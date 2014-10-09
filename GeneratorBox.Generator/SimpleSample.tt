@@ -31,7 +31,7 @@ var session = ParamTextTemplate.GetSessionObject();
 
 foreach (Test item in data)
 {
-	fileManager.StartNewFile(item.ClassName + ".cs", folderName:"TestFolder", fileProperties:fileProperties);
+	fileManager.StartNewFile(item.ClassName + ".generated.cs", projectName: "GeneratorBox", folderName:"TestFolder", fileProperties:fileProperties);
 	session["ClassMetaData"] = item;
 	string output = paramTmpl.TransformText("SimpleParameterTemplate.tt", session);
 	this.Write(output);
