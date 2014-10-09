@@ -5,11 +5,11 @@
 // some text...
 // </summary>
 
-//-> Unit1.generated.cs
+//-> Angle.generated.cs
 
-//-> Unit2.generated.cs
+//-> Length.generated.cs
 // Generated helper templates
 // GeneratorBox\GeneratorBox\Units\Generator.txt4
 // Generated items
-// GeneratorBox\GeneratorBox\Units\Unit2.generated.cs
-// GeneratorBox\GeneratorBox\Units\Unit1.generated.cs
+// GeneratorBox\GeneratorBox\Units\Length.generated.cs
+// GeneratorBox\GeneratorBox\Units\Angle.generated.cs

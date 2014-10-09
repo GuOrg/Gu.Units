@@ -7,11 +7,11 @@
 
 <# 
 // Recommended editor: Tangible T4 Editor (http://t4-editor.tangible-engineering.com/Download_T4Editor_Plus_ModelingTools.html)
-// after save SimpleSample.tt, the output will be generated in the TestFolder of the project
-var fileProperties = new FileProperties()
-{
-	BuildAction = BuildAction.Compile
-};
+// after save Generator.tt, the output will be generated in the TestFolder of the project
+//var fileProperties = new FileProperties()
+//{
+//	BuildAction = BuildAction.Compile
+//};
 
 var fileManager = TemplateFileManager.Create(this);
 fileManager.IsAutoIndentEnabled = true;
@@ -31,7 +31,7 @@ var session = ParamTextTemplate.GetSessionObject();
 
 foreach (var item in Settings.Descriptors)
 {
-	fileManager.StartNewFile(item.ClassName + ".generated.cs", projectName: "GeneratorBox", folderName: "Units", fileProperties:fileProperties);
+	fileManager.StartNewFile(item.ClassName + ".generated.cs", projectName: "GeneratorBox", folderName: "Units");
 	session["ClassMetaData"] = item;
 	string output = paramTmpl.TransformText("UnitValue.tt", session);
 	this.Write(output);
