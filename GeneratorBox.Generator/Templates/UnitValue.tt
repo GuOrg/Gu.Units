@@ -2,6 +2,7 @@
 <#@ assembly name="System.Core" #>
 <#@ assembly name="Microsoft.CSharp" #>
 <#@ import namespace="System" #>
+<#@ output extension=".txt" #>
 <#@ parameter name="ClassMetaData" type="System.Object" #>
 <# 
 if (ClassMetaData != null)

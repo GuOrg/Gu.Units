@@ -1,0 +1,16 @@
+﻿
+ 
+
+// <summary file="$filename$" company="...">
+// some text...
+// </summary>
+
+//-> Unit1.generated.cs
+
+//-> Unit2.generated.cs
+// Generated helper templates
+// GeneratorBox\GeneratorBox\Units\Generator.txt4
+// Generated items
+// GeneratorBox\GeneratorBox\Units\Unit2.generated.cs
+// GeneratorBox\GeneratorBox\Units\Unit1.generated.cs
+

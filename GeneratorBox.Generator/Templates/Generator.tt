@@ -1,6 +1,8 @@
-﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
 <#@ assembly name="System.Core" #>
 <#@ include file="$(SolutionDir)\Packages\T4.TemplateFileManager.2.1.2\tools\ttinc\TemplateFilemanager.CS.ttinclude" #>
+<#@ assembly name="$(TargetPath)" #>
+<#@ import namespace="GeneratorBox.Generator" #> 
 <#@ output extension=".txt" #>
 
 <# 
@@ -29,7 +31,7 @@ var data = this.GetTestDataForSample();
 var paramTmpl = ParamTextTemplate.Create(this.Host);
 var session = ParamTextTemplate.GetSessionObject();
 
-foreach (Test item in data)
+foreach (var item in Settings.Descriptors)
 {
 	fileManager.StartNewFile(item.ClassName + ".generated.cs", projectName: "GeneratorBox", folderName:"Units", fileProperties:fileProperties);
 	session["ClassMetaData"] = item;

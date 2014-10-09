@@ -36,6 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -55,6 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Settings.cs" />
+    <Compile Include="UnitValueDescriptor.cs" />
+    <Compile Include="Property.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -92,36 +98,33 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="SimpleParameterTemplate.tt">
+    <None Include="Templates\UnitValue.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SimpleParameterTemplate.txt</LastGenOutput>
+      <LastGenOutput>UnitValue.txt</LastGenOutput>
     </None>
-    <None Include="SimpleSample.tt">
+    <None Include="Templates\Generator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SimpleSample.txt</LastGenOutput>
+      <LastGenOutput>Generator.txt</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="TestFolder\ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="SimpleSample.txt">
+    <Resource Include="Templates\Generator.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SimpleSample.tt</DependentUpon>
+      <DependentUpon>Generator.tt</DependentUpon>
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="SimpleParameterTemplate.txt">
+    <Resource Include="Templates\UnitValue.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SimpleParameterTemplate.tt</DependentUpon>
+      <DependentUpon>UnitValue.tt</DependentUpon>
     </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
