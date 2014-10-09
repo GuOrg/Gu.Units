@@ -5,26 +5,26 @@
     using System.Linq;
 
     [Serializable]
-    public class UnitMetaData : MarshalByRefObject
+    public class UnitMetaData : TypeMetaData
     {
-        private UnitMetaData()
+        private UnitMetaData() 
+            : base()
         {
-            Units = new List<TemplateType>();
         }
-        public UnitMetaData(string baseType, string ns, string className, params string[] units)
-            : this()
+
+        public UnitMetaData(string unitValueType, string ns, string className)
+            : base(className)
         {
-            BaseType = new TemplateType(baseType);
+            UnitValueType = new TypeMetaData(unitValueType);
             Namespace = ns;
-            ClassName = new TemplateType(className);
-            Units = units.Select(x => new TemplateType(x)).ToArray();
         }
-        public TemplateType BaseType { get; set; }
+
+        public TypeMetaData UnitValueType { get; set; }
 
         public string Namespace { get; set; }
 
-        public TemplateType ClassName { get; set; }
-
-        public IList<TemplateType> Units { get; set; }
+        public string UnitName { get; set; }
+       
+        public string ConversionFactor { get; set; }
     }
 }

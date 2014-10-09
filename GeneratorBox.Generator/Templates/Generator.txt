@@ -1,9 +1,6 @@
 ﻿
  
 
-// <summary file="$filename$" company="...">
-// some text...
-// </summary>
 
 //-> Angle.generated.cs
 

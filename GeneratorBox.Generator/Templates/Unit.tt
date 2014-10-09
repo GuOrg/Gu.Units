@@ -5,7 +5,11 @@
 <#@ output extension=".txt" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="GeneratorBox.Generator" #> 
-<#@ parameter name="unitData" type="GeneratorBox.Generator.UnitMetaData" #>
+<#@ parameter name="UnitMetaData" type="GeneratorBox.Generator.UnitMetaData" #>
+<#
+// Template used by Generator.tt
+var unitData = UnitMetaData ?? new UnitMetaData("Meters", "GeneratorBox.Units", "Length","Centimeters","Millimeters");
+#>
 namespace MathNet.Spatial.Units
 {
     using System;

@@ -17,19 +17,11 @@ var fileManager = TemplateFileManager.Create(this);
 fileManager.IsAutoIndentEnabled = true;
 fileManager.CanOverwriteExistingFile = true;
 
-fileManager.StartHeader();
-#>
-// <summary file="$filename$" company="...">
-// some text...
-// </summary>
-<# 
-fileManager.EndBlock();
-
 // init handling for parameter templates
 var paramTmpl = ParamTextTemplate.Create(this.Host);
 var session = ParamTextTemplate.GetSessionObject();
 
-foreach (var item in Settings.Descriptors)
+foreach (var item in Settings.UnitValueTypes)
 {
 	fileManager.StartNewFile(item.ClassName + ".generated.cs", projectName: "GeneratorBox", folderName: "Units");
 	session["ClassMetaData"] = item;
