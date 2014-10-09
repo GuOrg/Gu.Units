@@ -6,11 +6,9 @@
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="GeneratorBox.Generator" #> 
 <#@ parameter name="ClassMetaData" type="GeneratorBox.Generator.UnitValueMetaData" #>
-<# 
-if (ClassMetaData != null)
-{
-	// Template used by Generator.tt
-	var classData = ClassMetaData; // Can't remove this without breaking it, dunno why.
+<#
+// Template used by Generator.tt
+var classData = ClassMetaData ?? new UnitValueMetaData("Meters", "GeneratorBox.Units", "Length","Centimeters","Millimeters");
 #>
 namespace <#= classData.Namespace #>
 {
@@ -433,6 +431,3 @@ namespace <#= classData.Namespace #>
         }
 	}
 }
-<#
-}
-#>

@@ -59,6 +59,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Descriptors\TemplateType.cs" />
+    <Compile Include="Descriptors\UnitMetaData.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Descriptors\UnitValueMetaData.cs" />
     <Page Include="MainWindow.xaml">

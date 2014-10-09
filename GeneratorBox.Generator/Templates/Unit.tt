@@ -1,1 +1,41 @@
-﻿<#@ output extension=".txt" #>
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="Microsoft.CSharp" #>
+<#@ import namespace="System" #>
+<#@ output extension=".txt" #>
+<#@ assembly name="$(TargetPath)" #>
+<#@ import namespace="GeneratorBox.Generator" #> 
+<#@ parameter name="unitData" type="GeneratorBox.Generator.UnitMetaData" #>
+namespace MathNet.Spatial.Units
+{
+    using System;
+    using System.ComponentModel;
+
+    [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
+    public struct Radians : IAngleUnit
+    {
+        private const double Conv = 1.0;
+        internal const string Name = "rad";
+
+        public double Conversionfactor
+        {
+            get
+            {
+                return Conv;
+            }
+        }
+
+        public string ShortName
+        {
+            get
+            {
+                return Name;
+            }
+        }
+
+        public static Angle operator *(double left, Radians right)
+        {
+            return new Angle(left, right);
+        }
+    }
+}
