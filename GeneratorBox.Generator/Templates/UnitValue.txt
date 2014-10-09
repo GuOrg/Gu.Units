@@ -52,7 +52,29 @@
         {
             Meters = UnitConverter.ConvertFrom(value, unit);
         }
-		 
+		 		
+        /// <summary>
+        /// The value in centimeters
+        /// </summary>
+        public double Centimeters
+        {
+            get
+            {
+                return UnitConverter.ConvertTo(Meters, LengthUnit.Centimeters);
+            }
+        }
+		
+        /// <summary>
+        /// The value in millimeters
+        /// </summary>
+        public double Millimeters
+        {
+            get
+            {
+                return UnitConverter.ConvertTo(Meters, LengthUnit.Millimeters);
+            }
+        }
+		
         /// <summary>
         /// Creates an instance of <see cref="T:GeneratorBox.Units.Length"/> from its string representation
         /// </summary>
