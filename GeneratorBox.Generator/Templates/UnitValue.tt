@@ -26,9 +26,9 @@ namespace <#= classData.Namespace #>
 	public partial struct <#= classData.ClassName #> : IComparable<<#= classData.ClassName #>>, IEquatable<<#= classData.ClassName #>>, IFormattable, IXmlSerializable, IUnitValue
 	{
 	    /// <summary>
-        /// The value in <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/>.
+        /// The value in <see cref="T:<#= classData.Namespace #>.<#= classData.BaseType #>"/>.
         /// </summary>
-		public readonly <#= classData.BaseType #> <#= classData.BaseType #>;
+		public readonly double <#= classData.BaseType #>;
 		
 		private <#= classData.ClassName #>(double <#= classData.BaseType.ParameterName #>)
         {
@@ -61,6 +61,38 @@ namespace <#= classData.Namespace #>
 		<#
 		} 
 		#>
+ 
+        /// <summary>
+        /// Creates an instance of <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/> from its string representation
+        /// </summary>
+        /// <param name="s">The string representation of the <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/></param>
+        /// <returns></returns>
+        public static <#= classData.ClassName #> Parse(string s)
+        {
+            return UnitParser.Parse(s, From);
+        }
+ 
+        /// <summary>
+        /// Reads an instance of <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>An instance of  <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/></returns>
+        public static <#= classData.ClassName #> ReadFrom(XmlReader reader)
+        {
+            var v = new <#= classData.ClassName #>();
+            v.ReadXml(reader);
+            return v;
+        }
+ 
+        /// <summary>
+        /// Creates a new instance of <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/>.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="unit"></param>
+        public static <#= classData.ClassName #> From<T>(double value, T unit) where T : I<#= classData.ClassName #>Unit
+        {
+            return new <#= classData.ClassName #>(UnitConverter.ConvertFrom(value, unit));
+        }
 
 	}
 }
