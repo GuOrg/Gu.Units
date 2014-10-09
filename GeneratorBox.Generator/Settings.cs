@@ -6,9 +6,9 @@
     {
         static Settings()
         {
-            Descriptors = new List<UnitValueDescriptor>
+            Descriptors = new List<UnitValue>
                               {
-                                  new UnitValueDescriptor
+                                  new UnitValue
                                       {
                                           ClassName = "Unit1",
                                           Namespace = "GeneratorBox.Units",
@@ -17,12 +17,12 @@
                                                   {
                                                       new Property
                                                           {
-                                                              PropertyName ="Prop1",
+                                                              Name ="Prop1",
                                                               ReturnType = "int"
                                                           }
                                                   }
                                       },
-                                      new UnitValueDescriptor
+                                      new UnitValue
                                       {
                                           ClassName = "Unit2",
                                           Namespace = "GeneratorBox.Units",
@@ -31,7 +31,7 @@
                                                   {
                                                       new Property
                                                           {
-                                                              PropertyName ="Prop1",
+                                                              Name ="Prop1",
                                                               ReturnType = "int"
                                                           }
                                                   }
@@ -43,6 +43,6 @@
         {
 
         }
-        public static List<UnitValueDescriptor> Descriptors { get; set; }
+        public static List<UnitValue> Descriptors { get; set; }
     }
 }

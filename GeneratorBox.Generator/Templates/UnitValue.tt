@@ -14,13 +14,13 @@ namespace <#= classData.Namespace #>
 {
 	using System;
 
-	public class <#= classData.ClassName #>
+	public partial struct <#= classData.ClassName #>
 	{
 		<#
 		foreach(dynamic item in classData.Properties)
 		{
 		#>
-		public <#= item.ReturnType #> <#= item.PropertyName #> { get; set; }
+		public <#= item.ReturnType #> <#= item.Name #> { get; set; }
 		<#
 		} 
 		#>

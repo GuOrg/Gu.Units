@@ -1,10 +1,9 @@
-﻿namespace SimpleTest.Namespace
+﻿namespace GeneratorBox.Units
 {
 	using System;
 
-	public class SimpleClass4
+	public partial struct Unit2
 	{
-				public int Id { get; set; }
-				public string Descripition { get; set; }
+				public int Prop1 { get; set; }
 			}
 }
