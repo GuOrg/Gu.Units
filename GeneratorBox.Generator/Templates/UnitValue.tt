@@ -61,7 +61,25 @@ namespace <#= classData.Namespace #>
 		<#
 		} 
 		#>
- 
+ 		<#
+		foreach(var unit in classData.Units)
+		{
+		#>
+
+        /// <summary>
+        /// The value in <#= unit.ParameterName #>
+        /// </summary>
+        public double <#= unit #>
+        {
+            get
+            {
+                return UnitConverter.ConvertTo(<#= classData.BaseType #>, <#= classData.ClassName #>Unit.<#= unit #>);
+            }
+        }
+		<#
+		} 
+		#>
+
         /// <summary>
         /// Creates an instance of <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/> from its string representation
         /// </summary>
