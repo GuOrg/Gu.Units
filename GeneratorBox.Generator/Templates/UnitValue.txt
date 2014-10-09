@@ -14,9 +14,9 @@
 	public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IUnitValue
 	{
 	    /// <summary>
-        /// The value in <see cref="T:GeneratorBox.Units.Length"/>.
+        /// The value in <see cref="T:GeneratorBox.Units.Meters"/>.
         /// </summary>
-		public readonly Meters Meters;
+		public readonly double Meters;
 		
 		private Length(double meters)
         {
@@ -52,6 +52,38 @@
         {
             Meters = UnitConverter.ConvertFrom(value, unit);
         }
-		
+		 
+        /// <summary>
+        /// Creates an instance of <see cref="T:GeneratorBox.Units.Length"/> from its string representation
+        /// </summary>
+        /// <param name="s">The string representation of the <see cref="T:GeneratorBox.Units.Length"/></param>
+        /// <returns></returns>
+        public static Length Parse(string s)
+        {
+            return UnitParser.Parse(s, From);
+        }
+ 
+        /// <summary>
+        /// Reads an instance of <see cref="T:GeneratorBox.Units.Length"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>An instance of  <see cref="T:GeneratorBox.Units.Length"/></returns>
+        public static Length ReadFrom(XmlReader reader)
+        {
+            var v = new Length();
+            v.ReadXml(reader);
+            return v;
+        }
+ 
+        /// <summary>
+        /// Creates a new instance of <see cref="T:GeneratorBox.Units.Length"/>.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="unit"></param>
+        public static Length From<T>(double value, T unit) where T : ILengthUnit
+        {
+            return new Length(UnitConverter.ConvertFrom(value, unit));
+        }
+
 	}
 }
