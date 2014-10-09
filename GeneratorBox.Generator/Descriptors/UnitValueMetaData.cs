@@ -11,22 +11,22 @@ namespace GeneratorBox.Generator
     {
         private UnitValueMetaData()
         {
-            Units = new List<TemplateType>();
+            Units = new List<TypeMetaData>();
         }
         public UnitValueMetaData(string baseType, string ns, string className, params string[] units)
             : this()
         {
-            BaseType = new TemplateType(baseType);
+            BaseType = new TypeMetaData(baseType);
             Namespace = ns;
-            ClassName = new TemplateType(className);
-            Units = units.Select(x => new TemplateType(x)).ToArray();
+            ClassName = new TypeMetaData(className);
+            Units = units.Select(x => new TypeMetaData(x)).ToArray();
         }
-        public TemplateType BaseType { get; set; }
+        public TypeMetaData BaseType { get; set; }
 
         public string Namespace { get; set; }
 
-        public TemplateType ClassName { get; set; }
+        public TypeMetaData ClassName { get; set; }
 
-        public IList<TemplateType> Units { get; set; }
+        public IList<TypeMetaData> Units { get; set; }
     }
 }

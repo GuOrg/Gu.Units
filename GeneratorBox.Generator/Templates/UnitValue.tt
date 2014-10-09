@@ -26,13 +26,13 @@ namespace <#= classData.Namespace #>
 	public partial struct <#= classData.ClassName #> : IComparable<<#= classData.ClassName #>>, IEquatable<<#= classData.ClassName #>>, IFormattable, IXmlSerializable, IUnitValue
 	{
 	    /// <summary>
-        /// The value in <see cref="T:<#= classData.Namespace #>.<#= classData.BaseType.Name #>"/>.
+        /// The value in <see cref="T:<#= classData.Namespace #>.<#= classData.BaseType.ClassName #>"/>.
         /// </summary>
-		public readonly double <#= classData.BaseType.Name #>;
+		public readonly double <#= classData.BaseType.ClassName #>;
 		
 		private <#= classData.ClassName #>(double <#= classData.BaseType.ParameterName #>)
         {
-            <#= classData.BaseType.Name #> = <#= classData.BaseType.ParameterName #>;
+            <#= classData.BaseType.ClassName #> = <#= classData.BaseType.ParameterName #>;
         }
 
 		/// <summary>
@@ -40,9 +40,9 @@ namespace <#= classData.Namespace #>
         /// </summary>
         /// <param name="<#= classData.BaseType.ParameterName #>"></param>
         /// <param name="unit"></param>
-        public <#= classData.ClassName #>(double <#= classData.BaseType.ParameterName #>, <#= classData.BaseType.Name #> unit)
+        public <#= classData.ClassName #>(double <#= classData.BaseType.ParameterName #>, <#= classData.BaseType.ClassName #> unit)
         {
-            <#= classData.BaseType.Name #> = <#= classData.BaseType.ParameterName #>;
+            <#= classData.BaseType.ClassName #> = <#= classData.BaseType.ParameterName #>;
         }
 		<#
 		foreach(var unit in classData.Units)
@@ -54,9 +54,9 @@ namespace <#= classData.Namespace #>
         /// </summary>
         /// <param name="value"></param>
         /// <param name="unit"></param>
-        public <#= classData.ClassName #>(double value, <#= unit.Name #> unit)
+        public <#= classData.ClassName #>(double value, <#= unit.ClassName #> unit)
         {
-            <#= classData.BaseType.Name #> = UnitConverter.ConvertFrom(value, unit);
+            <#= classData.BaseType.ClassName #> = UnitConverter.ConvertFrom(value, unit);
         }
 		<#
 		} 
@@ -69,11 +69,11 @@ namespace <#= classData.Namespace #>
         /// <summary>
         /// The value in <#= unit.ParameterName #>
         /// </summary>
-        public double <#= unit.Name #>
+        public double <#= unit.ClassName #>
         {
             get
             {
-                return UnitConverter.ConvertTo(<#= classData.BaseType.Name #>, <#= classData.ClassName #>Unit.<#= unit.Name #>);
+                return UnitConverter.ConvertTo(<#= classData.BaseType.ClassName #>, <#= classData.ClassName #>Unit.<#= unit.ClassName #>);
             }
         }
 		<#
@@ -116,7 +116,7 @@ namespace <#= classData.Namespace #>
         /// Creates a new instance of <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/>.
         /// </summary>
         /// <param name="value"></param>
-        public static <#= classData.ClassName #> From<#= classData.BaseType.Name #>(double value)
+        public static <#= classData.ClassName #> From<#= classData.BaseType.ClassName #>(double value)
         {
             return new <#= classData.ClassName #>(value);
         }
@@ -129,9 +129,9 @@ namespace <#= classData.Namespace #>
         /// Creates a new instance of <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/>.
         /// </summary>
         /// <param name="value"></param>
-        public static <#= classData.ClassName #> From<#= unit.Name #>(double value)
+        public static <#= classData.ClassName #> From<#= unit.ClassName #>(double value)
         {
-            return new <#= classData.ClassName #>(UnitConverter.ConvertFrom(value, <#= classData.ClassName #>Unit.<#= unit.Name #>));
+            return new <#= classData.ClassName #>(UnitConverter.ConvertFrom(value, <#= classData.ClassName #>Unit.<#= unit.ClassName #>));
         }
 		<#
 		} 
@@ -173,7 +173,7 @@ namespace <#= classData.Namespace #>
         /// <param name="right">An <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/>.</param>
         public static bool operator <(<#= classData.ClassName #> left, <#= classData.ClassName #> right)
         {
-            return left.<#= classData.BaseType.Name #> < right.<#= classData.BaseType.Name #>;
+            return left.<#= classData.BaseType.ClassName #> < right.<#= classData.BaseType.ClassName #>;
         }
  
         /// <summary>
@@ -186,7 +186,7 @@ namespace <#= classData.Namespace #>
         /// <param name="right">An <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/>.</param>
         public static bool operator >(<#= classData.ClassName #> left, <#= classData.ClassName #> right)
         {
-            return left.<#= classData.BaseType.Name #> > right.<#= classData.BaseType.Name #>;
+            return left.<#= classData.BaseType.ClassName #> > right.<#= classData.BaseType.ClassName #>;
         }
  
         /// <summary>
@@ -199,7 +199,7 @@ namespace <#= classData.Namespace #>
         /// <param name="right">An <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/>.</param>
         public static bool operator <=(<#= classData.ClassName #> left, <#= classData.ClassName #> right)
         {
-            return left.<#= classData.BaseType.Name #> <= right.<#= classData.BaseType.Name #>;
+            return left.<#= classData.BaseType.ClassName #> <= right.<#= classData.BaseType.ClassName #>;
         }
  
         /// <summary>
@@ -212,7 +212,7 @@ namespace <#= classData.Namespace #>
         /// <param name="right">An <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/>.</param>
         public static bool operator >=(<#= classData.ClassName #> left, <#= classData.ClassName #> right)
         {
-            return left.<#= classData.BaseType.Name #> >= right.<#= classData.BaseType.Name #>;
+            return left.<#= classData.BaseType.ClassName #> >= right.<#= classData.BaseType.ClassName #>;
         }
  
         /// <summary>
@@ -223,7 +223,7 @@ namespace <#= classData.Namespace #>
         /// <returns>Multiplies an instance of <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/> with <paramref name="left"/> and returns the result.</returns>
         public static <#= classData.ClassName #> operator *(double left, <#= classData.ClassName #> right)
         {
-            return new <#= classData.ClassName #>(left * right.<#= classData.BaseType.Name #>);
+            return new <#= classData.ClassName #>(left * right.<#= classData.BaseType.ClassName #>);
         }
  
         /// <summary>
@@ -234,7 +234,7 @@ namespace <#= classData.Namespace #>
         /// <returns>Multiplies an instance of <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/> with <paramref name="right"/> and returns the result.</returns>
         public static <#= classData.ClassName #> operator *(<#= classData.ClassName #> left, double right)
         {
-            return new <#= classData.ClassName #>(left.<#= classData.BaseType.Name #> * right);
+            return new <#= classData.ClassName #>(left.<#= classData.BaseType.ClassName #> * right);
         }
  
         /// <summary>
@@ -245,7 +245,7 @@ namespace <#= classData.Namespace #>
         /// <returns>Divides an instance of <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/> with <paramref name="right"/> and returns the result.</returns>
         public static <#= classData.ClassName #> operator /(<#= classData.ClassName #> left, double right)
         {
-            return new <#= classData.ClassName #>(left.<#= classData.BaseType.Name #> / right);
+            return new <#= classData.ClassName #>(left.<#= classData.BaseType.ClassName #> / right);
         }
  
         /// <summary>
@@ -258,7 +258,7 @@ namespace <#= classData.Namespace #>
         /// <param name="right">A TimeSpan.</param>
         public static <#= classData.ClassName #> operator +(<#= classData.ClassName #> left, <#= classData.ClassName #> right)
         {
-            return new <#= classData.ClassName #>(left.<#= classData.BaseType.Name #> + right.<#= classData.BaseType.Name #>);
+            return new <#= classData.ClassName #>(left.<#= classData.BaseType.ClassName #> + right.<#= classData.BaseType.ClassName #>);
         }
  
         /// <summary>
@@ -271,7 +271,7 @@ namespace <#= classData.Namespace #>
         /// <param name="right">A <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/> (the subtrahend).</param>
         public static <#= classData.ClassName #> operator -(<#= classData.ClassName #> left, <#= classData.ClassName #> right)
         {
-            return new <#= classData.ClassName #>(left.<#= classData.BaseType.Name #> - right.<#= classData.BaseType.Name #>);
+            return new <#= classData.ClassName #>(left.<#= classData.BaseType.ClassName #> - right.<#= classData.BaseType.ClassName #>);
         }
  
         /// <summary>
@@ -283,7 +283,7 @@ namespace <#= classData.Namespace #>
         /// <param name="<#= classData.ClassName #>">A <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/></param>
         public static <#= classData.ClassName #> operator -(<#= classData.ClassName #> <#= classData.ClassName #>)
         {
-            return new <#= classData.ClassName #>(-1 * <#= classData.ClassName #>.<#= classData.BaseType.Name #>);
+            return new <#= classData.ClassName #>(-1 * <#= classData.ClassName #>.<#= classData.BaseType.ClassName #>);
         }
  
         /// <summary>
@@ -315,12 +315,12 @@ namespace <#= classData.Namespace #>
  
         public string ToString(string format, IFormatProvider formatProvider)
         {
-            return this.ToString(format, formatProvider, <#= classData.ClassName #>Unit.<#= classData.BaseType.Name #>);
+            return this.ToString(format, formatProvider, <#= classData.ClassName #>Unit.<#= classData.BaseType.ClassName #>);
         }
  
         public string ToString<T>(string format, IFormatProvider formatProvider, T unit) where T : I<#= classData.ClassName #>Unit
         {
-            var value = UnitConverter.ConvertTo(this.<#= classData.BaseType.Name #>, unit);
+            var value = UnitConverter.ConvertTo(this.<#= classData.BaseType.ClassName #>, unit);
             return string.Format("{0}{1}", value.ToString(format, formatProvider), unit.ShortName);
         }
  
@@ -350,7 +350,7 @@ namespace <#= classData.Namespace #>
         /// <param name="value">A <see cref="T:MathNet.Spatial.Units.<#= classData.ClassName #>"/> object to compare to this instance.</param>
         public int CompareTo(<#= classData.ClassName #> value)
         {
-            return this.<#= classData.BaseType.Name #>.CompareTo(value.<#= classData.BaseType.Name #>);
+            return this.<#= classData.BaseType.ClassName #>.CompareTo(value.<#= classData.BaseType.ClassName #>);
         }
  
         /// <summary>
@@ -362,7 +362,7 @@ namespace <#= classData.Namespace #>
         /// <param name="other">An <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/> object to compare with this instance.</param>
         public bool Equals(<#= classData.ClassName #> other)
         {
-            return this.<#= classData.BaseType.Name #>.Equals(other.<#= classData.BaseType.Name #>);
+            return this.<#= classData.BaseType.ClassName #>.Equals(other.<#= classData.BaseType.ClassName #>);
         }
  
         /// <summary>
@@ -375,7 +375,7 @@ namespace <#= classData.Namespace #>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(<#= classData.ClassName #> other, double tolerance)
         {
-            return Math.Abs(this.<#= classData.BaseType.Name #> - other.<#= classData.BaseType.Name #>) < tolerance;
+            return Math.Abs(this.<#= classData.BaseType.ClassName #> - other.<#= classData.BaseType.ClassName #>) < tolerance;
         }
  
         public override bool Equals(object obj)
@@ -390,7 +390,7 @@ namespace <#= classData.Namespace #>
  
         public override int GetHashCode()
         {
-            return this.<#= classData.BaseType.Name #>.GetHashCode();
+            return this.<#= classData.BaseType.ClassName #>.GetHashCode();
         }
  
         /// <summary>
@@ -418,7 +418,7 @@ namespace <#= classData.Namespace #>
             var e = (XElement)XNode.ReadFrom(reader);
  
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, x => x.<#= classData.BaseType.Name #>, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
+            XmlExt.SetReadonlyField(ref this, x => x.<#= classData.BaseType.ClassName #>, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
  
         /// <summary>
@@ -427,7 +427,7 @@ namespace <#= classData.Namespace #>
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.<#= classData.BaseType.Name #>);
+            XmlExt.WriteAttribute(writer, "Value", this.<#= classData.BaseType.ClassName #>);
         }
 	}
 }
