@@ -5,7 +5,20 @@ namespace GeneratorBox.Generator
     [Serializable]
     public class Field : MarshalByRefObject
     {
-        public string Readonly { get; set; }
+        private string _readonly;
+
+        public string Readonly
+        {
+            get
+            {
+                return _readonly;
+            }
+            set
+            {
+                _readonly = value.EndsWith(" ") ? value : value + " ";
+            }
+        }
+
         public string ReturnType { get; set; }
         public string Name { get; set; }
     }

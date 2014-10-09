@@ -29,6 +29,9 @@ namespace <#= classData.Namespace #>
 		foreach(var item in classData.Fields)
 		{
 		#>
+        /// <summary>
+        /// The value in <see cref="T:<#= classData.Namespace #><#= item.ReturnType #>"/>.
+        /// </summary>
 		public <#= item.Readonly #><#= item.ReturnType #> <#= item.Name #>;
 		<#
 		} 
