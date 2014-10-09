@@ -16,6 +16,9 @@ namespace GeneratorBox.Units
     [Serializable]
     public partial struct Unit2 : IComparable<Unit2>, IEquatable<Unit2>, IFormattable, IXmlSerializable, IUnitValue
     {
+        /// <summary>
+        /// The value in <see cref="T:GeneratorBox.Unitsint/>.
+        /// </summary>
         public readonly int Field1;
 
         public int Prop1 { get; set; }
