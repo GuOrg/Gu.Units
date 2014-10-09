@@ -4,37 +4,15 @@
 
     public class Settings
     {
+        private static string _nameSpace;
         static Settings()
         {
+            _nameSpace = "GeneratorBox.Units";
             Descriptors = new List<UnitValue>
-                              {
-                                  new UnitValue
-                                      {
-                                          ClassName = "Unit1",
-                                          Namespace = "GeneratorBox.Units",
-                                          Properties =
-                                              new[]
-                                                  {
-                                                      new Property { Name ="Prop1", ReturnType = "int" }
-                                                  }
-                                      },
-                                      new UnitValue
-                                      {
-                                          ClassName = "Unit2",
-                                          Namespace = "GeneratorBox.Units",
-                                          Properties =
-                                              new[]
-                                                  {
-                                                      new Property { Name ="Prop1", ReturnType = "int" }
-                                                  },
-                                          Fields = 
-                                              new[]
-                                                  {
-                                                      new Field { Name ="Field1", Readonly = "readonly ", ReturnType = "int" }
-                                                  }
-                                      }
-
-                              };
+            {
+                new UnitValue("Radians", _nameSpace, "Angle", "Degrees"),
+                new UnitValue("Meters", _nameSpace, "Length","Centimeters","Millimeters"),
+            };
         }
         public Settings()
         {

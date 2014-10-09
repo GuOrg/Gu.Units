@@ -25,26 +25,43 @@ namespace <#= classData.Namespace #>
     [Serializable]
 	public partial struct <#= classData.ClassName #> : IComparable<<#= classData.ClassName #>>, IEquatable<<#= classData.ClassName #>>, IFormattable, IXmlSerializable, IUnitValue
 	{
-	    <#
-		foreach(var item in classData.Fields)
+	    /// <summary>
+        /// The value in <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/>.
+        /// </summary>
+		public readonly <#= classData.BaseType #> <#= classData.BaseType #>;
+		
+		private <#= classData.ClassName #>(double <#= classData.BaseType.ParameterName #>)
+        {
+            <#= classData.BaseType #> = <#= classData.BaseType.ParameterName #>;
+        }
+
+		/// <summary>
+        /// Initializes a new instance of <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/>.
+        /// </summary>
+        /// <param name="<#= classData.BaseType.ParameterName #>"></param>
+        /// <param name="unit"></param>
+        public <#= classData.ClassName #>(double <#= classData.BaseType.ParameterName #>, <#= classData.BaseType #> unit)
+        {
+            <#= classData.BaseType #> = <#= classData.BaseType.ParameterName #>;
+        }
+		<#
+		foreach(var unit in classData.Units)
 		{
 		#>
+
         /// <summary>
-        /// The value in <see cref="T:<#= classData.Namespace #><#= item.ReturnType #>"/>.
+        /// Initializes a new instance of <see cref="T:<#= classData.Namespace #>.<#= classData.ClassName #>"/>.
         /// </summary>
-		public <#= item.Readonly #><#= item.ReturnType #> <#= item.Name #>;
+        /// <param name="value"></param>
+        /// <param name="unit"></param>
+        public <#= classData.ClassName #>(double value, <#= unit #> unit)
+        {
+            <#= classData.BaseType #> = UnitConverter.ConvertFrom(value, unit);
+        }
 		<#
 		} 
 		#>
 
-		<#
-		foreach(var item in classData.Properties)
-		{
-		#>
-		public <#= item.ReturnType #> <#= item.Name #> { get; set; }
-		<#
-		} 
-		#>
 	}
 }
 <#

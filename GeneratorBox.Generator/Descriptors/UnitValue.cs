@@ -9,17 +9,24 @@ namespace GeneratorBox.Generator
     [Serializable]
     public class UnitValue : MarshalByRefObject
     {
-        public UnitValue()
+        private UnitValue()
         {
-            Properties = new List<Property>();
-            Fields = new List<Field>();
+            Units = new List<TemplateType>();
         }
+        public UnitValue(string baseType, string ns, string className, params string[] units)
+            : this()
+        {
+            BaseType = new TemplateType(baseType);
+            Namespace = ns;
+            ClassName = new TemplateType(className);
+            Units = units.Select(x => new TemplateType(x)).ToArray();
+        }
+        public TemplateType BaseType { get; set; }
 
         public string Namespace { get; set; }
-        
-        public string ClassName { get; set; }
 
-        public IList<Property> Properties { get; set; }
-        public IList<Field> Fields { get; set; }
+        public TemplateType ClassName { get; set; }
+
+        public IList<TemplateType> Units { get; set; }
     }
 }
