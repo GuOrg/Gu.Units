@@ -1,5 +1,4 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
-<#@ output extension=".txt" #>
 <#@ assembly name="System.Core" #>
 <#@ assembly name="Microsoft.CSharp" #>
 <#@ import namespace="System" #>
