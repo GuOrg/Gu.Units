@@ -15,11 +15,7 @@
                                           Properties =
                                               new[]
                                                   {
-                                                      new Property
-                                                          {
-                                                              Name ="Prop1",
-                                                              ReturnType = "int"
-                                                          }
+                                                      new Property { Name ="Prop1", ReturnType = "int" }
                                                   }
                                       },
                                       new UnitValue
@@ -29,11 +25,12 @@
                                           Properties =
                                               new[]
                                                   {
-                                                      new Property
-                                                          {
-                                                              Name ="Prop1",
-                                                              ReturnType = "int"
-                                                          }
+                                                      new Property { Name ="Prop1", ReturnType = "int" }
+                                                  },
+                                          Fields = 
+                                              new[]
+                                                  {
+                                                      new Field { Name ="Field1", Readonly = "readonly ", ReturnType = "int" }
                                                   }
                                       }
 

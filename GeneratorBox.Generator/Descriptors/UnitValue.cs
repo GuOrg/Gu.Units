@@ -12,12 +12,14 @@ namespace GeneratorBox.Generator
         public UnitValue()
         {
             Properties = new List<Property>();
+            Fields = new List<Field>();
         }
 
         public string Namespace { get; set; }
         
         public string ClassName { get; set; }
-        
+
         public IList<Property> Properties { get; set; }
+        public IList<Field> Fields { get; set; }
     }
 }
