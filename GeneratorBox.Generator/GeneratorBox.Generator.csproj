@@ -58,9 +58,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Descriptors\Field.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="UnitValueDescriptor.cs" />
-    <Compile Include="Property.cs" />
+    <Compile Include="Descriptors\UnitValue.cs" />
+    <Compile Include="Descriptors\Property.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

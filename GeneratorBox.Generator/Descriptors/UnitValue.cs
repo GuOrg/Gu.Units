@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace GeneratorBox.Generator
 {
     [Serializable]
-    public class UnitValueDescriptor : MarshalByRefObject
+    public class UnitValue : MarshalByRefObject
     {
-        public UnitValueDescriptor()
+        public UnitValue()
         {
             Properties = new List<Property>();
         }

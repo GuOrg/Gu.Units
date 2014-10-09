@@ -5,7 +5,7 @@ namespace GeneratorBox.Units
 {
     using System;
 
-    public class Unit1
+    public partial struct Unit1
     {
         public int Prop1 { get; set; }
     }
