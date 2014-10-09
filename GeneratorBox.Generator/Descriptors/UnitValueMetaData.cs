@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace GeneratorBox.Generator
 {
     [Serializable]
-    public class UnitValue : MarshalByRefObject
+    public class UnitValueMetaData : MarshalByRefObject
     {
-        private UnitValue()
+        private UnitValueMetaData()
         {
             Units = new List<TemplateType>();
         }
-        public UnitValue(string baseType, string ns, string className, params string[] units)
+        public UnitValueMetaData(string baseType, string ns, string className, params string[] units)
             : this()
         {
             BaseType = new TemplateType(baseType);

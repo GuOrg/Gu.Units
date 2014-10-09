@@ -8,16 +8,16 @@
         static Settings()
         {
             _nameSpace = "GeneratorBox.Units";
-            Descriptors = new List<UnitValue>
+            Descriptors = new List<UnitValueMetaData>
             {
-                new UnitValue("Radians", _nameSpace, "Angle", "Degrees"),
-                new UnitValue("Meters", _nameSpace, "Length","Centimeters","Millimeters"),
+                new UnitValueMetaData("Radians", _nameSpace, "Angle", "Degrees"),
+                new UnitValueMetaData("Meters", _nameSpace, "Length","Centimeters","Millimeters"),
             };
         }
         public Settings()
         {
 
         }
-        public static List<UnitValue> Descriptors { get; set; }
+        public static List<UnitValueMetaData> Descriptors { get; set; }
     }
 }

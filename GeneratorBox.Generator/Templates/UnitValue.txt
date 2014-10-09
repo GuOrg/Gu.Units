@@ -1,4 +1,5 @@
-﻿namespace GeneratorBox.Units
+﻿ 
+namespace GeneratorBox.Units
 {
     using System;
     using System.Globalization;
