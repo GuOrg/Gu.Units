@@ -3,12 +3,14 @@
 <#@ assembly name="Microsoft.CSharp" #>
 <#@ import namespace="System" #>
 <#@ output extension=".txt" #>
-<#@ parameter name="ClassMetaData" type="System.Object" #>
+<#@ assembly name="$(TargetPath)" #>
+<#@ import namespace="GeneratorBox.Generator" #> 
+<#@ parameter name="ClassMetaData" type="GeneratorBox.Generator.UnitValueMetaData" #>
 <# 
 if (ClassMetaData != null)
 {
-	// Template used by SimpleSample.tt
-	var classData = ClassMetaData as dynamic;
+	// Template used by Generator.tt
+	var classData = ClassMetaData; // Can't remove this without breaking it, dunno why.
 #>
 namespace <#= classData.Namespace #>
 {

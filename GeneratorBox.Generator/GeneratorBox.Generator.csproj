@@ -60,7 +60,7 @@
     </ApplicationDefinition>
     <Compile Include="Descriptors\TemplateType.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="Descriptors\UnitValue.cs" />
+    <Compile Include="Descriptors\UnitValueMetaData.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -98,6 +98,10 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Templates\Unit.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Unit.txt</LastGenOutput>
+    </None>
     <None Include="Templates\UnitValue.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UnitValue.txt</LastGenOutput>
@@ -125,6 +129,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Generator.tt</DependentUpon>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Templates\Unit.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Unit.tt</DependentUpon>
     </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
