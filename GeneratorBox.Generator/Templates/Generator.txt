@@ -13,4 +13,3 @@
 // Generated items
 // GeneratorBox\GeneratorBox\Units\Unit2.generated.cs
 // GeneratorBox\GeneratorBox\Units\Unit1.generated.cs
-
