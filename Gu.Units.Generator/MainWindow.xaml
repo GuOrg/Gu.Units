@@ -1,0 +1,39 @@
+﻿<Window x:Class="Gu.Units.Generator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:generator="clr-namespace:Gu.Units.Generator"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="MainWindow"
+        Width="525"
+        Height="350"
+        d:DataContext="{d:DesignInstance generator:ViewModel}"
+        mc:Ignorable="d">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" IsMainMenu="True">
+            <MenuItem Header="_File">
+                <MenuItem Command="Save" />
+            </MenuItem>
+            <MenuItem Header="_Edit" />
+            <MenuItem Header="_View" />
+            <MenuItem Header="_Window" />
+            <MenuItem Header="_Help" />
+        </Menu>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <TextBlock Text="NameSpace" />
+            <TextBox MinWidth="200" Text="{Binding NameSpace}" />
+        </StackPanel>
+        <DataGrid AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  ItemsSource="{Binding UnitData}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ValueTypeName}" Header="ClassName" />
+                <DataGridCheckBoxColumn Binding="{Binding IsSiUnit}" Header="IsSiUnit" />
+                <DataGridTextColumn Binding="{Binding UnitTypeName}" Header="UnitTypeName" />
+                <DataGridTextColumn Binding="{Binding UnitName}" Header="UnitName" />
+                <DataGridTextColumn Binding="{Binding ConversionFactor}" Header="ConversionFactor" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>
