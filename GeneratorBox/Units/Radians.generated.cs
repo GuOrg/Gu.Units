@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace GeneratorBox.Units
 {
     using System;
@@ -8,7 +8,7 @@ namespace GeneratorBox.Units
     public struct Radians : IAngleUnit
     {
         private const double _conversionFactor = 1;
-        internal const string _name = "rad";
+        internal const string _name = rad;
 
         public double Conversionfactor
         {

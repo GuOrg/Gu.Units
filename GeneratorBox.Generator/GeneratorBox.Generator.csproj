@@ -103,13 +103,18 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Unit.txt</LastGenOutput>
     </None>
+    <None Include="Templates\UnitGenerator.tt">
+      <SubType>Code</SubType>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UnitGenerator.txt</LastGenOutput>
+    </None>
     <None Include="Templates\UnitValue.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UnitValue.txt</LastGenOutput>
     </None>
-    <None Include="Templates\Generator.tt">
+    <None Include="Templates\UnitValueGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Generator.txt</LastGenOutput>
+      <LastGenOutput>UnitValueGenerator.txt</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -119,17 +124,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Templates\UnitGenerator.txt">
+      <DependentUpon>UnitGenerator.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Resource>
     <Resource Include="Templates\UnitValue.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UnitValue.tt</DependentUpon>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Templates\Generator.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Generator.tt</DependentUpon>
     </Resource>
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +141,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Unit.tt</DependentUpon>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\UnitValueGenerator.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitValueGenerator.tt</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
