@@ -40,20 +40,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Units\Angle.generated.cs">
-      <DependentUpon>UnitValueGenerator.txt4</DependentUpon>
-    </Compile>
     <Compile Include="Units\IUnitValue.cs" />
-    <Compile Include="Units\Length.generated.cs">
-      <DependentUpon>UnitValueGenerator.txt4</DependentUpon>
-    </Compile>
-    <Compile Include="Units\Radians.generated.cs">
-      <DependentUpon>UnitGenerator.txt4</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Units\UnitGenerator.txt4" />
-    <None Include="Units\UnitValueGenerator.txt4" />
+    <None Include="Units\ValueGenerator.txt4" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Units\Length.generated.txt">
+      <DependentUpon>ValueGenerator.txt4</DependentUpon>
+    </Content>
+    <Content Include="Units\Time.generated.txt">
+      <DependentUpon>ValueGenerator.txt4</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

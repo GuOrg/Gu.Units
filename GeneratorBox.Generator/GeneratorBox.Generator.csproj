@@ -35,6 +35,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
@@ -60,8 +66,12 @@
     </ApplicationDefinition>
     <Compile Include="Descriptors\TypeMetaData.cs" />
     <Compile Include="Descriptors\UnitMetaData.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="RelayCommand.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="Descriptors\UnitValueMetaData.cs" />
+    <Compile Include="Descriptors\ValueMetaData.cs" />
+    <Compile Include="MetaDataViewModel.cs" />
+    <Compile Include="ViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,6 +103,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Key.snk" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -108,13 +119,13 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UnitGenerator.txt</LastGenOutput>
     </None>
-    <None Include="Templates\UnitValue.tt">
+    <None Include="Templates\Value.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UnitValue.txt</LastGenOutput>
+      <LastGenOutput>Value.txt</LastGenOutput>
     </None>
-    <None Include="Templates\UnitValueGenerator.tt">
+    <None Include="Templates\ValueGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UnitValueGenerator.txt</LastGenOutput>
+      <LastGenOutput>ValueGenerator.txt</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -129,24 +140,23 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Resource>
-    <Resource Include="Templates\UnitValue.txt">
+    <Resource Include="Templates\Value.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UnitValue.tt</DependentUpon>
+      <DependentUpon>Value.tt</DependentUpon>
     </Resource>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="GeneratorSettings.xml" />
     <Resource Include="Templates\Unit.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Unit.tt</DependentUpon>
     </Resource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Templates\UnitValueGenerator.txt">
+    <Content Include="Templates\ValueGenerator.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UnitValueGenerator.tt</DependentUpon>
+      <DependentUpon>ValueGenerator.tt</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

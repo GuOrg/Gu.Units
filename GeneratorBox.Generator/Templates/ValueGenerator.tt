@@ -1,6 +1,6 @@
 ﻿<#@ template debug="false" hostspecific="true" language="C#" #>
 <#@ assembly name="System.Core" #>
-<#@ include file="$(SolutionDir)\Packages\T4.TemplateFileManager.2.1.2\tools\ttinc\TemplateFilemanager.CS.ttinclude" #>
+//<#@ include file="$(SolutionDir)\Packages\T4.TemplateFileManager.2.1.2\tools\ttinc\TemplateFilemanager.CS.ttinclude" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="GeneratorBox.Generator" #> 
 <#@ output extension=".txt" #>
@@ -19,12 +19,13 @@ fileManager.CanOverwriteExistingFile = true;
 // init handling for parameter templates
 var paramTmpl = ParamTextTemplate.Create(this.Host);
 var session = ParamTextTemplate.GetSessionObject();
-
-foreach (var item in Settings.UnitValueTypes)
+var settings = Settings.Instance;
+this.Write(string.Format("Read Settings found {0} units", settings.ValueTypes.Count));
+foreach (var item in settings.ValueTypes)
 {
-	fileManager.StartNewFile(item.ClassName + ".generated.cs", projectName: "GeneratorBox", folderName: "Units");
-	session["ClassMetaData"] = item;
-	string output = paramTmpl.TransformText("UnitValue.tt", session);
+	fileManager.StartNewFile(item.ClassName + ".generated.txt", Settings.ProjectName, Settings.FolderName, null);
+	session["ValueMetaData"] = item;
+	string output = paramTmpl.TransformText("Value.tt", session);
 	this.Write(output);
 }
 

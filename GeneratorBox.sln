@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratorBox.Generator", "GeneratorBox.Generator\GeneratorBox.Generator.csproj", "{E2703762-7D3C-49AE-B8A8-B3A792F018E3}"
 EndProject
@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5F0B1F
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
+		packages\T4.TemplateFileManager.2.1.2\tools\ttinc\TemplateFilemanager.CS.ttinclude = packages\T4.TemplateFileManager.2.1.2\tools\ttinc\TemplateFilemanager.CS.ttinclude
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratorBox", "GeneratorBox\GeneratorBox.csproj", "{F1F8B138-BECC-4475-A7AB-B3019338BC7B}"
