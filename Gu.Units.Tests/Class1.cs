@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gu.Units.Tests
+﻿namespace Gu.Units.Tests
 {
-    public class Class1
+    using NUnit.Framework;
+
+    public class UnitParserTests
     {
+        [Test]
+        public void Parse()
+        {
+            var s = "1m";
+            var length = UnitParser.Parse<ILengthUnit, Length>(s, Length.From);
+            Assert.AreEqual(1, length.Meters);
+        }
     }
 }
