@@ -4,7 +4,9 @@ namespace GeneratorBox
 
     public class UnitParser
     {
-        public static Force Parse(string s, Func<double, IForceUnit, Force> @from)
+        public static TValue Parse<TUnit, TValue>(string s, Func<double, TUnit, TValue> @from) 
+            where TUnit : IUnit 
+            where TValue : IUnitValue
         {
             throw new NotImplementedException();
         }

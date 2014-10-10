@@ -6,7 +6,7 @@ namespace GeneratorBox
 
     public class XmlExt
     {
-        public static void SetReadonlyField<T>(ref T force, Func<object, object> func, double toDouble)
+        public static void SetReadonlyField<T>(ref T force, Func<T, object> func, double toDouble)
         {
             throw new NotImplementedException();
         }
