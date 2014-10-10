@@ -3,10 +3,10 @@
   <ValueTypes>
     <ValueMetaData>
       <SiUnit>
-        <ClassName />
-        <UnitValueType>
+        <ClassName>Meters</ClassName>
+        <ValueType>
           <ClassName />
-        </UnitValueType>
+        </ValueType>
         <Namespace />
         <UnitName>Meters</UnitName>
         <ConversionFactor>0</ConversionFactor>
@@ -17,22 +17,49 @@
       </ClassName>
       <Units>
         <UnitMetaData>
-          <ClassName>Length</ClassName>
-          <UnitValueType>
+          <ClassName>Millimeters</ClassName>
+          <ValueType>
             <ClassName>Length</ClassName>
-          </UnitValueType>
+          </ValueType>
           <Namespace>GeneratorBox</Namespace>
           <UnitName>Millimeters</UnitName>
-          <ConversionFactor>0</ConversionFactor>
+          <ConversionFactor />
+        </UnitMetaData>
+        <UnitMetaData>
+          <ClassName>Centimeters</ClassName>
+          <ValueType>
+            <ClassName>Length</ClassName>
+          </ValueType>
+          <Namespace>GeneratorBox</Namespace>
+          <UnitName>Centimeters</UnitName>
+          <ConversionFactor />
+        </UnitMetaData>
+        <UnitMetaData>
+          <ClassName />
+          <ValueType>
+            <ClassName>Length</ClassName>
+          </ValueType>
+          <Namespace>GeneratorBox</Namespace>
+          <UnitName />
+          <ConversionFactor />
+        </UnitMetaData>
+        <UnitMetaData>
+          <ClassName />
+          <ValueType>
+            <ClassName>Length</ClassName>
+          </ValueType>
+          <Namespace>GeneratorBox</Namespace>
+          <UnitName />
+          <ConversionFactor />
         </UnitMetaData>
       </Units>
     </ValueMetaData>
     <ValueMetaData>
       <SiUnit>
-        <ClassName />
-        <UnitValueType>
+        <ClassName>Seconds</ClassName>
+        <ValueType>
           <ClassName />
-        </UnitValueType>
+        </ValueType>
         <Namespace />
         <UnitName>Seconds</UnitName>
         <ConversionFactor>0</ConversionFactor>
@@ -43,13 +70,40 @@
       </ClassName>
       <Units>
         <UnitMetaData>
-          <ClassName>Time</ClassName>
-          <UnitValueType>
+          <ClassName>MilliSeconds</ClassName>
+          <ValueType>
             <ClassName>Time</ClassName>
-          </UnitValueType>
+          </ValueType>
           <Namespace>GeneratorBox</Namespace>
           <UnitName>MilliSeconds</UnitName>
-          <ConversionFactor>0</ConversionFactor>
+          <ConversionFactor />
+        </UnitMetaData>
+        <UnitMetaData>
+          <ClassName>Hours</ClassName>
+          <ValueType>
+            <ClassName>Time</ClassName>
+          </ValueType>
+          <Namespace>GeneratorBox</Namespace>
+          <UnitName>Hours</UnitName>
+          <ConversionFactor />
+        </UnitMetaData>
+        <UnitMetaData>
+          <ClassName />
+          <ValueType>
+            <ClassName>Time</ClassName>
+          </ValueType>
+          <Namespace>GeneratorBox</Namespace>
+          <UnitName />
+          <ConversionFactor />
+        </UnitMetaData>
+        <UnitMetaData>
+          <ClassName />
+          <ValueType>
+            <ClassName>Time</ClassName>
+          </ValueType>
+          <Namespace>GeneratorBox</Namespace>
+          <UnitName />
+          <ConversionFactor />
         </UnitMetaData>
       </Units>
     </ValueMetaData>

@@ -48,10 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Units\Length.generated.txt">
-      <DependentUpon>ValueGenerator.txt4</DependentUpon>
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Content>
     <Content Include="Units\Time.generated.txt">
-      <DependentUpon>ValueGenerator.txt4</DependentUpon>
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

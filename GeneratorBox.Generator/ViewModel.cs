@@ -1,6 +1,7 @@
 ﻿namespace GeneratorBox.Generator
 {
     using System;
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Linq;
@@ -73,23 +74,29 @@
             }
         }
 
-        public void Save()
+        public static void Save(IEnumerable<MetaDataViewModel> data, string nameSpace)
         {
             var settings = new Settings();
-            var unitNames = UnitData.Where(x => !string.IsNullOrEmpty(x.ValueTypeName))
-                                    .Select(x => x.ValueTypeName)
-                                    .Distinct()
-                                    .ToArray();
-            foreach (var unitName in unitNames)
+            var nonEmpty = data.Where(x => x != null && x.UnitMetaData != null && !x.UnitMetaData.IsEmpty && !string.IsNullOrEmpty(x.ValueTypeName))
+                                   .ToArray();
+            var valueNames = nonEmpty.Select(x => x.ValueTypeName)
+                                     .Distinct()
+                                     .ToArray();
+            foreach (var valueName in valueNames)
             {
-                var units = this.UnitData.Where(x => x != null && x.ValueTypeName == unitName)
+                var units = nonEmpty.Where(x => x.ValueTypeName == valueName)
                                              .ToArray();
-                var metaDatas = units.Where(x => !x.IsSiUnit).Select(x => new UnitMetaData(unitName, NameSpace, x.ValueTypeName, 0, x.UnitName)).ToArray();
-                var unitValueMetaData = new ValueMetaData(units.Single(x => x.IsSiUnit).UnitMetaData, NameSpace, unitName, metaDatas);
+                var metaDatas = units.Where(x => !x.IsSiUnit).Select(x => new UnitMetaData(valueName, nameSpace, x.UnitTypeName, 0, x.UnitName)).ToArray();
+                var unitValueMetaData = new ValueMetaData(units.Single(x => x.IsSiUnit).UnitMetaData, nameSpace, valueName, metaDatas);
                 settings.ValueTypes.Add(unitValueMetaData);
             }
 
             Settings.Save(settings, Settings.FullFileName);
+        }
+
+        public void Save()
+        {
+            ViewModel.Save(UnitData, NameSpace);
         }
 
         [NotifyPropertyChangedInvocator]

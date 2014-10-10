@@ -29,6 +29,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding ValueTypeName}" Header="ClassName" />
                 <DataGridCheckBoxColumn Binding="{Binding IsSiUnit}" Header="IsSiUnit" />
+                <DataGridTextColumn Binding="{Binding UnitTypeName}" Header="UnitTypeName" />
                 <DataGridTextColumn Binding="{Binding UnitName}" Header="UnitName" />
 
             </DataGrid.Columns>
