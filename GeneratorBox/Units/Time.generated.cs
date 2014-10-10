@@ -83,7 +83,7 @@ namespace GeneratorBox
         /// <returns></returns>
         public static Time Parse(string s)
         {
-            return UnitParser.Parse(s, From);
+            return UnitParser.Parse<ITimeUnit, Time>(s, From);
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace GeneratorBox
         public string ToString<T>(string format, IFormatProvider formatProvider, T unit) where T : ITimeUnit
         {
             var value = UnitConverter.ConvertTo(this.Seconds, unit);
-            return string.Format("{0}{1}", value.ToString(format, formatProvider), unit.ShortName);
+            return string.Format("{0}{1}", value.ToString(format, formatProvider), unit.Name);
         }
 
         /// <summary>

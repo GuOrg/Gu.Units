@@ -87,7 +87,7 @@ namespace <#= value.Namespace #>
         /// <returns></returns>
         public static <#= value.ClassName #> Parse(string s)
         {
-            return UnitParser.Parse(s, From);
+            return UnitParser.Parse<<#= value.ClassName #>,<#= value.SiUnit.ClassName #>>(s, From);
         }
  
         /// <summary>
@@ -321,7 +321,7 @@ namespace <#= value.Namespace #>
         public string ToString<T>(string format, IFormatProvider formatProvider, T unit) where T : I<#= value.ClassName #>Unit
         {
             var value = UnitConverter.ConvertTo(this.<#= value.SiUnit.ClassName #>, unit);
-            return string.Format("{0}{1}", value.ToString(format, formatProvider), unit.ShortName);
+            return string.Format("{0}{1}", value.ToString(format, formatProvider), unit.Name);
         }
  
         /// <summary>
