@@ -1,0 +1,37 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="Microsoft.CSharp" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".txt" #>
+<#@ assembly name="$(TargetPath)" #>
+<#@ import namespace="Gu.Units.Generator" #> 
+<#@ parameter name="UnitMetaData" type="Gu.Units.Generator.UnitMetaData" #>
+<#
+// Template used by UnitGenerator.tt
+var unit = UnitMetaData ?? new UnitMetaData("Length", "Gu.Units", "Meters", "1", "m")
+                           {
+                               Related = new List<UnitMetaData>
+                                       {
+                                           new UnitMetaData("Length", "Gu.Units", "Millimeters", "1000", "mm"),
+                                           new UnitMetaData("Length", "Gu.Units", "CentiMeters", "100", "cm"),
+                                       }
+                           };
+#>
+namespace <#= unit.Namespace #>
+{
+    public static class <#= unit.ValueType.ClassName #>Unit
+    {
+		public static readonly <#= unit.ClassName #> <#= unit.ClassName #> = new <#= unit.ClassName #>();
+		public static readonly <#= unit.ClassName #> <#= unit.UnitName #> = <#= unit.ClassName #>;
+		<#
+		foreach(var r in unit.Related)
+		{
+		#>
+		public static readonly <#= r.ClassName #> <#= r.ClassName #> = new <#= r.ClassName #>();
+		public static readonly <#= r.ClassName #> <#= r.UnitName #> = <#= r.ClassName #>;
+		<#
+		} 
+		#>
+    }
+}

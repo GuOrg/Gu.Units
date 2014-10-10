@@ -1,0 +1,45 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="Microsoft.CSharp" #>
+<#@ import namespace="System" #>
+<#@ output extension=".txt" #>
+<#@ assembly name="$(TargetPath)" #>
+<#@ import namespace="Gu.Units.Generator" #> 
+<#@ parameter name="UnitMetaData" type="Gu.Units.Generator.UnitMetaData" #>
+<#
+// Template used by UnitGenerator.tt
+var unit = UnitMetaData ?? new UnitMetaData("Length", "Gu.Units", "Meters", "1/60.0", "m");
+#>
+namespace <#= unit.Namespace #>
+{
+    using System;
+    using System.ComponentModel;
+
+    [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
+    public struct <#= unit.ClassName #> : I<#= unit.ValueType.ClassName #>Unit
+    {
+        private const double _conversionFactor = <#= unit.ConversionFactor #>;
+        internal const string _name = "<#= unit.UnitName #>";
+
+        public double Conversionfactor
+        {
+            get
+            {
+                return _conversionFactor;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+        }
+
+        public static <#= unit.ValueType.ClassName #> operator *(double left, <#= unit.ClassName #> right)
+        {
+            return new <#= unit.ValueType.ClassName #>(left, right);
+        }
+    }
+}

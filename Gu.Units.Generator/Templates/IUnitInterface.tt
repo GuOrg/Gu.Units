@@ -1,0 +1,19 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="Microsoft.CSharp" #>
+<#@ import namespace="System" #>
+<#@ output extension=".txt" #>
+<#@ assembly name="$(TargetPath)" #>
+<#@ import namespace="Gu.Units.Generator" #> 
+<#@ parameter name="UnitMetaData" type="Gu.Units.Generator.UnitMetaData" #>
+<#
+// Template used by UnitGenerator.tt
+var unit = UnitMetaData ?? new UnitMetaData("Length", "Gu.Units", "Meters", 1.0, "m");
+#>
+namespace <#= unit.Namespace #>
+{
+    public interface I<#= unit.ValueType.ClassName #>Unit : IUnit
+    {
+
+    }
+}
