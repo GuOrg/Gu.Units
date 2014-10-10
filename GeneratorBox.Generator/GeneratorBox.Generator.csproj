@@ -68,6 +68,7 @@
     <Compile Include="Descriptors\UnitMetaData.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RelayCommand.cs" />
+    <Compile Include="Sandbox\Meh.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Descriptors\ValueMetaData.cs" />
     <Compile Include="MetaDataViewModel.cs" />
@@ -110,9 +111,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Templates\IUnit.tt">
+    <None Include="Templates\IUnitInterface.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>IUnit.txt</LastGenOutput>
+      <LastGenOutput>IUnitInterface.txt</LastGenOutput>
     </None>
     <None Include="Templates\Unit.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -130,6 +131,10 @@
     <None Include="Templates\ValueGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ValueGenerator.txt</LastGenOutput>
+    </None>
+    <None Include="Templates\UnitClass.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UnitClass.txt</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -157,10 +162,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Unit.tt</DependentUpon>
     </Resource>
-    <Resource Include="Templates\IUnit.txt">
+    <Resource Include="Templates\IUnitInterface.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IUnit.tt</DependentUpon>
+      <DependentUpon>IUnitInterface.tt</DependentUpon>
+    </Resource>
+    <Resource Include="Templates\UnitClass.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitClass.tt</DependentUpon>
     </Resource>
     <Content Include="Templates\ValueGenerator.txt">
       <AutoGen>True</AutoGen>

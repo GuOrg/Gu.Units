@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
+    using System.Xml.Serialization;
 
     [Serializable]
     public class UnitMetaData : TypeMetaData
@@ -12,6 +13,7 @@
             : base()
         {
             ValueType = new TypeMetaData("");
+            Related = new List<UnitMetaData>();
         }
 
         public UnitMetaData(string valueType, string ns, string unitTypeName, double conversionFactor, string unitName)
@@ -22,6 +24,7 @@
         public UnitMetaData(string valueType, string ns, string unitTypeName, string conversionFactor, string unitName)
             : base(unitTypeName)
         {
+            Related = new List<UnitMetaData>();
             ValueType = new TypeMetaData(valueType);
             Namespace = ns;
             UnitName = unitName;
@@ -44,6 +47,7 @@
 
         public string ConversionFactor { get; set; }
 
+        [XmlIgnore]
         public bool IsEmpty
         {
             get
@@ -55,6 +59,9 @@
                 return true;
             }
         }
+
+        [XmlIgnore]
+        public List<UnitMetaData> Related { get; set; } 
 
         public override string ToString()
         {

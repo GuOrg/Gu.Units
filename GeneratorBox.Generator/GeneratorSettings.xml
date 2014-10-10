@@ -93,7 +93,7 @@
           </ValueType>
           <Namespace>GeneratorBox</Namespace>
           <UnitName>kN</UnitName>
-          <ConversionFactor />
+          <ConversionFactor>1e-3</ConversionFactor>
         </UnitMetaData>
       </Units>
     </ValueMetaData>

@@ -6,5 +6,10 @@ namespace GeneratorBox
         {
             throw new System.NotImplementedException();
         }
+
+        public static double ConvertTo<T>(double siValue, T millimeters) where T : IUnit
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
