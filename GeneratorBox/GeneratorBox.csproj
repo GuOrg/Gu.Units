@@ -49,13 +49,13 @@
     <Compile Include="Units\Hours.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
-    <Compile Include="Units\IForce.generated.cs">
+    <Compile Include="Units\IForceUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
-    <Compile Include="Units\ILength.generated.cs">
+    <Compile Include="Units\ILengthUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
-    <Compile Include="Units\ITime.generated.cs">
+    <Compile Include="Units\ITimeUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
     <Compile Include="Units\IUnit.cs" />

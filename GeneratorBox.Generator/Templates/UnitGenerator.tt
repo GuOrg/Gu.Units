@@ -31,9 +31,9 @@ foreach (var unit in settings.UnitTypes)
 
 foreach (var unit in settings.SiUnitTypes)
 {
-	fileManager.StartNewFile("I" + unit.ValueType.ClassName + ".generated.cs", Settings.ProjectName, Settings.FolderName, null);
+	fileManager.StartNewFile("I" + unit.ValueType.ClassName + "Unit.generated.cs", Settings.ProjectName, Settings.FolderName, null);
 	session["UnitMetaData"] = unit;
-	string output = paramTmpl.TransformText("IUnit.tt", session);
+	string output = paramTmpl.TransformText("IUnitInterface.tt", session);
 	this.Write(output);
 }
 

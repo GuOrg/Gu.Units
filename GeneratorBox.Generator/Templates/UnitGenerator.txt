@@ -5,11 +5,11 @@ Read Settings found 8 units
 
 //-> Hours.generated.cs
 
-//-> IForce.generated.cs
+//-> IForceUnit.generated.cs
 
-//-> ILength.generated.cs
+//-> ILengthUnit.generated.cs
 
-//-> ITime.generated.cs
+//-> ITimeUnit.generated.cs
 
 //-> KiloNewtons.generated.cs
 
@@ -25,9 +25,9 @@ Read Settings found 8 units
 // Generated helper templates
 // GeneratorBox\GeneratorBox\Units\UnitGenerator.txt4
 // Generated items
-// GeneratorBox\GeneratorBox\Units\IForce.generated.cs
-// GeneratorBox\GeneratorBox\Units\ITime.generated.cs
-// GeneratorBox\GeneratorBox\Units\ILength.generated.cs
+// GeneratorBox\GeneratorBox\Units\IForceUnit.generated.cs
+// GeneratorBox\GeneratorBox\Units\ITimeUnit.generated.cs
+// GeneratorBox\GeneratorBox\Units\ILengthUnit.generated.cs
 // GeneratorBox\GeneratorBox\Units\KiloNewtons.generated.cs
 // GeneratorBox\GeneratorBox\Units\Newtons.generated.cs
 // GeneratorBox\GeneratorBox\Units\Hours.generated.cs
