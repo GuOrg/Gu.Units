@@ -21,10 +21,10 @@ var paramTmpl = ParamTextTemplate.Create(this.Host);
 var session = ParamTextTemplate.GetSessionObject();
 var settings = Settings.Instance;
 this.Write(string.Format("Read Settings found {0} units", settings.UnitTypes.Count()));
-foreach (var item in settings.UnitTypes)
+foreach (var unit in settings.UnitTypes)
 {
-	fileManager.StartNewFile(item.ClassName + ".generated.txt", Settings.ProjectName, Settings.FolderName, null);
-	session["UnitMetaData"] = item;
+	fileManager.StartNewFile(unit.ClassName + ".generated.txt", Settings.ProjectName, Settings.FolderName, null);
+	session["UnitMetaData"] = unit;
 	string output = paramTmpl.TransformText("Unit.tt", session);
 	this.Write(output);
 }

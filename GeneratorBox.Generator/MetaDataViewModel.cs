@@ -79,15 +79,15 @@
         {
             get
             {
-                return this.UnitMetaData.ValueType.ClassName;
+                return this.UnitMetaData.ClassName;
             }
             set
             {
-                if (value == UnitMetaData.ValueType.ClassName)
+                if (value == UnitMetaData.ClassName)
                 {
                     return;
                 }
-                UnitMetaData.ValueType.ClassName = value;
+                UnitMetaData.ClassName = value;
                 this.OnPropertyChanged();
             }
         }
