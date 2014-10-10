@@ -8,7 +8,7 @@
           <ClassName>Length</ClassName>
         </ValueType>
         <Namespace>Gu.Units</Namespace>
-        <UnitName>m</UnitName>
+        <Symbol>m</Symbol>
         <ConversionFactor>1</ConversionFactor>
       </SiUnit>
       <Namespace>Gu.Units</Namespace>
@@ -22,7 +22,7 @@
             <ClassName>Length</ClassName>
           </ValueType>
           <Namespace>Gu.Units</Namespace>
-          <UnitName>mm</UnitName>
+          <Symbol>mm</Symbol>
           <ConversionFactor>1000</ConversionFactor>
         </UnitMetaData>
         <UnitMetaData>
@@ -31,7 +31,7 @@
             <ClassName>Length</ClassName>
           </ValueType>
           <Namespace>Gu.Units</Namespace>
-          <UnitName>cm</UnitName>
+          <Symbol>cm</Symbol>
           <ConversionFactor>100</ConversionFactor>
         </UnitMetaData>
       </Units>
@@ -43,7 +43,7 @@
           <ClassName>Time</ClassName>
         </ValueType>
         <Namespace>Gu.Units</Namespace>
-        <UnitName>s</UnitName>
+        <Symbol>s</Symbol>
         <ConversionFactor>1</ConversionFactor>
       </SiUnit>
       <Namespace>Gu.Units</Namespace>
@@ -57,7 +57,7 @@
             <ClassName>Time</ClassName>
           </ValueType>
           <Namespace>Gu.Units</Namespace>
-          <UnitName>ms</UnitName>
+          <Symbol>ms</Symbol>
           <ConversionFactor>1000</ConversionFactor>
         </UnitMetaData>
         <UnitMetaData>
@@ -66,7 +66,7 @@
             <ClassName>Time</ClassName>
           </ValueType>
           <Namespace>Gu.Units</Namespace>
-          <UnitName>h</UnitName>
+          <Symbol>h</Symbol>
           <ConversionFactor>1/60.0</ConversionFactor>
         </UnitMetaData>
       </Units>
@@ -78,7 +78,7 @@
           <ClassName>Force</ClassName>
         </ValueType>
         <Namespace>Gu.Units</Namespace>
-        <UnitName>N</UnitName>
+        <Symbol>N</Symbol>
         <ConversionFactor>1</ConversionFactor>
       </SiUnit>
       <Namespace>Gu.Units</Namespace>
@@ -92,7 +92,7 @@
             <ClassName>Force</ClassName>
           </ValueType>
           <Namespace>Gu.Units</Namespace>
-          <UnitName>kN</UnitName>
+          <Symbol>kN</Symbol>
           <ConversionFactor>1e-3</ConversionFactor>
         </UnitMetaData>
       </Units>

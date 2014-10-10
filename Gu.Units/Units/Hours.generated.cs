@@ -8,9 +8,9 @@ namespace Gu.Units
     public struct Hours : ITimeUnit
     {
         private const double _conversionFactor = 1 / 60.0;
-        internal const string _name = "h";
+        internal const string _symbol = "h";
 
-        public double Conversionfactor
+        public double ConversionFactor
         {
             get
             {
@@ -18,11 +18,11 @@ namespace Gu.Units
             }
         }
 
-        public string Name
+        public string Symbol
         {
             get
             {
-                return _name;
+                return _symbol;
             }
         }
 

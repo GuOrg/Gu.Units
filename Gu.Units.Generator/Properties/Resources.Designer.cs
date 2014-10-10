@@ -71,7 +71,7 @@ namespace Gu.Units.Generator.Properties {
         ///          &lt;ClassName&gt;Length&lt;/ClassName&gt;
         ///        &lt;/ValueType&gt;
         ///        &lt;Namespace&gt;Gu.Units&lt;/Namespace&gt;
-        ///        &lt;UnitName&gt;m&lt;/UnitName&gt;
+        ///        &lt;Symbol&gt;m&lt;/Symbol&gt;
         ///        &lt;ConversionFactor&gt;1&lt;/ConversionFactor&gt;
         ///      &lt;/SiUnit&gt;
         ///      &lt;Namespace&gt;Gu.Units&lt;/Namespace&gt;

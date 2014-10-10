@@ -62,7 +62,7 @@ namespace Gu.Units
         /// <returns></returns>
         public static Force Parse(string s)
         {
-            return UnitParser.Parse<Force, Newtons>(s, From);
+            return UnitParser.Parse<IForceUnit, Force>(s, From);
         }
 
         /// <summary>
@@ -289,7 +289,7 @@ namespace Gu.Units
         public string ToString<T>(string format, IFormatProvider formatProvider, T unit) where T : IForceUnit
         {
             var value = UnitConverter.ConvertTo(this.Newtons, unit);
-            return string.Format("{0}{1}", value.ToString(format, formatProvider), unit.Name);
+            return string.Format("{0}{1}", value.ToString(format, formatProvider), unit.Symbol);
         }
 
         /// <summary>

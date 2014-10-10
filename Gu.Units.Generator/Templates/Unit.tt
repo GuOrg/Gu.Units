@@ -19,9 +19,9 @@ namespace <#= unit.Namespace #>
     public struct <#= unit.ClassName #> : I<#= unit.ValueType.ClassName #>Unit
     {
         private const double _conversionFactor = <#= unit.ConversionFactor #>;
-        internal const string _name = "<#= unit.UnitName #>";
+        internal const string _symbol = "<#= unit.Symbol #>";
 
-        public double Conversionfactor
+        public double ConversionFactor
         {
             get
             {
@@ -29,11 +29,11 @@ namespace <#= unit.Namespace #>
             }
         }
 
-        public string Name
+        public string Symbol
         {
             get
             {
-                return _name;
+                return _symbol;
             }
         }
 

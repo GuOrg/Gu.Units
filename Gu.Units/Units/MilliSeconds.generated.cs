@@ -8,9 +8,9 @@ namespace Gu.Units
     public struct MilliSeconds : ITimeUnit
     {
         private const double _conversionFactor = 1000;
-        internal const string _name = "ms";
+        internal const string _symbol = "ms";
 
-        public double Conversionfactor
+        public double ConversionFactor
         {
             get
             {
@@ -18,11 +18,11 @@ namespace Gu.Units
             }
         }
 
-        public string Name
+        public string Symbol
         {
             get
             {
-                return _name;
+                return _symbol;
             }
         }
 

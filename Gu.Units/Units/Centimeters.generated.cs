@@ -8,9 +8,9 @@ namespace Gu.Units
     public struct Centimeters : ILengthUnit
     {
         private const double _conversionFactor = 100;
-        internal const string _name = "cm";
+        internal const string _symbol = "cm";
 
-        public double Conversionfactor
+        public double ConversionFactor
         {
             get
             {
@@ -18,11 +18,11 @@ namespace Gu.Units
             }
         }
 
-        public string Name
+        public string Symbol
         {
             get
             {
-                return _name;
+                return _symbol;
             }
         }
 
