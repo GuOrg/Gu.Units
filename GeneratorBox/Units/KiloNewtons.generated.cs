@@ -5,10 +5,10 @@ namespace GeneratorBox
     using System.ComponentModel;
 
     [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
-    public struct Meters : ILengthUnit
+    public struct KiloNewtons : IForceUnit
     {
-        private const double _conversionFactor = 1/60.0;
-        internal const string _name = "m";
+        private const double _conversionFactor = ;
+        internal const string _name = "kN";
 
         public double Conversionfactor
         {
@@ -26,9 +26,9 @@ namespace GeneratorBox
             }
         }
 
-        public static Length operator *(double left, Meters right)
+        public static Force operator *(double left, KiloNewtons right)
         {
-            return new Length(left, right);
+            return new Force(left, right);
         }
     }
 }

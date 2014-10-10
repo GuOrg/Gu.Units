@@ -94,6 +94,15 @@
             }
         }
 
+        [XmlIgnore]
+        public IEnumerable<UnitMetaData> SiUnitTypes
+        {
+            get
+            {
+                return this.ValueTypes.Select(value => value.SiUnit).ToList();
+            }
+        }
+
         public static Settings FromFile(string fullFileName)
         {
             var serializer = new XmlSerializer(typeof(Settings));

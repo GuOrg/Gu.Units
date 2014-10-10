@@ -1,14 +1,14 @@
-﻿ 
+﻿
 namespace GeneratorBox
 {
     using System;
     using System.ComponentModel;
 
     [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
-    public struct Hours : ITimeUnit
+    public struct Newtons : IForceUnit
     {
-        private const double _conversionFactor = ;
-        internal const string _name = "Hours";
+        private const double _conversionFactor = 1;
+        internal const string _name = "N";
 
         public double Conversionfactor
         {
@@ -26,9 +26,9 @@ namespace GeneratorBox
             }
         }
 
-        public static Time operator *(double left, Hours right)
+        public static Force operator *(double left, Newtons right)
         {
-            return new Time(left, right);
+            return new Force(left, right);
         }
     }
 }

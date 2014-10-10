@@ -1,14 +1,14 @@
-﻿ 
+﻿
 namespace GeneratorBox
 {
     using System;
     using System.ComponentModel;
 
     [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
-    public struct MilliSeconds : ITimeUnit
+    public struct Millimeters : ILengthUnit
     {
-        private const double _conversionFactor = ;
-        internal const string _name = "MilliSeconds";
+        private const double _conversionFactor = 1000;
+        internal const string _name = "mm";
 
         public double Conversionfactor
         {
@@ -26,9 +26,9 @@ namespace GeneratorBox
             }
         }
 
-        public static Time operator *(double left, MilliSeconds right)
+        public static Length operator *(double left, Millimeters right)
         {
-            return new Time(left, right);
+            return new Length(left, right);
         }
     }
 }

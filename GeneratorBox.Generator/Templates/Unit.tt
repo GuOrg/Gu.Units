@@ -8,7 +8,7 @@
 <#@ parameter name="UnitMetaData" type="GeneratorBox.Generator.UnitMetaData" #>
 <#
 // Template used by UnitGenerator.tt
-var unit = UnitMetaData ?? new UnitMetaData("Length", "GeneratorBox", "Meters", 1.0, "m");
+var unit = UnitMetaData ?? new UnitMetaData("Length", "GeneratorBox", "Meters", "1/60.0", "m");
 #>
 namespace <#= unit.Namespace #>
 {

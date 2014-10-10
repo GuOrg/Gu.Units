@@ -1,14 +1,14 @@
-﻿ 
+﻿
 namespace GeneratorBox
 {
     using System;
     using System.ComponentModel;
 
     [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
-    public struct Meters : ILengthUnit
+    public struct Centimeters : ILengthUnit
     {
-        private const double _conversionFactor = 1/60.0;
-        internal const string _name = "m";
+        private const double _conversionFactor = 100;
+        internal const string _name = "cm";
 
         public double Conversionfactor
         {
@@ -26,7 +26,7 @@ namespace GeneratorBox
             }
         }
 
-        public static Length operator *(double left, Meters right)
+        public static Length operator *(double left, Centimeters right)
         {
             return new Length(left, right);
         }

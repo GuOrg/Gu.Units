@@ -7,9 +7,9 @@
         <ValueType>
           <ClassName>Length</ClassName>
         </ValueType>
-        <Namespace />
-        <UnitName>Meters</UnitName>
-        <ConversionFactor>0</ConversionFactor>
+        <Namespace>GeneratorBox</Namespace>
+        <UnitName>m</UnitName>
+        <ConversionFactor>1</ConversionFactor>
       </SiUnit>
       <Namespace>GeneratorBox</Namespace>
       <ClassName>
@@ -22,8 +22,8 @@
             <ClassName>Length</ClassName>
           </ValueType>
           <Namespace>GeneratorBox</Namespace>
-          <UnitName>Millimeters</UnitName>
-          <ConversionFactor />
+          <UnitName>mm</UnitName>
+          <ConversionFactor>1000</ConversionFactor>
         </UnitMetaData>
         <UnitMetaData>
           <ClassName>Centimeters</ClassName>
@@ -31,8 +31,8 @@
             <ClassName>Length</ClassName>
           </ValueType>
           <Namespace>GeneratorBox</Namespace>
-          <UnitName>Centimeters</UnitName>
-          <ConversionFactor />
+          <UnitName>cm</UnitName>
+          <ConversionFactor>100</ConversionFactor>
         </UnitMetaData>
       </Units>
     </ValueMetaData>
@@ -42,9 +42,9 @@
         <ValueType>
           <ClassName>Time</ClassName>
         </ValueType>
-        <Namespace />
-        <UnitName>Seconds</UnitName>
-        <ConversionFactor>0</ConversionFactor>
+        <Namespace>GeneratorBox</Namespace>
+        <UnitName>s</UnitName>
+        <ConversionFactor>1</ConversionFactor>
       </SiUnit>
       <Namespace>GeneratorBox</Namespace>
       <ClassName>
@@ -57,8 +57,8 @@
             <ClassName>Time</ClassName>
           </ValueType>
           <Namespace>GeneratorBox</Namespace>
-          <UnitName>MilliSeconds</UnitName>
-          <ConversionFactor />
+          <UnitName>ms</UnitName>
+          <ConversionFactor>1000</ConversionFactor>
         </UnitMetaData>
         <UnitMetaData>
           <ClassName>Hours</ClassName>
@@ -66,7 +66,33 @@
             <ClassName>Time</ClassName>
           </ValueType>
           <Namespace>GeneratorBox</Namespace>
-          <UnitName>Hours</UnitName>
+          <UnitName>h</UnitName>
+          <ConversionFactor>1/60.0</ConversionFactor>
+        </UnitMetaData>
+      </Units>
+    </ValueMetaData>
+    <ValueMetaData>
+      <SiUnit>
+        <ClassName>Newtons</ClassName>
+        <ValueType>
+          <ClassName>Force</ClassName>
+        </ValueType>
+        <Namespace>GeneratorBox</Namespace>
+        <UnitName>N</UnitName>
+        <ConversionFactor>1</ConversionFactor>
+      </SiUnit>
+      <Namespace>GeneratorBox</Namespace>
+      <ClassName>
+        <ClassName>Force</ClassName>
+      </ClassName>
+      <Units>
+        <UnitMetaData>
+          <ClassName>KiloNewtons</ClassName>
+          <ValueType>
+            <ClassName>Force</ClassName>
+          </ValueType>
+          <Namespace>GeneratorBox</Namespace>
+          <UnitName>kN</UnitName>
           <ConversionFactor />
         </UnitMetaData>
       </Units>

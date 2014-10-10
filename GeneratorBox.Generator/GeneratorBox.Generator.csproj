@@ -110,6 +110,10 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Templates\IUnit.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>IUnit.txt</LastGenOutput>
+    </None>
     <None Include="Templates\Unit.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Unit.txt</LastGenOutput>
@@ -152,6 +156,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Unit.tt</DependentUpon>
+    </Resource>
+    <Resource Include="Templates\IUnit.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IUnit.tt</DependentUpon>
     </Resource>
     <Content Include="Templates\ValueGenerator.txt">
       <AutoGen>True</AutoGen>

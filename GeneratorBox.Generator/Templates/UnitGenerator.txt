@@ -1,23 +1,38 @@
 ﻿
  
-Read Settings found 6 unitsError processing file Centimeters.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Centimeters.generated.txt
-Error processing file Hours.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Hours.generated.txt
-Error processing file Meters.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Meters.generated.txt
-Error processing file Millimeters.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Millimeters.generated.txt
-Error processing file MilliSeconds.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> MilliSeconds.generated.txt
-Error processing file Seconds.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Seconds.generated.txt
+Read Settings found 8 units
+//-> Centimeters.generated.cs
+
+//-> Hours.generated.cs
+
+//-> IForce.generated.cs
+
+//-> ILength.generated.cs
+
+//-> ITime.generated.cs
+
+//-> KiloNewtons.generated.cs
+
+//-> Meters.generated.cs
+
+//-> Millimeters.generated.cs
+
+//-> MilliSeconds.generated.cs
+
+//-> Newtons.generated.cs
+
+//-> Seconds.generated.cs
 // Generated helper templates
 // GeneratorBox\GeneratorBox\Units\UnitGenerator.txt4
 // Generated items
-// GeneratorBox\GeneratorBox\Units\Hours.generated.txt
-// GeneratorBox\GeneratorBox\Units\MilliSeconds.generated.txt
-// GeneratorBox\GeneratorBox\Units\Seconds.generated.txt
-// GeneratorBox\GeneratorBox\Units\Centimeters.generated.txt
-// GeneratorBox\GeneratorBox\Units\Millimeters.generated.txt
-// GeneratorBox\GeneratorBox\Units\Meters.generated.txt
+// GeneratorBox\GeneratorBox\Units\IForce.generated.cs
+// GeneratorBox\GeneratorBox\Units\ITime.generated.cs
+// GeneratorBox\GeneratorBox\Units\ILength.generated.cs
+// GeneratorBox\GeneratorBox\Units\KiloNewtons.generated.cs
+// GeneratorBox\GeneratorBox\Units\Newtons.generated.cs
+// GeneratorBox\GeneratorBox\Units\Hours.generated.cs
+// GeneratorBox\GeneratorBox\Units\MilliSeconds.generated.cs
+// GeneratorBox\GeneratorBox\Units\Seconds.generated.cs
+// GeneratorBox\GeneratorBox\Units\Centimeters.generated.cs
+// GeneratorBox\GeneratorBox\Units\Millimeters.generated.cs
+// GeneratorBox\GeneratorBox\Units\Meters.generated.cs

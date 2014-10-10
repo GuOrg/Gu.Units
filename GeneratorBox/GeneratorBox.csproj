@@ -40,37 +40,55 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Units\Centimeters.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Units\Force.generated.cs">
+      <DependentUpon>ValueGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Units\Hours.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Units\IForce.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Units\ILength.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Units\ITime.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Units\IUnit.cs" />
     <Compile Include="Units\IUnitValue.cs" />
+    <Compile Include="Units\KiloNewtons.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Units\Length.generated.cs">
+      <DependentUpon>ValueGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Units\Meters.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Units\Millimeters.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Units\MilliSeconds.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Units\Newtons.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Units\Seconds.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Units\Time.generated.cs">
+      <DependentUpon>ValueGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Units\UnitConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Units\UnitGenerator.txt4" />
     <None Include="Units\ValueGenerator.txt4" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Units\Centimeters.generated.txt">
-      <DependentUpon>UnitGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Units\Hours.generated.txt">
-      <DependentUpon>UnitGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Units\Length.generated.txt">
-      <DependentUpon>ValueGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Units\Meters.generated.txt">
-      <DependentUpon>UnitGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Units\Millimeters.generated.txt">
-      <DependentUpon>UnitGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Units\MilliSeconds.generated.txt">
-      <DependentUpon>UnitGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Units\Seconds.generated.txt">
-      <DependentUpon>UnitGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Units\Time.generated.txt">
-      <DependentUpon>ValueGenerator.txt4</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

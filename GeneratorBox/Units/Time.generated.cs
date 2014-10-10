@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace GeneratorBox
 {
     using System;
@@ -8,23 +8,23 @@ namespace GeneratorBox
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
-	/// <summary>
+    /// <summary>
     /// An Time
     /// </summary>
     [Serializable]
-	public partial struct Time : IComparable<Time>, IEquatable<Time>, IFormattable, IXmlSerializable, IUnitValue
-	{
-	    /// <summary>
+    public partial struct Time : IComparable<Time>, IEquatable<Time>, IFormattable, IXmlSerializable, IUnitValue
+    {
+        /// <summary>
         /// The value in <see cref="T:GeneratorBox.Seconds"/>.
         /// </summary>
-		public readonly double Seconds;
-		
-		private Time(double seconds)
+        public readonly double Seconds;
+
+        private Time(double seconds)
         {
             Seconds = seconds;
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of <see cref="T:GeneratorBox.Time"/>.
         /// </summary>
         /// <param name="seconds"></param>
@@ -33,7 +33,7 @@ namespace GeneratorBox
         {
             Seconds = seconds;
         }
-		
+
         /// <summary>
         /// Initializes a new instance of <see cref="T:GeneratorBox.Time"/>.
         /// </summary>
@@ -43,7 +43,7 @@ namespace GeneratorBox
         {
             Seconds = UnitConverter.ConvertFrom(value, unit);
         }
-		
+
         /// <summary>
         /// Initializes a new instance of <see cref="T:GeneratorBox.Time"/>.
         /// </summary>
@@ -53,7 +53,7 @@ namespace GeneratorBox
         {
             Seconds = UnitConverter.ConvertFrom(value, unit);
         }
-		 		
+
         /// <summary>
         /// The value in milliSeconds
         /// </summary>
@@ -64,7 +64,7 @@ namespace GeneratorBox
                 return UnitConverter.ConvertTo(Seconds, TimeUnit.MilliSeconds);
             }
         }
-		
+
         /// <summary>
         /// The value in hours
         /// </summary>
@@ -75,7 +75,7 @@ namespace GeneratorBox
                 return UnitConverter.ConvertTo(Seconds, TimeUnit.Hours);
             }
         }
-		
+
         /// <summary>
         /// Creates an instance of <see cref="T:GeneratorBox.Time"/> from its string representation
         /// </summary>
@@ -85,7 +85,7 @@ namespace GeneratorBox
         {
             return UnitParser.Parse(s, From);
         }
- 
+
         /// <summary>
         /// Reads an instance of <see cref="T:GeneratorBox.Time"/> from the <paramref name="reader"/>
         /// </summary>
@@ -97,7 +97,7 @@ namespace GeneratorBox
             v.ReadXml(reader);
             return v;
         }
- 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:GeneratorBox.Time"/>.
         /// </summary>
@@ -116,7 +116,7 @@ namespace GeneratorBox
         {
             return new Time(value);
         }
- 		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:GeneratorBox.Time"/>.
         /// </summary>
@@ -125,7 +125,7 @@ namespace GeneratorBox
         {
             return new Time(UnitConverter.ConvertFrom(value, TimeUnit.MilliSeconds));
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:GeneratorBox.Time"/>.
         /// </summary>
@@ -134,7 +134,7 @@ namespace GeneratorBox
         {
             return new Time(UnitConverter.ConvertFrom(value, TimeUnit.Hours));
         }
-				 
+
         /// <summary>
         /// Indicates whether two <see cref="T:GeneratorBox.Time"/> instances are equal.
         /// </summary>
@@ -147,7 +147,7 @@ namespace GeneratorBox
         {
             return left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether two <see cref="T:GeneratorBox.Time"/> instances are not equal.
         /// </summary>
@@ -160,7 +160,7 @@ namespace GeneratorBox
         {
             return !left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:GeneratorBox.Time"/> is less than another specified <see cref="T:GeneratorBox.Time"/>.
         /// </summary>
@@ -173,7 +173,7 @@ namespace GeneratorBox
         {
             return left.Seconds < right.Seconds;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:GeneratorBox.Time"/> is greater than another specified <see cref="T:GeneratorBox.Time"/>.
         /// </summary>
@@ -186,7 +186,7 @@ namespace GeneratorBox
         {
             return left.Seconds > right.Seconds;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:GeneratorBox.Time"/> is less than or equal to another specified <see cref="T:GeneratorBox.Time"/>.
         /// </summary>
@@ -199,7 +199,7 @@ namespace GeneratorBox
         {
             return left.Seconds <= right.Seconds;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:GeneratorBox.Time"/> is greater than or equal to another specified <see cref="T:GeneratorBox.Time"/>.
         /// </summary>
@@ -212,7 +212,7 @@ namespace GeneratorBox
         {
             return left.Seconds >= right.Seconds;
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:GeneratorBox.Time"/> with <paramref name="left"/> and returns the result.
         /// </summary>
@@ -223,7 +223,7 @@ namespace GeneratorBox
         {
             return new Time(left * right.Seconds);
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:GeneratorBox.Time"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -234,7 +234,7 @@ namespace GeneratorBox
         {
             return new Time(left.Seconds * right);
         }
- 
+
         /// <summary>
         /// Divides an instance of <see cref="T:GeneratorBox.Time"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -245,7 +245,7 @@ namespace GeneratorBox
         {
             return new Time(left.Seconds / right);
         }
- 
+
         /// <summary>
         /// Adds two specified <see cref="T:GeneratorBox.Time"/> instances.
         /// </summary>
@@ -258,7 +258,7 @@ namespace GeneratorBox
         {
             return new Time(left.Seconds + right.Seconds);
         }
- 
+
         /// <summary>
         /// Subtracts an Time from another Time and returns the difference.
         /// </summary>
@@ -271,7 +271,7 @@ namespace GeneratorBox
         {
             return new Time(left.Seconds - right.Seconds);
         }
- 
+
         /// <summary>
         /// Returns an <see cref="T:GeneratorBox.Time"/> whose value is the negated value of the specified instance.
         /// </summary>
@@ -283,7 +283,7 @@ namespace GeneratorBox
         {
             return new Time(-1 * Time.Seconds);
         }
- 
+
         /// <summary>
         /// Returns the specified instance of <see cref="T:GeneratorBox.Time"/>.
         /// </summary>
@@ -295,33 +295,33 @@ namespace GeneratorBox
         {
             return Time;
         }
- 
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(string format)
         {
             return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(IFormatProvider provider)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, TimeUnit.Seconds);
         }
- 
+
         public string ToString<T>(string format, IFormatProvider formatProvider, T unit) where T : ITimeUnit
         {
             var value = UnitConverter.ConvertTo(this.Seconds, unit);
             return string.Format("{0}{1}", value.ToString(format, formatProvider), unit.ShortName);
         }
- 
+
         /// <summary>
         /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Time"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Time"/> object.
         /// </summary>
@@ -350,7 +350,7 @@ namespace GeneratorBox
         {
             return this.Seconds.CompareTo(value.Seconds);
         }
- 
+
         /// <summary>
         /// Returns a value indicating whether this instance is equal to a specified <see cref="T:GeneratorBox.Time"/> object.
         /// </summary>
@@ -362,7 +362,7 @@ namespace GeneratorBox
         {
             return this.Seconds.Equals(other.Seconds);
         }
- 
+
         /// <summary>
         /// Returns a value indicating whether this instance is equal to a specified <see cref="T:GeneratorBox.Time"/> object within the given tolerance.
         /// </summary>
@@ -375,22 +375,22 @@ namespace GeneratorBox
         {
             return Math.Abs(this.Seconds - other.Seconds) < tolerance;
         }
- 
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {
                 return false;
             }
- 
+
             return obj is Time && this.Equals((Time)obj);
         }
- 
+
         public override int GetHashCode()
         {
             return this.Seconds.GetHashCode();
         }
- 
+
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
@@ -405,7 +405,7 @@ namespace GeneratorBox
         {
             return null;
         }
- 
+
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
@@ -414,11 +414,11 @@ namespace GeneratorBox
         {
             reader.MoveToContent();
             var e = (XElement)XNode.ReadFrom(reader);
- 
+
             // Hacking set readonly fields here, can't think of a cleaner workaround
             XmlExt.SetReadonlyField(ref this, x => x.Seconds, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
- 
+
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
@@ -427,5 +427,5 @@ namespace GeneratorBox
         {
             XmlExt.WriteAttribute(writer, "Value", this.Seconds);
         }
-	}
+    }
 }
