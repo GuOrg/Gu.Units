@@ -13,7 +13,14 @@ namespace GeneratorBox.Generator.Sandbox
         [Test]
         public void TestNameTest()
         {
-            var unit = new UnitMetaData("Length", "GeneratorBox", "Meters", "1/60.0", "m");
+            var unit = new UnitMetaData("Length", "GeneratorBox", "Meters", "1", "m")
+                           {
+                               Related = new List<UnitMetaData>
+                                       {
+                                           new UnitMetaData("Length", "GeneratorBox", "Millimeters", "1000", "mm"),
+                                           new UnitMetaData("Length", "GeneratorBox", "CentiMeters", "100", "cm"),
+                                       }
+                           };
             var ns = unit.Namespace;
         }
     }

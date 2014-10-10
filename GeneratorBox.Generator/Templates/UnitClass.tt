@@ -2,19 +2,36 @@
 <#@ assembly name="System.Core" #>
 <#@ assembly name="Microsoft.CSharp" #>
 <#@ import namespace="System" #>
+<#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".txt" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="GeneratorBox.Generator" #> 
 <#@ parameter name="UnitMetaData" type="GeneratorBox.Generator.UnitMetaData" #>
 <#
 // Template used by UnitGenerator.tt
-var unit = UnitMetaData ?? new UnitMetaData("Length", "GeneratorBox", "Meters", 1.0, "m");
+var unit = UnitMetaData ?? new UnitMetaData("Length", "GeneratorBox", "Meters", "1", "m")
+                           {
+                               Related = new List<UnitMetaData>
+                                       {
+                                           new UnitMetaData("Length", "GeneratorBox", "Millimeters", "1000", "mm"),
+                                           new UnitMetaData("Length", "GeneratorBox", "CentiMeters", "100", "cm"),
+                                       }
+                           };
 #>
-namespace MathNet.Spatial.Units
+namespace <#= unit.Namespace #>
 {
-    public static class AngleUnit
+    public static class <#= unit.ValueType.ClassName #>Unit
     {
-        public static readonly Degrees Degrees = new Degrees();
-        public static readonly Radians Radians = new Radians();
+		public static readonly <#= unit.ClassName #> <#= unit.ClassName #> = new <#= unit.ClassName #>();
+		public static readonly <#= unit.ClassName #> <#= unit.UnitName #> = <#= unit.ClassName #>;
+		<#
+		foreach(var r in unit.Related)
+		{
+		#>
+		public static readonly <#= r.ClassName #> <#= r.ClassName #> = new <#= r.ClassName #>();
+		public static readonly <#= r.ClassName #> <#= r.UnitName #> = <#= r.ClassName #>;
+		<#
+		} 
+		#>
     }
 }
