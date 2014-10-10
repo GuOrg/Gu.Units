@@ -13,16 +13,24 @@
         {
         }
 
-        public UnitMetaData(string unitValueType, string ns, string className, double conversionFactor, string unitName)
+        public UnitMetaData(string valueType, string ns, string className, double conversionFactor, string unitName)
             : base(className)
         {
-            UnitValueType = new TypeMetaData(unitValueType);
+            ValueType = new TypeMetaData(valueType);
             Namespace = ns;
             UnitName = unitName;
             ConversionFactor = conversionFactor.ToString(CultureInfo.InvariantCulture);
         }
 
-        public TypeMetaData UnitValueType { get; set; }
+        public static UnitMetaData Empty
+        {
+            get
+            {
+                return new UnitMetaData("", "", "", 0, "");
+            }
+        }
+
+        public TypeMetaData ValueType { get; set; }
 
         public string Namespace { get; set; }
 

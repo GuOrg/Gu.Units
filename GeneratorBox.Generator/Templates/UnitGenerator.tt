@@ -19,10 +19,11 @@ fileManager.CanOverwriteExistingFile = true;
 // init handling for parameter templates
 var paramTmpl = ParamTextTemplate.Create(this.Host);
 var session = ParamTextTemplate.GetSessionObject();
-
-foreach (var item in Settings.UnitTypes)
+var settings = Settings.Instance;
+this.Write(string.Format("Read Settings found {0} units", settings.UnitTypes.Count()));
+foreach (var item in settings.UnitTypes)
 {
-	fileManager.StartNewFile(item.ClassName + ".generated.cs", projectName: "GeneratorBox", folderName: "Units");
+	fileManager.StartNewFile(item.ClassName + ".generated.txt", Settings.ProjectName, Settings.FolderName, null);
 	session["UnitMetaData"] = item;
 	string output = paramTmpl.TransformText("Unit.tt", session);
 	this.Write(output);

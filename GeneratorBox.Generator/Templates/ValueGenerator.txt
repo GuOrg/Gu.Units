@@ -1,11 +1,11 @@
-﻿
+﻿//
  
 Read Settings found 2 unitsError processing file Length.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
 //-> Length.generated.txt
 Error processing file Time.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
 //-> Time.generated.txt
 // Generated helper templates
-// GeneratorBox\GeneratorBox\Units\UnitGenerator.txt4
+// GeneratorBox\GeneratorBox\Units\ValueGenerator.txt4
 // Generated items
 // GeneratorBox\GeneratorBox\Units\Time.generated.txt
 // GeneratorBox\GeneratorBox\Units\Length.generated.txt

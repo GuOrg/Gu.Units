@@ -7,19 +7,19 @@
 <#@ import namespace="GeneratorBox.Generator" #> 
 <#@ parameter name="UnitMetaData" type="GeneratorBox.Generator.UnitMetaData" #>
 <#
-// Template used by Generator.tt
-var unitData = UnitMetaData ?? new UnitMetaData("Angle", "GeneratorBox.Units", "Radians", 1.0, "rad");
+// Template used by UnitGenerator.tt
+var unit = UnitMetaData ?? new UnitMetaData("Length", "GeneratorBox", "Meters", 1.0, "m");
 #>
-namespace <#= unitData.Namespace #>
+namespace <#= unit.Namespace #>
 {
     using System;
     using System.ComponentModel;
 
     [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
-    public struct <#= unitData.ClassName #> : I<#= unitData.UnitValueType.ClassName #>Unit
+    public struct <#= unit.ClassName #> : I<#= unit.ValueType.ClassName #>Unit
     {
-        private const double _conversionFactor = <#= unitData.ConversionFactor #>;
-        internal const string _name = "<#= unitData.UnitName #>";
+        private const double _conversionFactor = <#= unit.ConversionFactor #>;
+        internal const string _name = "<#= unit.UnitName #>";
 
         public double Conversionfactor
         {
@@ -37,9 +37,9 @@ namespace <#= unitData.Namespace #>
             }
         }
 
-        public static <#= unitData.UnitValueType.ClassName #> operator *(double left, <#= unitData.ClassName #> right)
+        public static <#= unit.ValueType.ClassName #> operator *(double left, <#= unit.ClassName #> right)
         {
-            return new <#= unitData.UnitValueType.ClassName #>(left, right);
+            return new <#= unit.ValueType.ClassName #>(left, right);
         }
     }
 }
