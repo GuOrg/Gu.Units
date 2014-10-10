@@ -1,9 +1,13 @@
 ﻿ 
-namespace MathNet.Spatial.Units
+namespace GeneratorBox
 {
-    public static class AngleUnit
+    public static class LengthUnit
     {
-        public static readonly Degrees Degrees = new Degrees();
-        public static readonly Radians Radians = new Radians();
-    }
+		public static readonly Meters Meters = new Meters();
+		public static readonly Meters m = Meters;
+				public static readonly Millimeters Millimeters = new Millimeters();
+		public static readonly Millimeters mm = Millimeters;
+				public static readonly CentiMeters CentiMeters = new CentiMeters();
+		public static readonly CentiMeters cm = CentiMeters;
+		    }
 }
