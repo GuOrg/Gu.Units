@@ -17,7 +17,7 @@
 
         public ViewModel()
         {
-            var settings = Settings.FromFile(Settings.FullFileName);
+            var settings = Settings.Instance;
             if (settings != null)
             {
                 foreach (var unit in settings.ValueTypes)
@@ -87,7 +87,9 @@
                 var units = nonEmpty.Where(x => x.ValueTypeName == valueName)
                                              .ToArray();
                 var metaDatas = units.Where(x => !x.IsSiUnit).Select(x => new UnitMetaData(valueName, nameSpace, x.UnitTypeName, 0, x.UnitName)).ToArray();
-                var unitValueMetaData = new ValueMetaData(units.Single(x => x.IsSiUnit).UnitMetaData, nameSpace, valueName, metaDatas);
+                var siUnit = units.Single(x => x.IsSiUnit).UnitMetaData;
+                siUnit.ValueType = new TypeMetaData(valueName);
+                var unitValueMetaData = new ValueMetaData(siUnit, nameSpace, valueName, metaDatas);
                 settings.ValueTypes.Add(unitValueMetaData);
             }
 

@@ -37,5 +37,10 @@ namespace GeneratorBox.Generator
         public TypeMetaData ClassName { get; set; }
 
         public List<UnitMetaData> Units { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("SiUnit: {0}, Namespace: {1}, ClassName: {2}, Units: {3}", this.SiUnit, this.Namespace, this.ClassName,string.Join(Environment.NewLine, this.Units.Select(x=>x.ToString())));
+        }
     }
 }

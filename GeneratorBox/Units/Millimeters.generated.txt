@@ -1,0 +1,34 @@
+﻿ 
+namespace GeneratorBox
+{
+    using System;
+    using System.ComponentModel;
+
+    [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
+    public struct Millimeters : ILengthUnit
+    {
+        private const double _conversionFactor = ;
+        internal const string _name = "Millimeters";
+
+        public double Conversionfactor
+        {
+            get
+            {
+                return _conversionFactor;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return _name;
+            }
+        }
+
+        public static Length operator *(double left, Millimeters right)
+        {
+            return new Length(left, right);
+        }
+    }
+}
