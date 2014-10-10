@@ -84,12 +84,18 @@
                                      .ToArray();
             foreach (var valueName in valueNames)
             {
-                var units = nonEmpty.Where(x => x.ValueTypeName == valueName)
+                var values = nonEmpty.Where(x => x.ValueTypeName == valueName)
                                              .ToArray();
-                var metaDatas = units.Where(x => !x.IsSiUnit).Select(x => new UnitMetaData(valueName, nameSpace, x.UnitTypeName, 0, x.UnitName)).ToArray();
-                var siUnit = units.Single(x => x.IsSiUnit).UnitMetaData;
+                var units = values.Where(x => !x.IsSiUnit).Select(x => x.UnitMetaData).ToArray();
+                foreach (var unit in units)
+                {
+                    unit.ValueType = new TypeMetaData(valueName);
+                    unit.Namespace = nameSpace;
+                }
+                var siUnit = values.Single(x => x.IsSiUnit).UnitMetaData;
                 siUnit.ValueType = new TypeMetaData(valueName);
-                var unitValueMetaData = new ValueMetaData(siUnit, nameSpace, valueName, metaDatas);
+                siUnit.Namespace = nameSpace;
+                var unitValueMetaData = new ValueMetaData(siUnit, nameSpace, valueName, units);
                 settings.ValueTypes.Add(unitValueMetaData);
             }
 

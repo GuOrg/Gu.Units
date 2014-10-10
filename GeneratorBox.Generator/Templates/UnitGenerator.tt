@@ -23,9 +23,17 @@ var settings = Settings.Instance;
 this.Write(string.Format("Read Settings found {0} units", settings.UnitTypes.Count()));
 foreach (var unit in settings.UnitTypes)
 {
-	fileManager.StartNewFile(unit.ClassName + ".generated.txt", Settings.ProjectName, Settings.FolderName, null);
+	fileManager.StartNewFile(unit.ClassName + ".generated.cs", Settings.ProjectName, Settings.FolderName, null);
 	session["UnitMetaData"] = unit;
 	string output = paramTmpl.TransformText("Unit.tt", session);
+	this.Write(output);
+}
+
+foreach (var unit in settings.SiUnitTypes)
+{
+	fileManager.StartNewFile("I" + unit.ValueType.ClassName + ".generated.cs", Settings.ProjectName, Settings.FolderName, null);
+	session["UnitMetaData"] = unit;
+	string output = paramTmpl.TransformText("IUnit.tt", session);
 	this.Write(output);
 }
 

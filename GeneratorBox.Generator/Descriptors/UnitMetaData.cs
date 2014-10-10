@@ -15,12 +15,17 @@
         }
 
         public UnitMetaData(string valueType, string ns, string unitTypeName, double conversionFactor, string unitName)
+            : this(valueType, ns,unitTypeName,conversionFactor == 0 ? "" : conversionFactor.ToString(CultureInfo.InvariantCulture), unitName)
+        {
+        }
+
+        public UnitMetaData(string valueType, string ns, string unitTypeName, string conversionFactor, string unitName)
             : base(unitTypeName)
         {
             ValueType = new TypeMetaData(valueType);
             Namespace = ns;
             UnitName = unitName;
-            ConversionFactor = conversionFactor == 0 ? "" : conversionFactor.ToString(CultureInfo.InvariantCulture);
+            ConversionFactor = conversionFactor;
         }
 
         public static UnitMetaData Empty

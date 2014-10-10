@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace GeneratorBox
 {
     using System;
@@ -8,23 +8,23 @@ namespace GeneratorBox
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
-	/// <summary>
+    /// <summary>
     /// An Length
     /// </summary>
     [Serializable]
-	public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IUnitValue
-	{
-	    /// <summary>
+    public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IUnitValue
+    {
+        /// <summary>
         /// The value in <see cref="T:GeneratorBox.Meters"/>.
         /// </summary>
-		public readonly double Meters;
-		
-		private Length(double meters)
+        public readonly double Meters;
+
+        private Length(double meters)
         {
             Meters = meters;
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of <see cref="T:GeneratorBox.Length"/>.
         /// </summary>
         /// <param name="meters"></param>
@@ -33,7 +33,7 @@ namespace GeneratorBox
         {
             Meters = meters;
         }
-		
+
         /// <summary>
         /// Initializes a new instance of <see cref="T:GeneratorBox.Length"/>.
         /// </summary>
@@ -43,7 +43,7 @@ namespace GeneratorBox
         {
             Meters = UnitConverter.ConvertFrom(value, unit);
         }
-		
+
         /// <summary>
         /// Initializes a new instance of <see cref="T:GeneratorBox.Length"/>.
         /// </summary>
@@ -53,7 +53,7 @@ namespace GeneratorBox
         {
             Meters = UnitConverter.ConvertFrom(value, unit);
         }
-		 		
+
         /// <summary>
         /// The value in millimeters
         /// </summary>
@@ -64,7 +64,7 @@ namespace GeneratorBox
                 return UnitConverter.ConvertTo(Meters, LengthUnit.Millimeters);
             }
         }
-		
+
         /// <summary>
         /// The value in centimeters
         /// </summary>
@@ -75,7 +75,7 @@ namespace GeneratorBox
                 return UnitConverter.ConvertTo(Meters, LengthUnit.Centimeters);
             }
         }
-		
+
         /// <summary>
         /// Creates an instance of <see cref="T:GeneratorBox.Length"/> from its string representation
         /// </summary>
@@ -85,7 +85,7 @@ namespace GeneratorBox
         {
             return UnitParser.Parse(s, From);
         }
- 
+
         /// <summary>
         /// Reads an instance of <see cref="T:GeneratorBox.Length"/> from the <paramref name="reader"/>
         /// </summary>
@@ -97,7 +97,7 @@ namespace GeneratorBox
             v.ReadXml(reader);
             return v;
         }
- 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:GeneratorBox.Length"/>.
         /// </summary>
@@ -116,7 +116,7 @@ namespace GeneratorBox
         {
             return new Length(value);
         }
- 		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:GeneratorBox.Length"/>.
         /// </summary>
@@ -125,7 +125,7 @@ namespace GeneratorBox
         {
             return new Length(UnitConverter.ConvertFrom(value, LengthUnit.Millimeters));
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:GeneratorBox.Length"/>.
         /// </summary>
@@ -134,7 +134,7 @@ namespace GeneratorBox
         {
             return new Length(UnitConverter.ConvertFrom(value, LengthUnit.Centimeters));
         }
-				 
+
         /// <summary>
         /// Indicates whether two <see cref="T:GeneratorBox.Length"/> instances are equal.
         /// </summary>
@@ -147,7 +147,7 @@ namespace GeneratorBox
         {
             return left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether two <see cref="T:GeneratorBox.Length"/> instances are not equal.
         /// </summary>
@@ -160,7 +160,7 @@ namespace GeneratorBox
         {
             return !left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:GeneratorBox.Length"/> is less than another specified <see cref="T:GeneratorBox.Length"/>.
         /// </summary>
@@ -173,7 +173,7 @@ namespace GeneratorBox
         {
             return left.Meters < right.Meters;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:GeneratorBox.Length"/> is greater than another specified <see cref="T:GeneratorBox.Length"/>.
         /// </summary>
@@ -186,7 +186,7 @@ namespace GeneratorBox
         {
             return left.Meters > right.Meters;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:GeneratorBox.Length"/> is less than or equal to another specified <see cref="T:GeneratorBox.Length"/>.
         /// </summary>
@@ -199,7 +199,7 @@ namespace GeneratorBox
         {
             return left.Meters <= right.Meters;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:GeneratorBox.Length"/> is greater than or equal to another specified <see cref="T:GeneratorBox.Length"/>.
         /// </summary>
@@ -212,7 +212,7 @@ namespace GeneratorBox
         {
             return left.Meters >= right.Meters;
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:GeneratorBox.Length"/> with <paramref name="left"/> and returns the result.
         /// </summary>
@@ -223,7 +223,7 @@ namespace GeneratorBox
         {
             return new Length(left * right.Meters);
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:GeneratorBox.Length"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -234,7 +234,7 @@ namespace GeneratorBox
         {
             return new Length(left.Meters * right);
         }
- 
+
         /// <summary>
         /// Divides an instance of <see cref="T:GeneratorBox.Length"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -245,7 +245,7 @@ namespace GeneratorBox
         {
             return new Length(left.Meters / right);
         }
- 
+
         /// <summary>
         /// Adds two specified <see cref="T:GeneratorBox.Length"/> instances.
         /// </summary>
@@ -258,7 +258,7 @@ namespace GeneratorBox
         {
             return new Length(left.Meters + right.Meters);
         }
- 
+
         /// <summary>
         /// Subtracts an Length from another Length and returns the difference.
         /// </summary>
@@ -271,7 +271,7 @@ namespace GeneratorBox
         {
             return new Length(left.Meters - right.Meters);
         }
- 
+
         /// <summary>
         /// Returns an <see cref="T:GeneratorBox.Length"/> whose value is the negated value of the specified instance.
         /// </summary>
@@ -283,7 +283,7 @@ namespace GeneratorBox
         {
             return new Length(-1 * Length.Meters);
         }
- 
+
         /// <summary>
         /// Returns the specified instance of <see cref="T:GeneratorBox.Length"/>.
         /// </summary>
@@ -295,33 +295,33 @@ namespace GeneratorBox
         {
             return Length;
         }
- 
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(string format)
         {
             return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(IFormatProvider provider)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, LengthUnit.Meters);
         }
- 
+
         public string ToString<T>(string format, IFormatProvider formatProvider, T unit) where T : ILengthUnit
         {
             var value = UnitConverter.ConvertTo(this.Meters, unit);
             return string.Format("{0}{1}", value.ToString(format, formatProvider), unit.ShortName);
         }
- 
+
         /// <summary>
         /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Length"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Length"/> object.
         /// </summary>
@@ -350,7 +350,7 @@ namespace GeneratorBox
         {
             return this.Meters.CompareTo(value.Meters);
         }
- 
+
         /// <summary>
         /// Returns a value indicating whether this instance is equal to a specified <see cref="T:GeneratorBox.Length"/> object.
         /// </summary>
@@ -362,7 +362,7 @@ namespace GeneratorBox
         {
             return this.Meters.Equals(other.Meters);
         }
- 
+
         /// <summary>
         /// Returns a value indicating whether this instance is equal to a specified <see cref="T:GeneratorBox.Length"/> object within the given tolerance.
         /// </summary>
@@ -375,22 +375,22 @@ namespace GeneratorBox
         {
             return Math.Abs(this.Meters - other.Meters) < tolerance;
         }
- 
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {
                 return false;
             }
- 
+
             return obj is Length && this.Equals((Length)obj);
         }
- 
+
         public override int GetHashCode()
         {
             return this.Meters.GetHashCode();
         }
- 
+
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
@@ -405,7 +405,7 @@ namespace GeneratorBox
         {
             return null;
         }
- 
+
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
@@ -414,11 +414,11 @@ namespace GeneratorBox
         {
             reader.MoveToContent();
             var e = (XElement)XNode.ReadFrom(reader);
- 
+
             // Hacking set readonly fields here, can't think of a cleaner workaround
             XmlExt.SetReadonlyField(ref this, x => x.Meters, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
- 
+
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
@@ -427,5 +427,5 @@ namespace GeneratorBox
         {
             XmlExt.WriteAttribute(writer, "Value", this.Meters);
         }
-	}
+    }
 }
