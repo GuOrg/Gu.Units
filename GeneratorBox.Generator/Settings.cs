@@ -15,7 +15,7 @@
             };
             UnitTypes = new List<UnitMetaData>
             {
-                new UnitMetaData("Radians",_nameSpace,"")
+                new UnitMetaData("Angle", _nameSpace, "Radians", 1.0, "rad")
             };
         }
         public Settings()

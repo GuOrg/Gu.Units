@@ -8,38 +8,38 @@
 <#@ parameter name="UnitMetaData" type="GeneratorBox.Generator.UnitMetaData" #>
 <#
 // Template used by Generator.tt
-var unitData = UnitMetaData ?? new UnitMetaData("Meters", "GeneratorBox.Units", "Length","Centimeters","Millimeters");
+var unitData = UnitMetaData ?? new UnitMetaData("Angle", "GeneratorBox.Units", "Radians", 1.0, "rad");
 #>
-namespace MathNet.Spatial.Units
+namespace <#= unitData.Namespace #>
 {
     using System;
     using System.ComponentModel;
 
     [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
-    public struct Radians : IAngleUnit
+    public struct <#= unitData.ClassName #> : I<#= unitData.UnitValueType.ClassName #>Unit
     {
-        private const double Conv = 1.0;
-        internal const string Name = "rad";
+        private const double _conversionFactor = <#= unitData.ConversionFactor #>;
+        internal const string _name = <#= unitData.UnitName #>;
 
         public double Conversionfactor
         {
             get
             {
-                return Conv;
+                return _conversionFactor;
             }
         }
 
-        public string ShortName
+        public string Name
         {
             get
             {
-                return Name;
+                return _name;
             }
         }
 
-        public static Angle operator *(double left, Radians right)
+        public static <#= unitData.UnitValueType.ClassName #> operator *(double left, <#= unitData.ClassName #> right)
         {
-            return new Angle(left, right);
+            return new <#= unitData.UnitValueType.ClassName #>(left, right);
         }
     }
 }
