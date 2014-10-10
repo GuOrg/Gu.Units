@@ -5,7 +5,7 @@
       <SiUnit>
         <ClassName>Meters</ClassName>
         <ValueType>
-          <ClassName />
+          <ClassName>Length</ClassName>
         </ValueType>
         <Namespace />
         <UnitName>Meters</UnitName>
@@ -34,31 +34,13 @@
           <UnitName>Centimeters</UnitName>
           <ConversionFactor />
         </UnitMetaData>
-        <UnitMetaData>
-          <ClassName />
-          <ValueType>
-            <ClassName>Length</ClassName>
-          </ValueType>
-          <Namespace>GeneratorBox</Namespace>
-          <UnitName />
-          <ConversionFactor />
-        </UnitMetaData>
-        <UnitMetaData>
-          <ClassName />
-          <ValueType>
-            <ClassName>Length</ClassName>
-          </ValueType>
-          <Namespace>GeneratorBox</Namespace>
-          <UnitName />
-          <ConversionFactor />
-        </UnitMetaData>
       </Units>
     </ValueMetaData>
     <ValueMetaData>
       <SiUnit>
         <ClassName>Seconds</ClassName>
         <ValueType>
-          <ClassName />
+          <ClassName>Time</ClassName>
         </ValueType>
         <Namespace />
         <UnitName>Seconds</UnitName>
@@ -85,24 +67,6 @@
           </ValueType>
           <Namespace>GeneratorBox</Namespace>
           <UnitName>Hours</UnitName>
-          <ConversionFactor />
-        </UnitMetaData>
-        <UnitMetaData>
-          <ClassName />
-          <ValueType>
-            <ClassName>Time</ClassName>
-          </ValueType>
-          <Namespace>GeneratorBox</Namespace>
-          <UnitName />
-          <ConversionFactor />
-        </UnitMetaData>
-        <UnitMetaData>
-          <ClassName />
-          <ValueType>
-            <ClassName>Time</ClassName>
-          </ValueType>
-          <Namespace>GeneratorBox</Namespace>
-          <UnitName />
           <ConversionFactor />
         </UnitMetaData>
       </Units>

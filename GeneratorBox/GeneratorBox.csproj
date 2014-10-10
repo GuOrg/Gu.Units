@@ -47,11 +47,29 @@
     <None Include="Units\ValueGenerator.txt4" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Units\Centimeters.generated.txt">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Content>
+    <Content Include="Units\Hours.generated.txt">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Content>
     <Content Include="Units\Length.generated.txt">
+      <DependentUpon>ValueGenerator.txt4</DependentUpon>
+    </Content>
+    <Content Include="Units\Meters.generated.txt">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Content>
+    <Content Include="Units\Millimeters.generated.txt">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Content>
+    <Content Include="Units\MilliSeconds.generated.txt">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Content>
+    <Content Include="Units\Seconds.generated.txt">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Content>
     <Content Include="Units\Time.generated.txt">
-      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+      <DependentUpon>ValueGenerator.txt4</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

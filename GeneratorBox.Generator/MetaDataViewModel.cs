@@ -19,6 +19,7 @@
         public MetaDataViewModel(ValueMetaData valueMetaData, UnitMetaData unitMetaData)
         {
             this.UnitMetaData = unitMetaData;
+            this.UnitMetaData.ValueType = valueMetaData.ClassName;
             this.ValueMetaData = valueMetaData;
         }
 
@@ -121,6 +122,11 @@
             {
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("Namespace: {0}, ValueTypeName: {1}, IsSiUnit: {2}, UnitTypeName: {3}, UnitName: {4}, ValueMetaData: {5}, UnitMetaData: {6}", this.Namespace, this.ValueTypeName, this.IsSiUnit, this.UnitTypeName, this.UnitName, this.ValueMetaData, this.UnitMetaData);
         }
     }
 }

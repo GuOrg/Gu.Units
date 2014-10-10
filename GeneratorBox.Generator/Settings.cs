@@ -84,7 +84,13 @@
         {
             get
             {
-                return this.ValueTypes.SelectMany(x => x.Units).ToArray();
+                var datas = new List<UnitMetaData>();
+                foreach (var value in ValueTypes)
+                {
+                    datas.Add(value.SiUnit);
+                    datas.AddRange(value.Units);
+                }
+                return datas;
             }
         }
 

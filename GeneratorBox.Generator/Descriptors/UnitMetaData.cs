@@ -43,24 +43,17 @@
         {
             get
             {
-                if (!string.IsNullOrEmpty(ValueType.ClassName))
-                {
-                    return false;
-                }
-                if (!string.IsNullOrEmpty(Namespace))
-                {
-                    return false;
-                }
                 if (!string.IsNullOrEmpty(UnitName))
-                {
-                    return false;
-                }
-                if (!string.IsNullOrEmpty(ConversionFactor))
                 {
                     return false;
                 }
                 return true;
             }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0}, ValueType: {1}, Namespace: {2}, UnitName: {3}, ConversionFactor: {4}, IsEmpty: {5}", base.ToString(), this.ValueType, this.Namespace, this.UnitName, this.ConversionFactor, this.IsEmpty);
         }
     }
 }

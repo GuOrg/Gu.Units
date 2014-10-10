@@ -1,4 +1,4 @@
-﻿namespace GeneratorBox.Units
+﻿namespace GeneratorBox
 {
     public interface IUnitValue
     {
