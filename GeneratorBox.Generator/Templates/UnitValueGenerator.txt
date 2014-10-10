@@ -1,12 +1,11 @@
 ﻿
  
 
-
 //-> Angle.generated.cs
 
 //-> Length.generated.cs
 // Generated helper templates
-// GeneratorBox\GeneratorBox\Units\Generator.txt4
+// GeneratorBox\GeneratorBox\Units\UnitValueGenerator.txt4
 // Generated items
 // GeneratorBox\GeneratorBox\Units\Length.generated.cs
 // GeneratorBox\GeneratorBox\Units\Angle.generated.cs

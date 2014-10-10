@@ -1,0 +1,8 @@
+﻿
+ 
+
+//-> Radians.generated.cs
+// Generated helper templates
+// GeneratorBox\GeneratorBox\Units\UnitGenerator.txt4
+// Generated items
+// GeneratorBox\GeneratorBox\Units\Radians.generated.cs

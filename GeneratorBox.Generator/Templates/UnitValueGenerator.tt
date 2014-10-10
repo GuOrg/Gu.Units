@@ -4,7 +4,6 @@
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="GeneratorBox.Generator" #> 
 <#@ output extension=".txt" #>
-
 <# 
 // Recommended editor: Tangible T4 Editor (http://t4-editor.tangible-engineering.com/Download_T4Editor_Plus_ModelingTools.html)
 // after save Generator.tt, the output will be generated in the TestFolder of the project

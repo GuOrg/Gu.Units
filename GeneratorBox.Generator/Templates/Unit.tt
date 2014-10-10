@@ -19,7 +19,7 @@ namespace <#= unitData.Namespace #>
     public struct <#= unitData.ClassName #> : I<#= unitData.UnitValueType.ClassName #>Unit
     {
         private const double _conversionFactor = <#= unitData.ConversionFactor #>;
-        internal const string _name = <#= unitData.UnitName #>;
+        internal const string _name = "<#= unitData.UnitName #>";
 
         public double Conversionfactor
         {
