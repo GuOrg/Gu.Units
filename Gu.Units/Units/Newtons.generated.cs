@@ -8,9 +8,9 @@ namespace Gu.Units
     public struct Newtons : IForceUnit
     {
         private const double _conversionFactor = 1;
-        internal const string _name = "N";
+        internal const string _symbol = "N";
 
-        public double Conversionfactor
+        public double ConversionFactor
         {
             get
             {
@@ -18,11 +18,11 @@ namespace Gu.Units
             }
         }
 
-        public string Name
+        public string Symbol
         {
             get
             {
-                return _name;
+                return _symbol;
             }
         }
 

@@ -8,9 +8,9 @@ namespace Gu.Units
     public struct KiloNewtons : IForceUnit
     {
         private const double _conversionFactor = 1e-3;
-        internal const string _name = "kN";
+        internal const string _symbol = "kN";
 
-        public double Conversionfactor
+        public double ConversionFactor
         {
             get
             {
@@ -18,11 +18,11 @@ namespace Gu.Units
             }
         }
 
-        public string Name
+        public string Symbol
         {
             get
             {
-                return _name;
+                return _symbol;
             }
         }
 

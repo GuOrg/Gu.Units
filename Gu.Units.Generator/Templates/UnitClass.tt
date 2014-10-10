@@ -23,13 +23,13 @@ namespace <#= unit.Namespace #>
     public static class <#= unit.ValueType.ClassName #>Unit
     {
 		public static readonly <#= unit.ClassName #> <#= unit.ClassName #> = new <#= unit.ClassName #>();
-		public static readonly <#= unit.ClassName #> <#= unit.UnitName #> = <#= unit.ClassName #>;
+		public static readonly <#= unit.ClassName #> <#= unit.Symbol #> = <#= unit.ClassName #>;
 		<#
 		foreach(var r in unit.Related)
 		{
 		#>
 		public static readonly <#= r.ClassName #> <#= r.ClassName #> = new <#= r.ClassName #>();
-		public static readonly <#= r.ClassName #> <#= r.UnitName #> = <#= r.ClassName #>;
+		public static readonly <#= r.ClassName #> <#= r.Symbol #> = <#= r.ClassName #>;
 		<#
 		} 
 		#>

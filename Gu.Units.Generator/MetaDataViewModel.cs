@@ -90,19 +90,19 @@
             }
         }
 
-        public string UnitName
+        public string Symbol
         {
             get
             {
-                return this.UnitMetaData.UnitName;
+                return this.UnitMetaData.Symbol;
             }
             set
             {
-                if (value == UnitMetaData.UnitName)
+                if (value == UnitMetaData.Symbol)
                 {
                     return;
                 }
-                UnitMetaData.UnitName = value;
+                UnitMetaData.Symbol = value;
                 this.OnPropertyChanged();
             }
         }
@@ -140,7 +140,7 @@
 
         public override string ToString()
         {
-            return string.Format("Namespace: {0}, ValueTypeName: {1}, IsSiUnit: {2}, UnitTypeName: {3}, UnitName: {4}, ValueMetaData: {5}, UnitMetaData: {6}", this.Namespace, this.ValueTypeName, this.IsSiUnit, this.UnitTypeName, this.UnitName, this.ValueMetaData, this.UnitMetaData);
+            return string.Format("Namespace: {0}, ValueTypeName: {1}, IsSiUnit: {2}, UnitTypeName: {3}, Symbol: {4}, ValueMetaData: {5}, UnitMetaData: {6}", this.Namespace, this.ValueTypeName, this.IsSiUnit, this.UnitTypeName, this.Symbol, this.ValueMetaData, this.UnitMetaData);
         }
     }
 }

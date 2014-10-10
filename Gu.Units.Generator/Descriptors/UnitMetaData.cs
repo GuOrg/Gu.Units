@@ -15,18 +15,18 @@
             Related = new List<UnitMetaData>();
         }
 
-        public UnitMetaData(string valueType, string ns, string unitTypeName, double conversionFactor, string unitName)
-            : this(valueType, ns,unitTypeName,conversionFactor == 0 ? "" : conversionFactor.ToString(CultureInfo.InvariantCulture), unitName)
+        public UnitMetaData(string valueType, string ns, string unitTypeName, double conversionFactor, string symbol)
+            : this(valueType, ns,unitTypeName,conversionFactor == 0 ? "" : conversionFactor.ToString(CultureInfo.InvariantCulture), symbol)
         {
         }
 
-        public UnitMetaData(string valueType, string ns, string unitTypeName, string conversionFactor, string unitName)
+        public UnitMetaData(string valueType, string ns, string unitTypeName, string conversionFactor, string symbol)
             : base(unitTypeName)
         {
             Related = new List<UnitMetaData>();
             ValueType = new TypeMetaData(valueType);
             Namespace = ns;
-            UnitName = unitName;
+            Symbol = symbol;
             ConversionFactor = conversionFactor;
         }
 
@@ -42,7 +42,7 @@
 
         public string Namespace { get; set; }
 
-        public string UnitName { get; set; }
+        public string Symbol { get; set; }
 
         public string ConversionFactor { get; set; }
 
@@ -51,7 +51,7 @@
         {
             get
             {
-                if (!string.IsNullOrEmpty(UnitName))
+                if (!string.IsNullOrEmpty(Symbol))
                 {
                     return false;
                 }
@@ -64,7 +64,7 @@
 
         public override string ToString()
         {
-            return string.Format("{0}, ValueType: {1}, Namespace: {2}, UnitName: {3}, ConversionFactor: {4}, IsEmpty: {5}", base.ToString(), this.ValueType, this.Namespace, this.UnitName, this.ConversionFactor, this.IsEmpty);
+            return string.Format("{0}, ValueType: {1}, Namespace: {2}, Symbol: {3}, ConversionFactor: {4}, IsEmpty: {5}", base.ToString(), this.ValueType, this.Namespace, this.Symbol, this.ConversionFactor, this.IsEmpty);
         }
     }
 }
