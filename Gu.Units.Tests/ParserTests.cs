@@ -30,7 +30,7 @@
             {
                 var cultureInfo = CultureInfo.GetCultureInfo(culture);
                 var length = Parser.Parse<ILengthUnit, Length>(s, Length.From, cultureInfo);
-                Assert.AreEqual(expected, length.Meters);
+                Assert.AreEqual(expected, length.Metres);
             }
         }
 
@@ -43,14 +43,13 @@
             Assert.AreEqual(expected, time.Seconds);
         }
 
-        [TestCase("1N", 1)]
-        [TestCase("1kN", 1e3)]
+        [TestCase("1kg", 1)]
+        [TestCase("1g", 1e-3)]
         public void ParseForce(string s, double expected)
         {
-            var force = Parser.Parse<IForceUnit, Force>(s, Force.From);
-            Assert.AreEqual(expected, force.Newtons);
+            var value = Parser.Parse<IMassUnit, Mass>(s, Mass.From);
+            Assert.AreEqual(expected, value.Kilograms);
         }
-
 
         [TestCase("1", 1)]
         [TestCase(".1", .1)]

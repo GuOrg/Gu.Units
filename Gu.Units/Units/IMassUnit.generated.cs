@@ -1,7 +1,7 @@
 ﻿
 namespace Gu.Units
 {
-    public interface IForceUnit : IUnit
+    public interface IMassUnit : IUnit
     {
 
     }

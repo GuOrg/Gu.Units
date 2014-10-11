@@ -161,7 +161,7 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="left"/> and returns the result.</returns>
         public static Length operator *(double left, Length right)
         {
-            return new Length(left * right.Meters);
+            return new Length(left*right.Meters);
         }
  
         /// <summary>
@@ -172,7 +172,7 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="right"/> and returns the result.</returns>
         public static Length operator *(Length left, double right)
         {
-            return new Length(left.Meters * right);
+            return new Length(left.Meters*right);
         }
  
         /// <summary>
@@ -221,7 +221,7 @@ namespace Gu.Units
         /// <param name="Length">A <see cref="T:Gu.Units.Length"/></param>
         public static Length operator -(Length Length)
         {
-            return new Length(-1 * Length.Meters);
+            return new Length(-1*Length.Meters);
         }
  
         /// <summary>

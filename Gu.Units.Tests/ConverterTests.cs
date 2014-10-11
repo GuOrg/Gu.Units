@@ -1,16 +1,12 @@
-﻿using System;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gu.Units.Tests
+﻿namespace Gu.Units.Tests
 {
-    using System.Collections;
+    using System;
     using NUnit.Framework;
 
     public class ConverterTests
     {
         [Test]
-        public void TestNameTest()
+        public void CheckUnitTypeProvider()
         {
             Assert.IsNotEmpty(UnitTypeProvider.UnitTypes);
         }

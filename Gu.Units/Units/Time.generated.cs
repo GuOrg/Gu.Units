@@ -39,7 +39,7 @@ namespace Gu.Units
         /// </summary>
         /// <param name="value"></param>
         /// <param name="unit"></param>
-        public Time(double value, MilliSeconds unit)
+        public Time(double value, Milliseconds unit)
         {
             Seconds = UnitConverter.ConvertFrom(value, unit);
         }
@@ -55,13 +55,13 @@ namespace Gu.Units
         }
 
         /// <summary>
-        /// The value in milliSeconds
+        /// The value in milliseconds
         /// </summary>
-        public double MilliSeconds
+        public double Milliseconds
         {
             get
             {
-                return UnitConverter.ConvertTo(Seconds, TimeUnit.MilliSeconds);
+                return UnitConverter.ConvertTo(Seconds, TimeUnit.Milliseconds);
             }
         }
 
@@ -121,9 +121,9 @@ namespace Gu.Units
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
         /// <param name="value"></param>
-        public static Time FromMilliSeconds(double value)
+        public static Time FromMilliseconds(double value)
         {
-            return new Time(UnitConverter.ConvertFrom(value, TimeUnit.MilliSeconds));
+            return new Time(UnitConverter.ConvertFrom(value, TimeUnit.Milliseconds));
         }
 
         /// <summary>

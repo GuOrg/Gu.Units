@@ -15,33 +15,23 @@ namespace Gu.Units
     public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IUnitValue
     {
         /// <summary>
-        /// The value in <see cref="T:Gu.Units.Meters"/>.
+        /// The value in <see cref="T:Gu.Units.Metres"/>.
         /// </summary>
-        public readonly double Meters;
+        public readonly double Metres;
 
-        private Length(double meters)
+        private Length(double metres)
         {
-            Meters = meters;
+            Metres = metres;
         }
 
         /// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="meters"></param>
-        /// <param name="unit"><see cref="T:Gu.Units.Meters"/>.</param>
-        public Length(double meters, Meters unit)
+        /// <param name="metres"></param>
+        /// <param name="unit"><see cref="T:Gu.Units.Metres"/>.</param>
+        public Length(double metres, Metres unit)
         {
-            Meters = meters;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of <see cref="T:Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
-        public Length(double value, Millimeters unit)
-        {
-            Meters = UnitConverter.ConvertFrom(value, unit);
+            Metres = metres;
         }
 
         /// <summary>
@@ -49,30 +39,40 @@ namespace Gu.Units
         /// </summary>
         /// <param name="value"></param>
         /// <param name="unit"></param>
-        public Length(double value, Centimeters unit)
+        public Length(double value, Millimetres unit)
         {
-            Meters = UnitConverter.ConvertFrom(value, unit);
+            Metres = UnitConverter.ConvertFrom(value, unit);
         }
 
         /// <summary>
-        /// The value in millimeters
+        /// Initializes a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
-        public double Millimeters
+        /// <param name="value"></param>
+        /// <param name="unit"></param>
+        public Length(double value, Centimetres unit)
+        {
+            Metres = UnitConverter.ConvertFrom(value, unit);
+        }
+
+        /// <summary>
+        /// The value in millimetres
+        /// </summary>
+        public double Millimetres
         {
             get
             {
-                return UnitConverter.ConvertTo(Meters, LengthUnit.Millimeters);
+                return UnitConverter.ConvertTo(Metres, LengthUnit.Millimetres);
             }
         }
 
         /// <summary>
-        /// The value in centimeters
+        /// The value in centimetres
         /// </summary>
-        public double Centimeters
+        public double Centimetres
         {
             get
             {
-                return UnitConverter.ConvertTo(Meters, LengthUnit.Centimeters);
+                return UnitConverter.ConvertTo(Metres, LengthUnit.Centimetres);
             }
         }
 
@@ -112,7 +112,7 @@ namespace Gu.Units
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
         /// <param name="value"></param>
-        public static Length FromMeters(double value)
+        public static Length FromMetres(double value)
         {
             return new Length(value);
         }
@@ -121,18 +121,18 @@ namespace Gu.Units
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
         /// <param name="value"></param>
-        public static Length FromMillimeters(double value)
+        public static Length FromMillimetres(double value)
         {
-            return new Length(UnitConverter.ConvertFrom(value, LengthUnit.Millimeters));
+            return new Length(UnitConverter.ConvertFrom(value, LengthUnit.Millimetres));
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
         /// <param name="value"></param>
-        public static Length FromCentimeters(double value)
+        public static Length FromCentimetres(double value)
         {
-            return new Length(UnitConverter.ConvertFrom(value, LengthUnit.Centimeters));
+            return new Length(UnitConverter.ConvertFrom(value, LengthUnit.Centimetres));
         }
 
         /// <summary>
@@ -171,7 +171,7 @@ namespace Gu.Units
         /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
         public static bool operator <(Length left, Length right)
         {
-            return left.Meters < right.Meters;
+            return left.Metres < right.Metres;
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace Gu.Units
         /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
         public static bool operator >(Length left, Length right)
         {
-            return left.Meters > right.Meters;
+            return left.Metres > right.Metres;
         }
 
         /// <summary>
@@ -197,7 +197,7 @@ namespace Gu.Units
         /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
         public static bool operator <=(Length left, Length right)
         {
-            return left.Meters <= right.Meters;
+            return left.Metres <= right.Metres;
         }
 
         /// <summary>
@@ -210,7 +210,7 @@ namespace Gu.Units
         /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
         public static bool operator >=(Length left, Length right)
         {
-            return left.Meters >= right.Meters;
+            return left.Metres >= right.Metres;
         }
 
         /// <summary>
@@ -221,7 +221,7 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="left"/> and returns the result.</returns>
         public static Length operator *(double left, Length right)
         {
-            return new Length(left * right.Meters);
+            return new Length(left * right.Metres);
         }
 
         /// <summary>
@@ -232,7 +232,7 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="right"/> and returns the result.</returns>
         public static Length operator *(Length left, double right)
         {
-            return new Length(left.Meters * right);
+            return new Length(left.Metres * right);
         }
 
         /// <summary>
@@ -243,7 +243,7 @@ namespace Gu.Units
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="right"/> and returns the result.</returns>
         public static Length operator /(Length left, double right)
         {
-            return new Length(left.Meters / right);
+            return new Length(left.Metres / right);
         }
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace Gu.Units
         /// <param name="right">A TimeSpan.</param>
         public static Length operator +(Length left, Length right)
         {
-            return new Length(left.Meters + right.Meters);
+            return new Length(left.Metres + right.Metres);
         }
 
         /// <summary>
@@ -269,7 +269,7 @@ namespace Gu.Units
         /// <param name="right">A <see cref="T:Gu.Units.Length"/> (the subtrahend).</param>
         public static Length operator -(Length left, Length right)
         {
-            return new Length(left.Meters - right.Meters);
+            return new Length(left.Metres - right.Metres);
         }
 
         /// <summary>
@@ -281,7 +281,7 @@ namespace Gu.Units
         /// <param name="Length">A <see cref="T:Gu.Units.Length"/></param>
         public static Length operator -(Length Length)
         {
-            return new Length(-1 * Length.Meters);
+            return new Length(-1 * Length.Metres);
         }
 
         /// <summary>
@@ -313,12 +313,12 @@ namespace Gu.Units
 
         public string ToString(string format, IFormatProvider formatProvider)
         {
-            return this.ToString(format, formatProvider, LengthUnit.Meters);
+            return this.ToString(format, formatProvider, LengthUnit.Metres);
         }
 
         public string ToString<T>(string format, IFormatProvider formatProvider, T unit) where T : ILengthUnit
         {
-            var value = UnitConverter.ConvertTo(this.Meters, unit);
+            var value = UnitConverter.ConvertTo(this.Metres, unit);
             return string.Format("{0}{1}", value.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -348,7 +348,7 @@ namespace Gu.Units
         /// <param name="value">A <see cref="T:MathNet.Spatial.Units.Length"/> object to compare to this instance.</param>
         public int CompareTo(Length value)
         {
-            return this.Meters.CompareTo(value.Meters);
+            return this.Metres.CompareTo(value.Metres);
         }
 
         /// <summary>
@@ -360,7 +360,7 @@ namespace Gu.Units
         /// <param name="other">An <see cref="T:Gu.Units.Length"/> object to compare with this instance.</param>
         public bool Equals(Length other)
         {
-            return this.Meters.Equals(other.Meters);
+            return this.Metres.Equals(other.Metres);
         }
 
         /// <summary>
@@ -373,7 +373,7 @@ namespace Gu.Units
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Length other, double tolerance)
         {
-            return Math.Abs(this.Meters - other.Meters) < tolerance;
+            return Math.Abs(this.Metres - other.Metres) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -388,7 +388,7 @@ namespace Gu.Units
 
         public override int GetHashCode()
         {
-            return this.Meters.GetHashCode();
+            return this.Metres.GetHashCode();
         }
 
         /// <summary>
@@ -416,7 +416,7 @@ namespace Gu.Units
             var e = (XElement)XNode.ReadFrom(reader);
 
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, x => x.Meters, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
+            XmlExt.SetReadonlyField(ref this, x => x.Metres, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
 
         /// <summary>
@@ -425,7 +425,7 @@ namespace Gu.Units
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Meters);
+            XmlExt.WriteAttribute(writer, "Value", this.Metres);
         }
     }
 }

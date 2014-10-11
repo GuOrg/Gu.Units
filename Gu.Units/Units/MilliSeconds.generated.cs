@@ -5,7 +5,7 @@ namespace Gu.Units
     using System.ComponentModel;
 
     [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
-    public struct MilliSeconds : ITimeUnit
+    public struct Milliseconds : ITimeUnit
     {
         internal const string _symbol = "ms";
 
@@ -17,19 +17,19 @@ namespace Gu.Units
             }
         }
 
-        public static Time operator *(double left, MilliSeconds right)
+        public static Time operator *(double left, Milliseconds right)
         {
             return new Time(left, right);
         }
 
         /// <summary>
-        /// Converts a value in <see cref="T:Gu.Units.MilliSeconds"/> value to <see cref="T:Gu.Units.Seconds"/>.
+        /// Converts a value in <see cref="T:Gu.Units.Milliseconds"/> value to <see cref="T:Gu.Units.Seconds"/>.
         /// </summary>
-        /// <param name="milliSeconds"></param>
+        /// <param name="milliseconds"></param>
         /// <returns>The converted value</returns>
-        public double ToSiUnit(double milliSeconds)
+        public double ToSiUnit(double milliseconds)
         {
-            return 1e-3 * milliSeconds;
+            return 1e-3 * milliseconds;
         }
     }
 }

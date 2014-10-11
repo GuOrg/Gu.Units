@@ -1,29 +1,29 @@
 ﻿
  
 Read Settings found 8 units
-//-> Centimeters.generated.cs
+//-> Centimetres.generated.cs
 
-//-> ForceUnit.generated.cs
+//-> Grams.generated.cs
 
 //-> Hours.generated.cs
 
-//-> IForceUnit.generated.cs
-
 //-> ILengthUnit.generated.cs
+
+//-> IMassUnit.generated.cs
 
 //-> ITimeUnit.generated.cs
 
-//-> KiloNewtons.generated.cs
+//-> Kilograms.generated.cs
 
 //-> LengthUnit.generated.cs
 
-//-> Meters.generated.cs
+//-> MassUnit.generated.cs
 
-//-> Millimeters.generated.cs
+//-> Metres.generated.cs
 
-//-> MilliSeconds.generated.cs
+//-> Millimetres.generated.cs
 
-//-> Newtons.generated.cs
+//-> Milliseconds.generated.cs
 
 //-> Seconds.generated.cs
 
@@ -31,17 +31,17 @@ Read Settings found 8 units
 // Generated helper templates
 // Gu.Units\Gu.Units\Units\UnitGenerator.txt4
 // Generated items
-// Gu.Units\Gu.Units\Units\ForceUnit.generated.cs
-// Gu.Units\Gu.Units\Units\IForceUnit.generated.cs
+// Gu.Units\Gu.Units\Units\MassUnit.generated.cs
+// Gu.Units\Gu.Units\Units\IMassUnit.generated.cs
 // Gu.Units\Gu.Units\Units\TimeUnit.generated.cs
 // Gu.Units\Gu.Units\Units\ITimeUnit.generated.cs
 // Gu.Units\Gu.Units\Units\LengthUnit.generated.cs
 // Gu.Units\Gu.Units\Units\ILengthUnit.generated.cs
-// Gu.Units\Gu.Units\Units\KiloNewtons.generated.cs
-// Gu.Units\Gu.Units\Units\Newtons.generated.cs
+// Gu.Units\Gu.Units\Units\Grams.generated.cs
+// Gu.Units\Gu.Units\Units\Kilograms.generated.cs
 // Gu.Units\Gu.Units\Units\Hours.generated.cs
-// Gu.Units\Gu.Units\Units\MilliSeconds.generated.cs
+// Gu.Units\Gu.Units\Units\Milliseconds.generated.cs
 // Gu.Units\Gu.Units\Units\Seconds.generated.cs
-// Gu.Units\Gu.Units\Units\Centimeters.generated.cs
-// Gu.Units\Gu.Units\Units\Millimeters.generated.cs
-// Gu.Units\Gu.Units\Units\Meters.generated.cs
+// Gu.Units\Gu.Units\Units\Centimetres.generated.cs
+// Gu.Units\Gu.Units\Units\Millimetres.generated.cs
+// Gu.Units\Gu.Units\Units\Metres.generated.cs
