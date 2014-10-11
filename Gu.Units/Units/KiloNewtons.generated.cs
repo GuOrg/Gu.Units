@@ -29,7 +29,7 @@ namespace Gu.Units
         /// <returns>The converted value</returns>
         public double ToSiUnit(double force)
         {
-            return 1e-3 * force;
+            return 1e3 * force;
         }
     }
 }

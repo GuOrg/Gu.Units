@@ -7,10 +7,10 @@ namespace Gu.Units
     using System.Linq;
     using System.Text.RegularExpressions;
 
-    public static class UnitParser
+    public static class Parser
     {
-        public const string UnitValuePattern = @"^(?: *)(?<Value>[+-]?\d+([eE][+-]\d+)?([.,]\d+)?) *(?<Unit>.+) *$";
-        public const string DoublePattern = @"[+-]?\d+([eE][+-]\d+)?([.,]\d+)?";
+        public static readonly string DoublePattern = @"[+-]?\d+(?:[.,]\d+)?(?:[eE][+-]?\d+)?";
+        public static readonly string UnitValuePattern = string.Format(@"^(?: *)(?<Value>{0}) *(?<Unit>.+) *$", DoublePattern);
         private static readonly ConcurrentDictionary<Type, IUnit[]> Symbols = new ConcurrentDictionary<Type, IUnit[]>();
         public static TValue Parse<TUnit, TValue>(string s, Func<double, TUnit, TValue> creator)
             where TUnit : IUnit

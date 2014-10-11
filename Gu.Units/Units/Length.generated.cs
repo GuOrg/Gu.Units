@@ -83,7 +83,7 @@ namespace Gu.Units
         /// <returns></returns>
         public static Length Parse(string s)
         {
-            return UnitParser.Parse<ILengthUnit, Length>(s, From);
+            return Parser.Parse<ILengthUnit, Length>(s, From);
         }
 
         /// <summary>

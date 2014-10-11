@@ -2,7 +2,7 @@
 {
     using NUnit.Framework;
 
-    public class UnitParserTests
+    public class ParserTests
     {
         [TestCase("1m", 1)]
         [TestCase("-1m", -1)]
@@ -26,7 +26,7 @@
         [TestCase("1cm", 1e-2)]
         public void ParseLength(string s, double expected)
         {
-            var length = UnitParser.Parse<ILengthUnit, Length>(s, Length.From);
+            var length = Parser.Parse<ILengthUnit, Length>(s, Length.From);
             Assert.AreEqual(expected, length.Meters);
         }
 

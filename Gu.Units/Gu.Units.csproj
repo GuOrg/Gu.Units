@@ -91,7 +91,7 @@
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
     <Compile Include="Utils\UnitConverter.cs" />
-    <Compile Include="Utils\UnitParser.cs" />
+    <Compile Include="Utils\Parser.cs" />
     <Compile Include="Utils\XmlExt.cs" />
   </ItemGroup>
   <ItemGroup>

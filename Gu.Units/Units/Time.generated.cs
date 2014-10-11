@@ -83,7 +83,7 @@ namespace Gu.Units
         /// <returns></returns>
         public static Time Parse(string s)
         {
-            return UnitParser.Parse<ITimeUnit, Time>(s, From);
+            return Parser.Parse<ITimeUnit, Time>(s, From);
         }
 
         /// <summary>

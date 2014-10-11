@@ -29,7 +29,7 @@ namespace Gu.Units
         /// <returns>The converted value</returns>
         public double ToSiUnit(double time)
         {
-            return 1 / 60.0 * time;
+            return 3600 * time;
         }
     }
 }
