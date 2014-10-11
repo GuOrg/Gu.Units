@@ -22,6 +22,7 @@ namespace Gu.Units.Generator.Sandbox
                                            new UnitMetaData("Length", "Gu.Units", "CentiMeters", "100", "cm"),
                                        }
                            };
+            new UnitMetaData("Length", "Gu.Units", "Meters", "1e-3", "mm"){ SiUnit = new TypeMetaData("Meters") };
             var ns = unit.Namespace;
         }
     }

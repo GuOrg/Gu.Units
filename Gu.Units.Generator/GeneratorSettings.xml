@@ -9,7 +9,7 @@
         </ValueType>
         <Namespace>Gu.Units</Namespace>
         <Symbol>m</Symbol>
-        <ConversionFactor>1</ConversionFactor>
+        <Conversion>1</Conversion>
       </SiUnit>
       <Namespace>Gu.Units</Namespace>
       <ClassName>
@@ -23,7 +23,7 @@
           </ValueType>
           <Namespace>Gu.Units</Namespace>
           <Symbol>mm</Symbol>
-          <ConversionFactor>1000</ConversionFactor>
+          <Conversion>1000</Conversion>
         </UnitMetaData>
         <UnitMetaData>
           <ClassName>Centimeters</ClassName>
@@ -32,7 +32,7 @@
           </ValueType>
           <Namespace>Gu.Units</Namespace>
           <Symbol>cm</Symbol>
-          <ConversionFactor>100</ConversionFactor>
+          <Conversion>100</Conversion>
         </UnitMetaData>
       </Units>
     </ValueMetaData>
@@ -44,7 +44,7 @@
         </ValueType>
         <Namespace>Gu.Units</Namespace>
         <Symbol>s</Symbol>
-        <ConversionFactor>1</ConversionFactor>
+        <Conversion>1</Conversion>
       </SiUnit>
       <Namespace>Gu.Units</Namespace>
       <ClassName>
@@ -58,7 +58,7 @@
           </ValueType>
           <Namespace>Gu.Units</Namespace>
           <Symbol>ms</Symbol>
-          <ConversionFactor>1000</ConversionFactor>
+          <Conversion>1000</Conversion>
         </UnitMetaData>
         <UnitMetaData>
           <ClassName>Hours</ClassName>
@@ -67,7 +67,7 @@
           </ValueType>
           <Namespace>Gu.Units</Namespace>
           <Symbol>h</Symbol>
-          <ConversionFactor>1/60.0</ConversionFactor>
+          <Conversion>1/60.0</Conversion>
         </UnitMetaData>
       </Units>
     </ValueMetaData>
@@ -79,7 +79,7 @@
         </ValueType>
         <Namespace>Gu.Units</Namespace>
         <Symbol>N</Symbol>
-        <ConversionFactor>1</ConversionFactor>
+        <Conversion>1</Conversion>
       </SiUnit>
       <Namespace>Gu.Units</Namespace>
       <ClassName>
@@ -93,7 +93,7 @@
           </ValueType>
           <Namespace>Gu.Units</Namespace>
           <Symbol>kN</Symbol>
-          <ConversionFactor>1e-3</ConversionFactor>
+          <Conversion>1e-3</Conversion>
         </UnitMetaData>
       </Units>
     </ValueMetaData>

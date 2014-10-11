@@ -39,7 +39,7 @@ namespace <#= value.Namespace #>
         /// Initializes a new instance of <see cref="T:<#= value.Namespace #>.<#= value.ClassName #>"/>.
         /// </summary>
         /// <param name="<#= value.SiUnit.ParameterName #>"></param>
-        /// <param name="unit"></param>
+        /// <param name="unit"><see cref="T:<#= value.Namespace #>.<#= value.SiUnit.ClassName #>"/>.</param>
         public <#= value.ClassName #>(double <#= value.SiUnit.ParameterName #>, <#= value.SiUnit.ClassName #> unit)
         {
             <#= value.SiUnit.ClassName #> = <#= value.SiUnit.ParameterName #>;

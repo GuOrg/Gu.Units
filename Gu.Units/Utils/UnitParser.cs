@@ -2,14 +2,16 @@ namespace Gu.Units
 {
     using System;
     using System.Collections.Concurrent;
+    using System.Collections.Generic;
     using System.Globalization;
+    using System.Linq;
     using System.Text.RegularExpressions;
 
     public static class UnitParser
     {
         public const string UnitValuePattern = @"^(?: *)(?<Value>[+-]?\d+([eE][+-]\d+)?([.,]\d+)?) *(?<Unit>.+) *$";
         public const string DoublePattern = @"[+-]?\d+([eE][+-]\d+)?([.,]\d+)?";
-        private static readonly ConcurrentDictionary<Type, string> Symbols = new ConcurrentDictionary<Type, string>();
+        private static readonly ConcurrentDictionary<Type, IUnit[]> Symbols = new ConcurrentDictionary<Type, IUnit[]>();
         public static TValue Parse<TUnit, TValue>(string s, Func<double, TUnit, TValue> creator)
             where TUnit : IUnit
             where TValue : IUnitValue
@@ -24,8 +26,8 @@ namespace Gu.Units
         {
             var trim = s.Trim();
             var type = typeof(TUnit);
-            var symbol = Symbols.GetOrAdd(type, t => t.Symbol());
-            throw new NotImplementedException("message");
+            var symbols = Symbols.GetOrAdd(type, t => t.Symbol());
+            return (TUnit)symbols.Single(x => x.Symbol == trim);
         }
 
         public static double ParseDouble(string s)
@@ -33,9 +35,10 @@ namespace Gu.Units
             return double.Parse(s.Replace(',', '.'), CultureInfo.InvariantCulture);
         }
 
-        private static string Symbol(this Type t)
+        private static IUnit[] Symbol(this Type t)
         {
-            throw new NotImplementedException("message");
+            var unitTypes = t.Assembly.GetTypes().Where(x => x.IsValueType && x.GetInterfaces().Any(i => i == t));
+            return unitTypes.Select(x => (IUnit)Activator.CreateInstance(x)).ToArray();
         }
-     }
+    }
 }

@@ -28,7 +28,7 @@ namespace Gu.Units
         /// Initializes a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
         /// <param name="seconds"></param>
-        /// <param name="unit"></param>
+        /// <param name="unit"><see cref="T:Gu.Units.Seconds"/>.</param>
         public Time(double seconds, Seconds unit)
         {
             Seconds = seconds;

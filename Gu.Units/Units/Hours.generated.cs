@@ -7,16 +7,7 @@ namespace Gu.Units
     [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
     public struct Hours : ITimeUnit
     {
-        private const double _conversionFactor = 1 / 60.0;
         internal const string _symbol = "h";
-
-        public double ConversionFactor
-        {
-            get
-            {
-                return _conversionFactor;
-            }
-        }
 
         public string Symbol
         {
@@ -29,6 +20,16 @@ namespace Gu.Units
         public static Time operator *(double left, Hours right)
         {
             return new Time(left, right);
+        }
+
+        /// <summary>
+        /// Converts a value in <see cref="T:Gu.Units.Hours"/> value to <see cref="T:Gu.Units.Seconds"/>.
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns>The converted value</returns>
+        public double ToSiUnit(double time)
+        {
+            return 1 / 60.0 * time;
         }
     }
 }

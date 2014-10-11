@@ -72,7 +72,7 @@ namespace Gu.Units.Generator.Properties {
         ///        &lt;/ValueType&gt;
         ///        &lt;Namespace&gt;Gu.Units&lt;/Namespace&gt;
         ///        &lt;Symbol&gt;m&lt;/Symbol&gt;
-        ///        &lt;ConversionFactor&gt;1&lt;/ConversionFactor&gt;
+        ///        &lt;Conversion&gt;1&lt;/Conversion&gt;
         ///      &lt;/SiUnit&gt;
         ///      &lt;Namespace&gt;Gu.Units&lt;/Namespace&gt;
         ///      &lt;ClassName&gt; [rest of string was truncated]&quot;;.
