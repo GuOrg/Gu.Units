@@ -58,7 +58,7 @@
           </ValueType>
           <Namespace>Gu.Units</Namespace>
           <Symbol>ms</Symbol>
-          <Conversion>1000</Conversion>
+          <Conversion>1e-3</Conversion>
         </UnitMetaData>
         <UnitMetaData>
           <ClassName>Hours</ClassName>

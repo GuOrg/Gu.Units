@@ -9,7 +9,7 @@
 // after save Generator.tt, the output will be generated in the TestFolder of the project
 //var fileProperties = new FileProperties()
 //{
-//	BuildAction = BuildAction.Compile
+//	BuildAction = BuildAction.EmbeddedResource
 //};
 
 var fileManager = TemplateFileManager.Create(this);

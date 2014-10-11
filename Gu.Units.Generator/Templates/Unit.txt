@@ -25,11 +25,11 @@ namespace Gu.Units
         /// <summary>
         /// Converts a value in <see cref="T:Gu.Units.MilliMeters"/> value to <see cref="T:Gu.Units.Meters"/>.
         /// </summary>
-        /// <param name="length"></param>
+        /// <param name="milliMeters"></param>
         /// <returns>The converted value</returns>
-        public double ToSiUnit(double length)
+        public double ToSiUnit(double milliMeters)
         {
-            return 1e-3 * length;
+            return 1e-3 * milliMeters;
         }
     }
 }

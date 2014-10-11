@@ -36,11 +36,11 @@ namespace <#= unit.Namespace #>
         /// <summary>
         /// Converts a value in <see cref="T:<#= unit.Namespace #>.<#= unit.ClassName #>"/> value to <see cref="T:<#= unit.Namespace #>.<#= unit.SiUnit.ClassName #>"/>.
         /// </summary>
-        /// <param name="<#= unit.ValueType.ParameterName #>"></param>
+        /// <param name="<#= unit.ParameterName #>"></param>
         /// <returns>The converted value</returns>
-        public double ToSiUnit(double <#= unit.ValueType.ParameterName #>)
+        public double ToSiUnit(double <#= unit.ParameterName #>)
         {
-            return <#= unit.Conversion #> * <#= unit.ValueType.ParameterName #>;
+            return <#= unit.Conversion #> * <#= unit.ParameterName #>;
         }
     }
 }
