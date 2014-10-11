@@ -7,16 +7,7 @@ namespace Gu.Units
     [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
     public struct MilliSeconds : ITimeUnit
     {
-        private const double _conversionFactor = 1000;
         internal const string _symbol = "ms";
-
-        public double ConversionFactor
-        {
-            get
-            {
-                return _conversionFactor;
-            }
-        }
 
         public string Symbol
         {
@@ -29,6 +20,16 @@ namespace Gu.Units
         public static Time operator *(double left, MilliSeconds right)
         {
             return new Time(left, right);
+        }
+
+        /// <summary>
+        /// Converts a value in <see cref="T:Gu.Units.MilliSeconds"/> value to <see cref="T:Gu.Units.Seconds"/>.
+        /// </summary>
+        /// <param name="time"></param>
+        /// <returns>The converted value</returns>
+        public double ToSiUnit(double time)
+        {
+            return 1000 * time;
         }
     }
 }

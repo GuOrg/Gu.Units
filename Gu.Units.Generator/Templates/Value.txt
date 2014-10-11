@@ -28,7 +28,7 @@ namespace Gu.Units
         /// Initializes a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
         /// <param name="meters"></param>
-        /// <param name="unit"></param>
+        /// <param name="unit"><see cref="T:Gu.Units.Meters"/>.</param>
         public Length(double meters, Meters unit)
         {
             Meters = meters;

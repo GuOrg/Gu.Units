@@ -23,11 +23,13 @@
                 foreach (var value in settings.ValueTypes)
                 {
                     var siUnit = value.SiUnit;
+                    siUnit.SiUnit = siUnit;
                     siUnit.ValueType = value.ClassName;
                     foreach (var unit in value.Units)
                     {
                         unit.ValueType = value.ClassName;
                         siUnit.Related.Add(unit);
+                        unit.SiUnit = siUnit;
                     }
                 }
                 return settings;

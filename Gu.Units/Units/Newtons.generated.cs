@@ -7,16 +7,7 @@ namespace Gu.Units
     [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
     public struct Newtons : IForceUnit
     {
-        private const double _conversionFactor = 1;
         internal const string _symbol = "N";
-
-        public double ConversionFactor
-        {
-            get
-            {
-                return _conversionFactor;
-            }
-        }
 
         public string Symbol
         {
@@ -29,6 +20,16 @@ namespace Gu.Units
         public static Force operator *(double left, Newtons right)
         {
             return new Force(left, right);
+        }
+
+        /// <summary>
+        /// Converts a value in <see cref="T:Gu.Units.Newtons"/> value to <see cref="T:Gu.Units.Newtons"/>.
+        /// </summary>
+        /// <param name="force"></param>
+        /// <returns>The converted value</returns>
+        public double ToSiUnit(double force)
+        {
+            return 1 * force;
         }
     }
 }

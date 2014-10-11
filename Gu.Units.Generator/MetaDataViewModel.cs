@@ -107,19 +107,19 @@
             }
         }
 
-        public string ConversionFactor
+        public string Conversion
         {
             get
             {
-                return this.UnitMetaData.ConversionFactor;
+                return this.UnitMetaData.Conversion;
             }
             set
             {
-                if (value == UnitMetaData.ConversionFactor)
+                if (value == UnitMetaData.Conversion)
                 {
                     return;
                 }
-                UnitMetaData.ConversionFactor = value;
+                UnitMetaData.Conversion = value;
                 this.OnPropertyChanged();
             }
         }

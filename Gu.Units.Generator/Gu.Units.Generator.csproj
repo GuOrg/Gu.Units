@@ -69,7 +69,7 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="Sandbox\Meh.cs" />
-    <Compile Include="Settings.cs" />
+    <Compile Include="Descriptors\Settings.cs" />
     <Compile Include="Descriptors\ValueMetaData.cs" />
     <Compile Include="MetaDataViewModel.cs" />
     <Compile Include="ViewModel.cs" />

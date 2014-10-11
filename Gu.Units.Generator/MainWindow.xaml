@@ -31,7 +31,7 @@
                 <DataGridCheckBoxColumn Binding="{Binding IsSiUnit}" Header="IsSiUnit" />
                 <DataGridTextColumn Binding="{Binding UnitTypeName}" Header="UnitTypeName" />
                 <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
-                <DataGridTextColumn Binding="{Binding ConversionFactor}" Header="ConversionFactor" />
+                <DataGridTextColumn Binding="{Binding Conversion}" Header="Conversion" />
 
             </DataGrid.Columns>
         </DataGrid>

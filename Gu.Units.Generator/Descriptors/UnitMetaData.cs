@@ -15,19 +15,19 @@
             Related = new List<UnitMetaData>();
         }
 
-        public UnitMetaData(string valueType, string ns, string unitTypeName, double conversionFactor, string symbol)
-            : this(valueType, ns,unitTypeName,conversionFactor == 0 ? "" : conversionFactor.ToString(CultureInfo.InvariantCulture), symbol)
+        public UnitMetaData(string valueType, string ns, string unitTypeName, double conversion, string symbol)
+            : this(valueType, ns,unitTypeName,conversion == 0 ? "" : conversion.ToString(CultureInfo.InvariantCulture), symbol)
         {
         }
 
-        public UnitMetaData(string valueType, string ns, string unitTypeName, string conversionFactor, string symbol)
+        public UnitMetaData(string valueType, string ns, string unitTypeName, string conversion, string symbol)
             : base(unitTypeName)
         {
             Related = new List<UnitMetaData>();
             ValueType = new TypeMetaData(valueType);
             Namespace = ns;
             Symbol = symbol;
-            ConversionFactor = conversionFactor;
+            Conversion = conversion;
         }
 
         public static UnitMetaData Empty
@@ -44,7 +44,10 @@
 
         public string Symbol { get; set; }
 
-        public string ConversionFactor { get; set; }
+        public string Conversion { get; set; }
+       
+        [XmlIgnore]
+        public TypeMetaData SiUnit { get; set; }
 
         [XmlIgnore]
         public bool IsEmpty
@@ -64,7 +67,7 @@
 
         public override string ToString()
         {
-            return string.Format("{0}, ValueType: {1}, Namespace: {2}, Symbol: {3}, ConversionFactor: {4}, IsEmpty: {5}", base.ToString(), this.ValueType, this.Namespace, this.Symbol, this.ConversionFactor, this.IsEmpty);
+            return string.Format("{0}, ValueType: {1}, Namespace: {2}, Symbol: {3}, Conversion: {4}, IsEmpty: {5}", base.ToString(), this.ValueType, this.Namespace, this.Symbol, this.Conversion, this.IsEmpty);
         }
     }
 }

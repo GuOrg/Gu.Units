@@ -90,9 +90,9 @@
     <Compile Include="Units\TimeUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
-    <Compile Include="Units\UnitConverter.cs" />
-    <Compile Include="Units\UnitParser.cs" />
-    <Compile Include="Units\XmlExt.cs" />
+    <Compile Include="Utils\UnitConverter.cs" />
+    <Compile Include="Utils\UnitParser.cs" />
+    <Compile Include="Utils\XmlExt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Units\UnitGenerator.txt4" />

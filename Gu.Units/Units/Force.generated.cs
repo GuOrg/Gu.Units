@@ -28,7 +28,7 @@ namespace Gu.Units
         /// Initializes a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
         /// <param name="newtons"></param>
-        /// <param name="unit"></param>
+        /// <param name="unit"><see cref="T:Gu.Units.Newtons"/>.</param>
         public Force(double newtons, Newtons unit)
         {
             Newtons = newtons;

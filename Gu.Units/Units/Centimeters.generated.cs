@@ -7,16 +7,7 @@ namespace Gu.Units
     [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
     public struct Centimeters : ILengthUnit
     {
-        private const double _conversionFactor = 100;
         internal const string _symbol = "cm";
-
-        public double ConversionFactor
-        {
-            get
-            {
-                return _conversionFactor;
-            }
-        }
 
         public string Symbol
         {
@@ -29,6 +20,16 @@ namespace Gu.Units
         public static Length operator *(double left, Centimeters right)
         {
             return new Length(left, right);
+        }
+
+        /// <summary>
+        /// Converts a value in <see cref="T:Gu.Units.Centimeters"/> value to <see cref="T:Gu.Units.Meters"/>.
+        /// </summary>
+        /// <param name="length"></param>
+        /// <returns>The converted value</returns>
+        public double ToSiUnit(double length)
+        {
+            return 100 * length;
         }
     }
 }

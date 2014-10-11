@@ -7,7 +7,7 @@ namespace Gu.Units
             throw new System.NotImplementedException();
         }
 
-        public static double ConvertTo<T>(double siValue, T millimeters) where T : IUnit
+        public static double ConvertTo<T>(double siValue, T unit) where T : IUnit
         {
             throw new System.NotImplementedException();
         }

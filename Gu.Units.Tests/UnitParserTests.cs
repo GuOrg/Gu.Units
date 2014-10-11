@@ -6,10 +6,13 @@
     {
         [TestCase("1m", 1)]
         [TestCase("-1m", -1)]
+        [TestCase("1.2m", 1.2)]
+        [TestCase("1,2m", 1.2)]
+        [TestCase("-1m", -1)]
         [TestCase("1e3m", 1e3)]
         [TestCase("-1e3m", -1e3)]
         [TestCase("1e+3m", 1e+3)]
-        [TestCase("1e-3m", 1e-3)]
+        [TestCase("1E+3m", 1E+3)]
         [TestCase("-1e-3m", -1e-3)]
         [TestCase(" 1m", 1)]
         [TestCase("1m ", 1)]
@@ -19,6 +22,8 @@
         [TestCase(" 1 m ", 1)]
         [TestCase(" 1   m   ", 1)]
         [TestCase("1m ", 1)]
+        [TestCase("1mm", 1e-3)]
+        [TestCase("1cm", 1e-2)]
         public void ParseLength(string s, double expected)
         {
             var length = UnitParser.Parse<ILengthUnit, Length>(s, Length.From);
