@@ -3,11 +3,11 @@ namespace Gu.Units
 {
     public static class LengthUnit
     {
-        public static readonly Meters Meters = new Meters();
-        public static readonly Meters m = Meters;
-        public static readonly Millimeters Millimeters = new Millimeters();
-        public static readonly Millimeters mm = Millimeters;
-        public static readonly Centimeters Centimeters = new Centimeters();
-        public static readonly Centimeters cm = Centimeters;
+        public static readonly Metres Metres = new Metres();
+        public static readonly Metres m = Metres;
+        public static readonly Millimetres Millimetres = new Millimetres();
+        public static readonly Millimetres mm = Millimetres;
+        public static readonly Centimetres Centimetres = new Centimetres();
+        public static readonly Centimetres cm = Centimetres;
     }
 }

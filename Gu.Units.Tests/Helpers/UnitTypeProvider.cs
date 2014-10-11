@@ -7,9 +7,9 @@ namespace Gu.Units.Tests
 
     public class UnitTypeProvider : IEnumerable<Type>
     {
-        public static readonly List<Type> UnitTypes = typeof(Meters).Assembly.GetTypes()
-                                                                      .Where(x => x.IsValueType && typeof(IUnit).IsAssignableFrom(x))
-                                                                      .ToList();
+        public static readonly List<Type> UnitTypes = typeof(Length).Assembly.GetTypes()
+                                                                    .Where(x => x.IsValueType && typeof(IUnit).IsAssignableFrom(x))
+                                                                    .ToList();
 
         public IEnumerator<Type> GetEnumerator()
         {

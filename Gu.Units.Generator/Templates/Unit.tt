@@ -40,7 +40,7 @@ namespace <#= unit.Namespace #>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double <#= unit.ParameterName #>)
         {
-            return <#= unit.Conversion #> * <#= unit.ParameterName #>;
+            return <#= unit.Conversion #>*<#= unit.ParameterName #>;
         }
     }
 }

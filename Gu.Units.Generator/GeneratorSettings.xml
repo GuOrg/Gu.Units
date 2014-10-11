@@ -3,7 +3,7 @@
   <ValueTypes>
     <ValueMetaData>
       <SiUnit>
-        <ClassName>Meters</ClassName>
+        <ClassName>Metres</ClassName>
         <ValueType>
           <ClassName>Length</ClassName>
         </ValueType>
@@ -17,7 +17,7 @@
       </ClassName>
       <Units>
         <UnitMetaData>
-          <ClassName>Millimeters</ClassName>
+          <ClassName>Millimetres</ClassName>
           <ValueType>
             <ClassName>Length</ClassName>
           </ValueType>
@@ -26,7 +26,7 @@
           <Conversion>1e-3</Conversion>
         </UnitMetaData>
         <UnitMetaData>
-          <ClassName>Centimeters</ClassName>
+          <ClassName>Centimetres</ClassName>
           <ValueType>
             <ClassName>Length</ClassName>
           </ValueType>
@@ -52,7 +52,7 @@
       </ClassName>
       <Units>
         <UnitMetaData>
-          <ClassName>MilliSeconds</ClassName>
+          <ClassName>Milliseconds</ClassName>
           <ValueType>
             <ClassName>Time</ClassName>
           </ValueType>
@@ -73,27 +73,27 @@
     </ValueMetaData>
     <ValueMetaData>
       <SiUnit>
-        <ClassName>Newtons</ClassName>
+        <ClassName>Kilograms</ClassName>
         <ValueType>
-          <ClassName>Force</ClassName>
+          <ClassName>Mass</ClassName>
         </ValueType>
         <Namespace>Gu.Units</Namespace>
-        <Symbol>N</Symbol>
+        <Symbol>kg</Symbol>
         <Conversion>1</Conversion>
       </SiUnit>
       <Namespace>Gu.Units</Namespace>
       <ClassName>
-        <ClassName>Force</ClassName>
+        <ClassName>Mass</ClassName>
       </ClassName>
       <Units>
         <UnitMetaData>
-          <ClassName>KiloNewtons</ClassName>
+          <ClassName>Grams</ClassName>
           <ValueType>
-            <ClassName>Force</ClassName>
+            <ClassName>Mass</ClassName>
           </ValueType>
           <Namespace>Gu.Units</Namespace>
-          <Symbol>kN</Symbol>
-          <Conversion>1e3</Conversion>
+          <Symbol>g</Symbol>
+          <Conversion>1e-3</Conversion>
         </UnitMetaData>
       </Units>
     </ValueMetaData>

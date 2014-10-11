@@ -223,7 +223,7 @@ namespace <#= value.Namespace #>
         /// <returns>Multiplies an instance of <see cref="T:<#= value.Namespace #>.<#= value.ClassName #>"/> with <paramref name="left"/> and returns the result.</returns>
         public static <#= value.ClassName #> operator *(double left, <#= value.ClassName #> right)
         {
-            return new <#= value.ClassName #>(left * right.<#= value.SiUnit.ClassName #>);
+            return new <#= value.ClassName #>(left*right.<#= value.SiUnit.ClassName #>);
         }
  
         /// <summary>
@@ -234,7 +234,7 @@ namespace <#= value.Namespace #>
         /// <returns>Multiplies an instance of <see cref="T:<#= value.Namespace #>.<#= value.ClassName #>"/> with <paramref name="right"/> and returns the result.</returns>
         public static <#= value.ClassName #> operator *(<#= value.ClassName #> left, double right)
         {
-            return new <#= value.ClassName #>(left.<#= value.SiUnit.ClassName #> * right);
+            return new <#= value.ClassName #>(left.<#= value.SiUnit.ClassName #>*right);
         }
  
         /// <summary>
@@ -283,7 +283,7 @@ namespace <#= value.Namespace #>
         /// <param name="<#= value.ClassName #>">A <see cref="T:<#= value.Namespace #>.<#= value.ClassName #>"/></param>
         public static <#= value.ClassName #> operator -(<#= value.ClassName #> <#= value.ClassName #>)
         {
-            return new <#= value.ClassName #>(-1 * <#= value.ClassName #>.<#= value.SiUnit.ClassName #>);
+            return new <#= value.ClassName #>(-1*<#= value.ClassName #>.<#= value.SiUnit.ClassName #>);
         }
  
         /// <summary>
