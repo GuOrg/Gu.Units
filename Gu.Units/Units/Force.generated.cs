@@ -62,7 +62,7 @@ namespace Gu.Units
         /// <returns></returns>
         public static Force Parse(string s)
         {
-            return UnitParser.Parse<IForceUnit, Force>(s, From);
+            return Parser.Parse<IForceUnit, Force>(s, From);
         }
 
         /// <summary>

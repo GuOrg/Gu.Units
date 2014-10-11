@@ -29,7 +29,7 @@ namespace Gu.Units
         /// <returns>The converted value</returns>
         public double ToSiUnit(double length)
         {
-            return 1000 * length;
+            return 1e-3 * length;
         }
     }
 }

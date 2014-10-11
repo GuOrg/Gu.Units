@@ -23,7 +23,7 @@
           </ValueType>
           <Namespace>Gu.Units</Namespace>
           <Symbol>mm</Symbol>
-          <Conversion>1000</Conversion>
+          <Conversion>1e-3</Conversion>
         </UnitMetaData>
         <UnitMetaData>
           <ClassName>Centimeters</ClassName>
@@ -32,7 +32,7 @@
           </ValueType>
           <Namespace>Gu.Units</Namespace>
           <Symbol>cm</Symbol>
-          <Conversion>100</Conversion>
+          <Conversion>1e-2</Conversion>
         </UnitMetaData>
       </Units>
     </ValueMetaData>
@@ -67,7 +67,7 @@
           </ValueType>
           <Namespace>Gu.Units</Namespace>
           <Symbol>h</Symbol>
-          <Conversion>1/60.0</Conversion>
+          <Conversion>3600</Conversion>
         </UnitMetaData>
       </Units>
     </ValueMetaData>
@@ -93,7 +93,7 @@
           </ValueType>
           <Namespace>Gu.Units</Namespace>
           <Symbol>kN</Symbol>
-          <Conversion>1e-3</Conversion>
+          <Conversion>1e3</Conversion>
         </UnitMetaData>
       </Units>
     </ValueMetaData>

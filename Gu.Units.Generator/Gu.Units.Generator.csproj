@@ -156,7 +156,9 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="GeneratorSettings.xml" />
+    <Resource Include="GeneratorSettings.xml">
+      <SubType>Designer</SubType>
+    </Resource>
     <Resource Include="Templates\Unit.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
