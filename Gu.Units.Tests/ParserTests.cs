@@ -1,5 +1,6 @@
 ﻿namespace Gu.Units.Tests
 {
+    using System;
     using System.Globalization;
     using System.Text.RegularExpressions;
     using NUnit.Framework;
@@ -33,22 +34,6 @@
             }
         }
 
-        [TestCase("1", 1)]
-        [TestCase(".1", .1)]
-        [TestCase("-.1", -.1)]
-        [TestCase("1.2", 1.2)]
-        [TestCase("1.2E+3", 1.2E+3)]
-        [TestCase("1.2e+3", 1.2E+3)]
-        [TestCase("1.2E3", 1.2E3)]
-        [TestCase("1.2e3", 1.2E3)]
-        [TestCase("1.2E-3", 1.2E-3)]
-        [TestCase("1.2e-3", 1.2E-3)]
-        public void DoublePattern(string s, double expected)
-        {
-            Assert.IsTrue(Regex.IsMatch(s, Parser.DoublePattern));
-            Assert.AreEqual(expected, double.Parse(s, CultureInfo.InvariantCulture));
-        }
-
         [TestCase("1s", 1)]
         [TestCase("1h", 3600)]
         [TestCase("1ms", 1e-3)]
@@ -64,6 +49,32 @@
         {
             var force = Parser.Parse<IForceUnit, Force>(s, Force.From);
             Assert.AreEqual(expected, force.Newtons);
+        }
+
+
+        [TestCase("1", 1)]
+        [TestCase(".1", .1)]
+        [TestCase("-.1", -.1)]
+        [TestCase("1.2", 1.2)]
+        [TestCase("-1.2", -1.2)]
+        [TestCase("1.2E+3", 1.2E+3)]
+        [TestCase("1.2e+3", 1.2E+3)]
+        [TestCase("1.2E3", 1.2E3)]
+        [TestCase("1.2e3", 1.2E3)]
+        [TestCase("1.2E-3", 1.2E-3)]
+        [TestCase("1.2e-3", 1.2E-3)]
+        public void DoublePattern(string s, double expected)
+        {
+            Assert.IsTrue(Regex.IsMatch(s, Parser.DoublePointPattern));
+            Assert.AreEqual(expected, double.Parse(s, CultureInfo.InvariantCulture));
+        }
+
+        [TestCase("1.0cm", "sv-se")]
+        [TestCase("1,0cm", "en-us")]
+        public void Exceptions(string s, string culture)
+        {
+            var cultureInfo = CultureInfo.GetCultureInfo(culture);
+            Assert.Throws<FormatException>(() => Parser.Parse<ILengthUnit, Length>(s, Length.From, cultureInfo));
         }
     }
 }
