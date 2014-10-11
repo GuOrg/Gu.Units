@@ -25,11 +25,11 @@ namespace Gu.Units
         /// <summary>
         /// Converts a value in <see cref="T:Gu.Units.Newtons"/> value to <see cref="T:Gu.Units.Newtons"/>.
         /// </summary>
-        /// <param name="force"></param>
+        /// <param name="newtons"></param>
         /// <returns>The converted value</returns>
-        public double ToSiUnit(double force)
+        public double ToSiUnit(double newtons)
         {
-            return 1 * force;
+            return 1 * newtons;
         }
     }
 }

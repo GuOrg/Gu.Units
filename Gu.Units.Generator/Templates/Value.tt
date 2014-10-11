@@ -87,7 +87,7 @@ namespace <#= value.Namespace #>
         /// <returns></returns>
         public static <#= value.ClassName #> Parse(string s)
         {
-            return UnitParser.Parse<I<#= value.ClassName #>Unit, <#= value.ClassName #>>(s, From);
+            return Parser.Parse<I<#= value.ClassName #>Unit, <#= value.ClassName #>>(s, From);
         }
  
         /// <summary>

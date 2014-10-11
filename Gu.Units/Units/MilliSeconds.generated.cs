@@ -25,11 +25,11 @@ namespace Gu.Units
         /// <summary>
         /// Converts a value in <see cref="T:Gu.Units.MilliSeconds"/> value to <see cref="T:Gu.Units.Seconds"/>.
         /// </summary>
-        /// <param name="time"></param>
+        /// <param name="milliSeconds"></param>
         /// <returns>The converted value</returns>
-        public double ToSiUnit(double time)
+        public double ToSiUnit(double milliSeconds)
         {
-            return 1000 * time;
+            return 1e-3 * milliSeconds;
         }
     }
 }

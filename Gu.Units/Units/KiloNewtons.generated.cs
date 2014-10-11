@@ -25,11 +25,11 @@ namespace Gu.Units
         /// <summary>
         /// Converts a value in <see cref="T:Gu.Units.KiloNewtons"/> value to <see cref="T:Gu.Units.Newtons"/>.
         /// </summary>
-        /// <param name="force"></param>
+        /// <param name="kiloNewtons"></param>
         /// <returns>The converted value</returns>
-        public double ToSiUnit(double force)
+        public double ToSiUnit(double kiloNewtons)
         {
-            return 1e3 * force;
+            return 1e3 * kiloNewtons;
         }
     }
 }
