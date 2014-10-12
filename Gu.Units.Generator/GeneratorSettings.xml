@@ -1,6 +1,38 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Composites />
+  <Composites>
+    <Quantity>
+      <ClassName>Area</ClassName>
+      <Units>
+        <UnitAndPower>
+          <UnitName>Metres</UnitName>
+          <Power>2</Power>
+        </UnitAndPower>
+      </Units>
+    </Quantity>
+    <Quantity>
+      <ClassName>Volume</ClassName>
+      <Units>
+        <UnitAndPower>
+          <UnitName>Metres</UnitName>
+          <Power>3</Power>
+        </UnitAndPower>
+      </Units>
+    </Quantity>
+    <Quantity>
+      <ClassName>Speed</ClassName>
+      <Units>
+        <UnitAndPower>
+          <UnitName>Metres</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Seconds</UnitName>
+          <Power>-1</Power>
+        </UnitAndPower>
+      </Units>
+    </Quantity>
+  </Composites>
   <SiUnitTypes>
     <SiUnit>
       <ClassName>Kilograms</ClassName>

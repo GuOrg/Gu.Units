@@ -13,9 +13,16 @@
     public class Quantity : TypeMetaData
     {
         private readonly ObservableCollection<UnitAndPower> _units = new ObservableCollection<UnitAndPower>();
+        private TypeMetaData _type;
+        private string _ns;
 
         public Quantity()
         {
+            _units.CollectionChanged += (sender, args) =>
+            {
+                OnPropertyChanged("Interface");
+                OnPropertyChanged("UiName");
+            };
         }
 
         public Quantity(string ns, string className, params UnitAndPower[] units)
@@ -36,6 +43,11 @@
             {
                 throw new ArgumentException("Units must be distinct", "units");
             }
+            _units.CollectionChanged += (sender, args) =>
+            {
+                OnPropertyChanged("Interface");
+                OnPropertyChanged("UiName");
+            };
         }
         public Quantity(string ns, string className, SiUnit unit)
             : this(ns, className, new[] { new UnitAndPower(unit) })
@@ -63,9 +75,33 @@
             }
         }
 
-        public string Namespace { get; set; }
+        public string Namespace
+        {
+            get { return _ns; }
+            set
+            {
+                if (value == _ns)
+                {
+                    return;
+                }
+                _ns = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public TypeMetaData Type { get; set; }
+        public TypeMetaData Type
+        {
+            get { return _type; }
+            set
+            {
+                if (Equals(value, _type))
+                {
+                    return;
+                }
+                _type = value;
+                OnPropertyChanged();
+            }
+        }
 
         public ObservableCollection<UnitAndPower> Units
         {
@@ -89,7 +125,7 @@
                 return args;
             }
         }
-        
+
         [XmlIgnore]
         public string Interface
         {
@@ -102,15 +138,20 @@
                 var args = string.Join(", ",
                     Units.Select(u => string.Format("I{0}{1}<{2}>",
                         u.Power < 0 ? "Neg" : "",
-                        u.Power<0 ?-1*u.Power:u.Power ,
+                        u.Power < 0 ? -1 * u.Power : u.Power,
                         u.Unit.ClassName)));
-                return string.Format("IQuantity<IUnit{0}<{1}>>", Units.Count,args );
+                return string.Format("IQuantity<IUnit{0}<{1}>>", Units.Count, args);
             }
         }
 
         public override string ToString()
         {
-            return string.Format("Type: {0}, Units: {1}", Type.ClassName, string.Join("*", this.Units.Select(x => x.ToString())));
+            if (Type == null)
+            {
+                return "";
+            }
+            var units = Units == null ? "" : string.Join("*", this.Units.Select(x => x.ToString()));
+            return string.Format("Type: {0}, Units: {1}", Type.ClassName, units);
         }
     }
 }

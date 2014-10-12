@@ -1,10 +1,15 @@
 ﻿namespace Gu.Units.Generator
 {
     using System;
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
     using System.Xml.Serialization;
+    using Annotations;
 
-    public class UnitAndPower
+    public class UnitAndPower : INotifyPropertyChanged
     {
+        private SiUnit _unit;
+        private int _power;
         public UnitAndPower()
         {
             Unit = new SiUnit();
@@ -24,8 +29,24 @@
             Unit = unit;
             Power = power;
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         [XmlIgnore]
-        public SiUnit Unit { get; set; }
+        public SiUnit Unit
+        {
+            get { return _unit; }
+            set
+            {
+                if (Equals(value, _unit))
+                {
+                    return;
+                }
+                _unit = value;
+                OnPropertyChanged();
+                OnPropertyChanged("UnitName");
+            }
+        }
 
         public string UnitName
         {
@@ -39,7 +60,20 @@
             }
         }
 
-        public int Power { get; set; }
+        public int Power
+        {
+            get { return _power; }
+            set
+            {
+                if (value == _power)
+                {
+                    return;
+                }
+                _power = value;
+                OnPropertyChanged();
+            }
+        }
+
         public override string ToString()
         {
             if (Power == 1)
@@ -47,6 +81,16 @@
                 return Unit.ClassName;
             }
             return string.Format("{0}^{1}", Unit.ClassName, Power);
+        }
+       
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

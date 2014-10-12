@@ -4,11 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:generator="clr-namespace:Gu.Units.Generator"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        Title="MainWindow" Width="525"
+        Title="MainWindow"
+        Width="525"
         Height="350"
         d:DataContext="{d:DesignInstance generator:ViewModel}"
-        mc:Ignorable="d"
-        >
+        mc:Ignorable="d">
     <DockPanel>
         <Menu DockPanel.Dock="Top" IsMainMenu="True">
             <MenuItem Header="_File">
@@ -25,14 +25,15 @@
         </StackPanel>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <GroupBox Grid.Column="0" Header="Prefixes">
                 <DataGrid ItemsSource="{Binding Prefixes}" />
             </GroupBox>
+
             <GroupBox Grid.Column="1" Header="Units">
                 <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding SiUnits}">
                     <DataGrid.Columns>
@@ -42,13 +43,14 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </GroupBox>
+
             <GroupBox Grid.Column="2" Header="Composite units">
-                <DataGrid AutoGenerateColumns="False" CanUserAddRows="True"
-                          ItemsSource="{Binding Composites}"
-                          >
+                <DataGrid AutoGenerateColumns="False"
+                          CanUserAddRows="True"
+                          ItemsSource="{Binding Composites}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding ClassName}" Header="Quantity" />
-                        <DataGridTemplateColumn Header="Units" MinWidth="150">
+                        <DataGridTemplateColumn Header="Parts">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate DataType="{x:Type generator:Quantity}">
                                     <TextBlock Text="{Binding UiName}" />
@@ -58,12 +60,22 @@
                                 <DataTemplate DataType="{x:Type generator:Quantity}">
                                     <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Units}">
                                         <DataGrid.Columns>
-                                            <DataGridComboBoxColumn Header="Unit" 
-                                                                    ItemsSource="{Binding DataContext.SiUnits,
-                                                                                          RelativeSource={RelativeSource AncestorType=Window}}"
-                                                                    SelectedItemBinding="{Binding Unit, Mode=TwoWay}"
-                                                                    DisplayMemberPath="{Binding ClassName}"
-                                                                    />
+                                            <DataGridComboBoxColumn DisplayMemberPath="{Binding ClassName}"
+                                                                    Header="Unit"
+                                                                    SelectedItemBinding="{Binding Unit,
+                                                                                                  Mode=TwoWay}">
+                                                <DataGridComboBoxColumn.ElementStyle>
+                                                    <Style TargetType="ComboBox">
+                                                        <Setter Property="ItemsSource" Value="{Binding DataContext.SiUnits, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" />
+                                                        <Setter Property="IsReadOnly" Value="True" />
+                                                    </Style>
+                                                </DataGridComboBoxColumn.ElementStyle>
+                                                <DataGridComboBoxColumn.EditingElementStyle>
+                                                    <Style TargetType="ComboBox">
+                                                        <Setter Property="ItemsSource" Value="{Binding DataContext.SiUnits, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" />
+                                                    </Style>
+                                                </DataGridComboBoxColumn.EditingElementStyle>
+                                            </DataGridComboBoxColumn>
                                             <DataGridTextColumn Binding="{Binding Power}" Header="Power" />
                                         </DataGrid.Columns>
                                     </DataGrid>
@@ -71,8 +83,8 @@
                             </DataGridTemplateColumn.CellEditingTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTextColumn Binding="{Binding Interface}"
-                                            Header="Interface" IsReadOnly="True"
-                                            />
+                                            Header="Interface"
+                                            IsReadOnly="True" />
 
                     </DataGrid.Columns>
                 </DataGrid>
