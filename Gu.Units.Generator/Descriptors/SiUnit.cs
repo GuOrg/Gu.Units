@@ -11,7 +11,7 @@
     /// <summary>
     /// http://www.periodni.com/international_system_of_units.html
     /// </summary>
-    public class SiUnit : TypeMetaData, INotifyPropertyChanged
+    public class SiUnit : TypeMetaData
     {
         private string _symbol;
         private Quantity _quantity;
@@ -20,8 +20,6 @@
         {
             _quantity = new Quantity("", "", this);
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public string Symbol
         {
@@ -52,16 +50,6 @@
                     unit.Unit = this;
                 }
                 OnPropertyChanged();
-            }
-        }
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            var handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
             }
         }
     }

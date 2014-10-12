@@ -2,11 +2,14 @@
 {
     using System;
     using System.ComponentModel;
+    using System.Runtime.CompilerServices;
+    using Annotations;
     using WpfStuff;
 
     [TypeConverter(typeof(TypeMetaDataConverter))]
-    public class TypeMetaData : MarshalByRefObject
+    public class TypeMetaData : MarshalByRefObject, INotifyPropertyChanged
     {
+        private string _className;
         protected TypeMetaData()
         {
         }
@@ -15,8 +18,23 @@
         {
             ClassName = className;
         }
-        
-        public string ClassName { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public string ClassName
+        {
+            get { return _className; }
+            set
+            {
+                if (value == _className)
+                {
+                    return;
+                }
+                _className = value;
+                OnPropertyChanged();
+                OnPropertyChanged("ParameterName");
+            }
+        }
 
         public string ParameterName
         {
@@ -33,6 +51,16 @@
         public override string ToString()
         {
             return ClassName;
+        }
+       
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }
