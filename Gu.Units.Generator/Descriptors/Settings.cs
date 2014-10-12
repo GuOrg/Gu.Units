@@ -8,7 +8,9 @@
 
     public class Settings
     {
-        private List<ValueMetaData> _valueTypes = new List<ValueMetaData>();
+        private List<Quantity> _quantities = new List<Quantity>();
+        private List<SiUnit> _siUnitTypes = new List<SiUnit>();
+        private List<Prefix> _prefixes = new List<Prefix>();
 
         public static Settings Instance
         {
@@ -20,17 +22,17 @@
                 {
                     settings = (Settings)serializer.Deserialize(reader);
                 }
-                foreach (var value in settings.ValueTypes)
+                foreach (var quantity in settings.Quantities)
                 {
-                    var siUnit = value.SiUnit;
-                    siUnit.SiUnit = siUnit;
-                    siUnit.ValueType = value.ClassName;
-                    foreach (var unit in value.Units)
-                    {
-                        unit.ValueType = value.ClassName;
-                        siUnit.Related.Add(unit);
-                        unit.SiUnit = siUnit;
-                    }
+                    //var siUnit = quantity.SiUnit;
+                    //siUnit.SiUnit = siUnit;
+                    //siUnit.Quantity = quantity.Type;
+                    //foreach (var unit in quantity.Units)
+                    //{
+                    //    unit.Quantity = quantity.Type;
+                    //    siUnit.Related.Add(unit);
+                    //    unit.SiUnit = siUnit;
+                    //}
                 }
                 return settings;
             }
@@ -70,40 +72,43 @@
             }
         }
 
-        public List<ValueMetaData> ValueTypes
+        public List<Quantity> Quantities
         {
             get
             {
-                return this._valueTypes;
+                return this._quantities;
             }
             set
             {
-                this._valueTypes = value;
+                this._quantities = value;
             }
         }
 
         [XmlIgnore]
-        public IEnumerable<UnitMetaData> UnitTypes
+        public IEnumerable<Unit> UnitTypes
         {
             get
             {
-                var datas = new List<UnitMetaData>();
-                foreach (var value in ValueTypes)
+                var units = new List<Unit>();
+                foreach (var quantity in Quantities)
                 {
-                    datas.Add(value.SiUnit);
-                    datas.AddRange(value.Units);
+                    //units.Add(quantity.SiUnit);
+                    //units.AddRange(quantity.Units);
                 }
-                return datas;
+                return units;
             }
         }
 
-        [XmlIgnore]
-        public IEnumerable<UnitMetaData> SiUnitTypes
+        public List<SiUnit> SiUnitTypes
         {
-            get
-            {
-                return this.ValueTypes.Select(value => value.SiUnit).ToList();
-            }
+            get { return _siUnitTypes; }
+            set { _siUnitTypes = value; }
+        }
+
+        public List<Prefix> Prefixes
+        {
+            get { return _prefixes; }
+            set { _prefixes = value; }
         }
 
         public static Settings FromFile(string fullFileName)

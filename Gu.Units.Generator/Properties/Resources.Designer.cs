@@ -63,19 +63,24 @@ namespace Gu.Units.Generator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
         ///&lt;Settings xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
-        ///  &lt;ValueTypes&gt;
-        ///    &lt;ValueMetaData&gt;
-        ///      &lt;SiUnit&gt;
-        ///        &lt;ClassName&gt;Meters&lt;/ClassName&gt;
-        ///        &lt;ValueType&gt;
-        ///          &lt;ClassName&gt;Length&lt;/ClassName&gt;
-        ///        &lt;/ValueType&gt;
-        ///        &lt;Namespace&gt;Gu.Units&lt;/Namespace&gt;
-        ///        &lt;Symbol&gt;m&lt;/Symbol&gt;
-        ///        &lt;Conversion&gt;1&lt;/Conversion&gt;
-        ///      &lt;/SiUnit&gt;
-        ///      &lt;Namespace&gt;Gu.Units&lt;/Namespace&gt;
-        ///      &lt;ClassName&gt; [rest of string was truncated]&quot;;.
+        ///  &lt;Quantities /&gt;
+        ///  &lt;SiUnitTypes&gt;
+        ///    &lt;SiUnit&gt;
+        ///      &lt;Name&gt;
+        ///        &lt;ClassName&gt;Kilograms&lt;/ClassName&gt;
+        ///      &lt;/Name&gt;
+        ///      &lt;Symbol&gt;kg&lt;/Symbol&gt;
+        ///      &lt;Quantity&gt;
+        ///        &lt;ClassName&gt;Mass&lt;/ClassName&gt;
+        ///      &lt;/Quantity&gt;
+        ///    &lt;/SiUnit&gt;
+        ///    &lt;SiUnit&gt;
+        ///      &lt;Name&gt;
+        ///        &lt;ClassName&gt;Seconds&lt;/ClassName&gt;
+        ///      &lt;/Name&gt;
+        ///      &lt;Symbol&gt;s&lt;/Symbol&gt;
+        ///      &lt;Quantity&gt;
+        ///        &lt;ClassN [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string GeneratorSettings {
             get {

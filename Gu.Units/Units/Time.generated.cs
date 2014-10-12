@@ -12,7 +12,7 @@ namespace Gu.Units
     /// An Time
     /// </summary>
     [Serializable]
-    public partial struct Time : IComparable<Time>, IEquatable<Time>, IFormattable, IXmlSerializable, IUnitValue
+    public partial struct Time : IComparable<Time>, IEquatable<Time>, IFormattable, IXmlSerializable, IQuantity
     {
         /// <summary>
         /// The value in <see cref="T:Gu.Units.Seconds"/>.

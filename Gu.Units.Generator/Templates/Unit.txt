@@ -5,7 +5,7 @@ namespace Gu.Units
     using System.ComponentModel;
 
     [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
-    public struct MilliMeters : ILengthUnit
+    public struct Meters : ILengthUnit
     {
         internal const string _symbol = "mm";
 
@@ -17,19 +17,10 @@ namespace Gu.Units
             }
         }
 
-        public static Length operator *(double left, MilliMeters right)
+        public static Length operator *(double left, Meters right)
         {
             return new Length(left, right);
         }
 		
         /// <summary>
-        /// Converts a value in <see cref="T:Gu.Units.MilliMeters"/> value to <see cref="T:Gu.Units.Meters"/>.
-        /// </summary>
-        /// <param name="milliMeters"></param>
-        /// <returns>The converted value</returns>
-        public double ToSiUnit(double milliMeters)
-        {
-            return 1e-3*milliMeters;
-        }
-    }
-}
+        /// Converts a quantity in <see cref="T:Gu.Units.Meters"/> quantity to <see cref="T:Gu.Units.

@@ -6,18 +6,14 @@
 
     public class MetaDataViewModel : INotifyPropertyChanged
     {
-        private bool _isSiUnit;
-
         public MetaDataViewModel()
-            : this(new ValueMetaData(new UnitMetaData("","","",0,""), "", ""), new UnitMetaData("", "", "", 0, ""))
+            : this(new Quantity(Settings.NameSpace,"", new UnitAndPower[0]))
         {
         }
 
-        public MetaDataViewModel(ValueMetaData valueMetaData, UnitMetaData unitMetaData)
+        public MetaDataViewModel(Quantity quantity)
         {
-            this.UnitMetaData = unitMetaData;
-            this.UnitMetaData.ValueType = valueMetaData.ClassName;
-            this.ValueMetaData = valueMetaData;
+            this.Quantity = quantity;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -26,15 +22,15 @@
         {
             get
             {
-                return this.ValueMetaData.Namespace;
+                return this.Quantity.Namespace;
             }
             set
             {
-                if (value == this.ValueMetaData.Namespace)
+                if (value == this.Quantity.Namespace)
                 {
                     return;
                 }
-                this.ValueMetaData.Namespace = value;
+                this.Quantity.Namespace = value;
                 this.OnPropertyChanged();
             }
         }
@@ -43,32 +39,15 @@
         {
             get
             {
-                return this.ValueMetaData.ClassName.ClassName;
+                return this.Quantity.Type.ClassName;
             }
             set
             {
-                if (value == this.ValueMetaData.ClassName.ClassName)
+                if (value == this.Quantity.Type.ClassName)
                 {
                     return;
                 }
-                this.ValueMetaData.ClassName.ClassName = value;
-                this.OnPropertyChanged();
-            }
-        }
-
-        public bool IsSiUnit
-        {
-            get
-            {
-                return this._isSiUnit;
-            }
-            set
-            {
-                if (value.Equals(this._isSiUnit))
-                {
-                    return;
-                }
-                this._isSiUnit = value;
+                this.Quantity.Type.ClassName = value;
                 this.OnPropertyChanged();
             }
         }
@@ -77,15 +56,15 @@
         {
             get
             {
-                return this.UnitMetaData.ClassName;
+                return this.Unit.ClassName;
             }
             set
             {
-                if (value == UnitMetaData.ClassName)
+                if (value == Unit.ClassName)
                 {
                     return;
                 }
-                UnitMetaData.ClassName = value;
+                Unit.ClassName = value;
                 this.OnPropertyChanged();
             }
         }
@@ -94,15 +73,15 @@
         {
             get
             {
-                return this.UnitMetaData.Symbol;
+                return this.Unit.Symbol;
             }
             set
             {
-                if (value == UnitMetaData.Symbol)
+                if (value == Unit.Symbol)
                 {
                     return;
                 }
-                UnitMetaData.Symbol = value;
+                Unit.Symbol = value;
                 this.OnPropertyChanged();
             }
         }
@@ -111,22 +90,22 @@
         {
             get
             {
-                return this.UnitMetaData.Conversion;
+                return this.Unit.Conversion;
             }
             set
             {
-                if (value == UnitMetaData.Conversion)
+                if (value == Unit.Conversion)
                 {
                     return;
                 }
-                UnitMetaData.Conversion = value;
+                Unit.Conversion = value;
                 this.OnPropertyChanged();
             }
         }
 
-        internal ValueMetaData ValueMetaData { get; set; }
+        internal Quantity Quantity { get; set; }
 
-        internal UnitMetaData UnitMetaData { get; set; }
+        internal Unit Unit { get; set; }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -136,11 +115,6 @@
             {
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
-        }
-
-        public override string ToString()
-        {
-            return string.Format("Namespace: {0}, ValueTypeName: {1}, IsSiUnit: {2}, UnitTypeName: {3}, Symbol: {4}, ValueMetaData: {5}, UnitMetaData: {6}", this.Namespace, this.ValueTypeName, this.IsSiUnit, this.UnitTypeName, this.Symbol, this.ValueMetaData, this.UnitMetaData);
         }
     }
 }

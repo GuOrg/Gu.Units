@@ -5,10 +5,10 @@
 <#@ output extension=".txt" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #> 
-<#@ parameter name="UnitMetaData" type="Gu.Units.Generator.UnitMetaData" #>
+<#@ parameter name="UnitMetaData" type="Gu.Units.Generator.Unit" #>
 <#
 // Template used by UnitGenerator.tt
-var unit = UnitMetaData ?? new UnitMetaData("Length", "Gu.Units", "MilliMeters", "1e-3", "mm"){ SiUnit = new TypeMetaData("Meters") };
+var unit = UnitMetaData ?? new Unit("Length", "Gu.Units", "Meters", "1e-3", "mm");
 #>
 namespace <#= unit.Namespace #>
 {
@@ -16,7 +16,7 @@ namespace <#= unit.Namespace #>
     using System.ComponentModel;
 
     [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
-    public struct <#= unit.ClassName #> : I<#= unit.ValueType.ClassName #>Unit
+    public struct <#= unit.ClassName #> : I<#= unit.Quantity.ClassName #>Unit
     {
         internal const string _symbol = "<#= unit.Symbol #>";
 
@@ -28,16 +28,16 @@ namespace <#= unit.Namespace #>
             }
         }
 
-        public static <#= unit.ValueType.ClassName #> operator *(double left, <#= unit.ClassName #> right)
+        public static <#= unit.Quantity.ClassName #> operator *(double left, <#= unit.ClassName #> right)
         {
-            return new <#= unit.ValueType.ClassName #>(left, right);
+            return new <#= unit.Quantity.ClassName #>(left, right);
         }
 		
         /// <summary>
-        /// Converts a value in <see cref="T:<#= unit.Namespace #>.<#= unit.ClassName #>"/> value to <see cref="T:<#= unit.Namespace #>.<#= unit.SiUnit.ClassName #>"/>.
+        /// Converts a quantity in <see cref="T:<#= unit.Namespace #>.<#= unit.ClassName #>"/> quantity to <see cref="T:<#= unit.Namespace #>.<#= unit.SiUnit.ClassName #>"/>.
         /// </summary>
         /// <param name="<#= unit.ParameterName #>"></param>
-        /// <returns>The converted value</returns>
+        /// <returns>The converted quantity</returns>
         public double ToSiUnit(double <#= unit.ParameterName #>)
         {
             return <#= unit.Conversion #>*<#= unit.ParameterName #>;

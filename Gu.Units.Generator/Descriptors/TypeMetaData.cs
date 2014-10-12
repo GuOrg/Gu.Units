@@ -1,12 +1,14 @@
 ﻿namespace Gu.Units.Generator
 {
     using System;
+    using System.ComponentModel;
+    using WpfStuff;
 
+    [TypeConverter(typeof(TypeMetaDataConverter))]
     public class TypeMetaData : MarshalByRefObject
     {
         protected TypeMetaData()
         {
-            
         }
         
         public TypeMetaData(string className)
@@ -22,7 +24,7 @@
             {
                 if (string.IsNullOrEmpty(ClassName))
                 {
-                    return "### ERROR string.IsNullOrEmpty(TypeMetaData.ClassName)";
+                    return "### ERROR string.IsNullOrEmpty(TypeMetaData.Type)";
                 }
                 return Char.ToLower(ClassName[0]) + ClassName.Substring(1);
             }

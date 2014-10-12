@@ -12,7 +12,7 @@
 namespace Gu.Units.Generator.Annotations
 {
   /// <summary>
-  /// Indicates that the value of the marked element could be <c>null</c> sometimes,
+  /// Indicates that the quantity of the marked element could be <c>null</c> sometimes,
   /// so the check for <c>null</c> is necessary before its usage
   /// </summary>
   /// <example><code>
@@ -29,7 +29,7 @@ namespace Gu.Units.Generator.Annotations
   public sealed class CanBeNullAttribute : Attribute { }
 
   /// <summary>
-  /// Indicates that the value of the marked element could never be <c>null</c>
+  /// Indicates that the quantity of the marked element could never be <c>null</c>
   /// </summary>
   /// <example><code>
   /// [NotNull] public object Foo() {
@@ -87,7 +87,7 @@ namespace Gu.Units.Generator.Annotations
   /// <summary>
   /// Indicates that the method is contained in a type that implements
   /// <see cref="System.ComponentModel.INotifyPropertyChanged"/> interface
-  /// and this method is used to notify that some property value changed
+  /// and this method is used to notify that some property quantity changed
   /// </summary>
   /// <remarks>
   /// The method should be non-static and conform to one of the supported signatures:
@@ -108,7 +108,7 @@ namespace Gu.Units.Generator.Annotations
   ///   private string _name;
   ///   public string Name {
   ///     get { return _name; }
-  ///     set { _name = value; NotifyChanged("LastName"); /* Warning */ }
+  ///     set { _name = quantity; NotifyChanged("LastName"); /* Warning */ }
   ///   }
   /// }
   /// </code>
@@ -117,7 +117,7 @@ namespace Gu.Units.Generator.Annotations
   /// <item><c>NotifyChanged("Property")</c></item>
   /// <item><c>NotifyChanged(() =&gt; Property)</c></item>
   /// <item><c>NotifyChanged((VM x) =&gt; x.Property)</c></item>
-  /// <item><c>SetProperty(ref myField, value, "Property")</c></item>
+  /// <item><c>SetProperty(ref myField, quantity, "Property")</c></item>
   /// </list>
   /// </example>
   [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
@@ -212,7 +212,7 @@ namespace Gu.Units.Generator.Annotations
   }
 
   /// <summary>
-  /// Indicates that the value of the marked type (or its derivatives)
+  /// Indicates that the quantity of the marked type (or its derivatives)
   /// cannot be compared using '==' or '!=' operators and <c>Equals()</c>
   /// should be used instead. However, using '==' or '!=' for comparison
   /// with <c>null</c> is always permitted.
@@ -380,7 +380,7 @@ namespace Gu.Units.Generator.Annotations
   /// [Pure] private int Multiply(int x, int y) { return x * y; }
   /// public void Foo() {
   ///   const int a = 2, b = 2;
-  ///   Multiply(a, b); // Waring: Return value of pure method is not used
+  ///   Multiply(a, b); // Waring: Return quantity of pure method is not used
   /// }
   /// </code></example>
   [AttributeUsage(AttributeTargets.Method, Inherited = true)]
