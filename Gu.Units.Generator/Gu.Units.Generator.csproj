@@ -52,9 +52,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -74,15 +71,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Descriptors\Prefix.cs" />
+    <Compile Include="Descriptors\SiUnit.cs" />
     <Compile Include="Descriptors\TypeMetaData.cs" />
-    <Compile Include="Descriptors\UnitMetaData.cs" />
-    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Descriptors\Unit.cs" />
+    <Compile Include="Descriptors\UnitAndPower.cs" />
+    <Compile Include="Properties\Annotations.generated.cs" />
     <Compile Include="RelayCommand.cs" />
-    <Compile Include="Sandbox\Meh.cs" />
     <Compile Include="Descriptors\Settings.cs" />
-    <Compile Include="Descriptors\ValueMetaData.cs" />
+    <Compile Include="Descriptors\Quantity.cs" />
     <Compile Include="MetaDataViewModel.cs" />
     <Compile Include="ViewModel.cs" />
+    <Compile Include="WpfStuff\TypeMetaDataConverter.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -113,6 +113,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Key.snk" />
     <None Include="packages.config" />
@@ -134,13 +135,13 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UnitGenerator.txt</LastGenOutput>
     </None>
-    <None Include="Templates\Value.tt">
+    <None Include="Templates\Quantity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Value.txt</LastGenOutput>
+      <LastGenOutput>Quantity.txt</LastGenOutput>
     </None>
-    <None Include="Templates\ValueGenerator.tt">
+    <None Include="Templates\QuantityGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ValueGenerator.txt</LastGenOutput>
+      <LastGenOutput>QuantityGenerator.txt</LastGenOutput>
     </None>
     <None Include="Templates\UnitClass.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -159,10 +160,10 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Resource>
-    <Resource Include="Templates\Value.txt">
+    <Resource Include="Templates\Quantity.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Value.tt</DependentUpon>
+      <DependentUpon>Quantity.tt</DependentUpon>
     </Resource>
   </ItemGroup>
   <ItemGroup>
@@ -184,12 +185,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UnitClass.tt</DependentUpon>
     </Resource>
-    <Content Include="Templates\ValueGenerator.txt">
+    <Content Include="Templates\QuantityGenerator.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ValueGenerator.tt</DependentUpon>
+      <DependentUpon>QuantityGenerator.tt</DependentUpon>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

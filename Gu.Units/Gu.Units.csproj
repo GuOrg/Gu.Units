@@ -65,7 +65,7 @@
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
     <Compile Include="Units\IUnit.cs" />
-    <Compile Include="Units\IUnitValue.cs" />
+    <Compile Include="Units\IQuantity.cs" />
     <Compile Include="Units\Kilograms.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>

@@ -23,17 +23,38 @@
             <TextBlock Text="NameSpace" />
             <TextBox MinWidth="200" Text="{Binding NameSpace}" />
         </StackPanel>
-        <DataGrid AutoGenerateColumns="False"
-                  CanUserAddRows="False"
-                  ItemsSource="{Binding UnitData}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding ValueTypeName}" Header="ClassName" />
-                <DataGridCheckBoxColumn Binding="{Binding IsSiUnit}" Header="IsSiUnit" />
-                <DataGridTextColumn Binding="{Binding UnitTypeName}" Header="UnitTypeName" />
-                <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
-                <DataGridTextColumn Binding="{Binding Conversion}" Header="Conversion" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <GroupBox Grid.Column="0" Header="Prefixes">
+                <DataGrid ItemsSource="{Binding Prefixes}" />
+            </GroupBox>
+            <GroupBox Grid.Column="1" Header="Units">
+                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding SiUnits}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
+                        <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
+                        <DataGridTextColumn Binding="{Binding Quantity}" Header="Quantity" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+            <GroupBox Grid.Column="2" Header="Composite units">
+                <DataGrid AutoGenerateColumns="False"
+                          CanUserAddRows="False"
+                          ItemsSource="{Binding UnitData}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding ValueTypeName}" Header="Type" />
+                        <DataGridTextColumn Binding="{Binding UnitTypeName}" Header="UnitTypeName" />
+                        <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
+                        <DataGridTextColumn Binding="{Binding Conversion}" Header="Conversion" />
 
-            </DataGrid.Columns>
-        </DataGrid>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+        </Grid>
     </DockPanel>
 </Window>

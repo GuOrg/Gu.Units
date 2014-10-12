@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units", "Gu.Units\Gu.Uni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Tests", "Gu.Units.Tests\Gu.Units.Tests.csproj", "{E3A82C1C-4BA4-4C3D-9030-7B607EBD21E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Generator.Tests", "Gu.Units.Generator.Tests\Gu.Units.Generator.Tests.csproj", "{9785A89E-8B39-48BA-8C0A-BEB7D761D402}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,12 @@ Global
 		{E3A82C1C-4BA4-4C3D-9030-7B607EBD21E2}.Generator Only|Any CPU.ActiveCfg = Generator Only|Any CPU
 		{E3A82C1C-4BA4-4C3D-9030-7B607EBD21E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3A82C1C-4BA4-4C3D-9030-7B607EBD21E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.Generator Only|Any CPU.ActiveCfg = Release|Any CPU
+		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.Generator Only|Any CPU.Build.0 = Release|Any CPU
+		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

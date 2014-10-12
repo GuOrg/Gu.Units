@@ -5,10 +5,10 @@
 <#@ output extension=".txt" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #> 
-<#@ parameter name="UnitMetaData" type="Gu.Units.Generator.UnitMetaData" #>
+<#@ parameter name="UnitMetaData" type="Gu.Units.Generator.Unit" #>
 <#
 // Template used by UnitGenerator.tt
-var unit = UnitMetaData ?? new UnitMetaData("Length", "Gu.Units", "Meters", 1.0, "m");
+var unit = UnitMetaData ?? new Unit("Length", "Gu.Units", "Meters", 1.0, "m");
 #>
 namespace <#= unit.Namespace #>
 {

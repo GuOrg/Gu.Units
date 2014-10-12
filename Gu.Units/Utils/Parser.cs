@@ -16,7 +16,7 @@ namespace Gu.Units
         private static readonly ConcurrentDictionary<Type, IUnit[]> Symbols = new ConcurrentDictionary<Type, IUnit[]>();
         public static TValue Parse<TUnit, TValue>(string s, Func<double, TUnit, TValue> creator, IFormatProvider provider = null)
             where TUnit : IUnit
-            where TValue : IUnitValue
+            where TValue : IQuantity
         {
             if (provider == null)
             {

@@ -12,7 +12,7 @@ namespace Gu.Units
     /// An Mass
     /// </summary>
     [Serializable]
-    public partial struct Mass : IComparable<Mass>, IEquatable<Mass>, IFormattable, IXmlSerializable, IUnitValue
+    public partial struct Mass : IComparable<Mass>, IEquatable<Mass>, IFormattable, IXmlSerializable, IQuantity
     {
         /// <summary>
         /// The value in <see cref="T:Gu.Units.Kilograms"/>.
