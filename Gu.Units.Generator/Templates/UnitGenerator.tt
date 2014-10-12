@@ -24,7 +24,7 @@ this.Write(string.Format("Read Settings found {0} units", settings.UnitTypes.Cou
 foreach (var unit in settings.UnitTypes)
 {
 	session["UnitMetaData"] = unit;
-	fileManager.StartNewFile(unit.ClassName + ".generated.cs", Settings.ProjectName, Settings.FolderName, null);
+	fileManager.StartNewFile(unit.ClassName + ".generated.cs", Settings.ProjectName, null, null);
 	string output = paramTmpl.TransformText("Unit.tt", session);
 	this.Write(output);
 }
