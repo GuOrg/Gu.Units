@@ -23,7 +23,7 @@ var settings = Settings.Instance;
 this.Write(string.Format("Read Settings found {0} units", settings.ValueTypes.Count));
 foreach (var item in settings.ValueTypes)
 {
-	fileManager.StartNewFile(item.ClassName + ".generated.cs", Settings.ProjectName, Settings.FolderName, null);
+	fileManager.StartNewFile(item.ClassName + ".generated.cs", Settings.ProjectName, null, null);
 	session["ValueMetaData"] = item;
 	string output = paramTmpl.TransformText("Quantity.tt", session);
 	this.Write(output);
