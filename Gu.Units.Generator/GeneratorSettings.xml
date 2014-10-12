@@ -1,19 +1,22 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Quantities />
+  <Composites />
   <SiUnitTypes>
     <SiUnit>
-      <ClassName>Metres</ClassName>
+      <ClassName>Kilograms</ClassName>
       <Symbol>kg</Symbol>
       <Quantity>
         <ClassName>Mass</ClassName>
-      </Quantity>
-    </SiUnit>
-    <SiUnit>
-      <ClassName>Seconds</ClassName>
-      <Symbol>s</Symbol>
-      <Quantity>
-        <ClassName>Time</ClassName>
+        <Namespace />
+        <Type>
+          <ClassName>Mass</ClassName>
+        </Type>
+        <Units>
+          <UnitAndPower>
+            <UnitName>Kilograms</UnitName>
+            <Power>1</Power>
+          </UnitAndPower>
+        </Units>
       </Quantity>
     </SiUnit>
     <SiUnit>
@@ -21,6 +24,33 @@
       <Symbol>m</Symbol>
       <Quantity>
         <ClassName>Length</ClassName>
+        <Namespace />
+        <Type>
+          <ClassName>Length</ClassName>
+        </Type>
+        <Units>
+          <UnitAndPower>
+            <UnitName>Metres</UnitName>
+            <Power>1</Power>
+          </UnitAndPower>
+        </Units>
+      </Quantity>
+    </SiUnit>
+    <SiUnit>
+      <ClassName>Seconds</ClassName>
+      <Symbol>s</Symbol>
+      <Quantity>
+        <ClassName>Time</ClassName>
+        <Namespace />
+        <Type>
+          <ClassName>Time</ClassName>
+        </Type>
+        <Units>
+          <UnitAndPower>
+            <UnitName>Seconds</UnitName>
+            <Power>1</Power>
+          </UnitAndPower>
+        </Units>
       </Quantity>
     </SiUnit>
   </SiUnitTypes>

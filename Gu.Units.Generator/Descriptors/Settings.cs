@@ -1,6 +1,8 @@
 ﻿namespace Gu.Units.Generator
 {
+    using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.IO;
     using System.Linq;
     using System.Reflection;
@@ -8,33 +10,33 @@
 
     public class Settings
     {
-        private List<Quantity> _quantities = new List<Quantity>();
-        private List<SiUnit> _siUnitTypes = new List<SiUnit>();
-        private List<Prefix> _prefixes = new List<Prefix>();
+        private readonly ObservableCollection<Quantity> composites = new ObservableCollection<Quantity>();
+        private readonly ObservableCollection<SiUnit> _siUnitTypes = new ObservableCollection<SiUnit>();
+        private readonly ObservableCollection<Prefix> _prefixes = new ObservableCollection<Prefix>();
 
         public static Settings Instance
         {
             get
             {
-                var serializer = new XmlSerializer(typeof(Settings));
-                Settings settings;
-                using (var reader = new StringReader(Properties.Resources.GeneratorSettings))
+                try
                 {
-                    settings = (Settings)serializer.Deserialize(reader);
+                    var serializer = new XmlSerializer(typeof(Settings));
+                    Settings settings;
+                    using (var reader = new StringReader(Properties.Resources.GeneratorSettings))
+                    {
+                        settings = (Settings)serializer.Deserialize(reader);
+                    }
+                    foreach (var unit in settings.SiUnitTypes)
+                    {
+                        unit.Quantity.Units.Clear();
+                        unit.Quantity.Units.Add(new UnitAndPower(unit));
+                    }
+                    return settings;
                 }
-                foreach (var quantity in settings.Quantities)
+                catch (Exception)
                 {
-                    //var siUnit = quantity.SiUnit;
-                    //siUnit.SiUnit = siUnit;
-                    //siUnit.Quantity = quantity.Type;
-                    //foreach (var unit in quantity.Units)
-                    //{
-                    //    unit.Quantity = quantity.Type;
-                    //    siUnit.Related.Add(unit);
-                    //    unit.SiUnit = siUnit;
-                    //}
+                    return new Settings();
                 }
-                return settings;
             }
         }
 
@@ -72,15 +74,11 @@
             }
         }
 
-        public List<Quantity> Quantities
+        public ObservableCollection<Quantity> Composites
         {
             get
             {
-                return this._quantities;
-            }
-            set
-            {
-                this._quantities = value;
+                return composites;
             }
         }
 
@@ -90,7 +88,7 @@
             get
             {
                 var units = new List<Unit>();
-                foreach (var quantity in Quantities)
+                foreach (var quantity in this.Composites)
                 {
                     //units.Add(quantity.SiUnit);
                     //units.AddRange(quantity.Units);
@@ -99,16 +97,14 @@
             }
         }
 
-        public List<SiUnit> SiUnitTypes
+        public ObservableCollection<SiUnit> SiUnitTypes
         {
             get { return _siUnitTypes; }
-            set { _siUnitTypes = value; }
         }
 
-        public List<Prefix> Prefixes
+        public ObservableCollection<Prefix> Prefixes
         {
             get { return _prefixes; }
-            set { _prefixes = value; }
         }
 
         public static Settings FromFile(string fullFileName)
