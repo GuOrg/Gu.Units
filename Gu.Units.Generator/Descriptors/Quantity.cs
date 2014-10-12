@@ -2,13 +2,19 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.ComponentModel;
     using System.Linq;
+    using System.Xml.Serialization;
 
-    [Serializable]
+    using Gu.Units.Generator.WpfStuff;
+
+    [Serializable, TypeConverter(typeof(QuantityConverter))]
     public class Quantity : TypeMetaData
     {
-        private List<UnitAndPower> _units = new List<UnitAndPower>();
-        private Quantity()
+        private readonly ObservableCollection<UnitAndPower> _units = new ObservableCollection<UnitAndPower>();
+
+        public Quantity()
         {
         }
 
@@ -17,7 +23,11 @@
         {
             Namespace = ns;
             Type = new TypeMetaData(className);
-            Units = units == null ? new List<UnitAndPower>() : units.OrderBy(x => x.Unit).ThenBy(x => x.Power).ToList();
+            var unitAndPowers = units.OrderBy(x => x.Unit).ThenBy(x => x.Power).ToList();
+            foreach (var unitAndPower in unitAndPowers)
+            {
+                _units.Add(unitAndPower);
+            }
             if (units.Length == 0)
             {
                 throw new ArgumentException("No units", "units");
@@ -57,16 +67,38 @@
 
         public TypeMetaData Type { get; set; }
 
-        public List<UnitAndPower> Units
+        public ObservableCollection<UnitAndPower> Units
         {
             get { return _units; }
-            set { _units = value; }
         }
 
+        [XmlIgnore]
+        public string UiName
+        {
+            get
+            {
+                if (!_units.Any())
+                {
+                    return "ERROR No Units";
+                }
+                var args = string.Join(", ",
+                    Units.Select(u => string.Format("I{0}{1}<{2}>",
+                        u.Power < 0 ? "Neg" : "",
+                        u.Power < 0 ? -1 * u.Power : u.Power,
+                        u.Unit.ClassName)));
+                return args;
+            }
+        }
+        
+        [XmlIgnore]
         public string Interface
         {
             get
             {
+                if (!_units.Any())
+                {
+                    return "ERROR No Units";
+                }
                 var args = string.Join(", ",
                     Units.Select(u => string.Format("I{0}{1}<{2}>",
                         u.Power < 0 ? "Neg" : "",

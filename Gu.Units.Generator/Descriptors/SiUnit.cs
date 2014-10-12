@@ -4,6 +4,8 @@
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
     using System.Windows;
+    using System.Xml.Serialization;
+
     using Annotations;
     using WpfStuff;
     /// <summary>
@@ -18,6 +20,7 @@
         {
             _quantity = new Quantity("", "", this);
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Symbol
@@ -43,8 +46,11 @@
                 {
                     return;
                 }
-                _quantity.Units = new List<UnitAndPower> { new UnitAndPower(this) };
                 _quantity = value;
+                foreach (var unit in _quantity.Units)
+                {
+                    unit.Unit = this;
+                }
                 OnPropertyChanged();
             }
         }

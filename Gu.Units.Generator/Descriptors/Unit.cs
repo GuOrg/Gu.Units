@@ -38,6 +38,7 @@
             }
         }
 
+        [XmlIgnore]
         public TypeMetaData Quantity { get; set; }
 
         public string Namespace { get; set; }
