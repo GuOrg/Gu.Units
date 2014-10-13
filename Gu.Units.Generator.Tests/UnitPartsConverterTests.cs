@@ -22,16 +22,20 @@
 
     public class UnitPartsConverterSource : IEnumerable
     {
-        public static SiUnit Metres = new SiUnit("", "Metres", "m");
+        public static readonly SiUnit Metres = new SiUnit("", "Metres", "m");
 
-        public static SiUnit Kilograms = new SiUnit("", "Kilograms", "kg");
+        public static readonly SiUnit Kilograms = new SiUnit("", "Kilograms", "kg");
 
-        public static SiUnit Seconds = new SiUnit("", "Seconds", "s");
+        public static readonly SiUnit Seconds = new SiUnit("", "Seconds", "s");
+
+        //public static readonly DerivedUnit Joules = new DerivedUnit("", "Joules", "J", new UnitAndPower(Kilograms, 1), new UnitAndPower(Metres, 2), new UnitAndPower(Seconds, -2));
 
         private readonly List<Data> _datas = new List<Data>
                                         {
                                             new Data("m^2", new UnitAndPower(Metres, 2)),
                                             new Data("kg*m/s^2",new UnitAndPower(Kilograms, 1),new UnitAndPower(Metres, 1),new UnitAndPower(Seconds, -2)),
+                                            new Data("m/s", new UnitAndPower(Metres,1), new UnitAndPower(Seconds,-1))
+                                            //new Data("J/s",new UnitAndPower(Joules, 1),new UnitAndPower(Seconds, -1)),
                                         };
         public IEnumerator GetEnumerator()
         {
@@ -50,7 +54,7 @@
             public override string ToString()
             {
                 var units = string.Join(", ", this.Units.Select(x => string.Format("{0}^{1}", x.Unit.Symbol, x.Power)));
-                return string.Format("Value: {0}, Units: {1}", this.Value, units);
+                return string.Format("String: {0}, Units: {{{1}}}", this.Value, units);
             }
         }
     }

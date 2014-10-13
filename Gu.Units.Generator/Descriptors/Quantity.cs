@@ -13,6 +13,7 @@
     public class Quantity : TypeMetaData
     {
         private IUnit _unit;
+        private string _unitName;
 
         public Quantity()
         {
@@ -49,11 +50,17 @@
         {
             get
             {
-                return Unit.ClassName;
+                if (Unit != null)
+                    return this.Unit.ClassName;
+                return _unitName;
             }
             set
             {
-                _unit = new SiUnit(Namespace, value, null);
+                if (Unit != null)
+                {
+                    throw new InvalidOperationException("Trying to set unit name");
+                }
+                _unitName = value;
             }
         }
 
@@ -85,27 +92,28 @@
                 var siUnit = Unit as SiUnit;
                 if (siUnit != null)
                 {
-                    if (string.IsNullOrEmpty(siUnit.Symbol))
+                    if (string.IsNullOrEmpty(Unit.Symbol))
                     {
-                        return "ERROR: no unit";
+                        return "ERROR: string.IsNullOrEmpty(Unit.Symbol)";
                     }
-                    return siUnit.Symbol;
+                    return string.Format("IQuantity<I1<{0}>>", siUnit.ClassName);
                 }
                 var derivedUnit = Unit as DerivedUnit;
                 if (derivedUnit == null)
                 {
                     return "Unit == null";
                 }
-                if (!derivedUnit.Parts.Any())
+                var flattened = derivedUnit.Parts.Flattened.ToArray();
+                if (!flattened.Any())
                 {
                     return "ERROR No Units";
                 }
                 var args = string.Join(", ",
-                    derivedUnit.Parts.Select(u => string.Format("I{0}{1}<{2}>",
+                    flattened.Select(u => string.Format("I{0}{1}<{2}>",
                         u.Power < 0 ? "Neg" : "",
                         u.Power < 0 ? -1 * u.Power : u.Power,
                         u.Unit.ClassName)));
-                return string.Format("IQuantity<IUnit{0}<{1}>>", derivedUnit.Parts.Count, args);
+                return string.Format("IQuantity<{0}>",  args);
             }
         }
 

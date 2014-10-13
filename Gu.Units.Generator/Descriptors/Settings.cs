@@ -16,7 +16,7 @@
         private readonly ObservableCollection<DerivedUnit> _derivedUnits = new ObservableCollection<DerivedUnit>();
         private readonly ObservableCollection<SiUnit> _siUnits = new ObservableCollection<SiUnit>();
         private readonly ObservableCollection<Prefix> _prefixes = new ObservableCollection<Prefix>();
-
+        private readonly ObservableCollection<Quantity> _quantities = new ObservableCollection<Quantity>();
         public static Settings Instance
         {
             get
@@ -31,10 +31,15 @@
                     }
                     foreach (var unit in settings.SiUnits)
                     {
-                        //unit.Quantity = 
+                        var quantity = new Quantity(unit.Namespace, unit.QuantityName, unit);
+                        unit.Quantity = quantity;
+                        settings._quantities.Add(quantity);
                     }
                     foreach (var unit in settings.DerivedUnits)
                     {
+                        var quantity = new Quantity(unit.Namespace, unit.QuantityName, unit);
+                        settings._quantities.Add(quantity);
+                        unit.Quantity = quantity;
                         foreach (var unitPart in unit.Parts)
                         {
                             unitPart.Unit = UnitBase.AllUnitsStatic.Single(x => x.ClassName == unitPart.UnitName);

@@ -1,6 +1,7 @@
 ﻿namespace Gu.Units.Generator
 {
     using System;
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Linq;
@@ -12,6 +13,26 @@
     [TypeConverter(typeof(UnitPartsConverter))]
     public class UnitParts : ObservableCollection<UnitAndPower>
     {
+        public IEnumerable<UnitAndPower> Flattened
+        {
+            get
+            {
+                var all = new List<UnitAndPower>();
+                foreach (var up in this)
+                {
+                    GetAll(up, 0, all);
+                }
+                foreach (SiUnit unit in all.Select(x => x.Unit).Distinct())
+                {
+                    var sum = all.Where(x => Equals(x.Unit, unit)).Sum(x => x.Power);
+                    if (sum != 0)
+                    {
+                        yield return new UnitAndPower(unit, sum);
+                    }
+                }
+            }
+        }
+
         [XmlIgnore]
         public string UiName
         {
@@ -46,6 +67,21 @@
                 }
                 return sb.ToString();
             }
+        }
+
+        private void GetAll(UnitAndPower up, int power, List<UnitAndPower> list)
+        {
+            if (up.Unit is SiUnit)
+            {
+                list.Add(new UnitAndPower(up.Unit, up.Power + power));
+                return;
+            }
+            var derivedUnit = (DerivedUnit)up.Unit;
+            foreach (var unitPart in derivedUnit.Parts)
+            {
+                GetAll(unitPart, up.Power - 1, list);
+            }
+
         }
     }
 }

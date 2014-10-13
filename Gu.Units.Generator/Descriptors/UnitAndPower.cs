@@ -9,19 +9,19 @@
     public class UnitAndPower : INotifyPropertyChanged
     {
         private IUnit _unit;
+        private string _unitName;
         private int _power;
         public UnitAndPower()
         {
-            this.Unit = new SiUnit();
         }
 
-        public UnitAndPower(SiUnit unit)
+        public UnitAndPower(IUnit unit)
         {
             this.Unit = unit;
             Power = 1;
         }
       
-        public UnitAndPower(SiUnit unit, int power)
+        public UnitAndPower(IUnit unit, int power)
         {
             if (power == 0)
             {
@@ -37,7 +37,7 @@
         {
             get
             {
-                return new UnitAndPower(new SiUnit(), 0);
+                return new UnitAndPower(null, 0);
             }
         }
 
@@ -61,11 +61,17 @@
         {
             get
             {
-                return this.Unit.ClassName;
+                if(Unit!=null)
+                    return this.Unit.ClassName;
+                return _unitName;
             }
             set
             {
-                this.Unit = new SiUnit { ClassName = value };
+                if (Unit != null)
+                {
+                    throw new InvalidOperationException("Trying to set unit name");
+                }
+                _unitName = value;
             }
         }
 

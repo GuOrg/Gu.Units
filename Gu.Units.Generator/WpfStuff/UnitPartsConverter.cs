@@ -30,7 +30,7 @@ namespace Gu.Units.Generator.WpfStuff
             {
                 return null;
             }
-            var symbols = UnitBase.AllUnitsStatic.Select(x => x.Symbol);
+            var symbols = UnitBase.AllUnitsStatic.Select(x => x.Symbol).ToArray();
             var pattern = string.Format(@"(?<Unit>(?<Symbol>({0}))((?:\^)(?<Power>[+-]?\d+))?)|(?<Op>[\*\/])", string.Join("|", symbols));
             var matches = Regex.Matches(s, pattern);
             var parts = new UnitParts();
@@ -44,11 +44,11 @@ namespace Gu.Units.Generator.WpfStuff
                     var power = match.Groups["Power"].Value;
                     if (power == "")
                     {
-                        parts.Add(new UnitAndPower((SiUnit)unit, 1));
+                        parts.Add(new UnitAndPower(unit, sign * 1));
                     }
                     else
                     {
-                        parts.Add(new UnitAndPower((SiUnit)unit, sign * int.Parse(power)));
+                        parts.Add(new UnitAndPower(unit, sign * int.Parse(power)));
                     }
                     expectsSymbol = false;
                 }

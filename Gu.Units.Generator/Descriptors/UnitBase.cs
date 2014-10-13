@@ -1,6 +1,8 @@
 ﻿namespace Gu.Units.Generator
 {
+    using System;
     using System.Collections.ObjectModel;
+    using System.Linq;
     using System.Xml.Serialization;
 
     public abstract class UnitBase : TypeMetaData, IUnit
@@ -9,12 +11,17 @@
         private readonly ReadOnlyObservableCollection<IUnit> _allUnitsReadonly;
         private string _symbol;
         private Quantity _quantity;
+        private string _quantityName;
 
         protected UnitBase(string @namespace, string className, string symbol)
             : base(@namespace, className)
         {
             _symbol = symbol;
-            AllUnitsStatic.Add(this);
+            this.PropertyChanged += (sender, args) =>
+            {
+                TryAdd();
+            };
+            TryAdd();
             _allUnitsReadonly = new ReadOnlyObservableCollection<IUnit>(AllUnitsStatic);
         }
 
@@ -36,15 +43,17 @@
         {
             get
             {
-                return this.Quantity.ClassName;
+                if(Quantity !=null)
+                    return this.Quantity.ClassName;
+                return _quantityName;
             }
             set
             {
-                if (Quantity == null)
+                if (Quantity != null)
                 {
-                    this.Quantity = Generator.Quantity.Empty;
+                    throw new InvalidOperationException("Trying to set quantity");
                 }
-                this.Quantity.ClassName = value;
+                _quantityName = value;
             }
         }
 
@@ -87,6 +96,48 @@
         public override string ToString()
         {
             return this.UiName;
+        }
+        protected bool Equals(UnitBase other)
+        {
+            return string.Equals(_symbol, other._symbol);
+        }
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+            if (obj.GetType() != this.GetType())
+            {
+                return false;
+            }
+            return Equals((UnitBase) obj);
+        }
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
+        }
+        public static bool operator ==(UnitBase left, UnitBase right)
+        {
+            return Equals(left, right);
+        }
+        public static bool operator !=(UnitBase left, UnitBase right)
+        {
+            return !Equals(left, right);
+        }
+        private void TryAdd()
+        {
+            if (!IsEmpty)
+            {
+                if (AllUnitsStatic.All(x => !(x.Symbol == this.Symbol && x.ClassName == this.ClassName)))
+                {
+                    AllUnitsStatic.Add(this);
+                }
+            }
         }
     }
 }
