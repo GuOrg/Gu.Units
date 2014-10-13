@@ -5,6 +5,7 @@
     public interface IQuantity
     {
         Type GetType();
+        double SiValue { get; }
     }
 
     public interface IQuantity<out TPower, out TUnit> : IQuantity
@@ -13,13 +14,22 @@
     {
     }
 
-    public struct Quantity<TPower,TUnit> : IQuantity<TPower, TUnit>
+    public struct Quantity<TPower, TUnit> : IQuantity<TPower, TUnit>
         where TPower : IPower<TUnit>
         where TUnit : IUnit
     {
+        private readonly double _siValue;
+        public Quantity(double siValue)
+        {
+            _siValue = siValue;
+        }
+        public double SiValue
+        {
+            get { return _siValue; }
+        }
     }
 
-    public interface IQuantity<TPower1,TUnit1,TPower2,TUnit2> : IQuantity
+    public interface IQuantity<TPower1, TUnit1, TPower2, TUnit2> : IQuantity
         where TPower1 : IPower<TUnit1>
         where TPower2 : IPower<TUnit2>
         where TUnit1 : IUnit

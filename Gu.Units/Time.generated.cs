@@ -54,6 +54,9 @@ namespace Gu.Units
             Seconds = UnitConverter.ConvertFrom(value, unit);
         }
 
+        public double SiValue { get { return Seconds; } }
+
+
         /// <summary>
         /// The value in milliseconds
         /// </summary>
