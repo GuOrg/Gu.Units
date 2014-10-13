@@ -17,18 +17,18 @@
 
         public UnitAndPower(IUnit unit)
         {
-            this.Unit = unit;
-            Power = 1;
+            _unit = unit;
+            _power = 1;
         }
-      
+
         public UnitAndPower(IUnit unit, int power)
         {
             if (power == 0)
             {
                 throw new ArgumentException("power == 0", "power");
             }
-            this.Unit = unit;
-            Power = power;
+            _unit = unit;
+            _power = power;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -61,7 +61,7 @@
         {
             get
             {
-                if(Unit!=null)
+                if (Unit != null)
                     return this.Unit.ClassName;
                 return _unitName;
             }
@@ -93,9 +93,13 @@
         {
             if (Power == 1)
             {
-                return this.Unit.ClassName;
+                if (Unit == null)
+                {
+                    return string.Format("(({0})null)^1", UnitName);
+                }
+                return this.Unit.Symbol;
             }
-            return string.Format("{0}^{1}", this.Unit.ClassName, Power);
+            return string.Format("({0}){1}^{2}", this.Unit == null ? "null" : "", this.UnitName, Power);
         }
 
         [NotifyPropertyChangedInvocator]

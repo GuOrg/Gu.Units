@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
+    using System.Diagnostics;
     using System.Linq;
     using System.Text;
     using System.Xml.Serialization;
@@ -13,6 +14,28 @@
     [TypeConverter(typeof(UnitPartsConverter))]
     public class UnitParts : ObservableCollection<UnitAndPower>
     {
+        public UnitParts()
+        {
+            this.CollectionChanged += (sender, args) =>
+                {
+                    this.OnPropertyChanged(new PropertyChangedEventArgs("UiName"));
+                    if (args.NewItems != null)
+                    {
+                        foreach (var newItem in args.NewItems.OfType<INotifyPropertyChanged>())
+                        {
+                            newItem.PropertyChanged += this.OnPartPropertyChanged;
+                        }
+                    }
+                    if (args.OldItems != null)
+                    {
+                        foreach (var oldItem in args.OldItems.OfType<INotifyPropertyChanged>())
+                        {
+                            oldItem.PropertyChanged -= this.OnPartPropertyChanged;
+                        }
+                    }
+                };
+        }
+
         public IEnumerable<UnitAndPower> Flattened
         {
             get
@@ -22,9 +45,10 @@
                 {
                     GetAll(up, 0, all);
                 }
-                foreach (SiUnit unit in all.Select(x => x.Unit).Distinct())
+                var distinct = all.Select(x => x.Unit).Distinct().ToArray();
+                foreach (SiUnit unit in distinct)
                 {
-                    var sum = all.Where(x => Equals(x.Unit, unit)).Sum(x => x.Power);
+                    var sum = all.Where(x => x.UnitName == unit.ClassName).Sum(x => x.Power);
                     if (sum != 0)
                     {
                         yield return new UnitAndPower(unit, sum);
@@ -57,7 +81,7 @@
                             sb.Append("⋅");
                         }
                     }
-                    sb.Append(unitAndPower.Unit.Symbol);
+                    sb.Append(unitAndPower.Unit == null ? unitAndPower.UnitName : unitAndPower.Unit.Symbol);
                     if (Math.Abs(unitAndPower.Power) > 1)
                     {
                         sb.Append("^")
@@ -69,8 +93,17 @@
             }
         }
 
+        public override string ToString()
+        {
+            return this.UiName;
+        }
+
         private void GetAll(UnitAndPower up, int power, List<UnitAndPower> list)
         {
+            if (list.Count > 100)
+            {
+                Debugger.Break();
+            }
             if (up.Unit is SiUnit)
             {
                 list.Add(new UnitAndPower(up.Unit, up.Power + power));
@@ -81,7 +114,10 @@
             {
                 GetAll(unitPart, up.Power - 1, list);
             }
-
+        }
+        private void OnPartPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
+        {
+            this.OnPropertyChanged(new PropertyChangedEventArgs("UiName"));
         }
     }
 }
