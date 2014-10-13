@@ -4,7 +4,7 @@
     using System.ComponentModel;
     using System.Globalization;
 
-    public class TypeMetaDataConverter : TypeConverter
+    public class QuantityConverter : TypeConverter
     {
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
         {
@@ -16,7 +16,7 @@
         }
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
         {
-            return value == null ? null : new TypeMetaData("", (string)value);
+            return value == null ? null : new Quantity("", (string)value, new SiUnit());
         }
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {

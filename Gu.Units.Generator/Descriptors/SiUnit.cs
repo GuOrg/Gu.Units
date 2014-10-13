@@ -8,48 +8,28 @@
 
     using Annotations;
     using WpfStuff;
+
     /// <summary>
     /// http://www.periodni.com/international_system_of_units.html
     /// </summary>
-    public class SiUnit : TypeMetaData
+    public class SiUnit : UnitBase
     {
-        private string _symbol;
-        private Quantity _quantity;
-
         public SiUnit()
+            : base(null,null,null)
         {
-            _quantity = new Quantity("", "", this);
         }
 
-        public string Symbol
+        public SiUnit(string @namespace, string name, string symbol)
+            : base(@namespace, name, symbol)
         {
-            get { return _symbol; }
-            set
-            {
-                if (value == _symbol)
-                {
-                    return;
-                }
-                _symbol = value;
-                OnPropertyChanged();
-            }
         }
 
-        public Quantity Quantity
+        [XmlIgnore]
+        public override string UiName
         {
-            get { return _quantity; }
-            set
+            get
             {
-                if (Equals(value, _quantity))
-                {
-                    return;
-                }
-                _quantity = value;
-                foreach (var unit in _quantity.Units)
-                {
-                    unit.Unit = this;
-                }
-                OnPropertyChanged();
+                return this.Symbol;
             }
         }
     }

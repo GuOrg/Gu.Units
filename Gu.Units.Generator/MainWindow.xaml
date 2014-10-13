@@ -35,59 +35,37 @@
             </GroupBox>
 
             <GroupBox Grid.Column="1" Header="Units">
-                <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding SiUnits}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Quantity}" Header="Quantity" />
-                        <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
-                        <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
-                    </DataGrid.Columns>
-                </DataGrid>
-            </GroupBox>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <GroupBox Header="SI units:">
+                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding SiUnits}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Quantity}" Header="Quantity" />
+                                <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
+                                <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
+                                <DataGridTextColumn Binding="{Binding Quantity.Interface}" Header="Interface" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
 
-            <GroupBox Grid.Column="2" Header="Composite units">
-                <DataGrid AutoGenerateColumns="False"
-                          CanUserAddRows="True"
-                          ItemsSource="{Binding Composites}">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding ClassName}" Header="Quantity" />
-                        <DataGridTemplateColumn Header="Parts">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate DataType="{x:Type generator:Quantity}">
-                                    <TextBlock Text="{Binding UiName}" />
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                            <DataGridTemplateColumn.CellEditingTemplate>
-                                <DataTemplate DataType="{x:Type generator:Quantity}">
-                                    <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Units}">
-                                        <DataGrid.Columns>
-                                            <DataGridComboBoxColumn DisplayMemberPath="{Binding ClassName}"
-                                                                    Header="Unit"
-                                                                    SelectedItemBinding="{Binding Unit,
-                                                                                                  Mode=TwoWay}">
-                                                <DataGridComboBoxColumn.ElementStyle>
-                                                    <Style TargetType="ComboBox">
-                                                        <Setter Property="ItemsSource" Value="{Binding DataContext.SiUnits, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" />
-                                                        <Setter Property="IsReadOnly" Value="True" />
-                                                    </Style>
-                                                </DataGridComboBoxColumn.ElementStyle>
-                                                <DataGridComboBoxColumn.EditingElementStyle>
-                                                    <Style TargetType="ComboBox">
-                                                        <Setter Property="ItemsSource" Value="{Binding DataContext.SiUnits, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" />
-                                                    </Style>
-                                                </DataGridComboBoxColumn.EditingElementStyle>
-                                            </DataGridComboBoxColumn>
-                                            <DataGridTextColumn Binding="{Binding Power}" Header="Power" />
-                                        </DataGrid.Columns>
-                                    </DataGrid>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellEditingTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTextColumn Binding="{Binding Interface}"
-                                            Header="Interface"
-                                            IsReadOnly="True" />
+                    <GroupBox Grid.Row="1" Header="Derived units:">
+                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding DerivedUnits}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding QuantityName}" Header="Quantity" />
+                                <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
+                                <DataGridTextColumn Binding="{Binding Parts}" Header="Parts" />
+                                <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
+                                <DataGridTextColumn Binding="{Binding Quantity.Interface}"
+                                                    Header="Interface"
+                                                    IsReadOnly="True" />
 
-                    </DataGrid.Columns>
-                </DataGrid>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
+                </Grid>
             </GroupBox>
         </Grid>
     </DockPanel>

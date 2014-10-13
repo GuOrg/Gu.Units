@@ -1,91 +1,46 @@
 <?xml version="1.0"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Composites>
-    <Quantity>
-      <ClassName>Area</ClassName>
-      <Units>
+  <DerivedUnits>
+    <DerivedUnit>
+      <ClassName>SquareMetres</ClassName>
+      <Symbol>m^2</Symbol>
+      <QuantityName>Area</QuantityName>
+      <Parts>
         <UnitAndPower>
           <UnitName>Metres</UnitName>
           <Power>2</Power>
         </UnitAndPower>
-      </Units>
-    </Quantity>
-    <Quantity>
-      <ClassName>Volume</ClassName>
-      <Units>
+      </Parts>
+    </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>CubicMetres</ClassName>
+      <Symbol>m^3</Symbol>
+      <QuantityName>Volume</QuantityName>
+      <Parts>
         <UnitAndPower>
           <UnitName>Metres</UnitName>
           <Power>3</Power>
         </UnitAndPower>
-      </Units>
-    </Quantity>
-    <Quantity>
-      <ClassName>Speed</ClassName>
-      <Units>
-        <UnitAndPower>
-          <UnitName>Metres</UnitName>
-          <Power>1</Power>
-        </UnitAndPower>
-        <UnitAndPower>
-          <UnitName>Seconds</UnitName>
-          <Power>-1</Power>
-        </UnitAndPower>
-      </Units>
-    </Quantity>
-  </Composites>
-  <SiUnitTypes>
+      </Parts>
+    </DerivedUnit>
+  </DerivedUnits>
+  <SiUnits>
     <SiUnit>
       <ClassName>Kilograms</ClassName>
       <Symbol>kg</Symbol>
-      <Quantity>
-        <ClassName>Mass</ClassName>
-        <Namespace />
-        <Type>
-          <ClassName>Mass</ClassName>
-        </Type>
-        <Units>
-          <UnitAndPower>
-            <UnitName>Kilograms</UnitName>
-            <Power>1</Power>
-          </UnitAndPower>
-        </Units>
-      </Quantity>
+      <QuantityName>Mass</QuantityName>
     </SiUnit>
     <SiUnit>
       <ClassName>Metres</ClassName>
       <Symbol>m</Symbol>
-      <Quantity>
-        <ClassName>Length</ClassName>
-        <Namespace />
-        <Type>
-          <ClassName>Length</ClassName>
-        </Type>
-        <Units>
-          <UnitAndPower>
-            <UnitName>Metres</UnitName>
-            <Power>1</Power>
-          </UnitAndPower>
-        </Units>
-      </Quantity>
+      <QuantityName>Length</QuantityName>
     </SiUnit>
     <SiUnit>
       <ClassName>Seconds</ClassName>
       <Symbol>s</Symbol>
-      <Quantity>
-        <ClassName>Time</ClassName>
-        <Namespace />
-        <Type>
-          <ClassName>Time</ClassName>
-        </Type>
-        <Units>
-          <UnitAndPower>
-            <UnitName>Seconds</UnitName>
-            <Power>1</Power>
-          </UnitAndPower>
-        </Units>
-      </Quantity>
+      <QuantityName>Time</QuantityName>
     </SiUnit>
-  </SiUnitTypes>
+  </SiUnits>
   <Prefixes>
     <Prefix>
       <Name>Kilo</Name>
