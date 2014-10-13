@@ -54,6 +54,9 @@ namespace Gu.Units
             Metres = UnitConverter.ConvertFrom(value, unit);
         }
 
+        public double SiValue { get { return Metres; } }
+
+
         /// <summary>
         /// The value in millimetres
         /// </summary>

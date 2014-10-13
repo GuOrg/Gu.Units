@@ -54,6 +54,7 @@ namespace Gu.Units
                 return UnitConverter.ConvertTo(Kilograms, MassUnit.Grams);
             }
         }
+        public double SiValue { get { return Kilograms; } }
 
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Mass"/> from its string representation
