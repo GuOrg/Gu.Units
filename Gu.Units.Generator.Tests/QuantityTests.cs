@@ -20,8 +20,7 @@
         public void ComposedQuantityInterface(string quantityName, string unitName, int power, string expected)
         {
             var siUnit = new SiUnit { ClassName = unitName };
-            var unitAndPower = new UnitAndPower(siUnit, power);
-            var quantity = new Quantity("", "Length", unitAndPower);
+            var quantity = new Quantity("", "Length", siUnit);
             var @interface = quantity.Interface;
             Assert.AreEqual(expected, @interface);
         }

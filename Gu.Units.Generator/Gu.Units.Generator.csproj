@@ -71,18 +71,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Descriptors\IUnit.cs" />
     <Compile Include="Descriptors\Prefix.cs" />
     <Compile Include="Descriptors\SiUnit.cs" />
     <Compile Include="Descriptors\TypeMetaData.cs" />
-    <Compile Include="Descriptors\Unit.cs" />
+    <Compile Include="Descriptors\DerivedUnit.cs" />
     <Compile Include="Descriptors\UnitAndPower.cs" />
+    <Compile Include="Descriptors\UnitBase.cs" />
+    <Compile Include="Descriptors\UnitParts.cs" />
     <Compile Include="Properties\Annotations.generated.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="Descriptors\Settings.cs" />
     <Compile Include="Descriptors\Quantity.cs" />
-    <Compile Include="MetaDataViewModel.cs" />
     <Compile Include="ViewModel.cs" />
+    <Compile Include="WpfStuff\ObservableCollectionExt.cs" />
+    <Compile Include="WpfStuff\QuantityConverter.cs" />
     <Compile Include="WpfStuff\TypeMetaDataConverter.cs" />
+    <Compile Include="WpfStuff\UnitPartsConverter.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

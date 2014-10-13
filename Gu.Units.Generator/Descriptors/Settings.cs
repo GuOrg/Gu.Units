@@ -8,10 +8,12 @@
     using System.Reflection;
     using System.Xml.Serialization;
 
+    using Gu.Units.Generator.WpfStuff;
+
     public class Settings
     {
-        private readonly ObservableCollection<Quantity> composites = new ObservableCollection<Quantity>();
-        private readonly ObservableCollection<SiUnit> _siUnitTypes = new ObservableCollection<SiUnit>();
+        private readonly ObservableCollection<DerivedUnit> _derivedUnits = new ObservableCollection<DerivedUnit>();
+        private readonly ObservableCollection<SiUnit> _siUnits = new ObservableCollection<SiUnit>();
         private readonly ObservableCollection<Prefix> _prefixes = new ObservableCollection<Prefix>();
 
         public static Settings Instance
@@ -26,14 +28,17 @@
                     {
                         settings = (Settings)serializer.Deserialize(reader);
                     }
-                    foreach (var unit in settings.SiUnitTypes)
+                    foreach (var unit in settings.SiUnits)
                     {
-                        unit.Quantity.Units.Clear();
-                        unit.Quantity.Units.Add(new UnitAndPower(unit));
+                        //unit.Quantity = 
+                    }
+                    foreach (var unit in settings.DerivedUnits)
+                    {
+                        //unit.Quantity = 
                     }
                     return settings;
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
                     return new Settings();
                 }
@@ -74,32 +79,17 @@
             }
         }
 
-        public ObservableCollection<Quantity> Composites
+        public ObservableCollection<DerivedUnit> DerivedUnits
         {
             get
             {
-                return composites;
+                return this._derivedUnits;
             }
         }
 
-        [XmlIgnore]
-        public IEnumerable<Unit> UnitTypes
+        public ObservableCollection<SiUnit> SiUnits
         {
-            get
-            {
-                var units = new List<Unit>();
-                foreach (var quantity in this.Composites)
-                {
-                    //units.Add(quantity.SiUnit);
-                    //units.AddRange(quantity.Units);
-                }
-                return units;
-            }
-        }
-
-        public ObservableCollection<SiUnit> SiUnitTypes
-        {
-            get { return _siUnitTypes; }
+            get { return this._siUnits; }
         }
 
         public ObservableCollection<Prefix> Prefixes
@@ -131,9 +121,13 @@
         public static void Save(Settings settings, string fullFileName)
         {
             var serializer = new XmlSerializer(typeof(Settings));
+            var toSave = new Settings();
+            toSave.DerivedUnits.InvokeAddRange(settings.DerivedUnits.Where(x => x != null && !x.IsEmpty));
+            toSave.SiUnits.InvokeAddRange(settings.SiUnits.Where(x => x != null && !x.IsEmpty));
+            toSave.Prefixes.InvokeAddRange(settings.Prefixes.Where(x => x != null));
             using (var stream = File.Create(fullFileName))
             {
-                serializer.Serialize(stream, settings);
+                serializer.Serialize(stream, toSave);
             }
         }
     }

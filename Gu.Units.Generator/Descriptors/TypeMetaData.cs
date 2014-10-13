@@ -3,6 +3,8 @@
     using System;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
+    using System.Xml.Serialization;
+
     using Annotations;
     using WpfStuff;
 
@@ -10,16 +12,35 @@
     public class TypeMetaData : MarshalByRefObject, INotifyPropertyChanged
     {
         private string _className;
+        private string _ns;
+
         protected TypeMetaData()
         {
         }
         
-        public TypeMetaData(string className)
+        public TypeMetaData(string @namespace,string className)
         {
-            ClassName = className;
+            _ns = @namespace;
+            _className = className;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public string Namespace
+        {
+            get { return _ns; }
+            set
+            {
+                if (value == _ns)
+                {
+                    return;
+                }
+                _ns = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Ns { get; set; }
 
         public string ClassName
         {
@@ -36,6 +57,7 @@
             }
         }
 
+        [XmlIgnore]
         public string ParameterName
         {
             get

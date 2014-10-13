@@ -12,117 +12,68 @@
     [Serializable, TypeConverter(typeof(QuantityConverter))]
     public class Quantity : TypeMetaData
     {
-        private readonly ObservableCollection<UnitAndPower> _units = new ObservableCollection<UnitAndPower>();
-        private TypeMetaData _type;
-        private string _ns;
+        private IUnit _unit;
 
         public Quantity()
         {
-            _units.CollectionChanged += (sender, args) =>
-            {
-                OnPropertyChanged("Interface");
-                OnPropertyChanged("UiName");
-            };
         }
 
-        public Quantity(string ns, string className, params UnitAndPower[] units)
-            : base(className)
+        public Quantity(string @namespace, string className, IUnit unit)
+            : base(@namespace, className)
         {
-            Namespace = ns;
-            Type = new TypeMetaData(className);
-            var unitAndPowers = units.OrderBy(x => x.Unit).ThenBy(x => x.Power).ToList();
-            foreach (var unitAndPower in unitAndPowers)
-            {
-                _units.Add(unitAndPower);
-            }
-            if (units.Length == 0)
-            {
-                throw new ArgumentException("No units", "units");
-            }
-            if (units.Length != units.Select(x => x.Unit.ClassName).Distinct().Count())
-            {
-                throw new ArgumentException("Units must be distinct", "units");
-            }
-            _units.CollectionChanged += (sender, args) =>
-            {
-                OnPropertyChanged("Interface");
-                OnPropertyChanged("UiName");
-            };
-        }
-        public Quantity(string ns, string className, SiUnit unit)
-            : this(ns, className, new[] { new UnitAndPower(unit) })
-        {
+            _unit = unit;
         }
 
         public static Quantity Empty
         {
             get
             {
-                return new Quantity("", "");
+                return new Quantity("", "", null);
             }
         }
 
         /// <summary>
         /// DummyData for the template
         /// </summary>
-        public static Quantity DummyBase
+        public static Quantity DummySiUnit
         {
             get
             {
-                var siUnit = new SiUnit { ClassName = "Length" };
+                var siUnit = new SiUnit("Gu.Units", "Metres", "m");
                 var quantity = new Quantity("", "Metres", siUnit);
                 return quantity;
             }
         }
 
-        public string Namespace
-        {
-            get { return _ns; }
-            set
-            {
-                if (value == _ns)
-                {
-                    return;
-                }
-                _ns = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public TypeMetaData Type
-        {
-            get { return _type; }
-            set
-            {
-                if (Equals(value, _type))
-                {
-                    return;
-                }
-                _type = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public ObservableCollection<UnitAndPower> Units
-        {
-            get { return _units; }
-        }
-
-        [XmlIgnore]
-        public string UiName
+        public string UnitName
         {
             get
             {
-                if (!_units.Any())
+                return Unit.ClassName;
+            }
+            set
+            {
+                _unit = new SiUnit(Namespace, value, null);
+            }
+        }
+
+        [XmlIgnore]
+        public IUnit Unit
+        {
+            get
+            {
+                return this._unit;
+            }
+            set
+            {
+                if (Equals(value, this._unit))
                 {
-                    return "ERROR No Units";
+                    return;
                 }
-                var args = string.Join(", ",
-                    Units.Select(u => string.Format("I{0}{1}<{2}>",
-                        u.Power < 0 ? "Neg" : "",
-                        u.Power < 0 ? -1 * u.Power : u.Power,
-                        u.Unit.ClassName)));
-                return args;
+                this._unit = value;
+                this.OnPropertyChanged();
+                this.OnPropertyChanged("UnitName");
+                this.OnPropertyChanged("Interface");
             }
         }
 
@@ -131,27 +82,36 @@
         {
             get
             {
-                if (!_units.Any())
+                var siUnit = Unit as SiUnit;
+                if (siUnit != null)
+                {
+                    if (string.IsNullOrEmpty(siUnit.Symbol))
+                    {
+                        return "ERROR: no unit";
+                    }
+                    return siUnit.Symbol;
+                }
+                var derivedUnit = Unit as DerivedUnit;
+                if (derivedUnit == null)
+                {
+                    return "Unit == null";
+                }
+                if (!derivedUnit.Parts.Any())
                 {
                     return "ERROR No Units";
                 }
                 var args = string.Join(", ",
-                    Units.Select(u => string.Format("I{0}{1}<{2}>",
+                    derivedUnit.Parts.Select(u => string.Format("I{0}{1}<{2}>",
                         u.Power < 0 ? "Neg" : "",
                         u.Power < 0 ? -1 * u.Power : u.Power,
-                        u.Unit.ClassName)));
-                return string.Format("IQuantity<IUnit{0}<{1}>>", Units.Count, args);
+                        u.SiUnit.ClassName)));
+                return string.Format("IQuantity<IUnit{0}<{1}>>", derivedUnit.Parts.Count, args);
             }
         }
 
         public override string ToString()
         {
-            if (Type == null)
-            {
-                return "";
-            }
-            var units = Units == null ? "" : string.Join("*", this.Units.Select(x => x.ToString()));
-            return string.Format("Type: {0}, Units: {1}", Type.ClassName, units);
+            return string.Format("{0} ({1})", ClassName, Unit.ToString());
         }
     }
 }
