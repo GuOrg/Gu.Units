@@ -1,4 +1,4 @@
-namespace Gu.Units.Generator.WpfStuff
+﻿namespace Gu.Units.Generator.WpfStuff
 {
     using System;
     using System.ComponentModel;
@@ -26,6 +26,7 @@ namespace Gu.Units.Generator.WpfStuff
             }
             int sign = 1;
             var s = (string)value;
+            s = s.Replace("⋅", "*");
             if (string.IsNullOrWhiteSpace(s))
             {
                 return null;
