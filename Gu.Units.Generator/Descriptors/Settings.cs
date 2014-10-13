@@ -6,6 +6,7 @@
     using System.IO;
     using System.Linq;
     using System.Reflection;
+    using System.Text;
     using System.Xml.Serialization;
 
     using Gu.Units.Generator.WpfStuff;
@@ -34,7 +35,10 @@
                     }
                     foreach (var unit in settings.DerivedUnits)
                     {
-                        //unit.Quantity = 
+                        foreach (var unitPart in unit.Parts)
+                        {
+                            unitPart.Unit = UnitBase.AllUnitsStatic.Single(x => x.ClassName == unitPart.UnitName);
+                        }
                     }
                     return settings;
                 }
@@ -124,10 +128,13 @@
             var toSave = new Settings();
             toSave.DerivedUnits.InvokeAddRange(settings.DerivedUnits.Where(x => x != null && !x.IsEmpty));
             toSave.SiUnits.InvokeAddRange(settings.SiUnits.Where(x => x != null && !x.IsEmpty));
-            toSave.Prefixes.InvokeAddRange(settings.Prefixes.Where(x => x != null));
+            toSave.Prefixes.InvokeAddRange(settings.Prefixes.Where(x => x != null).OrderBy(x => x.Factor));
             using (var stream = File.Create(fullFileName))
             {
-                serializer.Serialize(stream, toSave);
+                using (var writer = new StreamWriter(stream, Encoding.UTF8))
+                {
+                    serializer.Serialize(writer, toSave);
+                }
             }
         }
     }

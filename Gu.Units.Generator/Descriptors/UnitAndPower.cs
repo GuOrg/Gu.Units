@@ -8,26 +8,26 @@
 
     public class UnitAndPower : INotifyPropertyChanged
     {
-        private SiUnit _siUnit;
+        private IUnit _unit;
         private int _power;
         public UnitAndPower()
         {
-            this.SiUnit = new SiUnit();
+            this.Unit = new SiUnit();
         }
 
-        public UnitAndPower(SiUnit siUnit)
+        public UnitAndPower(SiUnit unit)
         {
-            this.SiUnit = siUnit;
+            this.Unit = unit;
             Power = 1;
         }
       
-        public UnitAndPower(SiUnit siUnit, int power)
+        public UnitAndPower(SiUnit unit, int power)
         {
             if (power == 0)
             {
                 throw new ArgumentException("power == 0", "power");
             }
-            this.SiUnit = siUnit;
+            this.Unit = unit;
             Power = power;
         }
 
@@ -42,16 +42,16 @@
         }
 
         [XmlIgnore]
-        public SiUnit SiUnit
+        public IUnit Unit
         {
-            get { return this._siUnit; }
+            get { return this._unit; }
             set
             {
-                if (Equals(value, this._siUnit))
+                if (Equals(value, this._unit))
                 {
                     return;
                 }
-                this._siUnit = value;
+                this._unit = value;
                 OnPropertyChanged();
                 OnPropertyChanged("UnitName");
             }
@@ -61,11 +61,11 @@
         {
             get
             {
-                return this.SiUnit.ClassName;
+                return this.Unit.ClassName;
             }
             set
             {
-                this.SiUnit = new SiUnit { ClassName = value };
+                this.Unit = new SiUnit { ClassName = value };
             }
         }
 
@@ -87,9 +87,9 @@
         {
             if (Power == 1)
             {
-                return this.SiUnit.ClassName;
+                return this.Unit.ClassName;
             }
-            return string.Format("{0}^{1}", this.SiUnit.ClassName, Power);
+            return string.Format("{0}^{1}", this.Unit.ClassName, Power);
         }
 
         [NotifyPropertyChangedInvocator]
@@ -104,7 +104,7 @@
 
         protected bool Equals(UnitAndPower other)
         {
-            return Equals(this._siUnit, other._siUnit) && this._power == other._power;
+            return Equals(this._unit, other._unit) && this._power == other._power;
         }
 
         public override bool Equals(object obj)
@@ -128,7 +128,7 @@
         {
             unchecked
             {
-                return ((this._siUnit != null ? this._siUnit.GetHashCode() : 0) * 397) ^ this._power;
+                return ((this._unit != null ? this._unit.GetHashCode() : 0) * 397) ^ this._power;
             }
         }
     }

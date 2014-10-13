@@ -36,11 +36,11 @@
                             sb.Append("⋅");
                         }
                     }
-                    sb.Append(unitAndPower.SiUnit.Symbol);
+                    sb.Append(unitAndPower.Unit.Symbol);
                     if (Math.Abs(unitAndPower.Power) > 1)
                     {
                         sb.Append("^")
-                          .Append(unitAndPower.Power);
+                          .Append(Math.Abs(unitAndPower.Power));
                     }
                     previous = unitAndPower;
                 }

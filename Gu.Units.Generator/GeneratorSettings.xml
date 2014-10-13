@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <DerivedUnits>
     <DerivedUnit>
@@ -40,12 +40,27 @@
       <Symbol>s</Symbol>
       <QuantityName>Time</QuantityName>
     </SiUnit>
+    <SiUnit>
+      <ClassName>Kelvin</ClassName>
+      <Symbol>°K</Symbol>
+      <QuantityName>Temperature</QuantityName>
+    </SiUnit>
   </SiUnits>
   <Prefixes>
     <Prefix>
-      <Name>Kilo</Name>
-      <Symbol>k</Symbol>
-      <Factor>3</Factor>
+      <Name>Nano</Name>
+      <Symbol>n</Symbol>
+      <Factor>-9</Factor>
+    </Prefix>
+    <Prefix>
+      <Name>Micro</Name>
+      <Symbol>µ</Symbol>
+      <Factor>-6</Factor>
+    </Prefix>
+    <Prefix>
+      <Name>Milli</Name>
+      <Symbol>m</Symbol>
+      <Factor>-3</Factor>
     </Prefix>
     <Prefix>
       <Name>Centi</Name>
@@ -53,9 +68,24 @@
       <Factor>-2</Factor>
     </Prefix>
     <Prefix>
-      <Name>Milli</Name>
-      <Symbol>m</Symbol>
-      <Factor>-3</Factor>
+      <Name>Deci</Name>
+      <Symbol>d</Symbol>
+      <Factor>-1</Factor>
+    </Prefix>
+    <Prefix>
+      <Name>Kilo</Name>
+      <Symbol>k</Symbol>
+      <Factor>3</Factor>
+    </Prefix>
+    <Prefix>
+      <Name>Mega</Name>
+      <Symbol>M</Symbol>
+      <Factor>6</Factor>
+    </Prefix>
+    <Prefix>
+      <Name>Giga</Name>
+      <Symbol>G</Symbol>
+      <Factor>9</Factor>
     </Prefix>
   </Prefixes>
 </Settings>
