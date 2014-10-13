@@ -23,6 +23,100 @@
         </UnitAndPower>
       </Parts>
     </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>Newtons</ClassName>
+      <Symbol>N</Symbol>
+      <QuantityName>Force</QuantityName>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Kilograms</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Metres</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Seconds</UnitName>
+          <Power>-2</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>Pascals</ClassName>
+      <Symbol>Pa</Symbol>
+      <QuantityName>Pressure</QuantityName>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Newtons</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Metres</UnitName>
+          <Power>-2</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>MetresPerSecond</ClassName>
+      <Symbol>v</Symbol>
+      <QuantityName>Speed</QuantityName>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>MetresPerSecond</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>KilogramsPerCubicMetre</ClassName>
+      <Symbol>ρ</Symbol>
+      <QuantityName>Density</QuantityName>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Kilograms</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Metres</UnitName>
+          <Power>-3</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>Joules</ClassName>
+      <Symbol>J</Symbol>
+      <QuantityName>Energy</QuantityName>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Kilograms</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Metres</UnitName>
+          <Power>2</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Seconds</UnitName>
+          <Power>-2</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>Watts</ClassName>
+      <Symbol>W</Symbol>
+      <QuantityName>Power</QuantityName>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Joules</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Seconds</UnitName>
+          <Power>-1</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
   </DerivedUnits>
   <SiUnits>
     <SiUnit>
@@ -44,6 +138,16 @@
       <ClassName>Kelvin</ClassName>
       <Symbol>°K</Symbol>
       <QuantityName>Temperature</QuantityName>
+    </SiUnit>
+    <SiUnit>
+      <ClassName>Percent</ClassName>
+      <Symbol>%</Symbol>
+      <QuantityName>Percent</QuantityName>
+    </SiUnit>
+    <SiUnit>
+      <ClassName>Radians</ClassName>
+      <Symbol>rad</Symbol>
+      <QuantityName>Angle</QuantityName>
     </SiUnit>
   </SiUnits>
   <Prefixes>
