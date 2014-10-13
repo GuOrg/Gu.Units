@@ -104,7 +104,7 @@
                     derivedUnit.Parts.Select(u => string.Format("I{0}{1}<{2}>",
                         u.Power < 0 ? "Neg" : "",
                         u.Power < 0 ? -1 * u.Power : u.Power,
-                        u.SiUnit.ClassName)));
+                        u.Unit.ClassName)));
                 return string.Format("IQuantity<IUnit{0}<{1}>>", derivedUnit.Parts.Count, args);
             }
         }

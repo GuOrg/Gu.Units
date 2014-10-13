@@ -15,6 +15,8 @@
             Assert.IsTrue(converter.CanConvertFrom(null, typeof(string)));
             var parts = (UnitParts)converter.ConvertFrom(null, null, data.Value);
             CollectionAssert.AreEquivalent(data.Units, parts);
+            var uiName = parts.UiName;
+            Assert.AreEqual(data.Value.Replace(" ", ""), uiName.Replace('⋅', '*').Replace(" ", ""));
         }
     }
 
@@ -47,7 +49,7 @@
 
             public override string ToString()
             {
-                var units = string.Join(", ", this.Units.Select(x => string.Format("{0}^{1}", x.SiUnit.Symbol, x.Power)));
+                var units = string.Join(", ", this.Units.Select(x => string.Format("{0}^{1}", x.Unit.Symbol, x.Power)));
                 return string.Format("Value: {0}, Units: {1}", this.Value, units);
             }
         }

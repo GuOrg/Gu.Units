@@ -7,7 +7,6 @@
             where TPowerRight : IPower<TUnit>
             where TUnit : IUnit
         {
-            var type = typeof (TPowerLeft);
             return new Quantity<I2<TUnit>, TUnit>(left.SiValue * right.SiValue);
         }
     }
