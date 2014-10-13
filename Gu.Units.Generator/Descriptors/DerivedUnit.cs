@@ -67,5 +67,10 @@
                 return Parts.UiName;
             }
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0}  ({1})", Symbol, this.UiName);
+        }
     }
 }

@@ -58,17 +58,6 @@
       </Parts>
     </DerivedUnit>
     <DerivedUnit>
-      <ClassName>MetresPerSecond</ClassName>
-      <Symbol>v</Symbol>
-      <QuantityName>Speed</QuantityName>
-      <Parts>
-        <UnitAndPower>
-          <UnitName>MetresPerSecond</UnitName>
-          <Power>1</Power>
-        </UnitAndPower>
-      </Parts>
-    </DerivedUnit>
-    <DerivedUnit>
       <ClassName>KilogramsPerCubicMetre</ClassName>
       <Symbol>ρ</Symbol>
       <QuantityName>Density</QuantityName>
@@ -109,6 +98,21 @@
       <Parts>
         <UnitAndPower>
           <UnitName>Joules</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Seconds</UnitName>
+          <Power>-1</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>MetresPerSecond</ClassName>
+      <Symbol>v</Symbol>
+      <QuantityName>Speed</QuantityName>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Metres</UnitName>
           <Power>1</Power>
         </UnitAndPower>
         <UnitAndPower>

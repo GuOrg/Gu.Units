@@ -66,6 +66,11 @@
             }
         }
 
+        public override string ToString()
+        {
+            return string.Format("Name: {0}, Symbol: {1}, Factor: {2}", this.Name, this.Symbol, this.Factor);
+        }
+
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

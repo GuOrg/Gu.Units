@@ -42,7 +42,10 @@
                         unit.Quantity = quantity;
                         foreach (var unitPart in unit.Parts)
                         {
-                            unitPart.Unit = UnitBase.AllUnitsStatic.Single(x => x.ClassName == unitPart.UnitName);
+                            if (unitPart.Unit == null)
+                            {
+                                unitPart.Unit = UnitBase.AllUnitsStatic.Single(x => x.ClassName == unitPart.UnitName);
+                            }
                         }
                     }
                     return settings;

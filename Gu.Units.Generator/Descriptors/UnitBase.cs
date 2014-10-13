@@ -17,10 +17,7 @@
             : base(@namespace, className)
         {
             _symbol = symbol;
-            this.PropertyChanged += (sender, args) =>
-            {
-                TryAdd();
-            };
+            this.PropertyChanged += (sender, args) => this.TryAdd();
             TryAdd();
             _allUnitsReadonly = new ReadOnlyObservableCollection<IUnit>(AllUnitsStatic);
         }
@@ -97,38 +94,7 @@
         {
             return this.UiName;
         }
-        protected bool Equals(UnitBase other)
-        {
-            return string.Equals(_symbol, other._symbol);
-        }
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-            {
-                return false;
-            }
-            if (ReferenceEquals(this, obj))
-            {
-                return true;
-            }
-            if (obj.GetType() != this.GetType())
-            {
-                return false;
-            }
-            return Equals((UnitBase) obj);
-        }
-        public override int GetHashCode()
-        {
-            return _symbol.GetHashCode();
-        }
-        public static bool operator ==(UnitBase left, UnitBase right)
-        {
-            return Equals(left, right);
-        }
-        public static bool operator !=(UnitBase left, UnitBase right)
-        {
-            return !Equals(left, right);
-        }
+
         private void TryAdd()
         {
             if (!IsEmpty)

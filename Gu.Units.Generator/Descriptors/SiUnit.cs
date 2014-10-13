@@ -32,5 +32,10 @@
                 return this.Symbol;
             }
         }
+
+        public override string ToString()
+        {
+            return this.UiName;
+        }
     }
 }
