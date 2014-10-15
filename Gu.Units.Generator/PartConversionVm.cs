@@ -1,36 +1,32 @@
 ﻿namespace Gu.Units.Generator
 {
-    using System;
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
     using Annotations;
     using WpfStuff;
 
-    public class PrefixConversionVm : INotifyPropertyChanged
+    public class PartConversionVm : INotifyPropertyChanged
     {
         private readonly IUnit _unit;
-        private readonly SubUnit _temp;
-        public PrefixConversionVm(Prefix prefix, IUnit unit)
+        private readonly SubUnit[] _subParts;
+        public PartConversionVm(IUnit unit, params SubUnit[] subParts)
         {
             _unit = unit;
-            Prefix = prefix;
-            _temp = new SubUnit
-            {
-                BaseUnit = unit,
-                Prefix = prefix
-            };
+            _subParts = subParts;
+            Temp = new SubUnit { BaseUnit = unit };
+            Temp.SetParts(subParts);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Prefix Prefix { get; private set; }
+        public SubUnit Temp { get; set; }
 
         public bool IsUsed
         {
             get
             {
-                return _unit.SubUnits.Any(x => x.ConversionFactor == _temp.ConversionFactor && x.Symbol == _temp.Symbol);
+                return _unit.SubUnits.Any(x => x.ConversionFactor == Temp.ConversionFactor);
             }
             set
             {
@@ -40,14 +36,21 @@
                 }
                 if (value)
                 {
-                    _unit.SubUnits.Add(new SubUnit { Prefix = Prefix });
+                    var subUnit = new SubUnit { BaseUnit = _unit };
+                    subUnit.SetParts(_subParts);
+                    _unit.SubUnits.Add(subUnit);
                 }
                 else
                 {
-                    _unit.SubUnits.InvokeRemove(x => x.Prefix != null && x.Prefix.Name == Prefix.Name);
+                    _unit.SubUnits.InvokeRemove(x => x.ConversionFactor == Temp.ConversionFactor);
                 }
                 OnPropertyChanged();
             }
+        }
+
+        public override string ToString()
+        {
+            return Temp.Symbol;
         }
 
         [NotifyPropertyChangedInvocator]

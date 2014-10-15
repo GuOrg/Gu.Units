@@ -14,6 +14,11 @@
     [TypeConverter(typeof(UnitPartsConverter))]
     public class UnitParts : ObservableCollection<UnitAndPower>
     {
+        public UnitParts(IEnumerable<UnitAndPower> parts)
+            : base(parts)
+        {
+        }
+
         public UnitParts()
         {
             this.CollectionChanged += (sender, args) =>
@@ -92,6 +97,12 @@
                 return sb.ToString();
             }
         }
+        public void Replace(UnitAndPower old, UnitAndPower @new)
+        {
+            var indexOf = base.IndexOf(old);
+            base.RemoveAt(indexOf);
+            base.Insert(indexOf, @new);
+        }
 
         public override string ToString()
         {
@@ -115,6 +126,7 @@
                 GetAll(unitPart, up.Power - 1, list);
             }
         }
+
         private void OnPartPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
         {
             this.OnPropertyChanged(new PropertyChangedEventArgs("UiName"));

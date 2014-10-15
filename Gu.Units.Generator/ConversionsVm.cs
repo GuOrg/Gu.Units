@@ -1,9 +1,12 @@
 ﻿namespace Gu.Units.Generator
 {
+    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
+    using System.Linq;
     using System.Runtime.CompilerServices;
+    using System.Text;
     using Annotations;
     using WpfStuff;
 
@@ -11,6 +14,8 @@
     {
         private readonly Settings _settings;
         private readonly ObservableCollection<PrefixConversionVm> _prefixes = new ObservableCollection<PrefixConversionVm>();
+        private readonly ObservableCollection<PartConversionVm[]> _subParts = new ObservableCollection<PartConversionVm[]>();
+
         private IUnit _baseUnit;
         public ConversionsVm(Settings settings)
         {
@@ -30,9 +35,26 @@
                 }
                 _baseUnit = value;
                 _prefixes.Clear();
+                _subParts.Clear();
                 foreach (var prefix in _settings.Prefixes)
                 {
                     _prefixes.Add(new PrefixConversionVm(prefix, _baseUnit));
+                }
+                var derivedUnit = _baseUnit as DerivedUnit;
+                if (derivedUnit != null)
+                {
+                    if (derivedUnit.Parts.Count == 1)
+                    {
+                        _subParts.Add(derivedUnit.Parts.Single().Unit.SubUnits.Select(x => new PartConversionVm(_baseUnit, x)).ToArray());
+                    }
+                    else if (derivedUnit.Parts.Count == 2)
+                    {
+                        _subParts.Add(derivedUnit.Parts[0].Unit.SubUnits.Select(x => new PartConversionVm(_baseUnit, x)).ToArray());
+                        foreach (var u in derivedUnit.Parts[1].Unit.SubUnits)
+                        {
+                            _subParts.Add(derivedUnit.Parts[0].Unit.SubUnits.Select(x => new PartConversionVm(_baseUnit, u, x)).ToArray());
+                        }
+                    }
                 }
                 OnPropertyChanged();
             }
@@ -41,6 +63,11 @@
         public ObservableCollection<PrefixConversionVm> Prefixes
         {
             get { return _prefixes; }
+        }
+
+        public ObservableCollection<PartConversionVm[]> SubParts
+        {
+            get { return _subParts; }
         }
 
         [NotifyPropertyChangedInvocator]
