@@ -82,6 +82,7 @@
     <Compile Include="Descriptors\UnitAndPower.cs" />
     <Compile Include="Descriptors\UnitBase.cs" />
     <Compile Include="Descriptors\UnitParts.cs" />
+    <Compile Include="PartConversionVm.cs" />
     <Compile Include="PrefixConversionVm.cs" />
     <Compile Include="Properties\Annotations.generated.cs" />
     <Compile Include="Descriptors\Settings.cs" />

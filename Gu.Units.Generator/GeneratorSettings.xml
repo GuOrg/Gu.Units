@@ -5,7 +5,32 @@
       <ClassName>SquareMetres</ClassName>
       <Symbol>m^2</Symbol>
       <QuantityName>Area</QuantityName>
-      <SubUnits />
+      <SubUnits>
+        <SubUnit>
+          <ClassName>SquareMillimetres</ClassName>
+          <Symbol>mm^2</Symbol>
+          <ConversionFactor>1E-06</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>SquareKilometres</ClassName>
+          <Symbol>km^2</Symbol>
+          <ConversionFactor>1000000</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>SquareCentimetres</ClassName>
+          <Symbol>cm^2</Symbol>
+          <ConversionFactor>0.0001</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>SquareDecimetres</ClassName>
+          <Symbol>dm^2</Symbol>
+          <ConversionFactor>0.010000000000000002</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
       <Parts>
         <UnitAndPower>
           <UnitName>Metres</UnitName>
@@ -17,7 +42,32 @@
       <ClassName>CubicMetres</ClassName>
       <Symbol>m^3</Symbol>
       <QuantityName>Volume</QuantityName>
-      <SubUnits />
+      <SubUnits>
+        <SubUnit>
+          <ClassName>CubicMillimetres</ClassName>
+          <Symbol>mm^3</Symbol>
+          <ConversionFactor>1E-09</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Litres</ClassName>
+          <Symbol>L</Symbol>
+          <ConversionFactor>0.0010000000000000002</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>CubicKilometres</ClassName>
+          <Symbol>km^3</Symbol>
+          <ConversionFactor>1000000000</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>CubicCentimetres</ClassName>
+          <Symbol>cm^3</Symbol>
+          <ConversionFactor>1.0000000000000002E-06</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
       <Parts>
         <UnitAndPower>
           <UnitName>Metres</UnitName>
@@ -33,37 +83,37 @@
         <SubUnit>
           <ClassName>Nanonewtons</ClassName>
           <Symbol>nN</Symbol>
-          <ConversionFactor>-9</ConversionFactor>
+          <ConversionFactor>1E-09</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Micronewtons</ClassName>
           <Symbol>µN</Symbol>
-          <ConversionFactor>-6</ConversionFactor>
+          <ConversionFactor>1E-06</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Millinewtons</ClassName>
           <Symbol>mN</Symbol>
-          <ConversionFactor>-3</ConversionFactor>
+          <ConversionFactor>0.001</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Kilonewtons</ClassName>
           <Symbol>kN</Symbol>
-          <ConversionFactor>3</ConversionFactor>
+          <ConversionFactor>1000</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Meganewtons</ClassName>
           <Symbol>MN</Symbol>
-          <ConversionFactor>6</ConversionFactor>
+          <ConversionFactor>1000000</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Giganewtons</ClassName>
           <Symbol>GN</Symbol>
-          <ConversionFactor>9</ConversionFactor>
+          <ConversionFactor>1000000000</ConversionFactor>
           <SubUnits />
         </SubUnit>
       </SubUnits>
@@ -90,37 +140,37 @@
         <SubUnit>
           <ClassName>Nanopascals</ClassName>
           <Symbol>nPa</Symbol>
-          <ConversionFactor>-9</ConversionFactor>
+          <ConversionFactor>1E-09</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Micropascals</ClassName>
           <Symbol>µPa</Symbol>
-          <ConversionFactor>-6</ConversionFactor>
+          <ConversionFactor>1E-06</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Millipascals</ClassName>
           <Symbol>mPa</Symbol>
-          <ConversionFactor>-3</ConversionFactor>
+          <ConversionFactor>0.001</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Kilopascals</ClassName>
           <Symbol>kPa</Symbol>
-          <ConversionFactor>3</ConversionFactor>
+          <ConversionFactor>1000</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Megapascals</ClassName>
           <Symbol>MPa</Symbol>
-          <ConversionFactor>6</ConversionFactor>
+          <ConversionFactor>1000000</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Gigapascals</ClassName>
           <Symbol>GPa</Symbol>
-          <ConversionFactor>9</ConversionFactor>
+          <ConversionFactor>1000000000</ConversionFactor>
           <SubUnits />
         </SubUnit>
       </SubUnits>
@@ -159,37 +209,37 @@
         <SubUnit>
           <ClassName>Nanojoules</ClassName>
           <Symbol>nJ</Symbol>
-          <ConversionFactor>-9</ConversionFactor>
+          <ConversionFactor>1E-09</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Microjoules</ClassName>
           <Symbol>µJ</Symbol>
-          <ConversionFactor>-6</ConversionFactor>
+          <ConversionFactor>1E-06</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Millijoules</ClassName>
           <Symbol>mJ</Symbol>
-          <ConversionFactor>-3</ConversionFactor>
+          <ConversionFactor>0.001</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Kilojoules</ClassName>
           <Symbol>kJ</Symbol>
-          <ConversionFactor>3</ConversionFactor>
+          <ConversionFactor>1000</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Megajoules</ClassName>
           <Symbol>MJ</Symbol>
-          <ConversionFactor>6</ConversionFactor>
+          <ConversionFactor>1000000</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Gigajoules</ClassName>
           <Symbol>GJ</Symbol>
-          <ConversionFactor>9</ConversionFactor>
+          <ConversionFactor>1000000000</ConversionFactor>
           <SubUnits />
         </SubUnit>
       </SubUnits>
@@ -216,37 +266,37 @@
         <SubUnit>
           <ClassName>Nanowatts</ClassName>
           <Symbol>nW</Symbol>
-          <ConversionFactor>-9</ConversionFactor>
+          <ConversionFactor>1E-09</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Microwatts</ClassName>
           <Symbol>µW</Symbol>
-          <ConversionFactor>-6</ConversionFactor>
+          <ConversionFactor>1E-06</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Milliwatts</ClassName>
           <Symbol>mW</Symbol>
-          <ConversionFactor>-3</ConversionFactor>
+          <ConversionFactor>0.001</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Kilowatts</ClassName>
           <Symbol>kW</Symbol>
-          <ConversionFactor>3</ConversionFactor>
+          <ConversionFactor>1000</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Megawatts</ClassName>
           <Symbol>MW</Symbol>
-          <ConversionFactor>6</ConversionFactor>
+          <ConversionFactor>1000000</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Gigawatts</ClassName>
           <Symbol>GW</Symbol>
-          <ConversionFactor>9</ConversionFactor>
+          <ConversionFactor>1000000000</ConversionFactor>
           <SubUnits />
         </SubUnit>
       </SubUnits>
@@ -265,7 +315,20 @@
       <ClassName>MetresPerSecond</ClassName>
       <Symbol>m/s</Symbol>
       <QuantityName>Speed</QuantityName>
-      <SubUnits />
+      <SubUnits>
+        <SubUnit>
+          <ClassName>MillimetresPerSecond</ClassName>
+          <Symbol>mm / s</Symbol>
+          <ConversionFactor>0.001</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>CentimetresPerSecond</ClassName>
+          <Symbol>cm / s</Symbol>
+          <ConversionFactor>0.01</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
       <Parts>
         <UnitAndPower>
           <UnitName>Metres</UnitName>
@@ -287,19 +350,19 @@
         <SubUnit>
           <ClassName>Grams</ClassName>
           <Symbol>g</Symbol>
-          <ConversionFactor>-3</ConversionFactor>
+          <ConversionFactor>0.001</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Milligrams</ClassName>
           <Symbol>mg</Symbol>
-          <ConversionFactor>-6</ConversionFactor>
+          <ConversionFactor>1E-06</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Micrograms</ClassName>
           <Symbol>µg</Symbol>
-          <ConversionFactor>-9</ConversionFactor>
+          <ConversionFactor>1E-09</ConversionFactor>
           <SubUnits />
         </SubUnit>
       </SubUnits>
@@ -312,37 +375,37 @@
         <SubUnit>
           <ClassName>Nanometres</ClassName>
           <Symbol>nm</Symbol>
-          <ConversionFactor>-9</ConversionFactor>
+          <ConversionFactor>1E-09</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Micrometres</ClassName>
           <Symbol>µm</Symbol>
-          <ConversionFactor>-6</ConversionFactor>
+          <ConversionFactor>1E-06</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Millimetres</ClassName>
           <Symbol>mm</Symbol>
-          <ConversionFactor>-3</ConversionFactor>
+          <ConversionFactor>0.001</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Centimetres</ClassName>
           <Symbol>cm</Symbol>
-          <ConversionFactor>-2</ConversionFactor>
+          <ConversionFactor>0.01</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Decimetres</ClassName>
           <Symbol>dm</Symbol>
-          <ConversionFactor>-1</ConversionFactor>
+          <ConversionFactor>0.1</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Kilometres</ClassName>
           <Symbol>km</Symbol>
-          <ConversionFactor>3</ConversionFactor>
+          <ConversionFactor>1000</ConversionFactor>
           <SubUnits />
         </SubUnit>
       </SubUnits>
@@ -355,19 +418,19 @@
         <SubUnit>
           <ClassName>Nanoseconds</ClassName>
           <Symbol>ns</Symbol>
-          <ConversionFactor>-9</ConversionFactor>
+          <ConversionFactor>1E-09</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Microseconds</ClassName>
           <Symbol>µs</Symbol>
-          <ConversionFactor>-6</ConversionFactor>
+          <ConversionFactor>1E-06</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>Milliseconds</ClassName>
           <Symbol>ms</Symbol>
-          <ConversionFactor>-3</ConversionFactor>
+          <ConversionFactor>0.001</ConversionFactor>
           <SubUnits />
         </SubUnit>
       </SubUnits>

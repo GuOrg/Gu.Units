@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:generator="clr-namespace:Gu.Units.Generator"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:objectModel="clr-namespace:System.Collections.ObjectModel;assembly=System"
         Title="MainWindow"
         Width="525"
         Height="350"
@@ -88,15 +89,39 @@
                                    Grid.Column="0"
                                    Text="{Binding Conversions.BaseUnit.ClassName,
                                                   StringFormat='BaseUnit: {0}'}" />
-                        <ItemsControl Grid.Row="1"
-                                      Grid.Column="0"
-                                      ItemsSource="{Binding Conversions.Prefixes}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate DataType="{x:Type generator:PrefixConversionVm}">
-                                    <CheckBox Content="{Binding Prefix.Name}" IsChecked="{Binding IsUsed}" />
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
+                        <Expander Grid.Row="1"
+                                  Grid.Column="0"
+                                  Header="Prefixes">
+                            <ItemsControl ItemsSource="{Binding Conversions.Prefixes}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type generator:PrefixConversionVm}">
+                                        <CheckBox Content="{Binding Prefix.Name}" IsChecked="{Binding IsUsed}" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Expander>
+                        <Expander Grid.Row="1"
+                                  Grid.Column="1"
+                                  Header="Subparts">
+                            <ItemsControl ItemsSource="{Binding Conversions.SubParts}">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type generator:PartConversionVm[]}">
+                                        <ItemsControl ItemsSource="{Binding}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate DataType="{x:Type generator:PartConversionVm}">
+                                                    <CheckBox Content="{Binding Temp.Symbol}" IsChecked="{Binding IsUsed}" />
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Expander>
                     </Grid>
                     <DataGrid Grid.Row="1"
                               AutoGenerateColumns="False"
@@ -105,7 +130,6 @@
                             <DataGridTextColumn Binding="{Binding Quantity.ClassName}" Header="Quantity" />
                             <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
                             <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
-                            <DataGridTextColumn Header="Prefix" Binding="{Binding Prefix}" IsReadOnly="True" />
                             <DataGridTextColumn Binding="{Binding ConversionFactor}" Header="Factor" />
                         </DataGrid.Columns>
                     </DataGrid>
