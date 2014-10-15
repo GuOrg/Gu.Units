@@ -7,23 +7,19 @@
     using System.Runtime.CompilerServices;
     using Annotations;
 
-    using Gu.Units.Generator.WpfStuff;
 
-    public class ViewModel : INotifyPropertyChanged
+    public class MainVm : INotifyPropertyChanged
     {
-        private readonly UnitCollection<SiUnit> _siUnits;
-        private readonly UnitCollection<DerivedUnit> _derivedUnits;
         private readonly Settings _settings;
         private string _nameSpace;
 
-        private IUnit _selectedUnit;
+        private readonly ConversionsVm _conversions;
 
-        public ViewModel()
+        public MainVm()
         {
             this._settings = Settings.Instance;
-            _siUnits = new UnitCollection<SiUnit>(_settings.SiUnits, x => SiUnit.Empty);
-            _derivedUnits = new UnitCollection<DerivedUnit>(_settings.DerivedUnits, x => DerivedUnit.Empty);
             NameSpace = Settings.ProjectName;
+            _conversions = new ConversionsVm(_settings);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -33,19 +29,19 @@
             get { return _settings.Prefixes; }
         }
 
-        public UnitCollection<SiUnit> SiUnits
+        public ObservableCollection<SiUnit> SiUnits
         {
             get
             {
-                return _siUnits;
+                return _settings.SiUnits;
             }
         }
 
-        public UnitCollection<DerivedUnit> DerivedUnits
+        public ObservableCollection<DerivedUnit> DerivedUnits
         {
             get
             {
-                return _derivedUnits;
+                return _settings.DerivedUnits;
             }
         }
 
@@ -66,20 +62,11 @@
             }
         }
 
-        public IUnit SelectedUnit
+        public ConversionsVm Conversions
         {
             get
             {
-                return this._selectedUnit;
-            }
-            set
-            {
-                if (Equals(value, this._selectedUnit))
-                {
-                    return;
-                }
-                this._selectedUnit = value;
-                this.OnPropertyChanged();
+                return this._conversions;
             }
         }
 
