@@ -241,6 +241,12 @@
           <ConversionFactor>1000000000</ConversionFactor>
           <SubUnits />
         </SubUnit>
+        <SubUnit>
+          <ClassName>KilowattHours</ClassName>
+          <Symbol>kWh</Symbol>
+          <ConversionFactor>3600000</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
       </SubUnits>
       <Parts>
         <UnitAndPower>
@@ -341,10 +347,64 @@
           <ConversionFactor>0.00016666666666666666</ConversionFactor>
           <SubUnits />
         </SubUnit>
+        <SubUnit>
+          <ClassName>MetresPerMinute</ClassName>
+          <Symbol>m / min</Symbol>
+          <ConversionFactor>0.016666666666666666</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>MetresPerHour</ClassName>
+          <Symbol>m / h</Symbol>
+          <ConversionFactor>0.00027777777777777778</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>MillimetresPerHour</ClassName>
+          <Symbol>mm / h</Symbol>
+          <ConversionFactor>2.7777777777777776E-07</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>CentimetresPerHour</ClassName>
+          <Symbol>cm / h</Symbol>
+          <ConversionFactor>2.7777777777777779E-06</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>MillimetresPerMinute</ClassName>
+          <Symbol>mm / min</Symbol>
+          <ConversionFactor>1.6666666666666667E-05</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
       </SubUnits>
       <Parts>
         <UnitAndPower>
           <UnitName>Metres</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Seconds</UnitName>
+          <Power>-1</Power>
+        </UnitAndPower>
+      </Parts>
+      <ExplicitName>false</ExplicitName>
+    </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>RadiansPerSecond</ClassName>
+      <Symbol>rad/s</Symbol>
+      <QuantityName>AngularVelocity</QuantityName>
+      <SubUnits>
+        <SubUnit>
+          <ClassName>Rpm</ClassName>
+          <Symbol>rpm</Symbol>
+          <ConversionFactor>0</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Radians</UnitName>
           <Power>1</Power>
         </UnitAndPower>
         <UnitAndPower>
@@ -471,13 +531,33 @@
       <ClassName>Percent</ClassName>
       <Symbol>%</Symbol>
       <QuantityName>Percent</QuantityName>
-      <SubUnits />
+      <SubUnits>
+        <SubUnit>
+          <ClassName>PartsPerMillion</ClassName>
+          <Symbol>ppm</Symbol>
+          <ConversionFactor>-4</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Promille</ClassName>
+          <Symbol>‰</Symbol>
+          <ConversionFactor>-1</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
     </SiUnit>
     <SiUnit>
       <ClassName>Radians</ClassName>
       <Symbol>rad</Symbol>
       <QuantityName>Angle</QuantityName>
-      <SubUnits />
+      <SubUnits>
+        <SubUnit>
+          <ClassName>Degrees</ClassName>
+          <Symbol>°</Symbol>
+          <ConversionFactor>57.295779513082323</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
     </SiUnit>
   </SiUnits>
   <Prefixes>

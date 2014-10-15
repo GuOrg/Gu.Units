@@ -1,5 +1,6 @@
 ﻿namespace Gu.Units.Generator
 {
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Linq;
@@ -45,10 +46,15 @@
                     }
                     else if (derivedUnit.Parts.Count == 2)
                     {
-                        _subParts.Add(derivedUnit.Parts[0].Unit.SubUnits.Select(x => new PartConversionVm(_baseUnit, x)).ToArray());
+                        var partConversionVms = new List<PartConversionVm> { null };
+                        partConversionVms.AddRange(derivedUnit.Parts[0].Unit.SubUnits.Select(x => new PartConversionVm(_baseUnit, x)));
+                        _subParts.Add(partConversionVms.ToArray());
                         foreach (var u in derivedUnit.Parts[1].Unit.SubUnits)
                         {
-                            _subParts.Add(derivedUnit.Parts[0].Unit.SubUnits.Select(x => new PartConversionVm(_baseUnit, u, x)).ToArray());
+                            partConversionVms.Clear();
+                            partConversionVms.Add(new PartConversionVm(_baseUnit, u));
+                            partConversionVms.AddRange(derivedUnit.Parts[0].Unit.SubUnits.Select(x => new PartConversionVm(_baseUnit, u, x)));
+                            _subParts.Add(partConversionVms.ToArray());
                         }
                     }
                 }
