@@ -5,6 +5,7 @@
       <ClassName>SquareMetres</ClassName>
       <Symbol>m^2</Symbol>
       <QuantityName>Area</QuantityName>
+      <SubUnits />
       <Parts>
         <UnitAndPower>
           <UnitName>Metres</UnitName>
@@ -16,6 +17,7 @@
       <ClassName>CubicMetres</ClassName>
       <Symbol>m^3</Symbol>
       <QuantityName>Volume</QuantityName>
+      <SubUnits />
       <Parts>
         <UnitAndPower>
           <UnitName>Metres</UnitName>
@@ -27,6 +29,7 @@
       <ClassName>Newtons</ClassName>
       <Symbol>N</Symbol>
       <QuantityName>Force</QuantityName>
+      <SubUnits />
       <Parts>
         <UnitAndPower>
           <UnitName>Kilograms</UnitName>
@@ -46,6 +49,7 @@
       <ClassName>Pascals</ClassName>
       <Symbol>Pa</Symbol>
       <QuantityName>Pressure</QuantityName>
+      <SubUnits />
       <Parts>
         <UnitAndPower>
           <UnitName>Newtons</UnitName>
@@ -61,6 +65,7 @@
       <ClassName>KilogramsPerCubicMetre</ClassName>
       <Symbol>ρ</Symbol>
       <QuantityName>Density</QuantityName>
+      <SubUnits />
       <Parts>
         <UnitAndPower>
           <UnitName>Kilograms</UnitName>
@@ -76,6 +81,7 @@
       <ClassName>Joules</ClassName>
       <Symbol>J</Symbol>
       <QuantityName>Energy</QuantityName>
+      <SubUnits />
       <Parts>
         <UnitAndPower>
           <UnitName>Kilograms</UnitName>
@@ -95,6 +101,7 @@
       <ClassName>Watts</ClassName>
       <Symbol>W</Symbol>
       <QuantityName>Power</QuantityName>
+      <SubUnits />
       <Parts>
         <UnitAndPower>
           <UnitName>Joules</UnitName>
@@ -110,6 +117,7 @@
       <ClassName>MetresPerSecond</ClassName>
       <Symbol>m/s</Symbol>
       <QuantityName>Speed</QuantityName>
+      <SubUnits />
       <Parts>
         <UnitAndPower>
           <UnitName>Metres</UnitName>
@@ -127,31 +135,44 @@
       <ClassName>Kilograms</ClassName>
       <Symbol>kg</Symbol>
       <QuantityName>Mass</QuantityName>
+      <SubUnits>
+        <SubUnit>
+          <ClassName>Grams</ClassName>
+          <Symbol>g</Symbol>
+          <ConversionFactor>-3</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
     </SiUnit>
     <SiUnit>
       <ClassName>Metres</ClassName>
       <Symbol>m</Symbol>
       <QuantityName>Length</QuantityName>
+      <SubUnits />
     </SiUnit>
     <SiUnit>
       <ClassName>Seconds</ClassName>
       <Symbol>s</Symbol>
       <QuantityName>Time</QuantityName>
+      <SubUnits />
     </SiUnit>
     <SiUnit>
       <ClassName>Kelvin</ClassName>
       <Symbol>°K</Symbol>
       <QuantityName>Temperature</QuantityName>
+      <SubUnits />
     </SiUnit>
     <SiUnit>
       <ClassName>Percent</ClassName>
       <Symbol>%</Symbol>
       <QuantityName>Percent</QuantityName>
+      <SubUnits />
     </SiUnit>
     <SiUnit>
       <ClassName>Radians</ClassName>
       <Symbol>rad</Symbol>
       <QuantityName>Angle</QuantityName>
+      <SubUnits />
     </SiUnit>
   </SiUnits>
   <Prefixes>
