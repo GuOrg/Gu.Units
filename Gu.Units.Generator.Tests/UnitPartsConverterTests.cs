@@ -15,7 +15,7 @@
             Assert.IsTrue(converter.CanConvertFrom(null, typeof(string)));
             var parts = (UnitParts)converter.ConvertFrom(null, null, data.Value);
             CollectionAssert.AreEquivalent(data.Units, parts);
-            var uiName = parts.UiName;
+            var uiName = parts.Expression;
             Assert.AreEqual(data.Value.Replace(" ", ""), uiName.Replace('⋅', '*').Replace(" ", ""));
         }
     }

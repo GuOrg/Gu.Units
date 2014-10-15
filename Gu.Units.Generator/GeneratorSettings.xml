@@ -13,12 +13,6 @@
           <SubUnits />
         </SubUnit>
         <SubUnit>
-          <ClassName>SquareKilometres</ClassName>
-          <Symbol>km^2</Symbol>
-          <ConversionFactor>1000000</ConversionFactor>
-          <SubUnits />
-        </SubUnit>
-        <SubUnit>
           <ClassName>SquareCentimetres</ClassName>
           <Symbol>cm^2</Symbol>
           <ConversionFactor>0.0001</ConversionFactor>
@@ -30,6 +24,12 @@
           <ConversionFactor>0.010000000000000002</ConversionFactor>
           <SubUnits />
         </SubUnit>
+        <SubUnit>
+          <ClassName>SquareKilometres</ClassName>
+          <Symbol>km^2</Symbol>
+          <ConversionFactor>1000000</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
       </SubUnits>
       <Parts>
         <UnitAndPower>
@@ -37,6 +37,7 @@
           <Power>2</Power>
         </UnitAndPower>
       </Parts>
+      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <ClassName>CubicMetres</ClassName>
@@ -44,27 +45,21 @@
       <QuantityName>Volume</QuantityName>
       <SubUnits>
         <SubUnit>
-          <ClassName>CubicMillimetres</ClassName>
-          <Symbol>mm^3</Symbol>
-          <ConversionFactor>1E-09</ConversionFactor>
-          <SubUnits />
-        </SubUnit>
-        <SubUnit>
           <ClassName>Litres</ClassName>
           <Symbol>L</Symbol>
           <ConversionFactor>0.0010000000000000002</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
-          <ClassName>CubicKilometres</ClassName>
-          <Symbol>km^3</Symbol>
-          <ConversionFactor>1000000000</ConversionFactor>
-          <SubUnits />
-        </SubUnit>
-        <SubUnit>
           <ClassName>CubicCentimetres</ClassName>
           <Symbol>cm^3</Symbol>
           <ConversionFactor>1.0000000000000002E-06</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>CubicMillimetres</ClassName>
+          <Symbol>mm^3</Symbol>
+          <ConversionFactor>1E-09</ConversionFactor>
           <SubUnits />
         </SubUnit>
       </SubUnits>
@@ -74,6 +69,7 @@
           <Power>3</Power>
         </UnitAndPower>
       </Parts>
+      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <ClassName>Newtons</ClassName>
@@ -131,6 +127,7 @@
           <Power>-2</Power>
         </UnitAndPower>
       </Parts>
+      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <ClassName>Pascals</ClassName>
@@ -184,6 +181,7 @@
           <Power>-2</Power>
         </UnitAndPower>
       </Parts>
+      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <ClassName>KilogramsPerCubicMetre</ClassName>
@@ -200,6 +198,7 @@
           <Power>-3</Power>
         </UnitAndPower>
       </Parts>
+      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <ClassName>Joules</ClassName>
@@ -257,6 +256,7 @@
           <Power>-2</Power>
         </UnitAndPower>
       </Parts>
+      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <ClassName>Watts</ClassName>
@@ -310,6 +310,7 @@
           <Power>-1</Power>
         </UnitAndPower>
       </Parts>
+      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <ClassName>MetresPerSecond</ClassName>
@@ -328,6 +329,18 @@
           <ConversionFactor>0.01</ConversionFactor>
           <SubUnits />
         </SubUnit>
+        <SubUnit>
+          <ClassName>KilometresPerHour</ClassName>
+          <Symbol>km / h</Symbol>
+          <ConversionFactor>0.27777777777777779</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>CentimetresPerMinute</ClassName>
+          <Symbol>cm / min</Symbol>
+          <ConversionFactor>0.00016666666666666666</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
       </SubUnits>
       <Parts>
         <UnitAndPower>
@@ -339,6 +352,7 @@
           <Power>-1</Power>
         </UnitAndPower>
       </Parts>
+      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
   </DerivedUnits>
   <SiUnits>
@@ -431,6 +445,18 @@
           <ClassName>Milliseconds</ClassName>
           <Symbol>ms</Symbol>
           <ConversionFactor>0.001</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Hours</ClassName>
+          <Symbol>h</Symbol>
+          <ConversionFactor>3600</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Minutes</ClassName>
+          <Symbol>min</Symbol>
+          <ConversionFactor>60</ConversionFactor>
           <SubUnits />
         </SubUnit>
       </SubUnits>

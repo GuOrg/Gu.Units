@@ -77,7 +77,7 @@
 
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            return value == null ? null : ((UnitParts)value).UiName;
+            return value == null ? null : ((UnitParts)value).Expression;
         }
     }
 }

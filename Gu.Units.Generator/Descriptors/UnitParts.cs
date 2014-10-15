@@ -23,7 +23,7 @@
         {
             this.CollectionChanged += (sender, args) =>
                 {
-                    this.OnPropertyChanged(new PropertyChangedEventArgs("UiName"));
+                    this.OnPropertyChanged(new PropertyChangedEventArgs("Expression"));
                     if (args.NewItems != null)
                     {
                         foreach (var newItem in args.NewItems.OfType<INotifyPropertyChanged>())
@@ -63,7 +63,7 @@
         }
 
         [XmlIgnore]
-        public string UiName
+        public string Expression
         {
             get
             {
@@ -97,6 +97,48 @@
                 return sb.ToString();
             }
         }
+
+        [XmlIgnore]
+        public string UnitName
+        {
+            get
+            {
+                var builder = new StringBuilder();
+                int sign = 1;
+                foreach (var up in this)
+                {
+                    if (sign == 1 && up.Power < 0)
+                    {
+                        builder.Append("Per");
+                        sign = -1;
+                    }
+                    var p = Math.Abs(up.Power);
+                    switch (p)
+                    {
+                        case 1:
+                            break;
+                        case 2:
+                            builder.Append("Square");
+                            break;
+                        case 3:
+                            builder.Append("Cubic");
+                            break;
+                        default:
+                            throw new NotImplementedException("message");
+                    }
+                    if (up.Power > 0)
+                    {
+                        builder.Append(up.UnitName);
+                    }
+                    else
+                    {
+                        builder.Append(up.UnitName.TrimEnd('s'));
+                    }
+                }
+                return builder.ToString();
+            }
+        }
+
         public void Replace(UnitAndPower old, UnitAndPower @new)
         {
             var indexOf = base.IndexOf(old);
@@ -106,7 +148,7 @@
 
         public override string ToString()
         {
-            return this.UiName;
+            return this.Expression;
         }
 
         private void GetAll(UnitAndPower up, int power, List<UnitAndPower> list)
@@ -129,7 +171,7 @@
 
         private void OnPartPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
         {
-            this.OnPropertyChanged(new PropertyChangedEventArgs("UiName"));
+            this.OnPropertyChanged(new PropertyChangedEventArgs("Expression"));
         }
     }
 }
