@@ -1,7 +1,7 @@
 ﻿namespace Gu.Units.Generator
 {
-    public interface ISubUnit : IUnit
+    public interface ISubUnit
     {
-        string Conversion { get; set; }
+        double ConversionFactor { get; set; }
     }
 }

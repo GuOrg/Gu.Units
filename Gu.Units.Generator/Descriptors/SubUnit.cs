@@ -8,13 +8,16 @@
         private string _symbol;
         private Quantity _quantity;
         private string _quantityName;
-        private string _conversion;
-
+        private double conversionFactor;
         private Prefix _prefix;
-
         private UnitBase _baseUnit;
 
         private readonly ObservableCollection<SubUnit> _subUnits = new ObservableCollection<SubUnit>();
+
+        public SubUnit()
+        {
+            
+        }
 
         public string Symbol
         {
@@ -29,23 +32,6 @@
                     return;
                 }
                 _symbol = value;
-                this.OnPropertyChanged();
-            }
-        }
-
-        public string QuantityName
-        {
-            get
-            {
-                return _quantityName;
-            }
-            set
-            {
-                if (value == _quantityName)
-                {
-                    return;
-                }
-                _quantityName = value;
                 this.OnPropertyChanged();
             }
         }
@@ -83,6 +69,7 @@
                 }
                 _prefix = value;
                 this.OnPropertyChanged();
+                ConversionFactor = _prefix.Factor;
             }
         }
 
@@ -104,20 +91,28 @@
             }
         }
 
-        public string Conversion
+        public double ConversionFactor
         {
             get
             {
-                return _conversion;
+                return this.conversionFactor;
             }
             set
             {
-                if (value == _conversion)
+                if (value == this.conversionFactor)
                 {
                     return;
                 }
-                _conversion = value;
+                this.conversionFactor = value;
                 this.OnPropertyChanged();
+            }
+        }
+
+        public ObservableCollection<SubUnit> SubUnits
+        {
+            get
+            {
+                return this._subUnits;
             }
         }
 
@@ -126,14 +121,5 @@
 
         [XmlIgnore]
         public string UiName { get; private set; }
-
-        [XmlIgnore]
-        public ObservableCollection<SubUnit> SubUnits
-        {
-            get
-            {
-                return this._subUnits;
-            }
-        }
     }
 }

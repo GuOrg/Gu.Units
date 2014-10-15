@@ -75,7 +75,7 @@
     <Compile Include="Descriptors\IUnit.cs" />
     <Compile Include="Descriptors\Prefix.cs" />
     <Compile Include="Descriptors\SiUnit.cs" />
-    <Compile Include="Descriptors\PrefixSubUnit.cs" />
+    <Compile Include="Descriptors\SubUnit.cs" />
     <Compile Include="Descriptors\TypeMetaData.cs" />
     <Compile Include="Descriptors\DerivedUnit.cs" />
     <Compile Include="Descriptors\UnitAndPower.cs" />
@@ -88,6 +88,7 @@
     <Compile Include="ViewModel.cs" />
     <Compile Include="WpfStuff\ObservableCollectionExt.cs" />
     <Compile Include="WpfStuff\QuantityConverter.cs" />
+    <Compile Include="WpfStuff\RelayCommand.cs" />
     <Compile Include="WpfStuff\TypeMetaDataConverter.cs" />
     <Compile Include="WpfStuff\UnitCollection.cs" />
     <Compile Include="WpfStuff\UnitPartsConverter.cs" />

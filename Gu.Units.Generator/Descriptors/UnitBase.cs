@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.ObjectModel;
+    using System.Collections.Specialized;
     using System.Linq;
     using System.Xml.Serialization;
 
@@ -22,6 +23,7 @@
             this.PropertyChanged += (sender, args) => this.TryAdd();
             TryAdd();
             _allUnitsReadonly = new ReadOnlyObservableCollection<IUnit>(AllUnitsStatic);
+            _subUnits.CollectionChanged += SubUnitsOnCollectionChanged;
         }
 
         public string Symbol
@@ -76,6 +78,10 @@
                 }
                 this._quantity = value;
                 this.OnPropertyChanged();
+                foreach (var subUnit in SubUnits)
+                {
+                    subUnit.Quantity = _quantity;
+                }
             }
         }
 
@@ -112,6 +118,18 @@
                 if (AllUnitsStatic.All(x => !(x.Symbol == this.Symbol && x.ClassName == this.ClassName)))
                 {
                     AllUnitsStatic.Add(this);
+                }
+            }
+        }
+
+        private void SubUnitsOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.NewItems != null)
+            {
+                foreach (var subUnit in e.NewItems.OfType<SubUnit>())
+                {
+                    subUnit.Quantity = this.Quantity;
+                    subUnit.BaseUnit = this;
                 }
             }
         }
