@@ -1,6 +1,7 @@
 ﻿namespace Gu.Units.Generator
 {
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
     using System.Windows;
@@ -23,6 +24,15 @@
             : base(@namespace, name, symbol)
         {
         }
+
+        public static SiUnit Empty
+        {
+            get
+            {
+                return new SiUnit();
+            }
+        }
+
 
         [XmlIgnore]
         public override string UiName

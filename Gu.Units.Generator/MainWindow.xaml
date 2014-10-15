@@ -30,18 +30,17 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <GroupBox Grid.Column="0" Header="Prefixes">
-                <DataGrid ItemsSource="{Binding Prefixes}" />
-            </GroupBox>
 
-            <GroupBox Grid.Column="1" Header="Units">
+            <GroupBox Grid.Column="0" Header="Units">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition />
                     </Grid.RowDefinitions>
                     <GroupBox Header="SI units:">
-                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding SiUnits}">
+                        <DataGrid AutoGenerateColumns="False"
+                                  ItemsSource="{Binding SiUnits}"
+                                  SelectedItem="{Binding SelectedUnit}">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Binding="{Binding Quantity}" Header="Quantity" />
                                 <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
@@ -52,7 +51,9 @@
                     </GroupBox>
 
                     <GroupBox Grid.Row="1" Header="Derived units:">
-                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding DerivedUnits}">
+                        <DataGrid AutoGenerateColumns="False"
+                                  ItemsSource="{Binding DerivedUnits}"
+                                  SelectedItem="{Binding SelectedUnit}">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Binding="{Binding QuantityName}" Header="Quantity" />
                                 <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
@@ -66,6 +67,20 @@
                         </DataGrid>
                     </GroupBox>
                 </Grid>
+            </GroupBox>
+
+            <GroupBox Grid.Column="1" Header="Conversions" >
+                <DataGrid ItemsSource="{Binding SelectedUnit.SubUnits}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding QuantityName}" Header="Quantity" />
+                        <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
+                        <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+
+            <GroupBox Grid.Column="2" Header="Prefixes">
+                <DataGrid ItemsSource="{Binding Prefixes}" />
             </GroupBox>
         </Grid>
     </DockPanel>

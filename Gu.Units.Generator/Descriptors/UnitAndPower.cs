@@ -37,7 +37,11 @@
         {
             get
             {
-                return new UnitAndPower(null, 0);
+                return new UnitAndPower()
+                           {
+                               _unit = null,
+                               _power = 0
+                           };
             }
         }
 

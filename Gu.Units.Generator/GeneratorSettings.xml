@@ -108,7 +108,7 @@
     </DerivedUnit>
     <DerivedUnit>
       <ClassName>MetresPerSecond</ClassName>
-      <Symbol>v</Symbol>
+      <Symbol>m/s</Symbol>
       <QuantityName>Speed</QuantityName>
       <Parts>
         <UnitAndPower>
