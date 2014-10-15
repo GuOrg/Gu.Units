@@ -168,18 +168,16 @@
                 throw new InvalidOperationException("trying to set partunits when baseunit != DerivedUnit");
             }
             double cf = 1;
-            string className = BaseUnit.ClassName;
             var unitParts = new UnitParts(derivedUnit.Parts.ToArray());
             foreach (var part in subunits)
             {
                 var up = unitParts.Single(x => x.UnitName == part.BaseUnit.ClassName);
                 cf = cf * Math.Pow(part.ConversionFactor, up.Power);
-                className = className.Replace(up.UnitName, part.ClassName);
                 unitParts.Replace(up, new UnitAndPower(part, up.Power));
             }
             ConversionFactor = cf;
-            ClassName = className;
-            Symbol = unitParts.UiName;
+            ClassName = unitParts.UnitName;
+            Symbol = unitParts.Expression;
         }
     }
 }

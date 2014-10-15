@@ -1,11 +1,8 @@
 ﻿namespace Gu.Units.Generator
 {
     using System;
-    using System.Collections.Generic;
-    using System.Globalization;
+    using System.Collections.Specialized;
     using System.Linq;
-    using System.Text;
-    using System.Threading;
     using System.Xml.Serialization;
 
     using Gu.Units.Generator.WpfStuff;
@@ -14,10 +11,12 @@
     public class DerivedUnit : UnitBase
     {
         private readonly UnitParts _parts = new UnitParts();
+        private bool _explicitName;
 
         public DerivedUnit()
             : base(null, null, null)
         {
+            _parts.CollectionChanged += PartsOnCollectionChanged;
         }
 
         public DerivedUnit(string @namespace, string name, string symbol, params UnitAndPower[] parts)
@@ -36,6 +35,7 @@
             {
                 _parts.Add(unitAndPower);
             }
+            _parts.CollectionChanged += PartsOnCollectionChanged;
         }
 
         public static DerivedUnit Empty
@@ -59,18 +59,41 @@
             }
         }
 
+        public bool ExplicitName
+        {
+            get { return _explicitName; }
+            set
+            {
+                if (value.Equals(_explicitName))
+                {
+                    return;
+                }
+                _explicitName = value;
+                OnPropertyChanged();
+            }
+        }
+
         [XmlIgnore]
         public override string UiName
         {
             get
             {
-                return Parts.UiName;
+                return Parts.Expression;
             }
         }
 
         public override string ToString()
         {
             return string.Format("{0}  ({1})", Symbol, this.UiName);
+        }
+
+        private void PartsOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs notifyCollectionChangedEventArgs)
+        {
+            if (string.IsNullOrEmpty(ClassName))
+            {
+                ClassName = _parts.UnitName;
+                ExplicitName = false;
+            }
         }
     }
 }
