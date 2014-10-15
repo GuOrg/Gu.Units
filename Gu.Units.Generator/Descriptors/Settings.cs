@@ -13,8 +13,8 @@
 
     public class Settings
     {
-        private readonly ObservableCollection<DerivedUnit> _derivedUnits = new ObservableCollection<DerivedUnit>();
-        private readonly ObservableCollection<SiUnit> _siUnits = new ObservableCollection<SiUnit>();
+        private readonly List<DerivedUnit> _derivedUnits = new List<DerivedUnit>();
+        private readonly List<SiUnit> _siUnits = new List<SiUnit>();
         private readonly ObservableCollection<Prefix> _prefixes = new ObservableCollection<Prefix>();
         private readonly ObservableCollection<Quantity> _quantities = new ObservableCollection<Quantity>();
         public static Settings Instance
@@ -29,6 +29,7 @@
                     {
                         settings = (Settings)serializer.Deserialize(reader);
                     }
+
                     foreach (var unit in settings.SiUnits)
                     {
                         var quantity = new Quantity(unit.Namespace, unit.QuantityName, unit);
@@ -91,7 +92,7 @@
             }
         }
 
-        public ObservableCollection<DerivedUnit> DerivedUnits
+        public List<DerivedUnit> DerivedUnits
         {
             get
             {
@@ -99,7 +100,7 @@
             }
         }
 
-        public ObservableCollection<SiUnit> SiUnits
+        public List<SiUnit> SiUnits
         {
             get { return this._siUnits; }
         }
@@ -134,8 +135,8 @@
         {
             var serializer = new XmlSerializer(typeof(Settings));
             var toSave = new Settings();
-            toSave.DerivedUnits.InvokeAddRange(settings.DerivedUnits.Where(x => x != null && !x.IsEmpty));
-            toSave.SiUnits.InvokeAddRange(settings.SiUnits.Where(x => x != null && !x.IsEmpty));
+            toSave.DerivedUnits.AddRange(settings.DerivedUnits.Where(x => x != null && !x.IsEmpty));
+            toSave.SiUnits.AddRange(settings.SiUnits.Where(x => x != null && !x.IsEmpty));
             toSave.Prefixes.InvokeAddRange(settings.Prefixes.Where(x => x != null).OrderBy(x => x.Factor));
             using (var stream = File.Create(fullFileName))
             {

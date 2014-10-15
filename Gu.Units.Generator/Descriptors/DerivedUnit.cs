@@ -42,7 +42,7 @@
         {
             get
             {
-                return new DerivedUnit("", "", "", UnitAndPower.Empty);
+                return new DerivedUnit();
             }
         }
 

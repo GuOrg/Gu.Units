@@ -1,5 +1,6 @@
 namespace Gu.Units.Generator
 {
+    using System.Collections.ObjectModel;
     using System.Xml.Serialization;
 
     public interface IUnit
@@ -10,5 +11,6 @@ namespace Gu.Units.Generator
         Quantity Quantity { get; set; }
         bool IsEmpty { get; }
         string UiName { get; }
+        ObservableCollection<SubUnit> SubUnits { get; }
     }
 }

@@ -9,6 +9,8 @@
     {
         public static readonly ObservableCollection<IUnit> AllUnitsStatic = new ObservableCollection<IUnit>();
         private readonly ReadOnlyObservableCollection<IUnit> _allUnitsReadonly;
+        private readonly ObservableCollection<SubUnit> _subUnits = new ObservableCollection<SubUnit>();
+
         private string _symbol;
         private Quantity _quantity;
         private string _quantityName;
@@ -40,7 +42,7 @@
         {
             get
             {
-                if(Quantity !=null)
+                if (Quantity != null)
                     return this.Quantity.ClassName;
                 return _quantityName;
             }
@@ -51,6 +53,14 @@
                     throw new InvalidOperationException("Trying to set quantity");
                 }
                 _quantityName = value;
+            }
+        }
+
+        public ObservableCollection<SubUnit> SubUnits
+        {
+            get
+            {
+                return _subUnits;
             }
         }
 

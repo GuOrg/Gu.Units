@@ -7,15 +7,22 @@
     using System.Runtime.CompilerServices;
     using Annotations;
 
+    using Gu.Units.Generator.WpfStuff;
+
     public class ViewModel : INotifyPropertyChanged
     {
+        private readonly UnitCollection<SiUnit> _siUnits;
+        private readonly UnitCollection<DerivedUnit> _derivedUnits;
+        private readonly Settings _settings;
         private string _nameSpace;
 
-        private readonly Settings _settings;
+        private IUnit _selectedUnit;
 
         public ViewModel()
         {
             this._settings = Settings.Instance;
+            _siUnits = new UnitCollection<SiUnit>(_settings.SiUnits, x => SiUnit.Empty);
+            _derivedUnits = new UnitCollection<DerivedUnit>(_settings.DerivedUnits, x => DerivedUnit.Empty);
             NameSpace = Settings.ProjectName;
         }
 
@@ -26,19 +33,19 @@
             get { return _settings.Prefixes; }
         }
 
-        public ObservableCollection<SiUnit> SiUnits
+        public UnitCollection<SiUnit> SiUnits
         {
             get
             {
-                return _settings.SiUnits;
+                return _siUnits;
             }
         }
 
-        public ObservableCollection<DerivedUnit> DerivedUnits
+        public UnitCollection<DerivedUnit> DerivedUnits
         {
             get
             {
-                return _settings.DerivedUnits;
+                return _derivedUnits;
             }
         }
 
@@ -55,6 +62,23 @@
                     return;
                 }
                 this._nameSpace = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public IUnit SelectedUnit
+        {
+            get
+            {
+                return this._selectedUnit;
+            }
+            set
+            {
+                if (Equals(value, this._selectedUnit))
+                {
+                    return;
+                }
+                this._selectedUnit = value;
                 this.OnPropertyChanged();
             }
         }
