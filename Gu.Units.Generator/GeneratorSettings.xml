@@ -29,7 +29,44 @@
       <ClassName>Newtons</ClassName>
       <Symbol>N</Symbol>
       <QuantityName>Force</QuantityName>
-      <SubUnits />
+      <SubUnits>
+        <SubUnit>
+          <ClassName>Nanonewtons</ClassName>
+          <Symbol>nN</Symbol>
+          <ConversionFactor>-9</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Micronewtons</ClassName>
+          <Symbol>µN</Symbol>
+          <ConversionFactor>-6</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Millinewtons</ClassName>
+          <Symbol>mN</Symbol>
+          <ConversionFactor>-3</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Kilonewtons</ClassName>
+          <Symbol>kN</Symbol>
+          <ConversionFactor>3</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Meganewtons</ClassName>
+          <Symbol>MN</Symbol>
+          <ConversionFactor>6</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Giganewtons</ClassName>
+          <Symbol>GN</Symbol>
+          <ConversionFactor>9</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
       <Parts>
         <UnitAndPower>
           <UnitName>Kilograms</UnitName>
@@ -49,7 +86,44 @@
       <ClassName>Pascals</ClassName>
       <Symbol>Pa</Symbol>
       <QuantityName>Pressure</QuantityName>
-      <SubUnits />
+      <SubUnits>
+        <SubUnit>
+          <ClassName>Nanopascals</ClassName>
+          <Symbol>nPa</Symbol>
+          <ConversionFactor>-9</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Micropascals</ClassName>
+          <Symbol>µPa</Symbol>
+          <ConversionFactor>-6</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Millipascals</ClassName>
+          <Symbol>mPa</Symbol>
+          <ConversionFactor>-3</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Kilopascals</ClassName>
+          <Symbol>kPa</Symbol>
+          <ConversionFactor>3</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Megapascals</ClassName>
+          <Symbol>MPa</Symbol>
+          <ConversionFactor>6</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Gigapascals</ClassName>
+          <Symbol>GPa</Symbol>
+          <ConversionFactor>9</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
       <Parts>
         <UnitAndPower>
           <UnitName>Newtons</UnitName>
@@ -81,7 +155,44 @@
       <ClassName>Joules</ClassName>
       <Symbol>J</Symbol>
       <QuantityName>Energy</QuantityName>
-      <SubUnits />
+      <SubUnits>
+        <SubUnit>
+          <ClassName>Nanojoules</ClassName>
+          <Symbol>nJ</Symbol>
+          <ConversionFactor>-9</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Microjoules</ClassName>
+          <Symbol>µJ</Symbol>
+          <ConversionFactor>-6</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Millijoules</ClassName>
+          <Symbol>mJ</Symbol>
+          <ConversionFactor>-3</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Kilojoules</ClassName>
+          <Symbol>kJ</Symbol>
+          <ConversionFactor>3</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Megajoules</ClassName>
+          <Symbol>MJ</Symbol>
+          <ConversionFactor>6</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Gigajoules</ClassName>
+          <Symbol>GJ</Symbol>
+          <ConversionFactor>9</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
       <Parts>
         <UnitAndPower>
           <UnitName>Kilograms</UnitName>
@@ -101,7 +212,44 @@
       <ClassName>Watts</ClassName>
       <Symbol>W</Symbol>
       <QuantityName>Power</QuantityName>
-      <SubUnits />
+      <SubUnits>
+        <SubUnit>
+          <ClassName>Nanowatts</ClassName>
+          <Symbol>nW</Symbol>
+          <ConversionFactor>-9</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Microwatts</ClassName>
+          <Symbol>µW</Symbol>
+          <ConversionFactor>-6</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Milliwatts</ClassName>
+          <Symbol>mW</Symbol>
+          <ConversionFactor>-3</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Kilowatts</ClassName>
+          <Symbol>kW</Symbol>
+          <ConversionFactor>3</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Megawatts</ClassName>
+          <Symbol>MW</Symbol>
+          <ConversionFactor>6</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Gigawatts</ClassName>
+          <Symbol>GW</Symbol>
+          <ConversionFactor>9</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
       <Parts>
         <UnitAndPower>
           <UnitName>Joules</UnitName>
@@ -142,19 +290,87 @@
           <ConversionFactor>-3</ConversionFactor>
           <SubUnits />
         </SubUnit>
+        <SubUnit>
+          <ClassName>Milligrams</ClassName>
+          <Symbol>mg</Symbol>
+          <ConversionFactor>-6</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Micrograms</ClassName>
+          <Symbol>µg</Symbol>
+          <ConversionFactor>-9</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
       </SubUnits>
     </SiUnit>
     <SiUnit>
       <ClassName>Metres</ClassName>
       <Symbol>m</Symbol>
       <QuantityName>Length</QuantityName>
-      <SubUnits />
+      <SubUnits>
+        <SubUnit>
+          <ClassName>Nanometres</ClassName>
+          <Symbol>nm</Symbol>
+          <ConversionFactor>-9</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Micrometres</ClassName>
+          <Symbol>µm</Symbol>
+          <ConversionFactor>-6</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Millimetres</ClassName>
+          <Symbol>mm</Symbol>
+          <ConversionFactor>-3</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Centimetres</ClassName>
+          <Symbol>cm</Symbol>
+          <ConversionFactor>-2</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Decimetres</ClassName>
+          <Symbol>dm</Symbol>
+          <ConversionFactor>-1</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Kilometres</ClassName>
+          <Symbol>km</Symbol>
+          <ConversionFactor>3</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
     </SiUnit>
     <SiUnit>
       <ClassName>Seconds</ClassName>
       <Symbol>s</Symbol>
       <QuantityName>Time</QuantityName>
-      <SubUnits />
+      <SubUnits>
+        <SubUnit>
+          <ClassName>Nanoseconds</ClassName>
+          <Symbol>ns</Symbol>
+          <ConversionFactor>-9</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Microseconds</ClassName>
+          <Symbol>µs</Symbol>
+          <ConversionFactor>-6</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Milliseconds</ClassName>
+          <Symbol>ms</Symbol>
+          <ConversionFactor>-3</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
     </SiUnit>
     <SiUnit>
       <ClassName>Kelvin</ClassName>

@@ -16,7 +16,7 @@
 
         public SubUnit()
         {
-            
+
         }
 
         public string Symbol
@@ -69,7 +69,7 @@
                 }
                 _prefix = value;
                 this.OnPropertyChanged();
-                ConversionFactor = _prefix.Factor;
+                SyncWithPrefix();
             }
         }
 
@@ -88,6 +88,7 @@
                 }
                 _baseUnit = value;
                 this.OnPropertyChanged();
+                SyncWithPrefix();
             }
         }
 
@@ -121,5 +122,22 @@
 
         [XmlIgnore]
         public string UiName { get; private set; }
+
+        private void SyncWithPrefix()
+        {
+            if (BaseUnit == null || Prefix == null)
+            {
+                return;
+            }
+            ConversionFactor = _prefix.Factor;
+            if (string.IsNullOrEmpty(Symbol))
+            {
+                Symbol = Prefix.Symbol + BaseUnit.Symbol;
+            }
+            if (string.IsNullOrEmpty(ClassName))
+            {
+                ClassName = Prefix.Name + BaseUnit.ParameterName;
+            }
+        }
     }
 }

@@ -71,6 +71,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ConversionsVm.cs" />
     <Compile Include="Descriptors\ISubUnit.cs" />
     <Compile Include="Descriptors\IUnit.cs" />
     <Compile Include="Descriptors\Prefix.cs" />
@@ -81,11 +82,11 @@
     <Compile Include="Descriptors\UnitAndPower.cs" />
     <Compile Include="Descriptors\UnitBase.cs" />
     <Compile Include="Descriptors\UnitParts.cs" />
+    <Compile Include="PrefixConversionVm.cs" />
     <Compile Include="Properties\Annotations.generated.cs" />
-    <Compile Include="RelayCommand.cs" />
     <Compile Include="Descriptors\Settings.cs" />
     <Compile Include="Descriptors\Quantity.cs" />
-    <Compile Include="ViewModel.cs" />
+    <Compile Include="MainVm.cs" />
     <Compile Include="WpfStuff\ObservableCollectionExt.cs" />
     <Compile Include="WpfStuff\QuantityConverter.cs" />
     <Compile Include="WpfStuff\RelayCommand.cs" />
