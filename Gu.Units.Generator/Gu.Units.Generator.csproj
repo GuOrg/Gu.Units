@@ -89,6 +89,11 @@
     <Compile Include="Descriptors\Settings.cs" />
     <Compile Include="Descriptors\Quantity.cs" />
     <Compile Include="MainVm.cs" />
+    <Compile Include="Templates\IUnitInterface.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IUnitInterface.tt</DependentUpon>
+    </Compile>
     <Compile Include="WpfStuff\ObservableCollectionExt.cs" />
     <Compile Include="WpfStuff\QuantityConverter.cs" />
     <Compile Include="WpfStuff\RelayCommand.cs" />
@@ -136,7 +141,7 @@
     <AppDesigner Include="Properties\" />
     <None Include="Templates\IUnitInterface.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>IUnitInterface.txt</LastGenOutput>
+      <LastGenOutput>IUnitInterface.cs</LastGenOutput>
     </None>
     <None Include="Templates\UnitGenerator.tt">
       <SubType>Code</SubType>
@@ -177,11 +182,6 @@
   <ItemGroup>
     <Resource Include="GeneratorSettings.xml">
       <SubType>Designer</SubType>
-    </Resource>
-    <Resource Include="Templates\IUnitInterface.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IUnitInterface.tt</DependentUpon>
     </Resource>
     <Resource Include="Templates\Unit.txt">
       <AutoGen>True</AutoGen>
