@@ -4,6 +4,7 @@ namespace Gu.Units
     using System.Collections.Concurrent;
     using System.Globalization;
     using System.Linq;
+    using System.Reflection;
     using System.Text.RegularExpressions;
 
     public static class Parser
@@ -71,8 +72,12 @@ namespace Gu.Units
 
         private static IUnit[] Symbol(this Type t)
         {
-            var unitTypes = t.Assembly.GetTypes().Where(x => x.IsValueType && x.GetInterfaces().Any(i => i == t));
-            return unitTypes.Select(x => (IUnit)Activator.CreateInstance(x)).ToArray();
+            var units = t.GetFields(BindingFlags.GetField | BindingFlags.Public | BindingFlags.Static)
+                              .Where(f => typeof(IUnit).IsAssignableFrom(f.FieldType))
+                              .Select(f => (IUnit)f.GetValue(null))
+                              .Distinct()
+                              .ToArray();
+            return units;
         }
     }
 }
