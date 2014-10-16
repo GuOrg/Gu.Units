@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace Gu.Units
 {
     using System;
@@ -8,23 +8,23 @@ namespace Gu.Units
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
-	/// <summary>
+    /// <summary>
     /// A type for the quantity Pressure
     /// </summary>
     [Serializable]
-	public partial struct Pressure : IComparable<Pressure>, IEquatable<Pressure>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, INeg1, TimeUnit, INeg2>
-	{
-	    /// <summary>
+    public partial struct Pressure : IComparable<Pressure>, IEquatable<Pressure>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, INeg1, TimeUnit, INeg2>
+    {
+        /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Pascals"/>.
         /// </summary>
-		public readonly double Pascals;
-		
-		private Pressure(double pascals)
+        public readonly double Pascals;
+
+        private Pressure(double pascals)
         {
             Pascals = pascals;
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
         /// <param name="value"></param>
@@ -45,7 +45,7 @@ namespace Gu.Units
             }
         }
 
- 		
+
         /// <summary>
         /// The quantity in nanopascals
         /// </summary>
@@ -56,7 +56,7 @@ namespace Gu.Units
                 return PressureUnit.Nanopascals.FromSiUnit(Pascals);
             }
         }
-		
+
         /// <summary>
         /// The quantity in micropascals
         /// </summary>
@@ -67,7 +67,7 @@ namespace Gu.Units
                 return PressureUnit.Micropascals.FromSiUnit(Pascals);
             }
         }
-		
+
         /// <summary>
         /// The quantity in millipascals
         /// </summary>
@@ -78,7 +78,7 @@ namespace Gu.Units
                 return PressureUnit.Millipascals.FromSiUnit(Pascals);
             }
         }
-		
+
         /// <summary>
         /// The quantity in kilopascals
         /// </summary>
@@ -89,7 +89,7 @@ namespace Gu.Units
                 return PressureUnit.Kilopascals.FromSiUnit(Pascals);
             }
         }
-		
+
         /// <summary>
         /// The quantity in megapascals
         /// </summary>
@@ -100,7 +100,7 @@ namespace Gu.Units
                 return PressureUnit.Megapascals.FromSiUnit(Pascals);
             }
         }
-		
+
         /// <summary>
         /// The quantity in gigapascals
         /// </summary>
@@ -111,7 +111,7 @@ namespace Gu.Units
                 return PressureUnit.Gigapascals.FromSiUnit(Pascals);
             }
         }
-		
+
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Pressure"/> from its string representation
         /// </summary>
@@ -121,7 +121,7 @@ namespace Gu.Units
         {
             return Parser.Parse<PressureUnit, Pressure>(s, From);
         }
- 
+
         /// <summary>
         /// Reads an instance of <see cref="T:Gu.Units.Pressure"/> from the <paramref name="reader"/>
         /// </summary>
@@ -133,7 +133,7 @@ namespace Gu.Units
             v.ReadXml(reader);
             return v;
         }
- 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -153,7 +153,7 @@ namespace Gu.Units
             return new Pressure(value);
         }
 
- 		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -162,7 +162,7 @@ namespace Gu.Units
         {
             return From(value, PressureUnit.Nanopascals);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -171,7 +171,7 @@ namespace Gu.Units
         {
             return From(value, PressureUnit.Micropascals);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -180,7 +180,7 @@ namespace Gu.Units
         {
             return From(value, PressureUnit.Millipascals);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -189,7 +189,7 @@ namespace Gu.Units
         {
             return From(value, PressureUnit.Kilopascals);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -198,7 +198,7 @@ namespace Gu.Units
         {
             return From(value, PressureUnit.Megapascals);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -207,7 +207,7 @@ namespace Gu.Units
         {
             return From(value, PressureUnit.Gigapascals);
         }
-				 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Pressure"/> instances are equal.
         /// </summary>
@@ -220,7 +220,7 @@ namespace Gu.Units
         {
             return left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Pressure"/> instances are not equal.
         /// </summary>
@@ -233,7 +233,7 @@ namespace Gu.Units
         {
             return !left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Pressure"/> is less than another specified <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -246,7 +246,7 @@ namespace Gu.Units
         {
             return left.Pascals < right.Pascals;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Pressure"/> is greater than another specified <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -259,7 +259,7 @@ namespace Gu.Units
         {
             return left.Pascals > right.Pascals;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Pressure"/> is less than or equal to another specified <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -272,7 +272,7 @@ namespace Gu.Units
         {
             return left.Pascals <= right.Pascals;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Pressure"/> is greater than or equal to another specified <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -285,7 +285,7 @@ namespace Gu.Units
         {
             return left.Pascals >= right.Pascals;
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Pressure"/> with <paramref name="left"/> and returns the result.
         /// </summary>
@@ -294,9 +294,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Pressure"/> with <paramref name="left"/> and returns the result.</returns>
         public static Pressure operator *(double left, Pressure right)
         {
-            return new Pressure(left*right.Pascals);
+            return new Pressure(left * right.Pascals);
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Pressure"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -305,9 +305,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Pressure"/> with <paramref name="right"/> and returns the result.</returns>
         public static Pressure operator *(Pressure left, double right)
         {
-            return new Pressure(left.Pascals*right);
+            return new Pressure(left.Pascals * right);
         }
- 
+
         /// <summary>
         /// Divides an instance of <see cref="T:Gu.Units.Pressure"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -318,7 +318,7 @@ namespace Gu.Units
         {
             return new Pressure(left.Pascals / right);
         }
- 
+
         /// <summary>
         /// Adds two specified <see cref="T:Gu.Units.Pressure"/> instances.
         /// </summary>
@@ -331,7 +331,7 @@ namespace Gu.Units
         {
             return new Pressure(left.Pascals + right.Pascals);
         }
- 
+
         /// <summary>
         /// Subtracts an Pressure from another Pressure and returns the difference.
         /// </summary>
@@ -344,7 +344,7 @@ namespace Gu.Units
         {
             return new Pressure(left.Pascals - right.Pascals);
         }
- 
+
         /// <summary>
         /// Returns an <see cref="T:Gu.Units.Pressure"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
@@ -354,9 +354,9 @@ namespace Gu.Units
         /// <param name="Pressure">A <see cref="T:Gu.Units.Pressure"/></param>
         public static Pressure operator -(Pressure Pressure)
         {
-            return new Pressure(-1*Pressure.Pascals);
+            return new Pressure(-1 * Pressure.Pascals);
         }
- 
+
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -368,33 +368,33 @@ namespace Gu.Units
         {
             return Pressure;
         }
- 
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(string format)
         {
             return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(IFormatProvider provider)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, PressureUnit.Pascals);
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider, PressureUnit unit)
         {
             var quantity = unit.FromSiUnit(this.Pascals);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
- 
+
         /// <summary>
         /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Pressure"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Pressure"/> object.
         /// </summary>
@@ -423,7 +423,7 @@ namespace Gu.Units
         {
             return this.Pascals.CompareTo(quantity.Pascals);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Pressure"/> object.
         /// </summary>
@@ -435,7 +435,7 @@ namespace Gu.Units
         {
             return this.Pascals.Equals(other.Pascals);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Pressure"/> object within the given tolerance.
         /// </summary>
@@ -448,22 +448,22 @@ namespace Gu.Units
         {
             return Math.Abs(this.Pascals - other.Pascals) < tolerance;
         }
- 
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {
                 return false;
             }
- 
+
             return obj is Pressure && this.Equals((Pressure)obj);
         }
- 
+
         public override int GetHashCode()
         {
             return this.Pascals.GetHashCode();
         }
- 
+
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
@@ -478,7 +478,7 @@ namespace Gu.Units
         {
             return null;
         }
- 
+
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
@@ -487,11 +487,11 @@ namespace Gu.Units
         {
             reader.MoveToContent();
             var e = (XElement)XNode.ReadFrom(reader);
- 
+
             // Hacking set readonly fields here, can't think of a cleaner workaround
             XmlExt.SetReadonlyField(ref this, x => x.Pascals, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
- 
+
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
@@ -500,5 +500,5 @@ namespace Gu.Units
         {
             XmlExt.WriteAttribute(writer, "Value", this.Pascals);
         }
-	}
+    }
 }

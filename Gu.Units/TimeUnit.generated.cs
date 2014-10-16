@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace Gu.Units
 {
     using System;
@@ -7,24 +7,24 @@ namespace Gu.Units
     public struct TimeUnit : IUnit
     {
         public static readonly TimeUnit Seconds = new TimeUnit(1.0, "s");
-		    public static readonly TimeUnit s = Seconds;
-                
-		public static readonly TimeUnit Nanoseconds = new TimeUnit(1E-09, "ns");
-		    public static readonly TimeUnit ns = Nanoseconds;
-                
+        public static readonly TimeUnit s = Seconds;
+
+        public static readonly TimeUnit Nanoseconds = new TimeUnit(1E-09, "ns");
+        public static readonly TimeUnit ns = Nanoseconds;
+
         public static readonly TimeUnit Microseconds = new TimeUnit(1E-06, "µs");
-		    public static readonly TimeUnit µs = Microseconds;
-                
+        public static readonly TimeUnit µs = Microseconds;
+
         public static readonly TimeUnit Milliseconds = new TimeUnit(0.001, "ms");
-		    public static readonly TimeUnit ms = Milliseconds;
-                
+        public static readonly TimeUnit ms = Milliseconds;
+
         public static readonly TimeUnit Hours = new TimeUnit(3600, "h");
-		    public static readonly TimeUnit h = Hours;
-                
+        public static readonly TimeUnit h = Hours;
+
         public static readonly TimeUnit Minutes = new TimeUnit(60, "min");
-		    public static readonly TimeUnit min = Minutes;
-                
-                
+        public static readonly TimeUnit min = Minutes;
+
+
         private readonly double _conversionFactor;
         private readonly string _symbol;
 

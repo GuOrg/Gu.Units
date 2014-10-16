@@ -26,7 +26,17 @@ foreach (var unit in settings.SiUnits)
 {
 	session["UnitMetaData"] = unit;
 
-	fileManager.StartNewFile(unit.Quantity.ClassName + "Unit.generated.txt", Settings.ProjectName, Settings.FolderName, null);
+	fileManager.StartNewFile(unit.Quantity.ClassName + "Unit.generated." + Settings.Extension, Settings.ProjectName, Settings.FolderName, null);
+	var output = paramTmpl.TransformText("Unit.tt", session);
+	this.Write(output);
+    //this.WriteLine();
+}
+
+foreach (var unit in settings.DerivedUnits)
+{
+	session["UnitMetaData"] = unit;
+
+	fileManager.StartNewFile(unit.Quantity.ClassName + "Unit.generated." + Settings.Extension, Settings.ProjectName, Settings.FolderName, null);
 	var output = paramTmpl.TransformText("Unit.tt", session);
 	this.Write(output);
     //this.WriteLine();

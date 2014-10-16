@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace Gu.Units
 {
     using System;
@@ -8,23 +8,23 @@ namespace Gu.Units
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
-	/// <summary>
+    /// <summary>
     /// A type for the quantity Density
     /// </summary>
     [Serializable]
-	public partial struct Density : IComparable<Density>, IEquatable<Density>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, INeg3>
-	{
-	    /// <summary>
+    public partial struct Density : IComparable<Density>, IEquatable<Density>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, INeg3>
+    {
+        /// <summary>
         /// The quantity in <see cref="T:Gu.Units.KilogramsPerCubicMetre"/>.
         /// </summary>
-		public readonly double KilogramsPerCubicMetre;
-		
-		private Density(double kilogramsPerCubicMetre)
+        public readonly double KilogramsPerCubicMetre;
+
+        private Density(double kilogramsPerCubicMetre)
         {
             KilogramsPerCubicMetre = kilogramsPerCubicMetre;
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.Density"/>.
         /// </summary>
         /// <param name="value"></param>
@@ -45,7 +45,7 @@ namespace Gu.Units
             }
         }
 
- 		
+
         /// <summary>
         /// The quantity in gramsPerCubicMillimetre
         /// </summary>
@@ -56,7 +56,7 @@ namespace Gu.Units
                 return DensityUnit.GramsPerCubicMillimetre.FromSiUnit(KilogramsPerCubicMetre);
             }
         }
-		
+
         /// <summary>
         /// The quantity in gramsPerCubicCentimetre
         /// </summary>
@@ -67,7 +67,7 @@ namespace Gu.Units
                 return DensityUnit.GramsPerCubicCentimetre.FromSiUnit(KilogramsPerCubicMetre);
             }
         }
-		
+
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Density"/> from its string representation
         /// </summary>
@@ -77,7 +77,7 @@ namespace Gu.Units
         {
             return Parser.Parse<DensityUnit, Density>(s, From);
         }
- 
+
         /// <summary>
         /// Reads an instance of <see cref="T:Gu.Units.Density"/> from the <paramref name="reader"/>
         /// </summary>
@@ -89,7 +89,7 @@ namespace Gu.Units
             v.ReadXml(reader);
             return v;
         }
- 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Density"/>.
         /// </summary>
@@ -109,7 +109,7 @@ namespace Gu.Units
             return new Density(value);
         }
 
- 		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Density"/>.
         /// </summary>
@@ -118,7 +118,7 @@ namespace Gu.Units
         {
             return From(value, DensityUnit.GramsPerCubicMillimetre);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Density"/>.
         /// </summary>
@@ -127,7 +127,7 @@ namespace Gu.Units
         {
             return From(value, DensityUnit.GramsPerCubicCentimetre);
         }
-				 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Density"/> instances are equal.
         /// </summary>
@@ -140,7 +140,7 @@ namespace Gu.Units
         {
             return left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Density"/> instances are not equal.
         /// </summary>
@@ -153,7 +153,7 @@ namespace Gu.Units
         {
             return !left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Density"/> is less than another specified <see cref="T:Gu.Units.Density"/>.
         /// </summary>
@@ -166,7 +166,7 @@ namespace Gu.Units
         {
             return left.KilogramsPerCubicMetre < right.KilogramsPerCubicMetre;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Density"/> is greater than another specified <see cref="T:Gu.Units.Density"/>.
         /// </summary>
@@ -179,7 +179,7 @@ namespace Gu.Units
         {
             return left.KilogramsPerCubicMetre > right.KilogramsPerCubicMetre;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Density"/> is less than or equal to another specified <see cref="T:Gu.Units.Density"/>.
         /// </summary>
@@ -192,7 +192,7 @@ namespace Gu.Units
         {
             return left.KilogramsPerCubicMetre <= right.KilogramsPerCubicMetre;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Density"/> is greater than or equal to another specified <see cref="T:Gu.Units.Density"/>.
         /// </summary>
@@ -205,7 +205,7 @@ namespace Gu.Units
         {
             return left.KilogramsPerCubicMetre >= right.KilogramsPerCubicMetre;
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Density"/> with <paramref name="left"/> and returns the result.
         /// </summary>
@@ -214,9 +214,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Density"/> with <paramref name="left"/> and returns the result.</returns>
         public static Density operator *(double left, Density right)
         {
-            return new Density(left*right.KilogramsPerCubicMetre);
+            return new Density(left * right.KilogramsPerCubicMetre);
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Density"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -225,9 +225,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Density"/> with <paramref name="right"/> and returns the result.</returns>
         public static Density operator *(Density left, double right)
         {
-            return new Density(left.KilogramsPerCubicMetre*right);
+            return new Density(left.KilogramsPerCubicMetre * right);
         }
- 
+
         /// <summary>
         /// Divides an instance of <see cref="T:Gu.Units.Density"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -238,7 +238,7 @@ namespace Gu.Units
         {
             return new Density(left.KilogramsPerCubicMetre / right);
         }
- 
+
         /// <summary>
         /// Adds two specified <see cref="T:Gu.Units.Density"/> instances.
         /// </summary>
@@ -251,7 +251,7 @@ namespace Gu.Units
         {
             return new Density(left.KilogramsPerCubicMetre + right.KilogramsPerCubicMetre);
         }
- 
+
         /// <summary>
         /// Subtracts an Density from another Density and returns the difference.
         /// </summary>
@@ -264,7 +264,7 @@ namespace Gu.Units
         {
             return new Density(left.KilogramsPerCubicMetre - right.KilogramsPerCubicMetre);
         }
- 
+
         /// <summary>
         /// Returns an <see cref="T:Gu.Units.Density"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
@@ -274,9 +274,9 @@ namespace Gu.Units
         /// <param name="Density">A <see cref="T:Gu.Units.Density"/></param>
         public static Density operator -(Density Density)
         {
-            return new Density(-1*Density.KilogramsPerCubicMetre);
+            return new Density(-1 * Density.KilogramsPerCubicMetre);
         }
- 
+
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Density"/>.
         /// </summary>
@@ -288,33 +288,33 @@ namespace Gu.Units
         {
             return Density;
         }
- 
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(string format)
         {
             return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(IFormatProvider provider)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, DensityUnit.KilogramsPerCubicMetre);
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider, DensityUnit unit)
         {
             var quantity = unit.FromSiUnit(this.KilogramsPerCubicMetre);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
- 
+
         /// <summary>
         /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Density"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Density"/> object.
         /// </summary>
@@ -343,7 +343,7 @@ namespace Gu.Units
         {
             return this.KilogramsPerCubicMetre.CompareTo(quantity.KilogramsPerCubicMetre);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Density"/> object.
         /// </summary>
@@ -355,7 +355,7 @@ namespace Gu.Units
         {
             return this.KilogramsPerCubicMetre.Equals(other.KilogramsPerCubicMetre);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Density"/> object within the given tolerance.
         /// </summary>
@@ -368,22 +368,22 @@ namespace Gu.Units
         {
             return Math.Abs(this.KilogramsPerCubicMetre - other.KilogramsPerCubicMetre) < tolerance;
         }
- 
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {
                 return false;
             }
- 
+
             return obj is Density && this.Equals((Density)obj);
         }
- 
+
         public override int GetHashCode()
         {
             return this.KilogramsPerCubicMetre.GetHashCode();
         }
- 
+
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
@@ -398,7 +398,7 @@ namespace Gu.Units
         {
             return null;
         }
- 
+
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
@@ -407,11 +407,11 @@ namespace Gu.Units
         {
             reader.MoveToContent();
             var e = (XElement)XNode.ReadFrom(reader);
- 
+
             // Hacking set readonly fields here, can't think of a cleaner workaround
             XmlExt.SetReadonlyField(ref this, x => x.KilogramsPerCubicMetre, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
- 
+
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
@@ -420,5 +420,5 @@ namespace Gu.Units
         {
             XmlExt.WriteAttribute(writer, "Value", this.KilogramsPerCubicMetre);
         }
-	}
+    }
 }

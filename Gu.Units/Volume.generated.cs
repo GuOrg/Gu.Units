@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace Gu.Units
 {
     using System;
@@ -8,23 +8,23 @@ namespace Gu.Units
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
-	/// <summary>
+    /// <summary>
     /// A type for the quantity Volume
     /// </summary>
     [Serializable]
-	public partial struct Volume : IComparable<Volume>, IEquatable<Volume>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I3>
-	{
-	    /// <summary>
+    public partial struct Volume : IComparable<Volume>, IEquatable<Volume>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I3>
+    {
+        /// <summary>
         /// The quantity in <see cref="T:Gu.Units.CubicMetres"/>.
         /// </summary>
-		public readonly double CubicMetres;
-		
-		private Volume(double cubicMetres)
+        public readonly double CubicMetres;
+
+        private Volume(double cubicMetres)
         {
             CubicMetres = cubicMetres;
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="value"></param>
@@ -45,7 +45,7 @@ namespace Gu.Units
             }
         }
 
- 		
+
         /// <summary>
         /// The quantity in litres
         /// </summary>
@@ -56,7 +56,7 @@ namespace Gu.Units
                 return VolumeUnit.Litres.FromSiUnit(CubicMetres);
             }
         }
-		
+
         /// <summary>
         /// The quantity in cubicCentimetres
         /// </summary>
@@ -67,7 +67,7 @@ namespace Gu.Units
                 return VolumeUnit.CubicCentimetres.FromSiUnit(CubicMetres);
             }
         }
-		
+
         /// <summary>
         /// The quantity in cubicMillimetres
         /// </summary>
@@ -78,7 +78,7 @@ namespace Gu.Units
                 return VolumeUnit.CubicMillimetres.FromSiUnit(CubicMetres);
             }
         }
-		
+
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Volume"/> from its string representation
         /// </summary>
@@ -88,7 +88,7 @@ namespace Gu.Units
         {
             return Parser.Parse<VolumeUnit, Volume>(s, From);
         }
- 
+
         /// <summary>
         /// Reads an instance of <see cref="T:Gu.Units.Volume"/> from the <paramref name="reader"/>
         /// </summary>
@@ -100,7 +100,7 @@ namespace Gu.Units
             v.ReadXml(reader);
             return v;
         }
- 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
@@ -120,7 +120,7 @@ namespace Gu.Units
             return new Volume(value);
         }
 
- 		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
@@ -129,7 +129,7 @@ namespace Gu.Units
         {
             return From(value, VolumeUnit.Litres);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
@@ -138,7 +138,7 @@ namespace Gu.Units
         {
             return From(value, VolumeUnit.CubicCentimetres);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
@@ -147,7 +147,7 @@ namespace Gu.Units
         {
             return From(value, VolumeUnit.CubicMillimetres);
         }
-				 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Volume"/> instances are equal.
         /// </summary>
@@ -160,7 +160,7 @@ namespace Gu.Units
         {
             return left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Volume"/> instances are not equal.
         /// </summary>
@@ -173,7 +173,7 @@ namespace Gu.Units
         {
             return !left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Volume"/> is less than another specified <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
@@ -186,7 +186,7 @@ namespace Gu.Units
         {
             return left.CubicMetres < right.CubicMetres;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Volume"/> is greater than another specified <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
@@ -199,7 +199,7 @@ namespace Gu.Units
         {
             return left.CubicMetres > right.CubicMetres;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Volume"/> is less than or equal to another specified <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
@@ -212,7 +212,7 @@ namespace Gu.Units
         {
             return left.CubicMetres <= right.CubicMetres;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Volume"/> is greater than or equal to another specified <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
@@ -225,7 +225,7 @@ namespace Gu.Units
         {
             return left.CubicMetres >= right.CubicMetres;
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Volume"/> with <paramref name="left"/> and returns the result.
         /// </summary>
@@ -234,9 +234,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Volume"/> with <paramref name="left"/> and returns the result.</returns>
         public static Volume operator *(double left, Volume right)
         {
-            return new Volume(left*right.CubicMetres);
+            return new Volume(left * right.CubicMetres);
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Volume"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -245,9 +245,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Volume"/> with <paramref name="right"/> and returns the result.</returns>
         public static Volume operator *(Volume left, double right)
         {
-            return new Volume(left.CubicMetres*right);
+            return new Volume(left.CubicMetres * right);
         }
- 
+
         /// <summary>
         /// Divides an instance of <see cref="T:Gu.Units.Volume"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -258,7 +258,7 @@ namespace Gu.Units
         {
             return new Volume(left.CubicMetres / right);
         }
- 
+
         /// <summary>
         /// Adds two specified <see cref="T:Gu.Units.Volume"/> instances.
         /// </summary>
@@ -271,7 +271,7 @@ namespace Gu.Units
         {
             return new Volume(left.CubicMetres + right.CubicMetres);
         }
- 
+
         /// <summary>
         /// Subtracts an Volume from another Volume and returns the difference.
         /// </summary>
@@ -284,7 +284,7 @@ namespace Gu.Units
         {
             return new Volume(left.CubicMetres - right.CubicMetres);
         }
- 
+
         /// <summary>
         /// Returns an <see cref="T:Gu.Units.Volume"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
@@ -294,9 +294,9 @@ namespace Gu.Units
         /// <param name="Volume">A <see cref="T:Gu.Units.Volume"/></param>
         public static Volume operator -(Volume Volume)
         {
-            return new Volume(-1*Volume.CubicMetres);
+            return new Volume(-1 * Volume.CubicMetres);
         }
- 
+
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
@@ -308,33 +308,33 @@ namespace Gu.Units
         {
             return Volume;
         }
- 
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(string format)
         {
             return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(IFormatProvider provider)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, VolumeUnit.CubicMetres);
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider, VolumeUnit unit)
         {
             var quantity = unit.FromSiUnit(this.CubicMetres);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
- 
+
         /// <summary>
         /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Volume"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Volume"/> object.
         /// </summary>
@@ -363,7 +363,7 @@ namespace Gu.Units
         {
             return this.CubicMetres.CompareTo(quantity.CubicMetres);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Volume"/> object.
         /// </summary>
@@ -375,7 +375,7 @@ namespace Gu.Units
         {
             return this.CubicMetres.Equals(other.CubicMetres);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Volume"/> object within the given tolerance.
         /// </summary>
@@ -388,22 +388,22 @@ namespace Gu.Units
         {
             return Math.Abs(this.CubicMetres - other.CubicMetres) < tolerance;
         }
- 
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {
                 return false;
             }
- 
+
             return obj is Volume && this.Equals((Volume)obj);
         }
- 
+
         public override int GetHashCode()
         {
             return this.CubicMetres.GetHashCode();
         }
- 
+
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
@@ -418,7 +418,7 @@ namespace Gu.Units
         {
             return null;
         }
- 
+
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
@@ -427,11 +427,11 @@ namespace Gu.Units
         {
             reader.MoveToContent();
             var e = (XElement)XNode.ReadFrom(reader);
- 
+
             // Hacking set readonly fields here, can't think of a cleaner workaround
             XmlExt.SetReadonlyField(ref this, x => x.CubicMetres, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
- 
+
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
@@ -440,5 +440,5 @@ namespace Gu.Units
         {
             XmlExt.WriteAttribute(writer, "Value", this.CubicMetres);
         }
-	}
+    }
 }

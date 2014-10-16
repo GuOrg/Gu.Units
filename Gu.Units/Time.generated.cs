@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace Gu.Units
 {
     using System;
@@ -8,23 +8,23 @@ namespace Gu.Units
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
-	/// <summary>
+    /// <summary>
     /// A type for the quantity Time
     /// </summary>
     [Serializable]
-	public partial struct Time : IComparable<Time>, IEquatable<Time>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, I1>
-	{
-	    /// <summary>
+    public partial struct Time : IComparable<Time>, IEquatable<Time>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, I1>
+    {
+        /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Seconds"/>.
         /// </summary>
-		public readonly double Seconds;
-		
-		private Time(double seconds)
+        public readonly double Seconds;
+
+        private Time(double seconds)
         {
             Seconds = seconds;
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
         /// <param name="value"></param>
@@ -45,7 +45,7 @@ namespace Gu.Units
             }
         }
 
- 		
+
         /// <summary>
         /// The quantity in nanoseconds
         /// </summary>
@@ -56,7 +56,7 @@ namespace Gu.Units
                 return TimeUnit.Nanoseconds.FromSiUnit(Seconds);
             }
         }
-		
+
         /// <summary>
         /// The quantity in microseconds
         /// </summary>
@@ -67,7 +67,7 @@ namespace Gu.Units
                 return TimeUnit.Microseconds.FromSiUnit(Seconds);
             }
         }
-		
+
         /// <summary>
         /// The quantity in milliseconds
         /// </summary>
@@ -78,7 +78,7 @@ namespace Gu.Units
                 return TimeUnit.Milliseconds.FromSiUnit(Seconds);
             }
         }
-		
+
         /// <summary>
         /// The quantity in hours
         /// </summary>
@@ -89,7 +89,7 @@ namespace Gu.Units
                 return TimeUnit.Hours.FromSiUnit(Seconds);
             }
         }
-		
+
         /// <summary>
         /// The quantity in minutes
         /// </summary>
@@ -100,7 +100,7 @@ namespace Gu.Units
                 return TimeUnit.Minutes.FromSiUnit(Seconds);
             }
         }
-		
+
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Time"/> from its string representation
         /// </summary>
@@ -110,7 +110,7 @@ namespace Gu.Units
         {
             return Parser.Parse<TimeUnit, Time>(s, From);
         }
- 
+
         /// <summary>
         /// Reads an instance of <see cref="T:Gu.Units.Time"/> from the <paramref name="reader"/>
         /// </summary>
@@ -122,7 +122,7 @@ namespace Gu.Units
             v.ReadXml(reader);
             return v;
         }
- 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -142,7 +142,7 @@ namespace Gu.Units
             return new Time(value);
         }
 
- 		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -151,7 +151,7 @@ namespace Gu.Units
         {
             return From(value, TimeUnit.Nanoseconds);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -160,7 +160,7 @@ namespace Gu.Units
         {
             return From(value, TimeUnit.Microseconds);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -169,7 +169,7 @@ namespace Gu.Units
         {
             return From(value, TimeUnit.Milliseconds);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -178,7 +178,7 @@ namespace Gu.Units
         {
             return From(value, TimeUnit.Hours);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -187,7 +187,7 @@ namespace Gu.Units
         {
             return From(value, TimeUnit.Minutes);
         }
-				 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Time"/> instances are equal.
         /// </summary>
@@ -200,7 +200,7 @@ namespace Gu.Units
         {
             return left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Time"/> instances are not equal.
         /// </summary>
@@ -213,7 +213,7 @@ namespace Gu.Units
         {
             return !left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Time"/> is less than another specified <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -226,7 +226,7 @@ namespace Gu.Units
         {
             return left.Seconds < right.Seconds;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Time"/> is greater than another specified <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -239,7 +239,7 @@ namespace Gu.Units
         {
             return left.Seconds > right.Seconds;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Time"/> is less than or equal to another specified <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -252,7 +252,7 @@ namespace Gu.Units
         {
             return left.Seconds <= right.Seconds;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Time"/> is greater than or equal to another specified <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -265,7 +265,7 @@ namespace Gu.Units
         {
             return left.Seconds >= right.Seconds;
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="left"/> and returns the result.
         /// </summary>
@@ -274,9 +274,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="left"/> and returns the result.</returns>
         public static Time operator *(double left, Time right)
         {
-            return new Time(left*right.Seconds);
+            return new Time(left * right.Seconds);
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -285,9 +285,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="right"/> and returns the result.</returns>
         public static Time operator *(Time left, double right)
         {
-            return new Time(left.Seconds*right);
+            return new Time(left.Seconds * right);
         }
- 
+
         /// <summary>
         /// Divides an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -298,7 +298,7 @@ namespace Gu.Units
         {
             return new Time(left.Seconds / right);
         }
- 
+
         /// <summary>
         /// Adds two specified <see cref="T:Gu.Units.Time"/> instances.
         /// </summary>
@@ -311,7 +311,7 @@ namespace Gu.Units
         {
             return new Time(left.Seconds + right.Seconds);
         }
- 
+
         /// <summary>
         /// Subtracts an Time from another Time and returns the difference.
         /// </summary>
@@ -324,7 +324,7 @@ namespace Gu.Units
         {
             return new Time(left.Seconds - right.Seconds);
         }
- 
+
         /// <summary>
         /// Returns an <see cref="T:Gu.Units.Time"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
@@ -334,9 +334,9 @@ namespace Gu.Units
         /// <param name="Time">A <see cref="T:Gu.Units.Time"/></param>
         public static Time operator -(Time Time)
         {
-            return new Time(-1*Time.Seconds);
+            return new Time(-1 * Time.Seconds);
         }
- 
+
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -348,33 +348,33 @@ namespace Gu.Units
         {
             return Time;
         }
- 
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(string format)
         {
             return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(IFormatProvider provider)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, TimeUnit.Seconds);
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider, TimeUnit unit)
         {
             var quantity = unit.FromSiUnit(this.Seconds);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
- 
+
         /// <summary>
         /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Time"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Time"/> object.
         /// </summary>
@@ -403,7 +403,7 @@ namespace Gu.Units
         {
             return this.Seconds.CompareTo(quantity.Seconds);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Time"/> object.
         /// </summary>
@@ -415,7 +415,7 @@ namespace Gu.Units
         {
             return this.Seconds.Equals(other.Seconds);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Time"/> object within the given tolerance.
         /// </summary>
@@ -428,22 +428,22 @@ namespace Gu.Units
         {
             return Math.Abs(this.Seconds - other.Seconds) < tolerance;
         }
- 
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {
                 return false;
             }
- 
+
             return obj is Time && this.Equals((Time)obj);
         }
- 
+
         public override int GetHashCode()
         {
             return this.Seconds.GetHashCode();
         }
- 
+
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
@@ -458,7 +458,7 @@ namespace Gu.Units
         {
             return null;
         }
- 
+
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
@@ -467,11 +467,11 @@ namespace Gu.Units
         {
             reader.MoveToContent();
             var e = (XElement)XNode.ReadFrom(reader);
- 
+
             // Hacking set readonly fields here, can't think of a cleaner workaround
             XmlExt.SetReadonlyField(ref this, x => x.Seconds, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
- 
+
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
@@ -480,5 +480,5 @@ namespace Gu.Units
         {
             XmlExt.WriteAttribute(writer, "Value", this.Seconds);
         }
-	}
+    }
 }

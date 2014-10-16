@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace Gu.Units
 {
     using System;
@@ -8,23 +8,23 @@ namespace Gu.Units
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
-	/// <summary>
+    /// <summary>
     /// A type for the quantity Angle
     /// </summary>
     [Serializable]
-	public partial struct Angle : IComparable<Angle>, IEquatable<Angle>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1>
-	{
-	    /// <summary>
+    public partial struct Angle : IComparable<Angle>, IEquatable<Angle>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1>
+    {
+        /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Radians"/>.
         /// </summary>
-		public readonly double Radians;
-		
-		private Angle(double radians)
+        public readonly double Radians;
+
+        private Angle(double radians)
         {
             Radians = radians;
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.Angle"/>.
         /// </summary>
         /// <param name="value"></param>
@@ -45,7 +45,7 @@ namespace Gu.Units
             }
         }
 
- 		
+
         /// <summary>
         /// The quantity in degrees
         /// </summary>
@@ -56,7 +56,7 @@ namespace Gu.Units
                 return AngleUnit.Degrees.FromSiUnit(Radians);
             }
         }
-		
+
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Angle"/> from its string representation
         /// </summary>
@@ -66,7 +66,7 @@ namespace Gu.Units
         {
             return Parser.Parse<AngleUnit, Angle>(s, From);
         }
- 
+
         /// <summary>
         /// Reads an instance of <see cref="T:Gu.Units.Angle"/> from the <paramref name="reader"/>
         /// </summary>
@@ -78,7 +78,7 @@ namespace Gu.Units
             v.ReadXml(reader);
             return v;
         }
- 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Angle"/>.
         /// </summary>
@@ -98,7 +98,7 @@ namespace Gu.Units
             return new Angle(value);
         }
 
- 		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Angle"/>.
         /// </summary>
@@ -107,7 +107,7 @@ namespace Gu.Units
         {
             return From(value, AngleUnit.Degrees);
         }
-				 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Angle"/> instances are equal.
         /// </summary>
@@ -120,7 +120,7 @@ namespace Gu.Units
         {
             return left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Angle"/> instances are not equal.
         /// </summary>
@@ -133,7 +133,7 @@ namespace Gu.Units
         {
             return !left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Angle"/> is less than another specified <see cref="T:Gu.Units.Angle"/>.
         /// </summary>
@@ -146,7 +146,7 @@ namespace Gu.Units
         {
             return left.Radians < right.Radians;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Angle"/> is greater than another specified <see cref="T:Gu.Units.Angle"/>.
         /// </summary>
@@ -159,7 +159,7 @@ namespace Gu.Units
         {
             return left.Radians > right.Radians;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Angle"/> is less than or equal to another specified <see cref="T:Gu.Units.Angle"/>.
         /// </summary>
@@ -172,7 +172,7 @@ namespace Gu.Units
         {
             return left.Radians <= right.Radians;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Angle"/> is greater than or equal to another specified <see cref="T:Gu.Units.Angle"/>.
         /// </summary>
@@ -185,7 +185,7 @@ namespace Gu.Units
         {
             return left.Radians >= right.Radians;
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Angle"/> with <paramref name="left"/> and returns the result.
         /// </summary>
@@ -194,9 +194,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Angle"/> with <paramref name="left"/> and returns the result.</returns>
         public static Angle operator *(double left, Angle right)
         {
-            return new Angle(left*right.Radians);
+            return new Angle(left * right.Radians);
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Angle"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -205,9 +205,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Angle"/> with <paramref name="right"/> and returns the result.</returns>
         public static Angle operator *(Angle left, double right)
         {
-            return new Angle(left.Radians*right);
+            return new Angle(left.Radians * right);
         }
- 
+
         /// <summary>
         /// Divides an instance of <see cref="T:Gu.Units.Angle"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -218,7 +218,7 @@ namespace Gu.Units
         {
             return new Angle(left.Radians / right);
         }
- 
+
         /// <summary>
         /// Adds two specified <see cref="T:Gu.Units.Angle"/> instances.
         /// </summary>
@@ -231,7 +231,7 @@ namespace Gu.Units
         {
             return new Angle(left.Radians + right.Radians);
         }
- 
+
         /// <summary>
         /// Subtracts an Angle from another Angle and returns the difference.
         /// </summary>
@@ -244,7 +244,7 @@ namespace Gu.Units
         {
             return new Angle(left.Radians - right.Radians);
         }
- 
+
         /// <summary>
         /// Returns an <see cref="T:Gu.Units.Angle"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
@@ -254,9 +254,9 @@ namespace Gu.Units
         /// <param name="Angle">A <see cref="T:Gu.Units.Angle"/></param>
         public static Angle operator -(Angle Angle)
         {
-            return new Angle(-1*Angle.Radians);
+            return new Angle(-1 * Angle.Radians);
         }
- 
+
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Angle"/>.
         /// </summary>
@@ -268,33 +268,33 @@ namespace Gu.Units
         {
             return Angle;
         }
- 
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(string format)
         {
             return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(IFormatProvider provider)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, AngleUnit.Radians);
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider, AngleUnit unit)
         {
             var quantity = unit.FromSiUnit(this.Radians);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
- 
+
         /// <summary>
         /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Angle"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Angle"/> object.
         /// </summary>
@@ -323,7 +323,7 @@ namespace Gu.Units
         {
             return this.Radians.CompareTo(quantity.Radians);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Angle"/> object.
         /// </summary>
@@ -335,7 +335,7 @@ namespace Gu.Units
         {
             return this.Radians.Equals(other.Radians);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Angle"/> object within the given tolerance.
         /// </summary>
@@ -348,22 +348,22 @@ namespace Gu.Units
         {
             return Math.Abs(this.Radians - other.Radians) < tolerance;
         }
- 
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {
                 return false;
             }
- 
+
             return obj is Angle && this.Equals((Angle)obj);
         }
- 
+
         public override int GetHashCode()
         {
             return this.Radians.GetHashCode();
         }
- 
+
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
@@ -378,7 +378,7 @@ namespace Gu.Units
         {
             return null;
         }
- 
+
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
@@ -387,11 +387,11 @@ namespace Gu.Units
         {
             reader.MoveToContent();
             var e = (XElement)XNode.ReadFrom(reader);
- 
+
             // Hacking set readonly fields here, can't think of a cleaner workaround
             XmlExt.SetReadonlyField(ref this, x => x.Radians, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
- 
+
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
@@ -400,5 +400,5 @@ namespace Gu.Units
         {
             XmlExt.WriteAttribute(writer, "Value", this.Radians);
         }
-	}
+    }
 }

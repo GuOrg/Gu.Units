@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace Gu.Units
 {
     using System;
@@ -8,23 +8,23 @@ namespace Gu.Units
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
-	/// <summary>
+    /// <summary>
     /// A type for the quantity AngularVelocity
     /// </summary>
     [Serializable]
-	public partial struct AngularVelocity : IComparable<AngularVelocity>, IEquatable<AngularVelocity>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1, TimeUnit, INeg1>
-	{
-	    /// <summary>
+    public partial struct AngularVelocity : IComparable<AngularVelocity>, IEquatable<AngularVelocity>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1, TimeUnit, INeg1>
+    {
+        /// <summary>
         /// The quantity in <see cref="T:Gu.Units.RadiansPerSecond"/>.
         /// </summary>
-		public readonly double RadiansPerSecond;
-		
-		private AngularVelocity(double radiansPerSecond)
+        public readonly double RadiansPerSecond;
+
+        private AngularVelocity(double radiansPerSecond)
         {
             RadiansPerSecond = radiansPerSecond;
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.AngularVelocity"/>.
         /// </summary>
         /// <param name="value"></param>
@@ -45,7 +45,7 @@ namespace Gu.Units
             }
         }
 
- 		
+
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.AngularVelocity"/> from its string representation
         /// </summary>
@@ -55,7 +55,7 @@ namespace Gu.Units
         {
             return Parser.Parse<AngularVelocityUnit, AngularVelocity>(s, From);
         }
- 
+
         /// <summary>
         /// Reads an instance of <see cref="T:Gu.Units.AngularVelocity"/> from the <paramref name="reader"/>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Gu.Units
             v.ReadXml(reader);
             return v;
         }
- 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularVelocity"/>.
         /// </summary>
@@ -87,7 +87,7 @@ namespace Gu.Units
             return new AngularVelocity(value);
         }
 
- 				 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.AngularVelocity"/> instances are equal.
         /// </summary>
@@ -100,7 +100,7 @@ namespace Gu.Units
         {
             return left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.AngularVelocity"/> instances are not equal.
         /// </summary>
@@ -113,7 +113,7 @@ namespace Gu.Units
         {
             return !left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.AngularVelocity"/> is less than another specified <see cref="T:Gu.Units.AngularVelocity"/>.
         /// </summary>
@@ -126,7 +126,7 @@ namespace Gu.Units
         {
             return left.RadiansPerSecond < right.RadiansPerSecond;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.AngularVelocity"/> is greater than another specified <see cref="T:Gu.Units.AngularVelocity"/>.
         /// </summary>
@@ -139,7 +139,7 @@ namespace Gu.Units
         {
             return left.RadiansPerSecond > right.RadiansPerSecond;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.AngularVelocity"/> is less than or equal to another specified <see cref="T:Gu.Units.AngularVelocity"/>.
         /// </summary>
@@ -152,7 +152,7 @@ namespace Gu.Units
         {
             return left.RadiansPerSecond <= right.RadiansPerSecond;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.AngularVelocity"/> is greater than or equal to another specified <see cref="T:Gu.Units.AngularVelocity"/>.
         /// </summary>
@@ -165,7 +165,7 @@ namespace Gu.Units
         {
             return left.RadiansPerSecond >= right.RadiansPerSecond;
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.AngularVelocity"/> with <paramref name="left"/> and returns the result.
         /// </summary>
@@ -174,9 +174,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.AngularVelocity"/> with <paramref name="left"/> and returns the result.</returns>
         public static AngularVelocity operator *(double left, AngularVelocity right)
         {
-            return new AngularVelocity(left*right.RadiansPerSecond);
+            return new AngularVelocity(left * right.RadiansPerSecond);
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.AngularVelocity"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -185,9 +185,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.AngularVelocity"/> with <paramref name="right"/> and returns the result.</returns>
         public static AngularVelocity operator *(AngularVelocity left, double right)
         {
-            return new AngularVelocity(left.RadiansPerSecond*right);
+            return new AngularVelocity(left.RadiansPerSecond * right);
         }
- 
+
         /// <summary>
         /// Divides an instance of <see cref="T:Gu.Units.AngularVelocity"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -198,7 +198,7 @@ namespace Gu.Units
         {
             return new AngularVelocity(left.RadiansPerSecond / right);
         }
- 
+
         /// <summary>
         /// Adds two specified <see cref="T:Gu.Units.AngularVelocity"/> instances.
         /// </summary>
@@ -211,7 +211,7 @@ namespace Gu.Units
         {
             return new AngularVelocity(left.RadiansPerSecond + right.RadiansPerSecond);
         }
- 
+
         /// <summary>
         /// Subtracts an AngularVelocity from another AngularVelocity and returns the difference.
         /// </summary>
@@ -224,7 +224,7 @@ namespace Gu.Units
         {
             return new AngularVelocity(left.RadiansPerSecond - right.RadiansPerSecond);
         }
- 
+
         /// <summary>
         /// Returns an <see cref="T:Gu.Units.AngularVelocity"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
@@ -234,9 +234,9 @@ namespace Gu.Units
         /// <param name="AngularVelocity">A <see cref="T:Gu.Units.AngularVelocity"/></param>
         public static AngularVelocity operator -(AngularVelocity AngularVelocity)
         {
-            return new AngularVelocity(-1*AngularVelocity.RadiansPerSecond);
+            return new AngularVelocity(-1 * AngularVelocity.RadiansPerSecond);
         }
- 
+
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.AngularVelocity"/>.
         /// </summary>
@@ -248,33 +248,33 @@ namespace Gu.Units
         {
             return AngularVelocity;
         }
- 
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(string format)
         {
             return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(IFormatProvider provider)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, AngularVelocityUnit.RadiansPerSecond);
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider, AngularVelocityUnit unit)
         {
             var quantity = unit.FromSiUnit(this.RadiansPerSecond);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
- 
+
         /// <summary>
         /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.AngularVelocity"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.AngularVelocity"/> object.
         /// </summary>
@@ -303,7 +303,7 @@ namespace Gu.Units
         {
             return this.RadiansPerSecond.CompareTo(quantity.RadiansPerSecond);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.AngularVelocity"/> object.
         /// </summary>
@@ -315,7 +315,7 @@ namespace Gu.Units
         {
             return this.RadiansPerSecond.Equals(other.RadiansPerSecond);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.AngularVelocity"/> object within the given tolerance.
         /// </summary>
@@ -328,22 +328,22 @@ namespace Gu.Units
         {
             return Math.Abs(this.RadiansPerSecond - other.RadiansPerSecond) < tolerance;
         }
- 
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {
                 return false;
             }
- 
+
             return obj is AngularVelocity && this.Equals((AngularVelocity)obj);
         }
- 
+
         public override int GetHashCode()
         {
             return this.RadiansPerSecond.GetHashCode();
         }
- 
+
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
@@ -358,7 +358,7 @@ namespace Gu.Units
         {
             return null;
         }
- 
+
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
@@ -367,11 +367,11 @@ namespace Gu.Units
         {
             reader.MoveToContent();
             var e = (XElement)XNode.ReadFrom(reader);
- 
+
             // Hacking set readonly fields here, can't think of a cleaner workaround
             XmlExt.SetReadonlyField(ref this, x => x.RadiansPerSecond, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
- 
+
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
@@ -380,5 +380,5 @@ namespace Gu.Units
         {
             XmlExt.WriteAttribute(writer, "Value", this.RadiansPerSecond);
         }
-	}
+    }
 }

@@ -1,6 +1,7 @@
 ﻿namespace Gu.Units.Generator
 {
     using System;
+    using System.CodeDom.Compiler;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
@@ -8,14 +9,15 @@
 
     public class SubUnit : TypeMetaData, ISubUnit
     {
+        private readonly ObservableCollection<SubUnit> _subUnits = new ObservableCollection<SubUnit>();
+        private readonly CodeDomProvider _provider = CodeDomProvider.CreateProvider("C#");
+     
         private string _symbol;
         private double _conversionFactor;
         private Quantity _quantity;
         private string _quantityName;
         private Prefix _prefix;
         private IUnit _baseUnit;
-
-        private readonly ObservableCollection<SubUnit> _subUnits = new ObservableCollection<SubUnit>();
 
         public SubUnit()
         {
@@ -154,7 +156,7 @@
         {
             get
             {
-                return char.IsLetter(Symbol[0]);
+                return _provider.IsValidIdentifier(Symbol);
             }
         }
 

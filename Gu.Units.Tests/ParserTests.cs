@@ -29,7 +29,7 @@
             foreach (var culture in cultures)
             {
                 var cultureInfo = CultureInfo.GetCultureInfo(culture);
-                var length = Parser.Parse<ILengthUnit, Length>(s, Length.From, cultureInfo);
+                var length = Parser.Parse<LengthUnit, Length>(s, Length.From, cultureInfo);
                 Assert.AreEqual(expected, length.Metres);
             }
         }
@@ -39,7 +39,7 @@
         [TestCase("1ms", 1e-3)]
         public void ParseTime(string s, double expected)
         {
-            var time = Parser.Parse<ITimeUnit, Time>(s, Time.From);
+            var time = Parser.Parse<TimeUnit, Time>(s, Time.From);
             Assert.AreEqual(expected, time.Seconds);
         }
 
@@ -47,7 +47,7 @@
         [TestCase("1g", 1e-3)]
         public void ParseForce(string s, double expected)
         {
-            var value = Parser.Parse<IMassUnit, Mass>(s, Mass.From);
+            var value = Parser.Parse<MassUnit, Mass>(s, Mass.From);
             Assert.AreEqual(expected, value.Kilograms);
         }
 
@@ -73,7 +73,7 @@
         public void Exceptions(string s, string culture)
         {
             var cultureInfo = CultureInfo.GetCultureInfo(culture);
-            Assert.Throws<FormatException>(() => Parser.Parse<ILengthUnit, Length>(s, Length.From, cultureInfo));
+            Assert.Throws<FormatException>(() => Parser.Parse<LengthUnit, Length>(s, Length.From, cultureInfo));
         }
     }
 }

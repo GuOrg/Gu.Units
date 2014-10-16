@@ -2,31 +2,32 @@
 <Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <DerivedUnits>
     <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
       <ClassName>SquareMetres</ClassName>
-      <Symbol>m^2</Symbol>
+      <Symbol>m²</Symbol>
       <QuantityName>Area</QuantityName>
       <SubUnits>
         <SubUnit>
           <ClassName>SquareMillimetres</ClassName>
-          <Symbol>mm^2</Symbol>
+          <Symbol>mm²</Symbol>
           <ConversionFactor>1E-06</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>SquareCentimetres</ClassName>
-          <Symbol>cm^2</Symbol>
+          <Symbol>cm²</Symbol>
           <ConversionFactor>0.0001</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>SquareDecimetres</ClassName>
-          <Symbol>dm^2</Symbol>
+          <Symbol>dm²</Symbol>
           <ConversionFactor>0.010000000000000002</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>SquareKilometres</ClassName>
-          <Symbol>km^2</Symbol>
+          <Symbol>km²</Symbol>
           <ConversionFactor>1000000</ConversionFactor>
           <SubUnits />
         </SubUnit>
@@ -40,8 +41,9 @@
       <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
       <ClassName>CubicMetres</ClassName>
-      <Symbol>m^3</Symbol>
+      <Symbol>m³</Symbol>
       <QuantityName>Volume</QuantityName>
       <SubUnits>
         <SubUnit>
@@ -52,13 +54,13 @@
         </SubUnit>
         <SubUnit>
           <ClassName>CubicCentimetres</ClassName>
-          <Symbol>cm^3</Symbol>
+          <Symbol>cm³</Symbol>
           <ConversionFactor>1.0000000000000002E-06</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>CubicMillimetres</ClassName>
-          <Symbol>mm^3</Symbol>
+          <Symbol>mm³</Symbol>
           <ConversionFactor>1E-09</ConversionFactor>
           <SubUnits />
         </SubUnit>
@@ -72,6 +74,7 @@
       <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
       <ClassName>Newtons</ClassName>
       <Symbol>N</Symbol>
       <QuantityName>Force</QuantityName>
@@ -130,6 +133,7 @@
       <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
       <ClassName>Pascals</ClassName>
       <Symbol>Pa</Symbol>
       <QuantityName>Pressure</QuantityName>
@@ -184,19 +188,20 @@
       <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
       <ClassName>KilogramsPerCubicMetre</ClassName>
-      <Symbol>ρ</Symbol>
+      <Symbol>kg/m³</Symbol>
       <QuantityName>Density</QuantityName>
       <SubUnits>
         <SubUnit>
           <ClassName>GramsPerCubicMillimetre</ClassName>
-          <Symbol>g / mm^3</Symbol>
+          <Symbol>g / mm³</Symbol>
           <ConversionFactor>999999.99999999988</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
           <ClassName>GramsPerCubicCentimetre</ClassName>
-          <Symbol>g / cm^3</Symbol>
+          <Symbol>g / cm³</Symbol>
           <ConversionFactor>999.99999999999989</ConversionFactor>
           <SubUnits />
         </SubUnit>
@@ -214,6 +219,7 @@
       <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
       <ClassName>Joules</ClassName>
       <Symbol>J</Symbol>
       <QuantityName>Energy</QuantityName>
@@ -278,6 +284,7 @@
       <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
       <ClassName>Watts</ClassName>
       <Symbol>W</Symbol>
       <QuantityName>Power</QuantityName>
@@ -332,6 +339,7 @@
       <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
       <ClassName>MetresPerSecond</ClassName>
       <Symbol>m/s</Symbol>
       <QuantityName>Speed</QuantityName>
@@ -404,6 +412,7 @@
       <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
       <ClassName>RadiansPerSecond</ClassName>
       <Symbol>rad/s</Symbol>
       <QuantityName>AngularVelocity</QuantityName>
@@ -421,6 +430,7 @@
       <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
       <ClassName>Herts</ClassName>
       <Symbol>Hz</Symbol>
       <QuantityName>Frequency</QuantityName>
@@ -461,6 +471,7 @@
   </DerivedUnits>
   <SiUnits>
     <SiUnit>
+      <Namespace>Gu.Units</Namespace>
       <ClassName>Kilograms</ClassName>
       <Symbol>kg</Symbol>
       <QuantityName>Mass</QuantityName>
@@ -486,6 +497,7 @@
       </SubUnits>
     </SiUnit>
     <SiUnit>
+      <Namespace>Gu.Units</Namespace>
       <ClassName>Metres</ClassName>
       <Symbol>m</Symbol>
       <QuantityName>Length</QuantityName>
@@ -529,6 +541,7 @@
       </SubUnits>
     </SiUnit>
     <SiUnit>
+      <Namespace>Gu.Units</Namespace>
       <ClassName>Seconds</ClassName>
       <Symbol>s</Symbol>
       <QuantityName>Time</QuantityName>
@@ -566,31 +579,14 @@
       </SubUnits>
     </SiUnit>
     <SiUnit>
+      <Namespace>Gu.Units</Namespace>
       <ClassName>Kelvin</ClassName>
       <Symbol>°K</Symbol>
       <QuantityName>Temperature</QuantityName>
       <SubUnits />
     </SiUnit>
     <SiUnit>
-      <ClassName>Percent</ClassName>
-      <Symbol>%</Symbol>
-      <QuantityName>Percent</QuantityName>
-      <SubUnits>
-        <SubUnit>
-          <ClassName>PartsPerMillion</ClassName>
-          <Symbol>ppm</Symbol>
-          <ConversionFactor>-4</ConversionFactor>
-          <SubUnits />
-        </SubUnit>
-        <SubUnit>
-          <ClassName>Promille</ClassName>
-          <Symbol>‰</Symbol>
-          <ConversionFactor>-1</ConversionFactor>
-          <SubUnits />
-        </SubUnit>
-      </SubUnits>
-    </SiUnit>
-    <SiUnit>
+      <Namespace>Gu.Units</Namespace>
       <ClassName>Radians</ClassName>
       <Symbol>rad</Symbol>
       <QuantityName>Angle</QuantityName>
@@ -599,6 +595,32 @@
           <ClassName>Degrees</ClassName>
           <Symbol>°</Symbol>
           <ConversionFactor>57.295779513082323</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
+    </SiUnit>
+    <SiUnit>
+      <Namespace>Gu.Units</Namespace>
+      <ClassName>Fractions</ClassName>
+      <Symbol>/x</Symbol>
+      <QuantityName>Fraction</QuantityName>
+      <SubUnits>
+        <SubUnit>
+          <ClassName>PartsPerMillion</ClassName>
+          <Symbol>ppm</Symbol>
+          <ConversionFactor>1E-06</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Promilles</ClassName>
+          <Symbol>‰</Symbol>
+          <ConversionFactor>0.001</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Percents</ClassName>
+          <Symbol>%</Symbol>
+          <ConversionFactor>0.01</ConversionFactor>
           <SubUnits />
         </SubUnit>
       </SubUnits>
@@ -646,4 +668,5 @@
       <Factor>9</Factor>
     </Prefix>
   </Prefixes>
+  <Quantities />
 </Settings>
