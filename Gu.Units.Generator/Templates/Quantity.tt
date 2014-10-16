@@ -4,7 +4,7 @@
 <#@ import namespace="System" #>
 <#@ output extension=".txt" #>
 <#@ assembly name="$(TargetPath)" #>
-<#@ import namespace="Gu.Units.Generator" #> 
+<#@ import namespace="Gu.Units.Generator" #>
 <#@ parameter name="QuantityMetaData" type="Gu.Units.Generator.Quantity" #>
 <#
 // Template used by QuantityGenerator.tt

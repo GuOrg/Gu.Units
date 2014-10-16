@@ -1,25 +1,24 @@
-﻿
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
 
     [Serializable]
     public struct FrequencyUnit : IUnit
     {
-        public static readonly FrequencyUnit Herts = new FrequencyUnit(1.0, "Hz");
-        public static readonly FrequencyUnit Hz = Herts;
+        public static readonly FrequencyUnit Hertz = new FrequencyUnit(1.0, "Hz");
+        public static readonly FrequencyUnit Hz = Hertz;
 
-        public static readonly FrequencyUnit Kiloherts = new FrequencyUnit(1000, "kHz");
-        public static readonly FrequencyUnit kHz = Kiloherts;
+        public static readonly FrequencyUnit Millihertz = new FrequencyUnit(0.001, "mHz");
+        public static readonly FrequencyUnit mHz = Millihertz;
 
-        public static readonly FrequencyUnit Megaherts = new FrequencyUnit(1000000, "MHz");
-        public static readonly FrequencyUnit MHz = Megaherts;
+        public static readonly FrequencyUnit Kilohertz = new FrequencyUnit(1000, "kHz");
+        public static readonly FrequencyUnit kHz = Kilohertz;
 
-        public static readonly FrequencyUnit Gigaherts = new FrequencyUnit(1000000000, "GHz");
-        public static readonly FrequencyUnit GHz = Gigaherts;
+        public static readonly FrequencyUnit Megahertz = new FrequencyUnit(1000000, "MHz");
+        public static readonly FrequencyUnit MHz = Megahertz;
 
-        public static readonly FrequencyUnit Milliherts = new FrequencyUnit(0.001, "mHz");
-        public static readonly FrequencyUnit mHz = Milliherts;
+        public static readonly FrequencyUnit Gigahertz = new FrequencyUnit(1000000000, "GHz");
+        public static readonly FrequencyUnit GHz = Gigahertz;
 
 
         private readonly double _conversionFactor;
@@ -55,7 +54,7 @@ namespace Gu.Units
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Herts "/>.
+        /// Converts a value to <see cref="T:Gu.Units.Hertz "/>.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -66,7 +65,7 @@ namespace Gu.Units
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Herts.Symbol);
+            return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Hertz.Symbol);
         }
     }
 }

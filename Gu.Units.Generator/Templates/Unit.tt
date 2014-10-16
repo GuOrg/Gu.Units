@@ -5,9 +5,8 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".txt" #>
 <#@ assembly name="$(TargetPath)" #>
-<#@ import namespace="Gu.Units.Generator" #> 
-<#@ parameter name="UnitMetaData" type="Gu.Units.Generator.IUnit" #>
-<#
+<#@ import namespace="Gu.Units.Generator" #>
+<#@ parameter name="UnitMetaData" type="Gu.Units.Generator.IUnit" #><#
 // Template used by UnitGenerator.tt
 IUnit unit;
 if(UnitMetaData != null)

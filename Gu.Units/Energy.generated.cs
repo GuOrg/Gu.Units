@@ -1,5 +1,4 @@
-﻿
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.Globalization;
@@ -44,7 +43,6 @@ namespace Gu.Units
                 return Joules;
             }
         }
-
 
         /// <summary>
         /// The quantity in nanojoules
@@ -122,6 +120,7 @@ namespace Gu.Units
                 return EnergyUnit.KilowattHours.FromSiUnit(Joules);
             }
         }
+
 
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Energy"/> from its string representation

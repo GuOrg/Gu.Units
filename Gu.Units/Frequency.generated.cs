@@ -1,5 +1,4 @@
-﻿
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.Globalization;
@@ -15,77 +14,77 @@ namespace Gu.Units
     public partial struct Frequency : IComparable<Frequency>, IEquatable<Frequency>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, INeg1>
     {
         /// <summary>
-        /// The quantity in <see cref="T:Gu.Units.Herts"/>.
+        /// The quantity in <see cref="T:Gu.Units.Hertz"/>.
         /// </summary>
-        public readonly double Herts;
+        public readonly double Hertz;
 
-        private Frequency(double herts)
+        private Frequency(double hertz)
         {
-            Herts = herts;
+            Hertz = hertz;
         }
 
         /// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="unit"><see cref="T:Gu.Units.Herts"/>.</param>
+        /// <param name="unit"><see cref="T:Gu.Units.Hertz"/>.</param>
         public Frequency(double value, FrequencyUnit unit)
         {
-            Herts = unit.ToSiUnit(value);
+            Hertz = unit.ToSiUnit(value);
         }
 
         /// <summary>
-        /// The quantity in Herts
+        /// The quantity in Hertz
         /// </summary>
         public double SiValue
         {
             get
             {
-                return Herts;
+                return Hertz;
             }
         }
 
         /// <summary>
-        /// The quantity in kiloherts
+        /// The quantity in millihertz
         /// </summary>
-        public double Kiloherts
+        public double Millihertz
         {
             get
             {
-                return FrequencyUnit.Kiloherts.FromSiUnit(Herts);
+                return FrequencyUnit.Millihertz.FromSiUnit(Hertz);
             }
         }
 
         /// <summary>
-        /// The quantity in megaherts
+        /// The quantity in kilohertz
         /// </summary>
-        public double Megaherts
+        public double Kilohertz
         {
             get
             {
-                return FrequencyUnit.Megaherts.FromSiUnit(Herts);
+                return FrequencyUnit.Kilohertz.FromSiUnit(Hertz);
             }
         }
 
         /// <summary>
-        /// The quantity in gigaherts
+        /// The quantity in megahertz
         /// </summary>
-        public double Gigaherts
+        public double Megahertz
         {
             get
             {
-                return FrequencyUnit.Gigaherts.FromSiUnit(Herts);
+                return FrequencyUnit.Megahertz.FromSiUnit(Hertz);
             }
         }
 
         /// <summary>
-        /// The quantity in milliherts
+        /// The quantity in gigahertz
         /// </summary>
-        public double Milliherts
+        public double Gigahertz
         {
             get
             {
-                return FrequencyUnit.Milliherts.FromSiUnit(Herts);
+                return FrequencyUnit.Gigahertz.FromSiUnit(Hertz);
             }
         }
 
@@ -126,7 +125,7 @@ namespace Gu.Units
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static Frequency FromHerts(double value)
+        public static Frequency FromHertz(double value)
         {
             return new Frequency(value);
         }
@@ -136,36 +135,36 @@ namespace Gu.Units
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static Frequency FromKiloherts(double value)
+        public static Frequency FromMillihertz(double value)
         {
-            return From(value, FrequencyUnit.Kiloherts);
+            return From(value, FrequencyUnit.Millihertz);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static Frequency FromMegaherts(double value)
+        public static Frequency FromKilohertz(double value)
         {
-            return From(value, FrequencyUnit.Megaherts);
+            return From(value, FrequencyUnit.Kilohertz);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static Frequency FromGigaherts(double value)
+        public static Frequency FromMegahertz(double value)
         {
-            return From(value, FrequencyUnit.Gigaherts);
+            return From(value, FrequencyUnit.Megahertz);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static Frequency FromMilliherts(double value)
+        public static Frequency FromGigahertz(double value)
         {
-            return From(value, FrequencyUnit.Milliherts);
+            return From(value, FrequencyUnit.Gigahertz);
         }
 
         /// <summary>
@@ -204,7 +203,7 @@ namespace Gu.Units
         /// <param name="right">An <see cref="T:Gu.Units.Frequency"/>.</param>
         public static bool operator <(Frequency left, Frequency right)
         {
-            return left.Herts < right.Herts;
+            return left.Hertz < right.Hertz;
         }
 
         /// <summary>
@@ -217,7 +216,7 @@ namespace Gu.Units
         /// <param name="right">An <see cref="T:Gu.Units.Frequency"/>.</param>
         public static bool operator >(Frequency left, Frequency right)
         {
-            return left.Herts > right.Herts;
+            return left.Hertz > right.Hertz;
         }
 
         /// <summary>
@@ -230,7 +229,7 @@ namespace Gu.Units
         /// <param name="right">An <see cref="T:Gu.Units.Frequency"/>.</param>
         public static bool operator <=(Frequency left, Frequency right)
         {
-            return left.Herts <= right.Herts;
+            return left.Hertz <= right.Hertz;
         }
 
         /// <summary>
@@ -243,7 +242,7 @@ namespace Gu.Units
         /// <param name="right">An <see cref="T:Gu.Units.Frequency"/>.</param>
         public static bool operator >=(Frequency left, Frequency right)
         {
-            return left.Herts >= right.Herts;
+            return left.Hertz >= right.Hertz;
         }
 
         /// <summary>
@@ -254,7 +253,7 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Frequency"/> with <paramref name="left"/> and returns the result.</returns>
         public static Frequency operator *(double left, Frequency right)
         {
-            return new Frequency(left * right.Herts);
+            return new Frequency(left * right.Hertz);
         }
 
         /// <summary>
@@ -265,7 +264,7 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Frequency"/> with <paramref name="right"/> and returns the result.</returns>
         public static Frequency operator *(Frequency left, double right)
         {
-            return new Frequency(left.Herts * right);
+            return new Frequency(left.Hertz * right);
         }
 
         /// <summary>
@@ -276,7 +275,7 @@ namespace Gu.Units
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Frequency"/> with <paramref name="right"/> and returns the result.</returns>
         public static Frequency operator /(Frequency left, double right)
         {
-            return new Frequency(left.Herts / right);
+            return new Frequency(left.Hertz / right);
         }
 
         /// <summary>
@@ -289,7 +288,7 @@ namespace Gu.Units
         /// <param name="right">A TimeSpan.</param>
         public static Frequency operator +(Frequency left, Frequency right)
         {
-            return new Frequency(left.Herts + right.Herts);
+            return new Frequency(left.Hertz + right.Hertz);
         }
 
         /// <summary>
@@ -302,7 +301,7 @@ namespace Gu.Units
         /// <param name="right">A <see cref="T:Gu.Units.Frequency"/> (the subtrahend).</param>
         public static Frequency operator -(Frequency left, Frequency right)
         {
-            return new Frequency(left.Herts - right.Herts);
+            return new Frequency(left.Hertz - right.Hertz);
         }
 
         /// <summary>
@@ -314,7 +313,7 @@ namespace Gu.Units
         /// <param name="Frequency">A <see cref="T:Gu.Units.Frequency"/></param>
         public static Frequency operator -(Frequency Frequency)
         {
-            return new Frequency(-1 * Frequency.Herts);
+            return new Frequency(-1 * Frequency.Hertz);
         }
 
         /// <summary>
@@ -346,12 +345,12 @@ namespace Gu.Units
 
         public string ToString(string format, IFormatProvider formatProvider)
         {
-            return this.ToString(format, formatProvider, FrequencyUnit.Herts);
+            return this.ToString(format, formatProvider, FrequencyUnit.Hertz);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, FrequencyUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Herts);
+            var quantity = unit.FromSiUnit(this.Hertz);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -381,7 +380,7 @@ namespace Gu.Units
         /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Frequency"/> object to compare to this instance.</param>
         public int CompareTo(Frequency quantity)
         {
-            return this.Herts.CompareTo(quantity.Herts);
+            return this.Hertz.CompareTo(quantity.Hertz);
         }
 
         /// <summary>
@@ -393,7 +392,7 @@ namespace Gu.Units
         /// <param name="other">An <see cref="T:Gu.Units.Frequency"/> object to compare with this instance.</param>
         public bool Equals(Frequency other)
         {
-            return this.Herts.Equals(other.Herts);
+            return this.Hertz.Equals(other.Hertz);
         }
 
         /// <summary>
@@ -406,7 +405,7 @@ namespace Gu.Units
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Frequency other, double tolerance)
         {
-            return Math.Abs(this.Herts - other.Herts) < tolerance;
+            return Math.Abs(this.Hertz - other.Hertz) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -421,7 +420,7 @@ namespace Gu.Units
 
         public override int GetHashCode()
         {
-            return this.Herts.GetHashCode();
+            return this.Hertz.GetHashCode();
         }
 
         /// <summary>
@@ -449,7 +448,7 @@ namespace Gu.Units
             var e = (XElement)XNode.ReadFrom(reader);
 
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, x => x.Herts, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
+            XmlExt.SetReadonlyField(ref this, x => x.Hertz, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
 
         /// <summary>
@@ -458,7 +457,7 @@ namespace Gu.Units
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Herts);
+            XmlExt.WriteAttribute(writer, "Value", this.Hertz);
         }
     }
 }
