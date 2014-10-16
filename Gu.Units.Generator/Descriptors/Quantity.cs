@@ -102,7 +102,7 @@
                     {
                         return "ERROR: string.IsNullOrEmpty(Unit.Symbol)";
                     }
-                    return string.Format("IQuantity<{0}, I1>", siUnit.ClassName);
+                    return string.Format("IQuantity<{0}Unit, I1>", siUnit.Quantity.ClassName);
                 }
                 var derivedUnit = Unit as DerivedUnit;
                 if (derivedUnit == null)
@@ -115,8 +115,8 @@
                     return "ERROR No Units";
                 }
                 var args = string.Join(", ",
-                    flattened.Select(u => string.Format("{0}, I{1}{2}",
-                        u.Unit.ClassName,
+                    flattened.Select(u => string.Format("{0}Unit, I{1}{2}",
+                        u.Unit.Quantity.ClassName,
                         u.Power < 0 ? "Neg" : "",
                         u.Power < 0 ? -1 * u.Power : u.Power)));
                 return string.Format("IQuantity<{0}>", args);
