@@ -43,24 +43,24 @@ namespace <#= quantity.Namespace #>
 	    /// <summary>
         /// The quantity in <see cref="T:<#= quantity.Namespace #>.<#= quantity.Unit.ClassName #>"/>.
         /// </summary>
-		public readonly double <#= quantity.SiUnit.ClassName #>;
+		public readonly double <#= quantity.Unit.ClassName #>;
 		
-		private <#= quantity.ClassName #>(double <#= quantity.SiUnit.ParameterName #>)
+		private <#= quantity.ClassName #>(double <#= quantity.Unit.ParameterName #>)
         {
-            <#= quantity.SiUnit.ClassName #> = <#= quantity.SiUnit.ParameterName #>;
+            <#= quantity.Unit.ClassName #> = <#= quantity.Unit.ParameterName #>;
         }
 
 		/// <summary>
         /// Initializes a new instance of <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.
         /// </summary>
-        /// <param name="<#= quantity.SiUnit.ParameterName #>"></param>
-        /// <param name="unit"><see cref="T:<#= quantity.Namespace #>.<#= quantity.SiUnit.ClassName #>"/>.</param>
-        public <#= quantity.ClassName #>(double <#= quantity.SiUnit.ParameterName #>, <#= quantity.SiUnit.ClassName #> unit)
+        /// <param name="<#= quantity.Unit.ParameterName #>"></param>
+        /// <param name="unit"><see cref="T:<#= quantity.Namespace #>.<#= quantity.Unit.ClassName #>"/>.</param>
+        public <#= quantity.ClassName #>(double <#= quantity.Unit.ParameterName #>, <#= quantity.Unit.ClassName #> unit)
         {
-            <#= quantity.SiUnit.ClassName #> = <#= quantity.SiUnit.ParameterName #>;
+            <#= quantity.Unit.ClassName #> = <#= quantity.Unit.ParameterName #>;
         }
 		<#
-		foreach(var unit in quantity.Units)
+		foreach(var unit in quantity.Unit.SubUnits)
 		{
 		#>
 
@@ -71,13 +71,13 @@ namespace <#= quantity.Namespace #>
         /// <param name="unit"></param>
         public <#= quantity.ClassName #>(double quantity, <#= unit.ClassName #> unit)
         {
-            <#= quantity.SiUnit.ClassName #> = UnitConverter.ConvertFrom(quantity, unit);
+            <#= quantity.Unit.ClassName #> = UnitConverter.ConvertFrom(quantity, unit);
         }
 		<#
 		} 
 		#>
  		<#
-		foreach(var unit in quantity.Units)
+		foreach(var unit in quantity.Unit.SubUnits)
 		{
 		#>
 
@@ -88,7 +88,7 @@ namespace <#= quantity.Namespace #>
         {
             get
             {
-                return UnitConverter.ConvertTo(<#= quantity.SiUnit.ClassName #>, <#= quantity.ClassName #>Unit.<#= unit.ClassName #>);
+                return UnitConverter.ConvertTo(<#= quantity.Unit.ClassName #>, <#= quantity.ClassName #>Unit.<#= unit.ClassName #>);
             }
         }
 		<#
@@ -131,12 +131,22 @@ namespace <#= quantity.Namespace #>
         /// Creates a new instance of <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static <#= quantity.ClassName #> From<#= quantity.SiUnit.ClassName #>(double quantity)
+        public static <#= quantity.ClassName #> From<#= quantity.Unit.ClassName #>(double quantity)
         {
             return new <#= quantity.ClassName #>(quantity);
         }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.
+        /// </summary>
+        /// <param name="quantity"></param>
+        public static <#= quantity.ClassName #> From<#= quantity.Unit.ClassName #>(double value)
+        {
+            return new <#= quantity.ClassName #>(value);
+        }
+
  		<#
-		foreach(var unit in quantity.Units)
+		foreach(var unit in quantity.Unit.SubUnits)
 		{
 		#>
 
@@ -188,7 +198,7 @@ namespace <#= quantity.Namespace #>
         /// <param name="right">An <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.</param>
         public static bool operator <(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
         {
-            return left.<#= quantity.SiUnit.ClassName #> < right.<#= quantity.SiUnit.ClassName #>;
+            return left.<#= quantity.Unit.ClassName #> < right.<#= quantity.Unit.ClassName #>;
         }
  
         /// <summary>
@@ -201,7 +211,7 @@ namespace <#= quantity.Namespace #>
         /// <param name="right">An <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.</param>
         public static bool operator >(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
         {
-            return left.<#= quantity.SiUnit.ClassName #> > right.<#= quantity.SiUnit.ClassName #>;
+            return left.<#= quantity.Unit.ClassName #> > right.<#= quantity.Unit.ClassName #>;
         }
  
         /// <summary>
@@ -214,7 +224,7 @@ namespace <#= quantity.Namespace #>
         /// <param name="right">An <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.</param>
         public static bool operator <=(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
         {
-            return left.<#= quantity.SiUnit.ClassName #> <= right.<#= quantity.SiUnit.ClassName #>;
+            return left.<#= quantity.Unit.ClassName #> <= right.<#= quantity.Unit.ClassName #>;
         }
  
         /// <summary>
@@ -227,7 +237,7 @@ namespace <#= quantity.Namespace #>
         /// <param name="right">An <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.</param>
         public static bool operator >=(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
         {
-            return left.<#= quantity.SiUnit.ClassName #> >= right.<#= quantity.SiUnit.ClassName #>;
+            return left.<#= quantity.Unit.ClassName #> >= right.<#= quantity.Unit.ClassName #>;
         }
  
         /// <summary>
@@ -238,7 +248,7 @@ namespace <#= quantity.Namespace #>
         /// <returns>Multiplies an instance of <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/> with <paramref name="left"/> and returns the result.</returns>
         public static <#= quantity.ClassName #> operator *(double left, <#= quantity.ClassName #> right)
         {
-            return new <#= quantity.ClassName #>(left*right.<#= quantity.SiUnit.ClassName #>);
+            return new <#= quantity.ClassName #>(left*right.<#= quantity.Unit.ClassName #>);
         }
  
         /// <summary>
@@ -249,7 +259,7 @@ namespace <#= quantity.Namespace #>
         /// <returns>Multiplies an instance of <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/> with <paramref name="right"/> and returns the result.</returns>
         public static <#= quantity.ClassName #> operator *(<#= quantity.ClassName #> left, double right)
         {
-            return new <#= quantity.ClassName #>(left.<#= quantity.SiUnit.ClassName #>*right);
+            return new <#= quantity.ClassName #>(left.<#= quantity.Unit.ClassName #>*right);
         }
  
         /// <summary>
@@ -260,7 +270,7 @@ namespace <#= quantity.Namespace #>
         /// <returns>Divides an instance of <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/> with <paramref name="right"/> and returns the result.</returns>
         public static <#= quantity.ClassName #> operator /(<#= quantity.ClassName #> left, double right)
         {
-            return new <#= quantity.ClassName #>(left.<#= quantity.SiUnit.ClassName #> / right);
+            return new <#= quantity.ClassName #>(left.<#= quantity.Unit.ClassName #> / right);
         }
  
         /// <summary>
@@ -273,7 +283,7 @@ namespace <#= quantity.Namespace #>
         /// <param name="right">A TimeSpan.</param>
         public static <#= quantity.ClassName #> operator +(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
         {
-            return new <#= quantity.ClassName #>(left.<#= quantity.SiUnit.ClassName #> + right.<#= quantity.SiUnit.ClassName #>);
+            return new <#= quantity.ClassName #>(left.<#= quantity.Unit.ClassName #> + right.<#= quantity.Unit.ClassName #>);
         }
  
         /// <summary>
@@ -286,7 +296,7 @@ namespace <#= quantity.Namespace #>
         /// <param name="right">A <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/> (the subtrahend).</param>
         public static <#= quantity.ClassName #> operator -(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
         {
-            return new <#= quantity.ClassName #>(left.<#= quantity.SiUnit.ClassName #> - right.<#= quantity.SiUnit.ClassName #>);
+            return new <#= quantity.ClassName #>(left.<#= quantity.Unit.ClassName #> - right.<#= quantity.Unit.ClassName #>);
         }
  
         /// <summary>
@@ -298,7 +308,7 @@ namespace <#= quantity.Namespace #>
         /// <param name="<#= quantity.ClassName #>">A <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/></param>
         public static <#= quantity.ClassName #> operator -(<#= quantity.ClassName #> <#= quantity.ClassName #>)
         {
-            return new <#= quantity.ClassName #>(-1*<#= quantity.ClassName #>.<#= quantity.SiUnit.ClassName #>);
+            return new <#= quantity.ClassName #>(-1*<#= quantity.ClassName #>.<#= quantity.Unit.ClassName #>);
         }
  
         /// <summary>
@@ -330,12 +340,12 @@ namespace <#= quantity.Namespace #>
  
         public string ToString(string format, IFormatProvider formatProvider)
         {
-            return this.ToString(format, formatProvider, <#= quantity.ClassName #>Unit.<#= quantity.SiUnit.ClassName #>);
+            return this.ToString(format, formatProvider, <#= quantity.ClassName #>Unit.<#= quantity.Unit.ClassName #>);
         }
  
         public string ToString<T>(string format, IFormatProvider formatProvider, T unit) where T : I<#= quantity.ClassName #>Unit
         {
-            var quantity = UnitConverter.ConvertTo(this.<#= quantity.SiUnit.ClassName #>, unit);
+            var quantity = UnitConverter.ConvertTo(this.<#= quantity.Unit.ClassName #>, unit);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
  
@@ -365,7 +375,7 @@ namespace <#= quantity.Namespace #>
         /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.<#= quantity.ClassName #>"/> object to compare to this instance.</param>
         public int CompareTo(<#= quantity.ClassName #> quantity)
         {
-            return this.<#= quantity.SiUnit.ClassName #>.CompareTo(quantity.<#= quantity.SiUnit.ClassName #>);
+            return this.<#= quantity.Unit.ClassName #>.CompareTo(quantity.<#= quantity.Unit.ClassName #>);
         }
  
         /// <summary>
@@ -377,7 +387,7 @@ namespace <#= quantity.Namespace #>
         /// <param name="other">An <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/> object to compare with this instance.</param>
         public bool Equals(<#= quantity.ClassName #> other)
         {
-            return this.<#= quantity.SiUnit.ClassName #>.Equals(other.<#= quantity.SiUnit.ClassName #>);
+            return this.<#= quantity.Unit.ClassName #>.Equals(other.<#= quantity.Unit.ClassName #>);
         }
  
         /// <summary>
@@ -390,7 +400,7 @@ namespace <#= quantity.Namespace #>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(<#= quantity.ClassName #> other, double tolerance)
         {
-            return Math.Abs(this.<#= quantity.SiUnit.ClassName #> - other.<#= quantity.SiUnit.ClassName #>) < tolerance;
+            return Math.Abs(this.<#= quantity.Unit.ClassName #> - other.<#= quantity.Unit.ClassName #>) < tolerance;
         }
  
         public override bool Equals(object obj)
@@ -405,7 +415,7 @@ namespace <#= quantity.Namespace #>
  
         public override int GetHashCode()
         {
-            return this.<#= quantity.SiUnit.ClassName #>.GetHashCode();
+            return this.<#= quantity.Unit.ClassName #>.GetHashCode();
         }
  
         /// <summary>
@@ -433,7 +443,7 @@ namespace <#= quantity.Namespace #>
             var e = (XElement)XNode.ReadFrom(reader);
  
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, x => x.<#= quantity.SiUnit.ClassName #>, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
+            XmlExt.SetReadonlyField(ref this, x => x.<#= quantity.Unit.ClassName #>, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
  
         /// <summary>
@@ -442,7 +452,7 @@ namespace <#= quantity.Namespace #>
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.<#= quantity.SiUnit.ClassName #>);
+            XmlExt.WriteAttribute(writer, "Value", this.<#= quantity.Unit.ClassName #>);
         }
 	}
 }

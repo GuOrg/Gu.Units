@@ -112,6 +112,14 @@
             get { return _prefixes; }
         }
 
+        public List<Quantity> Quantities
+        {
+            get
+            {
+                return _quantities;
+            }
+        }
+
         public static Settings FromFile(string fullFileName)
         {
             var serializer = new XmlSerializer(typeof(Settings));
