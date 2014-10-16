@@ -1,5 +1,4 @@
-﻿//
- 
+﻿
 Read Settings found 16 units
 //-> Angle.generated.cs
 

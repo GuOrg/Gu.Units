@@ -8,7 +8,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity Pressure
+    /// A type for the quantity <see cref="T:Gu.Units.Pressure"/>.
     /// </summary>
     [Serializable]
     public partial struct Pressure : IComparable<Pressure>, IEquatable<Pressure>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, INeg1, TimeUnit, INeg2>
@@ -110,7 +110,6 @@
             }
         }
 
-
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Pressure"/> from its string representation
         /// </summary>
@@ -136,7 +135,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static Pressure From(double value, PressureUnit unit)
         {
@@ -146,65 +145,64 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Pressure FromPascals(double value)
+        /// <param name="pascals">The value in <see cref="T:Gu.Units.Pascals"/></param>
+        public static Pressure FromPascals(double pascals)
         {
-            return new Pressure(value);
-        }
-
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        public static Pressure FromNanopascals(double value)
-        {
-            return From(value, PressureUnit.Nanopascals);
+            return new Pressure(pascals);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Pressure FromMicropascals(double value)
+        /// <param name="nanopascals">The value in nPa</param>
+        public static Pressure FromNanopascals(double nanopascals)
         {
-            return From(value, PressureUnit.Micropascals);
+            return From(nanopascals, PressureUnit.Nanopascals);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Pressure FromMillipascals(double value)
+        /// <param name="micropascals">The value in µPa</param>
+        public static Pressure FromMicropascals(double micropascals)
         {
-            return From(value, PressureUnit.Millipascals);
+            return From(micropascals, PressureUnit.Micropascals);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Pressure FromKilopascals(double value)
+        /// <param name="millipascals">The value in mPa</param>
+        public static Pressure FromMillipascals(double millipascals)
         {
-            return From(value, PressureUnit.Kilopascals);
+            return From(millipascals, PressureUnit.Millipascals);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Pressure FromMegapascals(double value)
+        /// <param name="kilopascals">The value in kPa</param>
+        public static Pressure FromKilopascals(double kilopascals)
         {
-            return From(value, PressureUnit.Megapascals);
+            return From(kilopascals, PressureUnit.Kilopascals);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Pressure FromGigapascals(double value)
+        /// <param name="megapascals">The value in MPa</param>
+        public static Pressure FromMegapascals(double megapascals)
         {
-            return From(value, PressureUnit.Gigapascals);
+            return From(megapascals, PressureUnit.Megapascals);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
+        /// </summary>
+        /// <param name="gigapascals">The value in GPa</param>
+        public static Pressure FromGigapascals(double gigapascals)
+        {
+            return From(gigapascals, PressureUnit.Gigapascals);
         }
 
         /// <summary>

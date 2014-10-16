@@ -8,7 +8,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity Length
+    /// A type for the quantity <see cref="T:Gu.Units.Length"/>.
     /// </summary>
     [Serializable]
     public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1>
@@ -110,7 +110,6 @@
             }
         }
 
-
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Length"/> from its string representation
         /// </summary>
@@ -136,7 +135,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static Length From(double value, LengthUnit unit)
         {
@@ -146,65 +145,64 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Length FromMetres(double value)
+        /// <param name="metres">The value in <see cref="T:Gu.Units.Metres"/></param>
+        public static Length FromMetres(double metres)
         {
-            return new Length(value);
-        }
-
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        public static Length FromNanometres(double value)
-        {
-            return From(value, LengthUnit.Nanometres);
+            return new Length(metres);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Length FromMicrometres(double value)
+        /// <param name="nanometres">The value in nm</param>
+        public static Length FromNanometres(double nanometres)
         {
-            return From(value, LengthUnit.Micrometres);
+            return From(nanometres, LengthUnit.Nanometres);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Length FromMillimetres(double value)
+        /// <param name="micrometres">The value in µm</param>
+        public static Length FromMicrometres(double micrometres)
         {
-            return From(value, LengthUnit.Millimetres);
+            return From(micrometres, LengthUnit.Micrometres);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Length FromCentimetres(double value)
+        /// <param name="millimetres">The value in mm</param>
+        public static Length FromMillimetres(double millimetres)
         {
-            return From(value, LengthUnit.Centimetres);
+            return From(millimetres, LengthUnit.Millimetres);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Length FromDecimetres(double value)
+        /// <param name="centimetres">The value in cm</param>
+        public static Length FromCentimetres(double centimetres)
         {
-            return From(value, LengthUnit.Decimetres);
+            return From(centimetres, LengthUnit.Centimetres);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Length FromKilometres(double value)
+        /// <param name="decimetres">The value in dm</param>
+        public static Length FromDecimetres(double decimetres)
         {
-            return From(value, LengthUnit.Kilometres);
+            return From(decimetres, LengthUnit.Decimetres);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="kilometres">The value in km</param>
+        public static Length FromKilometres(double kilometres)
+        {
+            return From(kilometres, LengthUnit.Kilometres);
         }
 
         /// <summary>

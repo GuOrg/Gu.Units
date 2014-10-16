@@ -8,7 +8,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity Speed
+    /// A type for the quantity <see cref="T:Gu.Units.Speed"/>.
     /// </summary>
     [Serializable]
     public partial struct Speed : IComparable<Speed>, IEquatable<Speed>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1, TimeUnit, INeg1>
@@ -143,7 +143,6 @@
             }
         }
 
-
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Speed"/> from its string representation
         /// </summary>
@@ -169,7 +168,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static Speed From(double value, SpeedUnit unit)
         {
@@ -179,92 +178,91 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Speed FromMetresPerSecond(double value)
+        /// <param name="metresPerSecond">The value in <see cref="T:Gu.Units.MetresPerSecond"/></param>
+        public static Speed FromMetresPerSecond(double metresPerSecond)
         {
-            return new Speed(value);
-        }
-
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        public static Speed FromMillimetresPerSecond(double value)
-        {
-            return From(value, SpeedUnit.MillimetresPerSecond);
+            return new Speed(metresPerSecond);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Speed FromCentimetresPerSecond(double value)
+        /// <param name="millimetresPerSecond">The value in mm / s</param>
+        public static Speed FromMillimetresPerSecond(double millimetresPerSecond)
         {
-            return From(value, SpeedUnit.CentimetresPerSecond);
+            return From(millimetresPerSecond, SpeedUnit.MillimetresPerSecond);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Speed FromKilometresPerHour(double value)
+        /// <param name="centimetresPerSecond">The value in cm / s</param>
+        public static Speed FromCentimetresPerSecond(double centimetresPerSecond)
         {
-            return From(value, SpeedUnit.KilometresPerHour);
+            return From(centimetresPerSecond, SpeedUnit.CentimetresPerSecond);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Speed FromCentimetresPerMinute(double value)
+        /// <param name="kilometresPerHour">The value in km / h</param>
+        public static Speed FromKilometresPerHour(double kilometresPerHour)
         {
-            return From(value, SpeedUnit.CentimetresPerMinute);
+            return From(kilometresPerHour, SpeedUnit.KilometresPerHour);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Speed FromMetresPerMinute(double value)
+        /// <param name="centimetresPerMinute">The value in cm / min</param>
+        public static Speed FromCentimetresPerMinute(double centimetresPerMinute)
         {
-            return From(value, SpeedUnit.MetresPerMinute);
+            return From(centimetresPerMinute, SpeedUnit.CentimetresPerMinute);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Speed FromMetresPerHour(double value)
+        /// <param name="metresPerMinute">The value in m / min</param>
+        public static Speed FromMetresPerMinute(double metresPerMinute)
         {
-            return From(value, SpeedUnit.MetresPerHour);
+            return From(metresPerMinute, SpeedUnit.MetresPerMinute);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Speed FromMillimetresPerHour(double value)
+        /// <param name="metresPerHour">The value in m / h</param>
+        public static Speed FromMetresPerHour(double metresPerHour)
         {
-            return From(value, SpeedUnit.MillimetresPerHour);
+            return From(metresPerHour, SpeedUnit.MetresPerHour);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Speed FromCentimetresPerHour(double value)
+        /// <param name="millimetresPerHour">The value in mm / h</param>
+        public static Speed FromMillimetresPerHour(double millimetresPerHour)
         {
-            return From(value, SpeedUnit.CentimetresPerHour);
+            return From(millimetresPerHour, SpeedUnit.MillimetresPerHour);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Speed FromMillimetresPerMinute(double value)
+        /// <param name="centimetresPerHour">The value in cm / h</param>
+        public static Speed FromCentimetresPerHour(double centimetresPerHour)
         {
-            return From(value, SpeedUnit.MillimetresPerMinute);
+            return From(centimetresPerHour, SpeedUnit.CentimetresPerHour);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
+        /// </summary>
+        /// <param name="millimetresPerMinute">The value in mm / min</param>
+        public static Speed FromMillimetresPerMinute(double millimetresPerMinute)
+        {
+            return From(millimetresPerMinute, SpeedUnit.MillimetresPerMinute);
         }
 
         /// <summary>

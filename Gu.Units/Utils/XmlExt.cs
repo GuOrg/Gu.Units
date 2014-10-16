@@ -20,5 +20,9 @@ namespace Gu.Units
         {
             throw new NotImplementedException();
         }
+        public static void SetReadonlyField(ref Volume force, Func<Volume, double> func, XmlReader reader, string value)
+        {
+            reader.MoveToContent();
+        }
     }
 }

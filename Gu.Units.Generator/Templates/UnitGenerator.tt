@@ -2,7 +2,7 @@
 <#@ assembly name="System.Core" #>
 <#@ include file="$(SolutionDir)\Packages\T4.TemplateFileManager.2.1.2\tools\ttinc\TemplateFilemanager.CS.ttinclude" #>
 <#@ assembly name="$(TargetPath)" #>
-<#@ import namespace="Gu.Units.Generator" #> 
+<#@ import namespace="Gu.Units.Generator" #>
 <#@ output extension=".txt" #>
 <# 
 // Recommended editor: Tangible T4 Editor (http://t4-editor.tangible-engineering.com/Download_T4Editor_Plus_ModelingTools.html)

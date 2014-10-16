@@ -8,7 +8,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity Temperature
+    /// A type for the quantity <see cref="T:Gu.Units.Temperature"/>.
     /// </summary>
     [Serializable]
     public partial struct Temperature : IComparable<Temperature>, IEquatable<Temperature>, IFormattable, IXmlSerializable, IQuantity<TemperatureUnit, I1>
@@ -44,7 +44,6 @@
             }
         }
 
-
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Temperature"/> from its string representation
         /// </summary>
@@ -70,7 +69,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Temperature"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static Temperature From(double value, TemperatureUnit unit)
         {
@@ -80,12 +79,11 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Temperature"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Temperature FromKelvin(double value)
+        /// <param name="kelvin">The value in <see cref="T:Gu.Units.Kelvin"/></param>
+        public static Temperature FromKelvin(double kelvin)
         {
-            return new Temperature(value);
+            return new Temperature(kelvin);
         }
-
 
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Temperature"/> instances are equal.

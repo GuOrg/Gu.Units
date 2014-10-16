@@ -1,15 +1,29 @@
 ﻿namespace Gu.Units
 {
     using System;
-
+    /// <summary>
+    /// A type for the unit <see cref="T:Gu.Units.AngleUnit"/>.
+    /// Contains conversion logic.
+    /// </summary>
     [Serializable]
     public struct AngleUnit : IUnit
     {
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Radians"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
         public static readonly AngleUnit Radians = new AngleUnit(1.0, "rad");
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Radians"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
         public static readonly AngleUnit rad = Radians;
 
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Degrees"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
         public static readonly AngleUnit Degrees = new AngleUnit(57.2957795130823, "°");
-
 
         private readonly double _conversionFactor;
         private readonly string _symbol;
@@ -20,6 +34,9 @@
             _symbol = symbol;
         }
 
+        /// <summary>
+        /// The symbol for <see cref="T:Gu.Units.Radians"/>.
+        /// </summary>
         public string Symbol
         {
             get
@@ -34,7 +51,7 @@
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Angle "/>.
+        /// Converts a value to <see cref="T:Gu.Units.Radians"/>.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -44,9 +61,9 @@
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Radians "/>.
+        /// Converts a value from Radians.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in Radians</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double value)
         {

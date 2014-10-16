@@ -8,7 +8,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity Area
+    /// A type for the quantity <see cref="T:Gu.Units.Area"/>.
     /// </summary>
     [Serializable]
     public partial struct Area : IComparable<Area>, IEquatable<Area>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I2>
@@ -88,7 +88,6 @@
             }
         }
 
-
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Area"/> from its string representation
         /// </summary>
@@ -114,7 +113,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static Area From(double value, AreaUnit unit)
         {
@@ -124,47 +123,46 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Area FromSquareMetres(double value)
+        /// <param name="squareMetres">The value in <see cref="T:Gu.Units.SquareMetres"/></param>
+        public static Area FromSquareMetres(double squareMetres)
         {
-            return new Area(value);
-        }
-
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        public static Area FromSquareMillimetres(double value)
-        {
-            return From(value, AreaUnit.SquareMillimetres);
+            return new Area(squareMetres);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Area FromSquareCentimetres(double value)
+        /// <param name="squareMillimetres">The value in mm²</param>
+        public static Area FromSquareMillimetres(double squareMillimetres)
         {
-            return From(value, AreaUnit.SquareCentimetres);
+            return From(squareMillimetres, AreaUnit.SquareMillimetres);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Area FromSquareDecimetres(double value)
+        /// <param name="squareCentimetres">The value in cm²</param>
+        public static Area FromSquareCentimetres(double squareCentimetres)
         {
-            return From(value, AreaUnit.SquareDecimetres);
+            return From(squareCentimetres, AreaUnit.SquareCentimetres);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Area FromSquareKilometres(double value)
+        /// <param name="squareDecimetres">The value in dm²</param>
+        public static Area FromSquareDecimetres(double squareDecimetres)
         {
-            return From(value, AreaUnit.SquareKilometres);
+            return From(squareDecimetres, AreaUnit.SquareDecimetres);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="squareKilometres">The value in km²</param>
+        public static Area FromSquareKilometres(double squareKilometres)
+        {
+            return From(squareKilometres, AreaUnit.SquareKilometres);
         }
 
         /// <summary>

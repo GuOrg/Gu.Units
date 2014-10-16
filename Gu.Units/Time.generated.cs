@@ -8,7 +8,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity Time
+    /// A type for the quantity <see cref="T:Gu.Units.Time"/>.
     /// </summary>
     [Serializable]
     public partial struct Time : IComparable<Time>, IEquatable<Time>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, I1>
@@ -99,7 +99,6 @@
             }
         }
 
-
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Time"/> from its string representation
         /// </summary>
@@ -125,7 +124,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static Time From(double value, TimeUnit unit)
         {
@@ -135,56 +134,55 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Time FromSeconds(double value)
+        /// <param name="seconds">The value in <see cref="T:Gu.Units.Seconds"/></param>
+        public static Time FromSeconds(double seconds)
         {
-            return new Time(value);
-        }
-
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        public static Time FromNanoseconds(double value)
-        {
-            return From(value, TimeUnit.Nanoseconds);
+            return new Time(seconds);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Time FromMicroseconds(double value)
+        /// <param name="nanoseconds">The value in ns</param>
+        public static Time FromNanoseconds(double nanoseconds)
         {
-            return From(value, TimeUnit.Microseconds);
+            return From(nanoseconds, TimeUnit.Nanoseconds);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Time FromMilliseconds(double value)
+        /// <param name="microseconds">The value in µs</param>
+        public static Time FromMicroseconds(double microseconds)
         {
-            return From(value, TimeUnit.Milliseconds);
+            return From(microseconds, TimeUnit.Microseconds);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Time FromHours(double value)
+        /// <param name="milliseconds">The value in ms</param>
+        public static Time FromMilliseconds(double milliseconds)
         {
-            return From(value, TimeUnit.Hours);
+            return From(milliseconds, TimeUnit.Milliseconds);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Time FromMinutes(double value)
+        /// <param name="hours">The value in h</param>
+        public static Time FromHours(double hours)
         {
-            return From(value, TimeUnit.Minutes);
+            return From(hours, TimeUnit.Hours);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="minutes">The value in min</param>
+        public static Time FromMinutes(double minutes)
+        {
+            return From(minutes, TimeUnit.Minutes);
         }
 
         /// <summary>
