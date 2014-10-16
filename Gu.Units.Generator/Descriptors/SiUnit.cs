@@ -16,7 +16,7 @@
     public class SiUnit : UnitBase
     {
         public SiUnit()
-            : base(null,null,null)
+            : base(null, null, null)
         {
         }
 
@@ -45,7 +45,7 @@
 
         public override string ToString()
         {
-            return this.UiName;
+            return string.Format("{0} ({1})", this.UiName, this.Quantity == null ? "null" : this.Quantity.ClassName);
         }
     }
 }

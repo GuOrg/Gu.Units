@@ -75,6 +75,7 @@
     <Compile Include="Descriptors\ISubUnit.cs" />
     <Compile Include="Descriptors\IUnit.cs" />
     <Compile Include="Descriptors\Methods.cs" />
+    <Compile Include="Descriptors\OperatorOverload.cs" />
     <Compile Include="Descriptors\Prefix.cs" />
     <Compile Include="Descriptors\SiUnit.cs" />
     <Compile Include="Descriptors\SubUnit.cs" />

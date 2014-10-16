@@ -96,7 +96,6 @@
     <Compile Include="Length.generated.cs">
       <DependentUpon>QuantityGenerator.txt4</DependentUpon>
     </Compile>
-    <Compile Include="LengthUnit.cs" />
     <Compile Include="LengthUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>

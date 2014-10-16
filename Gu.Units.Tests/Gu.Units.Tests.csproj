@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArithmeticsTests.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="ConverterTests.cs" />
     <Compile Include="Helpers\DummyUnit.cs" />
     <Compile Include="ParserTests.cs" />
