@@ -32,13 +32,27 @@ namespace <#= unit.Namespace #>
     public struct <#= unit.Quantity.ClassName #>Unit : IUnit
     {
         public static readonly <#= unit.Quantity.ClassName #>Unit <#= unit.ClassName #> = new <#= unit.Quantity.ClassName #>Unit(1.0, "<#= unit.Symbol #>");
-        public static readonly <#= unit.Quantity.ClassName #>Unit <#= unit.Symbol #> = <#= unit.ClassName #>;
+		    <#
+		    if(unit.IsSymbolNameValid)
+            {
+		    #>
+public static readonly <#= unit.Quantity.ClassName #>Unit <#= unit.Symbol #> = <#= unit.ClassName #>;
+            <#
+            }
+            #>    
 		<#
 		foreach(var su in unit.SubUnits)
         {
 		#>
 public static readonly <#= unit.Quantity.ClassName #>Unit <#= su.ClassName #> = new <#= unit.Quantity.ClassName #>Unit(<#= su.ConversionFactor #>, "<#= su.Symbol #>");
-        public static readonly <#= unit.Quantity.ClassName #>Unit <#= su.Symbol #> = <#= su.ClassName #>;
+		    <#
+		    if(su.IsSymbolNameValid)
+            {
+		    #>
+public static readonly <#= unit.Quantity.ClassName #>Unit <#= su.Symbol #> = <#= su.ClassName #>;
+            <#
+            }
+            #>    
         <#
         }
         #>        
@@ -65,13 +79,23 @@ public static readonly <#= unit.Quantity.ClassName #>Unit <#= su.ClassName #> = 
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:<#= unit.Namespace #>.<#= unit.ClassName #> "/>.
+        /// Converts a value to <see cref="T:<#= unit.Namespace #>.<#= unit.Quantity.ClassName #> "/>.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
         public double <#= Gu.Units.Generator.Methods.ToSiUnit #>(double value)
         {
             return _conversionFactor * value;
+        }
+
+        /// <summary>
+        /// Converts a value to <see cref="T:<#= unit.Namespace #>.<#= unit.ClassName #> "/>.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>The converted value</returns>
+        public double <#= Gu.Units.Generator.Methods.FromSiUnit #>(double value)
+        {
+            return value / _conversionFactor;
         }
 
         public override string ToString()

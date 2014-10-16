@@ -9,301 +9,344 @@ namespace Gu.Units
     using System.Xml.Serialization;
 
 	/// <summary>
-    /// An Length
+    /// A type for the quantity Time
     /// </summary>
     [Serializable]
-	public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1>
+	public partial struct Time : IComparable<Time>, IEquatable<Time>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, I1>
 	{
 	    /// <summary>
-        /// The quantity in <see cref="T:Gu.Units.Metres"/>.
+        /// The quantity in <see cref="T:Gu.Units.Seconds"/>.
         /// </summary>
-		public readonly double Metres;
+		public readonly double Seconds;
 		
-		private Length(double metres)
+		private Time(double seconds)
         {
-            Metres = metres;
+            Seconds = seconds;
         }
 
 		/// <summary>
-        /// Initializes a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// Initializes a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="metres"></param>
-        /// <param name="unit"><see cref="T:Gu.Units.Metres"/>.</param>
-        public Length(double metres, Metres unit)
+        /// <param name="value"></param>
+        /// <param name="unit"><see cref="T:Gu.Units.Seconds"/>.</param>
+        public Time(double value, TimeUnit unit)
         {
-            Metres = metres;
+            Seconds = unit.ToSiUnit(value);
         }
-		
+
         /// <summary>
-        /// Initializes a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// The quantity in Seconds
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <param name="unit"></param>
-        public Length(double quantity, Centimetres unit)
-        {
-            Metres = UnitConverter.ConvertFrom(quantity, unit);
-        }
-		
-        /// <summary>
-        /// Initializes a new instance of <see cref="T:Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        /// <param name="unit"></param>
-        public Length(double quantity, Millimetres unit)
-        {
-            Metres = UnitConverter.ConvertFrom(quantity, unit);
-        }
-		 		
-        /// <summary>
-        /// The quantity in centimetres
-        /// </summary>
-        public double Centimetres
+        public double SiValue
         {
             get
             {
-                return UnitConverter.ConvertTo(Metres, LengthUnit.Centimetres);
+                return Seconds;
+            }
+        }
+
+ 		
+        /// <summary>
+        /// The quantity in nanoseconds
+        /// </summary>
+        public double Nanoseconds
+        {
+            get
+            {
+                return TimeUnit.Nanoseconds.FromSiUnit(Seconds);
             }
         }
 		
         /// <summary>
-        /// The quantity in millimetres
+        /// The quantity in microseconds
         /// </summary>
-        public double Millimetres
+        public double Microseconds
         {
             get
             {
-                return UnitConverter.ConvertTo(Metres, LengthUnit.Millimetres);
+                return TimeUnit.Microseconds.FromSiUnit(Seconds);
             }
         }
 		
         /// <summary>
-        /// Creates an instance of <see cref="T:Gu.Units.Length"/> from its string representation
+        /// The quantity in milliseconds
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="T:Gu.Units.Length"/></param>
+        public double Milliseconds
+        {
+            get
+            {
+                return TimeUnit.Milliseconds.FromSiUnit(Seconds);
+            }
+        }
+		
+        /// <summary>
+        /// The quantity in hours
+        /// </summary>
+        public double Hours
+        {
+            get
+            {
+                return TimeUnit.Hours.FromSiUnit(Seconds);
+            }
+        }
+		
+        /// <summary>
+        /// The quantity in minutes
+        /// </summary>
+        public double Minutes
+        {
+            get
+            {
+                return TimeUnit.Minutes.FromSiUnit(Seconds);
+            }
+        }
+		
+        /// <summary>
+        /// Creates an instance of <see cref="T:Gu.Units.Time"/> from its string representation
+        /// </summary>
+        /// <param name="s">The string representation of the <see cref="T:Gu.Units.Time"/></param>
         /// <returns></returns>
-        public static Length Parse(string s)
+        public static Time Parse(string s)
         {
-            return Parser.Parse<ILengthUnit, Length>(s, From);
+            return Parser.Parse<TimeUnit, Time>(s, From);
         }
  
         /// <summary>
-        /// Reads an instance of <see cref="T:Gu.Units.Length"/> from the <paramref name="reader"/>
+        /// Reads an instance of <see cref="T:Gu.Units.Time"/> from the <paramref name="reader"/>
         /// </summary>
         /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="T:Gu.Units.Length"/></returns>
-        public static Length ReadFrom(XmlReader reader)
+        /// <returns>An instance of  <see cref="T:Gu.Units.Time"/></returns>
+        public static Time ReadFrom(XmlReader reader)
         {
-            var v = new Length();
+            var v = new Time();
             v.ReadXml(reader);
             return v;
         }
  
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
         /// <param name="quantity"></param>
         /// <param name="unit"></param>
-        public static Length From(double value, LengthUnit unit)
+        public static Time From(double value, TimeUnit unit)
         {
-            return new Length(unit.ToSiUnit(value));
+            return new Time(unit.ToSiUnit(value));
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static Length FromMetres(double quantity)
+        public static Time FromSeconds(double value)
         {
-            return new Length(quantity);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        public static Length FromMetres(double value)
-        {
-            return new Length(value);
+            return new Time(value);
         }
 
  		
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static Length FromCentimetres(double quantity)
+        public static Time FromNanoseconds(double value)
         {
-            return new Length(UnitConverter.ConvertFrom(quantity, LengthUnit.Centimetres));
+            return From(value, TimeUnit.Nanoseconds);
         }
 		
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static Length FromMillimetres(double quantity)
+        public static Time FromMicroseconds(double value)
         {
-            return new Length(UnitConverter.ConvertFrom(quantity, LengthUnit.Millimetres));
+            return From(value, TimeUnit.Microseconds);
+        }
+		
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="quantity"></param>
+        public static Time FromMilliseconds(double value)
+        {
+            return From(value, TimeUnit.Milliseconds);
+        }
+		
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="quantity"></param>
+        public static Time FromHours(double value)
+        {
+            return From(value, TimeUnit.Hours);
+        }
+		
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="quantity"></param>
+        public static Time FromMinutes(double value)
+        {
+            return From(value, TimeUnit.Minutes);
         }
 				 
         /// <summary>
-        /// Indicates whether two <see cref="T:Gu.Units.Length"/> instances are equal.
+        /// Indicates whether two <see cref="T:Gu.Units.Time"/> instances are equal.
         /// </summary>
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Length"/>.</param>
-        public static bool operator ==(Length left, Length right)
+        /// <param name="left">A <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="right">A <see cref="T:Gu.Units.Time"/>.</param>
+        public static bool operator ==(Time left, Time right)
         {
             return left.Equals(right);
         }
  
         /// <summary>
-        /// Indicates whether two <see cref="T:Gu.Units.Length"/> instances are not equal.
+        /// Indicates whether two <see cref="T:Gu.Units.Time"/> instances are not equal.
         /// </summary>
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Length"/>.</param>
-        public static bool operator !=(Length left, Length right)
+        /// <param name="left">A <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="right">A <see cref="T:Gu.Units.Time"/>.</param>
+        public static bool operator !=(Time left, Time right)
         {
             return !left.Equals(right);
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Length"/> is less than another specified <see cref="T:Gu.Units.Length"/>.
+        /// Indicates whether a specified <see cref="T:Gu.Units.Time"/> is less than another specified <see cref="T:Gu.Units.Time"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
-        public static bool operator <(Length left, Length right)
+        /// <param name="left">An <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="right">An <see cref="T:Gu.Units.Time"/>.</param>
+        public static bool operator <(Time left, Time right)
         {
-            return left.Metres < right.Metres;
+            return left.Seconds < right.Seconds;
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Length"/> is greater than another specified <see cref="T:Gu.Units.Length"/>.
+        /// Indicates whether a specified <see cref="T:Gu.Units.Time"/> is greater than another specified <see cref="T:Gu.Units.Time"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
-        public static bool operator >(Length left, Length right)
+        /// <param name="left">An <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="right">An <see cref="T:Gu.Units.Time"/>.</param>
+        public static bool operator >(Time left, Time right)
         {
-            return left.Metres > right.Metres;
+            return left.Seconds > right.Seconds;
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Length"/> is less than or equal to another specified <see cref="T:Gu.Units.Length"/>.
+        /// Indicates whether a specified <see cref="T:Gu.Units.Time"/> is less than or equal to another specified <see cref="T:Gu.Units.Time"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
-        public static bool operator <=(Length left, Length right)
+        /// <param name="left">An <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="right">An <see cref="T:Gu.Units.Time"/>.</param>
+        public static bool operator <=(Time left, Time right)
         {
-            return left.Metres <= right.Metres;
+            return left.Seconds <= right.Seconds;
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Length"/> is greater than or equal to another specified <see cref="T:Gu.Units.Length"/>.
+        /// Indicates whether a specified <see cref="T:Gu.Units.Time"/> is greater than or equal to another specified <see cref="T:Gu.Units.Time"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
-        public static bool operator >=(Length left, Length right)
+        /// <param name="left">An <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="right">An <see cref="T:Gu.Units.Time"/>.</param>
+        public static bool operator >=(Time left, Time right)
         {
-            return left.Metres >= right.Metres;
+            return left.Seconds >= right.Seconds;
         }
  
         /// <summary>
-        /// Multiplies an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="left"/> and returns the result.
+        /// Multiplies an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="left"/> and returns the result.
         /// </summary>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Length"/></param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Time"/></param>
         /// <param name="left">An instance of <seealso cref="T:System.Double"/></param>
-        /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="left"/> and returns the result.</returns>
-        public static Length operator *(double left, Length right)
+        /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="left"/> and returns the result.</returns>
+        public static Time operator *(double left, Time right)
         {
-            return new Length(left*right.Metres);
+            return new Time(left*right.Seconds);
         }
  
         /// <summary>
-        /// Multiplies an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="right"/> and returns the result.
+        /// Multiplies an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Length"/></param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Time"/></param>
         /// <param name="right">An instance of <seealso cref="T:System.Double"/></param>
-        /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="right"/> and returns the result.</returns>
-        public static Length operator *(Length left, double right)
+        /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="right"/> and returns the result.</returns>
+        public static Time operator *(Time left, double right)
         {
-            return new Length(left.Metres*right);
+            return new Time(left.Seconds*right);
         }
  
         /// <summary>
-        /// Divides an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="right"/> and returns the result.
+        /// Divides an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Length"/></param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Time"/></param>
         /// <param name="right">An instance of <seealso cref="T:System.Double"/></param>
-        /// <returns>Divides an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="right"/> and returns the result.</returns>
-        public static Length operator /(Length left, double right)
+        /// <returns>Divides an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="right"/> and returns the result.</returns>
+        public static Time operator /(Time left, double right)
         {
-            return new Length(left.Metres / right);
+            return new Time(left.Seconds / right);
         }
  
         /// <summary>
-        /// Adds two specified <see cref="T:Gu.Units.Length"/> instances.
+        /// Adds two specified <see cref="T:Gu.Units.Time"/> instances.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:Gu.Units.Length"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
+        /// An <see cref="T:Gu.Units.Time"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Length"/>.</param>
+        /// <param name="left">A <see cref="T:Gu.Units.Time"/>.</param>
         /// <param name="right">A TimeSpan.</param>
-        public static Length operator +(Length left, Length right)
+        public static Time operator +(Time left, Time right)
         {
-            return new Length(left.Metres + right.Metres);
+            return new Time(left.Seconds + right.Seconds);
         }
  
         /// <summary>
-        /// Subtracts an Length from another Length and returns the difference.
+        /// Subtracts an Time from another Time and returns the difference.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:Gu.Units.Length"/> that is the difference
+        /// An <see cref="T:Gu.Units.Time"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Length"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Length"/> (the subtrahend).</param>
-        public static Length operator -(Length left, Length right)
+        /// <param name="left">A <see cref="T:Gu.Units.Time"/> (the minuend).</param>
+        /// <param name="right">A <see cref="T:Gu.Units.Time"/> (the subtrahend).</param>
+        public static Time operator -(Time left, Time right)
         {
-            return new Length(left.Metres - right.Metres);
+            return new Time(left.Seconds - right.Seconds);
         }
  
         /// <summary>
-        /// Returns an <see cref="T:Gu.Units.Length"/> whose quantity is the negated quantity of the specified instance.
+        /// Returns an <see cref="T:Gu.Units.Time"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:Gu.Units.Length"/> with the same numeric quantity as this instance, but the opposite sign.
+        /// An <see cref="T:Gu.Units.Time"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Length">A <see cref="T:Gu.Units.Length"/></param>
-        public static Length operator -(Length Length)
+        /// <param name="Time">A <see cref="T:Gu.Units.Time"/></param>
+        public static Time operator -(Time Time)
         {
-            return new Length(-1*Length.Metres);
+            return new Time(-1*Time.Seconds);
         }
  
         /// <summary>
-        /// Returns the specified instance of <see cref="T:Gu.Units.Length"/>.
+        /// Returns the specified instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Length"/>.
+        /// Returns <paramref name="Time"/>.
         /// </returns>
-        /// <param name="Length">A <see cref="T:Gu.Units.Length"/></param>
-        public static Length operator +(Length Length)
+        /// <param name="Time">A <see cref="T:Gu.Units.Time"/></param>
+        public static Time operator +(Time Time)
         {
-            return Length;
+            return Time;
         }
  
         public override string ToString()
@@ -323,17 +366,17 @@ namespace Gu.Units
  
         public string ToString(string format, IFormatProvider formatProvider)
         {
-            return this.ToString(format, formatProvider, LengthUnit.Metres);
+            return this.ToString(format, formatProvider, TimeUnit.Seconds);
         }
  
-        public string ToString<T>(string format, IFormatProvider formatProvider, T unit) where T : ILengthUnit
+        public string ToString(string format, IFormatProvider formatProvider, TimeUnit unit)
         {
-            var quantity = UnitConverter.ConvertTo(this.Metres, unit);
+            var quantity = unit.FromSiUnit(this.Seconds);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
  
         /// <summary>
-        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Length"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Length"/> object.
+        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Time"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Time"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -355,35 +398,35 @@ namespace Gu.Units
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Length"/> object to compare to this instance.</param>
-        public int CompareTo(Length quantity)
+        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Time"/> object to compare to this instance.</param>
+        public int CompareTo(Time quantity)
         {
-            return this.Metres.CompareTo(quantity.Metres);
+            return this.Seconds.CompareTo(quantity.Seconds);
         }
  
         /// <summary>
-        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Length"/> object.
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Time"/> object.
         /// </summary>
         /// <returns>
-        /// true if <paramref name="other"/> represents the same Length as this instance; otherwise, false.
+        /// true if <paramref name="other"/> represents the same Time as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Length"/> object to compare with this instance.</param>
-        public bool Equals(Length other)
+        /// <param name="other">An <see cref="T:Gu.Units.Time"/> object to compare with this instance.</param>
+        public bool Equals(Time other)
         {
-            return this.Metres.Equals(other.Metres);
+            return this.Seconds.Equals(other.Seconds);
         }
  
         /// <summary>
-        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Length"/> object within the given tolerance.
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Time"/> object within the given tolerance.
         /// </summary>
         /// <returns>
-        /// true if <paramref name="other"/> represents the same Length as this instance; otherwise, false.
+        /// true if <paramref name="other"/> represents the same Time as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Length"/> object to compare with this instance.</param>
+        /// <param name="other">An <see cref="T:Gu.Units.Time"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
-        public bool Equals(Length other, double tolerance)
+        public bool Equals(Time other, double tolerance)
         {
-            return Math.Abs(this.Metres - other.Metres) < tolerance;
+            return Math.Abs(this.Seconds - other.Seconds) < tolerance;
         }
  
         public override bool Equals(object obj)
@@ -393,12 +436,12 @@ namespace Gu.Units
                 return false;
             }
  
-            return obj is Length && this.Equals((Length)obj);
+            return obj is Time && this.Equals((Time)obj);
         }
  
         public override int GetHashCode()
         {
-            return this.Metres.GetHashCode();
+            return this.Seconds.GetHashCode();
         }
  
         /// <summary>
@@ -426,7 +469,7 @@ namespace Gu.Units
             var e = (XElement)XNode.ReadFrom(reader);
  
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, x => x.Metres, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
+            XmlExt.SetReadonlyField(ref this, x => x.Seconds, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
  
         /// <summary>
@@ -435,7 +478,7 @@ namespace Gu.Units
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Metres);
+            XmlExt.WriteAttribute(writer, "Value", this.Seconds);
         }
 	}
 }

@@ -7,9 +7,10 @@ namespace Gu.Units
     public struct AngleUnit : IUnit
     {
         public static readonly AngleUnit Radians = new AngleUnit(1.0, "rad");
-        public static readonly AngleUnit rad = Radians;
+		    public static readonly AngleUnit rad = Radians;
+                
 		public static readonly AngleUnit Degrees = new AngleUnit(57.2957795130823, "°");
-        public static readonly AngleUnit ° = Degrees;
+		        
                 
         private readonly double _conversionFactor;
         private readonly string _symbol;
@@ -34,13 +35,23 @@ namespace Gu.Units
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Radians "/>.
+        /// Converts a value to <see cref="T:Gu.Units.Angle "/>.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
             return _conversionFactor * value;
+        }
+
+        /// <summary>
+        /// Converts a value to <see cref="T:Gu.Units.Radians "/>.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>The converted value</returns>
+        public double FromSiUnit(double value)
+        {
+            return value / _conversionFactor;
         }
 
         public override string ToString()

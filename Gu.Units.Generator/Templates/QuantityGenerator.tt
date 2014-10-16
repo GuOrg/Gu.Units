@@ -21,10 +21,10 @@ var paramTmpl = ParamTextTemplate.Create(this.Host);
 var session = ParamTextTemplate.GetSessionObject();
 var settings = Settings.Instance;
 this.Write(string.Format("Read Settings found {0} units", settings.Quantities.Count));
-foreach (var item in settings.Quantities)
+foreach (var quantity in settings.Quantities)
 {
-	fileManager.StartNewFile(item.ClassName + ".generated.txt", Settings.ProjectName, null, null);
-	session["ValueMetaData"] = item;
+	fileManager.StartNewFile(quantity.ClassName + ".generated.txt", Settings.ProjectName, null, null);
+	session["QuantityMetaData"] = quantity;
 	string output = paramTmpl.TransformText("Quantity.tt", session);
 	this.Write(output);
 }

@@ -2,6 +2,8 @@
 {
     public static class Methods
     {
-        public const string ToSiUnit = "ToSiUnit";
+        public static readonly string ToSiUnit = "ToSiUnit";
+        public static readonly string FromSiUnit = "FromSiUnit";
+        public static readonly string SiValue = "SiValue";
     }
 }

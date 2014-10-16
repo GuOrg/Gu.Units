@@ -112,6 +112,14 @@
             }
         }
 
+        public bool IsSymbolNameValid
+        {
+            get
+            {
+                return char.IsLetter(Symbol[0]);
+            }
+        }
+
         public override string ToString()
         {
             return this.UiName;

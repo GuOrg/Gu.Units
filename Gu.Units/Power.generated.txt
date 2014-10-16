@@ -9,301 +9,364 @@ namespace Gu.Units
     using System.Xml.Serialization;
 
 	/// <summary>
-    /// An Length
+    /// A type for the quantity Power
     /// </summary>
     [Serializable]
-	public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1>
+	public partial struct Power : IComparable<Power>, IEquatable<Power>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3>
 	{
 	    /// <summary>
-        /// The quantity in <see cref="T:Gu.Units.Metres"/>.
+        /// The quantity in <see cref="T:Gu.Units.Watts"/>.
         /// </summary>
-		public readonly double Metres;
+		public readonly double Watts;
 		
-		private Length(double metres)
+		private Power(double watts)
         {
-            Metres = metres;
+            Watts = watts;
         }
 
 		/// <summary>
-        /// Initializes a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// Initializes a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="metres"></param>
-        /// <param name="unit"><see cref="T:Gu.Units.Metres"/>.</param>
-        public Length(double metres, Metres unit)
+        /// <param name="value"></param>
+        /// <param name="unit"><see cref="T:Gu.Units.Watts"/>.</param>
+        public Power(double value, PowerUnit unit)
         {
-            Metres = metres;
+            Watts = unit.ToSiUnit(value);
         }
-		
+
         /// <summary>
-        /// Initializes a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// The quantity in Watts
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <param name="unit"></param>
-        public Length(double quantity, Centimetres unit)
-        {
-            Metres = UnitConverter.ConvertFrom(quantity, unit);
-        }
-		
-        /// <summary>
-        /// Initializes a new instance of <see cref="T:Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        /// <param name="unit"></param>
-        public Length(double quantity, Millimetres unit)
-        {
-            Metres = UnitConverter.ConvertFrom(quantity, unit);
-        }
-		 		
-        /// <summary>
-        /// The quantity in centimetres
-        /// </summary>
-        public double Centimetres
+        public double SiValue
         {
             get
             {
-                return UnitConverter.ConvertTo(Metres, LengthUnit.Centimetres);
+                return Watts;
+            }
+        }
+
+ 		
+        /// <summary>
+        /// The quantity in nanowatts
+        /// </summary>
+        public double Nanowatts
+        {
+            get
+            {
+                return PowerUnit.Nanowatts.FromSiUnit(Watts);
             }
         }
 		
         /// <summary>
-        /// The quantity in millimetres
+        /// The quantity in microwatts
         /// </summary>
-        public double Millimetres
+        public double Microwatts
         {
             get
             {
-                return UnitConverter.ConvertTo(Metres, LengthUnit.Millimetres);
+                return PowerUnit.Microwatts.FromSiUnit(Watts);
             }
         }
 		
         /// <summary>
-        /// Creates an instance of <see cref="T:Gu.Units.Length"/> from its string representation
+        /// The quantity in milliwatts
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="T:Gu.Units.Length"/></param>
+        public double Milliwatts
+        {
+            get
+            {
+                return PowerUnit.Milliwatts.FromSiUnit(Watts);
+            }
+        }
+		
+        /// <summary>
+        /// The quantity in kilowatts
+        /// </summary>
+        public double Kilowatts
+        {
+            get
+            {
+                return PowerUnit.Kilowatts.FromSiUnit(Watts);
+            }
+        }
+		
+        /// <summary>
+        /// The quantity in megawatts
+        /// </summary>
+        public double Megawatts
+        {
+            get
+            {
+                return PowerUnit.Megawatts.FromSiUnit(Watts);
+            }
+        }
+		
+        /// <summary>
+        /// The quantity in gigawatts
+        /// </summary>
+        public double Gigawatts
+        {
+            get
+            {
+                return PowerUnit.Gigawatts.FromSiUnit(Watts);
+            }
+        }
+		
+        /// <summary>
+        /// Creates an instance of <see cref="T:Gu.Units.Power"/> from its string representation
+        /// </summary>
+        /// <param name="s">The string representation of the <see cref="T:Gu.Units.Power"/></param>
         /// <returns></returns>
-        public static Length Parse(string s)
+        public static Power Parse(string s)
         {
-            return Parser.Parse<ILengthUnit, Length>(s, From);
+            return Parser.Parse<PowerUnit, Power>(s, From);
         }
  
         /// <summary>
-        /// Reads an instance of <see cref="T:Gu.Units.Length"/> from the <paramref name="reader"/>
+        /// Reads an instance of <see cref="T:Gu.Units.Power"/> from the <paramref name="reader"/>
         /// </summary>
         /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="T:Gu.Units.Length"/></returns>
-        public static Length ReadFrom(XmlReader reader)
+        /// <returns>An instance of  <see cref="T:Gu.Units.Power"/></returns>
+        public static Power ReadFrom(XmlReader reader)
         {
-            var v = new Length();
+            var v = new Power();
             v.ReadXml(reader);
             return v;
         }
  
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
         /// <param name="quantity"></param>
         /// <param name="unit"></param>
-        public static Length From(double value, LengthUnit unit)
+        public static Power From(double value, PowerUnit unit)
         {
-            return new Length(unit.ToSiUnit(value));
+            return new Power(unit.ToSiUnit(value));
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static Length FromMetres(double quantity)
+        public static Power FromWatts(double value)
         {
-            return new Length(quantity);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        public static Length FromMetres(double value)
-        {
-            return new Length(value);
+            return new Power(value);
         }
 
  		
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static Length FromCentimetres(double quantity)
+        public static Power FromNanowatts(double value)
         {
-            return new Length(UnitConverter.ConvertFrom(quantity, LengthUnit.Centimetres));
+            return From(value, PowerUnit.Nanowatts);
         }
 		
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static Length FromMillimetres(double quantity)
+        public static Power FromMicrowatts(double value)
         {
-            return new Length(UnitConverter.ConvertFrom(quantity, LengthUnit.Millimetres));
+            return From(value, PowerUnit.Microwatts);
+        }
+		
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
+        /// </summary>
+        /// <param name="quantity"></param>
+        public static Power FromMilliwatts(double value)
+        {
+            return From(value, PowerUnit.Milliwatts);
+        }
+		
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
+        /// </summary>
+        /// <param name="quantity"></param>
+        public static Power FromKilowatts(double value)
+        {
+            return From(value, PowerUnit.Kilowatts);
+        }
+		
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
+        /// </summary>
+        /// <param name="quantity"></param>
+        public static Power FromMegawatts(double value)
+        {
+            return From(value, PowerUnit.Megawatts);
+        }
+		
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
+        /// </summary>
+        /// <param name="quantity"></param>
+        public static Power FromGigawatts(double value)
+        {
+            return From(value, PowerUnit.Gigawatts);
         }
 				 
         /// <summary>
-        /// Indicates whether two <see cref="T:Gu.Units.Length"/> instances are equal.
+        /// Indicates whether two <see cref="T:Gu.Units.Power"/> instances are equal.
         /// </summary>
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Length"/>.</param>
-        public static bool operator ==(Length left, Length right)
+        /// <param name="left">A <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="right">A <see cref="T:Gu.Units.Power"/>.</param>
+        public static bool operator ==(Power left, Power right)
         {
             return left.Equals(right);
         }
  
         /// <summary>
-        /// Indicates whether two <see cref="T:Gu.Units.Length"/> instances are not equal.
+        /// Indicates whether two <see cref="T:Gu.Units.Power"/> instances are not equal.
         /// </summary>
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Length"/>.</param>
-        public static bool operator !=(Length left, Length right)
+        /// <param name="left">A <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="right">A <see cref="T:Gu.Units.Power"/>.</param>
+        public static bool operator !=(Power left, Power right)
         {
             return !left.Equals(right);
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Length"/> is less than another specified <see cref="T:Gu.Units.Length"/>.
+        /// Indicates whether a specified <see cref="T:Gu.Units.Power"/> is less than another specified <see cref="T:Gu.Units.Power"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
-        public static bool operator <(Length left, Length right)
+        /// <param name="left">An <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="right">An <see cref="T:Gu.Units.Power"/>.</param>
+        public static bool operator <(Power left, Power right)
         {
-            return left.Metres < right.Metres;
+            return left.Watts < right.Watts;
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Length"/> is greater than another specified <see cref="T:Gu.Units.Length"/>.
+        /// Indicates whether a specified <see cref="T:Gu.Units.Power"/> is greater than another specified <see cref="T:Gu.Units.Power"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
-        public static bool operator >(Length left, Length right)
+        /// <param name="left">An <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="right">An <see cref="T:Gu.Units.Power"/>.</param>
+        public static bool operator >(Power left, Power right)
         {
-            return left.Metres > right.Metres;
+            return left.Watts > right.Watts;
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Length"/> is less than or equal to another specified <see cref="T:Gu.Units.Length"/>.
+        /// Indicates whether a specified <see cref="T:Gu.Units.Power"/> is less than or equal to another specified <see cref="T:Gu.Units.Power"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
-        public static bool operator <=(Length left, Length right)
+        /// <param name="left">An <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="right">An <see cref="T:Gu.Units.Power"/>.</param>
+        public static bool operator <=(Power left, Power right)
         {
-            return left.Metres <= right.Metres;
+            return left.Watts <= right.Watts;
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Length"/> is greater than or equal to another specified <see cref="T:Gu.Units.Length"/>.
+        /// Indicates whether a specified <see cref="T:Gu.Units.Power"/> is greater than or equal to another specified <see cref="T:Gu.Units.Power"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
-        public static bool operator >=(Length left, Length right)
+        /// <param name="left">An <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="right">An <see cref="T:Gu.Units.Power"/>.</param>
+        public static bool operator >=(Power left, Power right)
         {
-            return left.Metres >= right.Metres;
+            return left.Watts >= right.Watts;
         }
  
         /// <summary>
-        /// Multiplies an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="left"/> and returns the result.
+        /// Multiplies an instance of <see cref="T:Gu.Units.Power"/> with <paramref name="left"/> and returns the result.
         /// </summary>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Length"/></param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Power"/></param>
         /// <param name="left">An instance of <seealso cref="T:System.Double"/></param>
-        /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="left"/> and returns the result.</returns>
-        public static Length operator *(double left, Length right)
+        /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Power"/> with <paramref name="left"/> and returns the result.</returns>
+        public static Power operator *(double left, Power right)
         {
-            return new Length(left*right.Metres);
+            return new Power(left*right.Watts);
         }
  
         /// <summary>
-        /// Multiplies an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="right"/> and returns the result.
+        /// Multiplies an instance of <see cref="T:Gu.Units.Power"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Length"/></param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Power"/></param>
         /// <param name="right">An instance of <seealso cref="T:System.Double"/></param>
-        /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="right"/> and returns the result.</returns>
-        public static Length operator *(Length left, double right)
+        /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Power"/> with <paramref name="right"/> and returns the result.</returns>
+        public static Power operator *(Power left, double right)
         {
-            return new Length(left.Metres*right);
+            return new Power(left.Watts*right);
         }
  
         /// <summary>
-        /// Divides an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="right"/> and returns the result.
+        /// Divides an instance of <see cref="T:Gu.Units.Power"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Length"/></param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Power"/></param>
         /// <param name="right">An instance of <seealso cref="T:System.Double"/></param>
-        /// <returns>Divides an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="right"/> and returns the result.</returns>
-        public static Length operator /(Length left, double right)
+        /// <returns>Divides an instance of <see cref="T:Gu.Units.Power"/> with <paramref name="right"/> and returns the result.</returns>
+        public static Power operator /(Power left, double right)
         {
-            return new Length(left.Metres / right);
+            return new Power(left.Watts / right);
         }
  
         /// <summary>
-        /// Adds two specified <see cref="T:Gu.Units.Length"/> instances.
+        /// Adds two specified <see cref="T:Gu.Units.Power"/> instances.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:Gu.Units.Length"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
+        /// An <see cref="T:Gu.Units.Power"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Length"/>.</param>
+        /// <param name="left">A <see cref="T:Gu.Units.Power"/>.</param>
         /// <param name="right">A TimeSpan.</param>
-        public static Length operator +(Length left, Length right)
+        public static Power operator +(Power left, Power right)
         {
-            return new Length(left.Metres + right.Metres);
+            return new Power(left.Watts + right.Watts);
         }
  
         /// <summary>
-        /// Subtracts an Length from another Length and returns the difference.
+        /// Subtracts an Power from another Power and returns the difference.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:Gu.Units.Length"/> that is the difference
+        /// An <see cref="T:Gu.Units.Power"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Length"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Length"/> (the subtrahend).</param>
-        public static Length operator -(Length left, Length right)
+        /// <param name="left">A <see cref="T:Gu.Units.Power"/> (the minuend).</param>
+        /// <param name="right">A <see cref="T:Gu.Units.Power"/> (the subtrahend).</param>
+        public static Power operator -(Power left, Power right)
         {
-            return new Length(left.Metres - right.Metres);
+            return new Power(left.Watts - right.Watts);
         }
  
         /// <summary>
-        /// Returns an <see cref="T:Gu.Units.Length"/> whose quantity is the negated quantity of the specified instance.
+        /// Returns an <see cref="T:Gu.Units.Power"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:Gu.Units.Length"/> with the same numeric quantity as this instance, but the opposite sign.
+        /// An <see cref="T:Gu.Units.Power"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Length">A <see cref="T:Gu.Units.Length"/></param>
-        public static Length operator -(Length Length)
+        /// <param name="Power">A <see cref="T:Gu.Units.Power"/></param>
+        public static Power operator -(Power Power)
         {
-            return new Length(-1*Length.Metres);
+            return new Power(-1*Power.Watts);
         }
  
         /// <summary>
-        /// Returns the specified instance of <see cref="T:Gu.Units.Length"/>.
+        /// Returns the specified instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Length"/>.
+        /// Returns <paramref name="Power"/>.
         /// </returns>
-        /// <param name="Length">A <see cref="T:Gu.Units.Length"/></param>
-        public static Length operator +(Length Length)
+        /// <param name="Power">A <see cref="T:Gu.Units.Power"/></param>
+        public static Power operator +(Power Power)
         {
-            return Length;
+            return Power;
         }
  
         public override string ToString()
@@ -323,17 +386,17 @@ namespace Gu.Units
  
         public string ToString(string format, IFormatProvider formatProvider)
         {
-            return this.ToString(format, formatProvider, LengthUnit.Metres);
+            return this.ToString(format, formatProvider, PowerUnit.Watts);
         }
  
-        public string ToString<T>(string format, IFormatProvider formatProvider, T unit) where T : ILengthUnit
+        public string ToString(string format, IFormatProvider formatProvider, PowerUnit unit)
         {
-            var quantity = UnitConverter.ConvertTo(this.Metres, unit);
+            var quantity = unit.FromSiUnit(this.Watts);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
  
         /// <summary>
-        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Length"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Length"/> object.
+        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Power"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Power"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -355,35 +418,35 @@ namespace Gu.Units
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Length"/> object to compare to this instance.</param>
-        public int CompareTo(Length quantity)
+        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Power"/> object to compare to this instance.</param>
+        public int CompareTo(Power quantity)
         {
-            return this.Metres.CompareTo(quantity.Metres);
+            return this.Watts.CompareTo(quantity.Watts);
         }
  
         /// <summary>
-        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Length"/> object.
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Power"/> object.
         /// </summary>
         /// <returns>
-        /// true if <paramref name="other"/> represents the same Length as this instance; otherwise, false.
+        /// true if <paramref name="other"/> represents the same Power as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Length"/> object to compare with this instance.</param>
-        public bool Equals(Length other)
+        /// <param name="other">An <see cref="T:Gu.Units.Power"/> object to compare with this instance.</param>
+        public bool Equals(Power other)
         {
-            return this.Metres.Equals(other.Metres);
+            return this.Watts.Equals(other.Watts);
         }
  
         /// <summary>
-        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Length"/> object within the given tolerance.
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Power"/> object within the given tolerance.
         /// </summary>
         /// <returns>
-        /// true if <paramref name="other"/> represents the same Length as this instance; otherwise, false.
+        /// true if <paramref name="other"/> represents the same Power as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Length"/> object to compare with this instance.</param>
+        /// <param name="other">An <see cref="T:Gu.Units.Power"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
-        public bool Equals(Length other, double tolerance)
+        public bool Equals(Power other, double tolerance)
         {
-            return Math.Abs(this.Metres - other.Metres) < tolerance;
+            return Math.Abs(this.Watts - other.Watts) < tolerance;
         }
  
         public override bool Equals(object obj)
@@ -393,12 +456,12 @@ namespace Gu.Units
                 return false;
             }
  
-            return obj is Length && this.Equals((Length)obj);
+            return obj is Power && this.Equals((Power)obj);
         }
  
         public override int GetHashCode()
         {
-            return this.Metres.GetHashCode();
+            return this.Watts.GetHashCode();
         }
  
         /// <summary>
@@ -426,7 +489,7 @@ namespace Gu.Units
             var e = (XElement)XNode.ReadFrom(reader);
  
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, x => x.Metres, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
+            XmlExt.SetReadonlyField(ref this, x => x.Watts, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
  
         /// <summary>
@@ -435,7 +498,7 @@ namespace Gu.Units
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Metres);
+            XmlExt.WriteAttribute(writer, "Value", this.Watts);
         }
 	}
 }

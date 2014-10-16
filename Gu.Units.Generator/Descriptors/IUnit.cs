@@ -14,5 +14,6 @@ namespace Gu.Units.Generator
         bool IsEmpty { get; }
         string UiName { get; }
         ObservableCollection<SubUnit> SubUnits { get; }
+        bool IsSymbolNameValid { get; }
     }
 }

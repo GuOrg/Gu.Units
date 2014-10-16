@@ -9,7 +9,7 @@ namespace Gu.Units
     using System.Xml.Serialization;
 
 	/// <summary>
-    /// An Length
+    /// A type for the quantity Length
     /// </summary>
     [Serializable]
 	public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1>
@@ -27,33 +27,25 @@ namespace Gu.Units
 		/// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="metres"></param>
+        /// <param name="value"></param>
         /// <param name="unit"><see cref="T:Gu.Units.Metres"/>.</param>
-        public Length(double metres, Metres unit)
+        public Length(double value, LengthUnit unit)
         {
-            Metres = metres;
+            Metres = unit.ToSiUnit(value);
         }
-		
+
         /// <summary>
-        /// Initializes a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// The quantity in Metres
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <param name="unit"></param>
-        public Length(double quantity, Centimetres unit)
+        public double SiValue
         {
-            Metres = UnitConverter.ConvertFrom(quantity, unit);
+            get
+            {
+                return Metres;
+            }
         }
-		
-        /// <summary>
-        /// Initializes a new instance of <see cref="T:Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        /// <param name="unit"></param>
-        public Length(double quantity, Millimetres unit)
-        {
-            Metres = UnitConverter.ConvertFrom(quantity, unit);
-        }
-		 		
+
+ 		
         /// <summary>
         /// The quantity in centimetres
         /// </summary>
@@ -61,7 +53,7 @@ namespace Gu.Units
         {
             get
             {
-                return UnitConverter.ConvertTo(Metres, LengthUnit.Centimetres);
+                return LengthUnit.Centimetres.FromSiUnit(Metres);
             }
         }
 		
@@ -72,7 +64,7 @@ namespace Gu.Units
         {
             get
             {
-                return UnitConverter.ConvertTo(Metres, LengthUnit.Millimetres);
+                return LengthUnit.Millimetres.FromSiUnit(Metres);
             }
         }
 		
@@ -83,7 +75,7 @@ namespace Gu.Units
         /// <returns></returns>
         public static Length Parse(string s)
         {
-            return Parser.Parse<ILengthUnit, Length>(s, From);
+            return Parser.Parse<LengthUnit, Length>(s, From);
         }
  
         /// <summary>
@@ -112,15 +104,6 @@ namespace Gu.Units
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static Length FromMetres(double quantity)
-        {
-            return new Length(quantity);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
         public static Length FromMetres(double value)
         {
             return new Length(value);
@@ -131,18 +114,18 @@ namespace Gu.Units
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static Length FromCentimetres(double quantity)
+        public static Length FromCentimetres(double value)
         {
-            return new Length(UnitConverter.ConvertFrom(quantity, LengthUnit.Centimetres));
+            return From(value, LengthUnit.Centimetres);
         }
 		
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static Length FromMillimetres(double quantity)
+        public static Length FromMillimetres(double value)
         {
-            return new Length(UnitConverter.ConvertFrom(quantity, LengthUnit.Millimetres));
+            return From(value, LengthUnit.Millimetres);
         }
 				 
         /// <summary>
@@ -326,9 +309,9 @@ namespace Gu.Units
             return this.ToString(format, formatProvider, LengthUnit.Metres);
         }
  
-        public string ToString<T>(string format, IFormatProvider formatProvider, T unit) where T : ILengthUnit
+        public string ToString(string format, IFormatProvider formatProvider, LengthUnit unit)
         {
-            var quantity = UnitConverter.ConvertTo(this.Metres, unit);
+            var quantity = unit.FromSiUnit(this.Metres);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
  
