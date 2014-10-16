@@ -5,8 +5,7 @@
 <#@ import namespace="Gu.Units.Generator" #> 
 <#@ output extension=".txt" #>
 <# 
-// Recommended editor: Tangible T4 Editor (http://t4-editor.tangible-engineering.com/Download_T4Editor_Plus_ModelingTools.html)
-// after save Generator.tt, the output will be generated in the TestFolder of the project
+// after save QuantityGenerator.tt, the output will be generated in the target project
 //var fileProperties = new FileProperties()
 //{
 //	BuildAction = BuildAction.Compile

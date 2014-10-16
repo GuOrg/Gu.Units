@@ -45,7 +45,6 @@ namespace Gu.Units
             }
         }
 
-
         /// <summary>
         /// The quantity in millimetresPerSecond
         /// </summary>
@@ -144,6 +143,7 @@ namespace Gu.Units
                 return SpeedUnit.MillimetresPerMinute.FromSiUnit(MetresPerSecond);
             }
         }
+
 
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Speed"/> from its string representation

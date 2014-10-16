@@ -45,7 +45,6 @@ namespace Gu.Units
             }
         }
 
-
         /// <summary>
         /// The quantity in nanonewtons
         /// </summary>
@@ -111,6 +110,7 @@ namespace Gu.Units
                 return ForceUnit.Giganewtons.FromSiUnit(Newtons);
             }
         }
+
 
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Force"/> from its string representation

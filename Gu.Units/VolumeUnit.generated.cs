@@ -6,14 +6,14 @@ namespace Gu.Units
     [Serializable]
     public struct VolumeUnit : IUnit
     {
-        public static readonly VolumeUnit CubicMetres = new VolumeUnit(1.0, "m^3");
+        public static readonly VolumeUnit CubicMetres = new VolumeUnit(1.0, "m³");
 
         public static readonly VolumeUnit Litres = new VolumeUnit(0.001, "L");
         public static readonly VolumeUnit L = Litres;
 
-        public static readonly VolumeUnit CubicCentimetres = new VolumeUnit(1E-06, "cm^3");
+        public static readonly VolumeUnit CubicCentimetres = new VolumeUnit(1E-06, "cm³");
 
-        public static readonly VolumeUnit CubicMillimetres = new VolumeUnit(1E-09, "mm^3");
+        public static readonly VolumeUnit CubicMillimetres = new VolumeUnit(1E-09, "mm³");
 
 
         private readonly double _conversionFactor;

@@ -45,7 +45,6 @@ namespace Gu.Units
             }
         }
 
-
         /// <summary>
         /// The quantity in grams
         /// </summary>
@@ -78,6 +77,7 @@ namespace Gu.Units
                 return MassUnit.Micrograms.FromSiUnit(Kilograms);
             }
         }
+
 
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Mass"/> from its string representation

@@ -45,7 +45,6 @@ namespace Gu.Units
             }
         }
 
-
         /// <summary>
         /// The quantity in nanopascals
         /// </summary>
@@ -111,6 +110,7 @@ namespace Gu.Units
                 return PressureUnit.Gigapascals.FromSiUnit(Pascals);
             }
         }
+
 
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Pressure"/> from its string representation

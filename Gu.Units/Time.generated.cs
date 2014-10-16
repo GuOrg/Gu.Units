@@ -45,7 +45,6 @@ namespace Gu.Units
             }
         }
 
-
         /// <summary>
         /// The quantity in nanoseconds
         /// </summary>
@@ -100,6 +99,7 @@ namespace Gu.Units
                 return TimeUnit.Minutes.FromSiUnit(Seconds);
             }
         }
+
 
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Time"/> from its string representation

@@ -45,7 +45,6 @@ namespace Gu.Units
             }
         }
 
-
         /// <summary>
         /// The quantity in squareMillimetres
         /// </summary>
@@ -89,6 +88,7 @@ namespace Gu.Units
                 return AreaUnit.SquareKilometres.FromSiUnit(SquareMetres);
             }
         }
+
 
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Area"/> from its string representation

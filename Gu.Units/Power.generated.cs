@@ -45,7 +45,6 @@ namespace Gu.Units
             }
         }
 
-
         /// <summary>
         /// The quantity in nanowatts
         /// </summary>
@@ -111,6 +110,7 @@ namespace Gu.Units
                 return PowerUnit.Gigawatts.FromSiUnit(Watts);
             }
         }
+
 
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Power"/> from its string representation

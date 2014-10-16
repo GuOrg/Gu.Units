@@ -6,15 +6,15 @@ namespace Gu.Units
     [Serializable]
     public struct AreaUnit : IUnit
     {
-        public static readonly AreaUnit SquareMetres = new AreaUnit(1.0, "m^2");
+        public static readonly AreaUnit SquareMetres = new AreaUnit(1.0, "m²");
 
-        public static readonly AreaUnit SquareMillimetres = new AreaUnit(1E-06, "mm^2");
+        public static readonly AreaUnit SquareMillimetres = new AreaUnit(1E-06, "mm²");
 
-        public static readonly AreaUnit SquareCentimetres = new AreaUnit(0.0001, "cm^2");
+        public static readonly AreaUnit SquareCentimetres = new AreaUnit(0.0001, "cm²");
 
-        public static readonly AreaUnit SquareDecimetres = new AreaUnit(0.01, "dm^2");
+        public static readonly AreaUnit SquareDecimetres = new AreaUnit(0.01, "dm²");
 
-        public static readonly AreaUnit SquareKilometres = new AreaUnit(1000000, "km^2");
+        public static readonly AreaUnit SquareKilometres = new AreaUnit(1000000, "km²");
 
 
         private readonly double _conversionFactor;
