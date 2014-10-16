@@ -30,7 +30,7 @@
             {
                 throw new ArgumentException("Units must be distinct", "units");
             }
-            var unitAndPowers = parts.OrderBy(x => x.Unit).ThenBy(x => x.Power).ToList();
+            var unitAndPowers = parts.OrderBy(x => x.UnitName).ThenBy(x => x.Power).ToList();
             foreach (var unitAndPower in unitAndPowers)
             {
                 _parts.Add(unitAndPower);
