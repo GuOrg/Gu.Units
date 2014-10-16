@@ -7,5 +7,9 @@ namespace Gu.Units.Tests
         {
             return 10 * value;
         }
+        public double FromSiUnit(double value)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

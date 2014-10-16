@@ -45,7 +45,7 @@
 
         [TestCase("1kg", 1)]
         [TestCase("1g", 1e-3)]
-        public void ParseForce(string s, double expected)
+        public void ParseMass(string s, double expected)
         {
             var value = Parser.Parse<MassUnit, Mass>(s, Mass.From);
             Assert.AreEqual(expected, value.Kilograms);

@@ -12,15 +12,13 @@
         }
 
         [TestCaseSource(typeof(UnitTypeProvider))]
-        public void Roundtrip(Type unitType)
+        public void Roundtrip(IUnit unit)
         {
             double[] values = { 0, 100 };
-            var unit = (IUnit)Activator.CreateInstance(unitType);
             foreach (var value in values)
             {
-                Console.WriteLine(unitType.Name);
-                var si = UnitConverter.ConvertFrom(value, unit);
-                var d = UnitConverter.ConvertTo(si, unit);
+                var si = unit.ToSiUnit(value);
+                var d = unit.FromSiUnit(si);
                 Assert.AreEqual(value, d);
             }
         }
