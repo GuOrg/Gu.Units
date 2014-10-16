@@ -35,7 +35,7 @@ namespace <#= quantity.Namespace #>
     using System.Xml.Serialization;
 
 	/// <summary>
-    /// An <#= quantity.ClassName #>
+    /// A type for the quantity <#= quantity.ClassName #>
     /// </summary>
     [Serializable]
 	public partial struct <#= quantity.ClassName #> : IComparable<<#= quantity.ClassName #>>, IEquatable<<#= quantity.ClassName #>>, IFormattable, IXmlSerializable, <#= quantity.Interface #>
@@ -53,29 +53,24 @@ namespace <#= quantity.Namespace #>
 		/// <summary>
         /// Initializes a new instance of <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.
         /// </summary>
-        /// <param name="<#= quantity.Unit.ParameterName #>"></param>
+        /// <param name="value"></param>
         /// <param name="unit"><see cref="T:<#= quantity.Namespace #>.<#= quantity.Unit.ClassName #>"/>.</param>
-        public <#= quantity.ClassName #>(double <#= quantity.Unit.ParameterName #>, <#= quantity.Unit.ClassName #> unit)
+        public <#= quantity.ClassName #>(double value, <#= quantity.ClassName #>Unit unit)
         {
-            <#= quantity.Unit.ClassName #> = <#= quantity.Unit.ParameterName #>;
+            <#= quantity.Unit.ClassName #> = unit.<#= Methods.ToSiUnit #>(value);
         }
-		<#
-		foreach(var unit in quantity.Unit.SubUnits)
-		{
-		#>
 
         /// <summary>
-        /// Initializes a new instance of <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.
+        /// The quantity in <#= quantity.Unit.ClassName #>
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <param name="unit"></param>
-        public <#= quantity.ClassName #>(double quantity, <#= unit.ClassName #> unit)
+        public double <#= Methods.SiValue #>
         {
-            <#= quantity.Unit.ClassName #> = UnitConverter.ConvertFrom(quantity, unit);
+            get
+            {
+                return <#= quantity.Unit.ClassName #>;
+            }
         }
-		<#
-		} 
-		#>
+
  		<#
 		foreach(var unit in quantity.Unit.SubUnits)
 		{
@@ -88,7 +83,7 @@ namespace <#= quantity.Namespace #>
         {
             get
             {
-                return UnitConverter.ConvertTo(<#= quantity.Unit.ClassName #>, <#= quantity.ClassName #>Unit.<#= unit.ClassName #>);
+                return <#= quantity.ClassName #>Unit.<#= unit.ClassName #>.<#= Methods.FromSiUnit #>(<#= quantity.Unit.ClassName #>);
             }
         }
 		<#
@@ -102,7 +97,7 @@ namespace <#= quantity.Namespace #>
         /// <returns></returns>
         public static <#= quantity.ClassName #> Parse(string s)
         {
-            return Parser.Parse<I<#= quantity.ClassName #>Unit, <#= quantity.ClassName #>>(s, From);
+            return Parser.Parse<<#= quantity.ClassName #>Unit, <#= quantity.ClassName #>>(s, From);
         }
  
         /// <summary>
@@ -131,15 +126,6 @@ namespace <#= quantity.Namespace #>
         /// Creates a new instance of <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static <#= quantity.ClassName #> From<#= quantity.Unit.ClassName #>(double quantity)
-        {
-            return new <#= quantity.ClassName #>(quantity);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
         public static <#= quantity.ClassName #> From<#= quantity.Unit.ClassName #>(double value)
         {
             return new <#= quantity.ClassName #>(value);
@@ -154,9 +140,9 @@ namespace <#= quantity.Namespace #>
         /// Creates a new instance of <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.
         /// </summary>
         /// <param name="quantity"></param>
-        public static <#= quantity.ClassName #> From<#= unit.ClassName #>(double quantity)
+        public static <#= quantity.ClassName #> From<#= unit.ClassName #>(double value)
         {
-            return new <#= quantity.ClassName #>(UnitConverter.ConvertFrom(quantity, <#= quantity.ClassName #>Unit.<#= unit.ClassName #>));
+            return From(value, <#= quantity.ClassName #>Unit.<#= unit.ClassName #>);
         }
 		<#
 		} 
@@ -343,9 +329,9 @@ namespace <#= quantity.Namespace #>
             return this.ToString(format, formatProvider, <#= quantity.ClassName #>Unit.<#= quantity.Unit.ClassName #>);
         }
  
-        public string ToString<T>(string format, IFormatProvider formatProvider, T unit) where T : I<#= quantity.ClassName #>Unit
+        public string ToString(string format, IFormatProvider formatProvider, <#= quantity.ClassName #>Unit unit)
         {
-            var quantity = UnitConverter.ConvertTo(this.<#= quantity.Unit.ClassName #>, unit);
+            var quantity = unit.<#= Methods.FromSiUnit #>(this.<#= quantity.Unit.ClassName #>);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
  

@@ -150,6 +150,14 @@
         [XmlIgnore]
         public string UiName { get; private set; }
 
+        public bool IsSymbolNameValid
+        {
+            get
+            {
+                return char.IsLetter(Symbol[0]);
+            }
+        }
+
         private void SyncWithPrefix()
         {
             if (BaseUnit == null || Prefix == null)

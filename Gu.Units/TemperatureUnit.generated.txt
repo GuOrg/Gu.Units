@@ -7,7 +7,7 @@ namespace Gu.Units
     public struct TemperatureUnit : IUnit
     {
         public static readonly TemperatureUnit Kelvin = new TemperatureUnit(1.0, "°K");
-        public static readonly TemperatureUnit °K = Kelvin;
+		        
 		        
         private readonly double _conversionFactor;
         private readonly string _symbol;
@@ -32,13 +32,23 @@ namespace Gu.Units
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Kelvin "/>.
+        /// Converts a value to <see cref="T:Gu.Units.Temperature "/>.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
             return _conversionFactor * value;
+        }
+
+        /// <summary>
+        /// Converts a value to <see cref="T:Gu.Units.Kelvin "/>.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>The converted value</returns>
+        public double FromSiUnit(double value)
+        {
+            return value / _conversionFactor;
         }
 
         public override string ToString()

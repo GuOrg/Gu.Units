@@ -7,11 +7,14 @@ namespace Gu.Units
     public struct LengthUnit : IUnit
     {
         public static readonly LengthUnit Metres = new LengthUnit(1.0, "m");
-        public static readonly LengthUnit m = Metres;
+		    public static readonly LengthUnit m = Metres;
+                
 		public static readonly LengthUnit Centimetres = new LengthUnit(0.01, "cm");
-        public static readonly LengthUnit cm = Centimetres;
+		    public static readonly LengthUnit cm = Centimetres;
+                
         public static readonly LengthUnit Millimetres = new LengthUnit(0.001, "mm");
-        public static readonly LengthUnit mm = Millimetres;
+		    public static readonly LengthUnit mm = Millimetres;
+                
                 
         private readonly double _conversionFactor;
         private readonly string _symbol;
@@ -36,13 +39,23 @@ namespace Gu.Units
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Metres "/>.
+        /// Converts a value to <see cref="T:Gu.Units.Length "/>.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
             return _conversionFactor * value;
+        }
+
+        /// <summary>
+        /// Converts a value to <see cref="T:Gu.Units.Metres "/>.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>The converted value</returns>
+        public double FromSiUnit(double value)
+        {
+            return value / _conversionFactor;
         }
 
         public override string ToString()
