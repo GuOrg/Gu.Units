@@ -10,14 +10,17 @@
         {
             return sourceType == typeof(string);
         }
+       
         public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
         {
             return destinationType == typeof(string);
         }
+        
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
         {
             return value == null ? null : new Quantity("", (string)value, new SiUnit());
         }
+        
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
             return value == null ? null : ((TypeMetaData)value).ClassName;

@@ -48,14 +48,14 @@
         [XmlIgnore]
         public IUnit Unit
         {
-            get { return this._unit; }
+            get { return _unit; }
             set
             {
-                if (Equals(value, this._unit))
+                if (Equals(value, _unit))
                 {
                     return;
                 }
-                this._unit = value;
+                _unit = value;
                 OnPropertyChanged();
                 OnPropertyChanged("UnitName");
             }
@@ -118,7 +118,7 @@
 
         protected bool Equals(UnitAndPower other)
         {
-            return Equals(this._unit, other._unit) && this._power == other._power;
+            return Equals(_unit, other._unit) && _power == other._power;
         }
 
         public override bool Equals(object obj)
@@ -142,7 +142,7 @@
         {
             unchecked
             {
-                return ((this._unit != null ? this._unit.GetHashCode() : 0) * 397) ^ this._power;
+                return ((_unit != null ? _unit.GetHashCode() : 0) * 397) ^ _power;
             }
         }
     }

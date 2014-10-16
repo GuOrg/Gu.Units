@@ -9,7 +9,7 @@
         [SetUp]
         public void SetUp()
         {
-            _metres = new SiUnit("", "Metres", "m");
+            _metres = new SiUnit("", "Metres", "m") { QuantityName = "Length" };
             _seconds = new SiUnit("", "Seconds", "s");
         }
 

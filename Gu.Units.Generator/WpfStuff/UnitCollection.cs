@@ -12,7 +12,7 @@
         private bool _initialized;
         public UnitCollection(List<T> units, Func<T, T> creator)
         {
-            this._units = units;
+            _units = units;
             _creator = creator;
             foreach (var unit in units)
             {

@@ -420,6 +420,44 @@
       </Parts>
       <ExplicitName>false</ExplicitName>
     </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>Herts</ClassName>
+      <Symbol>Hz</Symbol>
+      <QuantityName>Frequency</QuantityName>
+      <SubUnits>
+        <SubUnit>
+          <ClassName>Kiloherts</ClassName>
+          <Symbol>kHz</Symbol>
+          <ConversionFactor>1000</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Megaherts</ClassName>
+          <Symbol>MHz</Symbol>
+          <ConversionFactor>1000000</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Gigaherts</ClassName>
+          <Symbol>GHz</Symbol>
+          <ConversionFactor>1000000000</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Milliherts</ClassName>
+          <Symbol>mHz</Symbol>
+          <ConversionFactor>0.001</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Seconds</UnitName>
+          <Power>-1</Power>
+        </UnitAndPower>
+      </Parts>
+      <ExplicitName>false</ExplicitName>
+    </DerivedUnit>
   </DerivedUnits>
   <SiUnits>
     <SiUnit>
