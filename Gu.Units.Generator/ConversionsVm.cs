@@ -33,6 +33,10 @@
                 _baseUnit = value;
                 _prefixes.Clear();
                 _subParts.Clear();
+                if (_baseUnit == null)
+                {
+                    return;
+                }
                 foreach (var prefix in _settings.Prefixes)
                 {
                     _prefixes.Add(new PrefixConversionVm(prefix, _baseUnit));

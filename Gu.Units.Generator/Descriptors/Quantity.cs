@@ -51,16 +51,21 @@
             get
             {
                 if (Unit != null)
+                {
                     return this.Unit.ClassName;
+                }
                 return _unitName;
             }
             set
             {
                 if (Unit != null)
                 {
-                    throw new InvalidOperationException("Trying to set unit name");
+                    this.Unit.ClassName = value;
                 }
-                _unitName = value;
+                else
+                {
+                    _unitName = value;
+                }
             }
         }
 
@@ -69,15 +74,16 @@
         {
             get
             {
-                return this._unit;
+                return _unit;
             }
             set
             {
-                if (Equals(value, this._unit))
+                if (Equals(value, _unit))
                 {
                     return;
                 }
-                this._unit = value;
+                _unit = value;
+                _unit.Quantity = this;
                 this.OnPropertyChanged();
                 this.OnPropertyChanged("UnitName");
                 this.OnPropertyChanged("Interface");
@@ -113,7 +119,7 @@
                         u.Unit.ClassName,
                         u.Power < 0 ? "Neg" : "",
                         u.Power < 0 ? -1 * u.Power : u.Power)));
-                return string.Format("IQuantity<{0}>",  args);
+                return string.Format("IQuantity<{0}>", args);
             }
         }
 

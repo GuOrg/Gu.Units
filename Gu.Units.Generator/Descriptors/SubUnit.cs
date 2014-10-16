@@ -9,9 +9,9 @@
     public class SubUnit : TypeMetaData, ISubUnit
     {
         private string _symbol;
+        private double _conversionFactor;
         private Quantity _quantity;
         private string _quantityName;
-        private double conversionFactor;
         private Prefix _prefix;
         private IUnit _baseUnit;
 
@@ -20,6 +20,13 @@
         public SubUnit()
         {
 
+        }
+
+        public SubUnit(string @namespace, string className, string symbol, double conversionFactor)
+            : base(@namespace, className)
+        {
+            _symbol = symbol;
+            _conversionFactor = conversionFactor;
         }
 
         public string Symbol
@@ -43,15 +50,15 @@
         {
             get
             {
-                return this.conversionFactor;
+                return _conversionFactor;
             }
             set
             {
-                if (value == this.conversionFactor)
+                if (value == _conversionFactor)
                 {
                     return;
                 }
-                this.conversionFactor = value;
+                _conversionFactor = value;
                 this.OnPropertyChanged();
             }
         }
@@ -60,7 +67,7 @@
         {
             get
             {
-                return this._subUnits;
+                return _subUnits;
             }
         }
 

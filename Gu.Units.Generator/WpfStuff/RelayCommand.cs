@@ -27,32 +27,32 @@
             if (execute == null)
                 throw new ArgumentNullException("execute");
 
-            this._execute = execute;
-            this._canExecute = canExecute ?? (x => true);
+            _execute = execute;
+            _canExecute = canExecute ?? (x => true);
         }
 
         public bool CanExecute(object parameter)
         {
-            return this._canExecute((T)parameter);
+            return _canExecute((T)parameter);
         }
 
         public event EventHandler CanExecuteChanged
         {
             add
             {
-                if (this._canExecute != null)
+                if (_canExecute != null)
                     CommandManager.RequerySuggested += value;
             }
             remove
             {
-                if (this._canExecute != null)
+                if (_canExecute != null)
                     CommandManager.RequerySuggested -= value;
             }
         }
 
         public void Execute(object parameter)
         {
-            this._execute((T)parameter);
+            _execute((T)parameter);
         }
     }
 }

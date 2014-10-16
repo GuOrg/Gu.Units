@@ -1,26 +1,2 @@
 ﻿ 
-namespace Gu.Units
-{
-    using System;
-    using System.ComponentModel;
-
-    [Serializable, EditorBrowsable(EditorBrowsableState.Never)]
-    public struct Meters : ILengthUnit
-    {
-        internal const string _symbol = "mm";
-
-        public string Symbol
-        {
-            get
-            {
-                return _symbol;
-            }
-        }
-
-        public static Length operator *(double left, Meters right)
-        {
-            return new Length(left, right);
-        }
-		
-        /// <summary>
-        /// Converts a quantity in <see cref="T:Gu.Units.Meters"/> quantity to <see cref="T:Gu.Units.
+namespace 

@@ -13,10 +13,10 @@
 
     public class Settings
     {
-        private readonly ObservableCollection<DerivedUnit> _derivedUnits = new ObservableCollection<DerivedUnit>();
-        private readonly ObservableCollection<SiUnit> _siUnits = new ObservableCollection<SiUnit>();
-        private readonly ObservableCollection<Prefix> _prefixes = new ObservableCollection<Prefix>();
-        private readonly ObservableCollection<Quantity> _quantities = new ObservableCollection<Quantity>();
+        private readonly List<DerivedUnit> _derivedUnits = new List<DerivedUnit>();
+        private readonly List<SiUnit> _siUnits = new List<SiUnit>();
+        private readonly List<Prefix> _prefixes = new List<Prefix>();
+        private readonly List<Quantity> _quantities = new List<Quantity>();
         public static Settings Instance
         {
             get
@@ -32,12 +32,14 @@
 
                     foreach (var unit in settings.SiUnits)
                     {
+                        unit.Namespace = NameSpace;
                         var quantity = new Quantity(unit.Namespace, unit.QuantityName, unit);
                         unit.Quantity = quantity;
                         settings._quantities.Add(quantity);
                     }
                     foreach (var unit in settings.DerivedUnits)
                     {
+                        unit.Namespace = NameSpace;
                         var quantity = new Quantity(unit.Namespace, unit.QuantityName, unit);
                         settings._quantities.Add(quantity);
                         unit.Quantity = quantity;
@@ -88,24 +90,24 @@
         {
             get
             {
-                return "Units";
+                return null;
             }
         }
 
-        public ObservableCollection<DerivedUnit> DerivedUnits
+        public List<DerivedUnit> DerivedUnits
         {
             get
             {
-                return this._derivedUnits;
+                return _derivedUnits;
             }
         }
 
-        public ObservableCollection<SiUnit> SiUnits
+        public List<SiUnit> SiUnits
         {
-            get { return this._siUnits; }
+            get { return _siUnits; }
         }
 
-        public ObservableCollection<Prefix> Prefixes
+        public List<Prefix> Prefixes
         {
             get { return _prefixes; }
         }
@@ -135,9 +137,9 @@
         {
             var serializer = new XmlSerializer(typeof(Settings));
             var toSave = new Settings();
-            toSave.DerivedUnits.InvokeAddRange(settings.DerivedUnits.Where(x => x != null && !x.IsEmpty));
-            toSave.SiUnits.InvokeAddRange(settings.SiUnits.Where(x => x != null && !x.IsEmpty));
-            toSave.Prefixes.InvokeAddRange(settings.Prefixes.Where(x => x != null).OrderBy(x => x.Factor));
+            toSave.DerivedUnits.AddRange(settings.DerivedUnits.Where(x => x != null && !x.IsEmpty));
+            toSave.SiUnits.AddRange(settings.SiUnits.Where(x => x != null && !x.IsEmpty));
+            toSave.Prefixes.AddRange(settings.Prefixes.Where(x => x != null).OrderBy(x => x.Factor));
             using (var stream = File.Create(fullFileName))
             {
                 using (var writer = new StreamWriter(stream, Encoding.UTF8))

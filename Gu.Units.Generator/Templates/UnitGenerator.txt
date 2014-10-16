@@ -1,1 +1,23 @@
-﻿ErrorGeneratingOutput
+﻿
+ 
+Read Settings found 6 unitsError processing file AngleUnit.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
+//-> AngleUnit.generated.txt
+Error processing file LengthUnit.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
+//-> LengthUnit.generated.txt
+Error processing file MassUnit.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
+//-> MassUnit.generated.txt
+Error processing file PercentUnit.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
+//-> PercentUnit.generated.txt
+Error processing file TemperatureUnit.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
+//-> TemperatureUnit.generated.txt
+Error processing file TimeUnit.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
+//-> TimeUnit.generated.txt
+// Generated helper templates
+// Gu.Units\Gu.Units\UnitGenerator.txt4
+// Generated items
+// Gu.Units\Gu.Units\AngleUnit.generated.txt
+// Gu.Units\Gu.Units\PercentUnit.generated.txt
+// Gu.Units\Gu.Units\TemperatureUnit.generated.txt
+// Gu.Units\Gu.Units\TimeUnit.generated.txt
+// Gu.Units\Gu.Units\LengthUnit.generated.txt
+// Gu.Units\Gu.Units\MassUnit.generated.txt

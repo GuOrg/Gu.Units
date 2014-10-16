@@ -7,6 +7,7 @@ namespace Gu.Units.Generator
     {
         string Symbol { get; set; }
         string ClassName { get; set; }
+        string Namespace { get; }
         string ParameterName { get; }
         string QuantityName { get; set; }
         Quantity Quantity { get; set; }

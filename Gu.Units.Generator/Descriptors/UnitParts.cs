@@ -86,6 +86,13 @@
                             sb.Append("⋅");
                         }
                     }
+                    else
+                    {
+                        if (unitAndPower.Power < 0)
+                        {
+                            sb.Append("1 / ");
+                        }
+                    }
                     sb.Append(unitAndPower.Unit == null ? unitAndPower.UnitName : unitAndPower.Unit.Symbol);
                     if (Math.Abs(unitAndPower.Power) > 1)
                     {

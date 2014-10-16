@@ -29,14 +29,14 @@
 
         public string Symbol
         {
-            get { return this._symbol; }
+            get { return _symbol; }
             set
             {
-                if (value == this._symbol)
+                if (value == _symbol)
                 {
                     return;
                 }
-                this._symbol = value;
+                _symbol = value;
                 this.OnPropertyChanged();
             }
         }
@@ -46,16 +46,21 @@
             get
             {
                 if (Quantity != null)
+                {
                     return this.Quantity.ClassName;
+                }
                 return _quantityName;
             }
             set
             {
                 if (Quantity != null)
                 {
-                    throw new InvalidOperationException("Trying to set quantity");
+                    this.Quantity.ClassName = value;
                 }
-                _quantityName = value;
+                else
+                {
+                    _quantityName = value;
+                }
             }
         }
 
@@ -70,14 +75,14 @@
         [XmlIgnore]
         public Quantity Quantity
         {
-            get { return this._quantity; }
+            get { return _quantity; }
             set
             {
-                if (Equals(value, this._quantity))
+                if (Equals(value, _quantity))
                 {
                     return;
                 }
-                this._quantity = value;
+                _quantity = value;
                 this.OnPropertyChanged();
                 foreach (var subUnit in SubUnits)
                 {

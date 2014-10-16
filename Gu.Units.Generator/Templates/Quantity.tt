@@ -8,7 +8,22 @@
 <#@ parameter name="QuantityMetaData" type="Gu.Units.Generator.Quantity" #>
 <#
 // Template used by QuantityGenerator.tt
-var quantity = QuantityMetaData ?? Quantity.DummyBase;
+Quantity quantity = null;
+if(QuantityMetaData != null)
+{
+    quantity = QuantityMetaData;
+}
+else
+{
+    var unit = new SiUnit("Gu.Units", "Metres", "m")
+                    {
+                        Quantity = new Quantity("Gu.Units", "Length", null)
+                    };
+    unit.SubUnits.Add(new SubUnit("Gu.Units", "Centimetres", "cm", 1E-2));
+    unit.SubUnits.Add(new SubUnit("Gu.Units", "Millimetres", "mm", 1E-3));
+    quantity = new Quantity("Gu.Units","Length", unit);
+    //unit.Quantity = quantity;
+}
 #>
 namespace <#= quantity.Namespace #>
 {
@@ -26,7 +41,7 @@ namespace <#= quantity.Namespace #>
 	public partial struct <#= quantity.ClassName #> : IComparable<<#= quantity.ClassName #>>, IEquatable<<#= quantity.ClassName #>>, IFormattable, IXmlSerializable, <#= quantity.Interface #>
 	{
 	    /// <summary>
-        /// The quantity in <see cref="T:<#= quantity.Namespace #>.<#= quantity.SiUnit.ClassName #>"/>.
+        /// The quantity in <see cref="T:<#= quantity.Namespace #>.<#= quantity.Unit.ClassName #>"/>.
         /// </summary>
 		public readonly double <#= quantity.SiUnit.ClassName #>;
 		

@@ -1,0 +1,53 @@
+﻿ 
+namespace Gu.Units
+{
+    using System;
+
+    [Serializable]
+    public struct PercentUnit : IUnit
+    {
+        public static readonly PercentUnit Percent = new PercentUnit(1.0, "%");
+        public static readonly PercentUnit % = Percent;
+		public static readonly PercentUnit PartsPerMillion = new PercentUnit(-4, "ppm");
+        public static readonly PercentUnit ppm = PartsPerMillion;
+        public static readonly PercentUnit Promille = new PercentUnit(-1, "‰");
+        public static readonly PercentUnit ‰ = Promille;
+                
+        private readonly double _conversionFactor;
+        private readonly string _symbol;
+
+        public PercentUnit(double conversionFactor, string symbol)
+        {
+            _conversionFactor = conversionFactor;
+            _symbol = symbol;
+        }
+
+        public string Symbol
+        {
+            get
+            {
+                return _symbol;
+            }
+        }
+
+        public static Percent operator *(double left, PercentUnit right)
+        {
+            return Percent.From(left, right);
+        }
+
+        /// <summary>
+        /// Converts a value to <see cref="T:Gu.Units.Percent "/>.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>The converted value</returns>
+        public double ToSiUnit(double value)
+        {
+            return _conversionFactor * value;
+        }
+
+        public override string ToString()
+        {
+            return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Percent.Symbol);
+        }
+    }
+}

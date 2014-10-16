@@ -74,6 +74,7 @@
     <Compile Include="ConversionsVm.cs" />
     <Compile Include="Descriptors\ISubUnit.cs" />
     <Compile Include="Descriptors\IUnit.cs" />
+    <Compile Include="Descriptors\Methods.cs" />
     <Compile Include="Descriptors\Prefix.cs" />
     <Compile Include="Descriptors\SiUnit.cs" />
     <Compile Include="Descriptors\SubUnit.cs" />
@@ -137,10 +138,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>IUnitInterface.txt</LastGenOutput>
     </None>
-    <None Include="Templates\Unit.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Unit.txt</LastGenOutput>
-    </None>
     <None Include="Templates\UnitGenerator.tt">
       <SubType>Code</SubType>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -154,9 +151,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>QuantityGenerator.txt</LastGenOutput>
     </None>
-    <None Include="Templates\UnitClass.tt">
+    <None Include="Templates\Unit.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UnitClass.txt</LastGenOutput>
+      <LastGenOutput>Unit.txt</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -181,20 +178,15 @@
     <Resource Include="GeneratorSettings.xml">
       <SubType>Designer</SubType>
     </Resource>
-    <Resource Include="Templates\Unit.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Unit.tt</DependentUpon>
-    </Resource>
     <Resource Include="Templates\IUnitInterface.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>IUnitInterface.tt</DependentUpon>
     </Resource>
-    <Resource Include="Templates\UnitClass.txt">
+    <Resource Include="Templates\Unit.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>UnitClass.tt</DependentUpon>
+      <DependentUpon>Unit.tt</DependentUpon>
     </Resource>
     <Content Include="Templates\QuantityGenerator.txt">
       <AutoGen>True</AutoGen>

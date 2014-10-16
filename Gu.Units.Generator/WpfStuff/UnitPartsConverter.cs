@@ -14,10 +14,12 @@
         {
             return sourceType == typeof(string);
         }
+      
         public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
         {
             return destinationType == typeof(string);
         }
+        
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
         {
             if (value == null)
@@ -26,14 +28,23 @@
             }
             int sign = 1;
             var s = (string)value;
-            s = s.Replace("⋅", "*");
+            //s = s.Replace("⋅", "*");
             if (string.IsNullOrWhiteSpace(s))
             {
                 return null;
             }
             var symbols = UnitBase.AllUnitsStatic.Select(x => x.Symbol).ToArray();
-            var pattern = string.Format(@"(?<Unit>(?<Symbol>({0}))((?:\^)(?<Power>[+-]?\d+))?)|(?<Op>[\*\/])", string.Join("|", symbols));
-            var matches = Regex.Matches(s, pattern);
+            var symbolsPattern = string.Join("|", new[] { "1" }.Concat(symbols));
+            var pattern = string.Format(@"(?<Unit>
+                                                (?<Symbol>({0}))
+                                                (
+                                                    (?:\^)
+                                                    (?<Power>[+-]?\d+)
+                                                )?
+                                               |
+                                               (?<Op>[⋅\*\/])
+                                          )",  symbolsPattern);
+            var matches = Regex.Matches(s, pattern, RegexOptions.IgnorePatternWhitespace);
             var parts = new UnitParts();
             bool expectsSymbol = true;
             foreach (Match match in matches)
@@ -41,6 +52,11 @@
                 if (expectsSymbol)
                 {
                     var symbol = match.Groups["Symbol"].Value;
+                    if (symbol == "1")
+                    {
+                        expectsSymbol = false;
+                        continue;
+                    }
                     var unit = UnitBase.AllUnitsStatic.Single(x => x.Symbol == symbol);
                     var power = match.Groups["Power"].Value;
                     if (power == "")
