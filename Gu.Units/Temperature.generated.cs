@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace Gu.Units
 {
     using System;
@@ -8,23 +8,23 @@ namespace Gu.Units
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
-	/// <summary>
+    /// <summary>
     /// A type for the quantity Temperature
     /// </summary>
     [Serializable]
-	public partial struct Temperature : IComparable<Temperature>, IEquatable<Temperature>, IFormattable, IXmlSerializable, IQuantity<TemperatureUnit, I1>
-	{
-	    /// <summary>
+    public partial struct Temperature : IComparable<Temperature>, IEquatable<Temperature>, IFormattable, IXmlSerializable, IQuantity<TemperatureUnit, I1>
+    {
+        /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Kelvin"/>.
         /// </summary>
-		public readonly double Kelvin;
-		
-		private Temperature(double kelvin)
+        public readonly double Kelvin;
+
+        private Temperature(double kelvin)
         {
             Kelvin = kelvin;
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.Temperature"/>.
         /// </summary>
         /// <param name="value"></param>
@@ -45,7 +45,7 @@ namespace Gu.Units
             }
         }
 
- 		
+
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Temperature"/> from its string representation
         /// </summary>
@@ -55,7 +55,7 @@ namespace Gu.Units
         {
             return Parser.Parse<TemperatureUnit, Temperature>(s, From);
         }
- 
+
         /// <summary>
         /// Reads an instance of <see cref="T:Gu.Units.Temperature"/> from the <paramref name="reader"/>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Gu.Units
             v.ReadXml(reader);
             return v;
         }
- 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Temperature"/>.
         /// </summary>
@@ -87,7 +87,7 @@ namespace Gu.Units
             return new Temperature(value);
         }
 
- 				 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Temperature"/> instances are equal.
         /// </summary>
@@ -100,7 +100,7 @@ namespace Gu.Units
         {
             return left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Temperature"/> instances are not equal.
         /// </summary>
@@ -113,7 +113,7 @@ namespace Gu.Units
         {
             return !left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Temperature"/> is less than another specified <see cref="T:Gu.Units.Temperature"/>.
         /// </summary>
@@ -126,7 +126,7 @@ namespace Gu.Units
         {
             return left.Kelvin < right.Kelvin;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Temperature"/> is greater than another specified <see cref="T:Gu.Units.Temperature"/>.
         /// </summary>
@@ -139,7 +139,7 @@ namespace Gu.Units
         {
             return left.Kelvin > right.Kelvin;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Temperature"/> is less than or equal to another specified <see cref="T:Gu.Units.Temperature"/>.
         /// </summary>
@@ -152,7 +152,7 @@ namespace Gu.Units
         {
             return left.Kelvin <= right.Kelvin;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Temperature"/> is greater than or equal to another specified <see cref="T:Gu.Units.Temperature"/>.
         /// </summary>
@@ -165,7 +165,7 @@ namespace Gu.Units
         {
             return left.Kelvin >= right.Kelvin;
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Temperature"/> with <paramref name="left"/> and returns the result.
         /// </summary>
@@ -174,9 +174,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Temperature"/> with <paramref name="left"/> and returns the result.</returns>
         public static Temperature operator *(double left, Temperature right)
         {
-            return new Temperature(left*right.Kelvin);
+            return new Temperature(left * right.Kelvin);
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Temperature"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -185,9 +185,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Temperature"/> with <paramref name="right"/> and returns the result.</returns>
         public static Temperature operator *(Temperature left, double right)
         {
-            return new Temperature(left.Kelvin*right);
+            return new Temperature(left.Kelvin * right);
         }
- 
+
         /// <summary>
         /// Divides an instance of <see cref="T:Gu.Units.Temperature"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -198,7 +198,7 @@ namespace Gu.Units
         {
             return new Temperature(left.Kelvin / right);
         }
- 
+
         /// <summary>
         /// Adds two specified <see cref="T:Gu.Units.Temperature"/> instances.
         /// </summary>
@@ -211,7 +211,7 @@ namespace Gu.Units
         {
             return new Temperature(left.Kelvin + right.Kelvin);
         }
- 
+
         /// <summary>
         /// Subtracts an Temperature from another Temperature and returns the difference.
         /// </summary>
@@ -224,7 +224,7 @@ namespace Gu.Units
         {
             return new Temperature(left.Kelvin - right.Kelvin);
         }
- 
+
         /// <summary>
         /// Returns an <see cref="T:Gu.Units.Temperature"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
@@ -234,9 +234,9 @@ namespace Gu.Units
         /// <param name="Temperature">A <see cref="T:Gu.Units.Temperature"/></param>
         public static Temperature operator -(Temperature Temperature)
         {
-            return new Temperature(-1*Temperature.Kelvin);
+            return new Temperature(-1 * Temperature.Kelvin);
         }
- 
+
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Temperature"/>.
         /// </summary>
@@ -248,33 +248,33 @@ namespace Gu.Units
         {
             return Temperature;
         }
- 
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(string format)
         {
             return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(IFormatProvider provider)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, TemperatureUnit.Kelvin);
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider, TemperatureUnit unit)
         {
             var quantity = unit.FromSiUnit(this.Kelvin);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
- 
+
         /// <summary>
         /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Temperature"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Temperature"/> object.
         /// </summary>
@@ -303,7 +303,7 @@ namespace Gu.Units
         {
             return this.Kelvin.CompareTo(quantity.Kelvin);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Temperature"/> object.
         /// </summary>
@@ -315,7 +315,7 @@ namespace Gu.Units
         {
             return this.Kelvin.Equals(other.Kelvin);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Temperature"/> object within the given tolerance.
         /// </summary>
@@ -328,22 +328,22 @@ namespace Gu.Units
         {
             return Math.Abs(this.Kelvin - other.Kelvin) < tolerance;
         }
- 
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {
                 return false;
             }
- 
+
             return obj is Temperature && this.Equals((Temperature)obj);
         }
- 
+
         public override int GetHashCode()
         {
             return this.Kelvin.GetHashCode();
         }
- 
+
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
@@ -358,7 +358,7 @@ namespace Gu.Units
         {
             return null;
         }
- 
+
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
@@ -367,11 +367,11 @@ namespace Gu.Units
         {
             reader.MoveToContent();
             var e = (XElement)XNode.ReadFrom(reader);
- 
+
             // Hacking set readonly fields here, can't think of a cleaner workaround
             XmlExt.SetReadonlyField(ref this, x => x.Kelvin, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
- 
+
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
@@ -380,5 +380,5 @@ namespace Gu.Units
         {
             XmlExt.WriteAttribute(writer, "Value", this.Kelvin);
         }
-	}
+    }
 }

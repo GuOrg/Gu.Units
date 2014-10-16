@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace Gu.Units
 {
     using System;
@@ -8,23 +8,23 @@ namespace Gu.Units
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
-	/// <summary>
+    /// <summary>
     /// A type for the quantity Mass
     /// </summary>
     [Serializable]
-	public partial struct Mass : IComparable<Mass>, IEquatable<Mass>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1>
-	{
-	    /// <summary>
+    public partial struct Mass : IComparable<Mass>, IEquatable<Mass>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1>
+    {
+        /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Kilograms"/>.
         /// </summary>
-		public readonly double Kilograms;
-		
-		private Mass(double kilograms)
+        public readonly double Kilograms;
+
+        private Mass(double kilograms)
         {
             Kilograms = kilograms;
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
         /// <param name="value"></param>
@@ -45,7 +45,7 @@ namespace Gu.Units
             }
         }
 
- 		
+
         /// <summary>
         /// The quantity in grams
         /// </summary>
@@ -56,7 +56,7 @@ namespace Gu.Units
                 return MassUnit.Grams.FromSiUnit(Kilograms);
             }
         }
-		
+
         /// <summary>
         /// The quantity in milligrams
         /// </summary>
@@ -67,7 +67,7 @@ namespace Gu.Units
                 return MassUnit.Milligrams.FromSiUnit(Kilograms);
             }
         }
-		
+
         /// <summary>
         /// The quantity in micrograms
         /// </summary>
@@ -78,7 +78,7 @@ namespace Gu.Units
                 return MassUnit.Micrograms.FromSiUnit(Kilograms);
             }
         }
-		
+
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Mass"/> from its string representation
         /// </summary>
@@ -88,7 +88,7 @@ namespace Gu.Units
         {
             return Parser.Parse<MassUnit, Mass>(s, From);
         }
- 
+
         /// <summary>
         /// Reads an instance of <see cref="T:Gu.Units.Mass"/> from the <paramref name="reader"/>
         /// </summary>
@@ -100,7 +100,7 @@ namespace Gu.Units
             v.ReadXml(reader);
             return v;
         }
- 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
@@ -120,7 +120,7 @@ namespace Gu.Units
             return new Mass(value);
         }
 
- 		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
@@ -129,7 +129,7 @@ namespace Gu.Units
         {
             return From(value, MassUnit.Grams);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
@@ -138,7 +138,7 @@ namespace Gu.Units
         {
             return From(value, MassUnit.Milligrams);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
@@ -147,7 +147,7 @@ namespace Gu.Units
         {
             return From(value, MassUnit.Micrograms);
         }
-				 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Mass"/> instances are equal.
         /// </summary>
@@ -160,7 +160,7 @@ namespace Gu.Units
         {
             return left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Mass"/> instances are not equal.
         /// </summary>
@@ -173,7 +173,7 @@ namespace Gu.Units
         {
             return !left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Mass"/> is less than another specified <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
@@ -186,7 +186,7 @@ namespace Gu.Units
         {
             return left.Kilograms < right.Kilograms;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Mass"/> is greater than another specified <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
@@ -199,7 +199,7 @@ namespace Gu.Units
         {
             return left.Kilograms > right.Kilograms;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Mass"/> is less than or equal to another specified <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
@@ -212,7 +212,7 @@ namespace Gu.Units
         {
             return left.Kilograms <= right.Kilograms;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Mass"/> is greater than or equal to another specified <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
@@ -225,7 +225,7 @@ namespace Gu.Units
         {
             return left.Kilograms >= right.Kilograms;
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Mass"/> with <paramref name="left"/> and returns the result.
         /// </summary>
@@ -234,9 +234,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Mass"/> with <paramref name="left"/> and returns the result.</returns>
         public static Mass operator *(double left, Mass right)
         {
-            return new Mass(left*right.Kilograms);
+            return new Mass(left * right.Kilograms);
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Mass"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -245,9 +245,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Mass"/> with <paramref name="right"/> and returns the result.</returns>
         public static Mass operator *(Mass left, double right)
         {
-            return new Mass(left.Kilograms*right);
+            return new Mass(left.Kilograms * right);
         }
- 
+
         /// <summary>
         /// Divides an instance of <see cref="T:Gu.Units.Mass"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -258,7 +258,7 @@ namespace Gu.Units
         {
             return new Mass(left.Kilograms / right);
         }
- 
+
         /// <summary>
         /// Adds two specified <see cref="T:Gu.Units.Mass"/> instances.
         /// </summary>
@@ -271,7 +271,7 @@ namespace Gu.Units
         {
             return new Mass(left.Kilograms + right.Kilograms);
         }
- 
+
         /// <summary>
         /// Subtracts an Mass from another Mass and returns the difference.
         /// </summary>
@@ -284,7 +284,7 @@ namespace Gu.Units
         {
             return new Mass(left.Kilograms - right.Kilograms);
         }
- 
+
         /// <summary>
         /// Returns an <see cref="T:Gu.Units.Mass"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
@@ -294,9 +294,9 @@ namespace Gu.Units
         /// <param name="Mass">A <see cref="T:Gu.Units.Mass"/></param>
         public static Mass operator -(Mass Mass)
         {
-            return new Mass(-1*Mass.Kilograms);
+            return new Mass(-1 * Mass.Kilograms);
         }
- 
+
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
@@ -308,33 +308,33 @@ namespace Gu.Units
         {
             return Mass;
         }
- 
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(string format)
         {
             return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(IFormatProvider provider)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, MassUnit.Kilograms);
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider, MassUnit unit)
         {
             var quantity = unit.FromSiUnit(this.Kilograms);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
- 
+
         /// <summary>
         /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Mass"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Mass"/> object.
         /// </summary>
@@ -363,7 +363,7 @@ namespace Gu.Units
         {
             return this.Kilograms.CompareTo(quantity.Kilograms);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Mass"/> object.
         /// </summary>
@@ -375,7 +375,7 @@ namespace Gu.Units
         {
             return this.Kilograms.Equals(other.Kilograms);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Mass"/> object within the given tolerance.
         /// </summary>
@@ -388,22 +388,22 @@ namespace Gu.Units
         {
             return Math.Abs(this.Kilograms - other.Kilograms) < tolerance;
         }
- 
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {
                 return false;
             }
- 
+
             return obj is Mass && this.Equals((Mass)obj);
         }
- 
+
         public override int GetHashCode()
         {
             return this.Kilograms.GetHashCode();
         }
- 
+
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
@@ -418,7 +418,7 @@ namespace Gu.Units
         {
             return null;
         }
- 
+
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
@@ -427,11 +427,11 @@ namespace Gu.Units
         {
             reader.MoveToContent();
             var e = (XElement)XNode.ReadFrom(reader);
- 
+
             // Hacking set readonly fields here, can't think of a cleaner workaround
             XmlExt.SetReadonlyField(ref this, x => x.Kilograms, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
- 
+
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
@@ -440,5 +440,5 @@ namespace Gu.Units
         {
             XmlExt.WriteAttribute(writer, "Value", this.Kilograms);
         }
-	}
+    }
 }

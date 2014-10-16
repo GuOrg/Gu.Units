@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace Gu.Units
 {
     using System;
@@ -8,23 +8,23 @@ namespace Gu.Units
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
-	/// <summary>
+    /// <summary>
     /// A type for the quantity Power
     /// </summary>
     [Serializable]
-	public partial struct Power : IComparable<Power>, IEquatable<Power>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3>
-	{
-	    /// <summary>
+    public partial struct Power : IComparable<Power>, IEquatable<Power>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3>
+    {
+        /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Watts"/>.
         /// </summary>
-		public readonly double Watts;
-		
-		private Power(double watts)
+        public readonly double Watts;
+
+        private Power(double watts)
         {
             Watts = watts;
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
         /// <param name="value"></param>
@@ -45,7 +45,7 @@ namespace Gu.Units
             }
         }
 
- 		
+
         /// <summary>
         /// The quantity in nanowatts
         /// </summary>
@@ -56,7 +56,7 @@ namespace Gu.Units
                 return PowerUnit.Nanowatts.FromSiUnit(Watts);
             }
         }
-		
+
         /// <summary>
         /// The quantity in microwatts
         /// </summary>
@@ -67,7 +67,7 @@ namespace Gu.Units
                 return PowerUnit.Microwatts.FromSiUnit(Watts);
             }
         }
-		
+
         /// <summary>
         /// The quantity in milliwatts
         /// </summary>
@@ -78,7 +78,7 @@ namespace Gu.Units
                 return PowerUnit.Milliwatts.FromSiUnit(Watts);
             }
         }
-		
+
         /// <summary>
         /// The quantity in kilowatts
         /// </summary>
@@ -89,7 +89,7 @@ namespace Gu.Units
                 return PowerUnit.Kilowatts.FromSiUnit(Watts);
             }
         }
-		
+
         /// <summary>
         /// The quantity in megawatts
         /// </summary>
@@ -100,7 +100,7 @@ namespace Gu.Units
                 return PowerUnit.Megawatts.FromSiUnit(Watts);
             }
         }
-		
+
         /// <summary>
         /// The quantity in gigawatts
         /// </summary>
@@ -111,7 +111,7 @@ namespace Gu.Units
                 return PowerUnit.Gigawatts.FromSiUnit(Watts);
             }
         }
-		
+
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Power"/> from its string representation
         /// </summary>
@@ -121,7 +121,7 @@ namespace Gu.Units
         {
             return Parser.Parse<PowerUnit, Power>(s, From);
         }
- 
+
         /// <summary>
         /// Reads an instance of <see cref="T:Gu.Units.Power"/> from the <paramref name="reader"/>
         /// </summary>
@@ -133,7 +133,7 @@ namespace Gu.Units
             v.ReadXml(reader);
             return v;
         }
- 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -153,7 +153,7 @@ namespace Gu.Units
             return new Power(value);
         }
 
- 		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -162,7 +162,7 @@ namespace Gu.Units
         {
             return From(value, PowerUnit.Nanowatts);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -171,7 +171,7 @@ namespace Gu.Units
         {
             return From(value, PowerUnit.Microwatts);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -180,7 +180,7 @@ namespace Gu.Units
         {
             return From(value, PowerUnit.Milliwatts);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -189,7 +189,7 @@ namespace Gu.Units
         {
             return From(value, PowerUnit.Kilowatts);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -198,7 +198,7 @@ namespace Gu.Units
         {
             return From(value, PowerUnit.Megawatts);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -207,7 +207,7 @@ namespace Gu.Units
         {
             return From(value, PowerUnit.Gigawatts);
         }
-				 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Power"/> instances are equal.
         /// </summary>
@@ -220,7 +220,7 @@ namespace Gu.Units
         {
             return left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Power"/> instances are not equal.
         /// </summary>
@@ -233,7 +233,7 @@ namespace Gu.Units
         {
             return !left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Power"/> is less than another specified <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -246,7 +246,7 @@ namespace Gu.Units
         {
             return left.Watts < right.Watts;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Power"/> is greater than another specified <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -259,7 +259,7 @@ namespace Gu.Units
         {
             return left.Watts > right.Watts;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Power"/> is less than or equal to another specified <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -272,7 +272,7 @@ namespace Gu.Units
         {
             return left.Watts <= right.Watts;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Power"/> is greater than or equal to another specified <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -285,7 +285,7 @@ namespace Gu.Units
         {
             return left.Watts >= right.Watts;
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Power"/> with <paramref name="left"/> and returns the result.
         /// </summary>
@@ -294,9 +294,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Power"/> with <paramref name="left"/> and returns the result.</returns>
         public static Power operator *(double left, Power right)
         {
-            return new Power(left*right.Watts);
+            return new Power(left * right.Watts);
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Power"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -305,9 +305,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Power"/> with <paramref name="right"/> and returns the result.</returns>
         public static Power operator *(Power left, double right)
         {
-            return new Power(left.Watts*right);
+            return new Power(left.Watts * right);
         }
- 
+
         /// <summary>
         /// Divides an instance of <see cref="T:Gu.Units.Power"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -318,7 +318,7 @@ namespace Gu.Units
         {
             return new Power(left.Watts / right);
         }
- 
+
         /// <summary>
         /// Adds two specified <see cref="T:Gu.Units.Power"/> instances.
         /// </summary>
@@ -331,7 +331,7 @@ namespace Gu.Units
         {
             return new Power(left.Watts + right.Watts);
         }
- 
+
         /// <summary>
         /// Subtracts an Power from another Power and returns the difference.
         /// </summary>
@@ -344,7 +344,7 @@ namespace Gu.Units
         {
             return new Power(left.Watts - right.Watts);
         }
- 
+
         /// <summary>
         /// Returns an <see cref="T:Gu.Units.Power"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
@@ -354,9 +354,9 @@ namespace Gu.Units
         /// <param name="Power">A <see cref="T:Gu.Units.Power"/></param>
         public static Power operator -(Power Power)
         {
-            return new Power(-1*Power.Watts);
+            return new Power(-1 * Power.Watts);
         }
- 
+
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -368,33 +368,33 @@ namespace Gu.Units
         {
             return Power;
         }
- 
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(string format)
         {
             return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(IFormatProvider provider)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, PowerUnit.Watts);
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider, PowerUnit unit)
         {
             var quantity = unit.FromSiUnit(this.Watts);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
- 
+
         /// <summary>
         /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Power"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Power"/> object.
         /// </summary>
@@ -423,7 +423,7 @@ namespace Gu.Units
         {
             return this.Watts.CompareTo(quantity.Watts);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Power"/> object.
         /// </summary>
@@ -435,7 +435,7 @@ namespace Gu.Units
         {
             return this.Watts.Equals(other.Watts);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Power"/> object within the given tolerance.
         /// </summary>
@@ -448,22 +448,22 @@ namespace Gu.Units
         {
             return Math.Abs(this.Watts - other.Watts) < tolerance;
         }
- 
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {
                 return false;
             }
- 
+
             return obj is Power && this.Equals((Power)obj);
         }
- 
+
         public override int GetHashCode()
         {
             return this.Watts.GetHashCode();
         }
- 
+
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
@@ -478,7 +478,7 @@ namespace Gu.Units
         {
             return null;
         }
- 
+
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
@@ -487,11 +487,11 @@ namespace Gu.Units
         {
             reader.MoveToContent();
             var e = (XElement)XNode.ReadFrom(reader);
- 
+
             // Hacking set readonly fields here, can't think of a cleaner workaround
             XmlExt.SetReadonlyField(ref this, x => x.Watts, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
- 
+
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
@@ -500,5 +500,5 @@ namespace Gu.Units
         {
             XmlExt.WriteAttribute(writer, "Value", this.Watts);
         }
-	}
+    }
 }

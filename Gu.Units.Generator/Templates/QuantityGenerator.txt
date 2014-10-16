@@ -1,53 +1,53 @@
 ﻿//
  
-Read Settings found 16 unitsError processing file Angle.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Angle.generated.txt
-Error processing file AngularVelocity.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> AngularVelocity.generated.txt
-Error processing file Area.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Area.generated.txt
-Error processing file Density.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Density.generated.txt
-Error processing file Energy.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Energy.generated.txt
-Error processing file Force.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Force.generated.txt
-Error processing file Frequency.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Frequency.generated.txt
-Error processing file Length.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Length.generated.txt
-Error processing file Mass.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Mass.generated.txt
-Error processing file Percent.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Percent.generated.txt
-Error processing file Power.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Power.generated.txt
-Error processing file Pressure.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Pressure.generated.txt
-Error processing file Speed.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Speed.generated.txt
-Error processing file Temperature.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Temperature.generated.txt
-Error processing file Time.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Time.generated.txt
-Error processing file Volume.generated.txt Error HRESULT E_FAIL has been returned from a call to a COM component.
-//-> Volume.generated.txt
+Read Settings found 16 units
+//-> Angle.generated.cs
+
+//-> AngularVelocity.generated.cs
+
+//-> Area.generated.cs
+
+//-> Density.generated.cs
+
+//-> Energy.generated.cs
+
+//-> Force.generated.cs
+
+//-> Fraction.generated.cs
+
+//-> Frequency.generated.cs
+
+//-> Length.generated.cs
+
+//-> Mass.generated.cs
+
+//-> Power.generated.cs
+
+//-> Pressure.generated.cs
+
+//-> Speed.generated.cs
+
+//-> Temperature.generated.cs
+
+//-> Time.generated.cs
+
+//-> Volume.generated.cs
 // Generated helper templates
 // Gu.Units\Gu.Units\QuantityGenerator.txt4
 // Generated items
-// Gu.Units\Gu.Units\Frequency.generated.txt
-// Gu.Units\Gu.Units\AngularVelocity.generated.txt
-// Gu.Units\Gu.Units\Speed.generated.txt
-// Gu.Units\Gu.Units\Power.generated.txt
-// Gu.Units\Gu.Units\Energy.generated.txt
-// Gu.Units\Gu.Units\Density.generated.txt
-// Gu.Units\Gu.Units\Pressure.generated.txt
-// Gu.Units\Gu.Units\Force.generated.txt
-// Gu.Units\Gu.Units\Volume.generated.txt
-// Gu.Units\Gu.Units\Area.generated.txt
-// Gu.Units\Gu.Units\Angle.generated.txt
-// Gu.Units\Gu.Units\Percent.generated.txt
-// Gu.Units\Gu.Units\Temperature.generated.txt
-// Gu.Units\Gu.Units\Time.generated.txt
-// Gu.Units\Gu.Units\Length.generated.txt
-// Gu.Units\Gu.Units\Mass.generated.txt
+// Gu.Units\Gu.Units\Frequency.generated.cs
+// Gu.Units\Gu.Units\AngularVelocity.generated.cs
+// Gu.Units\Gu.Units\Speed.generated.cs
+// Gu.Units\Gu.Units\Power.generated.cs
+// Gu.Units\Gu.Units\Energy.generated.cs
+// Gu.Units\Gu.Units\Density.generated.cs
+// Gu.Units\Gu.Units\Pressure.generated.cs
+// Gu.Units\Gu.Units\Force.generated.cs
+// Gu.Units\Gu.Units\Volume.generated.cs
+// Gu.Units\Gu.Units\Area.generated.cs
+// Gu.Units\Gu.Units\Fraction.generated.cs
+// Gu.Units\Gu.Units\Angle.generated.cs
+// Gu.Units\Gu.Units\Temperature.generated.cs
+// Gu.Units\Gu.Units\Time.generated.cs
+// Gu.Units\Gu.Units\Length.generated.cs
+// Gu.Units\Gu.Units\Mass.generated.cs

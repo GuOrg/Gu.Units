@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace Gu.Units
 {
     using System;
@@ -7,18 +7,18 @@ namespace Gu.Units
     public struct MassUnit : IUnit
     {
         public static readonly MassUnit Kilograms = new MassUnit(1.0, "kg");
-		    public static readonly MassUnit kg = Kilograms;
-                
-		public static readonly MassUnit Grams = new MassUnit(0.001, "g");
-		    public static readonly MassUnit g = Grams;
-                
+        public static readonly MassUnit kg = Kilograms;
+
+        public static readonly MassUnit Grams = new MassUnit(0.001, "g");
+        public static readonly MassUnit g = Grams;
+
         public static readonly MassUnit Milligrams = new MassUnit(1E-06, "mg");
-		    public static readonly MassUnit mg = Milligrams;
-                
+        public static readonly MassUnit mg = Milligrams;
+
         public static readonly MassUnit Micrograms = new MassUnit(1E-09, "µg");
-		    public static readonly MassUnit µg = Micrograms;
-                
-                
+        public static readonly MassUnit µg = Micrograms;
+
+
         private readonly double _conversionFactor;
         private readonly string _symbol;
 

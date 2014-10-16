@@ -1,23 +1,18 @@
-﻿ 
+﻿
 namespace Gu.Units
 {
     using System;
 
     [Serializable]
-    public struct PercentUnit : IUnit
+    public struct TemperatureUnit : IUnit
     {
-        public static readonly PercentUnit Percent = new PercentUnit(1.0, "%");
-		        
-		public static readonly PercentUnit PartsPerMillion = new PercentUnit(-4, "ppm");
-		    public static readonly PercentUnit ppm = PartsPerMillion;
-                
-        public static readonly PercentUnit Promille = new PercentUnit(-1, "‰");
-		        
-                
+        public static readonly TemperatureUnit Kelvin = new TemperatureUnit(1.0, "°K");
+
+
         private readonly double _conversionFactor;
         private readonly string _symbol;
 
-        public PercentUnit(double conversionFactor, string symbol)
+        public TemperatureUnit(double conversionFactor, string symbol)
         {
             _conversionFactor = conversionFactor;
             _symbol = symbol;
@@ -31,13 +26,13 @@ namespace Gu.Units
             }
         }
 
-        public static Percent operator *(double left, PercentUnit right)
+        public static Temperature operator *(double left, TemperatureUnit right)
         {
-            return Percent.From(left, right);
+            return Temperature.From(left, right);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Percent "/>.
+        /// Converts a value to <see cref="T:Gu.Units.Temperature "/>.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -47,7 +42,7 @@ namespace Gu.Units
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Percent "/>.
+        /// Converts a value to <see cref="T:Gu.Units.Kelvin "/>.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -58,7 +53,7 @@ namespace Gu.Units
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Percent.Symbol);
+            return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Kelvin.Symbol);
         }
     }
 }

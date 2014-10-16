@@ -10,23 +10,21 @@
     public class MainVm : INotifyPropertyChanged
     {
         private readonly Settings _settings;
-        private string _nameSpace;
         private readonly ConversionsVm _conversions;
 
-        private ObservableCollection<Prefix> _prefixes;
-
-        private ObservableCollection<SiUnit> _siUnits;
-
-        private ObservableCollection<DerivedUnit> _derivedUnits;
+        private readonly ObservableCollection<Prefix> _prefixes;
+        private readonly ObservableCollection<SiUnit> _siUnits;
+        private readonly ObservableCollection<DerivedUnit> _derivedUnits;
+        private string _nameSpace;
 
         public MainVm()
         {
             _settings = Settings.Instance;
             NameSpace = Settings.ProjectName;
             _conversions = new ConversionsVm(_settings);
-            _prefixes = new ObservableCollection<Prefix>(_prefixes);
-            _siUnits = new ObservableCollection<SiUnit>(_siUnits);
-            _derivedUnits= new ObservableCollection<DerivedUnit>(_derivedUnits);
+            _prefixes = new ObservableCollection<Prefix>(_settings.Prefixes);
+            _siUnits = new ObservableCollection<SiUnit>(_settings.SiUnits);
+            _derivedUnits= new ObservableCollection<DerivedUnit>(_settings.DerivedUnits);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

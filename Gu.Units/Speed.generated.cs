@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace Gu.Units
 {
     using System;
@@ -8,23 +8,23 @@ namespace Gu.Units
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
-	/// <summary>
+    /// <summary>
     /// A type for the quantity Speed
     /// </summary>
     [Serializable]
-	public partial struct Speed : IComparable<Speed>, IEquatable<Speed>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1, TimeUnit, INeg1>
-	{
-	    /// <summary>
+    public partial struct Speed : IComparable<Speed>, IEquatable<Speed>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1, TimeUnit, INeg1>
+    {
+        /// <summary>
         /// The quantity in <see cref="T:Gu.Units.MetresPerSecond"/>.
         /// </summary>
-		public readonly double MetresPerSecond;
-		
-		private Speed(double metresPerSecond)
+        public readonly double MetresPerSecond;
+
+        private Speed(double metresPerSecond)
         {
             MetresPerSecond = metresPerSecond;
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
         /// <param name="value"></param>
@@ -45,7 +45,7 @@ namespace Gu.Units
             }
         }
 
- 		
+
         /// <summary>
         /// The quantity in millimetresPerSecond
         /// </summary>
@@ -56,7 +56,7 @@ namespace Gu.Units
                 return SpeedUnit.MillimetresPerSecond.FromSiUnit(MetresPerSecond);
             }
         }
-		
+
         /// <summary>
         /// The quantity in centimetresPerSecond
         /// </summary>
@@ -67,7 +67,7 @@ namespace Gu.Units
                 return SpeedUnit.CentimetresPerSecond.FromSiUnit(MetresPerSecond);
             }
         }
-		
+
         /// <summary>
         /// The quantity in kilometresPerHour
         /// </summary>
@@ -78,7 +78,7 @@ namespace Gu.Units
                 return SpeedUnit.KilometresPerHour.FromSiUnit(MetresPerSecond);
             }
         }
-		
+
         /// <summary>
         /// The quantity in centimetresPerMinute
         /// </summary>
@@ -89,7 +89,7 @@ namespace Gu.Units
                 return SpeedUnit.CentimetresPerMinute.FromSiUnit(MetresPerSecond);
             }
         }
-		
+
         /// <summary>
         /// The quantity in metresPerMinute
         /// </summary>
@@ -100,7 +100,7 @@ namespace Gu.Units
                 return SpeedUnit.MetresPerMinute.FromSiUnit(MetresPerSecond);
             }
         }
-		
+
         /// <summary>
         /// The quantity in metresPerHour
         /// </summary>
@@ -111,7 +111,7 @@ namespace Gu.Units
                 return SpeedUnit.MetresPerHour.FromSiUnit(MetresPerSecond);
             }
         }
-		
+
         /// <summary>
         /// The quantity in millimetresPerHour
         /// </summary>
@@ -122,7 +122,7 @@ namespace Gu.Units
                 return SpeedUnit.MillimetresPerHour.FromSiUnit(MetresPerSecond);
             }
         }
-		
+
         /// <summary>
         /// The quantity in centimetresPerHour
         /// </summary>
@@ -133,7 +133,7 @@ namespace Gu.Units
                 return SpeedUnit.CentimetresPerHour.FromSiUnit(MetresPerSecond);
             }
         }
-		
+
         /// <summary>
         /// The quantity in millimetresPerMinute
         /// </summary>
@@ -144,7 +144,7 @@ namespace Gu.Units
                 return SpeedUnit.MillimetresPerMinute.FromSiUnit(MetresPerSecond);
             }
         }
-		
+
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Speed"/> from its string representation
         /// </summary>
@@ -154,7 +154,7 @@ namespace Gu.Units
         {
             return Parser.Parse<SpeedUnit, Speed>(s, From);
         }
- 
+
         /// <summary>
         /// Reads an instance of <see cref="T:Gu.Units.Speed"/> from the <paramref name="reader"/>
         /// </summary>
@@ -166,7 +166,7 @@ namespace Gu.Units
             v.ReadXml(reader);
             return v;
         }
- 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -186,7 +186,7 @@ namespace Gu.Units
             return new Speed(value);
         }
 
- 		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -195,7 +195,7 @@ namespace Gu.Units
         {
             return From(value, SpeedUnit.MillimetresPerSecond);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -204,7 +204,7 @@ namespace Gu.Units
         {
             return From(value, SpeedUnit.CentimetresPerSecond);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -213,7 +213,7 @@ namespace Gu.Units
         {
             return From(value, SpeedUnit.KilometresPerHour);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -222,7 +222,7 @@ namespace Gu.Units
         {
             return From(value, SpeedUnit.CentimetresPerMinute);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -231,7 +231,7 @@ namespace Gu.Units
         {
             return From(value, SpeedUnit.MetresPerMinute);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -240,7 +240,7 @@ namespace Gu.Units
         {
             return From(value, SpeedUnit.MetresPerHour);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -249,7 +249,7 @@ namespace Gu.Units
         {
             return From(value, SpeedUnit.MillimetresPerHour);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -258,7 +258,7 @@ namespace Gu.Units
         {
             return From(value, SpeedUnit.CentimetresPerHour);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -267,7 +267,7 @@ namespace Gu.Units
         {
             return From(value, SpeedUnit.MillimetresPerMinute);
         }
-				 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Speed"/> instances are equal.
         /// </summary>
@@ -280,7 +280,7 @@ namespace Gu.Units
         {
             return left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Speed"/> instances are not equal.
         /// </summary>
@@ -293,7 +293,7 @@ namespace Gu.Units
         {
             return !left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Speed"/> is less than another specified <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -306,7 +306,7 @@ namespace Gu.Units
         {
             return left.MetresPerSecond < right.MetresPerSecond;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Speed"/> is greater than another specified <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -319,7 +319,7 @@ namespace Gu.Units
         {
             return left.MetresPerSecond > right.MetresPerSecond;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Speed"/> is less than or equal to another specified <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -332,7 +332,7 @@ namespace Gu.Units
         {
             return left.MetresPerSecond <= right.MetresPerSecond;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Speed"/> is greater than or equal to another specified <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -345,7 +345,7 @@ namespace Gu.Units
         {
             return left.MetresPerSecond >= right.MetresPerSecond;
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Speed"/> with <paramref name="left"/> and returns the result.
         /// </summary>
@@ -354,9 +354,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Speed"/> with <paramref name="left"/> and returns the result.</returns>
         public static Speed operator *(double left, Speed right)
         {
-            return new Speed(left*right.MetresPerSecond);
+            return new Speed(left * right.MetresPerSecond);
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Speed"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -365,9 +365,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Speed"/> with <paramref name="right"/> and returns the result.</returns>
         public static Speed operator *(Speed left, double right)
         {
-            return new Speed(left.MetresPerSecond*right);
+            return new Speed(left.MetresPerSecond * right);
         }
- 
+
         /// <summary>
         /// Divides an instance of <see cref="T:Gu.Units.Speed"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -378,7 +378,7 @@ namespace Gu.Units
         {
             return new Speed(left.MetresPerSecond / right);
         }
- 
+
         /// <summary>
         /// Adds two specified <see cref="T:Gu.Units.Speed"/> instances.
         /// </summary>
@@ -391,7 +391,7 @@ namespace Gu.Units
         {
             return new Speed(left.MetresPerSecond + right.MetresPerSecond);
         }
- 
+
         /// <summary>
         /// Subtracts an Speed from another Speed and returns the difference.
         /// </summary>
@@ -404,7 +404,7 @@ namespace Gu.Units
         {
             return new Speed(left.MetresPerSecond - right.MetresPerSecond);
         }
- 
+
         /// <summary>
         /// Returns an <see cref="T:Gu.Units.Speed"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
@@ -414,9 +414,9 @@ namespace Gu.Units
         /// <param name="Speed">A <see cref="T:Gu.Units.Speed"/></param>
         public static Speed operator -(Speed Speed)
         {
-            return new Speed(-1*Speed.MetresPerSecond);
+            return new Speed(-1 * Speed.MetresPerSecond);
         }
- 
+
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -428,33 +428,33 @@ namespace Gu.Units
         {
             return Speed;
         }
- 
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(string format)
         {
             return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(IFormatProvider provider)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, SpeedUnit.MetresPerSecond);
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider, SpeedUnit unit)
         {
             var quantity = unit.FromSiUnit(this.MetresPerSecond);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
- 
+
         /// <summary>
         /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Speed"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Speed"/> object.
         /// </summary>
@@ -483,7 +483,7 @@ namespace Gu.Units
         {
             return this.MetresPerSecond.CompareTo(quantity.MetresPerSecond);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Speed"/> object.
         /// </summary>
@@ -495,7 +495,7 @@ namespace Gu.Units
         {
             return this.MetresPerSecond.Equals(other.MetresPerSecond);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Speed"/> object within the given tolerance.
         /// </summary>
@@ -508,22 +508,22 @@ namespace Gu.Units
         {
             return Math.Abs(this.MetresPerSecond - other.MetresPerSecond) < tolerance;
         }
- 
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {
                 return false;
             }
- 
+
             return obj is Speed && this.Equals((Speed)obj);
         }
- 
+
         public override int GetHashCode()
         {
             return this.MetresPerSecond.GetHashCode();
         }
- 
+
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
@@ -538,7 +538,7 @@ namespace Gu.Units
         {
             return null;
         }
- 
+
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
@@ -547,11 +547,11 @@ namespace Gu.Units
         {
             reader.MoveToContent();
             var e = (XElement)XNode.ReadFrom(reader);
- 
+
             // Hacking set readonly fields here, can't think of a cleaner workaround
             XmlExt.SetReadonlyField(ref this, x => x.MetresPerSecond, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
- 
+
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
@@ -560,5 +560,5 @@ namespace Gu.Units
         {
             XmlExt.WriteAttribute(writer, "Value", this.MetresPerSecond);
         }
-	}
+    }
 }

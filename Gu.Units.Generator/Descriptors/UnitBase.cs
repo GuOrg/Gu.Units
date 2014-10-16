@@ -1,6 +1,7 @@
 ﻿namespace Gu.Units.Generator
 {
     using System;
+    using System.CodeDom.Compiler;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Collections.Specialized;
@@ -12,6 +13,7 @@
         public static readonly ObservableCollection<IUnit> AllUnitsStatic = new ObservableCollection<IUnit>();
         private readonly ReadOnlyObservableCollection<IUnit> _allUnitsReadonly;
         private readonly ObservableCollection<SubUnit> _subUnits = new ObservableCollection<SubUnit>();
+        private readonly CodeDomProvider _provider = CodeDomProvider.CreateProvider("C#");
 
         private string _symbol;
         private Quantity _quantity;
@@ -116,7 +118,7 @@
         {
             get
             {
-                return char.IsLetter(Symbol[0]);
+                return _provider.IsValidIdentifier(Symbol);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace Gu.Units
 {
     using System;
@@ -8,23 +8,23 @@ namespace Gu.Units
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
-	/// <summary>
+    /// <summary>
     /// A type for the quantity Energy
     /// </summary>
     [Serializable]
-	public partial struct Energy : IComparable<Energy>, IEquatable<Energy>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg2>
-	{
-	    /// <summary>
+    public partial struct Energy : IComparable<Energy>, IEquatable<Energy>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg2>
+    {
+        /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Joules"/>.
         /// </summary>
-		public readonly double Joules;
-		
-		private Energy(double joules)
+        public readonly double Joules;
+
+        private Energy(double joules)
         {
             Joules = joules;
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
         /// <param name="value"></param>
@@ -45,7 +45,7 @@ namespace Gu.Units
             }
         }
 
- 		
+
         /// <summary>
         /// The quantity in nanojoules
         /// </summary>
@@ -56,7 +56,7 @@ namespace Gu.Units
                 return EnergyUnit.Nanojoules.FromSiUnit(Joules);
             }
         }
-		
+
         /// <summary>
         /// The quantity in microjoules
         /// </summary>
@@ -67,7 +67,7 @@ namespace Gu.Units
                 return EnergyUnit.Microjoules.FromSiUnit(Joules);
             }
         }
-		
+
         /// <summary>
         /// The quantity in millijoules
         /// </summary>
@@ -78,7 +78,7 @@ namespace Gu.Units
                 return EnergyUnit.Millijoules.FromSiUnit(Joules);
             }
         }
-		
+
         /// <summary>
         /// The quantity in kilojoules
         /// </summary>
@@ -89,7 +89,7 @@ namespace Gu.Units
                 return EnergyUnit.Kilojoules.FromSiUnit(Joules);
             }
         }
-		
+
         /// <summary>
         /// The quantity in megajoules
         /// </summary>
@@ -100,7 +100,7 @@ namespace Gu.Units
                 return EnergyUnit.Megajoules.FromSiUnit(Joules);
             }
         }
-		
+
         /// <summary>
         /// The quantity in gigajoules
         /// </summary>
@@ -111,7 +111,7 @@ namespace Gu.Units
                 return EnergyUnit.Gigajoules.FromSiUnit(Joules);
             }
         }
-		
+
         /// <summary>
         /// The quantity in kilowattHours
         /// </summary>
@@ -122,7 +122,7 @@ namespace Gu.Units
                 return EnergyUnit.KilowattHours.FromSiUnit(Joules);
             }
         }
-		
+
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Energy"/> from its string representation
         /// </summary>
@@ -132,7 +132,7 @@ namespace Gu.Units
         {
             return Parser.Parse<EnergyUnit, Energy>(s, From);
         }
- 
+
         /// <summary>
         /// Reads an instance of <see cref="T:Gu.Units.Energy"/> from the <paramref name="reader"/>
         /// </summary>
@@ -144,7 +144,7 @@ namespace Gu.Units
             v.ReadXml(reader);
             return v;
         }
- 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -164,7 +164,7 @@ namespace Gu.Units
             return new Energy(value);
         }
 
- 		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -173,7 +173,7 @@ namespace Gu.Units
         {
             return From(value, EnergyUnit.Nanojoules);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -182,7 +182,7 @@ namespace Gu.Units
         {
             return From(value, EnergyUnit.Microjoules);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -191,7 +191,7 @@ namespace Gu.Units
         {
             return From(value, EnergyUnit.Millijoules);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -200,7 +200,7 @@ namespace Gu.Units
         {
             return From(value, EnergyUnit.Kilojoules);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -209,7 +209,7 @@ namespace Gu.Units
         {
             return From(value, EnergyUnit.Megajoules);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -218,7 +218,7 @@ namespace Gu.Units
         {
             return From(value, EnergyUnit.Gigajoules);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -227,7 +227,7 @@ namespace Gu.Units
         {
             return From(value, EnergyUnit.KilowattHours);
         }
-				 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Energy"/> instances are equal.
         /// </summary>
@@ -240,7 +240,7 @@ namespace Gu.Units
         {
             return left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Energy"/> instances are not equal.
         /// </summary>
@@ -253,7 +253,7 @@ namespace Gu.Units
         {
             return !left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Energy"/> is less than another specified <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -266,7 +266,7 @@ namespace Gu.Units
         {
             return left.Joules < right.Joules;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Energy"/> is greater than another specified <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -279,7 +279,7 @@ namespace Gu.Units
         {
             return left.Joules > right.Joules;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Energy"/> is less than or equal to another specified <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -292,7 +292,7 @@ namespace Gu.Units
         {
             return left.Joules <= right.Joules;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Energy"/> is greater than or equal to another specified <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -305,7 +305,7 @@ namespace Gu.Units
         {
             return left.Joules >= right.Joules;
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Energy"/> with <paramref name="left"/> and returns the result.
         /// </summary>
@@ -314,9 +314,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Energy"/> with <paramref name="left"/> and returns the result.</returns>
         public static Energy operator *(double left, Energy right)
         {
-            return new Energy(left*right.Joules);
+            return new Energy(left * right.Joules);
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Energy"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -325,9 +325,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Energy"/> with <paramref name="right"/> and returns the result.</returns>
         public static Energy operator *(Energy left, double right)
         {
-            return new Energy(left.Joules*right);
+            return new Energy(left.Joules * right);
         }
- 
+
         /// <summary>
         /// Divides an instance of <see cref="T:Gu.Units.Energy"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -338,7 +338,7 @@ namespace Gu.Units
         {
             return new Energy(left.Joules / right);
         }
- 
+
         /// <summary>
         /// Adds two specified <see cref="T:Gu.Units.Energy"/> instances.
         /// </summary>
@@ -351,7 +351,7 @@ namespace Gu.Units
         {
             return new Energy(left.Joules + right.Joules);
         }
- 
+
         /// <summary>
         /// Subtracts an Energy from another Energy and returns the difference.
         /// </summary>
@@ -364,7 +364,7 @@ namespace Gu.Units
         {
             return new Energy(left.Joules - right.Joules);
         }
- 
+
         /// <summary>
         /// Returns an <see cref="T:Gu.Units.Energy"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
@@ -374,9 +374,9 @@ namespace Gu.Units
         /// <param name="Energy">A <see cref="T:Gu.Units.Energy"/></param>
         public static Energy operator -(Energy Energy)
         {
-            return new Energy(-1*Energy.Joules);
+            return new Energy(-1 * Energy.Joules);
         }
- 
+
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -388,33 +388,33 @@ namespace Gu.Units
         {
             return Energy;
         }
- 
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(string format)
         {
             return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(IFormatProvider provider)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, EnergyUnit.Joules);
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider, EnergyUnit unit)
         {
             var quantity = unit.FromSiUnit(this.Joules);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
- 
+
         /// <summary>
         /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Energy"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Energy"/> object.
         /// </summary>
@@ -443,7 +443,7 @@ namespace Gu.Units
         {
             return this.Joules.CompareTo(quantity.Joules);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Energy"/> object.
         /// </summary>
@@ -455,7 +455,7 @@ namespace Gu.Units
         {
             return this.Joules.Equals(other.Joules);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Energy"/> object within the given tolerance.
         /// </summary>
@@ -468,22 +468,22 @@ namespace Gu.Units
         {
             return Math.Abs(this.Joules - other.Joules) < tolerance;
         }
- 
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {
                 return false;
             }
- 
+
             return obj is Energy && this.Equals((Energy)obj);
         }
- 
+
         public override int GetHashCode()
         {
             return this.Joules.GetHashCode();
         }
- 
+
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
@@ -498,7 +498,7 @@ namespace Gu.Units
         {
             return null;
         }
- 
+
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
@@ -507,11 +507,11 @@ namespace Gu.Units
         {
             reader.MoveToContent();
             var e = (XElement)XNode.ReadFrom(reader);
- 
+
             // Hacking set readonly fields here, can't think of a cleaner workaround
             XmlExt.SetReadonlyField(ref this, x => x.Joules, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
- 
+
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
@@ -520,5 +520,5 @@ namespace Gu.Units
         {
             XmlExt.WriteAttribute(writer, "Value", this.Joules);
         }
-	}
+    }
 }

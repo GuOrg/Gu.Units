@@ -1,4 +1,4 @@
-﻿ 
+﻿
 namespace Gu.Units
 {
     using System;
@@ -8,23 +8,23 @@ namespace Gu.Units
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
-	/// <summary>
+    /// <summary>
     /// A type for the quantity Area
     /// </summary>
     [Serializable]
-	public partial struct Area : IComparable<Area>, IEquatable<Area>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I2>
-	{
-	    /// <summary>
+    public partial struct Area : IComparable<Area>, IEquatable<Area>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I2>
+    {
+        /// <summary>
         /// The quantity in <see cref="T:Gu.Units.SquareMetres"/>.
         /// </summary>
-		public readonly double SquareMetres;
-		
-		private Area(double squareMetres)
+        public readonly double SquareMetres;
+
+        private Area(double squareMetres)
         {
             SquareMetres = squareMetres;
         }
 
-		/// <summary>
+        /// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
         /// <param name="value"></param>
@@ -45,7 +45,7 @@ namespace Gu.Units
             }
         }
 
- 		
+
         /// <summary>
         /// The quantity in squareMillimetres
         /// </summary>
@@ -56,7 +56,7 @@ namespace Gu.Units
                 return AreaUnit.SquareMillimetres.FromSiUnit(SquareMetres);
             }
         }
-		
+
         /// <summary>
         /// The quantity in squareCentimetres
         /// </summary>
@@ -67,7 +67,7 @@ namespace Gu.Units
                 return AreaUnit.SquareCentimetres.FromSiUnit(SquareMetres);
             }
         }
-		
+
         /// <summary>
         /// The quantity in squareDecimetres
         /// </summary>
@@ -78,7 +78,7 @@ namespace Gu.Units
                 return AreaUnit.SquareDecimetres.FromSiUnit(SquareMetres);
             }
         }
-		
+
         /// <summary>
         /// The quantity in squareKilometres
         /// </summary>
@@ -89,7 +89,7 @@ namespace Gu.Units
                 return AreaUnit.SquareKilometres.FromSiUnit(SquareMetres);
             }
         }
-		
+
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Area"/> from its string representation
         /// </summary>
@@ -99,7 +99,7 @@ namespace Gu.Units
         {
             return Parser.Parse<AreaUnit, Area>(s, From);
         }
- 
+
         /// <summary>
         /// Reads an instance of <see cref="T:Gu.Units.Area"/> from the <paramref name="reader"/>
         /// </summary>
@@ -111,7 +111,7 @@ namespace Gu.Units
             v.ReadXml(reader);
             return v;
         }
- 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -131,7 +131,7 @@ namespace Gu.Units
             return new Area(value);
         }
 
- 		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -140,7 +140,7 @@ namespace Gu.Units
         {
             return From(value, AreaUnit.SquareMillimetres);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -149,7 +149,7 @@ namespace Gu.Units
         {
             return From(value, AreaUnit.SquareCentimetres);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -158,7 +158,7 @@ namespace Gu.Units
         {
             return From(value, AreaUnit.SquareDecimetres);
         }
-		
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -167,7 +167,7 @@ namespace Gu.Units
         {
             return From(value, AreaUnit.SquareKilometres);
         }
-				 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Area"/> instances are equal.
         /// </summary>
@@ -180,7 +180,7 @@ namespace Gu.Units
         {
             return left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Area"/> instances are not equal.
         /// </summary>
@@ -193,7 +193,7 @@ namespace Gu.Units
         {
             return !left.Equals(right);
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Area"/> is less than another specified <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -206,7 +206,7 @@ namespace Gu.Units
         {
             return left.SquareMetres < right.SquareMetres;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Area"/> is greater than another specified <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -219,7 +219,7 @@ namespace Gu.Units
         {
             return left.SquareMetres > right.SquareMetres;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Area"/> is less than or equal to another specified <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -232,7 +232,7 @@ namespace Gu.Units
         {
             return left.SquareMetres <= right.SquareMetres;
         }
- 
+
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Area"/> is greater than or equal to another specified <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -245,7 +245,7 @@ namespace Gu.Units
         {
             return left.SquareMetres >= right.SquareMetres;
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Area"/> with <paramref name="left"/> and returns the result.
         /// </summary>
@@ -254,9 +254,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Area"/> with <paramref name="left"/> and returns the result.</returns>
         public static Area operator *(double left, Area right)
         {
-            return new Area(left*right.SquareMetres);
+            return new Area(left * right.SquareMetres);
         }
- 
+
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Area"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -265,9 +265,9 @@ namespace Gu.Units
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Area"/> with <paramref name="right"/> and returns the result.</returns>
         public static Area operator *(Area left, double right)
         {
-            return new Area(left.SquareMetres*right);
+            return new Area(left.SquareMetres * right);
         }
- 
+
         /// <summary>
         /// Divides an instance of <see cref="T:Gu.Units.Area"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -278,7 +278,7 @@ namespace Gu.Units
         {
             return new Area(left.SquareMetres / right);
         }
- 
+
         /// <summary>
         /// Adds two specified <see cref="T:Gu.Units.Area"/> instances.
         /// </summary>
@@ -291,7 +291,7 @@ namespace Gu.Units
         {
             return new Area(left.SquareMetres + right.SquareMetres);
         }
- 
+
         /// <summary>
         /// Subtracts an Area from another Area and returns the difference.
         /// </summary>
@@ -304,7 +304,7 @@ namespace Gu.Units
         {
             return new Area(left.SquareMetres - right.SquareMetres);
         }
- 
+
         /// <summary>
         /// Returns an <see cref="T:Gu.Units.Area"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
@@ -314,9 +314,9 @@ namespace Gu.Units
         /// <param name="Area">A <see cref="T:Gu.Units.Area"/></param>
         public static Area operator -(Area Area)
         {
-            return new Area(-1*Area.SquareMetres);
+            return new Area(-1 * Area.SquareMetres);
         }
- 
+
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -328,33 +328,33 @@ namespace Gu.Units
         {
             return Area;
         }
- 
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(string format)
         {
             return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
- 
+
         public string ToString(IFormatProvider provider)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, AreaUnit.SquareMetres);
         }
- 
+
         public string ToString(string format, IFormatProvider formatProvider, AreaUnit unit)
         {
             var quantity = unit.FromSiUnit(this.SquareMetres);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
- 
+
         /// <summary>
         /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Area"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Area"/> object.
         /// </summary>
@@ -383,7 +383,7 @@ namespace Gu.Units
         {
             return this.SquareMetres.CompareTo(quantity.SquareMetres);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Area"/> object.
         /// </summary>
@@ -395,7 +395,7 @@ namespace Gu.Units
         {
             return this.SquareMetres.Equals(other.SquareMetres);
         }
- 
+
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Area"/> object within the given tolerance.
         /// </summary>
@@ -408,22 +408,22 @@ namespace Gu.Units
         {
             return Math.Abs(this.SquareMetres - other.SquareMetres) < tolerance;
         }
- 
+
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {
                 return false;
             }
- 
+
             return obj is Area && this.Equals((Area)obj);
         }
- 
+
         public override int GetHashCode()
         {
             return this.SquareMetres.GetHashCode();
         }
- 
+
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
@@ -438,7 +438,7 @@ namespace Gu.Units
         {
             return null;
         }
- 
+
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
@@ -447,11 +447,11 @@ namespace Gu.Units
         {
             reader.MoveToContent();
             var e = (XElement)XNode.ReadFrom(reader);
- 
+
             // Hacking set readonly fields here, can't think of a cleaner workaround
             XmlExt.SetReadonlyField(ref this, x => x.SquareMetres, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
         }
- 
+
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
@@ -460,5 +460,5 @@ namespace Gu.Units
         {
             XmlExt.WriteAttribute(writer, "Value", this.SquareMetres);
         }
-	}
+    }
 }

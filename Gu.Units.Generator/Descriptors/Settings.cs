@@ -94,6 +94,18 @@
             }
         }
 
+        /// <summary>
+        /// The extension for the generated files, set to txt if it does not build so you can´inspect the reult
+        /// cs when everything works
+        /// </summary>
+        public static string Extension
+        {
+            get
+            {
+                return "cs";
+            }
+        }
+
         public List<DerivedUnit> DerivedUnits
         {
             get

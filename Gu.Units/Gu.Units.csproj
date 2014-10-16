@@ -45,86 +45,114 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Angle.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="AngleUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="AngularVelocity.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="AngularVelocityUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Area.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="AreaUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Density.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="DensityUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Energy.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="EnergyUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Force.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="ForceUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Fraction.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="FractionUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Frequency.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="FrequencyUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Length.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
     <Compile Include="LengthUnit.cs" />
+    <Compile Include="LengthUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Mass.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MassUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Power.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="PowerUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Pressure.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="PressureUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IUnit.cs" />
     <Compile Include="Interfaces\IQuantity.cs" />
+    <Compile Include="Speed.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="SpeedUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Temperature.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="TemperatureUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Time.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="TimeUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
     <Compile Include="Utils\Arithmetics.cs" />
     <Compile Include="Utils\UnitConverter.cs" />
     <Compile Include="Utils\Parser.cs" />
     <Compile Include="Utils\XmlExt.cs" />
+    <Compile Include="Volume.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="VolumeUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="QuantityGenerator.txt4" />
     <None Include="UnitGenerator.txt4" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Angle.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="AngleUnit.generated.txt">
-      <DependentUpon>UnitGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="AngularVelocity.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Area.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Density.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Energy.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Force.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Frequency.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Length.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="LengthUnit.generated.txt">
-      <DependentUpon>UnitGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Mass.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="MassUnit.generated.txt">
-      <DependentUpon>UnitGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Percent.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="PercentUnit.generated.txt">
-      <DependentUpon>UnitGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Power.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Pressure.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Speed.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Temperature.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="TemperatureUnit.generated.txt">
-      <DependentUpon>UnitGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Time.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="TimeUnit.generated.txt">
-      <DependentUpon>UnitGenerator.txt4</DependentUpon>
-    </Content>
-    <Content Include="Volume.generated.txt">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
