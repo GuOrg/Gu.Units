@@ -29,28 +29,7 @@
                     {
                         settings = (Settings)serializer.Deserialize(reader);
                     }
-
-                    foreach (var unit in settings.SiUnits)
-                    {
-                        unit.Namespace = NameSpace;
-                        var quantity = new Quantity(unit.Namespace, unit.QuantityName, unit);
-                        unit.Quantity = quantity;
-                        settings._quantities.Add(quantity);
-                    }
-                    foreach (var unit in settings.DerivedUnits)
-                    {
-                        unit.Namespace = NameSpace;
-                        var quantity = new Quantity(unit.Namespace, unit.QuantityName, unit);
-                        settings._quantities.Add(quantity);
-                        unit.Quantity = quantity;
-                        foreach (var unitPart in unit.Parts)
-                        {
-                            if (unitPart.Unit == null)
-                            {
-                                unitPart.Unit = UnitBase.AllUnitsStatic.Single(x => x.ClassName == unitPart.UnitName);
-                            }
-                        }
-                    }
+                    settings.Initialize();
                     return settings;
                 }
                 catch (Exception e)
@@ -137,10 +116,13 @@
             var serializer = new XmlSerializer(typeof(Settings));
             try
             {
-                using (var stream = File.OpenRead(fullFileName))
+                Settings settings;
+                using (var reader = new StringReader(fullFileName))
                 {
-                    return (Settings)serializer.Deserialize(stream);
+                    settings = (Settings)serializer.Deserialize(reader);
                 }
+                settings.Initialize();
+                return settings;
             }
             catch (FileNotFoundException)
             {
@@ -150,6 +132,44 @@
                     serializer.Serialize(stream, settings);
                 }
                 return settings;
+            }
+        }
+        private void Initialize()
+        {
+            foreach (var unit in SiUnits)
+            {
+                unit.Namespace = NameSpace;
+                var quantity = new Quantity(unit.Namespace, unit.QuantityName, unit);
+                unit.Quantity = quantity;
+                _quantities.Add(quantity);
+            }
+            foreach (var unit in DerivedUnits)
+            {
+                unit.Namespace = NameSpace;
+                var quantity = new Quantity(unit.Namespace, unit.QuantityName, unit);
+                _quantities.Add(quantity);
+                unit.Quantity = quantity;
+                foreach (var unitPart in unit.Parts)
+                {
+                    if (unitPart.Unit == null)
+                    {
+                        unitPart.Unit = UnitBase.AllUnitsStatic.Single(x => x.ClassName == unitPart.UnitName);
+                    }
+                }
+            }
+            foreach (var quantity in Quantities.Where(x => x.Unit is DerivedUnit))
+            {
+                var derivedUnit = quantity.Unit as DerivedUnit;
+                var unitParts = derivedUnit.Parts;
+                foreach (var up in unitParts)
+                {
+                    if (up.Power > 0)
+                    {
+                        var left = up.Unit.Quantity;
+                        //left.OperatorOverloads.Add(new OperatorOverload(left, quantity));
+                        //quantity.OperatorOverloads.Add(new OperatorOverload(quantity, left));
+                    }
+                }
             }
         }
 

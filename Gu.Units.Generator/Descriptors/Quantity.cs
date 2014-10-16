@@ -130,6 +130,8 @@
                 return string.Format("IQuantity<{0}>", args);
             }
         }
+        
+        [XmlIgnore]
         public ObservableCollection<OperatorOverload> OperatorOverloads
         {
             get { return _operatorOverloads; }

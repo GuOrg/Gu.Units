@@ -2,32 +2,22 @@
 {
     using System;
     using System.Linq;
-    using System.Xml;
-
     using NUnit.Framework;
 
     public class QuantityTests
     {
-        private const string Namespace = "Gu.Units";
-        private SiUnit _metres;
-        private SiUnit _seconds;
-        private Quantity _length;
-        private Quantity _time;
-        private Quantity _speed;
         private Quantity[] _quantities;
+        private IUnit _metres;
+        private string Namespace;
+        private IUnit _seconds;
         [SetUp]
         public void SetUp()
         {
-            _metres = new SiUnit(Namespace, "Metres", "m");
-            _seconds = new SiUnit(Namespace, "Seconds", "s");
-            _length = new Quantity(Namespace, "Length", _metres);
-            _time = new Quantity(Namespace, "Time", _seconds);
-            _speed = new Quantity(Namespace, "Speed", new DerivedUnit(Namespace,
-                "MetresPerSecond",
-                "m/s",
-                new UnitAndPower(_metres, 1),
-                new UnitAndPower(_seconds, -1)));
-            _quantities = new[] { _length, _time, _speed };
+            var settings = new MockSettings();
+            _quantities = settings.Quantities;
+            _metres = settings.Metres;
+            _seconds = settings.Seconds;
+            Namespace = settings.Namespace;
         }
 
         [TestCase("Length", "Metres", "IQuantity<LengthUnit, I1>")]
@@ -82,7 +72,6 @@
                         left.OperatorOverloads.Add(new OperatorOverload(left, quantity));
                         quantity.OperatorOverloads.Add(new OperatorOverload(quantity, left));
                     }
-
                 }
             }
             throw new NotImplementedException("message");
