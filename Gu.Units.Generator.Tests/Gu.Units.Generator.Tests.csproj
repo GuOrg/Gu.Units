@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="QuantityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SiUnitTests.cs" />
     <Compile Include="UnitPartsConverterTests.cs" />
   </ItemGroup>
   <ItemGroup>
