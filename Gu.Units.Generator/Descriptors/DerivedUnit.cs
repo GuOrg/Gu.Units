@@ -84,7 +84,7 @@
 
         public override string ToString()
         {
-            return string.Format("{0}  ({1})", Symbol, this.UiName);
+            return string.Format("{0}  ({1}) ({2})", Symbol, this.UiName, this.Quantity == null ? "null" : this.Quantity.ClassName);
         }
 
         private void PartsOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs notifyCollectionChangedEventArgs)

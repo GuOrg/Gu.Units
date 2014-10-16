@@ -12,6 +12,7 @@
     [Serializable, TypeConverter(typeof(QuantityConverter))]
     public class Quantity : TypeMetaData
     {
+        private readonly ObservableCollection<OperatorOverload> _operatorOverloads = new ObservableCollection<OperatorOverload>();
         private IUnit _unit;
         private string _unitName;
 
@@ -128,6 +129,10 @@
                         u.Power < 0 ? -1 * u.Power : u.Power)));
                 return string.Format("IQuantity<{0}>", args);
             }
+        }
+        public ObservableCollection<OperatorOverload> OperatorOverloads
+        {
+            get { return _operatorOverloads; }
         }
 
         public override string ToString()

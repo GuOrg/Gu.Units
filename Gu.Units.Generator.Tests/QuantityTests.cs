@@ -1,17 +1,20 @@
 ﻿namespace Gu.Units.Generator.Tests
 {
+    using System;
+    using System.Linq;
     using System.Xml;
 
     using NUnit.Framework;
 
     public class QuantityTests
     {
-        private const string Namespace ="Gu.Units";
+        private const string Namespace = "Gu.Units";
         private SiUnit _metres;
         private SiUnit _seconds;
         private Quantity _length;
         private Quantity _time;
-
+        private Quantity _speed;
+        private Quantity[] _quantities;
         [SetUp]
         public void SetUp()
         {
@@ -19,6 +22,12 @@
             _seconds = new SiUnit(Namespace, "Seconds", "s");
             _length = new Quantity(Namespace, "Length", _metres);
             _time = new Quantity(Namespace, "Time", _seconds);
+            _speed = new Quantity(Namespace, "Speed", new DerivedUnit(Namespace,
+                "MetresPerSecond",
+                "m/s",
+                new UnitAndPower(_metres, 1),
+                new UnitAndPower(_seconds, -1)));
+            _quantities = new[] { _length, _time, _speed };
         }
 
         [TestCase("Length", "Metres", "IQuantity<LengthUnit, I1>")]
@@ -56,6 +65,27 @@
                 var @interface = quantity.Interface;
                 Assert.AreEqual(expected, @interface);
             }
+        }
+
+        [Test]
+        public void FindOverloads()
+        {
+            foreach (var quantity in _quantities.Where(x => x.Unit is DerivedUnit))
+            {
+                var derivedUnit = quantity.Unit as DerivedUnit;
+                var unitParts = derivedUnit.Parts;
+                foreach (var up in unitParts)
+                {
+                    if (up.Power > 0)
+                    {
+                        var left = up.Unit.Quantity;
+                        left.OperatorOverloads.Add(new OperatorOverload(left, quantity));
+                        quantity.OperatorOverloads.Add(new OperatorOverload(quantity, left));
+                    }
+
+                }
+            }
+            throw new NotImplementedException("message");
         }
     }
 }
