@@ -1,5 +1,4 @@
-﻿
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.Globalization;
@@ -9,7 +8,7 @@ namespace Gu.Units
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity AngularVelocity
+    /// A type for the quantity <see cref="T:Gu.Units.AngularVelocity"/>.
     /// </summary>
     [Serializable]
     public partial struct AngularVelocity : IComparable<AngularVelocity>, IEquatable<AngularVelocity>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1, TimeUnit, INeg1>
@@ -45,7 +44,6 @@ namespace Gu.Units
             }
         }
 
-
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.AngularVelocity"/> from its string representation
         /// </summary>
@@ -71,7 +69,7 @@ namespace Gu.Units
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularVelocity"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static AngularVelocity From(double value, AngularVelocityUnit unit)
         {
@@ -81,12 +79,11 @@ namespace Gu.Units
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularVelocity"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static AngularVelocity FromRadiansPerSecond(double value)
+        /// <param name="radiansPerSecond">The value in <see cref="T:Gu.Units.RadiansPerSecond"/></param>
+        public static AngularVelocity FromRadiansPerSecond(double radiansPerSecond)
         {
-            return new AngularVelocity(value);
+            return new AngularVelocity(radiansPerSecond);
         }
-
 
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.AngularVelocity"/> instances are equal.

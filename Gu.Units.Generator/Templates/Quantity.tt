@@ -1,11 +1,8 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
-<#@ assembly name="System.Core" #>
-<#@ assembly name="Microsoft.CSharp" #>
-<#@ import namespace="System" #>
-<#@ output extension=".txt" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #>
 <#@ parameter name="QuantityMetaData" type="Gu.Units.Generator.Quantity" #>
+<#@ output extension=".txt" #>
 <#
 // Template used by QuantityGenerator.tt
 Quantity quantity = null;
@@ -35,7 +32,7 @@ namespace <#= quantity.Namespace #>
     using System.Xml.Serialization;
 
 	/// <summary>
-    /// A type for the quantity <#= quantity.ClassName #>
+    /// A type for the quantity <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.
     /// </summary>
     [Serializable]
 	public partial struct <#= quantity.ClassName #> : IComparable<<#= quantity.ClassName #>>, IEquatable<<#= quantity.ClassName #>>, IFormattable, IXmlSerializable, <#= quantity.Interface #>
@@ -71,7 +68,7 @@ namespace <#= quantity.Namespace #>
             }
         }
 
- 		<#
+<#
 		foreach(var unit in quantity.Unit.SubUnits)
 		{
 		#>
@@ -86,10 +83,9 @@ namespace <#= quantity.Namespace #>
             }
         }
 
-		<#
+<#
 		} 
 		#>
-
         /// <summary>
         /// Creates an instance of <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/> from its string representation
         /// </summary>
@@ -115,7 +111,7 @@ namespace <#= quantity.Namespace #>
         /// <summary>
         /// Creates a new instance of <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static <#= quantity.ClassName #> From(double value, <#= quantity.ClassName #>Unit unit)
         {
@@ -125,29 +121,28 @@ namespace <#= quantity.Namespace #>
         /// <summary>
         /// Creates a new instance of <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static <#= quantity.ClassName #> From<#= quantity.Unit.ClassName #>(double value)
+        /// <param name="<#= quantity.Unit.ParameterName #>">The value in <see cref="T:<#= quantity.Namespace #>.<#= quantity.Unit.ClassName #>"/></param>
+        public static <#= quantity.ClassName #> From<#= quantity.Unit.ClassName #>(double <#= quantity.Unit.ParameterName #>)
         {
-            return new <#= quantity.ClassName #>(value);
+            return new <#= quantity.ClassName #>(<#= quantity.Unit.ParameterName #>);
         }
 
- 		<#
-		foreach(var unit in quantity.Unit.SubUnits)
+<#
+		foreach(var su in quantity.Unit.SubUnits)
 		{
 		#>
-
         /// <summary>
         /// Creates a new instance of <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static <#= quantity.ClassName #> From<#= unit.ClassName #>(double value)
+        /// <param name="<#= su.ParameterName #>">The value in <#= su.Symbol #></param>
+        public static <#= quantity.ClassName #> From<#= su.ClassName #>(double <#= su.ParameterName #>)
         {
-            return From(value, <#= quantity.ClassName #>Unit.<#= unit.ClassName #>);
+            return From(<#= su.ParameterName #>, <#= quantity.ClassName #>Unit.<#= su.ClassName #>);
         }
-		<#
+
+<#
 		} 
 		#>
-		 
         /// <summary>
         /// Indicates whether two <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/> instances are equal.
         /// </summary>
@@ -425,11 +420,8 @@ namespace <#= quantity.Namespace #>
         /// <param name="reader">The <see cref="T:System.Xml.XmlReader"/> stream from which the object is deserialized. </param>
         public void ReadXml(XmlReader reader)
         {
-            reader.MoveToContent();
-            var e = (XElement)XNode.ReadFrom(reader);
- 
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, x => x.<#= quantity.Unit.ClassName #>, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
+			XmlExt.SetReadonlyField(ref this, x => x.<#= quantity.Unit.ClassName #>, reader, "Value");
         }
  
         /// <summary>

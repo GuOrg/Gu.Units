@@ -1,12 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
-
+    /// <summary>
+    /// A type for the unit <see cref="T:Gu.Units.TemperatureUnit"/>.
+    /// Contains conversion logic.
+    /// </summary>
     [Serializable]
     public struct TemperatureUnit : IUnit
     {
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Kelvin"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
         public static readonly TemperatureUnit Kelvin = new TemperatureUnit(1.0, "°K");
-
 
         private readonly double _conversionFactor;
         private readonly string _symbol;
@@ -17,6 +23,9 @@
             _symbol = symbol;
         }
 
+        /// <summary>
+        /// The symbol for <see cref="T:Gu.Units.Kelvin"/>.
+        /// </summary>
         public string Symbol
         {
             get
@@ -31,7 +40,7 @@
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Temperature "/>.
+        /// Converts a value to <see cref="T:Gu.Units.Kelvin"/>.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -41,9 +50,9 @@
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Kelvin "/>.
+        /// Converts a value from Kelvin.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in Kelvin</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double value)
         {

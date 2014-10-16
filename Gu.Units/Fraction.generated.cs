@@ -8,7 +8,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity Fraction
+    /// A type for the quantity <see cref="T:Gu.Units.Fraction"/>.
     /// </summary>
     [Serializable]
     public partial struct Fraction : IComparable<Fraction>, IEquatable<Fraction>, IFormattable, IXmlSerializable, IQuantity<FractionUnit, I1>
@@ -77,7 +77,6 @@
             }
         }
 
-
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Fraction"/> from its string representation
         /// </summary>
@@ -103,7 +102,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Fraction"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static Fraction From(double value, FractionUnit unit)
         {
@@ -113,38 +112,37 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Fraction"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Fraction FromFractions(double value)
+        /// <param name="fractions">The value in <see cref="T:Gu.Units.Fractions"/></param>
+        public static Fraction FromFractions(double fractions)
         {
-            return new Fraction(value);
-        }
-
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Fraction"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        public static Fraction FromPartsPerMillion(double value)
-        {
-            return From(value, FractionUnit.PartsPerMillion);
+            return new Fraction(fractions);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Fraction"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Fraction FromPromilles(double value)
+        /// <param name="partsPerMillion">The value in ppm</param>
+        public static Fraction FromPartsPerMillion(double partsPerMillion)
         {
-            return From(value, FractionUnit.Promilles);
+            return From(partsPerMillion, FractionUnit.PartsPerMillion);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Fraction"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Fraction FromPercents(double value)
+        /// <param name="promilles">The value in ‰</param>
+        public static Fraction FromPromilles(double promilles)
         {
-            return From(value, FractionUnit.Percents);
+            return From(promilles, FractionUnit.Promilles);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Fraction"/>.
+        /// </summary>
+        /// <param name="percents">The value in %</param>
+        public static Fraction FromPercents(double percents)
+        {
+            return From(percents, FractionUnit.Percents);
         }
 
         /// <summary>

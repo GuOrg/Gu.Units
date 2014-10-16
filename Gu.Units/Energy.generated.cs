@@ -8,7 +8,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity Energy
+    /// A type for the quantity <see cref="T:Gu.Units.Energy"/>.
     /// </summary>
     [Serializable]
     public partial struct Energy : IComparable<Energy>, IEquatable<Energy>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg2>
@@ -121,7 +121,6 @@
             }
         }
 
-
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Energy"/> from its string representation
         /// </summary>
@@ -147,7 +146,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static Energy From(double value, EnergyUnit unit)
         {
@@ -157,74 +156,73 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Energy FromJoules(double value)
+        /// <param name="joules">The value in <see cref="T:Gu.Units.Joules"/></param>
+        public static Energy FromJoules(double joules)
         {
-            return new Energy(value);
-        }
-
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        public static Energy FromNanojoules(double value)
-        {
-            return From(value, EnergyUnit.Nanojoules);
+            return new Energy(joules);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Energy FromMicrojoules(double value)
+        /// <param name="nanojoules">The value in nJ</param>
+        public static Energy FromNanojoules(double nanojoules)
         {
-            return From(value, EnergyUnit.Microjoules);
+            return From(nanojoules, EnergyUnit.Nanojoules);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Energy FromMillijoules(double value)
+        /// <param name="microjoules">The value in µJ</param>
+        public static Energy FromMicrojoules(double microjoules)
         {
-            return From(value, EnergyUnit.Millijoules);
+            return From(microjoules, EnergyUnit.Microjoules);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Energy FromKilojoules(double value)
+        /// <param name="millijoules">The value in mJ</param>
+        public static Energy FromMillijoules(double millijoules)
         {
-            return From(value, EnergyUnit.Kilojoules);
+            return From(millijoules, EnergyUnit.Millijoules);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Energy FromMegajoules(double value)
+        /// <param name="kilojoules">The value in kJ</param>
+        public static Energy FromKilojoules(double kilojoules)
         {
-            return From(value, EnergyUnit.Megajoules);
+            return From(kilojoules, EnergyUnit.Kilojoules);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Energy FromGigajoules(double value)
+        /// <param name="megajoules">The value in MJ</param>
+        public static Energy FromMegajoules(double megajoules)
         {
-            return From(value, EnergyUnit.Gigajoules);
+            return From(megajoules, EnergyUnit.Megajoules);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Energy FromKilowattHours(double value)
+        /// <param name="gigajoules">The value in GJ</param>
+        public static Energy FromGigajoules(double gigajoules)
         {
-            return From(value, EnergyUnit.KilowattHours);
+            return From(gigajoules, EnergyUnit.Gigajoules);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
+        /// </summary>
+        /// <param name="kilowattHours">The value in kWh</param>
+        public static Energy FromKilowattHours(double kilowattHours)
+        {
+            return From(kilowattHours, EnergyUnit.KilowattHours);
         }
 
         /// <summary>

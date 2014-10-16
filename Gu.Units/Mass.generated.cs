@@ -8,7 +8,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity Mass
+    /// A type for the quantity <see cref="T:Gu.Units.Mass"/>.
     /// </summary>
     [Serializable]
     public partial struct Mass : IComparable<Mass>, IEquatable<Mass>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1>
@@ -77,7 +77,6 @@
             }
         }
 
-
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Mass"/> from its string representation
         /// </summary>
@@ -103,7 +102,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static Mass From(double value, MassUnit unit)
         {
@@ -113,38 +112,37 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Mass FromKilograms(double value)
+        /// <param name="kilograms">The value in <see cref="T:Gu.Units.Kilograms"/></param>
+        public static Mass FromKilograms(double kilograms)
         {
-            return new Mass(value);
-        }
-
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Mass"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        public static Mass FromGrams(double value)
-        {
-            return From(value, MassUnit.Grams);
+            return new Mass(kilograms);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Mass FromMilligrams(double value)
+        /// <param name="grams">The value in g</param>
+        public static Mass FromGrams(double grams)
         {
-            return From(value, MassUnit.Milligrams);
+            return From(grams, MassUnit.Grams);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Mass FromMicrograms(double value)
+        /// <param name="milligrams">The value in mg</param>
+        public static Mass FromMilligrams(double milligrams)
         {
-            return From(value, MassUnit.Micrograms);
+            return From(milligrams, MassUnit.Milligrams);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="micrograms">The value in µg</param>
+        public static Mass FromMicrograms(double micrograms)
+        {
+            return From(micrograms, MassUnit.Micrograms);
         }
 
         /// <summary>

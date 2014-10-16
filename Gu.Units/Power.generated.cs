@@ -8,7 +8,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity Power
+    /// A type for the quantity <see cref="T:Gu.Units.Power"/>.
     /// </summary>
     [Serializable]
     public partial struct Power : IComparable<Power>, IEquatable<Power>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3>
@@ -110,7 +110,6 @@
             }
         }
 
-
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Power"/> from its string representation
         /// </summary>
@@ -136,7 +135,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static Power From(double value, PowerUnit unit)
         {
@@ -146,65 +145,64 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Power FromWatts(double value)
+        /// <param name="watts">The value in <see cref="T:Gu.Units.Watts"/></param>
+        public static Power FromWatts(double watts)
         {
-            return new Power(value);
-        }
-
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        public static Power FromNanowatts(double value)
-        {
-            return From(value, PowerUnit.Nanowatts);
+            return new Power(watts);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Power FromMicrowatts(double value)
+        /// <param name="nanowatts">The value in nW</param>
+        public static Power FromNanowatts(double nanowatts)
         {
-            return From(value, PowerUnit.Microwatts);
+            return From(nanowatts, PowerUnit.Nanowatts);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Power FromMilliwatts(double value)
+        /// <param name="microwatts">The value in µW</param>
+        public static Power FromMicrowatts(double microwatts)
         {
-            return From(value, PowerUnit.Milliwatts);
+            return From(microwatts, PowerUnit.Microwatts);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Power FromKilowatts(double value)
+        /// <param name="milliwatts">The value in mW</param>
+        public static Power FromMilliwatts(double milliwatts)
         {
-            return From(value, PowerUnit.Kilowatts);
+            return From(milliwatts, PowerUnit.Milliwatts);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Power FromMegawatts(double value)
+        /// <param name="kilowatts">The value in kW</param>
+        public static Power FromKilowatts(double kilowatts)
         {
-            return From(value, PowerUnit.Megawatts);
+            return From(kilowatts, PowerUnit.Kilowatts);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Power FromGigawatts(double value)
+        /// <param name="megawatts">The value in MW</param>
+        public static Power FromMegawatts(double megawatts)
         {
-            return From(value, PowerUnit.Gigawatts);
+            return From(megawatts, PowerUnit.Megawatts);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
+        /// </summary>
+        /// <param name="gigawatts">The value in GW</param>
+        public static Power FromGigawatts(double gigawatts)
+        {
+            return From(gigawatts, PowerUnit.Gigawatts);
         }
 
         /// <summary>

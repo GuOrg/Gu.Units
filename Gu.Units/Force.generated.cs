@@ -8,7 +8,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity Force
+    /// A type for the quantity <see cref="T:Gu.Units.Force"/>.
     /// </summary>
     [Serializable]
     public partial struct Force : IComparable<Force>, IEquatable<Force>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I1, TimeUnit, INeg2>
@@ -110,7 +110,6 @@
             }
         }
 
-
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Force"/> from its string representation
         /// </summary>
@@ -136,7 +135,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static Force From(double value, ForceUnit unit)
         {
@@ -146,65 +145,64 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Force FromNewtons(double value)
+        /// <param name="newtons">The value in <see cref="T:Gu.Units.Newtons"/></param>
+        public static Force FromNewtons(double newtons)
         {
-            return new Force(value);
-        }
-
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        public static Force FromNanonewtons(double value)
-        {
-            return From(value, ForceUnit.Nanonewtons);
+            return new Force(newtons);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Force FromMicronewtons(double value)
+        /// <param name="nanonewtons">The value in nN</param>
+        public static Force FromNanonewtons(double nanonewtons)
         {
-            return From(value, ForceUnit.Micronewtons);
+            return From(nanonewtons, ForceUnit.Nanonewtons);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Force FromMillinewtons(double value)
+        /// <param name="micronewtons">The value in µN</param>
+        public static Force FromMicronewtons(double micronewtons)
         {
-            return From(value, ForceUnit.Millinewtons);
+            return From(micronewtons, ForceUnit.Micronewtons);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Force FromKilonewtons(double value)
+        /// <param name="millinewtons">The value in mN</param>
+        public static Force FromMillinewtons(double millinewtons)
         {
-            return From(value, ForceUnit.Kilonewtons);
+            return From(millinewtons, ForceUnit.Millinewtons);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Force FromMeganewtons(double value)
+        /// <param name="kilonewtons">The value in kN</param>
+        public static Force FromKilonewtons(double kilonewtons)
         {
-            return From(value, ForceUnit.Meganewtons);
+            return From(kilonewtons, ForceUnit.Kilonewtons);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Force FromGiganewtons(double value)
+        /// <param name="meganewtons">The value in MN</param>
+        public static Force FromMeganewtons(double meganewtons)
         {
-            return From(value, ForceUnit.Giganewtons);
+            return From(meganewtons, ForceUnit.Meganewtons);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
+        /// </summary>
+        /// <param name="giganewtons">The value in GN</param>
+        public static Force FromGiganewtons(double giganewtons)
+        {
+            return From(giganewtons, ForceUnit.Giganewtons);
         }
 
         /// <summary>

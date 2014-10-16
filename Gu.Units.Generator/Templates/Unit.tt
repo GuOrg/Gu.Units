@@ -1,12 +1,9 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
-<#@ assembly name="System.Core" #>
-<#@ assembly name="Microsoft.CSharp" #>
-<#@ import namespace="System" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ output extension=".txt" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #>
-<#@ parameter name="UnitMetaData" type="Gu.Units.Generator.IUnit" #><#
+<#@ parameter name="UnitMetaData" type="Gu.Units.Generator.IUnit" #>
+<#@ output extension=".txt" #>
+<#
 // Template used by UnitGenerator.tt
 IUnit unit;
 if(UnitMetaData != null)
@@ -26,35 +23,54 @@ else
 namespace <#= unit.Namespace #>
 {
     using System;
-
+    /// <summary>
+    /// A type for the unit <see cref="T:<#= unit.Namespace #>.<#= unit.Quantity.ClassName #>Unit"/>.
+	/// Contains conversion logic.
+    /// </summary>
     [Serializable]
     public struct <#= unit.Quantity.ClassName #>Unit : IUnit
     {
+        /// <summary>
+        /// The <see cref="T:<#= unit.Namespace #>.<#= unit.ClassName #>"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
         public static readonly <#= unit.Quantity.ClassName #>Unit <#= unit.ClassName #> = new <#= unit.Quantity.ClassName #>Unit(1.0, "<#= unit.Symbol #>");
-		    <#
+<#
 		    if(unit.IsSymbolNameValid)
             {
 		    #>
-public static readonly <#= unit.Quantity.ClassName #>Unit <#= unit.Symbol #> = <#= unit.ClassName #>;
-            <#
+        /// <summary>
+        /// The <see cref="T:<#= unit.Namespace #>.<#= unit.ClassName #>"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+		public static readonly <#= unit.Quantity.ClassName #>Unit <#= unit.Symbol #> = <#= unit.ClassName #>;
+<#
             }
-            #>    
-		<#
+            #><#
 		foreach(var su in unit.SubUnits)
         {
 		#>
-public static readonly <#= unit.Quantity.ClassName #>Unit <#= su.ClassName #> = new <#= unit.Quantity.ClassName #>Unit(<#= su.ConversionFactor #>, "<#= su.Symbol #>");
-		    <#
+
+        /// <summary>
+        /// The <see cref="T:<#= unit.Namespace #>.<#= su.ClassName #>"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+		public static readonly <#= unit.Quantity.ClassName #>Unit <#= su.ClassName #> = new <#= unit.Quantity.ClassName #>Unit(<#= su.ConversionFactor #>, "<#= su.Symbol #>");
+<#
 		    if(su.IsSymbolNameValid)
             {
 		    #>
-public static readonly <#= unit.Quantity.ClassName #>Unit <#= su.Symbol #> = <#= su.ClassName #>;
-            <#
+        /// <summary>
+        /// The <see cref="T:<#= unit.Namespace #>.<#= su.ClassName #>"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+		public static readonly <#= unit.Quantity.ClassName #>Unit <#= su.Symbol #> = <#= su.ClassName #>;
+<#
             }
-            #>    
-        <#
+            #><#
         }
-        #>        
+        #>
+
         private readonly double _conversionFactor;
         private readonly string _symbol;
 
@@ -64,6 +80,9 @@ public static readonly <#= unit.Quantity.ClassName #>Unit <#= su.Symbol #> = <#=
             _symbol = symbol;
         }
 
+		/// <summary>
+        /// The symbol for <see cref="T:<#= unit.Namespace #>.<#= unit.ClassName #>"/>.
+        /// </summary>
         public string Symbol
         {
             get
@@ -78,7 +97,7 @@ public static readonly <#= unit.Quantity.ClassName #>Unit <#= su.Symbol #> = <#=
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:<#= unit.Namespace #>.<#= unit.Quantity.ClassName #> "/>.
+        /// Converts a value to <see cref="T:<#= unit.Namespace #>.<#= unit.ClassName #>"/>.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -88,9 +107,9 @@ public static readonly <#= unit.Quantity.ClassName #>Unit <#= su.Symbol #> = <#=
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:<#= unit.Namespace #>.<#= unit.ClassName #> "/>.
+        /// Converts a value from <#= unit.ClassName #>.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in <#= unit.ClassName #></param>
         /// <returns>The converted value</returns>
         public double <#= Gu.Units.Generator.Methods.FromSiUnit #>(double value)
         {

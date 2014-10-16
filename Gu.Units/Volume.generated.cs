@@ -8,7 +8,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity Volume
+    /// A type for the quantity <see cref="T:Gu.Units.Volume"/>.
     /// </summary>
     [Serializable]
     public partial struct Volume : IComparable<Volume>, IEquatable<Volume>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I3>
@@ -77,7 +77,6 @@
             }
         }
 
-
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Volume"/> from its string representation
         /// </summary>
@@ -103,7 +102,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static Volume From(double value, VolumeUnit unit)
         {
@@ -113,38 +112,37 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Volume FromCubicMetres(double value)
+        /// <param name="cubicMetres">The value in <see cref="T:Gu.Units.CubicMetres"/></param>
+        public static Volume FromCubicMetres(double cubicMetres)
         {
-            return new Volume(value);
-        }
-
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        public static Volume FromLitres(double value)
-        {
-            return From(value, VolumeUnit.Litres);
+            return new Volume(cubicMetres);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Volume FromCubicCentimetres(double value)
+        /// <param name="litres">The value in L</param>
+        public static Volume FromLitres(double litres)
         {
-            return From(value, VolumeUnit.CubicCentimetres);
+            return From(litres, VolumeUnit.Litres);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Volume FromCubicMillimetres(double value)
+        /// <param name="cubicCentimetres">The value in cm³</param>
+        public static Volume FromCubicCentimetres(double cubicCentimetres)
         {
-            return From(value, VolumeUnit.CubicMillimetres);
+            return From(cubicCentimetres, VolumeUnit.CubicCentimetres);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
+        /// </summary>
+        /// <param name="cubicMillimetres">The value in mm³</param>
+        public static Volume FromCubicMillimetres(double cubicMillimetres)
+        {
+            return From(cubicMillimetres, VolumeUnit.CubicMillimetres);
         }
 
         /// <summary>
@@ -424,11 +422,8 @@
         /// <param name="reader">The <see cref="T:System.Xml.XmlReader"/> stream from which the object is deserialized. </param>
         public void ReadXml(XmlReader reader)
         {
-            reader.MoveToContent();
-            var e = (XElement)XNode.ReadFrom(reader);
-
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, x => x.CubicMetres, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
+            XmlExt.SetReadonlyField(ref this, x => x.CubicMetres, reader, "Value");
         }
 
         /// <summary>

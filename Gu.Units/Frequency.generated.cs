@@ -8,7 +8,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity Frequency
+    /// A type for the quantity <see cref="T:Gu.Units.Frequency"/>.
     /// </summary>
     [Serializable]
     public partial struct Frequency : IComparable<Frequency>, IEquatable<Frequency>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, INeg1>
@@ -88,7 +88,6 @@
             }
         }
 
-
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Frequency"/> from its string representation
         /// </summary>
@@ -114,7 +113,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static Frequency From(double value, FrequencyUnit unit)
         {
@@ -124,47 +123,46 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Frequency FromHertz(double value)
+        /// <param name="hertz">The value in <see cref="T:Gu.Units.Hertz"/></param>
+        public static Frequency FromHertz(double hertz)
         {
-            return new Frequency(value);
-        }
-
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        public static Frequency FromMillihertz(double value)
-        {
-            return From(value, FrequencyUnit.Millihertz);
+            return new Frequency(hertz);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Frequency FromKilohertz(double value)
+        /// <param name="millihertz">The value in mHz</param>
+        public static Frequency FromMillihertz(double millihertz)
         {
-            return From(value, FrequencyUnit.Kilohertz);
+            return From(millihertz, FrequencyUnit.Millihertz);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Frequency FromMegahertz(double value)
+        /// <param name="kilohertz">The value in kHz</param>
+        public static Frequency FromKilohertz(double kilohertz)
         {
-            return From(value, FrequencyUnit.Megahertz);
+            return From(kilohertz, FrequencyUnit.Kilohertz);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Frequency FromGigahertz(double value)
+        /// <param name="megahertz">The value in MHz</param>
+        public static Frequency FromMegahertz(double megahertz)
         {
-            return From(value, FrequencyUnit.Gigahertz);
+            return From(megahertz, FrequencyUnit.Megahertz);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
+        /// </summary>
+        /// <param name="gigahertz">The value in GHz</param>
+        public static Frequency FromGigahertz(double gigahertz)
+        {
+            return From(gigahertz, FrequencyUnit.Gigahertz);
         }
 
         /// <summary>

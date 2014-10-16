@@ -8,7 +8,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity Density
+    /// A type for the quantity <see cref="T:Gu.Units.Density"/>.
     /// </summary>
     [Serializable]
     public partial struct Density : IComparable<Density>, IEquatable<Density>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, INeg3>
@@ -66,7 +66,6 @@
             }
         }
 
-
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Density"/> from its string representation
         /// </summary>
@@ -92,7 +91,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Density"/>.
         /// </summary>
-        /// <param name="quantity"></param>
+        /// <param name="value"></param>
         /// <param name="unit"></param>
         public static Density From(double value, DensityUnit unit)
         {
@@ -102,29 +101,28 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Density"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Density FromKilogramsPerCubicMetre(double value)
+        /// <param name="kilogramsPerCubicMetre">The value in <see cref="T:Gu.Units.KilogramsPerCubicMetre"/></param>
+        public static Density FromKilogramsPerCubicMetre(double kilogramsPerCubicMetre)
         {
-            return new Density(value);
-        }
-
-
-        /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Density"/>.
-        /// </summary>
-        /// <param name="quantity"></param>
-        public static Density FromGramsPerCubicMillimetre(double value)
-        {
-            return From(value, DensityUnit.GramsPerCubicMillimetre);
+            return new Density(kilogramsPerCubicMetre);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Density"/>.
         /// </summary>
-        /// <param name="quantity"></param>
-        public static Density FromGramsPerCubicCentimetre(double value)
+        /// <param name="gramsPerCubicMillimetre">The value in g / mm³</param>
+        public static Density FromGramsPerCubicMillimetre(double gramsPerCubicMillimetre)
         {
-            return From(value, DensityUnit.GramsPerCubicCentimetre);
+            return From(gramsPerCubicMillimetre, DensityUnit.GramsPerCubicMillimetre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Density"/>.
+        /// </summary>
+        /// <param name="gramsPerCubicCentimetre">The value in g / cm³</param>
+        public static Density FromGramsPerCubicCentimetre(double gramsPerCubicCentimetre)
+        {
+            return From(gramsPerCubicCentimetre, DensityUnit.GramsPerCubicCentimetre);
         }
 
         /// <summary>
