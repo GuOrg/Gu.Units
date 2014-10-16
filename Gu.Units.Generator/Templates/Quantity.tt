@@ -122,9 +122,9 @@ namespace <#= quantity.Namespace #>
         /// </summary>
         /// <param name="quantity"></param>
         /// <param name="unit"></param>
-        public static <#= quantity.ClassName #> From<T>(double quantity, T unit) where T : I<#= quantity.ClassName #>Unit
+        public static <#= quantity.ClassName #> From(double value, <#= quantity.ClassName #>Unit unit)
         {
-            return new <#= quantity.ClassName #>(UnitConverter.ConvertFrom(quantity, unit));
+            return new <#= quantity.ClassName #>(unit.<#= Methods.ToSiUnit #>(value));
         }
 
         /// <summary>

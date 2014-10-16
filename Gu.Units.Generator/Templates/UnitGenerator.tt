@@ -29,6 +29,7 @@ foreach (var unit in settings.SiUnits)
 	fileManager.StartNewFile(unit.Quantity.ClassName + "Unit.generated.txt", Settings.ProjectName, Settings.FolderName, null);
 	var output = paramTmpl.TransformText("Unit.tt", session);
 	this.Write(output);
+    //this.WriteLine();
 }
 //session["UnitMetaData"] = null;
 fileManager.Process();
