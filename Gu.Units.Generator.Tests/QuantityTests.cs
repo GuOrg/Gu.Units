@@ -9,14 +9,19 @@
         private const string Namespace ="Gu.Units";
         private SiUnit _metres;
         private SiUnit _seconds;
+        private Quantity _length;
+        private Quantity _time;
+
         [SetUp]
         public void SetUp()
         {
-            _metres = new SiUnit("", "Metres", "m") { QuantityName = "Length" };
-            _seconds = new SiUnit("", "Seconds", "s");
+            _metres = new SiUnit(Namespace, "Metres", "m");
+            _seconds = new SiUnit(Namespace, "Seconds", "s");
+            _length = new Quantity(Namespace, "Length", _metres);
+            _time = new Quantity(Namespace, "Time", _seconds);
         }
 
-        [TestCase("Length", "Metres", "IQuantity<Metres, I1>")]
+        [TestCase("Length", "Metres", "IQuantity<LengthUnit, I1>")]
         public void BaseQuantityInterface(string quantityName, string unitName, string expected)
         {
             var quantity = new Quantity(Namespace, quantityName, _metres);
@@ -24,19 +29,19 @@
             Assert.AreEqual(expected, @interface);
         }
 
-        [TestCase(2, "IQuantity<Metres, I2>")]
-        [TestCase(3, "IQuantity<Metres, I3>")]
-        [TestCase(-2, "IQuantity<Metres, INeg2>")]
+        [TestCase(2, "IQuantity<LengthUnit, I2>")]
+        [TestCase(3, "IQuantity<LengthUnit, I3>")]
+        [TestCase(-2, "IQuantity<LengthUnit, INeg2>")]
         public void PowerQuantityInterface(int power, string expected)
         {
             var unitAndPower = new UnitAndPower(_metres, power);
-            var derivedUnit = new DerivedUnit(Namespace, "", "", unitAndPower);
-            var quantity = new Quantity("", "", derivedUnit);
+            var derivedUnit = new DerivedUnit(Namespace, "sdf", "ssf", unitAndPower);
+            var quantity = new Quantity(Namespace, "Qty", derivedUnit);
             var @interface = quantity.Interface;
             Assert.AreEqual(expected, @interface);
         }
 
-        [TestCase(1, -1, "IQuantity<Metres, I1, Seconds, INeg1>")]
+        [TestCase(1, -1, "IQuantity<LengthUnit, I1, TimeUnit, INeg1>")]
         public void ComposedQuantityInterface(int p1, int p2, string expected)
         {
             var unitAndPower1 = new UnitAndPower(_metres, p1);

@@ -23,6 +23,7 @@
             : base(@namespace, className)
         {
             _unit = unit;
+            _unit.Quantity = this;
         }
 
         public static Quantity Empty
