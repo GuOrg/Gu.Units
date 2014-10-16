@@ -45,7 +45,6 @@ namespace Gu.Units
             }
         }
 
-
         /// <summary>
         /// The quantity in partsPerMillion
         /// </summary>
@@ -78,6 +77,7 @@ namespace Gu.Units
                 return FractionUnit.Percents.FromSiUnit(Fractions);
             }
         }
+
 
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Fraction"/> from its string representation

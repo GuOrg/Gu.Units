@@ -45,7 +45,6 @@ namespace Gu.Units
             }
         }
 
-
         /// <summary>
         /// The quantity in nanometres
         /// </summary>
@@ -111,6 +110,7 @@ namespace Gu.Units
                 return LengthUnit.Kilometres.FromSiUnit(Metres);
             }
         }
+
 
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Length"/> from its string representation

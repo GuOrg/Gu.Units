@@ -6,12 +6,12 @@ namespace Gu.Units
     [Serializable]
     public struct DensityUnit : IUnit
     {
-        public static readonly DensityUnit KilogramsPerCubicMetre = new DensityUnit(1.0, "ρ");
-        public static readonly DensityUnit ρ = KilogramsPerCubicMetre;
+        public static readonly DensityUnit KilogramsPerCubicMetre = new DensityUnit(1.0, "kg/m³");
 
-        public static readonly DensityUnit GramsPerCubicMillimetre = new DensityUnit(1000000, "g / mm^3");
+        public static readonly DensityUnit GramsPerCubicMillimetre = new DensityUnit(1000000, "g / mm³");
 
-        public static readonly DensityUnit GramsPerCubicCentimetre = new DensityUnit(1000, "g / cm^3");
+        public static readonly DensityUnit GramsPerCubicCentimetre = new DensityUnit(1000, "g / cm³");
+
 
         private readonly double _conversionFactor;
         private readonly string _symbol;

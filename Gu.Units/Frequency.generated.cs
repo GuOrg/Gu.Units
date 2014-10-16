@@ -45,7 +45,6 @@ namespace Gu.Units
             }
         }
 
-
         /// <summary>
         /// The quantity in kiloherts
         /// </summary>
@@ -89,6 +88,7 @@ namespace Gu.Units
                 return FrequencyUnit.Milliherts.FromSiUnit(Herts);
             }
         }
+
 
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Frequency"/> from its string representation

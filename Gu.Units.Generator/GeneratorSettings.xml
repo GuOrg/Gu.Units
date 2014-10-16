@@ -431,32 +431,32 @@
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
-      <ClassName>Herts</ClassName>
+      <ClassName>Hertz</ClassName>
       <Symbol>Hz</Symbol>
       <QuantityName>Frequency</QuantityName>
       <SubUnits>
         <SubUnit>
-          <ClassName>Kiloherts</ClassName>
+          <ClassName>Millihertz</ClassName>
+          <Symbol>mHz</Symbol>
+          <ConversionFactor>0.001</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Kilohertz</ClassName>
           <Symbol>kHz</Symbol>
           <ConversionFactor>1000</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
-          <ClassName>Megaherts</ClassName>
+          <ClassName>Megahertz</ClassName>
           <Symbol>MHz</Symbol>
           <ConversionFactor>1000000</ConversionFactor>
           <SubUnits />
         </SubUnit>
         <SubUnit>
-          <ClassName>Gigaherts</ClassName>
+          <ClassName>Gigahertz</ClassName>
           <Symbol>GHz</Symbol>
           <ConversionFactor>1000000000</ConversionFactor>
-          <SubUnits />
-        </SubUnit>
-        <SubUnit>
-          <ClassName>Milliherts</ClassName>
-          <Symbol>mHz</Symbol>
-          <ConversionFactor>0.001</ConversionFactor>
           <SubUnits />
         </SubUnit>
       </SubUnits>

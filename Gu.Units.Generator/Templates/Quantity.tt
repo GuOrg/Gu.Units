@@ -75,7 +75,6 @@ namespace <#= quantity.Namespace #>
 		foreach(var unit in quantity.Unit.SubUnits)
 		{
 		#>
-
         /// <summary>
         /// The quantity in <#= unit.ParameterName #>
         /// </summary>
@@ -86,6 +85,7 @@ namespace <#= quantity.Namespace #>
                 return <#= quantity.ClassName #>Unit.<#= unit.ClassName #>.<#= Methods.FromSiUnit #>(<#= quantity.Unit.ClassName #>);
             }
         }
+
 		<#
 		} 
 		#>

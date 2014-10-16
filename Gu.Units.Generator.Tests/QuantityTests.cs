@@ -1,9 +1,12 @@
 ﻿namespace Gu.Units.Generator.Tests
 {
+    using System.Xml;
+
     using NUnit.Framework;
 
     public class QuantityTests
     {
+        private const string Namespace ="Gu.Units";
         private SiUnit _metres;
         private SiUnit _seconds;
         [SetUp]
@@ -16,7 +19,7 @@
         [TestCase("Length", "Metres", "IQuantity<Metres, I1>")]
         public void BaseQuantityInterface(string quantityName, string unitName, string expected)
         {
-            var quantity = new Quantity("Length", quantityName, _metres);
+            var quantity = new Quantity(Namespace, quantityName, _metres);
             var @interface = quantity.Interface;
             Assert.AreEqual(expected, @interface);
         }
@@ -27,7 +30,7 @@
         public void PowerQuantityInterface(int power, string expected)
         {
             var unitAndPower = new UnitAndPower(_metres, power);
-            var derivedUnit = new DerivedUnit("", "", "", unitAndPower);
+            var derivedUnit = new DerivedUnit(Namespace, "", "", unitAndPower);
             var quantity = new Quantity("", "", derivedUnit);
             var @interface = quantity.Interface;
             Assert.AreEqual(expected, @interface);

@@ -45,7 +45,6 @@ namespace Gu.Units
             }
         }
 
-
         /// <summary>
         /// The quantity in litres
         /// </summary>
@@ -78,6 +77,7 @@ namespace Gu.Units
                 return VolumeUnit.CubicMillimetres.FromSiUnit(CubicMetres);
             }
         }
+
 
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Volume"/> from its string representation

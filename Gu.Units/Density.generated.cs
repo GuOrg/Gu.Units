@@ -45,7 +45,6 @@ namespace Gu.Units
             }
         }
 
-
         /// <summary>
         /// The quantity in gramsPerCubicMillimetre
         /// </summary>
@@ -67,6 +66,7 @@ namespace Gu.Units
                 return DensityUnit.GramsPerCubicCentimetre.FromSiUnit(KilogramsPerCubicMetre);
             }
         }
+
 
         /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Density"/> from its string representation
