@@ -1,6 +1,7 @@
 ﻿namespace Gu.Units.Generator
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
     using System.Xml.Serialization;
@@ -32,6 +33,8 @@
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public static readonly IEqualityComparer<UnitAndPower> Comparer = new UnitNamePowerEqualityComparer();
 
         public static UnitAndPower Empty
         {
@@ -145,5 +148,37 @@
                 return ((_unit != null ? _unit.GetHashCode() : 0) * 397) ^ _power;
             }
         }
+
+        private sealed class UnitNamePowerEqualityComparer : IEqualityComparer<UnitAndPower>
+        {
+            public bool Equals(UnitAndPower x, UnitAndPower y)
+            {
+                if (ReferenceEquals(x, y))
+                {
+                    return true;
+                }
+                if (ReferenceEquals(x, null))
+                {
+                    return false;
+                }
+                if (ReferenceEquals(y, null))
+                {
+                    return false;
+                }
+                if (x.GetType() != y.GetType())
+                {
+                    return false;
+                }
+                return string.Equals(x.UnitName, y.UnitName) && x._power == y._power;
+            }
+            public int GetHashCode(UnitAndPower obj)
+            {
+                unchecked
+                {
+                    return ((obj._unitName != null ? obj._unitName.GetHashCode() : 0) * 397) ^ obj._power;
+                }
+            }
+        }
+
     }
 }

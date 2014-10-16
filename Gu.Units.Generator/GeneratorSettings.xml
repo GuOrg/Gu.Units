@@ -468,6 +468,37 @@
       </Parts>
       <ExplicitName>false</ExplicitName>
     </DerivedUnit>
+    <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
+      <ClassName>MetresPerSecondSquared</ClassName>
+      <Symbol>m/s²</Symbol>
+      <QuantityName>Acceleration</QuantityName>
+      <SubUnits>
+        <SubUnit>
+          <ClassName>MillimetresPerSecondSquared</ClassName>
+          <Symbol>mm / s^2</Symbol>
+          <ConversionFactor>1E-06</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>CentimetresPerSecondSquared</ClassName>
+          <Symbol>cm / s^2</Symbol>
+          <ConversionFactor>0.0001</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Metres</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Seconds</UnitName>
+          <Power>-2</Power>
+        </UnitAndPower>
+      </Parts>
+      <ExplicitName>false</ExplicitName>
+    </DerivedUnit>
   </DerivedUnits>
   <SiUnits>
     <SiUnit>

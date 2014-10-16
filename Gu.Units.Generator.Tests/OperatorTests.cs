@@ -1,35 +1,25 @@
 ﻿namespace Gu.Units.Generator.Tests
 {
-    using System.Linq;
     using NUnit.Framework;
 
     public class OperatorTests
     {
-        private const string Namespace = "Gu.Units";
-        private SiUnit _metres;
-        private SiUnit _seconds;
+        private MockSettings _settings;
         private Quantity _length;
-        private Quantity _time;
         private Quantity _speed;
-        private Quantity[] _quantities;
-        private DerivedUnit _metresPerSecond;
+        private Quantity _time;
+        private Quantity _area;
+        private Quantity _volume;
+
         [SetUp]
         public void SetUp()
         {
-            _metres = (SiUnit)UnitBase.AllUnitsStatic.SingleOrDefault(x => x.ClassName == "Metres") ??
-                            new SiUnit(Namespace, "Metres", "m");
-            _seconds = (SiUnit)UnitBase.AllUnitsStatic.SingleOrDefault(x => x.ClassName == "Seconds") ??
-                            new SiUnit(Namespace, "Seconds", "s");
-            _length = new Quantity(Namespace, "Length", _metres);
-            _time = new Quantity(Namespace, "Time", _seconds);
-            _metresPerSecond = (DerivedUnit)UnitBase.AllUnitsStatic.SingleOrDefault(x => x.ClassName == "MetresPerSecond") ??
-                                    new DerivedUnit(Namespace,
-                                                    "MetresPerSecond",
-                                                    "m/s",
-                                                    new UnitAndPower(_metres, 1),
-                                                    new UnitAndPower(_seconds, -1));
-            _speed = new Quantity(Namespace, "Speed", _metresPerSecond);
-            _quantities = new[] { _length, _time, _speed };
+            _settings = new MockSettings();
+            _length = _settings.Length;
+            _speed = _settings.Speed;
+            _time = _settings.Time;
+            _area = _settings.Area;
+            _volume = _settings.Volume;
         }
 
         [Test]
@@ -50,6 +40,36 @@
             Assert.AreEqual(_speed, @operator.Left);
             Assert.AreEqual(_time, @operator.Right);
             Assert.AreEqual(_length, @operator.Result);
+        }
+
+        [Test]
+        public void LengthArea()
+        {
+            var @operator = new OperatorOverload(_length, _area);
+            Assert.AreEqual(OperatorOverload.Multiply, @operator.Operator);
+            Assert.AreEqual(_length, @operator.Left);
+            Assert.AreEqual(_length, @operator.Right);
+            Assert.AreEqual(_area, @operator.Result);
+        }
+
+        [Test]
+        public void AreaLength()
+        {
+            var @operator = new OperatorOverload(_area, _length);
+            Assert.AreEqual(OperatorOverload.Divide, @operator.Operator);
+            Assert.AreEqual(_area, @operator.Left);
+            Assert.AreEqual(_length, @operator.Right);
+            Assert.AreEqual(_length, @operator.Result);
+        }
+
+        [Test]
+        public void LengthVolume()
+        {
+            var @operator = new OperatorOverload( _length,_volume);
+            Assert.AreEqual(OperatorOverload.Multiply, @operator.Operator);
+            Assert.AreEqual(_length, @operator.Left);
+            Assert.AreEqual(_area, @operator.Right);
+            Assert.AreEqual(_volume, @operator.Result);
         }
     }
 }

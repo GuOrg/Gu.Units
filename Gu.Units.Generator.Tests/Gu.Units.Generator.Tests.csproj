@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MockSettings.cs" />
     <Compile Include="OperatorTests.cs" />
     <Compile Include="QuantityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
