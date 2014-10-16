@@ -482,11 +482,8 @@
         /// <param name="reader">The <see cref="T:System.Xml.XmlReader"/> stream from which the object is deserialized. </param>
         public void ReadXml(XmlReader reader)
         {
-            reader.MoveToContent();
-            var e = (XElement)XNode.ReadFrom(reader);
-
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, x => x.Watts, XmlConvert.ToDouble(XmlExt.ReadAttributeOrElementOrDefault(e, "Value")));
+            XmlExt.SetReadonlyField(ref this, x => x.Watts, reader, "Value");
         }
 
         /// <summary>

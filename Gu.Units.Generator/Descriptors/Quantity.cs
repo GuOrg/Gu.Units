@@ -23,7 +23,10 @@
             : base(@namespace, className)
         {
             _unit = unit;
-            _unit.Quantity = this;
+            if (_unit != null)
+            {
+                _unit.Quantity = this;
+            }
         }
 
         public static Quantity Empty
@@ -84,7 +87,10 @@
                     return;
                 }
                 _unit = value;
-                _unit.Quantity = this;
+                if (_unit != null)
+                {
+                    _unit.Quantity = this;
+                }
                 this.OnPropertyChanged();
                 this.OnPropertyChanged("UnitName");
                 this.OnPropertyChanged("Interface");

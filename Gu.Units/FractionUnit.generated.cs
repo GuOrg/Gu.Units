@@ -57,12 +57,6 @@
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="left"></param>
-        /// <param name="right"></param>
-        /// <returns></returns>
         public static Fraction operator *(double left, FractionUnit right)
         {
             return Fraction.From(left, right);
