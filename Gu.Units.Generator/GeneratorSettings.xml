@@ -187,7 +187,20 @@
       <ClassName>KilogramsPerCubicMetre</ClassName>
       <Symbol>ρ</Symbol>
       <QuantityName>Density</QuantityName>
-      <SubUnits />
+      <SubUnits>
+        <SubUnit>
+          <ClassName>GramsPerCubicMillimetre</ClassName>
+          <Symbol>g / mm^3</Symbol>
+          <ConversionFactor>999999.99999999988</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>GramsPerCubicCentimetre</ClassName>
+          <Symbol>g / cm^3</Symbol>
+          <ConversionFactor>999.99999999999989</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
       <Parts>
         <UnitAndPower>
           <UnitName>Kilograms</UnitName>
@@ -394,14 +407,7 @@
       <ClassName>RadiansPerSecond</ClassName>
       <Symbol>rad/s</Symbol>
       <QuantityName>AngularVelocity</QuantityName>
-      <SubUnits>
-        <SubUnit>
-          <ClassName>Rpm</ClassName>
-          <Symbol>rpm</Symbol>
-          <ConversionFactor>0</ConversionFactor>
-          <SubUnits />
-        </SubUnit>
-      </SubUnits>
+      <SubUnits />
       <Parts>
         <UnitAndPower>
           <UnitName>Radians</UnitName>

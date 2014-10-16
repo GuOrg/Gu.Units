@@ -30,6 +30,10 @@
         {
             get
             {
+                if (_unit == null)
+                {
+                    return false;
+                }
                 return _unit.SubUnits.Any(x => x.ConversionFactor == _temp.ConversionFactor && x.Symbol == _temp.Symbol);
             }
             set
