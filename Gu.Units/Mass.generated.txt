@@ -12,7 +12,7 @@ namespace Gu.Units
     /// An Length
     /// </summary>
     [Serializable]
-	public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IQuantity<Metres, I1>
+	public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1>
 	{
 	    /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Metres"/>.
@@ -29,7 +29,7 @@ namespace Gu.Units
         /// </summary>
         /// <param name="metres"></param>
         /// <param name="unit"><see cref="T:Gu.Units.Metres"/>.</param>
-        public Length(double metres, Metres unit)
+        public Length(double metres)
         {
             Metres = metres;
         }
@@ -39,9 +39,9 @@ namespace Gu.Units
         /// </summary>
         /// <param name="quantity"></param>
         /// <param name="unit"></param>
-        public Length(double quantity, Centimetres unit)
+        public Length(double quantity, LengthUnit unit)
         {
-            Metres = UnitConverter.ConvertFrom(quantity, unit);
+            Metres = unit.ToSiUnit(quantity);
         }
 		
         /// <summary>

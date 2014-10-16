@@ -12,7 +12,7 @@ namespace Gu.Units
     /// An Length
     /// </summary>
     [Serializable]
-	public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IQuantity<Metres, I1>
+	public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1>
 	{
 	    /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Metres"/>.
