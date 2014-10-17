@@ -165,7 +165,7 @@
                 {
                     if (up.Power > 0)
                     {
-                        var left = up.Unit.Quantity;
+                        //var left = up.Unit.Quantity;
                         //left.OperatorOverloads.Add(new OperatorOverload(left, quantity));
                         //quantity.OperatorOverloads.Add(new OperatorOverload(quantity, left));
                     }

@@ -6,7 +6,9 @@
     using System.Xml.Serialization;
 
     using Gu.Units.Generator.WpfStuff;
-
+    /// <summary>
+    /// http://en.wikipedia.org/wiki/SI_derived_unit
+    /// </summary>
     [Serializable]
     public class DerivedUnit : UnitBase
     {

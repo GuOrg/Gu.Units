@@ -1,11 +1,13 @@
 ﻿namespace Gu.Units.Generator
 {
     using System;
+    using System.CodeDom;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Linq;
+    using System.Runtime.Remoting.Channels;
     using System.Text;
     using System.Xml.Serialization;
 
@@ -65,44 +67,13 @@
         [XmlIgnore]
         public string Expression
         {
-            get
-            {
-                if (!this.Any())
-                {
-                    return "ERROR No Units";
-                }
-                var sb = new StringBuilder();
-                UnitAndPower previous = null;
-                foreach (var unitAndPower in this)
-                {
-                    if (previous != null)
-                    {
-                        if (previous.Power > 0 && unitAndPower.Power < 0)
-                        {
-                            sb.Append(" / ");
-                        }
-                        else
-                        {
-                            sb.Append("⋅");
-                        }
-                    }
-                    else
-                    {
-                        if (unitAndPower.Power < 0)
-                        {
-                            sb.Append("1 / ");
-                        }
-                    }
-                    sb.Append(unitAndPower.Unit == null ? unitAndPower.UnitName : unitAndPower.Unit.Symbol);
-                    if (Math.Abs(unitAndPower.Power) > 1)
-                    {
-                        sb.Append("^")
-                          .Append(Math.Abs(unitAndPower.Power));
-                    }
-                    previous = unitAndPower;
-                }
-                return sb.ToString();
-            }
+            get { return CreateExpression(this.AsEnumerable()); }
+        }
+
+        [XmlIgnore]
+        public string BaseUnitExpression
+        {
+            get { return CreateExpression(Flattened); }
         }
 
         [XmlIgnore]
@@ -179,6 +150,55 @@
         private void OnPartPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
         {
             this.OnPropertyChanged(new PropertyChangedEventArgs("Expression"));
+        }
+
+        private string CreateExpression(IEnumerable<UnitAndPower> ups)
+        {
+            if (!this.Any())
+            {
+                return "ERROR No Units";
+            }
+            var sb = new StringBuilder();
+            UnitAndPower previous = null;
+            foreach (var unitAndPower in ups)
+            {
+                if (previous != null)
+                {
+                    if (previous.Power > 0 && unitAndPower.Power < 0)
+                    {
+                        sb.Append(" / ");
+                    }
+                    else
+                    {
+                        sb.Append("⋅");
+                    }
+                }
+                else
+                {
+                    if (unitAndPower.Power < 0)
+                    {
+                        sb.Append("1 / ");
+                    }
+                }
+                sb.Append(unitAndPower.Unit == null ? unitAndPower.UnitName : unitAndPower.Unit.Symbol);
+                switch (Math.Abs(unitAndPower.Power))
+                {
+                    case 1:
+                        break;
+                    case 2:
+                        sb.Append("²");
+                        break;
+                    case 3:
+                        sb.Append("³");
+                        break;
+                    default:
+                        sb.Append("^")
+                          .Append(Math.Abs(unitAndPower.Power));
+                        break;
+                }
+                previous = unitAndPower;
+            }
+            return sb.ToString();
         }
     }
 }

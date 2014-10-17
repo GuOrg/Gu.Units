@@ -17,14 +17,16 @@
             {
                 var right = Subtract(derivedUnit.Parts.Flattened, left).ToArray();
                 Right = Find(right.ToArray());
-                Operator = right.Single().Power > 0 ? Multiply : Divide;
+                var power = Power(Right, right);
+                Operator = power > 0 ? Multiply : Divide;
             }
             else
             {
                 var unit = Left.Unit as DerivedUnit;
                 var right = Subtract(unit.Parts.Flattened, result).ToArray();
                 Right = Find(right);
-                Operator = right.Single().Power < 0 ? Multiply : Divide;
+                var power = Power(Right, right);
+                Operator = power < 0 ? Multiply : Divide;
             }
             if (Right == null)
             {
@@ -63,7 +65,7 @@
         private Quantity Find(params UnitAndPower[] parts)
         {
             IUnit unit = null;
-            if (parts.Length == 1 && parts.Single().Power == 1)
+            if (parts.Length == 1 && Math.Abs(parts.Single().Power) == 1)
             {
                 var part = parts.Single();
                 unit = UnitBase.AllUnitsStatic.OfType<SiUnit>().SingleOrDefault(u => u.ClassName == part.Unit.ClassName);
@@ -72,12 +74,46 @@
             {
                 var unitAndPowers = parts.OrderBy(x => x.UnitName).ToArray();
                 unit = UnitBase.AllUnitsStatic.OfType<DerivedUnit>().SingleOrDefault(u => u.Parts.OrderBy(x => x.UnitName).SequenceEqual(unitAndPowers, UnitAndPower.Comparer));
+                if (unit == null)
+                {
+                    unitAndPowers = unitAndPowers.Select(x => new UnitAndPower(x.Unit, -1 * x.Power)).ToArray();
+                    unit = UnitBase.AllUnitsStatic.OfType<DerivedUnit>().SingleOrDefault(u => u.Parts.OrderBy(x => x.UnitName).SequenceEqual(unitAndPowers, UnitAndPower.Comparer));
+                }
             }
             if (unit == null)
             {
                 return null;
             }
             return unit.Quantity;
+        }
+
+        public int Power(Quantity left, params UnitAndPower[] right)
+        {
+            SiUnit siUnit = left.Unit as SiUnit;
+            if (siUnit != null)
+            {
+                var unitAndPower = right.Single();
+                if (Math.Abs(unitAndPower.Power) != 1)
+                {
+                    throw new ArgumentException();
+                }
+                return unitAndPower.Power;
+            }
+            else
+            {
+                DerivedUnit derivedUnit = (DerivedUnit)left.Unit;
+                var unitAndPowers = derivedUnit.Parts.OrderBy(x => x.UnitName).ToArray();
+                var andPowers = right.OrderBy(x => x.UnitName).ToArray();
+                if (unitAndPowers.Select(x => x.Power).SequenceEqual(andPowers.Select(x => x.Power)))
+                {
+                    return 1;
+                }
+                if (unitAndPowers.Select(x => x.Power).SequenceEqual(andPowers.Select(x =>-1* x.Power)))
+                {
+                    return -1;
+                }
+                throw new ArgumentException("message");
+            }
         }
     }
 }
