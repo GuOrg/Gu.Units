@@ -17,26 +17,31 @@
             CollectionAssert.AreEquivalent(data.Units, parts);
             var convertTo = converter.ConvertTo(null, null, parts, typeof(string));
             Assert.AreEqual(data.Formatted, convertTo);
-            
-            var uiName = parts.Expression;
-            Assert.AreEqual(data.Value.Replace(" ", ""), uiName.Replace('⋅', '*').Replace(" ", ""));
+            Assert.AreEqual(data.Formatted, parts.BaseUnitExpression);
         }
     }
 
     public class UnitPartsConverterSource : IEnumerable
     {
-        public static readonly SiUnit Metres = new SiUnit("", "Metres", "m");
-
-        public static readonly SiUnit Kilograms = new SiUnit("", "Kilograms", "kg");
-
-        public static readonly SiUnit Seconds = new SiUnit("", "Seconds", "s");
+        public readonly SiUnit Metres;
+        public readonly SiUnit Kilograms;
+        public readonly SiUnit Seconds;
 
         //public static readonly DerivedUnit Joules = new DerivedUnit("", "Joules", "J", new UnitAndPower(Kilograms, 1), new UnitAndPower(Metres, 2), new UnitAndPower(Seconds, -2));
 
-        private readonly List<Data> _datas = new List<Data>
+        private readonly List<Data> _datas;
+
+        public UnitPartsConverterSource()
+        {
+            UnitBase.AllUnitsStatic.Clear();
+            Metres = new SiUnit("", "Metres", "m");
+            Kilograms = new SiUnit("", "Kilograms", "kg");
+            Seconds = new SiUnit("", "Seconds", "s");
+            _datas = new List<Data>
                                         {
                                             new Data("m^2","m²", new UnitAndPower(Metres, 2)),
                                             new Data("m²","m²", new UnitAndPower(Metres, 2)),
+                                            new Data("m³","m³", new UnitAndPower(Metres, 3)),
                                             new Data("kg⋅m/s²","kg⋅m⋅s⁻²",new UnitAndPower(Kilograms, 1),new UnitAndPower(Metres, 1),new UnitAndPower(Seconds, -2)),
                                             new Data("kg⋅m⋅s⁻²","kg⋅m⋅s⁻²",new UnitAndPower(Kilograms, 1),new UnitAndPower(Metres, 1),new UnitAndPower(Seconds, -2)),
                                             new Data("kg*m/s²","kg⋅m⋅s⁻²",new UnitAndPower(Kilograms, 1),new UnitAndPower(Metres, 1),new UnitAndPower(Seconds, -2)),
@@ -49,6 +54,8 @@
                                             new Data("s^-1","s⁻¹", new UnitAndPower(Seconds,-1))
                                             //new Data("J/s",new UnitAndPower(Joules, 1),new UnitAndPower(Seconds, -1)),
                                         };
+
+        }
         public IEnumerator GetEnumerator()
         {
             return _datas.GetEnumerator();

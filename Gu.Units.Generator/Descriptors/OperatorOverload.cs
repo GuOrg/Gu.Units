@@ -39,35 +39,19 @@
             var derivedUnit = result.Unit as DerivedUnit;
             if (derivedUnit != null)
             {
-                var right = Subtract(derivedUnit.Parts.Flattened, left).ToArray();
-                return Find(right.ToArray());
+                var right = UnitParts.CreateFrom(result) / UnitParts.CreateFrom(left);
+                return Find(right.Flattened.ToArray());
             }
             else
             {
-                var unit = left.Unit as DerivedUnit;
-                var right = Subtract(unit.Parts.Flattened, result).ToArray();
-                return Find(right);
+                var right = UnitParts.CreateFrom(left) / UnitParts.CreateFrom(result);
+                return Find(right.Flattened.ToArray());
             }
         }
 
         public override string ToString()
         {
             return string.Format("{0} {1} {2} = {3}", Left.ClassName, Operator, Right.ClassName, Result.ClassName);
-        }
-
-        private static IEnumerable<UnitAndPower> Subtract(IEnumerable<UnitAndPower> parts, Quantity minuend)
-        {
-            var result = parts.ToList();
-            var unitAndPower = result.Single(x => x.Unit == minuend.Unit);
-            if (unitAndPower.Power == 1)
-            {
-                result.Remove(unitAndPower);
-            }
-            else
-            {
-                unitAndPower.Power--;
-            }
-            return result;
         }
 
         private static Quantity Find(params UnitAndPower[] parts)
@@ -105,8 +89,24 @@
         /// <returns></returns>
         private int FindPower(Quantity left, Quantity right, Quantity result)
         {
-            throw new NotImplementedException("message");
-
+            var leftParts = UnitParts.CreateFrom(left);
+            var rightParts = UnitParts.CreateFrom(right);
+            var resultParts = UnitParts.CreateFrom(result);
+            if (leftParts * rightParts == resultParts)
+            {
+                return 1;
+            }
+            if (leftParts / rightParts == resultParts)
+            {
+                return -1;
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Cound not find power for {0}*{1}^x == {2}",
+                    left.ClassName,
+                    right.ClassName,
+                    result.ClassName));
+            }
             //SiUnit siUnit = left.Unit as SiUnit;
             //if (siUnit != null)
             //{
@@ -126,7 +126,7 @@
             //    {
             //        return 1;
             //    }
-            //    if (unitAndPowers.Select(x => x.Power).SequenceEqual(andPowers.Select(x =>-1* x.Power)))
+            //    if (unitAndPowers.Select(x => x.Power).SequenceEqual(andPowers.Select(x => -1 * x.Power)))
             //    {
             //        return -1;
             //    }

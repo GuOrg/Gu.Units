@@ -74,7 +74,7 @@
                     }
                 }
             }
-            throw new NotImplementedException("message");
+            Assert.Inconclusive();
         }
     }
 }
