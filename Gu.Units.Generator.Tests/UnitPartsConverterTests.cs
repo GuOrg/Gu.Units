@@ -33,9 +33,15 @@
         private readonly List<Data> _datas = new List<Data>
                                         {
                                             new Data("m^2", new UnitAndPower(Metres, 2)),
-                                            new Data("kg*m/s^2",new UnitAndPower(Kilograms, 1),new UnitAndPower(Metres, 1),new UnitAndPower(Seconds, -2)),
+                                            new Data("m²", new UnitAndPower(Metres, 2)),
+                                            new Data("kg⋅m/s²",new UnitAndPower(Kilograms, 1),new UnitAndPower(Metres, 1),new UnitAndPower(Seconds, -2)),
+                                            new Data("kg⋅m⋅s⁻²",new UnitAndPower(Kilograms, 1),new UnitAndPower(Metres, 1),new UnitAndPower(Seconds, -2)),
+                                            new Data("kg*m/s²",new UnitAndPower(Kilograms, 1),new UnitAndPower(Metres, 1),new UnitAndPower(Seconds, -2)),
                                             new Data("m/s", new UnitAndPower(Metres,1), new UnitAndPower(Seconds,-1)),
-                                            new Data("1/s", new UnitAndPower(Seconds,-1))
+                                            new Data("m⋅s^-1", new UnitAndPower(Metres,1), new UnitAndPower(Seconds,-1)),
+                                            new Data("m⋅s⁻¹", new UnitAndPower(Metres,1), new UnitAndPower(Seconds,-1)),
+                                            new Data("1/s", new UnitAndPower(Seconds,-1)),
+                                            new Data("s^-1", new UnitAndPower(Seconds,-1))
                                             //new Data("J/s",new UnitAndPower(Joules, 1),new UnitAndPower(Seconds, -1)),
                                         };
         public IEnumerator GetEnumerator()
