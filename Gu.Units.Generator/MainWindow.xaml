@@ -60,6 +60,9 @@
                                 <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
                                 <DataGridTextColumn Binding="{Binding Parts}" Header="Parts" />
                                 <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
+                                <DataGridTextColumn Binding="{Binding Parts.BaseUnitExpression}"
+                                                    Header="In base units"
+                                                    IsReadOnly="True" />
                                 <DataGridTextColumn Binding="{Binding Quantity.Interface}"
                                                     Header="Interface"
                                                     IsReadOnly="True" />

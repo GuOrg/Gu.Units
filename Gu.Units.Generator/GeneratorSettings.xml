@@ -499,6 +499,146 @@
       </Parts>
       <ExplicitName>false</ExplicitName>
     </DerivedUnit>
+    <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
+      <ClassName>NewtonMetres</ClassName>
+      <Symbol>N⋅m</Symbol>
+      <QuantityName>Torque</QuantityName>
+      <SubUnits />
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Newtons</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Metres</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+      </Parts>
+      <ExplicitName>false</ExplicitName>
+    </DerivedUnit>
+    <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
+      <ClassName>NewtonsPerMetre</ClassName>
+      <Symbol>N/m</Symbol>
+      <QuantityName>Stiffness</QuantityName>
+      <SubUnits />
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Newtons</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Metres</UnitName>
+          <Power>-1</Power>
+        </UnitAndPower>
+      </Parts>
+      <ExplicitName>false</ExplicitName>
+    </DerivedUnit>
+    <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
+      <ClassName>CubicMetresPerSecond</ClassName>
+      <Symbol>m³ / s</Symbol>
+      <QuantityName>VolumetricFlow</QuantityName>
+      <SubUnits />
+      <Parts>
+        <UnitAndPower>
+          <UnitName>CubicMetres</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Seconds</UnitName>
+          <Power>-1</Power>
+        </UnitAndPower>
+      </Parts>
+      <ExplicitName>false</ExplicitName>
+    </DerivedUnit>
+    <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
+      <ClassName>Volts</ClassName>
+      <Symbol>V</Symbol>
+      <QuantityName>Voltage</QuantityName>
+      <SubUnits>
+        <SubUnit>
+          <ClassName>Millivolts</ClassName>
+          <Symbol>mV</Symbol>
+          <ConversionFactor>0.001</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Kilovolts</ClassName>
+          <Symbol>kV</Symbol>
+          <ConversionFactor>1000</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Megavolts</ClassName>
+          <Symbol>MV</Symbol>
+          <ConversionFactor>1000000</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Microvolts</ClassName>
+          <Symbol>µV</Symbol>
+          <ConversionFactor>1E-06</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Watts</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Amperes</UnitName>
+          <Power>-1</Power>
+        </UnitAndPower>
+      </Parts>
+      <ExplicitName>false</ExplicitName>
+    </DerivedUnit>
+    <DerivedUnit>
+      <Namespace>Gu.Units</Namespace>
+      <ClassName>Ohm</ClassName>
+      <Symbol>Ω</Symbol>
+      <QuantityName>Resistance</QuantityName>
+      <SubUnits>
+        <SubUnit>
+          <ClassName>Microohm</ClassName>
+          <Symbol>µΩ</Symbol>
+          <ConversionFactor>1E-06</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Milliohm</ClassName>
+          <Symbol>mΩ</Symbol>
+          <ConversionFactor>0.001</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Kiloohm</ClassName>
+          <Symbol>kΩ</Symbol>
+          <ConversionFactor>1000</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Megaohm</ClassName>
+          <Symbol>MΩ</Symbol>
+          <ConversionFactor>1000000</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Volts</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Amperes</UnitName>
+          <Power>-1</Power>
+        </UnitAndPower>
+      </Parts>
+      <ExplicitName>false</ExplicitName>
+    </DerivedUnit>
   </DerivedUnits>
   <SiUnits>
     <SiUnit>
@@ -652,6 +792,38 @@
           <ClassName>Percents</ClassName>
           <Symbol>%</Symbol>
           <ConversionFactor>0.01</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+      </SubUnits>
+    </SiUnit>
+    <SiUnit>
+      <Namespace>Gu.Units</Namespace>
+      <ClassName>Amperes</ClassName>
+      <Symbol>A</Symbol>
+      <QuantityName>Current</QuantityName>
+      <SubUnits>
+        <SubUnit>
+          <ClassName>Milliamperes</ClassName>
+          <Symbol>mA</Symbol>
+          <ConversionFactor>0.001</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Kiloamperes</ClassName>
+          <Symbol>kA</Symbol>
+          <ConversionFactor>1000</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Megaamperes</ClassName>
+          <Symbol>MA</Symbol>
+          <ConversionFactor>1000000</ConversionFactor>
+          <SubUnits />
+        </SubUnit>
+        <SubUnit>
+          <ClassName>Microamperes</ClassName>
+          <Symbol>µA</Symbol>
+          <ConversionFactor>1E-06</ConversionFactor>
           <SubUnits />
         </SubUnit>
       </SubUnits>
