@@ -134,7 +134,7 @@
                 return settings;
             }
         }
-        
+
         private void Initialize()
         {
             foreach (var unit in SiUnits)
@@ -158,20 +158,14 @@
                     }
                 }
             }
-            foreach (var quantity in Quantities.Where(x => x.Unit is DerivedUnit))
+            foreach (var left in Quantities)
             {
-                var derivedUnit = quantity.Unit as DerivedUnit;
-                var unitParts = derivedUnit.Parts;
-                foreach (var up in unitParts)
+                var tmp = left;
+                foreach (var result in Quantities.Where(x => x != tmp))
                 {
-                    if (up.Power > 0)
+                    if (OperatorOverload.CanCreate(left, result))
                     {
-                        var left = up.Unit.Quantity;
-                        if (OperatorOverload.CanCreate(left, quantity))
-                        {
-                            left.OperatorOverloads.Add(new OperatorOverload(left, quantity));
-                            quantity.OperatorOverloads.Add(new OperatorOverload(quantity, left));
-                        }
+                        left.OperatorOverloads.Add(new OperatorOverload(left, result));
                     }
                 }
             }
