@@ -134,6 +134,7 @@
                 return settings;
             }
         }
+        
         private void Initialize()
         {
             foreach (var unit in SiUnits)
@@ -165,9 +166,12 @@
                 {
                     if (up.Power > 0)
                     {
-                        //var left = up.Unit.Quantity;
-                        //left.OperatorOverloads.Add(new OperatorOverload(left, quantity));
-                        //quantity.OperatorOverloads.Add(new OperatorOverload(quantity, left));
+                        var left = up.Unit.Quantity;
+                        if (OperatorOverload.CanCreate(left, quantity))
+                        {
+                            left.OperatorOverloads.Add(new OperatorOverload(left, quantity));
+                            quantity.OperatorOverloads.Add(new OperatorOverload(quantity, left));
+                        }
                     }
                 }
             }
