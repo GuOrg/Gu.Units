@@ -21,6 +21,11 @@
         {
         }
 
+        public UnitParts(params UnitAndPower[] parts)
+            : base(parts)
+        {
+        }
+
         public UnitParts()
         {
             this.CollectionChanged += (sender, args) =>
@@ -43,6 +48,17 @@
                 };
         }
 
+        public static UnitParts CreateFrom(Quantity quantity)
+        {
+            var siUnit = quantity.Unit as SiUnit;
+            if (siUnit != null)
+            {
+                return new UnitParts(new UnitAndPower(siUnit, 1));
+            }
+            var derivedUnit = quantity.Unit as DerivedUnit;
+            return new UnitParts(derivedUnit.Parts);
+        }
+
         public IEnumerable<UnitAndPower> Flattened
         {
             get
@@ -62,6 +78,71 @@
                     }
                 }
             }
+        }
+
+        public static UnitParts operator *(UnitParts left, UnitParts right)
+        {
+            var leftPowers = left.Flattened.ToList();
+            var rightPowers = right.Flattened.ToList();
+            foreach (var rightPower in rightPowers.ToArray())
+            {
+                var leftPower = leftPowers.SingleOrDefault(x => x.UnitName == rightPower.UnitName);
+                if (leftPower != null)
+                {
+                    if (leftPower.Power == (-1 * rightPower.Power))
+                    {
+                        leftPowers.Remove(leftPower);
+                    }
+                    leftPower.Power += rightPower.Power;
+                    rightPowers.Remove(rightPower);
+                }
+            }
+            leftPowers.AddRange(rightPowers.Select(x => new UnitAndPower(x.Unit, x.Power)));
+            return new UnitParts(leftPowers);
+        }
+
+        public static UnitParts operator /(UnitParts left, UnitParts right)
+        {
+            var leftPowers = left.Flattened.ToList();
+            var rightPowers = right.Flattened.ToList();
+            foreach (var rightPower in rightPowers.ToArray())
+            {
+                var leftPower = leftPowers.SingleOrDefault(x => x.UnitName == rightPower.UnitName);
+                if (leftPower != null)
+                {
+                    if (leftPower.Power == rightPower.Power)
+                    {
+                        leftPowers.Remove(leftPower);
+                    }
+                    leftPower.Power -= rightPower.Power;
+                    rightPowers.Remove(rightPower);
+                }
+            }
+            leftPowers.AddRange(rightPowers.Select(x => new UnitAndPower(x.Unit, -1 * x.Power)));
+            return new UnitParts(leftPowers);
+        }
+
+        public static bool operator ==(UnitParts left, UnitParts right)
+        {
+            if (Equals(left, null) && Equals(right, null))
+            {
+                return true;
+            }
+            if (Equals(left, null) || Equals(right, null))
+            {
+                return false;
+            }
+            var leftPowers = left.Flattened.OrderBy(x => x.UnitName).ToArray();
+            var rightPowers = right.Flattened.OrderBy(x => x.UnitName).ToArray();
+            if (leftPowers.Count() != rightPowers.Count())
+            {
+                return false;
+            }
+            return leftPowers.SequenceEqual(rightPowers, UnitAndPower.Comparer);
+        }
+        public static bool operator !=(UnitParts left, UnitParts right)
+        {
+            return !(left == right);
         }
 
         [XmlIgnore]
@@ -164,23 +245,17 @@
             {
                 if (previous != null)
                 {
-                    if (previous.Power > 0 && unitAndPower.Power < 0)
-                    {
-                        sb.Append(" / ");
-                    }
-                    else
-                    {
-                        sb.Append("⋅");
-                    }
-                }
-                else
-                {
-                    if (unitAndPower.Power < 0)
-                    {
-                        sb.Append("1 / ");
-                    }
+                    sb.Append("⋅");
                 }
                 sb.Append(unitAndPower.Unit == null ? unitAndPower.UnitName : unitAndPower.Unit.Symbol);
+                if (unitAndPower.Power < 0)
+                {
+                    sb.Append("⁻");
+                    if (unitAndPower.Power == -1)
+                    {
+                        sb.Append("¹");
+                    }
+                }
                 switch (Math.Abs(unitAndPower.Power))
                 {
                     case 1:

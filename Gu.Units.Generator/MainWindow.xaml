@@ -20,13 +20,14 @@
             <MenuItem Header="_Window" />
             <MenuItem Header="_Help" />
         </Menu>
+
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
             <TextBlock Text="NameSpace" />
             <TextBox MinWidth="200" Text="{Binding NameSpace}" />
         </StackPanel>
+
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition />
@@ -76,71 +77,91 @@
             <GroupBox Grid.Column="1" Header="Conversions">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
+                        <RowDefinition />
+                        <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Row="0"
-                                   Grid.Column="0"
-                                   Text="{Binding Conversions.BaseUnit.ClassName,
-                                                  StringFormat='BaseUnit: {0}'}" />
-                        <Expander Grid.Row="1"
-                                  Grid.Column="0"
-                                  Header="Prefixes">
-                            <ItemsControl ItemsSource="{Binding Conversions.Prefixes}">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate DataType="{x:Type generator:PrefixConversionVm}">
-                                        <CheckBox Content="{Binding Prefix.Name}" IsChecked="{Binding IsUsed}" />
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-                        </Expander>
-                        <Expander Grid.Row="1"
-                                  Grid.Column="1"
-                                  Header="Subparts">
-                            <ItemsControl ItemsSource="{Binding Conversions.SubParts}">
-                                <ItemsControl.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <StackPanel Orientation="Horizontal" />
-                                    </ItemsPanelTemplate>
-                                </ItemsControl.ItemsPanel>
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate DataType="{x:Type generator:PartConversionVm[]}">
-                                        <ItemsControl ItemsSource="{Binding}">
-                                            <ItemsControl.ItemTemplate>
-                                                <DataTemplate DataType="{x:Type generator:PartConversionVm}">
-                                                    <CheckBox Content="{Binding Temp.Symbol}" IsChecked="{Binding IsUsed}" />
-                                                </DataTemplate>
-                                            </ItemsControl.ItemTemplate>
-                                        </ItemsControl>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-                        </Expander>
-                    </Grid>
-                    <DataGrid Grid.Row="1"
-                              AutoGenerateColumns="False"
-                              ItemsSource="{Binding Conversions.BaseUnit.SubUnits}">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Quantity.ClassName}" Header="Quantity" />
-                            <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
-                            <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
-                            <DataGridTextColumn Binding="{Binding ConversionFactor}" Header="Factor" />
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </Grid>
-            </GroupBox>
 
-            <GroupBox Grid.Column="2" Header="Prefixes">
-                <DataGrid ItemsSource="{Binding Prefixes}" />
+                    <GroupBox Grid.Row="0" Header="Fractions">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0"
+                                           Grid.Column="0"
+                                           Text="{Binding Conversions.BaseUnit.ClassName,
+                                                          StringFormat='BaseUnit: {0}'}" />
+                                <Expander Grid.Row="1"
+                                          Grid.Column="0"
+                                          Header="Prefixes">
+                                    <ItemsControl ItemsSource="{Binding Conversions.Prefixes}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate DataType="{x:Type generator:PrefixConversionVm}">
+                                                <CheckBox Content="{Binding Prefix.Name}" IsChecked="{Binding IsUsed}" />
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </Expander>
+                                <Expander Grid.Row="1"
+                                          Grid.Column="1"
+                                          Header="Subparts">
+                                    <ItemsControl ItemsSource="{Binding Conversions.SubParts}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal" />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate DataType="{x:Type generator:PartConversionVm[]}">
+                                                <ItemsControl ItemsSource="{Binding}">
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate DataType="{x:Type generator:PartConversionVm}">
+                                                            <CheckBox Content="{Binding Temp.Symbol}" IsChecked="{Binding IsUsed}" />
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </Expander>
+                            </Grid>
+                            <DataGrid Grid.Row="1"
+                                      AutoGenerateColumns="False"
+                                      ItemsSource="{Binding Conversions.BaseUnit.SubUnits}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Binding="{Binding Quantity.ClassName}" Header="Quantity" />
+                                    <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
+                                    <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
+                                    <DataGridTextColumn Binding="{Binding ConversionFactor}" Header="Factor" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="1" Header="Overloads">
+                        <ItemsControl ItemsSource="{Binding Conversions.BaseUnit.Quantity.OperatorOverloads}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="{x:Type generator:OperatorOverload}">
+                                    <TextBlock Text="{Binding}" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </GroupBox>
+
+                    <GroupBox Grid.Row="2" Header="Prefixes">
+                        <DataGrid ItemsSource="{Binding Prefixes}" />
+                    </GroupBox>
+                </Grid>
             </GroupBox>
         </Grid>
     </DockPanel>
