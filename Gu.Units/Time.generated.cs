@@ -185,6 +185,21 @@
             return From(minutes, TimeUnit.Minutes);
         }
 
+        public static Length operator *(Time left, Speed right)
+        {
+            return Length.FromMetres(left.Seconds * right.MetresPerSecond);
+        }
+
+        public static Angle operator *(Time left, AngularSpeed right)
+        {
+            return Angle.FromRadians(left.Seconds * right.RadiansPerSecond);
+        }
+
+        public static Speed operator *(Time left, Acceleration right)
+        {
+            return Speed.FromMetresPerSecond(left.Seconds * right.MetresPerSecondSquared);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Time"/> instances are equal.
         /// </summary>

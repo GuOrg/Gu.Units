@@ -205,6 +205,36 @@
             return From(gigawatts, PowerUnit.Gigawatts);
         }
 
+        public static Force operator /(Power left, Speed right)
+        {
+            return Force.FromNewtons(left.Watts / right.MetresPerSecond);
+        }
+
+        public static Energy operator *(Power left, Time right)
+        {
+            return Energy.FromJoules(left.Watts * right.Seconds);
+        }
+
+        public static Speed operator /(Power left, Force right)
+        {
+            return Speed.FromMetresPerSecond(left.Watts / right.Newtons);
+        }
+
+        public static Frequency operator /(Power left, Energy right)
+        {
+            return Frequency.FromHertz(left.Watts / right.Joules);
+        }
+
+        public static Torque operator /(Power left, AngularSpeed right)
+        {
+            return Torque.FromNewtonMetres(left.Watts / right.RadiansPerSecond);
+        }
+
+        public static Voltage operator /(Power left, Current right)
+        {
+            return Voltage.FromVolts(left.Watts / right.Amperes);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Power"/> instances are equal.
         /// </summary>

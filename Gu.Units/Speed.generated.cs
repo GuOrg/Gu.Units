@@ -265,6 +265,36 @@
             return From(millimetresPerMinute, SpeedUnit.MillimetresPerMinute);
         }
 
+        public static Length operator *(Speed left, Time right)
+        {
+            return Length.FromMetres(left.MetresPerSecond * right.Seconds);
+        }
+
+        public static Time operator /(Speed left, Acceleration right)
+        {
+            return Time.FromSeconds(left.MetresPerSecond / right.MetresPerSecondSquared);
+        }
+
+        public static Power operator *(Speed left, Force right)
+        {
+            return Power.FromWatts(left.MetresPerSecond * right.Newtons);
+        }
+
+        public static Frequency operator /(Speed left, Length right)
+        {
+            return Frequency.FromHertz(left.MetresPerSecond / right.Metres);
+        }
+
+        public static Acceleration operator /(Speed left, Time right)
+        {
+            return Acceleration.FromMetresPerSecondSquared(left.MetresPerSecond / right.Seconds);
+        }
+
+        public static VolumetricFlow operator *(Speed left, Area right)
+        {
+            return VolumetricFlow.FromCubicMetresPerSecond(left.MetresPerSecond * right.SquareMetres);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Speed"/> instances are equal.
         /// </summary>

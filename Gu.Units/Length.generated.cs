@@ -205,6 +205,31 @@
             return From(kilometres, LengthUnit.Kilometres);
         }
 
+        public static Time operator /(Length left, Speed right)
+        {
+            return Time.FromSeconds(left.Metres / right.MetresPerSecond);
+        }
+
+        public static Area operator *(Length left, Length right)
+        {
+            return Area.FromSquareMetres(left.Metres * right.Metres);
+        }
+
+        public static Volume operator *(Length left, Area right)
+        {
+            return Volume.FromCubicMetres(left.Metres * right.SquareMetres);
+        }
+
+        public static Energy operator *(Length left, Force right)
+        {
+            return Energy.FromJoules(left.Metres * right.Newtons);
+        }
+
+        public static Speed operator /(Length left, Time right)
+        {
+            return Speed.FromMetresPerSecond(left.Metres / right.Seconds);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Length"/> instances are equal.
         /// </summary>

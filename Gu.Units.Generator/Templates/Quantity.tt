@@ -143,6 +143,18 @@ namespace <#= quantity.Namespace #>
 <#
 		} 
 		#>
+<#
+		foreach(var op in quantity.OperatorOverloads)
+		{
+		#>
+        public static <#= op.Result.ClassName #> operator<#= op.Operator #>(<#= op.Left.ClassName #> left, <#= op.Right.ClassName #> right)
+        {
+            return <#= op.Result.ClassName #>.From<#= op.Result.Unit.ClassName #>(left.<#= op.Left.Unit.ClassName #> <#= op.Operator #> right.<#= op.Right.Unit.ClassName #>);
+        }
+
+<#
+		} 
+		#>
         /// <summary>
         /// Indicates whether two <see cref="T:<#= quantity.Namespace #>.<#= quantity.ClassName #>"/> instances are equal.
         /// </summary>

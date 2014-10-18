@@ -225,6 +225,36 @@
             return From(kilowattHours, EnergyUnit.KilowattHours);
         }
 
+        public static Length operator /(Energy left, Force right)
+        {
+            return Length.FromMetres(left.Joules / right.Newtons);
+        }
+
+        public static Force operator /(Energy left, Length right)
+        {
+            return Force.FromNewtons(left.Joules / right.Metres);
+        }
+
+        public static Pressure operator /(Energy left, Volume right)
+        {
+            return Pressure.FromPascals(left.Joules / right.CubicMetres);
+        }
+
+        public static Power operator /(Energy left, Time right)
+        {
+            return Power.FromWatts(left.Joules / right.Seconds);
+        }
+
+        public static Torque operator /(Energy left, Angle right)
+        {
+            return Torque.FromNewtonMetres(left.Joules / right.Radians);
+        }
+
+        public static Stiffness operator /(Energy left, Area right)
+        {
+            return Stiffness.FromNewtonsPerMetre(left.Joules / right.SquareMetres);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Energy"/> instances are equal.
         /// </summary>

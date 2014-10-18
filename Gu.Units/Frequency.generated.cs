@@ -165,6 +165,31 @@
             return From(gigahertz, FrequencyUnit.Gigahertz);
         }
 
+        public static Power operator *(Frequency left, Energy right)
+        {
+            return Power.FromWatts(left.Hertz * right.Joules);
+        }
+
+        public static Speed operator *(Frequency left, Length right)
+        {
+            return Speed.FromMetresPerSecond(left.Hertz * right.Metres);
+        }
+
+        public static AngularSpeed operator *(Frequency left, Angle right)
+        {
+            return AngularSpeed.FromRadiansPerSecond(left.Hertz * right.Radians);
+        }
+
+        public static Acceleration operator *(Frequency left, Speed right)
+        {
+            return Acceleration.FromMetresPerSecondSquared(left.Hertz * right.MetresPerSecond);
+        }
+
+        public static VolumetricFlow operator *(Frequency left, Volume right)
+        {
+            return VolumetricFlow.FromCubicMetresPerSecond(left.Hertz * right.CubicMetres);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Frequency"/> instances are equal.
         /// </summary>

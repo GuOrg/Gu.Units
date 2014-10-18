@@ -105,6 +105,16 @@
             return From(degrees, AngleUnit.Degrees);
         }
 
+        public static Time operator /(Angle left, AngularSpeed right)
+        {
+            return Time.FromSeconds(left.Radians / right.RadiansPerSecond);
+        }
+
+        public static AngularSpeed operator /(Angle left, Time right)
+        {
+            return AngularSpeed.FromRadiansPerSecond(left.Radians / right.Seconds);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Angle"/> instances are equal.
         /// </summary>

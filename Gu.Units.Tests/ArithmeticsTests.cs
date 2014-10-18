@@ -1,6 +1,5 @@
 ﻿namespace Gu.Units.Tests
 {
-    using Moq;
     using NUnit.Framework;
 
     //public class ArithmeticsTests

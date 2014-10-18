@@ -205,6 +205,36 @@
             return From(giganewtons, ForceUnit.Giganewtons);
         }
 
+        public static Mass operator /(Force left, Acceleration right)
+        {
+            return Mass.FromKilograms(left.Newtons / right.MetresPerSecondSquared);
+        }
+
+        public static Pressure operator /(Force left, Area right)
+        {
+            return Pressure.FromPascals(left.Newtons / right.SquareMetres);
+        }
+
+        public static Energy operator *(Force left, Length right)
+        {
+            return Energy.FromJoules(left.Newtons * right.Metres);
+        }
+
+        public static Power operator *(Force left, Speed right)
+        {
+            return Power.FromWatts(left.Newtons * right.MetresPerSecond);
+        }
+
+        public static Acceleration operator /(Force left, Mass right)
+        {
+            return Acceleration.FromMetresPerSecondSquared(left.Newtons / right.Kilograms);
+        }
+
+        public static Stiffness operator /(Force left, Length right)
+        {
+            return Stiffness.FromNewtonsPerMetre(left.Newtons / right.Metres);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Force"/> instances are equal.
         /// </summary>
