@@ -165,6 +165,21 @@
             return From(squareKilometres, AreaUnit.SquareKilometres);
         }
 
+        public static Length operator /(Area left, Length right)
+        {
+            return Length.FromMetres(left.SquareMetres / right.Metres);
+        }
+
+        public static Volume operator *(Area left, Length right)
+        {
+            return Volume.FromCubicMetres(left.SquareMetres * right.Metres);
+        }
+
+        public static VolumetricFlow operator *(Area left, Speed right)
+        {
+            return VolumetricFlow.FromCubicMetresPerSecond(left.SquareMetres * right.MetresPerSecond);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Area"/> instances are equal.
         /// </summary>

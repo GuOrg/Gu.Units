@@ -29,6 +29,7 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="5" />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
@@ -73,8 +74,13 @@
                     </GroupBox>
                 </Grid>
             </GroupBox>
-
-            <GroupBox Grid.Column="1" Header="Conversions">
+            
+            <GridSplitter Grid.Column="1"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch"
+                          ResizeDirection="Columns" />
+            
+            <GroupBox Grid.Column="2" Header="Conversions">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />

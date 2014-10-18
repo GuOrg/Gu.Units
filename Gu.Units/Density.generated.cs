@@ -125,6 +125,11 @@
             return From(gramsPerCubicCentimetre, DensityUnit.GramsPerCubicCentimetre);
         }
 
+        public static Mass operator *(Density left, Volume right)
+        {
+            return Mass.FromKilograms(left.KilogramsPerCubicMetre * right.CubicMetres);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Density"/> instances are equal.
         /// </summary>

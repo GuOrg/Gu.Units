@@ -2,22 +2,22 @@
 {
     using System;
     /// <summary>
-    /// A type for the unit <see cref="T:Gu.Units.AngularVelocityUnit"/>.
+    /// A type for the unit <see cref="T:Gu.Units.AngularSpeedUnit"/>.
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct AngularVelocityUnit : IUnit
+    public struct AngularSpeedUnit : IUnit
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.RadiansPerSecond"/> unit
         /// Contains coonversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularVelocityUnit RadiansPerSecond = new AngularVelocityUnit(1.0, "rad/s");
+        public static readonly AngularSpeedUnit RadiansPerSecond = new AngularSpeedUnit(1.0, "rad/s");
 
         private readonly double _conversionFactor;
         private readonly string _symbol;
 
-        public AngularVelocityUnit(double conversionFactor, string symbol)
+        public AngularSpeedUnit(double conversionFactor, string symbol)
         {
             _conversionFactor = conversionFactor;
             _symbol = symbol;
@@ -34,9 +34,9 @@
             }
         }
 
-        public static AngularVelocity operator *(double left, AngularVelocityUnit right)
+        public static AngularSpeed operator *(double left, AngularSpeedUnit right)
         {
-            return AngularVelocity.From(left, right);
+            return AngularSpeed.From(left, right);
         }
 
         /// <summary>

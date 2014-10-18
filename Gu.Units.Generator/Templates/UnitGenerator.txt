@@ -1,10 +1,14 @@
 ﻿
-Read Settings found 6 units
+Read Settings found 7 units
+//-> AccelerationUnit.generated.cs
+
 //-> AngleUnit.generated.cs
 
-//-> AngularVelocityUnit.generated.cs
+//-> AngularSpeedUnit.generated.cs
 
 //-> AreaUnit.generated.cs
+
+//-> CurrentUnit.generated.cs
 
 //-> DensityUnit.generated.cs
 
@@ -24,18 +28,34 @@ Read Settings found 6 units
 
 //-> PressureUnit.generated.cs
 
+//-> ResistanceUnit.generated.cs
+
 //-> SpeedUnit.generated.cs
+
+//-> StiffnessUnit.generated.cs
 
 //-> TemperatureUnit.generated.cs
 
 //-> TimeUnit.generated.cs
 
+//-> TorqueUnit.generated.cs
+
+//-> VoltageUnit.generated.cs
+
+//-> VolumetricFlowUnit.generated.cs
+
 //-> VolumeUnit.generated.cs
 // Generated helper templates
 // Gu.Units\Gu.Units\UnitGenerator.txt4
 // Generated items
+// Gu.Units\Gu.Units\ResistanceUnit.generated.cs
+// Gu.Units\Gu.Units\VoltageUnit.generated.cs
+// Gu.Units\Gu.Units\VolumetricFlowUnit.generated.cs
+// Gu.Units\Gu.Units\StiffnessUnit.generated.cs
+// Gu.Units\Gu.Units\TorqueUnit.generated.cs
+// Gu.Units\Gu.Units\AccelerationUnit.generated.cs
 // Gu.Units\Gu.Units\FrequencyUnit.generated.cs
-// Gu.Units\Gu.Units\AngularVelocityUnit.generated.cs
+// Gu.Units\Gu.Units\AngularSpeedUnit.generated.cs
 // Gu.Units\Gu.Units\SpeedUnit.generated.cs
 // Gu.Units\Gu.Units\PowerUnit.generated.cs
 // Gu.Units\Gu.Units\EnergyUnit.generated.cs
@@ -44,6 +64,7 @@ Read Settings found 6 units
 // Gu.Units\Gu.Units\ForceUnit.generated.cs
 // Gu.Units\Gu.Units\VolumeUnit.generated.cs
 // Gu.Units\Gu.Units\AreaUnit.generated.cs
+// Gu.Units\Gu.Units\CurrentUnit.generated.cs
 // Gu.Units\Gu.Units\FractionUnit.generated.cs
 // Gu.Units\Gu.Units\AngleUnit.generated.cs
 // Gu.Units\Gu.Units\TemperatureUnit.generated.cs

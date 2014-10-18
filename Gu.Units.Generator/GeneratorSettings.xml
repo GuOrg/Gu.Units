@@ -415,7 +415,7 @@
       <Namespace>Gu.Units</Namespace>
       <ClassName>RadiansPerSecond</ClassName>
       <Symbol>rad/s</Symbol>
-      <QuantityName>AngularVelocity</QuantityName>
+      <QuantityName>AngularSpeed</QuantityName>
       <SubUnits />
       <Parts>
         <UnitAndPower>
@@ -513,6 +513,10 @@
         <UnitAndPower>
           <UnitName>Metres</UnitName>
           <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Radians</UnitName>
+          <Power>-1</Power>
         </UnitAndPower>
       </Parts>
       <ExplicitName>false</ExplicitName>

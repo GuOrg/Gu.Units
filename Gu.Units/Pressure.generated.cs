@@ -205,6 +205,21 @@
             return From(gigapascals, PressureUnit.Gigapascals);
         }
 
+        public static Force operator *(Pressure left, Area right)
+        {
+            return Force.FromNewtons(left.Pascals * right.SquareMetres);
+        }
+
+        public static Energy operator *(Pressure left, Volume right)
+        {
+            return Energy.FromJoules(left.Pascals * right.CubicMetres);
+        }
+
+        public static Stiffness operator *(Pressure left, Length right)
+        {
+            return Stiffness.FromNewtonsPerMetre(left.Pascals * right.Metres);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Pressure"/> instances are equal.
         /// </summary>

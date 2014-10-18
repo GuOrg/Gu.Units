@@ -145,6 +145,21 @@
             return From(micrograms, MassUnit.Micrograms);
         }
 
+        public static Volume operator /(Mass left, Density right)
+        {
+            return Volume.FromCubicMetres(left.Kilograms / right.KilogramsPerCubicMetre);
+        }
+
+        public static Force operator *(Mass left, Acceleration right)
+        {
+            return Force.FromNewtons(left.Kilograms * right.MetresPerSecondSquared);
+        }
+
+        public static Density operator /(Mass left, Volume right)
+        {
+            return Density.FromKilogramsPerCubicMetre(left.Kilograms / right.CubicMetres);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Mass"/> instances are equal.
         /// </summary>

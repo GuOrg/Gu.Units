@@ -145,6 +145,26 @@
             return From(cubicMillimetres, VolumeUnit.CubicMillimetres);
         }
 
+        public static Mass operator *(Volume left, Density right)
+        {
+            return Mass.FromKilograms(left.CubicMetres * right.KilogramsPerCubicMetre);
+        }
+
+        public static Length operator /(Volume left, Area right)
+        {
+            return Length.FromMetres(left.CubicMetres / right.SquareMetres);
+        }
+
+        public static Area operator /(Volume left, Length right)
+        {
+            return Area.FromSquareMetres(left.CubicMetres / right.Metres);
+        }
+
+        public static VolumetricFlow operator /(Volume left, Time right)
+        {
+            return VolumetricFlow.FromCubicMetresPerSecond(left.CubicMetres / right.Seconds);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Volume"/> instances are equal.
         /// </summary>

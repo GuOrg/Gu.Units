@@ -37,11 +37,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MockSettings.cs" />
@@ -58,10 +53,6 @@
     <ProjectReference Include="..\Gu.Units.Generator\Gu.Units.Generator.csproj">
       <Project>{E2703762-7D3C-49AE-B8A8-B3A792F018E3}</Project>
       <Name>Gu.Units.Generator</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gu.Units\Gu.Units.csproj">
-      <Project>{F1F8B138-BECC-4475-A7AB-B3019338BC7B}</Project>
-      <Name>Gu.Units</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
