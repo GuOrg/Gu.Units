@@ -14,7 +14,7 @@
             var converter = new UnitPartsConverter();
             Assert.IsTrue(converter.CanConvertFrom(null, typeof(string)));
             var parts = (UnitParts)converter.ConvertFrom(null, null, data.Value);
-            CollectionAssert.AreEquivalent(data.Units, parts);
+            Assert.IsTrue(data.Units.SequenceEqual(parts, UnitAndPower.Comparer));
             var convertTo = converter.ConvertTo(null, null, parts, typeof(string));
             Assert.AreEqual(data.Formatted, convertTo);
             Assert.AreEqual(data.Formatted, parts.BaseUnitExpression);
@@ -31,9 +31,10 @@
 
         public UnitPartsConverterSource()
         {
-            Metres = new SiUnit("", "Metres", "m");
-            Kilograms = new SiUnit("", "Kilograms", "kg");
-            Seconds = new SiUnit("", "Seconds", "s");
+            var settings = new MockSettings();
+            Metres = settings.Metres;
+            Kilograms = settings.Kilograms;
+            Seconds = settings.Seconds;
             _datas = new List<Data>
                                         {
                                             new Data("m^2","m²", new UnitAndPower(Metres, 2)),

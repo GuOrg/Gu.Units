@@ -44,7 +44,7 @@
                                   ItemsSource="{Binding SiUnits}"
                                   SelectedItem="{Binding Conversions.BaseUnit}">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Binding="{Binding Quantity}" Header="Quantity" />
+                                <DataGridTextColumn Binding="{Binding QuantityName}" Header="Quantity" />
                                 <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
                                 <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
                                 <DataGridTextColumn Binding="{Binding Quantity.Interface}" Header="Interface" />

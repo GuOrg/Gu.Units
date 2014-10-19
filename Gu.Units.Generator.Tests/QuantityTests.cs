@@ -22,7 +22,7 @@
         [TestCase("Length", "IQuantity<LengthUnit, I1>")]
         public void BaseQuantityInterface(string quantityName, string expected)
         {
-            var quantity = _settings.Quantities.Single(x => x.ClassName == quantityName);
+            var quantity = _settings.Length;
             var @interface = quantity.Interface;
             Assert.AreEqual(expected, @interface);
         }
