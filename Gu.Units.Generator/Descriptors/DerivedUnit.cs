@@ -13,7 +13,6 @@
     public class DerivedUnit : UnitBase
     {
         private readonly UnitParts _parts;
-        private bool _explicitName;
 
         public DerivedUnit()
             : base(null, null, null)

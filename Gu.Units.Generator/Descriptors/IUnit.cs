@@ -13,7 +13,7 @@ namespace Gu.Units.Generator
         Quantity Quantity { get; set; }
         bool IsEmpty { get; }
         string UiName { get; }
-        ObservableCollection<SubUnit> SubUnits { get; }
+        ObservableCollection<Conversion> Conversions { get; }
         bool IsSymbolNameValid { get; }
         Settings Settings { get; set; }
     }

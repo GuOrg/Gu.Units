@@ -46,18 +46,18 @@
                 {
                     if (derivedUnit.Parts.Count == 1)
                     {
-                        _subParts.Add(derivedUnit.Parts.Single().Unit.SubUnits.Select(x => new PartConversionVm(_baseUnit, x)).ToArray());
+                        _subParts.Add(derivedUnit.Parts.Single().Unit.Conversions.Select(x => new PartConversionVm(_baseUnit, x)).ToArray());
                     }
                     else if (derivedUnit.Parts.Count == 2)
                     {
                         var partConversionVms = new List<PartConversionVm> { null };
-                        partConversionVms.AddRange(derivedUnit.Parts[0].Unit.SubUnits.Select(x => new PartConversionVm(_baseUnit, x)));
+                        partConversionVms.AddRange(derivedUnit.Parts[0].Unit.Conversions.Select(x => new PartConversionVm(_baseUnit, x)));
                         _subParts.Add(partConversionVms.ToArray());
-                        foreach (var u in derivedUnit.Parts[1].Unit.SubUnits)
+                        foreach (var u in derivedUnit.Parts[1].Unit.Conversions)
                         {
                             partConversionVms.Clear();
                             partConversionVms.Add(new PartConversionVm(_baseUnit, u));
-                            partConversionVms.AddRange(derivedUnit.Parts[0].Unit.SubUnits.Select(x => new PartConversionVm(_baseUnit, u, x)));
+                            partConversionVms.AddRange(derivedUnit.Parts[0].Unit.Conversions.Select(x => new PartConversionVm(_baseUnit, u, x)));
                             _subParts.Add(partConversionVms.ToArray());
                         }
                     }

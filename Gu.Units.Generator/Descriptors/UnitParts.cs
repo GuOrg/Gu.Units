@@ -16,8 +16,8 @@
     [TypeConverter(typeof(UnitPartsConverter))]
     public class UnitParts : ParentCollection<IUnit, UnitAndPower>, INotifyPropertyChanged
     {
-        public UnitParts(IUnit unit, IEnumerable<UnitAndPower> parts)
-            : base(unit, (up, u) => up.Parent = u, parts)
+        public UnitParts(IUnit baseUnit, IEnumerable<UnitAndPower> parts)
+            : base(baseUnit, (up, u) => up.Parent = u, parts)
         {
             base.CollectionChanged += (sender, args) =>
             {
@@ -26,8 +26,8 @@
             };
         }
 
-        public UnitParts(IUnit unit, params UnitAndPower[] parts)
-            : this(unit, (IEnumerable<UnitAndPower>)parts)
+        public UnitParts(IUnit baseUnit, params UnitAndPower[] parts)
+            : this(baseUnit, (IEnumerable<UnitAndPower>)parts)
         {
         }
 
@@ -49,7 +49,7 @@
                 var all = new List<UnitAndPower>();
                 foreach (var up in this)
                 {
-                    GetAll(up, 0, all);
+                    GetAll(up, up.Power, all);
                 }
                 var distinct = all.Select(x => x.Unit).Distinct().ToArray();
                 foreach (SiUnit unit in distinct)
@@ -202,13 +202,13 @@
             }
             if (up.Unit is SiUnit)
             {
-                list.Add(new UnitAndPower(up.Unit, up.Power + power));
+                list.Add(new UnitAndPower(up.Unit, power));
                 return;
             }
             var derivedUnit = (DerivedUnit)up.Unit;
             foreach (var unitPart in derivedUnit.Parts)
             {
-                GetAll(unitPart, up.Power - 1, list);
+                GetAll(unitPart, unitPart.Power * power, list);
             }
         }
 
