@@ -14,38 +14,21 @@
     using Gu.Units.Generator.WpfStuff;
 
     [TypeConverter(typeof(UnitPartsConverter))]
-    public class UnitParts : ObservableCollection<UnitAndPower>
+    public class UnitParts : ParentCollection<IUnit, UnitAndPower>, INotifyPropertyChanged
     {
-        public UnitParts(IEnumerable<UnitAndPower> parts)
-            : base(parts)
+        public UnitParts(IUnit unit, IEnumerable<UnitAndPower> parts)
+            : base(unit, (up, u) => up.Parent = u, parts)
         {
+            base.CollectionChanged += (sender, args) =>
+            {
+                base.OnPropertyChanged(new PropertyChangedEventArgs(NameOf.Property(() => Expression)));
+                base.OnPropertyChanged(new PropertyChangedEventArgs(NameOf.Property(() => BaseUnitExpression)));
+            };
         }
 
-        public UnitParts(params UnitAndPower[] parts)
-            : base(parts)
+        public UnitParts(IUnit unit, params UnitAndPower[] parts)
+            : this(unit, (IEnumerable<UnitAndPower>)parts)
         {
-        }
-
-        public UnitParts()
-        {
-            this.CollectionChanged += (sender, args) =>
-                {
-                    this.OnPropertyChanged(new PropertyChangedEventArgs("Expression"));
-                    if (args.NewItems != null)
-                    {
-                        foreach (var newItem in args.NewItems.OfType<INotifyPropertyChanged>())
-                        {
-                            newItem.PropertyChanged += this.OnPartPropertyChanged;
-                        }
-                    }
-                    if (args.OldItems != null)
-                    {
-                        foreach (var oldItem in args.OldItems.OfType<INotifyPropertyChanged>())
-                        {
-                            oldItem.PropertyChanged -= this.OnPartPropertyChanged;
-                        }
-                    }
-                };
         }
 
         public static UnitParts CreateFrom(Quantity quantity)
@@ -53,10 +36,10 @@
             var siUnit = quantity.Unit as SiUnit;
             if (siUnit != null)
             {
-                return new UnitParts(new UnitAndPower(siUnit, 1));
+                return new UnitParts(siUnit, new UnitAndPower(siUnit, 1));
             }
             var derivedUnit = quantity.Unit as DerivedUnit;
-            return new UnitParts(derivedUnit.Parts);
+            return new UnitParts(derivedUnit, derivedUnit.Parts);
         }
 
         public IEnumerable<UnitAndPower> Flattened
@@ -78,71 +61,6 @@
                     }
                 }
             }
-        }
-
-        public static UnitParts operator *(UnitParts left, UnitParts right)
-        {
-            var leftPowers = left.Flattened.ToList();
-            var rightPowers = right.Flattened.ToList();
-            foreach (var rightPower in rightPowers.ToArray())
-            {
-                var leftPower = leftPowers.SingleOrDefault(x => x.UnitName == rightPower.UnitName);
-                if (leftPower != null)
-                {
-                    if (leftPower.Power == (-1 * rightPower.Power))
-                    {
-                        leftPowers.Remove(leftPower);
-                    }
-                    leftPower.Power += rightPower.Power;
-                    rightPowers.Remove(rightPower);
-                }
-            }
-            leftPowers.AddRange(rightPowers.Select(x => new UnitAndPower(x.Unit, x.Power)));
-            return new UnitParts(leftPowers);
-        }
-
-        public static UnitParts operator /(UnitParts left, UnitParts right)
-        {
-            var leftPowers = left.Flattened.ToList();
-            var rightPowers = right.Flattened.ToList();
-            foreach (var rightPower in rightPowers.ToArray())
-            {
-                var leftPower = leftPowers.SingleOrDefault(x => x.UnitName == rightPower.UnitName);
-                if (leftPower != null)
-                {
-                    if (leftPower.Power == rightPower.Power)
-                    {
-                        leftPowers.Remove(leftPower);
-                    }
-                    leftPower.Power -= rightPower.Power;
-                    rightPowers.Remove(rightPower);
-                }
-            }
-            leftPowers.AddRange(rightPowers.Select(x => new UnitAndPower(x.Unit, -1 * x.Power)));
-            return new UnitParts(leftPowers);
-        }
-
-        public static bool operator ==(UnitParts left, UnitParts right)
-        {
-            if (Equals(left, null) && Equals(right, null))
-            {
-                return true;
-            }
-            if (Equals(left, null) || Equals(right, null))
-            {
-                return false;
-            }
-            var leftPowers = left.Flattened.OrderBy(x => x.UnitName).ToArray();
-            var rightPowers = right.Flattened.OrderBy(x => x.UnitName).ToArray();
-            if (leftPowers.Count() != rightPowers.Count())
-            {
-                return false;
-            }
-            return leftPowers.SequenceEqual(rightPowers, UnitAndPower.Comparer);
-        }
-        public static bool operator !=(UnitParts left, UnitParts right)
-        {
-            return !(left == right);
         }
 
         [XmlIgnore]
@@ -198,6 +116,72 @@
             }
         }
 
+        public static UnitParts operator *(UnitParts left, UnitParts right)
+        {
+            var leftPowers = left.Flattened.ToList();
+            var rightPowers = right.Flattened.ToList();
+            foreach (var rightPower in rightPowers.ToArray())
+            {
+                var leftPower = leftPowers.SingleOrDefault(x => x.UnitName == rightPower.UnitName);
+                if (leftPower != null)
+                {
+                    if (leftPower.Power == (-1 * rightPower.Power))
+                    {
+                        leftPowers.Remove(leftPower);
+                    }
+                    leftPower.Power += rightPower.Power;
+                    rightPowers.Remove(rightPower);
+                }
+            }
+            leftPowers.AddRange(rightPowers.Select(x => new UnitAndPower(x.Unit, x.Power)));
+            return new UnitParts(null, leftPowers);
+        }
+
+        public static UnitParts operator /(UnitParts left, UnitParts right)
+        {
+            var leftPowers = left.Flattened.ToList();
+            var rightPowers = right.Flattened.ToList();
+            foreach (var rightPower in rightPowers.ToArray())
+            {
+                var leftPower = leftPowers.SingleOrDefault(x => x.UnitName == rightPower.UnitName);
+                if (leftPower != null)
+                {
+                    if (leftPower.Power == rightPower.Power)
+                    {
+                        leftPowers.Remove(leftPower);
+                    }
+                    leftPower.Power -= rightPower.Power;
+                    rightPowers.Remove(rightPower);
+                }
+            }
+            leftPowers.AddRange(rightPowers.Select(x => new UnitAndPower(x.Unit, -1 * x.Power)));
+            return new UnitParts(null, leftPowers);
+        }
+
+        public static bool operator ==(UnitParts left, UnitParts right)
+        {
+            if (Equals(left, null) && Equals(right, null))
+            {
+                return true;
+            }
+            if (Equals(left, null) || Equals(right, null))
+            {
+                return false;
+            }
+            var leftPowers = left.Flattened.OrderBy(x => x.UnitName).ToArray();
+            var rightPowers = right.Flattened.OrderBy(x => x.UnitName).ToArray();
+            if (leftPowers.Count() != rightPowers.Count())
+            {
+                return false;
+            }
+            return leftPowers.SequenceEqual(rightPowers, UnitAndPower.Comparer);
+        }
+
+        public static bool operator !=(UnitParts left, UnitParts right)
+        {
+            return !(left == right);
+        }
+
         public void Replace(UnitAndPower old, UnitAndPower @new)
         {
             var indexOf = base.IndexOf(old);
@@ -214,7 +198,7 @@
         {
             if (list.Count > 100)
             {
-                Debugger.Break();
+                Debugger.Break(); // Looks like SO will happen
             }
             if (up.Unit is SiUnit)
             {
@@ -226,11 +210,6 @@
             {
                 GetAll(unitPart, up.Power - 1, list);
             }
-        }
-
-        private void OnPartPropertyChanged(object sender, PropertyChangedEventArgs propertyChangedEventArgs)
-        {
-            this.OnPropertyChanged(new PropertyChangedEventArgs("Expression"));
         }
 
         private string CreateExpression(IEnumerable<UnitAndPower> ups)

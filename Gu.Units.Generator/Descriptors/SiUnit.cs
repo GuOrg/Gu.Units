@@ -25,15 +25,6 @@
         {
         }
 
-        public static SiUnit Empty
-        {
-            get
-            {
-                return new SiUnit();
-            }
-        }
-
-
         [XmlIgnore]
         public override string UiName
         {

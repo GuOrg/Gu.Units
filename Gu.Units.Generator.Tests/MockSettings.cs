@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gu.Units.Generator.Tests
+﻿namespace Gu.Units.Generator.Tests
 {
-    public class MockSettings
+    using System.Runtime.Remoting.Metadata.W3cXsd2001;
+    using WpfStuff;
+
+    public class MockSettings : Settings
     {
         public readonly string Namespace = "Gu.Units";
         public readonly SiUnit Metres;
@@ -24,27 +21,32 @@ namespace Gu.Units.Generator.Tests
         public readonly DerivedUnit CubicMetres;
         public readonly Quantity Volume;
 
-        public readonly Quantity[] Quantities;
 
         public MockSettings()
         {
-            UnitBase.AllUnitsStatic.Clear();
-            Metres = new SiUnit(Namespace, "Metres", "m");
-            Seconds = new SiUnit(Namespace, "Seconds", "s");
-            Length = new Quantity(Namespace, "Length", Metres);
-            Time = new Quantity(Namespace, "Time", Seconds);
+            Metres = new SiUnit(Namespace, "Metres", "m") { QuantityName = "Length" };
+            SiUnits.Add(Metres);
+            Length = new Quantity(Metres);
+
+            Seconds = new SiUnit(Namespace, "Seconds", "s") { QuantityName = "Time" };
+            SiUnits.Add(Seconds);
+
+            Time = new Quantity(Seconds);
             MetresPerSecond = new DerivedUnit(Namespace,
                                                     "MetresPerSecond",
                                                     "m/s",
                                                     new UnitAndPower(Metres, 1),
-                                                    new UnitAndPower(Seconds, -1));
-            Speed = new Quantity(Namespace, "Speed", MetresPerSecond);
-            SquareMetres = new DerivedUnit(Namespace, "SquareMetres", "m^2", new UnitAndPower(Metres, 2));
-            Area = new Quantity(Namespace, "Area", SquareMetres);
+                                                    new UnitAndPower(Seconds, -1)) { QuantityName = "Speed" };
+            DerivedUnits.Add(MetresPerSecond);
+            Speed = new Quantity(MetresPerSecond);
 
-            CubicMetres = new DerivedUnit(Namespace, "CubicMetres", "m^3", new UnitAndPower(Metres, 3));
-            Volume = new Quantity(Namespace, "Volume", CubicMetres);
-            Quantities = new[] { Length, Time, Speed, Area };
+            SquareMetres = new DerivedUnit(Namespace, "SquareMetres", "m^2", new UnitAndPower(Metres, 2)) { QuantityName = "Area" };
+            DerivedUnits.Add(SquareMetres);
+            Area = new Quantity(SquareMetres);
+
+            CubicMetres = new DerivedUnit(Namespace, "CubicMetres", "m^3", new UnitAndPower(Metres, 3)) { QuantityName = "Volume" };
+            DerivedUnits.Add(CubicMetres);
+            Volume = new Quantity(CubicMetres);
         }
     }
 }

@@ -8,11 +8,11 @@
     {
         public static string Divide = "/";
         public static string Multiply = "*";
-        public OperatorOverload(Quantity left, Quantity result)
+        public OperatorOverload(Quantity left, Quantity result, Settings settings)
         {
             Left = left;
             Result = result;
-            Right = FindRight(left, Result);
+            Right = FindRight(settings, left, Result);
             if (Right == null)
             {
                 throw new ArgumentException(string.Format("Cannot create overload for {0} * x = {1}", left.ClassName, Result.ClassName));
@@ -29,23 +29,23 @@
 
         public string Operator { get; private set; }
 
-        public static bool CanCreate(Quantity left, Quantity result)
+        public static bool CanCreate(Settings settings, Quantity left, Quantity result)
         {
-            return FindRight(left, result) != null;
+            return FindRight(settings, left, result) != null;
         }
 
-        public static Quantity FindRight(Quantity left, Quantity result)
+        public static Quantity FindRight(Settings settings, Quantity left, Quantity result)
         {
             var derivedUnit = result.Unit as DerivedUnit;
             if (derivedUnit != null)
             {
                 var right = UnitParts.CreateFrom(result) / UnitParts.CreateFrom(left);
-                return Find(right.Flattened.ToArray());
+                return Find(settings, right.Flattened.ToArray());
             }
             else
             {
                 var right = UnitParts.CreateFrom(left) / UnitParts.CreateFrom(result);
-                return Find(right.Flattened.ToArray());
+                return Find(settings, right.Flattened.ToArray());
             }
         }
 
@@ -54,22 +54,22 @@
             return string.Format("{0} {1} {2} = {3}", Left.ClassName, Operator, Right.ClassName, Result.ClassName);
         }
 
-        private static Quantity Find(params UnitAndPower[] parts)
+        private static Quantity Find(Settings settings, params UnitAndPower[] parts)
         {
             IUnit unit = null;
             if (parts.Length == 1 && Math.Abs(parts.Single().Power) == 1)
             {
                 var part = parts.Single();
-                unit = UnitBase.AllUnitsStatic.OfType<SiUnit>().SingleOrDefault(u => u.ClassName == part.Unit.ClassName);
+                unit = settings.SiUnits.SingleOrDefault(u => u.ClassName == part.Unit.ClassName);
             }
             else
             {
                 var unitAndPowers = parts.OrderBy(x => x.UnitName).ToArray();
-                unit = UnitBase.AllUnitsStatic.OfType<DerivedUnit>().SingleOrDefault(u => u.Parts.OrderBy(x => x.UnitName).SequenceEqual(unitAndPowers, UnitAndPower.Comparer));
+                unit = settings.DerivedUnits.SingleOrDefault(u => u.Parts.OrderBy(x => x.UnitName).SequenceEqual(unitAndPowers, UnitAndPower.Comparer));
                 if (unit == null)
                 {
                     unitAndPowers = unitAndPowers.Select(x => new UnitAndPower(x.Unit, -1 * x.Power)).ToArray();
-                    unit = UnitBase.AllUnitsStatic.OfType<DerivedUnit>().SingleOrDefault(u => u.Parts.OrderBy(x => x.UnitName).SequenceEqual(unitAndPowers, UnitAndPower.Comparer));
+                    unit = settings.DerivedUnits.SingleOrDefault(u => u.Parts.OrderBy(x => x.UnitName).SequenceEqual(unitAndPowers, UnitAndPower.Comparer));
                 }
             }
             if (unit == null)

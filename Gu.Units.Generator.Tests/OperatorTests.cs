@@ -25,7 +25,7 @@
         [Test]
         public void LengthSpeed()
         {
-            var @operator = new OperatorOverload(_length, _speed);
+            var @operator = new OperatorOverload(_length, _speed, _settings);
             Assert.AreEqual(OperatorOverload.Divide, @operator.Operator);
             Assert.AreEqual(_length, @operator.Left);
             Assert.AreEqual(_time, @operator.Right);
@@ -35,7 +35,7 @@
         [Test]
         public void SpeedTime()
         {
-            var @operator = new OperatorOverload(_speed, _length);
+            var @operator = new OperatorOverload(_speed, _length, _settings);
             Assert.AreEqual(OperatorOverload.Multiply, @operator.Operator);
             Assert.AreEqual(_speed, @operator.Left);
             Assert.AreEqual(_time, @operator.Right);
@@ -45,7 +45,7 @@
         [Test]
         public void LengthArea()
         {
-            var @operator = new OperatorOverload(_length, _area);
+            var @operator = new OperatorOverload(_length, _area, _settings);
             Assert.AreEqual(OperatorOverload.Multiply, @operator.Operator);
             Assert.AreEqual(_length, @operator.Left);
             Assert.AreEqual(_length, @operator.Right);
@@ -55,7 +55,7 @@
         [Test]
         public void AreaLength()
         {
-            var @operator = new OperatorOverload(_area, _length);
+            var @operator = new OperatorOverload(_area, _length, _settings);
             Assert.AreEqual(OperatorOverload.Divide, @operator.Operator);
             Assert.AreEqual(_area, @operator.Left);
             Assert.AreEqual(_length, @operator.Right);
@@ -65,7 +65,7 @@
         [Test]
         public void LengthVolume()
         {
-            var @operator = new OperatorOverload( _length,_volume);
+            var @operator = new OperatorOverload(_length, _volume, _settings);
             Assert.AreEqual(OperatorOverload.Multiply, @operator.Operator);
             Assert.AreEqual(_length, @operator.Left);
             Assert.AreEqual(_area, @operator.Right);

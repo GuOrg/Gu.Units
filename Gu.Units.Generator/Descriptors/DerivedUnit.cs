@@ -12,18 +12,19 @@
     [Serializable]
     public class DerivedUnit : UnitBase
     {
-        private readonly UnitParts _parts = new UnitParts();
+        private readonly UnitParts _parts;
         private bool _explicitName;
 
         public DerivedUnit()
             : base(null, null, null)
         {
-            _parts.CollectionChanged += PartsOnCollectionChanged;
+            _parts = new UnitParts(this);
         }
 
         public DerivedUnit(string @namespace, string name, string symbol, params UnitAndPower[] parts)
             : base(@namespace, name, symbol)
         {
+            _parts = new UnitParts(this);
             if (parts.Length == 0)
             {
                 throw new ArgumentException("No units", "units");
@@ -37,15 +38,6 @@
             {
                 _parts.Add(unitAndPower);
             }
-            _parts.CollectionChanged += PartsOnCollectionChanged;
-        }
-
-        public static DerivedUnit Empty
-        {
-            get
-            {
-                return new DerivedUnit();
-            }
         }
 
         public UnitParts Parts
@@ -54,24 +46,10 @@
             {
                 return _parts;
             }
-            set
+            set // Needed for the converter to work
             {
                 _parts.Clear();
                 _parts.InvokeAddRange(value);
-            }
-        }
-
-        public bool ExplicitName
-        {
-            get { return _explicitName; }
-            set
-            {
-                if (value.Equals(_explicitName))
-                {
-                    return;
-                }
-                _explicitName = value;
-                OnPropertyChanged();
             }
         }
 
@@ -87,15 +65,6 @@
         public override string ToString()
         {
             return string.Format("{0}  ({1}) ({2})", Symbol, this.UiName, this.Quantity == null ? "null" : this.Quantity.ClassName);
-        }
-
-        private void PartsOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs notifyCollectionChangedEventArgs)
-        {
-            if (string.IsNullOrEmpty(ClassName))
-            {
-                ClassName = _parts.UnitName;
-                ExplicitName = false;
-            }
         }
     }
 }
