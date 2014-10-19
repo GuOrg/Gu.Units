@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:generator="clr-namespace:Gu.Units.Generator"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:objectModel="clr-namespace:System.Collections.ObjectModel;assembly=System"
         Title="MainWindow"
         Width="525"
         Height="350"
@@ -165,7 +164,13 @@
                     </GroupBox>
 
                     <GroupBox Grid.Row="2" Header="Prefixes">
-                        <DataGrid ItemsSource="{Binding Prefixes}" />
+                        <DataGrid ItemsSource="{Binding Prefixes}" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Symbol" Binding="{Binding Symbol}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Power" Binding="{Binding Power}"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
                     </GroupBox>
                 </Grid>
             </GroupBox>
