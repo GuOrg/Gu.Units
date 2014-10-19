@@ -73,12 +73,12 @@
                     </GroupBox>
                 </Grid>
             </GroupBox>
-            
+
             <GridSplitter Grid.Column="1"
                           HorizontalAlignment="Stretch"
                           VerticalAlignment="Stretch"
                           ResizeDirection="Columns" />
-            
+
             <GroupBox Grid.Column="2" Header="Conversions">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -164,11 +164,11 @@
                     </GroupBox>
 
                     <GroupBox Grid.Row="2" Header="Prefixes">
-                        <DataGrid ItemsSource="{Binding Prefixes}" AutoGenerateColumns="False">
+                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Prefixes}">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Name" Binding="{Binding Name}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Symbol" Binding="{Binding Symbol}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Power" Binding="{Binding Power}"></DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Name}" Header="Name" />
+                                <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
+                                <DataGridTextColumn Binding="{Binding Power}" Header="Power" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </GroupBox>

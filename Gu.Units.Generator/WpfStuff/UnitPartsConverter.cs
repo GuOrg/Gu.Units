@@ -78,11 +78,13 @@
 
         private static IEnumerable<Match> Parse(string s)
         {
-            var symbols = Settings.Instance.AllUnits.Select(x => x.Symbol).ToArray();
+            var symbols = Settings.Instance.AllUnits.Where(x => !string.IsNullOrEmpty(x.Symbol))
+                                                    .Select(x => Regex.Escape(x.Symbol))
+                                                    .ToArray();
             var symbolsPattern = string.Join("|", new[] { "1" }.Concat(symbols));
             var superscriptsPattern = string.Join("|", Superscripts);
             var pattern = string.Format(
-                @"(?<Unit>
+@"(?<Unit>
     (?<Symbol>({0}))
     (?<Power>
         ((?:\^)[\+\-]?\d+)
@@ -90,7 +92,7 @@
         (⁻?({1}))
     )?
     |
-    (?<Op>[⋅\*\/])
+    (?<Op>[⋅\*\/])?
 )", symbolsPattern, superscriptsPattern);
             var matches = Regex.Matches(s, pattern, RegexOptions.IgnorePatternWhitespace)
                                .OfType<Match>()
