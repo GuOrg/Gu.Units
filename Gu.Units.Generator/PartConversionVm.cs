@@ -9,24 +9,24 @@
     public class PartConversionVm : INotifyPropertyChanged
     {
         private readonly IUnit _unit;
-        private readonly SubUnit[] _subParts;
-        public PartConversionVm(IUnit unit, params SubUnit[] subParts)
+        private readonly Conversion[] _subParts;
+        public PartConversionVm(IUnit unit, params Conversion[] subParts)
         {
             _unit = unit;
             _subParts = subParts;
-            Temp = new SubUnit { BaseUnit = unit };
+            Temp = new Conversion { BaseUnit = unit };
             Temp.SetParts(subParts);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public SubUnit Temp { get; set; }
+        public Conversion Temp { get; set; }
 
         public bool IsUsed
         {
             get
             {
-                return _unit.SubUnits.Any(x => x.ConversionFactor == Temp.ConversionFactor);
+                return _unit.Conversions.Any(x => x.ConversionFactor == Temp.ConversionFactor);
             }
             set
             {
@@ -36,13 +36,13 @@
                 }
                 if (value)
                 {
-                    var subUnit = new SubUnit { BaseUnit = _unit };
+                    var subUnit = new Conversion { BaseUnit = _unit };
                     subUnit.SetParts(_subParts);
-                    _unit.SubUnits.Add(subUnit);
+                    _unit.Conversions.Add(subUnit);
                 }
                 else
                 {
-                    _unit.SubUnits.InvokeRemove(x => x.ConversionFactor == Temp.ConversionFactor);
+                    _unit.Conversions.InvokeRemove(x => x.ConversionFactor == Temp.ConversionFactor);
                 }
                 OnPropertyChanged();
             }

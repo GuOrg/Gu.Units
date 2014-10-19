@@ -7,9 +7,9 @@
     using System.Linq;
     using System.Xml.Serialization;
 
-    public class SubUnit : TypeMetaData, ISubUnit
+    public class Conversion : TypeMetaData, IUnit
     {
-        private readonly ObservableCollection<SubUnit> _subUnits = new ObservableCollection<SubUnit>();
+        private readonly ObservableCollection<Conversion> _conversions = new ObservableCollection<Conversion>();
         private readonly CodeDomProvider _provider = CodeDomProvider.CreateProvider("C#");
 
         private string _symbol;
@@ -17,12 +17,11 @@
         private Prefix _prefix;
         private IUnit _baseUnit;
 
-        public SubUnit()
+        public Conversion()
         {
-
         }
 
-        public SubUnit(string @namespace, string className, string symbol, double conversionFactor)
+        public Conversion(string @namespace, string className, string symbol, double conversionFactor)
             : base(@namespace, className)
         {
             _symbol = symbol;
@@ -60,14 +59,6 @@
                 }
                 _conversionFactor = value;
                 this.OnPropertyChanged();
-            }
-        }
-
-        public ObservableCollection<SubUnit> SubUnits
-        {
-            get
-            {
-                return _subUnits;
             }
         }
 
@@ -143,6 +134,11 @@
         [XmlIgnore]
         public string UiName { get; private set; }
 
+        public ObservableCollection<Conversion> Conversions
+        {
+            get { return _conversions; }
+        }
+
         public bool IsSymbolNameValid
         {
             get
@@ -171,7 +167,7 @@
             }
         }
 
-        public void SetParts(IEnumerable<SubUnit> subunits)
+        public void SetParts(IEnumerable<Conversion> subunits)
         {
             var derivedUnit = BaseUnit as DerivedUnit;
             if (derivedUnit == null)

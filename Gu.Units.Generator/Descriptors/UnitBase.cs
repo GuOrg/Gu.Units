@@ -11,7 +11,7 @@
 
     public abstract class UnitBase : TypeMetaData, IUnit
     {
-        private readonly ParentCollection<UnitBase, SubUnit> _subUnits;
+        private readonly ParentCollection<UnitBase, Conversion> _conversions;
         private readonly CodeDomProvider _provider = CodeDomProvider.CreateProvider("C#");
 
         private string _symbol;
@@ -20,14 +20,14 @@
 
         protected UnitBase()
         {
-            _subUnits = new ParentCollection<UnitBase, SubUnit>(this, (unit, parent) => unit.BaseUnit = parent);
+            _conversions = new ParentCollection<UnitBase, Conversion>(this, (unit, parent) => unit.BaseUnit = parent);
             Quantity = new Quantity(this);
         }
 
         protected UnitBase(string @namespace, string className, string symbol)
             : base(@namespace, className)
         {
-            _subUnits = new ParentCollection<UnitBase, SubUnit>(this, (unit, parent) => unit.BaseUnit = parent);
+            _conversions = new ParentCollection<UnitBase, Conversion>(this, (unit, parent) => unit.BaseUnit = parent);
             Quantity = new Quantity(this);
             _symbol = symbol;
         }
@@ -63,11 +63,11 @@
             }
         }
 
-        public ObservableCollection<SubUnit> SubUnits
+        public ObservableCollection<Conversion> Conversions
         {
             get
             {
-                return _subUnits;
+                return _conversions;
             }
         }
 
@@ -83,7 +83,7 @@
                 }
                 _quantity = value;
                 this.OnPropertyChanged();
-                foreach (var subUnit in SubUnits)
+                foreach (var subUnit in Conversions)
                 {
                     subUnit.Quantity = _quantity;
                 }

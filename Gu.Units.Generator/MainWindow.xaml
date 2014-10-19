@@ -142,7 +142,7 @@
                             </Grid>
                             <DataGrid Grid.Row="1"
                                       AutoGenerateColumns="False"
-                                      ItemsSource="{Binding Conversions.BaseUnit.SubUnits}">
+                                      ItemsSource="{Binding Conversions.BaseUnit.Conversions}">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Binding="{Binding Quantity.ClassName}" Header="Quantity" />
                                     <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />

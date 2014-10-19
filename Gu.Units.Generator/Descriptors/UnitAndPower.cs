@@ -99,6 +99,11 @@
             }
         }
 
+        public static UnitAndPower operator ^(UnitAndPower up, int i)
+        {
+            return new UnitAndPower(up.Unit, up.Power + i);
+        }
+
         public override string ToString()
         {
             if (Power == 1)

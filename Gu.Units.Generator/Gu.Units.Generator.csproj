@@ -72,13 +72,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ConversionsVm.cs" />
-    <Compile Include="Descriptors\ISubUnit.cs" />
     <Compile Include="Descriptors\IUnit.cs" />
     <Compile Include="Descriptors\Methods.cs" />
     <Compile Include="Descriptors\OperatorOverload.cs" />
     <Compile Include="Descriptors\Prefix.cs" />
     <Compile Include="Descriptors\SiUnit.cs" />
-    <Compile Include="Descriptors\SubUnit.cs" />
+    <Compile Include="Descriptors\Conversion.cs" />
     <Compile Include="Descriptors\TypeMetaData.cs" />
     <Compile Include="Descriptors\DerivedUnit.cs" />
     <Compile Include="Descriptors\UnitAndPower.cs" />

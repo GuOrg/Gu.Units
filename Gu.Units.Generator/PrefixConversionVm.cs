@@ -10,12 +10,12 @@
     public class PrefixConversionVm : INotifyPropertyChanged
     {
         private readonly IUnit _unit;
-        private readonly SubUnit _temp;
+        private readonly Conversion _temp;
         public PrefixConversionVm(Prefix prefix, IUnit unit)
         {
             _unit = unit;
             Prefix = prefix;
-            _temp = new SubUnit
+            _temp = new Conversion
             {
                 BaseUnit = unit,
                 Prefix = prefix
@@ -34,7 +34,7 @@
                 {
                     return false;
                 }
-                return _unit.SubUnits.Any(x => x.ConversionFactor == _temp.ConversionFactor && x.Symbol == _temp.Symbol);
+                return _unit.Conversions.Any(x => x.ConversionFactor == _temp.ConversionFactor && x.Symbol == _temp.Symbol);
             }
             set
             {
@@ -44,11 +44,11 @@
                 }
                 if (value)
                 {
-                    _unit.SubUnits.Add(new SubUnit { Prefix = Prefix });
+                    _unit.Conversions.Add(new Conversion { Prefix = Prefix });
                 }
                 else
                 {
-                    _unit.SubUnits.InvokeRemove(x => x.Prefix != null && x.Prefix.Name == Prefix.Name);
+                    _unit.Conversions.InvokeRemove(x => x.Prefix != null && x.Prefix.Name == Prefix.Name);
                 }
                 OnPropertyChanged();
             }
