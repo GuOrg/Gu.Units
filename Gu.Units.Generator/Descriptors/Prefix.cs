@@ -11,7 +11,7 @@
         private string _name;
         private string _symbol;
         private int _factor;
-        public Prefix()
+        private Prefix()
         {
         }
 

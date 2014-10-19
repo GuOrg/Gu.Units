@@ -8,7 +8,7 @@
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainVm _vm = new MainVm();
+        private readonly MainVm _vm = new MainVm();
         public MainWindow()
         {
             InitializeComponent();

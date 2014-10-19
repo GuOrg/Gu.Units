@@ -1,13 +1,13 @@
 namespace Gu.Units.Generator
 {
-    using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.ComponentModel;
 
-    public interface IUnit
+    public interface IUnit : INotifyPropertyChanged
     {
         string Symbol { get; set; }
         string ClassName { get; set; }
-        string Namespace { get; }
+        string Namespace { get; set; }
         string ParameterName { get; }
         string QuantityName { get; set; }
         Quantity Quantity { get; set; }
@@ -15,5 +15,6 @@ namespace Gu.Units.Generator
         string UiName { get; }
         ObservableCollection<SubUnit> SubUnits { get; }
         bool IsSymbolNameValid { get; }
+        Settings Settings { get; set; }
     }
 }

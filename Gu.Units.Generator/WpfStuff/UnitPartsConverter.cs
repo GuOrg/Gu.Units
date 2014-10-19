@@ -7,11 +7,10 @@
     using System.Linq;
     using System.Text.RegularExpressions;
 
-    using Gu.Units.Generator.Annotations;
-
     public class UnitPartsConverter : TypeConverter
     {
         private static readonly string[] Superscripts = { "¹", "²", "³" };
+
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
         {
             return sourceType == typeof(string);
@@ -34,7 +33,7 @@
                 return null;
             }
             var matches = Parse(s);
-            var parts = new UnitParts();
+            var parts = new UnitParts(null);
             int sign = 1;
             bool expectsSymbol = true;
             foreach (Match match in matches)
@@ -47,7 +46,7 @@
                         expectsSymbol = false;
                         continue;
                     }
-                    var unit = UnitBase.AllUnitsStatic.Single(x => x.Symbol == symbol);
+                    var unit = Settings.Instance.AllUnits.Single(x => x.Symbol == symbol);
                     int p = ParsePower(match.Groups["Power"].Value);
                     parts.Add(new UnitAndPower(unit, sign * p));
                     expectsSymbol = false;
@@ -72,9 +71,14 @@
             return parts;
         }
 
+        public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
+        {
+            return value == null ? null : ((UnitParts)value).Expression;
+        }
+
         private static IEnumerable<Match> Parse(string s)
         {
-            var symbols = UnitBase.AllUnitsStatic.Select(x => x.Symbol).ToArray();
+            var symbols = Settings.Instance.AllUnits.Select(x => x.Symbol).ToArray();
             var symbolsPattern = string.Join("|", new[] { "1" }.Concat(symbols));
             var superscriptsPattern = string.Join("|", Superscripts);
             var pattern = string.Format(
@@ -94,12 +98,7 @@
             return matches;
         }
 
-        public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
-        {
-            return value == null ? null : ((UnitParts)value).Expression;
-        }
-
-        private int ParsePower(string power)
+        private static int ParsePower(string power)
         {
             if (power == "")
             {
@@ -110,11 +109,11 @@
                 var indexOf = Array.IndexOf(Superscripts, power.Substring(1));
                 if (indexOf < 0)
                 {
-                    throw new FormatException();                    
+                    throw new FormatException();
                 }
-                return -1*(indexOf + 1);
+                return -1 * (indexOf + 1);
             }
-            int p =  Array.IndexOf(Superscripts, power) + 1;
+            int p = Array.IndexOf(Superscripts, power) + 1;
             if (p > 0)
             {
                 return p;

@@ -3,8 +3,8 @@
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
-    using Gu.Units.Generator.WpfStuff;
     using NUnit.Framework;
+    using WpfStuff;
 
     public class UnitPartsConverterTests
     {
@@ -27,13 +27,10 @@
         public readonly SiUnit Kilograms;
         public readonly SiUnit Seconds;
 
-        //public static readonly DerivedUnit Joules = new DerivedUnit("", "Joules", "J", new UnitAndPower(Kilograms, 1), new UnitAndPower(Metres, 2), new UnitAndPower(Seconds, -2));
-
         private readonly List<Data> _datas;
 
         public UnitPartsConverterSource()
         {
-            UnitBase.AllUnitsStatic.Clear();
             Metres = new SiUnit("", "Metres", "m");
             Kilograms = new SiUnit("", "Kilograms", "kg");
             Seconds = new SiUnit("", "Seconds", "s");

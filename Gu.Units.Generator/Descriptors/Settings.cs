@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Collections.Specialized;
     using System.IO;
     using System.Linq;
     using System.Reflection;
@@ -13,14 +14,24 @@
 
     public class Settings
     {
-        private readonly List<DerivedUnit> _derivedUnits = new List<DerivedUnit>();
-        private readonly List<SiUnit> _siUnits = new List<SiUnit>();
-        private readonly List<Prefix> _prefixes = new List<Prefix>();
-        private readonly List<Quantity> _quantities = new List<Quantity>();
+        private static Settings _instance;
+        private readonly ParentCollection<Settings, DerivedUnit> _derivedUnits;
+        private readonly ParentCollection<Settings, SiUnit> _siUnits;
+        private readonly ObservableCollection<Prefix> _prefixes = new ObservableCollection<Prefix>();
+        protected Settings()
+        {
+            _derivedUnits = new ParentCollection<Settings, DerivedUnit>(this, (unit, settings) => unit.Settings = settings);
+            _siUnits = new ParentCollection<Settings, SiUnit>(this, (unit, settings) => unit.Settings = settings);
+        }
+
         public static Settings Instance
         {
             get
             {
+                if (_instance != null)
+                {
+                    return _instance;
+                }
                 try
                 {
                     var serializer = new XmlSerializer(typeof(Settings));
@@ -29,12 +40,13 @@
                     {
                         settings = (Settings)serializer.Deserialize(reader);
                     }
-                    settings.Initialize();
+                    _instance = settings;
                     return settings;
                 }
                 catch (Exception e)
                 {
-                    return new Settings();
+                    _instance = new Settings();
+                    return _instance;
                 }
             }
         }
@@ -85,7 +97,7 @@
             }
         }
 
-        public List<DerivedUnit> DerivedUnits
+        public ObservableCollection<DerivedUnit> DerivedUnits
         {
             get
             {
@@ -93,21 +105,26 @@
             }
         }
 
-        public List<SiUnit> SiUnits
+        public ObservableCollection<SiUnit> SiUnits
         {
             get { return _siUnits; }
         }
 
-        public List<Prefix> Prefixes
+        public ObservableCollection<Prefix> Prefixes
         {
             get { return _prefixes; }
         }
 
-        public List<Quantity> Quantities
+        public IEnumerable<IUnit> AllUnits
+        {
+            get { return SiUnits.Concat<IUnit>(DerivedUnits); }
+        }
+
+        public IEnumerable<Quantity> Quantities
         {
             get
             {
-                return _quantities;
+                return AllUnits.Select(x => x.Quantity);
             }
         }
 
@@ -121,7 +138,6 @@
                 {
                     settings = (Settings)serializer.Deserialize(reader);
                 }
-                settings.Initialize();
                 return settings;
             }
             catch (FileNotFoundException)
@@ -135,49 +151,13 @@
             }
         }
 
-        private void Initialize()
-        {
-            foreach (var unit in SiUnits)
-            {
-                unit.Namespace = NameSpace;
-                var quantity = new Quantity(unit.Namespace, unit.QuantityName, unit);
-                unit.Quantity = quantity;
-                _quantities.Add(quantity);
-            }
-            foreach (var unit in DerivedUnits)
-            {
-                unit.Namespace = NameSpace;
-                var quantity = new Quantity(unit.Namespace, unit.QuantityName, unit);
-                _quantities.Add(quantity);
-                unit.Quantity = quantity;
-                foreach (var unitPart in unit.Parts)
-                {
-                    if (unitPart.Unit == null)
-                    {
-                        unitPart.Unit = UnitBase.AllUnitsStatic.Single(x => x.ClassName == unitPart.UnitName);
-                    }
-                }
-            }
-            foreach (var left in Quantities)
-            {
-                var tmp = left;
-                foreach (var result in Quantities.Where(x => x != tmp))
-                {
-                    if (OperatorOverload.CanCreate(left, result))
-                    {
-                        left.OperatorOverloads.Add(new OperatorOverload(left, result));
-                    }
-                }
-            }
-        }
-
         public static void Save(Settings settings, string fullFileName)
         {
             var serializer = new XmlSerializer(typeof(Settings));
             var toSave = new Settings();
-            toSave.DerivedUnits.AddRange(settings.DerivedUnits.Where(x => x != null && !x.IsEmpty));
-            toSave.SiUnits.AddRange(settings.SiUnits.Where(x => x != null && !x.IsEmpty));
-            toSave.Prefixes.AddRange(settings.Prefixes.Where(x => x != null).OrderBy(x => x.Factor));
+            toSave.DerivedUnits.InvokeAddRange(settings.DerivedUnits.Where(x => x != null && !x.IsEmpty));
+            toSave.SiUnits.InvokeAddRange(settings.SiUnits.Where(x => x != null && !x.IsEmpty));
+            toSave.Prefixes.InvokeAddRange(settings.Prefixes.Where(x => x != null).OrderBy(x => x.Factor));
             using (var stream = File.Create(fullFileName))
             {
                 using (var writer = new StreamWriter(stream, Encoding.UTF8))

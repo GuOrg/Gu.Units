@@ -3,54 +3,41 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Collections.Specialized;
     using System.ComponentModel;
     using System.Linq;
     using System.Xml.Serialization;
 
     using Gu.Units.Generator.WpfStuff;
 
-    [Serializable, TypeConverter(typeof(QuantityConverter))]
+    [Serializable]
     public class Quantity : TypeMetaData
     {
-        private readonly ObservableCollection<OperatorOverload> _operatorOverloads = new ObservableCollection<OperatorOverload>();
         private IUnit _unit;
         private string _unitName;
 
-        public Quantity()
-        {
-        }
-
-        public Quantity(string @namespace, string className, IUnit unit)
-            : base(@namespace, className)
+        public Quantity(IUnit unit)
+            : base(unit.Namespace, null)
         {
             _unit = unit;
-            if (_unit != null)
+            _unit.Quantity = this;
+            if (_unit.Settings == null)
             {
-                _unit.Quantity = this;
+                _unit.PropertyChanged += (_, e) =>
+                {
+                    if (e.PropertyName == NameOf.Property(() => _unit.Settings, true))
+                    {
+                        _unit.Settings.SiUnits.CollectionChanged += (__, _e) => OnPropertyChanged("OperatorOverloads");
+                        _unit.Settings.DerivedUnits.CollectionChanged += (__, _e) => OnPropertyChanged("OperatorOverloads");
+                    }
+                };
+            }
+            else
+            {
+                _unit.Settings.SiUnits.CollectionChanged += (_, e) => OnPropertyChanged("OperatorOverloads");
+                _unit.Settings.DerivedUnits.CollectionChanged += (_, e) => OnPropertyChanged("OperatorOverloads");
             }
         }
-
-        public static Quantity Empty
-        {
-            get
-            {
-                return new Quantity("", "", null);
-            }
-        }
-
-        /// <summary>
-        /// DummyData for the template
-        /// </summary>
-        public static Quantity DummySiUnit
-        {
-            get
-            {
-                var siUnit = new SiUnit("Gu.Units", "Metres", "m");
-                var quantity = new Quantity("", "Metres", siUnit);
-                return quantity;
-            }
-        }
-
         public string UnitName
         {
             get
@@ -130,11 +117,22 @@
                 return string.Format("IQuantity<{0}>", args);
             }
         }
-        
+
         [XmlIgnore]
-        public ObservableCollection<OperatorOverload> OperatorOverloads
+        public IEnumerable<OperatorOverload> OperatorOverloads
         {
-            get { return _operatorOverloads; }
+            get
+            {
+                return Settings.Quantities.Where(x => x != this)
+                               .Where(result => OperatorOverload.CanCreate(Settings, this, result))
+                               .Select(result => new OperatorOverload(this, result, Settings));
+            }
+        }
+
+        [XmlIgnore]
+        public Settings Settings
+        {
+            get { return Unit.Settings; }
         }
 
         public override string ToString()

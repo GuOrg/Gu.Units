@@ -11,11 +11,9 @@
     {
         private readonly ObservableCollection<SubUnit> _subUnits = new ObservableCollection<SubUnit>();
         private readonly CodeDomProvider _provider = CodeDomProvider.CreateProvider("C#");
-     
+
         private string _symbol;
         private double _conversionFactor;
-        private Quantity _quantity;
-        private string _quantityName;
         private Prefix _prefix;
         private IUnit _baseUnit;
 
@@ -95,17 +93,10 @@
         {
             get
             {
-                return _quantity;
+                return BaseUnit.Quantity;
             }
-            set
-            {
-                if (Equals(value, _quantity))
-                {
-                    return;
-                }
-                _quantity = value;
-                this.OnPropertyChanged();
-            }
+
+            set { throw new NotImplementedException(); }
         }
 
         [XmlIgnore]
@@ -160,6 +151,9 @@
             }
         }
 
+        [XmlIgnore]
+        public Settings Settings { get; set; }
+
         private void SyncWithPrefix()
         {
             if (BaseUnit == null || Prefix == null)
@@ -185,7 +179,7 @@
                 throw new InvalidOperationException("trying to set partunits when baseunit != DerivedUnit");
             }
             double cf = 1;
-            var unitParts = new UnitParts(derivedUnit.Parts.ToArray());
+            var unitParts = new UnitParts(derivedUnit, derivedUnit.Parts.ToArray());
             foreach (var part in subunits)
             {
                 var up = unitParts.Single(x => x.UnitName == part.BaseUnit.ClassName);

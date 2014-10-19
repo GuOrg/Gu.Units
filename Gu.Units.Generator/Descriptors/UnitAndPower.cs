@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.Linq;
     using System.Runtime.CompilerServices;
     using System.Xml.Serialization;
     using Annotations;
@@ -12,7 +13,8 @@
         private IUnit _unit;
         private string _unitName;
         private int _power;
-        public UnitAndPower()
+        private IUnit _parent;
+        private UnitAndPower()
         {
         }
 
@@ -36,22 +38,13 @@
 
         public static readonly IEqualityComparer<UnitAndPower> Comparer = new UnitNamePowerEqualityComparer();
 
-        public static UnitAndPower Empty
-        {
-            get
-            {
-                return new UnitAndPower()
-                           {
-                               _unit = null,
-                               _power = 0
-                           };
-            }
-        }
-
         [XmlIgnore]
         public IUnit Unit
         {
-            get { return _unit; }
+            get
+            {
+                return _unit ?? (_unit = Parent.Settings.AllUnits.Single(x => x.ClassName == _unitName));
+            }
             set
             {
                 if (Equals(value, _unit))
@@ -69,15 +62,13 @@
             get
             {
                 if (Unit != null)
+                {
                     return this.Unit.ClassName;
+                }
                 return _unitName;
             }
             set
             {
-                if (Unit != null)
-                {
-                    throw new InvalidOperationException("Trying to set unit name");
-                }
                 _unitName = value;
             }
         }
@@ -93,6 +84,18 @@
                 }
                 _power = value;
                 OnPropertyChanged();
+            }
+        }
+
+        [XmlIgnore]
+        public IUnit Parent
+        {
+            get { return _parent; }
+            set
+            {
+                _parent = value;
+                OnPropertyChanged();
+                OnPropertyChanged("Unit");
             }
         }
 
@@ -179,6 +182,5 @@
                 }
             }
         }
-
     }
 }

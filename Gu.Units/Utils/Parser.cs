@@ -1,4 +1,4 @@
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.Collections.Concurrent;
@@ -9,6 +9,7 @@ namespace Gu.Units
 
     public static class Parser
     {
+        public static readonly string[] Superscripts = { "¹", "²", "³" };
         public static readonly string DoublePointPattern = @"[+-]?\d*(?:.\d+)?(?:[eE][+-]?\d+)?";
         public static readonly string DoubleCommaPattern = @"[+-]?\d*(?:,\d+)?(?:[eE][+-]?\d+)?"; // not super nice :)
         public static readonly string UnitValuePointPattern = string.Format(@"^(?: *)(?<Value>{0}) *(?<Unit>.+) *$", DoublePointPattern);
@@ -78,6 +79,34 @@ namespace Gu.Units
                               .Distinct()
                               .ToArray();
             return units;
+        }
+
+        public static int ParsePower(string power)
+        {
+            if (power == "")
+            {
+                return 1;
+            }
+            if (power[0] == '⁻')
+            {
+                var indexOf = Array.IndexOf(Superscripts, power.Substring(1));
+                if (indexOf < 0)
+                {
+                    throw new FormatException();
+                }
+                return -1 * (indexOf + 1);
+            }
+            int p = Array.IndexOf(Superscripts, power) + 1;
+            if (p > 0)
+            {
+                return p;
+            }
+            if (power[0] != '^')
+            {
+                throw new FormatException();
+            }
+            p = int.Parse(power.TrimStart('^'));
+            return p;
         }
     }
 }

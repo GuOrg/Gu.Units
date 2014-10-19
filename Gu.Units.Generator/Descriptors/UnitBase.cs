@@ -7,26 +7,29 @@
     using System.Collections.Specialized;
     using System.Linq;
     using System.Xml.Serialization;
+    using WpfStuff;
 
     public abstract class UnitBase : TypeMetaData, IUnit
     {
-        public static readonly ObservableCollection<IUnit> AllUnitsStatic = new ObservableCollection<IUnit>();
-        private readonly ReadOnlyObservableCollection<IUnit> _allUnitsReadonly;
-        private readonly ObservableCollection<SubUnit> _subUnits = new ObservableCollection<SubUnit>();
+        private readonly ParentCollection<UnitBase, SubUnit> _subUnits;
         private readonly CodeDomProvider _provider = CodeDomProvider.CreateProvider("C#");
 
         private string _symbol;
         private Quantity _quantity;
-        private string _quantityName;
+        private Settings _settings;
+
+        protected UnitBase()
+        {
+            _subUnits = new ParentCollection<UnitBase, SubUnit>(this, (unit, parent) => unit.BaseUnit = parent);
+            Quantity = new Quantity(this);
+        }
 
         protected UnitBase(string @namespace, string className, string symbol)
             : base(@namespace, className)
         {
+            _subUnits = new ParentCollection<UnitBase, SubUnit>(this, (unit, parent) => unit.BaseUnit = parent);
+            Quantity = new Quantity(this);
             _symbol = symbol;
-            this.PropertyChanged += (sender, args) => this.TryAdd();
-            TryAdd();
-            _allUnitsReadonly = new ReadOnlyObservableCollection<IUnit>(AllUnitsStatic);
-            _subUnits.CollectionChanged += SubUnitsOnCollectionChanged;
         }
 
         public string Symbol
@@ -47,22 +50,16 @@
         {
             get
             {
-                if (Quantity != null)
-                {
-                    return this.Quantity.ClassName;
-                }
-                return _quantityName;
+                return Quantity.ClassName;
             }
             set
             {
-                if (Quantity != null)
+                if (Quantity.ClassName == value)
                 {
-                    this.Quantity.ClassName = value;
+                    return;
                 }
-                else
-                {
-                    _quantityName = value;
-                }
+                Quantity.ClassName = value;
+                OnPropertyChanged();
             }
         }
 
@@ -105,15 +102,6 @@
         [XmlIgnore]
         public abstract string UiName { get; }
 
-        [XmlIgnore]
-        public ReadOnlyObservableCollection<IUnit> AllUnits
-        {
-            get
-            {
-                return _allUnitsReadonly;
-            }
-        }
-
         public bool IsSymbolNameValid
         {
             get
@@ -122,32 +110,24 @@
             }
         }
 
+        [XmlIgnore]
+        public Settings Settings
+        {
+            get { return _settings; }
+            set
+            {
+                if (Equals(value, _settings))
+                {
+                    return;
+                }
+                _settings = value;
+                OnPropertyChanged();
+            }
+        }
+
         public override string ToString()
         {
             return this.UiName;
-        }
-
-        private void TryAdd()
-        {
-            if (!IsEmpty)
-            {
-                if (AllUnitsStatic.All(x => !(x.Symbol == this.Symbol && x.ClassName == this.ClassName)))
-                {
-                    AllUnitsStatic.Add(this);
-                }
-            }
-        }
-
-        private void SubUnitsOnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (e.NewItems != null)
-            {
-                foreach (var subUnit in e.NewItems.OfType<SubUnit>())
-                {
-                    subUnit.Quantity = this.Quantity;
-                    subUnit.BaseUnit = this;
-                }
-            }
         }
     }
 }
