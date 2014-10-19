@@ -51,11 +51,11 @@
             }
         }
 
-        public static string NameSpace
+        public static string Namespace
         {
             get
             {
-                return "Gu.Units";
+                return "Gu.Units"; // Hardcoding to avoid ref
             }
         }
 

@@ -220,6 +220,11 @@
             return Stiffness.FromNewtonsPerMetre(left.Pascals * right.Metres);
         }
 
+        public static SpecificEnergy operator /(Pressure left, Density right)
+        {
+            return SpecificEnergy.FromJoulesPerKilogram(left.Pascals / right.KilogramsPerCubicMetre);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Pressure"/> instances are equal.
         /// </summary>

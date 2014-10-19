@@ -21,7 +21,7 @@
         </Menu>
 
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-            <TextBlock Text="NameSpace" />
+            <TextBlock Text="Namespace" />
             <TextBox MinWidth="200" Text="{Binding NameSpace}" />
         </StackPanel>
 

@@ -165,6 +165,11 @@
             return From(microvolts, VoltageUnit.Microvolts);
         }
 
+        public static Energy operator *(Voltage left, ElectricCharge right)
+        {
+            return Energy.FromJoules(left.Volts * right.Coulombs);
+        }
+
         public static Power operator *(Voltage left, Current right)
         {
             return Power.FromWatts(left.Volts * right.Amperes);

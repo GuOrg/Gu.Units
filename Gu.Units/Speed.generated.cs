@@ -295,6 +295,11 @@
             return VolumetricFlow.FromCubicMetresPerSecond(left.MetresPerSecond * right.SquareMetres);
         }
 
+        public static SpecificEnergy operator *(Speed left, Speed right)
+        {
+            return SpecificEnergy.FromJoulesPerKilogram(left.MetresPerSecond * right.MetresPerSecond);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Speed"/> instances are equal.
         /// </summary>

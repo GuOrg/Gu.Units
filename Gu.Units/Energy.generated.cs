@@ -255,6 +255,16 @@
             return Stiffness.FromNewtonsPerMetre(left.Joules / right.SquareMetres);
         }
 
+        public static Voltage operator /(Energy left, ElectricCharge right)
+        {
+            return Voltage.FromVolts(left.Joules / right.Coulombs);
+        }
+
+        public static SpecificEnergy operator /(Energy left, Mass right)
+        {
+            return SpecificEnergy.FromJoulesPerKilogram(left.Joules / right.Kilograms);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Energy"/> instances are equal.
         /// </summary>

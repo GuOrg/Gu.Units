@@ -81,6 +81,12 @@
     <Compile Include="DensityUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
+    <Compile Include="ElectricCharge.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="ElectricChargeUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
     <Compile Include="Energy.generated.cs">
       <DependentUpon>QuantityGenerator.txt4</DependentUpon>
     </Compile>
@@ -111,6 +117,12 @@
     <Compile Include="LengthUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
+    <Compile Include="LuminousIntensity.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="LuminousIntensityUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
     <Compile Include="Mass.generated.cs">
       <DependentUpon>QuantityGenerator.txt4</DependentUpon>
     </Compile>
@@ -136,6 +148,12 @@
       <DependentUpon>QuantityGenerator.txt4</DependentUpon>
     </Compile>
     <Compile Include="ResistanceUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="SpecificEnergy.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="SpecificEnergyUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
     <Compile Include="Speed.generated.cs">

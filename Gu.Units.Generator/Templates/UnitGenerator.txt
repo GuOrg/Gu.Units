@@ -1,5 +1,5 @@
 ﻿
-Read Settings found 7 units
+Read Settings found 8 units
 //-> AccelerationUnit.generated.cs
 
 //-> AngleUnit.generated.cs
@@ -12,6 +12,8 @@ Read Settings found 7 units
 
 //-> DensityUnit.generated.cs
 
+//-> ElectricChargeUnit.generated.cs
+
 //-> EnergyUnit.generated.cs
 
 //-> ForceUnit.generated.cs
@@ -22,6 +24,8 @@ Read Settings found 7 units
 
 //-> LengthUnit.generated.cs
 
+//-> LuminousIntensityUnit.generated.cs
+
 //-> MassUnit.generated.cs
 
 //-> PowerUnit.generated.cs
@@ -29,6 +33,8 @@ Read Settings found 7 units
 //-> PressureUnit.generated.cs
 
 //-> ResistanceUnit.generated.cs
+
+//-> SpecificEnergyUnit.generated.cs
 
 //-> SpeedUnit.generated.cs
 
@@ -48,6 +54,8 @@ Read Settings found 7 units
 // Generated helper templates
 // Gu.Units\Gu.Units\UnitGenerator.txt4
 // Generated items
+// Gu.Units\Gu.Units\ElectricChargeUnit.generated.cs
+// Gu.Units\Gu.Units\SpecificEnergyUnit.generated.cs
 // Gu.Units\Gu.Units\ResistanceUnit.generated.cs
 // Gu.Units\Gu.Units\VoltageUnit.generated.cs
 // Gu.Units\Gu.Units\VolumetricFlowUnit.generated.cs
@@ -64,6 +72,7 @@ Read Settings found 7 units
 // Gu.Units\Gu.Units\ForceUnit.generated.cs
 // Gu.Units\Gu.Units\VolumeUnit.generated.cs
 // Gu.Units\Gu.Units\AreaUnit.generated.cs
+// Gu.Units\Gu.Units\LuminousIntensityUnit.generated.cs
 // Gu.Units\Gu.Units\CurrentUnit.generated.cs
 // Gu.Units\Gu.Units\FractionUnit.generated.cs
 // Gu.Units\Gu.Units\AngleUnit.generated.cs

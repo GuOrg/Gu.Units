@@ -165,6 +165,11 @@
             return From(gigahertz, FrequencyUnit.Gigahertz);
         }
 
+        public static Current operator *(Frequency left, ElectricCharge right)
+        {
+            return Current.FromAmperes(left.Hertz * right.Coulombs);
+        }
+
         public static Power operator *(Frequency left, Energy right)
         {
             return Power.FromWatts(left.Hertz * right.Joules);

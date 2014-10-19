@@ -26,7 +26,7 @@
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public string Namespace
+        public virtual string Namespace
         {
             get { return _ns; }
             set
