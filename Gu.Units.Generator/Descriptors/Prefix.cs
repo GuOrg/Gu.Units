@@ -10,16 +10,16 @@
     {
         private string _name;
         private string _symbol;
-        private int _factor;
+        private int _power;
         private Prefix()
         {
         }
 
-        public Prefix(string name, string symbol, int factor)
+        public Prefix(string name, string symbol, int power)
         {
             Name = name;
             Symbol = symbol;
-            Factor = factor;
+            Power = power;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -52,16 +52,16 @@
             }
         }
 
-        public int Factor
+        public int Power
         {
-            get { return _factor; }
+            get { return _power; }
             set
             {
-                if (value == _factor)
+                if (value == _power)
                 {
                     return;
                 }
-                _factor = value;
+                _power = value;
                 OnPropertyChanged();
             }
         }
@@ -70,13 +70,13 @@
         {
             get
             {
-                return Factor == 0 || string.IsNullOrEmpty(Name);
+                return Power == 0 || string.IsNullOrEmpty(Name);
             }
         }
 
         public override string ToString()
         {
-            return string.Format("Name: {0}, Symbol: {1}, Factor: {2}", this.Name, this.Symbol, this.Factor);
+            return string.Format("Name: {0}, Symbol: {1}, Power: {2}", this.Name, this.Symbol, this.Power);
         }
 
         [NotifyPropertyChangedInvocator]

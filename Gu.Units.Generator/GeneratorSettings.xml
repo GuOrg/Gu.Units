@@ -38,7 +38,6 @@
           <Power>2</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
@@ -71,7 +70,6 @@
           <Power>3</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
@@ -130,7 +128,6 @@
           <Power>-2</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
@@ -185,7 +182,6 @@
           <Power>-2</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
@@ -216,7 +212,6 @@
           <Power>-3</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
@@ -281,7 +276,6 @@
           <Power>-2</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
@@ -336,7 +330,6 @@
           <Power>-1</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
@@ -409,7 +402,6 @@
           <Power>-1</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
@@ -427,7 +419,6 @@
           <Power>-1</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
@@ -466,7 +457,6 @@
           <Power>-1</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
@@ -497,7 +487,6 @@
           <Power>-2</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
@@ -519,7 +508,6 @@
           <Power>-1</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
@@ -537,7 +525,6 @@
           <Power>-1</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
@@ -555,7 +542,6 @@
           <Power>-1</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
@@ -598,7 +584,6 @@
           <Power>-1</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
     </DerivedUnit>
     <DerivedUnit>
       <Namespace>Gu.Units</Namespace>
@@ -641,7 +626,22 @@
           <Power>-1</Power>
         </UnitAndPower>
       </Parts>
-      <ExplicitName>false</ExplicitName>
+    </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>JoulesPerKilogram</ClassName>
+      <Symbol>J/kg</Symbol>
+      <QuantityName>SpecificEnergy</QuantityName>
+      <SubUnits />
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Joules</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Kilograms</UnitName>
+          <Power>-1</Power>
+        </UnitAndPower>
+      </Parts>
     </DerivedUnit>
   </DerivedUnits>
   <SiUnits>
@@ -837,42 +837,42 @@
     <Prefix>
       <Name>Nano</Name>
       <Symbol>n</Symbol>
-      <Factor>-9</Factor>
+      <Power>-9</Power>
     </Prefix>
     <Prefix>
       <Name>Micro</Name>
       <Symbol>µ</Symbol>
-      <Factor>-6</Factor>
+      <Power>-6</Power>
     </Prefix>
     <Prefix>
       <Name>Milli</Name>
       <Symbol>m</Symbol>
-      <Factor>-3</Factor>
+      <Power>-3</Power>
     </Prefix>
     <Prefix>
       <Name>Centi</Name>
       <Symbol>c</Symbol>
-      <Factor>-2</Factor>
+      <Power>-2</Power>
     </Prefix>
     <Prefix>
       <Name>Deci</Name>
       <Symbol>d</Symbol>
-      <Factor>-1</Factor>
+      <Power>-1</Power>
     </Prefix>
     <Prefix>
       <Name>Kilo</Name>
       <Symbol>k</Symbol>
-      <Factor>3</Factor>
+      <Power>3</Power>
     </Prefix>
     <Prefix>
       <Name>Mega</Name>
       <Symbol>M</Symbol>
-      <Factor>6</Factor>
+      <Power>6</Power>
     </Prefix>
     <Prefix>
       <Name>Giga</Name>
       <Symbol>G</Symbol>
-      <Factor>9</Factor>
+      <Power>9</Power>
     </Prefix>
   </Prefixes>
 </Settings>

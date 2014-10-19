@@ -160,7 +160,7 @@
             {
                 return;
             }
-            ConversionFactor = Math.Pow(10, _prefix.Factor);
+            ConversionFactor = Math.Pow(10, _prefix.Power);
             if (string.IsNullOrEmpty(Symbol))
             {
                 Symbol = Prefix.Symbol + BaseUnit.Symbol;

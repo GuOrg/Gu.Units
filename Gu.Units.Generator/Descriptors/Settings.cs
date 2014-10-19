@@ -157,7 +157,7 @@
             var toSave = new Settings();
             toSave.DerivedUnits.InvokeAddRange(settings.DerivedUnits.Where(x => x != null && !x.IsEmpty));
             toSave.SiUnits.InvokeAddRange(settings.SiUnits.Where(x => x != null && !x.IsEmpty));
-            toSave.Prefixes.InvokeAddRange(settings.Prefixes.Where(x => x != null).OrderBy(x => x.Factor));
+            toSave.Prefixes.InvokeAddRange(settings.Prefixes.Where(x => x != null).OrderBy(x => x.Power));
             using (var stream = File.Create(fullFileName))
             {
                 using (var writer = new StreamWriter(stream, Encoding.UTF8))
