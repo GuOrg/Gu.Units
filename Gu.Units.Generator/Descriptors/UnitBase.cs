@@ -1,11 +1,7 @@
 ﻿namespace Gu.Units.Generator
 {
-    using System;
     using System.CodeDom.Compiler;
-    using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Collections.Specialized;
-    using System.Linq;
     using System.Xml.Serialization;
     using WpfStuff;
 

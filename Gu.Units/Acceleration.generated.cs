@@ -140,6 +140,11 @@
             return Frequency.FromHertz(left.MetresPerSecondSquared / right.MetresPerSecond);
         }
 
+        public static SpecificEnergy operator *(Acceleration left, Length right)
+        {
+            return SpecificEnergy.FromJoulesPerKilogram(left.MetresPerSecondSquared * right.Metres);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Acceleration"/> instances are equal.
         /// </summary>

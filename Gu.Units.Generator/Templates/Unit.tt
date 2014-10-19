@@ -14,57 +14,57 @@ else
 {
     unit = new SiUnit("Gu.Units", "Metres", "m")
                     {
-                        Quantity = new Quantity("Gu.Units", "Length", null)
+                        QuantityName =  "Length"
                     };
-    unit.SubUnits.Add(new SubUnit("Gu.Units", "Centimetres", "cm", 1E-2));
-    unit.SubUnits.Add(new SubUnit("Gu.Units", "Millimetres", "mm", 1E-3));
+    unit.Conversions.Add(new Conversion("Gu.Units", "Centimetres", "cm", 1E-2));
+    unit.Conversions.Add(new Conversion("Gu.Units", "Millimetres", "mm", 1E-3));
 }
 #>
-namespace <#= unit.Namespace #>
+namespace <#= Settings.Namespace #>
 {
     using System;
     /// <summary>
-    /// A type for the unit <see cref="T:<#= unit.Namespace #>.<#= unit.Quantity.ClassName #>Unit"/>.
+    /// A type for the unit <see cref="T:<#= Settings.Namespace #>.<#= unit.QuantityName #>Unit"/>.
 	/// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct <#= unit.Quantity.ClassName #>Unit : IUnit
+    public struct <#= unit.QuantityName #>Unit : IUnit
     {
         /// <summary>
-        /// The <see cref="T:<#= unit.Namespace #>.<#= unit.ClassName #>"/> unit
+        /// The <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/> unit
         /// Contains coonversion logic to from and formatting.
         /// </summary>
-        public static readonly <#= unit.Quantity.ClassName #>Unit <#= unit.ClassName #> = new <#= unit.Quantity.ClassName #>Unit(1.0, "<#= unit.Symbol #>");
+        public static readonly <#= unit.QuantityName #>Unit <#= unit.ClassName #> = new <#= unit.QuantityName #>Unit(1.0, "<#= unit.Symbol #>");
 <#
 		    if(unit.IsSymbolNameValid)
             {
 		    #>
         /// <summary>
-        /// The <see cref="T:<#= unit.Namespace #>.<#= unit.ClassName #>"/> unit
+        /// The <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/> unit
         /// Contains coonversion logic to from and formatting.
         /// </summary>
-		public static readonly <#= unit.Quantity.ClassName #>Unit <#= unit.Symbol #> = <#= unit.ClassName #>;
+		public static readonly <#= unit.QuantityName #>Unit <#= unit.Symbol #> = <#= unit.ClassName #>;
 <#
             }
             #><#
-		foreach(var su in unit.SubUnits)
+		foreach(var su in unit.Conversions)
         {
 		#>
 
         /// <summary>
-        /// The <see cref="T:<#= unit.Namespace #>.<#= su.ClassName #>"/> unit
+        /// The <see cref="T:<#= Settings.Namespace #>.<#= su.ClassName #>"/> unit
         /// Contains coonversion logic to from and formatting.
         /// </summary>
-		public static readonly <#= unit.Quantity.ClassName #>Unit <#= su.ClassName #> = new <#= unit.Quantity.ClassName #>Unit(<#= su.ConversionFactor #>, "<#= su.Symbol #>");
+		public static readonly <#= unit.QuantityName #>Unit <#= su.ClassName #> = new <#= unit.QuantityName #>Unit(<#= su.ConversionFactor #>, "<#= su.Symbol #>");
 <#
 		    if(su.IsSymbolNameValid)
             {
 		    #>
         /// <summary>
-        /// The <see cref="T:<#= unit.Namespace #>.<#= su.ClassName #>"/> unit
+        /// The <see cref="T:<#= Settings.Namespace #>.<#= su.ClassName #>"/> unit
         /// Contains coonversion logic to from and formatting.
         /// </summary>
-		public static readonly <#= unit.Quantity.ClassName #>Unit <#= su.Symbol #> = <#= su.ClassName #>;
+		public static readonly <#= unit.QuantityName #>Unit <#= su.Symbol #> = <#= su.ClassName #>;
 <#
             }
             #><#
@@ -74,14 +74,14 @@ namespace <#= unit.Namespace #>
         private readonly double _conversionFactor;
         private readonly string _symbol;
 
-        public <#= unit.Quantity.ClassName #>Unit(double conversionFactor, string symbol)
+        public <#= unit.QuantityName #>Unit(double conversionFactor, string symbol)
         {
             _conversionFactor = conversionFactor;
             _symbol = symbol;
         }
 
 		/// <summary>
-        /// The symbol for <see cref="T:<#= unit.Namespace #>.<#= unit.ClassName #>"/>.
+        /// The symbol for <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.
         /// </summary>
         public string Symbol
         {
@@ -91,13 +91,13 @@ namespace <#= unit.Namespace #>
             }
         }
 
-        public static <#= unit.Quantity.ClassName #> operator *(double left, <#= unit.Quantity.ClassName #>Unit right)
+        public static <#= unit.QuantityName #> operator *(double left, <#= unit.QuantityName #>Unit right)
         {
-            return <#= unit.Quantity.ClassName #>.From(left, right);
+            return <#= unit.QuantityName #>.From(left, right);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:<#= unit.Namespace #>.<#= unit.ClassName #>"/>.
+        /// Converts a value to <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>

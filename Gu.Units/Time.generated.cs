@@ -200,6 +200,11 @@
             return Speed.FromMetresPerSecond(left.Seconds * right.MetresPerSecondSquared);
         }
 
+        public static ElectricCharge operator *(Time left, Current right)
+        {
+            return ElectricCharge.FromCoulombs(left.Seconds * right.Amperes);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Time"/> instances are equal.
         /// </summary>

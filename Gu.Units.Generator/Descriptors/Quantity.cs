@@ -126,6 +126,10 @@
         {
             get
             {
+                if (Settings == null)
+                {
+                    return Enumerable.Empty<OperatorOverload>();
+                }
                 return Settings.Quantities.Where(x => x != this)
                                .Where(result => OperatorOverload.CanCreate(Settings, this, result))
                                .Select(result => new OperatorOverload(this, result, Settings));

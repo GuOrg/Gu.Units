@@ -230,6 +230,11 @@
             return Speed.FromMetresPerSecond(left.Metres / right.Seconds);
         }
 
+        public static SpecificEnergy operator *(Length left, Acceleration right)
+        {
+            return SpecificEnergy.FromJoulesPerKilogram(left.Metres * right.MetresPerSecondSquared);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Length"/> instances are equal.
         /// </summary>

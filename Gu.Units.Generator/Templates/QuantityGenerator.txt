@@ -1,5 +1,5 @@
 ﻿
-Read Settings found 23 units
+Read Settings found 26 units
 //-> Acceleration.generated.cs
 
 //-> Angle.generated.cs
@@ -12,6 +12,8 @@ Read Settings found 23 units
 
 //-> Density.generated.cs
 
+//-> ElectricCharge.generated.cs
+
 //-> Energy.generated.cs
 
 //-> Force.generated.cs
@@ -22,6 +24,8 @@ Read Settings found 23 units
 
 //-> Length.generated.cs
 
+//-> LuminousIntensity.generated.cs
+
 //-> Mass.generated.cs
 
 //-> Power.generated.cs
@@ -29,6 +33,8 @@ Read Settings found 23 units
 //-> Pressure.generated.cs
 
 //-> Resistance.generated.cs
+
+//-> SpecificEnergy.generated.cs
 
 //-> Speed.generated.cs
 
@@ -48,6 +54,8 @@ Read Settings found 23 units
 // Generated helper templates
 // Gu.Units\Gu.Units\QuantityGenerator.txt4
 // Generated items
+// Gu.Units\Gu.Units\ElectricCharge.generated.cs
+// Gu.Units\Gu.Units\SpecificEnergy.generated.cs
 // Gu.Units\Gu.Units\Resistance.generated.cs
 // Gu.Units\Gu.Units\Voltage.generated.cs
 // Gu.Units\Gu.Units\VolumetricFlow.generated.cs
@@ -64,6 +72,7 @@ Read Settings found 23 units
 // Gu.Units\Gu.Units\Force.generated.cs
 // Gu.Units\Gu.Units\Volume.generated.cs
 // Gu.Units\Gu.Units\Area.generated.cs
+// Gu.Units\Gu.Units\LuminousIntensity.generated.cs
 // Gu.Units\Gu.Units\Current.generated.cs
 // Gu.Units\Gu.Units\Fraction.generated.cs
 // Gu.Units\Gu.Units\Angle.generated.cs

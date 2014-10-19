@@ -165,6 +165,16 @@
             return From(microamperes, CurrentUnit.Microamperes);
         }
 
+        public static Frequency operator /(Current left, ElectricCharge right)
+        {
+            return Frequency.FromHertz(left.Amperes / right.Coulombs);
+        }
+
+        public static ElectricCharge operator *(Current left, Time right)
+        {
+            return ElectricCharge.FromCoulombs(left.Amperes * right.Seconds);
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Current"/> instances are equal.
         /// </summary>
