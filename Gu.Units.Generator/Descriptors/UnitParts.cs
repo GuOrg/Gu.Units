@@ -216,7 +216,7 @@
         {
             if (!this.Any())
             {
-                return "ERROR No Units";
+                return "";
             }
             var sb = new StringBuilder();
             UnitAndPower previous = null;

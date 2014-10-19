@@ -643,6 +643,22 @@
         </UnitAndPower>
       </Parts>
     </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>Coulombs</ClassName>
+      <Symbol>C</Symbol>
+      <QuantityName>ElectricCharge</QuantityName>
+      <SubUnits />
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Seconds</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Amperes</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
   </DerivedUnits>
   <SiUnits>
     <SiUnit>
@@ -831,6 +847,12 @@
           <SubUnits />
         </SubUnit>
       </SubUnits>
+    </SiUnit>
+    <SiUnit>
+      <ClassName>Candelas</ClassName>
+      <Symbol>cd</Symbol>
+      <QuantityName>LuminousIntensity</QuantityName>
+      <SubUnits />
     </SiUnit>
   </SiUnits>
   <Prefixes>

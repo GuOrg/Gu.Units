@@ -37,7 +37,9 @@
                 _unit.Settings.SiUnits.CollectionChanged += (_, e) => OnPropertyChanged("OperatorOverloads");
                 _unit.Settings.DerivedUnits.CollectionChanged += (_, e) => OnPropertyChanged("OperatorOverloads");
             }
+            _unit.PropertyChanged += (_, e) => OnPropertyChanged("Interface");
         }
+       
         public string UnitName
         {
             get
@@ -93,21 +95,25 @@
                 var siUnit = Unit as SiUnit;
                 if (siUnit != null)
                 {
-                    if (string.IsNullOrEmpty(Unit.Symbol))
+                    siUnit.PropertyChanged += (sender, eventArgs) =>
                     {
-                        return "ERROR: string.IsNullOrEmpty(Unit.Symbol)";
-                    }
+                        if (eventArgs.PropertyName == NameOf.Property(() => siUnit.QuantityName))
+                        {
+                            OnPropertyChanged();
+                        }
+                    };
                     return string.Format("IQuantity<{0}Unit, I1>", siUnit.Quantity.ClassName);
                 }
                 var derivedUnit = Unit as DerivedUnit;
                 if (derivedUnit == null)
                 {
-                    return "Unit == null";
+                    return null;
                 }
+                derivedUnit.Parts.CollectionChanged += (o, e) => OnPropertyChanged();
                 var flattened = derivedUnit.Parts.Flattened.ToArray();
                 if (!flattened.Any())
                 {
-                    return "ERROR No Units";
+                    return null;
                 }
                 var args = string.Join(", ",
                     flattened.Select(u => string.Format("{0}Unit, I{1}{2}",
