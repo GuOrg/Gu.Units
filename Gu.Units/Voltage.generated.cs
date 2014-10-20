@@ -3,7 +3,6 @@
     using System;
     using System.Globalization;
     using System.Xml;
-    using System.Xml.Linq;
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
@@ -368,7 +367,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Voltage"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Voltage"/> object.
+        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Voltage"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="T:MathNet.Spatial.Units.Voltage"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -458,7 +457,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, x => x.Volts, reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "Volts", reader, "Value");
         }
 
         /// <summary>
