@@ -458,7 +458,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, x => x.SquareMetres, reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "SquareMetres", reader, "Value");
         }
 
         /// <summary>

@@ -1,29 +1,36 @@
 namespace Gu.Units
 {
     using System;
+    using System.Linq.Expressions;
     using System.Xml;
-    using System.Xml.Linq;
 
     public class XmlExt
     {
-        public static void SetReadonlyField<T>(ref T force, Func<T, object> func, double toDouble)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static string ReadAttributeOrElementOrDefault(XElement xElement, string value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static void WriteAttribute(XmlWriter writer, string value, double newtons)
-        {
-            throw new NotImplementedException();
-        }
-        public static void SetReadonlyField<T>(ref T force, Func<T, double> func, XmlReader reader, string value)
+        internal static void SetReadonlyField<T>(ref T self, string fieldName, XmlReader reader, string attributeName)
             where T : IQuantity
         {
             reader.MoveToContent();
+            var d = XmlConvert.ToDouble(reader.GetAttribute(attributeName));
+            reader.ReadStartElement();
+            SetReadonlyField(ref self, fieldName, d);
+        }
+
+        private static void SetReadonlyField<T>(ref T self, string fieldName, double value)
+            where T : IQuantity
+        {
+            var fieldInfo = self.GetType()
+                                .GetField(fieldName);
+            object boxed = self;
+            fieldInfo.SetValue(boxed, value);
+            self = (T)boxed;
+        }
+
+
+        internal static void WriteAttribute(XmlWriter writer, string name, double value)
+        {
+            writer.WriteStartAttribute(name);
+            writer.WriteValue(value);
+            writer.WriteEndAttribute();
         }
     }
 }
