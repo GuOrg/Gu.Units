@@ -195,6 +195,12 @@
             return VolumetricFlow.FromCubicMetresPerSecond(left.Hertz * right.CubicMetres);
         }
 
+
+        public static double operator /(Frequency left, Frequency right)
+        {
+            return left.Hertz / right.Hertz;
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Frequency"/> instances are equal.
         /// </summary>
@@ -383,7 +389,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Frequency"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Frequency"/> object.
+        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Frequency"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="T:MathNet.Spatial.Units.Frequency"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.

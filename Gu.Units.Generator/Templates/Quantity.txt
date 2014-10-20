@@ -125,6 +125,12 @@
             return From(millimetres, LengthUnit.Millimetres);
         }
 
+
+        public static double operator /(Length left, Length right)
+        {
+            return left.Metres / right.Metres;
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Length"/> instances are equal.
         /// </summary>

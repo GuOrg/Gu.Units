@@ -8,6 +8,8 @@ Read Settings found 8 units
 
 //-> AreaUnit.generated.cs
 
+//-> CapacitanceUnit.generated.cs
+
 //-> CurrentUnit.generated.cs
 
 //-> DensityUnit.generated.cs
@@ -21,6 +23,8 @@ Read Settings found 8 units
 //-> FractionUnit.generated.cs
 
 //-> FrequencyUnit.generated.cs
+
+//-> InductanceUnit.generated.cs
 
 //-> LengthUnit.generated.cs
 
@@ -54,6 +58,8 @@ Read Settings found 8 units
 // Generated helper templates
 // Gu.Units\Gu.Units\UnitGenerator.txt4
 // Generated items
+// Gu.Units\Gu.Units\CapacitanceUnit.generated.cs
+// Gu.Units\Gu.Units\InductanceUnit.generated.cs
 // Gu.Units\Gu.Units\ElectricChargeUnit.generated.cs
 // Gu.Units\Gu.Units\SpecificEnergyUnit.generated.cs
 // Gu.Units\Gu.Units\ResistanceUnit.generated.cs

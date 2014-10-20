@@ -100,6 +100,12 @@
             return Energy.FromJoules(left.NewtonsPerMetre * right.SquareMetres);
         }
 
+
+        public static double operator /(Stiffness left, Stiffness right)
+        {
+            return left.NewtonsPerMetre / right.NewtonsPerMetre;
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Stiffness"/> instances are equal.
         /// </summary>
@@ -288,7 +294,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Stiffness"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Stiffness"/> object.
+        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Stiffness"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="T:MathNet.Spatial.Units.Stiffness"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.

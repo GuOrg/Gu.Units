@@ -1,5 +1,5 @@
 ﻿
-Read Settings found 26 units
+Read Settings found 28 units
 //-> Acceleration.generated.cs
 
 //-> Angle.generated.cs
@@ -7,6 +7,8 @@ Read Settings found 26 units
 //-> AngularSpeed.generated.cs
 
 //-> Area.generated.cs
+
+//-> Capacitance.generated.cs
 
 //-> Current.generated.cs
 
@@ -21,6 +23,8 @@ Read Settings found 26 units
 //-> Fraction.generated.cs
 
 //-> Frequency.generated.cs
+
+//-> Inductance.generated.cs
 
 //-> Length.generated.cs
 
@@ -54,6 +58,8 @@ Read Settings found 26 units
 // Generated helper templates
 // Gu.Units\Gu.Units\QuantityGenerator.txt4
 // Generated items
+// Gu.Units\Gu.Units\Capacitance.generated.cs
+// Gu.Units\Gu.Units\Inductance.generated.cs
 // Gu.Units\Gu.Units\ElectricCharge.generated.cs
 // Gu.Units\Gu.Units\SpecificEnergy.generated.cs
 // Gu.Units\Gu.Units\Resistance.generated.cs
