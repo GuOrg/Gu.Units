@@ -34,6 +34,18 @@
         }
 
         /// <summary>
+        /// The unit expressed in SI base units
+        /// http://en.wikipedia.org/wiki/SI_derived_unit
+        /// </summary>
+        public string BaseUnits
+        {
+            get
+            {
+                return "m^2";
+            }
+        }
+
+        /// <summary>
         /// The quantity in SquareMetres
         /// </summary>
         public double SiValue

@@ -6,6 +6,7 @@
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Diagnostics;
+    using System.Globalization;
     using System.Linq;
     using System.Runtime.Remoting.Channels;
     using System.Text;
@@ -16,6 +17,7 @@
     [TypeConverter(typeof(UnitPartsConverter))]
     public class UnitParts : ParentCollection<IUnit, UnitAndPower>, INotifyPropertyChanged
     {
+        private static BaseUnitOrderComparer _baseUnitOrderComparer = new BaseUnitOrderComparer();
         public UnitParts(IUnit baseUnit, IEnumerable<UnitAndPower> parts)
             : base(baseUnit, (up, u) => up.Parent = u, parts)
         {
@@ -220,7 +222,7 @@
             }
             var sb = new StringBuilder();
             UnitAndPower previous = null;
-            foreach (var unitAndPower in ups)
+            foreach (var unitAndPower in ups.OrderBy(x => x, _baseUnitOrderComparer).ToArray())
             {
                 if (previous != null)
                 {
@@ -245,6 +247,9 @@
                     case 3:
                         sb.Append("³");
                         break;
+                    case 4:
+                        sb.Append("⁴");
+                        break;
                     default:
                         sb.Append("^")
                           .Append(Math.Abs(unitAndPower.Power));
@@ -253,6 +258,21 @@
                 previous = unitAndPower;
             }
             return sb.ToString();
+        }
+
+        public class BaseUnitOrderComparer : IComparer<UnitAndPower>
+        {
+            private readonly string[] _order = { "kg", "m", "s", "A", "cd", "mol" };
+            public int Compare(UnitAndPower x, UnitAndPower y)
+            {
+                var indexOfX = Array.IndexOf(_order, x.Unit.Symbol);
+                var indexOfY = Array.IndexOf(_order, y.Unit.Symbol);
+                if (indexOfX < 0 && indexOfY < 0)
+                {
+                    return String.Compare(x.Unit.Symbol, y.Unit.Symbol, StringComparison.Ordinal);
+                }
+                return indexOfX.CompareTo(indexOfY);
+            }
         }
     }
 }

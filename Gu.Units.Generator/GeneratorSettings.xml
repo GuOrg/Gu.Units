@@ -659,6 +659,42 @@
         </UnitAndPower>
       </Parts>
     </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>Henrys</ClassName>
+      <Symbol>H</Symbol>
+      <QuantityName>Inductance</QuantityName>
+      <Conversions />
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Volts</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Seconds</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Amperes</UnitName>
+          <Power>-1</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>Farads</ClassName>
+      <Symbol>F</Symbol>
+      <QuantityName>Capacitance</QuantityName>
+      <Conversions />
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Coulombs</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Volts</UnitName>
+          <Power>-1</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
   </DerivedUnits>
   <SiUnits>
     <SiUnit>

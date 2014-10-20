@@ -22,15 +22,5 @@
                 Assert.AreEqual(value, d);
             }
         }
-
-        [TestCase(0)]
-        [TestCase(100)]
-        public void RoundtripDummy(double value)
-        {
-            var dummyUnit = new DummyUnit();
-            var si = UnitConverter.ConvertFrom(value, dummyUnit);
-            var d = UnitConverter.ConvertTo(si, dummyUnit);
-            Assert.AreEqual(value, d);
-        }
     }
 }
