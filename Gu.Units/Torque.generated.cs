@@ -95,6 +95,12 @@
             return Power.FromWatts(left.NewtonMetres * right.RadiansPerSecond);
         }
 
+
+        public static double operator /(Torque left, Torque right)
+        {
+            return left.NewtonMetres / right.NewtonMetres;
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Torque"/> instances are equal.
         /// </summary>
@@ -283,7 +289,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Torque"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Torque"/> object.
+        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Torque"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="T:MathNet.Spatial.Units.Torque"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.

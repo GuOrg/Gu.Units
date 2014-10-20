@@ -115,6 +115,12 @@
             return AngularSpeed.FromRadiansPerSecond(left.Radians / right.Seconds);
         }
 
+
+        public static double operator /(Angle left, Angle right)
+        {
+            return left.Radians / right.Radians;
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Angle"/> instances are equal.
         /// </summary>
@@ -303,7 +309,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Angle"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Angle"/> object.
+        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Angle"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="T:MathNet.Spatial.Units.Angle"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.

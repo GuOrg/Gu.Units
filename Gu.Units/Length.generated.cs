@@ -205,6 +205,11 @@
             return From(kilometres, LengthUnit.Kilometres);
         }
 
+        public static double operator /(Length left, Length right)
+        {
+            return left.Metres / right.Metres;
+        }
+
         public static Time operator /(Length left, Speed right)
         {
             return Time.FromSeconds(left.Metres / right.MetresPerSecond);

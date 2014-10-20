@@ -175,6 +175,12 @@
             return ElectricCharge.FromCoulombs(left.Amperes * right.Seconds);
         }
 
+
+        public static double operator /(Current left, Current right)
+        {
+            return left.Amperes / right.Amperes;
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Current"/> instances are equal.
         /// </summary>
@@ -363,7 +369,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Current"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Current"/> object.
+        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Current"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="T:MathNet.Spatial.Units.Current"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.

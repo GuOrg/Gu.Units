@@ -154,6 +154,12 @@ namespace <#= Settings.Namespace #>
 <#
 		} 
 		#>
+
+        public static double operator /(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
+        {
+            return left.<#= quantity.Unit.ClassName #> / right.<#= quantity.Unit.ClassName #>;
+        }
+
         /// <summary>
         /// Indicates whether two <see cref="T:<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> instances are equal.
         /// </summary>
