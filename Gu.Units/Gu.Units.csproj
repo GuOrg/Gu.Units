@@ -186,8 +186,6 @@
     <Compile Include="TorqueUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
-    <Compile Include="Utils\Arithmetics.cs" />
-    <Compile Include="Utils\UnitConverter.cs" />
     <Compile Include="Utils\Parser.cs" />
     <Compile Include="Utils\XmlExt.cs" />
     <Compile Include="Voltage.generated.cs">

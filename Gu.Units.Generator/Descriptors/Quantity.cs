@@ -94,7 +94,7 @@
                 {
                     siUnit.PropertyChanged += (sender, eventArgs) =>
                     {
-                        if (eventArgs.PropertyName == NameOf.Property(() => siUnit.QuantityName))
+                        if (eventArgs.PropertyName == NameOf.Property(() => siUnit.QuantityName, true))
                         {
                             OnPropertyChanged();
                         }
@@ -130,7 +130,7 @@
                 {
                     return Enumerable.Empty<OperatorOverload>();
                 }
-                return Settings.Quantities.Where(x => x != this)
+                return Settings.Quantities.Where(x => x.ClassName != ClassName)
                                .Where(result => OperatorOverload.CanCreate(Settings, this, result))
                                .Select(result => new OperatorOverload(this, result, Settings));
             }

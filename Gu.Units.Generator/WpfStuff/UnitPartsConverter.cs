@@ -9,7 +9,7 @@
 
     public class UnitPartsConverter : TypeConverter
     {
-        private static readonly string[] Superscripts = { "¹", "²", "³" };
+        private static readonly string[] Superscripts = { "¹", "²", "³", "⁴" };
 
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
         {
