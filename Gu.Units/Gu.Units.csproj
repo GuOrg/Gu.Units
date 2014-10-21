@@ -120,7 +120,9 @@
     <Compile Include="Inductance.generated.cs">
       <DependentUpon>QuantityGenerator.txt4</DependentUpon>
     </Compile>
-    <Compile Include="InductanceUnit.generated.cs" />
+    <Compile Include="InductanceUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
     <Compile Include="Length.generated.cs">
       <DependentUpon>QuantityGenerator.txt4</DependentUpon>
     </Compile>

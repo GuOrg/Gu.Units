@@ -47,7 +47,7 @@
                                 <DataGridTextColumn Binding="{Binding QuantityName}" Header="Quantity" />
                                 <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
                                 <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
-                                <!--<DataGridTextColumn Binding="{Binding Quantity.Interface}" Header="Interface" />-->
+                                <!--  <DataGridTextColumn Binding="{Binding Quantity.Interface}" Header="Interface" />  -->
                             </DataGrid.Columns>
                         </DataGrid>
                     </GroupBox>
@@ -64,9 +64,11 @@
                                 <DataGridTextColumn Binding="{Binding Parts.BaseUnitExpression}"
                                                     Header="In base units"
                                                     IsReadOnly="True" />
-                                <!--<DataGridTextColumn Binding="{Binding Quantity.Interface}"
-                                                    Header="Interface"
-                                                    IsReadOnly="True" />-->
+                                <!--
+                                    <DataGridTextColumn Binding="{Binding Quantity.Interface}"
+                                    Header="Interface"
+                                    IsReadOnly="True" />
+                                -->
 
                             </DataGrid.Columns>
                         </DataGrid>
@@ -82,8 +84,9 @@
             <GroupBox Grid.Column="2" Header="Conversions">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition />
                     </Grid.RowDefinitions>
 
