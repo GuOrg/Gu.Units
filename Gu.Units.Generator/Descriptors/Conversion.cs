@@ -22,8 +22,8 @@
             _formula = new ConversionFormula(this);
         }
 
-        public Conversion(string @namespace, string className, string symbol)
-            : base(@namespace, className)
+        public Conversion(string className, string symbol)
+            : base(className)
         {
             _symbol = symbol;
             _formula = new ConversionFormula(this);
@@ -42,23 +42,6 @@
                     return;
                 }
                 _symbol = value;
-                this.OnPropertyChanged();
-            }
-        }
-
-        public double ConversionFactor
-        {
-            get
-            {
-                return _formula.ConversionFactor;
-            }
-            set
-            {
-                if (value == _formula.ConversionFactor)
-                {
-                    return;
-                }
-                _formula.ConversionFactor = value;
                 this.OnPropertyChanged();
             }
         }
@@ -150,6 +133,7 @@
         {
             get { return _conversions; }
         }
+
         public bool AnyOffsetConversion
         {
             get { return Conversions.Any(x => x.Formula.Offset != 0); }
@@ -172,7 +156,7 @@
             {
                 return;
             }
-            ConversionFactor = Math.Pow(10, _prefix.Power);
+            Formula.ConversionFactor = Math.Pow(10, _prefix.Power);
             if (string.IsNullOrEmpty(Symbol))
             {
                 Symbol = Prefix.Symbol + BaseUnit.Symbol;
@@ -195,10 +179,10 @@
             foreach (var part in subunits)
             {
                 var up = unitParts.Single(x => x.UnitName == part.BaseUnit.ClassName);
-                cf = cf * Math.Pow(part.ConversionFactor, up.Power);
+                cf = cf * Math.Pow(part.Formula.ConversionFactor, up.Power);
                 unitParts.Replace(up, new UnitAndPower(part, up.Power));
             }
-            ConversionFactor = cf;
+            Formula.ConversionFactor = cf;
             ClassName = unitParts.UnitName;
             Symbol = unitParts.Expression;
         }

@@ -15,13 +15,13 @@
         private readonly UnitParts _parts;
 
         public DerivedUnit()
-            : base(null, null, null)
+            : base(null, null)
         {
             _parts = new UnitParts(this);
         }
 
-        public DerivedUnit(string @namespace, string name, string symbol, params UnitAndPower[] parts)
-            : base(@namespace, name, symbol)
+        public DerivedUnit(string name, string symbol, params UnitAndPower[] parts)
+            : base(name, symbol)
         {
             _parts = new UnitParts(this);
             if (parts.Length == 0)

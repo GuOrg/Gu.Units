@@ -2,7 +2,6 @@
 {
     public class MockSettings : Settings
     {
-        public readonly string Namespace = "Gu.Units";
         public readonly SiUnit Metres;
         public readonly Quantity Length;
 
@@ -32,7 +31,7 @@
 
         public readonly DerivedUnit Watts;
         public readonly Quantity Power;
-        
+
         public readonly DerivedUnit Volts;
         public readonly Quantity Voltage;
 
@@ -41,23 +40,23 @@
 
         public MockSettings()
         {
-            Metres = new SiUnit(Namespace, "Metres", "m") { QuantityName = "Length" };
+            Metres = new SiUnit("Metres", "m") { QuantityName = "Length" };
             SiUnits.Add(Metres);
             Length = Metres.Quantity;
 
-            Seconds = new SiUnit(Namespace, "Seconds", "s") { QuantityName = "Time" };
+            Seconds = new SiUnit("Seconds", "s") { QuantityName = "Time" };
             SiUnits.Add(Seconds);
             Time = Seconds.Quantity;
 
-            Kilograms = new SiUnit("", "Kilograms", "kg") { QuantityName = "Mass" };
+            Kilograms = new SiUnit("Kilograms", "kg") { QuantityName = "Mass" };
             SiUnits.Add(Kilograms);
             Mass = Kilograms.Quantity;
 
-            Amperes = new SiUnit("", "Amperes", "A") { QuantityName = "ElectricalCurrent" };
+            Amperes = new SiUnit("Amperes", "A") { QuantityName = "ElectricalCurrent" };
             SiUnits.Add(Amperes);
             Current = Amperes.Quantity;
 
-            MetresPerSecond = new DerivedUnit(Namespace,
+            MetresPerSecond = new DerivedUnit(
                 "MetresPerSecond",
                 "m/s",
                 new UnitAndPower(Metres, 1),
@@ -65,7 +64,7 @@
             DerivedUnits.Add(MetresPerSecond);
             Speed = MetresPerSecond.Quantity;
 
-            Newtons = new DerivedUnit(Namespace,
+            Newtons = new DerivedUnit(
                 "Newtons",
                 "N",
                 new UnitAndPower(Kilograms, 1),
@@ -74,7 +73,7 @@
             DerivedUnits.Add(Newtons);
             Force = Newtons.Quantity;
 
-            Joules = new DerivedUnit(Namespace,
+            Joules = new DerivedUnit(
                 "Joules",
                 "J",
                 new UnitAndPower(Newtons, 1),
@@ -82,7 +81,7 @@
             DerivedUnits.Add(Joules);
             Energy = Joules.Quantity;
 
-            Watts = new DerivedUnit(Namespace,
+            Watts = new DerivedUnit(
                 "Watts",
                 "W",
                 new UnitAndPower(Joules, 1),
@@ -90,7 +89,7 @@
             DerivedUnits.Add(Watts);
             Power = Watts.Quantity;
 
-            Volts = new DerivedUnit(Namespace,
+            Volts = new DerivedUnit(
                 "Volts",
                 "V",
                 new UnitAndPower(Watts, 1),
@@ -98,7 +97,7 @@
             DerivedUnits.Add(Volts);
             Voltage = Volts.Quantity;
 
-            Coloumbs = new DerivedUnit(Namespace,
+            Coloumbs = new DerivedUnit(
                 "Coloumbs",
                 "C",
                 new UnitAndPower(Seconds, 1),
@@ -106,14 +105,14 @@
             DerivedUnits.Add(Coloumbs);
             ElectricCharge = Coloumbs.Quantity;
 
-            SquareMetres = new DerivedUnit(Namespace, "SquareMetres", "m^2", new UnitAndPower(Metres, 2))
+            SquareMetres = new DerivedUnit("SquareMetres", "m^2", new UnitAndPower(Metres, 2))
             {
                 QuantityName = "Area"
             };
             DerivedUnits.Add(SquareMetres);
             Area = SquareMetres.Quantity;
 
-            CubicMetres = new DerivedUnit(Namespace, "CubicMetres", "m^3", new UnitAndPower(Metres, 3))
+            CubicMetres = new DerivedUnit("CubicMetres", "m^3", new UnitAndPower(Metres, 3))
             {
                 QuantityName = "Volume"
             };

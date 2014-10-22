@@ -12,12 +12,12 @@ if(UnitMetaData != null)
 }
 else
 {
-    unit = new SiUnit("Gu.Units", "Metres", "m")
+    unit = new SiUnit("Metres", "m")
                     {
                         QuantityName =  "Length"
                     };
-    unit.Conversions.Add(new Conversion("Gu.Units", "Centimetres", "cm"));
-    unit.Conversions.Add(new Conversion("Gu.Units", "Millimetres", "mm"));
+    unit.Conversions.Add(new Conversion("Centimetres", "cm"));
+    unit.Conversions.Add(new Conversion("Millimetres", "mm"));
 }
 #>
 namespace <#= Settings.Namespace #>
@@ -72,13 +72,13 @@ namespace <#= Settings.Namespace #>
 	if (unit.AnyOffsetConversion)
 	{
 	    #>
-		public static readonly <#= unit.QuantityName #>Unit <#= su.ClassName #> = new <#= unit.QuantityName #>Unit(<#= su.ConversionFactor #>, <#= su.Formula.Offset #>, "<#= su.Symbol #>");
+		public static readonly <#= unit.QuantityName #>Unit <#= su.ClassName #> = new <#= unit.QuantityName #>Unit(<#= su.Formula.ConversionFactor #>, <#= su.Formula.Offset #>, "<#= su.Symbol #>");
 <#
 	}
 	else
 	{
 	    #>
-		public static readonly <#= unit.QuantityName #>Unit <#= su.ClassName #> = new <#= unit.QuantityName #>Unit(<#= su.ConversionFactor #>, "<#= su.Symbol #>");
+		public static readonly <#= unit.QuantityName #>Unit <#= su.ClassName #> = new <#= unit.QuantityName #>Unit(<#= su.Formula.ConversionFactor #>, "<#= su.Symbol #>");
 <#
 	}
         #><#

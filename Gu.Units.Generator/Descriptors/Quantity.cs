@@ -14,7 +14,7 @@
         private string _unitName;
 
         public Quantity(IUnit unit)
-            : base(unit.Namespace, null)
+            : base(null)
         {
             _unit = unit;
             _unit.Quantity = this;

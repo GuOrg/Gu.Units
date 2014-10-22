@@ -12,12 +12,12 @@ if(QuantityMetaData != null)
 }
 else
 {
-    var unit = new SiUnit("Gu.Units", "Metres", "m")
+    var unit = new SiUnit("Metres", "m")
                     {
                         QuantityName = "Length"
                     };
-    unit.Conversions.Add(new Conversion("Gu.Units", "Centimetres", "cm"));
-    unit.Conversions.Add(new Conversion("Gu.Units", "Millimetres", "mm"));
+    unit.Conversions.Add(new Conversion("Centimetres", "cm"));
+    unit.Conversions.Add(new Conversion("Millimetres", "mm"));
     quantity = unit.Quantity;
 }
 #>
