@@ -34,7 +34,7 @@
                 {
                     return false;
                 }
-                return _unit.Conversions.Any(x => x.ConversionFactor == _temp.ConversionFactor && x.Symbol == _temp.Symbol);
+                return _unit.Conversions.Any(x => x.Formula.ConversionFactor == _temp.Formula.ConversionFactor && x.Symbol == _temp.Symbol);
             }
             set
             {

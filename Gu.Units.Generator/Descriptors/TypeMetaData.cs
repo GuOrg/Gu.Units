@@ -12,35 +12,17 @@
     public class TypeMetaData : MarshalByRefObject, INotifyPropertyChanged
     {
         private string _className;
-        private string _ns;
 
         protected TypeMetaData()
         {
         }
         
-        public TypeMetaData(string @namespace,string className)
+        public TypeMetaData(string className)
         {
-            _ns = @namespace;
             _className = className;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
-        public virtual string Namespace
-        {
-            get { return _ns; }
-            set
-            {
-                if (value == _ns)
-                {
-                    return;
-                }
-                _ns = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string Ns { get; set; }
 
         public string ClassName
         {

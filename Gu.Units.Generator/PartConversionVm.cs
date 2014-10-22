@@ -26,7 +26,7 @@
         {
             get
             {
-                return _unit.Conversions.Any(x => x.ConversionFactor == Temp.ConversionFactor);
+                return _unit.Conversions.Any(x => x.Formula.ConversionFactor == Temp.Formula.ConversionFactor);
             }
             set
             {
@@ -42,7 +42,7 @@
                 }
                 else
                 {
-                    _unit.Conversions.InvokeRemove(x => x.ConversionFactor == Temp.ConversionFactor);
+                    _unit.Conversions.InvokeRemove(x => x.Formula.ConversionFactor == Temp.Formula.ConversionFactor);
                 }
                 OnPropertyChanged();
             }

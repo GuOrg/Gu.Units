@@ -18,7 +18,7 @@
         
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
         {
-            return value == null ? null : new TypeMetaData("", (string)value);
+            return value == null ? null : new TypeMetaData((string)value);
         }
         
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)

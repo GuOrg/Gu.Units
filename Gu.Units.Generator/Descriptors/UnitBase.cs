@@ -21,8 +21,8 @@
             Quantity = new Quantity(this);
         }
 
-        protected UnitBase(string @namespace, string className, string symbol)
-            : base(@namespace, className)
+        protected UnitBase(string className, string symbol)
+            : base(className)
         {
             _conversions = new ParentCollection<UnitBase, Conversion>(this, (unit, parent) => unit.BaseUnit = parent);
             Quantity = new Quantity(this);

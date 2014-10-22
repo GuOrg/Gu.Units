@@ -16,12 +16,12 @@
     public class SiUnit : UnitBase
     {
         public SiUnit()
-            : base(null, null, null)
+            : base(null, null)
         {
         }
 
-        public SiUnit(string @namespace, string name, string symbol)
-            : base(@namespace, name, symbol)
+        public SiUnit(string name, string symbol)
+            : base(name, symbol)
         {
         }
 
