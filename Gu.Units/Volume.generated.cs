@@ -78,6 +78,17 @@
         }
 
         /// <summary>
+        /// The quantity in cubicInches
+        /// </summary>
+        public double CubicInches
+        {
+            get
+            {
+                return VolumeUnit.CubicInches.FromSiUnit(CubicMetres);
+            }
+        }
+
+        /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Volume"/> from its string representation
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Volume"/></param>
@@ -143,6 +154,15 @@
         public static Volume FromCubicMillimetres(double cubicMillimetres)
         {
             return From(cubicMillimetres, VolumeUnit.CubicMillimetres);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
+        /// </summary>
+        /// <param name="cubicInches">The value in in³</param>
+        public static Volume FromCubicInches(double cubicInches)
+        {
+            return From(cubicInches, VolumeUnit.CubicInches);
         }
 
         public static Mass operator *(Volume left, Density right)

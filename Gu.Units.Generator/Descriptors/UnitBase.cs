@@ -2,6 +2,7 @@
 {
     using System.CodeDom.Compiler;
     using System.Collections.ObjectModel;
+    using System.Linq;
     using System.Xml.Serialization;
     using WpfStuff;
 
@@ -65,6 +66,12 @@
             {
                 return _conversions;
             }
+        }
+
+        [XmlIgnore]
+        public bool AnyOffsetConversion
+        {
+            get { return Conversions.Any(x => x.Formula.Offset != 0); }
         }
 
         [XmlIgnore]

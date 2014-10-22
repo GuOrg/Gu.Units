@@ -3,6 +3,7 @@
     using System;
     using System.Globalization;
     using System.Xml;
+    using System.Xml.Linq;
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
@@ -177,6 +178,12 @@
         public static Resistance operator /(Voltage left, Current right)
         {
             return Resistance.FromOhm(left.Volts / right.Amperes);
+        }
+
+
+        public static double operator /(Voltage left, Voltage right)
+        {
+            return left.Volts / right.Volts;
         }
 
         /// <summary>

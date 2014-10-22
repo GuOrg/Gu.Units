@@ -16,8 +16,8 @@ else
                     {
                         QuantityName =  "Length"
                     };
-    unit.Conversions.Add(new Conversion("Gu.Units", "Centimetres", "cm", 1E-2));
-    unit.Conversions.Add(new Conversion("Gu.Units", "Millimetres", "mm", 1E-3));
+    unit.Conversions.Add(new Conversion("Gu.Units", "Centimetres", "cm"));
+    unit.Conversions.Add(new Conversion("Gu.Units", "Millimetres", "mm"));
 }
 #>
 namespace <#= Settings.Namespace #>
@@ -34,14 +34,27 @@ namespace <#= Settings.Namespace #>
         /// The <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/> unit
         /// Contains coonversion logic to from and formatting.
         /// </summary>
+<#
+	if (unit.AnyOffsetConversion)
+	{
+	    #>
+        public static readonly <#= unit.QuantityName #>Unit <#= unit.ClassName #> = new <#= unit.QuantityName #>Unit(1.0, 0, "<#= unit.Symbol #>");
+<#
+	}
+	else
+	{
+	    #>
         public static readonly <#= unit.QuantityName #>Unit <#= unit.ClassName #> = new <#= unit.QuantityName #>Unit(1.0, "<#= unit.Symbol #>");
+<#
+	}
+        #>
 <#
 		    if(unit.IsSymbolNameValid)
             {
 		    #>
         /// <summary>
         /// The <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly <#= unit.QuantityName #>Unit <#= unit.Symbol #> = <#= unit.ClassName #>;
 <#
@@ -53,10 +66,22 @@ namespace <#= Settings.Namespace #>
 
         /// <summary>
         /// The <see cref="T:<#= Settings.Namespace #>.<#= su.ClassName #>"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
+<#
+	if (unit.AnyOffsetConversion)
+	{
+	    #>
+		public static readonly <#= unit.QuantityName #>Unit <#= su.ClassName #> = new <#= unit.QuantityName #>Unit(<#= su.ConversionFactor #>, <#= su.Formula.Offset #>, "<#= su.Symbol #>");
+<#
+	}
+	else
+	{
+	    #>
 		public static readonly <#= unit.QuantityName #>Unit <#= su.ClassName #> = new <#= unit.QuantityName #>Unit(<#= su.ConversionFactor #>, "<#= su.Symbol #>");
 <#
+	}
+        #><#
 		    if(su.IsSymbolNameValid)
             {
 		    #>
@@ -71,12 +96,41 @@ namespace <#= Settings.Namespace #>
         }
         #>
 
-        private readonly double _conversionFactor;
+		private readonly double _conversionFactor;
+<#
+	if(unit.AnyOffsetConversion)
+    {
+	#>
+        private readonly double _offset;
+<#
+    }
+        #>
         private readonly string _symbol;
 
+<#
+	if (unit.AnyOffsetConversion)
+	{
+	    #>
+        public <#= unit.QuantityName #>Unit(double conversionFactor, double offset, string symbol)
+<#
+	}
+	else
+	{
+	    #>
         public <#= unit.QuantityName #>Unit(double conversionFactor, string symbol)
+<#
+	}
+        #>
         {
             _conversionFactor = conversionFactor;
+<#
+	if(unit.AnyOffsetConversion)
+    {
+	#>
+        _offset = offset;
+<#
+    }
+        #>
             _symbol = symbol;
         }
 
@@ -101,9 +155,22 @@ namespace <#= Settings.Namespace #>
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
-        public double <#= Gu.Units.Generator.Methods.ToSiUnit #>(double value)
+        public double <#= Gu.Units.Generator.Names.ToSiUnit #>(double value)
         {
+<#
+	if (unit.AnyOffsetConversion)
+	{
+	    #>
+			return _conversionFactor * value + _offset;
+<#
+	}
+	else
+	{
+	    #>
             return _conversionFactor * value;
+<#
+	}
+        #>
         }
 
         /// <summary>
@@ -111,14 +178,27 @@ namespace <#= Settings.Namespace #>
         /// </summary>
         /// <param name="value">The value in <#= unit.ClassName #></param>
         /// <returns>The converted value</returns>
-        public double <#= Gu.Units.Generator.Methods.FromSiUnit #>(double value)
+        public double <#= Gu.Units.Generator.Names.FromSiUnit #>(double value)
         {
+<#
+	if (unit.AnyOffsetConversion)
+	{
+	    #>
+			return (value - _offset) / _conversionFactor;
+<#
+	}
+	else
+	{
+	    #>
             return value / _conversionFactor;
+<#
+	}
+        #>
         }
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", _symbol, this.<#= Gu.Units.Generator.Methods.ToSiUnit #>(1), <#= unit.ClassName #>.Symbol);
+            return string.Format("1{0} == {1}{2}", _symbol, this.<#= Gu.Units.Generator.Names.ToSiUnit #>(1), <#= unit.ClassName #>.Symbol);
         }
     }
 }

@@ -10,22 +10,23 @@
     public class Conversion : TypeMetaData, IUnit
     {
         private readonly ObservableCollection<Conversion> _conversions = new ObservableCollection<Conversion>();
-        private readonly CodeDomProvider _provider = CodeDomProvider.CreateProvider("C#");
+        private readonly CodeDomProvider _codeDomProvider = CodeDomProvider.CreateProvider("C#");
+        private readonly ConversionFormula _formula;
 
         private string _symbol;
-        private double _conversionFactor;
         private Prefix _prefix;
         private IUnit _baseUnit;
 
         public Conversion()
         {
+            _formula = new ConversionFormula(this);
         }
 
-        public Conversion(string @namespace, string className, string symbol, double conversionFactor)
+        public Conversion(string @namespace, string className, string symbol)
             : base(@namespace, className)
         {
             _symbol = symbol;
-            _conversionFactor = conversionFactor;
+            _formula = new ConversionFormula(this);
         }
 
         public string Symbol
@@ -49,16 +50,28 @@
         {
             get
             {
-                return _conversionFactor;
+                return _formula.ConversionFactor;
             }
             set
             {
-                if (value == _conversionFactor)
+                if (value == _formula.ConversionFactor)
                 {
                     return;
                 }
-                _conversionFactor = value;
+                _formula.ConversionFactor = value;
                 this.OnPropertyChanged();
+            }
+        }
+
+        public ConversionFormula Formula
+        {
+            get { return _formula; }
+            set
+            {
+                _formula.ConversionFactor = value.ConversionFactor;
+                _formula.Offset = value.Offset;
+                OnPropertyChanged();
+                OnPropertyChanged("ConversionFactor");
             }
         }
 
@@ -86,7 +99,6 @@
             {
                 return BaseUnit.Quantity;
             }
-
             set { throw new NotImplementedException(); }
         }
 
@@ -138,12 +150,16 @@
         {
             get { return _conversions; }
         }
+        public bool AnyOffsetConversion
+        {
+            get { return Conversions.Any(x => x.Formula.Offset != 0); }
+        }
 
         public bool IsSymbolNameValid
         {
             get
             {
-                return _provider.IsValidIdentifier(Symbol);
+                return _codeDomProvider.IsValidIdentifier(Symbol);
             }
         }
 

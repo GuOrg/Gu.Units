@@ -38,6 +38,35 @@
         /// </summary>
         public static readonly AreaUnit SquareKilometres = new AreaUnit(1000000, "km²");
 
+        /// <summary>
+        /// The <see cref="T:Gu.Units.SquareInches"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly AreaUnit SquareInches = new AreaUnit(0.00064516, "in²");
+
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Hectare"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly AreaUnit Hectare = new AreaUnit(10000, "ha");
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Hectare"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly AreaUnit ha = Hectare;
+
+        /// <summary>
+        /// The <see cref="T:Gu.Units.SquareMile"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly AreaUnit SquareMile = new AreaUnit(2589988.110336, "mi²");
+
+        /// <summary>
+        /// The <see cref="T:Gu.Units.SquareYard"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly AreaUnit SquareYard = new AreaUnit(0.83612736, "yd²");
+
         private readonly double _conversionFactor;
         private readonly string _symbol;
 

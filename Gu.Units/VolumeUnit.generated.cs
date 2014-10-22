@@ -37,6 +37,12 @@
         /// </summary>
         public static readonly VolumeUnit CubicMillimetres = new VolumeUnit(1E-09, "mm³");
 
+        /// <summary>
+        /// The <see cref="T:Gu.Units.CubicInches"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumeUnit CubicInches = new VolumeUnit(1.6387064E-05, "in³");
+
         private readonly double _conversionFactor;
         private readonly string _symbol;
 
