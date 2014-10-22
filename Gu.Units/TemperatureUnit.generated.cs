@@ -12,14 +12,33 @@
         /// The <see cref="T:Gu.Units.Kelvin"/> unit
         /// Contains coonversion logic to from and formatting.
         /// </summary>
-        public static readonly TemperatureUnit Kelvin = new TemperatureUnit(1.0, "°K");
+        public static readonly TemperatureUnit Kelvin = new TemperatureUnit(1.0, 0, "K");
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Kelvin"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly TemperatureUnit K = Kelvin;
+
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Celsius"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly TemperatureUnit Celsius = new TemperatureUnit(1, -273.15, "°C");
+
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Fahrenheit"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly TemperatureUnit Fahrenheit = new TemperatureUnit(1.8, -459.67, "°F");
 
         private readonly double _conversionFactor;
+        private readonly double _offset;
         private readonly string _symbol;
 
-        public TemperatureUnit(double conversionFactor, string symbol)
+        public TemperatureUnit(double conversionFactor, double offset, string symbol)
         {
             _conversionFactor = conversionFactor;
+            _offset = offset;
             _symbol = symbol;
         }
 
@@ -46,7 +65,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return _conversionFactor * value;
+            return _conversionFactor * value + _offset;
         }
 
         /// <summary>
@@ -56,7 +75,7 @@
         /// <returns>The converted value</returns>
         public double FromSiUnit(double value)
         {
-            return value / _conversionFactor;
+            return (value - _offset) / _conversionFactor;
         }
 
         public override string ToString()

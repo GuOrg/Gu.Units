@@ -111,6 +111,50 @@
         }
 
         /// <summary>
+        /// The quantity in inches
+        /// </summary>
+        public double Inches
+        {
+            get
+            {
+                return LengthUnit.Inches.FromSiUnit(Metres);
+            }
+        }
+
+        /// <summary>
+        /// The quantity in mile
+        /// </summary>
+        public double Mile
+        {
+            get
+            {
+                return LengthUnit.Mile.FromSiUnit(Metres);
+            }
+        }
+
+        /// <summary>
+        /// The quantity in yard
+        /// </summary>
+        public double Yard
+        {
+            get
+            {
+                return LengthUnit.Yard.FromSiUnit(Metres);
+            }
+        }
+
+        /// <summary>
+        /// The quantity in nauticalMile
+        /// </summary>
+        public double NauticalMile
+        {
+            get
+            {
+                return LengthUnit.NauticalMile.FromSiUnit(Metres);
+            }
+        }
+
+        /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Length"/> from its string representation
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Length"/></param>
@@ -205,9 +249,40 @@
             return From(kilometres, LengthUnit.Kilometres);
         }
 
-        public static double operator /(Length left, Length right)
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="inches">The value in in</param>
+        public static Length FromInches(double inches)
         {
-            return left.Metres / right.Metres;
+            return From(inches, LengthUnit.Inches);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="mile">The value in mi</param>
+        public static Length FromMile(double mile)
+        {
+            return From(mile, LengthUnit.Mile);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="yard">The value in yd</param>
+        public static Length FromYard(double yard)
+        {
+            return From(yard, LengthUnit.Yard);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="nauticalMile">The value in nmi</param>
+        public static Length FromNauticalMile(double nauticalMile)
+        {
+            return From(nauticalMile, LengthUnit.NauticalMile);
         }
 
         public static Time operator /(Length left, Speed right)
@@ -238,6 +313,12 @@
         public static SpecificEnergy operator *(Length left, Acceleration right)
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.Metres * right.MetresPerSecondSquared);
+        }
+
+
+        public static double operator /(Length left, Length right)
+        {
+            return left.Metres / right.Metres;
         }
 
         /// <summary>
@@ -428,7 +509,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Length"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Length"/> object.
+        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Length"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="T:MathNet.Spatial.Units.Length"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.

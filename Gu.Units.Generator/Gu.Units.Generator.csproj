@@ -72,8 +72,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ConversionsVm.cs" />
+    <Compile Include="Descriptors\ConversionFormula.cs" />
     <Compile Include="Descriptors\IUnit.cs" />
-    <Compile Include="Descriptors\Methods.cs" />
+    <Compile Include="Descriptors\Names.cs" />
     <Compile Include="Descriptors\OperatorOverload.cs" />
     <Compile Include="Descriptors\Prefix.cs" />
     <Compile Include="Descriptors\SiUnit.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="WpfStuff\ObservableCollectionExt.cs" />
     <Compile Include="WpfStuff\PathExpressionVisitor.cs" />
     <Compile Include="WpfStuff\RelayCommand.cs" />
+    <Compile Include="WpfStuff\StringToFormulaConverter.cs" />
     <Compile Include="WpfStuff\TypeMetaDataConverter.cs" />
     <Compile Include="WpfStuff\ParentCollection.cs" />
     <Compile Include="WpfStuff\UnitPartsConverter.cs" />

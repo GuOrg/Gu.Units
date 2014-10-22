@@ -85,6 +85,45 @@
         /// </summary>
         public static readonly LengthUnit km = Kilometres;
 
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Inches"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly LengthUnit Inches = new LengthUnit(0.0254, "in");
+
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Mile"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly LengthUnit Mile = new LengthUnit(1609.344, "mi");
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Mile"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly LengthUnit mi = Mile;
+
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Yard"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly LengthUnit Yard = new LengthUnit(0.9144, "yd");
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Yard"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly LengthUnit yd = Yard;
+
+        /// <summary>
+        /// The <see cref="T:Gu.Units.NauticalMile"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly LengthUnit NauticalMile = new LengthUnit(1852, "nmi");
+        /// <summary>
+        /// The <see cref="T:Gu.Units.NauticalMile"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly LengthUnit nmi = NauticalMile;
+
         private readonly double _conversionFactor;
         private readonly string _symbol;
 

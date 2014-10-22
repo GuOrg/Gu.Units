@@ -40,10 +40,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConversionFormulaTests.cs" />
     <Compile Include="MockSettings.cs" />
     <Compile Include="OperatorTests.cs" />
     <Compile Include="QuantityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringToFormulaConverterTests.cs" />
     <Compile Include="UnitPartsConverterTests.cs" />
     <Compile Include="UnitPartsTests.cs" />
   </ItemGroup>

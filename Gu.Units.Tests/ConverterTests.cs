@@ -19,7 +19,7 @@
             {
                 var si = unit.ToSiUnit(value);
                 var d = unit.FromSiUnit(si);
-                Assert.AreEqual(value, d);
+                Assert.AreEqual(value, d, 1E-9);
             }
         }
     }

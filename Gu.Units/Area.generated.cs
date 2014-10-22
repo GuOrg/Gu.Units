@@ -34,18 +34,6 @@
         }
 
         /// <summary>
-        /// The unit expressed in SI base units
-        /// http://en.wikipedia.org/wiki/SI_derived_unit
-        /// </summary>
-        public string BaseUnits
-        {
-            get
-            {
-                return "m^2";
-            }
-        }
-
-        /// <summary>
         /// The quantity in SquareMetres
         /// </summary>
         public double SiValue
@@ -97,6 +85,50 @@
             get
             {
                 return AreaUnit.SquareKilometres.FromSiUnit(SquareMetres);
+            }
+        }
+
+        /// <summary>
+        /// The quantity in squareInches
+        /// </summary>
+        public double SquareInches
+        {
+            get
+            {
+                return AreaUnit.SquareInches.FromSiUnit(SquareMetres);
+            }
+        }
+
+        /// <summary>
+        /// The quantity in hectare
+        /// </summary>
+        public double Hectare
+        {
+            get
+            {
+                return AreaUnit.Hectare.FromSiUnit(SquareMetres);
+            }
+        }
+
+        /// <summary>
+        /// The quantity in squareMile
+        /// </summary>
+        public double SquareMile
+        {
+            get
+            {
+                return AreaUnit.SquareMile.FromSiUnit(SquareMetres);
+            }
+        }
+
+        /// <summary>
+        /// The quantity in squareYard
+        /// </summary>
+        public double SquareYard
+        {
+            get
+            {
+                return AreaUnit.SquareYard.FromSiUnit(SquareMetres);
             }
         }
 
@@ -177,6 +209,42 @@
             return From(squareKilometres, AreaUnit.SquareKilometres);
         }
 
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="squareInches">The value in in²</param>
+        public static Area FromSquareInches(double squareInches)
+        {
+            return From(squareInches, AreaUnit.SquareInches);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="hectare">The value in ha</param>
+        public static Area FromHectare(double hectare)
+        {
+            return From(hectare, AreaUnit.Hectare);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="squareMile">The value in mi²</param>
+        public static Area FromSquareMile(double squareMile)
+        {
+            return From(squareMile, AreaUnit.SquareMile);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="squareYard">The value in yd²</param>
+        public static Area FromSquareYard(double squareYard)
+        {
+            return From(squareYard, AreaUnit.SquareYard);
+        }
+
         public static Length operator /(Area left, Length right)
         {
             return Length.FromMetres(left.SquareMetres / right.Metres);
@@ -190,6 +258,12 @@
         public static VolumetricFlow operator *(Area left, Speed right)
         {
             return VolumetricFlow.FromCubicMetresPerSecond(left.SquareMetres * right.MetresPerSecond);
+        }
+
+
+        public static double operator /(Area left, Area right)
+        {
+            return left.SquareMetres / right.SquareMetres;
         }
 
         /// <summary>
@@ -380,7 +454,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Area"/> object and returns an integer that indicates whether this <see cref="instance"/> is shorter than, equal to, or longer than the <see cref="T:MathNet.Spatial.Units.Area"/> object.
+        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Area"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="T:MathNet.Spatial.Units.Area"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.

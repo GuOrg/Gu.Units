@@ -14,6 +14,7 @@ namespace Gu.Units.Generator
         bool IsEmpty { get; }
         string UiName { get; }
         ObservableCollection<Conversion> Conversions { get; }
+        bool AnyOffsetConversion { get; }
         bool IsSymbolNameValid { get; }
         Settings Settings { get; set; }
     }

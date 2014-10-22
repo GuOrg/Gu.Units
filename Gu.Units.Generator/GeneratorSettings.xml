@@ -11,24 +11,80 @@
           <ClassName>SquareMillimetres</ClassName>
           <Symbol>mm²</Symbol>
           <ConversionFactor>1E-06</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>SquareCentimetres</ClassName>
           <Symbol>cm²</Symbol>
           <ConversionFactor>0.0001</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.0001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>SquareDecimetres</ClassName>
           <Symbol>dm²</Symbol>
           <ConversionFactor>0.010000000000000002</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.010000000000000002</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>SquareKilometres</ClassName>
           <Symbol>km²</Symbol>
           <ConversionFactor>1000000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>SquareInches</ClassName>
+          <Symbol>in²</Symbol>
+          <ConversionFactor>0.00064516</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.00064516</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>Hectare</ClassName>
+          <Symbol>ha</Symbol>
+          <ConversionFactor>10000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>10000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>SquareMile</ClassName>
+          <Symbol>mi²</Symbol>
+          <ConversionFactor>2589988.110336</ConversionFactor>
+          <Formula>
+            <ConversionFactor>2589988.110336</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>SquareYard</ClassName>
+          <Symbol>yd²</Symbol>
+          <ConversionFactor>0.83612736</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.83612736</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -49,18 +105,40 @@
           <ClassName>Litres</ClassName>
           <Symbol>L</Symbol>
           <ConversionFactor>0.0010000000000000002</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.0010000000000000002</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>CubicCentimetres</ClassName>
           <Symbol>cm³</Symbol>
           <ConversionFactor>1.0000000000000002E-06</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1.0000000000000002E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>CubicMillimetres</ClassName>
           <Symbol>mm³</Symbol>
           <ConversionFactor>1E-09</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-09</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>CubicInches</ClassName>
+          <Symbol>in³</Symbol>
+          <ConversionFactor>1.6387064E-05</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1.6387064E-05</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -81,36 +159,60 @@
           <ClassName>Nanonewtons</ClassName>
           <Symbol>nN</Symbol>
           <ConversionFactor>1E-09</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-09</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Micronewtons</ClassName>
           <Symbol>µN</Symbol>
           <ConversionFactor>1E-06</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Millinewtons</ClassName>
           <Symbol>mN</Symbol>
           <ConversionFactor>0.001</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Kilonewtons</ClassName>
           <Symbol>kN</Symbol>
           <ConversionFactor>1000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Meganewtons</ClassName>
           <Symbol>MN</Symbol>
           <ConversionFactor>1000000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Giganewtons</ClassName>
           <Symbol>GN</Symbol>
           <ConversionFactor>1000000000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -139,36 +241,60 @@
           <ClassName>Nanopascals</ClassName>
           <Symbol>nPa</Symbol>
           <ConversionFactor>1E-09</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-09</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Micropascals</ClassName>
           <Symbol>µPa</Symbol>
           <ConversionFactor>1E-06</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Millipascals</ClassName>
           <Symbol>mPa</Symbol>
           <ConversionFactor>0.001</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Kilopascals</ClassName>
           <Symbol>kPa</Symbol>
           <ConversionFactor>1000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Megapascals</ClassName>
           <Symbol>MPa</Symbol>
           <ConversionFactor>1000000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Gigapascals</ClassName>
           <Symbol>GPa</Symbol>
           <ConversionFactor>1000000000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -193,12 +319,20 @@
           <ClassName>GramsPerCubicMillimetre</ClassName>
           <Symbol>g / mm³</Symbol>
           <ConversionFactor>999999.99999999988</ConversionFactor>
+          <Formula>
+            <ConversionFactor>999999.99999999988</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>GramsPerCubicCentimetre</ClassName>
           <Symbol>g / cm³</Symbol>
           <ConversionFactor>999.99999999999989</ConversionFactor>
+          <Formula>
+            <ConversionFactor>999.99999999999989</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -223,42 +357,70 @@
           <ClassName>Nanojoules</ClassName>
           <Symbol>nJ</Symbol>
           <ConversionFactor>1E-09</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-09</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Microjoules</ClassName>
           <Symbol>µJ</Symbol>
           <ConversionFactor>1E-06</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Millijoules</ClassName>
           <Symbol>mJ</Symbol>
           <ConversionFactor>0.001</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Kilojoules</ClassName>
           <Symbol>kJ</Symbol>
           <ConversionFactor>1000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Megajoules</ClassName>
           <Symbol>MJ</Symbol>
           <ConversionFactor>1000000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Gigajoules</ClassName>
           <Symbol>GJ</Symbol>
           <ConversionFactor>1000000000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>KilowattHours</ClassName>
           <Symbol>kWh</Symbol>
           <ConversionFactor>3600000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>3600000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -287,36 +449,60 @@
           <ClassName>Nanowatts</ClassName>
           <Symbol>nW</Symbol>
           <ConversionFactor>1E-09</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-09</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Microwatts</ClassName>
           <Symbol>µW</Symbol>
           <ConversionFactor>1E-06</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Milliwatts</ClassName>
           <Symbol>mW</Symbol>
           <ConversionFactor>0.001</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Kilowatts</ClassName>
           <Symbol>kW</Symbol>
           <ConversionFactor>1000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Megawatts</ClassName>
           <Symbol>MW</Symbol>
           <ConversionFactor>1000000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Gigawatts</ClassName>
           <Symbol>GW</Symbol>
           <ConversionFactor>1000000000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -341,54 +527,90 @@
           <ClassName>MillimetresPerSecond</ClassName>
           <Symbol>mm / s</Symbol>
           <ConversionFactor>0.001</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>CentimetresPerSecond</ClassName>
           <Symbol>cm / s</Symbol>
           <ConversionFactor>0.01</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.01</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>KilometresPerHour</ClassName>
           <Symbol>km / h</Symbol>
           <ConversionFactor>0.27777777777777779</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.27777777777777779</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>CentimetresPerMinute</ClassName>
           <Symbol>cm / min</Symbol>
           <ConversionFactor>0.00016666666666666666</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.00016666666666666666</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>MetresPerMinute</ClassName>
           <Symbol>m / min</Symbol>
           <ConversionFactor>0.016666666666666666</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.016666666666666666</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>MetresPerHour</ClassName>
           <Symbol>m / h</Symbol>
           <ConversionFactor>0.00027777777777777778</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.00027777777777777778</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>MillimetresPerHour</ClassName>
           <Symbol>mm / h</Symbol>
           <ConversionFactor>2.7777777777777776E-07</ConversionFactor>
+          <Formula>
+            <ConversionFactor>2.7777777777777776E-07</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>CentimetresPerHour</ClassName>
           <Symbol>cm / h</Symbol>
           <ConversionFactor>2.7777777777777779E-06</ConversionFactor>
+          <Formula>
+            <ConversionFactor>2.7777777777777779E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>MillimetresPerMinute</ClassName>
           <Symbol>mm / min</Symbol>
           <ConversionFactor>1.6666666666666667E-05</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1.6666666666666667E-05</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -408,7 +630,18 @@
       <ClassName>RadiansPerSecond</ClassName>
       <Symbol>rad/s</Symbol>
       <QuantityName>AngularSpeed</QuantityName>
-      <Conversions />
+      <Conversions>
+        <Conversion>
+          <ClassName>RevolutionsPerMinute</ClassName>
+          <Symbol>rpm</Symbol>
+          <ConversionFactor>0.10471975511966</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.10471975511966</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+      </Conversions>
       <Parts>
         <UnitAndPower>
           <UnitName>Radians</UnitName>
@@ -430,24 +663,40 @@
           <ClassName>Millihertz</ClassName>
           <Symbol>mHz</Symbol>
           <ConversionFactor>0.001</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Kilohertz</ClassName>
           <Symbol>kHz</Symbol>
           <ConversionFactor>1000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Megahertz</ClassName>
           <Symbol>MHz</Symbol>
           <ConversionFactor>1000000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Gigahertz</ClassName>
           <Symbol>GHz</Symbol>
           <ConversionFactor>1000000000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -468,12 +717,20 @@
           <ClassName>MillimetresPerSecondSquared</ClassName>
           <Symbol>mm / s^2</Symbol>
           <ConversionFactor>1E-06</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>CentimetresPerSecondSquared</ClassName>
           <Symbol>cm / s^2</Symbol>
           <ConversionFactor>0.0001</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.0001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -553,24 +810,40 @@
           <ClassName>Millivolts</ClassName>
           <Symbol>mV</Symbol>
           <ConversionFactor>0.001</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Kilovolts</ClassName>
           <Symbol>kV</Symbol>
           <ConversionFactor>1000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Megavolts</ClassName>
           <Symbol>MV</Symbol>
           <ConversionFactor>1000000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Microvolts</ClassName>
           <Symbol>µV</Symbol>
           <ConversionFactor>1E-06</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -595,24 +868,40 @@
           <ClassName>Microohm</ClassName>
           <Symbol>µΩ</Symbol>
           <ConversionFactor>1E-06</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Milliohm</ClassName>
           <Symbol>mΩ</Symbol>
           <ConversionFactor>0.001</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Kiloohm</ClassName>
           <Symbol>kΩ</Symbol>
           <ConversionFactor>1000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Megaohm</ClassName>
           <Symbol>MΩ</Symbol>
           <ConversionFactor>1000000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -707,18 +996,30 @@
           <ClassName>Grams</ClassName>
           <Symbol>g</Symbol>
           <ConversionFactor>0.001</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Milligrams</ClassName>
           <Symbol>mg</Symbol>
           <ConversionFactor>1E-06</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Micrograms</ClassName>
           <Symbol>µg</Symbol>
           <ConversionFactor>1E-09</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-09</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -733,36 +1034,100 @@
           <ClassName>Nanometres</ClassName>
           <Symbol>nm</Symbol>
           <ConversionFactor>1E-09</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-09</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Micrometres</ClassName>
           <Symbol>µm</Symbol>
           <ConversionFactor>1E-06</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Millimetres</ClassName>
           <Symbol>mm</Symbol>
           <ConversionFactor>0.001</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Centimetres</ClassName>
           <Symbol>cm</Symbol>
           <ConversionFactor>0.01</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.01</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Decimetres</ClassName>
           <Symbol>dm</Symbol>
           <ConversionFactor>0.1</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.1</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Kilometres</ClassName>
           <Symbol>km</Symbol>
           <ConversionFactor>1000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>Inches</ClassName>
+          <Symbol>in</Symbol>
+          <ConversionFactor>0.0254</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.0254</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>Mile</ClassName>
+          <Symbol>mi</Symbol>
+          <ConversionFactor>1609.344</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1609.344</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>Yard</ClassName>
+          <Symbol>yd</Symbol>
+          <ConversionFactor>0.9144</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.9144</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>NauticalMile</ClassName>
+          <Symbol>nmi</Symbol>
+          <ConversionFactor>1852</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1852</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -777,30 +1142,50 @@
           <ClassName>Nanoseconds</ClassName>
           <Symbol>ns</Symbol>
           <ConversionFactor>1E-09</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-09</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Microseconds</ClassName>
           <Symbol>µs</Symbol>
           <ConversionFactor>1E-06</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Milliseconds</ClassName>
           <Symbol>ms</Symbol>
           <ConversionFactor>0.001</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Hours</ClassName>
           <Symbol>h</Symbol>
           <ConversionFactor>3600</ConversionFactor>
+          <Formula>
+            <ConversionFactor>3600</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Minutes</ClassName>
           <Symbol>min</Symbol>
           <ConversionFactor>60</ConversionFactor>
+          <Formula>
+            <ConversionFactor>60</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -808,9 +1193,30 @@
     <SiUnit>
       <Namespace>Gu.Units</Namespace>
       <ClassName>Kelvin</ClassName>
-      <Symbol>°K</Symbol>
+      <Symbol>K</Symbol>
       <QuantityName>Temperature</QuantityName>
-      <Conversions />
+      <Conversions>
+        <Conversion>
+          <ClassName>Celsius</ClassName>
+          <Symbol>°C</Symbol>
+          <ConversionFactor>1</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1</ConversionFactor>
+            <Offset>-273.15</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>Fahrenheit</ClassName>
+          <Symbol>°F</Symbol>
+          <ConversionFactor>1.8</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1.8</ConversionFactor>
+            <Offset>-459.67</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+      </Conversions>
     </SiUnit>
     <SiUnit>
       <Namespace>Gu.Units</Namespace>
@@ -822,6 +1228,10 @@
           <ClassName>Degrees</ClassName>
           <Symbol>°</Symbol>
           <ConversionFactor>57.295779513082323</ConversionFactor>
+          <Formula>
+            <ConversionFactor>57.295779513082323</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -836,18 +1246,30 @@
           <ClassName>PartsPerMillion</ClassName>
           <Symbol>ppm</Symbol>
           <ConversionFactor>1E-06</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Promilles</ClassName>
           <Symbol>‰</Symbol>
           <ConversionFactor>0.001</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Percents</ClassName>
           <Symbol>%</Symbol>
           <ConversionFactor>0.01</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.01</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>
@@ -862,24 +1284,40 @@
           <ClassName>Milliamperes</ClassName>
           <Symbol>mA</Symbol>
           <ConversionFactor>0.001</ConversionFactor>
+          <Formula>
+            <ConversionFactor>0.001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Kiloamperes</ClassName>
           <Symbol>kA</Symbol>
           <ConversionFactor>1000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Megaamperes</ClassName>
           <Symbol>MA</Symbol>
           <ConversionFactor>1000000</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
         <Conversion>
           <ClassName>Microamperes</ClassName>
           <Symbol>µA</Symbol>
           <ConversionFactor>1E-06</ConversionFactor>
+          <Formula>
+            <ConversionFactor>1E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
           <Conversions />
         </Conversion>
       </Conversions>

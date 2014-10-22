@@ -45,6 +45,17 @@
         }
 
         /// <summary>
+        /// The quantity in revolutionsPerMinute
+        /// </summary>
+        public double RevolutionsPerMinute
+        {
+            get
+            {
+                return AngularSpeedUnit.RevolutionsPerMinute.FromSiUnit(RadiansPerSecond);
+            }
+        }
+
+        /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.AngularSpeed"/> from its string representation
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.AngularSpeed"/></param>
@@ -83,6 +94,15 @@
         public static AngularSpeed FromRadiansPerSecond(double radiansPerSecond)
         {
             return new AngularSpeed(radiansPerSecond);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.AngularSpeed"/>.
+        /// </summary>
+        /// <param name="revolutionsPerMinute">The value in rpm</param>
+        public static AngularSpeed FromRevolutionsPerMinute(double revolutionsPerMinute)
+        {
+            return From(revolutionsPerMinute, AngularSpeedUnit.RevolutionsPerMinute);
         }
 
         public static Angle operator *(AngularSpeed left, Time right)

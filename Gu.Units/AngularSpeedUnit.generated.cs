@@ -14,6 +14,17 @@
         /// </summary>
         public static readonly AngularSpeedUnit RadiansPerSecond = new AngularSpeedUnit(1.0, "rad/s");
 
+        /// <summary>
+        /// The <see cref="T:Gu.Units.RevolutionsPerMinute"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly AngularSpeedUnit RevolutionsPerMinute = new AngularSpeedUnit(0.10471975511966, "rpm");
+        /// <summary>
+        /// The <see cref="T:Gu.Units.RevolutionsPerMinute"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly AngularSpeedUnit rpm = RevolutionsPerMinute;
+
         private readonly double _conversionFactor;
         private readonly string _symbol;
 

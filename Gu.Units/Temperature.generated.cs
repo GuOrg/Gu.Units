@@ -45,6 +45,28 @@
         }
 
         /// <summary>
+        /// The quantity in celsius
+        /// </summary>
+        public double Celsius
+        {
+            get
+            {
+                return TemperatureUnit.Celsius.FromSiUnit(Kelvin);
+            }
+        }
+
+        /// <summary>
+        /// The quantity in fahrenheit
+        /// </summary>
+        public double Fahrenheit
+        {
+            get
+            {
+                return TemperatureUnit.Fahrenheit.FromSiUnit(Kelvin);
+            }
+        }
+
+        /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Temperature"/> from its string representation
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Temperature"/></param>
@@ -83,6 +105,24 @@
         public static Temperature FromKelvin(double kelvin)
         {
             return new Temperature(kelvin);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Temperature"/>.
+        /// </summary>
+        /// <param name="celsius">The value in °C</param>
+        public static Temperature FromCelsius(double celsius)
+        {
+            return From(celsius, TemperatureUnit.Celsius);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Temperature"/>.
+        /// </summary>
+        /// <param name="fahrenheit">The value in °F</param>
+        public static Temperature FromFahrenheit(double fahrenheit)
+        {
+            return From(fahrenheit, TemperatureUnit.Fahrenheit);
         }
 
 

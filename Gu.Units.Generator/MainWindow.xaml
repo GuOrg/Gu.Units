@@ -151,6 +151,7 @@
                                     <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
                                     <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
                                     <DataGridTextColumn Binding="{Binding ConversionFactor}" Header="Factor" />
+                                    <DataGridTextColumn Binding="{Binding Formula}" Header="Formula" />
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>

@@ -16,8 +16,8 @@ else
                     {
                         QuantityName = "Length"
                     };
-    unit.Conversions.Add(new Conversion("Gu.Units", "Centimetres", "cm", 1E-2));
-    unit.Conversions.Add(new Conversion("Gu.Units", "Millimetres", "mm", 1E-3));
+    unit.Conversions.Add(new Conversion("Gu.Units", "Centimetres", "cm"));
+    unit.Conversions.Add(new Conversion("Gu.Units", "Millimetres", "mm"));
     quantity = unit.Quantity;
 }
 #>
@@ -53,13 +53,13 @@ namespace <#= Settings.Namespace #>
         /// <param name="unit"><see cref="T:<#= Settings.Namespace #>.<#= quantity.Unit.ClassName #>"/>.</param>
         public <#= quantity.ClassName #>(double value, <#= quantity.ClassName #>Unit unit)
         {
-            <#= quantity.Unit.ClassName #> = unit.<#= Methods.ToSiUnit #>(value);
+            <#= quantity.Unit.ClassName #> = unit.<#= Names.ToSiUnit #>(value);
         }
 
         /// <summary>
         /// The quantity in <#= quantity.Unit.ClassName #>
         /// </summary>
-        public double <#= Methods.SiValue #>
+        public double <#= Names.SiValue #>
         {
             get
             {
@@ -78,7 +78,7 @@ namespace <#= Settings.Namespace #>
         {
             get
             {
-                return <#= quantity.ClassName #>Unit.<#= unit.ClassName #>.<#= Methods.FromSiUnit #>(<#= quantity.Unit.ClassName #>);
+                return <#= quantity.ClassName #>Unit.<#= unit.ClassName #>.<#= Names.FromSiUnit #>(<#= quantity.Unit.ClassName #>);
             }
         }
 
@@ -114,7 +114,7 @@ namespace <#= Settings.Namespace #>
         /// <param name="unit"></param>
         public static <#= quantity.ClassName #> From(double value, <#= quantity.ClassName #>Unit unit)
         {
-            return new <#= quantity.ClassName #>(unit.<#= Methods.ToSiUnit #>(value));
+            return new <#= quantity.ClassName #>(unit.<#= Names.ToSiUnit #>(value));
         }
 
         /// <summary>
@@ -343,7 +343,7 @@ namespace <#= Settings.Namespace #>
  
         public string ToString(string format, IFormatProvider formatProvider, <#= quantity.ClassName #>Unit unit)
         {
-            var quantity = unit.<#= Methods.FromSiUnit #>(this.<#= quantity.Unit.ClassName #>);
+            var quantity = unit.<#= Names.FromSiUnit #>(this.<#= quantity.Unit.ClassName #>);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
  
