@@ -4,6 +4,7 @@
     using System.Collections.Concurrent;
     using System.Collections.Generic;
     using System.Globalization;
+    using System.IO;
     using System.Linq;
     using System.Reflection;
     using System.Text;
@@ -125,50 +126,38 @@
             public static string PowerPattern = string.Join("|", Powers.SelectMany(x => x.StringRepresentations));
 
             public static string OperatorPattern = @"[⋅*/]";
-            
+
             public Symbol(IUnit unit)
             {
                 this.Unit = unit;
                 var stringBuilder = new StringBuilder();
                 stringBuilder.Append(@"^ *");
-                var powerMatches = Regex.Matches(unit.Symbol, PowerPattern).OfType<Match>().ToArray();
-                var operatorMatches = Regex.Matches(unit.Symbol, OperatorPattern).OfType<Match>().ToArray();
-                int i = 0;
-                while (i < unit.Symbol.Length)
+                var tokens = this.Tokenize(unit.Symbol).ToArray();
+                if (tokens.Any(x => x == "/"))
                 {
-                    var powerMatch = powerMatches.FirstOrDefault(m => m.Index == i);
-                    if (powerMatch != null)
+                    throw new NotImplementedException("message");
+                }
+                else
+                {
+                    foreach (var token in tokens)
                     {
-                        var power = Powers.Single(x => x.StringRepresentations.Any(s => s == powerMatch.Value));
-                        stringBuilder.AppendFormat(@"({0})", power.Pattern);
-                        if (power.Exponent == 1)
+                        var power = token as Power;
+                        if (power != null)
                         {
-                            stringBuilder.Append("?");
+                            stringBuilder.AppendFormat("({0})", power.Pattern);
+                            if (power.Exponent == 1)
+                            {
+                                stringBuilder.Append("?");
+                            }
                         }
-                        i += powerMatch.Length;
-                        continue;
-                    }
-                    var operatorMatch = operatorMatches.FirstOrDefault(m => m.Index == i);
-                    if (operatorMatch!=null)
-                    {
-                        if (operatorMatch.Value == "/")
+                        else if (token == "*")
                         {
-                            throw new NotImplementedException("message");
+                            stringBuilder.Append("[⋅*]");
                         }
                         else
                         {
-                            stringBuilder.Append("[⋅*]");
-                            i++;
+                            stringBuilder.Append(token);
                         }
-                        continue;
-                    }
-                    else
-                    {
-                        if (!char.IsWhiteSpace(unit.Symbol[i]))
-                        {
-                            stringBuilder.Append(unit.Symbol[i]);
-                        }
-                        i++;
                     }
                 }
                 stringBuilder.Append(@" *$");
@@ -187,6 +176,82 @@
             public override string ToString()
             {
                 return String.Format("Unit: {0}, Pattern: {1}", this.Unit, this.Pattern);
+            }
+
+            private IEnumerable<object> Tokenize(string s)
+            {
+                var powerMatches = Regex.Matches(s, PowerPattern).OfType<Match>().ToArray();
+                var operatorMatches = Regex.Matches(s, OperatorPattern).OfType<Match>().ToArray();
+                bool returnedUnit = false;
+                int pos = 0;
+                pos = SkipWhiteSpace(s, pos);
+                if (s[pos] == '1')
+                {
+                    yield return "1";
+                    pos++;
+                }
+                while (pos < s.Length)
+                {
+                    pos = SkipWhiteSpace(s, pos);
+                    var powerMatch = powerMatches.FirstOrDefault(m => m.Index == pos);
+                    if (powerMatch != null)
+                    {
+                        var power = Powers.Single(x => x.StringRepresentations.Any(sr => sr == powerMatch.Value));
+                        yield return power;
+                        returnedUnit = false;
+                        pos += powerMatch.Length;
+                        continue;
+                    }
+                    var operatorMatch = operatorMatches.FirstOrDefault(m => m.Index == pos);
+                    if (operatorMatch != null)
+                    {
+                        if (returnedUnit)
+                        {
+                            yield return Powers.First(x => x.Exponent == 1);
+                        }
+                        if (operatorMatch.Value == "/")
+                        {
+                            yield return "/";
+                        }
+                        else
+                        {
+                            yield return "*";
+                        }
+                        pos += operatorMatch.Length;
+                        returnedUnit = false;
+                        continue;
+                    }
+                    else
+                    {
+                        operatorMatch = operatorMatches.FirstOrDefault(m => m.Index > pos);
+                        powerMatch = powerMatches.FirstOrDefault(x => x.Index > pos);
+                        var ends = new[]
+                                       {
+                                           s.Length, 
+                                           operatorMatch != null ? operatorMatch.Index : int.MaxValue,
+                                           powerMatch != null ? powerMatch.Index : int.MaxValue,
+                                           s.IndexOf(' ', pos) == -1 ? int.MaxValue : s.IndexOf(' ', pos)
+                                       };
+
+                        var unit = s.Substring(pos, ends.Min()-pos);
+                        yield return unit;
+                        returnedUnit = true;
+                        pos += unit.Length;
+                    }
+                }
+                if (returnedUnit)
+                {
+                    yield return Powers.First(x => x.Exponent == 1);
+                }
+            }
+
+            private static int SkipWhiteSpace(string s, int pos)
+            {
+                while (char.IsWhiteSpace(s[pos]) && pos < s.Length)
+                {
+                    pos++;
+                }
+                return pos;
             }
         }
     }
