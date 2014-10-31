@@ -15,13 +15,13 @@
         public static readonly TimeUnit Seconds = new TimeUnit(1.0, "s");
         /// <summary>
         /// The <see cref="T:Gu.Units.Seconds"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TimeUnit s = Seconds;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Nanoseconds"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TimeUnit Nanoseconds = new TimeUnit(1E-09, "ns");
         /// <summary>
@@ -32,7 +32,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Microseconds"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TimeUnit Microseconds = new TimeUnit(1E-06, "µs");
         /// <summary>
@@ -43,7 +43,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Milliseconds"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TimeUnit Milliseconds = new TimeUnit(0.001, "ms");
         /// <summary>
@@ -54,7 +54,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Hours"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TimeUnit Hours = new TimeUnit(3600, "h");
         /// <summary>
@@ -65,7 +65,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Minutes"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TimeUnit Minutes = new TimeUnit(60, "min");
         /// <summary>

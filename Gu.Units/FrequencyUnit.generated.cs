@@ -15,13 +15,13 @@
         public static readonly FrequencyUnit Hertz = new FrequencyUnit(1.0, "Hz");
         /// <summary>
         /// The <see cref="T:Gu.Units.Hertz"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FrequencyUnit Hz = Hertz;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Millihertz"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FrequencyUnit Millihertz = new FrequencyUnit(0.001, "mHz");
         /// <summary>
@@ -32,7 +32,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilohertz"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FrequencyUnit Kilohertz = new FrequencyUnit(1000, "kHz");
         /// <summary>
@@ -43,7 +43,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Megahertz"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FrequencyUnit Megahertz = new FrequencyUnit(1000000, "MHz");
         /// <summary>
@@ -54,7 +54,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Gigahertz"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FrequencyUnit Gigahertz = new FrequencyUnit(1000000000, "GHz");
         /// <summary>

@@ -15,13 +15,13 @@
         public static readonly VoltageUnit Volts = new VoltageUnit(1.0, "V");
         /// <summary>
         /// The <see cref="T:Gu.Units.Volts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VoltageUnit V = Volts;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Millivolts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VoltageUnit Millivolts = new VoltageUnit(0.001, "mV");
         /// <summary>
@@ -32,7 +32,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilovolts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VoltageUnit Kilovolts = new VoltageUnit(1000, "kV");
         /// <summary>
@@ -43,7 +43,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Megavolts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VoltageUnit Megavolts = new VoltageUnit(1000000, "MV");
         /// <summary>
@@ -54,7 +54,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Microvolts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VoltageUnit Microvolts = new VoltageUnit(1E-06, "µV");
         /// <summary>

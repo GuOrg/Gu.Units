@@ -15,13 +15,13 @@
         public static readonly AngleUnit Radians = new AngleUnit(1.0, "rad");
         /// <summary>
         /// The <see cref="T:Gu.Units.Radians"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngleUnit rad = Radians;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Degrees"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngleUnit Degrees = new AngleUnit(57.2957795130823, "°");
 

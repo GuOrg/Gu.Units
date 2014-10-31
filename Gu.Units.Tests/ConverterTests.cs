@@ -8,10 +8,10 @@
         [Test]
         public void CheckUnitTypeProvider()
         {
-            Assert.IsNotEmpty(UnitTypeProvider.UnitTypes);
+            Assert.IsNotEmpty(UnitsProvider.UnitTypes);
         }
 
-        [TestCaseSource(typeof(UnitTypeProvider))]
+        [TestCaseSource(typeof(UnitsProvider))]
         public void Roundtrip(IUnit unit)
         {
             double[] values = { 0, 100 };

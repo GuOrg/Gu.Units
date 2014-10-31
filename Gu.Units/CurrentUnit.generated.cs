@@ -15,13 +15,13 @@
         public static readonly CurrentUnit Amperes = new CurrentUnit(1.0, "A");
         /// <summary>
         /// The <see cref="T:Gu.Units.Amperes"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CurrentUnit A = Amperes;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Milliamperes"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CurrentUnit Milliamperes = new CurrentUnit(0.001, "mA");
         /// <summary>
@@ -32,7 +32,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Kiloamperes"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CurrentUnit Kiloamperes = new CurrentUnit(1000, "kA");
         /// <summary>
@@ -43,7 +43,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Megaamperes"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CurrentUnit Megaamperes = new CurrentUnit(1000000, "MA");
         /// <summary>
@@ -54,7 +54,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Microamperes"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CurrentUnit Microamperes = new CurrentUnit(1E-06, "µA");
         /// <summary>

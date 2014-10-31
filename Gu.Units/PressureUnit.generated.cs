@@ -15,13 +15,13 @@
         public static readonly PressureUnit Pascals = new PressureUnit(1.0, "Pa");
         /// <summary>
         /// The <see cref="T:Gu.Units.Pascals"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit Pa = Pascals;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Nanopascals"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit Nanopascals = new PressureUnit(1E-09, "nPa");
         /// <summary>
@@ -32,7 +32,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Micropascals"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit Micropascals = new PressureUnit(1E-06, "µPa");
         /// <summary>
@@ -43,7 +43,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Millipascals"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit Millipascals = new PressureUnit(0.001, "mPa");
         /// <summary>
@@ -54,7 +54,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilopascals"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit Kilopascals = new PressureUnit(1000, "kPa");
         /// <summary>
@@ -65,7 +65,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Megapascals"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit Megapascals = new PressureUnit(1000000, "MPa");
         /// <summary>
@@ -76,7 +76,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Gigapascals"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit Gigapascals = new PressureUnit(1000000000, "GPa");
         /// <summary>

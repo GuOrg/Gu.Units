@@ -15,19 +15,19 @@
         public static readonly TemperatureUnit Kelvin = new TemperatureUnit(1.0, 0, "K");
         /// <summary>
         /// The <see cref="T:Gu.Units.Kelvin"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TemperatureUnit K = Kelvin;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Celsius"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TemperatureUnit Celsius = new TemperatureUnit(1, -273.15, "°C");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Fahrenheit"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TemperatureUnit Fahrenheit = new TemperatureUnit(1.8, -459.67, "°F");
 

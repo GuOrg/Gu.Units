@@ -15,7 +15,7 @@
         public static readonly LuminousIntensityUnit Candelas = new LuminousIntensityUnit(1.0, "cd");
         /// <summary>
         /// The <see cref="T:Gu.Units.Candelas"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LuminousIntensityUnit cd = Candelas;
 
