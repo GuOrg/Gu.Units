@@ -3,9 +3,11 @@
     using System;
     using System.Globalization;
     using System.Text.RegularExpressions;
+    using System.Threading;
+
     using NUnit.Framework;
 
-    public class ParserTests
+    public class ParseTests
     {
         [TestCase("1m", new[] { "sv-se", "en-us" }, 1)]
         [TestCase("-1m", new[] { "sv-se", "en-us" }, -1)]
@@ -34,21 +36,16 @@
             }
         }
 
-        [TestCase("1s", 1)]
-        [TestCase("1h", 3600)]
-        [TestCase("1ms", 1e-3)]
-        public void ParseTime(string s, double expected)
+        [TestCaseSource(typeof(ParseProvider))]
+        public void Parse(ParseProvider.ParseData data)
         {
-            var time = Parser.Parse<TimeUnit, Time>(s, Time.From);
-            Assert.AreEqual(expected, time.Seconds);
-        }
-
-        [TestCase("1kg", 1)]
-        [TestCase("1g", 1e-3)]
-        public void ParseMass(string s, double expected)
-        {
-            var value = Parser.Parse<MassUnit, Mass>(s, Mass.From);
-            Assert.AreEqual(expected, value.Kilograms);
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
+            var actual = data.ParseMethod(data.StringValue);
+            var expected = data.Quantity;
+            Assert.AreEqual(expected, actual);
+            var s = actual.ToString();
+            var roundtripped = data.ParseMethod(s);
+            Assert.AreEqual(expected, roundtripped);
         }
 
         [TestCase("1", 1)]
@@ -66,6 +63,27 @@
         {
             Assert.IsTrue(Regex.IsMatch(s, Parser.DoublePointPattern));
             Assert.AreEqual(expected, double.Parse(s, CultureInfo.InvariantCulture));
+        }
+
+        [Test]
+        public void CmSymbolPattern()
+        {
+            var symbol = new Parser.Symbol(LengthUnit.Centimetres);
+            Assert.AreEqual(@"^ *cm(¹|^1)? *$", symbol.Pattern);
+        }
+       
+        [Test]
+        public void SquareMmSymbolPattern()
+        {
+            var symbol = new Parser.Symbol(AreaUnit.SquareMillimetres);
+            Assert.AreEqual(@"^ *mm(²|^2) *$", symbol.Pattern);
+        }
+
+        [Test]
+        public void MmPerSecondSymbolPattern()
+        {
+            var symbol = new Parser.Symbol(SpeedUnit.MillimetresPerSecond);
+            Assert.AreEqual(@"^ *(mm(¹|^1)?[⋅*]s(⁻¹|^-1)|mm(¹|^1)?/s(¹|^1)?) *$", symbol.Pattern);
         }
 
         [TestCase("1.0cm", "sv-se")]
