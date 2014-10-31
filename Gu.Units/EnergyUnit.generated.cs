@@ -15,13 +15,13 @@
         public static readonly EnergyUnit Joules = new EnergyUnit(1.0, "J");
         /// <summary>
         /// The <see cref="T:Gu.Units.Joules"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit J = Joules;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Nanojoules"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit Nanojoules = new EnergyUnit(1E-09, "nJ");
         /// <summary>
@@ -32,7 +32,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Microjoules"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit Microjoules = new EnergyUnit(1E-06, "µJ");
         /// <summary>
@@ -43,7 +43,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Millijoules"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit Millijoules = new EnergyUnit(0.001, "mJ");
         /// <summary>
@@ -54,7 +54,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilojoules"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit Kilojoules = new EnergyUnit(1000, "kJ");
         /// <summary>
@@ -65,7 +65,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Megajoules"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit Megajoules = new EnergyUnit(1000000, "MJ");
         /// <summary>
@@ -76,7 +76,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Gigajoules"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit Gigajoules = new EnergyUnit(1000000000, "GJ");
         /// <summary>
@@ -87,7 +87,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.KilowattHours"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit KilowattHours = new EnergyUnit(3600000, "kWh");
         /// <summary>

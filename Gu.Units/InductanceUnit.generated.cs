@@ -15,7 +15,7 @@
         public static readonly InductanceUnit Henrys = new InductanceUnit(1.0, "H");
         /// <summary>
         /// The <see cref="T:Gu.Units.Henrys"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly InductanceUnit H = Henrys;
 

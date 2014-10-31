@@ -16,7 +16,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.RevolutionsPerMinute"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngularSpeedUnit RevolutionsPerMinute = new AngularSpeedUnit(0.10471975511966, "rpm");
         /// <summary>

@@ -15,7 +15,7 @@
         public static readonly ElectricChargeUnit Coulombs = new ElectricChargeUnit(1.0, "C");
         /// <summary>
         /// The <see cref="T:Gu.Units.Coulombs"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ElectricChargeUnit C = Coulombs;
 

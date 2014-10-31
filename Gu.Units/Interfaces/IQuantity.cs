@@ -14,21 +14,6 @@
     {
     }
 
-    public struct Quantity<TUnit, TPower> : IQuantity<TUnit, TPower>
-        where TUnit : IUnit
-        where TPower : IPower
-    {
-        private readonly double _siValue;
-        public Quantity(double siValue)
-        {
-            _siValue = siValue;
-        }
-        public double SiValue
-        {
-            get { return _siValue; }
-        }
-    }
-
     public interface IQuantity<TUnit1, TPower1, TUnit2, TPower2> : IQuantity
         where TUnit1 : IUnit
         where TPower1 : IPower

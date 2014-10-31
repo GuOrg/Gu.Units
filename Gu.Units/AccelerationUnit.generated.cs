@@ -16,13 +16,13 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.MillimetresPerSecondSquared"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AccelerationUnit MillimetresPerSecondSquared = new AccelerationUnit(1E-06, "mm / s^2");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.CentimetresPerSecondSquared"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AccelerationUnit CentimetresPerSecondSquared = new AccelerationUnit(0.0001, "cm / s^2");
 

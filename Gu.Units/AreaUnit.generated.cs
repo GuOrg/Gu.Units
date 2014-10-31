@@ -16,37 +16,37 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareMillimetres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AreaUnit SquareMillimetres = new AreaUnit(1E-06, "mm²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareCentimetres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AreaUnit SquareCentimetres = new AreaUnit(0.0001, "cm²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareDecimetres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AreaUnit SquareDecimetres = new AreaUnit(0.01, "dm²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareKilometres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AreaUnit SquareKilometres = new AreaUnit(1000000, "km²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareInches"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AreaUnit SquareInches = new AreaUnit(0.00064516, "in²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Hectare"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AreaUnit Hectare = new AreaUnit(10000, "ha");
         /// <summary>
@@ -57,13 +57,13 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareMile"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AreaUnit SquareMile = new AreaUnit(2589988.110336, "mi²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareYard"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AreaUnit SquareYard = new AreaUnit(0.83612736, "yd²");
 

@@ -15,7 +15,7 @@
         public static readonly CapacitanceUnit Farads = new CapacitanceUnit(1.0, "F");
         /// <summary>
         /// The <see cref="T:Gu.Units.Farads"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CapacitanceUnit F = Farads;
 

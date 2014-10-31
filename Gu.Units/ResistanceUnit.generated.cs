@@ -15,13 +15,13 @@
         public static readonly ResistanceUnit Ohm = new ResistanceUnit(1.0, "Ω");
         /// <summary>
         /// The <see cref="T:Gu.Units.Ohm"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ResistanceUnit Ω = Ohm;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Microohm"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ResistanceUnit Microohm = new ResistanceUnit(1E-06, "µΩ");
         /// <summary>
@@ -32,7 +32,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Milliohm"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ResistanceUnit Milliohm = new ResistanceUnit(0.001, "mΩ");
         /// <summary>
@@ -43,7 +43,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Kiloohm"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ResistanceUnit Kiloohm = new ResistanceUnit(1000, "kΩ");
         /// <summary>
@@ -54,7 +54,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Megaohm"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ResistanceUnit Megaohm = new ResistanceUnit(1000000, "MΩ");
         /// <summary>

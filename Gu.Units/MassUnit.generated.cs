@@ -15,13 +15,13 @@
         public static readonly MassUnit Kilograms = new MassUnit(1.0, "kg");
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilograms"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly MassUnit kg = Kilograms;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Grams"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly MassUnit Grams = new MassUnit(0.001, "g");
         /// <summary>
@@ -32,7 +32,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Milligrams"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly MassUnit Milligrams = new MassUnit(1E-06, "mg");
         /// <summary>
@@ -43,7 +43,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Micrograms"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly MassUnit Micrograms = new MassUnit(1E-09, "µg");
         /// <summary>

@@ -15,13 +15,13 @@
         public static readonly LengthUnit Metres = new LengthUnit(1.0, "m");
         /// <summary>
         /// The <see cref="T:Gu.Units.Metres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit m = Metres;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Nanometres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Nanometres = new LengthUnit(1E-09, "nm");
         /// <summary>
@@ -32,7 +32,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Micrometres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Micrometres = new LengthUnit(1E-06, "µm");
         /// <summary>
@@ -43,7 +43,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Millimetres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Millimetres = new LengthUnit(0.001, "mm");
         /// <summary>
@@ -54,7 +54,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Centimetres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Centimetres = new LengthUnit(0.01, "cm");
         /// <summary>
@@ -65,7 +65,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Decimetres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Decimetres = new LengthUnit(0.1, "dm");
         /// <summary>
@@ -76,7 +76,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilometres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Kilometres = new LengthUnit(1000, "km");
         /// <summary>
@@ -87,13 +87,13 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Inches"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Inches = new LengthUnit(0.0254, "in");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Mile"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Mile = new LengthUnit(1609.344, "mi");
         /// <summary>
@@ -104,7 +104,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Yard"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Yard = new LengthUnit(0.9144, "yd");
         /// <summary>
@@ -115,7 +115,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.NauticalMile"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit NauticalMile = new LengthUnit(1852, "nmi");
         /// <summary>

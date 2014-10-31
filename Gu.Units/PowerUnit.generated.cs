@@ -15,13 +15,13 @@
         public static readonly PowerUnit Watts = new PowerUnit(1.0, "W");
         /// <summary>
         /// The <see cref="T:Gu.Units.Watts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit W = Watts;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Nanowatts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit Nanowatts = new PowerUnit(1E-09, "nW");
         /// <summary>
@@ -32,7 +32,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Microwatts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit Microwatts = new PowerUnit(1E-06, "µW");
         /// <summary>
@@ -43,7 +43,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Milliwatts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit Milliwatts = new PowerUnit(0.001, "mW");
         /// <summary>
@@ -54,7 +54,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilowatts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit Kilowatts = new PowerUnit(1000, "kW");
         /// <summary>
@@ -65,7 +65,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Megawatts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit Megawatts = new PowerUnit(1000000, "MW");
         /// <summary>
@@ -76,7 +76,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Gigawatts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit Gigawatts = new PowerUnit(1000000000, "GW");
         /// <summary>

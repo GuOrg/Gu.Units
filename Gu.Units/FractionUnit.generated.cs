@@ -16,7 +16,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.PartsPerMillion"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FractionUnit PartsPerMillion = new FractionUnit(1E-06, "ppm");
         /// <summary>
@@ -27,13 +27,13 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Promilles"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FractionUnit Promilles = new FractionUnit(0.001, "‰");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Percents"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FractionUnit Percents = new FractionUnit(0.01, "%");
 

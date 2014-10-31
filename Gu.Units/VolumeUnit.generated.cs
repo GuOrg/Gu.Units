@@ -16,7 +16,7 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Litres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumeUnit Litres = new VolumeUnit(0.001, "L");
         /// <summary>
@@ -27,19 +27,19 @@
 
         /// <summary>
         /// The <see cref="T:Gu.Units.CubicCentimetres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumeUnit CubicCentimetres = new VolumeUnit(1E-06, "cm³");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.CubicMillimetres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumeUnit CubicMillimetres = new VolumeUnit(1E-09, "mm³");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.CubicInches"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumeUnit CubicInches = new VolumeUnit(1.6387064E-05, "in³");
 
