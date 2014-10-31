@@ -115,12 +115,12 @@
         {
             public static readonly Power[] Powers =
                 {
-                    new Power(1,new []{ "¹","^1"}), 
-                    new Power(2,new []{ "²","^2"}), 
-                    new Power(3,new []{ "³","^3"}),
-                    new Power(-1,new []{ "⁻¹","^-1"}), 
-                    new Power(-2,new []{ "⁻²","^-2"}), 
-                    new Power(-3,new []{ "⁻³","^-3"})
+                    new Power(1,new []{ "¹","\\^1"}), 
+                    new Power(2,new []{ "²","\\^2"}), 
+                    new Power(3,new []{ "³","\\^3"}),
+                    new Power(-1,new []{ "⁻¹","\\^-1"}), 
+                    new Power(-2,new []{ "⁻²","\\^-2"}), 
+                    new Power(-3,new []{ "⁻³","\\^-3"})
                 };
 
             public static string PowerPattern = string.Join("|", Powers.SelectMany(x => x.StringRepresentations));
@@ -133,35 +133,31 @@
                 var stringBuilder = new StringBuilder();
                 stringBuilder.Append(@"^ *");
                 var tokens = this.Tokenize(unit.Symbol).ToArray();
-                if (tokens.Any(x => x == "/"))
+                if (tokens.Any(x => x is Power && ((Power)x).Exponent < 0))
                 {
-                    throw new NotImplementedException("message");
+                    stringBuilder.Append("(");
+                    var count = tokens.TakeWhile(x => !(x is Power && ((Power)x).Exponent < 0)).Count() - 2;
+                    var positive = tokens.Take(count).ToArray();
+                    AppendUnits(positive, stringBuilder);
+                    stringBuilder.Append(@" */ *");
+                    var negative = tokens.Skip(count + 1)
+                                         .Select(x => x is Power
+                                                     ? Powers.First(p => p.Exponent == -1 * ((Power)x).Exponent)
+                                                     : x)
+                                         .ToArray();
+                    AppendUnits(negative, stringBuilder);
+                    stringBuilder.Append(")");
+                    stringBuilder.Append("|");
+                    stringBuilder.Append("(");
+                    AppendUnits(tokens, stringBuilder);
+                    stringBuilder.Append(")");
                 }
                 else
                 {
-                    foreach (var token in tokens)
-                    {
-                        var power = token as Power;
-                        if (power != null)
-                        {
-                            stringBuilder.AppendFormat("({0})", power.Pattern);
-                            if (power.Exponent == 1)
-                            {
-                                stringBuilder.Append("?");
-                            }
-                        }
-                        else if (token == "*")
-                        {
-                            stringBuilder.Append("[⋅*]");
-                        }
-                        else
-                        {
-                            stringBuilder.Append(token);
-                        }
-                    }
+                    AppendUnits(tokens, stringBuilder);
                 }
                 stringBuilder.Append(@" *$");
-                this.Pattern = stringBuilder.ToString();
+                Pattern = stringBuilder.ToString();
             }
 
             public string Pattern { get; private set; }
@@ -184,6 +180,7 @@
                 var operatorMatches = Regex.Matches(s, OperatorPattern).OfType<Match>().ToArray();
                 bool returnedUnit = false;
                 int pos = 0;
+                int sign = 1;
                 pos = SkipWhiteSpace(s, pos);
                 if (s[pos] == '1')
                 {
@@ -197,7 +194,7 @@
                     if (powerMatch != null)
                     {
                         var power = Powers.Single(x => x.StringRepresentations.Any(sr => sr == powerMatch.Value));
-                        yield return power;
+                        yield return Powers.First(x => x.Exponent == sign * power.Exponent);
                         returnedUnit = false;
                         pos += powerMatch.Length;
                         continue;
@@ -211,7 +208,8 @@
                         }
                         if (operatorMatch.Value == "/")
                         {
-                            yield return "/";
+                            sign = -1;
+                            yield return "*";
                         }
                         else
                         {
@@ -233,7 +231,7 @@
                                            s.IndexOf(' ', pos) == -1 ? int.MaxValue : s.IndexOf(' ', pos)
                                        };
 
-                        var unit = s.Substring(pos, ends.Min()-pos);
+                        var unit = s.Substring(pos, ends.Min() - pos);
                         yield return unit;
                         returnedUnit = true;
                         pos += unit.Length;
@@ -241,7 +239,7 @@
                 }
                 if (returnedUnit)
                 {
-                    yield return Powers.First(x => x.Exponent == 1);
+                    yield return Powers.First(x => x.Exponent == sign * 1);
                 }
             }
 
@@ -253,6 +251,31 @@
                 }
                 return pos;
             }
+
+            private static void AppendUnits(IEnumerable<object> tokens, StringBuilder stringBuilder)
+            {
+                foreach (var token in tokens)
+                {
+                    var power = token as Power;
+                    if (power != null)
+                    {
+                        stringBuilder.AppendFormat("({0})", power.Pattern);
+                        if (power.Exponent == 1)
+                        {
+                            stringBuilder.Append("?");
+                        }
+                    }
+                    else if (token == "*")
+                    {
+                        stringBuilder.Append(" *[⋅*] *");
+                    }
+                    else
+                    {
+                        stringBuilder.Append(token);
+                    }
+                }
+            }
+
         }
     }
 }

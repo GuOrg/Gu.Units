@@ -66,26 +66,18 @@
         }
 
         [Test]
-        public void CmSymbolPattern()
+        public void SymbolPattern()
         {
             var symbol = new Parser.Symbol(LengthUnit.Centimetres);
-            Assert.AreEqual(@"^ *cm(¹|^1)? *$", symbol.Pattern);
+            Assert.AreEqual(@"^ *cm(¹|\^1)? *$", symbol.Pattern);
+            
+            symbol = new Parser.Symbol(SpeedUnit.MillimetresPerSecond);
+            Assert.AreEqual(@"^ *(mm(¹|\^1)? */ *s(¹|\^1)?)|(mm(¹|\^1)? *[⋅*] *s(⁻¹|\^-1)) *$", symbol.Pattern);
+
+            symbol = new Parser.Symbol(AreaUnit.SquareMillimetres);
+            Assert.AreEqual(@"^ *mm(²|\^2) *$", symbol.Pattern);
         }
        
-        [Test]
-        public void SquareMmSymbolPattern()
-        {
-            var symbol = new Parser.Symbol(AreaUnit.SquareMillimetres);
-            Assert.AreEqual(@"^ *mm(²|^2) *$", symbol.Pattern);
-        }
-
-        [Test]
-        public void MmPerSecondSymbolPattern()
-        {
-            var symbol = new Parser.Symbol(SpeedUnit.MillimetresPerSecond);
-            Assert.AreEqual(@"^ *(mm(¹|^1)?[⋅*]s(⁻¹|^-1)|mm(¹|^1)?/s(¹|^1)?) *$", symbol.Pattern);
-        }
-
         [TestCase("1.0cm", "sv-se")]
         [TestCase("1,0cm", "en-us")]
         public void Exceptions(string s, string culture)
