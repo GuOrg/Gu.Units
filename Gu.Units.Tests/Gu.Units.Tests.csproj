@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArithmeticsTests.cs" />
     <Compile Include="ConversionTests.cs" />
     <Compile Include="QuantityTests.cs" />
     <Compile Include="Helpers\ConversionProvider.cs" />

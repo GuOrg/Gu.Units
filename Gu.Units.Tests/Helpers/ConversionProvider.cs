@@ -14,6 +14,7 @@
                                         {
                                             new Conversion<Length>("1.2cm","0.012m", Length.Parse),
                                             new Conversion<Length>("1.2cm","12mm", Length.Parse),
+                                            new Conversion<Area>("1.2mm^2","1.2E-6m^2", Area.Parse),
                                         };
 
         }

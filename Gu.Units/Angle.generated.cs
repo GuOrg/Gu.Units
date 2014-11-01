@@ -115,7 +115,6 @@
             return AngularSpeed.FromRadiansPerSecond(left.Radians / right.Seconds);
         }
 
-
         public static double operator /(Angle left, Angle right)
         {
             return left.Radians / right.Radians;
