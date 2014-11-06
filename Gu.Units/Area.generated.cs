@@ -181,7 +181,6 @@
         {
             return From(squareMillimetres, AreaUnit.SquareMillimetres);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -190,7 +189,6 @@
         {
             return From(squareCentimetres, AreaUnit.SquareCentimetres);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -199,7 +197,6 @@
         {
             return From(squareDecimetres, AreaUnit.SquareDecimetres);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -208,7 +205,6 @@
         {
             return From(squareKilometres, AreaUnit.SquareKilometres);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -217,7 +213,6 @@
         {
             return From(squareInches, AreaUnit.SquareInches);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -226,7 +221,6 @@
         {
             return From(hectare, AreaUnit.Hectare);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -235,7 +229,6 @@
         {
             return From(squareMile, AreaUnit.SquareMile);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -259,7 +252,6 @@
         {
             return VolumetricFlow.FromCubicMetresPerSecond(left.SquareMetres * right.MetresPerSecond);
         }
-
 
         public static double operator /(Area left, Area right)
         {

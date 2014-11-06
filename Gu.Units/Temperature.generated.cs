@@ -115,7 +115,6 @@
         {
             return From(celsius, TemperatureUnit.Celsius);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Temperature"/>.
         /// </summary>
@@ -124,7 +123,6 @@
         {
             return From(fahrenheit, TemperatureUnit.Fahrenheit);
         }
-
 
         public static double operator /(Temperature left, Temperature right)
         {

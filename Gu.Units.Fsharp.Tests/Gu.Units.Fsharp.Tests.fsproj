@@ -63,6 +63,15 @@
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'CreateNugetPackage|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>bin\Release\Gu.Units.Fsharp.Tests.XML</DocumentationFile>
+    <OutputPath>bin\CreateNugetPackage\</OutputPath>
+  </PropertyGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '11.0'">
       <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')">

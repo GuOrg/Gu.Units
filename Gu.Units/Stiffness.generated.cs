@@ -85,6 +85,7 @@
             return new Stiffness(newtonsPerMetre);
         }
 
+
         public static Force operator *(Stiffness left, Length right)
         {
             return Force.FromNewtons(left.NewtonsPerMetre * right.Metres);
@@ -99,7 +100,6 @@
         {
             return Energy.FromJoules(left.NewtonsPerMetre * right.SquareMetres);
         }
-
 
         public static double operator /(Stiffness left, Stiffness right)
         {

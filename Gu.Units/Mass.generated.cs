@@ -126,7 +126,6 @@
         {
             return From(grams, MassUnit.Grams);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
@@ -135,7 +134,6 @@
         {
             return From(milligrams, MassUnit.Milligrams);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
@@ -159,7 +157,6 @@
         {
             return Density.FromKilogramsPerCubicMetre(left.Kilograms / right.CubicMetres);
         }
-
 
         public static double operator /(Mass left, Mass right)
         {

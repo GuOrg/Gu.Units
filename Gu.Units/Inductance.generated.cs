@@ -85,11 +85,11 @@
             return new Inductance(henrys);
         }
 
+
         public static Resistance operator /(Inductance left, Time right)
         {
             return Resistance.FromOhm(left.Henrys / right.Seconds);
         }
-
 
         public static double operator /(Inductance left, Inductance right)
         {

@@ -137,7 +137,6 @@
         {
             return From(litres, VolumeUnit.Litres);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
@@ -146,7 +145,6 @@
         {
             return From(cubicCentimetres, VolumeUnit.CubicCentimetres);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
@@ -155,7 +153,6 @@
         {
             return From(cubicMillimetres, VolumeUnit.CubicMillimetres);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
@@ -184,7 +181,6 @@
         {
             return VolumetricFlow.FromCubicMetresPerSecond(left.CubicMetres / right.Seconds);
         }
-
 
         public static double operator /(Volume left, Volume right)
         {

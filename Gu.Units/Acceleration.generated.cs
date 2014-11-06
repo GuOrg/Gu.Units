@@ -115,7 +115,6 @@
         {
             return From(millimetresPerSecondSquared, AccelerationUnit.MillimetresPerSecondSquared);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Acceleration"/>.
         /// </summary>
@@ -144,7 +143,6 @@
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.MetresPerSecondSquared * right.Metres);
         }
-
 
         public static double operator /(Acceleration left, Acceleration right)
         {

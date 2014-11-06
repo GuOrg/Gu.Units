@@ -85,6 +85,7 @@
             return new VolumetricFlow(cubicMetresPerSecond);
         }
 
+
         public static Area operator /(VolumetricFlow left, Speed right)
         {
             return Area.FromSquareMetres(left.CubicMetresPerSecond / right.MetresPerSecond);
@@ -104,7 +105,6 @@
         {
             return Frequency.FromHertz(left.CubicMetresPerSecond / right.CubicMetres);
         }
-
 
         public static double operator /(VolumetricFlow left, VolumetricFlow right)
         {

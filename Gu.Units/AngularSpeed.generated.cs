@@ -115,7 +115,6 @@
             return Frequency.FromHertz(left.RadiansPerSecond / right.Radians);
         }
 
-
         public static double operator /(AngularSpeed left, AngularSpeed right)
         {
             return left.RadiansPerSecond / right.RadiansPerSecond;
