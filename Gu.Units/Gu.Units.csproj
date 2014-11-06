@@ -53,9 +53,6 @@
     <BuildPackage>true</BuildPackage>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MathNet.Spatial">
-      <HintPath>..\packages\MathNet.Spatial.0.1.3\lib\net45\MathNet.Spatial.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml" />
@@ -67,7 +64,6 @@
     <Compile Include="AccelerationUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
-    <Compile Include="Angle.cs" />
     <Compile Include="Angle.generated.cs">
       <DependentUpon>QuantityGenerator.txt4</DependentUpon>
     </Compile>
@@ -237,7 +233,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="QuantityGenerator.txt4" />
     <None Include="UnitGenerator.txt4" />
   </ItemGroup>
