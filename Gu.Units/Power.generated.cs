@@ -159,7 +159,6 @@
         {
             return From(nanowatts, PowerUnit.Nanowatts);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -168,7 +167,6 @@
         {
             return From(microwatts, PowerUnit.Microwatts);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -177,7 +175,6 @@
         {
             return From(milliwatts, PowerUnit.Milliwatts);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -186,7 +183,6 @@
         {
             return From(kilowatts, PowerUnit.Kilowatts);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -195,7 +191,6 @@
         {
             return From(megawatts, PowerUnit.Megawatts);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -234,7 +229,6 @@
         {
             return Voltage.FromVolts(left.Watts / right.Amperes);
         }
-
 
         public static double operator /(Power left, Power right)
         {

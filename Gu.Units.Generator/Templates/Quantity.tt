@@ -138,7 +138,6 @@ namespace <#= Settings.Namespace #>
         {
             return From(<#= su.ParameterName #>, <#= quantity.ClassName #>Unit.<#= su.ClassName #>);
         }
-
 <#
 		} 
 		#>
@@ -146,11 +145,11 @@ namespace <#= Settings.Namespace #>
 		foreach(var op in quantity.OperatorOverloads)
 		{
 		#>
+
         public static <#= op.Result.ClassName #> operator<#= op.Operator #>(<#= op.Left.ClassName #> left, <#= op.Right.ClassName #> right)
         {
             return <#= op.Result.ClassName #>.From<#= op.Result.Unit.ClassName #>(left.<#= op.Left.Unit.ClassName #> <#= op.Operator #> right.<#= op.Right.Unit.ClassName #>);
         }
-
 <#
 		} 
 		#>

@@ -170,7 +170,6 @@
         {
             return From(nanojoules, EnergyUnit.Nanojoules);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -179,7 +178,6 @@
         {
             return From(microjoules, EnergyUnit.Microjoules);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -188,7 +186,6 @@
         {
             return From(millijoules, EnergyUnit.Millijoules);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -197,7 +194,6 @@
         {
             return From(kilojoules, EnergyUnit.Kilojoules);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -206,7 +202,6 @@
         {
             return From(megajoules, EnergyUnit.Megajoules);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -215,7 +210,6 @@
         {
             return From(gigajoules, EnergyUnit.Gigajoules);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -264,7 +258,6 @@
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.Joules / right.Kilograms);
         }
-
 
         public static double operator /(Energy left, Energy right)
         {

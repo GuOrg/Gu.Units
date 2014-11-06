@@ -137,7 +137,6 @@
         {
             return From(millivolts, VoltageUnit.Millivolts);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Voltage"/>.
         /// </summary>
@@ -146,7 +145,6 @@
         {
             return From(kilovolts, VoltageUnit.Kilovolts);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Voltage"/>.
         /// </summary>
@@ -155,7 +153,6 @@
         {
             return From(megavolts, VoltageUnit.Megavolts);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Voltage"/>.
         /// </summary>
@@ -179,7 +176,6 @@
         {
             return Resistance.FromOhm(left.Volts / right.Amperes);
         }
-
 
         public static double operator /(Voltage left, Voltage right)
         {

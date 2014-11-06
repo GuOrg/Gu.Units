@@ -159,7 +159,6 @@
         {
             return From(nanopascals, PressureUnit.Nanopascals);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -168,7 +167,6 @@
         {
             return From(micropascals, PressureUnit.Micropascals);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -177,7 +175,6 @@
         {
             return From(millipascals, PressureUnit.Millipascals);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -186,7 +183,6 @@
         {
             return From(kilopascals, PressureUnit.Kilopascals);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -195,7 +191,6 @@
         {
             return From(megapascals, PressureUnit.Megapascals);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -224,7 +219,6 @@
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.Pascals / right.KilogramsPerCubicMetre);
         }
-
 
         public static double operator /(Pressure left, Pressure right)
         {

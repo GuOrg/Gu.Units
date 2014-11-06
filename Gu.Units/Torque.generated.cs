@@ -85,6 +85,7 @@
             return new Torque(newtonMetres);
         }
 
+
         public static Energy operator *(Torque left, Angle right)
         {
             return Energy.FromJoules(left.NewtonMetres * right.Radians);
@@ -94,7 +95,6 @@
         {
             return Power.FromWatts(left.NewtonMetres * right.RadiansPerSecond);
         }
-
 
         public static double operator /(Torque left, Torque right)
         {

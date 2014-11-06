@@ -85,6 +85,7 @@
             return new SpecificEnergy(joulesPerKilogram);
         }
 
+
         public static Length operator /(SpecificEnergy left, Acceleration right)
         {
             return Length.FromMetres(left.JoulesPerKilogram / right.MetresPerSecondSquared);
@@ -109,7 +110,6 @@
         {
             return Acceleration.FromMetresPerSecondSquared(left.JoulesPerKilogram / right.Metres);
         }
-
 
         public static double operator /(SpecificEnergy left, SpecificEnergy right)
         {

@@ -126,7 +126,6 @@
         {
             return From(partsPerMillion, FractionUnit.PartsPerMillion);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Fraction"/>.
         /// </summary>
@@ -135,7 +134,6 @@
         {
             return From(promilles, FractionUnit.Promilles);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Fraction"/>.
         /// </summary>
@@ -144,7 +142,6 @@
         {
             return From(percents, FractionUnit.Percents);
         }
-
 
         public static double operator /(Fraction left, Fraction right)
         {

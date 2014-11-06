@@ -192,7 +192,6 @@
         {
             return From(millimetresPerSecond, SpeedUnit.MillimetresPerSecond);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -201,7 +200,6 @@
         {
             return From(centimetresPerSecond, SpeedUnit.CentimetresPerSecond);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -210,7 +208,6 @@
         {
             return From(kilometresPerHour, SpeedUnit.KilometresPerHour);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -219,7 +216,6 @@
         {
             return From(centimetresPerMinute, SpeedUnit.CentimetresPerMinute);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -228,7 +224,6 @@
         {
             return From(metresPerMinute, SpeedUnit.MetresPerMinute);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -237,7 +232,6 @@
         {
             return From(metresPerHour, SpeedUnit.MetresPerHour);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -246,7 +240,6 @@
         {
             return From(millimetresPerHour, SpeedUnit.MillimetresPerHour);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -255,7 +248,6 @@
         {
             return From(centimetresPerHour, SpeedUnit.CentimetresPerHour);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
@@ -299,7 +291,6 @@
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.MetresPerSecond * right.MetresPerSecond);
         }
-
 
         public static double operator /(Speed left, Speed right)
         {

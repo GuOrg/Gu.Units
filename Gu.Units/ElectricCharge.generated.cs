@@ -85,6 +85,7 @@
             return new ElectricCharge(coulombs);
         }
 
+
         public static Time operator /(ElectricCharge left, Current right)
         {
             return Time.FromSeconds(left.Coulombs / right.Amperes);
@@ -94,7 +95,6 @@
         {
             return Current.FromAmperes(left.Coulombs / right.Seconds);
         }
-
 
         public static double operator /(ElectricCharge left, ElectricCharge right)
         {

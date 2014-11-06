@@ -137,7 +137,6 @@
         {
             return From(microohm, ResistanceUnit.Microohm);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Resistance"/>.
         /// </summary>
@@ -146,7 +145,6 @@
         {
             return From(milliohm, ResistanceUnit.Milliohm);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Resistance"/>.
         /// </summary>
@@ -155,7 +153,6 @@
         {
             return From(kiloohm, ResistanceUnit.Kiloohm);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Resistance"/>.
         /// </summary>
@@ -174,7 +171,6 @@
         {
             return Inductance.FromHenrys(left.Ohm * right.Seconds);
         }
-
 
         public static double operator /(Resistance left, Resistance right)
         {

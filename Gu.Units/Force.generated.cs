@@ -159,7 +159,6 @@
         {
             return From(nanonewtons, ForceUnit.Nanonewtons);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
@@ -168,7 +167,6 @@
         {
             return From(micronewtons, ForceUnit.Micronewtons);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
@@ -177,7 +175,6 @@
         {
             return From(millinewtons, ForceUnit.Millinewtons);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
@@ -186,7 +183,6 @@
         {
             return From(kilonewtons, ForceUnit.Kilonewtons);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
@@ -195,7 +191,6 @@
         {
             return From(meganewtons, ForceUnit.Meganewtons);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
@@ -234,7 +229,6 @@
         {
             return Stiffness.FromNewtonsPerMetre(left.Newtons / right.Metres);
         }
-
 
         public static double operator /(Force left, Force right)
         {

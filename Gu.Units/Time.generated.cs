@@ -148,7 +148,6 @@
         {
             return From(nanoseconds, TimeUnit.Nanoseconds);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -157,7 +156,6 @@
         {
             return From(microseconds, TimeUnit.Microseconds);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -166,7 +164,6 @@
         {
             return From(milliseconds, TimeUnit.Milliseconds);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -175,7 +172,6 @@
         {
             return From(hours, TimeUnit.Hours);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -204,7 +200,6 @@
         {
             return ElectricCharge.FromCoulombs(left.Seconds * right.Amperes);
         }
-
 
         public static double operator /(Time left, Time right)
         {

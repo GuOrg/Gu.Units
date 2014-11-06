@@ -137,7 +137,6 @@
         {
             return From(millihertz, FrequencyUnit.Millihertz);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
@@ -146,7 +145,6 @@
         {
             return From(kilohertz, FrequencyUnit.Kilohertz);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
@@ -155,7 +153,6 @@
         {
             return From(megahertz, FrequencyUnit.Megahertz);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
@@ -194,7 +191,6 @@
         {
             return VolumetricFlow.FromCubicMetresPerSecond(left.Hertz * right.CubicMetres);
         }
-
 
         public static double operator /(Frequency left, Frequency right)
         {

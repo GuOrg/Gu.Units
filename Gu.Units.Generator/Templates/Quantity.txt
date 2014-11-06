@@ -115,7 +115,6 @@
         {
             return From(centimetres, LengthUnit.Centimetres);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
@@ -124,7 +123,6 @@
         {
             return From(millimetres, LengthUnit.Millimetres);
         }
-
 
         public static double operator /(Length left, Length right)
         {
