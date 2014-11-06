@@ -112,6 +112,12 @@
     <Compile Include="EnergyUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
+    <Compile Include="Flexibility.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="FlexibilityUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
     <Compile Include="Force.generated.cs">
       <DependentUpon>QuantityGenerator.txt4</DependentUpon>
     </Compile>

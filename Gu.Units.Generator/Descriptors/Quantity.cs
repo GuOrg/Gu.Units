@@ -36,7 +36,7 @@
             }
             _unit.PropertyChanged += (_, e) => OnPropertyChanged("Interface");
         }
-       
+
         public string UnitName
         {
             get
@@ -133,6 +133,15 @@
                 return Settings.Quantities.Where(x => x.ClassName != ClassName)
                                .Where(result => OperatorOverload.CanCreate(Settings, this, result))
                                .Select(result => new OperatorOverload(this, result, Settings));
+            }
+        }
+
+        [XmlIgnore]
+        public Quantity Inverse
+        {
+            get
+            {
+                throw new NotImplementedException("message");
             }
         }
 

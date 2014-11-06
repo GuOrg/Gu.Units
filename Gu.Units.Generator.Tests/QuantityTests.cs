@@ -55,10 +55,37 @@
         }
 
         [Test]
-        public void FindOverloads()
+        public void LengthOverloads()
         {
-            var overloads = _settings.Length.OperatorOverloads;
-            Assert.Inconclusive();
+            var actual = _settings.Length.OperatorOverloads.ToArray();
+            var expected = new[]
+                               {
+                                   new OperatorOverload(_settings.Length, _settings.Time, _settings),
+                                   new OperatorOverload(_settings.Length, _settings.Speed, _settings),
+                                   new OperatorOverload(_settings.Length, _settings.Energy, _settings),
+                                   new OperatorOverload(_settings.Length, _settings.Area, _settings),
+                                   new OperatorOverload(_settings.Length, _settings.Volume, _settings)
+                               };
+            CollectionAssert.AreEqual(expected.Select(x => x.ToString()), actual.Select(x => x.ToString()));
+        }
+
+        [Test]
+        public void TimeOverloads()
+        {
+            var actual = _settings.Time.OperatorOverloads.ToArray();
+            var expected = new[]
+                               {
+                                   new OperatorOverload(_settings.Time, _settings.Length, _settings),
+                                   new OperatorOverload(_settings.Time, _settings.ElectricCharge, _settings),
+                               };
+            CollectionAssert.AreEqual(expected.Select(x => x.ToString()), actual.Select(x => x.ToString()));
+        }
+
+        [Test]
+        public void Inversions()
+        {
+            var actual = _settings.Time.Inverse;
+            Assert.AreEqual(_settings.Quantities);
         }
     }
 }

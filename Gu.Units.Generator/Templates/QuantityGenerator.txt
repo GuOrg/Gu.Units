@@ -1,5 +1,5 @@
 ﻿
-Read Settings found 28 units
+Read Settings found 29 units
 //-> Acceleration.generated.cs
 
 //-> Angle.generated.cs
@@ -17,6 +17,8 @@ Read Settings found 28 units
 //-> ElectricCharge.generated.cs
 
 //-> Energy.generated.cs
+
+//-> Flexibility.generated.cs
 
 //-> Force.generated.cs
 
@@ -58,6 +60,7 @@ Read Settings found 28 units
 // Generated helper templates
 // Gu.Units\Gu.Units\QuantityGenerator.txt4
 // Generated items
+// Gu.Units\Gu.Units\Flexibility.generated.cs
 // Gu.Units\Gu.Units\Capacitance.generated.cs
 // Gu.Units\Gu.Units\Inductance.generated.cs
 // Gu.Units\Gu.Units\ElectricCharge.generated.cs
