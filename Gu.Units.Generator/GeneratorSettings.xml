@@ -905,6 +905,32 @@
         </UnitAndPower>
       </Parts>
     </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>MetresPerNewton</ClassName>
+      <Symbol>m/N</Symbol>
+      <QuantityName>Flexibility</QuantityName>
+      <Conversions>
+        <Conversion>
+          <ClassName>MillimetresPerNewton</ClassName>
+          <Symbol>mm/N</Symbol>
+          <Formula>
+            <ConversionFactor>0.001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+      </Conversions>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Metres</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Newtons</UnitName>
+          <Power>-1</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
   </DerivedUnits>
   <SiUnits>
     <SiUnit>
@@ -1133,7 +1159,7 @@
     </SiUnit>
     <SiUnit>
       <ClassName>Fractions</ClassName>
-      <Symbol>/x</Symbol>
+      <Symbol>ul</Symbol>
       <QuantityName>Fraction</QuantityName>
       <Conversions>
         <Conversion>

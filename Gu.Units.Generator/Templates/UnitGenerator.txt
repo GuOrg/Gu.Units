@@ -18,6 +18,8 @@ Read Settings found 8 units
 
 //-> EnergyUnit.generated.cs
 
+//-> FlexibilityUnit.generated.cs
+
 //-> ForceUnit.generated.cs
 
 //-> FractionUnit.generated.cs
@@ -58,6 +60,7 @@ Read Settings found 8 units
 // Generated helper templates
 // Gu.Units\Gu.Units\UnitGenerator.txt4
 // Generated items
+// Gu.Units\Gu.Units\FlexibilityUnit.generated.cs
 // Gu.Units\Gu.Units\CapacitanceUnit.generated.cs
 // Gu.Units\Gu.Units\InductanceUnit.generated.cs
 // Gu.Units\Gu.Units\ElectricChargeUnit.generated.cs
