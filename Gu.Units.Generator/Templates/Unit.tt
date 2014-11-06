@@ -1,6 +1,7 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #>
+<#@ import namespace="System.Globalization" #>
 <#@ parameter name="UnitMetaData" type="Gu.Units.Generator.IUnit" #>
 <#@ output extension=".txt" #>
 <#
@@ -78,7 +79,7 @@ namespace <#= Settings.Namespace #>
 	else
 	{
 	    #>
-		public static readonly <#= unit.QuantityName #>Unit <#= su.ClassName #> = new <#= unit.QuantityName #>Unit(<#= su.Formula.ConversionFactor #>, "<#= su.Symbol #>");
+		public static readonly <#= unit.QuantityName #>Unit <#= su.ClassName #> = new <#= unit.QuantityName #>Unit(<#= su.Formula.ConversionFactor.ToString("R", CultureInfo.InvariantCulture) #>, "<#= su.Symbol #>");
 <#
 	}
         #><#

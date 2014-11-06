@@ -15,6 +15,8 @@
                                             new Conversion<Length>("1.2cm","0.012m", Length.Parse),
                                             new Conversion<Length>("1.2cm","12mm", Length.Parse),
                                             new Conversion<Area>("1.2mm^2","1.2E-6m^2", Area.Parse),
+                                            new Conversion<Angle>("90°","1.5707963267948966rad", Angle.Parse),
+                                            new Conversion<Angle>("1°","0.017453292519943295rad", Angle.Parse),
                                         };
 
         }

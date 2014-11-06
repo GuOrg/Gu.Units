@@ -18,13 +18,13 @@
         /// The <see cref="T:Gu.Units.GramsPerCubicMillimetre"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly DensityUnit GramsPerCubicMillimetre = new DensityUnit(1000000, "g / mm³");
+        public static readonly DensityUnit GramsPerCubicMillimetre = new DensityUnit(999999.99999999988, "g / mm³");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.GramsPerCubicCentimetre"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly DensityUnit GramsPerCubicCentimetre = new DensityUnit(1000, "g / cm³");
+        public static readonly DensityUnit GramsPerCubicCentimetre = new DensityUnit(999.99999999999989, "g / cm³");
 
         private readonly double _conversionFactor;
         private readonly string _symbol;
