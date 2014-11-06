@@ -1124,7 +1124,7 @@
           <ClassName>Degrees</ClassName>
           <Symbol>°</Symbol>
           <Formula>
-            <ConversionFactor>57.295779513082323</ConversionFactor>
+            <ConversionFactor>0.017453292519943295</ConversionFactor>
             <Offset>0</Offset>
           </Formula>
           <Conversions />

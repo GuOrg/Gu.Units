@@ -136,7 +136,6 @@
         {
             return From(milliamperes, CurrentUnit.Milliamperes);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Current"/>.
         /// </summary>
@@ -145,7 +144,6 @@
         {
             return From(kiloamperes, CurrentUnit.Kiloamperes);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Current"/>.
         /// </summary>
@@ -154,7 +152,6 @@
         {
             return From(megaamperes, CurrentUnit.Megaamperes);
         }
-
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Current"/>.
         /// </summary>
@@ -173,7 +170,6 @@
         {
             return ElectricCharge.FromCoulombs(left.Amperes * right.Seconds);
         }
-
 
         public static double operator /(Current left, Current right)
         {

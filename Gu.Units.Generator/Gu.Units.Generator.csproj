@@ -162,7 +162,7 @@
     </None>
     <None Include="Templates\Unit.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Unit.txt</LastGenOutput>
+      <LastGenOutput>Unit1.txt</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +184,11 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Templates\Unit1.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Unit.tt</DependentUpon>
+    </Resource>
     <Resource Include="GeneratorSettings.xml">
       <SubType>Designer</SubType>
     </Resource>

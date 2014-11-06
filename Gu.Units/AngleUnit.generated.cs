@@ -23,7 +23,7 @@
         /// The <see cref="T:Gu.Units.Degrees"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngleUnit Degrees = new AngleUnit(57.2957795130823, "°");
+        public static readonly AngleUnit Degrees = new AngleUnit(0.017453292519943295, "°");
 
         private readonly double _conversionFactor;
         private readonly string _symbol;

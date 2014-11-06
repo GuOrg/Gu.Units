@@ -30,7 +30,7 @@
         /// The <see cref="T:Gu.Units.SquareDecimetres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AreaUnit SquareDecimetres = new AreaUnit(0.01, "dm²");
+        public static readonly AreaUnit SquareDecimetres = new AreaUnit(0.010000000000000002, "dm²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareKilometres"/> unit

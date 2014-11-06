@@ -18,7 +18,7 @@
         /// The <see cref="T:Gu.Units.Litres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VolumeUnit Litres = new VolumeUnit(0.001, "L");
+        public static readonly VolumeUnit Litres = new VolumeUnit(0.0010000000000000002, "L");
         /// <summary>
         /// The <see cref="T:Gu.Units.Litres"/> unit
         /// Contains coonversion logic to from and formatting.
@@ -29,7 +29,7 @@
         /// The <see cref="T:Gu.Units.CubicCentimetres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VolumeUnit CubicCentimetres = new VolumeUnit(1E-06, "cm³");
+        public static readonly VolumeUnit CubicCentimetres = new VolumeUnit(1.0000000000000002E-06, "cm³");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.CubicMillimetres"/> unit
