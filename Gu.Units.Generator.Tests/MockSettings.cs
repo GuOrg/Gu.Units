@@ -38,6 +38,9 @@
         public readonly DerivedUnit Coloumbs;
         public readonly Quantity ElectricCharge;
 
+        public readonly DerivedUnit Hertz;
+        public readonly Quantity Frequency;
+
         public MockSettings()
         {
             Metres = new SiUnit("Metres", "m") { QuantityName = "Length" };
@@ -118,6 +121,13 @@
             };
             DerivedUnits.Add(CubicMetres);
             Volume = CubicMetres.Quantity;
+
+            Hertz = new DerivedUnit("Hertz", "1/s", new UnitAndPower(Seconds, -1))
+            {
+                QuantityName = "Frequency"
+            };
+            DerivedUnits.Add(Hertz);
+            Frequency = Hertz.Quantity;
         }
     }
 }

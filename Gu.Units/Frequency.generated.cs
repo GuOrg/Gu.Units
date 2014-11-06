@@ -191,6 +191,11 @@
             return VolumetricFlow.FromCubicMetresPerSecond(left.Hertz * right.CubicMetres);
         }
 
+        public static Time operator /(double left, Frequency right)
+        {
+            return Time.FromSeconds(left / right.Hertz);
+        }
+
         public static double operator /(Frequency left, Frequency right)
         {
             return left.Hertz / right.Hertz;

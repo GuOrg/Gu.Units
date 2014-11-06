@@ -85,7 +85,8 @@
         public void Inversions()
         {
             var actual = _settings.Time.Inverse;
-            Assert.AreEqual(_settings.Quantities);
+            Assert.AreEqual(_settings.Frequency.ToString(), actual.ToString());
+            Assert.IsNull(_settings.Length.Inverse);
         }
     }
 }

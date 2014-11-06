@@ -305,6 +305,11 @@
             return SpecificEnergy.FromJoulesPerKilogram(left.Metres * right.MetresPerSecondSquared);
         }
 
+        public static Flexibility operator /(Length left, Force right)
+        {
+            return Flexibility.FromMetresPerNewton(left.Metres / right.Newtons);
+        }
+
         public static double operator /(Length left, Length right)
         {
             return left.Metres / right.Metres;

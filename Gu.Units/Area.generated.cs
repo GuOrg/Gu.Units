@@ -252,6 +252,11 @@
             return VolumetricFlow.FromCubicMetresPerSecond(left.SquareMetres * right.MetresPerSecond);
         }
 
+        public static Flexibility operator /(Area left, Energy right)
+        {
+            return Flexibility.FromMetresPerNewton(left.SquareMetres / right.Joules);
+        }
+
         public static double operator /(Area left, Area right)
         {
             return left.SquareMetres / right.SquareMetres;

@@ -141,7 +141,11 @@
         {
             get
             {
-                throw new NotImplementedException("message");
+                if (Settings == null || Settings.Quantities == null)
+                {
+                    return null;
+                }
+                return Settings.Quantities.FirstOrDefault(x => x != null && OperatorOverload.IsInverse(this, x));
             }
         }
 

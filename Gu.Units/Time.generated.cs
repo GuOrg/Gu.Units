@@ -200,6 +200,11 @@
             return ElectricCharge.FromCoulombs(left.Seconds * right.Amperes);
         }
 
+        public static Frequency operator /(double left, Time right)
+        {
+            return Frequency.FromHertz(left / right.Seconds);
+        }
+
         public static double operator /(Time left, Time right)
         {
             return left.Seconds / right.Seconds;
