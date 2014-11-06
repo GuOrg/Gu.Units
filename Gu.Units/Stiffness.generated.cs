@@ -100,6 +100,11 @@
             return Energy.FromJoules(left.NewtonsPerMetre * right.SquareMetres);
         }
 
+        public static Flexibility operator /(double left, Stiffness right)
+        {
+            return Flexibility.FromMetresPerNewton(left / right.NewtonsPerMetre);
+        }
+
         public static double operator /(Stiffness left, Stiffness right)
         {
             return left.NewtonsPerMetre / right.NewtonsPerMetre;

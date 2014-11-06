@@ -12,7 +12,12 @@
         /// The <see cref="T:Gu.Units.Fractions"/> unit
         /// Contains coonversion logic to from and formatting.
         /// </summary>
-        public static readonly FractionUnit Fractions = new FractionUnit(1.0, "/x");
+        public static readonly FractionUnit Fractions = new FractionUnit(1.0, "ul");
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Fractions"/> unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly FractionUnit ul = Fractions;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.PartsPerMillion"/> unit

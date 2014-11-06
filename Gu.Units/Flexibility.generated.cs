@@ -114,6 +114,11 @@
             return Area.FromSquareMetres(left.MetresPerNewton * right.Joules);
         }
 
+        public static Stiffness operator /(double left, Flexibility right)
+        {
+            return Stiffness.FromNewtonsPerMetre(left / right.MetresPerNewton);
+        }
+
         public static double operator /(Flexibility left, Flexibility right)
         {
             return left.MetresPerNewton / right.MetresPerNewton;

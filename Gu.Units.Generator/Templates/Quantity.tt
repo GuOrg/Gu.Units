@@ -152,6 +152,18 @@ namespace <#= Settings.Namespace #>
 <#
 		} 
 		#>
+<#
+		if(quantity.Inverse != null)
+		{
+		#>
+
+        public static <#= quantity.Inverse.ClassName #> operator/(double left, <#= quantity.ClassName #> right)
+        {
+            return <#= quantity.Inverse.ClassName #>.From<#= quantity.Inverse.Unit.ClassName #>(left / right.<#= quantity.Unit.ClassName #>);
+        }
+<#
+		} 
+		#>
 
         public static double operator /(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
         {
