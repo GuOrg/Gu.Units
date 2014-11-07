@@ -17,6 +17,16 @@
                                             new Conversion<Area>("1.2mm^2","1.2E-6m^2", Area.Parse),
                                             new Conversion<Angle>("90°","1.5707963267948966rad", Angle.Parse),
                                             new Conversion<Angle>("1°","0.017453292519943295rad", Angle.Parse),
+                                            new Conversion<Temperature>("0°C","32°F", Temperature.Parse),
+                                            new Conversion<Temperature>("100°C","211.99999999999994°F", Temperature.Parse),
+                                            new Conversion<Temperature>("100°F","37.777777777777828°C", Temperature.Parse),
+                                            new Conversion<Temperature>("0K","-273.15°C", Temperature.Parse),
+                                            new Conversion<Temperature>("0K","-459.67°F", Temperature.Parse),
+                                            new Conversion<Temperature>("100K","-173.14999999999998°C", Temperature.Parse),
+                                            new Conversion<Temperature>("100K","-279.67°F", Temperature.Parse),
+                                            new Conversion<Unitless>("1ul","100%", Unitless.Parse),
+                                            new Conversion<Unitless>("1%","0.01ul", Unitless.Parse),
+                                            new Conversion<Unitless>("1%","10‰", Unitless.Parse),
                                         };
 
         }

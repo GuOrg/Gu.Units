@@ -1158,9 +1158,9 @@
       </Conversions>
     </SiUnit>
     <SiUnit>
-      <ClassName>Fractions</ClassName>
+      <ClassName>Scalar</ClassName>
       <Symbol>ul</Symbol>
-      <QuantityName>Fraction</QuantityName>
+      <QuantityName>Unitless</QuantityName>
       <Conversions>
         <Conversion>
           <ClassName>PartsPerMillion</ClassName>

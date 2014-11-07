@@ -83,6 +83,7 @@
     </ApplicationDefinition>
     <Compile Include="ConversionsVm.cs" />
     <Compile Include="Descriptors\ConversionFormula.cs" />
+    <Compile Include="Descriptors\InverseOverload.cs" />
     <Compile Include="Descriptors\IUnit.cs" />
     <Compile Include="Descriptors\Names.cs" />
     <Compile Include="Descriptors\OperatorOverload.cs" />
@@ -191,11 +192,6 @@
     </Resource>
     <Resource Include="GeneratorSettings.xml">
       <SubType>Designer</SubType>
-    </Resource>
-    <Resource Include="Templates\Unit.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Unit.tt</DependentUpon>
     </Resource>
     <Content Include="Templates\QuantityGenerator.txt">
       <AutoGen>True</AutoGen>

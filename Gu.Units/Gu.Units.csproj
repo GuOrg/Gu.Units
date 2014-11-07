@@ -124,12 +124,6 @@
     <Compile Include="ForceUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
-    <Compile Include="Fraction.generated.cs">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Compile>
-    <Compile Include="FractionUnit.generated.cs">
-      <DependentUpon>UnitGenerator.txt4</DependentUpon>
-    </Compile>
     <Compile Include="Frequency.generated.cs">
       <DependentUpon>QuantityGenerator.txt4</DependentUpon>
     </Compile>
@@ -215,6 +209,12 @@
       <DependentUpon>QuantityGenerator.txt4</DependentUpon>
     </Compile>
     <Compile Include="TorqueUnit.generated.cs">
+      <DependentUpon>UnitGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Unitless.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="UnitlessUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
     <Compile Include="Utils\Parser.cs" />

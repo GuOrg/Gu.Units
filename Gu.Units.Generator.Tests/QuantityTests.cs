@@ -85,7 +85,7 @@
         public void Inversions()
         {
             var actual = _settings.Time.Inverse;
-            Assert.AreEqual(_settings.Frequency.ToString(), actual.ToString());
+            Assert.AreEqual("1 / Time = Frequency", actual.ToString());
             Assert.IsNull(_settings.Length.Inverse);
         }
     }

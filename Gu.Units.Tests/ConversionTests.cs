@@ -49,16 +49,6 @@
             Assert.AreEqual(conversion.FromQuantity, conversion.ToQuantity);
         }
 
-        [Test, Explicit]
-        public void DegRadFactor()
-        {
-            var d = Math.PI / 180;
-            Console.WriteLine(d.ToString(CultureInfo.InvariantCulture));
-            Console.WriteLine(d.ToString("G17", CultureInfo.InvariantCulture));
-            Console.WriteLine(d.ToString("R", CultureInfo.InvariantCulture));
-            Console.WriteLine((90 * d).ToString("R", CultureInfo.InvariantCulture));
-        }
-
         [TestCaseSource(typeof(UnitsProvider))]
         public void Roundtrip(IUnit unit)
         {

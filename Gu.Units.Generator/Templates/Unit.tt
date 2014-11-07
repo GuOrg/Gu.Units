@@ -162,7 +162,7 @@ namespace <#= Settings.Namespace #>
 	if (unit.AnyOffsetConversion)
 	{
 	    #>
-			return _conversionFactor * value + _offset;
+			return (value - _offset) / _conversionFactor;
 <#
 	}
 	else
@@ -185,7 +185,7 @@ namespace <#= Settings.Namespace #>
 	if (unit.AnyOffsetConversion)
 	{
 	    #>
-			return (value - _offset) / _conversionFactor;
+			return _conversionFactor * value + _offset;
 <#
 	}
 	else

@@ -22,8 +22,6 @@ Read Settings found 8 units
 
 //-> ForceUnit.generated.cs
 
-//-> FractionUnit.generated.cs
-
 //-> FrequencyUnit.generated.cs
 
 //-> InductanceUnit.generated.cs
@@ -51,6 +49,8 @@ Read Settings found 8 units
 //-> TimeUnit.generated.cs
 
 //-> TorqueUnit.generated.cs
+
+//-> UnitlessUnit.generated.cs
 
 //-> VoltageUnit.generated.cs
 
@@ -83,7 +83,7 @@ Read Settings found 8 units
 // Gu.Units\Gu.Units\AreaUnit.generated.cs
 // Gu.Units\Gu.Units\LuminousIntensityUnit.generated.cs
 // Gu.Units\Gu.Units\CurrentUnit.generated.cs
-// Gu.Units\Gu.Units\FractionUnit.generated.cs
+// Gu.Units\Gu.Units\UnitlessUnit.generated.cs
 // Gu.Units\Gu.Units\AngleUnit.generated.cs
 // Gu.Units\Gu.Units\TemperatureUnit.generated.cs
 // Gu.Units\Gu.Units\TimeUnit.generated.cs

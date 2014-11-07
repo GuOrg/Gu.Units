@@ -2,57 +2,57 @@
 {
     using System;
     /// <summary>
-    /// A type for the unit <see cref="T:Gu.Units.FractionUnit"/>.
+    /// A type for the unit <see cref="T:Gu.Units.UnitlessUnit"/>.
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct FractionUnit : IUnit
+    public struct UnitlessUnit : IUnit
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.Fractions"/> unit
+        /// The <see cref="T:Gu.Units.Scalar"/> unit
         /// Contains coonversion logic to from and formatting.
         /// </summary>
-        public static readonly FractionUnit Fractions = new FractionUnit(1.0, "ul");
+        public static readonly UnitlessUnit Scalar = new UnitlessUnit(1.0, "ul");
         /// <summary>
-        /// The <see cref="T:Gu.Units.Fractions"/> unit
+        /// The <see cref="T:Gu.Units.Scalar"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly FractionUnit ul = Fractions;
+        public static readonly UnitlessUnit ul = Scalar;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.PartsPerMillion"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly FractionUnit PartsPerMillion = new FractionUnit(1E-06, "ppm");
+        public static readonly UnitlessUnit PartsPerMillion = new UnitlessUnit(1E-06, "ppm");
         /// <summary>
         /// The <see cref="T:Gu.Units.PartsPerMillion"/> unit
         /// Contains coonversion logic to from and formatting.
         /// </summary>
-        public static readonly FractionUnit ppm = PartsPerMillion;
+        public static readonly UnitlessUnit ppm = PartsPerMillion;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Promilles"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly FractionUnit Promilles = new FractionUnit(0.001, "‰");
+        public static readonly UnitlessUnit Promilles = new UnitlessUnit(0.001, "‰");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Percents"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly FractionUnit Percents = new FractionUnit(0.01, "%");
+        public static readonly UnitlessUnit Percents = new UnitlessUnit(0.01, "%");
 
         private readonly double _conversionFactor;
         private readonly string _symbol;
 
-        public FractionUnit(double conversionFactor, string symbol)
+        public UnitlessUnit(double conversionFactor, string symbol)
         {
             _conversionFactor = conversionFactor;
             _symbol = symbol;
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.Fractions"/>.
+        /// The symbol for <see cref="T:Gu.Units.Scalar"/>.
         /// </summary>
         public string Symbol
         {
@@ -62,13 +62,13 @@
             }
         }
 
-        public static Fraction operator *(double left, FractionUnit right)
+        public static Unitless operator *(double left, UnitlessUnit right)
         {
-            return Fraction.From(left, right);
+            return Unitless.From(left, right);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Fractions"/>.
+        /// Converts a value to <see cref="T:Gu.Units.Scalar"/>.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -78,9 +78,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Fractions.
+        /// Converts a value from Scalar.
         /// </summary>
-        /// <param name="value">The value in Fractions</param>
+        /// <param name="value">The value in Scalar</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double value)
         {
@@ -89,7 +89,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Fractions.Symbol);
+            return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Scalar.Symbol);
         }
     }
 }

@@ -137,15 +137,20 @@
         }
 
         [XmlIgnore]
-        public Quantity Inverse
+        public InverseOverload Inverse
         {
             get
             {
-                if (Settings == null || Settings.Quantities == null)
+                if (Settings == null || Settings.Quantities == null) // For the template in designtime
                 {
                     return null;
                 }
-                return Settings.Quantities.FirstOrDefault(x => x != null && OperatorOverload.IsInverse(this, x));
+                var inverse = Settings.Quantities.FirstOrDefault(x => x != null && InverseOverload.IsInverse(this, x));
+                if (inverse == null)
+                {
+                    return null;
+                }
+                return new InverseOverload(this, inverse);
             }
         }
 
