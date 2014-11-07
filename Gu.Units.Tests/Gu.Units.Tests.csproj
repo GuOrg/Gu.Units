@@ -73,6 +73,7 @@
     <Compile Include="Helpers\UnitsProvider.cs" />
     <Compile Include="Sandbox.cs" />
     <Compile Include="SerializationTests.cs" />
+    <Compile Include="UnitlessTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
