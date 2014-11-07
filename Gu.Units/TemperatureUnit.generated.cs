@@ -65,7 +65,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return _conversionFactor * value + _offset;
+            return (value - _offset) / _conversionFactor;
         }
 
         /// <summary>
@@ -75,7 +75,7 @@
         /// <returns>The converted value</returns>
         public double FromSiUnit(double value)
         {
-            return (value - _offset) / _conversionFactor;
+            return _conversionFactor * value + _offset;
         }
 
         public override string ToString()

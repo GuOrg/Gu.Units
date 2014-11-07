@@ -157,13 +157,16 @@
                     </GroupBox>
 
                     <GroupBox Grid.Row="1" Header="Overloads">
-                        <ItemsControl ItemsSource="{Binding Conversions.BaseUnit.Quantity.OperatorOverloads}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate DataType="{x:Type generator:OperatorOverload}">
-                                    <TextBlock Text="{Binding}" />
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
+                        <StackPanel>
+                            <ItemsControl ItemsSource="{Binding Conversions.BaseUnit.Quantity.OperatorOverloads}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type generator:OperatorOverload}">
+                                        <TextBlock Text="{Binding}" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                            <TextBlock Text="{Binding Conversions.BaseUnit.Quantity.Inverse}" />
+                        </StackPanel>
                     </GroupBox>
 
                     <GroupBox Grid.Row="2" Header="Prefixes">

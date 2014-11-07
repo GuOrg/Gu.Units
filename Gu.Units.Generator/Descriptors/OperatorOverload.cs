@@ -133,12 +133,5 @@
             //    throw new ArgumentException("message");
             //}
         }
-
-        public static bool IsInverse(Quantity left, Quantity right)
-        {
-            var leftParts = UnitParts.CreateFrom(left);
-            var rightParts = UnitParts.CreateFrom(right);
-            return leftParts.Flattened.SequenceEqual(rightParts.Flattened.Select(x => x ^ -1));
-        }
     }
 }

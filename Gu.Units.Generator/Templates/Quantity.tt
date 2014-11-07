@@ -157,9 +157,9 @@ namespace <#= Settings.Namespace #>
 		{
 		#>
 
-        public static <#= quantity.Inverse.ClassName #> operator/(double left, <#= quantity.ClassName #> right)
+        public static <#= quantity.Inverse.Inverted.ClassName #> operator/(double left, <#= quantity.ClassName #> right)
         {
-            return <#= quantity.Inverse.ClassName #>.From<#= quantity.Inverse.Unit.ClassName #>(left / right.<#= quantity.Unit.ClassName #>);
+            return <#= quantity.Inverse.Inverted.ClassName #>.From<#= quantity.Inverse.Inverted.Unit.ClassName #>(left / right.<#= quantity.Unit.ClassName #>);
         }
 <#
 		} 
