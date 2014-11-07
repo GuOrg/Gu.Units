@@ -27,6 +27,7 @@
                                             new Conversion<Unitless>("1ul","100%", Unitless.Parse),
                                             new Conversion<Unitless>("1%","0.01ul", Unitless.Parse),
                                             new Conversion<Unitless>("1%","10‰", Unitless.Parse),
+                                            new Conversion<Force>("100N","0.1kN", Force.Parse),
                                         };
 
         }

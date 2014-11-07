@@ -37,7 +37,7 @@
         }
 
         [TestCaseSource(typeof(ParseProvider))]
-        public void Parse(ParseProvider.ParseData data)
+        public void Roundtrip(ParseProvider.ParseData data)
         {
             Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             var actual = data.ParseMethod(data.StringValue);
