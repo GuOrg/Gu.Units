@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Joules"/>.
         /// </summary>
-        public readonly double Joules;
+        internal readonly double joules;
 
         private Energy(double joules)
         {
-            Joules = joules;
+            this.joules = joules;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Joules"/>.</param>
         public Energy(double value, EnergyUnit unit)
         {
-            Joules = unit.ToSiUnit(value);
+            this.joules = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Joules;
+                return this.joules;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in joules".
+        /// </summary>
+        public double Joules
+        {
+            get
+            {
+                return this.joules;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return EnergyUnit.Nanojoules.FromSiUnit(Joules);
+                return EnergyUnit.Nanojoules.FromSiUnit(this.joules);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return EnergyUnit.Microjoules.FromSiUnit(Joules);
+                return EnergyUnit.Microjoules.FromSiUnit(this.joules);
             }
         }
 
@@ -72,7 +83,7 @@
         {
             get
             {
-                return EnergyUnit.Millijoules.FromSiUnit(Joules);
+                return EnergyUnit.Millijoules.FromSiUnit(this.joules);
             }
         }
 
@@ -83,7 +94,7 @@
         {
             get
             {
-                return EnergyUnit.Kilojoules.FromSiUnit(Joules);
+                return EnergyUnit.Kilojoules.FromSiUnit(this.joules);
             }
         }
 
@@ -94,7 +105,7 @@
         {
             get
             {
-                return EnergyUnit.Megajoules.FromSiUnit(Joules);
+                return EnergyUnit.Megajoules.FromSiUnit(this.joules);
             }
         }
 
@@ -105,7 +116,7 @@
         {
             get
             {
-                return EnergyUnit.Gigajoules.FromSiUnit(Joules);
+                return EnergyUnit.Gigajoules.FromSiUnit(this.joules);
             }
         }
 
@@ -116,7 +127,7 @@
         {
             get
             {
-                return EnergyUnit.KilowattHours.FromSiUnit(Joules);
+                return EnergyUnit.KilowattHours.FromSiUnit(this.joules);
             }
         }
 
@@ -220,47 +231,47 @@
 
         public static Length operator /(Energy left, Force right)
         {
-            return Length.FromMetres(left.Joules / right.Newtons);
+            return Length.FromMetres(left.joules / right.newtons);
         }
 
         public static Force operator /(Energy left, Length right)
         {
-            return Force.FromNewtons(left.Joules / right.Metres);
+            return Force.FromNewtons(left.joules / right.metres);
         }
 
         public static Pressure operator /(Energy left, Volume right)
         {
-            return Pressure.FromPascals(left.Joules / right.CubicMetres);
+            return Pressure.FromPascals(left.joules / right.cubicMetres);
         }
 
         public static Power operator /(Energy left, Time right)
         {
-            return Power.FromWatts(left.Joules / right.Seconds);
+            return Power.FromWatts(left.joules / right.seconds);
         }
 
         public static Torque operator /(Energy left, Angle right)
         {
-            return Torque.FromNewtonMetres(left.Joules / right.Radians);
+            return Torque.FromNewtonMetres(left.joules / right.radians);
         }
 
         public static Stiffness operator /(Energy left, Area right)
         {
-            return Stiffness.FromNewtonsPerMetre(left.Joules / right.SquareMetres);
+            return Stiffness.FromNewtonsPerMetre(left.joules / right.squareMetres);
         }
 
         public static Voltage operator /(Energy left, ElectricCharge right)
         {
-            return Voltage.FromVolts(left.Joules / right.Coulombs);
+            return Voltage.FromVolts(left.joules / right.coulombs);
         }
 
         public static SpecificEnergy operator /(Energy left, Mass right)
         {
-            return SpecificEnergy.FromJoulesPerKilogram(left.Joules / right.Kilograms);
+            return SpecificEnergy.FromJoulesPerKilogram(left.joules / right.kilograms);
         }
 
         public static double operator /(Energy left, Energy right)
         {
-            return left.Joules / right.Joules;
+            return left.joules / right.joules;
         }
 
         /// <summary>
@@ -269,8 +280,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Energy"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Energy"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Energy"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Energy"/>.</param>
         public static bool operator ==(Energy left, Energy right)
         {
             return left.Equals(right);
@@ -282,8 +293,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Energy"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Energy"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Energy"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Energy"/>.</param>
         public static bool operator !=(Energy left, Energy right)
         {
             return !left.Equals(right);
@@ -295,11 +306,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Energy"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Energy"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Energy"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Energy"/>.</param>
         public static bool operator <(Energy left, Energy right)
         {
-            return left.Joules < right.Joules;
+            return left.joules < right.joules;
         }
 
         /// <summary>
@@ -308,11 +319,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Energy"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Energy"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Energy"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Energy"/>.</param>
         public static bool operator >(Energy left, Energy right)
         {
-            return left.Joules > right.Joules;
+            return left.joules > right.joules;
         }
 
         /// <summary>
@@ -321,11 +332,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Energy"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Energy"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Energy"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Energy"/>.</param>
         public static bool operator <=(Energy left, Energy right)
         {
-            return left.Joules <= right.Joules;
+            return left.joules <= right.joules;
         }
 
         /// <summary>
@@ -334,11 +345,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Energy"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Energy"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Energy"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Energy"/>.</param>
         public static bool operator >=(Energy left, Energy right)
         {
-            return left.Joules >= right.Joules;
+            return left.joules >= right.joules;
         }
 
         /// <summary>
@@ -349,7 +360,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Energy"/> with <paramref name="left"/> and returns the result.</returns>
         public static Energy operator *(double left, Energy right)
         {
-            return new Energy(left * right.Joules);
+            return new Energy(left * right.joules);
         }
 
         /// <summary>
@@ -360,7 +371,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Energy"/> with <paramref name="right"/> and returns the result.</returns>
         public static Energy operator *(Energy left, double right)
         {
-            return new Energy(left.Joules * right);
+            return new Energy(left.joules * right);
         }
 
         /// <summary>
@@ -371,7 +382,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Energy"/> with <paramref name="right"/> and returns the result.</returns>
         public static Energy operator /(Energy left, double right)
         {
-            return new Energy(left.Joules / right);
+            return new Energy(left.joules / right);
         }
 
         /// <summary>
@@ -380,11 +391,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Energy"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Energy"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Energy"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Energy"/>.</param>
         public static Energy operator +(Energy left, Energy right)
         {
-            return new Energy(left.Joules + right.Joules);
+            return new Energy(left.joules + right.joules);
         }
 
         /// <summary>
@@ -393,11 +404,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Energy"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Energy"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Energy"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Energy"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Energy"/> (the subtrahend).</param>
         public static Energy operator -(Energy left, Energy right)
         {
-            return new Energy(left.Joules - right.Joules);
+            return new Energy(left.joules - right.joules);
         }
 
         /// <summary>
@@ -406,22 +417,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Energy"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Energy">A <see cref="T:Gu.Units.Energy"/></param>
-        public static Energy operator -(Energy Energy)
+        /// <param name="energy">An instance of <see cref="T:Gu.Units.Energy"/></param>
+        public static Energy operator -(Energy energy)
         {
-            return new Energy(-1 * Energy.Joules);
+            return new Energy(-1 * energy.joules);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Energy"/>.
+        /// Returns <paramref name="energy"/>.
         /// </returns>
-        /// <param name="Energy">A <see cref="T:Gu.Units.Energy"/></param>
-        public static Energy operator +(Energy Energy)
+        /// <param name="energy">An instance of <see cref="T:Gu.Units.Energy"/></param>
+        public static Energy operator +(Energy energy)
         {
-            return Energy;
+            return energy;
         }
 
         public override string ToString()
@@ -446,7 +457,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, EnergyUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Joules);
+            var quantity = unit.FromSiUnit(this.joules);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -473,10 +484,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Energy"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Energy"/> object to compare to this instance.</param>
         public int CompareTo(Energy quantity)
         {
-            return this.Joules.CompareTo(quantity.Joules);
+            return this.joules.CompareTo(quantity.joules);
         }
 
         /// <summary>
@@ -485,10 +496,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Energy as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Energy"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Energy"/> object to compare with this instance.</param>
         public bool Equals(Energy other)
         {
-            return this.Joules.Equals(other.Joules);
+            return this.joules.Equals(other.joules);
         }
 
         /// <summary>
@@ -497,11 +508,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Energy as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Energy"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Energy"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Energy other, double tolerance)
         {
-            return Math.Abs(this.Joules - other.Joules) < tolerance;
+            return Math.Abs(this.joules - other.joules) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -516,7 +527,7 @@
 
         public override int GetHashCode()
         {
-            return this.Joules.GetHashCode();
+            return this.joules.GetHashCode();
         }
 
         /// <summary>
@@ -541,7 +552,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Joules", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "joules", reader, "Value");
         }
 
         /// <summary>
@@ -550,7 +561,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Joules);
+            XmlExt.WriteAttribute(writer, "Value", this.joules);
         }
     }
 }

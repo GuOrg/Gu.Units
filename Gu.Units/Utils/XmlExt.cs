@@ -2,6 +2,7 @@ namespace Gu.Units
 {
     using System;
     using System.Linq.Expressions;
+    using System.Reflection;
     using System.Xml;
 
     public class XmlExt
@@ -19,7 +20,7 @@ namespace Gu.Units
             where T : IQuantity
         {
             var fieldInfo = self.GetType()
-                                .GetField(fieldName);
+                                .GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
             object boxed = self;
             fieldInfo.SetValue(boxed, value);
             self = (T)boxed;

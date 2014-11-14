@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.KilogramsPerCubicMetre"/>.
         /// </summary>
-        public readonly double KilogramsPerCubicMetre;
+        internal readonly double kilogramsPerCubicMetre;
 
         private Density(double kilogramsPerCubicMetre)
         {
-            KilogramsPerCubicMetre = kilogramsPerCubicMetre;
+            this.kilogramsPerCubicMetre = kilogramsPerCubicMetre;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.KilogramsPerCubicMetre"/>.</param>
         public Density(double value, DensityUnit unit)
         {
-            KilogramsPerCubicMetre = unit.ToSiUnit(value);
+            this.kilogramsPerCubicMetre = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return KilogramsPerCubicMetre;
+                return this.kilogramsPerCubicMetre;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in kilogramsPerCubicMetre".
+        /// </summary>
+        public double KilogramsPerCubicMetre
+        {
+            get
+            {
+                return this.kilogramsPerCubicMetre;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return DensityUnit.GramsPerCubicMillimetre.FromSiUnit(KilogramsPerCubicMetre);
+                return DensityUnit.GramsPerCubicMillimetre.FromSiUnit(this.kilogramsPerCubicMetre);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return DensityUnit.GramsPerCubicCentimetre.FromSiUnit(KilogramsPerCubicMetre);
+                return DensityUnit.GramsPerCubicCentimetre.FromSiUnit(this.kilogramsPerCubicMetre);
             }
         }
 
@@ -125,12 +136,12 @@
 
         public static Mass operator *(Density left, Volume right)
         {
-            return Mass.FromKilograms(left.KilogramsPerCubicMetre * right.CubicMetres);
+            return Mass.FromKilograms(left.kilogramsPerCubicMetre * right.cubicMetres);
         }
 
         public static double operator /(Density left, Density right)
         {
-            return left.KilogramsPerCubicMetre / right.KilogramsPerCubicMetre;
+            return left.kilogramsPerCubicMetre / right.kilogramsPerCubicMetre;
         }
 
         /// <summary>
@@ -139,8 +150,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Density"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Density"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Density"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Density"/>.</param>
         public static bool operator ==(Density left, Density right)
         {
             return left.Equals(right);
@@ -152,8 +163,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Density"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Density"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Density"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Density"/>.</param>
         public static bool operator !=(Density left, Density right)
         {
             return !left.Equals(right);
@@ -165,11 +176,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Density"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Density"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Density"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Density"/>.</param>
         public static bool operator <(Density left, Density right)
         {
-            return left.KilogramsPerCubicMetre < right.KilogramsPerCubicMetre;
+            return left.kilogramsPerCubicMetre < right.kilogramsPerCubicMetre;
         }
 
         /// <summary>
@@ -178,11 +189,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Density"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Density"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Density"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Density"/>.</param>
         public static bool operator >(Density left, Density right)
         {
-            return left.KilogramsPerCubicMetre > right.KilogramsPerCubicMetre;
+            return left.kilogramsPerCubicMetre > right.kilogramsPerCubicMetre;
         }
 
         /// <summary>
@@ -191,11 +202,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Density"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Density"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Density"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Density"/>.</param>
         public static bool operator <=(Density left, Density right)
         {
-            return left.KilogramsPerCubicMetre <= right.KilogramsPerCubicMetre;
+            return left.kilogramsPerCubicMetre <= right.kilogramsPerCubicMetre;
         }
 
         /// <summary>
@@ -204,11 +215,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Density"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Density"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Density"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Density"/>.</param>
         public static bool operator >=(Density left, Density right)
         {
-            return left.KilogramsPerCubicMetre >= right.KilogramsPerCubicMetre;
+            return left.kilogramsPerCubicMetre >= right.kilogramsPerCubicMetre;
         }
 
         /// <summary>
@@ -219,7 +230,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Density"/> with <paramref name="left"/> and returns the result.</returns>
         public static Density operator *(double left, Density right)
         {
-            return new Density(left * right.KilogramsPerCubicMetre);
+            return new Density(left * right.kilogramsPerCubicMetre);
         }
 
         /// <summary>
@@ -230,7 +241,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Density"/> with <paramref name="right"/> and returns the result.</returns>
         public static Density operator *(Density left, double right)
         {
-            return new Density(left.KilogramsPerCubicMetre * right);
+            return new Density(left.kilogramsPerCubicMetre * right);
         }
 
         /// <summary>
@@ -241,7 +252,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Density"/> with <paramref name="right"/> and returns the result.</returns>
         public static Density operator /(Density left, double right)
         {
-            return new Density(left.KilogramsPerCubicMetre / right);
+            return new Density(left.kilogramsPerCubicMetre / right);
         }
 
         /// <summary>
@@ -250,11 +261,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Density"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Density"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Density"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Density"/>.</param>
         public static Density operator +(Density left, Density right)
         {
-            return new Density(left.KilogramsPerCubicMetre + right.KilogramsPerCubicMetre);
+            return new Density(left.kilogramsPerCubicMetre + right.kilogramsPerCubicMetre);
         }
 
         /// <summary>
@@ -263,11 +274,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Density"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Density"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Density"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Density"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Density"/> (the subtrahend).</param>
         public static Density operator -(Density left, Density right)
         {
-            return new Density(left.KilogramsPerCubicMetre - right.KilogramsPerCubicMetre);
+            return new Density(left.kilogramsPerCubicMetre - right.kilogramsPerCubicMetre);
         }
 
         /// <summary>
@@ -276,22 +287,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Density"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Density">A <see cref="T:Gu.Units.Density"/></param>
-        public static Density operator -(Density Density)
+        /// <param name="density">An instance of <see cref="T:Gu.Units.Density"/></param>
+        public static Density operator -(Density density)
         {
-            return new Density(-1 * Density.KilogramsPerCubicMetre);
+            return new Density(-1 * density.kilogramsPerCubicMetre);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Density"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Density"/>.
+        /// Returns <paramref name="density"/>.
         /// </returns>
-        /// <param name="Density">A <see cref="T:Gu.Units.Density"/></param>
-        public static Density operator +(Density Density)
+        /// <param name="density">An instance of <see cref="T:Gu.Units.Density"/></param>
+        public static Density operator +(Density density)
         {
-            return Density;
+            return density;
         }
 
         public override string ToString()
@@ -316,7 +327,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, DensityUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.KilogramsPerCubicMetre);
+            var quantity = unit.FromSiUnit(this.kilogramsPerCubicMetre);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -343,10 +354,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Density"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Density"/> object to compare to this instance.</param>
         public int CompareTo(Density quantity)
         {
-            return this.KilogramsPerCubicMetre.CompareTo(quantity.KilogramsPerCubicMetre);
+            return this.kilogramsPerCubicMetre.CompareTo(quantity.kilogramsPerCubicMetre);
         }
 
         /// <summary>
@@ -355,10 +366,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Density as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Density"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Density"/> object to compare with this instance.</param>
         public bool Equals(Density other)
         {
-            return this.KilogramsPerCubicMetre.Equals(other.KilogramsPerCubicMetre);
+            return this.kilogramsPerCubicMetre.Equals(other.kilogramsPerCubicMetre);
         }
 
         /// <summary>
@@ -367,11 +378,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Density as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Density"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Density"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Density other, double tolerance)
         {
-            return Math.Abs(this.KilogramsPerCubicMetre - other.KilogramsPerCubicMetre) < tolerance;
+            return Math.Abs(this.kilogramsPerCubicMetre - other.kilogramsPerCubicMetre) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -386,7 +397,7 @@
 
         public override int GetHashCode()
         {
-            return this.KilogramsPerCubicMetre.GetHashCode();
+            return this.kilogramsPerCubicMetre.GetHashCode();
         }
 
         /// <summary>
@@ -411,7 +422,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "KilogramsPerCubicMetre", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "kilogramsPerCubicMetre", reader, "Value");
         }
 
         /// <summary>
@@ -420,7 +431,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.KilogramsPerCubicMetre);
+            XmlExt.WriteAttribute(writer, "Value", this.kilogramsPerCubicMetre);
         }
     }
 }

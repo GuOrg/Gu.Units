@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Kilograms"/>.
         /// </summary>
-        public readonly double Kilograms;
+        internal readonly double kilograms;
 
         private Mass(double kilograms)
         {
-            Kilograms = kilograms;
+            this.kilograms = kilograms;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Kilograms"/>.</param>
         public Mass(double value, MassUnit unit)
         {
-            Kilograms = unit.ToSiUnit(value);
+            this.kilograms = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Kilograms;
+                return this.kilograms;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in kilograms".
+        /// </summary>
+        public double Kilograms
+        {
+            get
+            {
+                return this.kilograms;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return MassUnit.Grams.FromSiUnit(Kilograms);
+                return MassUnit.Grams.FromSiUnit(this.kilograms);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return MassUnit.Milligrams.FromSiUnit(Kilograms);
+                return MassUnit.Milligrams.FromSiUnit(this.kilograms);
             }
         }
 
@@ -72,7 +83,7 @@
         {
             get
             {
-                return MassUnit.Micrograms.FromSiUnit(Kilograms);
+                return MassUnit.Micrograms.FromSiUnit(this.kilograms);
             }
         }
 
@@ -144,22 +155,22 @@
 
         public static Volume operator /(Mass left, Density right)
         {
-            return Volume.FromCubicMetres(left.Kilograms / right.KilogramsPerCubicMetre);
+            return Volume.FromCubicMetres(left.kilograms / right.kilogramsPerCubicMetre);
         }
 
         public static Force operator *(Mass left, Acceleration right)
         {
-            return Force.FromNewtons(left.Kilograms * right.MetresPerSecondSquared);
+            return Force.FromNewtons(left.kilograms * right.metresPerSecondSquared);
         }
 
         public static Density operator /(Mass left, Volume right)
         {
-            return Density.FromKilogramsPerCubicMetre(left.Kilograms / right.CubicMetres);
+            return Density.FromKilogramsPerCubicMetre(left.kilograms / right.cubicMetres);
         }
 
         public static double operator /(Mass left, Mass right)
         {
-            return left.Kilograms / right.Kilograms;
+            return left.kilograms / right.kilograms;
         }
 
         /// <summary>
@@ -168,8 +179,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Mass"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Mass"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Mass"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Mass"/>.</param>
         public static bool operator ==(Mass left, Mass right)
         {
             return left.Equals(right);
@@ -181,8 +192,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Mass"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Mass"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Mass"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Mass"/>.</param>
         public static bool operator !=(Mass left, Mass right)
         {
             return !left.Equals(right);
@@ -194,11 +205,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Mass"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Mass"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Mass"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Mass"/>.</param>
         public static bool operator <(Mass left, Mass right)
         {
-            return left.Kilograms < right.Kilograms;
+            return left.kilograms < right.kilograms;
         }
 
         /// <summary>
@@ -207,11 +218,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Mass"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Mass"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Mass"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Mass"/>.</param>
         public static bool operator >(Mass left, Mass right)
         {
-            return left.Kilograms > right.Kilograms;
+            return left.kilograms > right.kilograms;
         }
 
         /// <summary>
@@ -220,11 +231,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Mass"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Mass"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Mass"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Mass"/>.</param>
         public static bool operator <=(Mass left, Mass right)
         {
-            return left.Kilograms <= right.Kilograms;
+            return left.kilograms <= right.kilograms;
         }
 
         /// <summary>
@@ -233,11 +244,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Mass"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Mass"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Mass"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Mass"/>.</param>
         public static bool operator >=(Mass left, Mass right)
         {
-            return left.Kilograms >= right.Kilograms;
+            return left.kilograms >= right.kilograms;
         }
 
         /// <summary>
@@ -248,7 +259,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Mass"/> with <paramref name="left"/> and returns the result.</returns>
         public static Mass operator *(double left, Mass right)
         {
-            return new Mass(left * right.Kilograms);
+            return new Mass(left * right.kilograms);
         }
 
         /// <summary>
@@ -259,7 +270,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Mass"/> with <paramref name="right"/> and returns the result.</returns>
         public static Mass operator *(Mass left, double right)
         {
-            return new Mass(left.Kilograms * right);
+            return new Mass(left.kilograms * right);
         }
 
         /// <summary>
@@ -270,7 +281,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Mass"/> with <paramref name="right"/> and returns the result.</returns>
         public static Mass operator /(Mass left, double right)
         {
-            return new Mass(left.Kilograms / right);
+            return new Mass(left.kilograms / right);
         }
 
         /// <summary>
@@ -279,11 +290,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Mass"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Mass"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Mass"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Mass"/>.</param>
         public static Mass operator +(Mass left, Mass right)
         {
-            return new Mass(left.Kilograms + right.Kilograms);
+            return new Mass(left.kilograms + right.kilograms);
         }
 
         /// <summary>
@@ -292,11 +303,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Mass"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Mass"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Mass"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Mass"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Mass"/> (the subtrahend).</param>
         public static Mass operator -(Mass left, Mass right)
         {
-            return new Mass(left.Kilograms - right.Kilograms);
+            return new Mass(left.kilograms - right.kilograms);
         }
 
         /// <summary>
@@ -305,22 +316,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Mass"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Mass">A <see cref="T:Gu.Units.Mass"/></param>
-        public static Mass operator -(Mass Mass)
+        /// <param name="mass">An instance of <see cref="T:Gu.Units.Mass"/></param>
+        public static Mass operator -(Mass mass)
         {
-            return new Mass(-1 * Mass.Kilograms);
+            return new Mass(-1 * mass.kilograms);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Mass"/>.
+        /// Returns <paramref name="mass"/>.
         /// </returns>
-        /// <param name="Mass">A <see cref="T:Gu.Units.Mass"/></param>
-        public static Mass operator +(Mass Mass)
+        /// <param name="mass">An instance of <see cref="T:Gu.Units.Mass"/></param>
+        public static Mass operator +(Mass mass)
         {
-            return Mass;
+            return mass;
         }
 
         public override string ToString()
@@ -345,7 +356,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, MassUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Kilograms);
+            var quantity = unit.FromSiUnit(this.kilograms);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -372,10 +383,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Mass"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Mass"/> object to compare to this instance.</param>
         public int CompareTo(Mass quantity)
         {
-            return this.Kilograms.CompareTo(quantity.Kilograms);
+            return this.kilograms.CompareTo(quantity.kilograms);
         }
 
         /// <summary>
@@ -384,10 +395,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Mass as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Mass"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Mass"/> object to compare with this instance.</param>
         public bool Equals(Mass other)
         {
-            return this.Kilograms.Equals(other.Kilograms);
+            return this.kilograms.Equals(other.kilograms);
         }
 
         /// <summary>
@@ -396,11 +407,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Mass as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Mass"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Mass"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Mass other, double tolerance)
         {
-            return Math.Abs(this.Kilograms - other.Kilograms) < tolerance;
+            return Math.Abs(this.kilograms - other.kilograms) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -415,7 +426,7 @@
 
         public override int GetHashCode()
         {
-            return this.Kilograms.GetHashCode();
+            return this.kilograms.GetHashCode();
         }
 
         /// <summary>
@@ -440,7 +451,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Kilograms", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "kilograms", reader, "Value");
         }
 
         /// <summary>
@@ -449,7 +460,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Kilograms);
+            XmlExt.WriteAttribute(writer, "Value", this.kilograms);
         }
     }
 }

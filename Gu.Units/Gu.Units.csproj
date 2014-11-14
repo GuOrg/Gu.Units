@@ -88,6 +88,12 @@
     <Compile Include="CapacitanceUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
+    <Compile Include="Speed.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="Stiffness.generated.cs">
+      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
+    </Compile>
     <Compile Include="Unitless.cs" />
     <Compile Include="Current.generated.cs">
       <DependentUpon>QuantityGenerator.txt4</DependentUpon>
@@ -182,14 +188,8 @@
     <Compile Include="SpecificEnergyUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
-    <Compile Include="Speed.generated.cs">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
-    </Compile>
     <Compile Include="SpeedUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
-    </Compile>
-    <Compile Include="Stiffness.generated.cs">
-      <DependentUpon>QuantityGenerator.txt4</DependentUpon>
     </Compile>
     <Compile Include="StiffnessUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>

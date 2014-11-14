@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Amperes"/>.
         /// </summary>
-        public readonly double Amperes;
+        internal readonly double amperes;
 
         private Current(double amperes)
         {
-            Amperes = amperes;
+            this.amperes = amperes;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Amperes"/>.</param>
         public Current(double value, CurrentUnit unit)
         {
-            Amperes = unit.ToSiUnit(value);
+            this.amperes = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Amperes;
+                return this.amperes;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in amperes".
+        /// </summary>
+        public double Amperes
+        {
+            get
+            {
+                return this.amperes;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return CurrentUnit.Milliamperes.FromSiUnit(Amperes);
+                return CurrentUnit.Milliamperes.FromSiUnit(this.amperes);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return CurrentUnit.Kiloamperes.FromSiUnit(Amperes);
+                return CurrentUnit.Kiloamperes.FromSiUnit(this.amperes);
             }
         }
 
@@ -72,7 +83,7 @@
         {
             get
             {
-                return CurrentUnit.Megaamperes.FromSiUnit(Amperes);
+                return CurrentUnit.Megaamperes.FromSiUnit(this.amperes);
             }
         }
 
@@ -83,7 +94,7 @@
         {
             get
             {
-                return CurrentUnit.Microamperes.FromSiUnit(Amperes);
+                return CurrentUnit.Microamperes.FromSiUnit(this.amperes);
             }
         }
 
@@ -163,17 +174,17 @@
 
         public static Frequency operator /(Current left, ElectricCharge right)
         {
-            return Frequency.FromHertz(left.Amperes / right.Coulombs);
+            return Frequency.FromHertz(left.amperes / right.coulombs);
         }
 
         public static ElectricCharge operator *(Current left, Time right)
         {
-            return ElectricCharge.FromCoulombs(left.Amperes * right.Seconds);
+            return ElectricCharge.FromCoulombs(left.amperes * right.seconds);
         }
 
         public static double operator /(Current left, Current right)
         {
-            return left.Amperes / right.Amperes;
+            return left.amperes / right.amperes;
         }
 
         /// <summary>
@@ -182,8 +193,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Current"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Current"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Current"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Current"/>.</param>
         public static bool operator ==(Current left, Current right)
         {
             return left.Equals(right);
@@ -195,8 +206,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Current"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Current"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Current"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Current"/>.</param>
         public static bool operator !=(Current left, Current right)
         {
             return !left.Equals(right);
@@ -208,11 +219,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Current"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Current"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Current"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Current"/>.</param>
         public static bool operator <(Current left, Current right)
         {
-            return left.Amperes < right.Amperes;
+            return left.amperes < right.amperes;
         }
 
         /// <summary>
@@ -221,11 +232,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Current"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Current"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Current"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Current"/>.</param>
         public static bool operator >(Current left, Current right)
         {
-            return left.Amperes > right.Amperes;
+            return left.amperes > right.amperes;
         }
 
         /// <summary>
@@ -234,11 +245,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Current"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Current"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Current"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Current"/>.</param>
         public static bool operator <=(Current left, Current right)
         {
-            return left.Amperes <= right.Amperes;
+            return left.amperes <= right.amperes;
         }
 
         /// <summary>
@@ -247,11 +258,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Current"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Current"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Current"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Current"/>.</param>
         public static bool operator >=(Current left, Current right)
         {
-            return left.Amperes >= right.Amperes;
+            return left.amperes >= right.amperes;
         }
 
         /// <summary>
@@ -262,7 +273,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Current"/> with <paramref name="left"/> and returns the result.</returns>
         public static Current operator *(double left, Current right)
         {
-            return new Current(left * right.Amperes);
+            return new Current(left * right.amperes);
         }
 
         /// <summary>
@@ -273,7 +284,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Current"/> with <paramref name="right"/> and returns the result.</returns>
         public static Current operator *(Current left, double right)
         {
-            return new Current(left.Amperes * right);
+            return new Current(left.amperes * right);
         }
 
         /// <summary>
@@ -284,7 +295,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Current"/> with <paramref name="right"/> and returns the result.</returns>
         public static Current operator /(Current left, double right)
         {
-            return new Current(left.Amperes / right);
+            return new Current(left.amperes / right);
         }
 
         /// <summary>
@@ -293,11 +304,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Current"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Current"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Current"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Current"/>.</param>
         public static Current operator +(Current left, Current right)
         {
-            return new Current(left.Amperes + right.Amperes);
+            return new Current(left.amperes + right.amperes);
         }
 
         /// <summary>
@@ -306,11 +317,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Current"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Current"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Current"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Current"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Current"/> (the subtrahend).</param>
         public static Current operator -(Current left, Current right)
         {
-            return new Current(left.Amperes - right.Amperes);
+            return new Current(left.amperes - right.amperes);
         }
 
         /// <summary>
@@ -319,22 +330,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Current"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Current">A <see cref="T:Gu.Units.Current"/></param>
-        public static Current operator -(Current Current)
+        /// <param name="current">An instance of <see cref="T:Gu.Units.Current"/></param>
+        public static Current operator -(Current current)
         {
-            return new Current(-1 * Current.Amperes);
+            return new Current(-1 * current.amperes);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Current"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Current"/>.
+        /// Returns <paramref name="current"/>.
         /// </returns>
-        /// <param name="Current">A <see cref="T:Gu.Units.Current"/></param>
-        public static Current operator +(Current Current)
+        /// <param name="current">An instance of <see cref="T:Gu.Units.Current"/></param>
+        public static Current operator +(Current current)
         {
-            return Current;
+            return current;
         }
 
         public override string ToString()
@@ -359,7 +370,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, CurrentUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Amperes);
+            var quantity = unit.FromSiUnit(this.amperes);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -386,10 +397,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Current"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Current"/> object to compare to this instance.</param>
         public int CompareTo(Current quantity)
         {
-            return this.Amperes.CompareTo(quantity.Amperes);
+            return this.amperes.CompareTo(quantity.amperes);
         }
 
         /// <summary>
@@ -398,10 +409,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Current as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Current"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Current"/> object to compare with this instance.</param>
         public bool Equals(Current other)
         {
-            return this.Amperes.Equals(other.Amperes);
+            return this.amperes.Equals(other.amperes);
         }
 
         /// <summary>
@@ -410,11 +421,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Current as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Current"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Current"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Current other, double tolerance)
         {
-            return Math.Abs(this.Amperes - other.Amperes) < tolerance;
+            return Math.Abs(this.amperes - other.amperes) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -429,7 +440,7 @@
 
         public override int GetHashCode()
         {
-            return this.Amperes.GetHashCode();
+            return this.amperes.GetHashCode();
         }
 
         /// <summary>
@@ -454,7 +465,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Amperes", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "amperes", reader, "Value");
         }
 
         /// <summary>
@@ -463,7 +474,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Amperes);
+            XmlExt.WriteAttribute(writer, "Value", this.amperes);
         }
     }
 }

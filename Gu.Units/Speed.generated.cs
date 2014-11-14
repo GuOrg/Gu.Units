@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.MetresPerSecond"/>.
         /// </summary>
-        public readonly double MetresPerSecond;
+        internal readonly double metresPerSecond;
 
         private Speed(double metresPerSecond)
         {
-            MetresPerSecond = metresPerSecond;
+            this.metresPerSecond = metresPerSecond;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.MetresPerSecond"/>.</param>
         public Speed(double value, SpeedUnit unit)
         {
-            MetresPerSecond = unit.ToSiUnit(value);
+            this.metresPerSecond = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return MetresPerSecond;
+                return this.metresPerSecond;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in metresPerSecond".
+        /// </summary>
+        public double MetresPerSecond
+        {
+            get
+            {
+                return this.metresPerSecond;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return SpeedUnit.MillimetresPerSecond.FromSiUnit(MetresPerSecond);
+                return SpeedUnit.MillimetresPerSecond.FromSiUnit(this.metresPerSecond);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return SpeedUnit.CentimetresPerSecond.FromSiUnit(MetresPerSecond);
+                return SpeedUnit.CentimetresPerSecond.FromSiUnit(this.metresPerSecond);
             }
         }
 
@@ -72,7 +83,7 @@
         {
             get
             {
-                return SpeedUnit.KilometresPerHour.FromSiUnit(MetresPerSecond);
+                return SpeedUnit.KilometresPerHour.FromSiUnit(this.metresPerSecond);
             }
         }
 
@@ -83,7 +94,7 @@
         {
             get
             {
-                return SpeedUnit.CentimetresPerMinute.FromSiUnit(MetresPerSecond);
+                return SpeedUnit.CentimetresPerMinute.FromSiUnit(this.metresPerSecond);
             }
         }
 
@@ -94,7 +105,7 @@
         {
             get
             {
-                return SpeedUnit.MetresPerMinute.FromSiUnit(MetresPerSecond);
+                return SpeedUnit.MetresPerMinute.FromSiUnit(this.metresPerSecond);
             }
         }
 
@@ -105,7 +116,7 @@
         {
             get
             {
-                return SpeedUnit.MetresPerHour.FromSiUnit(MetresPerSecond);
+                return SpeedUnit.MetresPerHour.FromSiUnit(this.metresPerSecond);
             }
         }
 
@@ -116,7 +127,7 @@
         {
             get
             {
-                return SpeedUnit.MillimetresPerHour.FromSiUnit(MetresPerSecond);
+                return SpeedUnit.MillimetresPerHour.FromSiUnit(this.metresPerSecond);
             }
         }
 
@@ -127,7 +138,7 @@
         {
             get
             {
-                return SpeedUnit.CentimetresPerHour.FromSiUnit(MetresPerSecond);
+                return SpeedUnit.CentimetresPerHour.FromSiUnit(this.metresPerSecond);
             }
         }
 
@@ -138,7 +149,7 @@
         {
             get
             {
-                return SpeedUnit.MillimetresPerMinute.FromSiUnit(MetresPerSecond);
+                return SpeedUnit.MillimetresPerMinute.FromSiUnit(this.metresPerSecond);
             }
         }
 
@@ -258,42 +269,42 @@
 
         public static Length operator *(Speed left, Time right)
         {
-            return Length.FromMetres(left.MetresPerSecond * right.Seconds);
+            return Length.FromMetres(left.metresPerSecond * right.seconds);
         }
 
         public static Time operator /(Speed left, Acceleration right)
         {
-            return Time.FromSeconds(left.MetresPerSecond / right.MetresPerSecondSquared);
+            return Time.FromSeconds(left.metresPerSecond / right.metresPerSecondSquared);
         }
 
         public static Power operator *(Speed left, Force right)
         {
-            return Power.FromWatts(left.MetresPerSecond * right.Newtons);
+            return Power.FromWatts(left.metresPerSecond * right.newtons);
         }
 
         public static Frequency operator /(Speed left, Length right)
         {
-            return Frequency.FromHertz(left.MetresPerSecond / right.Metres);
+            return Frequency.FromHertz(left.metresPerSecond / right.metres);
         }
 
         public static Acceleration operator /(Speed left, Time right)
         {
-            return Acceleration.FromMetresPerSecondSquared(left.MetresPerSecond / right.Seconds);
+            return Acceleration.FromMetresPerSecondSquared(left.metresPerSecond / right.seconds);
         }
 
         public static VolumetricFlow operator *(Speed left, Area right)
         {
-            return VolumetricFlow.FromCubicMetresPerSecond(left.MetresPerSecond * right.SquareMetres);
+            return VolumetricFlow.FromCubicMetresPerSecond(left.metresPerSecond * right.squareMetres);
         }
 
         public static SpecificEnergy operator *(Speed left, Speed right)
         {
-            return SpecificEnergy.FromJoulesPerKilogram(left.MetresPerSecond * right.MetresPerSecond);
+            return SpecificEnergy.FromJoulesPerKilogram(left.metresPerSecond * right.metresPerSecond);
         }
 
         public static double operator /(Speed left, Speed right)
         {
-            return left.MetresPerSecond / right.MetresPerSecond;
+            return left.metresPerSecond / right.metresPerSecond;
         }
 
         /// <summary>
@@ -302,8 +313,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Speed"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Speed"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Speed"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Speed"/>.</param>
         public static bool operator ==(Speed left, Speed right)
         {
             return left.Equals(right);
@@ -315,8 +326,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Speed"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Speed"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Speed"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Speed"/>.</param>
         public static bool operator !=(Speed left, Speed right)
         {
             return !left.Equals(right);
@@ -328,11 +339,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Speed"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Speed"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Speed"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Speed"/>.</param>
         public static bool operator <(Speed left, Speed right)
         {
-            return left.MetresPerSecond < right.MetresPerSecond;
+            return left.metresPerSecond < right.metresPerSecond;
         }
 
         /// <summary>
@@ -341,11 +352,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Speed"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Speed"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Speed"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Speed"/>.</param>
         public static bool operator >(Speed left, Speed right)
         {
-            return left.MetresPerSecond > right.MetresPerSecond;
+            return left.metresPerSecond > right.metresPerSecond;
         }
 
         /// <summary>
@@ -354,11 +365,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Speed"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Speed"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Speed"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Speed"/>.</param>
         public static bool operator <=(Speed left, Speed right)
         {
-            return left.MetresPerSecond <= right.MetresPerSecond;
+            return left.metresPerSecond <= right.metresPerSecond;
         }
 
         /// <summary>
@@ -367,11 +378,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Speed"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Speed"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Speed"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Speed"/>.</param>
         public static bool operator >=(Speed left, Speed right)
         {
-            return left.MetresPerSecond >= right.MetresPerSecond;
+            return left.metresPerSecond >= right.metresPerSecond;
         }
 
         /// <summary>
@@ -382,7 +393,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Speed"/> with <paramref name="left"/> and returns the result.</returns>
         public static Speed operator *(double left, Speed right)
         {
-            return new Speed(left * right.MetresPerSecond);
+            return new Speed(left * right.metresPerSecond);
         }
 
         /// <summary>
@@ -393,7 +404,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Speed"/> with <paramref name="right"/> and returns the result.</returns>
         public static Speed operator *(Speed left, double right)
         {
-            return new Speed(left.MetresPerSecond * right);
+            return new Speed(left.metresPerSecond * right);
         }
 
         /// <summary>
@@ -404,7 +415,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Speed"/> with <paramref name="right"/> and returns the result.</returns>
         public static Speed operator /(Speed left, double right)
         {
-            return new Speed(left.MetresPerSecond / right);
+            return new Speed(left.metresPerSecond / right);
         }
 
         /// <summary>
@@ -413,11 +424,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Speed"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Speed"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Speed"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Speed"/>.</param>
         public static Speed operator +(Speed left, Speed right)
         {
-            return new Speed(left.MetresPerSecond + right.MetresPerSecond);
+            return new Speed(left.metresPerSecond + right.metresPerSecond);
         }
 
         /// <summary>
@@ -426,11 +437,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Speed"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Speed"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Speed"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Speed"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Speed"/> (the subtrahend).</param>
         public static Speed operator -(Speed left, Speed right)
         {
-            return new Speed(left.MetresPerSecond - right.MetresPerSecond);
+            return new Speed(left.metresPerSecond - right.metresPerSecond);
         }
 
         /// <summary>
@@ -439,22 +450,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Speed"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Speed">A <see cref="T:Gu.Units.Speed"/></param>
-        public static Speed operator -(Speed Speed)
+        /// <param name="speed">An instance of <see cref="T:Gu.Units.Speed"/></param>
+        public static Speed operator -(Speed speed)
         {
-            return new Speed(-1 * Speed.MetresPerSecond);
+            return new Speed(-1 * speed.metresPerSecond);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Speed"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Speed"/>.
+        /// Returns <paramref name="speed"/>.
         /// </returns>
-        /// <param name="Speed">A <see cref="T:Gu.Units.Speed"/></param>
-        public static Speed operator +(Speed Speed)
+        /// <param name="speed">An instance of <see cref="T:Gu.Units.Speed"/></param>
+        public static Speed operator +(Speed speed)
         {
-            return Speed;
+            return speed;
         }
 
         public override string ToString()
@@ -479,7 +490,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, SpeedUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.MetresPerSecond);
+            var quantity = unit.FromSiUnit(this.metresPerSecond);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -506,10 +517,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Speed"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Speed"/> object to compare to this instance.</param>
         public int CompareTo(Speed quantity)
         {
-            return this.MetresPerSecond.CompareTo(quantity.MetresPerSecond);
+            return this.metresPerSecond.CompareTo(quantity.metresPerSecond);
         }
 
         /// <summary>
@@ -518,10 +529,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Speed as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Speed"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Speed"/> object to compare with this instance.</param>
         public bool Equals(Speed other)
         {
-            return this.MetresPerSecond.Equals(other.MetresPerSecond);
+            return this.metresPerSecond.Equals(other.metresPerSecond);
         }
 
         /// <summary>
@@ -530,11 +541,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Speed as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Speed"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Speed"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Speed other, double tolerance)
         {
-            return Math.Abs(this.MetresPerSecond - other.MetresPerSecond) < tolerance;
+            return Math.Abs(this.metresPerSecond - other.metresPerSecond) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -549,7 +560,7 @@
 
         public override int GetHashCode()
         {
-            return this.MetresPerSecond.GetHashCode();
+            return this.metresPerSecond.GetHashCode();
         }
 
         /// <summary>
@@ -574,7 +585,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "MetresPerSecond", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "metresPerSecond", reader, "Value");
         }
 
         /// <summary>
@@ -583,7 +594,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.MetresPerSecond);
+            XmlExt.WriteAttribute(writer, "Value", this.metresPerSecond);
         }
     }
 }

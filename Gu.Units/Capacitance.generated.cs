@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Farads"/>.
         /// </summary>
-        public readonly double Farads;
+        internal readonly double farads;
 
         private Capacitance(double farads)
         {
-            Farads = farads;
+            this.farads = farads;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Farads"/>.</param>
         public Capacitance(double value, CapacitanceUnit unit)
         {
-            Farads = unit.ToSiUnit(value);
+            this.farads = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Farads;
+                return this.farads;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in farads".
+        /// </summary>
+        public double Farads
+        {
+            get
+            {
+                return this.farads;
             }
         }
 
@@ -87,7 +98,7 @@
 
         public static double operator /(Capacitance left, Capacitance right)
         {
-            return left.Farads / right.Farads;
+            return left.farads / right.farads;
         }
 
         /// <summary>
@@ -96,8 +107,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Capacitance"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Capacitance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Capacitance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Capacitance"/>.</param>
         public static bool operator ==(Capacitance left, Capacitance right)
         {
             return left.Equals(right);
@@ -109,8 +120,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Capacitance"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Capacitance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Capacitance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Capacitance"/>.</param>
         public static bool operator !=(Capacitance left, Capacitance right)
         {
             return !left.Equals(right);
@@ -122,11 +133,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Capacitance"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Capacitance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Capacitance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Capacitance"/>.</param>
         public static bool operator <(Capacitance left, Capacitance right)
         {
-            return left.Farads < right.Farads;
+            return left.farads < right.farads;
         }
 
         /// <summary>
@@ -135,11 +146,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Capacitance"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Capacitance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Capacitance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Capacitance"/>.</param>
         public static bool operator >(Capacitance left, Capacitance right)
         {
-            return left.Farads > right.Farads;
+            return left.farads > right.farads;
         }
 
         /// <summary>
@@ -148,11 +159,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Capacitance"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Capacitance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Capacitance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Capacitance"/>.</param>
         public static bool operator <=(Capacitance left, Capacitance right)
         {
-            return left.Farads <= right.Farads;
+            return left.farads <= right.farads;
         }
 
         /// <summary>
@@ -161,11 +172,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Capacitance"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Capacitance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Capacitance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Capacitance"/>.</param>
         public static bool operator >=(Capacitance left, Capacitance right)
         {
-            return left.Farads >= right.Farads;
+            return left.farads >= right.farads;
         }
 
         /// <summary>
@@ -176,7 +187,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Capacitance"/> with <paramref name="left"/> and returns the result.</returns>
         public static Capacitance operator *(double left, Capacitance right)
         {
-            return new Capacitance(left * right.Farads);
+            return new Capacitance(left * right.farads);
         }
 
         /// <summary>
@@ -187,7 +198,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Capacitance"/> with <paramref name="right"/> and returns the result.</returns>
         public static Capacitance operator *(Capacitance left, double right)
         {
-            return new Capacitance(left.Farads * right);
+            return new Capacitance(left.farads * right);
         }
 
         /// <summary>
@@ -198,7 +209,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Capacitance"/> with <paramref name="right"/> and returns the result.</returns>
         public static Capacitance operator /(Capacitance left, double right)
         {
-            return new Capacitance(left.Farads / right);
+            return new Capacitance(left.farads / right);
         }
 
         /// <summary>
@@ -207,11 +218,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Capacitance"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Capacitance"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Capacitance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Capacitance"/>.</param>
         public static Capacitance operator +(Capacitance left, Capacitance right)
         {
-            return new Capacitance(left.Farads + right.Farads);
+            return new Capacitance(left.farads + right.farads);
         }
 
         /// <summary>
@@ -220,11 +231,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Capacitance"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Capacitance"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Capacitance"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Capacitance"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Capacitance"/> (the subtrahend).</param>
         public static Capacitance operator -(Capacitance left, Capacitance right)
         {
-            return new Capacitance(left.Farads - right.Farads);
+            return new Capacitance(left.farads - right.farads);
         }
 
         /// <summary>
@@ -233,22 +244,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Capacitance"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Capacitance">A <see cref="T:Gu.Units.Capacitance"/></param>
-        public static Capacitance operator -(Capacitance Capacitance)
+        /// <param name="capacitance">An instance of <see cref="T:Gu.Units.Capacitance"/></param>
+        public static Capacitance operator -(Capacitance capacitance)
         {
-            return new Capacitance(-1 * Capacitance.Farads);
+            return new Capacitance(-1 * capacitance.farads);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Capacitance"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Capacitance"/>.
+        /// Returns <paramref name="capacitance"/>.
         /// </returns>
-        /// <param name="Capacitance">A <see cref="T:Gu.Units.Capacitance"/></param>
-        public static Capacitance operator +(Capacitance Capacitance)
+        /// <param name="capacitance">An instance of <see cref="T:Gu.Units.Capacitance"/></param>
+        public static Capacitance operator +(Capacitance capacitance)
         {
-            return Capacitance;
+            return capacitance;
         }
 
         public override string ToString()
@@ -273,7 +284,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, CapacitanceUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Farads);
+            var quantity = unit.FromSiUnit(this.farads);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -300,10 +311,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Capacitance"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Capacitance"/> object to compare to this instance.</param>
         public int CompareTo(Capacitance quantity)
         {
-            return this.Farads.CompareTo(quantity.Farads);
+            return this.farads.CompareTo(quantity.farads);
         }
 
         /// <summary>
@@ -312,10 +323,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Capacitance as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Capacitance"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Capacitance"/> object to compare with this instance.</param>
         public bool Equals(Capacitance other)
         {
-            return this.Farads.Equals(other.Farads);
+            return this.farads.Equals(other.farads);
         }
 
         /// <summary>
@@ -324,11 +335,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Capacitance as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Capacitance"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Capacitance"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Capacitance other, double tolerance)
         {
-            return Math.Abs(this.Farads - other.Farads) < tolerance;
+            return Math.Abs(this.farads - other.farads) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -343,7 +354,7 @@
 
         public override int GetHashCode()
         {
-            return this.Farads.GetHashCode();
+            return this.farads.GetHashCode();
         }
 
         /// <summary>
@@ -368,7 +379,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Farads", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "farads", reader, "Value");
         }
 
         /// <summary>
@@ -377,7 +388,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Farads);
+            XmlExt.WriteAttribute(writer, "Value", this.farads);
         }
     }
 }

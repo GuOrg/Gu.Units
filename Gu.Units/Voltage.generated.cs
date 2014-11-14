@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Volts"/>.
         /// </summary>
-        public readonly double Volts;
+        internal readonly double volts;
 
         private Voltage(double volts)
         {
-            Volts = volts;
+            this.volts = volts;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Volts"/>.</param>
         public Voltage(double value, VoltageUnit unit)
         {
-            Volts = unit.ToSiUnit(value);
+            this.volts = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Volts;
+                return this.volts;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in volts".
+        /// </summary>
+        public double Volts
+        {
+            get
+            {
+                return this.volts;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return VoltageUnit.Millivolts.FromSiUnit(Volts);
+                return VoltageUnit.Millivolts.FromSiUnit(this.volts);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return VoltageUnit.Kilovolts.FromSiUnit(Volts);
+                return VoltageUnit.Kilovolts.FromSiUnit(this.volts);
             }
         }
 
@@ -72,7 +83,7 @@
         {
             get
             {
-                return VoltageUnit.Megavolts.FromSiUnit(Volts);
+                return VoltageUnit.Megavolts.FromSiUnit(this.volts);
             }
         }
 
@@ -83,7 +94,7 @@
         {
             get
             {
-                return VoltageUnit.Microvolts.FromSiUnit(Volts);
+                return VoltageUnit.Microvolts.FromSiUnit(this.volts);
             }
         }
 
@@ -163,22 +174,22 @@
 
         public static Energy operator *(Voltage left, ElectricCharge right)
         {
-            return Energy.FromJoules(left.Volts * right.Coulombs);
+            return Energy.FromJoules(left.volts * right.coulombs);
         }
 
         public static Power operator *(Voltage left, Current right)
         {
-            return Power.FromWatts(left.Volts * right.Amperes);
+            return Power.FromWatts(left.volts * right.amperes);
         }
 
         public static Resistance operator /(Voltage left, Current right)
         {
-            return Resistance.FromOhm(left.Volts / right.Amperes);
+            return Resistance.FromOhm(left.volts / right.amperes);
         }
 
         public static double operator /(Voltage left, Voltage right)
         {
-            return left.Volts / right.Volts;
+            return left.volts / right.volts;
         }
 
         /// <summary>
@@ -187,8 +198,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Voltage"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Voltage"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Voltage"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Voltage"/>.</param>
         public static bool operator ==(Voltage left, Voltage right)
         {
             return left.Equals(right);
@@ -200,8 +211,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Voltage"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Voltage"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Voltage"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Voltage"/>.</param>
         public static bool operator !=(Voltage left, Voltage right)
         {
             return !left.Equals(right);
@@ -213,11 +224,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Voltage"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Voltage"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Voltage"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Voltage"/>.</param>
         public static bool operator <(Voltage left, Voltage right)
         {
-            return left.Volts < right.Volts;
+            return left.volts < right.volts;
         }
 
         /// <summary>
@@ -226,11 +237,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Voltage"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Voltage"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Voltage"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Voltage"/>.</param>
         public static bool operator >(Voltage left, Voltage right)
         {
-            return left.Volts > right.Volts;
+            return left.volts > right.volts;
         }
 
         /// <summary>
@@ -239,11 +250,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Voltage"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Voltage"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Voltage"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Voltage"/>.</param>
         public static bool operator <=(Voltage left, Voltage right)
         {
-            return left.Volts <= right.Volts;
+            return left.volts <= right.volts;
         }
 
         /// <summary>
@@ -252,11 +263,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Voltage"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Voltage"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Voltage"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Voltage"/>.</param>
         public static bool operator >=(Voltage left, Voltage right)
         {
-            return left.Volts >= right.Volts;
+            return left.volts >= right.volts;
         }
 
         /// <summary>
@@ -267,7 +278,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Voltage"/> with <paramref name="left"/> and returns the result.</returns>
         public static Voltage operator *(double left, Voltage right)
         {
-            return new Voltage(left * right.Volts);
+            return new Voltage(left * right.volts);
         }
 
         /// <summary>
@@ -278,7 +289,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Voltage"/> with <paramref name="right"/> and returns the result.</returns>
         public static Voltage operator *(Voltage left, double right)
         {
-            return new Voltage(left.Volts * right);
+            return new Voltage(left.volts * right);
         }
 
         /// <summary>
@@ -289,7 +300,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Voltage"/> with <paramref name="right"/> and returns the result.</returns>
         public static Voltage operator /(Voltage left, double right)
         {
-            return new Voltage(left.Volts / right);
+            return new Voltage(left.volts / right);
         }
 
         /// <summary>
@@ -298,11 +309,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Voltage"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Voltage"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Voltage"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Voltage"/>.</param>
         public static Voltage operator +(Voltage left, Voltage right)
         {
-            return new Voltage(left.Volts + right.Volts);
+            return new Voltage(left.volts + right.volts);
         }
 
         /// <summary>
@@ -311,11 +322,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Voltage"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Voltage"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Voltage"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Voltage"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Voltage"/> (the subtrahend).</param>
         public static Voltage operator -(Voltage left, Voltage right)
         {
-            return new Voltage(left.Volts - right.Volts);
+            return new Voltage(left.volts - right.volts);
         }
 
         /// <summary>
@@ -324,22 +335,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Voltage"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Voltage">A <see cref="T:Gu.Units.Voltage"/></param>
-        public static Voltage operator -(Voltage Voltage)
+        /// <param name="voltage">An instance of <see cref="T:Gu.Units.Voltage"/></param>
+        public static Voltage operator -(Voltage voltage)
         {
-            return new Voltage(-1 * Voltage.Volts);
+            return new Voltage(-1 * voltage.volts);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Voltage"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Voltage"/>.
+        /// Returns <paramref name="voltage"/>.
         /// </returns>
-        /// <param name="Voltage">A <see cref="T:Gu.Units.Voltage"/></param>
-        public static Voltage operator +(Voltage Voltage)
+        /// <param name="voltage">An instance of <see cref="T:Gu.Units.Voltage"/></param>
+        public static Voltage operator +(Voltage voltage)
         {
-            return Voltage;
+            return voltage;
         }
 
         public override string ToString()
@@ -364,7 +375,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, VoltageUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Volts);
+            var quantity = unit.FromSiUnit(this.volts);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -391,10 +402,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Voltage"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Voltage"/> object to compare to this instance.</param>
         public int CompareTo(Voltage quantity)
         {
-            return this.Volts.CompareTo(quantity.Volts);
+            return this.volts.CompareTo(quantity.volts);
         }
 
         /// <summary>
@@ -403,10 +414,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Voltage as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Voltage"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Voltage"/> object to compare with this instance.</param>
         public bool Equals(Voltage other)
         {
-            return this.Volts.Equals(other.Volts);
+            return this.volts.Equals(other.volts);
         }
 
         /// <summary>
@@ -415,11 +426,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Voltage as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Voltage"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Voltage"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Voltage other, double tolerance)
         {
-            return Math.Abs(this.Volts - other.Volts) < tolerance;
+            return Math.Abs(this.volts - other.volts) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -434,7 +445,7 @@
 
         public override int GetHashCode()
         {
-            return this.Volts.GetHashCode();
+            return this.volts.GetHashCode();
         }
 
         /// <summary>
@@ -459,7 +470,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Volts", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "volts", reader, "Value");
         }
 
         /// <summary>
@@ -468,7 +479,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Volts);
+            XmlExt.WriteAttribute(writer, "Value", this.volts);
         }
     }
 }

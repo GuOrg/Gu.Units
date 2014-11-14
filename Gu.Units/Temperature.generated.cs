@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Kelvin"/>.
         /// </summary>
-        public readonly double Kelvin;
+        internal readonly double kelvin;
 
         private Temperature(double kelvin)
         {
-            Kelvin = kelvin;
+            this.kelvin = kelvin;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Kelvin"/>.</param>
         public Temperature(double value, TemperatureUnit unit)
         {
-            Kelvin = unit.ToSiUnit(value);
+            this.kelvin = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Kelvin;
+                return this.kelvin;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in kelvin".
+        /// </summary>
+        public double Kelvin
+        {
+            get
+            {
+                return this.kelvin;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return TemperatureUnit.Celsius.FromSiUnit(Kelvin);
+                return TemperatureUnit.Celsius.FromSiUnit(this.kelvin);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return TemperatureUnit.Fahrenheit.FromSiUnit(Kelvin);
+                return TemperatureUnit.Fahrenheit.FromSiUnit(this.kelvin);
             }
         }
 
@@ -125,7 +136,7 @@
 
         public static double operator /(Temperature left, Temperature right)
         {
-            return left.Kelvin / right.Kelvin;
+            return left.kelvin / right.kelvin;
         }
 
         /// <summary>
@@ -134,8 +145,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Temperature"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Temperature"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Temperature"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Temperature"/>.</param>
         public static bool operator ==(Temperature left, Temperature right)
         {
             return left.Equals(right);
@@ -147,8 +158,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Temperature"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Temperature"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Temperature"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Temperature"/>.</param>
         public static bool operator !=(Temperature left, Temperature right)
         {
             return !left.Equals(right);
@@ -160,11 +171,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Temperature"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Temperature"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Temperature"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Temperature"/>.</param>
         public static bool operator <(Temperature left, Temperature right)
         {
-            return left.Kelvin < right.Kelvin;
+            return left.kelvin < right.kelvin;
         }
 
         /// <summary>
@@ -173,11 +184,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Temperature"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Temperature"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Temperature"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Temperature"/>.</param>
         public static bool operator >(Temperature left, Temperature right)
         {
-            return left.Kelvin > right.Kelvin;
+            return left.kelvin > right.kelvin;
         }
 
         /// <summary>
@@ -186,11 +197,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Temperature"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Temperature"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Temperature"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Temperature"/>.</param>
         public static bool operator <=(Temperature left, Temperature right)
         {
-            return left.Kelvin <= right.Kelvin;
+            return left.kelvin <= right.kelvin;
         }
 
         /// <summary>
@@ -199,11 +210,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Temperature"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Temperature"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Temperature"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Temperature"/>.</param>
         public static bool operator >=(Temperature left, Temperature right)
         {
-            return left.Kelvin >= right.Kelvin;
+            return left.kelvin >= right.kelvin;
         }
 
         /// <summary>
@@ -214,7 +225,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Temperature"/> with <paramref name="left"/> and returns the result.</returns>
         public static Temperature operator *(double left, Temperature right)
         {
-            return new Temperature(left * right.Kelvin);
+            return new Temperature(left * right.kelvin);
         }
 
         /// <summary>
@@ -225,7 +236,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Temperature"/> with <paramref name="right"/> and returns the result.</returns>
         public static Temperature operator *(Temperature left, double right)
         {
-            return new Temperature(left.Kelvin * right);
+            return new Temperature(left.kelvin * right);
         }
 
         /// <summary>
@@ -236,7 +247,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Temperature"/> with <paramref name="right"/> and returns the result.</returns>
         public static Temperature operator /(Temperature left, double right)
         {
-            return new Temperature(left.Kelvin / right);
+            return new Temperature(left.kelvin / right);
         }
 
         /// <summary>
@@ -245,11 +256,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Temperature"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Temperature"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Temperature"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Temperature"/>.</param>
         public static Temperature operator +(Temperature left, Temperature right)
         {
-            return new Temperature(left.Kelvin + right.Kelvin);
+            return new Temperature(left.kelvin + right.kelvin);
         }
 
         /// <summary>
@@ -258,11 +269,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Temperature"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Temperature"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Temperature"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Temperature"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Temperature"/> (the subtrahend).</param>
         public static Temperature operator -(Temperature left, Temperature right)
         {
-            return new Temperature(left.Kelvin - right.Kelvin);
+            return new Temperature(left.kelvin - right.kelvin);
         }
 
         /// <summary>
@@ -271,22 +282,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Temperature"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Temperature">A <see cref="T:Gu.Units.Temperature"/></param>
-        public static Temperature operator -(Temperature Temperature)
+        /// <param name="temperature">An instance of <see cref="T:Gu.Units.Temperature"/></param>
+        public static Temperature operator -(Temperature temperature)
         {
-            return new Temperature(-1 * Temperature.Kelvin);
+            return new Temperature(-1 * temperature.kelvin);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Temperature"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Temperature"/>.
+        /// Returns <paramref name="temperature"/>.
         /// </returns>
-        /// <param name="Temperature">A <see cref="T:Gu.Units.Temperature"/></param>
-        public static Temperature operator +(Temperature Temperature)
+        /// <param name="temperature">An instance of <see cref="T:Gu.Units.Temperature"/></param>
+        public static Temperature operator +(Temperature temperature)
         {
-            return Temperature;
+            return temperature;
         }
 
         public override string ToString()
@@ -311,7 +322,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, TemperatureUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Kelvin);
+            var quantity = unit.FromSiUnit(this.kelvin);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -338,10 +349,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Temperature"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Temperature"/> object to compare to this instance.</param>
         public int CompareTo(Temperature quantity)
         {
-            return this.Kelvin.CompareTo(quantity.Kelvin);
+            return this.kelvin.CompareTo(quantity.kelvin);
         }
 
         /// <summary>
@@ -350,10 +361,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Temperature as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Temperature"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Temperature"/> object to compare with this instance.</param>
         public bool Equals(Temperature other)
         {
-            return this.Kelvin.Equals(other.Kelvin);
+            return this.kelvin.Equals(other.kelvin);
         }
 
         /// <summary>
@@ -362,11 +373,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Temperature as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Temperature"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Temperature"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Temperature other, double tolerance)
         {
-            return Math.Abs(this.Kelvin - other.Kelvin) < tolerance;
+            return Math.Abs(this.kelvin - other.kelvin) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -381,7 +392,7 @@
 
         public override int GetHashCode()
         {
-            return this.Kelvin.GetHashCode();
+            return this.kelvin.GetHashCode();
         }
 
         /// <summary>
@@ -406,7 +417,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Kelvin", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "kelvin", reader, "Value");
         }
 
         /// <summary>
@@ -415,7 +426,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Kelvin);
+            XmlExt.WriteAttribute(writer, "Value", this.kelvin);
         }
     }
 }

@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Scalar"/>.
         /// </summary>
-        public readonly double Scalar;
+        internal readonly double scalar;
 
         private Unitless(double scalar)
         {
-            Scalar = scalar;
+            this.scalar = scalar;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Scalar"/>.</param>
         public Unitless(double value, UnitlessUnit unit)
         {
-            Scalar = unit.ToSiUnit(value);
+            this.scalar = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Scalar;
+                return this.scalar;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in scalar".
+        /// </summary>
+        public double Scalar
+        {
+            get
+            {
+                return this.scalar;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return UnitlessUnit.PartsPerMillion.FromSiUnit(Scalar);
+                return UnitlessUnit.PartsPerMillion.FromSiUnit(this.scalar);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return UnitlessUnit.Promilles.FromSiUnit(Scalar);
+                return UnitlessUnit.Promilles.FromSiUnit(this.scalar);
             }
         }
 
@@ -72,7 +83,7 @@
         {
             get
             {
-                return UnitlessUnit.Percents.FromSiUnit(Scalar);
+                return UnitlessUnit.Percents.FromSiUnit(this.scalar);
             }
         }
 
@@ -144,7 +155,7 @@
 
         public static double operator /(Unitless left, Unitless right)
         {
-            return left.Scalar / right.Scalar;
+            return left.scalar / right.scalar;
         }
 
         /// <summary>
@@ -153,8 +164,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Unitless"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Unitless"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Unitless"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Unitless"/>.</param>
         public static bool operator ==(Unitless left, Unitless right)
         {
             return left.Equals(right);
@@ -166,8 +177,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Unitless"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Unitless"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Unitless"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Unitless"/>.</param>
         public static bool operator !=(Unitless left, Unitless right)
         {
             return !left.Equals(right);
@@ -179,11 +190,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Unitless"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Unitless"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Unitless"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Unitless"/>.</param>
         public static bool operator <(Unitless left, Unitless right)
         {
-            return left.Scalar < right.Scalar;
+            return left.scalar < right.scalar;
         }
 
         /// <summary>
@@ -192,11 +203,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Unitless"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Unitless"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Unitless"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Unitless"/>.</param>
         public static bool operator >(Unitless left, Unitless right)
         {
-            return left.Scalar > right.Scalar;
+            return left.scalar > right.scalar;
         }
 
         /// <summary>
@@ -205,11 +216,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Unitless"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Unitless"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Unitless"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Unitless"/>.</param>
         public static bool operator <=(Unitless left, Unitless right)
         {
-            return left.Scalar <= right.Scalar;
+            return left.scalar <= right.scalar;
         }
 
         /// <summary>
@@ -218,11 +229,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Unitless"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Unitless"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Unitless"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Unitless"/>.</param>
         public static bool operator >=(Unitless left, Unitless right)
         {
-            return left.Scalar >= right.Scalar;
+            return left.scalar >= right.scalar;
         }
 
         /// <summary>
@@ -233,7 +244,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Unitless"/> with <paramref name="left"/> and returns the result.</returns>
         public static Unitless operator *(double left, Unitless right)
         {
-            return new Unitless(left * right.Scalar);
+            return new Unitless(left * right.scalar);
         }
 
         /// <summary>
@@ -244,7 +255,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Unitless"/> with <paramref name="right"/> and returns the result.</returns>
         public static Unitless operator *(Unitless left, double right)
         {
-            return new Unitless(left.Scalar * right);
+            return new Unitless(left.scalar * right);
         }
 
         /// <summary>
@@ -255,7 +266,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Unitless"/> with <paramref name="right"/> and returns the result.</returns>
         public static Unitless operator /(Unitless left, double right)
         {
-            return new Unitless(left.Scalar / right);
+            return new Unitless(left.scalar / right);
         }
 
         /// <summary>
@@ -264,11 +275,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Unitless"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Unitless"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Unitless"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Unitless"/>.</param>
         public static Unitless operator +(Unitless left, Unitless right)
         {
-            return new Unitless(left.Scalar + right.Scalar);
+            return new Unitless(left.scalar + right.scalar);
         }
 
         /// <summary>
@@ -277,11 +288,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Unitless"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Unitless"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Unitless"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Unitless"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Unitless"/> (the subtrahend).</param>
         public static Unitless operator -(Unitless left, Unitless right)
         {
-            return new Unitless(left.Scalar - right.Scalar);
+            return new Unitless(left.scalar - right.scalar);
         }
 
         /// <summary>
@@ -290,22 +301,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Unitless"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Unitless">A <see cref="T:Gu.Units.Unitless"/></param>
-        public static Unitless operator -(Unitless Unitless)
+        /// <param name="unitless">An instance of <see cref="T:Gu.Units.Unitless"/></param>
+        public static Unitless operator -(Unitless unitless)
         {
-            return new Unitless(-1 * Unitless.Scalar);
+            return new Unitless(-1 * unitless.scalar);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Unitless"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Unitless"/>.
+        /// Returns <paramref name="unitless"/>.
         /// </returns>
-        /// <param name="Unitless">A <see cref="T:Gu.Units.Unitless"/></param>
-        public static Unitless operator +(Unitless Unitless)
+        /// <param name="unitless">An instance of <see cref="T:Gu.Units.Unitless"/></param>
+        public static Unitless operator +(Unitless unitless)
         {
-            return Unitless;
+            return unitless;
         }
 
         public override string ToString()
@@ -330,7 +341,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, UnitlessUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Scalar);
+            var quantity = unit.FromSiUnit(this.scalar);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -357,10 +368,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Unitless"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Unitless"/> object to compare to this instance.</param>
         public int CompareTo(Unitless quantity)
         {
-            return this.Scalar.CompareTo(quantity.Scalar);
+            return this.scalar.CompareTo(quantity.scalar);
         }
 
         /// <summary>
@@ -369,10 +380,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Unitless as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Unitless"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Unitless"/> object to compare with this instance.</param>
         public bool Equals(Unitless other)
         {
-            return this.Scalar.Equals(other.Scalar);
+            return this.scalar.Equals(other.scalar);
         }
 
         /// <summary>
@@ -381,11 +392,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Unitless as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Unitless"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Unitless"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Unitless other, double tolerance)
         {
-            return Math.Abs(this.Scalar - other.Scalar) < tolerance;
+            return Math.Abs(this.scalar - other.scalar) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -400,7 +411,7 @@
 
         public override int GetHashCode()
         {
-            return this.Scalar.GetHashCode();
+            return this.scalar.GetHashCode();
         }
 
         /// <summary>
@@ -425,7 +436,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Scalar", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "scalar", reader, "Value");
         }
 
         /// <summary>
@@ -434,7 +445,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Scalar);
+            XmlExt.WriteAttribute(writer, "Value", this.scalar);
         }
     }
 }

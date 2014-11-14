@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.SquareMetres"/>.
         /// </summary>
-        public readonly double SquareMetres;
+        internal readonly double squareMetres;
 
         private Area(double squareMetres)
         {
-            SquareMetres = squareMetres;
+            this.squareMetres = squareMetres;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.SquareMetres"/>.</param>
         public Area(double value, AreaUnit unit)
         {
-            SquareMetres = unit.ToSiUnit(value);
+            this.squareMetres = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return SquareMetres;
+                return this.squareMetres;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in squareMetres".
+        /// </summary>
+        public double SquareMetres
+        {
+            get
+            {
+                return this.squareMetres;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return AreaUnit.SquareMillimetres.FromSiUnit(SquareMetres);
+                return AreaUnit.SquareMillimetres.FromSiUnit(this.squareMetres);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return AreaUnit.SquareCentimetres.FromSiUnit(SquareMetres);
+                return AreaUnit.SquareCentimetres.FromSiUnit(this.squareMetres);
             }
         }
 
@@ -72,7 +83,7 @@
         {
             get
             {
-                return AreaUnit.SquareDecimetres.FromSiUnit(SquareMetres);
+                return AreaUnit.SquareDecimetres.FromSiUnit(this.squareMetres);
             }
         }
 
@@ -83,7 +94,7 @@
         {
             get
             {
-                return AreaUnit.SquareKilometres.FromSiUnit(SquareMetres);
+                return AreaUnit.SquareKilometres.FromSiUnit(this.squareMetres);
             }
         }
 
@@ -94,7 +105,7 @@
         {
             get
             {
-                return AreaUnit.SquareInches.FromSiUnit(SquareMetres);
+                return AreaUnit.SquareInches.FromSiUnit(this.squareMetres);
             }
         }
 
@@ -105,7 +116,7 @@
         {
             get
             {
-                return AreaUnit.Hectare.FromSiUnit(SquareMetres);
+                return AreaUnit.Hectare.FromSiUnit(this.squareMetres);
             }
         }
 
@@ -116,7 +127,7 @@
         {
             get
             {
-                return AreaUnit.SquareMile.FromSiUnit(SquareMetres);
+                return AreaUnit.SquareMile.FromSiUnit(this.squareMetres);
             }
         }
 
@@ -127,7 +138,7 @@
         {
             get
             {
-                return AreaUnit.SquareYard.FromSiUnit(SquareMetres);
+                return AreaUnit.SquareYard.FromSiUnit(this.squareMetres);
             }
         }
 
@@ -239,27 +250,27 @@
 
         public static Length operator /(Area left, Length right)
         {
-            return Length.FromMetres(left.SquareMetres / right.Metres);
+            return Length.FromMetres(left.squareMetres / right.metres);
         }
 
         public static Volume operator *(Area left, Length right)
         {
-            return Volume.FromCubicMetres(left.SquareMetres * right.Metres);
+            return Volume.FromCubicMetres(left.squareMetres * right.metres);
         }
 
         public static VolumetricFlow operator *(Area left, Speed right)
         {
-            return VolumetricFlow.FromCubicMetresPerSecond(left.SquareMetres * right.MetresPerSecond);
+            return VolumetricFlow.FromCubicMetresPerSecond(left.squareMetres * right.metresPerSecond);
         }
 
         public static Flexibility operator /(Area left, Energy right)
         {
-            return Flexibility.FromMetresPerNewton(left.SquareMetres / right.Joules);
+            return Flexibility.FromMetresPerNewton(left.squareMetres / right.joules);
         }
 
         public static double operator /(Area left, Area right)
         {
-            return left.SquareMetres / right.SquareMetres;
+            return left.squareMetres / right.squareMetres;
         }
 
         /// <summary>
@@ -268,8 +279,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Area"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Area"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Area"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Area"/>.</param>
         public static bool operator ==(Area left, Area right)
         {
             return left.Equals(right);
@@ -281,8 +292,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Area"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Area"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Area"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Area"/>.</param>
         public static bool operator !=(Area left, Area right)
         {
             return !left.Equals(right);
@@ -294,11 +305,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Area"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Area"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Area"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Area"/>.</param>
         public static bool operator <(Area left, Area right)
         {
-            return left.SquareMetres < right.SquareMetres;
+            return left.squareMetres < right.squareMetres;
         }
 
         /// <summary>
@@ -307,11 +318,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Area"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Area"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Area"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Area"/>.</param>
         public static bool operator >(Area left, Area right)
         {
-            return left.SquareMetres > right.SquareMetres;
+            return left.squareMetres > right.squareMetres;
         }
 
         /// <summary>
@@ -320,11 +331,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Area"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Area"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Area"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Area"/>.</param>
         public static bool operator <=(Area left, Area right)
         {
-            return left.SquareMetres <= right.SquareMetres;
+            return left.squareMetres <= right.squareMetres;
         }
 
         /// <summary>
@@ -333,11 +344,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Area"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Area"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Area"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Area"/>.</param>
         public static bool operator >=(Area left, Area right)
         {
-            return left.SquareMetres >= right.SquareMetres;
+            return left.squareMetres >= right.squareMetres;
         }
 
         /// <summary>
@@ -348,7 +359,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Area"/> with <paramref name="left"/> and returns the result.</returns>
         public static Area operator *(double left, Area right)
         {
-            return new Area(left * right.SquareMetres);
+            return new Area(left * right.squareMetres);
         }
 
         /// <summary>
@@ -359,7 +370,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Area"/> with <paramref name="right"/> and returns the result.</returns>
         public static Area operator *(Area left, double right)
         {
-            return new Area(left.SquareMetres * right);
+            return new Area(left.squareMetres * right);
         }
 
         /// <summary>
@@ -370,7 +381,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Area"/> with <paramref name="right"/> and returns the result.</returns>
         public static Area operator /(Area left, double right)
         {
-            return new Area(left.SquareMetres / right);
+            return new Area(left.squareMetres / right);
         }
 
         /// <summary>
@@ -379,11 +390,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Area"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Area"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Area"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Area"/>.</param>
         public static Area operator +(Area left, Area right)
         {
-            return new Area(left.SquareMetres + right.SquareMetres);
+            return new Area(left.squareMetres + right.squareMetres);
         }
 
         /// <summary>
@@ -392,11 +403,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Area"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Area"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Area"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Area"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Area"/> (the subtrahend).</param>
         public static Area operator -(Area left, Area right)
         {
-            return new Area(left.SquareMetres - right.SquareMetres);
+            return new Area(left.squareMetres - right.squareMetres);
         }
 
         /// <summary>
@@ -405,22 +416,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Area"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Area">A <see cref="T:Gu.Units.Area"/></param>
-        public static Area operator -(Area Area)
+        /// <param name="area">An instance of <see cref="T:Gu.Units.Area"/></param>
+        public static Area operator -(Area area)
         {
-            return new Area(-1 * Area.SquareMetres);
+            return new Area(-1 * area.squareMetres);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Area"/>.
+        /// Returns <paramref name="area"/>.
         /// </returns>
-        /// <param name="Area">A <see cref="T:Gu.Units.Area"/></param>
-        public static Area operator +(Area Area)
+        /// <param name="area">An instance of <see cref="T:Gu.Units.Area"/></param>
+        public static Area operator +(Area area)
         {
-            return Area;
+            return area;
         }
 
         public override string ToString()
@@ -445,7 +456,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, AreaUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.SquareMetres);
+            var quantity = unit.FromSiUnit(this.squareMetres);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -472,10 +483,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Area"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Area"/> object to compare to this instance.</param>
         public int CompareTo(Area quantity)
         {
-            return this.SquareMetres.CompareTo(quantity.SquareMetres);
+            return this.squareMetres.CompareTo(quantity.squareMetres);
         }
 
         /// <summary>
@@ -484,10 +495,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Area as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Area"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Area"/> object to compare with this instance.</param>
         public bool Equals(Area other)
         {
-            return this.SquareMetres.Equals(other.SquareMetres);
+            return this.squareMetres.Equals(other.squareMetres);
         }
 
         /// <summary>
@@ -496,11 +507,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Area as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Area"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Area"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Area other, double tolerance)
         {
-            return Math.Abs(this.SquareMetres - other.SquareMetres) < tolerance;
+            return Math.Abs(this.squareMetres - other.squareMetres) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -515,7 +526,7 @@
 
         public override int GetHashCode()
         {
-            return this.SquareMetres.GetHashCode();
+            return this.squareMetres.GetHashCode();
         }
 
         /// <summary>
@@ -540,7 +551,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "SquareMetres", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "squareMetres", reader, "Value");
         }
 
         /// <summary>
@@ -549,7 +560,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.SquareMetres);
+            XmlExt.WriteAttribute(writer, "Value", this.squareMetres);
         }
     }
 }

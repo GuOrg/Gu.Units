@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.MetresPerNewton"/>.
         /// </summary>
-        public readonly double MetresPerNewton;
+        internal readonly double metresPerNewton;
 
         private Flexibility(double metresPerNewton)
         {
-            MetresPerNewton = metresPerNewton;
+            this.metresPerNewton = metresPerNewton;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.MetresPerNewton"/>.</param>
         public Flexibility(double value, FlexibilityUnit unit)
         {
-            MetresPerNewton = unit.ToSiUnit(value);
+            this.metresPerNewton = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return MetresPerNewton;
+                return this.metresPerNewton;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in metresPerNewton".
+        /// </summary>
+        public double MetresPerNewton
+        {
+            get
+            {
+                return this.metresPerNewton;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return FlexibilityUnit.MillimetresPerNewton.FromSiUnit(MetresPerNewton);
+                return FlexibilityUnit.MillimetresPerNewton.FromSiUnit(this.metresPerNewton);
             }
         }
 
@@ -106,22 +117,22 @@
 
         public static Length operator *(Flexibility left, Force right)
         {
-            return Length.FromMetres(left.MetresPerNewton * right.Newtons);
+            return Length.FromMetres(left.metresPerNewton * right.newtons);
         }
 
         public static Area operator *(Flexibility left, Energy right)
         {
-            return Area.FromSquareMetres(left.MetresPerNewton * right.Joules);
+            return Area.FromSquareMetres(left.metresPerNewton * right.joules);
         }
 
         public static Stiffness operator /(double left, Flexibility right)
         {
-            return Stiffness.FromNewtonsPerMetre(left / right.MetresPerNewton);
+            return Stiffness.FromNewtonsPerMetre(left / right.metresPerNewton);
         }
 
         public static double operator /(Flexibility left, Flexibility right)
         {
-            return left.MetresPerNewton / right.MetresPerNewton;
+            return left.metresPerNewton / right.metresPerNewton;
         }
 
         /// <summary>
@@ -130,8 +141,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Flexibility"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Flexibility"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Flexibility"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Flexibility"/>.</param>
         public static bool operator ==(Flexibility left, Flexibility right)
         {
             return left.Equals(right);
@@ -143,8 +154,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Flexibility"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Flexibility"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Flexibility"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Flexibility"/>.</param>
         public static bool operator !=(Flexibility left, Flexibility right)
         {
             return !left.Equals(right);
@@ -156,11 +167,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Flexibility"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Flexibility"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Flexibility"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Flexibility"/>.</param>
         public static bool operator <(Flexibility left, Flexibility right)
         {
-            return left.MetresPerNewton < right.MetresPerNewton;
+            return left.metresPerNewton < right.metresPerNewton;
         }
 
         /// <summary>
@@ -169,11 +180,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Flexibility"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Flexibility"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Flexibility"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Flexibility"/>.</param>
         public static bool operator >(Flexibility left, Flexibility right)
         {
-            return left.MetresPerNewton > right.MetresPerNewton;
+            return left.metresPerNewton > right.metresPerNewton;
         }
 
         /// <summary>
@@ -182,11 +193,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Flexibility"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Flexibility"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Flexibility"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Flexibility"/>.</param>
         public static bool operator <=(Flexibility left, Flexibility right)
         {
-            return left.MetresPerNewton <= right.MetresPerNewton;
+            return left.metresPerNewton <= right.metresPerNewton;
         }
 
         /// <summary>
@@ -195,11 +206,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Flexibility"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Flexibility"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Flexibility"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Flexibility"/>.</param>
         public static bool operator >=(Flexibility left, Flexibility right)
         {
-            return left.MetresPerNewton >= right.MetresPerNewton;
+            return left.metresPerNewton >= right.metresPerNewton;
         }
 
         /// <summary>
@@ -210,7 +221,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Flexibility"/> with <paramref name="left"/> and returns the result.</returns>
         public static Flexibility operator *(double left, Flexibility right)
         {
-            return new Flexibility(left * right.MetresPerNewton);
+            return new Flexibility(left * right.metresPerNewton);
         }
 
         /// <summary>
@@ -221,7 +232,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Flexibility"/> with <paramref name="right"/> and returns the result.</returns>
         public static Flexibility operator *(Flexibility left, double right)
         {
-            return new Flexibility(left.MetresPerNewton * right);
+            return new Flexibility(left.metresPerNewton * right);
         }
 
         /// <summary>
@@ -232,7 +243,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Flexibility"/> with <paramref name="right"/> and returns the result.</returns>
         public static Flexibility operator /(Flexibility left, double right)
         {
-            return new Flexibility(left.MetresPerNewton / right);
+            return new Flexibility(left.metresPerNewton / right);
         }
 
         /// <summary>
@@ -241,11 +252,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Flexibility"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Flexibility"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Flexibility"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Flexibility"/>.</param>
         public static Flexibility operator +(Flexibility left, Flexibility right)
         {
-            return new Flexibility(left.MetresPerNewton + right.MetresPerNewton);
+            return new Flexibility(left.metresPerNewton + right.metresPerNewton);
         }
 
         /// <summary>
@@ -254,11 +265,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Flexibility"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Flexibility"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Flexibility"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Flexibility"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Flexibility"/> (the subtrahend).</param>
         public static Flexibility operator -(Flexibility left, Flexibility right)
         {
-            return new Flexibility(left.MetresPerNewton - right.MetresPerNewton);
+            return new Flexibility(left.metresPerNewton - right.metresPerNewton);
         }
 
         /// <summary>
@@ -267,22 +278,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Flexibility"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Flexibility">A <see cref="T:Gu.Units.Flexibility"/></param>
-        public static Flexibility operator -(Flexibility Flexibility)
+        /// <param name="flexibility">An instance of <see cref="T:Gu.Units.Flexibility"/></param>
+        public static Flexibility operator -(Flexibility flexibility)
         {
-            return new Flexibility(-1 * Flexibility.MetresPerNewton);
+            return new Flexibility(-1 * flexibility.metresPerNewton);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Flexibility"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Flexibility"/>.
+        /// Returns <paramref name="flexibility"/>.
         /// </returns>
-        /// <param name="Flexibility">A <see cref="T:Gu.Units.Flexibility"/></param>
-        public static Flexibility operator +(Flexibility Flexibility)
+        /// <param name="flexibility">An instance of <see cref="T:Gu.Units.Flexibility"/></param>
+        public static Flexibility operator +(Flexibility flexibility)
         {
-            return Flexibility;
+            return flexibility;
         }
 
         public override string ToString()
@@ -307,7 +318,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, FlexibilityUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.MetresPerNewton);
+            var quantity = unit.FromSiUnit(this.metresPerNewton);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -334,10 +345,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Flexibility"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Flexibility"/> object to compare to this instance.</param>
         public int CompareTo(Flexibility quantity)
         {
-            return this.MetresPerNewton.CompareTo(quantity.MetresPerNewton);
+            return this.metresPerNewton.CompareTo(quantity.metresPerNewton);
         }
 
         /// <summary>
@@ -346,10 +357,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Flexibility as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Flexibility"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Flexibility"/> object to compare with this instance.</param>
         public bool Equals(Flexibility other)
         {
-            return this.MetresPerNewton.Equals(other.MetresPerNewton);
+            return this.metresPerNewton.Equals(other.metresPerNewton);
         }
 
         /// <summary>
@@ -358,11 +369,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Flexibility as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Flexibility"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Flexibility"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Flexibility other, double tolerance)
         {
-            return Math.Abs(this.MetresPerNewton - other.MetresPerNewton) < tolerance;
+            return Math.Abs(this.metresPerNewton - other.metresPerNewton) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -377,7 +388,7 @@
 
         public override int GetHashCode()
         {
-            return this.MetresPerNewton.GetHashCode();
+            return this.metresPerNewton.GetHashCode();
         }
 
         /// <summary>
@@ -402,7 +413,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "MetresPerNewton", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "metresPerNewton", reader, "Value");
         }
 
         /// <summary>
@@ -411,7 +422,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.MetresPerNewton);
+            XmlExt.WriteAttribute(writer, "Value", this.metresPerNewton);
         }
     }
 }

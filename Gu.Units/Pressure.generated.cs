@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Pascals"/>.
         /// </summary>
-        public readonly double Pascals;
+        internal readonly double pascals;
 
         private Pressure(double pascals)
         {
-            Pascals = pascals;
+            this.pascals = pascals;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Pascals"/>.</param>
         public Pressure(double value, PressureUnit unit)
         {
-            Pascals = unit.ToSiUnit(value);
+            this.pascals = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Pascals;
+                return this.pascals;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in pascals".
+        /// </summary>
+        public double Pascals
+        {
+            get
+            {
+                return this.pascals;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return PressureUnit.Nanopascals.FromSiUnit(Pascals);
+                return PressureUnit.Nanopascals.FromSiUnit(this.pascals);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return PressureUnit.Micropascals.FromSiUnit(Pascals);
+                return PressureUnit.Micropascals.FromSiUnit(this.pascals);
             }
         }
 
@@ -72,7 +83,7 @@
         {
             get
             {
-                return PressureUnit.Millipascals.FromSiUnit(Pascals);
+                return PressureUnit.Millipascals.FromSiUnit(this.pascals);
             }
         }
 
@@ -83,7 +94,7 @@
         {
             get
             {
-                return PressureUnit.Kilopascals.FromSiUnit(Pascals);
+                return PressureUnit.Kilopascals.FromSiUnit(this.pascals);
             }
         }
 
@@ -94,7 +105,7 @@
         {
             get
             {
-                return PressureUnit.Megapascals.FromSiUnit(Pascals);
+                return PressureUnit.Megapascals.FromSiUnit(this.pascals);
             }
         }
 
@@ -105,7 +116,7 @@
         {
             get
             {
-                return PressureUnit.Gigapascals.FromSiUnit(Pascals);
+                return PressureUnit.Gigapascals.FromSiUnit(this.pascals);
             }
         }
 
@@ -201,27 +212,27 @@
 
         public static Force operator *(Pressure left, Area right)
         {
-            return Force.FromNewtons(left.Pascals * right.SquareMetres);
+            return Force.FromNewtons(left.pascals * right.squareMetres);
         }
 
         public static Energy operator *(Pressure left, Volume right)
         {
-            return Energy.FromJoules(left.Pascals * right.CubicMetres);
+            return Energy.FromJoules(left.pascals * right.cubicMetres);
         }
 
         public static Stiffness operator *(Pressure left, Length right)
         {
-            return Stiffness.FromNewtonsPerMetre(left.Pascals * right.Metres);
+            return Stiffness.FromNewtonsPerMetre(left.pascals * right.metres);
         }
 
         public static SpecificEnergy operator /(Pressure left, Density right)
         {
-            return SpecificEnergy.FromJoulesPerKilogram(left.Pascals / right.KilogramsPerCubicMetre);
+            return SpecificEnergy.FromJoulesPerKilogram(left.pascals / right.kilogramsPerCubicMetre);
         }
 
         public static double operator /(Pressure left, Pressure right)
         {
-            return left.Pascals / right.Pascals;
+            return left.pascals / right.pascals;
         }
 
         /// <summary>
@@ -230,8 +241,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Pressure"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
         public static bool operator ==(Pressure left, Pressure right)
         {
             return left.Equals(right);
@@ -243,8 +254,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Pressure"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
         public static bool operator !=(Pressure left, Pressure right)
         {
             return !left.Equals(right);
@@ -256,11 +267,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Pressure"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
         public static bool operator <(Pressure left, Pressure right)
         {
-            return left.Pascals < right.Pascals;
+            return left.pascals < right.pascals;
         }
 
         /// <summary>
@@ -269,11 +280,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Pressure"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
         public static bool operator >(Pressure left, Pressure right)
         {
-            return left.Pascals > right.Pascals;
+            return left.pascals > right.pascals;
         }
 
         /// <summary>
@@ -282,11 +293,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Pressure"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
         public static bool operator <=(Pressure left, Pressure right)
         {
-            return left.Pascals <= right.Pascals;
+            return left.pascals <= right.pascals;
         }
 
         /// <summary>
@@ -295,11 +306,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Pressure"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
         public static bool operator >=(Pressure left, Pressure right)
         {
-            return left.Pascals >= right.Pascals;
+            return left.pascals >= right.pascals;
         }
 
         /// <summary>
@@ -310,7 +321,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Pressure"/> with <paramref name="left"/> and returns the result.</returns>
         public static Pressure operator *(double left, Pressure right)
         {
-            return new Pressure(left * right.Pascals);
+            return new Pressure(left * right.pascals);
         }
 
         /// <summary>
@@ -321,7 +332,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Pressure"/> with <paramref name="right"/> and returns the result.</returns>
         public static Pressure operator *(Pressure left, double right)
         {
-            return new Pressure(left.Pascals * right);
+            return new Pressure(left.pascals * right);
         }
 
         /// <summary>
@@ -332,7 +343,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Pressure"/> with <paramref name="right"/> and returns the result.</returns>
         public static Pressure operator /(Pressure left, double right)
         {
-            return new Pressure(left.Pascals / right);
+            return new Pressure(left.pascals / right);
         }
 
         /// <summary>
@@ -341,11 +352,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Pressure"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Pressure"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
         public static Pressure operator +(Pressure left, Pressure right)
         {
-            return new Pressure(left.Pascals + right.Pascals);
+            return new Pressure(left.pascals + right.pascals);
         }
 
         /// <summary>
@@ -354,11 +365,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Pressure"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Pressure"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Pressure"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/> (the subtrahend).</param>
         public static Pressure operator -(Pressure left, Pressure right)
         {
-            return new Pressure(left.Pascals - right.Pascals);
+            return new Pressure(left.pascals - right.pascals);
         }
 
         /// <summary>
@@ -367,22 +378,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Pressure"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Pressure">A <see cref="T:Gu.Units.Pressure"/></param>
-        public static Pressure operator -(Pressure Pressure)
+        /// <param name="pressure">An instance of <see cref="T:Gu.Units.Pressure"/></param>
+        public static Pressure operator -(Pressure pressure)
         {
-            return new Pressure(-1 * Pressure.Pascals);
+            return new Pressure(-1 * pressure.pascals);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Pressure"/>.
+        /// Returns <paramref name="pressure"/>.
         /// </returns>
-        /// <param name="Pressure">A <see cref="T:Gu.Units.Pressure"/></param>
-        public static Pressure operator +(Pressure Pressure)
+        /// <param name="pressure">An instance of <see cref="T:Gu.Units.Pressure"/></param>
+        public static Pressure operator +(Pressure pressure)
         {
-            return Pressure;
+            return pressure;
         }
 
         public override string ToString()
@@ -407,7 +418,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, PressureUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Pascals);
+            var quantity = unit.FromSiUnit(this.pascals);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -434,10 +445,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Pressure"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Pressure"/> object to compare to this instance.</param>
         public int CompareTo(Pressure quantity)
         {
-            return this.Pascals.CompareTo(quantity.Pascals);
+            return this.pascals.CompareTo(quantity.pascals);
         }
 
         /// <summary>
@@ -446,10 +457,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Pressure as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Pressure"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Pressure"/> object to compare with this instance.</param>
         public bool Equals(Pressure other)
         {
-            return this.Pascals.Equals(other.Pascals);
+            return this.pascals.Equals(other.pascals);
         }
 
         /// <summary>
@@ -458,11 +469,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Pressure as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Pressure"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Pressure"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Pressure other, double tolerance)
         {
-            return Math.Abs(this.Pascals - other.Pascals) < tolerance;
+            return Math.Abs(this.pascals - other.pascals) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -477,7 +488,7 @@
 
         public override int GetHashCode()
         {
-            return this.Pascals.GetHashCode();
+            return this.pascals.GetHashCode();
         }
 
         /// <summary>
@@ -502,7 +513,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Pascals", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "pascals", reader, "Value");
         }
 
         /// <summary>
@@ -511,7 +522,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Pascals);
+            XmlExt.WriteAttribute(writer, "Value", this.pascals);
         }
     }
 }

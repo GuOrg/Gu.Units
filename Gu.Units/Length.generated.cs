@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Metres"/>.
         /// </summary>
-        public readonly double Metres;
+        internal readonly double metres;
 
         private Length(double metres)
         {
-            Metres = metres;
+            this.metres = metres;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Metres"/>.</param>
         public Length(double value, LengthUnit unit)
         {
-            Metres = unit.ToSiUnit(value);
+            this.metres = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Metres;
+                return this.metres;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in metres".
+        /// </summary>
+        public double Metres
+        {
+            get
+            {
+                return this.metres;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return LengthUnit.Nanometres.FromSiUnit(Metres);
+                return LengthUnit.Nanometres.FromSiUnit(this.metres);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return LengthUnit.Micrometres.FromSiUnit(Metres);
+                return LengthUnit.Micrometres.FromSiUnit(this.metres);
             }
         }
 
@@ -72,7 +83,7 @@
         {
             get
             {
-                return LengthUnit.Millimetres.FromSiUnit(Metres);
+                return LengthUnit.Millimetres.FromSiUnit(this.metres);
             }
         }
 
@@ -83,7 +94,7 @@
         {
             get
             {
-                return LengthUnit.Centimetres.FromSiUnit(Metres);
+                return LengthUnit.Centimetres.FromSiUnit(this.metres);
             }
         }
 
@@ -94,7 +105,7 @@
         {
             get
             {
-                return LengthUnit.Decimetres.FromSiUnit(Metres);
+                return LengthUnit.Decimetres.FromSiUnit(this.metres);
             }
         }
 
@@ -105,7 +116,7 @@
         {
             get
             {
-                return LengthUnit.Kilometres.FromSiUnit(Metres);
+                return LengthUnit.Kilometres.FromSiUnit(this.metres);
             }
         }
 
@@ -116,7 +127,7 @@
         {
             get
             {
-                return LengthUnit.Inches.FromSiUnit(Metres);
+                return LengthUnit.Inches.FromSiUnit(this.metres);
             }
         }
 
@@ -127,7 +138,7 @@
         {
             get
             {
-                return LengthUnit.Mile.FromSiUnit(Metres);
+                return LengthUnit.Mile.FromSiUnit(this.metres);
             }
         }
 
@@ -138,7 +149,7 @@
         {
             get
             {
-                return LengthUnit.Yard.FromSiUnit(Metres);
+                return LengthUnit.Yard.FromSiUnit(this.metres);
             }
         }
 
@@ -149,7 +160,7 @@
         {
             get
             {
-                return LengthUnit.NauticalMile.FromSiUnit(Metres);
+                return LengthUnit.NauticalMile.FromSiUnit(this.metres);
             }
         }
 
@@ -277,42 +288,42 @@
 
         public static Time operator /(Length left, Speed right)
         {
-            return Time.FromSeconds(left.Metres / right.MetresPerSecond);
+            return Time.FromSeconds(left.metres / right.metresPerSecond);
         }
 
         public static Area operator *(Length left, Length right)
         {
-            return Area.FromSquareMetres(left.Metres * right.Metres);
+            return Area.FromSquareMetres(left.metres * right.metres);
         }
 
         public static Volume operator *(Length left, Area right)
         {
-            return Volume.FromCubicMetres(left.Metres * right.SquareMetres);
+            return Volume.FromCubicMetres(left.metres * right.squareMetres);
         }
 
         public static Energy operator *(Length left, Force right)
         {
-            return Energy.FromJoules(left.Metres * right.Newtons);
+            return Energy.FromJoules(left.metres * right.newtons);
         }
 
         public static Speed operator /(Length left, Time right)
         {
-            return Speed.FromMetresPerSecond(left.Metres / right.Seconds);
+            return Speed.FromMetresPerSecond(left.metres / right.seconds);
         }
 
         public static SpecificEnergy operator *(Length left, Acceleration right)
         {
-            return SpecificEnergy.FromJoulesPerKilogram(left.Metres * right.MetresPerSecondSquared);
+            return SpecificEnergy.FromJoulesPerKilogram(left.metres * right.metresPerSecondSquared);
         }
 
         public static Flexibility operator /(Length left, Force right)
         {
-            return Flexibility.FromMetresPerNewton(left.Metres / right.Newtons);
+            return Flexibility.FromMetresPerNewton(left.metres / right.newtons);
         }
 
         public static double operator /(Length left, Length right)
         {
-            return left.Metres / right.Metres;
+            return left.metres / right.metres;
         }
 
         /// <summary>
@@ -321,8 +332,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Length"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Length"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Length"/>.</param>
         public static bool operator ==(Length left, Length right)
         {
             return left.Equals(right);
@@ -334,8 +345,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Length"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Length"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Length"/>.</param>
         public static bool operator !=(Length left, Length right)
         {
             return !left.Equals(right);
@@ -347,11 +358,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Length"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Length"/>.</param>
         public static bool operator <(Length left, Length right)
         {
-            return left.Metres < right.Metres;
+            return left.metres < right.metres;
         }
 
         /// <summary>
@@ -360,11 +371,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Length"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Length"/>.</param>
         public static bool operator >(Length left, Length right)
         {
-            return left.Metres > right.Metres;
+            return left.metres > right.metres;
         }
 
         /// <summary>
@@ -373,11 +384,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Length"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Length"/>.</param>
         public static bool operator <=(Length left, Length right)
         {
-            return left.Metres <= right.Metres;
+            return left.metres <= right.metres;
         }
 
         /// <summary>
@@ -386,11 +397,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Length"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Length"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Length"/>.</param>
         public static bool operator >=(Length left, Length right)
         {
-            return left.Metres >= right.Metres;
+            return left.metres >= right.metres;
         }
 
         /// <summary>
@@ -401,7 +412,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="left"/> and returns the result.</returns>
         public static Length operator *(double left, Length right)
         {
-            return new Length(left * right.Metres);
+            return new Length(left * right.metres);
         }
 
         /// <summary>
@@ -412,7 +423,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="right"/> and returns the result.</returns>
         public static Length operator *(Length left, double right)
         {
-            return new Length(left.Metres * right);
+            return new Length(left.metres * right);
         }
 
         /// <summary>
@@ -423,7 +434,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Length"/> with <paramref name="right"/> and returns the result.</returns>
         public static Length operator /(Length left, double right)
         {
-            return new Length(left.Metres / right);
+            return new Length(left.metres / right);
         }
 
         /// <summary>
@@ -432,11 +443,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Length"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Length"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Length"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Length"/>.</param>
         public static Length operator +(Length left, Length right)
         {
-            return new Length(left.Metres + right.Metres);
+            return new Length(left.metres + right.metres);
         }
 
         /// <summary>
@@ -445,11 +456,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Length"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Length"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Length"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Length"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Length"/> (the subtrahend).</param>
         public static Length operator -(Length left, Length right)
         {
-            return new Length(left.Metres - right.Metres);
+            return new Length(left.metres - right.metres);
         }
 
         /// <summary>
@@ -458,22 +469,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Length"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Length">A <see cref="T:Gu.Units.Length"/></param>
-        public static Length operator -(Length Length)
+        /// <param name="length">An instance of <see cref="T:Gu.Units.Length"/></param>
+        public static Length operator -(Length length)
         {
-            return new Length(-1 * Length.Metres);
+            return new Length(-1 * length.metres);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Length"/>.
+        /// Returns <paramref name="length"/>.
         /// </returns>
-        /// <param name="Length">A <see cref="T:Gu.Units.Length"/></param>
-        public static Length operator +(Length Length)
+        /// <param name="length">An instance of <see cref="T:Gu.Units.Length"/></param>
+        public static Length operator +(Length length)
         {
-            return Length;
+            return length;
         }
 
         public override string ToString()
@@ -498,7 +509,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, LengthUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Metres);
+            var quantity = unit.FromSiUnit(this.metres);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -525,10 +536,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Length"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Length"/> object to compare to this instance.</param>
         public int CompareTo(Length quantity)
         {
-            return this.Metres.CompareTo(quantity.Metres);
+            return this.metres.CompareTo(quantity.metres);
         }
 
         /// <summary>
@@ -537,10 +548,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Length as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Length"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Length"/> object to compare with this instance.</param>
         public bool Equals(Length other)
         {
-            return this.Metres.Equals(other.Metres);
+            return this.metres.Equals(other.metres);
         }
 
         /// <summary>
@@ -549,11 +560,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Length as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Length"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Length"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Length other, double tolerance)
         {
-            return Math.Abs(this.Metres - other.Metres) < tolerance;
+            return Math.Abs(this.metres - other.metres) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -568,7 +579,7 @@
 
         public override int GetHashCode()
         {
-            return this.Metres.GetHashCode();
+            return this.metres.GetHashCode();
         }
 
         /// <summary>
@@ -593,7 +604,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Metres", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "metres", reader, "Value");
         }
 
         /// <summary>
@@ -602,7 +613,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Metres);
+            XmlExt.WriteAttribute(writer, "Value", this.metres);
         }
     }
 }
