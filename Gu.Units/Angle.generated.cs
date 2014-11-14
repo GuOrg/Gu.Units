@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Radians"/>.
         /// </summary>
-        public readonly double Radians;
+        internal readonly double radians;
 
         private Angle(double radians)
         {
-            Radians = radians;
+            this.radians = radians;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Radians"/>.</param>
         public Angle(double value, AngleUnit unit)
         {
-            Radians = unit.ToSiUnit(value);
+            this.radians = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Radians;
+                return this.radians;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in radians".
+        /// </summary>
+        public double Radians
+        {
+            get
+            {
+                return this.radians;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return AngleUnit.Degrees.FromSiUnit(Radians);
+                return AngleUnit.Degrees.FromSiUnit(this.radians);
             }
         }
 
@@ -106,17 +117,17 @@
 
         public static Time operator /(Angle left, AngularSpeed right)
         {
-            return Time.FromSeconds(left.Radians / right.RadiansPerSecond);
+            return Time.FromSeconds(left.radians / right.radiansPerSecond);
         }
 
         public static AngularSpeed operator /(Angle left, Time right)
         {
-            return AngularSpeed.FromRadiansPerSecond(left.Radians / right.Seconds);
+            return AngularSpeed.FromRadiansPerSecond(left.radians / right.seconds);
         }
 
         public static double operator /(Angle left, Angle right)
         {
-            return left.Radians / right.Radians;
+            return left.radians / right.radians;
         }
 
         /// <summary>
@@ -125,8 +136,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Angle"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Angle"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Angle"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Angle"/>.</param>
         public static bool operator ==(Angle left, Angle right)
         {
             return left.Equals(right);
@@ -138,8 +149,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Angle"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Angle"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Angle"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Angle"/>.</param>
         public static bool operator !=(Angle left, Angle right)
         {
             return !left.Equals(right);
@@ -151,11 +162,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Angle"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Angle"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Angle"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Angle"/>.</param>
         public static bool operator <(Angle left, Angle right)
         {
-            return left.Radians < right.Radians;
+            return left.radians < right.radians;
         }
 
         /// <summary>
@@ -164,11 +175,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Angle"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Angle"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Angle"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Angle"/>.</param>
         public static bool operator >(Angle left, Angle right)
         {
-            return left.Radians > right.Radians;
+            return left.radians > right.radians;
         }
 
         /// <summary>
@@ -177,11 +188,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Angle"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Angle"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Angle"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Angle"/>.</param>
         public static bool operator <=(Angle left, Angle right)
         {
-            return left.Radians <= right.Radians;
+            return left.radians <= right.radians;
         }
 
         /// <summary>
@@ -190,11 +201,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Angle"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Angle"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Angle"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Angle"/>.</param>
         public static bool operator >=(Angle left, Angle right)
         {
-            return left.Radians >= right.Radians;
+            return left.radians >= right.radians;
         }
 
         /// <summary>
@@ -205,7 +216,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Angle"/> with <paramref name="left"/> and returns the result.</returns>
         public static Angle operator *(double left, Angle right)
         {
-            return new Angle(left * right.Radians);
+            return new Angle(left * right.radians);
         }
 
         /// <summary>
@@ -216,7 +227,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Angle"/> with <paramref name="right"/> and returns the result.</returns>
         public static Angle operator *(Angle left, double right)
         {
-            return new Angle(left.Radians * right);
+            return new Angle(left.radians * right);
         }
 
         /// <summary>
@@ -227,7 +238,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Angle"/> with <paramref name="right"/> and returns the result.</returns>
         public static Angle operator /(Angle left, double right)
         {
-            return new Angle(left.Radians / right);
+            return new Angle(left.radians / right);
         }
 
         /// <summary>
@@ -236,11 +247,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Angle"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Angle"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Angle"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Angle"/>.</param>
         public static Angle operator +(Angle left, Angle right)
         {
-            return new Angle(left.Radians + right.Radians);
+            return new Angle(left.radians + right.radians);
         }
 
         /// <summary>
@@ -249,11 +260,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Angle"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Angle"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Angle"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Angle"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Angle"/> (the subtrahend).</param>
         public static Angle operator -(Angle left, Angle right)
         {
-            return new Angle(left.Radians - right.Radians);
+            return new Angle(left.radians - right.radians);
         }
 
         /// <summary>
@@ -262,22 +273,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Angle"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Angle">A <see cref="T:Gu.Units.Angle"/></param>
-        public static Angle operator -(Angle Angle)
+        /// <param name="angle">An instance of <see cref="T:Gu.Units.Angle"/></param>
+        public static Angle operator -(Angle angle)
         {
-            return new Angle(-1 * Angle.Radians);
+            return new Angle(-1 * angle.radians);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Angle"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Angle"/>.
+        /// Returns <paramref name="angle"/>.
         /// </returns>
-        /// <param name="Angle">A <see cref="T:Gu.Units.Angle"/></param>
-        public static Angle operator +(Angle Angle)
+        /// <param name="angle">An instance of <see cref="T:Gu.Units.Angle"/></param>
+        public static Angle operator +(Angle angle)
         {
-            return Angle;
+            return angle;
         }
 
         public override string ToString()
@@ -302,7 +313,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, AngleUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Radians);
+            var quantity = unit.FromSiUnit(this.radians);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -329,10 +340,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Angle"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Angle"/> object to compare to this instance.</param>
         public int CompareTo(Angle quantity)
         {
-            return this.Radians.CompareTo(quantity.Radians);
+            return this.radians.CompareTo(quantity.radians);
         }
 
         /// <summary>
@@ -341,10 +352,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Angle as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Angle"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Angle"/> object to compare with this instance.</param>
         public bool Equals(Angle other)
         {
-            return this.Radians.Equals(other.Radians);
+            return this.radians.Equals(other.radians);
         }
 
         /// <summary>
@@ -353,11 +364,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Angle as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Angle"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Angle"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Angle other, double tolerance)
         {
-            return Math.Abs(this.Radians - other.Radians) < tolerance;
+            return Math.Abs(this.radians - other.radians) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -372,7 +383,7 @@
 
         public override int GetHashCode()
         {
-            return this.Radians.GetHashCode();
+            return this.radians.GetHashCode();
         }
 
         /// <summary>
@@ -397,7 +408,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Radians", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "radians", reader, "Value");
         }
 
         /// <summary>
@@ -406,7 +417,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Radians);
+            XmlExt.WriteAttribute(writer, "Value", this.radians);
         }
     }
 }

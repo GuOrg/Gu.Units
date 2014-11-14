@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.MetresPerSecondSquared"/>.
         /// </summary>
-        public readonly double MetresPerSecondSquared;
+        internal readonly double metresPerSecondSquared;
 
         private Acceleration(double metresPerSecondSquared)
         {
-            MetresPerSecondSquared = metresPerSecondSquared;
+            this.metresPerSecondSquared = metresPerSecondSquared;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.MetresPerSecondSquared"/>.</param>
         public Acceleration(double value, AccelerationUnit unit)
         {
-            MetresPerSecondSquared = unit.ToSiUnit(value);
+            this.metresPerSecondSquared = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return MetresPerSecondSquared;
+                return this.metresPerSecondSquared;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in metresPerSecondSquared".
+        /// </summary>
+        public double MetresPerSecondSquared
+        {
+            get
+            {
+                return this.metresPerSecondSquared;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return AccelerationUnit.MillimetresPerSecondSquared.FromSiUnit(MetresPerSecondSquared);
+                return AccelerationUnit.MillimetresPerSecondSquared.FromSiUnit(this.metresPerSecondSquared);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return AccelerationUnit.CentimetresPerSecondSquared.FromSiUnit(MetresPerSecondSquared);
+                return AccelerationUnit.CentimetresPerSecondSquared.FromSiUnit(this.metresPerSecondSquared);
             }
         }
 
@@ -125,27 +136,27 @@
 
         public static Force operator *(Acceleration left, Mass right)
         {
-            return Force.FromNewtons(left.MetresPerSecondSquared * right.Kilograms);
+            return Force.FromNewtons(left.metresPerSecondSquared * right.kilograms);
         }
 
         public static Speed operator *(Acceleration left, Time right)
         {
-            return Speed.FromMetresPerSecond(left.MetresPerSecondSquared * right.Seconds);
+            return Speed.FromMetresPerSecond(left.metresPerSecondSquared * right.seconds);
         }
 
         public static Frequency operator /(Acceleration left, Speed right)
         {
-            return Frequency.FromHertz(left.MetresPerSecondSquared / right.MetresPerSecond);
+            return Frequency.FromHertz(left.metresPerSecondSquared / right.metresPerSecond);
         }
 
         public static SpecificEnergy operator *(Acceleration left, Length right)
         {
-            return SpecificEnergy.FromJoulesPerKilogram(left.MetresPerSecondSquared * right.Metres);
+            return SpecificEnergy.FromJoulesPerKilogram(left.metresPerSecondSquared * right.metres);
         }
 
         public static double operator /(Acceleration left, Acceleration right)
         {
-            return left.MetresPerSecondSquared / right.MetresPerSecondSquared;
+            return left.metresPerSecondSquared / right.metresPerSecondSquared;
         }
 
         /// <summary>
@@ -154,8 +165,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Acceleration"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Acceleration"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Acceleration"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Acceleration"/>.</param>
         public static bool operator ==(Acceleration left, Acceleration right)
         {
             return left.Equals(right);
@@ -167,8 +178,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Acceleration"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Acceleration"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Acceleration"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Acceleration"/>.</param>
         public static bool operator !=(Acceleration left, Acceleration right)
         {
             return !left.Equals(right);
@@ -180,11 +191,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Acceleration"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Acceleration"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Acceleration"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Acceleration"/>.</param>
         public static bool operator <(Acceleration left, Acceleration right)
         {
-            return left.MetresPerSecondSquared < right.MetresPerSecondSquared;
+            return left.metresPerSecondSquared < right.metresPerSecondSquared;
         }
 
         /// <summary>
@@ -193,11 +204,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Acceleration"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Acceleration"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Acceleration"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Acceleration"/>.</param>
         public static bool operator >(Acceleration left, Acceleration right)
         {
-            return left.MetresPerSecondSquared > right.MetresPerSecondSquared;
+            return left.metresPerSecondSquared > right.metresPerSecondSquared;
         }
 
         /// <summary>
@@ -206,11 +217,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Acceleration"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Acceleration"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Acceleration"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Acceleration"/>.</param>
         public static bool operator <=(Acceleration left, Acceleration right)
         {
-            return left.MetresPerSecondSquared <= right.MetresPerSecondSquared;
+            return left.metresPerSecondSquared <= right.metresPerSecondSquared;
         }
 
         /// <summary>
@@ -219,11 +230,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Acceleration"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Acceleration"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Acceleration"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Acceleration"/>.</param>
         public static bool operator >=(Acceleration left, Acceleration right)
         {
-            return left.MetresPerSecondSquared >= right.MetresPerSecondSquared;
+            return left.metresPerSecondSquared >= right.metresPerSecondSquared;
         }
 
         /// <summary>
@@ -234,7 +245,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Acceleration"/> with <paramref name="left"/> and returns the result.</returns>
         public static Acceleration operator *(double left, Acceleration right)
         {
-            return new Acceleration(left * right.MetresPerSecondSquared);
+            return new Acceleration(left * right.metresPerSecondSquared);
         }
 
         /// <summary>
@@ -245,7 +256,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Acceleration"/> with <paramref name="right"/> and returns the result.</returns>
         public static Acceleration operator *(Acceleration left, double right)
         {
-            return new Acceleration(left.MetresPerSecondSquared * right);
+            return new Acceleration(left.metresPerSecondSquared * right);
         }
 
         /// <summary>
@@ -256,7 +267,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Acceleration"/> with <paramref name="right"/> and returns the result.</returns>
         public static Acceleration operator /(Acceleration left, double right)
         {
-            return new Acceleration(left.MetresPerSecondSquared / right);
+            return new Acceleration(left.metresPerSecondSquared / right);
         }
 
         /// <summary>
@@ -265,11 +276,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Acceleration"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Acceleration"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Acceleration"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Acceleration"/>.</param>
         public static Acceleration operator +(Acceleration left, Acceleration right)
         {
-            return new Acceleration(left.MetresPerSecondSquared + right.MetresPerSecondSquared);
+            return new Acceleration(left.metresPerSecondSquared + right.metresPerSecondSquared);
         }
 
         /// <summary>
@@ -278,11 +289,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Acceleration"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Acceleration"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Acceleration"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Acceleration"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Acceleration"/> (the subtrahend).</param>
         public static Acceleration operator -(Acceleration left, Acceleration right)
         {
-            return new Acceleration(left.MetresPerSecondSquared - right.MetresPerSecondSquared);
+            return new Acceleration(left.metresPerSecondSquared - right.metresPerSecondSquared);
         }
 
         /// <summary>
@@ -291,22 +302,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Acceleration"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Acceleration">A <see cref="T:Gu.Units.Acceleration"/></param>
-        public static Acceleration operator -(Acceleration Acceleration)
+        /// <param name="acceleration">An instance of <see cref="T:Gu.Units.Acceleration"/></param>
+        public static Acceleration operator -(Acceleration acceleration)
         {
-            return new Acceleration(-1 * Acceleration.MetresPerSecondSquared);
+            return new Acceleration(-1 * acceleration.metresPerSecondSquared);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Acceleration"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Acceleration"/>.
+        /// Returns <paramref name="acceleration"/>.
         /// </returns>
-        /// <param name="Acceleration">A <see cref="T:Gu.Units.Acceleration"/></param>
-        public static Acceleration operator +(Acceleration Acceleration)
+        /// <param name="acceleration">An instance of <see cref="T:Gu.Units.Acceleration"/></param>
+        public static Acceleration operator +(Acceleration acceleration)
         {
-            return Acceleration;
+            return acceleration;
         }
 
         public override string ToString()
@@ -331,7 +342,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, AccelerationUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.MetresPerSecondSquared);
+            var quantity = unit.FromSiUnit(this.metresPerSecondSquared);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -358,10 +369,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Acceleration"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Acceleration"/> object to compare to this instance.</param>
         public int CompareTo(Acceleration quantity)
         {
-            return this.MetresPerSecondSquared.CompareTo(quantity.MetresPerSecondSquared);
+            return this.metresPerSecondSquared.CompareTo(quantity.metresPerSecondSquared);
         }
 
         /// <summary>
@@ -370,10 +381,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Acceleration as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Acceleration"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Acceleration"/> object to compare with this instance.</param>
         public bool Equals(Acceleration other)
         {
-            return this.MetresPerSecondSquared.Equals(other.MetresPerSecondSquared);
+            return this.metresPerSecondSquared.Equals(other.metresPerSecondSquared);
         }
 
         /// <summary>
@@ -382,11 +393,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Acceleration as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Acceleration"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Acceleration"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Acceleration other, double tolerance)
         {
-            return Math.Abs(this.MetresPerSecondSquared - other.MetresPerSecondSquared) < tolerance;
+            return Math.Abs(this.metresPerSecondSquared - other.metresPerSecondSquared) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -401,7 +412,7 @@
 
         public override int GetHashCode()
         {
-            return this.MetresPerSecondSquared.GetHashCode();
+            return this.metresPerSecondSquared.GetHashCode();
         }
 
         /// <summary>
@@ -426,7 +437,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "MetresPerSecondSquared", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "metresPerSecondSquared", reader, "Value");
         }
 
         /// <summary>
@@ -435,7 +446,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.MetresPerSecondSquared);
+            XmlExt.WriteAttribute(writer, "Value", this.metresPerSecondSquared);
         }
     }
 }

@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.CubicMetresPerSecond"/>.
         /// </summary>
-        public readonly double CubicMetresPerSecond;
+        internal readonly double cubicMetresPerSecond;
 
         private VolumetricFlow(double cubicMetresPerSecond)
         {
-            CubicMetresPerSecond = cubicMetresPerSecond;
+            this.cubicMetresPerSecond = cubicMetresPerSecond;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.CubicMetresPerSecond"/>.</param>
         public VolumetricFlow(double value, VolumetricFlowUnit unit)
         {
-            CubicMetresPerSecond = unit.ToSiUnit(value);
+            this.cubicMetresPerSecond = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return CubicMetresPerSecond;
+                return this.cubicMetresPerSecond;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in cubicMetresPerSecond".
+        /// </summary>
+        public double CubicMetresPerSecond
+        {
+            get
+            {
+                return this.cubicMetresPerSecond;
             }
         }
 
@@ -87,27 +98,27 @@
 
         public static Area operator /(VolumetricFlow left, Speed right)
         {
-            return Area.FromSquareMetres(left.CubicMetresPerSecond / right.MetresPerSecond);
+            return Area.FromSquareMetres(left.cubicMetresPerSecond / right.metresPerSecond);
         }
 
         public static Volume operator *(VolumetricFlow left, Time right)
         {
-            return Volume.FromCubicMetres(left.CubicMetresPerSecond * right.Seconds);
+            return Volume.FromCubicMetres(left.cubicMetresPerSecond * right.seconds);
         }
 
         public static Speed operator /(VolumetricFlow left, Area right)
         {
-            return Speed.FromMetresPerSecond(left.CubicMetresPerSecond / right.SquareMetres);
+            return Speed.FromMetresPerSecond(left.cubicMetresPerSecond / right.squareMetres);
         }
 
         public static Frequency operator /(VolumetricFlow left, Volume right)
         {
-            return Frequency.FromHertz(left.CubicMetresPerSecond / right.CubicMetres);
+            return Frequency.FromHertz(left.cubicMetresPerSecond / right.cubicMetres);
         }
 
         public static double operator /(VolumetricFlow left, VolumetricFlow right)
         {
-            return left.CubicMetresPerSecond / right.CubicMetresPerSecond;
+            return left.cubicMetresPerSecond / right.cubicMetresPerSecond;
         }
 
         /// <summary>
@@ -116,8 +127,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
         public static bool operator ==(VolumetricFlow left, VolumetricFlow right)
         {
             return left.Equals(right);
@@ -129,8 +140,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
         public static bool operator !=(VolumetricFlow left, VolumetricFlow right)
         {
             return !left.Equals(right);
@@ -142,11 +153,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
         public static bool operator <(VolumetricFlow left, VolumetricFlow right)
         {
-            return left.CubicMetresPerSecond < right.CubicMetresPerSecond;
+            return left.cubicMetresPerSecond < right.cubicMetresPerSecond;
         }
 
         /// <summary>
@@ -155,11 +166,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
         public static bool operator >(VolumetricFlow left, VolumetricFlow right)
         {
-            return left.CubicMetresPerSecond > right.CubicMetresPerSecond;
+            return left.cubicMetresPerSecond > right.cubicMetresPerSecond;
         }
 
         /// <summary>
@@ -168,11 +179,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
         public static bool operator <=(VolumetricFlow left, VolumetricFlow right)
         {
-            return left.CubicMetresPerSecond <= right.CubicMetresPerSecond;
+            return left.cubicMetresPerSecond <= right.cubicMetresPerSecond;
         }
 
         /// <summary>
@@ -181,11 +192,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
         public static bool operator >=(VolumetricFlow left, VolumetricFlow right)
         {
-            return left.CubicMetresPerSecond >= right.CubicMetresPerSecond;
+            return left.cubicMetresPerSecond >= right.cubicMetresPerSecond;
         }
 
         /// <summary>
@@ -196,7 +207,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.VolumetricFlow"/> with <paramref name="left"/> and returns the result.</returns>
         public static VolumetricFlow operator *(double left, VolumetricFlow right)
         {
-            return new VolumetricFlow(left * right.CubicMetresPerSecond);
+            return new VolumetricFlow(left * right.cubicMetresPerSecond);
         }
 
         /// <summary>
@@ -207,7 +218,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.VolumetricFlow"/> with <paramref name="right"/> and returns the result.</returns>
         public static VolumetricFlow operator *(VolumetricFlow left, double right)
         {
-            return new VolumetricFlow(left.CubicMetresPerSecond * right);
+            return new VolumetricFlow(left.cubicMetresPerSecond * right);
         }
 
         /// <summary>
@@ -218,7 +229,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.VolumetricFlow"/> with <paramref name="right"/> and returns the result.</returns>
         public static VolumetricFlow operator /(VolumetricFlow left, double right)
         {
-            return new VolumetricFlow(left.CubicMetresPerSecond / right);
+            return new VolumetricFlow(left.cubicMetresPerSecond / right);
         }
 
         /// <summary>
@@ -227,11 +238,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.VolumetricFlow"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.VolumetricFlow"/>.</param>
         public static VolumetricFlow operator +(VolumetricFlow left, VolumetricFlow right)
         {
-            return new VolumetricFlow(left.CubicMetresPerSecond + right.CubicMetresPerSecond);
+            return new VolumetricFlow(left.cubicMetresPerSecond + right.cubicMetresPerSecond);
         }
 
         /// <summary>
@@ -240,11 +251,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.VolumetricFlow"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.VolumetricFlow"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.VolumetricFlow"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.VolumetricFlow"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.VolumetricFlow"/> (the subtrahend).</param>
         public static VolumetricFlow operator -(VolumetricFlow left, VolumetricFlow right)
         {
-            return new VolumetricFlow(left.CubicMetresPerSecond - right.CubicMetresPerSecond);
+            return new VolumetricFlow(left.cubicMetresPerSecond - right.cubicMetresPerSecond);
         }
 
         /// <summary>
@@ -253,22 +264,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.VolumetricFlow"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="VolumetricFlow">A <see cref="T:Gu.Units.VolumetricFlow"/></param>
-        public static VolumetricFlow operator -(VolumetricFlow VolumetricFlow)
+        /// <param name="volumetricFlow">An instance of <see cref="T:Gu.Units.VolumetricFlow"/></param>
+        public static VolumetricFlow operator -(VolumetricFlow volumetricFlow)
         {
-            return new VolumetricFlow(-1 * VolumetricFlow.CubicMetresPerSecond);
+            return new VolumetricFlow(-1 * volumetricFlow.cubicMetresPerSecond);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="VolumetricFlow"/>.
+        /// Returns <paramref name="volumetricFlow"/>.
         /// </returns>
-        /// <param name="VolumetricFlow">A <see cref="T:Gu.Units.VolumetricFlow"/></param>
-        public static VolumetricFlow operator +(VolumetricFlow VolumetricFlow)
+        /// <param name="volumetricFlow">An instance of <see cref="T:Gu.Units.VolumetricFlow"/></param>
+        public static VolumetricFlow operator +(VolumetricFlow volumetricFlow)
         {
-            return VolumetricFlow;
+            return volumetricFlow;
         }
 
         public override string ToString()
@@ -293,7 +304,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, VolumetricFlowUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.CubicMetresPerSecond);
+            var quantity = unit.FromSiUnit(this.cubicMetresPerSecond);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -320,10 +331,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.VolumetricFlow"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.VolumetricFlow"/> object to compare to this instance.</param>
         public int CompareTo(VolumetricFlow quantity)
         {
-            return this.CubicMetresPerSecond.CompareTo(quantity.CubicMetresPerSecond);
+            return this.cubicMetresPerSecond.CompareTo(quantity.cubicMetresPerSecond);
         }
 
         /// <summary>
@@ -332,10 +343,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same VolumetricFlow as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.VolumetricFlow"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.VolumetricFlow"/> object to compare with this instance.</param>
         public bool Equals(VolumetricFlow other)
         {
-            return this.CubicMetresPerSecond.Equals(other.CubicMetresPerSecond);
+            return this.cubicMetresPerSecond.Equals(other.cubicMetresPerSecond);
         }
 
         /// <summary>
@@ -344,11 +355,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same VolumetricFlow as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.VolumetricFlow"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.VolumetricFlow"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(VolumetricFlow other, double tolerance)
         {
-            return Math.Abs(this.CubicMetresPerSecond - other.CubicMetresPerSecond) < tolerance;
+            return Math.Abs(this.cubicMetresPerSecond - other.cubicMetresPerSecond) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -363,7 +374,7 @@
 
         public override int GetHashCode()
         {
-            return this.CubicMetresPerSecond.GetHashCode();
+            return this.cubicMetresPerSecond.GetHashCode();
         }
 
         /// <summary>
@@ -388,7 +399,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "CubicMetresPerSecond", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "cubicMetresPerSecond", reader, "Value");
         }
 
         /// <summary>
@@ -397,7 +408,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.CubicMetresPerSecond);
+            XmlExt.WriteAttribute(writer, "Value", this.cubicMetresPerSecond);
         }
     }
 }

@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Candelas"/>.
         /// </summary>
-        public readonly double Candelas;
+        internal readonly double candelas;
 
         private LuminousIntensity(double candelas)
         {
-            Candelas = candelas;
+            this.candelas = candelas;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Candelas"/>.</param>
         public LuminousIntensity(double value, LuminousIntensityUnit unit)
         {
-            Candelas = unit.ToSiUnit(value);
+            this.candelas = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Candelas;
+                return this.candelas;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in candelas".
+        /// </summary>
+        public double Candelas
+        {
+            get
+            {
+                return this.candelas;
             }
         }
 
@@ -87,7 +98,7 @@
 
         public static double operator /(LuminousIntensity left, LuminousIntensity right)
         {
-            return left.Candelas / right.Candelas;
+            return left.candelas / right.candelas;
         }
 
         /// <summary>
@@ -96,8 +107,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
         public static bool operator ==(LuminousIntensity left, LuminousIntensity right)
         {
             return left.Equals(right);
@@ -109,8 +120,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
         public static bool operator !=(LuminousIntensity left, LuminousIntensity right)
         {
             return !left.Equals(right);
@@ -122,11 +133,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
         public static bool operator <(LuminousIntensity left, LuminousIntensity right)
         {
-            return left.Candelas < right.Candelas;
+            return left.candelas < right.candelas;
         }
 
         /// <summary>
@@ -135,11 +146,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
         public static bool operator >(LuminousIntensity left, LuminousIntensity right)
         {
-            return left.Candelas > right.Candelas;
+            return left.candelas > right.candelas;
         }
 
         /// <summary>
@@ -148,11 +159,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
         public static bool operator <=(LuminousIntensity left, LuminousIntensity right)
         {
-            return left.Candelas <= right.Candelas;
+            return left.candelas <= right.candelas;
         }
 
         /// <summary>
@@ -161,11 +172,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
         public static bool operator >=(LuminousIntensity left, LuminousIntensity right)
         {
-            return left.Candelas >= right.Candelas;
+            return left.candelas >= right.candelas;
         }
 
         /// <summary>
@@ -176,7 +187,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.LuminousIntensity"/> with <paramref name="left"/> and returns the result.</returns>
         public static LuminousIntensity operator *(double left, LuminousIntensity right)
         {
-            return new LuminousIntensity(left * right.Candelas);
+            return new LuminousIntensity(left * right.candelas);
         }
 
         /// <summary>
@@ -187,7 +198,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.LuminousIntensity"/> with <paramref name="right"/> and returns the result.</returns>
         public static LuminousIntensity operator *(LuminousIntensity left, double right)
         {
-            return new LuminousIntensity(left.Candelas * right);
+            return new LuminousIntensity(left.candelas * right);
         }
 
         /// <summary>
@@ -198,7 +209,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.LuminousIntensity"/> with <paramref name="right"/> and returns the result.</returns>
         public static LuminousIntensity operator /(LuminousIntensity left, double right)
         {
-            return new LuminousIntensity(left.Candelas / right);
+            return new LuminousIntensity(left.candelas / right);
         }
 
         /// <summary>
@@ -207,11 +218,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.LuminousIntensity"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.LuminousIntensity"/>.</param>
         public static LuminousIntensity operator +(LuminousIntensity left, LuminousIntensity right)
         {
-            return new LuminousIntensity(left.Candelas + right.Candelas);
+            return new LuminousIntensity(left.candelas + right.candelas);
         }
 
         /// <summary>
@@ -220,11 +231,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.LuminousIntensity"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.LuminousIntensity"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.LuminousIntensity"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.LuminousIntensity"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.LuminousIntensity"/> (the subtrahend).</param>
         public static LuminousIntensity operator -(LuminousIntensity left, LuminousIntensity right)
         {
-            return new LuminousIntensity(left.Candelas - right.Candelas);
+            return new LuminousIntensity(left.candelas - right.candelas);
         }
 
         /// <summary>
@@ -233,22 +244,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.LuminousIntensity"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="LuminousIntensity">A <see cref="T:Gu.Units.LuminousIntensity"/></param>
-        public static LuminousIntensity operator -(LuminousIntensity LuminousIntensity)
+        /// <param name="luminousIntensity">An instance of <see cref="T:Gu.Units.LuminousIntensity"/></param>
+        public static LuminousIntensity operator -(LuminousIntensity luminousIntensity)
         {
-            return new LuminousIntensity(-1 * LuminousIntensity.Candelas);
+            return new LuminousIntensity(-1 * luminousIntensity.candelas);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.LuminousIntensity"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="LuminousIntensity"/>.
+        /// Returns <paramref name="luminousIntensity"/>.
         /// </returns>
-        /// <param name="LuminousIntensity">A <see cref="T:Gu.Units.LuminousIntensity"/></param>
-        public static LuminousIntensity operator +(LuminousIntensity LuminousIntensity)
+        /// <param name="luminousIntensity">An instance of <see cref="T:Gu.Units.LuminousIntensity"/></param>
+        public static LuminousIntensity operator +(LuminousIntensity luminousIntensity)
         {
-            return LuminousIntensity;
+            return luminousIntensity;
         }
 
         public override string ToString()
@@ -273,7 +284,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, LuminousIntensityUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Candelas);
+            var quantity = unit.FromSiUnit(this.candelas);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -300,10 +311,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.LuminousIntensity"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.LuminousIntensity"/> object to compare to this instance.</param>
         public int CompareTo(LuminousIntensity quantity)
         {
-            return this.Candelas.CompareTo(quantity.Candelas);
+            return this.candelas.CompareTo(quantity.candelas);
         }
 
         /// <summary>
@@ -312,10 +323,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same LuminousIntensity as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.LuminousIntensity"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.LuminousIntensity"/> object to compare with this instance.</param>
         public bool Equals(LuminousIntensity other)
         {
-            return this.Candelas.Equals(other.Candelas);
+            return this.candelas.Equals(other.candelas);
         }
 
         /// <summary>
@@ -324,11 +335,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same LuminousIntensity as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.LuminousIntensity"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.LuminousIntensity"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(LuminousIntensity other, double tolerance)
         {
-            return Math.Abs(this.Candelas - other.Candelas) < tolerance;
+            return Math.Abs(this.candelas - other.candelas) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -343,7 +354,7 @@
 
         public override int GetHashCode()
         {
-            return this.Candelas.GetHashCode();
+            return this.candelas.GetHashCode();
         }
 
         /// <summary>
@@ -368,7 +379,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Candelas", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "candelas", reader, "Value");
         }
 
         /// <summary>
@@ -377,7 +388,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Candelas);
+            XmlExt.WriteAttribute(writer, "Value", this.candelas);
         }
     }
 }

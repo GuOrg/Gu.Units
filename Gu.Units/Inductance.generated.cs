@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Henrys"/>.
         /// </summary>
-        public readonly double Henrys;
+        internal readonly double henrys;
 
         private Inductance(double henrys)
         {
-            Henrys = henrys;
+            this.henrys = henrys;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Henrys"/>.</param>
         public Inductance(double value, InductanceUnit unit)
         {
-            Henrys = unit.ToSiUnit(value);
+            this.henrys = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Henrys;
+                return this.henrys;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in henrys".
+        /// </summary>
+        public double Henrys
+        {
+            get
+            {
+                return this.henrys;
             }
         }
 
@@ -87,12 +98,12 @@
 
         public static Resistance operator /(Inductance left, Time right)
         {
-            return Resistance.FromOhm(left.Henrys / right.Seconds);
+            return Resistance.FromOhm(left.henrys / right.seconds);
         }
 
         public static double operator /(Inductance left, Inductance right)
         {
-            return left.Henrys / right.Henrys;
+            return left.henrys / right.henrys;
         }
 
         /// <summary>
@@ -101,8 +112,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Inductance"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Inductance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Inductance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Inductance"/>.</param>
         public static bool operator ==(Inductance left, Inductance right)
         {
             return left.Equals(right);
@@ -114,8 +125,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Inductance"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Inductance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Inductance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Inductance"/>.</param>
         public static bool operator !=(Inductance left, Inductance right)
         {
             return !left.Equals(right);
@@ -127,11 +138,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Inductance"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Inductance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Inductance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Inductance"/>.</param>
         public static bool operator <(Inductance left, Inductance right)
         {
-            return left.Henrys < right.Henrys;
+            return left.henrys < right.henrys;
         }
 
         /// <summary>
@@ -140,11 +151,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Inductance"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Inductance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Inductance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Inductance"/>.</param>
         public static bool operator >(Inductance left, Inductance right)
         {
-            return left.Henrys > right.Henrys;
+            return left.henrys > right.henrys;
         }
 
         /// <summary>
@@ -153,11 +164,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Inductance"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Inductance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Inductance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Inductance"/>.</param>
         public static bool operator <=(Inductance left, Inductance right)
         {
-            return left.Henrys <= right.Henrys;
+            return left.henrys <= right.henrys;
         }
 
         /// <summary>
@@ -166,11 +177,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Inductance"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Inductance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Inductance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Inductance"/>.</param>
         public static bool operator >=(Inductance left, Inductance right)
         {
-            return left.Henrys >= right.Henrys;
+            return left.henrys >= right.henrys;
         }
 
         /// <summary>
@@ -181,7 +192,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Inductance"/> with <paramref name="left"/> and returns the result.</returns>
         public static Inductance operator *(double left, Inductance right)
         {
-            return new Inductance(left * right.Henrys);
+            return new Inductance(left * right.henrys);
         }
 
         /// <summary>
@@ -192,7 +203,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Inductance"/> with <paramref name="right"/> and returns the result.</returns>
         public static Inductance operator *(Inductance left, double right)
         {
-            return new Inductance(left.Henrys * right);
+            return new Inductance(left.henrys * right);
         }
 
         /// <summary>
@@ -203,7 +214,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Inductance"/> with <paramref name="right"/> and returns the result.</returns>
         public static Inductance operator /(Inductance left, double right)
         {
-            return new Inductance(left.Henrys / right);
+            return new Inductance(left.henrys / right);
         }
 
         /// <summary>
@@ -212,11 +223,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Inductance"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Inductance"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Inductance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Inductance"/>.</param>
         public static Inductance operator +(Inductance left, Inductance right)
         {
-            return new Inductance(left.Henrys + right.Henrys);
+            return new Inductance(left.henrys + right.henrys);
         }
 
         /// <summary>
@@ -225,11 +236,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Inductance"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Inductance"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Inductance"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Inductance"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Inductance"/> (the subtrahend).</param>
         public static Inductance operator -(Inductance left, Inductance right)
         {
-            return new Inductance(left.Henrys - right.Henrys);
+            return new Inductance(left.henrys - right.henrys);
         }
 
         /// <summary>
@@ -238,22 +249,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Inductance"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Inductance">A <see cref="T:Gu.Units.Inductance"/></param>
-        public static Inductance operator -(Inductance Inductance)
+        /// <param name="inductance">An instance of <see cref="T:Gu.Units.Inductance"/></param>
+        public static Inductance operator -(Inductance inductance)
         {
-            return new Inductance(-1 * Inductance.Henrys);
+            return new Inductance(-1 * inductance.henrys);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Inductance"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Inductance"/>.
+        /// Returns <paramref name="inductance"/>.
         /// </returns>
-        /// <param name="Inductance">A <see cref="T:Gu.Units.Inductance"/></param>
-        public static Inductance operator +(Inductance Inductance)
+        /// <param name="inductance">An instance of <see cref="T:Gu.Units.Inductance"/></param>
+        public static Inductance operator +(Inductance inductance)
         {
-            return Inductance;
+            return inductance;
         }
 
         public override string ToString()
@@ -278,7 +289,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, InductanceUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Henrys);
+            var quantity = unit.FromSiUnit(this.henrys);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -305,10 +316,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Inductance"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Inductance"/> object to compare to this instance.</param>
         public int CompareTo(Inductance quantity)
         {
-            return this.Henrys.CompareTo(quantity.Henrys);
+            return this.henrys.CompareTo(quantity.henrys);
         }
 
         /// <summary>
@@ -317,10 +328,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Inductance as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Inductance"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Inductance"/> object to compare with this instance.</param>
         public bool Equals(Inductance other)
         {
-            return this.Henrys.Equals(other.Henrys);
+            return this.henrys.Equals(other.henrys);
         }
 
         /// <summary>
@@ -329,11 +340,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Inductance as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Inductance"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Inductance"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Inductance other, double tolerance)
         {
-            return Math.Abs(this.Henrys - other.Henrys) < tolerance;
+            return Math.Abs(this.henrys - other.henrys) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -348,7 +359,7 @@
 
         public override int GetHashCode()
         {
-            return this.Henrys.GetHashCode();
+            return this.henrys.GetHashCode();
         }
 
         /// <summary>
@@ -373,7 +384,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Henrys", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "henrys", reader, "Value");
         }
 
         /// <summary>
@@ -382,7 +393,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Henrys);
+            XmlExt.WriteAttribute(writer, "Value", this.henrys);
         }
     }
 }

@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Seconds"/>.
         /// </summary>
-        public readonly double Seconds;
+        internal readonly double seconds;
 
         private Time(double seconds)
         {
-            Seconds = seconds;
+            this.seconds = seconds;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Seconds"/>.</param>
         public Time(double value, TimeUnit unit)
         {
-            Seconds = unit.ToSiUnit(value);
+            this.seconds = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Seconds;
+                return this.seconds;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in seconds".
+        /// </summary>
+        public double Seconds
+        {
+            get
+            {
+                return this.seconds;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return TimeUnit.Nanoseconds.FromSiUnit(Seconds);
+                return TimeUnit.Nanoseconds.FromSiUnit(this.seconds);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return TimeUnit.Microseconds.FromSiUnit(Seconds);
+                return TimeUnit.Microseconds.FromSiUnit(this.seconds);
             }
         }
 
@@ -72,7 +83,7 @@
         {
             get
             {
-                return TimeUnit.Milliseconds.FromSiUnit(Seconds);
+                return TimeUnit.Milliseconds.FromSiUnit(this.seconds);
             }
         }
 
@@ -83,7 +94,7 @@
         {
             get
             {
-                return TimeUnit.Hours.FromSiUnit(Seconds);
+                return TimeUnit.Hours.FromSiUnit(this.seconds);
             }
         }
 
@@ -94,7 +105,7 @@
         {
             get
             {
-                return TimeUnit.Minutes.FromSiUnit(Seconds);
+                return TimeUnit.Minutes.FromSiUnit(this.seconds);
             }
         }
 
@@ -182,32 +193,32 @@
 
         public static Length operator *(Time left, Speed right)
         {
-            return Length.FromMetres(left.Seconds * right.MetresPerSecond);
+            return Length.FromMetres(left.seconds * right.metresPerSecond);
         }
 
         public static Angle operator *(Time left, AngularSpeed right)
         {
-            return Angle.FromRadians(left.Seconds * right.RadiansPerSecond);
+            return Angle.FromRadians(left.seconds * right.radiansPerSecond);
         }
 
         public static Speed operator *(Time left, Acceleration right)
         {
-            return Speed.FromMetresPerSecond(left.Seconds * right.MetresPerSecondSquared);
+            return Speed.FromMetresPerSecond(left.seconds * right.metresPerSecondSquared);
         }
 
         public static ElectricCharge operator *(Time left, Current right)
         {
-            return ElectricCharge.FromCoulombs(left.Seconds * right.Amperes);
+            return ElectricCharge.FromCoulombs(left.seconds * right.amperes);
         }
 
         public static Frequency operator /(double left, Time right)
         {
-            return Frequency.FromHertz(left / right.Seconds);
+            return Frequency.FromHertz(left / right.seconds);
         }
 
         public static double operator /(Time left, Time right)
         {
-            return left.Seconds / right.Seconds;
+            return left.seconds / right.seconds;
         }
 
         /// <summary>
@@ -216,8 +227,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Time"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Time"/>.</param>
         public static bool operator ==(Time left, Time right)
         {
             return left.Equals(right);
@@ -229,8 +240,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Time"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Time"/>.</param>
         public static bool operator !=(Time left, Time right)
         {
             return !left.Equals(right);
@@ -242,11 +253,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Time"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Time"/>.</param>
         public static bool operator <(Time left, Time right)
         {
-            return left.Seconds < right.Seconds;
+            return left.seconds < right.seconds;
         }
 
         /// <summary>
@@ -255,11 +266,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Time"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Time"/>.</param>
         public static bool operator >(Time left, Time right)
         {
-            return left.Seconds > right.Seconds;
+            return left.seconds > right.seconds;
         }
 
         /// <summary>
@@ -268,11 +279,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Time"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Time"/>.</param>
         public static bool operator <=(Time left, Time right)
         {
-            return left.Seconds <= right.Seconds;
+            return left.seconds <= right.seconds;
         }
 
         /// <summary>
@@ -281,11 +292,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Time"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Time"/>.</param>
         public static bool operator >=(Time left, Time right)
         {
-            return left.Seconds >= right.Seconds;
+            return left.seconds >= right.seconds;
         }
 
         /// <summary>
@@ -296,7 +307,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="left"/> and returns the result.</returns>
         public static Time operator *(double left, Time right)
         {
-            return new Time(left * right.Seconds);
+            return new Time(left * right.seconds);
         }
 
         /// <summary>
@@ -307,7 +318,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="right"/> and returns the result.</returns>
         public static Time operator *(Time left, double right)
         {
-            return new Time(left.Seconds * right);
+            return new Time(left.seconds * right);
         }
 
         /// <summary>
@@ -318,7 +329,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="right"/> and returns the result.</returns>
         public static Time operator /(Time left, double right)
         {
-            return new Time(left.Seconds / right);
+            return new Time(left.seconds / right);
         }
 
         /// <summary>
@@ -327,11 +338,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Time"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Time"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Time"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Time"/>.</param>
         public static Time operator +(Time left, Time right)
         {
-            return new Time(left.Seconds + right.Seconds);
+            return new Time(left.seconds + right.seconds);
         }
 
         /// <summary>
@@ -340,11 +351,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Time"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Time"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Time"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Time"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Time"/> (the subtrahend).</param>
         public static Time operator -(Time left, Time right)
         {
-            return new Time(left.Seconds - right.Seconds);
+            return new Time(left.seconds - right.seconds);
         }
 
         /// <summary>
@@ -353,22 +364,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Time"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Time">A <see cref="T:Gu.Units.Time"/></param>
-        public static Time operator -(Time Time)
+        /// <param name="time">An instance of <see cref="T:Gu.Units.Time"/></param>
+        public static Time operator -(Time time)
         {
-            return new Time(-1 * Time.Seconds);
+            return new Time(-1 * time.seconds);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Time"/>.
+        /// Returns <paramref name="time"/>.
         /// </returns>
-        /// <param name="Time">A <see cref="T:Gu.Units.Time"/></param>
-        public static Time operator +(Time Time)
+        /// <param name="time">An instance of <see cref="T:Gu.Units.Time"/></param>
+        public static Time operator +(Time time)
         {
-            return Time;
+            return time;
         }
 
         public override string ToString()
@@ -393,7 +404,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, TimeUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Seconds);
+            var quantity = unit.FromSiUnit(this.seconds);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -420,10 +431,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Time"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Time"/> object to compare to this instance.</param>
         public int CompareTo(Time quantity)
         {
-            return this.Seconds.CompareTo(quantity.Seconds);
+            return this.seconds.CompareTo(quantity.seconds);
         }
 
         /// <summary>
@@ -432,10 +443,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Time as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Time"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Time"/> object to compare with this instance.</param>
         public bool Equals(Time other)
         {
-            return this.Seconds.Equals(other.Seconds);
+            return this.seconds.Equals(other.seconds);
         }
 
         /// <summary>
@@ -444,11 +455,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Time as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Time"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Time"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Time other, double tolerance)
         {
-            return Math.Abs(this.Seconds - other.Seconds) < tolerance;
+            return Math.Abs(this.seconds - other.seconds) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -463,7 +474,7 @@
 
         public override int GetHashCode()
         {
-            return this.Seconds.GetHashCode();
+            return this.seconds.GetHashCode();
         }
 
         /// <summary>
@@ -488,7 +499,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Seconds", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "seconds", reader, "Value");
         }
 
         /// <summary>
@@ -497,7 +508,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Seconds);
+            XmlExt.WriteAttribute(writer, "Value", this.seconds);
         }
     }
 }

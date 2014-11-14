@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Hertz"/>.
         /// </summary>
-        public readonly double Hertz;
+        internal readonly double hertz;
 
         private Frequency(double hertz)
         {
-            Hertz = hertz;
+            this.hertz = hertz;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Hertz"/>.</param>
         public Frequency(double value, FrequencyUnit unit)
         {
-            Hertz = unit.ToSiUnit(value);
+            this.hertz = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Hertz;
+                return this.hertz;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in hertz".
+        /// </summary>
+        public double Hertz
+        {
+            get
+            {
+                return this.hertz;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return FrequencyUnit.Millihertz.FromSiUnit(Hertz);
+                return FrequencyUnit.Millihertz.FromSiUnit(this.hertz);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return FrequencyUnit.Kilohertz.FromSiUnit(Hertz);
+                return FrequencyUnit.Kilohertz.FromSiUnit(this.hertz);
             }
         }
 
@@ -72,7 +83,7 @@
         {
             get
             {
-                return FrequencyUnit.Megahertz.FromSiUnit(Hertz);
+                return FrequencyUnit.Megahertz.FromSiUnit(this.hertz);
             }
         }
 
@@ -83,7 +94,7 @@
         {
             get
             {
-                return FrequencyUnit.Gigahertz.FromSiUnit(Hertz);
+                return FrequencyUnit.Gigahertz.FromSiUnit(this.hertz);
             }
         }
 
@@ -163,42 +174,42 @@
 
         public static Current operator *(Frequency left, ElectricCharge right)
         {
-            return Current.FromAmperes(left.Hertz * right.Coulombs);
+            return Current.FromAmperes(left.hertz * right.coulombs);
         }
 
         public static Power operator *(Frequency left, Energy right)
         {
-            return Power.FromWatts(left.Hertz * right.Joules);
+            return Power.FromWatts(left.hertz * right.joules);
         }
 
         public static Speed operator *(Frequency left, Length right)
         {
-            return Speed.FromMetresPerSecond(left.Hertz * right.Metres);
+            return Speed.FromMetresPerSecond(left.hertz * right.metres);
         }
 
         public static AngularSpeed operator *(Frequency left, Angle right)
         {
-            return AngularSpeed.FromRadiansPerSecond(left.Hertz * right.Radians);
+            return AngularSpeed.FromRadiansPerSecond(left.hertz * right.radians);
         }
 
         public static Acceleration operator *(Frequency left, Speed right)
         {
-            return Acceleration.FromMetresPerSecondSquared(left.Hertz * right.MetresPerSecond);
+            return Acceleration.FromMetresPerSecondSquared(left.hertz * right.metresPerSecond);
         }
 
         public static VolumetricFlow operator *(Frequency left, Volume right)
         {
-            return VolumetricFlow.FromCubicMetresPerSecond(left.Hertz * right.CubicMetres);
+            return VolumetricFlow.FromCubicMetresPerSecond(left.hertz * right.cubicMetres);
         }
 
         public static Time operator /(double left, Frequency right)
         {
-            return Time.FromSeconds(left / right.Hertz);
+            return Time.FromSeconds(left / right.hertz);
         }
 
         public static double operator /(Frequency left, Frequency right)
         {
-            return left.Hertz / right.Hertz;
+            return left.hertz / right.hertz;
         }
 
         /// <summary>
@@ -207,8 +218,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Frequency"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Frequency"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Frequency"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Frequency"/>.</param>
         public static bool operator ==(Frequency left, Frequency right)
         {
             return left.Equals(right);
@@ -220,8 +231,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Frequency"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Frequency"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Frequency"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Frequency"/>.</param>
         public static bool operator !=(Frequency left, Frequency right)
         {
             return !left.Equals(right);
@@ -233,11 +244,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Frequency"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Frequency"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Frequency"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Frequency"/>.</param>
         public static bool operator <(Frequency left, Frequency right)
         {
-            return left.Hertz < right.Hertz;
+            return left.hertz < right.hertz;
         }
 
         /// <summary>
@@ -246,11 +257,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Frequency"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Frequency"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Frequency"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Frequency"/>.</param>
         public static bool operator >(Frequency left, Frequency right)
         {
-            return left.Hertz > right.Hertz;
+            return left.hertz > right.hertz;
         }
 
         /// <summary>
@@ -259,11 +270,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Frequency"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Frequency"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Frequency"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Frequency"/>.</param>
         public static bool operator <=(Frequency left, Frequency right)
         {
-            return left.Hertz <= right.Hertz;
+            return left.hertz <= right.hertz;
         }
 
         /// <summary>
@@ -272,11 +283,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Frequency"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Frequency"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Frequency"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Frequency"/>.</param>
         public static bool operator >=(Frequency left, Frequency right)
         {
-            return left.Hertz >= right.Hertz;
+            return left.hertz >= right.hertz;
         }
 
         /// <summary>
@@ -287,7 +298,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Frequency"/> with <paramref name="left"/> and returns the result.</returns>
         public static Frequency operator *(double left, Frequency right)
         {
-            return new Frequency(left * right.Hertz);
+            return new Frequency(left * right.hertz);
         }
 
         /// <summary>
@@ -298,7 +309,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Frequency"/> with <paramref name="right"/> and returns the result.</returns>
         public static Frequency operator *(Frequency left, double right)
         {
-            return new Frequency(left.Hertz * right);
+            return new Frequency(left.hertz * right);
         }
 
         /// <summary>
@@ -309,7 +320,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Frequency"/> with <paramref name="right"/> and returns the result.</returns>
         public static Frequency operator /(Frequency left, double right)
         {
-            return new Frequency(left.Hertz / right);
+            return new Frequency(left.hertz / right);
         }
 
         /// <summary>
@@ -318,11 +329,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Frequency"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Frequency"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Frequency"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Frequency"/>.</param>
         public static Frequency operator +(Frequency left, Frequency right)
         {
-            return new Frequency(left.Hertz + right.Hertz);
+            return new Frequency(left.hertz + right.hertz);
         }
 
         /// <summary>
@@ -331,11 +342,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Frequency"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Frequency"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Frequency"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Frequency"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Frequency"/> (the subtrahend).</param>
         public static Frequency operator -(Frequency left, Frequency right)
         {
-            return new Frequency(left.Hertz - right.Hertz);
+            return new Frequency(left.hertz - right.hertz);
         }
 
         /// <summary>
@@ -344,22 +355,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Frequency"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Frequency">A <see cref="T:Gu.Units.Frequency"/></param>
-        public static Frequency operator -(Frequency Frequency)
+        /// <param name="frequency">An instance of <see cref="T:Gu.Units.Frequency"/></param>
+        public static Frequency operator -(Frequency frequency)
         {
-            return new Frequency(-1 * Frequency.Hertz);
+            return new Frequency(-1 * frequency.hertz);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Frequency"/>.
+        /// Returns <paramref name="frequency"/>.
         /// </returns>
-        /// <param name="Frequency">A <see cref="T:Gu.Units.Frequency"/></param>
-        public static Frequency operator +(Frequency Frequency)
+        /// <param name="frequency">An instance of <see cref="T:Gu.Units.Frequency"/></param>
+        public static Frequency operator +(Frequency frequency)
         {
-            return Frequency;
+            return frequency;
         }
 
         public override string ToString()
@@ -384,7 +395,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, FrequencyUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Hertz);
+            var quantity = unit.FromSiUnit(this.hertz);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -411,10 +422,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Frequency"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Frequency"/> object to compare to this instance.</param>
         public int CompareTo(Frequency quantity)
         {
-            return this.Hertz.CompareTo(quantity.Hertz);
+            return this.hertz.CompareTo(quantity.hertz);
         }
 
         /// <summary>
@@ -423,10 +434,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Frequency as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Frequency"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Frequency"/> object to compare with this instance.</param>
         public bool Equals(Frequency other)
         {
-            return this.Hertz.Equals(other.Hertz);
+            return this.hertz.Equals(other.hertz);
         }
 
         /// <summary>
@@ -435,11 +446,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Frequency as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Frequency"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Frequency"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Frequency other, double tolerance)
         {
-            return Math.Abs(this.Hertz - other.Hertz) < tolerance;
+            return Math.Abs(this.hertz - other.hertz) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -454,7 +465,7 @@
 
         public override int GetHashCode()
         {
-            return this.Hertz.GetHashCode();
+            return this.hertz.GetHashCode();
         }
 
         /// <summary>
@@ -479,7 +490,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Hertz", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "hertz", reader, "Value");
         }
 
         /// <summary>
@@ -488,7 +499,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Hertz);
+            XmlExt.WriteAttribute(writer, "Value", this.hertz);
         }
     }
 }

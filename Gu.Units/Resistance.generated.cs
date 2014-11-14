@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Ohm"/>.
         /// </summary>
-        public readonly double Ohm;
+        internal readonly double ohm;
 
         private Resistance(double ohm)
         {
-            Ohm = ohm;
+            this.ohm = ohm;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Ohm"/>.</param>
         public Resistance(double value, ResistanceUnit unit)
         {
-            Ohm = unit.ToSiUnit(value);
+            this.ohm = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Ohm;
+                return this.ohm;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in ohm".
+        /// </summary>
+        public double Ohm
+        {
+            get
+            {
+                return this.ohm;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return ResistanceUnit.Microohm.FromSiUnit(Ohm);
+                return ResistanceUnit.Microohm.FromSiUnit(this.ohm);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return ResistanceUnit.Milliohm.FromSiUnit(Ohm);
+                return ResistanceUnit.Milliohm.FromSiUnit(this.ohm);
             }
         }
 
@@ -72,7 +83,7 @@
         {
             get
             {
-                return ResistanceUnit.Kiloohm.FromSiUnit(Ohm);
+                return ResistanceUnit.Kiloohm.FromSiUnit(this.ohm);
             }
         }
 
@@ -83,7 +94,7 @@
         {
             get
             {
-                return ResistanceUnit.Megaohm.FromSiUnit(Ohm);
+                return ResistanceUnit.Megaohm.FromSiUnit(this.ohm);
             }
         }
 
@@ -163,17 +174,17 @@
 
         public static Voltage operator *(Resistance left, Current right)
         {
-            return Voltage.FromVolts(left.Ohm * right.Amperes);
+            return Voltage.FromVolts(left.ohm * right.amperes);
         }
 
         public static Inductance operator *(Resistance left, Time right)
         {
-            return Inductance.FromHenrys(left.Ohm * right.Seconds);
+            return Inductance.FromHenrys(left.ohm * right.seconds);
         }
 
         public static double operator /(Resistance left, Resistance right)
         {
-            return left.Ohm / right.Ohm;
+            return left.ohm / right.ohm;
         }
 
         /// <summary>
@@ -182,8 +193,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Resistance"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Resistance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Resistance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Resistance"/>.</param>
         public static bool operator ==(Resistance left, Resistance right)
         {
             return left.Equals(right);
@@ -195,8 +206,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Resistance"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Resistance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Resistance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Resistance"/>.</param>
         public static bool operator !=(Resistance left, Resistance right)
         {
             return !left.Equals(right);
@@ -208,11 +219,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Resistance"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Resistance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Resistance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Resistance"/>.</param>
         public static bool operator <(Resistance left, Resistance right)
         {
-            return left.Ohm < right.Ohm;
+            return left.ohm < right.ohm;
         }
 
         /// <summary>
@@ -221,11 +232,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Resistance"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Resistance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Resistance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Resistance"/>.</param>
         public static bool operator >(Resistance left, Resistance right)
         {
-            return left.Ohm > right.Ohm;
+            return left.ohm > right.ohm;
         }
 
         /// <summary>
@@ -234,11 +245,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Resistance"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Resistance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Resistance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Resistance"/>.</param>
         public static bool operator <=(Resistance left, Resistance right)
         {
-            return left.Ohm <= right.Ohm;
+            return left.ohm <= right.ohm;
         }
 
         /// <summary>
@@ -247,11 +258,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Resistance"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Resistance"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Resistance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Resistance"/>.</param>
         public static bool operator >=(Resistance left, Resistance right)
         {
-            return left.Ohm >= right.Ohm;
+            return left.ohm >= right.ohm;
         }
 
         /// <summary>
@@ -262,7 +273,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Resistance"/> with <paramref name="left"/> and returns the result.</returns>
         public static Resistance operator *(double left, Resistance right)
         {
-            return new Resistance(left * right.Ohm);
+            return new Resistance(left * right.ohm);
         }
 
         /// <summary>
@@ -273,7 +284,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Resistance"/> with <paramref name="right"/> and returns the result.</returns>
         public static Resistance operator *(Resistance left, double right)
         {
-            return new Resistance(left.Ohm * right);
+            return new Resistance(left.ohm * right);
         }
 
         /// <summary>
@@ -284,7 +295,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Resistance"/> with <paramref name="right"/> and returns the result.</returns>
         public static Resistance operator /(Resistance left, double right)
         {
-            return new Resistance(left.Ohm / right);
+            return new Resistance(left.ohm / right);
         }
 
         /// <summary>
@@ -293,11 +304,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Resistance"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Resistance"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Resistance"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Resistance"/>.</param>
         public static Resistance operator +(Resistance left, Resistance right)
         {
-            return new Resistance(left.Ohm + right.Ohm);
+            return new Resistance(left.ohm + right.ohm);
         }
 
         /// <summary>
@@ -306,11 +317,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Resistance"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Resistance"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Resistance"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Resistance"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Resistance"/> (the subtrahend).</param>
         public static Resistance operator -(Resistance left, Resistance right)
         {
-            return new Resistance(left.Ohm - right.Ohm);
+            return new Resistance(left.ohm - right.ohm);
         }
 
         /// <summary>
@@ -319,22 +330,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Resistance"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Resistance">A <see cref="T:Gu.Units.Resistance"/></param>
-        public static Resistance operator -(Resistance Resistance)
+        /// <param name="resistance">An instance of <see cref="T:Gu.Units.Resistance"/></param>
+        public static Resistance operator -(Resistance resistance)
         {
-            return new Resistance(-1 * Resistance.Ohm);
+            return new Resistance(-1 * resistance.ohm);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Resistance"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Resistance"/>.
+        /// Returns <paramref name="resistance"/>.
         /// </returns>
-        /// <param name="Resistance">A <see cref="T:Gu.Units.Resistance"/></param>
-        public static Resistance operator +(Resistance Resistance)
+        /// <param name="resistance">An instance of <see cref="T:Gu.Units.Resistance"/></param>
+        public static Resistance operator +(Resistance resistance)
         {
-            return Resistance;
+            return resistance;
         }
 
         public override string ToString()
@@ -359,7 +370,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, ResistanceUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Ohm);
+            var quantity = unit.FromSiUnit(this.ohm);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -386,10 +397,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Resistance"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Resistance"/> object to compare to this instance.</param>
         public int CompareTo(Resistance quantity)
         {
-            return this.Ohm.CompareTo(quantity.Ohm);
+            return this.ohm.CompareTo(quantity.ohm);
         }
 
         /// <summary>
@@ -398,10 +409,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Resistance as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Resistance"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Resistance"/> object to compare with this instance.</param>
         public bool Equals(Resistance other)
         {
-            return this.Ohm.Equals(other.Ohm);
+            return this.ohm.Equals(other.ohm);
         }
 
         /// <summary>
@@ -410,11 +421,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Resistance as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Resistance"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Resistance"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Resistance other, double tolerance)
         {
-            return Math.Abs(this.Ohm - other.Ohm) < tolerance;
+            return Math.Abs(this.ohm - other.ohm) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -429,7 +440,7 @@
 
         public override int GetHashCode()
         {
-            return this.Ohm.GetHashCode();
+            return this.ohm.GetHashCode();
         }
 
         /// <summary>
@@ -454,7 +465,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Ohm", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "ohm", reader, "Value");
         }
 
         /// <summary>
@@ -463,7 +474,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Ohm);
+            XmlExt.WriteAttribute(writer, "Value", this.ohm);
         }
     }
 }

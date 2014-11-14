@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Newtons"/>.
         /// </summary>
-        public readonly double Newtons;
+        internal readonly double newtons;
 
         private Force(double newtons)
         {
-            Newtons = newtons;
+            this.newtons = newtons;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Newtons"/>.</param>
         public Force(double value, ForceUnit unit)
         {
-            Newtons = unit.ToSiUnit(value);
+            this.newtons = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Newtons;
+                return this.newtons;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in newtons".
+        /// </summary>
+        public double Newtons
+        {
+            get
+            {
+                return this.newtons;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return ForceUnit.Nanonewtons.FromSiUnit(Newtons);
+                return ForceUnit.Nanonewtons.FromSiUnit(this.newtons);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return ForceUnit.Micronewtons.FromSiUnit(Newtons);
+                return ForceUnit.Micronewtons.FromSiUnit(this.newtons);
             }
         }
 
@@ -72,7 +83,7 @@
         {
             get
             {
-                return ForceUnit.Millinewtons.FromSiUnit(Newtons);
+                return ForceUnit.Millinewtons.FromSiUnit(this.newtons);
             }
         }
 
@@ -83,7 +94,7 @@
         {
             get
             {
-                return ForceUnit.Kilonewtons.FromSiUnit(Newtons);
+                return ForceUnit.Kilonewtons.FromSiUnit(this.newtons);
             }
         }
 
@@ -94,7 +105,7 @@
         {
             get
             {
-                return ForceUnit.Meganewtons.FromSiUnit(Newtons);
+                return ForceUnit.Meganewtons.FromSiUnit(this.newtons);
             }
         }
 
@@ -105,7 +116,7 @@
         {
             get
             {
-                return ForceUnit.Giganewtons.FromSiUnit(Newtons);
+                return ForceUnit.Giganewtons.FromSiUnit(this.newtons);
             }
         }
 
@@ -201,37 +212,37 @@
 
         public static Mass operator /(Force left, Acceleration right)
         {
-            return Mass.FromKilograms(left.Newtons / right.MetresPerSecondSquared);
+            return Mass.FromKilograms(left.newtons / right.metresPerSecondSquared);
         }
 
         public static Pressure operator /(Force left, Area right)
         {
-            return Pressure.FromPascals(left.Newtons / right.SquareMetres);
+            return Pressure.FromPascals(left.newtons / right.squareMetres);
         }
 
         public static Energy operator *(Force left, Length right)
         {
-            return Energy.FromJoules(left.Newtons * right.Metres);
+            return Energy.FromJoules(left.newtons * right.metres);
         }
 
         public static Power operator *(Force left, Speed right)
         {
-            return Power.FromWatts(left.Newtons * right.MetresPerSecond);
+            return Power.FromWatts(left.newtons * right.metresPerSecond);
         }
 
         public static Acceleration operator /(Force left, Mass right)
         {
-            return Acceleration.FromMetresPerSecondSquared(left.Newtons / right.Kilograms);
+            return Acceleration.FromMetresPerSecondSquared(left.newtons / right.kilograms);
         }
 
         public static Stiffness operator /(Force left, Length right)
         {
-            return Stiffness.FromNewtonsPerMetre(left.Newtons / right.Metres);
+            return Stiffness.FromNewtonsPerMetre(left.newtons / right.metres);
         }
 
         public static double operator /(Force left, Force right)
         {
-            return left.Newtons / right.Newtons;
+            return left.newtons / right.newtons;
         }
 
         /// <summary>
@@ -240,8 +251,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Force"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Force"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Force"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Force"/>.</param>
         public static bool operator ==(Force left, Force right)
         {
             return left.Equals(right);
@@ -253,8 +264,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Force"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Force"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Force"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Force"/>.</param>
         public static bool operator !=(Force left, Force right)
         {
             return !left.Equals(right);
@@ -266,11 +277,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Force"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Force"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Force"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Force"/>.</param>
         public static bool operator <(Force left, Force right)
         {
-            return left.Newtons < right.Newtons;
+            return left.newtons < right.newtons;
         }
 
         /// <summary>
@@ -279,11 +290,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Force"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Force"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Force"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Force"/>.</param>
         public static bool operator >(Force left, Force right)
         {
-            return left.Newtons > right.Newtons;
+            return left.newtons > right.newtons;
         }
 
         /// <summary>
@@ -292,11 +303,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Force"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Force"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Force"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Force"/>.</param>
         public static bool operator <=(Force left, Force right)
         {
-            return left.Newtons <= right.Newtons;
+            return left.newtons <= right.newtons;
         }
 
         /// <summary>
@@ -305,11 +316,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Force"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Force"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Force"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Force"/>.</param>
         public static bool operator >=(Force left, Force right)
         {
-            return left.Newtons >= right.Newtons;
+            return left.newtons >= right.newtons;
         }
 
         /// <summary>
@@ -320,7 +331,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Force"/> with <paramref name="left"/> and returns the result.</returns>
         public static Force operator *(double left, Force right)
         {
-            return new Force(left * right.Newtons);
+            return new Force(left * right.newtons);
         }
 
         /// <summary>
@@ -331,7 +342,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Force"/> with <paramref name="right"/> and returns the result.</returns>
         public static Force operator *(Force left, double right)
         {
-            return new Force(left.Newtons * right);
+            return new Force(left.newtons * right);
         }
 
         /// <summary>
@@ -342,7 +353,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Force"/> with <paramref name="right"/> and returns the result.</returns>
         public static Force operator /(Force left, double right)
         {
-            return new Force(left.Newtons / right);
+            return new Force(left.newtons / right);
         }
 
         /// <summary>
@@ -351,11 +362,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Force"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Force"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Force"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Force"/>.</param>
         public static Force operator +(Force left, Force right)
         {
-            return new Force(left.Newtons + right.Newtons);
+            return new Force(left.newtons + right.newtons);
         }
 
         /// <summary>
@@ -364,11 +375,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Force"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Force"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Force"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Force"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Force"/> (the subtrahend).</param>
         public static Force operator -(Force left, Force right)
         {
-            return new Force(left.Newtons - right.Newtons);
+            return new Force(left.newtons - right.newtons);
         }
 
         /// <summary>
@@ -377,22 +388,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Force"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Force">A <see cref="T:Gu.Units.Force"/></param>
-        public static Force operator -(Force Force)
+        /// <param name="force">An instance of <see cref="T:Gu.Units.Force"/></param>
+        public static Force operator -(Force force)
         {
-            return new Force(-1 * Force.Newtons);
+            return new Force(-1 * force.newtons);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Force"/>.
+        /// Returns <paramref name="force"/>.
         /// </returns>
-        /// <param name="Force">A <see cref="T:Gu.Units.Force"/></param>
-        public static Force operator +(Force Force)
+        /// <param name="force">An instance of <see cref="T:Gu.Units.Force"/></param>
+        public static Force operator +(Force force)
         {
-            return Force;
+            return force;
         }
 
         public override string ToString()
@@ -417,7 +428,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, ForceUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Newtons);
+            var quantity = unit.FromSiUnit(this.newtons);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -444,10 +455,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Force"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Force"/> object to compare to this instance.</param>
         public int CompareTo(Force quantity)
         {
-            return this.Newtons.CompareTo(quantity.Newtons);
+            return this.newtons.CompareTo(quantity.newtons);
         }
 
         /// <summary>
@@ -456,10 +467,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Force as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Force"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Force"/> object to compare with this instance.</param>
         public bool Equals(Force other)
         {
-            return this.Newtons.Equals(other.Newtons);
+            return this.newtons.Equals(other.newtons);
         }
 
         /// <summary>
@@ -468,11 +479,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Force as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Force"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Force"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Force other, double tolerance)
         {
-            return Math.Abs(this.Newtons - other.Newtons) < tolerance;
+            return Math.Abs(this.newtons - other.newtons) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -487,7 +498,7 @@
 
         public override int GetHashCode()
         {
-            return this.Newtons.GetHashCode();
+            return this.newtons.GetHashCode();
         }
 
         /// <summary>
@@ -512,7 +523,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Newtons", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "newtons", reader, "Value");
         }
 
         /// <summary>
@@ -521,7 +532,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Newtons);
+            XmlExt.WriteAttribute(writer, "Value", this.newtons);
         }
     }
 }

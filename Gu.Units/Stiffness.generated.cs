@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.NewtonsPerMetre"/>.
         /// </summary>
-        public readonly double NewtonsPerMetre;
+        internal readonly double newtonsPerMetre;
 
         private Stiffness(double newtonsPerMetre)
         {
-            NewtonsPerMetre = newtonsPerMetre;
+            this.newtonsPerMetre = newtonsPerMetre;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.NewtonsPerMetre"/>.</param>
         public Stiffness(double value, StiffnessUnit unit)
         {
-            NewtonsPerMetre = unit.ToSiUnit(value);
+            this.newtonsPerMetre = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return NewtonsPerMetre;
+                return this.newtonsPerMetre;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in newtonsPerMetre".
+        /// </summary>
+        public double NewtonsPerMetre
+        {
+            get
+            {
+                return this.newtonsPerMetre;
             }
         }
 
@@ -87,27 +98,27 @@
 
         public static Force operator *(Stiffness left, Length right)
         {
-            return Force.FromNewtons(left.NewtonsPerMetre * right.Metres);
+            return Force.FromNewtons(left.newtonsPerMetre * right.metres);
         }
 
         public static Pressure operator /(Stiffness left, Length right)
         {
-            return Pressure.FromPascals(left.NewtonsPerMetre / right.Metres);
+            return Pressure.FromPascals(left.newtonsPerMetre / right.metres);
         }
 
         public static Energy operator *(Stiffness left, Area right)
         {
-            return Energy.FromJoules(left.NewtonsPerMetre * right.SquareMetres);
+            return Energy.FromJoules(left.newtonsPerMetre * right.squareMetres);
         }
 
         public static Flexibility operator /(double left, Stiffness right)
         {
-            return Flexibility.FromMetresPerNewton(left / right.NewtonsPerMetre);
+            return Flexibility.FromMetresPerNewton(left / right.newtonsPerMetre);
         }
 
         public static double operator /(Stiffness left, Stiffness right)
         {
-            return left.NewtonsPerMetre / right.NewtonsPerMetre;
+            return left.newtonsPerMetre / right.newtonsPerMetre;
         }
 
         /// <summary>
@@ -116,8 +127,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Stiffness"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Stiffness"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Stiffness"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Stiffness"/>.</param>
         public static bool operator ==(Stiffness left, Stiffness right)
         {
             return left.Equals(right);
@@ -129,8 +140,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Stiffness"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Stiffness"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Stiffness"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Stiffness"/>.</param>
         public static bool operator !=(Stiffness left, Stiffness right)
         {
             return !left.Equals(right);
@@ -142,11 +153,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Stiffness"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Stiffness"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Stiffness"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Stiffness"/>.</param>
         public static bool operator <(Stiffness left, Stiffness right)
         {
-            return left.NewtonsPerMetre < right.NewtonsPerMetre;
+            return left.newtonsPerMetre < right.newtonsPerMetre;
         }
 
         /// <summary>
@@ -155,11 +166,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Stiffness"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Stiffness"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Stiffness"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Stiffness"/>.</param>
         public static bool operator >(Stiffness left, Stiffness right)
         {
-            return left.NewtonsPerMetre > right.NewtonsPerMetre;
+            return left.newtonsPerMetre > right.newtonsPerMetre;
         }
 
         /// <summary>
@@ -168,11 +179,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Stiffness"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Stiffness"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Stiffness"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Stiffness"/>.</param>
         public static bool operator <=(Stiffness left, Stiffness right)
         {
-            return left.NewtonsPerMetre <= right.NewtonsPerMetre;
+            return left.newtonsPerMetre <= right.newtonsPerMetre;
         }
 
         /// <summary>
@@ -181,11 +192,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Stiffness"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Stiffness"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Stiffness"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Stiffness"/>.</param>
         public static bool operator >=(Stiffness left, Stiffness right)
         {
-            return left.NewtonsPerMetre >= right.NewtonsPerMetre;
+            return left.newtonsPerMetre >= right.newtonsPerMetre;
         }
 
         /// <summary>
@@ -196,7 +207,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Stiffness"/> with <paramref name="left"/> and returns the result.</returns>
         public static Stiffness operator *(double left, Stiffness right)
         {
-            return new Stiffness(left * right.NewtonsPerMetre);
+            return new Stiffness(left * right.newtonsPerMetre);
         }
 
         /// <summary>
@@ -207,7 +218,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Stiffness"/> with <paramref name="right"/> and returns the result.</returns>
         public static Stiffness operator *(Stiffness left, double right)
         {
-            return new Stiffness(left.NewtonsPerMetre * right);
+            return new Stiffness(left.newtonsPerMetre * right);
         }
 
         /// <summary>
@@ -218,7 +229,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Stiffness"/> with <paramref name="right"/> and returns the result.</returns>
         public static Stiffness operator /(Stiffness left, double right)
         {
-            return new Stiffness(left.NewtonsPerMetre / right);
+            return new Stiffness(left.newtonsPerMetre / right);
         }
 
         /// <summary>
@@ -227,11 +238,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Stiffness"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Stiffness"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Stiffness"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Stiffness"/>.</param>
         public static Stiffness operator +(Stiffness left, Stiffness right)
         {
-            return new Stiffness(left.NewtonsPerMetre + right.NewtonsPerMetre);
+            return new Stiffness(left.newtonsPerMetre + right.newtonsPerMetre);
         }
 
         /// <summary>
@@ -240,11 +251,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Stiffness"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Stiffness"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Stiffness"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Stiffness"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Stiffness"/> (the subtrahend).</param>
         public static Stiffness operator -(Stiffness left, Stiffness right)
         {
-            return new Stiffness(left.NewtonsPerMetre - right.NewtonsPerMetre);
+            return new Stiffness(left.newtonsPerMetre - right.newtonsPerMetre);
         }
 
         /// <summary>
@@ -253,22 +264,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Stiffness"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Stiffness">A <see cref="T:Gu.Units.Stiffness"/></param>
-        public static Stiffness operator -(Stiffness Stiffness)
+        /// <param name="stiffness">An instance of <see cref="T:Gu.Units.Stiffness"/></param>
+        public static Stiffness operator -(Stiffness stiffness)
         {
-            return new Stiffness(-1 * Stiffness.NewtonsPerMetre);
+            return new Stiffness(-1 * stiffness.newtonsPerMetre);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Stiffness"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Stiffness"/>.
+        /// Returns <paramref name="stiffness"/>.
         /// </returns>
-        /// <param name="Stiffness">A <see cref="T:Gu.Units.Stiffness"/></param>
-        public static Stiffness operator +(Stiffness Stiffness)
+        /// <param name="stiffness">An instance of <see cref="T:Gu.Units.Stiffness"/></param>
+        public static Stiffness operator +(Stiffness stiffness)
         {
-            return Stiffness;
+            return stiffness;
         }
 
         public override string ToString()
@@ -293,7 +304,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, StiffnessUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.NewtonsPerMetre);
+            var quantity = unit.FromSiUnit(this.newtonsPerMetre);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -320,10 +331,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Stiffness"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Stiffness"/> object to compare to this instance.</param>
         public int CompareTo(Stiffness quantity)
         {
-            return this.NewtonsPerMetre.CompareTo(quantity.NewtonsPerMetre);
+            return this.newtonsPerMetre.CompareTo(quantity.newtonsPerMetre);
         }
 
         /// <summary>
@@ -332,10 +343,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Stiffness as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Stiffness"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Stiffness"/> object to compare with this instance.</param>
         public bool Equals(Stiffness other)
         {
-            return this.NewtonsPerMetre.Equals(other.NewtonsPerMetre);
+            return this.newtonsPerMetre.Equals(other.newtonsPerMetre);
         }
 
         /// <summary>
@@ -344,11 +355,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Stiffness as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Stiffness"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Stiffness"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Stiffness other, double tolerance)
         {
-            return Math.Abs(this.NewtonsPerMetre - other.NewtonsPerMetre) < tolerance;
+            return Math.Abs(this.newtonsPerMetre - other.newtonsPerMetre) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -363,7 +374,7 @@
 
         public override int GetHashCode()
         {
-            return this.NewtonsPerMetre.GetHashCode();
+            return this.newtonsPerMetre.GetHashCode();
         }
 
         /// <summary>
@@ -388,7 +399,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "NewtonsPerMetre", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "newtonsPerMetre", reader, "Value");
         }
 
         /// <summary>
@@ -397,7 +408,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.NewtonsPerMetre);
+            XmlExt.WriteAttribute(writer, "Value", this.newtonsPerMetre);
         }
     }
 }

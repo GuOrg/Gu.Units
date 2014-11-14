@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Watts"/>.
         /// </summary>
-        public readonly double Watts;
+        internal readonly double watts;
 
         private Power(double watts)
         {
-            Watts = watts;
+            this.watts = watts;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Watts"/>.</param>
         public Power(double value, PowerUnit unit)
         {
-            Watts = unit.ToSiUnit(value);
+            this.watts = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Watts;
+                return this.watts;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in watts".
+        /// </summary>
+        public double Watts
+        {
+            get
+            {
+                return this.watts;
             }
         }
 
@@ -50,7 +61,7 @@
         {
             get
             {
-                return PowerUnit.Nanowatts.FromSiUnit(Watts);
+                return PowerUnit.Nanowatts.FromSiUnit(this.watts);
             }
         }
 
@@ -61,7 +72,7 @@
         {
             get
             {
-                return PowerUnit.Microwatts.FromSiUnit(Watts);
+                return PowerUnit.Microwatts.FromSiUnit(this.watts);
             }
         }
 
@@ -72,7 +83,7 @@
         {
             get
             {
-                return PowerUnit.Milliwatts.FromSiUnit(Watts);
+                return PowerUnit.Milliwatts.FromSiUnit(this.watts);
             }
         }
 
@@ -83,7 +94,7 @@
         {
             get
             {
-                return PowerUnit.Kilowatts.FromSiUnit(Watts);
+                return PowerUnit.Kilowatts.FromSiUnit(this.watts);
             }
         }
 
@@ -94,7 +105,7 @@
         {
             get
             {
-                return PowerUnit.Megawatts.FromSiUnit(Watts);
+                return PowerUnit.Megawatts.FromSiUnit(this.watts);
             }
         }
 
@@ -105,7 +116,7 @@
         {
             get
             {
-                return PowerUnit.Gigawatts.FromSiUnit(Watts);
+                return PowerUnit.Gigawatts.FromSiUnit(this.watts);
             }
         }
 
@@ -201,37 +212,37 @@
 
         public static Force operator /(Power left, Speed right)
         {
-            return Force.FromNewtons(left.Watts / right.MetresPerSecond);
+            return Force.FromNewtons(left.watts / right.metresPerSecond);
         }
 
         public static Energy operator *(Power left, Time right)
         {
-            return Energy.FromJoules(left.Watts * right.Seconds);
+            return Energy.FromJoules(left.watts * right.seconds);
         }
 
         public static Speed operator /(Power left, Force right)
         {
-            return Speed.FromMetresPerSecond(left.Watts / right.Newtons);
+            return Speed.FromMetresPerSecond(left.watts / right.newtons);
         }
 
         public static Frequency operator /(Power left, Energy right)
         {
-            return Frequency.FromHertz(left.Watts / right.Joules);
+            return Frequency.FromHertz(left.watts / right.joules);
         }
 
         public static Torque operator /(Power left, AngularSpeed right)
         {
-            return Torque.FromNewtonMetres(left.Watts / right.RadiansPerSecond);
+            return Torque.FromNewtonMetres(left.watts / right.radiansPerSecond);
         }
 
         public static Voltage operator /(Power left, Current right)
         {
-            return Voltage.FromVolts(left.Watts / right.Amperes);
+            return Voltage.FromVolts(left.watts / right.amperes);
         }
 
         public static double operator /(Power left, Power right)
         {
-            return left.Watts / right.Watts;
+            return left.watts / right.watts;
         }
 
         /// <summary>
@@ -240,8 +251,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Power"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Power"/>.</param>
         public static bool operator ==(Power left, Power right)
         {
             return left.Equals(right);
@@ -253,8 +264,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Power"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Power"/>.</param>
         public static bool operator !=(Power left, Power right)
         {
             return !left.Equals(right);
@@ -266,11 +277,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Power"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Power"/>.</param>
         public static bool operator <(Power left, Power right)
         {
-            return left.Watts < right.Watts;
+            return left.watts < right.watts;
         }
 
         /// <summary>
@@ -279,11 +290,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Power"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Power"/>.</param>
         public static bool operator >(Power left, Power right)
         {
-            return left.Watts > right.Watts;
+            return left.watts > right.watts;
         }
 
         /// <summary>
@@ -292,11 +303,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Power"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Power"/>.</param>
         public static bool operator <=(Power left, Power right)
         {
-            return left.Watts <= right.Watts;
+            return left.watts <= right.watts;
         }
 
         /// <summary>
@@ -305,11 +316,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.Power"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Power"/>.</param>
         public static bool operator >=(Power left, Power right)
         {
-            return left.Watts >= right.Watts;
+            return left.watts >= right.watts;
         }
 
         /// <summary>
@@ -320,7 +331,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Power"/> with <paramref name="left"/> and returns the result.</returns>
         public static Power operator *(double left, Power right)
         {
-            return new Power(left * right.Watts);
+            return new Power(left * right.watts);
         }
 
         /// <summary>
@@ -331,7 +342,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Power"/> with <paramref name="right"/> and returns the result.</returns>
         public static Power operator *(Power left, double right)
         {
-            return new Power(left.Watts * right);
+            return new Power(left.watts * right);
         }
 
         /// <summary>
@@ -342,7 +353,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.Power"/> with <paramref name="right"/> and returns the result.</returns>
         public static Power operator /(Power left, double right)
         {
-            return new Power(left.Watts / right);
+            return new Power(left.watts / right);
         }
 
         /// <summary>
@@ -351,11 +362,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Power"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Power"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Power"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Power"/>.</param>
         public static Power operator +(Power left, Power right)
         {
-            return new Power(left.Watts + right.Watts);
+            return new Power(left.watts + right.watts);
         }
 
         /// <summary>
@@ -364,11 +375,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Power"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.Power"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.Power"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.Power"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.Power"/> (the subtrahend).</param>
         public static Power operator -(Power left, Power right)
         {
-            return new Power(left.Watts - right.Watts);
+            return new Power(left.watts - right.watts);
         }
 
         /// <summary>
@@ -377,22 +388,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.Power"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="Power">A <see cref="T:Gu.Units.Power"/></param>
-        public static Power operator -(Power Power)
+        /// <param name="power">An instance of <see cref="T:Gu.Units.Power"/></param>
+        public static Power operator -(Power power)
         {
-            return new Power(-1 * Power.Watts);
+            return new Power(-1 * power.watts);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="Power"/>.
+        /// Returns <paramref name="power"/>.
         /// </returns>
-        /// <param name="Power">A <see cref="T:Gu.Units.Power"/></param>
-        public static Power operator +(Power Power)
+        /// <param name="power">An instance of <see cref="T:Gu.Units.Power"/></param>
+        public static Power operator +(Power power)
         {
-            return Power;
+            return power;
         }
 
         public override string ToString()
@@ -417,7 +428,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, PowerUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Watts);
+            var quantity = unit.FromSiUnit(this.watts);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -444,10 +455,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.Power"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Power"/> object to compare to this instance.</param>
         public int CompareTo(Power quantity)
         {
-            return this.Watts.CompareTo(quantity.Watts);
+            return this.watts.CompareTo(quantity.watts);
         }
 
         /// <summary>
@@ -456,10 +467,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Power as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Power"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Power"/> object to compare with this instance.</param>
         public bool Equals(Power other)
         {
-            return this.Watts.Equals(other.Watts);
+            return this.watts.Equals(other.watts);
         }
 
         /// <summary>
@@ -468,11 +479,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same Power as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.Power"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.Power"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(Power other, double tolerance)
         {
-            return Math.Abs(this.Watts - other.Watts) < tolerance;
+            return Math.Abs(this.watts - other.watts) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -487,7 +498,7 @@
 
         public override int GetHashCode()
         {
-            return this.Watts.GetHashCode();
+            return this.watts.GetHashCode();
         }
 
         /// <summary>
@@ -512,7 +523,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Watts", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "watts", reader, "Value");
         }
 
         /// <summary>
@@ -521,7 +532,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Watts);
+            XmlExt.WriteAttribute(writer, "Value", this.watts);
         }
     }
 }

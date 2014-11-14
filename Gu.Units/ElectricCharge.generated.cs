@@ -15,11 +15,11 @@
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Coulombs"/>.
         /// </summary>
-        public readonly double Coulombs;
+        internal readonly double coulombs;
 
         private ElectricCharge(double coulombs)
         {
-            Coulombs = coulombs;
+            this.coulombs = coulombs;
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="unit"><see cref="T:Gu.Units.Coulombs"/>.</param>
         public ElectricCharge(double value, ElectricChargeUnit unit)
         {
-            Coulombs = unit.ToSiUnit(value);
+            this.coulombs = unit.ToSiUnit(value);
         }
 
         /// <summary>
@@ -39,7 +39,18 @@
         {
             get
             {
-                return Coulombs;
+                return this.coulombs;
+            }
+        }
+
+        /// <summary>
+        /// The quantity in coulombs".
+        /// </summary>
+        public double Coulombs
+        {
+            get
+            {
+                return this.coulombs;
             }
         }
 
@@ -87,17 +98,17 @@
 
         public static Time operator /(ElectricCharge left, Current right)
         {
-            return Time.FromSeconds(left.Coulombs / right.Amperes);
+            return Time.FromSeconds(left.coulombs / right.amperes);
         }
 
         public static Current operator /(ElectricCharge left, Time right)
         {
-            return Current.FromAmperes(left.Coulombs / right.Seconds);
+            return Current.FromAmperes(left.coulombs / right.seconds);
         }
 
         public static double operator /(ElectricCharge left, ElectricCharge right)
         {
-            return left.Coulombs / right.Coulombs;
+            return left.coulombs / right.coulombs;
         }
 
         /// <summary>
@@ -106,8 +117,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.ElectricCharge"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.ElectricCharge"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.ElectricCharge"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.ElectricCharge"/>.</param>
         public static bool operator ==(ElectricCharge left, ElectricCharge right)
         {
             return left.Equals(right);
@@ -119,8 +130,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.ElectricCharge"/>.</param>
-        /// <param name="right">A <see cref="T:Gu.Units.ElectricCharge"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.ElectricCharge"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.ElectricCharge"/>.</param>
         public static bool operator !=(ElectricCharge left, ElectricCharge right)
         {
             return !left.Equals(right);
@@ -132,11 +143,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.ElectricCharge"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.ElectricCharge"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.ElectricCharge"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.ElectricCharge"/>.</param>
         public static bool operator <(ElectricCharge left, ElectricCharge right)
         {
-            return left.Coulombs < right.Coulombs;
+            return left.coulombs < right.coulombs;
         }
 
         /// <summary>
@@ -145,11 +156,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.ElectricCharge"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.ElectricCharge"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.ElectricCharge"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.ElectricCharge"/>.</param>
         public static bool operator >(ElectricCharge left, ElectricCharge right)
         {
-            return left.Coulombs > right.Coulombs;
+            return left.coulombs > right.coulombs;
         }
 
         /// <summary>
@@ -158,11 +169,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.ElectricCharge"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.ElectricCharge"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.ElectricCharge"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.ElectricCharge"/>.</param>
         public static bool operator <=(ElectricCharge left, ElectricCharge right)
         {
-            return left.Coulombs <= right.Coulombs;
+            return left.coulombs <= right.coulombs;
         }
 
         /// <summary>
@@ -171,11 +182,11 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An <see cref="T:Gu.Units.ElectricCharge"/>.</param>
-        /// <param name="right">An <see cref="T:Gu.Units.ElectricCharge"/>.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.ElectricCharge"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.ElectricCharge"/>.</param>
         public static bool operator >=(ElectricCharge left, ElectricCharge right)
         {
-            return left.Coulombs >= right.Coulombs;
+            return left.coulombs >= right.coulombs;
         }
 
         /// <summary>
@@ -186,7 +197,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.ElectricCharge"/> with <paramref name="left"/> and returns the result.</returns>
         public static ElectricCharge operator *(double left, ElectricCharge right)
         {
-            return new ElectricCharge(left * right.Coulombs);
+            return new ElectricCharge(left * right.coulombs);
         }
 
         /// <summary>
@@ -197,7 +208,7 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.ElectricCharge"/> with <paramref name="right"/> and returns the result.</returns>
         public static ElectricCharge operator *(ElectricCharge left, double right)
         {
-            return new ElectricCharge(left.Coulombs * right);
+            return new ElectricCharge(left.coulombs * right);
         }
 
         /// <summary>
@@ -208,7 +219,7 @@
         /// <returns>Divides an instance of <see cref="T:Gu.Units.ElectricCharge"/> with <paramref name="right"/> and returns the result.</returns>
         public static ElectricCharge operator /(ElectricCharge left, double right)
         {
-            return new ElectricCharge(left.Coulombs / right);
+            return new ElectricCharge(left.coulombs / right);
         }
 
         /// <summary>
@@ -217,11 +228,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.ElectricCharge"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.ElectricCharge"/>.</param>
-        /// <param name="right">A TimeSpan.</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.ElectricCharge"/>.</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.ElectricCharge"/>.</param>
         public static ElectricCharge operator +(ElectricCharge left, ElectricCharge right)
         {
-            return new ElectricCharge(left.Coulombs + right.Coulombs);
+            return new ElectricCharge(left.coulombs + right.coulombs);
         }
 
         /// <summary>
@@ -230,11 +241,11 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.ElectricCharge"/> that is the difference
         /// </returns>
-        /// <param name="left">A <see cref="T:Gu.Units.ElectricCharge"/> (the minuend).</param>
-        /// <param name="right">A <see cref="T:Gu.Units.ElectricCharge"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="T:Gu.Units.ElectricCharge"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="T:Gu.Units.ElectricCharge"/> (the subtrahend).</param>
         public static ElectricCharge operator -(ElectricCharge left, ElectricCharge right)
         {
-            return new ElectricCharge(left.Coulombs - right.Coulombs);
+            return new ElectricCharge(left.coulombs - right.coulombs);
         }
 
         /// <summary>
@@ -243,22 +254,22 @@
         /// <returns>
         /// An <see cref="T:Gu.Units.ElectricCharge"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="ElectricCharge">A <see cref="T:Gu.Units.ElectricCharge"/></param>
-        public static ElectricCharge operator -(ElectricCharge ElectricCharge)
+        /// <param name="electricCharge">An instance of <see cref="T:Gu.Units.ElectricCharge"/></param>
+        public static ElectricCharge operator -(ElectricCharge electricCharge)
         {
-            return new ElectricCharge(-1 * ElectricCharge.Coulombs);
+            return new ElectricCharge(-1 * electricCharge.coulombs);
         }
 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.ElectricCharge"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="ElectricCharge"/>.
+        /// Returns <paramref name="electricCharge"/>.
         /// </returns>
-        /// <param name="ElectricCharge">A <see cref="T:Gu.Units.ElectricCharge"/></param>
-        public static ElectricCharge operator +(ElectricCharge ElectricCharge)
+        /// <param name="electricCharge">An instance of <see cref="T:Gu.Units.ElectricCharge"/></param>
+        public static ElectricCharge operator +(ElectricCharge electricCharge)
         {
-            return ElectricCharge;
+            return electricCharge;
         }
 
         public override string ToString()
@@ -283,7 +294,7 @@
 
         public string ToString(string format, IFormatProvider formatProvider, ElectricChargeUnit unit)
         {
-            var quantity = unit.FromSiUnit(this.Coulombs);
+            var quantity = unit.FromSiUnit(this.coulombs);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
 
@@ -310,10 +321,10 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">A <see cref="T:MathNet.Spatial.Units.ElectricCharge"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.ElectricCharge"/> object to compare to this instance.</param>
         public int CompareTo(ElectricCharge quantity)
         {
-            return this.Coulombs.CompareTo(quantity.Coulombs);
+            return this.coulombs.CompareTo(quantity.coulombs);
         }
 
         /// <summary>
@@ -322,10 +333,10 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same ElectricCharge as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.ElectricCharge"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.ElectricCharge"/> object to compare with this instance.</param>
         public bool Equals(ElectricCharge other)
         {
-            return this.Coulombs.Equals(other.Coulombs);
+            return this.coulombs.Equals(other.coulombs);
         }
 
         /// <summary>
@@ -334,11 +345,11 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same ElectricCharge as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An <see cref="T:Gu.Units.ElectricCharge"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="T:Gu.Units.ElectricCharge"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal</param>
         public bool Equals(ElectricCharge other, double tolerance)
         {
-            return Math.Abs(this.Coulombs - other.Coulombs) < tolerance;
+            return Math.Abs(this.coulombs - other.coulombs) < tolerance;
         }
 
         public override bool Equals(object obj)
@@ -353,7 +364,7 @@
 
         public override int GetHashCode()
         {
-            return this.Coulombs.GetHashCode();
+            return this.coulombs.GetHashCode();
         }
 
         /// <summary>
@@ -378,7 +389,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "Coulombs", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "coulombs", reader, "Value");
         }
 
         /// <summary>
@@ -387,7 +398,7 @@
         /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.Coulombs);
+            XmlExt.WriteAttribute(writer, "Value", this.coulombs);
         }
     }
 }
