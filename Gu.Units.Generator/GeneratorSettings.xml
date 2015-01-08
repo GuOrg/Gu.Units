@@ -269,6 +269,15 @@
           </Formula>
           <Conversions />
         </Conversion>
+        <Conversion>
+          <ClassName>Bar</ClassName>
+          <Symbol>bar</Symbol>
+          <Formula>
+            <ConversionFactor>100</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
       </Conversions>
       <Parts>
         <UnitAndPower>
