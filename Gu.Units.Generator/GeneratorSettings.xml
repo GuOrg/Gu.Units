@@ -270,7 +270,7 @@
           <Conversions />
         </Conversion>
         <Conversion>
-          <ClassName>Bar</ClassName>
+          <ClassName>Bars</ClassName>
           <Symbol>bar</Symbol>
           <Formula>
             <ConversionFactor>100</ConversionFactor>

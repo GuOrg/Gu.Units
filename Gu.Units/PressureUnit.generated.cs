@@ -86,15 +86,15 @@
         public static readonly PressureUnit GPa = Gigapascals;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Bar"/> unit
+        /// The <see cref="T:Gu.Units.Bars"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly PressureUnit Bar = new PressureUnit(100, "bar");
+        public static readonly PressureUnit Bars = new PressureUnit(100, "bar");
         /// <summary>
-        /// The <see cref="T:Gu.Units.Bar"/> unit
+        /// The <see cref="T:Gu.Units.Bars"/> unit
         /// Contains coonversion logic to from and formatting.
         /// </summary>
-        public static readonly PressureUnit bar = Bar;
+        public static readonly PressureUnit bar = Bars;
 
         private readonly double _conversionFactor;
         private readonly string _symbol;
