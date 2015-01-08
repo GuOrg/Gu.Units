@@ -121,6 +121,17 @@
         }
 
         /// <summary>
+        /// The quantity in bar
+        /// </summary>
+        public double Bar
+        {
+            get
+            {
+                return PressureUnit.Bar.FromSiUnit(this.pascals);
+            }
+        }
+
+        /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Pressure"/> from its string representation
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Pressure"/></param>
@@ -208,6 +219,14 @@
         public static Pressure FromGigapascals(double gigapascals)
         {
             return From(gigapascals, PressureUnit.Gigapascals);
+        }
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
+        /// </summary>
+        /// <param name="bar">The value in bar</param>
+        public static Pressure FromBar(double bar)
+        {
+            return From(bar, PressureUnit.Bar);
         }
 
         public static Force operator *(Pressure left, Area right)
