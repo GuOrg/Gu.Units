@@ -127,7 +127,7 @@
         {
             get
             {
-                return PressureUnit.Bar.FromSiUnit(this.pascals);
+                return PressureUnit.Bars.FromSiUnit(this.pascals);
             }
         }
 
@@ -224,9 +224,9 @@
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
         /// <param name="bar">The value in bar</param>
-        public static Pressure FromBar(double bar)
+        public static Pressure FromBars(double bar)
         {
-            return From(bar, PressureUnit.Bar);
+            return From(bar, PressureUnit.Bars);
         }
 
         public static Force operator *(Pressure left, Area right)
