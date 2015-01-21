@@ -3,6 +3,8 @@
     using System;
     using System.Globalization;
 
+    using Gu.Units.Tests.Helpers;
+
     using NUnit.Framework;
 
     public class ConversionTests

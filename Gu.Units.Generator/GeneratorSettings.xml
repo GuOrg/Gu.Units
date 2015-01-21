@@ -273,6 +273,15 @@
           <ClassName>Bars</ClassName>
           <Symbol>bar</Symbol>
           <Formula>
+            <ConversionFactor>100000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>Millibars</ClassName>
+          <Symbol>mbar</Symbol>
+          <Formula>
             <ConversionFactor>100</ConversionFactor>
             <Offset>0</Offset>
           </Formula>

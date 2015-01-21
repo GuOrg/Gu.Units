@@ -121,13 +121,24 @@
         }
 
         /// <summary>
-        /// The quantity in bar
+        /// The quantity in bars
         /// </summary>
-        public double Bar
+        public double Bars
         {
             get
             {
                 return PressureUnit.Bars.FromSiUnit(this.pascals);
+            }
+        }
+
+        /// <summary>
+        /// The quantity in millibars
+        /// </summary>
+        public double Millibars
+        {
+            get
+            {
+                return PressureUnit.Millibars.FromSiUnit(this.pascals);
             }
         }
 
@@ -223,10 +234,18 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="bar">The value in bar</param>
-        public static Pressure FromBars(double bar)
+        /// <param name="bars">The value in bar</param>
+        public static Pressure FromBars(double bars)
         {
-            return From(bar, PressureUnit.Bars);
+            return From(bars, PressureUnit.Bars);
+        }
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
+        /// </summary>
+        /// <param name="millibars">The value in mbar</param>
+        public static Pressure FromMillibars(double millibars)
+        {
+            return From(millibars, PressureUnit.Millibars);
         }
 
         public static Force operator *(Pressure left, Area right)
