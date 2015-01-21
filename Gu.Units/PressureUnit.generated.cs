@@ -89,12 +89,23 @@
         /// The <see cref="T:Gu.Units.Bars"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly PressureUnit Bars = new PressureUnit(100, "bar");
+        public static readonly PressureUnit Bars = new PressureUnit(100000, "bar");
         /// <summary>
         /// The <see cref="T:Gu.Units.Bars"/> unit
         /// Contains coonversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit bar = Bars;
+
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Millibars"/> unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly PressureUnit Millibars = new PressureUnit(100, "mbar");
+        /// <summary>
+        /// The <see cref="T:Gu.Units.Millibars"/> unit
+        /// Contains coonversion logic to from and formatting.
+        /// </summary>
+        public static readonly PressureUnit mbar = Millibars;
 
         private readonly double _conversionFactor;
         private readonly string _symbol;

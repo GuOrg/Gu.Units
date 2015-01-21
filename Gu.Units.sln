@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Generator", "Gu.Units.Generator\Gu.Units.Generator.csproj", "{E2703762-7D3C-49AE-B8A8-B3A792F018E3}"
 EndProject
@@ -25,6 +25,24 @@ EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Gu.Units.Fsharp.Tests", "Gu.Units.Fsharp.Tests\Gu.Units.Fsharp.Tests.fsproj", "{BE7BE5C0-7D90-49D4-86BF-4D826C052D80}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfshub.sandvik.com:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Gu.Units.Generator\\Gu.Units.Generator.csproj
+		SccProjectName1 = Gu.Units.Generator
+		SccLocalPath1 = Gu.Units.Generator
+		SccProjectUniqueName2 = Gu.Units\\Gu.Units.csproj
+		SccProjectName2 = Gu.Units
+		SccLocalPath2 = Gu.Units
+		SccProjectUniqueName3 = Gu.Units.Tests\\Gu.Units.Tests.csproj
+		SccProjectName3 = Gu.Units.Tests
+		SccLocalPath3 = Gu.Units.Tests
+		SccProjectUniqueName4 = Gu.Units.Generator.Tests\\Gu.Units.Generator.Tests.csproj
+		SccProjectName4 = Gu.Units.Generator.Tests
+		SccLocalPath4 = Gu.Units.Generator.Tests
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CreateNugetPackage|Any CPU = CreateNugetPackage|Any CPU
 		Debug|Any CPU = Debug|Any CPU

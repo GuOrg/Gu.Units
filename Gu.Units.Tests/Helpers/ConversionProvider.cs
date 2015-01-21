@@ -1,4 +1,4 @@
-﻿namespace Gu.Units.Tests
+﻿namespace Gu.Units.Tests.Helpers
 {
     using System;
     using System.Collections;
@@ -28,6 +28,9 @@
                                             new Conversion<Unitless>("1%","0.01ul", Unitless.Parse),
                                             new Conversion<Unitless>("1%","10‰", Unitless.Parse),
                                             new Conversion<Force>("100N","0.1kN", Force.Parse),
+                                            new Conversion<Pressure>("1.2 Pa","0.000012 bar", Pressure.Parse),
+                                            new Conversion<Pressure>("0.12 MPa","1.2 bar", Pressure.Parse),
+                                            new Conversion<Pressure>("1.2 Pa","0.012 mbar", Pressure.Parse),
                                         };
 
         }
