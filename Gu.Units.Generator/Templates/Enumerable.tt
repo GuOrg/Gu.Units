@@ -1,5 +1,18 @@
-﻿namespace Gu.Units
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="$(TargetPath)" #>
+<#@ import namespace="Gu.Units.Generator" #>
+<#@ import namespace="System.Globalization" #>
+<#@ parameter name="UnitsMetaData" type="System.Collections.IEnumerable<Gu.Units.Generator.Quantity>" #>
+<#@ output extension=".txt" #>
+<#
+// Template used by EnumerableGenerator.tt
+IEnumerable<Quantity> quantities;
+if(UnitMetaData != null)
 {
+    quantities = UnitMetaData;
+}
+#>
+namespace <#= Settings.Namespace #>
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -16,7 +29,7 @@
             {
                 foreach (var v in source)
                 {
-                    sum += v.Metres;
+                    sum += v.metres;
                 }
             }
             return Length.FromMetres(sum);
