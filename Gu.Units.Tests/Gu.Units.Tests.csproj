@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="ArithmeticsTests.cs" />
     <Compile Include="ConversionTests.cs" />
+    <Compile Include="EnumerableTests.cs" />
     <Compile Include="QuantityTests.cs" />
     <Compile Include="Helpers\ConversionProvider.cs" />
     <Compile Include="Helpers\DummyUnit.cs" />

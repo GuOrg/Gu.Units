@@ -92,6 +92,7 @@
     <Compile Include="CapacitanceUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
+    <Compile Include="Enumerable.generated.cs" />
     <Compile Include="Speed.generated.cs">
       <DependentUpon>QuantityGenerator.txt4</DependentUpon>
     </Compile>
