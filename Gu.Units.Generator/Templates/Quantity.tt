@@ -1,5 +1,4 @@
-﻿<#@ template debug="true" hostspecific="false" language="C#" #>
-<#@ assembly name="$(TargetPath)" #>
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ import namespace="Gu.Units.Generator" #>
 <#@ parameter name="QuantityMetaData" type="Gu.Units.Generator.Quantity" #>
 <#@ output extension=".txt" #>

@@ -1,18 +1,20 @@
-﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+﻿<#@ template debug="true" hostspecific="false" language="C#" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #>
 <#@ import namespace="System.Globalization" #>
-<#@ parameter name="UnitsMetaData" type="System.Collections.IEnumerable<Gu.Units.Generator.Quantity>" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter name="UnitsMetaData" type="Gu.Units.Generator.Quantity[]" #>
 <#@ output extension=".txt" #>
 <#
 // Template used by EnumerableGenerator.tt
-IEnumerable<Quantity> quantities;
-if(UnitMetaData != null)
+IEnumerable<Quantity> quantities = new Quantity[0];
+if(UnitsMetaData != null)
 {
-    quantities = UnitMetaData;
+    quantities = UnitsMetaData;
 }
 #>
 namespace <#= Settings.Namespace #>
+{
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -65,13 +67,13 @@ namespace <#= Settings.Namespace #>
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.SiValue))
+                if (System.Double.IsNaN(x.metres))
                 {
                     return x;
                 }
                 if (hasValue)
                 {
-                    if (x.SiValue < value.SiValue)
+                    if (x.metres < value.metres)
                     {
                         value = x;
                     }
@@ -99,11 +101,11 @@ namespace <#= Settings.Namespace #>
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.SiValue))
+                if (System.Double.IsNaN(x.Value.metres))
                 {
                     return x;
                 }
-                if (value == null || x.Value.SiValue < value.Value.SiValue)
+                if (value == null || x.Value.metres < value.Value.metres)
                 {
                     value = x;
                 }
@@ -121,13 +123,13 @@ namespace <#= Settings.Namespace #>
             bool hasValue = false;
             foreach (Length x in source)
             {
-                if (System.Double.IsNaN(x.SiValue))
+                if (System.Double.IsNaN(x.metres))
                 {
                     return x;
                 }
                 if (hasValue)
                 {
-                    if (x.SiValue > value.SiValue)
+                    if (x.metres > value.metres)
                     {
                         value = x;
                     }
@@ -155,11 +157,11 @@ namespace <#= Settings.Namespace #>
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.SiValue))
+                if (System.Double.IsNaN(x.Value.metres))
                 {
                     return x;
                 }
-                if (value == null || x.Value.SiValue > value.Value.SiValue || System.Double.IsNaN(x.Value.SiValue))
+                if (value == null || x.Value.metres > value.Value.metres || System.Double.IsNaN(x.Value.metres))
                 {
                     value = x;
                 }

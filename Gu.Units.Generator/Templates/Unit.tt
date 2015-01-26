@@ -1,7 +1,9 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ import namespace="System.Globalization" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #>
-<#@ import namespace="System.Globalization" #>
 <#@ parameter name="UnitMetaData" type="Gu.Units.Generator.IUnit" #>
 <#@ output extension=".txt" #>
 <#
