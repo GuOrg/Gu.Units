@@ -13,7 +13,7 @@ namespace <#= Settings.Namespace #>
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    public static partial class Enumerable
+    public static partial class EnumerableUnits
     {
 <#
     foreach(var quantity in quantities)
