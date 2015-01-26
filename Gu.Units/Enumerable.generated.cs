@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    public static partial class Enumerable
+    public static partial class EnumerableUnits
     {
         public static Mass Sum(this IEnumerable<Mass> source)
         {
