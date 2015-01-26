@@ -1,17 +1,12 @@
-﻿<#@ template debug="true" hostspecific="false" language="C#" #>
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #>
 <#@ import namespace="System.Globalization" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ parameter name="UnitsMetaData" type="Gu.Units.Generator.Quantity[]" #>
 <#@ output extension=".txt" #>
 <#
 // Template used by EnumerableGenerator.tt
-IEnumerable<Quantity> quantities = new Quantity[0];
-if(UnitsMetaData != null)
-{
-    quantities = UnitsMetaData;
-}
+var quantities = Settings.Instance.Quantities;
 #>
 namespace <#= Settings.Namespace #>
 {
@@ -20,7 +15,11 @@ namespace <#= Settings.Namespace #>
     using System.Linq;
     public static partial class Enumerable
     {
-        public static Length Sum(this IEnumerable<Length> source)
+<#
+    foreach(var quantity in quantities)
+    {
+		#>
+        public static <#= quantity.ClassName #> Sum(this IEnumerable<<#= quantity.ClassName #>> source)
         {
             if (source == null)
             {
@@ -31,13 +30,18 @@ namespace <#= Settings.Namespace #>
             {
                 foreach (var v in source)
                 {
-                    sum += v.metres;
+                    sum += v.<#= quantity.Unit.ParameterName #>;
                 }
             }
-            return Length.FromMetres(sum);
+            return <#= quantity.ClassName #>.From<#= quantity.Unit.ClassName #>(sum);
         }
 
-        public static Length? Sum(this IEnumerable<Length?> source)
+<# } #>
+<#
+    foreach(var quantity in quantities)
+    {
+		#>
+        public static <#= quantity.ClassName #>? Sum(this IEnumerable<<#= quantity.ClassName #>?> source)
         {
             if (source == null)
             {
@@ -50,30 +54,35 @@ namespace <#= Settings.Namespace #>
                 {
                     if (v != null)
                     {
-                        sum += v.Value.metres;
+                        sum += v.Value.<#= quantity.Unit.ParameterName #>;
                     }
                 }
             }
-            return Length.FromMetres(sum);
+            return <#= quantity.ClassName #>.From<#= quantity.Unit.ClassName #>(sum);
         }
 
-        public static Length Min(this IEnumerable<Length> source)
+<# } #>
+<#
+    foreach(var quantity in quantities)
+    {
+		#>
+        public static <#= quantity.ClassName #> Min(this IEnumerable<<#= quantity.ClassName #>> source)
         {
             if (source == null)
             {
                 throw new ArgumentNullException("source");
             }
-            var value = default(Length);
+            var value = default(<#= quantity.ClassName #>);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.metres))
+                if (System.Double.IsNaN(x.<#= quantity.Unit.ParameterName #>))
                 {
                     return x;
                 }
                 if (hasValue)
                 {
-                    if (x.metres < value.metres)
+                    if (x.<#= quantity.Unit.ParameterName #> < value.<#= quantity.Unit.ParameterName #>)
                     {
                         value = x;
                     }
@@ -88,24 +97,29 @@ namespace <#= Settings.Namespace #>
             throw new ArgumentException("No elements", "source");
         }
 
-        public static Length? Min(this IEnumerable<Length?> source)
+<# } #>
+<#
+    foreach(var quantity in quantities)
+    {
+		#>
+        public static <#= quantity.ClassName #>? Min(this IEnumerable<<#= quantity.ClassName #>?> source)
         {
             if (source == null)
             {
                 throw new ArgumentNullException("source");
             }
-            Length? value = null;
+            <#= quantity.ClassName #>? value = null;
             foreach (var x in source)
             {
                 if (x == null)
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.metres))
+                if (System.Double.IsNaN(x.Value.<#= quantity.Unit.ParameterName #>))
                 {
                     return x;
                 }
-                if (value == null || x.Value.metres < value.Value.metres)
+                if (value == null || x.Value.<#= quantity.Unit.ParameterName #> < value.Value.<#= quantity.Unit.ParameterName #>)
                 {
                     value = x;
                 }
@@ -113,23 +127,28 @@ namespace <#= Settings.Namespace #>
             return value;
         }
 
-        public static Length Max(this IEnumerable<Length> source)
+<# } #>
+<#
+    foreach(var quantity in quantities)
+    {
+		#>
+        public static <#= quantity.ClassName #> Max(this IEnumerable<<#= quantity.ClassName #>> source)
         {
             if (source == null)
             {
                 throw new ArgumentNullException("source");
             }
-            Length value = default(Length);
+            <#= quantity.ClassName #> value = default(<#= quantity.ClassName #>);
             bool hasValue = false;
-            foreach (Length x in source)
+            foreach (<#= quantity.ClassName #> x in source)
             {
-                if (System.Double.IsNaN(x.metres))
+                if (System.Double.IsNaN(x.<#= quantity.Unit.ParameterName #>))
                 {
                     return x;
                 }
                 if (hasValue)
                 {
-                    if (x.metres > value.metres)
+                    if (x.<#= quantity.Unit.ParameterName #> > value.<#= quantity.Unit.ParameterName #>)
                     {
                         value = x;
                     }
@@ -144,24 +163,29 @@ namespace <#= Settings.Namespace #>
             throw new ArgumentException("No elements", "source");
         }
 
-        public static Length? Max(this IEnumerable<Length?> source)
+<# } #>
+<#
+    foreach(var quantity in quantities)
+    {
+		#>
+        public static <#= quantity.ClassName #>? Max(this IEnumerable<<#= quantity.ClassName #>?> source)
         {
             if (source == null)
             {
                 throw new ArgumentNullException("source");
             }
-            Length? value = null;
+            <#= quantity.ClassName #>? value = null;
             foreach (var x in source)
             {
                 if (x == null)
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.metres))
+                if (System.Double.IsNaN(x.Value.<#= quantity.Unit.ParameterName #>))
                 {
                     return x;
                 }
-                if (value == null || x.Value.metres > value.Value.metres || System.Double.IsNaN(x.Value.metres))
+                if (value == null || x.Value.<#= quantity.Unit.ParameterName #> > value.Value.<#= quantity.Unit.ParameterName #>)
                 {
                     value = x;
                 }
@@ -169,7 +193,12 @@ namespace <#= Settings.Namespace #>
             return value;
         }
 
-        public static Length Average(this IEnumerable<Length> source)
+<# } #>
+<#
+    foreach(var quantity in quantities)
+    {
+		#>
+        public static <#= quantity.ClassName #> Average(this IEnumerable<<#= quantity.ClassName #>> source)
         {
             if (source == null)
             {
@@ -181,18 +210,24 @@ namespace <#= Settings.Namespace #>
             {
                 foreach (var v in source)
                 {
-                    sum += v.metres;
+                    sum += v.<#= quantity.Unit.ParameterName #>;
                     count++;
                 }
             }
             if (count > 0)
             {
-                return Length.FromMetres(sum / count);
+                return <#= quantity.ClassName #>.From<#= quantity.Unit.ClassName #>(sum / count);
             }
             throw new ArgumentException("No elements", "source");
         }
 
-        public static Length? Average(this IEnumerable<Length?> source)
+<# } #>
+<#
+    foreach(var quantity in quantities)
+    {
+		#>
+
+        public static <#= quantity.ClassName #>? Average(this IEnumerable<<#= quantity.ClassName #>?> source)
         {
             if (source == null)
             {
@@ -206,16 +241,17 @@ namespace <#= Settings.Namespace #>
                 {
                     if (v != null)
                     {
-                        sum += v.Value.metres;
+                        sum += v.Value.<#= quantity.Unit.ParameterName #>;
                         count++;
                     }
                 }
             }
             if (count > 0)
             {
-                return Length.FromMetres(sum / count);
+                return <#= quantity.ClassName #>.From<#= quantity.Unit.ClassName #>(sum / count);
             }
             return null;
         }
+<# } #>
     }
 }
