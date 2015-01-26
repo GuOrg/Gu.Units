@@ -25,24 +25,6 @@ EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Gu.Units.Fsharp.Tests", "Gu.Units.Fsharp.Tests\Gu.Units.Fsharp.Tests.fsproj", "{BE7BE5C0-7D90-49D4-86BF-4D826C052D80}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 5
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfshub.sandvik.com:8080/tfs/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Gu.Units.Generator\\Gu.Units.Generator.csproj
-		SccProjectName1 = Gu.Units.Generator
-		SccLocalPath1 = Gu.Units.Generator
-		SccProjectUniqueName2 = Gu.Units\\Gu.Units.csproj
-		SccProjectName2 = Gu.Units
-		SccLocalPath2 = Gu.Units
-		SccProjectUniqueName3 = Gu.Units.Tests\\Gu.Units.Tests.csproj
-		SccProjectName3 = Gu.Units.Tests
-		SccLocalPath3 = Gu.Units.Tests
-		SccProjectUniqueName4 = Gu.Units.Generator.Tests\\Gu.Units.Generator.Tests.csproj
-		SccProjectName4 = Gu.Units.Generator.Tests
-		SccLocalPath4 = Gu.Units.Generator.Tests
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CreateNugetPackage|Any CPU = CreateNugetPackage|Any CPU
 		Debug|Any CPU = Debug|Any CPU
@@ -84,7 +66,6 @@ Global
 		{BE7BE5C0-7D90-49D4-86BF-4D826C052D80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BE7BE5C0-7D90-49D4-86BF-4D826C052D80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE7BE5C0-7D90-49D4-86BF-4D826C052D80}.Generator Only|Any CPU.ActiveCfg = Release|Any CPU
-		{BE7BE5C0-7D90-49D4-86BF-4D826C052D80}.Generator Only|Any CPU.Build.0 = Release|Any CPU
 		{BE7BE5C0-7D90-49D4-86BF-4D826C052D80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE7BE5C0-7D90-49D4-86BF-4D826C052D80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection

@@ -1,12 +1,10 @@
 ﻿<#@ template debug="true" hostspecific="true" language="C#" #>
 <#@ assembly name="System.Core" #>
-<#@ include file="$(SolutionDir)\Packages\T4.TemplateFileManager.2.1.2\tools\ttinc\TemplateFilemanager.CS.ttinclude" #>
+<#@ include file="$(SolutionDir)\Packages\T4.TemplateFileManager.2.2.1\tools\ttinc\TemplateFilemanager.CS.ttinclude" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #>
 <#@ output extension=".txt" #>
 <#
-// Recommended editor: Tangible T4 Editor (http://t4-editor.tangible-engineering.com/Download_T4Editor_Plus_ModelingTools.html)
-// after save Generator.tt, the output will be generated in the TestFolder of the project
 //var fileProperties = new FileProperties()
 //{
 //	BuildAction = BuildAction.EmbeddedResource
@@ -22,7 +20,7 @@ var session = ParamTextTemplate.GetSessionObject();
 var settings = Settings.Instance;
 this.Write(string.Format("Read Settings found {0} units", settings.Quantities.Count()));
 
-session["UnitsMetaData"] = settings.Quantities;
+session["UnitsMetaData"] = settings.Quantities.ToArray();
 
 fileManager.StartNewFile("Enumerable.generated." + Settings.Extension, Settings.ProjectName, Settings.FolderName, null);
 var output = paramTmpl.TransformText("Enumerable.tt", session);
