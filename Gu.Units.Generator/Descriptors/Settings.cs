@@ -124,7 +124,7 @@
         {
             get
             {
-                return AllUnits.Select(x => x.Quantity);
+                return AllUnits.Select(x => x.Quantity).ToArray();
             }
         }
 

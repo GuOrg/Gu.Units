@@ -59,7 +59,8 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Generator Only|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -161,13 +162,19 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="Key.snk" />
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Templates\Enumerable.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Enumerable.txt</LastGenOutput>
+    </None>
+    <None Include="Templates\EnumerableGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EnumerableGenerator.txt</LastGenOutput>
+    </None>
     <None Include="Templates\UnitGenerator.tt">
       <SubType>Code</SubType>
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -212,6 +219,16 @@
     </Resource>
     <Resource Include="GeneratorSettings.xml">
       <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Templates\Enumerable.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Enumerable.tt</DependentUpon>
+    </Resource>
+    <Resource Include="Templates\EnumerableGenerator.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumerableGenerator.tt</DependentUpon>
     </Resource>
     <Content Include="Templates\QuantityGenerator.txt">
       <AutoGen>True</AutoGen>
