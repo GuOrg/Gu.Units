@@ -66,6 +66,17 @@
         }
 
         /// <summary>
+        /// The quantity in millimetresPerKilonewton
+        /// </summary>
+        public double MillimetresPerKilonewton
+        {
+            get
+            {
+                return FlexibilityUnit.MillimetresPerKilonewton.FromSiUnit(this.metresPerNewton);
+            }
+        }
+
+        /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Flexibility"/> from its string representation
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Flexibility"/></param>
@@ -113,6 +124,14 @@
         public static Flexibility FromMillimetresPerNewton(double millimetresPerNewton)
         {
             return From(millimetresPerNewton, FlexibilityUnit.MillimetresPerNewton);
+        }
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Flexibility"/>.
+        /// </summary>
+        /// <param name="millimetresPerKilonewton">The value in kN⁻¹⋅mm</param>
+        public static Flexibility FromMillimetresPerKilonewton(double millimetresPerKilonewton)
+        {
+            return From(millimetresPerKilonewton, FlexibilityUnit.MillimetresPerKilonewton);
         }
 
         public static Length operator *(Flexibility left, Force right)
