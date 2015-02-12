@@ -13,7 +13,7 @@
         [Test]
         public void TestNameTest()
         {
-            var length = 1 * m;
+            Length length = 1*m;
             var time = 2 * s;
             var speed = length / time;
             Assert.AreEqual(0.5, speed.MetresPerSecond);

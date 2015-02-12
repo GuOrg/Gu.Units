@@ -20,6 +20,12 @@
         /// </summary>
         public static readonly FlexibilityUnit MillimetresPerNewton = new FlexibilityUnit(0.001, "mm/N");
 
+        /// <summary>
+        /// The <see cref="T:Gu.Units.MillimetresPerKilonewton"/> unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly FlexibilityUnit MillimetresPerKilonewton = new FlexibilityUnit(1E-06, "kN⁻¹⋅mm");
+
         private readonly double _conversionFactor;
         private readonly string _symbol;
 

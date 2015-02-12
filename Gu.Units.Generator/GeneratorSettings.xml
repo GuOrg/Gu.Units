@@ -937,6 +937,15 @@
           </Formula>
           <Conversions />
         </Conversion>
+        <Conversion>
+          <ClassName>MillimetresPerKilonewton</ClassName>
+          <Symbol>kN⁻¹⋅mm</Symbol>
+          <Formula>
+            <ConversionFactor>1E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
       </Conversions>
       <Parts>
         <UnitAndPower>
