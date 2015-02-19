@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct DensityUnit : IUnit
+    public struct DensityUnit : IUnit, IUnit<Density>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.KilogramsPerCubicMetre"/> unit
@@ -69,6 +69,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Density Create(double value)
+        {
+            return new Density(value, this);
         }
 
         public override string ToString()

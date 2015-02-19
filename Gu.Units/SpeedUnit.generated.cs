@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct SpeedUnit : IUnit
+    public struct SpeedUnit : IUnit, IUnit<Speed>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.MetresPerSecond"/> unit
@@ -111,6 +111,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Speed Create(double value)
+        {
+            return new Speed(value, this);
         }
 
         public override string ToString()

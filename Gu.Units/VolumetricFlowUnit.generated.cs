@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct VolumetricFlowUnit : IUnit
+    public struct VolumetricFlowUnit : IUnit, IUnit<VolumetricFlow>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.CubicMetresPerSecond"/> unit
@@ -57,6 +57,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public VolumetricFlow Create(double value)
+        {
+            return new VolumetricFlow(value, this);
         }
 
         public override string ToString()

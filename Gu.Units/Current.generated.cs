@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Current"/>.
     /// </summary>
     [Serializable]
-    public partial struct Current : IComparable<Current>, IEquatable<Current>, IFormattable, IXmlSerializable, IQuantity<CurrentUnit, I1>
+    public partial struct Current : IComparable<Current>, IEquatable<Current>, IFormattable, IXmlSerializable, IQuantity<CurrentUnit, I1>, IQuantity<CurrentUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Amperes"/>.
@@ -366,6 +366,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, CurrentUnit.Amperes);
+        }
+
+        public string ToString(CurrentUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, CurrentUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, CurrentUnit unit)

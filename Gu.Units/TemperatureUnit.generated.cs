@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct TemperatureUnit : IUnit
+    public struct TemperatureUnit : IUnit, IUnit<Temperature>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Kelvin"/> unit
@@ -76,6 +76,11 @@
         public double FromSiUnit(double value)
         {
             return _conversionFactor * value + _offset;
+        }
+
+        public Temperature Create(double value)
+        {
+            return new Temperature(value, this);
         }
 
         public override string ToString()

@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Acceleration"/>.
     /// </summary>
     [Serializable]
-    public partial struct Acceleration : IComparable<Acceleration>, IEquatable<Acceleration>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1, TimeUnit, INeg2>
+    public partial struct Acceleration : IComparable<Acceleration>, IEquatable<Acceleration>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1, TimeUnit, INeg2>, IQuantity<AccelerationUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.MetresPerSecondSquared"/>.
@@ -338,6 +338,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, AccelerationUnit.MetresPerSecondSquared);
+        }
+
+        public string ToString(AccelerationUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, AccelerationUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, AccelerationUnit unit)

@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct TimeUnit : IUnit
+    public struct TimeUnit : IUnit, IUnit<Time>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Seconds"/> unit
@@ -117,6 +117,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Time Create(double value)
+        {
+            return new Time(value, this);
         }
 
         public override string ToString()

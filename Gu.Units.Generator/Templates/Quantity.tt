@@ -33,7 +33,7 @@ namespace <#= Settings.Namespace #>
     /// A type for the quantity <see cref="T:<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.
     /// </summary>
     [Serializable]
-	public partial struct <#= quantity.ClassName #> : IComparable<<#= quantity.ClassName #>>, IEquatable<<#= quantity.ClassName #>>, IFormattable, IXmlSerializable, <#= quantity.Interface #>
+	public partial struct <#= quantity.ClassName #> : IComparable<<#= quantity.ClassName #>>, IEquatable<<#= quantity.ClassName #>>, IFormattable, IXmlSerializable, <#= quantity.Interface #>, IQuantity<<#= quantity.ClassName #>Unit>
 	{
 	    /// <summary>
         /// The quantity in <see cref="T:<#= Settings.Namespace #>.<#= quantity.Unit.ClassName #>"/>.
@@ -362,6 +362,16 @@ namespace <#= Settings.Namespace #>
             return this.ToString(format, formatProvider, <#= quantity.ClassName #>Unit.<#= quantity.Unit.ClassName #>);
         }
  
+        public string ToString(<#= quantity.ClassName #>Unit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, <#= quantity.ClassName #>Unit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
         public string ToString(string format, IFormatProvider formatProvider, <#= quantity.ClassName #>Unit unit)
         {
             var quantity = unit.<#= Names.FromSiUnit #>(this.<#= quantity.Unit.ParameterName #>);

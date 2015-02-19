@@ -8,6 +8,11 @@
         double SiValue { get; }
     }
 
+    public interface IQuantity<TUnit> : IQuantity
+        where TUnit : IUnit
+    {
+    }
+
     public interface IQuantity<TUnit, TPower> : IQuantity
         where TUnit : IUnit
         where TPower : IPower

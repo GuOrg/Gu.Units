@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.SpecificEnergy"/>.
     /// </summary>
     [Serializable]
-    public partial struct SpecificEnergy : IComparable<SpecificEnergy>, IEquatable<SpecificEnergy>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I2, TimeUnit, INeg2>
+    public partial struct SpecificEnergy : IComparable<SpecificEnergy>, IEquatable<SpecificEnergy>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I2, TimeUnit, INeg2>, IQuantity<SpecificEnergyUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.JoulesPerKilogram"/>.
@@ -305,6 +305,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, SpecificEnergyUnit.JoulesPerKilogram);
+        }
+
+        public string ToString(SpecificEnergyUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, SpecificEnergyUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, SpecificEnergyUnit unit)

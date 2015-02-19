@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Capacitance"/>.
     /// </summary>
     [Serializable]
-    public partial struct Capacitance : IComparable<Capacitance>, IEquatable<Capacitance>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, I4, CurrentUnit, I2, MassUnit, INeg1, LengthUnit, INeg2>
+    public partial struct Capacitance : IComparable<Capacitance>, IEquatable<Capacitance>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, I4, CurrentUnit, I2, MassUnit, INeg1, LengthUnit, INeg2>, IQuantity<CapacitanceUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Farads"/>.
@@ -280,6 +280,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, CapacitanceUnit.Farads);
+        }
+
+        public string ToString(CapacitanceUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, CapacitanceUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, CapacitanceUnit unit)

@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct PowerUnit : IUnit
+    public struct PowerUnit : IUnit, IUnit<Power>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Watts"/> unit
@@ -128,6 +128,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Power Create(double value)
+        {
+            return new Power(value, this);
         }
 
         public override string ToString()

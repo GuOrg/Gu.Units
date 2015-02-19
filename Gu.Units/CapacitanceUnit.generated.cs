@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct CapacitanceUnit : IUnit
+    public struct CapacitanceUnit : IUnit, IUnit<Capacitance>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Farads"/> unit
@@ -62,6 +62,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Capacitance Create(double value)
+        {
+            return new Capacitance(value, this);
         }
 
         public override string ToString()

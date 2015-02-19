@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct ForceUnit : IUnit
+    public struct ForceUnit : IUnit, IUnit<Force>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Newtons"/> unit
@@ -128,6 +128,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Force Create(double value)
+        {
+            return new Force(value, this);
         }
 
         public override string ToString()

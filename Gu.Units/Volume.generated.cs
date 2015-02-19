@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Volume"/>.
     /// </summary>
     [Serializable]
-    public partial struct Volume : IComparable<Volume>, IEquatable<Volume>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I3>
+    public partial struct Volume : IComparable<Volume>, IEquatable<Volume>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I3>, IQuantity<VolumeUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.CubicMetres"/>.
@@ -376,6 +376,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, VolumeUnit.CubicMetres);
+        }
+
+        public string ToString(VolumeUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, VolumeUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, VolumeUnit unit)

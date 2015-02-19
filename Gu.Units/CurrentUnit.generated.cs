@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct CurrentUnit : IUnit
+    public struct CurrentUnit : IUnit, IUnit<Current>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Amperes"/> unit
@@ -106,6 +106,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Current Create(double value)
+        {
+            return new Current(value, this);
         }
 
         public override string ToString()

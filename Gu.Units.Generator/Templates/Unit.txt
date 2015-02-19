@@ -6,7 +6,7 @@
 	/// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct LengthUnit : IUnit
+    public struct LengthUnit : IUnit, IUnit<Length>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Metres"/> unit
@@ -84,6 +84,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Length Create(double value)
+        {
+            return new Length(value, this);
         }
 
         public override string ToString()

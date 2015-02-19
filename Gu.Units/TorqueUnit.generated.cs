@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct TorqueUnit : IUnit
+    public struct TorqueUnit : IUnit, IUnit<Torque>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.NewtonMetres"/> unit
@@ -57,6 +57,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Torque Create(double value)
+        {
+            return new Torque(value, this);
         }
 
         public override string ToString()

@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Length"/>.
     /// </summary>
     [Serializable]
-    public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1>
+    public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1>, IQuantity<LengthUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Metres"/>.
@@ -505,6 +505,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, LengthUnit.Metres);
+        }
+
+        public string ToString(LengthUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, LengthUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, LengthUnit unit)

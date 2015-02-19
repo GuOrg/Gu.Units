@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Time"/>.
     /// </summary>
     [Serializable]
-    public partial struct Time : IComparable<Time>, IEquatable<Time>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, I1>
+    public partial struct Time : IComparable<Time>, IEquatable<Time>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, I1>, IQuantity<TimeUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Seconds"/>.
@@ -400,6 +400,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, TimeUnit.Seconds);
+        }
+
+        public string ToString(TimeUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, TimeUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, TimeUnit unit)

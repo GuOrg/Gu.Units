@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Frequency"/>.
     /// </summary>
     [Serializable]
-    public partial struct Frequency : IComparable<Frequency>, IEquatable<Frequency>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, INeg1>
+    public partial struct Frequency : IComparable<Frequency>, IEquatable<Frequency>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, INeg1>, IQuantity<FrequencyUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Hertz"/>.
@@ -391,6 +391,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, FrequencyUnit.Hertz);
+        }
+
+        public string ToString(FrequencyUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, FrequencyUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, FrequencyUnit unit)

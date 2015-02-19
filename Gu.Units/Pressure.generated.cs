@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Pressure"/>.
     /// </summary>
     [Serializable]
-    public partial struct Pressure : IComparable<Pressure>, IEquatable<Pressure>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, INeg1, TimeUnit, INeg2>
+    public partial struct Pressure : IComparable<Pressure>, IEquatable<Pressure>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, INeg1, TimeUnit, INeg2>, IQuantity<PressureUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Pascals"/>.
@@ -452,6 +452,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, PressureUnit.Pascals);
+        }
+
+        public string ToString(PressureUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, PressureUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, PressureUnit unit)

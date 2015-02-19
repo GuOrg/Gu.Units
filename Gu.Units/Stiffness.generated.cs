@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Stiffness"/>.
     /// </summary>
     [Serializable]
-    public partial struct Stiffness : IComparable<Stiffness>, IEquatable<Stiffness>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, TimeUnit, INeg2>
+    public partial struct Stiffness : IComparable<Stiffness>, IEquatable<Stiffness>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, TimeUnit, INeg2>, IQuantity<StiffnessUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.NewtonsPerMetre"/>.
@@ -300,6 +300,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, StiffnessUnit.NewtonsPerMetre);
+        }
+
+        public string ToString(StiffnessUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, StiffnessUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, StiffnessUnit unit)

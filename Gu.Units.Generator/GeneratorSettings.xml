@@ -946,6 +946,15 @@
           </Formula>
           <Conversions />
         </Conversion>
+        <Conversion>
+          <ClassName>MicrometresPerKilonewton</ClassName>
+          <Symbol>kN⁻¹⋅µm</Symbol>
+          <Formula>
+            <ConversionFactor>1E-09</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
       </Conversions>
       <Parts>
         <UnitAndPower>

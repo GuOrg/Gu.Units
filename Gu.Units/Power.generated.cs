@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Power"/>.
     /// </summary>
     [Serializable]
-    public partial struct Power : IComparable<Power>, IEquatable<Power>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3>
+    public partial struct Power : IComparable<Power>, IEquatable<Power>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3>, IQuantity<PowerUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Watts"/>.
@@ -424,6 +424,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, PowerUnit.Watts);
+        }
+
+        public string ToString(PowerUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, PowerUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, PowerUnit unit)

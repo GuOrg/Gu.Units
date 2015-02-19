@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Voltage"/>.
     /// </summary>
     [Serializable]
-    public partial struct Voltage : IComparable<Voltage>, IEquatable<Voltage>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3, CurrentUnit, INeg1>
+    public partial struct Voltage : IComparable<Voltage>, IEquatable<Voltage>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3, CurrentUnit, INeg1>, IQuantity<VoltageUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Volts"/>.
@@ -371,6 +371,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, VoltageUnit.Volts);
+        }
+
+        public string ToString(VoltageUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, VoltageUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, VoltageUnit unit)

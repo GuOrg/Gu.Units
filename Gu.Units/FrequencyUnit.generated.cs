@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct FrequencyUnit : IUnit
+    public struct FrequencyUnit : IUnit, IUnit<Frequency>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Hertz"/> unit
@@ -106,6 +106,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Frequency Create(double value)
+        {
+            return new Frequency(value, this);
         }
 
         public override string ToString()

@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.AngularSpeed"/>.
     /// </summary>
     [Serializable]
-    public partial struct AngularSpeed : IComparable<AngularSpeed>, IEquatable<AngularSpeed>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1, TimeUnit, INeg1>
+    public partial struct AngularSpeed : IComparable<AngularSpeed>, IEquatable<AngularSpeed>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1, TimeUnit, INeg1>, IQuantity<AngularSpeedUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.RadiansPerSecond"/>.
@@ -309,6 +309,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, AngularSpeedUnit.RadiansPerSecond);
+        }
+
+        public string ToString(AngularSpeedUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, AngularSpeedUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, AngularSpeedUnit unit)

@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct PressureUnit : IUnit
+    public struct PressureUnit : IUnit, IUnit<Pressure>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Pascals"/> unit
@@ -150,6 +150,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Pressure Create(double value)
+        {
+            return new Pressure(value, this);
         }
 
         public override string ToString()

@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Temperature"/>.
     /// </summary>
     [Serializable]
-    public partial struct Temperature : IComparable<Temperature>, IEquatable<Temperature>, IFormattable, IXmlSerializable, IQuantity<TemperatureUnit, I1>
+    public partial struct Temperature : IComparable<Temperature>, IEquatable<Temperature>, IFormattable, IXmlSerializable, IQuantity<TemperatureUnit, I1>, IQuantity<TemperatureUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Kelvin"/>.
@@ -318,6 +318,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, TemperatureUnit.Kelvin);
+        }
+
+        public string ToString(TemperatureUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, TemperatureUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, TemperatureUnit unit)

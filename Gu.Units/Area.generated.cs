@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Area"/>.
     /// </summary>
     [Serializable]
-    public partial struct Area : IComparable<Area>, IEquatable<Area>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I2>
+    public partial struct Area : IComparable<Area>, IEquatable<Area>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I2>, IQuantity<AreaUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.SquareMetres"/>.
@@ -452,6 +452,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, AreaUnit.SquareMetres);
+        }
+
+        public string ToString(AreaUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, AreaUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, AreaUnit unit)

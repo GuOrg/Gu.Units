@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct AccelerationUnit : IUnit
+    public struct AccelerationUnit : IUnit, IUnit<Acceleration>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.MetresPerSecondSquared"/> unit
@@ -69,6 +69,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Acceleration Create(double value)
+        {
+            return new Acceleration(value, this);
         }
 
         public override string ToString()

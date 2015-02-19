@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Density"/>.
     /// </summary>
     [Serializable]
-    public partial struct Density : IComparable<Density>, IEquatable<Density>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, INeg3>
+    public partial struct Density : IComparable<Density>, IEquatable<Density>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, INeg3>, IQuantity<DensityUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.KilogramsPerCubicMetre"/>.
@@ -323,6 +323,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, DensityUnit.KilogramsPerCubicMetre);
+        }
+
+        public string ToString(DensityUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, DensityUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, DensityUnit unit)

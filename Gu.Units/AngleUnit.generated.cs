@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct AngleUnit : IUnit
+    public struct AngleUnit : IUnit, IUnit<Angle>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Radians"/> unit
@@ -68,6 +68,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Angle Create(double value)
+        {
+            return new Angle(value, this);
         }
 
         public override string ToString()
