@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Torque"/>.
     /// </summary>
     [Serializable]
-    public partial struct Torque : IComparable<Torque>, IEquatable<Torque>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg2, AngleUnit, INeg1>
+    public partial struct Torque : IComparable<Torque>, IEquatable<Torque>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg2, AngleUnit, INeg1>, IQuantity<TorqueUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.NewtonMetres"/>.
@@ -290,6 +290,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, TorqueUnit.NewtonMetres);
+        }
+
+        public string ToString(TorqueUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, TorqueUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, TorqueUnit unit)

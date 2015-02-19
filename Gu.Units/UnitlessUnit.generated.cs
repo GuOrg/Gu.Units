@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct UnitlessUnit : IUnit
+    public struct UnitlessUnit : IUnit, IUnit<Unitless>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Scalar"/> unit
@@ -85,6 +85,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Unitless Create(double value)
+        {
+            return new Unitless(value, this);
         }
 
         public override string ToString()

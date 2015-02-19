@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Unitless"/>.
     /// </summary>
     [Serializable]
-    public partial struct Unitless : IComparable<Unitless>, IEquatable<Unitless>, IFormattable, IXmlSerializable, IQuantity<UnitlessUnit, I1>
+    public partial struct Unitless : IComparable<Unitless>, IEquatable<Unitless>, IFormattable, IXmlSerializable, IQuantity<UnitlessUnit, I1>, IQuantity<UnitlessUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Scalar"/>.
@@ -337,6 +337,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, UnitlessUnit.Scalar);
+        }
+
+        public string ToString(UnitlessUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, UnitlessUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, UnitlessUnit unit)

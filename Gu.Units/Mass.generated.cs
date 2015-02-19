@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Mass"/>.
     /// </summary>
     [Serializable]
-    public partial struct Mass : IComparable<Mass>, IEquatable<Mass>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1>
+    public partial struct Mass : IComparable<Mass>, IEquatable<Mass>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1>, IQuantity<MassUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Kilograms"/>.
@@ -352,6 +352,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, MassUnit.Kilograms);
+        }
+
+        public string ToString(MassUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, MassUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, MassUnit unit)

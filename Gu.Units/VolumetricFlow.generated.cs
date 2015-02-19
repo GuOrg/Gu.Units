@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.VolumetricFlow"/>.
     /// </summary>
     [Serializable]
-    public partial struct VolumetricFlow : IComparable<VolumetricFlow>, IEquatable<VolumetricFlow>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I3, TimeUnit, INeg1>
+    public partial struct VolumetricFlow : IComparable<VolumetricFlow>, IEquatable<VolumetricFlow>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I3, TimeUnit, INeg1>, IQuantity<VolumetricFlowUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.CubicMetresPerSecond"/>.
@@ -300,6 +300,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, VolumetricFlowUnit.CubicMetresPerSecond);
+        }
+
+        public string ToString(VolumetricFlowUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, VolumetricFlowUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, VolumetricFlowUnit unit)

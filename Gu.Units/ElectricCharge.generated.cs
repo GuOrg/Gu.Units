@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.ElectricCharge"/>.
     /// </summary>
     [Serializable]
-    public partial struct ElectricCharge : IComparable<ElectricCharge>, IEquatable<ElectricCharge>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, I1, CurrentUnit, I1>
+    public partial struct ElectricCharge : IComparable<ElectricCharge>, IEquatable<ElectricCharge>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, I1, CurrentUnit, I1>, IQuantity<ElectricChargeUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Coulombs"/>.
@@ -290,6 +290,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, ElectricChargeUnit.Coulombs);
+        }
+
+        public string ToString(ElectricChargeUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, ElectricChargeUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, ElectricChargeUnit unit)

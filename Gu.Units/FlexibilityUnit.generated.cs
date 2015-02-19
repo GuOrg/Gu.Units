@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct FlexibilityUnit : IUnit
+    public struct FlexibilityUnit : IUnit, IUnit<Flexibility>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.MetresPerNewton"/> unit
@@ -25,6 +25,12 @@
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FlexibilityUnit MillimetresPerKilonewton = new FlexibilityUnit(1E-06, "kN⁻¹⋅mm");
+
+        /// <summary>
+        /// The <see cref="T:Gu.Units.MicrometresPerKilonewton"/> unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly FlexibilityUnit MicrometresPerKilonewton = new FlexibilityUnit(1E-09, "kN⁻¹⋅µm");
 
         private readonly double _conversionFactor;
         private readonly string _symbol;
@@ -69,6 +75,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Flexibility Create(double value)
+        {
+            return new Flexibility(value, this);
         }
 
         public override string ToString()

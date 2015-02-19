@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Energy"/>.
     /// </summary>
     [Serializable]
-    public partial struct Energy : IComparable<Energy>, IEquatable<Energy>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg2>
+    public partial struct Energy : IComparable<Energy>, IEquatable<Energy>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg2>, IQuantity<EnergyUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Joules"/>.
@@ -453,6 +453,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, EnergyUnit.Joules);
+        }
+
+        public string ToString(EnergyUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, EnergyUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, EnergyUnit unit)

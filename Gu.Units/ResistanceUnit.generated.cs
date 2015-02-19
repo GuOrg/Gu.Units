@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct ResistanceUnit : IUnit
+    public struct ResistanceUnit : IUnit, IUnit<Resistance>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Ohm"/> unit
@@ -106,6 +106,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Resistance Create(double value)
+        {
+            return new Resistance(value, this);
         }
 
         public override string ToString()

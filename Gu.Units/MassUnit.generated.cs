@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct MassUnit : IUnit
+    public struct MassUnit : IUnit, IUnit<Mass>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilograms"/> unit
@@ -95,6 +95,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Mass Create(double value)
+        {
+            return new Mass(value, this);
         }
 
         public override string ToString()

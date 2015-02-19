@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct StiffnessUnit : IUnit
+    public struct StiffnessUnit : IUnit, IUnit<Stiffness>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.NewtonsPerMetre"/> unit
@@ -57,6 +57,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Stiffness Create(double value)
+        {
+            return new Stiffness(value, this);
         }
 
         public override string ToString()

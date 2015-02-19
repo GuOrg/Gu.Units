@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct VoltageUnit : IUnit
+    public struct VoltageUnit : IUnit, IUnit<Voltage>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Volts"/> unit
@@ -106,6 +106,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Voltage Create(double value)
+        {
+            return new Voltage(value, this);
         }
 
         public override string ToString()

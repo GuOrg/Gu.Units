@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct InductanceUnit : IUnit
+    public struct InductanceUnit : IUnit, IUnit<Inductance>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Henrys"/> unit
@@ -62,6 +62,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Inductance Create(double value)
+        {
+            return new Inductance(value, this);
         }
 
         public override string ToString()

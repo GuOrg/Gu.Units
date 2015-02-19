@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct AngularSpeedUnit : IUnit
+    public struct AngularSpeedUnit : IUnit, IUnit<AngularSpeed>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.RadiansPerSecond"/> unit
@@ -68,6 +68,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public AngularSpeed Create(double value)
+        {
+            return new AngularSpeed(value, this);
         }
 
         public override string ToString()

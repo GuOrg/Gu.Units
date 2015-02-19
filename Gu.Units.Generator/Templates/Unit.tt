@@ -31,7 +31,7 @@ namespace <#= Settings.Namespace #>
 	/// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct <#= unit.QuantityName #>Unit : IUnit
+    public struct <#= unit.QuantityName #>Unit : IUnit, IUnit<<#= unit.QuantityName #>>
     {
         /// <summary>
         /// The <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/> unit
@@ -197,6 +197,11 @@ namespace <#= Settings.Namespace #>
 <#
 	}
         #>
+        }
+
+        public <#= unit.QuantityName #> Create(double value)
+        {
+            return new <#= unit.QuantityName #>(value, this);
         }
 
         public override string ToString()

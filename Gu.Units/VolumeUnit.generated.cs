@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct VolumeUnit : IUnit
+    public struct VolumeUnit : IUnit, IUnit<Volume>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.CubicMetres"/> unit
@@ -86,6 +86,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Volume Create(double value)
+        {
+            return new Volume(value, this);
         }
 
         public override string ToString()

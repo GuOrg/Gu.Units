@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Angle"/>.
     /// </summary>
     [Serializable]
-    public partial struct Angle : IComparable<Angle>, IEquatable<Angle>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1>
+    public partial struct Angle : IComparable<Angle>, IEquatable<Angle>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1>, IQuantity<AngleUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Radians"/>.
@@ -309,6 +309,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, AngleUnit.Radians);
+        }
+
+        public string ToString(AngleUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, AngleUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, AngleUnit unit)

@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.LuminousIntensity"/>.
     /// </summary>
     [Serializable]
-    public partial struct LuminousIntensity : IComparable<LuminousIntensity>, IEquatable<LuminousIntensity>, IFormattable, IXmlSerializable, IQuantity<LuminousIntensityUnit, I1>
+    public partial struct LuminousIntensity : IComparable<LuminousIntensity>, IEquatable<LuminousIntensity>, IFormattable, IXmlSerializable, IQuantity<LuminousIntensityUnit, I1>, IQuantity<LuminousIntensityUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Candelas"/>.
@@ -280,6 +280,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, LuminousIntensityUnit.Candelas);
+        }
+
+        public string ToString(LuminousIntensityUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, LuminousIntensityUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, LuminousIntensityUnit unit)

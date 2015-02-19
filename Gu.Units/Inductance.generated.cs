@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Inductance"/>.
     /// </summary>
     [Serializable]
-    public partial struct Inductance : IComparable<Inductance>, IEquatable<Inductance>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg2, CurrentUnit, INeg2>
+    public partial struct Inductance : IComparable<Inductance>, IEquatable<Inductance>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg2, CurrentUnit, INeg2>, IQuantity<InductanceUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Henrys"/>.
@@ -285,6 +285,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, InductanceUnit.Henrys);
+        }
+
+        public string ToString(InductanceUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, InductanceUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, InductanceUnit unit)

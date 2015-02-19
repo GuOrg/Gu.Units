@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Resistance"/>.
     /// </summary>
     [Serializable]
-    public partial struct Resistance : IComparable<Resistance>, IEquatable<Resistance>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3, CurrentUnit, INeg2>
+    public partial struct Resistance : IComparable<Resistance>, IEquatable<Resistance>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3, CurrentUnit, INeg2>, IQuantity<ResistanceUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Ohm"/>.
@@ -366,6 +366,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, ResistanceUnit.Ohm);
+        }
+
+        public string ToString(ResistanceUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, ResistanceUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, ResistanceUnit unit)

@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct EnergyUnit : IUnit
+    public struct EnergyUnit : IUnit, IUnit<Energy>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Joules"/> unit
@@ -139,6 +139,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Energy Create(double value)
+        {
+            return new Energy(value, this);
         }
 
         public override string ToString()

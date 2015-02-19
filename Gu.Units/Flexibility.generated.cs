@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Flexibility"/>.
     /// </summary>
     [Serializable]
-    public partial struct Flexibility : IComparable<Flexibility>, IEquatable<Flexibility>, IFormattable, IXmlSerializable, IQuantity<MassUnit, INeg1, TimeUnit, I2>
+    public partial struct Flexibility : IComparable<Flexibility>, IEquatable<Flexibility>, IFormattable, IXmlSerializable, IQuantity<MassUnit, INeg1, TimeUnit, I2>, IQuantity<FlexibilityUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.MetresPerNewton"/>.
@@ -77,6 +77,17 @@
         }
 
         /// <summary>
+        /// The quantity in micrometresPerKilonewton
+        /// </summary>
+        public double MicrometresPerKilonewton
+        {
+            get
+            {
+                return FlexibilityUnit.MicrometresPerKilonewton.FromSiUnit(this.metresPerNewton);
+            }
+        }
+
+        /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.Flexibility"/> from its string representation
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Flexibility"/></param>
@@ -132,6 +143,14 @@
         public static Flexibility FromMillimetresPerKilonewton(double millimetresPerKilonewton)
         {
             return From(millimetresPerKilonewton, FlexibilityUnit.MillimetresPerKilonewton);
+        }
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.Flexibility"/>.
+        /// </summary>
+        /// <param name="micrometresPerKilonewton">The value in kN⁻¹⋅µm</param>
+        public static Flexibility FromMicrometresPerKilonewton(double micrometresPerKilonewton)
+        {
+            return From(micrometresPerKilonewton, FlexibilityUnit.MicrometresPerKilonewton);
         }
 
         public static Length operator *(Flexibility left, Force right)
@@ -333,6 +352,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, FlexibilityUnit.MetresPerNewton);
+        }
+
+        public string ToString(FlexibilityUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, FlexibilityUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, FlexibilityUnit unit)

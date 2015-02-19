@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct ElectricChargeUnit : IUnit
+    public struct ElectricChargeUnit : IUnit, IUnit<ElectricCharge>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Coulombs"/> unit
@@ -62,6 +62,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public ElectricCharge Create(double value)
+        {
+            return new ElectricCharge(value, this);
         }
 
         public override string ToString()

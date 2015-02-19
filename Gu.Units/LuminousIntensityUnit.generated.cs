@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct LuminousIntensityUnit : IUnit
+    public struct LuminousIntensityUnit : IUnit, IUnit<LuminousIntensity>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Candelas"/> unit
@@ -62,6 +62,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public LuminousIntensity Create(double value)
+        {
+            return new LuminousIntensity(value, this);
         }
 
         public override string ToString()

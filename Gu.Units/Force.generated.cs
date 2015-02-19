@@ -10,7 +10,7 @@
     /// A type for the quantity <see cref="T:Gu.Units.Force"/>.
     /// </summary>
     [Serializable]
-    public partial struct Force : IComparable<Force>, IEquatable<Force>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I1, TimeUnit, INeg2>
+    public partial struct Force : IComparable<Force>, IEquatable<Force>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I1, TimeUnit, INeg2>, IQuantity<ForceUnit>
     {
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Newtons"/>.
@@ -424,6 +424,16 @@
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, ForceUnit.Newtons);
+        }
+
+        public string ToString(ForceUnit unit)
+        {
+            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+        }
+
+        public string ToString(string format, ForceUnit unit)
+        {
+            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
         }
 
         public string ToString(string format, IFormatProvider formatProvider, ForceUnit unit)

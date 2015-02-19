@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct AreaUnit : IUnit
+    public struct AreaUnit : IUnit, IUnit<Area>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareMetres"/> unit
@@ -110,6 +110,11 @@
         public double FromSiUnit(double value)
         {
             return value / _conversionFactor;
+        }
+
+        public Area Create(double value)
+        {
+            return new Area(value, this);
         }
 
         public override string ToString()
