@@ -64,7 +64,7 @@
             return value / _conversionFactor;
         }
 
-        public Capacitance Create(double value)
+        public Capacitance CreateQuantity(double value)
         {
             return new Capacitance(value, this);
         }

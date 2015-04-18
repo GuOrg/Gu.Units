@@ -59,7 +59,7 @@
             return value / _conversionFactor;
         }
 
-        public Torque Create(double value)
+        public Torque CreateQuantity(double value)
         {
             return new Torque(value, this);
         }

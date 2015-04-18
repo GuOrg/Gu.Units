@@ -113,7 +113,7 @@
             return value / _conversionFactor;
         }
 
-        public Speed Create(double value)
+        public Speed CreateQuantity(double value)
         {
             return new Speed(value, this);
         }

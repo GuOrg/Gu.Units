@@ -59,7 +59,7 @@
             return value / _conversionFactor;
         }
 
-        public SpecificEnergy Create(double value)
+        public SpecificEnergy CreateQuantity(double value)
         {
             return new SpecificEnergy(value, this);
         }

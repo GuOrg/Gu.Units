@@ -130,7 +130,7 @@
             return value / _conversionFactor;
         }
 
-        public Force Create(double value)
+        public Force CreateQuantity(double value)
         {
             return new Force(value, this);
         }

@@ -108,7 +108,7 @@
             return value / _conversionFactor;
         }
 
-        public Frequency Create(double value)
+        public Frequency CreateQuantity(double value)
         {
             return new Frequency(value, this);
         }

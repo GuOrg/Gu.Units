@@ -87,7 +87,7 @@
             return value / _conversionFactor;
         }
 
-        public Unitless Create(double value)
+        public Unitless CreateQuantity(double value)
         {
             return new Unitless(value, this);
         }

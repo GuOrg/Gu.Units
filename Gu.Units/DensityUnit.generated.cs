@@ -71,7 +71,7 @@
             return value / _conversionFactor;
         }
 
-        public Density Create(double value)
+        public Density CreateQuantity(double value)
         {
             return new Density(value, this);
         }

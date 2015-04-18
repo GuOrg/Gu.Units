@@ -64,7 +64,7 @@
             return value / _conversionFactor;
         }
 
-        public LuminousIntensity Create(double value)
+        public LuminousIntensity CreateQuantity(double value)
         {
             return new LuminousIntensity(value, this);
         }

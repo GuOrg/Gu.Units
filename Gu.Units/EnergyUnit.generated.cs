@@ -141,7 +141,7 @@
             return value / _conversionFactor;
         }
 
-        public Energy Create(double value)
+        public Energy CreateQuantity(double value)
         {
             return new Energy(value, this);
         }

@@ -78,7 +78,7 @@
             return _conversionFactor * value + _offset;
         }
 
-        public Temperature Create(double value)
+        public Temperature CreateQuantity(double value)
         {
             return new Temperature(value, this);
         }

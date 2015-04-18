@@ -108,7 +108,7 @@
             return value / _conversionFactor;
         }
 
-        public Resistance Create(double value)
+        public Resistance CreateQuantity(double value)
         {
             return new Resistance(value, this);
         }
