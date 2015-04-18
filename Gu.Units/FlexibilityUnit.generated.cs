@@ -77,7 +77,7 @@
             return value / _conversionFactor;
         }
 
-        public Flexibility Create(double value)
+        public Flexibility CreateQuantity(double value)
         {
             return new Flexibility(value, this);
         }

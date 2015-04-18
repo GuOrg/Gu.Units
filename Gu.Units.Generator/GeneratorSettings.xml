@@ -939,7 +939,7 @@
         </Conversion>
         <Conversion>
           <ClassName>MillimetresPerKilonewton</ClassName>
-          <Symbol>kN⁻¹⋅mm</Symbol>
+          <Symbol>mm/kN</Symbol>
           <Formula>
             <ConversionFactor>1E-06</ConversionFactor>
             <Offset>0</Offset>
@@ -948,7 +948,7 @@
         </Conversion>
         <Conversion>
           <ClassName>MicrometresPerKilonewton</ClassName>
-          <Symbol>kN⁻¹⋅µm</Symbol>
+          <Symbol>µm/kN</Symbol>
           <Formula>
             <ConversionFactor>1E-09</ConversionFactor>
             <Offset>0</Offset>

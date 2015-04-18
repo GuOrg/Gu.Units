@@ -64,7 +64,7 @@
             return value / _conversionFactor;
         }
 
-        public Inductance Create(double value)
+        public Inductance CreateQuantity(double value)
         {
             return new Inductance(value, this);
         }

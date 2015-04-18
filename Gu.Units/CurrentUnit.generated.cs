@@ -108,7 +108,7 @@
             return value / _conversionFactor;
         }
 
-        public Current Create(double value)
+        public Current CreateQuantity(double value)
         {
             return new Current(value, this);
         }

@@ -88,7 +88,7 @@
             return value / _conversionFactor;
         }
 
-        public Volume Create(double value)
+        public Volume CreateQuantity(double value)
         {
             return new Volume(value, this);
         }

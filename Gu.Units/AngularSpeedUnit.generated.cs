@@ -70,7 +70,7 @@
             return value / _conversionFactor;
         }
 
-        public AngularSpeed Create(double value)
+        public AngularSpeed CreateQuantity(double value)
         {
             return new AngularSpeed(value, this);
         }

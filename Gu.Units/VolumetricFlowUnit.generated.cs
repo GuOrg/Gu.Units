@@ -59,7 +59,7 @@
             return value / _conversionFactor;
         }
 
-        public VolumetricFlow Create(double value)
+        public VolumetricFlow CreateQuantity(double value)
         {
             return new VolumetricFlow(value, this);
         }

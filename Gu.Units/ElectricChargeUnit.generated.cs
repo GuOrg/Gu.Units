@@ -64,7 +64,7 @@
             return value / _conversionFactor;
         }
 
-        public ElectricCharge Create(double value)
+        public ElectricCharge CreateQuantity(double value)
         {
             return new ElectricCharge(value, this);
         }

@@ -59,7 +59,7 @@
             return value / _conversionFactor;
         }
 
-        public Stiffness Create(double value)
+        public Stiffness CreateQuantity(double value)
         {
             return new Stiffness(value, this);
         }

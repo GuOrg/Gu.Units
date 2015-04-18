@@ -112,7 +112,7 @@
             return value / _conversionFactor;
         }
 
-        public Area Create(double value)
+        public Area CreateQuantity(double value)
         {
             return new Area(value, this);
         }

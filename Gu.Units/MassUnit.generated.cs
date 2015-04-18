@@ -97,7 +97,7 @@
             return value / _conversionFactor;
         }
 
-        public Mass Create(double value)
+        public Mass CreateQuantity(double value)
         {
             return new Mass(value, this);
         }

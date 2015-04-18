@@ -71,7 +71,7 @@
             return value / _conversionFactor;
         }
 
-        public Acceleration Create(double value)
+        public Acceleration CreateQuantity(double value)
         {
             return new Acceleration(value, this);
         }

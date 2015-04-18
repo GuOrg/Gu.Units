@@ -152,7 +152,7 @@
             return value / _conversionFactor;
         }
 
-        public Pressure Create(double value)
+        public Pressure CreateQuantity(double value)
         {
             return new Pressure(value, this);
         }

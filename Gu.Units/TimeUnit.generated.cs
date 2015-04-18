@@ -119,7 +119,7 @@
             return value / _conversionFactor;
         }
 
-        public Time Create(double value)
+        public Time CreateQuantity(double value)
         {
             return new Time(value, this);
         }

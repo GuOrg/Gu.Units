@@ -130,7 +130,7 @@
             return value / _conversionFactor;
         }
 
-        public Power Create(double value)
+        public Power CreateQuantity(double value)
         {
             return new Power(value, this);
         }

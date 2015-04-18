@@ -169,7 +169,7 @@
             return value / _conversionFactor;
         }
 
-        public Length Create(double value)
+        public Length CreateQuantity(double value)
         {
             return new Length(value, this);
         }

@@ -70,7 +70,7 @@
             return value / _conversionFactor;
         }
 
-        public Angle Create(double value)
+        public Angle CreateQuantity(double value)
         {
             return new Angle(value, this);
         }

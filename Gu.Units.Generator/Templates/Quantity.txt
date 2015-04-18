@@ -299,6 +299,16 @@
         {
             return length;
         }
+
+        /// <summary>
+        /// Get the scalar value
+        /// </summary>
+        /// <param name="lengthUnit"></param>
+        /// <returns>The scalar value of this in the specified unit</returns>
+        public double GetValue(LengthUnit unit)
+        {
+            return unit.FromSiUnit(this.length);
+        }
  
         public override string ToString()
         {

@@ -108,7 +108,7 @@
             return value / _conversionFactor;
         }
 
-        public Voltage Create(double value)
+        public Voltage CreateQuantity(double value)
         {
             return new Voltage(value, this);
         }
