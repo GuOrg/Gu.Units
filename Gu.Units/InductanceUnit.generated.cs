@@ -64,9 +64,24 @@
             return value / _conversionFactor;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public Inductance CreateQuantity(double value)
         {
             return new Inductance(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(Inductance quantity)
+        {
+            return FromSiUnit(quantity.henrys);
         }
 
         public override string ToString()

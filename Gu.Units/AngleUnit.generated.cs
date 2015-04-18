@@ -70,9 +70,24 @@
             return value / _conversionFactor;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public Angle CreateQuantity(double value)
         {
             return new Angle(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(Angle quantity)
+        {
+            return FromSiUnit(quantity.radians);
         }
 
         public override string ToString()

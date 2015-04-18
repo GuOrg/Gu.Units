@@ -341,6 +341,16 @@ namespace <#= Settings.Namespace #>
         {
             return <#= quantity.ParameterName #>;
         }
+
+        /// <summary>
+        /// Get the scalar value
+        /// </summary>
+        /// <param name="unit"></param>
+        /// <returns>The scalar value of this in the specified unit</returns>
+        public double GetValue(<#= quantity.ClassName #>Unit unit)
+        {
+            return unit.FromSiUnit(this.<#= quantity.Unit.ParameterName #>);
+        }
  
         public override string ToString()
         {

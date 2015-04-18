@@ -348,6 +348,16 @@
             return resistance;
         }
 
+        /// <summary>
+        /// Get the scalar value
+        /// </summary>
+        /// <param name="unit"></param>
+        /// <returns>The scalar value of this in the specified unit</returns>
+        public double GetValue(ResistanceUnit unit)
+        {
+            return unit.FromSiUnit(this.ohm);
+        }
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);

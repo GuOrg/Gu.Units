@@ -12,7 +12,7 @@
         /// The <see cref="T:Gu.Units.CubicMetresPerSecond"/> unit
         /// Contains coonversion logic to from and formatting.
         /// </summary>
-        public static readonly VolumetricFlowUnit CubicMetresPerSecond = new VolumetricFlowUnit(1.0, "m³ / s");
+        public static readonly VolumetricFlowUnit CubicMetresPerSecond = new VolumetricFlowUnit(1.0, "m³/s");
 
         private readonly double _conversionFactor;
         private readonly string _symbol;
@@ -59,9 +59,24 @@
             return value / _conversionFactor;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public VolumetricFlow CreateQuantity(double value)
         {
             return new VolumetricFlow(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(VolumetricFlow quantity)
+        {
+            return FromSiUnit(quantity.cubicMetresPerSecond);
         }
 
         public override string ToString()

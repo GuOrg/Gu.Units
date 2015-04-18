@@ -64,9 +64,24 @@
             return value / _conversionFactor;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public ElectricCharge CreateQuantity(double value)
         {
             return new ElectricCharge(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(ElectricCharge quantity)
+        {
+            return FromSiUnit(quantity.coulombs);
         }
 
         public override string ToString()

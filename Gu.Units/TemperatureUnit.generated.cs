@@ -78,9 +78,24 @@
             return _conversionFactor * value + _offset;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public Temperature CreateQuantity(double value)
         {
             return new Temperature(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(Temperature quantity)
+        {
+            return FromSiUnit(quantity.kelvin);
         }
 
         public override string ToString()

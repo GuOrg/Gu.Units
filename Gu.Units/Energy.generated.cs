@@ -435,6 +435,16 @@
             return energy;
         }
 
+        /// <summary>
+        /// Get the scalar value
+        /// </summary>
+        /// <param name="unit"></param>
+        /// <returns>The scalar value of this in the specified unit</returns>
+        public double GetValue(EnergyUnit unit)
+        {
+            return unit.FromSiUnit(this.joules);
+        }
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);

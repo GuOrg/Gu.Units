@@ -112,9 +112,24 @@
             return value / _conversionFactor;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public Area CreateQuantity(double value)
         {
             return new Area(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(Area quantity)
+        {
+            return FromSiUnit(quantity.squareMetres);
         }
 
         public override string ToString()

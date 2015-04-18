@@ -24,13 +24,13 @@
         /// The <see cref="T:Gu.Units.MillimetresPerKilonewton"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly FlexibilityUnit MillimetresPerKilonewton = new FlexibilityUnit(1E-06, "kN⁻¹⋅mm");
+        public static readonly FlexibilityUnit MillimetresPerKilonewton = new FlexibilityUnit(1E-06, "mm/kN");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.MicrometresPerKilonewton"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly FlexibilityUnit MicrometresPerKilonewton = new FlexibilityUnit(1E-09, "kN⁻¹⋅µm");
+        public static readonly FlexibilityUnit MicrometresPerKilonewton = new FlexibilityUnit(1E-09, "µm/kN");
 
         private readonly double _conversionFactor;
         private readonly string _symbol;
@@ -77,9 +77,24 @@
             return value / _conversionFactor;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public Flexibility CreateQuantity(double value)
         {
             return new Flexibility(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(Flexibility quantity)
+        {
+            return FromSiUnit(quantity.metresPerNewton);
         }
 
         public override string ToString()

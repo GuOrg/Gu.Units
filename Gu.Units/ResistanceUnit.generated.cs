@@ -108,9 +108,24 @@
             return value / _conversionFactor;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public Resistance CreateQuantity(double value)
         {
             return new Resistance(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(Resistance quantity)
+        {
+            return FromSiUnit(quantity.ohm);
         }
 
         public override string ToString()

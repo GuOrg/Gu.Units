@@ -303,11 +303,11 @@
         /// <summary>
         /// Get the scalar value
         /// </summary>
-        /// <param name="lengthUnit"></param>
+        /// <param name="unit"></param>
         /// <returns>The scalar value of this in the specified unit</returns>
         public double GetValue(LengthUnit unit)
         {
-            return unit.FromSiUnit(this.length);
+            return unit.FromSiUnit(this.metres);
         }
  
         public override string ToString()

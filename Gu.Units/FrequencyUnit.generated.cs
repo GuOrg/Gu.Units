@@ -108,9 +108,24 @@
             return value / _conversionFactor;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public Frequency CreateQuantity(double value)
         {
             return new Frequency(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(Frequency quantity)
+        {
+            return FromSiUnit(quantity.hertz);
         }
 
         public override string ToString()

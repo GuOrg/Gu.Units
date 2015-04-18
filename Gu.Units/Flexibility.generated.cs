@@ -139,7 +139,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Flexibility"/>.
         /// </summary>
-        /// <param name="millimetresPerKilonewton">The value in kN⁻¹⋅mm</param>
+        /// <param name="millimetresPerKilonewton">The value in mm/kN</param>
         public static Flexibility FromMillimetresPerKilonewton(double millimetresPerKilonewton)
         {
             return From(millimetresPerKilonewton, FlexibilityUnit.MillimetresPerKilonewton);
@@ -147,7 +147,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Flexibility"/>.
         /// </summary>
-        /// <param name="micrometresPerKilonewton">The value in kN⁻¹⋅µm</param>
+        /// <param name="micrometresPerKilonewton">The value in µm/kN</param>
         public static Flexibility FromMicrometresPerKilonewton(double micrometresPerKilonewton)
         {
             return From(micrometresPerKilonewton, FlexibilityUnit.MicrometresPerKilonewton);
@@ -332,6 +332,16 @@
         public static Flexibility operator +(Flexibility flexibility)
         {
             return flexibility;
+        }
+
+        /// <summary>
+        /// Get the scalar value
+        /// </summary>
+        /// <param name="unit"></param>
+        /// <returns>The scalar value of this in the specified unit</returns>
+        public double GetValue(FlexibilityUnit unit)
+        {
+            return unit.FromSiUnit(this.metresPerNewton);
         }
 
         public override string ToString()

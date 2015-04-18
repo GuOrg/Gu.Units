@@ -152,9 +152,24 @@
             return value / _conversionFactor;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public Pressure CreateQuantity(double value)
         {
             return new Pressure(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(Pressure quantity)
+        {
+            return FromSiUnit(quantity.pascals);
         }
 
         public override string ToString()

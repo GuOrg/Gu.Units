@@ -18,55 +18,55 @@
         /// The <see cref="T:Gu.Units.MillimetresPerSecond"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly SpeedUnit MillimetresPerSecond = new SpeedUnit(0.001, "mm / s");
+        public static readonly SpeedUnit MillimetresPerSecond = new SpeedUnit(0.001, "mm/s");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.CentimetresPerSecond"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly SpeedUnit CentimetresPerSecond = new SpeedUnit(0.01, "cm / s");
+        public static readonly SpeedUnit CentimetresPerSecond = new SpeedUnit(0.01, "cm/s");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.KilometresPerHour"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly SpeedUnit KilometresPerHour = new SpeedUnit(0.27777777777777779, "km / h");
+        public static readonly SpeedUnit KilometresPerHour = new SpeedUnit(0.27777777777777779, "km/h");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.CentimetresPerMinute"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly SpeedUnit CentimetresPerMinute = new SpeedUnit(0.00016666666666666666, "cm / min");
+        public static readonly SpeedUnit CentimetresPerMinute = new SpeedUnit(0.00016666666666666666, "cm/min");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.MetresPerMinute"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly SpeedUnit MetresPerMinute = new SpeedUnit(0.016666666666666666, "m / min");
+        public static readonly SpeedUnit MetresPerMinute = new SpeedUnit(0.016666666666666666, "m/min");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.MetresPerHour"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly SpeedUnit MetresPerHour = new SpeedUnit(0.00027777777777777778, "m / h");
+        public static readonly SpeedUnit MetresPerHour = new SpeedUnit(0.00027777777777777778, "m/h");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.MillimetresPerHour"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly SpeedUnit MillimetresPerHour = new SpeedUnit(2.7777777777777776E-07, "mm / h");
+        public static readonly SpeedUnit MillimetresPerHour = new SpeedUnit(2.7777777777777776E-07, "mm/h");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.CentimetresPerHour"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly SpeedUnit CentimetresPerHour = new SpeedUnit(2.7777777777777779E-06, "cm / h");
+        public static readonly SpeedUnit CentimetresPerHour = new SpeedUnit(2.7777777777777779E-06, "cm/h");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.MillimetresPerMinute"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly SpeedUnit MillimetresPerMinute = new SpeedUnit(1.6666666666666667E-05, "mm / min");
+        public static readonly SpeedUnit MillimetresPerMinute = new SpeedUnit(1.6666666666666667E-05, "mm/min");
 
         private readonly double _conversionFactor;
         private readonly string _symbol;
@@ -113,9 +113,24 @@
             return value / _conversionFactor;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public Speed CreateQuantity(double value)
         {
             return new Speed(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(Speed quantity)
+        {
+            return FromSiUnit(quantity.metresPerSecond);
         }
 
         public override string ToString()

@@ -487,6 +487,16 @@
             return length;
         }
 
+        /// <summary>
+        /// Get the scalar value
+        /// </summary>
+        /// <param name="unit"></param>
+        /// <returns>The scalar value of this in the specified unit</returns>
+        public double GetValue(LengthUnit unit)
+        {
+            return unit.FromSiUnit(this.metres);
+        }
+
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
