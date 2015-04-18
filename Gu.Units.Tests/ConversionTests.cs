@@ -62,5 +62,23 @@
                 Assert.AreEqual(value, d, 1E-9);
             }
         }
+
+        [TestCaseSource(typeof(UnitsProvider))]
+        public void Roundtrip2(IUnit unit)
+        {
+            double[] values = { 0, 1.2 };
+            foreach (var value in values)
+            {
+                dynamic u = (dynamic)unit;
+                var qty = u.CreateQuantity(value); // Hacking it with dynamic here
+                Assert.IsInstanceOf<IQuantity>(qty);
+                
+                var d = qty.GetValue(u);
+                Assert.AreEqual(value, d, 1E-9);
+
+                d = u.From(qty);
+                Assert.AreEqual(value, d, 1E-9);
+            }
+        }
     }
 }

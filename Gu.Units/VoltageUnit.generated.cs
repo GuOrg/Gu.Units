@@ -108,9 +108,24 @@
             return value / _conversionFactor;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public Voltage CreateQuantity(double value)
         {
             return new Voltage(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(Voltage quantity)
+        {
+            return FromSiUnit(quantity.volts);
         }
 
         public override string ToString()

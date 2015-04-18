@@ -120,7 +120,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Density"/>.
         /// </summary>
-        /// <param name="gramsPerCubicMillimetre">The value in g / mm³</param>
+        /// <param name="gramsPerCubicMillimetre">The value in g/mm³</param>
         public static Density FromGramsPerCubicMillimetre(double gramsPerCubicMillimetre)
         {
             return From(gramsPerCubicMillimetre, DensityUnit.GramsPerCubicMillimetre);
@@ -128,7 +128,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Density"/>.
         /// </summary>
-        /// <param name="gramsPerCubicCentimetre">The value in g / cm³</param>
+        /// <param name="gramsPerCubicCentimetre">The value in g/cm³</param>
         public static Density FromGramsPerCubicCentimetre(double gramsPerCubicCentimetre)
         {
             return From(gramsPerCubicCentimetre, DensityUnit.GramsPerCubicCentimetre);
@@ -303,6 +303,16 @@
         public static Density operator +(Density density)
         {
             return density;
+        }
+
+        /// <summary>
+        /// Get the scalar value
+        /// </summary>
+        /// <param name="unit"></param>
+        /// <returns>The scalar value of this in the specified unit</returns>
+        public double GetValue(DensityUnit unit)
+        {
+            return unit.FromSiUnit(this.kilogramsPerCubicMetre);
         }
 
         public override string ToString()

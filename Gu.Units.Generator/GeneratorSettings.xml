@@ -306,7 +306,7 @@
       <Conversions>
         <Conversion>
           <ClassName>GramsPerCubicMillimetre</ClassName>
-          <Symbol>g / mm³</Symbol>
+          <Symbol>g/mm³</Symbol>
           <Formula>
             <ConversionFactor>999999.99999999988</ConversionFactor>
             <Offset>0</Offset>
@@ -315,7 +315,7 @@
         </Conversion>
         <Conversion>
           <ClassName>GramsPerCubicCentimetre</ClassName>
-          <Symbol>g / cm³</Symbol>
+          <Symbol>g/cm³</Symbol>
           <Formula>
             <ConversionFactor>999.99999999999989</ConversionFactor>
             <Offset>0</Offset>
@@ -496,7 +496,7 @@
       <Conversions>
         <Conversion>
           <ClassName>MillimetresPerSecond</ClassName>
-          <Symbol>mm / s</Symbol>
+          <Symbol>mm/s</Symbol>
           <Formula>
             <ConversionFactor>0.001</ConversionFactor>
             <Offset>0</Offset>
@@ -505,7 +505,7 @@
         </Conversion>
         <Conversion>
           <ClassName>CentimetresPerSecond</ClassName>
-          <Symbol>cm / s</Symbol>
+          <Symbol>cm/s</Symbol>
           <Formula>
             <ConversionFactor>0.01</ConversionFactor>
             <Offset>0</Offset>
@@ -514,7 +514,7 @@
         </Conversion>
         <Conversion>
           <ClassName>KilometresPerHour</ClassName>
-          <Symbol>km / h</Symbol>
+          <Symbol>km/h</Symbol>
           <Formula>
             <ConversionFactor>0.27777777777777779</ConversionFactor>
             <Offset>0</Offset>
@@ -523,7 +523,7 @@
         </Conversion>
         <Conversion>
           <ClassName>CentimetresPerMinute</ClassName>
-          <Symbol>cm / min</Symbol>
+          <Symbol>cm/min</Symbol>
           <Formula>
             <ConversionFactor>0.00016666666666666666</ConversionFactor>
             <Offset>0</Offset>
@@ -532,7 +532,7 @@
         </Conversion>
         <Conversion>
           <ClassName>MetresPerMinute</ClassName>
-          <Symbol>m / min</Symbol>
+          <Symbol>m/min</Symbol>
           <Formula>
             <ConversionFactor>0.016666666666666666</ConversionFactor>
             <Offset>0</Offset>
@@ -541,7 +541,7 @@
         </Conversion>
         <Conversion>
           <ClassName>MetresPerHour</ClassName>
-          <Symbol>m / h</Symbol>
+          <Symbol>m/h</Symbol>
           <Formula>
             <ConversionFactor>0.00027777777777777778</ConversionFactor>
             <Offset>0</Offset>
@@ -550,7 +550,7 @@
         </Conversion>
         <Conversion>
           <ClassName>MillimetresPerHour</ClassName>
-          <Symbol>mm / h</Symbol>
+          <Symbol>mm/h</Symbol>
           <Formula>
             <ConversionFactor>2.7777777777777776E-07</ConversionFactor>
             <Offset>0</Offset>
@@ -559,7 +559,7 @@
         </Conversion>
         <Conversion>
           <ClassName>CentimetresPerHour</ClassName>
-          <Symbol>cm / h</Symbol>
+          <Symbol>cm/h</Symbol>
           <Formula>
             <ConversionFactor>2.7777777777777779E-06</ConversionFactor>
             <Offset>0</Offset>
@@ -568,7 +568,7 @@
         </Conversion>
         <Conversion>
           <ClassName>MillimetresPerMinute</ClassName>
-          <Symbol>mm / min</Symbol>
+          <Symbol>mm/min</Symbol>
           <Formula>
             <ConversionFactor>1.6666666666666667E-05</ConversionFactor>
             <Offset>0</Offset>
@@ -669,7 +669,7 @@
       <Conversions>
         <Conversion>
           <ClassName>MillimetresPerSecondSquared</ClassName>
-          <Symbol>mm / s^2</Symbol>
+          <Symbol>mm/s^2</Symbol>
           <Formula>
             <ConversionFactor>1E-06</ConversionFactor>
             <Offset>0</Offset>
@@ -678,7 +678,7 @@
         </Conversion>
         <Conversion>
           <ClassName>CentimetresPerSecondSquared</ClassName>
-          <Symbol>cm / s^2</Symbol>
+          <Symbol>cm/s^2</Symbol>
           <Formula>
             <ConversionFactor>0.0001</ConversionFactor>
             <Offset>0</Offset>
@@ -735,7 +735,7 @@
     </DerivedUnit>
     <DerivedUnit>
       <ClassName>CubicMetresPerSecond</ClassName>
-      <Symbol>m³ / s</Symbol>
+      <Symbol>m³/s</Symbol>
       <QuantityName>VolumetricFlow</QuantityName>
       <Conversions />
       <Parts>

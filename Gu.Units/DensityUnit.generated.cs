@@ -18,13 +18,13 @@
         /// The <see cref="T:Gu.Units.GramsPerCubicMillimetre"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly DensityUnit GramsPerCubicMillimetre = new DensityUnit(999999.99999999988, "g / mm³");
+        public static readonly DensityUnit GramsPerCubicMillimetre = new DensityUnit(999999.99999999988, "g/mm³");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.GramsPerCubicCentimetre"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly DensityUnit GramsPerCubicCentimetre = new DensityUnit(999.99999999999989, "g / cm³");
+        public static readonly DensityUnit GramsPerCubicCentimetre = new DensityUnit(999.99999999999989, "g/cm³");
 
         private readonly double _conversionFactor;
         private readonly string _symbol;
@@ -71,9 +71,24 @@
             return value / _conversionFactor;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public Density CreateQuantity(double value)
         {
             return new Density(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(Density quantity)
+        {
+            return FromSiUnit(quantity.kilogramsPerCubicMetre);
         }
 
         public override string ToString()

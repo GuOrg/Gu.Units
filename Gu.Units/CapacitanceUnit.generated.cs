@@ -64,9 +64,24 @@
             return value / _conversionFactor;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public Capacitance CreateQuantity(double value)
         {
             return new Capacitance(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(Capacitance quantity)
+        {
+            return FromSiUnit(quantity.farads);
         }
 
         public override string ToString()

@@ -18,13 +18,13 @@
         /// The <see cref="T:Gu.Units.MillimetresPerSecondSquared"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AccelerationUnit MillimetresPerSecondSquared = new AccelerationUnit(1E-06, "mm / s^2");
+        public static readonly AccelerationUnit MillimetresPerSecondSquared = new AccelerationUnit(1E-06, "mm/s^2");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.CentimetresPerSecondSquared"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AccelerationUnit CentimetresPerSecondSquared = new AccelerationUnit(0.0001, "cm / s^2");
+        public static readonly AccelerationUnit CentimetresPerSecondSquared = new AccelerationUnit(0.0001, "cm/s^2");
 
         private readonly double _conversionFactor;
         private readonly string _symbol;
@@ -71,9 +71,24 @@
             return value / _conversionFactor;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public Acceleration CreateQuantity(double value)
         {
             return new Acceleration(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(Acceleration quantity)
+        {
+            return FromSiUnit(quantity.metresPerSecondSquared);
         }
 
         public override string ToString()

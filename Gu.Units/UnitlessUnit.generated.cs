@@ -87,9 +87,24 @@
             return value / _conversionFactor;
         }
 
+        /// <summary>
+        /// Creates a quantity with this unit
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>new TTQuantity(value, this)</returns>
         public Unitless CreateQuantity(double value)
         {
             return new Unitless(value, this);
+        }
+
+        /// <summary>
+        /// Gets the scalar value
+        /// </summary>
+        /// <param name="quantity"></param>
+        /// <returns></returns>
+        public double From(Unitless quantity)
+        {
+            return FromSiUnit(quantity.scalar);
         }
 
         public override string ToString()

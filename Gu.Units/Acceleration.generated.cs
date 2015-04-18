@@ -120,7 +120,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Acceleration"/>.
         /// </summary>
-        /// <param name="millimetresPerSecondSquared">The value in mm / s^2</param>
+        /// <param name="millimetresPerSecondSquared">The value in mm/s^2</param>
         public static Acceleration FromMillimetresPerSecondSquared(double millimetresPerSecondSquared)
         {
             return From(millimetresPerSecondSquared, AccelerationUnit.MillimetresPerSecondSquared);
@@ -128,7 +128,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Acceleration"/>.
         /// </summary>
-        /// <param name="centimetresPerSecondSquared">The value in cm / s^2</param>
+        /// <param name="centimetresPerSecondSquared">The value in cm/s^2</param>
         public static Acceleration FromCentimetresPerSecondSquared(double centimetresPerSecondSquared)
         {
             return From(centimetresPerSecondSquared, AccelerationUnit.CentimetresPerSecondSquared);
@@ -318,6 +318,16 @@
         public static Acceleration operator +(Acceleration acceleration)
         {
             return acceleration;
+        }
+
+        /// <summary>
+        /// Get the scalar value
+        /// </summary>
+        /// <param name="unit"></param>
+        /// <returns>The scalar value of this in the specified unit</returns>
+        public double GetValue(AccelerationUnit unit)
+        {
+            return unit.FromSiUnit(this.metresPerSecondSquared);
         }
 
         public override string ToString()
