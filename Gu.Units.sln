@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5F0B1F
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 		.nuget\nuspec.2010.7.xsd = .nuget\nuspec.2010.7.xsd
 		.nuget\nuspec.2011.8.xsd = .nuget\nuspec.2011.8.xsd
-		packages\T4.TemplateFileManager.2.1.2\tools\ttinc\TemplateFilemanager.CS.ttinclude = packages\T4.TemplateFileManager.2.1.2\tools\ttinc\TemplateFilemanager.CS.ttinclude
+		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units", "Gu.Units\Gu.Units.csproj", "{F1F8B138-BECC-4475-A7AB-B3019338BC7B}"
