@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct LuminousIntensityUnit : IUnit, IUnit<LuminousIntensity>
+    public struct LuminousIntensityUnit : IUnit, IUnit<LuminousIntensity>, IEquatable<LuminousIntensityUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Candelas"/> unit
@@ -42,6 +42,16 @@
         public static LuminousIntensity operator *(double left, LuminousIntensityUnit right)
         {
             return LuminousIntensity.From(left, right);
+        }
+
+        public static bool operator ==(LuminousIntensityUnit left, LuminousIntensityUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(LuminousIntensityUnit left, LuminousIntensityUnit right)
+        {
+            return !left.Equals(right);
         }
 
         /// <summary>
@@ -87,6 +97,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Candelas.Symbol);
+        }
+
+        public bool Equals(LuminousIntensityUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is LuminousIntensityUnit && Equals((LuminousIntensityUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

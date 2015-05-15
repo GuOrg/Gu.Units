@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct TorqueUnit : IUnit, IUnit<Torque>
+    public struct TorqueUnit : IUnit, IUnit<Torque>, IEquatable<TorqueUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.NewtonMetres"/> unit
@@ -37,6 +37,16 @@
         public static Torque operator *(double left, TorqueUnit right)
         {
             return Torque.From(left, right);
+        }
+
+        public static bool operator ==(TorqueUnit left, TorqueUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(TorqueUnit left, TorqueUnit right)
+        {
+            return !left.Equals(right);
         }
 
         /// <summary>
@@ -82,6 +92,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), NewtonMetres.Symbol);
+        }
+
+        public bool Equals(TorqueUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is TorqueUnit && Equals((TorqueUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

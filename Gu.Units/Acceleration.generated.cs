@@ -120,7 +120,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Acceleration"/>.
         /// </summary>
-        /// <param name="millimetresPerSecondSquared">The value in mm/s^2</param>
+        /// <param name="millimetresPerSecondSquared">The value in mm/s²</param>
         public static Acceleration FromMillimetresPerSecondSquared(double millimetresPerSecondSquared)
         {
             return From(millimetresPerSecondSquared, AccelerationUnit.MillimetresPerSecondSquared);
@@ -128,7 +128,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Acceleration"/>.
         /// </summary>
-        /// <param name="centimetresPerSecondSquared">The value in cm/s^2</param>
+        /// <param name="centimetresPerSecondSquared">The value in cm/s²</param>
         public static Acceleration FromCentimetresPerSecondSquared(double centimetresPerSecondSquared)
         {
             return From(centimetresPerSecondSquared, AccelerationUnit.CentimetresPerSecondSquared);

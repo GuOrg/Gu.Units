@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct ElectricChargeUnit : IUnit, IUnit<ElectricCharge>
+    public struct ElectricChargeUnit : IUnit, IUnit<ElectricCharge>, IEquatable<ElectricChargeUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Coulombs"/> unit
@@ -42,6 +42,16 @@
         public static ElectricCharge operator *(double left, ElectricChargeUnit right)
         {
             return ElectricCharge.From(left, right);
+        }
+
+        public static bool operator ==(ElectricChargeUnit left, ElectricChargeUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(ElectricChargeUnit left, ElectricChargeUnit right)
+        {
+            return !left.Equals(right);
         }
 
         /// <summary>
@@ -87,6 +97,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Coulombs.Symbol);
+        }
+
+        public bool Equals(ElectricChargeUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is ElectricChargeUnit && Equals((ElectricChargeUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct ForceUnit : IUnit, IUnit<Force>
+    public struct ForceUnit : IUnit, IUnit<Force>, IEquatable<ForceUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Newtons"/> unit
@@ -110,6 +110,16 @@
             return Force.From(left, right);
         }
 
+        public static bool operator ==(ForceUnit left, ForceUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(ForceUnit left, ForceUnit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Newtons"/>.
         /// </summary>
@@ -153,6 +163,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Newtons.Symbol);
+        }
+
+        public bool Equals(ForceUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is ForceUnit && Equals((ForceUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

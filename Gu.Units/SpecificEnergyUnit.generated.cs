@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct SpecificEnergyUnit : IUnit, IUnit<SpecificEnergy>
+    public struct SpecificEnergyUnit : IUnit, IUnit<SpecificEnergy>, IEquatable<SpecificEnergyUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.JoulesPerKilogram"/> unit
@@ -37,6 +37,16 @@
         public static SpecificEnergy operator *(double left, SpecificEnergyUnit right)
         {
             return SpecificEnergy.From(left, right);
+        }
+
+        public static bool operator ==(SpecificEnergyUnit left, SpecificEnergyUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(SpecificEnergyUnit left, SpecificEnergyUnit right)
+        {
+            return !left.Equals(right);
         }
 
         /// <summary>
@@ -82,6 +92,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), JoulesPerKilogram.Symbol);
+        }
+
+        public bool Equals(SpecificEnergyUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is SpecificEnergyUnit && Equals((SpecificEnergyUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

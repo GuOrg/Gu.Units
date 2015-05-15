@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct AngularSpeedUnit : IUnit, IUnit<AngularSpeed>
+    public struct AngularSpeedUnit : IUnit, IUnit<AngularSpeed>, IEquatable<AngularSpeedUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.RadiansPerSecond"/> unit
@@ -48,6 +48,16 @@
         public static AngularSpeed operator *(double left, AngularSpeedUnit right)
         {
             return AngularSpeed.From(left, right);
+        }
+
+        public static bool operator ==(AngularSpeedUnit left, AngularSpeedUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(AngularSpeedUnit left, AngularSpeedUnit right)
+        {
+            return !left.Equals(right);
         }
 
         /// <summary>
@@ -93,6 +103,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), RadiansPerSecond.Symbol);
+        }
+
+        public bool Equals(AngularSpeedUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is AngularSpeedUnit && Equals((AngularSpeedUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct LengthUnit : IUnit, IUnit<Length>
+    public struct LengthUnit : IUnit, IUnit<Length>, IEquatable<LengthUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Metres"/> unit
@@ -149,6 +149,16 @@
             return Length.From(left, right);
         }
 
+        public static bool operator ==(LengthUnit left, LengthUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(LengthUnit left, LengthUnit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Metres"/>.
         /// </summary>
@@ -192,6 +202,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Metres.Symbol);
+        }
+
+        public bool Equals(LengthUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is LengthUnit && Equals((LengthUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

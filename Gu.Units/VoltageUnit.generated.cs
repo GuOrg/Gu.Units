@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct VoltageUnit : IUnit, IUnit<Voltage>
+    public struct VoltageUnit : IUnit, IUnit<Voltage>, IEquatable<VoltageUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Volts"/> unit
@@ -88,6 +88,16 @@
             return Voltage.From(left, right);
         }
 
+        public static bool operator ==(VoltageUnit left, VoltageUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(VoltageUnit left, VoltageUnit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Volts"/>.
         /// </summary>
@@ -131,6 +141,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Volts.Symbol);
+        }
+
+        public bool Equals(VoltageUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is VoltageUnit && Equals((VoltageUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct UnitlessUnit : IUnit, IUnit<Unitless>
+    public struct UnitlessUnit : IUnit, IUnit<Unitless>, IEquatable<UnitlessUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Scalar"/> unit
@@ -67,6 +67,16 @@
             return Unitless.From(left, right);
         }
 
+        public static bool operator ==(UnitlessUnit left, UnitlessUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(UnitlessUnit left, UnitlessUnit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Scalar"/>.
         /// </summary>
@@ -110,6 +120,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Scalar.Symbol);
+        }
+
+        public bool Equals(UnitlessUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is UnitlessUnit && Equals((UnitlessUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

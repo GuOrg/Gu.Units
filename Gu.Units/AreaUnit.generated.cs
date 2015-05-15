@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct AreaUnit : IUnit, IUnit<Area>
+    public struct AreaUnit : IUnit, IUnit<Area>, IEquatable<AreaUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareMetres"/> unit
@@ -92,6 +92,16 @@
             return Area.From(left, right);
         }
 
+        public static bool operator ==(AreaUnit left, AreaUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(AreaUnit left, AreaUnit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.SquareMetres"/>.
         /// </summary>
@@ -135,6 +145,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), SquareMetres.Symbol);
+        }
+
+        public bool Equals(AreaUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is AreaUnit && Equals((AreaUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

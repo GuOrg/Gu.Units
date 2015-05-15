@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct TemperatureUnit : IUnit, IUnit<Temperature>
+    public struct TemperatureUnit : IUnit, IUnit<Temperature>, IEquatable<TemperatureUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Kelvin"/> unit
@@ -58,6 +58,16 @@
             return Temperature.From(left, right);
         }
 
+        public static bool operator ==(TemperatureUnit left, TemperatureUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(TemperatureUnit left, TemperatureUnit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Kelvin"/>.
         /// </summary>
@@ -101,6 +111,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Kelvin.Symbol);
+        }
+
+        public bool Equals(TemperatureUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is TemperatureUnit && Equals((TemperatureUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

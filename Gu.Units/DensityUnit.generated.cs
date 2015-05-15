@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct DensityUnit : IUnit, IUnit<Density>
+    public struct DensityUnit : IUnit, IUnit<Density>, IEquatable<DensityUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.KilogramsPerCubicMetre"/> unit
@@ -49,6 +49,16 @@
         public static Density operator *(double left, DensityUnit right)
         {
             return Density.From(left, right);
+        }
+
+        public static bool operator ==(DensityUnit left, DensityUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(DensityUnit left, DensityUnit right)
+        {
+            return !left.Equals(right);
         }
 
         /// <summary>
@@ -94,6 +104,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), KilogramsPerCubicMetre.Symbol);
+        }
+
+        public bool Equals(DensityUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is DensityUnit && Equals((DensityUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

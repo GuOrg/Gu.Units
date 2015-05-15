@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct InductanceUnit : IUnit, IUnit<Inductance>
+    public struct InductanceUnit : IUnit, IUnit<Inductance>, IEquatable<InductanceUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Henrys"/> unit
@@ -42,6 +42,16 @@
         public static Inductance operator *(double left, InductanceUnit right)
         {
             return Inductance.From(left, right);
+        }
+
+        public static bool operator ==(InductanceUnit left, InductanceUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(InductanceUnit left, InductanceUnit right)
+        {
+            return !left.Equals(right);
         }
 
         /// <summary>
@@ -87,6 +97,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Henrys.Symbol);
+        }
+
+        public bool Equals(InductanceUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is InductanceUnit && Equals((InductanceUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

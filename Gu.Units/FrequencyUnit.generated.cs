@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct FrequencyUnit : IUnit, IUnit<Frequency>
+    public struct FrequencyUnit : IUnit, IUnit<Frequency>, IEquatable<FrequencyUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Hertz"/> unit
@@ -88,6 +88,16 @@
             return Frequency.From(left, right);
         }
 
+        public static bool operator ==(FrequencyUnit left, FrequencyUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(FrequencyUnit left, FrequencyUnit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Hertz"/>.
         /// </summary>
@@ -131,6 +141,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Hertz.Symbol);
+        }
+
+        public bool Equals(FrequencyUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is FrequencyUnit && Equals((FrequencyUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

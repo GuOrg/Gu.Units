@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct TimeUnit : IUnit, IUnit<Time>
+    public struct TimeUnit : IUnit, IUnit<Time>, IEquatable<TimeUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Seconds"/> unit
@@ -99,6 +99,16 @@
             return Time.From(left, right);
         }
 
+        public static bool operator ==(TimeUnit left, TimeUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(TimeUnit left, TimeUnit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Seconds"/>.
         /// </summary>
@@ -142,6 +152,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Seconds.Symbol);
+        }
+
+        public bool Equals(TimeUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is TimeUnit && Equals((TimeUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }
