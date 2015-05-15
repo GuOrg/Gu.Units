@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct StiffnessUnit : IUnit, IUnit<Stiffness>
+    public struct StiffnessUnit : IUnit, IUnit<Stiffness>, IEquatable<StiffnessUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.NewtonsPerMetre"/> unit
@@ -37,6 +37,16 @@
         public static Stiffness operator *(double left, StiffnessUnit right)
         {
             return Stiffness.From(left, right);
+        }
+
+        public static bool operator ==(StiffnessUnit left, StiffnessUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(StiffnessUnit left, StiffnessUnit right)
+        {
+            return !left.Equals(right);
         }
 
         /// <summary>
@@ -82,6 +92,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), NewtonsPerMetre.Symbol);
+        }
+
+        public bool Equals(StiffnessUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is StiffnessUnit && Equals((StiffnessUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

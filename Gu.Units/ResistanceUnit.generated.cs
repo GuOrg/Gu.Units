@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct ResistanceUnit : IUnit, IUnit<Resistance>
+    public struct ResistanceUnit : IUnit, IUnit<Resistance>, IEquatable<ResistanceUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Ohm"/> unit
@@ -88,6 +88,16 @@
             return Resistance.From(left, right);
         }
 
+        public static bool operator ==(ResistanceUnit left, ResistanceUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(ResistanceUnit left, ResistanceUnit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Ohm"/>.
         /// </summary>
@@ -131,6 +141,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Ohm.Symbol);
+        }
+
+        public bool Equals(ResistanceUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is ResistanceUnit && Equals((ResistanceUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

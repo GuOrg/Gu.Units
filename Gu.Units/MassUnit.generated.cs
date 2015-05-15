@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct MassUnit : IUnit, IUnit<Mass>
+    public struct MassUnit : IUnit, IUnit<Mass>, IEquatable<MassUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilograms"/> unit
@@ -77,6 +77,16 @@
             return Mass.From(left, right);
         }
 
+        public static bool operator ==(MassUnit left, MassUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(MassUnit left, MassUnit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Kilograms"/>.
         /// </summary>
@@ -120,6 +130,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Kilograms.Symbol);
+        }
+
+        public bool Equals(MassUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is MassUnit && Equals((MassUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

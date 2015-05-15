@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct VolumeUnit : IUnit, IUnit<Volume>
+    public struct VolumeUnit : IUnit, IUnit<Volume>, IEquatable<VolumeUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.CubicMetres"/> unit
@@ -68,6 +68,16 @@
             return Volume.From(left, right);
         }
 
+        public static bool operator ==(VolumeUnit left, VolumeUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(VolumeUnit left, VolumeUnit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.CubicMetres"/>.
         /// </summary>
@@ -111,6 +121,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), CubicMetres.Symbol);
+        }
+
+        public bool Equals(VolumeUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is VolumeUnit && Equals((VolumeUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

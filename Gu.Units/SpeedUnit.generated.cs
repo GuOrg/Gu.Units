@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct SpeedUnit : IUnit, IUnit<Speed>
+    public struct SpeedUnit : IUnit, IUnit<Speed>, IEquatable<SpeedUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.MetresPerSecond"/> unit
@@ -93,6 +93,16 @@
             return Speed.From(left, right);
         }
 
+        public static bool operator ==(SpeedUnit left, SpeedUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(SpeedUnit left, SpeedUnit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.MetresPerSecond"/>.
         /// </summary>
@@ -136,6 +146,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), MetresPerSecond.Symbol);
+        }
+
+        public bool Equals(SpeedUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is SpeedUnit && Equals((SpeedUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

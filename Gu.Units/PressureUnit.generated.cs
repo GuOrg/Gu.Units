@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct PressureUnit : IUnit, IUnit<Pressure>
+    public struct PressureUnit : IUnit, IUnit<Pressure>, IEquatable<PressureUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Pascals"/> unit
@@ -132,6 +132,16 @@
             return Pressure.From(left, right);
         }
 
+        public static bool operator ==(PressureUnit left, PressureUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(PressureUnit left, PressureUnit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Pascals"/>.
         /// </summary>
@@ -175,6 +185,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Pascals.Symbol);
+        }
+
+        public bool Equals(PressureUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is PressureUnit && Equals((PressureUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct AccelerationUnit : IUnit, IUnit<Acceleration>
+    public struct AccelerationUnit : IUnit, IUnit<Acceleration>, IEquatable<AccelerationUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.MetresPerSecondSquared"/> unit
@@ -18,13 +18,13 @@
         /// The <see cref="T:Gu.Units.MillimetresPerSecondSquared"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AccelerationUnit MillimetresPerSecondSquared = new AccelerationUnit(1E-06, "mm/s^2");
+        public static readonly AccelerationUnit MillimetresPerSecondSquared = new AccelerationUnit(1E-06, "mm/s²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.CentimetresPerSecondSquared"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AccelerationUnit CentimetresPerSecondSquared = new AccelerationUnit(0.0001, "cm/s^2");
+        public static readonly AccelerationUnit CentimetresPerSecondSquared = new AccelerationUnit(0.0001, "cm/s²");
 
         private readonly double _conversionFactor;
         private readonly string _symbol;
@@ -49,6 +49,16 @@
         public static Acceleration operator *(double left, AccelerationUnit right)
         {
             return Acceleration.From(left, right);
+        }
+
+        public static bool operator ==(AccelerationUnit left, AccelerationUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(AccelerationUnit left, AccelerationUnit right)
+        {
+            return !left.Equals(right);
         }
 
         /// <summary>
@@ -94,6 +104,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), MetresPerSecondSquared.Symbol);
+        }
+
+        public bool Equals(AccelerationUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is AccelerationUnit && Equals((AccelerationUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct FlexibilityUnit : IUnit, IUnit<Flexibility>
+    public struct FlexibilityUnit : IUnit, IUnit<Flexibility>, IEquatable<FlexibilityUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.MetresPerNewton"/> unit
@@ -57,6 +57,16 @@
             return Flexibility.From(left, right);
         }
 
+        public static bool operator ==(FlexibilityUnit left, FlexibilityUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(FlexibilityUnit left, FlexibilityUnit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.MetresPerNewton"/>.
         /// </summary>
@@ -100,6 +110,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), MetresPerNewton.Symbol);
+        }
+
+        public bool Equals(FlexibilityUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is FlexibilityUnit && Equals((FlexibilityUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

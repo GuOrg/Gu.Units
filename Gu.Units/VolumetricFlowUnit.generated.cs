@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct VolumetricFlowUnit : IUnit, IUnit<VolumetricFlow>
+    public struct VolumetricFlowUnit : IUnit, IUnit<VolumetricFlow>, IEquatable<VolumetricFlowUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.CubicMetresPerSecond"/> unit
@@ -37,6 +37,16 @@
         public static VolumetricFlow operator *(double left, VolumetricFlowUnit right)
         {
             return VolumetricFlow.From(left, right);
+        }
+
+        public static bool operator ==(VolumetricFlowUnit left, VolumetricFlowUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(VolumetricFlowUnit left, VolumetricFlowUnit right)
+        {
+            return !left.Equals(right);
         }
 
         /// <summary>
@@ -82,6 +92,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), CubicMetresPerSecond.Symbol);
+        }
+
+        public bool Equals(VolumetricFlowUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is VolumetricFlowUnit && Equals((VolumetricFlowUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

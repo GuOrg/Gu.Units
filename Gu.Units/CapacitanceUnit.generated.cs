@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct CapacitanceUnit : IUnit, IUnit<Capacitance>
+    public struct CapacitanceUnit : IUnit, IUnit<Capacitance>, IEquatable<CapacitanceUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Farads"/> unit
@@ -42,6 +42,16 @@
         public static Capacitance operator *(double left, CapacitanceUnit right)
         {
             return Capacitance.From(left, right);
+        }
+
+        public static bool operator ==(CapacitanceUnit left, CapacitanceUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(CapacitanceUnit left, CapacitanceUnit right)
+        {
+            return !left.Equals(right);
         }
 
         /// <summary>
@@ -87,6 +97,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Farads.Symbol);
+        }
+
+        public bool Equals(CapacitanceUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is CapacitanceUnit && Equals((CapacitanceUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

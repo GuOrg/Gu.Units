@@ -1,4 +1,4 @@
-﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+﻿<#@ template debug="true" hostspecific="false" language="C#" #>
 <#@ import namespace="System.Globalization" #>
 <#@ import namespace="System.Collections" #>
 <#@ import namespace="System.Collections.Generic" #>
@@ -31,7 +31,7 @@ namespace <#= Settings.Namespace #>
 	/// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct <#= unit.QuantityName #>Unit : IUnit, IUnit<<#= unit.QuantityName #>>
+    public struct <#= unit.QuantityName #>Unit : IUnit, IUnit<<#= unit.QuantityName #>>, IEquatable<<#= unit.QuantityName #>Unit>
     {
         /// <summary>
         /// The <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/> unit
@@ -153,6 +153,16 @@ namespace <#= Settings.Namespace #>
             return <#= unit.QuantityName #>.From(left, right);
         }
 
+	    public static bool operator ==(<#= unit.QuantityName #>Unit left, <#= unit.QuantityName #>Unit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(<#= unit.QuantityName #>Unit left, <#= unit.QuantityName #>Unit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.
         /// </summary>
@@ -222,6 +232,22 @@ namespace <#= Settings.Namespace #>
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.<#= Gu.Units.Generator.Names.ToSiUnit #>(1), <#= unit.ClassName #>.Symbol);
+        }
+
+		public bool Equals(<#= unit.QuantityName #>Unit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is <#= unit.QuantityName #>Unit && Equals((<#= unit.QuantityName #>Unit) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

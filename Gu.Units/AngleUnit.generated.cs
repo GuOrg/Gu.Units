@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct AngleUnit : IUnit, IUnit<Angle>
+    public struct AngleUnit : IUnit, IUnit<Angle>, IEquatable<AngleUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Radians"/> unit
@@ -48,6 +48,16 @@
         public static Angle operator *(double left, AngleUnit right)
         {
             return Angle.From(left, right);
+        }
+
+        public static bool operator ==(AngleUnit left, AngleUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(AngleUnit left, AngleUnit right)
+        {
+            return !left.Equals(right);
         }
 
         /// <summary>
@@ -93,6 +103,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Radians.Symbol);
+        }
+
+        public bool Equals(AngleUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is AngleUnit && Equals((AngleUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }

@@ -6,7 +6,7 @@
     /// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct EnergyUnit : IUnit, IUnit<Energy>
+    public struct EnergyUnit : IUnit, IUnit<Energy>, IEquatable<EnergyUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Joules"/> unit
@@ -121,6 +121,16 @@
             return Energy.From(left, right);
         }
 
+        public static bool operator ==(EnergyUnit left, EnergyUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(EnergyUnit left, EnergyUnit right)
+        {
+            return !left.Equals(right);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Joules"/>.
         /// </summary>
@@ -164,6 +174,22 @@
         public override string ToString()
         {
             return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Joules.Symbol);
+        }
+
+        public bool Equals(EnergyUnit other)
+        {
+            return _symbol == other.Symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is EnergyUnit && Equals((EnergyUnit)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _symbol.GetHashCode();
         }
     }
 }
