@@ -26,13 +26,13 @@
         /// </summary>
         public static readonly DensityUnit GramsPerCubicCentimetre = new DensityUnit(999.99999999999989, "g/cm³");
 
-        private readonly double _conversionFactor;
-        private readonly string _symbol;
+        private readonly double conversionFactor;
+        private readonly string symbol;
 
         public DensityUnit(double conversionFactor, string symbol)
         {
-            _conversionFactor = conversionFactor;
-            _symbol = symbol;
+            this.conversionFactor = conversionFactor;
+            this.symbol = symbol;
         }
 
         /// <summary>
@@ -42,7 +42,7 @@
         {
             get
             {
-                return _symbol;
+                return this.symbol;
             }
         }
 
@@ -68,7 +68,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return _conversionFactor * value;
+            return this.conversionFactor * value;
         }
 
         /// <summary>
@@ -78,7 +78,7 @@
         /// <returns>The converted value</returns>
         public double FromSiUnit(double value)
         {
-            return value / _conversionFactor;
+            return value / this.conversionFactor;
         }
 
         /// <summary>
@@ -96,30 +96,39 @@
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
-        public double From(Density quantity)
+        public double GetScalarValue(Density quantity)
         {
             return FromSiUnit(quantity.kilogramsPerCubicMetre);
         }
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), KilogramsPerCubicMetre.Symbol);
+            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), KilogramsPerCubicMetre.symbol);
         }
 
         public bool Equals(DensityUnit other)
         {
-            return _symbol == other.Symbol;
+            return this.symbol == other.symbol;
         }
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
             return obj is DensityUnit && Equals((DensityUnit)obj);
         }
 
         public override int GetHashCode()
         {
-            return _symbol.GetHashCode();
+            if (this.symbol == null)
+            {
+                return 0; // Needed due to default ctor
+            }
+
+            return this.symbol.GetHashCode();
         }
     }
 }
