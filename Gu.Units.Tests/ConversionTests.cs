@@ -76,7 +76,7 @@
                 var d = qty.GetValue(u);
                 Assert.AreEqual(value, d, 1E-9);
 
-                d = u.From(qty);
+                d = u.GetScalarValue(qty);
                 Assert.AreEqual(value, d, 1E-9);
             }
         }

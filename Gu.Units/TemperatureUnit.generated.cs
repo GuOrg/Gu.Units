@@ -31,15 +31,15 @@
         /// </summary>
         public static readonly TemperatureUnit Fahrenheit = new TemperatureUnit(1.8, -459.67, "°F");
 
-        private readonly double _conversionFactor;
-        private readonly double _offset;
-        private readonly string _symbol;
+        private readonly double conversionFactor;
+        private readonly double offset;
+        private readonly string symbol;
 
         public TemperatureUnit(double conversionFactor, double offset, string symbol)
         {
-            _conversionFactor = conversionFactor;
-            _offset = offset;
-            _symbol = symbol;
+            this.conversionFactor = conversionFactor;
+            this.offset = offset;
+            this.symbol = symbol;
         }
 
         /// <summary>
@@ -49,7 +49,7 @@
         {
             get
             {
-                return _symbol;
+                return this.symbol;
             }
         }
 
@@ -75,7 +75,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return (value - _offset) / _conversionFactor;
+            return (value - this.offset) / this.conversionFactor;
         }
 
         /// <summary>
@@ -85,7 +85,7 @@
         /// <returns>The converted value</returns>
         public double FromSiUnit(double value)
         {
-            return _conversionFactor * value + _offset;
+            return this.conversionFactor * value + this.offset;
         }
 
         /// <summary>
@@ -103,30 +103,39 @@
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
-        public double From(Temperature quantity)
+        public double GetScalarValue(Temperature quantity)
         {
             return FromSiUnit(quantity.kelvin);
         }
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Kelvin.Symbol);
+            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Kelvin.symbol);
         }
 
         public bool Equals(TemperatureUnit other)
         {
-            return _symbol == other.Symbol;
+            return this.symbol == other.symbol;
         }
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
             return obj is TemperatureUnit && Equals((TemperatureUnit)obj);
         }
 
         public override int GetHashCode()
         {
-            return _symbol.GetHashCode();
+            if (this.symbol == null)
+            {
+                return 0; // Needed due to default ctor
+            }
+
+            return this.symbol.GetHashCode();
         }
     }
 }

@@ -63,13 +63,13 @@
         /// </summary>
         public static readonly CurrentUnit µA = Microamperes;
 
-        private readonly double _conversionFactor;
-        private readonly string _symbol;
+        private readonly double conversionFactor;
+        private readonly string symbol;
 
         public CurrentUnit(double conversionFactor, string symbol)
         {
-            _conversionFactor = conversionFactor;
-            _symbol = symbol;
+            this.conversionFactor = conversionFactor;
+            this.symbol = symbol;
         }
 
         /// <summary>
@@ -79,7 +79,7 @@
         {
             get
             {
-                return _symbol;
+                return this.symbol;
             }
         }
 
@@ -105,7 +105,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return _conversionFactor * value;
+            return this.conversionFactor * value;
         }
 
         /// <summary>
@@ -115,7 +115,7 @@
         /// <returns>The converted value</returns>
         public double FromSiUnit(double value)
         {
-            return value / _conversionFactor;
+            return value / this.conversionFactor;
         }
 
         /// <summary>
@@ -133,30 +133,39 @@
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
-        public double From(Current quantity)
+        public double GetScalarValue(Current quantity)
         {
             return FromSiUnit(quantity.amperes);
         }
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Amperes.Symbol);
+            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Amperes.symbol);
         }
 
         public bool Equals(CurrentUnit other)
         {
-            return _symbol == other.Symbol;
+            return this.symbol == other.symbol;
         }
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
             return obj is CurrentUnit && Equals((CurrentUnit)obj);
         }
 
         public override int GetHashCode()
         {
-            return _symbol.GetHashCode();
+            if (this.symbol == null)
+            {
+                return 0; // Needed due to default ctor
+            }
+
+            return this.symbol.GetHashCode();
         }
     }
 }

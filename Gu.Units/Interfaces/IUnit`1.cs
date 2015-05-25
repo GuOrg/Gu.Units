@@ -16,6 +16,6 @@
         /// <typeparam name="TQuantity"></typeparam>
         /// <param name="quantity"></param>
         /// <returns></returns>
-        double From(TQuantity quantity);
+        double GetScalarValue(TQuantity quantity);
     }
 }

@@ -6,7 +6,7 @@
 	/// Contains conversion logic.
     /// </summary>
     [Serializable]
-    public struct LengthUnit : IUnit, IUnit<Length>
+    public struct LengthUnit : IUnit, IUnit<Length>, IEquatable<LengthUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Metres"/> unit
@@ -41,13 +41,13 @@
         /// </summary>
 		public static readonly LengthUnit mm = Millimetres;
 
-		private readonly double _conversionFactor;
-        private readonly string _symbol;
+		private readonly double conversionFactor;
+        private readonly string symbol;
 
         public LengthUnit(double conversionFactor, string symbol)
         {
-            _conversionFactor = conversionFactor;
-            _symbol = symbol;
+            this.conversionFactor = conversionFactor;
+            this.symbol = symbol;
         }
 
 		/// <summary>
@@ -57,13 +57,23 @@
         {
             get
             {
-                return _symbol;
+                return this.symbol;
             }
         }
 
         public static Length operator *(double left, LengthUnit right)
         {
             return Length.From(left, right);
+        }
+
+	    public static bool operator ==(LengthUnit left, LengthUnit right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(LengthUnit left, LengthUnit right)
+        {
+            return !left.Equals(right);
         }
 
         /// <summary>
@@ -73,7 +83,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return _conversionFactor * value;
+            return this.conversionFactor * value;
         }
 
         /// <summary>
@@ -83,7 +93,7 @@
         /// <returns>The converted value</returns>
         public double FromSiUnit(double value)
         {
-            return value / _conversionFactor;
+            return value / this.conversionFactor;
         }
 
         /// <summary>
@@ -101,14 +111,39 @@
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
-        public double From(Length quantity)
+        public double GetScalarValue(Length quantity)
         {
             return FromSiUnit(quantity.metres);
         }
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", _symbol, this.ToSiUnit(1), Metres.Symbol);
+            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Metres.symbol);
+        }
+
+		public bool Equals(LengthUnit other)
+        {
+            return this.symbol == other.symbol;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            return obj is LengthUnit && Equals((LengthUnit) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            if (this.symbol == null)
+            {
+                return 0; // Needed due to default ctor
+            }
+
+            return this.symbol.GetHashCode();
         }
     }
 }
