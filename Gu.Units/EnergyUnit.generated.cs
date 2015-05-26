@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.EnergyUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Joules.symbol}")]
     public struct EnergyUnit : IUnit, IUnit<Energy>, IEquatable<EnergyUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Joules"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit Joules = new EnergyUnit(1.0, "J");
         /// <summary>
@@ -26,7 +28,7 @@
         public static readonly EnergyUnit Nanojoules = new EnergyUnit(1E-09, "nJ");
         /// <summary>
         /// The <see cref="T:Gu.Units.Nanojoules"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit nJ = Nanojoules;
 
@@ -37,7 +39,7 @@
         public static readonly EnergyUnit Microjoules = new EnergyUnit(1E-06, "µJ");
         /// <summary>
         /// The <see cref="T:Gu.Units.Microjoules"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit µJ = Microjoules;
 
@@ -48,7 +50,7 @@
         public static readonly EnergyUnit Millijoules = new EnergyUnit(0.001, "mJ");
         /// <summary>
         /// The <see cref="T:Gu.Units.Millijoules"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit mJ = Millijoules;
 
@@ -59,7 +61,7 @@
         public static readonly EnergyUnit Kilojoules = new EnergyUnit(1000, "kJ");
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilojoules"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit kJ = Kilojoules;
 
@@ -70,7 +72,7 @@
         public static readonly EnergyUnit Megajoules = new EnergyUnit(1000000, "MJ");
         /// <summary>
         /// The <see cref="T:Gu.Units.Megajoules"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit MJ = Megajoules;
 
@@ -81,7 +83,7 @@
         public static readonly EnergyUnit Gigajoules = new EnergyUnit(1000000000, "GJ");
         /// <summary>
         /// The <see cref="T:Gu.Units.Gigajoules"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit GJ = Gigajoules;
 
@@ -92,7 +94,7 @@
         public static readonly EnergyUnit KilowattHours = new EnergyUnit(3600000, "kWh");
         /// <summary>
         /// The <see cref="T:Gu.Units.KilowattHours"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit kWh = KilowattHours;
 
@@ -129,6 +131,11 @@
         public static bool operator !=(EnergyUnit left, EnergyUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static EnergyUnit Parse(string text)
+        {
+            return Parser.ParseUnit<EnergyUnit>(text);
         }
 
         /// <summary>
@@ -173,7 +180,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Joules.symbol);
+            return this.symbol;
         }
 
         public bool Equals(EnergyUnit other)

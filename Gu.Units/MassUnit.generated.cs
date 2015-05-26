@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.MassUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Kilograms.symbol}")]
     public struct MassUnit : IUnit, IUnit<Mass>, IEquatable<MassUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilograms"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly MassUnit Kilograms = new MassUnit(1.0, "kg");
         /// <summary>
@@ -26,7 +28,7 @@
         public static readonly MassUnit Grams = new MassUnit(0.001, "g");
         /// <summary>
         /// The <see cref="T:Gu.Units.Grams"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly MassUnit g = Grams;
 
@@ -37,7 +39,7 @@
         public static readonly MassUnit Milligrams = new MassUnit(1E-06, "mg");
         /// <summary>
         /// The <see cref="T:Gu.Units.Milligrams"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly MassUnit mg = Milligrams;
 
@@ -48,7 +50,7 @@
         public static readonly MassUnit Micrograms = new MassUnit(1E-09, "µg");
         /// <summary>
         /// The <see cref="T:Gu.Units.Micrograms"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly MassUnit µg = Micrograms;
 
@@ -85,6 +87,11 @@
         public static bool operator !=(MassUnit left, MassUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static MassUnit Parse(string text)
+        {
+            return Parser.ParseUnit<MassUnit>(text);
         }
 
         /// <summary>
@@ -129,7 +136,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Kilograms.symbol);
+            return this.symbol;
         }
 
         public bool Equals(MassUnit other)

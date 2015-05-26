@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.TimeUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Seconds.symbol}")]
     public struct TimeUnit : IUnit, IUnit<Time>, IEquatable<TimeUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Seconds"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TimeUnit Seconds = new TimeUnit(1.0, "s");
         /// <summary>
@@ -26,7 +28,7 @@
         public static readonly TimeUnit Nanoseconds = new TimeUnit(1E-09, "ns");
         /// <summary>
         /// The <see cref="T:Gu.Units.Nanoseconds"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TimeUnit ns = Nanoseconds;
 
@@ -37,7 +39,7 @@
         public static readonly TimeUnit Microseconds = new TimeUnit(1E-06, "µs");
         /// <summary>
         /// The <see cref="T:Gu.Units.Microseconds"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TimeUnit µs = Microseconds;
 
@@ -48,7 +50,7 @@
         public static readonly TimeUnit Milliseconds = new TimeUnit(0.001, "ms");
         /// <summary>
         /// The <see cref="T:Gu.Units.Milliseconds"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TimeUnit ms = Milliseconds;
 
@@ -59,7 +61,7 @@
         public static readonly TimeUnit Hours = new TimeUnit(3600, "h");
         /// <summary>
         /// The <see cref="T:Gu.Units.Hours"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TimeUnit h = Hours;
 
@@ -70,7 +72,7 @@
         public static readonly TimeUnit Minutes = new TimeUnit(60, "min");
         /// <summary>
         /// The <see cref="T:Gu.Units.Minutes"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TimeUnit min = Minutes;
 
@@ -107,6 +109,11 @@
         public static bool operator !=(TimeUnit left, TimeUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static TimeUnit Parse(string text)
+        {
+            return Parser.ParseUnit<TimeUnit>(text);
         }
 
         /// <summary>
@@ -151,7 +158,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Seconds.symbol);
+            return this.symbol;
         }
 
         public bool Equals(TimeUnit other)

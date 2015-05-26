@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.AngularSpeedUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{RadiansPerSecond.symbol}")]
     public struct AngularSpeedUnit : IUnit, IUnit<AngularSpeed>, IEquatable<AngularSpeedUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.RadiansPerSecond"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngularSpeedUnit RadiansPerSecond = new AngularSpeedUnit(1.0, "rad/s");
 
@@ -21,7 +23,7 @@
         public static readonly AngularSpeedUnit RevolutionsPerMinute = new AngularSpeedUnit(0.10471975511966, "rpm");
         /// <summary>
         /// The <see cref="T:Gu.Units.RevolutionsPerMinute"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngularSpeedUnit rpm = RevolutionsPerMinute;
 
@@ -58,6 +60,11 @@
         public static bool operator !=(AngularSpeedUnit left, AngularSpeedUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static AngularSpeedUnit Parse(string text)
+        {
+            return Parser.ParseUnit<AngularSpeedUnit>(text);
         }
 
         /// <summary>
@@ -102,7 +109,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), RadiansPerSecond.symbol);
+            return this.symbol;
         }
 
         public bool Equals(AngularSpeedUnit other)

@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.CurrentUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Amperes.symbol}")]
     public struct CurrentUnit : IUnit, IUnit<Current>, IEquatable<CurrentUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Amperes"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CurrentUnit Amperes = new CurrentUnit(1.0, "A");
         /// <summary>
@@ -26,7 +28,7 @@
         public static readonly CurrentUnit Milliamperes = new CurrentUnit(0.001, "mA");
         /// <summary>
         /// The <see cref="T:Gu.Units.Milliamperes"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CurrentUnit mA = Milliamperes;
 
@@ -37,7 +39,7 @@
         public static readonly CurrentUnit Kiloamperes = new CurrentUnit(1000, "kA");
         /// <summary>
         /// The <see cref="T:Gu.Units.Kiloamperes"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CurrentUnit kA = Kiloamperes;
 
@@ -48,7 +50,7 @@
         public static readonly CurrentUnit Megaamperes = new CurrentUnit(1000000, "MA");
         /// <summary>
         /// The <see cref="T:Gu.Units.Megaamperes"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CurrentUnit MA = Megaamperes;
 
@@ -59,7 +61,7 @@
         public static readonly CurrentUnit Microamperes = new CurrentUnit(1E-06, "µA");
         /// <summary>
         /// The <see cref="T:Gu.Units.Microamperes"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CurrentUnit µA = Microamperes;
 
@@ -96,6 +98,11 @@
         public static bool operator !=(CurrentUnit left, CurrentUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static CurrentUnit Parse(string text)
+        {
+            return Parser.ParseUnit<CurrentUnit>(text);
         }
 
         /// <summary>
@@ -140,7 +147,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Amperes.symbol);
+            return this.symbol;
         }
 
         public bool Equals(CurrentUnit other)

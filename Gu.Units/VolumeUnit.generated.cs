@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.VolumeUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{CubicMetres.symbol}")]
     public struct VolumeUnit : IUnit, IUnit<Volume>, IEquatable<VolumeUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.CubicMetres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumeUnit CubicMetres = new VolumeUnit(1.0, "m³");
 
@@ -21,7 +23,7 @@
         public static readonly VolumeUnit Litres = new VolumeUnit(0.0010000000000000002, "L");
         /// <summary>
         /// The <see cref="T:Gu.Units.Litres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumeUnit L = Litres;
 
@@ -78,6 +80,11 @@
             return !left.Equals(right);
         }
 
+        public static VolumeUnit Parse(string text)
+        {
+            return Parser.ParseUnit<VolumeUnit>(text);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.CubicMetres"/>.
         /// </summary>
@@ -120,7 +127,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), CubicMetres.symbol);
+            return this.symbol;
         }
 
         public bool Equals(VolumeUnit other)

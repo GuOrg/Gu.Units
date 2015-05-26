@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.StiffnessUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{NewtonsPerMetre.symbol}")]
     public struct StiffnessUnit : IUnit, IUnit<Stiffness>, IEquatable<StiffnessUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.NewtonsPerMetre"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly StiffnessUnit NewtonsPerMetre = new StiffnessUnit(1.0, "N/m");
 
@@ -47,6 +49,11 @@
         public static bool operator !=(StiffnessUnit left, StiffnessUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static StiffnessUnit Parse(string text)
+        {
+            return Parser.ParseUnit<StiffnessUnit>(text);
         }
 
         /// <summary>
@@ -91,7 +98,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), NewtonsPerMetre.symbol);
+            return this.symbol;
         }
 
         public bool Equals(StiffnessUnit other)

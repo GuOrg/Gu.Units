@@ -26,16 +26,18 @@ else
 namespace <#= Settings.Namespace #>
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:<#= Settings.Namespace #>.<#= unit.QuantityName #>Unit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{<#= unit.ClassName #>.symbol}")]
     public struct <#= unit.QuantityName #>Unit : IUnit, IUnit<<#= unit.QuantityName #>>, IEquatable<<#= unit.QuantityName #>Unit>
     {
         /// <summary>
         /// The <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
 <#
 	if (unit.AnyOffsetConversion)
@@ -90,7 +92,7 @@ namespace <#= Settings.Namespace #>
 		    #>
         /// <summary>
         /// The <see cref="T:<#= Settings.Namespace #>.<#= su.ClassName #>"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly <#= unit.QuantityName #>Unit <#= su.Symbol #> = <#= su.ClassName #>;
 <#
@@ -163,6 +165,11 @@ namespace <#= Settings.Namespace #>
             return !left.Equals(right);
         }
 
+        public static <#= unit.QuantityName #>Unit Parse(string text)
+        {
+            return Parser.ParseUnit<<#= unit.QuantityName #>Unit>(text);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.
         /// </summary>
@@ -231,7 +238,7 @@ namespace <#= Settings.Namespace #>
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.<#= Gu.Units.Generator.Names.ToSiUnit #>(1), <#= unit.ClassName #>.symbol);
+            return this.symbol;
         }
 
 		public bool Equals(<#= unit.QuantityName #>Unit other)

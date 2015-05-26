@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.LengthUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Metres.symbol}")]
     public struct LengthUnit : IUnit, IUnit<Length>, IEquatable<LengthUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Metres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Metres = new LengthUnit(1.0, "m");
         /// <summary>
@@ -26,7 +28,7 @@
         public static readonly LengthUnit Nanometres = new LengthUnit(1E-09, "nm");
         /// <summary>
         /// The <see cref="T:Gu.Units.Nanometres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit nm = Nanometres;
 
@@ -37,7 +39,7 @@
         public static readonly LengthUnit Micrometres = new LengthUnit(1E-06, "µm");
         /// <summary>
         /// The <see cref="T:Gu.Units.Micrometres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit µm = Micrometres;
 
@@ -48,7 +50,7 @@
         public static readonly LengthUnit Millimetres = new LengthUnit(0.001, "mm");
         /// <summary>
         /// The <see cref="T:Gu.Units.Millimetres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit mm = Millimetres;
 
@@ -59,7 +61,7 @@
         public static readonly LengthUnit Centimetres = new LengthUnit(0.01, "cm");
         /// <summary>
         /// The <see cref="T:Gu.Units.Centimetres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit cm = Centimetres;
 
@@ -70,7 +72,7 @@
         public static readonly LengthUnit Decimetres = new LengthUnit(0.1, "dm");
         /// <summary>
         /// The <see cref="T:Gu.Units.Decimetres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit dm = Decimetres;
 
@@ -81,7 +83,7 @@
         public static readonly LengthUnit Kilometres = new LengthUnit(1000, "km");
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilometres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit km = Kilometres;
 
@@ -98,7 +100,7 @@
         public static readonly LengthUnit Mile = new LengthUnit(1609.344, "mi");
         /// <summary>
         /// The <see cref="T:Gu.Units.Mile"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit mi = Mile;
 
@@ -109,7 +111,7 @@
         public static readonly LengthUnit Yard = new LengthUnit(0.9144, "yd");
         /// <summary>
         /// The <see cref="T:Gu.Units.Yard"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit yd = Yard;
 
@@ -120,7 +122,7 @@
         public static readonly LengthUnit NauticalMile = new LengthUnit(1852, "nmi");
         /// <summary>
         /// The <see cref="T:Gu.Units.NauticalMile"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit nmi = NauticalMile;
 
@@ -157,6 +159,11 @@
         public static bool operator !=(LengthUnit left, LengthUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static LengthUnit Parse(string text)
+        {
+            return Parser.ParseUnit<LengthUnit>(text);
         }
 
         /// <summary>
@@ -201,7 +208,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Metres.symbol);
+            return this.symbol;
         }
 
         public bool Equals(LengthUnit other)

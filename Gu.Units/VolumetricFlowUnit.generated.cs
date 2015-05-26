@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.VolumetricFlowUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{CubicMetresPerSecond.symbol}")]
     public struct VolumetricFlowUnit : IUnit, IUnit<VolumetricFlow>, IEquatable<VolumetricFlowUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.CubicMetresPerSecond"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumetricFlowUnit CubicMetresPerSecond = new VolumetricFlowUnit(1.0, "m³/s");
 
@@ -47,6 +49,11 @@
         public static bool operator !=(VolumetricFlowUnit left, VolumetricFlowUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static VolumetricFlowUnit Parse(string text)
+        {
+            return Parser.ParseUnit<VolumetricFlowUnit>(text);
         }
 
         /// <summary>
@@ -91,7 +98,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), CubicMetresPerSecond.symbol);
+            return this.symbol;
         }
 
         public bool Equals(VolumetricFlowUnit other)

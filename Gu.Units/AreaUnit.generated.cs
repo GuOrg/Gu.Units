@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.AreaUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{SquareMetres.symbol}")]
     public struct AreaUnit : IUnit, IUnit<Area>, IEquatable<AreaUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareMetres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AreaUnit SquareMetres = new AreaUnit(1.0, "m²");
 
@@ -51,7 +53,7 @@
         public static readonly AreaUnit Hectare = new AreaUnit(10000, "ha");
         /// <summary>
         /// The <see cref="T:Gu.Units.Hectare"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AreaUnit ha = Hectare;
 
@@ -102,6 +104,11 @@
             return !left.Equals(right);
         }
 
+        public static AreaUnit Parse(string text)
+        {
+            return Parser.ParseUnit<AreaUnit>(text);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.SquareMetres"/>.
         /// </summary>
@@ -144,7 +151,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), SquareMetres.symbol);
+            return this.symbol;
         }
 
         public bool Equals(AreaUnit other)

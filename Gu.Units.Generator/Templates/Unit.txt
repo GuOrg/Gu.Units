@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.LengthUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Metres.symbol}")]
     public struct LengthUnit : IUnit, IUnit<Length>, IEquatable<LengthUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Metres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Metres = new LengthUnit(1.0, "m");
         /// <summary>
@@ -26,7 +28,7 @@
 		public static readonly LengthUnit Centimetres = new LengthUnit(0, "cm");
         /// <summary>
         /// The <see cref="T:Gu.Units.Centimetres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit cm = Centimetres;
 
@@ -37,7 +39,7 @@
 		public static readonly LengthUnit Millimetres = new LengthUnit(0, "mm");
         /// <summary>
         /// The <see cref="T:Gu.Units.Millimetres"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit mm = Millimetres;
 
@@ -74,6 +76,11 @@
         public static bool operator !=(LengthUnit left, LengthUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static LengthUnit Parse(string text)
+        {
+            return Parser.ParseUnit<LengthUnit>(text);
         }
 
         /// <summary>
@@ -118,7 +125,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Metres.symbol);
+            return this.symbol;
         }
 
 		public bool Equals(LengthUnit other)

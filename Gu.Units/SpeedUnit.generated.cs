@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.SpeedUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MetresPerSecond.symbol}")]
     public struct SpeedUnit : IUnit, IUnit<Speed>, IEquatable<SpeedUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.MetresPerSecond"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly SpeedUnit MetresPerSecond = new SpeedUnit(1.0, "m/s");
 
@@ -103,6 +105,11 @@
             return !left.Equals(right);
         }
 
+        public static SpeedUnit Parse(string text)
+        {
+            return Parser.ParseUnit<SpeedUnit>(text);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.MetresPerSecond"/>.
         /// </summary>
@@ -145,7 +152,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), MetresPerSecond.symbol);
+            return this.symbol;
         }
 
         public bool Equals(SpeedUnit other)

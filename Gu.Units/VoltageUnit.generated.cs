@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.VoltageUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Volts.symbol}")]
     public struct VoltageUnit : IUnit, IUnit<Voltage>, IEquatable<VoltageUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Volts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VoltageUnit Volts = new VoltageUnit(1.0, "V");
         /// <summary>
@@ -26,7 +28,7 @@
         public static readonly VoltageUnit Millivolts = new VoltageUnit(0.001, "mV");
         /// <summary>
         /// The <see cref="T:Gu.Units.Millivolts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VoltageUnit mV = Millivolts;
 
@@ -37,7 +39,7 @@
         public static readonly VoltageUnit Kilovolts = new VoltageUnit(1000, "kV");
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilovolts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VoltageUnit kV = Kilovolts;
 
@@ -48,7 +50,7 @@
         public static readonly VoltageUnit Megavolts = new VoltageUnit(1000000, "MV");
         /// <summary>
         /// The <see cref="T:Gu.Units.Megavolts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VoltageUnit MV = Megavolts;
 
@@ -59,7 +61,7 @@
         public static readonly VoltageUnit Microvolts = new VoltageUnit(1E-06, "µV");
         /// <summary>
         /// The <see cref="T:Gu.Units.Microvolts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VoltageUnit µV = Microvolts;
 
@@ -96,6 +98,11 @@
         public static bool operator !=(VoltageUnit left, VoltageUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static VoltageUnit Parse(string text)
+        {
+            return Parser.ParseUnit<VoltageUnit>(text);
         }
 
         /// <summary>
@@ -140,7 +147,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Volts.symbol);
+            return this.symbol;
         }
 
         public bool Equals(VoltageUnit other)
