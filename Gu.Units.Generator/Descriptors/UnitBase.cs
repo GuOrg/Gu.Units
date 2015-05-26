@@ -57,6 +57,16 @@
                 }
                 Quantity.ClassName = value;
                 OnPropertyChanged();
+                OnPropertyChanged("UnitName");
+            }
+        }
+
+        [XmlIgnore]
+        public string UnitName
+        {
+            get
+            {
+                return QuantityName + "Unit";
             }
         }
 
