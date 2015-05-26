@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.ElectricChargeUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Coulombs.symbol}")]
     public struct ElectricChargeUnit : IUnit, IUnit<ElectricCharge>, IEquatable<ElectricChargeUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Coulombs"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ElectricChargeUnit Coulombs = new ElectricChargeUnit(1.0, "C");
         /// <summary>
@@ -52,6 +54,11 @@
         public static bool operator !=(ElectricChargeUnit left, ElectricChargeUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static ElectricChargeUnit Parse(string text)
+        {
+            return Parser.ParseUnit<ElectricChargeUnit>(text);
         }
 
         /// <summary>
@@ -96,7 +103,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Coulombs.symbol);
+            return this.symbol;
         }
 
         public bool Equals(ElectricChargeUnit other)

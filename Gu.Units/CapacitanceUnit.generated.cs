@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.CapacitanceUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Farads.symbol}")]
     public struct CapacitanceUnit : IUnit, IUnit<Capacitance>, IEquatable<CapacitanceUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Farads"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CapacitanceUnit Farads = new CapacitanceUnit(1.0, "F");
         /// <summary>
@@ -52,6 +54,11 @@
         public static bool operator !=(CapacitanceUnit left, CapacitanceUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static CapacitanceUnit Parse(string text)
+        {
+            return Parser.ParseUnit<CapacitanceUnit>(text);
         }
 
         /// <summary>
@@ -96,7 +103,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Farads.symbol);
+            return this.symbol;
         }
 
         public bool Equals(CapacitanceUnit other)

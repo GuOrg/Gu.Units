@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.PressureUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Pascals.symbol}")]
     public struct PressureUnit : IUnit, IUnit<Pressure>, IEquatable<PressureUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Pascals"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit Pascals = new PressureUnit(1.0, "Pa");
         /// <summary>
@@ -26,7 +28,7 @@
         public static readonly PressureUnit Nanopascals = new PressureUnit(1E-09, "nPa");
         /// <summary>
         /// The <see cref="T:Gu.Units.Nanopascals"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit nPa = Nanopascals;
 
@@ -37,7 +39,7 @@
         public static readonly PressureUnit Micropascals = new PressureUnit(1E-06, "µPa");
         /// <summary>
         /// The <see cref="T:Gu.Units.Micropascals"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit µPa = Micropascals;
 
@@ -48,7 +50,7 @@
         public static readonly PressureUnit Millipascals = new PressureUnit(0.001, "mPa");
         /// <summary>
         /// The <see cref="T:Gu.Units.Millipascals"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit mPa = Millipascals;
 
@@ -59,7 +61,7 @@
         public static readonly PressureUnit Kilopascals = new PressureUnit(1000, "kPa");
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilopascals"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit kPa = Kilopascals;
 
@@ -70,7 +72,7 @@
         public static readonly PressureUnit Megapascals = new PressureUnit(1000000, "MPa");
         /// <summary>
         /// The <see cref="T:Gu.Units.Megapascals"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit MPa = Megapascals;
 
@@ -81,7 +83,7 @@
         public static readonly PressureUnit Gigapascals = new PressureUnit(1000000000, "GPa");
         /// <summary>
         /// The <see cref="T:Gu.Units.Gigapascals"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit GPa = Gigapascals;
 
@@ -92,7 +94,7 @@
         public static readonly PressureUnit Bars = new PressureUnit(100000, "bar");
         /// <summary>
         /// The <see cref="T:Gu.Units.Bars"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit bar = Bars;
 
@@ -103,7 +105,7 @@
         public static readonly PressureUnit Millibars = new PressureUnit(100, "mbar");
         /// <summary>
         /// The <see cref="T:Gu.Units.Millibars"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit mbar = Millibars;
 
@@ -140,6 +142,11 @@
         public static bool operator !=(PressureUnit left, PressureUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static PressureUnit Parse(string text)
+        {
+            return Parser.ParseUnit<PressureUnit>(text);
         }
 
         /// <summary>
@@ -184,7 +191,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Pascals.symbol);
+            return this.symbol;
         }
 
         public bool Equals(PressureUnit other)

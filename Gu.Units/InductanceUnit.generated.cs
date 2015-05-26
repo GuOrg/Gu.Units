@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.InductanceUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Henrys.symbol}")]
     public struct InductanceUnit : IUnit, IUnit<Inductance>, IEquatable<InductanceUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Henrys"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly InductanceUnit Henrys = new InductanceUnit(1.0, "H");
         /// <summary>
@@ -52,6 +54,11 @@
         public static bool operator !=(InductanceUnit left, InductanceUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static InductanceUnit Parse(string text)
+        {
+            return Parser.ParseUnit<InductanceUnit>(text);
         }
 
         /// <summary>
@@ -96,7 +103,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Henrys.symbol);
+            return this.symbol;
         }
 
         public bool Equals(InductanceUnit other)

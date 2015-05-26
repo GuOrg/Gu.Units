@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.PowerUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Watts.symbol}")]
     public struct PowerUnit : IUnit, IUnit<Power>, IEquatable<PowerUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Watts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit Watts = new PowerUnit(1.0, "W");
         /// <summary>
@@ -26,7 +28,7 @@
         public static readonly PowerUnit Nanowatts = new PowerUnit(1E-09, "nW");
         /// <summary>
         /// The <see cref="T:Gu.Units.Nanowatts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit nW = Nanowatts;
 
@@ -37,7 +39,7 @@
         public static readonly PowerUnit Microwatts = new PowerUnit(1E-06, "µW");
         /// <summary>
         /// The <see cref="T:Gu.Units.Microwatts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit µW = Microwatts;
 
@@ -48,7 +50,7 @@
         public static readonly PowerUnit Milliwatts = new PowerUnit(0.001, "mW");
         /// <summary>
         /// The <see cref="T:Gu.Units.Milliwatts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit mW = Milliwatts;
 
@@ -59,7 +61,7 @@
         public static readonly PowerUnit Kilowatts = new PowerUnit(1000, "kW");
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilowatts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit kW = Kilowatts;
 
@@ -70,7 +72,7 @@
         public static readonly PowerUnit Megawatts = new PowerUnit(1000000, "MW");
         /// <summary>
         /// The <see cref="T:Gu.Units.Megawatts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit MW = Megawatts;
 
@@ -81,7 +83,7 @@
         public static readonly PowerUnit Gigawatts = new PowerUnit(1000000000, "GW");
         /// <summary>
         /// The <see cref="T:Gu.Units.Gigawatts"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit GW = Gigawatts;
 
@@ -118,6 +120,11 @@
         public static bool operator !=(PowerUnit left, PowerUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static PowerUnit Parse(string text)
+        {
+            return Parser.ParseUnit<PowerUnit>(text);
         }
 
         /// <summary>
@@ -162,7 +169,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Watts.symbol);
+            return this.symbol;
         }
 
         public bool Equals(PowerUnit other)

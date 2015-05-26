@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.FlexibilityUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MetresPerNewton.symbol}")]
     public struct FlexibilityUnit : IUnit, IUnit<Flexibility>, IEquatable<FlexibilityUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.MetresPerNewton"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FlexibilityUnit MetresPerNewton = new FlexibilityUnit(1.0, "m/N");
 
@@ -67,6 +69,11 @@
             return !left.Equals(right);
         }
 
+        public static FlexibilityUnit Parse(string text)
+        {
+            return Parser.ParseUnit<FlexibilityUnit>(text);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.MetresPerNewton"/>.
         /// </summary>
@@ -109,7 +116,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), MetresPerNewton.symbol);
+            return this.symbol;
         }
 
         public bool Equals(FlexibilityUnit other)

@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.UnitlessUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Scalar.symbol}")]
     public struct UnitlessUnit : IUnit, IUnit<Unitless>, IEquatable<UnitlessUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Scalar"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly UnitlessUnit Scalar = new UnitlessUnit(1.0, "ul");
         /// <summary>
@@ -26,7 +28,7 @@
         public static readonly UnitlessUnit PartsPerMillion = new UnitlessUnit(1E-06, "ppm");
         /// <summary>
         /// The <see cref="T:Gu.Units.PartsPerMillion"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly UnitlessUnit ppm = PartsPerMillion;
 
@@ -77,6 +79,11 @@
             return !left.Equals(right);
         }
 
+        public static UnitlessUnit Parse(string text)
+        {
+            return Parser.ParseUnit<UnitlessUnit>(text);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Scalar"/>.
         /// </summary>
@@ -119,7 +126,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Scalar.symbol);
+            return this.symbol;
         }
 
         public bool Equals(UnitlessUnit other)

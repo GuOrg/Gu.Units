@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.DensityUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{KilogramsPerCubicMetre.symbol}")]
     public struct DensityUnit : IUnit, IUnit<Density>, IEquatable<DensityUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.KilogramsPerCubicMetre"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly DensityUnit KilogramsPerCubicMetre = new DensityUnit(1.0, "kg/m³");
 
@@ -61,6 +63,11 @@
             return !left.Equals(right);
         }
 
+        public static DensityUnit Parse(string text)
+        {
+            return Parser.ParseUnit<DensityUnit>(text);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.KilogramsPerCubicMetre"/>.
         /// </summary>
@@ -103,7 +110,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), KilogramsPerCubicMetre.symbol);
+            return this.symbol;
         }
 
         public bool Equals(DensityUnit other)

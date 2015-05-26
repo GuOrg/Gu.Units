@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.AngleUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Radians.symbol}")]
     public struct AngleUnit : IUnit, IUnit<Angle>, IEquatable<AngleUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Radians"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngleUnit Radians = new AngleUnit(1.0, "rad");
         /// <summary>
@@ -60,6 +62,11 @@
             return !left.Equals(right);
         }
 
+        public static AngleUnit Parse(string text)
+        {
+            return Parser.ParseUnit<AngleUnit>(text);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Radians"/>.
         /// </summary>
@@ -102,7 +109,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Radians.symbol);
+            return this.symbol;
         }
 
         public bool Equals(AngleUnit other)

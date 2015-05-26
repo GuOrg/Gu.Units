@@ -5,12 +5,12 @@
     /// A type for the unit <see cref="T:Gu.Units.AccelerationUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MetresPerSecondSquared.symbol}")]
     public struct AccelerationUnit : IUnit, IUnit<Acceleration>, IEquatable<AccelerationUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.MetresPerSecondSquared"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AccelerationUnit MetresPerSecondSquared = new AccelerationUnit(1.0, "m/s²");
 
@@ -61,6 +61,11 @@
             return !left.Equals(right);
         }
 
+        public static AccelerationUnit Parse(string text)
+        {
+            return Parser.ParseUnit<AccelerationUnit>(text);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.MetresPerSecondSquared"/>.
         /// </summary>
@@ -103,7 +108,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), MetresPerSecondSquared.symbol);
+            return this.symbol;
         }
 
         public bool Equals(AccelerationUnit other)

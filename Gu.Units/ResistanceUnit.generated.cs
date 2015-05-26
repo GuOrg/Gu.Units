@@ -1,16 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Diagnostics;
+
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.ResistanceUnit"/>.
     /// Contains conversion logic.
     /// </summary>
-    [Serializable]
+    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Ohm.symbol}")]
     public struct ResistanceUnit : IUnit, IUnit<Resistance>, IEquatable<ResistanceUnit>
     {
         /// <summary>
         /// The <see cref="T:Gu.Units.Ohm"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ResistanceUnit Ohm = new ResistanceUnit(1.0, "Ω");
         /// <summary>
@@ -26,7 +28,7 @@
         public static readonly ResistanceUnit Microohm = new ResistanceUnit(1E-06, "µΩ");
         /// <summary>
         /// The <see cref="T:Gu.Units.Microohm"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ResistanceUnit µΩ = Microohm;
 
@@ -37,7 +39,7 @@
         public static readonly ResistanceUnit Milliohm = new ResistanceUnit(0.001, "mΩ");
         /// <summary>
         /// The <see cref="T:Gu.Units.Milliohm"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ResistanceUnit mΩ = Milliohm;
 
@@ -48,7 +50,7 @@
         public static readonly ResistanceUnit Kiloohm = new ResistanceUnit(1000, "kΩ");
         /// <summary>
         /// The <see cref="T:Gu.Units.Kiloohm"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ResistanceUnit kΩ = Kiloohm;
 
@@ -59,7 +61,7 @@
         public static readonly ResistanceUnit Megaohm = new ResistanceUnit(1000000, "MΩ");
         /// <summary>
         /// The <see cref="T:Gu.Units.Megaohm"/> unit
-        /// Contains coonversion logic to from and formatting.
+        /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ResistanceUnit MΩ = Megaohm;
 
@@ -96,6 +98,11 @@
         public static bool operator !=(ResistanceUnit left, ResistanceUnit right)
         {
             return !left.Equals(right);
+        }
+
+        public static ResistanceUnit Parse(string text)
+        {
+            return Parser.ParseUnit<ResistanceUnit>(text);
         }
 
         /// <summary>
@@ -140,7 +147,7 @@
 
         public override string ToString()
         {
-            return string.Format("1{0} == {1}{2}", this.symbol, this.ToSiUnit(1), Ohm.symbol);
+            return this.symbol;
         }
 
         public bool Equals(ResistanceUnit other)
