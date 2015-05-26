@@ -29,11 +29,11 @@ namespace <#= Settings.Namespace #>
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="T:<#= Settings.Namespace #>.<#= unit.QuantityName #>Unit"/>.
+    /// A type for the unit <see cref="T:<#= Settings.Namespace #>.<#= unit.UnitName #>"/>.
 	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{<#= unit.ClassName #>.symbol}")]
-    public struct <#= unit.QuantityName #>Unit : IUnit, IUnit<<#= unit.QuantityName #>>, IEquatable<<#= unit.QuantityName #>Unit>
+    public struct <#= unit.UnitName #> : IUnit, IUnit<<#= unit.QuantityName #>>, IEquatable<<#= unit.UnitName #>>
     {
         /// <summary>
         /// The <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/> unit
@@ -43,13 +43,13 @@ namespace <#= Settings.Namespace #>
 	if (unit.AnyOffsetConversion)
 	{
 	    #>
-        public static readonly <#= unit.QuantityName #>Unit <#= unit.ClassName #> = new <#= unit.QuantityName #>Unit(1.0, 0, "<#= unit.Symbol #>");
+        public static readonly <#= unit.UnitName #> <#= unit.ClassName #> = new <#= unit.UnitName #>(1.0, 0, "<#= unit.Symbol #>");
 <#
 	}
 	else
 	{
 	    #>
-        public static readonly <#= unit.QuantityName #>Unit <#= unit.ClassName #> = new <#= unit.QuantityName #>Unit(1.0, "<#= unit.Symbol #>");
+        public static readonly <#= unit.UnitName #> <#= unit.ClassName #> = new <#= unit.UnitName #>(1.0, "<#= unit.Symbol #>");
 <#
 	}
         #>
@@ -61,7 +61,7 @@ namespace <#= Settings.Namespace #>
         /// The <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly <#= unit.QuantityName #>Unit <#= unit.Symbol #> = <#= unit.ClassName #>;
+		public static readonly <#= unit.UnitName #> <#= unit.Symbol #> = <#= unit.ClassName #>;
 <#
             }
             #><#
@@ -77,13 +77,13 @@ namespace <#= Settings.Namespace #>
 	if (unit.AnyOffsetConversion)
 	{
 	    #>
-		public static readonly <#= unit.QuantityName #>Unit <#= su.ClassName #> = new <#= unit.QuantityName #>Unit(<#= su.Formula.ConversionFactor #>, <#= su.Formula.Offset #>, "<#= su.Symbol #>");
+		public static readonly <#= unit.UnitName #> <#= su.ClassName #> = new <#= unit.UnitName #>(<#= su.Formula.ConversionFactor #>, <#= su.Formula.Offset #>, "<#= su.Symbol #>");
 <#
 	}
 	else
 	{
 	    #>
-		public static readonly <#= unit.QuantityName #>Unit <#= su.ClassName #> = new <#= unit.QuantityName #>Unit(<#= su.Formula.ConversionFactor.ToString("R", CultureInfo.InvariantCulture) #>, "<#= su.Symbol #>");
+		public static readonly <#= unit.UnitName #> <#= su.ClassName #> = new <#= unit.UnitName #>(<#= su.Formula.ConversionFactor.ToString("R", CultureInfo.InvariantCulture) #>, "<#= su.Symbol #>");
 <#
 	}
         #><#
@@ -94,7 +94,7 @@ namespace <#= Settings.Namespace #>
         /// The <see cref="T:<#= Settings.Namespace #>.<#= su.ClassName #>"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly <#= unit.QuantityName #>Unit <#= su.Symbol #> = <#= su.ClassName #>;
+		public static readonly <#= unit.UnitName #> <#= su.Symbol #> = <#= su.ClassName #>;
 <#
             }
             #><#
@@ -116,13 +116,13 @@ namespace <#= Settings.Namespace #>
 	if (unit.AnyOffsetConversion)
 	{
 	    #>
-        public <#= unit.QuantityName #>Unit(double conversionFactor, double offset, string symbol)
+        public <#= unit.UnitName #>(double conversionFactor, double offset, string symbol)
 <#
 	}
 	else
 	{
 	    #>
-        public <#= unit.QuantityName #>Unit(double conversionFactor, string symbol)
+        public <#= unit.UnitName #>(double conversionFactor, string symbol)
 <#
 	}
         #>
@@ -150,24 +150,24 @@ namespace <#= Settings.Namespace #>
             }
         }
 
-        public static <#= unit.QuantityName #> operator *(double left, <#= unit.QuantityName #>Unit right)
+        public static <#= unit.QuantityName #> operator *(double left, <#= unit.UnitName #> right)
         {
             return <#= unit.QuantityName #>.From(left, right);
         }
 
-	    public static bool operator ==(<#= unit.QuantityName #>Unit left, <#= unit.QuantityName #>Unit right)
+	    public static bool operator ==(<#= unit.UnitName #> left, <#= unit.UnitName #> right)
         {
             return left.Equals(right);
         }
 
-        public static bool operator !=(<#= unit.QuantityName #>Unit left, <#= unit.QuantityName #>Unit right)
+        public static bool operator !=(<#= unit.UnitName #> left, <#= unit.UnitName #> right)
         {
             return !left.Equals(right);
         }
 
-        public static <#= unit.QuantityName #>Unit Parse(string text)
+        public static <#= unit.UnitName #> Parse(string text)
         {
-            return Parser.ParseUnit<<#= unit.QuantityName #>Unit>(text);
+            return Parser.ParseUnit<<#= unit.UnitName #>>(text);
         }
 
         /// <summary>
@@ -241,7 +241,7 @@ namespace <#= Settings.Namespace #>
             return this.symbol;
         }
 
-		public bool Equals(<#= unit.QuantityName #>Unit other)
+		public bool Equals(<#= unit.UnitName #> other)
         {
             return this.symbol == other.symbol;
         }
@@ -253,7 +253,7 @@ namespace <#= Settings.Namespace #>
                 return false;
             }
 
-            return obj is <#= unit.QuantityName #>Unit && Equals((<#= unit.QuantityName #>Unit) obj);
+            return obj is <#= unit.UnitName #> && Equals((<#= unit.UnitName #>) obj);
         }
 
         public override int GetHashCode()

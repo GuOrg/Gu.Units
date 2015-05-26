@@ -76,6 +76,15 @@
         }
 
         [XmlIgnore]
+        public string UnitName
+        {
+            get
+            {
+                return QuantityName + "Unit";
+            }
+        }
+
+        [XmlIgnore]
         public Quantity Quantity
         {
             get

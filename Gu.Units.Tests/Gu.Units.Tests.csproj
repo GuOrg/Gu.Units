@@ -85,6 +85,7 @@
     <Compile Include="Sandbox.cs" />
     <Compile Include="SerializationTests.cs" />
     <Compile Include="UnitlessTests.cs" />
+    <Compile Include="UnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
