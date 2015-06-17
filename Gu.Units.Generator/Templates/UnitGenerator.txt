@@ -4,6 +4,10 @@ Read Settings found 8 units
 
 //-> AngleUnit.generated.cs
 
+//-> AngularAccelerationUnit.generated.cs
+
+//-> AngularJerkUnit.generated.cs
+
 //-> AngularSpeedUnit.generated.cs
 
 //-> AreaUnit.generated.cs
@@ -25,6 +29,8 @@ Read Settings found 8 units
 //-> FrequencyUnit.generated.cs
 
 //-> InductanceUnit.generated.cs
+
+//-> JerkUnit.generated.cs
 
 //-> LengthUnit.generated.cs
 
@@ -60,6 +66,9 @@ Read Settings found 8 units
 // Generated helper templates
 // Gu.Units\Gu.Units\UnitGenerator.txt4
 // Generated items
+// Gu.Units\Gu.Units\JerkUnit.generated.cs
+// Gu.Units\Gu.Units\AngularJerkUnit.generated.cs
+// Gu.Units\Gu.Units\AngularAccelerationUnit.generated.cs
 // Gu.Units\Gu.Units\FlexibilityUnit.generated.cs
 // Gu.Units\Gu.Units\CapacitanceUnit.generated.cs
 // Gu.Units\Gu.Units\InductanceUnit.generated.cs

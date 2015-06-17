@@ -31,6 +31,7 @@
                                             new Conversion<Pressure>("1.2 Pa","0.000012 bar", Pressure.Parse),
                                             new Conversion<Pressure>("0.12 MPa","1.2 bar", Pressure.Parse),
                                             new Conversion<Pressure>("1.2 Pa","0.012 mbar", Pressure.Parse),
+                                            new Conversion<Acceleration>("1.2 mm/s^2","0.0012 m/s^2", Acceleration.Parse),
                                         };
 
         }

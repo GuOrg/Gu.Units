@@ -26,6 +26,7 @@
         where TPower2 : IPower
     {
     }
+
     public interface IQuantity<TUnit1, TPower1, TUnit2, TPower2, TUnit3, TPower3> : IQuantity
         where TUnit1 : IUnit
         where TPower1 : IPower
@@ -45,42 +46,6 @@
         where TPower3 : IPower
         where TUnit4 : IUnit
         where TPower4 : IPower
-    {
-    }
-
-    public interface IPower
-    {
-    }
-
-    public interface I1 : IPower
-    {
-    }
-
-    public interface I2 : IPower
-    {
-    }
-
-    public interface I3 : IPower
-    {
-    }
-
-    public interface I4 : IPower
-    {
-    }
-
-    public interface INeg1 : IPower
-    {
-    }
-
-    public interface INeg2 : IPower
-    {
-    }
-
-    public interface INeg3 : IPower
-    {
-    }
-
-    public interface INeg4 : IPower
     {
     }
 }
