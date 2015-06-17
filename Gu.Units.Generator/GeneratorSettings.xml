@@ -1012,6 +1012,237 @@
         </UnitAndPower>
       </Parts>
     </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>RadiansPerSecondSquared</ClassName>
+      <Symbol>rad/s²</Symbol>
+      <QuantityName>AngularAcceleration</QuantityName>
+      <Conversions>
+        <Conversion>
+          <ClassName>DegreesPerSquareSecond</ClassName>
+          <Symbol>°⋅s⁻²</Symbol>
+          <Formula>
+            <ConversionFactor>0.017453292519943295</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>RadiansPerSquareHour</ClassName>
+          <Symbol>h⁻²⋅rad</Symbol>
+          <Formula>
+            <ConversionFactor>7.71604938271605E-08</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>DegreesPerSquareHour</ClassName>
+          <Symbol>h⁻²⋅°</Symbol>
+          <Formula>
+            <ConversionFactor>1.346704669748711E-09</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>DegreesPerSquareMinute</ClassName>
+          <Symbol>min⁻²⋅°</Symbol>
+          <Formula>
+            <ConversionFactor>4.84813681109536E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>RadiansPerSquareMinute</ClassName>
+          <Symbol>min⁻²⋅rad</Symbol>
+          <Formula>
+            <ConversionFactor>0.00027777777777777778</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+      </Conversions>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Radians</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Seconds</UnitName>
+          <Power>-2</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>RadiansPerSecondCubed</ClassName>
+      <Symbol>rad/s³</Symbol>
+      <QuantityName>AngularJerk</QuantityName>
+      <Conversions>
+        <Conversion>
+          <ClassName>DegreesPerCubicSecond</ClassName>
+          <Symbol>°⋅s⁻³</Symbol>
+          <Formula>
+            <ConversionFactor>0.017453292519943295</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>RadiansPerCubicHour</ClassName>
+          <Symbol>h⁻³⋅rad</Symbol>
+          <Formula>
+            <ConversionFactor>2.1433470507544583E-11</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>DegreesPerCubicHour</ClassName>
+          <Symbol>h⁻³⋅°</Symbol>
+          <Formula>
+            <ConversionFactor>3.7408463048575307E-13</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>RadiansPerCubicMinute</ClassName>
+          <Symbol>min⁻³⋅rad</Symbol>
+          <Formula>
+            <ConversionFactor>4.6296296296296296E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>DegreesPerCubicMinute</ClassName>
+          <Symbol>min⁻³⋅°</Symbol>
+          <Formula>
+            <ConversionFactor>8.0802280184922666E-08</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+      </Conversions>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Radians</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Seconds</UnitName>
+          <Power>-3</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>MetresPerSecondCubed</ClassName>
+      <Symbol>m/s³</Symbol>
+      <QuantityName>Jerk</QuantityName>
+      <Conversions>
+        <Conversion>
+          <ClassName>MillimetresPerCubicSecond</ClassName>
+          <Symbol>mm⋅s⁻³</Symbol>
+          <Formula>
+            <ConversionFactor>0.001</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>MillimetresPerCubicHour</ClassName>
+          <Symbol>h⁻³⋅mm</Symbol>
+          <Formula>
+            <ConversionFactor>2.1433470507544584E-14</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>MillimetresPerCubicMinute</ClassName>
+          <Symbol>min⁻³⋅mm</Symbol>
+          <Formula>
+            <ConversionFactor>4.6296296296296295E-09</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>MetresPerCubicHour</ClassName>
+          <Symbol>h⁻³⋅m</Symbol>
+          <Formula>
+            <ConversionFactor>2.1433470507544583E-11</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>MetresPerCubicMinute</ClassName>
+          <Symbol>min⁻³⋅m</Symbol>
+          <Formula>
+            <ConversionFactor>4.6296296296296296E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>NanometresPerCubicHour</ClassName>
+          <Symbol>h⁻³⋅nm</Symbol>
+          <Formula>
+            <ConversionFactor>2.1433470507544585E-20</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>NanometresPerCubicMinute</ClassName>
+          <Symbol>min⁻³⋅nm</Symbol>
+          <Formula>
+            <ConversionFactor>4.62962962962963E-15</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>CentimetresPerCubicSecond</ClassName>
+          <Symbol>cm⋅s⁻³</Symbol>
+          <Formula>
+            <ConversionFactor>0.01</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>CentimetresPerCubicHour</ClassName>
+          <Symbol>cm⋅h⁻³</Symbol>
+          <Formula>
+            <ConversionFactor>2.1433470507544584E-13</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>CentimetresPerCubicMinute</ClassName>
+          <Symbol>cm⋅min⁻³</Symbol>
+          <Formula>
+            <ConversionFactor>4.6296296296296295E-08</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+      </Conversions>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Metres</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Seconds</UnitName>
+          <Power>-3</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
   </DerivedUnits>
   <SiUnits>
     <SiUnit>

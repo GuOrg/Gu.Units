@@ -27,6 +27,11 @@
                              new ParseData("1.2m¹⋅s⁻¹", s=>Speed.Parse(s), Speed.FromMetresPerSecond(1.2)),
                              new ParseData("1.2m^1⋅s⁻¹", s=>Speed.Parse(s), Speed.FromMetresPerSecond(1.2)),
                              new ParseData("1.2m^1⋅s^-1", s=>Speed.Parse(s), Speed.FromMetresPerSecond(1.2)),
+                             new ParseData("1.2m^1/s^2", s=>Acceleration.Parse(s), Acceleration.FromMetresPerSecondSquared(1.2)),
+                             new ParseData("1.2m/s^2", s=>Acceleration.Parse(s), Acceleration.FromMetresPerSecondSquared(1.2)),
+                             new ParseData("1.2 m/s^2", s=>Acceleration.Parse(s), Acceleration.FromMetresPerSecondSquared(1.2)),
+                             new ParseData("1.2 m / s^2", s=>Acceleration.Parse(s), Acceleration.FromMetresPerSecondSquared(1.2)),
+                             new ParseData("1.2 m / s²", s=>Acceleration.Parse(s), Acceleration.FromMetresPerSecondSquared(1.2)),
                          };
 
         }

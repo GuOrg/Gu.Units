@@ -498,6 +498,57 @@
             return Flexibility.FromMetresPerNewton(sum);
         }
 
+        public static AngularAcceleration Sum(this IEnumerable<AngularAcceleration> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.radiansPerSecondSquared;
+                }
+            }
+            return AngularAcceleration.FromRadiansPerSecondSquared(sum);
+        }
+
+        public static AngularJerk Sum(this IEnumerable<AngularJerk> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.radiansPerSecondCubed;
+                }
+            }
+            return AngularJerk.FromRadiansPerSecondCubed(sum);
+        }
+
+        public static Jerk Sum(this IEnumerable<Jerk> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.metresPerSecondCubed;
+                }
+            }
+            return Jerk.FromMetresPerSecondCubed(sum);
+        }
+
         public static Mass? Sum(this IEnumerable<Mass?> source)
         {
             if (source == null)
@@ -1076,6 +1127,66 @@
                 }
             }
             return Flexibility.FromMetresPerNewton(sum);
+        }
+
+        public static AngularAcceleration? Sum(this IEnumerable<AngularAcceleration?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.radiansPerSecondSquared;
+                    }
+                }
+            }
+            return AngularAcceleration.FromRadiansPerSecondSquared(sum);
+        }
+
+        public static AngularJerk? Sum(this IEnumerable<AngularJerk?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.radiansPerSecondCubed;
+                    }
+                }
+            }
+            return AngularJerk.FromRadiansPerSecondCubed(sum);
+        }
+
+        public static Jerk? Sum(this IEnumerable<Jerk?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.metresPerSecondCubed;
+                    }
+                }
+            }
+            return Jerk.FromMetresPerSecondCubed(sum);
         }
 
         public static Mass Min(this IEnumerable<Mass> source)
@@ -1977,6 +2088,99 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        public static AngularAcceleration Min(this IEnumerable<AngularAcceleration> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(AngularAcceleration);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.radiansPerSecondSquared))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.radiansPerSecondSquared < value.radiansPerSecondSquared)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static AngularJerk Min(this IEnumerable<AngularJerk> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(AngularJerk);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.radiansPerSecondCubed))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.radiansPerSecondCubed < value.radiansPerSecondCubed)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static Jerk Min(this IEnumerable<Jerk> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(Jerk);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.metresPerSecondCubed))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.metresPerSecondCubed < value.metresPerSecondCubed)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
         public static Mass? Min(this IEnumerable<Mass?> source)
         {
             if (source == null)
@@ -2695,6 +2899,81 @@
                     return x;
                 }
                 if (value == null || x.Value.metresPerNewton < value.Value.metresPerNewton)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static AngularAcceleration? Min(this IEnumerable<AngularAcceleration?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            AngularAcceleration? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.radiansPerSecondSquared))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.radiansPerSecondSquared < value.Value.radiansPerSecondSquared)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static AngularJerk? Min(this IEnumerable<AngularJerk?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            AngularJerk? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.radiansPerSecondCubed))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.radiansPerSecondCubed < value.Value.radiansPerSecondCubed)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static Jerk? Min(this IEnumerable<Jerk?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            Jerk? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.metresPerSecondCubed))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.metresPerSecondCubed < value.Value.metresPerSecondCubed)
                 {
                     value = x;
                 }
@@ -3601,6 +3880,99 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        public static AngularAcceleration Max(this IEnumerable<AngularAcceleration> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            AngularAcceleration value = default(AngularAcceleration);
+            bool hasValue = false;
+            foreach (AngularAcceleration x in source)
+            {
+                if (System.Double.IsNaN(x.radiansPerSecondSquared))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.radiansPerSecondSquared > value.radiansPerSecondSquared)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static AngularJerk Max(this IEnumerable<AngularJerk> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            AngularJerk value = default(AngularJerk);
+            bool hasValue = false;
+            foreach (AngularJerk x in source)
+            {
+                if (System.Double.IsNaN(x.radiansPerSecondCubed))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.radiansPerSecondCubed > value.radiansPerSecondCubed)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static Jerk Max(this IEnumerable<Jerk> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            Jerk value = default(Jerk);
+            bool hasValue = false;
+            foreach (Jerk x in source)
+            {
+                if (System.Double.IsNaN(x.metresPerSecondCubed))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.metresPerSecondCubed > value.metresPerSecondCubed)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
         public static Mass? Max(this IEnumerable<Mass?> source)
         {
             if (source == null)
@@ -4326,6 +4698,81 @@
             return value;
         }
 
+        public static AngularAcceleration? Max(this IEnumerable<AngularAcceleration?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            AngularAcceleration? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.radiansPerSecondSquared))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.radiansPerSecondSquared > value.Value.radiansPerSecondSquared)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static AngularJerk? Max(this IEnumerable<AngularJerk?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            AngularJerk? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.radiansPerSecondCubed))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.radiansPerSecondCubed > value.Value.radiansPerSecondCubed)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static Jerk? Max(this IEnumerable<Jerk?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            Jerk? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.metresPerSecondCubed))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.metresPerSecondCubed > value.Value.metresPerSecondCubed)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
         public static Mass Average(this IEnumerable<Mass> source)
         {
             if (source == null)
@@ -4989,6 +5436,75 @@
             if (count > 0)
             {
                 return Flexibility.FromMetresPerNewton(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static AngularAcceleration Average(this IEnumerable<AngularAcceleration> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.radiansPerSecondSquared;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return AngularAcceleration.FromRadiansPerSecondSquared(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static AngularJerk Average(this IEnumerable<AngularJerk> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.radiansPerSecondCubed;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return AngularJerk.FromRadiansPerSecondCubed(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static Jerk Average(this IEnumerable<Jerk> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.metresPerSecondCubed;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return Jerk.FromMetresPerSecondCubed(sum / count);
             }
             throw new ArgumentException("No elements", "source");
         }
@@ -5744,6 +6260,84 @@
             if (count > 0)
             {
                 return Flexibility.FromMetresPerNewton(sum / count);
+            }
+            return null;
+        }
+
+        public static AngularAcceleration? Average(this IEnumerable<AngularAcceleration?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.radiansPerSecondSquared;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return AngularAcceleration.FromRadiansPerSecondSquared(sum / count);
+            }
+            return null;
+        }
+
+        public static AngularJerk? Average(this IEnumerable<AngularJerk?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.radiansPerSecondCubed;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return AngularJerk.FromRadiansPerSecondCubed(sum / count);
+            }
+            return null;
+        }
+
+        public static Jerk? Average(this IEnumerable<Jerk?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.metresPerSecondCubed;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return Jerk.FromMetresPerSecondCubed(sum / count);
             }
             return null;
         }
