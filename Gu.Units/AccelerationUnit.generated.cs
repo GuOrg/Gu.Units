@@ -20,13 +20,13 @@
         /// The <see cref="T:Gu.Units.MillimetresPerSecondSquared"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AccelerationUnit MillimetresPerSecondSquared = new AccelerationUnit(1E-06, "mm/s²");
+        public static readonly AccelerationUnit MillimetresPerSecondSquared = new AccelerationUnit(0.001, "mm/s²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.CentimetresPerSecondSquared"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AccelerationUnit CentimetresPerSecondSquared = new AccelerationUnit(0.0001, "cm/s²");
+        public static readonly AccelerationUnit CentimetresPerSecondSquared = new AccelerationUnit(0.01, "cm/s²");
 
         private readonly double conversionFactor;
         private readonly string symbol;
