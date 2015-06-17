@@ -27,6 +27,36 @@
         /// </summary>
         public static readonly AngularSpeedUnit rpm = RevolutionsPerMinute;
 
+        /// <summary>
+        /// The <see cref="T:Gu.Units.DegreesPerSecond"/> unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly AngularSpeedUnit DegreesPerSecond = new AngularSpeedUnit(0.017453292519943295, "°⋅s⁻¹");
+
+        /// <summary>
+        /// The <see cref="T:Gu.Units.DegreesPerMinute"/> unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly AngularSpeedUnit DegreesPerMinute = new AngularSpeedUnit(0.00029088820866572158, "min⁻¹⋅°");
+
+        /// <summary>
+        /// The <see cref="T:Gu.Units.RadiansPerMinute"/> unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly AngularSpeedUnit RadiansPerMinute = new AngularSpeedUnit(0.016666666666666666, "min⁻¹⋅rad");
+
+        /// <summary>
+        /// The <see cref="T:Gu.Units.DegreesPerHour"/> unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly AngularSpeedUnit DegreesPerHour = new AngularSpeedUnit(4.84813681109536E-06, "h⁻¹⋅°");
+
+        /// <summary>
+        /// The <see cref="T:Gu.Units.RadiansPerHour"/> unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly AngularSpeedUnit RadiansPerHour = new AngularSpeedUnit(0.00027777777777777778, "h⁻¹⋅rad");
+
         private readonly double conversionFactor;
         private readonly string symbol;
 

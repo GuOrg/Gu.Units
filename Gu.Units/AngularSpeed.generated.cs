@@ -66,6 +66,61 @@
         }
 
         /// <summary>
+        /// The quantity in degreesPerSecond
+        /// </summary>
+        public double DegreesPerSecond
+        {
+            get
+            {
+                return AngularSpeedUnit.DegreesPerSecond.FromSiUnit(this.radiansPerSecond);
+            }
+        }
+
+        /// <summary>
+        /// The quantity in degreesPerMinute
+        /// </summary>
+        public double DegreesPerMinute
+        {
+            get
+            {
+                return AngularSpeedUnit.DegreesPerMinute.FromSiUnit(this.radiansPerSecond);
+            }
+        }
+
+        /// <summary>
+        /// The quantity in radiansPerMinute
+        /// </summary>
+        public double RadiansPerMinute
+        {
+            get
+            {
+                return AngularSpeedUnit.RadiansPerMinute.FromSiUnit(this.radiansPerSecond);
+            }
+        }
+
+        /// <summary>
+        /// The quantity in degreesPerHour
+        /// </summary>
+        public double DegreesPerHour
+        {
+            get
+            {
+                return AngularSpeedUnit.DegreesPerHour.FromSiUnit(this.radiansPerSecond);
+            }
+        }
+
+        /// <summary>
+        /// The quantity in radiansPerHour
+        /// </summary>
+        public double RadiansPerHour
+        {
+            get
+            {
+                return AngularSpeedUnit.RadiansPerHour.FromSiUnit(this.radiansPerSecond);
+            }
+        }
+
+        /// <summary>
         /// Creates an instance of <see cref="T:Gu.Units.AngularSpeed"/> from its string representation
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.AngularSpeed"/></param>
@@ -113,6 +168,46 @@
         public static AngularSpeed FromRevolutionsPerMinute(double revolutionsPerMinute)
         {
             return From(revolutionsPerMinute, AngularSpeedUnit.RevolutionsPerMinute);
+        }
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.AngularSpeed"/>.
+        /// </summary>
+        /// <param name="degreesPerSecond">The value in °⋅s⁻¹</param>
+        public static AngularSpeed FromDegreesPerSecond(double degreesPerSecond)
+        {
+            return From(degreesPerSecond, AngularSpeedUnit.DegreesPerSecond);
+        }
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.AngularSpeed"/>.
+        /// </summary>
+        /// <param name="degreesPerMinute">The value in min⁻¹⋅°</param>
+        public static AngularSpeed FromDegreesPerMinute(double degreesPerMinute)
+        {
+            return From(degreesPerMinute, AngularSpeedUnit.DegreesPerMinute);
+        }
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.AngularSpeed"/>.
+        /// </summary>
+        /// <param name="radiansPerMinute">The value in min⁻¹⋅rad</param>
+        public static AngularSpeed FromRadiansPerMinute(double radiansPerMinute)
+        {
+            return From(radiansPerMinute, AngularSpeedUnit.RadiansPerMinute);
+        }
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.AngularSpeed"/>.
+        /// </summary>
+        /// <param name="degreesPerHour">The value in h⁻¹⋅°</param>
+        public static AngularSpeed FromDegreesPerHour(double degreesPerHour)
+        {
+            return From(degreesPerHour, AngularSpeedUnit.DegreesPerHour);
+        }
+        /// <summary>
+        /// Creates a new instance of <see cref="T:Gu.Units.AngularSpeed"/>.
+        /// </summary>
+        /// <param name="radiansPerHour">The value in h⁻¹⋅rad</param>
+        public static AngularSpeed FromRadiansPerHour(double radiansPerHour)
+        {
+            return From(radiansPerHour, AngularSpeedUnit.RadiansPerHour);
         }
 
         public static Angle operator *(AngularSpeed left, Time right)

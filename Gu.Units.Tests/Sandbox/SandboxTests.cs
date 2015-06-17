@@ -1,11 +1,11 @@
-﻿namespace Gu.Units.Tests
+﻿namespace Gu.Units.Tests.Sandbox
 {
     using System;
     using System.Diagnostics;
 
     using NUnit.Framework;
 
-    public class Sandbox
+    public class SandboxTests
     {
         private static LengthUnit m = LengthUnit.m;
         private static TimeUnit s = TimeUnit.s;
