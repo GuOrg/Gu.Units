@@ -601,6 +601,51 @@
           </Formula>
           <Conversions />
         </Conversion>
+        <Conversion>
+          <ClassName>DegreesPerSecond</ClassName>
+          <Symbol>°⋅s⁻¹</Symbol>
+          <Formula>
+            <ConversionFactor>0.017453292519943295</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>DegreesPerMinute</ClassName>
+          <Symbol>min⁻¹⋅°</Symbol>
+          <Formula>
+            <ConversionFactor>0.00029088820866572158</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>RadiansPerMinute</ClassName>
+          <Symbol>min⁻¹⋅rad</Symbol>
+          <Formula>
+            <ConversionFactor>0.016666666666666666</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>DegreesPerHour</ClassName>
+          <Symbol>h⁻¹⋅°</Symbol>
+          <Formula>
+            <ConversionFactor>4.84813681109536E-06</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>RadiansPerHour</ClassName>
+          <Symbol>h⁻¹⋅rad</Symbol>
+          <Formula>
+            <ConversionFactor>0.00027777777777777778</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
       </Conversions>
       <Parts>
         <UnitAndPower>
