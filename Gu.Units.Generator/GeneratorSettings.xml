@@ -671,7 +671,7 @@
           <ClassName>MillimetresPerSecondSquared</ClassName>
           <Symbol>mm/s²</Symbol>
           <Formula>
-            <ConversionFactor>1E-06</ConversionFactor>
+            <ConversionFactor>0.001</ConversionFactor>
             <Offset>0</Offset>
           </Formula>
           <Conversions />
@@ -680,7 +680,7 @@
           <ClassName>CentimetresPerSecondSquared</ClassName>
           <Symbol>cm/s²</Symbol>
           <Formula>
-            <ConversionFactor>0.0001</ConversionFactor>
+            <ConversionFactor>0.01</ConversionFactor>
             <Offset>0</Offset>
           </Formula>
           <Conversions />
