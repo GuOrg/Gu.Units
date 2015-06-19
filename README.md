@@ -19,8 +19,8 @@ Types for units and quantities, sample:
     [Test]
     public void ConversionSample()
     {
-        var cm = Length.FromCentimetres(1.2);
-        Assert.Equals(0.012, cm.Metres);
+        var l = Length.FromCentimetres(1.2);
+        Assert.Equals(0.012, l.Metres);
     }
 
 - Only the Gu.Units dll is meant for use. The other projects are for generating the code.
