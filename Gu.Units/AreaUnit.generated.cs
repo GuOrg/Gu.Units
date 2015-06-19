@@ -109,6 +109,11 @@
             return Parser.ParseUnit<AreaUnit>(text);
         }
 
+        public static bool TryParse(string text, out AreaUnit value)
+        {
+            return Parser.TryParseUnit<AreaUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.SquareMetres"/>.
         /// </summary>

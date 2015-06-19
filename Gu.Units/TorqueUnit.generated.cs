@@ -56,6 +56,11 @@
             return Parser.ParseUnit<TorqueUnit>(text);
         }
 
+        public static bool TryParse(string text, out TorqueUnit value)
+        {
+            return Parser.TryParseUnit<TorqueUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.NewtonMetres"/>.
         /// </summary>

@@ -61,6 +61,11 @@
             return Parser.ParseUnit<InductanceUnit>(text);
         }
 
+        public static bool TryParse(string text, out InductanceUnit value)
+        {
+            return Parser.TryParseUnit<InductanceUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Henrys"/>.
         /// </summary>

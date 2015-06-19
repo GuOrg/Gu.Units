@@ -105,7 +105,32 @@
         /// <returns></returns>
         public static Voltage Parse(string s)
         {
-            return Parser.Parse<VoltageUnit, Voltage>(s, From);
+            return Parser.Parse<VoltageUnit, Voltage>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        public static Voltage Parse(string s, NumberStyles styles)
+        {
+            return Parser.Parse<VoltageUnit, Voltage>(s, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        public static Voltage Parse(string s, NumberStyles styles, IFormatProvider provider)
+        {
+            return Parser.Parse<VoltageUnit, Voltage>(s, From, styles, provider);
+        }
+
+        public static bool TryParse(string s, out Voltage value)
+        {
+            return Parser.TryParse<VoltageUnit, Voltage>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, out Voltage value)
+        {
+            return Parser.TryParse<VoltageUnit, Voltage>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Voltage value)
+        {
+            return Parser.TryParse<VoltageUnit, Voltage>(s, From, styles, provider, out value);
         }
 
         /// <summary>

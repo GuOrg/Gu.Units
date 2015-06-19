@@ -94,6 +94,11 @@
             return Parser.ParseUnit<MassUnit>(text);
         }
 
+        public static bool TryParse(string text, out MassUnit value)
+        {
+            return Parser.TryParseUnit<MassUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Kilograms"/>.
         /// </summary>

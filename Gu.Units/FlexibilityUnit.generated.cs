@@ -74,6 +74,11 @@
             return Parser.ParseUnit<FlexibilityUnit>(text);
         }
 
+        public static bool TryParse(string text, out FlexibilityUnit value)
+        {
+            return Parser.TryParseUnit<FlexibilityUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.MetresPerNewton"/>.
         /// </summary>

@@ -61,7 +61,32 @@
         /// <returns></returns>
         public static VolumetricFlow Parse(string s)
         {
-            return Parser.Parse<VolumetricFlowUnit, VolumetricFlow>(s, From);
+            return Parser.Parse<VolumetricFlowUnit, VolumetricFlow>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        public static VolumetricFlow Parse(string s, NumberStyles styles)
+        {
+            return Parser.Parse<VolumetricFlowUnit, VolumetricFlow>(s, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        public static VolumetricFlow Parse(string s, NumberStyles styles, IFormatProvider provider)
+        {
+            return Parser.Parse<VolumetricFlowUnit, VolumetricFlow>(s, From, styles, provider);
+        }
+
+        public static bool TryParse(string s, out VolumetricFlow value)
+        {
+            return Parser.TryParse<VolumetricFlowUnit, VolumetricFlow>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, out VolumetricFlow value)
+        {
+            return Parser.TryParse<VolumetricFlowUnit, VolumetricFlow>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out VolumetricFlow value)
+        {
+            return Parser.TryParse<VolumetricFlowUnit, VolumetricFlow>(s, From, styles, provider, out value);
         }
 
         /// <summary>

@@ -55,57 +55,57 @@
         }
 
         /// <summary>
-        /// The quantity in degreesPerCubicSecond
+        /// The quantity in degreesPerSecondCubed
         /// </summary>
-        public double DegreesPerCubicSecond
+        public double DegreesPerSecondCubed
         {
             get
             {
-                return AngularJerkUnit.DegreesPerCubicSecond.FromSiUnit(this.radiansPerSecondCubed);
+                return AngularJerkUnit.DegreesPerSecondCubed.FromSiUnit(this.radiansPerSecondCubed);
             }
         }
 
         /// <summary>
-        /// The quantity in radiansPerCubicHour
+        /// The quantity in radiansPerHourCubed
         /// </summary>
-        public double RadiansPerCubicHour
+        public double RadiansPerHourCubed
         {
             get
             {
-                return AngularJerkUnit.RadiansPerCubicHour.FromSiUnit(this.radiansPerSecondCubed);
+                return AngularJerkUnit.RadiansPerHourCubed.FromSiUnit(this.radiansPerSecondCubed);
             }
         }
 
         /// <summary>
-        /// The quantity in degreesPerCubicHour
+        /// The quantity in degreesPerHourCubed
         /// </summary>
-        public double DegreesPerCubicHour
+        public double DegreesPerHourCubed
         {
             get
             {
-                return AngularJerkUnit.DegreesPerCubicHour.FromSiUnit(this.radiansPerSecondCubed);
+                return AngularJerkUnit.DegreesPerHourCubed.FromSiUnit(this.radiansPerSecondCubed);
             }
         }
 
         /// <summary>
-        /// The quantity in radiansPerCubicMinute
+        /// The quantity in radiansPerMinuteCubed
         /// </summary>
-        public double RadiansPerCubicMinute
+        public double RadiansPerMinuteCubed
         {
             get
             {
-                return AngularJerkUnit.RadiansPerCubicMinute.FromSiUnit(this.radiansPerSecondCubed);
+                return AngularJerkUnit.RadiansPerMinuteCubed.FromSiUnit(this.radiansPerSecondCubed);
             }
         }
 
         /// <summary>
-        /// The quantity in degreesPerCubicMinute
+        /// The quantity in degreesPerMinuteCubed
         /// </summary>
-        public double DegreesPerCubicMinute
+        public double DegreesPerMinuteCubed
         {
             get
             {
-                return AngularJerkUnit.DegreesPerCubicMinute.FromSiUnit(this.radiansPerSecondCubed);
+                return AngularJerkUnit.DegreesPerMinuteCubed.FromSiUnit(this.radiansPerSecondCubed);
             }
         }
 
@@ -116,7 +116,32 @@
         /// <returns></returns>
         public static AngularJerk Parse(string s)
         {
-            return Parser.Parse<AngularJerkUnit, AngularJerk>(s, From);
+            return Parser.Parse<AngularJerkUnit, AngularJerk>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        public static AngularJerk Parse(string s, NumberStyles styles)
+        {
+            return Parser.Parse<AngularJerkUnit, AngularJerk>(s, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        public static AngularJerk Parse(string s, NumberStyles styles, IFormatProvider provider)
+        {
+            return Parser.Parse<AngularJerkUnit, AngularJerk>(s, From, styles, provider);
+        }
+
+        public static bool TryParse(string s, out AngularJerk value)
+        {
+            return Parser.TryParse<AngularJerkUnit, AngularJerk>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, out AngularJerk value)
+        {
+            return Parser.TryParse<AngularJerkUnit, AngularJerk>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out AngularJerk value)
+        {
+            return Parser.TryParse<AngularJerkUnit, AngularJerk>(s, From, styles, provider, out value);
         }
 
         /// <summary>
@@ -153,42 +178,42 @@
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularJerk"/>.
         /// </summary>
-        /// <param name="degreesPerCubicSecond">The value in °⋅s⁻³</param>
-        public static AngularJerk FromDegreesPerCubicSecond(double degreesPerCubicSecond)
+        /// <param name="degreesPerSecondCubed">The value in °⋅s⁻³</param>
+        public static AngularJerk FromDegreesPerSecondCubed(double degreesPerSecondCubed)
         {
-            return From(degreesPerCubicSecond, AngularJerkUnit.DegreesPerCubicSecond);
+            return From(degreesPerSecondCubed, AngularJerkUnit.DegreesPerSecondCubed);
         }
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularJerk"/>.
         /// </summary>
-        /// <param name="radiansPerCubicHour">The value in h⁻³⋅rad</param>
-        public static AngularJerk FromRadiansPerCubicHour(double radiansPerCubicHour)
+        /// <param name="radiansPerHourCubed">The value in rad⋅h⁻³</param>
+        public static AngularJerk FromRadiansPerHourCubed(double radiansPerHourCubed)
         {
-            return From(radiansPerCubicHour, AngularJerkUnit.RadiansPerCubicHour);
+            return From(radiansPerHourCubed, AngularJerkUnit.RadiansPerHourCubed);
         }
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularJerk"/>.
         /// </summary>
-        /// <param name="degreesPerCubicHour">The value in h⁻³⋅°</param>
-        public static AngularJerk FromDegreesPerCubicHour(double degreesPerCubicHour)
+        /// <param name="degreesPerHourCubed">The value in °⋅h⁻³</param>
+        public static AngularJerk FromDegreesPerHourCubed(double degreesPerHourCubed)
         {
-            return From(degreesPerCubicHour, AngularJerkUnit.DegreesPerCubicHour);
+            return From(degreesPerHourCubed, AngularJerkUnit.DegreesPerHourCubed);
         }
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularJerk"/>.
         /// </summary>
-        /// <param name="radiansPerCubicMinute">The value in min⁻³⋅rad</param>
-        public static AngularJerk FromRadiansPerCubicMinute(double radiansPerCubicMinute)
+        /// <param name="radiansPerMinuteCubed">The value in rad⋅min⁻³</param>
+        public static AngularJerk FromRadiansPerMinuteCubed(double radiansPerMinuteCubed)
         {
-            return From(radiansPerCubicMinute, AngularJerkUnit.RadiansPerCubicMinute);
+            return From(radiansPerMinuteCubed, AngularJerkUnit.RadiansPerMinuteCubed);
         }
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularJerk"/>.
         /// </summary>
-        /// <param name="degreesPerCubicMinute">The value in min⁻³⋅°</param>
-        public static AngularJerk FromDegreesPerCubicMinute(double degreesPerCubicMinute)
+        /// <param name="degreesPerMinuteCubed">The value in °⋅min⁻³</param>
+        public static AngularJerk FromDegreesPerMinuteCubed(double degreesPerMinuteCubed)
         {
-            return From(degreesPerCubicMinute, AngularJerkUnit.DegreesPerCubicMinute);
+            return From(degreesPerMinuteCubed, AngularJerkUnit.DegreesPerMinuteCubed);
         }
 
         public static Frequency operator /(AngularJerk left, AngularAcceleration right)

@@ -56,6 +56,11 @@
             return Parser.ParseUnit<StiffnessUnit>(text);
         }
 
+        public static bool TryParse(string text, out StiffnessUnit value)
+        {
+            return Parser.TryParseUnit<StiffnessUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.NewtonsPerMetre"/>.
         /// </summary>

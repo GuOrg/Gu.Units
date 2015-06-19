@@ -149,7 +149,32 @@
         /// <returns></returns>
         public static Area Parse(string s)
         {
-            return Parser.Parse<AreaUnit, Area>(s, From);
+            return Parser.Parse<AreaUnit, Area>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        public static Area Parse(string s, NumberStyles styles)
+        {
+            return Parser.Parse<AreaUnit, Area>(s, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        public static Area Parse(string s, NumberStyles styles, IFormatProvider provider)
+        {
+            return Parser.Parse<AreaUnit, Area>(s, From, styles, provider);
+        }
+
+        public static bool TryParse(string s, out Area value)
+        {
+            return Parser.TryParse<AreaUnit, Area>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, out Area value)
+        {
+            return Parser.TryParse<AreaUnit, Area>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Area value)
+        {
+            return Parser.TryParse<AreaUnit, Area>(s, From, styles, provider, out value);
         }
 
         /// <summary>

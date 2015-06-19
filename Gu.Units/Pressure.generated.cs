@@ -149,7 +149,32 @@
         /// <returns></returns>
         public static Pressure Parse(string s)
         {
-            return Parser.Parse<PressureUnit, Pressure>(s, From);
+            return Parser.Parse<PressureUnit, Pressure>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        public static Pressure Parse(string s, NumberStyles styles)
+        {
+            return Parser.Parse<PressureUnit, Pressure>(s, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        public static Pressure Parse(string s, NumberStyles styles, IFormatProvider provider)
+        {
+            return Parser.Parse<PressureUnit, Pressure>(s, From, styles, provider);
+        }
+
+        public static bool TryParse(string s, out Pressure value)
+        {
+            return Parser.TryParse<PressureUnit, Pressure>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, out Pressure value)
+        {
+            return Parser.TryParse<PressureUnit, Pressure>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Pressure value)
+        {
+            return Parser.TryParse<PressureUnit, Pressure>(s, From, styles, provider, out value);
         }
 
         /// <summary>

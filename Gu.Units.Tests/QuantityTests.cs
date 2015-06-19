@@ -3,7 +3,7 @@
     using NUnit.Framework;
 
     /// <summary>
-    /// Just testing for length and assuming the other generated units will work.
+    /// Just testing for length assuming the other generated units will work.
     /// </summary>
     public class QuantityTests
     {

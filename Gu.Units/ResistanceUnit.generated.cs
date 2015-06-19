@@ -105,6 +105,11 @@
             return Parser.ParseUnit<ResistanceUnit>(text);
         }
 
+        public static bool TryParse(string text, out ResistanceUnit value)
+        {
+            return Parser.TryParseUnit<ResistanceUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Ohm"/>.
         /// </summary>

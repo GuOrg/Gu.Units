@@ -2,6 +2,8 @@
 {
     using System.Reflection;
 
+    using Gu.Units.Tests.Sources;
+
     using NUnit.Framework;
 
     public class UnitTests

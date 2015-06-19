@@ -97,6 +97,11 @@
             return Parser.ParseUnit<AngularSpeedUnit>(text);
         }
 
+        public static bool TryParse(string text, out AngularSpeedUnit value)
+        {
+            return Parser.TryParseUnit<AngularSpeedUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.RadiansPerSecond"/>.
         /// </summary>

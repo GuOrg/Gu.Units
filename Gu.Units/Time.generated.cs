@@ -116,7 +116,32 @@
         /// <returns></returns>
         public static Time Parse(string s)
         {
-            return Parser.Parse<TimeUnit, Time>(s, From);
+            return Parser.Parse<TimeUnit, Time>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        public static Time Parse(string s, NumberStyles styles)
+        {
+            return Parser.Parse<TimeUnit, Time>(s, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        public static Time Parse(string s, NumberStyles styles, IFormatProvider provider)
+        {
+            return Parser.Parse<TimeUnit, Time>(s, From, styles, provider);
+        }
+
+        public static bool TryParse(string s, out Time value)
+        {
+            return Parser.TryParse<TimeUnit, Time>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, out Time value)
+        {
+            return Parser.TryParse<TimeUnit, Time>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Time value)
+        {
+            return Parser.TryParse<TimeUnit, Time>(s, From, styles, provider, out value);
         }
 
         /// <summary>
@@ -206,9 +231,24 @@
             return Speed.FromMetresPerSecond(left.seconds * right.metresPerSecondSquared);
         }
 
+        public static AngularSpeed operator *(Time left, AngularAcceleration right)
+        {
+            return AngularSpeed.FromRadiansPerSecond(left.seconds * right.radiansPerSecondSquared);
+        }
+
+        public static Acceleration operator *(Time left, Jerk right)
+        {
+            return Acceleration.FromMetresPerSecondSquared(left.seconds * right.metresPerSecondCubed);
+        }
+
         public static ElectricCharge operator *(Time left, Current right)
         {
             return ElectricCharge.FromCoulombs(left.seconds * right.amperes);
+        }
+
+        public static AngularAcceleration operator *(Time left, AngularJerk right)
+        {
+            return AngularAcceleration.FromRadiansPerSecondSquared(left.seconds * right.radiansPerSecondCubed);
         }
 
         public static Frequency operator /(double left, Time right)

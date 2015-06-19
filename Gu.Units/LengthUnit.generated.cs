@@ -166,6 +166,11 @@
             return Parser.ParseUnit<LengthUnit>(text);
         }
 
+        public static bool TryParse(string text, out LengthUnit value)
+        {
+            return Parser.TryParseUnit<LengthUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Metres"/>.
         /// </summary>

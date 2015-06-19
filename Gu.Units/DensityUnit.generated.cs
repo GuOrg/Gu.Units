@@ -68,6 +68,11 @@
             return Parser.ParseUnit<DensityUnit>(text);
         }
 
+        public static bool TryParse(string text, out DensityUnit value)
+        {
+            return Parser.TryParseUnit<DensityUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.KilogramsPerCubicMetre"/>.
         /// </summary>

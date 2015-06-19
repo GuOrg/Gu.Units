@@ -67,6 +67,11 @@
             return Parser.ParseUnit<AngleUnit>(text);
         }
 
+        public static bool TryParse(string text, out AngleUnit value)
+        {
+            return Parser.TryParseUnit<AngleUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Radians"/>.
         /// </summary>

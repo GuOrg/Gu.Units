@@ -116,6 +116,11 @@
             return Parser.ParseUnit<TimeUnit>(text);
         }
 
+        public static bool TryParse(string text, out TimeUnit value)
+        {
+            return Parser.TryParseUnit<TimeUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Seconds"/>.
         /// </summary>

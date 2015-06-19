@@ -85,6 +85,11 @@
             return Parser.ParseUnit<VolumeUnit>(text);
         }
 
+        public static bool TryParse(string text, out VolumeUnit value)
+        {
+            return Parser.TryParseUnit<VolumeUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.CubicMetres"/>.
         /// </summary>

@@ -171,7 +171,32 @@
         /// <returns></returns>
         public static Length Parse(string s)
         {
-            return Parser.Parse<LengthUnit, Length>(s, From);
+            return Parser.Parse<LengthUnit, Length>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        public static Length Parse(string s, NumberStyles styles)
+        {
+            return Parser.Parse<LengthUnit, Length>(s, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        public static Length Parse(string s, NumberStyles styles, IFormatProvider provider)
+        {
+            return Parser.Parse<LengthUnit, Length>(s, From, styles, provider);
+        }
+
+        public static bool TryParse(string s, out Length value)
+        {
+            return Parser.TryParse<LengthUnit, Length>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, out Length value)
+        {
+            return Parser.TryParse<LengthUnit, Length>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Length value)
+        {
+            return Parser.TryParse<LengthUnit, Length>(s, From, styles, provider, out value);
         }
 
         /// <summary>

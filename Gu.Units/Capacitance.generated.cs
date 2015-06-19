@@ -61,7 +61,32 @@
         /// <returns></returns>
         public static Capacitance Parse(string s)
         {
-            return Parser.Parse<CapacitanceUnit, Capacitance>(s, From);
+            return Parser.Parse<CapacitanceUnit, Capacitance>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        public static Capacitance Parse(string s, NumberStyles styles)
+        {
+            return Parser.Parse<CapacitanceUnit, Capacitance>(s, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        public static Capacitance Parse(string s, NumberStyles styles, IFormatProvider provider)
+        {
+            return Parser.Parse<CapacitanceUnit, Capacitance>(s, From, styles, provider);
+        }
+
+        public static bool TryParse(string s, out Capacitance value)
+        {
+            return Parser.TryParse<CapacitanceUnit, Capacitance>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, out Capacitance value)
+        {
+            return Parser.TryParse<CapacitanceUnit, Capacitance>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Capacitance value)
+        {
+            return Parser.TryParse<CapacitanceUnit, Capacitance>(s, From, styles, provider, out value);
         }
 
         /// <summary>

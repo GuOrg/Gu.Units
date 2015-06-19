@@ -56,6 +56,11 @@
             return Parser.ParseUnit<SpecificEnergyUnit>(text);
         }
 
+        public static bool TryParse(string text, out SpecificEnergyUnit value)
+        {
+            return Parser.TryParseUnit<SpecificEnergyUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.JoulesPerKilogram"/>.
         /// </summary>

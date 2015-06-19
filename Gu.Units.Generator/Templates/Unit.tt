@@ -170,6 +170,11 @@ namespace <#= Settings.Namespace #>
             return Parser.ParseUnit<<#= unit.UnitName #>>(text);
         }
 
+        public static bool TryParse(string text, out <#= unit.UnitName #> value)
+        {
+            return Parser.TryParseUnit<<#= unit.UnitName #>>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.
         /// </summary>

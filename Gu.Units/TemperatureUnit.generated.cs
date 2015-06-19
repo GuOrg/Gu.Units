@@ -75,6 +75,11 @@
             return Parser.ParseUnit<TemperatureUnit>(text);
         }
 
+        public static bool TryParse(string text, out TemperatureUnit value)
+        {
+            return Parser.TryParseUnit<TemperatureUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Kelvin"/>.
         /// </summary>
