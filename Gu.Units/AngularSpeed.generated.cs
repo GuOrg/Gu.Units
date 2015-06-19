@@ -127,7 +127,32 @@
         /// <returns></returns>
         public static AngularSpeed Parse(string s)
         {
-            return Parser.Parse<AngularSpeedUnit, AngularSpeed>(s, From);
+            return Parser.Parse<AngularSpeedUnit, AngularSpeed>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        public static AngularSpeed Parse(string s, NumberStyles styles)
+        {
+            return Parser.Parse<AngularSpeedUnit, AngularSpeed>(s, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        public static AngularSpeed Parse(string s, NumberStyles styles, IFormatProvider provider)
+        {
+            return Parser.Parse<AngularSpeedUnit, AngularSpeed>(s, From, styles, provider);
+        }
+
+        public static bool TryParse(string s, out AngularSpeed value)
+        {
+            return Parser.TryParse<AngularSpeedUnit, AngularSpeed>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, out AngularSpeed value)
+        {
+            return Parser.TryParse<AngularSpeedUnit, AngularSpeed>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out AngularSpeed value)
+        {
+            return Parser.TryParse<AngularSpeedUnit, AngularSpeed>(s, From, styles, provider, out value);
         }
 
         /// <summary>
@@ -210,6 +235,11 @@
             return From(radiansPerHour, AngularSpeedUnit.RadiansPerHour);
         }
 
+        public static Time operator /(AngularSpeed left, AngularAcceleration right)
+        {
+            return Time.FromSeconds(left.radiansPerSecond / right.radiansPerSecondSquared);
+        }
+
         public static Angle operator *(AngularSpeed left, Time right)
         {
             return Angle.FromRadians(left.radiansPerSecond * right.seconds);
@@ -218,6 +248,11 @@
         public static Frequency operator /(AngularSpeed left, Angle right)
         {
             return Frequency.FromHertz(left.radiansPerSecond / right.radians);
+        }
+
+        public static AngularAcceleration operator /(AngularSpeed left, Time right)
+        {
+            return AngularAcceleration.FromRadiansPerSecondSquared(left.radiansPerSecond / right.seconds);
         }
 
         public static double operator /(AngularSpeed left, AngularSpeed right)

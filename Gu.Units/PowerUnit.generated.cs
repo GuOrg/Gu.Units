@@ -127,6 +127,11 @@
             return Parser.ParseUnit<PowerUnit>(text);
         }
 
+        public static bool TryParse(string text, out PowerUnit value)
+        {
+            return Parser.TryParseUnit<PowerUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Watts"/>.
         /// </summary>

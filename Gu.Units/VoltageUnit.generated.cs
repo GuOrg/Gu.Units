@@ -105,6 +105,11 @@
             return Parser.ParseUnit<VoltageUnit>(text);
         }
 
+        public static bool TryParse(string text, out VoltageUnit value)
+        {
+            return Parser.TryParseUnit<VoltageUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Volts"/>.
         /// </summary>

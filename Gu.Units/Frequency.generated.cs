@@ -105,7 +105,32 @@
         /// <returns></returns>
         public static Frequency Parse(string s)
         {
-            return Parser.Parse<FrequencyUnit, Frequency>(s, From);
+            return Parser.Parse<FrequencyUnit, Frequency>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        public static Frequency Parse(string s, NumberStyles styles)
+        {
+            return Parser.Parse<FrequencyUnit, Frequency>(s, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        public static Frequency Parse(string s, NumberStyles styles, IFormatProvider provider)
+        {
+            return Parser.Parse<FrequencyUnit, Frequency>(s, From, styles, provider);
+        }
+
+        public static bool TryParse(string s, out Frequency value)
+        {
+            return Parser.TryParse<FrequencyUnit, Frequency>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, out Frequency value)
+        {
+            return Parser.TryParse<FrequencyUnit, Frequency>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Frequency value)
+        {
+            return Parser.TryParse<FrequencyUnit, Frequency>(s, From, styles, provider, out value);
         }
 
         /// <summary>
@@ -200,6 +225,21 @@
         public static VolumetricFlow operator *(Frequency left, Volume right)
         {
             return VolumetricFlow.FromCubicMetresPerSecond(left.hertz * right.cubicMetres);
+        }
+
+        public static AngularAcceleration operator *(Frequency left, AngularSpeed right)
+        {
+            return AngularAcceleration.FromRadiansPerSecondSquared(left.hertz * right.radiansPerSecond);
+        }
+
+        public static AngularJerk operator *(Frequency left, AngularAcceleration right)
+        {
+            return AngularJerk.FromRadiansPerSecondCubed(left.hertz * right.radiansPerSecondSquared);
+        }
+
+        public static Jerk operator *(Frequency left, Acceleration right)
+        {
+            return Jerk.FromMetresPerSecondCubed(left.hertz * right.metresPerSecondSquared);
         }
 
         public static Time operator /(double left, Frequency right)

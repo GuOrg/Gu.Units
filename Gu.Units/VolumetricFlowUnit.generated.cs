@@ -56,6 +56,11 @@
             return Parser.ParseUnit<VolumetricFlowUnit>(text);
         }
 
+        public static bool TryParse(string text, out VolumetricFlowUnit value)
+        {
+            return Parser.TryParseUnit<VolumetricFlowUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.CubicMetresPerSecond"/>.
         /// </summary>

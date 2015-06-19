@@ -138,6 +138,11 @@
             return Parser.ParseUnit<EnergyUnit>(text);
         }
 
+        public static bool TryParse(string text, out EnergyUnit value)
+        {
+            return Parser.TryParseUnit<EnergyUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Joules"/>.
         /// </summary>

@@ -84,6 +84,11 @@
             return Parser.ParseUnit<UnitlessUnit>(text);
         }
 
+        public static bool TryParse(string text, out UnitlessUnit value)
+        {
+            return Parser.TryParseUnit<UnitlessUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Scalar"/>.
         /// </summary>

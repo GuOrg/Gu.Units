@@ -245,7 +245,10 @@
     <Compile Include="UnitlessUnit.generated.cs">
       <DependentUpon>UnitGenerator.txt4</DependentUpon>
     </Compile>
+    <Compile Include="Utils\DoubleParser.cs" />
     <Compile Include="Utils\Parser.cs" />
+    <Compile Include="Utils\Sign.cs" />
+    <Compile Include="Utils\SymbolAndPower.cs" />
     <Compile Include="Utils\XmlExt.cs" />
     <Compile Include="Voltage.generated.cs">
       <DependentUpon>QuantityGenerator.txt4</DependentUpon>

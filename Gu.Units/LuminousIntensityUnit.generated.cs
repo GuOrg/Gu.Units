@@ -61,6 +61,11 @@
             return Parser.ParseUnit<LuminousIntensityUnit>(text);
         }
 
+        public static bool TryParse(string text, out LuminousIntensityUnit value)
+        {
+            return Parser.TryParseUnit<LuminousIntensityUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Candelas"/>.
         /// </summary>

@@ -105,6 +105,11 @@
             return Parser.ParseUnit<FrequencyUnit>(text);
         }
 
+        public static bool TryParse(string text, out FrequencyUnit value)
+        {
+            return Parser.TryParseUnit<FrequencyUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Hertz"/>.
         /// </summary>

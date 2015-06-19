@@ -36,3 +36,6 @@ using System.Resources;
 [assembly: AssemblyVersion("0.4.0.0")]
 [assembly: AssemblyFileVersion("0.4.0.0")]
 [assembly: NeutralResourcesLanguageAttribute("en")]
+[assembly: InternalsVisibleTo("Gu.Units.Tests")]
+[assembly: InternalsVisibleTo("Gu.Units.Generator")]
+[assembly: InternalsVisibleTo("Gu.Units.Generator.Tests")]

@@ -83,7 +83,32 @@
         /// <returns></returns>
         public static Acceleration Parse(string s)
         {
-            return Parser.Parse<AccelerationUnit, Acceleration>(s, From);
+            return Parser.Parse<AccelerationUnit, Acceleration>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        public static Acceleration Parse(string s, NumberStyles styles)
+        {
+            return Parser.Parse<AccelerationUnit, Acceleration>(s, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        public static Acceleration Parse(string s, NumberStyles styles, IFormatProvider provider)
+        {
+            return Parser.Parse<AccelerationUnit, Acceleration>(s, From, styles, provider);
+        }
+
+        public static bool TryParse(string s, out Acceleration value)
+        {
+            return Parser.TryParse<AccelerationUnit, Acceleration>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, out Acceleration value)
+        {
+            return Parser.TryParse<AccelerationUnit, Acceleration>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Acceleration value)
+        {
+            return Parser.TryParse<AccelerationUnit, Acceleration>(s, From, styles, provider, out value);
         }
 
         /// <summary>
@@ -134,6 +159,11 @@
             return From(centimetresPerSecondSquared, AccelerationUnit.CentimetresPerSecondSquared);
         }
 
+        public static Time operator /(Acceleration left, Jerk right)
+        {
+            return Time.FromSeconds(left.metresPerSecondSquared / right.metresPerSecondCubed);
+        }
+
         public static Force operator *(Acceleration left, Mass right)
         {
             return Force.FromNewtons(left.metresPerSecondSquared * right.kilograms);
@@ -152,6 +182,11 @@
         public static SpecificEnergy operator *(Acceleration left, Length right)
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.metresPerSecondSquared * right.metres);
+        }
+
+        public static Jerk operator /(Acceleration left, Time right)
+        {
+            return Jerk.FromMetresPerSecondCubed(left.metresPerSecondSquared / right.seconds);
         }
 
         public static double operator /(Acceleration left, Acceleration right)

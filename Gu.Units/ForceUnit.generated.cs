@@ -127,6 +127,11 @@
             return Parser.ParseUnit<ForceUnit>(text);
         }
 
+        public static bool TryParse(string text, out ForceUnit value)
+        {
+            return Parser.TryParseUnit<ForceUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Newtons"/>.
         /// </summary>

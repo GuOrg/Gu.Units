@@ -149,6 +149,11 @@
             return Parser.ParseUnit<PressureUnit>(text);
         }
 
+        public static bool TryParse(string text, out PressureUnit value)
+        {
+            return Parser.TryParseUnit<PressureUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Pascals"/>.
         /// </summary>

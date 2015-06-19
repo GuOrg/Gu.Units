@@ -61,6 +61,11 @@
             return Parser.ParseUnit<CapacitanceUnit>(text);
         }
 
+        public static bool TryParse(string text, out CapacitanceUnit value)
+        {
+            return Parser.TryParseUnit<CapacitanceUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Farads"/>.
         /// </summary>

@@ -68,6 +68,11 @@
             return Parser.ParseUnit<AccelerationUnit>(text);
         }
 
+        public static bool TryParse(string text, out AccelerationUnit value)
+        {
+            return Parser.TryParseUnit<AccelerationUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.MetresPerSecondSquared"/>.
         /// </summary>

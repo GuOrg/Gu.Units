@@ -105,7 +105,32 @@
         /// <returns></returns>
         public static Resistance Parse(string s)
         {
-            return Parser.Parse<ResistanceUnit, Resistance>(s, From);
+            return Parser.Parse<ResistanceUnit, Resistance>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        public static Resistance Parse(string s, NumberStyles styles)
+        {
+            return Parser.Parse<ResistanceUnit, Resistance>(s, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        public static Resistance Parse(string s, NumberStyles styles, IFormatProvider provider)
+        {
+            return Parser.Parse<ResistanceUnit, Resistance>(s, From, styles, provider);
+        }
+
+        public static bool TryParse(string s, out Resistance value)
+        {
+            return Parser.TryParse<ResistanceUnit, Resistance>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, out Resistance value)
+        {
+            return Parser.TryParse<ResistanceUnit, Resistance>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Resistance value)
+        {
+            return Parser.TryParse<ResistanceUnit, Resistance>(s, From, styles, provider, out value);
         }
 
         /// <summary>

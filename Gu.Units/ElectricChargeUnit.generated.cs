@@ -61,6 +61,11 @@
             return Parser.ParseUnit<ElectricChargeUnit>(text);
         }
 
+        public static bool TryParse(string text, out ElectricChargeUnit value)
+        {
+            return Parser.TryParseUnit<ElectricChargeUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Coulombs"/>.
         /// </summary>

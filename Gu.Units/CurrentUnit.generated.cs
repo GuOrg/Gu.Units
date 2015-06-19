@@ -105,6 +105,11 @@
             return Parser.ParseUnit<CurrentUnit>(text);
         }
 
+        public static bool TryParse(string text, out CurrentUnit value)
+        {
+            return Parser.TryParseUnit<CurrentUnit>(text, out value);
+        }
+
         /// <summary>
         /// Converts a value to <see cref="T:Gu.Units.Amperes"/>.
         /// </summary>

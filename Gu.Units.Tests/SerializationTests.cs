@@ -8,6 +8,9 @@
     using System.Text;
     using System.Xml;
     using System.Xml.Serialization;
+
+    using Gu.Units.Tests.Sources;
+
     using NUnit.Framework;
 
     public class SerializationTests

@@ -61,7 +61,32 @@
         /// <returns></returns>
         public static ElectricCharge Parse(string s)
         {
-            return Parser.Parse<ElectricChargeUnit, ElectricCharge>(s, From);
+            return Parser.Parse<ElectricChargeUnit, ElectricCharge>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        public static ElectricCharge Parse(string s, NumberStyles styles)
+        {
+            return Parser.Parse<ElectricChargeUnit, ElectricCharge>(s, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        public static ElectricCharge Parse(string s, NumberStyles styles, IFormatProvider provider)
+        {
+            return Parser.Parse<ElectricChargeUnit, ElectricCharge>(s, From, styles, provider);
+        }
+
+        public static bool TryParse(string s, out ElectricCharge value)
+        {
+            return Parser.TryParse<ElectricChargeUnit, ElectricCharge>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, out ElectricCharge value)
+        {
+            return Parser.TryParse<ElectricChargeUnit, ElectricCharge>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out ElectricCharge value)
+        {
+            return Parser.TryParse<ElectricChargeUnit, ElectricCharge>(s, From, styles, provider, out value);
         }
 
         /// <summary>

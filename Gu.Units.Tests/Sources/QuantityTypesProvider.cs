@@ -1,24 +1,18 @@
-namespace Gu.Units.Tests
+namespace Gu.Units.Tests.Sources
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
-    public class QuantityTypesProvider : IEnumerable<Type>
+    public class QuantityTypesProvider : List<Type>
     {
         public static readonly List<Type> UnitTypes = typeof(Length).Assembly.GetTypes()
                                                                     .Where(x => x.IsValueType && typeof(IQuantity).IsAssignableFrom(x))
                                                                     .ToList();
 
-        public IEnumerator<Type> GetEnumerator()
+        public QuantityTypesProvider()
         {
-            return UnitTypes.GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return this.GetEnumerator();
+            AddRange(UnitTypes);
         }
     }
 }

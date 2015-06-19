@@ -1,12 +1,9 @@
 ﻿namespace Gu.Units.Tests
 {
-    using System;
-    using System.Globalization;
-
-    using Gu.Units.Tests.Helpers;
-
     using NUnit.Framework;
+    using Sources;
 
+    [TestFixture]
     public class ConversionTests
     {
         [Test]
