@@ -130,6 +130,11 @@
             return Parser.Parse<ForceUnit, Force>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
+        public static Force Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<ForceUnit, Force>(s, From, NumberStyles.Float, provider);
+        }
+
         public static Force Parse(string s, NumberStyles styles)
         {
             return Parser.Parse<ForceUnit, Force>(s, From, styles, CultureInfo.CurrentCulture);
@@ -143,6 +148,12 @@
         public static bool TryParse(string s, out Force value)
         {
             return Parser.TryParse<ForceUnit, Force>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+
+        public static bool TryParse(string s, IFormatProvider provider, out Force value)
+        {
+            return Parser.TryParse<ForceUnit, Force>(s, From, NumberStyles.Float, provider, out  value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Force value)

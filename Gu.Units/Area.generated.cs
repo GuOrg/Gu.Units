@@ -152,6 +152,11 @@
             return Parser.Parse<AreaUnit, Area>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
+        public static Area Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<AreaUnit, Area>(s, From, NumberStyles.Float, provider);
+        }
+
         public static Area Parse(string s, NumberStyles styles)
         {
             return Parser.Parse<AreaUnit, Area>(s, From, styles, CultureInfo.CurrentCulture);
@@ -165,6 +170,12 @@
         public static bool TryParse(string s, out Area value)
         {
             return Parser.TryParse<AreaUnit, Area>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+
+        public static bool TryParse(string s, IFormatProvider provider, out Area value)
+        {
+            return Parser.TryParse<AreaUnit, Area>(s, From, NumberStyles.Float, provider, out  value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Area value)

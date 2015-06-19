@@ -119,6 +119,11 @@
             return Parser.Parse<AngularJerkUnit, AngularJerk>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
+        public static AngularJerk Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<AngularJerkUnit, AngularJerk>(s, From, NumberStyles.Float, provider);
+        }
+
         public static AngularJerk Parse(string s, NumberStyles styles)
         {
             return Parser.Parse<AngularJerkUnit, AngularJerk>(s, From, styles, CultureInfo.CurrentCulture);
@@ -132,6 +137,12 @@
         public static bool TryParse(string s, out AngularJerk value)
         {
             return Parser.TryParse<AngularJerkUnit, AngularJerk>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+
+        public static bool TryParse(string s, IFormatProvider provider, out AngularJerk value)
+        {
+            return Parser.TryParse<AngularJerkUnit, AngularJerk>(s, From, NumberStyles.Float, provider, out  value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out AngularJerk value)

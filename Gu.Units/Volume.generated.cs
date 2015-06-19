@@ -108,6 +108,11 @@
             return Parser.Parse<VolumeUnit, Volume>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
+        public static Volume Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<VolumeUnit, Volume>(s, From, NumberStyles.Float, provider);
+        }
+
         public static Volume Parse(string s, NumberStyles styles)
         {
             return Parser.Parse<VolumeUnit, Volume>(s, From, styles, CultureInfo.CurrentCulture);
@@ -121,6 +126,11 @@
         public static bool TryParse(string s, out Volume value)
         {
             return Parser.TryParse<VolumeUnit, Volume>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, IFormatProvider provider, out Volume value)
+        {
+            return Parser.TryParse<VolumeUnit, Volume>(s, From, NumberStyles.Float, provider, out  value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Volume value)

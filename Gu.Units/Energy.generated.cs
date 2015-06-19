@@ -141,6 +141,11 @@
             return Parser.Parse<EnergyUnit, Energy>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
+        public static Energy Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<EnergyUnit, Energy>(s, From, NumberStyles.Float, provider);
+        }
+
         public static Energy Parse(string s, NumberStyles styles)
         {
             return Parser.Parse<EnergyUnit, Energy>(s, From, styles, CultureInfo.CurrentCulture);
@@ -154,6 +159,12 @@
         public static bool TryParse(string s, out Energy value)
         {
             return Parser.TryParse<EnergyUnit, Energy>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+
+        public static bool TryParse(string s, IFormatProvider provider, out Energy value)
+        {
+            return Parser.TryParse<EnergyUnit, Energy>(s, From, NumberStyles.Float, provider, out  value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Energy value)

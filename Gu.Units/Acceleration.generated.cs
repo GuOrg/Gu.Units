@@ -86,6 +86,11 @@
             return Parser.Parse<AccelerationUnit, Acceleration>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
+        public static Acceleration Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<AccelerationUnit, Acceleration>(s, From, NumberStyles.Float, provider);
+        }
+
         public static Acceleration Parse(string s, NumberStyles styles)
         {
             return Parser.Parse<AccelerationUnit, Acceleration>(s, From, styles, CultureInfo.CurrentCulture);
@@ -99,6 +104,12 @@
         public static bool TryParse(string s, out Acceleration value)
         {
             return Parser.TryParse<AccelerationUnit, Acceleration>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+
+        public static bool TryParse(string s, IFormatProvider provider, out Acceleration value)
+        {
+            return Parser.TryParse<AccelerationUnit, Acceleration>(s, From, NumberStyles.Float, provider, out  value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Acceleration value)

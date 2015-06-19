@@ -64,6 +64,11 @@
             return Parser.Parse<TorqueUnit, Torque>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
+        public static Torque Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<TorqueUnit, Torque>(s, From, NumberStyles.Float, provider);
+        }
+
         public static Torque Parse(string s, NumberStyles styles)
         {
             return Parser.Parse<TorqueUnit, Torque>(s, From, styles, CultureInfo.CurrentCulture);
@@ -77,6 +82,11 @@
         public static bool TryParse(string s, out Torque value)
         {
             return Parser.TryParse<TorqueUnit, Torque>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, IFormatProvider provider, out Torque value)
+        {
+            return Parser.TryParse<TorqueUnit, Torque>(s, From, NumberStyles.Float, provider, out  value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Torque value)

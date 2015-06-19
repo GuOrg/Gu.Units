@@ -38,11 +38,30 @@
 
         internal static bool TryParse<TUnit, TQuantity>(string s,
             Func<double, TUnit, TQuantity> creator,
-            NumberStyles styles,
+            NumberStyles style,
             IFormatProvider provider,
             out TQuantity value)
         {
-            throw new NotImplementedException();
+            if (provider == null)
+            {
+                provider = NumberFormatInfo.GetInstance(CultureInfo.CurrentCulture);
+            }
+            int end;
+            double d;
+            if (!DoubleParser.TryParse(s, 0, style, provider, out d, out end))
+            {
+                value = default(TQuantity);
+                return false;
+            }
+            var us = s.Substring(end, s.Length - end);
+            TUnit unit;
+            if (!TryParseUnit(us, out unit))
+            {
+                value = default(TQuantity);
+                return false;
+            }
+            value= creator(d, unit);
+            return true;
         }
 
         internal static TUnit ParseUnit<TUnit>(string s)
@@ -70,12 +89,21 @@
                     patterns);
                 throw new FormatException(message);
             }
-            return (TUnit)matches.Single().Unit;
+            return (TUnit)matches[0].Unit;
         }
 
         internal static bool TryParseUnit<TUnit>(string text, out TUnit value)
         {
-            throw new NotImplementedException();
+            var type = typeof(TUnit);
+            var symbols = SymbolCache.GetOrAdd(type, CreateSymbolsForType);
+            var matches = symbols.Where(x => x.IsMatch(text)).ToArray();
+            if (matches.Length != 1)
+            {
+                value = default(TUnit);
+                return false;
+            }
+            value =(TUnit) matches[0].Unit;
+            return true;
         }
 
         internal static IReadOnlyList<SymbolAndPower> TokenizeUnit(string s)

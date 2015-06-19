@@ -105,6 +105,11 @@ namespace <#= Settings.Namespace #>
             return Parser.Parse<<#= quantity.ClassName #>Unit, <#= quantity.ClassName #>>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
+		public static <#= quantity.ClassName #> Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<<#= quantity.ClassName #>Unit, <#= quantity.ClassName #>>(s, From, NumberStyles.Float, provider);
+        }
+
         public static <#= quantity.ClassName #> Parse(string s, NumberStyles styles)
         {
             return Parser.Parse<<#= quantity.ClassName #>Unit, <#= quantity.ClassName #>>(s, From, styles, CultureInfo.CurrentCulture);
@@ -118,6 +123,11 @@ namespace <#= Settings.Namespace #>
         public static bool TryParse(string s, out <#= quantity.ClassName #> value)
         {
             return Parser.TryParse<<#= quantity.ClassName #>Unit, <#= quantity.ClassName #>>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+		
+        public static bool TryParse(string s, IFormatProvider provider, out <#= quantity.ClassName #> value)
+        {
+            return Parser.TryParse<<#= quantity.ClassName #>Unit, <#= quantity.ClassName #>>(s, From, NumberStyles.Float, provider, out  value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out <#= quantity.ClassName #> value)

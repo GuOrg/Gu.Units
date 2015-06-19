@@ -152,6 +152,11 @@
             return Parser.Parse<PressureUnit, Pressure>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
+        public static Pressure Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<PressureUnit, Pressure>(s, From, NumberStyles.Float, provider);
+        }
+
         public static Pressure Parse(string s, NumberStyles styles)
         {
             return Parser.Parse<PressureUnit, Pressure>(s, From, styles, CultureInfo.CurrentCulture);
@@ -165,6 +170,12 @@
         public static bool TryParse(string s, out Pressure value)
         {
             return Parser.TryParse<PressureUnit, Pressure>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+
+        public static bool TryParse(string s, IFormatProvider provider, out Pressure value)
+        {
+            return Parser.TryParse<PressureUnit, Pressure>(s, From, NumberStyles.Float, provider, out  value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Pressure value)

@@ -7,18 +7,6 @@
 
     public class SandboxTests
     {
-        private static LengthUnit m = LengthUnit.m;
-        private static TimeUnit s = TimeUnit.s;
-
-        [Test]
-        public void TestNameTest()
-        {
-            Length length = 1*m;
-            var time = 2 * s;
-            var speed = length / time;
-            Assert.AreEqual(0.5, speed.MetresPerSecond);
-        }
-
         [Test, Explicit]
         public void PerformanceDoublesThenLengths()
         {

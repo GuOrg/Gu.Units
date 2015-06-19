@@ -130,6 +130,11 @@
             return Parser.Parse<AngularSpeedUnit, AngularSpeed>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
+        public static AngularSpeed Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<AngularSpeedUnit, AngularSpeed>(s, From, NumberStyles.Float, provider);
+        }
+
         public static AngularSpeed Parse(string s, NumberStyles styles)
         {
             return Parser.Parse<AngularSpeedUnit, AngularSpeed>(s, From, styles, CultureInfo.CurrentCulture);
@@ -143,6 +148,12 @@
         public static bool TryParse(string s, out AngularSpeed value)
         {
             return Parser.TryParse<AngularSpeedUnit, AngularSpeed>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+
+        public static bool TryParse(string s, IFormatProvider provider, out AngularSpeed value)
+        {
+            return Parser.TryParse<AngularSpeedUnit, AngularSpeed>(s, From, NumberStyles.Float, provider, out  value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out AngularSpeed value)
