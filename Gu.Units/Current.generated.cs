@@ -108,6 +108,11 @@
             return Parser.Parse<CurrentUnit, Current>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
+        public static Current Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<CurrentUnit, Current>(s, From, NumberStyles.Float, provider);
+        }
+
         public static Current Parse(string s, NumberStyles styles)
         {
             return Parser.Parse<CurrentUnit, Current>(s, From, styles, CultureInfo.CurrentCulture);
@@ -121,6 +126,12 @@
         public static bool TryParse(string s, out Current value)
         {
             return Parser.TryParse<CurrentUnit, Current>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+
+        public static bool TryParse(string s, IFormatProvider provider, out Current value)
+        {
+            return Parser.TryParse<CurrentUnit, Current>(s, From, NumberStyles.Float, provider, out  value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Current value)

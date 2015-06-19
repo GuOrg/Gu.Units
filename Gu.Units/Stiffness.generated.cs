@@ -64,6 +64,11 @@
             return Parser.Parse<StiffnessUnit, Stiffness>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
+        public static Stiffness Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<StiffnessUnit, Stiffness>(s, From, NumberStyles.Float, provider);
+        }
+
         public static Stiffness Parse(string s, NumberStyles styles)
         {
             return Parser.Parse<StiffnessUnit, Stiffness>(s, From, styles, CultureInfo.CurrentCulture);
@@ -77,6 +82,12 @@
         public static bool TryParse(string s, out Stiffness value)
         {
             return Parser.TryParse<StiffnessUnit, Stiffness>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+
+        public static bool TryParse(string s, IFormatProvider provider, out Stiffness value)
+        {
+            return Parser.TryParse<StiffnessUnit, Stiffness>(s, From, NumberStyles.Float, provider, out  value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Stiffness value)

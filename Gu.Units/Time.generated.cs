@@ -6,23 +6,23 @@
     using System.Xml.Schema;
     using System.Xml.Serialization;
 
-    /// <summary>
+	/// <summary>
     /// A type for the quantity <see cref="T:Gu.Units.Time"/>.
     /// </summary>
     [Serializable]
-    public partial struct Time : IComparable<Time>, IEquatable<Time>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, I1>, IQuantity<TimeUnit>
-    {
-        /// <summary>
+	public partial struct Time : IComparable<Time>, IEquatable<Time>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, I1>, IQuantity<TimeUnit>
+	{
+	    /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Seconds"/>.
         /// </summary>
-        internal readonly double seconds;
-
-        private Time(double seconds)
+		internal readonly double seconds;
+		
+		private Time(double seconds)
         {
             this.seconds = seconds;
         }
 
-        /// <summary>
+		/// <summary>
         /// Initializes a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
         /// <param name="value"></param>
@@ -43,10 +43,10 @@
             }
         }
 
-        /// <summary>
+	    /// <summary>
         /// The quantity in seconds".
         /// </summary>
-        public double Seconds
+		public double Seconds
         {
             get
             {
@@ -114,9 +114,14 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Time"/></param>
         /// <returns></returns>
-        public static Time Parse(string s)
+		public static Time Parse(string s)
         {
             return Parser.Parse<TimeUnit, Time>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+		public static Time Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<TimeUnit, Time>(s, From, NumberStyles.Float, provider);
         }
 
         public static Time Parse(string s, NumberStyles styles)
@@ -133,6 +138,11 @@
         {
             return Parser.TryParse<TimeUnit, Time>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
+		
+        public static bool TryParse(string s, IFormatProvider provider, out Time value)
+        {
+            return Parser.TryParse<TimeUnit, Time>(s, From, NumberStyles.Float, provider, out  value);
+        }
 
         public static bool TryParse(string s, NumberStyles styles, out Time value)
         {
@@ -143,7 +153,7 @@
         {
             return Parser.TryParse<TimeUnit, Time>(s, From, styles, provider, out value);
         }
-
+ 
         /// <summary>
         /// Reads an instance of <see cref="T:Gu.Units.Time"/> from the <paramref name="reader"/>
         /// </summary>
@@ -155,7 +165,7 @@
             v.ReadXml(reader);
             return v;
         }
-
+ 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -216,42 +226,42 @@
             return From(minutes, TimeUnit.Minutes);
         }
 
-        public static Length operator *(Time left, Speed right)
+        public static Length operator*(Time left, Speed right)
         {
             return Length.FromMetres(left.seconds * right.metresPerSecond);
         }
 
-        public static Angle operator *(Time left, AngularSpeed right)
+        public static Angle operator*(Time left, AngularSpeed right)
         {
             return Angle.FromRadians(left.seconds * right.radiansPerSecond);
         }
 
-        public static Speed operator *(Time left, Acceleration right)
+        public static Speed operator*(Time left, Acceleration right)
         {
             return Speed.FromMetresPerSecond(left.seconds * right.metresPerSecondSquared);
         }
 
-        public static AngularSpeed operator *(Time left, AngularAcceleration right)
+        public static AngularSpeed operator*(Time left, AngularAcceleration right)
         {
             return AngularSpeed.FromRadiansPerSecond(left.seconds * right.radiansPerSecondSquared);
         }
 
-        public static Acceleration operator *(Time left, Jerk right)
+        public static Acceleration operator*(Time left, Jerk right)
         {
             return Acceleration.FromMetresPerSecondSquared(left.seconds * right.metresPerSecondCubed);
         }
 
-        public static ElectricCharge operator *(Time left, Current right)
+        public static ElectricCharge operator*(Time left, Current right)
         {
             return ElectricCharge.FromCoulombs(left.seconds * right.amperes);
         }
 
-        public static AngularAcceleration operator *(Time left, AngularJerk right)
+        public static AngularAcceleration operator*(Time left, AngularJerk right)
         {
             return AngularAcceleration.FromRadiansPerSecondSquared(left.seconds * right.radiansPerSecondCubed);
         }
 
-        public static Frequency operator /(double left, Time right)
+        public static Frequency operator/(double left, Time right)
         {
             return Frequency.FromHertz(left / right.seconds);
         }
@@ -273,7 +283,7 @@
         {
             return left.Equals(right);
         }
-
+ 
         /// <summary>
         /// Indicates whether two <see cref="T:Gu.Units.Time"/> instances are not equal.
         /// </summary>
@@ -286,7 +296,7 @@
         {
             return !left.Equals(right);
         }
-
+ 
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Time"/> is less than another specified <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -299,7 +309,7 @@
         {
             return left.seconds < right.seconds;
         }
-
+ 
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Time"/> is greater than another specified <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -312,7 +322,7 @@
         {
             return left.seconds > right.seconds;
         }
-
+ 
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Time"/> is less than or equal to another specified <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -325,7 +335,7 @@
         {
             return left.seconds <= right.seconds;
         }
-
+ 
         /// <summary>
         /// Indicates whether a specified <see cref="T:Gu.Units.Time"/> is greater than or equal to another specified <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -338,7 +348,7 @@
         {
             return left.seconds >= right.seconds;
         }
-
+ 
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="left"/> and returns the result.
         /// </summary>
@@ -347,9 +357,9 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="left"/> and returns the result.</returns>
         public static Time operator *(double left, Time right)
         {
-            return new Time(left * right.seconds);
+            return new Time(left*right.seconds);
         }
-
+ 
         /// <summary>
         /// Multiplies an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -358,9 +368,9 @@
         /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="right"/> and returns the result.</returns>
         public static Time operator *(Time left, double right)
         {
-            return new Time(left.seconds * right);
+            return new Time(left.seconds*right);
         }
-
+ 
         /// <summary>
         /// Divides an instance of <see cref="T:Gu.Units.Time"/> with <paramref name="right"/> and returns the result.
         /// </summary>
@@ -371,7 +381,7 @@
         {
             return new Time(left.seconds / right);
         }
-
+ 
         /// <summary>
         /// Adds two specified <see cref="T:Gu.Units.Time"/> instances.
         /// </summary>
@@ -384,7 +394,7 @@
         {
             return new Time(left.seconds + right.seconds);
         }
-
+ 
         /// <summary>
         /// Subtracts an Time from another Time and returns the difference.
         /// </summary>
@@ -397,7 +407,7 @@
         {
             return new Time(left.seconds - right.seconds);
         }
-
+ 
         /// <summary>
         /// Returns an <see cref="T:Gu.Units.Time"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
@@ -407,9 +417,9 @@
         /// <param name="time">An instance of <see cref="T:Gu.Units.Time"/></param>
         public static Time operator -(Time time)
         {
-            return new Time(-1 * time.seconds);
+            return new Time(-1*time.seconds);
         }
-
+ 
         /// <summary>
         /// Returns the specified instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -431,27 +441,27 @@
         {
             return unit.FromSiUnit(this.seconds);
         }
-
+ 
         public override string ToString()
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
-
+ 
         public string ToString(string format)
         {
             return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
         }
-
+ 
         public string ToString(IFormatProvider provider)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
         }
-
+ 
         public string ToString(string format, IFormatProvider formatProvider)
         {
             return this.ToString(format, formatProvider, TimeUnit.Seconds);
         }
-
+ 
         public string ToString(TimeUnit unit)
         {
             return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
@@ -467,7 +477,7 @@
             var quantity = unit.FromSiUnit(this.seconds);
             return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
         }
-
+ 
         /// <summary>
         /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Time"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="T:MathNet.Spatial.Units.Time"/> object.
         /// </summary>
@@ -496,7 +506,7 @@
         {
             return this.seconds.CompareTo(quantity.seconds);
         }
-
+ 
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Time"/> object.
         /// </summary>
@@ -508,7 +518,7 @@
         {
             return this.seconds.Equals(other.seconds);
         }
-
+ 
         /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Time"/> object within the given tolerance.
         /// </summary>
@@ -521,22 +531,22 @@
         {
             return Math.Abs(this.seconds - other.seconds) < tolerance;
         }
-
+ 
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
             {
                 return false;
             }
-
+ 
             return obj is Time && this.Equals((Time)obj);
         }
-
+ 
         public override int GetHashCode()
         {
             return this.seconds.GetHashCode();
         }
-
+ 
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
@@ -551,7 +561,7 @@
         {
             return null;
         }
-
+ 
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
@@ -559,9 +569,9 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "seconds", reader, "Value");
+			XmlExt.SetReadonlyField(ref this, "seconds", reader, "Value");
         }
-
+ 
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
@@ -570,5 +580,5 @@
         {
             XmlExt.WriteAttribute(writer, "Value", this.seconds);
         }
-    }
+	}
 }

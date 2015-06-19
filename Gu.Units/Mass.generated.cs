@@ -97,6 +97,11 @@
             return Parser.Parse<MassUnit, Mass>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
+        public static Mass Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<MassUnit, Mass>(s, From, NumberStyles.Float, provider);
+        }
+
         public static Mass Parse(string s, NumberStyles styles)
         {
             return Parser.Parse<MassUnit, Mass>(s, From, styles, CultureInfo.CurrentCulture);
@@ -110,6 +115,12 @@
         public static bool TryParse(string s, out Mass value)
         {
             return Parser.TryParse<MassUnit, Mass>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+
+        public static bool TryParse(string s, IFormatProvider provider, out Mass value)
+        {
+            return Parser.TryParse<MassUnit, Mass>(s, From, NumberStyles.Float, provider, out  value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Mass value)

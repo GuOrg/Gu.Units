@@ -174,6 +174,11 @@
             return Parser.Parse<LengthUnit, Length>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
+        public static Length Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<LengthUnit, Length>(s, From, NumberStyles.Float, provider);
+        }
+
         public static Length Parse(string s, NumberStyles styles)
         {
             return Parser.Parse<LengthUnit, Length>(s, From, styles, CultureInfo.CurrentCulture);
@@ -187,6 +192,12 @@
         public static bool TryParse(string s, out Length value)
         {
             return Parser.TryParse<LengthUnit, Length>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+
+        public static bool TryParse(string s, IFormatProvider provider, out Length value)
+        {
+            return Parser.TryParse<LengthUnit, Length>(s, From, NumberStyles.Float, provider, out  value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Length value)

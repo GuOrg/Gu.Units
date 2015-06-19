@@ -108,6 +108,11 @@
             return Parser.Parse<VoltageUnit, Voltage>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
+        public static Voltage Parse(string s, IFormatProvider provider)
+        {
+            return Parser.Parse<VoltageUnit, Voltage>(s, From, NumberStyles.Float, provider);
+        }
+
         public static Voltage Parse(string s, NumberStyles styles)
         {
             return Parser.Parse<VoltageUnit, Voltage>(s, From, styles, CultureInfo.CurrentCulture);
@@ -121,6 +126,11 @@
         public static bool TryParse(string s, out Voltage value)
         {
             return Parser.TryParse<VoltageUnit, Voltage>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        public static bool TryParse(string s, IFormatProvider provider, out Voltage value)
+        {
+            return Parser.TryParse<VoltageUnit, Voltage>(s, From, NumberStyles.Float, provider, out  value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Voltage value)
