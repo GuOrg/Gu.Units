@@ -108,6 +108,44 @@
             return ReadSymbolAndPower(s, ref pos, sign);
         }
 
+
+        internal static bool TryRead(string s, ref int pos, ref Sign sign, out SymbolAndPower result)
+        {
+            if (sign == Sign.None)
+            {
+                result = default(SymbolAndPower);
+                return false;
+            }
+            ReadWhiteSpace(s, ref pos);
+            if (pos == s.Length)
+            {
+                result = default(SymbolAndPower);
+                return false;
+            }
+
+            var op = ReadOperator(s, ref pos);
+            if (op != Operator.None)
+            {
+                ReadWhiteSpace(s, ref pos);
+                if (ReadOperator(s, ref pos) != Operator.None)
+                {
+                    result = default(SymbolAndPower);
+                    return false;
+                }
+                if (op == Operator.Division)
+                {
+                    if (sign == Sign.Negative)
+                    {
+                        result = default(SymbolAndPower);
+                        return false;
+                    }
+                    sign = Sign.Negative;
+                }
+            }
+            ReadWhiteSpace(s, ref pos);
+            return TryReadSymbolAndPower(s, ref pos, sign,out result);
+        }
+
         internal static bool CanRead(string s, ref int pos)
         {
             ReadWhiteSpace(s, ref pos);
@@ -162,6 +200,38 @@
                 throw new FormatException(String.Format("Power cannot be negative after / error at {0} in {1}", start + symbol.Length, s));
             }
             return new SymbolAndPower(symbol, (int)sign * power);
+        }
+
+        private static bool TryReadSymbolAndPower(string s, ref int pos, Sign sign, out SymbolAndPower result)
+        {
+            var start = pos;
+            while (s.Length > pos && IsSymbol(s[pos]))
+            {
+                pos++;
+            }
+            if (pos == start)
+            {
+                result = default(SymbolAndPower);
+                return false;
+            }
+            var symbol = s.Substring(start, pos - start);
+            ReadWhiteSpace(s, ref pos);
+
+            var power = s.Length == pos
+                            ? 1
+                            : ReadPower(s, ref pos);
+            if (power == 0)
+            {
+                result = default(SymbolAndPower);
+                return false;
+            }
+            if (sign == Sign.Negative && power < 0)
+            {
+                result = default(SymbolAndPower);
+                return false;
+            }
+            result = new SymbolAndPower(symbol, (int)sign * power);
+            return true;
         }
 
         private static bool IsSymbol(char c)

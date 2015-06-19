@@ -60,7 +60,7 @@
                 value = default(TQuantity);
                 return false;
             }
-            value= creator(d, unit);
+            value = creator(d, unit);
             return true;
         }
 
@@ -102,7 +102,7 @@
                 value = default(TUnit);
                 return false;
             }
-            value =(TUnit) matches[0].Unit;
+            value = (TUnit)matches[0].Unit;
             return true;
         }
 
@@ -125,6 +125,30 @@
                 tokens.Add(sap);
             }
             return tokens;
+        }
+
+        internal static bool TryTokenizeUnit(string s, out IReadOnlyList<SymbolAndPower> tokens)
+        {
+            int pos = 0;
+            var sign = Sign.Positive;
+            var temp = new List<SymbolAndPower>();
+            while (SymbolAndPower.CanRead(s, ref pos))
+            {
+                SymbolAndPower sap;
+                if (!SymbolAndPower.TryRead(s, ref pos, ref sign, out sap))
+                {
+                    tokens = null;
+                    return false;
+                }
+                if (temp.Any(t => t.Symbol == sap.Symbol))
+                {
+                    tokens = null;
+                    return false;
+                }
+                temp.Add(sap);
+            }
+            tokens = temp;
+            return true;
         }
 
         private static IReadOnlyList<Symbol> CreateSymbolsForType(Type type)
