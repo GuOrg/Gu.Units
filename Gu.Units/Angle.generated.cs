@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Angle : IComparable<Angle>, IEquatable<Angle>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1>, IQuantity<AngleUnit>
     {
+        public static readonly Angle Zero = new Angle();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Radians"/>.
         /// </summary>
@@ -70,7 +72,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Angle"/></param>
         /// <returns></returns>
-        public static Angle Parse(string s)
+		public static Angle Parse(string s)
         {
             return Parser.Parse<AngleUnit, Angle>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -95,15 +97,14 @@
             return Parser.TryParse<AngleUnit, Angle>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Angle value)
         {
-            return Parser.TryParse<AngleUnit, Angle>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<AngleUnit, Angle>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Angle value)
         {
-            return Parser.TryParse<AngleUnit, Angle>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<AngleUnit, Angle>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Angle value)

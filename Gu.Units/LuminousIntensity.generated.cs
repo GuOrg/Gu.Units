@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct LuminousIntensity : IComparable<LuminousIntensity>, IEquatable<LuminousIntensity>, IFormattable, IXmlSerializable, IQuantity<LuminousIntensityUnit, I1>, IQuantity<LuminousIntensityUnit>
     {
+        public static readonly LuminousIntensity Zero = new LuminousIntensity();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Candelas"/>.
         /// </summary>
@@ -59,7 +61,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.LuminousIntensity"/></param>
         /// <returns></returns>
-        public static LuminousIntensity Parse(string s)
+		public static LuminousIntensity Parse(string s)
         {
             return Parser.Parse<LuminousIntensityUnit, LuminousIntensity>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -84,15 +86,14 @@
             return Parser.TryParse<LuminousIntensityUnit, LuminousIntensity>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out LuminousIntensity value)
         {
-            return Parser.TryParse<LuminousIntensityUnit, LuminousIntensity>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<LuminousIntensityUnit, LuminousIntensity>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out LuminousIntensity value)
         {
-            return Parser.TryParse<LuminousIntensityUnit, LuminousIntensity>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<LuminousIntensityUnit, LuminousIntensity>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out LuminousIntensity value)

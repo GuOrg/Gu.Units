@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.CapacitanceUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Farads.symbol}")]
     public struct CapacitanceUnit : IUnit, IUnit<Capacitance>, IEquatable<CapacitanceUnit>
@@ -19,7 +19,7 @@
         /// The <see cref="T:Gu.Units.Farads"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly CapacitanceUnit F = Farads;
+		public static readonly CapacitanceUnit F = Farads;
 
         private readonly double conversionFactor;
         private readonly string symbol;

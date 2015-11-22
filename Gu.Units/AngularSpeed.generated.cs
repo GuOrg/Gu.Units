@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct AngularSpeed : IComparable<AngularSpeed>, IEquatable<AngularSpeed>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1, TimeUnit, INeg1>, IQuantity<AngularSpeedUnit>
     {
+        public static readonly AngularSpeed Zero = new AngularSpeed();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.RadiansPerSecond"/>.
         /// </summary>
@@ -125,7 +127,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.AngularSpeed"/></param>
         /// <returns></returns>
-        public static AngularSpeed Parse(string s)
+		public static AngularSpeed Parse(string s)
         {
             return Parser.Parse<AngularSpeedUnit, AngularSpeed>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -150,15 +152,14 @@
             return Parser.TryParse<AngularSpeedUnit, AngularSpeed>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out AngularSpeed value)
         {
-            return Parser.TryParse<AngularSpeedUnit, AngularSpeed>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<AngularSpeedUnit, AngularSpeed>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out AngularSpeed value)
         {
-            return Parser.TryParse<AngularSpeedUnit, AngularSpeed>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<AngularSpeedUnit, AngularSpeed>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out AngularSpeed value)

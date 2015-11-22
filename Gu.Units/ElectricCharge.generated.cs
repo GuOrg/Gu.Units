@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct ElectricCharge : IComparable<ElectricCharge>, IEquatable<ElectricCharge>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, I1, CurrentUnit, I1>, IQuantity<ElectricChargeUnit>
     {
+        public static readonly ElectricCharge Zero = new ElectricCharge();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Coulombs"/>.
         /// </summary>
@@ -59,7 +61,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.ElectricCharge"/></param>
         /// <returns></returns>
-        public static ElectricCharge Parse(string s)
+		public static ElectricCharge Parse(string s)
         {
             return Parser.Parse<ElectricChargeUnit, ElectricCharge>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -84,15 +86,14 @@
             return Parser.TryParse<ElectricChargeUnit, ElectricCharge>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out ElectricCharge value)
         {
-            return Parser.TryParse<ElectricChargeUnit, ElectricCharge>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<ElectricChargeUnit, ElectricCharge>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out ElectricCharge value)
         {
-            return Parser.TryParse<ElectricChargeUnit, ElectricCharge>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<ElectricChargeUnit, ElectricCharge>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out ElectricCharge value)

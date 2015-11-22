@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct VolumetricFlow : IComparable<VolumetricFlow>, IEquatable<VolumetricFlow>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I3, TimeUnit, INeg1>, IQuantity<VolumetricFlowUnit>
     {
+        public static readonly VolumetricFlow Zero = new VolumetricFlow();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.CubicMetresPerSecond"/>.
         /// </summary>
@@ -59,7 +61,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.VolumetricFlow"/></param>
         /// <returns></returns>
-        public static VolumetricFlow Parse(string s)
+		public static VolumetricFlow Parse(string s)
         {
             return Parser.Parse<VolumetricFlowUnit, VolumetricFlow>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -86,12 +88,12 @@
 
         public static bool TryParse(string s, IFormatProvider provider, out VolumetricFlow value)
         {
-            return Parser.TryParse<VolumetricFlowUnit, VolumetricFlow>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<VolumetricFlowUnit, VolumetricFlow>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out VolumetricFlow value)
         {
-            return Parser.TryParse<VolumetricFlowUnit, VolumetricFlow>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<VolumetricFlowUnit, VolumetricFlow>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out VolumetricFlow value)

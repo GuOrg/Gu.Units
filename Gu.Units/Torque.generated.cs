@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Torque : IComparable<Torque>, IEquatable<Torque>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg2, AngleUnit, INeg1>, IQuantity<TorqueUnit>
     {
+        public static readonly Torque Zero = new Torque();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.NewtonMetres"/>.
         /// </summary>
@@ -59,7 +61,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Torque"/></param>
         /// <returns></returns>
-        public static Torque Parse(string s)
+		public static Torque Parse(string s)
         {
             return Parser.Parse<TorqueUnit, Torque>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -86,12 +88,12 @@
 
         public static bool TryParse(string s, IFormatProvider provider, out Torque value)
         {
-            return Parser.TryParse<TorqueUnit, Torque>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<TorqueUnit, Torque>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Torque value)
         {
-            return Parser.TryParse<TorqueUnit, Torque>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<TorqueUnit, Torque>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Torque value)

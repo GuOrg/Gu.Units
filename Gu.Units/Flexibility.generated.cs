@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Flexibility : IComparable<Flexibility>, IEquatable<Flexibility>, IFormattable, IXmlSerializable, IQuantity<MassUnit, INeg1, TimeUnit, I2>, IQuantity<FlexibilityUnit>
     {
+        public static readonly Flexibility Zero = new Flexibility();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.MetresPerNewton"/>.
         /// </summary>
@@ -92,7 +94,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Flexibility"/></param>
         /// <returns></returns>
-        public static Flexibility Parse(string s)
+		public static Flexibility Parse(string s)
         {
             return Parser.Parse<FlexibilityUnit, Flexibility>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -117,15 +119,14 @@
             return Parser.TryParse<FlexibilityUnit, Flexibility>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Flexibility value)
         {
-            return Parser.TryParse<FlexibilityUnit, Flexibility>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<FlexibilityUnit, Flexibility>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Flexibility value)
         {
-            return Parser.TryParse<FlexibilityUnit, Flexibility>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<FlexibilityUnit, Flexibility>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Flexibility value)

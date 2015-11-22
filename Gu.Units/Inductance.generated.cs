@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Inductance : IComparable<Inductance>, IEquatable<Inductance>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg2, CurrentUnit, INeg2>, IQuantity<InductanceUnit>
     {
+        public static readonly Inductance Zero = new Inductance();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Henrys"/>.
         /// </summary>
@@ -59,7 +61,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Inductance"/></param>
         /// <returns></returns>
-        public static Inductance Parse(string s)
+		public static Inductance Parse(string s)
         {
             return Parser.Parse<InductanceUnit, Inductance>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -84,15 +86,14 @@
             return Parser.TryParse<InductanceUnit, Inductance>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Inductance value)
         {
-            return Parser.TryParse<InductanceUnit, Inductance>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<InductanceUnit, Inductance>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Inductance value)
         {
-            return Parser.TryParse<InductanceUnit, Inductance>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<InductanceUnit, Inductance>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Inductance value)

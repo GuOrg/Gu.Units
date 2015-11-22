@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.InductanceUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Henrys.symbol}")]
     public struct InductanceUnit : IUnit, IUnit<Inductance>, IEquatable<InductanceUnit>
@@ -19,7 +19,7 @@
         /// The <see cref="T:Gu.Units.Henrys"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly InductanceUnit H = Henrys;
+		public static readonly InductanceUnit H = Henrys;
 
         private readonly double conversionFactor;
         private readonly string symbol;

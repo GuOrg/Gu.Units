@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Current : IComparable<Current>, IEquatable<Current>, IFormattable, IXmlSerializable, IQuantity<CurrentUnit, I1>, IQuantity<CurrentUnit>
     {
+        public static readonly Current Zero = new Current();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Amperes"/>.
         /// </summary>
@@ -103,7 +105,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Current"/></param>
         /// <returns></returns>
-        public static Current Parse(string s)
+		public static Current Parse(string s)
         {
             return Parser.Parse<CurrentUnit, Current>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -128,15 +130,14 @@
             return Parser.TryParse<CurrentUnit, Current>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Current value)
         {
-            return Parser.TryParse<CurrentUnit, Current>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<CurrentUnit, Current>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Current value)
         {
-            return Parser.TryParse<CurrentUnit, Current>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<CurrentUnit, Current>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Current value)

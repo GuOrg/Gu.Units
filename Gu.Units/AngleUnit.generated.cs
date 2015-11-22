@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.AngleUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Radians.symbol}")]
     public struct AngleUnit : IUnit, IUnit<Angle>, IEquatable<AngleUnit>
@@ -19,13 +19,13 @@
         /// The <see cref="T:Gu.Units.Radians"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngleUnit rad = Radians;
+		public static readonly AngleUnit rad = Radians;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Degrees"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngleUnit Degrees = new AngleUnit(0.017453292519943295, "°");
+		public static readonly AngleUnit Degrees = new AngleUnit(0.017453292519943295, "°");
 
         private readonly double conversionFactor;
         private readonly string symbol;

@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.VolumeUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{CubicMetres.symbol}")]
     public struct VolumeUnit : IUnit, IUnit<Volume>, IEquatable<VolumeUnit>
@@ -20,30 +20,30 @@
         /// The <see cref="T:Gu.Units.Litres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VolumeUnit Litres = new VolumeUnit(0.0010000000000000002, "L");
+		public static readonly VolumeUnit Litres = new VolumeUnit(0.0010000000000000002, "L");
         /// <summary>
         /// The <see cref="T:Gu.Units.Litres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VolumeUnit L = Litres;
+		public static readonly VolumeUnit L = Litres;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.CubicCentimetres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VolumeUnit CubicCentimetres = new VolumeUnit(1.0000000000000002E-06, "cm³");
+		public static readonly VolumeUnit CubicCentimetres = new VolumeUnit(1.0000000000000002E-06, "cm³");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.CubicMillimetres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VolumeUnit CubicMillimetres = new VolumeUnit(1E-09, "mm³");
+		public static readonly VolumeUnit CubicMillimetres = new VolumeUnit(1E-09, "mm³");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.CubicInches"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VolumeUnit CubicInches = new VolumeUnit(1.6387064E-05, "in³");
+		public static readonly VolumeUnit CubicInches = new VolumeUnit(1.6387064E-05, "in³");
 
         private readonly double conversionFactor;
         private readonly string symbol;

@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Mass : IComparable<Mass>, IEquatable<Mass>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1>, IQuantity<MassUnit>
     {
+        public static readonly Mass Zero = new Mass();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Kilograms"/>.
         /// </summary>
@@ -92,7 +94,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Mass"/></param>
         /// <returns></returns>
-        public static Mass Parse(string s)
+		public static Mass Parse(string s)
         {
             return Parser.Parse<MassUnit, Mass>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -117,15 +119,14 @@
             return Parser.TryParse<MassUnit, Mass>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Mass value)
         {
-            return Parser.TryParse<MassUnit, Mass>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<MassUnit, Mass>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Mass value)
         {
-            return Parser.TryParse<MassUnit, Mass>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<MassUnit, Mass>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Mass value)

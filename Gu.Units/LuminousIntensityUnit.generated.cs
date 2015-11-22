@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.LuminousIntensityUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Candelas.symbol}")]
     public struct LuminousIntensityUnit : IUnit, IUnit<LuminousIntensity>, IEquatable<LuminousIntensityUnit>
@@ -19,7 +19,7 @@
         /// The <see cref="T:Gu.Units.Candelas"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LuminousIntensityUnit cd = Candelas;
+		public static readonly LuminousIntensityUnit cd = Candelas;
 
         private readonly double conversionFactor;
         private readonly string symbol;

@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Speed : IComparable<Speed>, IEquatable<Speed>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1, TimeUnit, INeg1>, IQuantity<SpeedUnit>
     {
+        public static readonly Speed Zero = new Speed();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.MetresPerSecond"/>.
         /// </summary>
@@ -158,19 +160,19 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Speed"/></param>
         /// <returns></returns>
-        public static Speed Parse(string s)
+		public static Speed Parse(string s)
         {
             return Parser.Parse<SpeedUnit, Speed>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        public static Speed Parse(string s, NumberStyles styles)
-        {
-            return Parser.Parse<SpeedUnit, Speed>(s, From, styles, CultureInfo.CurrentCulture);
         }
 
         public static Speed Parse(string s, IFormatProvider provider)
         {
             return Parser.Parse<SpeedUnit, Speed>(s, From, NumberStyles.Float, provider);
+        }
+
+        public static Speed Parse(string s, NumberStyles styles)
+        {
+            return Parser.Parse<SpeedUnit, Speed>(s, From, styles, CultureInfo.CurrentCulture);
         }
 
         public static Speed Parse(string s, NumberStyles styles, IFormatProvider provider)
@@ -183,14 +185,14 @@
             return Parser.TryParse<SpeedUnit, Speed>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out Speed value)
-        {
-            return Parser.TryParse<SpeedUnit, Speed>(s, From, styles, CultureInfo.CurrentCulture, out  value);
-        }
-
         public static bool TryParse(string s, IFormatProvider provider, out Speed value)
         {
-            return Parser.TryParse<SpeedUnit, Speed>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<SpeedUnit, Speed>(s, From, NumberStyles.Float, provider, out value);
+        }
+
+        public static bool TryParse(string s, NumberStyles styles, out Speed value)
+        {
+            return Parser.TryParse<SpeedUnit, Speed>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Speed value)

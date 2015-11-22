@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.UnitlessUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Scalar.symbol}")]
     public struct UnitlessUnit : IUnit, IUnit<Unitless>, IEquatable<UnitlessUnit>
@@ -19,30 +19,30 @@
         /// The <see cref="T:Gu.Units.Scalar"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly UnitlessUnit ul = Scalar;
+		public static readonly UnitlessUnit ul = Scalar;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.PartsPerMillion"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly UnitlessUnit PartsPerMillion = new UnitlessUnit(1E-06, "ppm");
+		public static readonly UnitlessUnit PartsPerMillion = new UnitlessUnit(1E-06, "ppm");
         /// <summary>
         /// The <see cref="T:Gu.Units.PartsPerMillion"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly UnitlessUnit ppm = PartsPerMillion;
+		public static readonly UnitlessUnit ppm = PartsPerMillion;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Promilles"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly UnitlessUnit Promilles = new UnitlessUnit(0.001, "‰");
+		public static readonly UnitlessUnit Promilles = new UnitlessUnit(0.001, "‰");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Percents"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly UnitlessUnit Percents = new UnitlessUnit(0.01, "%");
+		public static readonly UnitlessUnit Percents = new UnitlessUnit(0.01, "%");
 
         private readonly double conversionFactor;
         private readonly string symbol;

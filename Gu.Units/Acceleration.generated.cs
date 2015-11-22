@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Acceleration : IComparable<Acceleration>, IEquatable<Acceleration>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1, TimeUnit, INeg2>, IQuantity<AccelerationUnit>
     {
+        public static readonly Acceleration Zero = new Acceleration();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.MetresPerSecondSquared"/>.
         /// </summary>
@@ -81,7 +83,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Acceleration"/></param>
         /// <returns></returns>
-        public static Acceleration Parse(string s)
+		public static Acceleration Parse(string s)
         {
             return Parser.Parse<AccelerationUnit, Acceleration>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -106,15 +108,14 @@
             return Parser.TryParse<AccelerationUnit, Acceleration>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Acceleration value)
         {
-            return Parser.TryParse<AccelerationUnit, Acceleration>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<AccelerationUnit, Acceleration>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Acceleration value)
         {
-            return Parser.TryParse<AccelerationUnit, Acceleration>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<AccelerationUnit, Acceleration>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Acceleration value)

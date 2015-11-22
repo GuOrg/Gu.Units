@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Stiffness : IComparable<Stiffness>, IEquatable<Stiffness>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, TimeUnit, INeg2>, IQuantity<StiffnessUnit>
     {
+        public static readonly Stiffness Zero = new Stiffness();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.NewtonsPerMetre"/>.
         /// </summary>
@@ -59,7 +61,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Stiffness"/></param>
         /// <returns></returns>
-        public static Stiffness Parse(string s)
+		public static Stiffness Parse(string s)
         {
             return Parser.Parse<StiffnessUnit, Stiffness>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -84,15 +86,14 @@
             return Parser.TryParse<StiffnessUnit, Stiffness>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Stiffness value)
         {
-            return Parser.TryParse<StiffnessUnit, Stiffness>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<StiffnessUnit, Stiffness>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Stiffness value)
         {
-            return Parser.TryParse<StiffnessUnit, Stiffness>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<StiffnessUnit, Stiffness>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Stiffness value)

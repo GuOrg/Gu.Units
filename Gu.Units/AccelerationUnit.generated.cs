@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.AccelerationUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MetresPerSecondSquared.symbol}")]
     public struct AccelerationUnit : IUnit, IUnit<Acceleration>, IEquatable<AccelerationUnit>
@@ -20,13 +20,13 @@
         /// The <see cref="T:Gu.Units.MillimetresPerSecondSquared"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AccelerationUnit MillimetresPerSecondSquared = new AccelerationUnit(0.001, "mm/s²");
+		public static readonly AccelerationUnit MillimetresPerSecondSquared = new AccelerationUnit(0.001, "mm/s²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.CentimetresPerSecondSquared"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AccelerationUnit CentimetresPerSecondSquared = new AccelerationUnit(0.01, "cm/s²");
+		public static readonly AccelerationUnit CentimetresPerSecondSquared = new AccelerationUnit(0.01, "cm/s²");
 
         private readonly double conversionFactor;
         private readonly string symbol;

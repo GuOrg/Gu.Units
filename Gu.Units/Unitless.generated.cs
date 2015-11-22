@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Unitless : IComparable<Unitless>, IEquatable<Unitless>, IFormattable, IXmlSerializable, IQuantity<UnitlessUnit, I1>, IQuantity<UnitlessUnit>
     {
+        public static readonly Unitless Zero = new Unitless();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Scalar"/>.
         /// </summary>
@@ -92,7 +94,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Unitless"/></param>
         /// <returns></returns>
-        public static Unitless Parse(string s)
+		public static Unitless Parse(string s)
         {
             return Parser.Parse<UnitlessUnit, Unitless>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -119,12 +121,12 @@
 
         public static bool TryParse(string s, IFormatProvider provider, out Unitless value)
         {
-            return Parser.TryParse<UnitlessUnit, Unitless>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<UnitlessUnit, Unitless>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Unitless value)
         {
-            return Parser.TryParse<UnitlessUnit, Unitless>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<UnitlessUnit, Unitless>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Unitless value)

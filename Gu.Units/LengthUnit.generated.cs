@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.LengthUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Metres.symbol}")]
     public struct LengthUnit : IUnit, IUnit<Length>, IEquatable<LengthUnit>
@@ -19,112 +19,112 @@
         /// The <see cref="T:Gu.Units.Metres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit m = Metres;
+		public static readonly LengthUnit m = Metres;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Nanometres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit Nanometres = new LengthUnit(1E-09, "nm");
+		public static readonly LengthUnit Nanometres = new LengthUnit(1E-09, "nm");
         /// <summary>
         /// The <see cref="T:Gu.Units.Nanometres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit nm = Nanometres;
+		public static readonly LengthUnit nm = Nanometres;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Micrometres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit Micrometres = new LengthUnit(1E-06, "µm");
+		public static readonly LengthUnit Micrometres = new LengthUnit(1E-06, "µm");
         /// <summary>
         /// The <see cref="T:Gu.Units.Micrometres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit µm = Micrometres;
+		public static readonly LengthUnit µm = Micrometres;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Millimetres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit Millimetres = new LengthUnit(0.001, "mm");
+		public static readonly LengthUnit Millimetres = new LengthUnit(0.001, "mm");
         /// <summary>
         /// The <see cref="T:Gu.Units.Millimetres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit mm = Millimetres;
+		public static readonly LengthUnit mm = Millimetres;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Centimetres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit Centimetres = new LengthUnit(0.01, "cm");
+		public static readonly LengthUnit Centimetres = new LengthUnit(0.01, "cm");
         /// <summary>
         /// The <see cref="T:Gu.Units.Centimetres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit cm = Centimetres;
+		public static readonly LengthUnit cm = Centimetres;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Decimetres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit Decimetres = new LengthUnit(0.1, "dm");
+		public static readonly LengthUnit Decimetres = new LengthUnit(0.1, "dm");
         /// <summary>
         /// The <see cref="T:Gu.Units.Decimetres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit dm = Decimetres;
+		public static readonly LengthUnit dm = Decimetres;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilometres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit Kilometres = new LengthUnit(1000, "km");
+		public static readonly LengthUnit Kilometres = new LengthUnit(1000, "km");
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilometres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit km = Kilometres;
+		public static readonly LengthUnit km = Kilometres;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Inches"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit Inches = new LengthUnit(0.0254, "in");
+		public static readonly LengthUnit Inches = new LengthUnit(0.0254, "in");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Mile"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit Mile = new LengthUnit(1609.344, "mi");
+		public static readonly LengthUnit Mile = new LengthUnit(1609.344, "mi");
         /// <summary>
         /// The <see cref="T:Gu.Units.Mile"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit mi = Mile;
+		public static readonly LengthUnit mi = Mile;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Yard"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit Yard = new LengthUnit(0.9144, "yd");
+		public static readonly LengthUnit Yard = new LengthUnit(0.9144, "yd");
         /// <summary>
         /// The <see cref="T:Gu.Units.Yard"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit yd = Yard;
+		public static readonly LengthUnit yd = Yard;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.NauticalMile"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit NauticalMile = new LengthUnit(1852, "nmi");
+		public static readonly LengthUnit NauticalMile = new LengthUnit(1852, "nmi");
         /// <summary>
         /// The <see cref="T:Gu.Units.NauticalMile"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit nmi = NauticalMile;
+		public static readonly LengthUnit nmi = NauticalMile;
 
         private readonly double conversionFactor;
         private readonly string symbol;

@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.MassUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Kilograms.symbol}")]
     public struct MassUnit : IUnit, IUnit<Mass>, IEquatable<MassUnit>
@@ -19,40 +19,40 @@
         /// The <see cref="T:Gu.Units.Kilograms"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly MassUnit kg = Kilograms;
+		public static readonly MassUnit kg = Kilograms;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Grams"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly MassUnit Grams = new MassUnit(0.001, "g");
+		public static readonly MassUnit Grams = new MassUnit(0.001, "g");
         /// <summary>
         /// The <see cref="T:Gu.Units.Grams"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly MassUnit g = Grams;
+		public static readonly MassUnit g = Grams;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Milligrams"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly MassUnit Milligrams = new MassUnit(1E-06, "mg");
+		public static readonly MassUnit Milligrams = new MassUnit(1E-06, "mg");
         /// <summary>
         /// The <see cref="T:Gu.Units.Milligrams"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly MassUnit mg = Milligrams;
+		public static readonly MassUnit mg = Milligrams;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Micrograms"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly MassUnit Micrograms = new MassUnit(1E-09, "µg");
+		public static readonly MassUnit Micrograms = new MassUnit(1E-09, "µg");
         /// <summary>
         /// The <see cref="T:Gu.Units.Micrograms"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly MassUnit µg = Micrograms;
+		public static readonly MassUnit µg = Micrograms;
 
         private readonly double conversionFactor;
         private readonly string symbol;

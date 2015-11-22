@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Power : IComparable<Power>, IEquatable<Power>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3>, IQuantity<PowerUnit>
     {
+        public static readonly Power Zero = new Power();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Watts"/>.
         /// </summary>
@@ -125,7 +127,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Power"/></param>
         /// <returns></returns>
-        public static Power Parse(string s)
+		public static Power Parse(string s)
         {
             return Parser.Parse<PowerUnit, Power>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -150,15 +152,14 @@
             return Parser.TryParse<PowerUnit, Power>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Power value)
         {
-            return Parser.TryParse<PowerUnit, Power>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<PowerUnit, Power>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Power value)
         {
-            return Parser.TryParse<PowerUnit, Power>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<PowerUnit, Power>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Power value)
