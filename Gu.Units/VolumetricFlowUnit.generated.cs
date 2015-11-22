@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.VolumetricFlowUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{CubicMetresPerSecond.symbol}")]
     public struct VolumetricFlowUnit : IUnit, IUnit<VolumetricFlow>, IEquatable<VolumetricFlowUnit>

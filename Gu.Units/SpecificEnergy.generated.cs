@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct SpecificEnergy : IComparable<SpecificEnergy>, IEquatable<SpecificEnergy>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I2, TimeUnit, INeg2>, IQuantity<SpecificEnergyUnit>
     {
+        public static readonly SpecificEnergy Zero = new SpecificEnergy();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.JoulesPerKilogram"/>.
         /// </summary>
@@ -59,7 +61,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.SpecificEnergy"/></param>
         /// <returns></returns>
-        public static SpecificEnergy Parse(string s)
+		public static SpecificEnergy Parse(string s)
         {
             return Parser.Parse<SpecificEnergyUnit, SpecificEnergy>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -84,15 +86,14 @@
             return Parser.TryParse<SpecificEnergyUnit, SpecificEnergy>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out SpecificEnergy value)
         {
-            return Parser.TryParse<SpecificEnergyUnit, SpecificEnergy>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<SpecificEnergyUnit, SpecificEnergy>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out SpecificEnergy value)
         {
-            return Parser.TryParse<SpecificEnergyUnit, SpecificEnergy>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<SpecificEnergyUnit, SpecificEnergy>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out SpecificEnergy value)

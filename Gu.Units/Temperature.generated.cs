@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Temperature : IComparable<Temperature>, IEquatable<Temperature>, IFormattable, IXmlSerializable, IQuantity<TemperatureUnit, I1>, IQuantity<TemperatureUnit>
     {
+        public static readonly Temperature Zero = new Temperature();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Kelvin"/>.
         /// </summary>
@@ -81,7 +83,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Temperature"/></param>
         /// <returns></returns>
-        public static Temperature Parse(string s)
+		public static Temperature Parse(string s)
         {
             return Parser.Parse<TemperatureUnit, Temperature>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -108,12 +110,12 @@
 
         public static bool TryParse(string s, IFormatProvider provider, out Temperature value)
         {
-            return Parser.TryParse<TemperatureUnit, Temperature>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<TemperatureUnit, Temperature>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Temperature value)
         {
-            return Parser.TryParse<TemperatureUnit, Temperature>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<TemperatureUnit, Temperature>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Temperature value)

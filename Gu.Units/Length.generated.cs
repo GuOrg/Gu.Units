@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1>, IQuantity<LengthUnit>
     {
+        public static readonly Length Zero = new Length();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Metres"/>.
         /// </summary>
@@ -169,7 +171,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Length"/></param>
         /// <returns></returns>
-        public static Length Parse(string s)
+		public static Length Parse(string s)
         {
             return Parser.Parse<LengthUnit, Length>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -194,15 +196,14 @@
             return Parser.TryParse<LengthUnit, Length>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Length value)
         {
-            return Parser.TryParse<LengthUnit, Length>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<LengthUnit, Length>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Length value)
         {
-            return Parser.TryParse<LengthUnit, Length>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<LengthUnit, Length>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Length value)

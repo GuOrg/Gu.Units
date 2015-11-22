@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.AreaUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{SquareMetres.symbol}")]
     public struct AreaUnit : IUnit, IUnit<Area>, IEquatable<AreaUnit>
@@ -20,54 +20,54 @@
         /// The <see cref="T:Gu.Units.SquareMillimetres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AreaUnit SquareMillimetres = new AreaUnit(1E-06, "mm²");
+		public static readonly AreaUnit SquareMillimetres = new AreaUnit(1E-06, "mm²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareCentimetres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AreaUnit SquareCentimetres = new AreaUnit(0.0001, "cm²");
+		public static readonly AreaUnit SquareCentimetres = new AreaUnit(0.0001, "cm²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareDecimetres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AreaUnit SquareDecimetres = new AreaUnit(0.010000000000000002, "dm²");
+		public static readonly AreaUnit SquareDecimetres = new AreaUnit(0.010000000000000002, "dm²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareKilometres"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AreaUnit SquareKilometres = new AreaUnit(1000000, "km²");
+		public static readonly AreaUnit SquareKilometres = new AreaUnit(1000000, "km²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareInches"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AreaUnit SquareInches = new AreaUnit(0.00064516, "in²");
+		public static readonly AreaUnit SquareInches = new AreaUnit(0.00064516, "in²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Hectare"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AreaUnit Hectare = new AreaUnit(10000, "ha");
+		public static readonly AreaUnit Hectare = new AreaUnit(10000, "ha");
         /// <summary>
         /// The <see cref="T:Gu.Units.Hectare"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AreaUnit ha = Hectare;
+		public static readonly AreaUnit ha = Hectare;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareMile"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AreaUnit SquareMile = new AreaUnit(2589988.110336, "mi²");
+		public static readonly AreaUnit SquareMile = new AreaUnit(2589988.110336, "mi²");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.SquareYard"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AreaUnit SquareYard = new AreaUnit(0.83612736, "yd²");
+		public static readonly AreaUnit SquareYard = new AreaUnit(0.83612736, "yd²");
 
         private readonly double conversionFactor;
         private readonly string symbol;

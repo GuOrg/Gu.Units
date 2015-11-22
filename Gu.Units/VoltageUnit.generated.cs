@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.VoltageUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Volts.symbol}")]
     public struct VoltageUnit : IUnit, IUnit<Voltage>, IEquatable<VoltageUnit>
@@ -19,51 +19,51 @@
         /// The <see cref="T:Gu.Units.Volts"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VoltageUnit V = Volts;
+		public static readonly VoltageUnit V = Volts;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Millivolts"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VoltageUnit Millivolts = new VoltageUnit(0.001, "mV");
+		public static readonly VoltageUnit Millivolts = new VoltageUnit(0.001, "mV");
         /// <summary>
         /// The <see cref="T:Gu.Units.Millivolts"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VoltageUnit mV = Millivolts;
+		public static readonly VoltageUnit mV = Millivolts;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilovolts"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VoltageUnit Kilovolts = new VoltageUnit(1000, "kV");
+		public static readonly VoltageUnit Kilovolts = new VoltageUnit(1000, "kV");
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilovolts"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VoltageUnit kV = Kilovolts;
+		public static readonly VoltageUnit kV = Kilovolts;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Megavolts"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VoltageUnit Megavolts = new VoltageUnit(1000000, "MV");
+		public static readonly VoltageUnit Megavolts = new VoltageUnit(1000000, "MV");
         /// <summary>
         /// The <see cref="T:Gu.Units.Megavolts"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VoltageUnit MV = Megavolts;
+		public static readonly VoltageUnit MV = Megavolts;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Microvolts"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VoltageUnit Microvolts = new VoltageUnit(1E-06, "µV");
+		public static readonly VoltageUnit Microvolts = new VoltageUnit(1E-06, "µV");
         /// <summary>
         /// The <see cref="T:Gu.Units.Microvolts"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VoltageUnit µV = Microvolts;
+		public static readonly VoltageUnit µV = Microvolts;
 
         private readonly double conversionFactor;
         private readonly string symbol;

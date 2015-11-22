@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Density : IComparable<Density>, IEquatable<Density>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, INeg3>, IQuantity<DensityUnit>
     {
+        public static readonly Density Zero = new Density();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.KilogramsPerCubicMetre"/>.
         /// </summary>
@@ -81,7 +83,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Density"/></param>
         /// <returns></returns>
-        public static Density Parse(string s)
+		public static Density Parse(string s)
         {
             return Parser.Parse<DensityUnit, Density>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -106,15 +108,14 @@
             return Parser.TryParse<DensityUnit, Density>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Density value)
         {
-            return Parser.TryParse<DensityUnit, Density>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<DensityUnit, Density>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Density value)
         {
-            return Parser.TryParse<DensityUnit, Density>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<DensityUnit, Density>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Density value)

@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.CurrentUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Amperes.symbol}")]
     public struct CurrentUnit : IUnit, IUnit<Current>, IEquatable<CurrentUnit>
@@ -19,51 +19,51 @@
         /// The <see cref="T:Gu.Units.Amperes"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly CurrentUnit A = Amperes;
+		public static readonly CurrentUnit A = Amperes;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Milliamperes"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly CurrentUnit Milliamperes = new CurrentUnit(0.001, "mA");
+		public static readonly CurrentUnit Milliamperes = new CurrentUnit(0.001, "mA");
         /// <summary>
         /// The <see cref="T:Gu.Units.Milliamperes"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly CurrentUnit mA = Milliamperes;
+		public static readonly CurrentUnit mA = Milliamperes;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Kiloamperes"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly CurrentUnit Kiloamperes = new CurrentUnit(1000, "kA");
+		public static readonly CurrentUnit Kiloamperes = new CurrentUnit(1000, "kA");
         /// <summary>
         /// The <see cref="T:Gu.Units.Kiloamperes"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly CurrentUnit kA = Kiloamperes;
+		public static readonly CurrentUnit kA = Kiloamperes;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Megaamperes"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly CurrentUnit Megaamperes = new CurrentUnit(1000000, "MA");
+		public static readonly CurrentUnit Megaamperes = new CurrentUnit(1000000, "MA");
         /// <summary>
         /// The <see cref="T:Gu.Units.Megaamperes"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly CurrentUnit MA = Megaamperes;
+		public static readonly CurrentUnit MA = Megaamperes;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Microamperes"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly CurrentUnit Microamperes = new CurrentUnit(1E-06, "µA");
+		public static readonly CurrentUnit Microamperes = new CurrentUnit(1E-06, "µA");
         /// <summary>
         /// The <see cref="T:Gu.Units.Microamperes"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly CurrentUnit µA = Microamperes;
+		public static readonly CurrentUnit µA = Microamperes;
 
         private readonly double conversionFactor;
         private readonly string symbol;

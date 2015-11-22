@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.TemperatureUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Kelvin.symbol}")]
     public struct TemperatureUnit : IUnit, IUnit<Temperature>, IEquatable<TemperatureUnit>
@@ -19,19 +19,19 @@
         /// The <see cref="T:Gu.Units.Kelvin"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly TemperatureUnit K = Kelvin;
+		public static readonly TemperatureUnit K = Kelvin;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Celsius"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly TemperatureUnit Celsius = new TemperatureUnit(1, -273.15, "°C");
+		public static readonly TemperatureUnit Celsius = new TemperatureUnit(1, -273.15, "°C");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Fahrenheit"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly TemperatureUnit Fahrenheit = new TemperatureUnit(1.8, -459.67, "°F");
+		public static readonly TemperatureUnit Fahrenheit = new TemperatureUnit(1.8, -459.67, "°F");
 
         private readonly double conversionFactor;
         private readonly double offset;

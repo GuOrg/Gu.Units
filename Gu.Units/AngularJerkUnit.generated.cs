@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.AngularJerkUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{RadiansPerSecondCubed.symbol}")]
     public struct AngularJerkUnit : IUnit, IUnit<AngularJerk>, IEquatable<AngularJerkUnit>
@@ -20,31 +20,31 @@
         /// The <see cref="T:Gu.Units.DegreesPerSecondCubed"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularJerkUnit DegreesPerSecondCubed = new AngularJerkUnit(0.017453292519943295, "°⋅s⁻³");
+		public static readonly AngularJerkUnit DegreesPerSecondCubed = new AngularJerkUnit(0.017453292519943295, "°⋅s⁻³");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.RadiansPerHourCubed"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularJerkUnit RadiansPerHourCubed = new AngularJerkUnit(2.1433470507544583E-11, "rad⋅h⁻³");
+		public static readonly AngularJerkUnit RadiansPerHourCubed = new AngularJerkUnit(2.1433470507544583E-11, "rad⋅h⁻³");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.DegreesPerHourCubed"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularJerkUnit DegreesPerHourCubed = new AngularJerkUnit(3.7408463048575307E-13, "°⋅h⁻³");
+		public static readonly AngularJerkUnit DegreesPerHourCubed = new AngularJerkUnit(3.7408463048575307E-13, "°⋅h⁻³");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.RadiansPerMinuteCubed"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularJerkUnit RadiansPerMinuteCubed = new AngularJerkUnit(4.6296296296296296E-06, "rad⋅min⁻³");
+		public static readonly AngularJerkUnit RadiansPerMinuteCubed = new AngularJerkUnit(4.6296296296296296E-06, "rad⋅min⁻³");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.DegreesPerMinuteCubed"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularJerkUnit DegreesPerMinuteCubed = new AngularJerkUnit(8.0802280184922666E-08, "°⋅min⁻³");
+		public static readonly AngularJerkUnit DegreesPerMinuteCubed = new AngularJerkUnit(8.0802280184922666E-08, "°⋅min⁻³");
 
         private readonly double conversionFactor;
         private readonly string symbol;

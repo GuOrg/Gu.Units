@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Resistance : IComparable<Resistance>, IEquatable<Resistance>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3, CurrentUnit, INeg2>, IQuantity<ResistanceUnit>
     {
+        public static readonly Resistance Zero = new Resistance();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Ohm"/>.
         /// </summary>
@@ -103,7 +105,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Resistance"/></param>
         /// <returns></returns>
-        public static Resistance Parse(string s)
+		public static Resistance Parse(string s)
         {
             return Parser.Parse<ResistanceUnit, Resistance>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -128,15 +130,14 @@
             return Parser.TryParse<ResistanceUnit, Resistance>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Resistance value)
         {
-            return Parser.TryParse<ResistanceUnit, Resistance>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<ResistanceUnit, Resistance>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Resistance value)
         {
-            return Parser.TryParse<ResistanceUnit, Resistance>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<ResistanceUnit, Resistance>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Resistance value)

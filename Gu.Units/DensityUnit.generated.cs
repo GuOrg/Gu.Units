@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.DensityUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{KilogramsPerCubicMetre.symbol}")]
     public struct DensityUnit : IUnit, IUnit<Density>, IEquatable<DensityUnit>
@@ -20,13 +20,13 @@
         /// The <see cref="T:Gu.Units.GramsPerCubicMillimetre"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly DensityUnit GramsPerCubicMillimetre = new DensityUnit(999999.99999999988, "g/mm³");
+		public static readonly DensityUnit GramsPerCubicMillimetre = new DensityUnit(999999.99999999988, "g/mm³");
 
         /// <summary>
         /// The <see cref="T:Gu.Units.GramsPerCubicCentimetre"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly DensityUnit GramsPerCubicCentimetre = new DensityUnit(999.99999999999989, "g/cm³");
+		public static readonly DensityUnit GramsPerCubicCentimetre = new DensityUnit(999.99999999999989, "g/cm³");
 
         private readonly double conversionFactor;
         private readonly string symbol;

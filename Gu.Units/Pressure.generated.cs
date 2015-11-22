@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Pressure : IComparable<Pressure>, IEquatable<Pressure>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, INeg1, TimeUnit, INeg2>, IQuantity<PressureUnit>
     {
+        public static readonly Pressure Zero = new Pressure();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Pascals"/>.
         /// </summary>
@@ -147,7 +149,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Pressure"/></param>
         /// <returns></returns>
-        public static Pressure Parse(string s)
+		public static Pressure Parse(string s)
         {
             return Parser.Parse<PressureUnit, Pressure>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -172,15 +174,14 @@
             return Parser.TryParse<PressureUnit, Pressure>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Pressure value)
         {
-            return Parser.TryParse<PressureUnit, Pressure>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<PressureUnit, Pressure>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Pressure value)
         {
-            return Parser.TryParse<PressureUnit, Pressure>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<PressureUnit, Pressure>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Pressure value)

@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Force : IComparable<Force>, IEquatable<Force>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I1, TimeUnit, INeg2>, IQuantity<ForceUnit>
     {
+        public static readonly Force Zero = new Force();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Newtons"/>.
         /// </summary>
@@ -125,7 +127,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Force"/></param>
         /// <returns></returns>
-        public static Force Parse(string s)
+		public static Force Parse(string s)
         {
             return Parser.Parse<ForceUnit, Force>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -150,15 +152,14 @@
             return Parser.TryParse<ForceUnit, Force>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Force value)
         {
-            return Parser.TryParse<ForceUnit, Force>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<ForceUnit, Force>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Force value)
         {
-            return Parser.TryParse<ForceUnit, Force>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<ForceUnit, Force>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Force value)

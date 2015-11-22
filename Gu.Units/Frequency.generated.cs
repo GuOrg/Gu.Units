@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Frequency : IComparable<Frequency>, IEquatable<Frequency>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, INeg1>, IQuantity<FrequencyUnit>
     {
+        public static readonly Frequency Zero = new Frequency();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Hertz"/>.
         /// </summary>
@@ -103,7 +105,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Frequency"/></param>
         /// <returns></returns>
-        public static Frequency Parse(string s)
+		public static Frequency Parse(string s)
         {
             return Parser.Parse<FrequencyUnit, Frequency>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -128,15 +130,14 @@
             return Parser.TryParse<FrequencyUnit, Frequency>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Frequency value)
         {
-            return Parser.TryParse<FrequencyUnit, Frequency>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<FrequencyUnit, Frequency>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Frequency value)
         {
-            return Parser.TryParse<FrequencyUnit, Frequency>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<FrequencyUnit, Frequency>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Frequency value)

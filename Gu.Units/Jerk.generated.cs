@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Jerk : IComparable<Jerk>, IEquatable<Jerk>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1, TimeUnit, INeg3>, IQuantity<JerkUnit>
     {
+        public static readonly Jerk Zero = new Jerk();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.MetresPerSecondCubed"/>.
         /// </summary>
@@ -169,7 +171,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Jerk"/></param>
         /// <returns></returns>
-        public static Jerk Parse(string s)
+		public static Jerk Parse(string s)
         {
             return Parser.Parse<JerkUnit, Jerk>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -194,15 +196,14 @@
             return Parser.TryParse<JerkUnit, Jerk>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Jerk value)
         {
-            return Parser.TryParse<JerkUnit, Jerk>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<JerkUnit, Jerk>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Jerk value)
         {
-            return Parser.TryParse<JerkUnit, Jerk>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<JerkUnit, Jerk>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Jerk value)

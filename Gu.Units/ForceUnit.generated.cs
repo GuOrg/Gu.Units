@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.ForceUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Newtons.symbol}")]
     public struct ForceUnit : IUnit, IUnit<Force>, IEquatable<ForceUnit>
@@ -19,73 +19,73 @@
         /// The <see cref="T:Gu.Units.Newtons"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ForceUnit N = Newtons;
+		public static readonly ForceUnit N = Newtons;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Nanonewtons"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ForceUnit Nanonewtons = new ForceUnit(1E-09, "nN");
+		public static readonly ForceUnit Nanonewtons = new ForceUnit(1E-09, "nN");
         /// <summary>
         /// The <see cref="T:Gu.Units.Nanonewtons"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ForceUnit nN = Nanonewtons;
+		public static readonly ForceUnit nN = Nanonewtons;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Micronewtons"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ForceUnit Micronewtons = new ForceUnit(1E-06, "µN");
+		public static readonly ForceUnit Micronewtons = new ForceUnit(1E-06, "µN");
         /// <summary>
         /// The <see cref="T:Gu.Units.Micronewtons"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ForceUnit µN = Micronewtons;
+		public static readonly ForceUnit µN = Micronewtons;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Millinewtons"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ForceUnit Millinewtons = new ForceUnit(0.001, "mN");
+		public static readonly ForceUnit Millinewtons = new ForceUnit(0.001, "mN");
         /// <summary>
         /// The <see cref="T:Gu.Units.Millinewtons"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ForceUnit mN = Millinewtons;
+		public static readonly ForceUnit mN = Millinewtons;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilonewtons"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ForceUnit Kilonewtons = new ForceUnit(1000, "kN");
+		public static readonly ForceUnit Kilonewtons = new ForceUnit(1000, "kN");
         /// <summary>
         /// The <see cref="T:Gu.Units.Kilonewtons"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ForceUnit kN = Kilonewtons;
+		public static readonly ForceUnit kN = Kilonewtons;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Meganewtons"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ForceUnit Meganewtons = new ForceUnit(1000000, "MN");
+		public static readonly ForceUnit Meganewtons = new ForceUnit(1000000, "MN");
         /// <summary>
         /// The <see cref="T:Gu.Units.Meganewtons"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ForceUnit MN = Meganewtons;
+		public static readonly ForceUnit MN = Meganewtons;
 
         /// <summary>
         /// The <see cref="T:Gu.Units.Giganewtons"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ForceUnit Giganewtons = new ForceUnit(1000000000, "GN");
+		public static readonly ForceUnit Giganewtons = new ForceUnit(1000000000, "GN");
         /// <summary>
         /// The <see cref="T:Gu.Units.Giganewtons"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ForceUnit GN = Giganewtons;
+		public static readonly ForceUnit GN = Giganewtons;
 
         private readonly double conversionFactor;
         private readonly string symbol;

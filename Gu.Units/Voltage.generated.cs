@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Voltage : IComparable<Voltage>, IEquatable<Voltage>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3, CurrentUnit, INeg1>, IQuantity<VoltageUnit>
     {
+        public static readonly Voltage Zero = new Voltage();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.Volts"/>.
         /// </summary>
@@ -103,7 +105,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Voltage"/></param>
         /// <returns></returns>
-        public static Voltage Parse(string s)
+		public static Voltage Parse(string s)
         {
             return Parser.Parse<VoltageUnit, Voltage>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -130,12 +132,12 @@
 
         public static bool TryParse(string s, IFormatProvider provider, out Voltage value)
         {
-            return Parser.TryParse<VoltageUnit, Voltage>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<VoltageUnit, Voltage>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Voltage value)
         {
-            return Parser.TryParse<VoltageUnit, Voltage>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<VoltageUnit, Voltage>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Voltage value)

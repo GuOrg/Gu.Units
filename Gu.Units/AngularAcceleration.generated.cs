@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct AngularAcceleration : IComparable<AngularAcceleration>, IEquatable<AngularAcceleration>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1, TimeUnit, INeg2>, IQuantity<AngularAccelerationUnit>
     {
+        public static readonly AngularAcceleration Zero = new AngularAcceleration();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.RadiansPerSecondSquared"/>.
         /// </summary>
@@ -114,7 +116,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.AngularAcceleration"/></param>
         /// <returns></returns>
-        public static AngularAcceleration Parse(string s)
+		public static AngularAcceleration Parse(string s)
         {
             return Parser.Parse<AngularAccelerationUnit, AngularAcceleration>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -139,15 +141,14 @@
             return Parser.TryParse<AngularAccelerationUnit, AngularAcceleration>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out AngularAcceleration value)
         {
-            return Parser.TryParse<AngularAccelerationUnit, AngularAcceleration>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<AngularAccelerationUnit, AngularAcceleration>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out AngularAcceleration value)
         {
-            return Parser.TryParse<AngularAccelerationUnit, AngularAcceleration>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<AngularAccelerationUnit, AngularAcceleration>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out AngularAcceleration value)

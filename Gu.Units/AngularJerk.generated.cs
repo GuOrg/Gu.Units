@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct AngularJerk : IComparable<AngularJerk>, IEquatable<AngularJerk>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1, TimeUnit, INeg3>, IQuantity<AngularJerkUnit>
     {
+        public static readonly AngularJerk Zero = new AngularJerk();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.RadiansPerSecondCubed"/>.
         /// </summary>
@@ -114,7 +116,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.AngularJerk"/></param>
         /// <returns></returns>
-        public static AngularJerk Parse(string s)
+		public static AngularJerk Parse(string s)
         {
             return Parser.Parse<AngularJerkUnit, AngularJerk>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -139,15 +141,14 @@
             return Parser.TryParse<AngularJerkUnit, AngularJerk>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out AngularJerk value)
         {
-            return Parser.TryParse<AngularJerkUnit, AngularJerk>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<AngularJerkUnit, AngularJerk>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out AngularJerk value)
         {
-            return Parser.TryParse<AngularJerkUnit, AngularJerk>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<AngularJerkUnit, AngularJerk>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out AngularJerk value)

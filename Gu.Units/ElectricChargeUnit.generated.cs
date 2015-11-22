@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="T:Gu.Units.ElectricChargeUnit"/>.
-    /// Contains conversion logic.
+	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Coulombs.symbol}")]
     public struct ElectricChargeUnit : IUnit, IUnit<ElectricCharge>, IEquatable<ElectricChargeUnit>
@@ -19,7 +19,7 @@
         /// The <see cref="T:Gu.Units.Coulombs"/> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ElectricChargeUnit C = Coulombs;
+		public static readonly ElectricChargeUnit C = Coulombs;
 
         private readonly double conversionFactor;
         private readonly string symbol;

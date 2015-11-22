@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Area : IComparable<Area>, IEquatable<Area>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I2>, IQuantity<AreaUnit>
     {
+        public static readonly Area Zero = new Area();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.SquareMetres"/>.
         /// </summary>
@@ -147,7 +149,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Area"/></param>
         /// <returns></returns>
-        public static Area Parse(string s)
+		public static Area Parse(string s)
         {
             return Parser.Parse<AreaUnit, Area>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -172,15 +174,14 @@
             return Parser.TryParse<AreaUnit, Area>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
-
         public static bool TryParse(string s, IFormatProvider provider, out Area value)
         {
-            return Parser.TryParse<AreaUnit, Area>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<AreaUnit, Area>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Area value)
         {
-            return Parser.TryParse<AreaUnit, Area>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<AreaUnit, Area>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Area value)

@@ -12,6 +12,8 @@
     [Serializable]
     public partial struct Volume : IComparable<Volume>, IEquatable<Volume>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I3>, IQuantity<VolumeUnit>
     {
+        public static readonly Volume Zero = new Volume();
+
         /// <summary>
         /// The quantity in <see cref="T:Gu.Units.CubicMetres"/>.
         /// </summary>
@@ -103,7 +105,7 @@
         /// </summary>
         /// <param name="s">The string representation of the <see cref="T:Gu.Units.Volume"/></param>
         /// <returns></returns>
-        public static Volume Parse(string s)
+		public static Volume Parse(string s)
         {
             return Parser.Parse<VolumeUnit, Volume>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -130,12 +132,12 @@
 
         public static bool TryParse(string s, IFormatProvider provider, out Volume value)
         {
-            return Parser.TryParse<VolumeUnit, Volume>(s, From, NumberStyles.Float, provider, out  value);
+            return Parser.TryParse<VolumeUnit, Volume>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Volume value)
         {
-            return Parser.TryParse<VolumeUnit, Volume>(s, From, styles, CultureInfo.CurrentCulture, out  value);
+            return Parser.TryParse<VolumeUnit, Volume>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Volume value)
