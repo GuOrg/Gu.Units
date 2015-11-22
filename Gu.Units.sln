@@ -1,20 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Generator", "Gu.Units.Generator\Gu.Units.Generator.csproj", "{E2703762-7D3C-49AE-B8A8-B3A792F018E3}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5F0B1FC9-16E8-449E-A0CD-61C2CB3FE93E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{4596217D-657C-443F-83BD-4D850760E094}"
 	ProjectSection(SolutionItems) = preProject
-		Gu.Units\Gu.Units.nuspec = Gu.Units\Gu.Units.nuspec
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-		.nuget\nuspec.2010.7.xsd = .nuget\nuspec.2010.7.xsd
-		.nuget\nuspec.2011.8.xsd = .nuget\nuspec.2011.8.xsd
-		.nuget\packages.config = .nuget\packages.config
+		.paket\paket.bootstrapper.exe = .paket\paket.bootstrapper.exe
+		paket.dependencies = paket.dependencies
+		paket.lock = paket.lock
+		.paket\paket.targets = .paket\paket.targets
+		.paket\Readme.paket.md = .paket\Readme.paket.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Generator", "Gu.Units.Generator\Gu.Units.Generator.csproj", "{E2703762-7D3C-49AE-B8A8-B3A792F018E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units", "Gu.Units\Gu.Units.csproj", "{F1F8B138-BECC-4475-A7AB-B3019338BC7B}"
 EndProject
@@ -26,43 +24,32 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Gu.Units.Fsharp.Tests", "Gu
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		CreateNugetPackage|Any CPU = CreateNugetPackage|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Generator Only|Any CPU = Generator Only|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E2703762-7D3C-49AE-B8A8-B3A792F018E3}.CreateNugetPackage|Any CPU.ActiveCfg = CreateNugetPackage|Any CPU
-		{E2703762-7D3C-49AE-B8A8-B3A792F018E3}.CreateNugetPackage|Any CPU.Build.0 = CreateNugetPackage|Any CPU
 		{E2703762-7D3C-49AE-B8A8-B3A792F018E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E2703762-7D3C-49AE-B8A8-B3A792F018E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2703762-7D3C-49AE-B8A8-B3A792F018E3}.Generator Only|Any CPU.ActiveCfg = Generator Only|Any CPU
 		{E2703762-7D3C-49AE-B8A8-B3A792F018E3}.Generator Only|Any CPU.Build.0 = Generator Only|Any CPU
 		{E2703762-7D3C-49AE-B8A8-B3A792F018E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2703762-7D3C-49AE-B8A8-B3A792F018E3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F1F8B138-BECC-4475-A7AB-B3019338BC7B}.CreateNugetPackage|Any CPU.ActiveCfg = CreateNugetPackage|Any CPU
-		{F1F8B138-BECC-4475-A7AB-B3019338BC7B}.CreateNugetPackage|Any CPU.Build.0 = CreateNugetPackage|Any CPU
-		{F1F8B138-BECC-4475-A7AB-B3019338BC7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F1F8B138-BECC-4475-A7AB-B3019338BC7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F1F8B138-BECC-4475-A7AB-B3019338BC7B}.Generator Only|Any CPU.ActiveCfg = Generator Only|Any CPU
+		{F1F8B138-BECC-4475-A7AB-B3019338BC7B}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{F1F8B138-BECC-4475-A7AB-B3019338BC7B}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{F1F8B138-BECC-4475-A7AB-B3019338BC7B}.Generator Only|Any CPU.ActiveCfg = Release|Any CPU
 		{F1F8B138-BECC-4475-A7AB-B3019338BC7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1F8B138-BECC-4475-A7AB-B3019338BC7B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E3A82C1C-4BA4-4C3D-9030-7B607EBD21E2}.CreateNugetPackage|Any CPU.ActiveCfg = CreateNugetPackage|Any CPU
-		{E3A82C1C-4BA4-4C3D-9030-7B607EBD21E2}.CreateNugetPackage|Any CPU.Build.0 = CreateNugetPackage|Any CPU
 		{E3A82C1C-4BA4-4C3D-9030-7B607EBD21E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3A82C1C-4BA4-4C3D-9030-7B607EBD21E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3A82C1C-4BA4-4C3D-9030-7B607EBD21E2}.Generator Only|Any CPU.ActiveCfg = Generator Only|Any CPU
+		{E3A82C1C-4BA4-4C3D-9030-7B607EBD21E2}.Generator Only|Any CPU.ActiveCfg = Release|Any CPU
 		{E3A82C1C-4BA4-4C3D-9030-7B607EBD21E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3A82C1C-4BA4-4C3D-9030-7B607EBD21E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.CreateNugetPackage|Any CPU.ActiveCfg = CreateNugetPackage|Any CPU
-		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.CreateNugetPackage|Any CPU.Build.0 = CreateNugetPackage|Any CPU
 		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.Generator Only|Any CPU.ActiveCfg = Release|Any CPU
 		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BE7BE5C0-7D90-49D4-86BF-4D826C052D80}.CreateNugetPackage|Any CPU.ActiveCfg = CreateNugetPackage|Any CPU
-		{BE7BE5C0-7D90-49D4-86BF-4D826C052D80}.CreateNugetPackage|Any CPU.Build.0 = CreateNugetPackage|Any CPU
 		{BE7BE5C0-7D90-49D4-86BF-4D826C052D80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BE7BE5C0-7D90-49D4-86BF-4D826C052D80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE7BE5C0-7D90-49D4-86BF-4D826C052D80}.Generator Only|Any CPU.ActiveCfg = Release|Any CPU
