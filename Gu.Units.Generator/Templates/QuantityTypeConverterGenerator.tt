@@ -1,5 +1,5 @@
 ﻿<#@ template debug="false" hostspecific="true" language="C#" #>
-<#@ include file="$(SolutionDir)\Packages\T4.TemplateFileManager\tools\ttinc\TemplateFilemanager.CS.ttinclude" #>
+<#@ include file="$(SolutionDir)Packages\T4.TemplateFileManager\tools\ttinc\TemplateFilemanager.CS.ttinclude" #>
 <#@ output extension=".txt" #>
 <#@ assembly name="System.Core" #>
 <#@ assembly name="$(TargetPath)" #>
@@ -25,7 +25,7 @@ foreach (var quantity in settings.Quantities)
     var fileName = quantity.ClassName + "TypeConverter.generated." + Settings.Extension;
     fileManager.StartNewFile(fileName , Settings.ProjectName, null, null);
 	session["QuantityMetaData"] = quantity;
-	string output = paramTmpl.TransformText("TypeConverter.tt", session);
+	string output = paramTmpl.TransformText("QuantityTypeConverter.tt", session);
 	this.Write(output);
 }
 

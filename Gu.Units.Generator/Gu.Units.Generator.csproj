@@ -142,6 +142,24 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Templates\UnitTypeConverter.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UnitTypeConverter.txt</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Templates\UnitTypeConverterGenerator.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitTypeConverterGenerator.tt</DependentUpon>
+    </Resource>
+    <Resource Include="Templates\UnitTypeConverter.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitTypeConverter.tt</DependentUpon>
+    </Resource>
+    <EmbeddedResource Include="Templates\UnitTypeConverterGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UnitTypeConverterGenerator.txt</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -153,40 +171,40 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <Content Include="Templates\Enumerable.tt">
+    <EmbeddedResource Include="Templates\Enumerable.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Enumerable.txt</LastGenOutput>
-    </Content>
-    <Content Include="Templates\EnumerableGenerator.tt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\EnumerableGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableGenerator.txt</LastGenOutput>
-    </Content>
-    <Content Include="Templates\TypeConverterGenerator.tt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\QuantityTypeConverterGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TypeConverterGenerator.txt</LastGenOutput>
-    </Content>
-    <Resource Include="Templates\TypeConverterGenerator.txt">
+      <LastGenOutput>QuantityTypeConverterGenerator.txt</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Templates\QuantityTypeConverterGenerator.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TypeConverterGenerator.tt</DependentUpon>
+      <DependentUpon>QuantityTypeConverterGenerator.tt</DependentUpon>
     </Resource>
-    <Content Include="Templates\UnitGenerator.tt">
+    <EmbeddedResource Include="Templates\UnitGenerator.tt">
       <SubType>Code</SubType>
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UnitGenerator.txt</LastGenOutput>
-    </Content>
-    <Content Include="Templates\Quantity.tt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\Quantity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Quantity.txt</LastGenOutput>
-    </Content>
-    <Content Include="Templates\QuantityGenerator.tt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\QuantityGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>QuantityGenerator.txt</LastGenOutput>
-    </Content>
-    <Content Include="Templates\Unit.tt">
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\Unit.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Unit.txt</LastGenOutput>
-    </Content>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -207,14 +225,14 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Templates\TypeConverter.tt">
+    <EmbeddedResource Include="Templates\QuantityTypeConverter.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TypeConverter.txt</LastGenOutput>
-    </Content>
-    <Resource Include="Templates\TypeConverter.txt">
+      <LastGenOutput>QuantityTypeConverter.txt</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Templates\QuantityTypeConverter.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TypeConverter.tt</DependentUpon>
+      <DependentUpon>QuantityTypeConverter.tt</DependentUpon>
     </Resource>
     <Resource Include="Templates\Unit.txt">
       <AutoGen>True</AutoGen>
