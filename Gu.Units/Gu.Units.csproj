@@ -121,6 +121,7 @@
     <Compile Include="Stiffness.generated.cs">
       <DependentUpon>QuantityGenerator.txt4</DependentUpon>
     </Compile>
+    <Compile Include="Time.cs" />
     <Compile Include="Unitless.cs" />
     <Compile Include="Current.generated.cs">
       <DependentUpon>QuantityGenerator.txt4</DependentUpon>
