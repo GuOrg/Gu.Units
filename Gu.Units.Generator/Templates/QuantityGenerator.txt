@@ -1,1 +1,100 @@
-﻿ErrorGeneratingOutput
+﻿
+Read Settings and found 32 units
+//-> Acceleration.generated.cs
+
+//-> Angle.generated.cs
+
+//-> AngularAcceleration.generated.cs
+
+//-> AngularJerk.generated.cs
+
+//-> AngularSpeed.generated.cs
+
+//-> Area.generated.cs
+
+//-> Capacitance.generated.cs
+
+//-> Current.generated.cs
+
+//-> Density.generated.cs
+
+//-> ElectricCharge.generated.cs
+
+//-> Energy.generated.cs
+
+//-> Flexibility.generated.cs
+
+//-> Force.generated.cs
+
+//-> Frequency.generated.cs
+
+//-> Inductance.generated.cs
+
+//-> Jerk.generated.cs
+
+//-> Length.generated.cs
+
+//-> LuminousIntensity.generated.cs
+
+//-> Mass.generated.cs
+
+//-> Power.generated.cs
+
+//-> Pressure.generated.cs
+
+//-> Resistance.generated.cs
+
+//-> SpecificEnergy.generated.cs
+
+//-> Speed.generated.cs
+
+//-> Stiffness.generated.cs
+
+//-> Temperature.generated.cs
+
+//-> Time.generated.cs
+
+//-> Torque.generated.cs
+
+//-> Unitless.generated.cs
+
+//-> Voltage.generated.cs
+
+//-> Volume.generated.cs
+
+//-> VolumetricFlow.generated.cs
+// Generated helper templates
+// Gu.Units\Gu.Units\QuantityGenerator.txt4
+// Generated items
+// Gu.Units\Gu.Units\Jerk.generated.cs
+// Gu.Units\Gu.Units\AngularJerk.generated.cs
+// Gu.Units\Gu.Units\AngularAcceleration.generated.cs
+// Gu.Units\Gu.Units\Flexibility.generated.cs
+// Gu.Units\Gu.Units\Capacitance.generated.cs
+// Gu.Units\Gu.Units\Inductance.generated.cs
+// Gu.Units\Gu.Units\ElectricCharge.generated.cs
+// Gu.Units\Gu.Units\SpecificEnergy.generated.cs
+// Gu.Units\Gu.Units\Resistance.generated.cs
+// Gu.Units\Gu.Units\Voltage.generated.cs
+// Gu.Units\Gu.Units\VolumetricFlow.generated.cs
+// Gu.Units\Gu.Units\Stiffness.generated.cs
+// Gu.Units\Gu.Units\Torque.generated.cs
+// Gu.Units\Gu.Units\Acceleration.generated.cs
+// Gu.Units\Gu.Units\Frequency.generated.cs
+// Gu.Units\Gu.Units\AngularSpeed.generated.cs
+// Gu.Units\Gu.Units\Speed.generated.cs
+// Gu.Units\Gu.Units\Power.generated.cs
+// Gu.Units\Gu.Units\Energy.generated.cs
+// Gu.Units\Gu.Units\Density.generated.cs
+// Gu.Units\Gu.Units\Pressure.generated.cs
+// Gu.Units\Gu.Units\Force.generated.cs
+// Gu.Units\Gu.Units\Volume.generated.cs
+// Gu.Units\Gu.Units\Area.generated.cs
+// Gu.Units\Gu.Units\LuminousIntensity.generated.cs
+// Gu.Units\Gu.Units\Current.generated.cs
+// Gu.Units\Gu.Units\Unitless.generated.cs
+// Gu.Units\Gu.Units\Angle.generated.cs
+// Gu.Units\Gu.Units\Temperature.generated.cs
+// Gu.Units\Gu.Units\Time.generated.cs
+// Gu.Units\Gu.Units\Length.generated.cs
+// Gu.Units\Gu.Units\Mass.generated.cs

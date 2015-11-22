@@ -1,28 +1,4 @@
-﻿<#@ template debug="true" hostspecific="false" language="C#" #>
-<#@ import namespace="System.Globalization" #>
-<#@ import namespace="System.Collections" #>
-<#@ import namespace="System.Collections.Generic" #>
-<#@ assembly name="$(TargetPath)" #>
-<#@ import namespace="Gu.Units.Generator" #>
-<#@ parameter name="QuantityMetaData" type="Gu.Units.Generator.Quantity" #>
-<#@ output extension=".txt" #>
-<#
-// Template used by TypeConverterGenerator.tt
-Quantity quantity = null;
-if(QuantityMetaData != null)
-{
-    quantity = QuantityMetaData;
-}
-else
-{
-    var unit = new SiUnit("Metres", "m")
-                    {
-                        QuantityName = "Length"
-                    };
-    quantity = unit.Quantity;
-}
-#>
-namespace <#= Settings.Namespace #>
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -31,15 +7,15 @@ namespace <#= Settings.Namespace #>
     using System.Reflection;
 
     /// <devdoc>
-    /// <para>Provides a type converter to convert <see cref='<#= Settings.Namespace #>.<#= quantity.ClassName #>'/>
+    /// <para>Provides a type converter to convert <see cref='Gu.Units.AngularSpeedUnit'/>
     /// objects to and from various
     /// other representations.</para>
     /// </devdoc>
-    public class <#= quantity.ClassName #>TypeConverter : TypeConverter
+    public class AngularSpeedUnitTypeConverter : TypeConverter
     {
         /// <devdoc>
         ///    <para>Gets a value indicating whether this converter can
-        ///       convert an object in the given source type to a <see cref='<#= Settings.Namespace #>.<#= quantity.ClassName #>'/> object using the
+        ///       convert an object in the given source type to a <see cref='Gu.Units.AngularSpeedUnit'/> object using the
         ///       specified context.</para>
         /// </devdoc>
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
@@ -67,7 +43,7 @@ namespace <#= Settings.Namespace #>
         }
 
         /// <devdoc>
-        /// <para>Converts the given object to a <see cref='<#= Settings.Namespace #>.<#= quantity.ClassName #>'/>
+        /// <para>Converts the given object to a <see cref='Gu.Units.AngularSpeedUnit'/>
         /// object.</para>
         /// </devdoc>
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
@@ -76,7 +52,7 @@ namespace <#= Settings.Namespace #>
             if (text != null)
             {
                 text = text.Trim();
-                return <#= quantity.ClassName #>.Parse(text, culture);
+                return AngularSpeedUnit.Parse(text);
             }
 
             return base.ConvertFrom(context, culture, value);
@@ -96,12 +72,13 @@ namespace <#= Settings.Namespace #>
                 throw new ArgumentNullException(nameof(destinationType));
             }
 
-            if (destinationType == typeof(InstanceDescriptor) && value is <#= quantity.ClassName #>)
+            if (destinationType == typeof(InstanceDescriptor) && value is AngularSpeedUnit)
             {
-                MethodInfo method = typeof(<#= quantity.ClassName #>).GetMethod(nameof(<#= quantity.ClassName #>.Parse), new Type[] { typeof(string) });
+                MethodInfo method = typeof(AngularSpeedUnit).GetMethod(nameof(AngularSpeedUnit.Parse), new Type[] { typeof(string) });
                 if (method != null)
                 {
-                    return new InstanceDescriptor(method, new object[] { value.ToString() });
+                    var args = new object[] { ((AngularSpeedUnit)value).Symbol };
+                    return new InstanceDescriptor(method, args);
                 }
             }
 
