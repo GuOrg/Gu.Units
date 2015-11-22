@@ -1,0 +1,5 @@
+﻿type project
+title Gu.Units
+tags unit units quantity quantities unitsofmeasure
+projectUrl https://github.com/JohanLarsson/Gu.Units
+licenseUrl http://opensource.org/licenses/MIT

@@ -1,7 +1,1 @@
-﻿
-Read Settings found 32 quantities
-//-> Enumerable.generated.cs
-// Generated helper templates
-// Gu.Units\Gu.Units\EnumerableGenerator.txt4
-// Generated items
-// Gu.Units\Gu.Units\Enumerable.generated.cs
+﻿ErrorGeneratingOutput
