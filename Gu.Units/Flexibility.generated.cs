@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Flexibility"/>.
+    /// A type for the quantity <see cref="Gu.Units.Flexibility"/>.
     /// </summary>
     [Serializable]
     public partial struct Flexibility : IComparable<Flexibility>, IEquatable<Flexibility>, IFormattable, IXmlSerializable, IQuantity<MassUnit, INeg1, TimeUnit, I2>, IQuantity<FlexibilityUnit>
@@ -165,6 +165,7 @@
             return new Flexibility(metresPerNewton);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Flexibility"/>.
         /// </summary>
@@ -173,6 +174,7 @@
         {
             return From(millimetresPerNewton, FlexibilityUnit.MillimetresPerNewton);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Flexibility"/>.
         /// </summary>
@@ -181,6 +183,7 @@
         {
             return From(millimetresPerKilonewton, FlexibilityUnit.MillimetresPerKilonewton);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Flexibility"/>.
         /// </summary>

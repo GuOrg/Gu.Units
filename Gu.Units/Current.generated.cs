@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Current"/>.
+    /// A type for the quantity <see cref="Gu.Units.Current"/>.
     /// </summary>
     [Serializable]
     public partial struct Current : IComparable<Current>, IEquatable<Current>, IFormattable, IXmlSerializable, IQuantity<CurrentUnit, I1>, IQuantity<CurrentUnit>
@@ -176,6 +176,7 @@
             return new Current(amperes);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Current"/>.
         /// </summary>
@@ -184,6 +185,7 @@
         {
             return From(milliamperes, CurrentUnit.Milliamperes);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Current"/>.
         /// </summary>
@@ -192,6 +194,7 @@
         {
             return From(kiloamperes, CurrentUnit.Kiloamperes);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Current"/>.
         /// </summary>
@@ -200,6 +203,7 @@
         {
             return From(megaamperes, CurrentUnit.Megaamperes);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Current"/>.
         /// </summary>

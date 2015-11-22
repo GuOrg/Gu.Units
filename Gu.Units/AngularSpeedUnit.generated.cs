@@ -4,7 +4,7 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="T:Gu.Units.AngularSpeedUnit"/>.
+    /// A type for the unit <see cref="Gu.Units.AngularSpeedUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{RadiansPerSecond.symbol}")]

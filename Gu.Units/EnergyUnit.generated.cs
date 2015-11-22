@@ -4,7 +4,7 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="T:Gu.Units.EnergyUnit"/>.
+    /// A type for the unit <see cref="Gu.Units.EnergyUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
     [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Joules.symbol}")]

@@ -164,31 +164,40 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Templates\Enumerable.tt">
+    <Content Include="Templates\Enumerable.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Enumerable.txt</LastGenOutput>
-    </None>
-    <None Include="Templates\EnumerableGenerator.tt">
+    </Content>
+    <Content Include="Templates\EnumerableGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableGenerator.txt</LastGenOutput>
-    </None>
-    <None Include="Templates\UnitGenerator.tt">
+    </Content>
+    <Content Include="Templates\TypeConverterGenerator.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TypeConverterGenerator.txt</LastGenOutput>
+    </Content>
+    <Resource Include="Templates\TypeConverterGenerator.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TypeConverterGenerator.tt</DependentUpon>
+    </Resource>
+    <Content Include="Templates\UnitGenerator.tt">
       <SubType>Code</SubType>
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UnitGenerator.txt</LastGenOutput>
-    </None>
-    <None Include="Templates\Quantity.tt">
+    </Content>
+    <Content Include="Templates\Quantity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Quantity.txt</LastGenOutput>
-    </None>
-    <None Include="Templates\QuantityGenerator.tt">
+    </Content>
+    <Content Include="Templates\QuantityGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>QuantityGenerator.txt</LastGenOutput>
-    </None>
-    <None Include="Templates\Unit.tt">
+    </Content>
+    <Content Include="Templates\Unit.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Unit.txt</LastGenOutput>
-    </None>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -209,6 +218,15 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Templates\TypeConverter.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>TypeConverter.txt</LastGenOutput>
+    </Content>
+    <Resource Include="Templates\TypeConverter.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TypeConverter.tt</DependentUpon>
+    </Resource>
     <Resource Include="Templates\Unit.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -249,6 +267,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sandbox\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

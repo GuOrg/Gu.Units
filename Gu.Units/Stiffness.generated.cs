@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Stiffness"/>.
+    /// A type for the quantity <see cref="Gu.Units.Stiffness"/>.
     /// </summary>
     [Serializable]
     public partial struct Stiffness : IComparable<Stiffness>, IEquatable<Stiffness>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, TimeUnit, INeg2>, IQuantity<StiffnessUnit>

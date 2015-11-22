@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Resistance"/>.
+    /// A type for the quantity <see cref="Gu.Units.Resistance"/>.
     /// </summary>
     [Serializable]
     public partial struct Resistance : IComparable<Resistance>, IEquatable<Resistance>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3, CurrentUnit, INeg2>, IQuantity<ResistanceUnit>
@@ -176,6 +176,7 @@
             return new Resistance(ohm);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Resistance"/>.
         /// </summary>
@@ -184,6 +185,7 @@
         {
             return From(microohm, ResistanceUnit.Microohm);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Resistance"/>.
         /// </summary>
@@ -192,6 +194,7 @@
         {
             return From(milliohm, ResistanceUnit.Milliohm);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Resistance"/>.
         /// </summary>
@@ -200,6 +203,7 @@
         {
             return From(kiloohm, ResistanceUnit.Kiloohm);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Resistance"/>.
         /// </summary>

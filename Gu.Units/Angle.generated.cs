@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Angle"/>.
+    /// A type for the quantity <see cref="Gu.Units.Angle"/>.
     /// </summary>
     [Serializable]
     public partial struct Angle : IComparable<Angle>, IEquatable<Angle>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1>, IQuantity<AngleUnit>
@@ -142,6 +142,7 @@
         {
             return new Angle(radians);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Angle"/>.

@@ -13,7 +13,7 @@
     [TypeConverter(typeof(UnitPartsConverter))]
     public class UnitParts : ParentCollection<IUnit, UnitAndPower>, INotifyPropertyChanged
     {
-        private static BaseUnitOrderComparer _baseUnitOrderComparer = new BaseUnitOrderComparer();
+        private static readonly BaseUnitOrderComparer _baseUnitOrderComparer = new BaseUnitOrderComparer();
         public UnitParts(IUnit baseUnit, IEnumerable<UnitAndPower> parts)
             : base(baseUnit, (up, u) => up.Parent = u, parts)
         {

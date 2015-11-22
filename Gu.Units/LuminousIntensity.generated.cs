@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.LuminousIntensity"/>.
+    /// A type for the quantity <see cref="Gu.Units.LuminousIntensity"/>.
     /// </summary>
     [Serializable]
     public partial struct LuminousIntensity : IComparable<LuminousIntensity>, IEquatable<LuminousIntensity>, IFormattable, IXmlSerializable, IQuantity<LuminousIntensityUnit, I1>, IQuantity<LuminousIntensityUnit>

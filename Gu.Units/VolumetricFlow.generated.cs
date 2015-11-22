@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.VolumetricFlow"/>.
+    /// A type for the quantity <see cref="Gu.Units.VolumetricFlow"/>.
     /// </summary>
     [Serializable]
     public partial struct VolumetricFlow : IComparable<VolumetricFlow>, IEquatable<VolumetricFlow>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I3, TimeUnit, INeg1>, IQuantity<VolumetricFlowUnit>

@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Density"/>.
+    /// A type for the quantity <see cref="Gu.Units.Density"/>.
     /// </summary>
     [Serializable]
     public partial struct Density : IComparable<Density>, IEquatable<Density>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, INeg3>, IQuantity<DensityUnit>
@@ -154,6 +154,7 @@
             return new Density(kilogramsPerCubicMetre);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Density"/>.
         /// </summary>
@@ -162,6 +163,7 @@
         {
             return From(gramsPerCubicMillimetre, DensityUnit.GramsPerCubicMillimetre);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Density"/>.
         /// </summary>

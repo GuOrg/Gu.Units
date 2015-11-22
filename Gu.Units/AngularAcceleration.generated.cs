@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.AngularAcceleration"/>.
+    /// A type for the quantity <see cref="Gu.Units.AngularAcceleration"/>.
     /// </summary>
     [Serializable]
     public partial struct AngularAcceleration : IComparable<AngularAcceleration>, IEquatable<AngularAcceleration>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1, TimeUnit, INeg2>, IQuantity<AngularAccelerationUnit>
@@ -187,6 +187,7 @@
             return new AngularAcceleration(radiansPerSecondSquared);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularAcceleration"/>.
         /// </summary>
@@ -195,6 +196,7 @@
         {
             return From(degreesPerSquareSecond, AngularAccelerationUnit.DegreesPerSquareSecond);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularAcceleration"/>.
         /// </summary>
@@ -203,6 +205,7 @@
         {
             return From(radiansPerSquareHour, AngularAccelerationUnit.RadiansPerSquareHour);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularAcceleration"/>.
         /// </summary>
@@ -211,6 +214,7 @@
         {
             return From(degreesPerSquareHour, AngularAccelerationUnit.DegreesPerSquareHour);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularAcceleration"/>.
         /// </summary>
@@ -219,6 +223,7 @@
         {
             return From(degreesPerSquareMinute, AngularAccelerationUnit.DegreesPerSquareMinute);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularAcceleration"/>.
         /// </summary>

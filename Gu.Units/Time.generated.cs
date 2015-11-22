@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Time"/>.
+    /// A type for the quantity <see cref="Gu.Units.Time"/>.
     /// </summary>
     [Serializable]
     public partial struct Time : IComparable<Time>, IEquatable<Time>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, I1>, IQuantity<TimeUnit>
@@ -187,6 +187,7 @@
             return new Time(seconds);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -195,6 +196,7 @@
         {
             return From(nanoseconds, TimeUnit.Nanoseconds);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -203,6 +205,7 @@
         {
             return From(microseconds, TimeUnit.Microseconds);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -211,6 +214,7 @@
         {
             return From(milliseconds, TimeUnit.Milliseconds);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>
@@ -219,6 +223,7 @@
         {
             return From(hours, TimeUnit.Hours);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Time"/>.
         /// </summary>

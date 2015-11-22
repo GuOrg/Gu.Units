@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Energy"/>.
+    /// A type for the quantity <see cref="Gu.Units.Energy"/>.
     /// </summary>
     [Serializable]
     public partial struct Energy : IComparable<Energy>, IEquatable<Energy>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg2>, IQuantity<EnergyUnit>
@@ -209,6 +209,7 @@
             return new Energy(joules);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -217,6 +218,7 @@
         {
             return From(nanojoules, EnergyUnit.Nanojoules);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -225,6 +227,7 @@
         {
             return From(microjoules, EnergyUnit.Microjoules);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -233,6 +236,7 @@
         {
             return From(millijoules, EnergyUnit.Millijoules);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -241,6 +245,7 @@
         {
             return From(kilojoules, EnergyUnit.Kilojoules);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -249,6 +254,7 @@
         {
             return From(megajoules, EnergyUnit.Megajoules);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
@@ -257,6 +263,7 @@
         {
             return From(gigajoules, EnergyUnit.Gigajoules);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Energy"/>.
         /// </summary>
