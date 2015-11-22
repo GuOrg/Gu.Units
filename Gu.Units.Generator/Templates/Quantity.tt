@@ -30,7 +30,7 @@ namespace <#= Settings.Namespace #>
     using System.Xml.Serialization;
 
 	/// <summary>
-    /// A type for the quantity <see cref="T:<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.
+    /// A type for the quantity <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.
     /// </summary>
     [Serializable]
 	public partial struct <#= quantity.ClassName #> : IComparable<<#= quantity.ClassName #>>, IEquatable<<#= quantity.ClassName #>>, IFormattable, IXmlSerializable, <#= quantity.Interface #>, IQuantity<<#= quantity.ClassName #>Unit>

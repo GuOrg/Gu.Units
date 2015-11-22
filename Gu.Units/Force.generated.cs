@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Force"/>.
+    /// A type for the quantity <see cref="Gu.Units.Force"/>.
     /// </summary>
     [Serializable]
     public partial struct Force : IComparable<Force>, IEquatable<Force>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I1, TimeUnit, INeg2>, IQuantity<ForceUnit>
@@ -198,6 +198,7 @@
             return new Force(newtons);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
@@ -206,6 +207,7 @@
         {
             return From(nanonewtons, ForceUnit.Nanonewtons);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
@@ -214,6 +216,7 @@
         {
             return From(micronewtons, ForceUnit.Micronewtons);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
@@ -222,6 +225,7 @@
         {
             return From(millinewtons, ForceUnit.Millinewtons);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
@@ -230,6 +234,7 @@
         {
             return From(kilonewtons, ForceUnit.Kilonewtons);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>
@@ -238,6 +243,7 @@
         {
             return From(meganewtons, ForceUnit.Meganewtons);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Force"/>.
         /// </summary>

@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Capacitance"/>.
+    /// A type for the quantity <see cref="Gu.Units.Capacitance"/>.
     /// </summary>
     [Serializable]
     public partial struct Capacitance : IComparable<Capacitance>, IEquatable<Capacitance>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, I4, CurrentUnit, I2, MassUnit, INeg1, LengthUnit, INeg2>, IQuantity<CapacitanceUnit>

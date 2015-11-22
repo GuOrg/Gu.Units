@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Temperature"/>.
+    /// A type for the quantity <see cref="Gu.Units.Temperature"/>.
     /// </summary>
     [Serializable]
     public partial struct Temperature : IComparable<Temperature>, IEquatable<Temperature>, IFormattable, IXmlSerializable, IQuantity<TemperatureUnit, I1>, IQuantity<TemperatureUnit>
@@ -154,6 +154,7 @@
             return new Temperature(kelvin);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Temperature"/>.
         /// </summary>
@@ -162,6 +163,7 @@
         {
             return From(celsius, TemperatureUnit.Celsius);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Temperature"/>.
         /// </summary>

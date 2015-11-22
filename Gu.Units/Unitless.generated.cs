@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Unitless"/>.
+    /// A type for the quantity <see cref="Gu.Units.Unitless"/>.
     /// </summary>
     [Serializable]
     public partial struct Unitless : IComparable<Unitless>, IEquatable<Unitless>, IFormattable, IXmlSerializable, IQuantity<UnitlessUnit, I1>, IQuantity<UnitlessUnit>
@@ -165,6 +165,7 @@
             return new Unitless(scalar);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Unitless"/>.
         /// </summary>
@@ -173,6 +174,7 @@
         {
             return From(partsPerMillion, UnitlessUnit.PartsPerMillion);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Unitless"/>.
         /// </summary>
@@ -181,6 +183,7 @@
         {
             return From(promilles, UnitlessUnit.Promilles);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Unitless"/>.
         /// </summary>

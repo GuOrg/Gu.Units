@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Pressure"/>.
+    /// A type for the quantity <see cref="Gu.Units.Pressure"/>.
     /// </summary>
     [Serializable]
     public partial struct Pressure : IComparable<Pressure>, IEquatable<Pressure>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, INeg1, TimeUnit, INeg2>, IQuantity<PressureUnit>
@@ -220,6 +220,7 @@
             return new Pressure(pascals);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -228,6 +229,7 @@
         {
             return From(nanopascals, PressureUnit.Nanopascals);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -236,6 +238,7 @@
         {
             return From(micropascals, PressureUnit.Micropascals);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -244,6 +247,7 @@
         {
             return From(millipascals, PressureUnit.Millipascals);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -252,6 +256,7 @@
         {
             return From(kilopascals, PressureUnit.Kilopascals);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -260,6 +265,7 @@
         {
             return From(megapascals, PressureUnit.Megapascals);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -268,6 +274,7 @@
         {
             return From(gigapascals, PressureUnit.Gigapascals);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>
@@ -276,6 +283,7 @@
         {
             return From(bars, PressureUnit.Bars);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
         /// </summary>

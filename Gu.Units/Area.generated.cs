@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Area"/>.
+    /// A type for the quantity <see cref="Gu.Units.Area"/>.
     /// </summary>
     [Serializable]
     public partial struct Area : IComparable<Area>, IEquatable<Area>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I2>, IQuantity<AreaUnit>
@@ -220,6 +220,7 @@
             return new Area(squareMetres);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -228,6 +229,7 @@
         {
             return From(squareMillimetres, AreaUnit.SquareMillimetres);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -236,6 +238,7 @@
         {
             return From(squareCentimetres, AreaUnit.SquareCentimetres);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -244,6 +247,7 @@
         {
             return From(squareDecimetres, AreaUnit.SquareDecimetres);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -252,6 +256,7 @@
         {
             return From(squareKilometres, AreaUnit.SquareKilometres);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -260,6 +265,7 @@
         {
             return From(squareInches, AreaUnit.SquareInches);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -268,6 +274,7 @@
         {
             return From(hectare, AreaUnit.Hectare);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>
@@ -276,6 +283,7 @@
         {
             return From(squareMile, AreaUnit.SquareMile);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Area"/>.
         /// </summary>

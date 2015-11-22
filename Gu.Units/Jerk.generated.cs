@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Jerk"/>.
+    /// A type for the quantity <see cref="Gu.Units.Jerk"/>.
     /// </summary>
     [Serializable]
     public partial struct Jerk : IComparable<Jerk>, IEquatable<Jerk>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1, TimeUnit, INeg3>, IQuantity<JerkUnit>
@@ -242,6 +242,7 @@
             return new Jerk(metresPerSecondCubed);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Jerk"/>.
         /// </summary>
@@ -250,6 +251,7 @@
         {
             return From(millimetresPerSecondCubed, JerkUnit.MillimetresPerSecondCubed);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Jerk"/>.
         /// </summary>
@@ -258,6 +260,7 @@
         {
             return From(millimetresPerHourCubed, JerkUnit.MillimetresPerHourCubed);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Jerk"/>.
         /// </summary>
@@ -266,6 +269,7 @@
         {
             return From(millimetresPerMinuteCubed, JerkUnit.MillimetresPerMinuteCubed);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Jerk"/>.
         /// </summary>
@@ -274,6 +278,7 @@
         {
             return From(metresPerHourCubed, JerkUnit.MetresPerHourCubed);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Jerk"/>.
         /// </summary>
@@ -282,6 +287,7 @@
         {
             return From(metresPerMinuteCubed, JerkUnit.MetresPerMinuteCubed);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Jerk"/>.
         /// </summary>
@@ -290,6 +296,7 @@
         {
             return From(nanometresPerHourCubed, JerkUnit.NanometresPerHourCubed);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Jerk"/>.
         /// </summary>
@@ -298,6 +305,7 @@
         {
             return From(nanometresPerMinuteCubed, JerkUnit.NanometresPerMinuteCubed);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Jerk"/>.
         /// </summary>
@@ -306,6 +314,7 @@
         {
             return From(centimetresPerSecondCubed, JerkUnit.CentimetresPerSecondCubed);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Jerk"/>.
         /// </summary>
@@ -314,6 +323,7 @@
         {
             return From(centimetresPerHourCubed, JerkUnit.CentimetresPerHourCubed);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Jerk"/>.
         /// </summary>

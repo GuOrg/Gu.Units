@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Power"/>.
+    /// A type for the quantity <see cref="Gu.Units.Power"/>.
     /// </summary>
     [Serializable]
     public partial struct Power : IComparable<Power>, IEquatable<Power>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3>, IQuantity<PowerUnit>
@@ -198,6 +198,7 @@
             return new Power(watts);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -206,6 +207,7 @@
         {
             return From(nanowatts, PowerUnit.Nanowatts);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -214,6 +216,7 @@
         {
             return From(microwatts, PowerUnit.Microwatts);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -222,6 +225,7 @@
         {
             return From(milliwatts, PowerUnit.Milliwatts);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -230,6 +234,7 @@
         {
             return From(kilowatts, PowerUnit.Kilowatts);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>
@@ -238,6 +243,7 @@
         {
             return From(megawatts, PowerUnit.Megawatts);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Power"/>.
         /// </summary>

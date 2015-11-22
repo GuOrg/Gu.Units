@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Mass"/>.
+    /// A type for the quantity <see cref="Gu.Units.Mass"/>.
     /// </summary>
     [Serializable]
     public partial struct Mass : IComparable<Mass>, IEquatable<Mass>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1>, IQuantity<MassUnit>
@@ -165,6 +165,7 @@
             return new Mass(kilograms);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
@@ -173,6 +174,7 @@
         {
             return From(grams, MassUnit.Grams);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>
@@ -181,6 +183,7 @@
         {
             return From(milligrams, MassUnit.Milligrams);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Mass"/>.
         /// </summary>

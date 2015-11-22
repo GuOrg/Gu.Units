@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Acceleration"/>.
+    /// A type for the quantity <see cref="Gu.Units.Acceleration"/>.
     /// </summary>
     [Serializable]
     public partial struct Acceleration : IComparable<Acceleration>, IEquatable<Acceleration>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1, TimeUnit, INeg2>, IQuantity<AccelerationUnit>
@@ -154,6 +154,7 @@
             return new Acceleration(metresPerSecondSquared);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Acceleration"/>.
         /// </summary>
@@ -162,6 +163,7 @@
         {
             return From(millimetresPerSecondSquared, AccelerationUnit.MillimetresPerSecondSquared);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Acceleration"/>.
         /// </summary>

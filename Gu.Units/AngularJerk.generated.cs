@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.AngularJerk"/>.
+    /// A type for the quantity <see cref="Gu.Units.AngularJerk"/>.
     /// </summary>
     [Serializable]
     public partial struct AngularJerk : IComparable<AngularJerk>, IEquatable<AngularJerk>, IFormattable, IXmlSerializable, IQuantity<AngleUnit, I1, TimeUnit, INeg3>, IQuantity<AngularJerkUnit>
@@ -187,6 +187,7 @@
             return new AngularJerk(radiansPerSecondCubed);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularJerk"/>.
         /// </summary>
@@ -195,6 +196,7 @@
         {
             return From(degreesPerSecondCubed, AngularJerkUnit.DegreesPerSecondCubed);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularJerk"/>.
         /// </summary>
@@ -203,6 +205,7 @@
         {
             return From(radiansPerHourCubed, AngularJerkUnit.RadiansPerHourCubed);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularJerk"/>.
         /// </summary>
@@ -211,6 +214,7 @@
         {
             return From(degreesPerHourCubed, AngularJerkUnit.DegreesPerHourCubed);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularJerk"/>.
         /// </summary>
@@ -219,6 +223,7 @@
         {
             return From(radiansPerMinuteCubed, AngularJerkUnit.RadiansPerMinuteCubed);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.AngularJerk"/>.
         /// </summary>

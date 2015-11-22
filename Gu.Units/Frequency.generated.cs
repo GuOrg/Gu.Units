@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Frequency"/>.
+    /// A type for the quantity <see cref="Gu.Units.Frequency"/>.
     /// </summary>
     [Serializable]
     public partial struct Frequency : IComparable<Frequency>, IEquatable<Frequency>, IFormattable, IXmlSerializable, IQuantity<TimeUnit, INeg1>, IQuantity<FrequencyUnit>
@@ -176,6 +176,7 @@
             return new Frequency(hertz);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
@@ -184,6 +185,7 @@
         {
             return From(millihertz, FrequencyUnit.Millihertz);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
@@ -192,6 +194,7 @@
         {
             return From(kilohertz, FrequencyUnit.Kilohertz);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>
@@ -200,6 +203,7 @@
         {
             return From(megahertz, FrequencyUnit.Megahertz);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Frequency"/>.
         /// </summary>

@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Volume"/>.
+    /// A type for the quantity <see cref="Gu.Units.Volume"/>.
     /// </summary>
     [Serializable]
     public partial struct Volume : IComparable<Volume>, IEquatable<Volume>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I3>, IQuantity<VolumeUnit>
@@ -176,6 +176,7 @@
             return new Volume(cubicMetres);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
@@ -184,6 +185,7 @@
         {
             return From(litres, VolumeUnit.Litres);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
@@ -192,6 +194,7 @@
         {
             return From(cubicCentimetres, VolumeUnit.CubicCentimetres);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>
@@ -200,6 +203,7 @@
         {
             return From(cubicMillimetres, VolumeUnit.CubicMillimetres);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
         /// </summary>

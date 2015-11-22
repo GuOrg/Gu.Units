@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Voltage"/>.
+    /// A type for the quantity <see cref="Gu.Units.Voltage"/>.
     /// </summary>
     [Serializable]
     public partial struct Voltage : IComparable<Voltage>, IEquatable<Voltage>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg3, CurrentUnit, INeg1>, IQuantity<VoltageUnit>
@@ -176,6 +176,7 @@
             return new Voltage(volts);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Voltage"/>.
         /// </summary>
@@ -184,6 +185,7 @@
         {
             return From(millivolts, VoltageUnit.Millivolts);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Voltage"/>.
         /// </summary>
@@ -192,6 +194,7 @@
         {
             return From(kilovolts, VoltageUnit.Kilovolts);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Voltage"/>.
         /// </summary>
@@ -200,6 +203,7 @@
         {
             return From(megavolts, VoltageUnit.Megavolts);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Voltage"/>.
         /// </summary>

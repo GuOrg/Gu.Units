@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Length"/>.
+    /// A type for the quantity <see cref="Gu.Units.Length"/>.
     /// </summary>
     [Serializable]
     public partial struct Length : IComparable<Length>, IEquatable<Length>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I1>, IQuantity<LengthUnit>
@@ -242,6 +242,7 @@
             return new Length(metres);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
@@ -250,6 +251,7 @@
         {
             return From(nanometres, LengthUnit.Nanometres);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
@@ -258,6 +260,7 @@
         {
             return From(micrometres, LengthUnit.Micrometres);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
@@ -266,6 +269,7 @@
         {
             return From(millimetres, LengthUnit.Millimetres);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
@@ -274,6 +278,7 @@
         {
             return From(centimetres, LengthUnit.Centimetres);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
@@ -282,6 +287,7 @@
         {
             return From(decimetres, LengthUnit.Decimetres);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
@@ -290,6 +296,7 @@
         {
             return From(kilometres, LengthUnit.Kilometres);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
@@ -298,6 +305,7 @@
         {
             return From(inches, LengthUnit.Inches);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
@@ -306,6 +314,7 @@
         {
             return From(mile, LengthUnit.Mile);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>
@@ -314,6 +323,7 @@
         {
             return From(yard, LengthUnit.Yard);
         }
+
         /// <summary>
         /// Creates a new instance of <see cref="T:Gu.Units.Length"/>.
         /// </summary>

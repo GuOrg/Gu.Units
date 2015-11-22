@@ -7,7 +7,7 @@
     using System.Xml.Serialization;
 
     /// <summary>
-    /// A type for the quantity <see cref="T:Gu.Units.Inductance"/>.
+    /// A type for the quantity <see cref="Gu.Units.Inductance"/>.
     /// </summary>
     [Serializable]
     public partial struct Inductance : IComparable<Inductance>, IEquatable<Inductance>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, I2, TimeUnit, INeg2, CurrentUnit, INeg2>, IQuantity<InductanceUnit>
