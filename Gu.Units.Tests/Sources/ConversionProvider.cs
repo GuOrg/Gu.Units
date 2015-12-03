@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Globalization;
     using System.Threading;
+    using Internals.Parsing;
 
     public class ConversionProvider : List<ConversionProvider.IConversion<IQuantity>>
     {
@@ -54,12 +55,14 @@
 
             public Conversion(string from, string to, Func<string, T> parser)
             {
-                Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
-                this._parser = parser;
-                this.From = @from;
-                FromQuantity = Parse(from);
-                this.To = to;
-                ToQuantity = Parse(to);
+                using (Thread.CurrentThread.UsingTempCulture(CultureInfo.InvariantCulture))
+                {
+                    this._parser = parser;
+                    this.From = @from;
+                    FromQuantity = Parse(from);
+                    this.To = to;
+                    ToQuantity = Parse(to);
+                }
             }
 
             public T Parse(string s)

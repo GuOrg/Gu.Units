@@ -549,6 +549,57 @@
             return Jerk.FromMetresPerSecondCubed(sum);
         }
 
+        public static LengthPerUnitless Sum(this IEnumerable<LengthPerUnitless> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.metresPerUnitless;
+                }
+            }
+            return LengthPerUnitless.FromMetresPerUnitless(sum);
+        }
+
+        public static AnglePerUnitless Sum(this IEnumerable<AnglePerUnitless> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.radiansPerUnitless;
+                }
+            }
+            return AnglePerUnitless.FromRadiansPerUnitless(sum);
+        }
+
+        public static ForcePerUnitless Sum(this IEnumerable<ForcePerUnitless> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.newtonsPerUnitless;
+                }
+            }
+            return ForcePerUnitless.FromNewtonsPerUnitless(sum);
+        }
+
         public static Mass? Sum(this IEnumerable<Mass?> source)
         {
             if (source == null)
@@ -1187,6 +1238,66 @@
                 }
             }
             return Jerk.FromMetresPerSecondCubed(sum);
+        }
+
+        public static LengthPerUnitless? Sum(this IEnumerable<LengthPerUnitless?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.metresPerUnitless;
+                    }
+                }
+            }
+            return LengthPerUnitless.FromMetresPerUnitless(sum);
+        }
+
+        public static AnglePerUnitless? Sum(this IEnumerable<AnglePerUnitless?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.radiansPerUnitless;
+                    }
+                }
+            }
+            return AnglePerUnitless.FromRadiansPerUnitless(sum);
+        }
+
+        public static ForcePerUnitless? Sum(this IEnumerable<ForcePerUnitless?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.newtonsPerUnitless;
+                    }
+                }
+            }
+            return ForcePerUnitless.FromNewtonsPerUnitless(sum);
         }
 
         public static Mass Min(this IEnumerable<Mass> source)
@@ -2181,6 +2292,99 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        public static LengthPerUnitless Min(this IEnumerable<LengthPerUnitless> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(LengthPerUnitless);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.metresPerUnitless))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.metresPerUnitless < value.metresPerUnitless)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static AnglePerUnitless Min(this IEnumerable<AnglePerUnitless> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(AnglePerUnitless);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.radiansPerUnitless))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.radiansPerUnitless < value.radiansPerUnitless)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static ForcePerUnitless Min(this IEnumerable<ForcePerUnitless> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(ForcePerUnitless);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.newtonsPerUnitless))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.newtonsPerUnitless < value.newtonsPerUnitless)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
         public static Mass? Min(this IEnumerable<Mass?> source)
         {
             if (source == null)
@@ -2974,6 +3178,81 @@
                     return x;
                 }
                 if (value == null || x.Value.metresPerSecondCubed < value.Value.metresPerSecondCubed)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static LengthPerUnitless? Min(this IEnumerable<LengthPerUnitless?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            LengthPerUnitless? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.metresPerUnitless))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.metresPerUnitless < value.Value.metresPerUnitless)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static AnglePerUnitless? Min(this IEnumerable<AnglePerUnitless?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            AnglePerUnitless? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.radiansPerUnitless))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.radiansPerUnitless < value.Value.radiansPerUnitless)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static ForcePerUnitless? Min(this IEnumerable<ForcePerUnitless?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            ForcePerUnitless? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.newtonsPerUnitless))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.newtonsPerUnitless < value.Value.newtonsPerUnitless)
                 {
                     value = x;
                 }
@@ -3973,6 +4252,99 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        public static LengthPerUnitless Max(this IEnumerable<LengthPerUnitless> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            LengthPerUnitless value = default(LengthPerUnitless);
+            bool hasValue = false;
+            foreach (LengthPerUnitless x in source)
+            {
+                if (System.Double.IsNaN(x.metresPerUnitless))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.metresPerUnitless > value.metresPerUnitless)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static AnglePerUnitless Max(this IEnumerable<AnglePerUnitless> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            AnglePerUnitless value = default(AnglePerUnitless);
+            bool hasValue = false;
+            foreach (AnglePerUnitless x in source)
+            {
+                if (System.Double.IsNaN(x.radiansPerUnitless))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.radiansPerUnitless > value.radiansPerUnitless)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static ForcePerUnitless Max(this IEnumerable<ForcePerUnitless> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            ForcePerUnitless value = default(ForcePerUnitless);
+            bool hasValue = false;
+            foreach (ForcePerUnitless x in source)
+            {
+                if (System.Double.IsNaN(x.newtonsPerUnitless))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.newtonsPerUnitless > value.newtonsPerUnitless)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
         public static Mass? Max(this IEnumerable<Mass?> source)
         {
             if (source == null)
@@ -4773,6 +5145,81 @@
             return value;
         }
 
+        public static LengthPerUnitless? Max(this IEnumerable<LengthPerUnitless?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            LengthPerUnitless? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.metresPerUnitless))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.metresPerUnitless > value.Value.metresPerUnitless)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static AnglePerUnitless? Max(this IEnumerable<AnglePerUnitless?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            AnglePerUnitless? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.radiansPerUnitless))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.radiansPerUnitless > value.Value.radiansPerUnitless)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static ForcePerUnitless? Max(this IEnumerable<ForcePerUnitless?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            ForcePerUnitless? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.newtonsPerUnitless))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.newtonsPerUnitless > value.Value.newtonsPerUnitless)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
         public static Mass Average(this IEnumerable<Mass> source)
         {
             if (source == null)
@@ -5505,6 +5952,75 @@
             if (count > 0)
             {
                 return Jerk.FromMetresPerSecondCubed(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static LengthPerUnitless Average(this IEnumerable<LengthPerUnitless> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.metresPerUnitless;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return LengthPerUnitless.FromMetresPerUnitless(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static AnglePerUnitless Average(this IEnumerable<AnglePerUnitless> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.radiansPerUnitless;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return AnglePerUnitless.FromRadiansPerUnitless(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static ForcePerUnitless Average(this IEnumerable<ForcePerUnitless> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.newtonsPerUnitless;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return ForcePerUnitless.FromNewtonsPerUnitless(sum / count);
             }
             throw new ArgumentException("No elements", "source");
         }
@@ -6338,6 +6854,84 @@
             if (count > 0)
             {
                 return Jerk.FromMetresPerSecondCubed(sum / count);
+            }
+            return null;
+        }
+
+        public static LengthPerUnitless? Average(this IEnumerable<LengthPerUnitless?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.metresPerUnitless;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return LengthPerUnitless.FromMetresPerUnitless(sum / count);
+            }
+            return null;
+        }
+
+        public static AnglePerUnitless? Average(this IEnumerable<AnglePerUnitless?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.radiansPerUnitless;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return AnglePerUnitless.FromRadiansPerUnitless(sum / count);
+            }
+            return null;
+        }
+
+        public static ForcePerUnitless? Average(this IEnumerable<ForcePerUnitless?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.newtonsPerUnitless;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return ForcePerUnitless.FromNewtonsPerUnitless(sum / count);
             }
             return null;
         }

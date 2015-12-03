@@ -1,22 +1,24 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.LuminousIntensityUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Candelas.symbol}")]
+    [Serializable, TypeConverter(typeof(LuminousIntensityUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Candelas.symbol}")]
     public struct LuminousIntensityUnit : IUnit, IUnit<LuminousIntensity>, IEquatable<LuminousIntensityUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.Candelas"/> unit
+        /// The Candelas unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LuminousIntensityUnit Candelas = new LuminousIntensityUnit(1.0, "cd");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Candelas"/> unit
+        /// The Candelas unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LuminousIntensityUnit cd = Candelas;
@@ -31,7 +33,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.Candelas"/>.
+        /// The symbol for the <see cref="Gu.Units.LuminousIntensityUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -40,6 +42,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.LuminousIntensityUnit"/>
+        /// </summary>
+        public LuminousIntensityUnit SiUnit => LuminousIntensityUnit.Candelas;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.LuminousIntensityUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => LuminousIntensityUnit.Candelas;
 
         public static LuminousIntensity operator *(double left, LuminousIntensityUnit right)
         {
@@ -58,16 +70,16 @@
 
         public static LuminousIntensityUnit Parse(string text)
         {
-            return Parser.ParseUnit<LuminousIntensityUnit>(text);
+            return UnitParser<LuminousIntensityUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out LuminousIntensityUnit value)
         {
-            return Parser.TryParseUnit<LuminousIntensityUnit>(text, out value);
+            return UnitParser<LuminousIntensityUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Candelas"/>.
+        /// Converts <paramref name="value"/> to Candelas.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -90,14 +102,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new LuminousIntensity(value, this)</returns>
         public LuminousIntensity CreateQuantity(double value)
         {
             return new LuminousIntensity(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in Candelas
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

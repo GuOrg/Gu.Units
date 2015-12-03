@@ -1,5 +1,6 @@
-source https://www.nuget.org/api/v2/
+source http://www.nuget.org/api/v2/
 
 nuget Moq
-nuget NUnit
+nuget Newtonsoft.Json
+nuget NUnit ~> 2
 nuget T4.TemplateFileManager

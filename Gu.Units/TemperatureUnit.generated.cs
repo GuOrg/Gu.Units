@@ -1,34 +1,36 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.TemperatureUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Kelvin.symbol}")]
+    [Serializable, TypeConverter(typeof(TemperatureUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Kelvin.symbol}")]
     public struct TemperatureUnit : IUnit, IUnit<Temperature>, IEquatable<TemperatureUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.Kelvin"/> unit
+        /// The Kelvin unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TemperatureUnit Kelvin = new TemperatureUnit(1.0, 0, "K");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Kelvin"/> unit
+        /// The Kelvin unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly TemperatureUnit K = Kelvin;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Celsius"/> unit
+        /// The Celsius unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly TemperatureUnit Celsius = new TemperatureUnit(1, -273.15, "°C");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Fahrenheit"/> unit
+        /// The Fahrenheit unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly TemperatureUnit Fahrenheit = new TemperatureUnit(1.8, -459.67, "°F");
@@ -45,7 +47,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.Kelvin"/>.
+        /// The symbol for the <see cref="Gu.Units.TemperatureUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -54,6 +56,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.TemperatureUnit"/>
+        /// </summary>
+        public TemperatureUnit SiUnit => TemperatureUnit.Kelvin;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.TemperatureUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => TemperatureUnit.Kelvin;
 
         public static Temperature operator *(double left, TemperatureUnit right)
         {
@@ -72,16 +84,16 @@
 
         public static TemperatureUnit Parse(string text)
         {
-            return Parser.ParseUnit<TemperatureUnit>(text);
+            return UnitParser<TemperatureUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out TemperatureUnit value)
         {
-            return Parser.TryParseUnit<TemperatureUnit>(text, out value);
+            return UnitParser<TemperatureUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Kelvin"/>.
+        /// Converts <paramref name="value"/> to Kelvin.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -104,14 +116,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new Temperature(value, this)</returns>
         public Temperature CreateQuantity(double value)
         {
             return new Temperature(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in Kelvin
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

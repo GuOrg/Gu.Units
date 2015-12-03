@@ -1,22 +1,24 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.ElectricChargeUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Coulombs.symbol}")]
+    [Serializable, TypeConverter(typeof(ElectricChargeUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Coulombs.symbol}")]
     public struct ElectricChargeUnit : IUnit, IUnit<ElectricCharge>, IEquatable<ElectricChargeUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.Coulombs"/> unit
+        /// The Coulombs unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ElectricChargeUnit Coulombs = new ElectricChargeUnit(1.0, "C");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Coulombs"/> unit
+        /// The Coulombs unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly ElectricChargeUnit C = Coulombs;
@@ -31,7 +33,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.Coulombs"/>.
+        /// The symbol for the <see cref="Gu.Units.ElectricChargeUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -40,6 +42,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.ElectricChargeUnit"/>
+        /// </summary>
+        public ElectricChargeUnit SiUnit => ElectricChargeUnit.Coulombs;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.ElectricChargeUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => ElectricChargeUnit.Coulombs;
 
         public static ElectricCharge operator *(double left, ElectricChargeUnit right)
         {
@@ -58,16 +70,16 @@
 
         public static ElectricChargeUnit Parse(string text)
         {
-            return Parser.ParseUnit<ElectricChargeUnit>(text);
+            return UnitParser<ElectricChargeUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out ElectricChargeUnit value)
         {
-            return Parser.TryParseUnit<ElectricChargeUnit>(text, out value);
+            return UnitParser<ElectricChargeUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Coulombs"/>.
+        /// Converts <paramref name="value"/> to Coulombs.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -90,14 +102,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new ElectricCharge(value, this)</returns>
         public ElectricCharge CreateQuantity(double value)
         {
             return new ElectricCharge(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in Coulombs
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

@@ -4,18 +4,18 @@
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
-    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.Pressure"/>.
     /// </summary>
+    // [TypeConverter(typeof(PressureTypeConverter))]
     [Serializable]
-    public partial struct Pressure : IComparable<Pressure>, IEquatable<Pressure>, IFormattable, IXmlSerializable, IQuantity<MassUnit, I1, LengthUnit, INeg1, TimeUnit, INeg2>, IQuantity<PressureUnit>
+    public partial struct Pressure : IQuantity<PressureUnit>, IComparable<Pressure>, IEquatable<Pressure>
     {
         public static readonly Pressure Zero = new Pressure();
 
         /// <summary>
-        /// The quantity in <see cref="T:Gu.Units.Pascals"/>.
+        /// The quantity in <see cref="Gu.Units.PressureUnit.Pascals"/>.
         /// </summary>
         internal readonly double pascals;
 
@@ -25,17 +25,17 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="T:Gu.Units.Pressure"/>.
+        /// Initializes a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="unit"><see cref="T:Gu.Units.Pascals"/>.</param>
+        /// <param name="unit"><see cref="Gu.Units.PressureUnit"/>.</param>
         public Pressure(double value, PressureUnit unit)
         {
             this.pascals = unit.ToSiUnit(value);
         }
 
         /// <summary>
-        /// The quantity in Pascals
+        /// The quantity in <see cref="Gu.Units.PressureUnit.Pascals"/>
         /// </summary>
         public double SiValue
         {
@@ -44,6 +44,16 @@
                 return this.pascals;
             }
         }
+
+        /// <summary>
+        /// The <see cref="Gu.Units.PressureUnit"/> for the <see cref="SiValue"/>
+        /// </summary>
+        public PressureUnit SiUnit => PressureUnit.Pascals;
+
+        /// <summary>
+        /// The <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
+        /// </summary>
+        IUnit IQuantity.SiUnit => PressureUnit.Pascals;
 
         /// <summary>
         /// The quantity in pascals".
@@ -145,55 +155,88 @@
         }
 
         /// <summary>
-        /// Creates an instance of <see cref="T:Gu.Units.Pressure"/> from its string representation
+        /// The quantity in newtonsPerSquareMillimetre
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="T:Gu.Units.Pressure"/></param>
+        public double NewtonsPerSquareMillimetre
+        {
+            get
+            {
+                return PressureUnit.NewtonsPerSquareMillimetre.FromSiUnit(this.pascals);
+            }
+        }
+
+        /// <summary>
+        /// The quantity in kilonewtonsPerSquareMillimetre
+        /// </summary>
+        public double KilonewtonsPerSquareMillimetre
+        {
+            get
+            {
+                return PressureUnit.KilonewtonsPerSquareMillimetre.FromSiUnit(this.pascals);
+            }
+        }
+
+        /// <summary>
+        /// The quantity in newtonsPerSquareMetre
+        /// </summary>
+        public double NewtonsPerSquareMetre
+        {
+            get
+            {
+                return PressureUnit.NewtonsPerSquareMetre.FromSiUnit(this.pascals);
+            }
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
+        /// </summary>
+        /// <param name="s">The string representation of the <see cref="Gu.Units.Pressure"/></param>
         /// <returns></returns>
 		public static Pressure Parse(string s)
         {
-            return Parser.Parse<PressureUnit, Pressure>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<PressureUnit, Pressure>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
         public static Pressure Parse(string s, IFormatProvider provider)
         {
-            return Parser.Parse<PressureUnit, Pressure>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<PressureUnit, Pressure>(s, From, NumberStyles.Float, provider);
         }
 
         public static Pressure Parse(string s, NumberStyles styles)
         {
-            return Parser.Parse<PressureUnit, Pressure>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<PressureUnit, Pressure>(s, From, styles, CultureInfo.CurrentCulture);
         }
 
         public static Pressure Parse(string s, NumberStyles styles, IFormatProvider provider)
         {
-            return Parser.Parse<PressureUnit, Pressure>(s, From, styles, provider);
+            return QuantityParser.Parse<PressureUnit, Pressure>(s, From, styles, provider);
         }
 
         public static bool TryParse(string s, out Pressure value)
         {
-            return Parser.TryParse<PressureUnit, Pressure>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<PressureUnit, Pressure>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, IFormatProvider provider, out Pressure value)
         {
-            return Parser.TryParse<PressureUnit, Pressure>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<PressureUnit, Pressure>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Pressure value)
         {
-            return Parser.TryParse<PressureUnit, Pressure>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<PressureUnit, Pressure>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Pressure value)
         {
-            return Parser.TryParse<PressureUnit, Pressure>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<PressureUnit, Pressure>(s, From, styles, provider, out value);
         }
 
         /// <summary>
-        /// Reads an instance of <see cref="T:Gu.Units.Pressure"/> from the <paramref name="reader"/>
+        /// Reads an instance of <see cref="Gu.Units.Pressure"/> from the <paramref name="reader"/>
         /// </summary>
         /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="T:Gu.Units.Pressure"/></returns>
+        /// <returns>An instance of  <see cref="Gu.Units.Pressure"/></returns>
         public static Pressure ReadFrom(XmlReader reader)
         {
             var v = new Pressure();
@@ -202,7 +245,7 @@
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
         /// <param name="value"></param>
         /// <param name="unit"></param>
@@ -212,17 +255,16 @@
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="pascals">The value in <see cref="T:Gu.Units.Pascals"/></param>
+        /// <param name="pascals">The value in <see cref="Gu.Units.PressureUnit.Pascals"/></param>
         public static Pressure FromPascals(double pascals)
         {
             return new Pressure(pascals);
         }
 
-
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
         /// <param name="nanopascals">The value in nPa</param>
         public static Pressure FromNanopascals(double nanopascals)
@@ -231,7 +273,7 @@
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
         /// <param name="micropascals">The value in µPa</param>
         public static Pressure FromMicropascals(double micropascals)
@@ -240,7 +282,7 @@
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
         /// <param name="millipascals">The value in mPa</param>
         public static Pressure FromMillipascals(double millipascals)
@@ -249,7 +291,7 @@
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
         /// <param name="kilopascals">The value in kPa</param>
         public static Pressure FromKilopascals(double kilopascals)
@@ -258,7 +300,7 @@
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
         /// <param name="megapascals">The value in MPa</param>
         public static Pressure FromMegapascals(double megapascals)
@@ -267,7 +309,7 @@
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
         /// <param name="gigapascals">The value in GPa</param>
         public static Pressure FromGigapascals(double gigapascals)
@@ -276,7 +318,7 @@
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
         /// <param name="bars">The value in bar</param>
         public static Pressure FromBars(double bars)
@@ -285,12 +327,39 @@
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Pressure"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
         /// <param name="millibars">The value in mbar</param>
         public static Pressure FromMillibars(double millibars)
         {
             return From(millibars, PressureUnit.Millibars);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
+        /// </summary>
+        /// <param name="newtonsPerSquareMillimetre">The value in N⋅mm⁻²</param>
+        public static Pressure FromNewtonsPerSquareMillimetre(double newtonsPerSquareMillimetre)
+        {
+            return From(newtonsPerSquareMillimetre, PressureUnit.NewtonsPerSquareMillimetre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
+        /// </summary>
+        /// <param name="kilonewtonsPerSquareMillimetre">The value in kN⋅mm⁻²</param>
+        public static Pressure FromKilonewtonsPerSquareMillimetre(double kilonewtonsPerSquareMillimetre)
+        {
+            return From(kilonewtonsPerSquareMillimetre, PressureUnit.KilonewtonsPerSquareMillimetre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
+        /// </summary>
+        /// <param name="newtonsPerSquareMetre">The value in N/m²</param>
+        public static Pressure FromNewtonsPerSquareMetre(double newtonsPerSquareMetre)
+        {
+            return From(newtonsPerSquareMetre, PressureUnit.NewtonsPerSquareMetre);
         }
 
         public static Force operator *(Pressure left, Area right)
@@ -319,124 +388,124 @@
         }
 
         /// <summary>
-        /// Indicates whether two <see cref="T:Gu.Units.Pressure"/> instances are equal.
+        /// Indicates whether two <see cref="Gu.Units.Pressure"/> instances are equal.
         /// </summary>
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Pressure"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Pressure"/>.</param>
         public static bool operator ==(Pressure left, Pressure right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Indicates whether two <see cref="T:Gu.Units.Pressure"/> instances are not equal.
+        /// Indicates whether two <see cref="Gu.Units.Pressure"/> instances are not equal.
         /// </summary>
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Pressure"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Pressure"/>.</param>
         public static bool operator !=(Pressure left, Pressure right)
         {
             return !left.Equals(right);
         }
 
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Pressure"/> is less than another specified <see cref="T:Gu.Units.Pressure"/>.
+        /// Indicates whether a specified <see cref="Gu.Units.Pressure"/> is less than another specified <see cref="Gu.Units.Pressure"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Pressure"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Pressure"/>.</param>
         public static bool operator <(Pressure left, Pressure right)
         {
             return left.pascals < right.pascals;
         }
 
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Pressure"/> is greater than another specified <see cref="T:Gu.Units.Pressure"/>.
+        /// Indicates whether a specified <see cref="Gu.Units.Pressure"/> is greater than another specified <see cref="Gu.Units.Pressure"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Pressure"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Pressure"/>.</param>
         public static bool operator >(Pressure left, Pressure right)
         {
             return left.pascals > right.pascals;
         }
 
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Pressure"/> is less than or equal to another specified <see cref="T:Gu.Units.Pressure"/>.
+        /// Indicates whether a specified <see cref="Gu.Units.Pressure"/> is less than or equal to another specified <see cref="Gu.Units.Pressure"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Pressure"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Pressure"/>.</param>
         public static bool operator <=(Pressure left, Pressure right)
         {
             return left.pascals <= right.pascals;
         }
 
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Pressure"/> is greater than or equal to another specified <see cref="T:Gu.Units.Pressure"/>.
+        /// Indicates whether a specified <see cref="Gu.Units.Pressure"/> is greater than or equal to another specified <see cref="Gu.Units.Pressure"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Pressure"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Pressure"/>.</param>
         public static bool operator >=(Pressure left, Pressure right)
         {
             return left.pascals >= right.pascals;
         }
 
         /// <summary>
-        /// Multiplies an instance of <see cref="T:Gu.Units.Pressure"/> with <paramref name="left"/> and returns the result.
+        /// Multiplies an instance of <see cref="Gu.Units.Pressure"/> with <paramref name="left"/> and returns the result.
         /// </summary>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/></param>
-        /// <param name="left">An instance of <seealso cref="T:System.Double"/></param>
-        /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Pressure"/> with <paramref name="left"/> and returns the result.</returns>
+        /// <param name="right">An instance of <see cref="Gu.Units.Pressure"/></param>
+        /// <param name="left">An instance of <seealso cref="System.Double"/></param>
+        /// <returns>Multiplies an instance of <see cref="Gu.Units.Pressure"/> with <paramref name="left"/> and returns the result.</returns>
         public static Pressure operator *(double left, Pressure right)
         {
             return new Pressure(left * right.pascals);
         }
 
         /// <summary>
-        /// Multiplies an instance of <see cref="T:Gu.Units.Pressure"/> with <paramref name="right"/> and returns the result.
+        /// Multiplies an instance of <see cref="Gu.Units.Pressure"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/></param>
-        /// <param name="right">An instance of <seealso cref="T:System.Double"/></param>
-        /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Pressure"/> with <paramref name="right"/> and returns the result.</returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.Pressure"/></param>
+        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <returns>Multiplies an instance of <see cref="Gu.Units.Pressure"/> with <paramref name="right"/> and returns the result.</returns>
         public static Pressure operator *(Pressure left, double right)
         {
             return new Pressure(left.pascals * right);
         }
 
         /// <summary>
-        /// Divides an instance of <see cref="T:Gu.Units.Pressure"/> with <paramref name="right"/> and returns the result.
+        /// Divides an instance of <see cref="Gu.Units.Pressure"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/></param>
-        /// <param name="right">An instance of <seealso cref="T:System.Double"/></param>
-        /// <returns>Divides an instance of <see cref="T:Gu.Units.Pressure"/> with <paramref name="right"/> and returns the result.</returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.Pressure"/></param>
+        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <returns>Divides an instance of <see cref="Gu.Units.Pressure"/> with <paramref name="right"/> and returns the result.</returns>
         public static Pressure operator /(Pressure left, double right)
         {
             return new Pressure(left.pascals / right);
         }
 
         /// <summary>
-        /// Adds two specified <see cref="T:Gu.Units.Pressure"/> instances.
+        /// Adds two specified <see cref="Gu.Units.Pressure"/> instances.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:Gu.Units.Pressure"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
+        /// An <see cref="Gu.Units.Pressure"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/>.</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Pressure"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Pressure"/>.</param>
         public static Pressure operator +(Pressure left, Pressure right)
         {
             return new Pressure(left.pascals + right.pascals);
@@ -446,34 +515,34 @@
         /// Subtracts an Pressure from another Pressure and returns the difference.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:Gu.Units.Pressure"/> that is the difference
+        /// An <see cref="Gu.Units.Pressure"/> that is the difference
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Pressure"/> (the minuend).</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Pressure"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Pressure"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Pressure"/> (the subtrahend).</param>
         public static Pressure operator -(Pressure left, Pressure right)
         {
             return new Pressure(left.pascals - right.pascals);
         }
 
         /// <summary>
-        /// Returns an <see cref="T:Gu.Units.Pressure"/> whose quantity is the negated quantity of the specified instance.
+        /// Returns an <see cref="Gu.Units.Pressure"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:Gu.Units.Pressure"/> with the same numeric quantity as this instance, but the opposite sign.
+        /// An <see cref="Gu.Units.Pressure"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="pressure">An instance of <see cref="T:Gu.Units.Pressure"/></param>
+        /// <param name="pressure">An instance of <see cref="Gu.Units.Pressure"/></param>
         public static Pressure operator -(Pressure pressure)
         {
             return new Pressure(-1 * pressure.pascals);
         }
 
         /// <summary>
-        /// Returns the specified instance of <see cref="T:Gu.Units.Pressure"/>.
+        /// Returns the specified instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
         /// <returns>
         /// Returns <paramref name="pressure"/>.
         /// </returns>
-        /// <param name="pressure">An instance of <see cref="T:Gu.Units.Pressure"/></param>
+        /// <param name="pressure">An instance of <see cref="Gu.Units.Pressure"/></param>
         public static Pressure operator +(Pressure pressure)
         {
             return pressure;
@@ -489,44 +558,134 @@
             return unit.FromSiUnit(this.pascals);
         }
 
+        /// <summary>
+        /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
+        /// </summary>
+        /// <returns>The string representation of the <see cref="Pressure"/></returns>
         public override string ToString()
         {
-            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
+            var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(null, this.SiUnit);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
-        public string ToString(string format)
-        {
-            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
-        }
-
+        /// <summary>
+        /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
+        /// </summary>
+        /// <returns>The string representation of the <see cref="Pressure"/></returns>
         public string ToString(IFormatProvider provider)
         {
-            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
+            var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(string.Empty, SiUnit);
+            return ToString(quantityFormat, provider);
         }
 
+        /// <summary>
+        /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
+        /// </summary>
+        /// <param name="format">Must be a composite format ex: \"F2 Pa\"</param>
+        /// <returns>The string representation of the <see cref="Pressure"/></returns>
+        public string ToString(string format)
+        {
+            var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(format);
+            return ToString(quantityFormat, (IFormatProvider)null);
+        }
+
+        /// <summary>
+        /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
+        /// </summary>
+        /// <param name="format">Must be a composite format ex: \"F2 Pa\"</param>
+        /// <returns>The string representation of the <see cref="Pressure"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
-            return this.ToString(format, formatProvider, PressureUnit.Pascals);
+            var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(format);
+            return ToString(quantityFormat, formatProvider);
+        }
+
+        /// <summary>
+        ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
+        /// </summary>
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        ///  ex: F2</param>
+        /// <param name="symbolFormat">For formatting of the unit ex Pa</param>
+        /// <returns>The string representation of the <see cref="Pressure"/></returns>
+        public string ToString(string valueFormat, string symbolFormat)
+        {
+            var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(valueFormat, symbolFormat);
+            return ToString(quantityFormat, (IFormatProvider)null);
+        }
+
+        /// <summary>
+        ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
+        /// </summary>
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        ///  ex: F2</param>
+        /// <param name="symbolFormat">For formatting the unit ex Pa</param>
+        /// <param name="formatProvider"></param>
+        /// <returns>The string representation of the <see cref="Pressure"/></returns>
+        public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
+        {
+            var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(valueFormat, symbolFormat);
+            return ToString(quantityFormat, formatProvider);
         }
 
         public string ToString(PressureUnit unit)
         {
-            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+            var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(null, unit);
+            return ToString(quantityFormat, null);
         }
 
-        public string ToString(string format, PressureUnit unit)
+        public string ToString(PressureUnit unit, SymbolFormat symbolFormat)
         {
-            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+            var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(null, unit, symbolFormat);
+            return ToString(quantityFormat, null);
         }
 
-        public string ToString(string format, IFormatProvider formatProvider, PressureUnit unit)
+        public string ToString(PressureUnit unit, IFormatProvider formatProvider)
         {
-            var quantity = unit.FromSiUnit(this.pascals);
-            return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
+            var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(null, unit);
+            return ToString(quantityFormat, formatProvider);
+        }
+
+        public string ToString(PressureUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        {
+            var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(null, unit, symbolFormat);
+            return ToString(quantityFormat, formatProvider);
+        }
+
+        public string ToString(string valueFormat, PressureUnit unit)
+        {
+            var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(valueFormat, unit);
+            return ToString(quantityFormat, null);
+        }
+
+        public string ToString(string valueFormat, PressureUnit unit, SymbolFormat symbolFormat)
+        {
+            var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
+            return ToString(quantityFormat, null);
+        }
+
+        public string ToString(string valueFormat, PressureUnit unit, IFormatProvider formatProvider)
+        {
+            var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(valueFormat, unit);
+            return ToString(quantityFormat, formatProvider);
+        }
+
+        public string ToString(string valueFormat, PressureUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        {
+            var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
+            return ToString(quantityFormat, formatProvider);
+        }
+
+        internal string ToString(QuantityFormat<PressureUnit> format, IFormatProvider formatProvider)
+        {
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(this, format, formatProvider);
+                return builder.ToString();
+            }
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Pressure"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="T:MathNet.Spatial.Units.Pressure"/> object.
+        /// Compares this instance to a specified <see cref="Gu.Units.Pressure"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Pressure"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -548,35 +707,36 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Pressure"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="Gu.Units.Pressure"/> object to compare to this instance.</param>
         public int CompareTo(Pressure quantity)
         {
             return this.pascals.CompareTo(quantity.pascals);
         }
 
         /// <summary>
-        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Pressure"/> object.
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.Pressure"/> object.
         /// </summary>
         /// <returns>
         /// true if <paramref name="other"/> represents the same Pressure as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An instance of <see cref="T:Gu.Units.Pressure"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="Gu.Units.Pressure"/> object to compare with this instance.</param>
         public bool Equals(Pressure other)
         {
             return this.pascals.Equals(other.pascals);
         }
 
         /// <summary>
-        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Pressure"/> object within the given tolerance.
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.Pressure"/> object within the given tolerance.
         /// </summary>
         /// <returns>
         /// true if <paramref name="other"/> represents the same Pressure as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An instance of <see cref="T:Gu.Units.Pressure"/> object to compare with this instance.</param>
-        /// <param name="tolerance">The maximum difference for being considered equal</param>
-        public bool Equals(Pressure other, double tolerance)
+        /// <param name="other">An instance of <see cref="Gu.Units.Pressure"/> object to compare with this instance.</param>
+        /// <param name="tolerance">The maximum difference for being considered equal. Must be greater than zero.</param>
+        public bool Equals(Pressure other, Pressure tolerance)
         {
-            return Math.Abs(this.pascals - other.pascals) < tolerance;
+            Ensure.GreaterThan(tolerance.pascals, 0, nameof(tolerance));
+            return Math.Abs(this.pascals - other.pascals) < tolerance.pascals;
         }
 
         public override bool Equals(object obj)
@@ -597,10 +757,10 @@
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
-        /// if specifying a custom schema is required, apply the <see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
+        /// if specifying a custom schema is required, apply the <see cref="System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the
+        /// An <see cref="System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the
         ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/> 
         /// method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
         /// </returns>
@@ -612,7 +772,7 @@
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
-        /// <param name="reader">The <see cref="T:System.Xml.XmlReader"/> stream from which the object is deserialized. </param>
+        /// <param name="reader">The <see cref="System.Xml.XmlReader"/> stream from which the object is deserialized. </param>
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
@@ -622,7 +782,7 @@
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
-        /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
+        /// <param name="writer">The <see cref="System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
             XmlExt.WriteAttribute(writer, "Value", this.pascals);

@@ -1,17 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.SpecificEnergyUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{JoulesPerKilogram.symbol}")]
+    [Serializable, TypeConverter(typeof(SpecificEnergyUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{JoulesPerKilogram.symbol}")]
     public struct SpecificEnergyUnit : IUnit, IUnit<SpecificEnergy>, IEquatable<SpecificEnergyUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.JoulesPerKilogram"/> unit
+        /// The JoulesPerKilogram unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly SpecificEnergyUnit JoulesPerKilogram = new SpecificEnergyUnit(1.0, "J/kg");
@@ -26,7 +27,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.JoulesPerKilogram"/>.
+        /// The symbol for the <see cref="Gu.Units.SpecificEnergyUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -35,6 +36,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.SpecificEnergyUnit"/>
+        /// </summary>
+        public SpecificEnergyUnit SiUnit => SpecificEnergyUnit.JoulesPerKilogram;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.SpecificEnergyUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => SpecificEnergyUnit.JoulesPerKilogram;
 
         public static SpecificEnergy operator *(double left, SpecificEnergyUnit right)
         {
@@ -53,16 +64,16 @@
 
         public static SpecificEnergyUnit Parse(string text)
         {
-            return Parser.ParseUnit<SpecificEnergyUnit>(text);
+            return UnitParser<SpecificEnergyUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out SpecificEnergyUnit value)
         {
-            return Parser.TryParseUnit<SpecificEnergyUnit>(text, out value);
+            return UnitParser<SpecificEnergyUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.JoulesPerKilogram"/>.
+        /// Converts <paramref name="value"/> to JoulesPerKilogram.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -85,14 +96,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new SpecificEnergy(value, this)</returns>
         public SpecificEnergy CreateQuantity(double value)
         {
             return new SpecificEnergy(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in JoulesPerKilogram
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

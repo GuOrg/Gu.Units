@@ -12,8 +12,7 @@
         public void Roundtrip(IUnit unit)
         {
             var s = unit.ToString();
-            var parseMethod = unit.GetType()
-                                        .GetMethod("Parse", BindingFlags.Static | BindingFlags.Public);
+            var parseMethod = unit.GetType().GetMethod("Parse", BindingFlags.Static | BindingFlags.Public);
             var roundtripped = (IUnit)parseMethod.Invoke(null, new object[] { s });
             Assert.AreEqual(unit, roundtripped);
         }

@@ -1,22 +1,24 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.CapacitanceUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Farads.symbol}")]
+    [Serializable, TypeConverter(typeof(CapacitanceUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Farads.symbol}")]
     public struct CapacitanceUnit : IUnit, IUnit<Capacitance>, IEquatable<CapacitanceUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.Farads"/> unit
+        /// The Farads unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CapacitanceUnit Farads = new CapacitanceUnit(1.0, "F");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Farads"/> unit
+        /// The Farads unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly CapacitanceUnit F = Farads;
@@ -31,7 +33,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.Farads"/>.
+        /// The symbol for the <see cref="Gu.Units.CapacitanceUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -40,6 +42,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.CapacitanceUnit"/>
+        /// </summary>
+        public CapacitanceUnit SiUnit => CapacitanceUnit.Farads;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.CapacitanceUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => CapacitanceUnit.Farads;
 
         public static Capacitance operator *(double left, CapacitanceUnit right)
         {
@@ -58,16 +70,16 @@
 
         public static CapacitanceUnit Parse(string text)
         {
-            return Parser.ParseUnit<CapacitanceUnit>(text);
+            return UnitParser<CapacitanceUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out CapacitanceUnit value)
         {
-            return Parser.TryParseUnit<CapacitanceUnit>(text, out value);
+            return UnitParser<CapacitanceUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Farads"/>.
+        /// Converts <paramref name="value"/> to Farads.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -90,14 +102,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new Capacitance(value, this)</returns>
         public Capacitance CreateQuantity(double value)
         {
             return new Capacitance(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in Farads
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

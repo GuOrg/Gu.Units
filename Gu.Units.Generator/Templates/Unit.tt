@@ -1,17 +1,15 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ import namespace="System.Globalization" #>
-<#@ import namespace="System.Collections" #>
-<#@ import namespace="System.Collections.Generic" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #>
-<#@ parameter name="UnitMetaData" type="Gu.Units.Generator.IUnit" #>
+<#@ parameter name="UnitData" type="Gu.Units.Generator.IUnit" #>
 <#@ output extension=".txt" #>
 <#
 // Template used by UnitGenerator.tt
 IUnit unit;
-if(UnitMetaData != null)
+if(UnitData != null)
 {
-    unit = UnitMetaData;
+    unit = UnitData;
 }
 else
 {
@@ -26,17 +24,18 @@ else
 namespace <#= Settings.Namespace #>
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="<#= Settings.Namespace #>.<#= unit.UnitName #>"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{<#= unit.ClassName #>.symbol}")]
+    [Serializable, TypeConverter(typeof(<#= unit.UnitName #>TypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{<#= unit.ClassName #>.symbol}")]
     public struct <#= unit.UnitName #> : IUnit, IUnit<<#= unit.QuantityName #>>, IEquatable<<#= unit.UnitName #>>
     {
         /// <summary>
-        /// The <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/> unit
+        /// The <#= unit.ClassName #> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 <#
@@ -57,8 +56,9 @@ namespace <#= Settings.Namespace #>
 		    if(unit.IsSymbolNameValid)
             {
 		    #>
+
         /// <summary>
-        /// The <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/> unit
+        /// The <#= unit.ClassName #> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly <#= unit.UnitName #> <#= unit.Symbol #> = <#= unit.ClassName #>;
@@ -70,7 +70,7 @@ namespace <#= Settings.Namespace #>
 		#>
 
         /// <summary>
-        /// The <see cref="T:<#= Settings.Namespace #>.<#= su.ClassName #>"/> unit
+        /// The <#= su.ClassName #> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 <#
@@ -90,8 +90,9 @@ namespace <#= Settings.Namespace #>
 		    if(su.IsSymbolNameValid)
             {
 		    #>
+
         /// <summary>
-        /// The <see cref="T:<#= Settings.Namespace #>.<#= su.ClassName #>"/> unit
+        /// The <#= su.ClassName #> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly <#= unit.UnitName #> <#= su.Symbol #> = <#= su.ClassName #>;
@@ -140,7 +141,7 @@ namespace <#= Settings.Namespace #>
         }
 
 		/// <summary>
-        /// The symbol for <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.
+        /// The symbol for the <see cref="<#= Settings.Namespace #>.<#= unit.UnitName #>"/>.
         /// </summary>
         public string Symbol
         {
@@ -149,6 +150,16 @@ namespace <#= Settings.Namespace #>
                 return this.symbol;
             }
         }
+
+		/// <summary>
+        /// The default unit for <see cref="<#= Settings.Namespace #>.<#= unit.UnitName #>"/>
+        /// </summary>
+        public <#= unit.UnitName #> SiUnit => <#= unit.UnitName #>.<#= unit.ClassName #>;
+
+		/// <summary>
+        /// The default <see cref="<#= Settings.Namespace #>.IUnit"/> for <see cref="<#= Settings.Namespace #>.<#= unit.UnitName #>"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => <#= unit.UnitName #>.<#= unit.ClassName #>;
 
         public static <#= unit.QuantityName #> operator *(double left, <#= unit.UnitName #> right)
         {
@@ -167,16 +178,16 @@ namespace <#= Settings.Namespace #>
 
         public static <#= unit.UnitName #> Parse(string text)
         {
-            return Parser.ParseUnit<<#= unit.UnitName #>>(text);
+            return UnitParser<<#= unit.UnitName #>>.Parse(text);
         }
 
         public static bool TryParse(string text, out <#= unit.UnitName #> value)
         {
-            return Parser.TryParseUnit<<#= unit.UnitName #>>(text, out value);
+            return UnitParser<<#= unit.UnitName #>>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.
+        /// Converts <paramref name="value"/> to <#= unit.ClassName #>.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -225,14 +236,14 @@ namespace <#= Settings.Namespace #>
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new <#= unit.QuantityName #>(value, this)</returns>
         public <#= unit.QuantityName #> CreateQuantity(double value)
         {
             return new <#= unit.QuantityName #>(value, this);
         }
 
 		/// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in <#= unit.ClassName #>
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

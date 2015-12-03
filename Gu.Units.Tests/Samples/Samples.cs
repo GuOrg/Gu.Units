@@ -39,10 +39,11 @@ namespace Gu.Units.Tests.Samples
         [TestCase("1.2m^1/s¹")]
         public void ParsingSample(string s)
         {
-            var speed = Speed.Parse(s,CultureInfo.InvariantCulture);
-            Assert.AreEqual(Speed.FromMetresPerSecond(1.2), Speed.Parse(s));
+            var speed = Speed.Parse(s, CultureInfo.InvariantCulture);
+            Assert.AreEqual(Speed.FromMetresPerSecond(1.2), speed);
+
             Assert.IsTrue(Speed.TryParse(s, CultureInfo.InvariantCulture, out speed));
-            Assert.AreEqual(Speed.FromMetresPerSecond(1.2), Speed.Parse(s));
+            Assert.AreEqual(Speed.FromMetresPerSecond(1.2), speed);
         }
     }
 }

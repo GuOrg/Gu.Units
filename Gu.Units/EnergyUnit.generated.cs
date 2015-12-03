@@ -1,99 +1,108 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.EnergyUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Joules.symbol}")]
+    [Serializable, TypeConverter(typeof(EnergyUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Joules.symbol}")]
     public struct EnergyUnit : IUnit, IUnit<Energy>, IEquatable<EnergyUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.Joules"/> unit
+        /// The Joules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit Joules = new EnergyUnit(1.0, "J");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Joules"/> unit
+        /// The Joules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly EnergyUnit J = Joules;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Nanojoules"/> unit
+        /// The Nanojoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly EnergyUnit Nanojoules = new EnergyUnit(1E-09, "nJ");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Nanojoules"/> unit
+        /// The Nanojoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly EnergyUnit nJ = Nanojoules;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Microjoules"/> unit
+        /// The Microjoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly EnergyUnit Microjoules = new EnergyUnit(1E-06, "µJ");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Microjoules"/> unit
+        /// The Microjoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly EnergyUnit µJ = Microjoules;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Millijoules"/> unit
+        /// The Millijoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly EnergyUnit Millijoules = new EnergyUnit(0.001, "mJ");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Millijoules"/> unit
+        /// The Millijoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly EnergyUnit mJ = Millijoules;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Kilojoules"/> unit
+        /// The Kilojoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly EnergyUnit Kilojoules = new EnergyUnit(1000, "kJ");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Kilojoules"/> unit
+        /// The Kilojoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly EnergyUnit kJ = Kilojoules;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Megajoules"/> unit
+        /// The Megajoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly EnergyUnit Megajoules = new EnergyUnit(1000000, "MJ");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Megajoules"/> unit
+        /// The Megajoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly EnergyUnit MJ = Megajoules;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Gigajoules"/> unit
+        /// The Gigajoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly EnergyUnit Gigajoules = new EnergyUnit(1000000000, "GJ");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Gigajoules"/> unit
+        /// The Gigajoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly EnergyUnit GJ = Gigajoules;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.KilowattHours"/> unit
+        /// The KilowattHours unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly EnergyUnit KilowattHours = new EnergyUnit(3600000, "kWh");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.KilowattHours"/> unit
+        /// The KilowattHours unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly EnergyUnit kWh = KilowattHours;
@@ -108,7 +117,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.Joules"/>.
+        /// The symbol for the <see cref="Gu.Units.EnergyUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -117,6 +126,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.EnergyUnit"/>
+        /// </summary>
+        public EnergyUnit SiUnit => EnergyUnit.Joules;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.EnergyUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => EnergyUnit.Joules;
 
         public static Energy operator *(double left, EnergyUnit right)
         {
@@ -135,16 +154,16 @@
 
         public static EnergyUnit Parse(string text)
         {
-            return Parser.ParseUnit<EnergyUnit>(text);
+            return UnitParser<EnergyUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out EnergyUnit value)
         {
-            return Parser.TryParseUnit<EnergyUnit>(text, out value);
+            return UnitParser<EnergyUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Joules"/>.
+        /// Converts <paramref name="value"/> to Joules.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -167,14 +186,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new Energy(value, this)</returns>
         public Energy CreateQuantity(double value)
         {
             return new Energy(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in Joules
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

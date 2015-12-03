@@ -55,15 +55,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Generator Only|AnyCPU'">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'GeneratorOnly|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Generator Only\</OutputPath>
+    <OutputPath>bin\GeneratorOnly\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -146,25 +145,23 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UnitTypeConverter.txt</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="Templates\UnitTypeConverterGenerator.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UnitTypeConverterGenerator.tt</DependentUpon>
-    </Resource>
+    <EmbeddedResource Include="Templates\TemplateFilemanager.CS.ttinclude" />
+    <None Include="Templates\MultipleOutputHelper.ttinclude" />
     <Resource Include="Templates\UnitTypeConverter.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>UnitTypeConverter.tt</DependentUpon>
     </Resource>
-    <EmbeddedResource Include="Templates\UnitTypeConverterGenerator.tt">
+    <EmbeddedResource Include="Templates\UnitTypeConverters.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UnitTypeConverterGenerator.txt</LastGenOutput>
+      <LastGenOutput>UnitTypeConverters.txt</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="Key.snk" />
     <None Include="paket.references" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -179,27 +176,22 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EnumerableGenerator.txt</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Templates\QuantityTypeConverterGenerator.tt">
+    <EmbeddedResource Include="Templates\QuantityTypeConverters.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>QuantityTypeConverterGenerator.txt</LastGenOutput>
+      <LastGenOutput>QuantityTypeConverters.txt</LastGenOutput>
     </EmbeddedResource>
-    <Resource Include="Templates\QuantityTypeConverterGenerator.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuantityTypeConverterGenerator.tt</DependentUpon>
-    </Resource>
-    <EmbeddedResource Include="Templates\UnitGenerator.tt">
+    <EmbeddedResource Include="Templates\Units.tt">
       <SubType>Code</SubType>
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UnitGenerator.txt</LastGenOutput>
+      <LastGenOutput>Units.txt</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Templates\Quantity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Quantity.txt</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Templates\QuantityGenerator.tt">
+    <EmbeddedResource Include="Templates\Quantties.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>QuantityGenerator.txt</LastGenOutput>
+      <LastGenOutput>Quantties.txt</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Templates\Unit.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -213,11 +205,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Templates\UnitGenerator.txt">
-      <DependentUpon>UnitGenerator.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Resource>
     <Resource Include="Templates\Quantity.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -242,21 +229,16 @@
     <Resource Include="GeneratorSettings.xml">
       <SubType>Designer</SubType>
     </Resource>
-    <Resource Include="Templates\Enumerable.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Enumerable.tt</DependentUpon>
-    </Resource>
     <Resource Include="Templates\EnumerableGenerator.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EnumerableGenerator.tt</DependentUpon>
     </Resource>
-    <Content Include="Templates\QuantityGenerator.txt">
+    <Resource Include="Templates\Enumerable.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QuantityGenerator.tt</DependentUpon>
-    </Content>
+      <DependentUpon>Enumerable.tt</DependentUpon>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -277,6 +259,65 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Sandbox\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\QuantityValueConverter.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QuantityValueConverter.txt</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Templates\QuantityValueConverter.txt">
+      <DependentUpon>QuantityValueConverter.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Resource>
+    <EmbeddedResource Include="Templates\QuantityValueConverters.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QuantityValueConverters.txt</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\QuantityJsonConverter.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QuantityJsonConverter.txt</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Templates\QuantityJsonConverter.txt">
+      <DependentUpon>QuantityJsonConverter.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Resource>
+    <EmbeddedResource Include="Templates\QuantityJsonConverters.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>QuantityJsonConverters.txt</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Templates\QuantityJsonConverters.txt">
+      <DependentUpon>QuantityJsonConverters.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Resource>
+    <Content Include="Templates\QuantityValueConverters.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuantityValueConverters.tt</DependentUpon>
+    </Content>
+    <Content Include="Templates\QuantityTypeConverters.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuantityTypeConverters.tt</DependentUpon>
+    </Content>
+    <Content Include="Templates\Quantties.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Quantties.tt</DependentUpon>
+    </Content>
+    <Resource Include="Templates\Readme.txt" />
+    <Content Include="Templates\Units.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Units.tt</DependentUpon>
+    </Content>
+    <Content Include="Templates\UnitTypeConverters.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitTypeConverters.tt</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

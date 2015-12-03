@@ -1,17 +1,18 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.TorqueUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{NewtonMetres.symbol}")]
+    [Serializable, TypeConverter(typeof(TorqueUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{NewtonMetres.symbol}")]
     public struct TorqueUnit : IUnit, IUnit<Torque>, IEquatable<TorqueUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.NewtonMetres"/> unit
+        /// The NewtonMetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TorqueUnit NewtonMetres = new TorqueUnit(1.0, "N⋅m");
@@ -26,7 +27,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.NewtonMetres"/>.
+        /// The symbol for the <see cref="Gu.Units.TorqueUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -35,6 +36,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.TorqueUnit"/>
+        /// </summary>
+        public TorqueUnit SiUnit => TorqueUnit.NewtonMetres;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.TorqueUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => TorqueUnit.NewtonMetres;
 
         public static Torque operator *(double left, TorqueUnit right)
         {
@@ -53,16 +64,16 @@
 
         public static TorqueUnit Parse(string text)
         {
-            return Parser.ParseUnit<TorqueUnit>(text);
+            return UnitParser<TorqueUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out TorqueUnit value)
         {
-            return Parser.TryParseUnit<TorqueUnit>(text, out value);
+            return UnitParser<TorqueUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.NewtonMetres"/>.
+        /// Converts <paramref name="value"/> to NewtonMetres.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -85,14 +96,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new Torque(value, this)</returns>
         public Torque CreateQuantity(double value)
         {
             return new Torque(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in NewtonMetres
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

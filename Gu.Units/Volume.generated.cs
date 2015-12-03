@@ -4,18 +4,18 @@
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
-    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.Volume"/>.
     /// </summary>
+    // [TypeConverter(typeof(VolumeTypeConverter))]
     [Serializable]
-    public partial struct Volume : IComparable<Volume>, IEquatable<Volume>, IFormattable, IXmlSerializable, IQuantity<LengthUnit, I3>, IQuantity<VolumeUnit>
+    public partial struct Volume : IQuantity<VolumeUnit>, IComparable<Volume>, IEquatable<Volume>
     {
         public static readonly Volume Zero = new Volume();
 
         /// <summary>
-        /// The quantity in <see cref="T:Gu.Units.CubicMetres"/>.
+        /// The quantity in <see cref="Gu.Units.VolumeUnit.CubicMetres"/>.
         /// </summary>
         internal readonly double cubicMetres;
 
@@ -25,17 +25,17 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="T:Gu.Units.Volume"/>.
+        /// Initializes a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="unit"><see cref="T:Gu.Units.CubicMetres"/>.</param>
+        /// <param name="unit"><see cref="Gu.Units.VolumeUnit"/>.</param>
         public Volume(double value, VolumeUnit unit)
         {
             this.cubicMetres = unit.ToSiUnit(value);
         }
 
         /// <summary>
-        /// The quantity in CubicMetres
+        /// The quantity in <see cref="Gu.Units.VolumeUnit.CubicMetres"/>
         /// </summary>
         public double SiValue
         {
@@ -44,6 +44,16 @@
                 return this.cubicMetres;
             }
         }
+
+        /// <summary>
+        /// The <see cref="Gu.Units.VolumeUnit"/> for the <see cref="SiValue"/>
+        /// </summary>
+        public VolumeUnit SiUnit => VolumeUnit.CubicMetres;
+
+        /// <summary>
+        /// The <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
+        /// </summary>
+        IUnit IQuantity.SiUnit => VolumeUnit.CubicMetres;
 
         /// <summary>
         /// The quantity in cubicMetres".
@@ -101,55 +111,55 @@
         }
 
         /// <summary>
-        /// Creates an instance of <see cref="T:Gu.Units.Volume"/> from its string representation
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="T:Gu.Units.Volume"/></param>
+        /// <param name="s">The string representation of the <see cref="Gu.Units.Volume"/></param>
         /// <returns></returns>
 		public static Volume Parse(string s)
         {
-            return Parser.Parse<VolumeUnit, Volume>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<VolumeUnit, Volume>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
         public static Volume Parse(string s, IFormatProvider provider)
         {
-            return Parser.Parse<VolumeUnit, Volume>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<VolumeUnit, Volume>(s, From, NumberStyles.Float, provider);
         }
 
         public static Volume Parse(string s, NumberStyles styles)
         {
-            return Parser.Parse<VolumeUnit, Volume>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<VolumeUnit, Volume>(s, From, styles, CultureInfo.CurrentCulture);
         }
 
         public static Volume Parse(string s, NumberStyles styles, IFormatProvider provider)
         {
-            return Parser.Parse<VolumeUnit, Volume>(s, From, styles, provider);
+            return QuantityParser.Parse<VolumeUnit, Volume>(s, From, styles, provider);
         }
 
         public static bool TryParse(string s, out Volume value)
         {
-            return Parser.TryParse<VolumeUnit, Volume>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<VolumeUnit, Volume>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, IFormatProvider provider, out Volume value)
         {
-            return Parser.TryParse<VolumeUnit, Volume>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<VolumeUnit, Volume>(s, From, NumberStyles.Float, provider, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, out Volume value)
         {
-            return Parser.TryParse<VolumeUnit, Volume>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<VolumeUnit, Volume>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
         public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Volume value)
         {
-            return Parser.TryParse<VolumeUnit, Volume>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<VolumeUnit, Volume>(s, From, styles, provider, out value);
         }
 
         /// <summary>
-        /// Reads an instance of <see cref="T:Gu.Units.Volume"/> from the <paramref name="reader"/>
+        /// Reads an instance of <see cref="Gu.Units.Volume"/> from the <paramref name="reader"/>
         /// </summary>
         /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="T:Gu.Units.Volume"/></returns>
+        /// <returns>An instance of  <see cref="Gu.Units.Volume"/></returns>
         public static Volume ReadFrom(XmlReader reader)
         {
             var v = new Volume();
@@ -158,7 +168,7 @@
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="value"></param>
         /// <param name="unit"></param>
@@ -168,17 +178,16 @@
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
-        /// <param name="cubicMetres">The value in <see cref="T:Gu.Units.CubicMetres"/></param>
+        /// <param name="cubicMetres">The value in <see cref="Gu.Units.VolumeUnit.CubicMetres"/></param>
         public static Volume FromCubicMetres(double cubicMetres)
         {
             return new Volume(cubicMetres);
         }
 
-
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="litres">The value in L</param>
         public static Volume FromLitres(double litres)
@@ -187,7 +196,7 @@
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="cubicCentimetres">The value in cm³</param>
         public static Volume FromCubicCentimetres(double cubicCentimetres)
@@ -196,7 +205,7 @@
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="cubicMillimetres">The value in mm³</param>
         public static Volume FromCubicMillimetres(double cubicMillimetres)
@@ -205,7 +214,7 @@
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="T:Gu.Units.Volume"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="cubicInches">The value in in³</param>
         public static Volume FromCubicInches(double cubicInches)
@@ -239,124 +248,124 @@
         }
 
         /// <summary>
-        /// Indicates whether two <see cref="T:Gu.Units.Volume"/> instances are equal.
+        /// Indicates whether two <see cref="Gu.Units.Volume"/> instances are equal.
         /// </summary>
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Volume"/>.</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Volume"/>.</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Volume"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Volume"/>.</param>
         public static bool operator ==(Volume left, Volume right)
         {
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Indicates whether two <see cref="T:Gu.Units.Volume"/> instances are not equal.
+        /// Indicates whether two <see cref="Gu.Units.Volume"/> instances are not equal.
         /// </summary>
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Volume"/>.</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Volume"/>.</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Volume"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Volume"/>.</param>
         public static bool operator !=(Volume left, Volume right)
         {
             return !left.Equals(right);
         }
 
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Volume"/> is less than another specified <see cref="T:Gu.Units.Volume"/>.
+        /// Indicates whether a specified <see cref="Gu.Units.Volume"/> is less than another specified <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Volume"/>.</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Volume"/>.</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Volume"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Volume"/>.</param>
         public static bool operator <(Volume left, Volume right)
         {
             return left.cubicMetres < right.cubicMetres;
         }
 
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Volume"/> is greater than another specified <see cref="T:Gu.Units.Volume"/>.
+        /// Indicates whether a specified <see cref="Gu.Units.Volume"/> is greater than another specified <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Volume"/>.</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Volume"/>.</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Volume"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Volume"/>.</param>
         public static bool operator >(Volume left, Volume right)
         {
             return left.cubicMetres > right.cubicMetres;
         }
 
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Volume"/> is less than or equal to another specified <see cref="T:Gu.Units.Volume"/>.
+        /// Indicates whether a specified <see cref="Gu.Units.Volume"/> is less than or equal to another specified <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Volume"/>.</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Volume"/>.</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Volume"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Volume"/>.</param>
         public static bool operator <=(Volume left, Volume right)
         {
             return left.cubicMetres <= right.cubicMetres;
         }
 
         /// <summary>
-        /// Indicates whether a specified <see cref="T:Gu.Units.Volume"/> is greater than or equal to another specified <see cref="T:Gu.Units.Volume"/>.
+        /// Indicates whether a specified <see cref="Gu.Units.Volume"/> is greater than or equal to another specified <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Volume"/>.</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Volume"/>.</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Volume"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Volume"/>.</param>
         public static bool operator >=(Volume left, Volume right)
         {
             return left.cubicMetres >= right.cubicMetres;
         }
 
         /// <summary>
-        /// Multiplies an instance of <see cref="T:Gu.Units.Volume"/> with <paramref name="left"/> and returns the result.
+        /// Multiplies an instance of <see cref="Gu.Units.Volume"/> with <paramref name="left"/> and returns the result.
         /// </summary>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Volume"/></param>
-        /// <param name="left">An instance of <seealso cref="T:System.Double"/></param>
-        /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Volume"/> with <paramref name="left"/> and returns the result.</returns>
+        /// <param name="right">An instance of <see cref="Gu.Units.Volume"/></param>
+        /// <param name="left">An instance of <seealso cref="System.Double"/></param>
+        /// <returns>Multiplies an instance of <see cref="Gu.Units.Volume"/> with <paramref name="left"/> and returns the result.</returns>
         public static Volume operator *(double left, Volume right)
         {
             return new Volume(left * right.cubicMetres);
         }
 
         /// <summary>
-        /// Multiplies an instance of <see cref="T:Gu.Units.Volume"/> with <paramref name="right"/> and returns the result.
+        /// Multiplies an instance of <see cref="Gu.Units.Volume"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Volume"/></param>
-        /// <param name="right">An instance of <seealso cref="T:System.Double"/></param>
-        /// <returns>Multiplies an instance of <see cref="T:Gu.Units.Volume"/> with <paramref name="right"/> and returns the result.</returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.Volume"/></param>
+        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <returns>Multiplies an instance of <see cref="Gu.Units.Volume"/> with <paramref name="right"/> and returns the result.</returns>
         public static Volume operator *(Volume left, double right)
         {
             return new Volume(left.cubicMetres * right);
         }
 
         /// <summary>
-        /// Divides an instance of <see cref="T:Gu.Units.Volume"/> with <paramref name="right"/> and returns the result.
+        /// Divides an instance of <see cref="Gu.Units.Volume"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Volume"/></param>
-        /// <param name="right">An instance of <seealso cref="T:System.Double"/></param>
-        /// <returns>Divides an instance of <see cref="T:Gu.Units.Volume"/> with <paramref name="right"/> and returns the result.</returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.Volume"/></param>
+        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <returns>Divides an instance of <see cref="Gu.Units.Volume"/> with <paramref name="right"/> and returns the result.</returns>
         public static Volume operator /(Volume left, double right)
         {
             return new Volume(left.cubicMetres / right);
         }
 
         /// <summary>
-        /// Adds two specified <see cref="T:Gu.Units.Volume"/> instances.
+        /// Adds two specified <see cref="Gu.Units.Volume"/> instances.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:Gu.Units.Volume"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
+        /// An <see cref="Gu.Units.Volume"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Volume"/>.</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Volume"/>.</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Volume"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Volume"/>.</param>
         public static Volume operator +(Volume left, Volume right)
         {
             return new Volume(left.cubicMetres + right.cubicMetres);
@@ -366,34 +375,34 @@
         /// Subtracts an Volume from another Volume and returns the difference.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:Gu.Units.Volume"/> that is the difference
+        /// An <see cref="Gu.Units.Volume"/> that is the difference
         /// </returns>
-        /// <param name="left">An instance of <see cref="T:Gu.Units.Volume"/> (the minuend).</param>
-        /// <param name="right">An instance of <see cref="T:Gu.Units.Volume"/> (the subtrahend).</param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Volume"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Volume"/> (the subtrahend).</param>
         public static Volume operator -(Volume left, Volume right)
         {
             return new Volume(left.cubicMetres - right.cubicMetres);
         }
 
         /// <summary>
-        /// Returns an <see cref="T:Gu.Units.Volume"/> whose quantity is the negated quantity of the specified instance.
+        /// Returns an <see cref="Gu.Units.Volume"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:Gu.Units.Volume"/> with the same numeric quantity as this instance, but the opposite sign.
+        /// An <see cref="Gu.Units.Volume"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="volume">An instance of <see cref="T:Gu.Units.Volume"/></param>
+        /// <param name="volume">An instance of <see cref="Gu.Units.Volume"/></param>
         public static Volume operator -(Volume volume)
         {
             return new Volume(-1 * volume.cubicMetres);
         }
 
         /// <summary>
-        /// Returns the specified instance of <see cref="T:Gu.Units.Volume"/>.
+        /// Returns the specified instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <returns>
         /// Returns <paramref name="volume"/>.
         /// </returns>
-        /// <param name="volume">An instance of <see cref="T:Gu.Units.Volume"/></param>
+        /// <param name="volume">An instance of <see cref="Gu.Units.Volume"/></param>
         public static Volume operator +(Volume volume)
         {
             return volume;
@@ -409,44 +418,134 @@
             return unit.FromSiUnit(this.cubicMetres);
         }
 
+        /// <summary>
+        /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
+        /// </summary>
+        /// <returns>The string representation of the <see cref="Volume"/></returns>
         public override string ToString()
         {
-            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo);
+            var quantityFormat = FormatCache<VolumeUnit>.GetOrCreate(null, this.SiUnit);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
-        public string ToString(string format)
-        {
-            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo);
-        }
-
+        /// <summary>
+        /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
+        /// </summary>
+        /// <returns>The string representation of the <see cref="Volume"/></returns>
         public string ToString(IFormatProvider provider)
         {
-            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.GetInstance(provider));
+            var quantityFormat = FormatCache<VolumeUnit>.GetOrCreate(string.Empty, SiUnit);
+            return ToString(quantityFormat, provider);
         }
 
+        /// <summary>
+        /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
+        /// </summary>
+        /// <param name="format">Must be a composite format ex: \"F2 m³\"</param>
+        /// <returns>The string representation of the <see cref="Volume"/></returns>
+        public string ToString(string format)
+        {
+            var quantityFormat = FormatCache<VolumeUnit>.GetOrCreate(format);
+            return ToString(quantityFormat, (IFormatProvider)null);
+        }
+
+        /// <summary>
+        /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
+        /// </summary>
+        /// <param name="format">Must be a composite format ex: \"F2 m³\"</param>
+        /// <returns>The string representation of the <see cref="Volume"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
-            return this.ToString(format, formatProvider, VolumeUnit.CubicMetres);
+            var quantityFormat = FormatCache<VolumeUnit>.GetOrCreate(format);
+            return ToString(quantityFormat, formatProvider);
+        }
+
+        /// <summary>
+        ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
+        /// </summary>
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        ///  ex: F2</param>
+        /// <param name="symbolFormat">For formatting of the unit ex m³</param>
+        /// <returns>The string representation of the <see cref="Volume"/></returns>
+        public string ToString(string valueFormat, string symbolFormat)
+        {
+            var quantityFormat = FormatCache<VolumeUnit>.GetOrCreate(valueFormat, symbolFormat);
+            return ToString(quantityFormat, (IFormatProvider)null);
+        }
+
+        /// <summary>
+        ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
+        /// </summary>
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        ///  ex: F2</param>
+        /// <param name="symbolFormat">For formatting the unit ex m³</param>
+        /// <param name="formatProvider"></param>
+        /// <returns>The string representation of the <see cref="Volume"/></returns>
+        public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
+        {
+            var quantityFormat = FormatCache<VolumeUnit>.GetOrCreate(valueFormat, symbolFormat);
+            return ToString(quantityFormat, formatProvider);
         }
 
         public string ToString(VolumeUnit unit)
         {
-            return this.ToString((string)null, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+            var quantityFormat = FormatCache<VolumeUnit>.GetOrCreate(null, unit);
+            return ToString(quantityFormat, null);
         }
 
-        public string ToString(string format, VolumeUnit unit)
+        public string ToString(VolumeUnit unit, SymbolFormat symbolFormat)
         {
-            return this.ToString(format, (IFormatProvider)NumberFormatInfo.CurrentInfo, unit);
+            var quantityFormat = FormatCache<VolumeUnit>.GetOrCreate(null, unit, symbolFormat);
+            return ToString(quantityFormat, null);
         }
 
-        public string ToString(string format, IFormatProvider formatProvider, VolumeUnit unit)
+        public string ToString(VolumeUnit unit, IFormatProvider formatProvider)
         {
-            var quantity = unit.FromSiUnit(this.cubicMetres);
-            return string.Format("{0}{1}", quantity.ToString(format, formatProvider), unit.Symbol);
+            var quantityFormat = FormatCache<VolumeUnit>.GetOrCreate(null, unit);
+            return ToString(quantityFormat, formatProvider);
+        }
+
+        public string ToString(VolumeUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        {
+            var quantityFormat = FormatCache<VolumeUnit>.GetOrCreate(null, unit, symbolFormat);
+            return ToString(quantityFormat, formatProvider);
+        }
+
+        public string ToString(string valueFormat, VolumeUnit unit)
+        {
+            var quantityFormat = FormatCache<VolumeUnit>.GetOrCreate(valueFormat, unit);
+            return ToString(quantityFormat, null);
+        }
+
+        public string ToString(string valueFormat, VolumeUnit unit, SymbolFormat symbolFormat)
+        {
+            var quantityFormat = FormatCache<VolumeUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
+            return ToString(quantityFormat, null);
+        }
+
+        public string ToString(string valueFormat, VolumeUnit unit, IFormatProvider formatProvider)
+        {
+            var quantityFormat = FormatCache<VolumeUnit>.GetOrCreate(valueFormat, unit);
+            return ToString(quantityFormat, formatProvider);
+        }
+
+        public string ToString(string valueFormat, VolumeUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        {
+            var quantityFormat = FormatCache<VolumeUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
+            return ToString(quantityFormat, formatProvider);
+        }
+
+        internal string ToString(QuantityFormat<VolumeUnit> format, IFormatProvider formatProvider)
+        {
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(this, format, formatProvider);
+                return builder.ToString();
+            }
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="T:MathNet.Spatial.Units.Volume"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="T:MathNet.Spatial.Units.Volume"/> object.
+        /// Compares this instance to a specified <see cref="Gu.Units.Volume"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Volume"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -468,35 +567,36 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">An instance of <see cref="T:MathNet.Spatial.Units.Volume"/> object to compare to this instance.</param>
+        /// <param name="quantity">An instance of <see cref="Gu.Units.Volume"/> object to compare to this instance.</param>
         public int CompareTo(Volume quantity)
         {
             return this.cubicMetres.CompareTo(quantity.cubicMetres);
         }
 
         /// <summary>
-        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Volume"/> object.
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.Volume"/> object.
         /// </summary>
         /// <returns>
         /// true if <paramref name="other"/> represents the same Volume as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An instance of <see cref="T:Gu.Units.Volume"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="Gu.Units.Volume"/> object to compare with this instance.</param>
         public bool Equals(Volume other)
         {
             return this.cubicMetres.Equals(other.cubicMetres);
         }
 
         /// <summary>
-        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="T:Gu.Units.Volume"/> object within the given tolerance.
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.Volume"/> object within the given tolerance.
         /// </summary>
         /// <returns>
         /// true if <paramref name="other"/> represents the same Volume as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An instance of <see cref="T:Gu.Units.Volume"/> object to compare with this instance.</param>
-        /// <param name="tolerance">The maximum difference for being considered equal</param>
-        public bool Equals(Volume other, double tolerance)
+        /// <param name="other">An instance of <see cref="Gu.Units.Volume"/> object to compare with this instance.</param>
+        /// <param name="tolerance">The maximum difference for being considered equal. Must be greater than zero.</param>
+        public bool Equals(Volume other, Volume tolerance)
         {
-            return Math.Abs(this.cubicMetres - other.cubicMetres) < tolerance;
+            Ensure.GreaterThan(tolerance.cubicMetres, 0, nameof(tolerance));
+            return Math.Abs(this.cubicMetres - other.cubicMetres) < tolerance.cubicMetres;
         }
 
         public override bool Equals(object obj)
@@ -517,10 +617,10 @@
         /// <summary>
         /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
         /// you should return null (Nothing in Visual Basic) from this method, and instead, 
-        /// if specifying a custom schema is required, apply the <see cref="T:System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
+        /// if specifying a custom schema is required, apply the <see cref="System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
         /// </summary>
         /// <returns>
-        /// An <see cref="T:System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the
+        /// An <see cref="System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the
         ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/> 
         /// method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
         /// </returns>
@@ -532,7 +632,7 @@
         /// <summary>
         /// Generates an object from its XML representation.
         /// </summary>
-        /// <param name="reader">The <see cref="T:System.Xml.XmlReader"/> stream from which the object is deserialized. </param>
+        /// <param name="reader">The <see cref="System.Xml.XmlReader"/> stream from which the object is deserialized. </param>
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
@@ -542,7 +642,7 @@
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>
-        /// <param name="writer">The <see cref="T:System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
+        /// <param name="writer">The <see cref="System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
             XmlExt.WriteAttribute(writer, "Value", this.cubicMetres);

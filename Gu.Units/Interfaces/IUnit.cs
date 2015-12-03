@@ -4,6 +4,8 @@
     {
         string Symbol { get; }
 
+        IUnit SiUnit { get; }
+
         double ToSiUnit(double value);
 
         /// <summary>

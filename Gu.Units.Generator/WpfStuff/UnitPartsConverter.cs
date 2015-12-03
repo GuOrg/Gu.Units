@@ -27,11 +27,13 @@
             {
                 return null;
             }
+
             var s = (string)value;
             if (string.IsNullOrWhiteSpace(s))
             {
                 return null;
             }
+
             var matches = Parse(s);
             var parts = new UnitParts(null);
             int sign = 1;
@@ -73,7 +75,7 @@
 
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            return value == null ? null : ((UnitParts)value).Expression;
+            return ((UnitParts) value)?.Expression;
         }
 
         private static IEnumerable<Match> Parse(string s)

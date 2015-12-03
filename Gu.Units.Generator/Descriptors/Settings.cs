@@ -3,7 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.Collections.Specialized;
     using System.IO;
     using System.Linq;
     using System.Reflection;
@@ -18,6 +17,7 @@
         private readonly ParentCollection<Settings, DerivedUnit> _derivedUnits;
         private readonly ParentCollection<Settings, SiUnit> _siUnits;
         private readonly ObservableCollection<Prefix> _prefixes = new ObservableCollection<Prefix>();
+
         protected Settings()
         {
             _derivedUnits = new ParentCollection<Settings, DerivedUnit>(this, (unit, settings) => unit.Settings = settings);
@@ -115,18 +115,9 @@
             get { return _prefixes; }
         }
 
-        public IEnumerable<IUnit> AllUnits
-        {
-            get { return SiUnits.Concat<IUnit>(DerivedUnits); }
-        }
+        public IReadOnlyList<IUnit> AllUnits => SiUnits.Concat<IUnit>(DerivedUnits).ToList();
 
-        public IEnumerable<Quantity> Quantities
-        {
-            get
-            {
-                return AllUnits.Select(x => x.Quantity).ToArray();
-            }
-        }
+        public IReadOnlyList<Quantity> Quantities => AllUnits.Select(x => x.Quantity).ToList();
 
         public static Settings FromFile(string fullFileName)
         {

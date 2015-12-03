@@ -1,127 +1,138 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.LengthUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Metres.symbol}")]
+    [Serializable, TypeConverter(typeof(LengthUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Metres.symbol}")]
     public struct LengthUnit : IUnit, IUnit<Length>, IEquatable<LengthUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.Metres"/> unit
+        /// The Metres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Metres = new LengthUnit(1.0, "m");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Metres"/> unit
+        /// The Metres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit m = Metres;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Nanometres"/> unit
+        /// The Nanometres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit Nanometres = new LengthUnit(1E-09, "nm");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Nanometres"/> unit
+        /// The Nanometres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit nm = Nanometres;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Micrometres"/> unit
+        /// The Micrometres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit Micrometres = new LengthUnit(1E-06, "µm");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Micrometres"/> unit
+        /// The Micrometres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit µm = Micrometres;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Millimetres"/> unit
+        /// The Millimetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit Millimetres = new LengthUnit(0.001, "mm");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Millimetres"/> unit
+        /// The Millimetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit mm = Millimetres;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Centimetres"/> unit
+        /// The Centimetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit Centimetres = new LengthUnit(0.01, "cm");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Centimetres"/> unit
+        /// The Centimetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit cm = Centimetres;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Decimetres"/> unit
+        /// The Decimetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit Decimetres = new LengthUnit(0.1, "dm");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Decimetres"/> unit
+        /// The Decimetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit dm = Decimetres;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Kilometres"/> unit
+        /// The Kilometres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit Kilometres = new LengthUnit(1000, "km");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Kilometres"/> unit
+        /// The Kilometres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit km = Kilometres;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Inches"/> unit
+        /// The Inches unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit Inches = new LengthUnit(0.0254, "in");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Mile"/> unit
+        /// The Mile unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit Mile = new LengthUnit(1609.344, "mi");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Mile"/> unit
+        /// The Mile unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit mi = Mile;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Yard"/> unit
+        /// The Yard unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit Yard = new LengthUnit(0.9144, "yd");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Yard"/> unit
+        /// The Yard unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit yd = Yard;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.NauticalMile"/> unit
+        /// The NauticalMile unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit NauticalMile = new LengthUnit(1852, "nmi");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.NauticalMile"/> unit
+        /// The NauticalMile unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly LengthUnit nmi = NauticalMile;
@@ -136,7 +147,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.Metres"/>.
+        /// The symbol for the <see cref="Gu.Units.LengthUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -145,6 +156,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.LengthUnit"/>
+        /// </summary>
+        public LengthUnit SiUnit => LengthUnit.Metres;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.LengthUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => LengthUnit.Metres;
 
         public static Length operator *(double left, LengthUnit right)
         {
@@ -163,16 +184,16 @@
 
         public static LengthUnit Parse(string text)
         {
-            return Parser.ParseUnit<LengthUnit>(text);
+            return UnitParser<LengthUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out LengthUnit value)
         {
-            return Parser.TryParseUnit<LengthUnit>(text, out value);
+            return UnitParser<LengthUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Metres"/>.
+        /// Converts <paramref name="value"/> to Metres.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -195,14 +216,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new Length(value, this)</returns>
         public Length CreateQuantity(double value)
         {
             return new Length(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in Metres
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
