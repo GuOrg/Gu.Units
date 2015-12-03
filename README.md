@@ -40,3 +40,5 @@ Types for units and quantities, sample:
 
 - Only the Gu.Units dll is meant for use. The other projects are for generating the code.
 - The code is generated from GeneratorSettings.xml, the wpf project is an editor for it. Should probably clean it up and make a wiki about how to use it. Started as a hack to avoid writing xml by hand, never got unhacked.
+
+[nuget package](https://www.nuget.org/packages/Gu.Units/)
