@@ -1,45 +1,48 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.UnitlessUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Scalar.symbol}")]
+    [Serializable, TypeConverter(typeof(UnitlessUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Scalar.symbol}")]
     public struct UnitlessUnit : IUnit, IUnit<Unitless>, IEquatable<UnitlessUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.Scalar"/> unit
+        /// The Scalar unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly UnitlessUnit Scalar = new UnitlessUnit(1.0, "ul");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Scalar"/> unit
+        /// The Scalar unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly UnitlessUnit ul = Scalar;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.PartsPerMillion"/> unit
+        /// The PartsPerMillion unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly UnitlessUnit PartsPerMillion = new UnitlessUnit(1E-06, "ppm");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.PartsPerMillion"/> unit
+        /// The PartsPerMillion unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly UnitlessUnit ppm = PartsPerMillion;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Promilles"/> unit
+        /// The Promilles unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly UnitlessUnit Promilles = new UnitlessUnit(0.001, "‰");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Percents"/> unit
+        /// The Percents unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly UnitlessUnit Percents = new UnitlessUnit(0.01, "%");
@@ -54,7 +57,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.Scalar"/>.
+        /// The symbol for the <see cref="Gu.Units.UnitlessUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -63,6 +66,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.UnitlessUnit"/>
+        /// </summary>
+        public UnitlessUnit SiUnit => UnitlessUnit.Scalar;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.UnitlessUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => UnitlessUnit.Scalar;
 
         public static Unitless operator *(double left, UnitlessUnit right)
         {
@@ -81,16 +94,16 @@
 
         public static UnitlessUnit Parse(string text)
         {
-            return Parser.ParseUnit<UnitlessUnit>(text);
+            return UnitParser<UnitlessUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out UnitlessUnit value)
         {
-            return Parser.TryParseUnit<UnitlessUnit>(text, out value);
+            return UnitParser<UnitlessUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Scalar"/>.
+        /// Converts <paramref name="value"/> to Scalar.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -113,14 +126,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new Unitless(value, this)</returns>
         public Unitless CreateQuantity(double value)
         {
             return new Unitless(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in Scalar
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

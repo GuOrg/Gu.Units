@@ -5,30 +5,27 @@
         xmlns:local="clr-namespace:Gu.Units.Wpf.Demo"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:units="http://Gu.com/Units"
+        xmlns:units1="clr-namespace:Gu.Units;assembly=Gu.Units"
         Title="MainWindow"
         Width="525"
         Height="350"
+        DataContext="{x:Static local:ViewModel.Instance}"
         mc:Ignorable="d">
-    <Window.DataContext>
-        <local:ViewModel />
-    </Window.DataContext>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0"
-                   Grid.Column="0"
-                   Text="Length" />
-        <!--<TextBox Grid.Row="0"
-                 Grid.Column="1"
-                 Text="{Binding Length,
-                                Converter={units:LengthConverter mm}}" />-->
-    </Grid>
+    <TabControl>
+        <TabItem Header="Units only">
+            <local:UnitsOnlyView />
+        </TabItem>
+
+        <TabItem Header="Input options">
+            <local:InputOptionsView />
+        </TabItem>
+
+        <TabItem Header="Symbol options">
+            <local:SymbolOptions />
+        </TabItem>
+
+        <TabItem Header="String formats">
+            <local:StringFormatView />
+        </TabItem>
+    </TabControl>
 </Window>

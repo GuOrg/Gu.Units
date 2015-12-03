@@ -1,8 +1,6 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #>
-<#@ import namespace="System.Globalization" #>
-<#@ import namespace="System.Collections.Generic" #>
 <#@ output extension=".txt" #>
 <#
 // Template used by EnumerableGenerator.tt

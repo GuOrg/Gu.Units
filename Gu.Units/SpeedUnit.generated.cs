@@ -1,71 +1,72 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.SpeedUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MetresPerSecond.symbol}")]
+    [Serializable, TypeConverter(typeof(SpeedUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MetresPerSecond.symbol}")]
     public struct SpeedUnit : IUnit, IUnit<Speed>, IEquatable<SpeedUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.MetresPerSecond"/> unit
+        /// The MetresPerSecond unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly SpeedUnit MetresPerSecond = new SpeedUnit(1.0, "m/s");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.MillimetresPerSecond"/> unit
+        /// The MillimetresPerSecond unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly SpeedUnit MillimetresPerSecond = new SpeedUnit(0.001, "mm/s");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.CentimetresPerSecond"/> unit
+        /// The CentimetresPerSecond unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly SpeedUnit CentimetresPerSecond = new SpeedUnit(0.01, "cm/s");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.KilometresPerHour"/> unit
+        /// The KilometresPerHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly SpeedUnit KilometresPerHour = new SpeedUnit(0.27777777777777779, "km/h");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.CentimetresPerMinute"/> unit
+        /// The CentimetresPerMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly SpeedUnit CentimetresPerMinute = new SpeedUnit(0.00016666666666666666, "cm/min");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.MetresPerMinute"/> unit
+        /// The MetresPerMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly SpeedUnit MetresPerMinute = new SpeedUnit(0.016666666666666666, "m/min");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.MetresPerHour"/> unit
+        /// The MetresPerHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly SpeedUnit MetresPerHour = new SpeedUnit(0.00027777777777777778, "m/h");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.MillimetresPerHour"/> unit
+        /// The MillimetresPerHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly SpeedUnit MillimetresPerHour = new SpeedUnit(2.7777777777777776E-07, "mm/h");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.CentimetresPerHour"/> unit
+        /// The CentimetresPerHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly SpeedUnit CentimetresPerHour = new SpeedUnit(2.7777777777777779E-06, "cm/h");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.MillimetresPerMinute"/> unit
+        /// The MillimetresPerMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly SpeedUnit MillimetresPerMinute = new SpeedUnit(1.6666666666666667E-05, "mm/min");
@@ -80,7 +81,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.MetresPerSecond"/>.
+        /// The symbol for the <see cref="Gu.Units.SpeedUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -89,6 +90,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.SpeedUnit"/>
+        /// </summary>
+        public SpeedUnit SiUnit => SpeedUnit.MetresPerSecond;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.SpeedUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => SpeedUnit.MetresPerSecond;
 
         public static Speed operator *(double left, SpeedUnit right)
         {
@@ -107,16 +118,16 @@
 
         public static SpeedUnit Parse(string text)
         {
-            return Parser.ParseUnit<SpeedUnit>(text);
+            return UnitParser<SpeedUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out SpeedUnit value)
         {
-            return Parser.TryParseUnit<SpeedUnit>(text, out value);
+            return UnitParser<SpeedUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.MetresPerSecond"/>.
+        /// Converts <paramref name="value"/> to MetresPerSecond.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -139,14 +150,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new Speed(value, this)</returns>
         public Speed CreateQuantity(double value)
         {
             return new Speed(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in MetresPerSecond
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

@@ -268,7 +268,7 @@
             <Offset>0</Offset>
           </Formula>
           <Conversions />
-        </Conversion>
+        </Conversion>        
         <Conversion>
           <ClassName>Bars</ClassName>
           <Symbol>bar</Symbol>
@@ -283,6 +283,33 @@
           <Symbol>mbar</Symbol>
           <Formula>
             <ConversionFactor>100</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>NewtonsPerSquareMillimetre</ClassName>
+          <Symbol>N⋅mm⁻²</Symbol>
+          <Formula>
+            <ConversionFactor>1000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>KilonewtonsPerSquareMillimetre</ClassName>
+          <Symbol>kN⋅mm⁻²</Symbol>
+          <Formula>
+            <ConversionFactor>1000000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>NewtonsPerSquareMetre</ClassName>
+          <Symbol>N/m²</Symbol>
+          <Formula>
+            <ConversionFactor>1</ConversionFactor>
             <Offset>0</Offset>
           </Formula>
           <Conversions />
@@ -1240,6 +1267,147 @@
         <UnitAndPower>
           <UnitName>Seconds</UnitName>
           <Power>-3</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>MetresPerUnitless</ClassName>
+      <Symbol>m/ul</Symbol>
+      <QuantityName>LengthPerUnitless</QuantityName>
+      <Conversions>
+        <Conversion>
+          <ClassName>MillimetresPerPercent</ClassName>
+          <Symbol>mm/%</Symbol>
+          <Formula>
+            <ConversionFactor>0.1</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>MicrometresPerPercent</ClassName>
+          <Symbol>µm/%</Symbol>
+          <Formula>
+            <ConversionFactor>9.9999999999999991E-05</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>NanometresPerPercent</ClassName>
+          <Symbol>nm/%</Symbol>
+          <Formula>
+            <ConversionFactor>1.0000000000000001E-07</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>MetresPerPercent</ClassName>
+          <Symbol>m/%</Symbol>
+          <Formula>
+            <ConversionFactor>100</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+      </Conversions>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Metres</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Scalar</UnitName>
+          <Power>-1</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>RadiansPerUnitless</ClassName>
+      <Symbol>rad/ul</Symbol>
+      <QuantityName>AnglePerUnitless</QuantityName>
+      <Conversions>
+        <Conversion>
+          <ClassName>DegreesPerPercent</ClassName>
+          <Symbol>°/%</Symbol>
+          <Formula>
+            <ConversionFactor>1.7453292519943295</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>RadiansPerPercent</ClassName>
+          <Symbol>rad/%</Symbol>
+          <Formula>
+            <ConversionFactor>100</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+      </Conversions>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Radians</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Scalar</UnitName>
+          <Power>-1</Power>
+        </UnitAndPower>
+      </Parts>
+    </DerivedUnit>
+    <DerivedUnit>
+      <ClassName>NewtonsPerUnitless</ClassName>
+      <Symbol>N/ul</Symbol>
+      <QuantityName>ForcePerUnitless</QuantityName>
+      <Conversions>
+        <Conversion>
+          <ClassName>NewtonsPerPercent</ClassName>
+          <Symbol>N/%</Symbol>
+          <Formula>
+            <ConversionFactor>100</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>KilonewtonsPerPercent</ClassName>
+          <Symbol>kN/%</Symbol>
+          <Formula>
+            <ConversionFactor>100000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>MeganewtonsPerPercent</ClassName>
+          <Symbol>MN/%</Symbol>
+          <Formula>
+            <ConversionFactor>100000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+        <Conversion>
+          <ClassName>GiganewtonsPerPercent</ClassName>
+          <Symbol>GN/%</Symbol>
+          <Formula>
+            <ConversionFactor>100000000000</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
+      </Conversions>
+      <Parts>
+        <UnitAndPower>
+          <UnitName>Newtons</UnitName>
+          <Power>1</Power>
+        </UnitAndPower>
+        <UnitAndPower>
+          <UnitName>Scalar</UnitName>
+          <Power>-1</Power>
         </UnitAndPower>
       </Parts>
     </DerivedUnit>

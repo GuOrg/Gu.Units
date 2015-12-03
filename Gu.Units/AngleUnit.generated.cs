@@ -1,28 +1,30 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.AngleUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Radians.symbol}")]
+    [Serializable, TypeConverter(typeof(AngleUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Radians.symbol}")]
     public struct AngleUnit : IUnit, IUnit<Angle>, IEquatable<AngleUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.Radians"/> unit
+        /// The Radians unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngleUnit Radians = new AngleUnit(1.0, "rad");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Radians"/> unit
+        /// The Radians unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly AngleUnit rad = Radians;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Degrees"/> unit
+        /// The Degrees unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly AngleUnit Degrees = new AngleUnit(0.017453292519943295, "°");
@@ -37,7 +39,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.Radians"/>.
+        /// The symbol for the <see cref="Gu.Units.AngleUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -46,6 +48,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.AngleUnit"/>
+        /// </summary>
+        public AngleUnit SiUnit => AngleUnit.Radians;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.AngleUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => AngleUnit.Radians;
 
         public static Angle operator *(double left, AngleUnit right)
         {
@@ -64,16 +76,16 @@
 
         public static AngleUnit Parse(string text)
         {
-            return Parser.ParseUnit<AngleUnit>(text);
+            return UnitParser<AngleUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out AngleUnit value)
         {
-            return Parser.TryParseUnit<AngleUnit>(text, out value);
+            return UnitParser<AngleUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Radians"/>.
+        /// Converts <paramref name="value"/> to Radians.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -96,14 +108,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new Angle(value, this)</returns>
         public Angle CreateQuantity(double value)
         {
             return new Angle(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in Radians
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

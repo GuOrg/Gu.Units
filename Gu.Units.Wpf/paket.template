@@ -1,0 +1,5 @@
+﻿type project
+title Gu.Units.Wpf
+tags unit units quantity quantities unitsofmeasure converter xaml wpf
+projectUrl https://github.com/JohanLarsson/Gu.Units
+licenseUrl http://opensource.org/licenses/MIT

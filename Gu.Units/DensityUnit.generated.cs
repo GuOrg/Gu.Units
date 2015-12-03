@@ -1,29 +1,30 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.DensityUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{KilogramsPerCubicMetre.symbol}")]
+    [Serializable, TypeConverter(typeof(DensityUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{KilogramsPerCubicMetre.symbol}")]
     public struct DensityUnit : IUnit, IUnit<Density>, IEquatable<DensityUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.KilogramsPerCubicMetre"/> unit
+        /// The KilogramsPerCubicMetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly DensityUnit KilogramsPerCubicMetre = new DensityUnit(1.0, "kg/m³");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.GramsPerCubicMillimetre"/> unit
+        /// The GramsPerCubicMillimetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly DensityUnit GramsPerCubicMillimetre = new DensityUnit(999999.99999999988, "g/mm³");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.GramsPerCubicCentimetre"/> unit
+        /// The GramsPerCubicCentimetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly DensityUnit GramsPerCubicCentimetre = new DensityUnit(999.99999999999989, "g/cm³");
@@ -38,7 +39,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.KilogramsPerCubicMetre"/>.
+        /// The symbol for the <see cref="Gu.Units.DensityUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -47,6 +48,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.DensityUnit"/>
+        /// </summary>
+        public DensityUnit SiUnit => DensityUnit.KilogramsPerCubicMetre;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.DensityUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => DensityUnit.KilogramsPerCubicMetre;
 
         public static Density operator *(double left, DensityUnit right)
         {
@@ -65,16 +76,16 @@
 
         public static DensityUnit Parse(string text)
         {
-            return Parser.ParseUnit<DensityUnit>(text);
+            return UnitParser<DensityUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out DensityUnit value)
         {
-            return Parser.TryParseUnit<DensityUnit>(text, out value);
+            return UnitParser<DensityUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.KilogramsPerCubicMetre"/>.
+        /// Converts <paramref name="value"/> to KilogramsPerCubicMetre.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -97,14 +108,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new Density(value, this)</returns>
         public Density CreateQuantity(double value)
         {
             return new Density(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in KilogramsPerCubicMetre
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

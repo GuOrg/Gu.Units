@@ -1,55 +1,60 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.MassUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Kilograms.symbol}")]
+    [Serializable, TypeConverter(typeof(MassUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Kilograms.symbol}")]
     public struct MassUnit : IUnit, IUnit<Mass>, IEquatable<MassUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.Kilograms"/> unit
+        /// The Kilograms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly MassUnit Kilograms = new MassUnit(1.0, "kg");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Kilograms"/> unit
+        /// The Kilograms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly MassUnit kg = Kilograms;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Grams"/> unit
+        /// The Grams unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly MassUnit Grams = new MassUnit(0.001, "g");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Grams"/> unit
+        /// The Grams unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly MassUnit g = Grams;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Milligrams"/> unit
+        /// The Milligrams unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly MassUnit Milligrams = new MassUnit(1E-06, "mg");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Milligrams"/> unit
+        /// The Milligrams unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly MassUnit mg = Milligrams;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Micrograms"/> unit
+        /// The Micrograms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly MassUnit Micrograms = new MassUnit(1E-09, "µg");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Micrograms"/> unit
+        /// The Micrograms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly MassUnit µg = Micrograms;
@@ -64,7 +69,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.Kilograms"/>.
+        /// The symbol for the <see cref="Gu.Units.MassUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -73,6 +78,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.MassUnit"/>
+        /// </summary>
+        public MassUnit SiUnit => MassUnit.Kilograms;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.MassUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => MassUnit.Kilograms;
 
         public static Mass operator *(double left, MassUnit right)
         {
@@ -91,16 +106,16 @@
 
         public static MassUnit Parse(string text)
         {
-            return Parser.ParseUnit<MassUnit>(text);
+            return UnitParser<MassUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out MassUnit value)
         {
-            return Parser.TryParseUnit<MassUnit>(text, out value);
+            return UnitParser<MassUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Kilograms"/>.
+        /// Converts <paramref name="value"/> to Kilograms.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -123,14 +138,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new Mass(value, this)</returns>
         public Mass CreateQuantity(double value)
         {
             return new Mass(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in Kilograms
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

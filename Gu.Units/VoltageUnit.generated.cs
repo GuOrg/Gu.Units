@@ -1,66 +1,72 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.VoltageUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Volts.symbol}")]
+    [Serializable, TypeConverter(typeof(VoltageUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Volts.symbol}")]
     public struct VoltageUnit : IUnit, IUnit<Voltage>, IEquatable<VoltageUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.Volts"/> unit
+        /// The Volts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VoltageUnit Volts = new VoltageUnit(1.0, "V");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Volts"/> unit
+        /// The Volts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly VoltageUnit V = Volts;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Millivolts"/> unit
+        /// The Millivolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly VoltageUnit Millivolts = new VoltageUnit(0.001, "mV");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Millivolts"/> unit
+        /// The Millivolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly VoltageUnit mV = Millivolts;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Kilovolts"/> unit
+        /// The Kilovolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly VoltageUnit Kilovolts = new VoltageUnit(1000, "kV");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Kilovolts"/> unit
+        /// The Kilovolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly VoltageUnit kV = Kilovolts;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Megavolts"/> unit
+        /// The Megavolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly VoltageUnit Megavolts = new VoltageUnit(1000000, "MV");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Megavolts"/> unit
+        /// The Megavolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly VoltageUnit MV = Megavolts;
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.Microvolts"/> unit
+        /// The Microvolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly VoltageUnit Microvolts = new VoltageUnit(1E-06, "µV");
+
         /// <summary>
-        /// The <see cref="T:Gu.Units.Microvolts"/> unit
+        /// The Microvolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly VoltageUnit µV = Microvolts;
@@ -75,7 +81,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.Volts"/>.
+        /// The symbol for the <see cref="Gu.Units.VoltageUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -84,6 +90,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.VoltageUnit"/>
+        /// </summary>
+        public VoltageUnit SiUnit => VoltageUnit.Volts;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.VoltageUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => VoltageUnit.Volts;
 
         public static Voltage operator *(double left, VoltageUnit right)
         {
@@ -102,16 +118,16 @@
 
         public static VoltageUnit Parse(string text)
         {
-            return Parser.ParseUnit<VoltageUnit>(text);
+            return UnitParser<VoltageUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out VoltageUnit value)
         {
-            return Parser.TryParseUnit<VoltageUnit>(text, out value);
+            return UnitParser<VoltageUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.Volts"/>.
+        /// Converts <paramref name="value"/> to Volts.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -134,14 +150,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new Voltage(value, this)</returns>
         public Voltage CreateQuantity(double value)
         {
             return new Voltage(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in Volts
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

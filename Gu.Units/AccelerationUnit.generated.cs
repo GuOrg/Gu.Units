@@ -1,29 +1,30 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.AccelerationUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MetresPerSecondSquared.symbol}")]
+    [Serializable, TypeConverter(typeof(AccelerationUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MetresPerSecondSquared.symbol}")]
     public struct AccelerationUnit : IUnit, IUnit<Acceleration>, IEquatable<AccelerationUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.MetresPerSecondSquared"/> unit
+        /// The MetresPerSecondSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AccelerationUnit MetresPerSecondSquared = new AccelerationUnit(1.0, "m/s²");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.MillimetresPerSecondSquared"/> unit
+        /// The MillimetresPerSecondSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly AccelerationUnit MillimetresPerSecondSquared = new AccelerationUnit(0.001, "mm/s²");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.CentimetresPerSecondSquared"/> unit
+        /// The CentimetresPerSecondSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly AccelerationUnit CentimetresPerSecondSquared = new AccelerationUnit(0.01, "cm/s²");
@@ -38,7 +39,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.MetresPerSecondSquared"/>.
+        /// The symbol for the <see cref="Gu.Units.AccelerationUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -47,6 +48,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.AccelerationUnit"/>
+        /// </summary>
+        public AccelerationUnit SiUnit => AccelerationUnit.MetresPerSecondSquared;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.AccelerationUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => AccelerationUnit.MetresPerSecondSquared;
 
         public static Acceleration operator *(double left, AccelerationUnit right)
         {
@@ -65,16 +76,16 @@
 
         public static AccelerationUnit Parse(string text)
         {
-            return Parser.ParseUnit<AccelerationUnit>(text);
+            return UnitParser<AccelerationUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out AccelerationUnit value)
         {
-            return Parser.TryParseUnit<AccelerationUnit>(text, out value);
+            return UnitParser<AccelerationUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.MetresPerSecondSquared"/>.
+        /// Converts <paramref name="value"/> to MetresPerSecondSquared.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -97,14 +108,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new Acceleration(value, this)</returns>
         public Acceleration CreateQuantity(double value)
         {
             return new Acceleration(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in MetresPerSecondSquared
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

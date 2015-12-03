@@ -1,17 +1,14 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
-<#@ import namespace="System.Globalization" #>
-<#@ import namespace="System.Collections" #>
-<#@ import namespace="System.Collections.Generic" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #>
-<#@ parameter name="QuantityMetaData" type="Gu.Units.Generator.Quantity" #>
+<#@ parameter name="QuantityTypeConverterData" type="Gu.Units.Generator.Quantity" #>
 <#@ output extension=".txt" #>
 <#
 // Template used by QuantityTypeConverterGenerator.tt
 Quantity quantity = null;
-if(QuantityMetaData != null)
+if(QuantityTypeConverterData != null)
 {
-    quantity = QuantityMetaData;
+    quantity = QuantityTypeConverterData;
 }
 else
 {

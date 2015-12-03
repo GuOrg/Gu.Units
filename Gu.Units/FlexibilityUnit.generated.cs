@@ -1,35 +1,36 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.FlexibilityUnit"/>.
 	/// Contains conversion logic.
     /// </summary>
-    [Serializable, DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MetresPerNewton.symbol}")]
+    [Serializable, TypeConverter(typeof(FlexibilityUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MetresPerNewton.symbol}")]
     public struct FlexibilityUnit : IUnit, IUnit<Flexibility>, IEquatable<FlexibilityUnit>
     {
         /// <summary>
-        /// The <see cref="T:Gu.Units.MetresPerNewton"/> unit
+        /// The MetresPerNewton unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FlexibilityUnit MetresPerNewton = new FlexibilityUnit(1.0, "m/N");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.MillimetresPerNewton"/> unit
+        /// The MillimetresPerNewton unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly FlexibilityUnit MillimetresPerNewton = new FlexibilityUnit(0.001, "mm/N");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.MillimetresPerKilonewton"/> unit
+        /// The MillimetresPerKilonewton unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly FlexibilityUnit MillimetresPerKilonewton = new FlexibilityUnit(1E-06, "mm/kN");
 
         /// <summary>
-        /// The <see cref="T:Gu.Units.MicrometresPerKilonewton"/> unit
+        /// The MicrometresPerKilonewton unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
 		public static readonly FlexibilityUnit MicrometresPerKilonewton = new FlexibilityUnit(1E-09, "µm/kN");
@@ -44,7 +45,7 @@
         }
 
         /// <summary>
-        /// The symbol for <see cref="T:Gu.Units.MetresPerNewton"/>.
+        /// The symbol for the <see cref="Gu.Units.FlexibilityUnit"/>.
         /// </summary>
         public string Symbol
         {
@@ -53,6 +54,16 @@
                 return this.symbol;
             }
         }
+
+        /// <summary>
+        /// The default unit for <see cref="Gu.Units.FlexibilityUnit"/>
+        /// </summary>
+        public FlexibilityUnit SiUnit => FlexibilityUnit.MetresPerNewton;
+
+        /// <summary>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.FlexibilityUnit"/>
+        /// </summary>
+        IUnit IUnit.SiUnit => FlexibilityUnit.MetresPerNewton;
 
         public static Flexibility operator *(double left, FlexibilityUnit right)
         {
@@ -71,16 +82,16 @@
 
         public static FlexibilityUnit Parse(string text)
         {
-            return Parser.ParseUnit<FlexibilityUnit>(text);
+            return UnitParser<FlexibilityUnit>.Parse(text);
         }
 
         public static bool TryParse(string text, out FlexibilityUnit value)
         {
-            return Parser.TryParseUnit<FlexibilityUnit>(text, out value);
+            return UnitParser<FlexibilityUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts a value to <see cref="T:Gu.Units.MetresPerNewton"/>.
+        /// Converts <paramref name="value"/> to MetresPerNewton.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
@@ -103,14 +114,14 @@
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value"></param>
-        /// <returns>new TTQuantity(value, this)</returns>
+        /// <returns>new Flexibility(value, this)</returns>
         public Flexibility CreateQuantity(double value)
         {
             return new Flexibility(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value
+        /// Gets the scalar value of <paramref name="quantity"/> in MetresPerNewton
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

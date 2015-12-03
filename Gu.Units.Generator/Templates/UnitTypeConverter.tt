@@ -1,17 +1,14 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
-<#@ import namespace="System.Globalization" #>
-<#@ import namespace="System.Collections" #>
-<#@ import namespace="System.Collections.Generic" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #>
-<#@ parameter name="UnitMetaData" type="Gu.Units.Generator.IUnit" #>
+<#@ parameter name="UnitTypeConverterData" type="Gu.Units.Generator.IUnit" #>
 <#@ output extension=".txt" #>
 <#
 // Template used by UnitTypeConverterGenerator.tt
 IUnit unit;
-if(UnitMetaData != null)
+if(UnitTypeConverterData != null)
 {
-    unit = UnitMetaData;
+    unit = UnitTypeConverterData;
 }
 else
 {
