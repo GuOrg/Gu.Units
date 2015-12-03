@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Resources;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Markup;
@@ -9,9 +10,9 @@ using Gu.Units;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Gu.Units.Wpf")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("IValueConverters for Gu.Units as MarkupExtensions")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Johan Larsson")]
 [assembly: AssemblyProduct("Gu.Units.Wpf")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
@@ -35,12 +36,13 @@ using Gu.Units;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("0.6.0.0")]
+[assembly: AssemblyFileVersion("0.6.0.0")]
 [assembly:InternalsVisibleTo("Gu.Units.Wpf.Tests", AllInternalsVisible = true)]
 
 [assembly: XmlnsDefinition("http://Gu.com/Units", clrNamespace: "Gu.Units", AssemblyName = "Gu.Units")]
 [assembly: XmlnsDefinition("http://Gu.com/Units", clrNamespace: "Gu.Units.Wpf", AssemblyName = "Gu.Units.Wpf")]
 [assembly: XmlnsPrefix("http://Gu.com/Units", "units")]
+[assembly: NeutralResourcesLanguage("en")]
 
 namespace Gu.Units {} // testing hacking it like this
