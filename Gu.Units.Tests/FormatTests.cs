@@ -7,8 +7,6 @@
 
     public class FormatTests
     {
-        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
-        private const char MultiplyDot = '⋅';
         const string UnknownFormat = "unknown format";
 
         [Test]
@@ -60,10 +58,10 @@
                 Assert.AreEqual("1.2\u00A0s^-1*m^1", speed.ToString("F1", "s^-1*m^1"));
                 Assert.AreEqual("4.32\u00A0km/h", speed.ToString(SpeedUnit.KilometresPerHour));
                 Assert.AreEqual("1.2\u00A0m/s", speed.ToString(SpeedUnit.MetresPerSecond, SymbolFormat.Default));
-                Assert.AreEqual("1.2\u00A0m/s", speed.ToString( SpeedUnit.MetresPerSecond, SymbolFormat.FractionHatPowers));
-                Assert.AreEqual("1.2\u00A0m*s^-1", speed.ToString( SpeedUnit.MetresPerSecond, SymbolFormat.SignedHatPowers));
+                Assert.AreEqual("1.2\u00A0m/s", speed.ToString(SpeedUnit.MetresPerSecond, SymbolFormat.FractionHatPowers));
+                Assert.AreEqual("1.2\u00A0m*s^-1", speed.ToString(SpeedUnit.MetresPerSecond, SymbolFormat.SignedHatPowers));
                 Assert.AreEqual("1.2\u00A0m/s", speed.ToString(SpeedUnit.MetresPerSecond, SymbolFormat.FractionSuperScript));
-                Assert.AreEqual("1.2\u00A0m⋅s⁻¹", speed.ToString( SpeedUnit.MetresPerSecond, SymbolFormat.SignedSuperScript));
+                Assert.AreEqual("1.2\u00A0m⋅s⁻¹", speed.ToString(SpeedUnit.MetresPerSecond, SymbolFormat.SignedSuperScript));
                 Assert.AreEqual("4.3\u00A0km/h", speed.ToString("F1", SpeedUnit.KilometresPerHour));
                 Assert.AreEqual("1.2\u00A0m/s", speed.ToString("F1", SpeedUnit.MetresPerSecond, SymbolFormat.Default));
                 Assert.AreEqual("1.2\u00A0m/s", speed.ToString("F1", SpeedUnit.MetresPerSecond, SymbolFormat.FractionHatPowers));
@@ -106,16 +104,32 @@
             Assert.AreEqual("1\u00A0200,00 mm⋅s⁻¹", speed.ToString("N mm⋅s⁻¹", sv));
         }
 
-        [Explicit(Reminder.ToDo)]
+        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
+        private const char MultiplyDot = '⋅';
         [Test]
         public void FormatPressure()
         {
             var pressure = Pressure.FromMegapascals(1.2);
-            Assert.AreEqual("1.20 N/m^2", pressure.ToString("F2 N/m^2"));
-            Assert.AreEqual("1.20 N/m^2", pressure.ToString("F2 N⋅m⁻²"));
-            Assert.AreEqual("1.20 N/m^2", pressure.ToString("F2 N⋅mm⁻²"));
-            Assert.AreEqual("1.20 MPa", pressure.ToString("F2 MPa"));
-            Assert.AreEqual("1.20E6 Pa", pressure.ToString("E Pa"));
+            using (Thread.CurrentThread.UsingTempCulture(CultureInfo.InvariantCulture))
+            {
+                Assert.AreEqual("1200000\u00A0Pa", pressure.ToString());
+                Assert.AreEqual("12\u00A0bar", pressure.ToString(PressureUnit.Bars));
+                Assert.AreEqual("1.2\u00A0N/mm²", pressure.ToString(PressureUnit.NewtonsPerSquareMillimetre, SymbolFormat.Default));
+                Assert.AreEqual("1.2\u00A0N/mm^2", pressure.ToString(PressureUnit.NewtonsPerSquareMillimetre, SymbolFormat.FractionHatPowers));
+                Assert.AreEqual("1.2\u00A0N*mm^-2", pressure.ToString(PressureUnit.NewtonsPerSquareMillimetre, SymbolFormat.SignedHatPowers));
+                Assert.AreEqual("1.2\u00A0N/mm²", pressure.ToString(PressureUnit.NewtonsPerSquareMillimetre, SymbolFormat.FractionSuperScript));
+                Assert.AreEqual("1.2\u00A0N⋅mm⁻²", pressure.ToString(PressureUnit.NewtonsPerSquareMillimetre, SymbolFormat.SignedSuperScript));
+                Assert.AreEqual("1.20\u00A0N/mm²", pressure.ToString("F2", PressureUnit.NewtonsPerSquareMillimetre));
+                Assert.AreEqual("1.20\u00A0N/mm²", pressure.ToString("F2", PressureUnit.NewtonsPerSquareMillimetre, SymbolFormat.Default));
+                Assert.AreEqual("1.20\u00A0N/mm^2", pressure.ToString("F2", PressureUnit.NewtonsPerSquareMillimetre, SymbolFormat.FractionHatPowers));
+                Assert.AreEqual("1.20\u00A0N*mm^-2", pressure.ToString("F2", PressureUnit.NewtonsPerSquareMillimetre, SymbolFormat.SignedHatPowers));
+                Assert.AreEqual("1.20\u00A0N/mm²", pressure.ToString("F2", PressureUnit.NewtonsPerSquareMillimetre, SymbolFormat.FractionSuperScript));
+                Assert.AreEqual("1.20\u00A0N⋅mm⁻²", pressure.ToString("F2", PressureUnit.NewtonsPerSquareMillimetre, SymbolFormat.SignedSuperScript));
+                Assert.AreEqual("1.20 N/mm^2", pressure.ToString("F2 N/mm^2"));
+                Assert.AreEqual("1.20 N⋅mm⁻²", pressure.ToString("F2 N⋅mm⁻²"));
+                Assert.AreEqual("1.20 MPa", pressure.ToString("F2 MPa"));
+                Assert.AreEqual("1.20E+006 Pa", pressure.ToString("E2 Pa"));
+            }
         }
     }
 }

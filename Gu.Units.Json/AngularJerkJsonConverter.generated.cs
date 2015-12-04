@@ -27,7 +27,7 @@
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var angularJerk = (AngularJerk)value;
-            serializer.Serialize(writer, angularJerk.ToString(this.unit, writer.Culture));
+            serializer.Serialize(writer, angularJerk.ToString(this.unit, serializer.Culture));
         }
 
         public override bool CanConvert(Type objectType)
@@ -38,7 +38,7 @@
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;
-            return AngularJerk.Parse(stringValue, reader.Culture);
+            return AngularJerk.Parse(stringValue, serializer.Culture);
         }
     }
 }

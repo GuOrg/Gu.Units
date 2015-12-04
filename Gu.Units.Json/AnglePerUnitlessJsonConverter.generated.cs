@@ -24,7 +24,7 @@
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var anglePerUnitless = (AnglePerUnitless)value;
-            serializer.Serialize(writer, anglePerUnitless.ToString(this.unit, writer.Culture));
+            serializer.Serialize(writer, anglePerUnitless.ToString(this.unit, serializer.Culture));
         }
 
         public override bool CanConvert(Type objectType)
@@ -35,7 +35,7 @@
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;
-            return AnglePerUnitless.Parse(stringValue, reader.Culture);
+            return AnglePerUnitless.Parse(stringValue, serializer.Culture);
         }
     }
 }

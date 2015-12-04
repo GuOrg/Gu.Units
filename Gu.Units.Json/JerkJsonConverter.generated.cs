@@ -32,7 +32,7 @@
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var jerk = (Jerk)value;
-            serializer.Serialize(writer, jerk.ToString(this.unit, writer.Culture));
+            serializer.Serialize(writer, jerk.ToString(this.unit, serializer.Culture));
         }
 
         public override bool CanConvert(Type objectType)
@@ -43,7 +43,7 @@
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;
-            return Jerk.Parse(stringValue, reader.Culture);
+            return Jerk.Parse(stringValue, serializer.Culture);
         }
     }
 }

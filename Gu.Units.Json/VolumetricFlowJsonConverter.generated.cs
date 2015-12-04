@@ -22,7 +22,7 @@
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var volumetricFlow = (VolumetricFlow)value;
-            serializer.Serialize(writer, volumetricFlow.ToString(this.unit, writer.Culture));
+            serializer.Serialize(writer, volumetricFlow.ToString(this.unit, serializer.Culture));
         }
 
         public override bool CanConvert(Type objectType)
@@ -33,7 +33,7 @@
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;
-            return VolumetricFlow.Parse(stringValue, reader.Culture);
+            return VolumetricFlow.Parse(stringValue, serializer.Culture);
         }
     }
 }

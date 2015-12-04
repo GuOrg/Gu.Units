@@ -24,7 +24,7 @@
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var acceleration = (Acceleration)value;
-            serializer.Serialize(writer, acceleration.ToString(this.unit, writer.Culture));
+            serializer.Serialize(writer, acceleration.ToString(this.unit, serializer.Culture));
         }
 
         public override bool CanConvert(Type objectType)
@@ -35,7 +35,7 @@
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;
-            return Acceleration.Parse(stringValue, reader.Culture);
+            return Acceleration.Parse(stringValue, serializer.Culture);
         }
     }
 }

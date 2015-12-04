@@ -33,7 +33,7 @@
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var pressure = (Pressure)value;
-            serializer.Serialize(writer, pressure.ToString(this.unit, writer.Culture));
+            serializer.Serialize(writer, pressure.ToString(this.unit, serializer.Culture));
         }
 
         public override bool CanConvert(Type objectType)
@@ -44,7 +44,7 @@
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;
-            return Pressure.Parse(stringValue, reader.Culture);
+            return Pressure.Parse(stringValue, serializer.Culture);
         }
     }
 }

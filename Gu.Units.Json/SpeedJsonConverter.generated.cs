@@ -31,7 +31,7 @@
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var speed = (Speed)value;
-            serializer.Serialize(writer, speed.ToString(this.unit, writer.Culture));
+            serializer.Serialize(writer, speed.ToString(this.unit, serializer.Culture));
         }
 
         public override bool CanConvert(Type objectType)
@@ -42,7 +42,7 @@
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;
-            return Speed.Parse(stringValue, reader.Culture);
+            return Speed.Parse(stringValue, serializer.Culture);
         }
     }
 }

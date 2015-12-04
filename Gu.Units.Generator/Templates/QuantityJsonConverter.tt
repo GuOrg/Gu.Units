@@ -53,7 +53,7 @@ namespace Gu.Units.Json
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var <#= quantity.ParameterName #> = (<#= quantity.ClassName #>)value;
-            serializer.Serialize(writer, <#= quantity.ParameterName #>.ToString(this.unit, writer.Culture));
+            serializer.Serialize(writer, <#= quantity.ParameterName #>.ToString(this.unit, serializer.Culture));
         }
 
         public override bool CanConvert(Type objectType)
@@ -64,7 +64,7 @@ namespace Gu.Units.Json
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;
-            return <#= quantity.ClassName #>.Parse(stringValue, reader.Culture);
+            return <#= quantity.ClassName #>.Parse(stringValue, serializer.Culture);
         }
     }
 }

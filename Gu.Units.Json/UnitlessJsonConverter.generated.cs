@@ -25,7 +25,7 @@
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var unitless = (Unitless)value;
-            serializer.Serialize(writer, unitless.ToString(this.unit, writer.Culture));
+            serializer.Serialize(writer, unitless.ToString(this.unit, serializer.Culture));
         }
 
         public override bool CanConvert(Type objectType)
@@ -36,7 +36,7 @@
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;
-            return Unitless.Parse(stringValue, reader.Culture);
+            return Unitless.Parse(stringValue, serializer.Culture);
         }
     }
 }

@@ -22,7 +22,7 @@
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var capacitance = (Capacitance)value;
-            serializer.Serialize(writer, capacitance.ToString(this.unit, writer.Culture));
+            serializer.Serialize(writer, capacitance.ToString(this.unit, serializer.Culture));
         }
 
         public override bool CanConvert(Type objectType)
@@ -33,7 +33,7 @@
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;
-            return Capacitance.Parse(stringValue, reader.Culture);
+            return Capacitance.Parse(stringValue, serializer.Culture);
         }
     }
 }
