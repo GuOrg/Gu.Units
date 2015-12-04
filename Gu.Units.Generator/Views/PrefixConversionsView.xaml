@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Gu.Units.Generator.PrefixConversionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Gu.Units.Generator"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             DataContext="{x:Static local:MainVm.Instance}"
+             mc:Ignorable="d">
+    <ItemsControl ItemsSource="{Binding Conversions.PrefixConversions.Prefixes}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate DataType="{x:Type local:PrefixConversionVm}">
+                <CheckBox IsChecked="{Binding IsUsed}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Conversion.Symbol}" />
+                        <TextBlock Text="(" />
+                        <TextBlock Text="{Binding Prefix.Name}" />
+                        <TextBlock Text="{Binding Unit.ClassName}" />
+                        <TextBlock Text=")" />
+                    </StackPanel>
+                </CheckBox>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</UserControl>

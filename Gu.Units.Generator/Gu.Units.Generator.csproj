@@ -102,8 +102,19 @@
     <Compile Include="MainVm.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PartConversionVm.cs" />
-    <Compile Include="Views\PrefixConversionVm.cs" />
+    <Compile Include="Views\PartConversionsView.xaml.cs">
+      <DependentUpon>PartConversionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartConversionsVm.cs" />
+    <Compile Include="Views\PartConversionVm.cs">
+      <DependentUpon>PartConversionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrefixConversionsView.xaml.cs">
+      <DependentUpon>PrefixConversionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrefixConversionsVm.cs">
+      <DependentUpon>PrefixConversionsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Annotations.generated.cs" />
     <Compile Include="Descriptors\Settings.cs" />
     <Compile Include="Descriptors\Quantity.cs" />
@@ -112,6 +123,9 @@
     </Compile>
     <Compile Include="Views\ConversionsVm.cs">
       <DependentUpon>ConversionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PrefixConversionVm.cs">
+      <DependentUpon>PrefixConversionsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="WpfStuff\ObservableCollectionExt.cs" />
     <Compile Include="WpfStuff\RelayCommand.cs" />
@@ -132,6 +146,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\ConversionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PartConversionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PrefixConversionsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

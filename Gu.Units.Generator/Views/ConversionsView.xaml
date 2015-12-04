@@ -30,43 +30,16 @@
                                Grid.Column="0"
                                Text="{Binding Conversions.BaseUnit.ClassName,
                                               StringFormat='BaseUnit: {0}'}" />
-                    <GroupBox Grid.Row="1" Header="Prefixes">
-                        <ItemsControl ItemsSource="{Binding Conversions.Prefixes}">
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate DataType="{x:Type local:PrefixConversionVm}">
-                                    <CheckBox IsChecked="{Binding IsUsed}">
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="{Binding Conversion.Symbol}" />
-                                            <TextBlock Text="(" />
-                                            <TextBlock Text="{Binding Prefix.Name}" />
-                                            <TextBlock Text="{Binding Unit.ClassName}" />
-                                            <TextBlock Text=")" />
-                                        </StackPanel>
-                                    </CheckBox>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
+                    <GroupBox Grid.Row="1"
+                              MinHeight="100"
+                              Header="Prefixes">
+                        <local:PrefixConversionsView />
                     </GroupBox>
 
-                    <GroupBox Grid.Row="2" Header="Subparts">
-                        <ItemsControl ItemsSource="{Binding Conversions.SubParts}">
-                            <ItemsControl.ItemsPanel>
-                                <ItemsPanelTemplate>
-                                    <StackPanel Orientation="Horizontal" />
-                                </ItemsPanelTemplate>
-                            </ItemsControl.ItemsPanel>
-                            <ItemsControl.ItemTemplate>
-                                <DataTemplate DataType="{x:Type local:PartConversionVm[]}">
-                                    <ItemsControl ItemsSource="{Binding}">
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate DataType="{x:Type local:PartConversionVm}">
-                                                <CheckBox Content="{Binding Conversion.Symbol}" IsChecked="{Binding IsUsed}" />
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                    </ItemsControl>
-                                </DataTemplate>
-                            </ItemsControl.ItemTemplate>
-                        </ItemsControl>
+                    <GroupBox Grid.Row="2"
+                              MinHeight="100"
+                              Header="Subparts">
+                        <local:PartConversionsView />
                     </GroupBox>
                 </Grid>
 

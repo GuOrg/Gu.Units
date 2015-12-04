@@ -1,25 +1,24 @@
 ﻿namespace Gu.Units.Generator
 {
-    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel;
-    using System.Linq;
     using System.Runtime.CompilerServices;
     using Annotations;
 
-    public class ConversionsVm : INotifyPropertyChanged
+    public class PrefixConversionsVm : INotifyPropertyChanged
     {
         private readonly Settings settings;
+        private readonly ObservableCollection<PrefixConversionVm> prefixes = new ObservableCollection<PrefixConversionVm>();
         private IUnit baseUnit;
 
-        public ConversionsVm(Settings settings)
+        public PrefixConversionsVm(Settings settings)
         {
             this.settings = settings;
-            PrefixConversions = new PrefixConversionsVm(settings);
-            PartConversions = new PartConversionsVm(settings);
-            BaseUnit = settings.AllUnits.FirstOrDefault(x => x.ClassName == "SquareMetres"); // for designtime
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public ObservableCollection<PrefixConversionVm> Prefixes => this.prefixes;
 
         public IUnit BaseUnit
         {
@@ -30,17 +29,25 @@
                 {
                     return;
                 }
-                this.baseUnit = value;
 
-                PrefixConversions.SetBaseUnit(value);
-                PartConversions.SetBaseUnit(value);
+                this.baseUnit = value;
                 OnPropertyChanged();
             }
         }
 
-        public PrefixConversionsVm PrefixConversions { get; }
-
-        public PartConversionsVm PartConversions { get; }
+        public void SetBaseUnit(IUnit value)
+        {
+            this.BaseUnit = value;
+            this.prefixes.Clear();
+            var siUnit = this.baseUnit as SiUnit;
+            if (siUnit != null)
+            {
+                foreach (var prefix in this.settings.Prefixes)
+                {
+                    this.prefixes.Add(new PrefixConversionVm(prefix, this.baseUnit));
+                }
+            }
+        }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
