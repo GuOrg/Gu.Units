@@ -307,7 +307,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Quantties.tt</DependentUpon>
     </Content>
-    <Resource Include="Templates\Readme.txt" />
+    <None Include="Templates\Readme.md" />
     <Content Include="Templates\Units.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
