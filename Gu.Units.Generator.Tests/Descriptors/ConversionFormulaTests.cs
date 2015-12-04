@@ -1,4 +1,4 @@
-﻿namespace Gu.Units.Generator.Tests
+﻿namespace Gu.Units.Generator.Tests.Descriptors
 {
     using NUnit.Framework;
 
@@ -8,13 +8,13 @@
         [SetUp]
         public void SetUp()
         {
-            _settings = new MockSettings();
+            this._settings = new MockSettings();
         }
 
         [Test]
         public void TrivialConversion()
         {
-            var conversionFormula = new ConversionFormula(_settings.Metres)
+            var conversionFormula = new ConversionFormula(this._settings.Metres)
             {
                 ConversionFactor = 1
             };
@@ -25,7 +25,7 @@
         [Test]
         public void FactorConversion()
         {
-            var conversionFormula = new ConversionFormula(_settings.Metres)
+            var conversionFormula = new ConversionFormula(this._settings.Metres)
             {
                 ConversionFactor = 1
             };

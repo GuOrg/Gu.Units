@@ -6,13 +6,14 @@
 
     public class ParentCollection<TParent, TItem> : ObservableCollection<TItem>
     {
-        private readonly TParent _parent;
-        private readonly Action<TItem, TParent> _setter;
+        private readonly TParent parent;
+        private readonly Action<TItem, TParent> setter;
         public ParentCollection(TParent parent, Action<TItem, TParent> setter)
         {
-            _parent = parent;
-            _setter = setter;
+            this.parent = parent;
+            this.setter = setter;
         }
+
         public ParentCollection(TParent parent, Action<TItem, TParent> setter, IEnumerable<TItem> items)
             : this(parent, setter)
         {
@@ -21,15 +22,16 @@
                 Add(item);
             }
         }
+
         protected override void InsertItem(int index, TItem item)
         {
-            _setter(item, _parent);
+            this.setter(item, this.parent);
             base.InsertItem(index, item);
         }
 
         protected override void SetItem(int index, TItem item)
         {
-            _setter(item, _parent);
+            this.setter(item, this.parent);
             base.SetItem(index, item);
         }
     }

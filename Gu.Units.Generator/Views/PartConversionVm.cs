@@ -8,25 +8,25 @@
 
     public class PartConversionVm : INotifyPropertyChanged
     {
-        private readonly IUnit _unit;
-        private readonly Conversion[] _subParts;
+        private readonly IUnit unit;
+        private readonly Conversion[] subParts;
         public PartConversionVm(IUnit unit, params Conversion[] subParts)
         {
-            _unit = unit;
-            _subParts = subParts;
-            Temp = new Conversion { BaseUnit = unit };
-            Temp.SetParts(subParts);
+            this.unit = unit;
+            this.subParts = subParts;
+            Conversion = new Conversion { BaseUnit = unit };
+            Conversion.SetParts(subParts);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Conversion Temp { get; set; }
+        public Conversion Conversion { get; }
 
         public bool IsUsed
         {
             get
             {
-                return _unit.Conversions.Any(x => x.Formula.ConversionFactor == Temp.Formula.ConversionFactor);
+                return this.unit.Conversions.Any(x => x.Formula.ConversionFactor == Conversion.Formula.ConversionFactor && x.Symbol == Conversion.Symbol);
             }
             set
             {
@@ -36,13 +36,13 @@
                 }
                 if (value)
                 {
-                    var subUnit = new Conversion { BaseUnit = _unit };
-                    subUnit.SetParts(_subParts);
-                    _unit.Conversions.Add(subUnit);
+                    var subUnit = new Conversion { BaseUnit = this.unit };
+                    subUnit.SetParts(this.subParts);
+                    this.unit.Conversions.Add(subUnit);
                 }
                 else
                 {
-                    _unit.Conversions.InvokeRemove(x => x.Formula.ConversionFactor == Temp.Formula.ConversionFactor);
+                    this.unit.Conversions.InvokeRemove(x => x.Formula.ConversionFactor == Conversion.Formula.ConversionFactor);
                 }
                 OnPropertyChanged();
             }
@@ -50,17 +50,13 @@
 
         public override string ToString()
         {
-            return Temp.Symbol;
+            return Conversion.Symbol;
         }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            var handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

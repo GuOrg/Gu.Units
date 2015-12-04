@@ -14,14 +14,14 @@
     public class Settings
     {
         private static Settings _instance;
-        private readonly ParentCollection<Settings, DerivedUnit> _derivedUnits;
-        private readonly ParentCollection<Settings, SiUnit> _siUnits;
-        private readonly ObservableCollection<Prefix> _prefixes = new ObservableCollection<Prefix>();
+        private readonly ParentCollection<Settings, DerivedUnit> derivedUnits;
+        private readonly ParentCollection<Settings, SiUnit> siUnits;
+        private readonly ObservableCollection<Prefix> prefixes = new ObservableCollection<Prefix>();
 
         protected Settings()
         {
-            _derivedUnits = new ParentCollection<Settings, DerivedUnit>(this, (unit, settings) => unit.Settings = settings);
-            _siUnits = new ParentCollection<Settings, SiUnit>(this, (unit, settings) => unit.Settings = settings);
+            this.derivedUnits = new ParentCollection<Settings, DerivedUnit>(this, (unit, settings) => unit.Settings = settings);
+            this.siUnits = new ParentCollection<Settings, SiUnit>(this, (unit, settings) => unit.Settings = settings);
         }
 
         public static Settings Instance
@@ -51,13 +51,7 @@
             }
         }
 
-        public static string Namespace
-        {
-            get
-            {
-                return "Gu.Units"; // Hardcoding to avoid ref
-            }
-        }
+        public static string Namespace => "Gu.Units";
 
         public static string FullFileName
         {
@@ -69,51 +63,21 @@
             }
         }
 
-        public static string ProjectName
-        {
-            get
-            {
-                return "Gu.Units";
-            }
-        }
+        public static string ProjectName => "Gu.Units";
 
-        public static string FolderName
-        {
-            get
-            {
-                return null;
-            }
-        }
+        public static string FolderName => null;
 
         /// <summary>
         /// The extension for the generated files, set to txt if it does not build so you can´inspect the reult
         /// cs when everything works
         /// </summary>
-        public static string Extension
-        {
-            get
-            {
-                return "cs";
-            }
-        }
+        public static string Extension => "cs";
 
-        public ObservableCollection<DerivedUnit> DerivedUnits
-        {
-            get
-            {
-                return _derivedUnits;
-            }
-        }
+        public ObservableCollection<DerivedUnit> DerivedUnits => this.derivedUnits;
 
-        public ObservableCollection<SiUnit> SiUnits
-        {
-            get { return _siUnits; }
-        }
+        public ObservableCollection<SiUnit> SiUnits => this.siUnits;
 
-        public ObservableCollection<Prefix> Prefixes
-        {
-            get { return _prefixes; }
-        }
+        public ObservableCollection<Prefix> Prefixes => this.prefixes;
 
         public IReadOnlyList<IUnit> AllUnits => SiUnits.Concat<IUnit>(DerivedUnits).ToList();
 

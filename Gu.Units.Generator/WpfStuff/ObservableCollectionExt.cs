@@ -35,6 +35,7 @@
         {
             collection.InvokeRemove(collection.Where(criteria).ToArray());
         }
+
         public static void InvokeRemove<T>(this ObservableCollection<T> collection, IEnumerable<T> oldItems)
         {
             collection.Invoke(

@@ -8,37 +8,37 @@
 
     public abstract class UnitBase : TypeMetaData, IUnit
     {
-        private readonly ParentCollection<UnitBase, Conversion> _conversions;
-        private readonly CodeDomProvider _provider = CodeDomProvider.CreateProvider("C#");
+        private readonly ParentCollection<UnitBase, Conversion> conversions;
+        private readonly CodeDomProvider provider = CodeDomProvider.CreateProvider("C#");
 
-        private string _symbol;
-        private Quantity _quantity;
-        private Settings _settings;
+        private string symbol;
+        private Quantity quantity;
+        private Settings settings;
 
         protected UnitBase()
         {
-            _conversions = new ParentCollection<UnitBase, Conversion>(this, (unit, parent) => unit.BaseUnit = parent);
+            this.conversions = new ParentCollection<UnitBase, Conversion>(this, (unit, parent) => unit.BaseUnit = parent);
             Quantity = new Quantity(this);
         }
 
         protected UnitBase(string className, string symbol)
             : base(className)
         {
-            _conversions = new ParentCollection<UnitBase, Conversion>(this, (unit, parent) => unit.BaseUnit = parent);
+            this.conversions = new ParentCollection<UnitBase, Conversion>(this, (unit, parent) => unit.BaseUnit = parent);
             Quantity = new Quantity(this);
-            _symbol = symbol;
+            this.symbol = symbol;
         }
 
         public string Symbol
         {
-            get { return _symbol; }
+            get { return this.symbol; }
             set
             {
-                if (value == _symbol)
+                if (value == this.symbol)
                 {
                     return;
                 }
-                _symbol = value;
+                this.symbol = value;
                 this.OnPropertyChanged();
             }
         }
@@ -57,26 +57,14 @@
                 }
                 Quantity.ClassName = value;
                 OnPropertyChanged();
-                OnPropertyChanged("UnitName");
+                OnPropertyChanged(nameof(UnitName));
             }
         }
 
         [XmlIgnore]
-        public string UnitName
-        {
-            get
-            {
-                return QuantityName + "Unit";
-            }
-        }
+        public string UnitName => QuantityName + "Unit";
 
-        public ObservableCollection<Conversion> Conversions
-        {
-            get
-            {
-                return _conversions;
-            }
-        }
+        public ObservableCollection<Conversion> Conversions => this.conversions;
 
         [XmlIgnore]
         public bool AnyOffsetConversion
@@ -87,53 +75,41 @@
         [XmlIgnore]
         public Quantity Quantity
         {
-            get { return _quantity; }
+            get { return this.quantity; }
             set
             {
-                if (Equals(value, _quantity))
+                if (Equals(value, this.quantity))
                 {
                     return;
                 }
-                _quantity = value;
+                this.quantity = value;
                 this.OnPropertyChanged();
                 foreach (var subUnit in Conversions)
                 {
-                    subUnit.Quantity = _quantity;
+                    subUnit.Quantity = this.quantity;
                 }
             }
         }
 
         [XmlIgnore]
-        public bool IsEmpty
-        {
-            get
-            {
-                return string.IsNullOrEmpty(this.ClassName) || string.IsNullOrEmpty(this.Symbol);
-            }
-        }
+        public bool IsEmpty => string.IsNullOrEmpty(this.ClassName) || string.IsNullOrEmpty(this.Symbol);
 
         [XmlIgnore]
         public abstract string UiName { get; }
 
-        public bool IsSymbolNameValid
-        {
-            get
-            {
-                return _provider.IsValidIdentifier(Symbol);
-            }
-        }
+        public bool IsSymbolNameValid => this.provider.IsValidIdentifier(Symbol);
 
         [XmlIgnore]
         public Settings Settings
         {
-            get { return _settings; }
+            get { return this.settings; }
             set
             {
-                if (Equals(value, _settings))
+                if (Equals(value, this.settings))
                 {
                     return;
                 }
-                _settings = value;
+                this.settings = value;
                 OnPropertyChanged();
             }
         }

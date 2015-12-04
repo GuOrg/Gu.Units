@@ -3,14 +3,16 @@
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
     using Annotations;
+
     /// <summary>
     /// http://physics.nist.gov/cuu/Units/prefixes.html
     /// </summary>
     public class Prefix : INotifyPropertyChanged
     {
-        private string _name;
-        private string _symbol;
-        private int _power;
+        private string name;
+        private string symbol;
+        private int power;
+
         private Prefix()
         {
         }
@@ -26,67 +28,57 @@
 
         public string Name
         {
-            get { return _name; }
+            get { return this.name; }
             set
             {
-                if (value == _name)
+                if (value == this.name)
                 {
                     return;
                 }
-                _name = value;
+                this.name = value;
                 OnPropertyChanged();
             }
         }
 
         public string Symbol
         {
-            get { return _symbol; }
+            get { return this.symbol; }
             set
             {
-                if (value == _symbol)
+                if (value == this.symbol)
                 {
                     return;
                 }
-                _symbol = value;
+                this.symbol = value;
                 OnPropertyChanged();
             }
         }
 
         public int Power
         {
-            get { return _power; }
+            get { return this.power; }
             set
             {
-                if (value == _power)
+                if (value == this.power)
                 {
                     return;
                 }
-                _power = value;
+                this.power = value;
                 OnPropertyChanged();
             }
         }
 
-        public bool IsEmpty
-        {
-            get
-            {
-                return Power == 0 || string.IsNullOrEmpty(Name);
-            }
-        }
+        public bool IsEmpty => Power == 0 || string.IsNullOrEmpty(Name);
 
         public override string ToString()
         {
-            return string.Format("Name: {0}, Symbol: {1}, Power: {2}", this.Name, this.Symbol, this.Power);
+            return $"Name: {this.Name}, Symbol: {this.Symbol}, Power: {this.Power}";
         }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            var handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

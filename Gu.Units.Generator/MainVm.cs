@@ -2,82 +2,62 @@
 {
     using System.Collections.ObjectModel;
     using System.ComponentModel;
-    using System.Linq;
     using System.Runtime.CompilerServices;
     using Annotations;
 
 
     public class MainVm : INotifyPropertyChanged
     {
-        private readonly Settings _settings;
-        private readonly ConversionsVm _conversions;
-        private string _nameSpace;
+        public static readonly MainVm Instance = new MainVm();
+        private readonly Settings settings;
+        private readonly ConversionsVm conversions;
+        private string nameSpace;
 
-        public MainVm()
+        private MainVm()
         {
-            _settings = Settings.Instance;
+            this.settings = Settings.Instance;
             NameSpace = Settings.ProjectName;
-            _conversions = new ConversionsVm(_settings);
+            this.conversions = new ConversionsVm(this.settings);
+            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ObservableCollection<Prefix> Prefixes
-        {
-            get
-            {
-                return _settings.Prefixes;
-            }
-        }
+        public ObservableCollection<Prefix> Prefixes => this.settings.Prefixes;
 
-        public ObservableCollection<SiUnit> SiUnits
-        {
-            get { return _settings.SiUnits; }
-        }
+        public ObservableCollection<SiUnit> SiUnits => this.settings.SiUnits;
 
-        public ObservableCollection<DerivedUnit> DerivedUnits
-        {
-            get { return _settings.DerivedUnits; }
-        }
+        public ObservableCollection<DerivedUnit> DerivedUnits => this.settings.DerivedUnits;
+
+        public ConversionsVm Conversions => this.conversions;
 
         public string NameSpace
         {
             get
             {
-                return _nameSpace;
+                return this.nameSpace;
             }
             set
             {
-                if (value == _nameSpace)
+                if (value == this.nameSpace)
                 {
                     return;
                 }
-                _nameSpace = value;
+                this.nameSpace = value;
                 this.OnPropertyChanged();
             }
         }
 
-        public ConversionsVm Conversions
-        {
-            get
-            {
-                return _conversions;
-            }
-        }
 
         public void Save()
         {
-            Settings.Save(_settings, Settings.FullFileName);
+            Settings.Save(this.settings, Settings.FullFileName);
         }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            var handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

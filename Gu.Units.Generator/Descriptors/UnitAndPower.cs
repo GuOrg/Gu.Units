@@ -10,50 +10,50 @@
 
     public class UnitAndPower : INotifyPropertyChanged
     {
-        private IUnit _unit;
-        private string _unitName;
-        private int _power;
-        private IUnit _parent;
+        public static readonly IEqualityComparer<UnitAndPower> Comparer = new UnitNamePowerEqualityComparer();
+
+        private IUnit unit;
+        private string unitName;
+        private int power;
+        private IUnit parent;
         private UnitAndPower()
         {
         }
 
         public UnitAndPower(IUnit unit)
         {
-            _unit = unit;
-            _power = 1;
+            this.unit = unit;
+            this.power = 1;
         }
 
         public UnitAndPower(IUnit unit, int power)
         {
             if (power == 0)
             {
-                throw new ArgumentException("power == 0", "power");
+                throw new ArgumentException("power == 0", nameof(power));
             }
-            _unit = unit;
-            _power = power;
+            this.unit = unit;
+            this.power = power;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
-        public static readonly IEqualityComparer<UnitAndPower> Comparer = new UnitNamePowerEqualityComparer();
 
         [XmlIgnore]
         public IUnit Unit
         {
             get
             {
-                return _unit ?? (_unit = Parent.Settings.AllUnits.Single(x => x.ClassName == _unitName));
+                return this.unit ?? (this.unit = Parent.Settings.AllUnits.Single(x => x.ClassName == this.unitName));
             }
             set
             {
-                if (Equals(value, _unit))
+                if (Equals(value, this.unit))
                 {
                     return;
                 }
-                _unit = value;
+                this.unit = value;
                 OnPropertyChanged();
-                OnPropertyChanged("UnitName");
+                OnPropertyChanged(nameof(UnitName));
             }
         }
 
@@ -65,24 +65,24 @@
                 {
                     return this.Unit.ClassName;
                 }
-                return _unitName;
+                return this.unitName;
             }
             set
             {
-                _unitName = value;
+                this.unitName = value;
             }
         }
 
         public int Power
         {
-            get { return _power; }
+            get { return this.power; }
             set
             {
-                if (value == _power)
+                if (value == this.power)
                 {
                     return;
                 }
-                _power = value;
+                this.power = value;
                 OnPropertyChanged();
             }
         }
@@ -90,12 +90,12 @@
         [XmlIgnore]
         public IUnit Parent
         {
-            get { return _parent; }
+            get { return this.parent; }
             set
             {
-                _parent = value;
+                this.parent = value;
                 OnPropertyChanged();
-                OnPropertyChanged("Unit");
+                OnPropertyChanged(nameof(Unit));
             }
         }
 
@@ -110,26 +110,22 @@
             {
                 if (Unit == null)
                 {
-                    return string.Format("(({0})null)^1", UnitName);
+                    return $"(({UnitName})null)^1";
                 }
                 return this.Unit.Symbol;
             }
-            return string.Format("({0}){1}^{2}", this.Unit == null ? "null" : "", this.UnitName, Power);
+            return $"({(this.Unit == null ? "null" : "")}){this.UnitName}^{Power}";
         }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            var handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         protected bool Equals(UnitAndPower other)
         {
-            return Equals(_unit, other._unit) && _power == other._power;
+            return Equals(this.unit, other.unit) && this.power == other.power;
         }
 
         public override bool Equals(object obj)
@@ -153,7 +149,7 @@
         {
             unchecked
             {
-                return ((_unit != null ? _unit.GetHashCode() : 0) * 397) ^ _power;
+                return ((this.unit?.GetHashCode() ?? 0) * 397) ^ this.power;
             }
         }
 
@@ -177,13 +173,14 @@
                 {
                     return false;
                 }
-                return string.Equals(x.UnitName, y.UnitName) && x._power == y._power;
+                return string.Equals(x.UnitName, y.UnitName) && x.power == y.power;
             }
+
             public int GetHashCode(UnitAndPower obj)
             {
                 unchecked
                 {
-                    return ((obj._unitName != null ? obj._unitName.GetHashCode() : 0) * 397) ^ obj._power;
+                    return ((obj.unitName?.GetHashCode() ?? 0) * 397) ^ obj.power;
                 }
             }
         }

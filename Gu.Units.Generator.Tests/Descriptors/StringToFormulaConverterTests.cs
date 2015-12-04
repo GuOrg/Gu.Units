@@ -1,4 +1,4 @@
-﻿namespace Gu.Units.Generator.Tests
+﻿namespace Gu.Units.Generator.Tests.Descriptors
 {
     using NUnit.Framework;
     using WpfStuff;

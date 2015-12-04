@@ -10,13 +10,13 @@
             this.Inverted = inverted;
         }
 
-        public Quantity Original { get; private set; }
+        public Quantity Original { get; }
         
-        public Quantity Inverted { get; private set; }
+        public Quantity Inverted { get; }
 
         public override string ToString()
         {
-            return string.Format("1 / {0} = {1}", this.Original.ClassName, this.Inverted.ClassName);
+            return $"1 / {this.Original.ClassName} = {this.Inverted.ClassName}";
         }
 
         public static bool IsInverse(Quantity left, Quantity right)

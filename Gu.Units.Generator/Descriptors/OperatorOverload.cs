@@ -1,7 +1,6 @@
 ﻿namespace Gu.Units.Generator
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
 
     public class OperatorOverload
@@ -15,7 +14,7 @@
             Right = FindRight(settings, left, Result);
             if (Right == null)
             {
-                throw new ArgumentException(string.Format("Cannot create overload for {0} * x = {1}", left.ClassName, Result.ClassName));
+                throw new ArgumentException($"Cannot create overload for {left.ClassName} * x = {Result.ClassName}");
             }
             var power = this.FindPower(Left, Right, Result);
             Operator = power > 0 ? Multiply : Divide;
@@ -51,7 +50,7 @@
 
         public override string ToString()
         {
-            return string.Format("{0} {1} {2} = {3}", Left.ClassName, Operator, Right.ClassName, Result.ClassName);
+            return $"{Left.ClassName} {Operator} {Right.ClassName} = {Result.ClassName}";
         }
 
         private static Quantity Find(Settings settings, params UnitAndPower[] parts)
@@ -72,11 +71,7 @@
                     unit = settings.DerivedUnits.SingleOrDefault(u => u.Parts.OrderBy(x => x.UnitName).SequenceEqual(unitAndPowers, UnitAndPower.Comparer));
                 }
             }
-            if (unit == null)
-            {
-                return null;
-            }
-            return unit.Quantity;
+            return unit?.Quantity;
         }
 
         /// <summary>
@@ -102,10 +97,8 @@
             }
             else
             {
-                throw new ArgumentException(string.Format("Cound not find power for {0}*{1}^x == {2}",
-                    left.ClassName,
-                    right.ClassName,
-                    result.ClassName));
+                throw new ArgumentException(
+                    $"Cound not find power for {left.ClassName}*{right.ClassName}^x == {result.ClassName}");
             }
             //SiUnit siUnit = left.Unit as SiUnit;
             //if (siUnit != null)

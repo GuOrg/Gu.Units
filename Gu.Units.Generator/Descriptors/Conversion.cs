@@ -9,52 +9,51 @@
 
     public class Conversion : TypeMetaData, IUnit
     {
-        private readonly ObservableCollection<Conversion> _conversions = new ObservableCollection<Conversion>();
-        private readonly CodeDomProvider _codeDomProvider = CodeDomProvider.CreateProvider("C#");
-        private readonly ConversionFormula _formula;
+        private readonly ObservableCollection<Conversion> conversions = new ObservableCollection<Conversion>();
+        private readonly CodeDomProvider codeDomProvider = CodeDomProvider.CreateProvider("C#");
+        private readonly ConversionFormula formula;
 
-        private string _symbol;
-        private Prefix _prefix;
-        private IUnit _baseUnit;
+        private string symbol;
+        private Prefix prefix;
+        private IUnit baseUnit;
 
         public Conversion()
         {
-            _formula = new ConversionFormula(this);
+            this.formula = new ConversionFormula(this);
         }
 
         public Conversion(string className, string symbol)
             : base(className)
         {
-            _symbol = symbol;
-            _formula = new ConversionFormula(this);
+            this.symbol = symbol;
+            this.formula = new ConversionFormula(this);
         }
 
         public string Symbol
         {
             get
             {
-                return _symbol;
+                return this.symbol;
             }
             set
             {
-                if (value == _symbol)
+                if (value == this.symbol)
                 {
                     return;
                 }
-                _symbol = value;
+                this.symbol = value;
                 this.OnPropertyChanged();
             }
         }
 
         public ConversionFormula Formula
         {
-            get { return _formula; }
+            get { return this.formula; }
             set
             {
-                _formula.ConversionFactor = value.ConversionFactor;
-                _formula.Offset = value.Offset;
+                this.formula.ConversionFactor = value.ConversionFactor;
+                this.formula.Offset = value.Offset;
                 OnPropertyChanged();
-                OnPropertyChanged("ConversionFactor");
             }
         }
 
@@ -76,13 +75,7 @@
         }
 
         [XmlIgnore]
-        public string UnitName
-        {
-            get
-            {
-                return QuantityName + "Unit";
-            }
-        }
+        public string UnitName => QuantityName + "Unit";
 
         [XmlIgnore]
         public Quantity Quantity
@@ -99,15 +92,15 @@
         {
             get
             {
-                return _baseUnit;
+                return this.baseUnit;
             }
             set
             {
-                if (Equals(value, _baseUnit))
+                if (Equals(value, this.baseUnit))
                 {
                     return;
                 }
-                _baseUnit = value;
+                this.baseUnit = value;
                 this.OnPropertyChanged();
                 SyncWithPrefix();
             }
@@ -118,15 +111,15 @@
         {
             get
             {
-                return _prefix;
+                return this.prefix;
             }
             set
             {
-                if (Equals(value, _prefix))
+                if (Equals(value, this.prefix))
                 {
                     return;
                 }
-                _prefix = value;
+                this.prefix = value;
                 this.OnPropertyChanged();
                 SyncWithPrefix();
             }
@@ -138,23 +131,14 @@
         [XmlIgnore]
         public string UiName { get; private set; }
 
-        public ObservableCollection<Conversion> Conversions
-        {
-            get { return _conversions; }
-        }
+        public ObservableCollection<Conversion> Conversions => this.conversions;
 
         public bool AnyOffsetConversion
         {
             get { return Conversions.Any(x => x.Formula.Offset != 0); }
         }
 
-        public bool IsSymbolNameValid
-        {
-            get
-            {
-                return _codeDomProvider.IsValidIdentifier(Symbol);
-            }
-        }
+        public bool IsSymbolNameValid => this.codeDomProvider.IsValidIdentifier(Symbol);
 
         [XmlIgnore]
         public Settings Settings { get; set; }
@@ -165,7 +149,7 @@
             {
                 return;
             }
-            Formula.ConversionFactor = Math.Pow(10, _prefix.Power);
+            Formula.ConversionFactor = Math.Pow(10, this.prefix.Power);
             if (string.IsNullOrEmpty(Symbol))
             {
                 Symbol = Prefix.Symbol + BaseUnit.Symbol;

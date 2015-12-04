@@ -11,7 +11,7 @@
     [TypeConverter(typeof(TypeMetaDataConverter))]
     public class TypeMetaData : MarshalByRefObject, INotifyPropertyChanged
     {
-        private string _className;
+        private string className;
 
         protected TypeMetaData()
         {
@@ -19,23 +19,23 @@
         
         public TypeMetaData(string className)
         {
-            _className = className;
+            this.className = className;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string ClassName
         {
-            get { return _className; }
+            get { return this.className; }
             set
             {
-                if (value == _className)
+                if (value == this.className)
                 {
                     return;
                 }
-                _className = value;
+                this.className = value;
                 OnPropertyChanged();
-                OnPropertyChanged("ParameterName");
+                OnPropertyChanged(nameof(ParameterName));
             }
         }
 
@@ -60,11 +60,7 @@
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            var handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

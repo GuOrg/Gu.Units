@@ -19,8 +19,8 @@
         {
             base.CollectionChanged += (sender, args) =>
             {
-                base.OnPropertyChanged(new PropertyChangedEventArgs(NameOf.Property(() => Expression)));
-                base.OnPropertyChanged(new PropertyChangedEventArgs(NameOf.Property(() => BaseUnitExpression)));
+                base.OnPropertyChanged(new PropertyChangedEventArgs(nameof(Expression)));
+                base.OnPropertyChanged(new PropertyChangedEventArgs(nameof(BaseUnitExpression)));
             };
         }
 
@@ -62,16 +62,10 @@
         }
 
         [XmlIgnore]
-        public string Expression
-        {
-            get { return CreateExpression(this.AsEnumerable()); }
-        }
+        public string Expression => CreateExpression(this.AsEnumerable());
 
         [XmlIgnore]
-        public string BaseUnitExpression
-        {
-            get { return CreateExpression(Flattened); }
-        }
+        public string BaseUnitExpression => CreateExpression(Flattened);
 
         [XmlIgnore]
         public string UnitName

@@ -23,12 +23,7 @@
 
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
         {
-            if (value == null)
-            {
-                return null;
-            }
-
-            var s = (string)value;
+            var s =  value as string;
             if (string.IsNullOrWhiteSpace(s))
             {
                 return null;
@@ -85,17 +80,18 @@
                                                     .ToArray();
             var symbolsPattern = string.Join("|", new[] { "1" }.Concat(symbols));
             var superscriptsPattern = string.Join("|", Superscripts);
-            var pattern = string.Format(
-@"(?<Unit>
-    (?<Symbol>({0}))
-    (?<Power>
-        ((?:\^)[\+\-]?\d+)
-        |
-        (⁻?({1}))
-    )?
-    |
-    (?<Op>[⋅\*\/])?
-)", symbolsPattern, superscriptsPattern);
+            var pattern = $@"(?<Unit>
+                                (?<Symbol>({symbolsPattern
+                                                }))
+                                (?<Power>
+                                    ((?:\^)[\+\-]?\d+)
+                                    |
+                                    (⁻?({superscriptsPattern
+                                                }))
+                                )?
+                                |
+                                (?<Op>[⋅\*\/])?
+                            )";
             var matches = Regex.Matches(s, pattern, RegexOptions.IgnorePatternWhitespace)
                                .OfType<Match>()
                                .ToArray();

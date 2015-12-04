@@ -86,7 +86,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ConversionsVm.cs" />
     <Compile Include="Descriptors\ConversionFormula.cs" />
     <Compile Include="Descriptors\InverseOverload.cs" />
     <Compile Include="Descriptors\IUnit.cs" />
@@ -100,15 +99,21 @@
     <Compile Include="Descriptors\UnitAndPower.cs" />
     <Compile Include="Descriptors\UnitBase.cs" />
     <Compile Include="Descriptors\UnitParts.cs" />
-    <Compile Include="PartConversionVm.cs" />
-    <Compile Include="PrefixConversionVm.cs" />
+    <Compile Include="MainVm.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartConversionVm.cs" />
+    <Compile Include="Views\PrefixConversionVm.cs" />
     <Compile Include="Properties\Annotations.generated.cs" />
     <Compile Include="Descriptors\Settings.cs" />
     <Compile Include="Descriptors\Quantity.cs" />
-    <Compile Include="MainVm.cs" />
-    <Compile Include="WpfStuff\NameOf.cs" />
+    <Compile Include="Views\ConversionsView.xaml.cs">
+      <DependentUpon>ConversionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConversionsVm.cs">
+      <DependentUpon>ConversionsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WpfStuff\ObservableCollectionExt.cs" />
-    <Compile Include="WpfStuff\PathExpressionVisitor.cs" />
     <Compile Include="WpfStuff\RelayCommand.cs" />
     <Compile Include="WpfStuff\StringToFormulaConverter.cs" />
     <Compile Include="WpfStuff\TypeMetaDataConverter.cs" />
@@ -126,6 +131,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ConversionsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

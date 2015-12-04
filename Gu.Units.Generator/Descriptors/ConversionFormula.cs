@@ -12,14 +12,14 @@
     [TypeConverter(typeof(StringToFormulaConverter))]
     public class ConversionFormula : INotifyPropertyChanged
     {
-        private readonly IUnit _baseUnit;
+        private readonly IUnit baseUnit;
         private ConversionFormula()
         {
         }
 
         public ConversionFormula(IUnit baseUnit)
         {
-            _baseUnit = baseUnit;
+            this.baseUnit = baseUnit;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -38,7 +38,7 @@
                 {
                     builder.Append(ConversionFactor.ToString(CultureInfo.InvariantCulture) + "*");
                 }
-                builder.Append(_baseUnit != null ? _baseUnit.Quantity.Unit.ClassName : "x");
+                builder.Append(this.baseUnit != null ? this.baseUnit.Quantity.Unit.ClassName : "x");
                 if (Offset != 0)
                 {
                     if (Offset > 0)
@@ -61,7 +61,7 @@
             {
                 var builder = new StringBuilder();
 
-                builder.Append(_baseUnit != null ? _baseUnit.Quantity.Unit.ClassName : "x");
+                builder.Append(this.baseUnit != null ? this.baseUnit.Quantity.Unit.ClassName : "x");
                 if (ConversionFactor != 1)
                 {
                     builder.Append( "/"+ConversionFactor.ToString(CultureInfo.InvariantCulture));
@@ -93,11 +93,7 @@
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            var handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

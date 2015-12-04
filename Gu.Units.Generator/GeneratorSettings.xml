@@ -127,6 +127,15 @@
           </Formula>
           <Conversions />
         </Conversion>
+        <Conversion>
+          <ClassName>CubicDecimetres</ClassName>
+          <Symbol>dm³</Symbol>
+          <Formula>
+            <ConversionFactor>0.0010000000000000002</ConversionFactor>
+            <Offset>0</Offset>
+          </Formula>
+          <Conversions />
+        </Conversion>
       </Conversions>
       <Parts>
         <UnitAndPower>
@@ -268,7 +277,7 @@
             <Offset>0</Offset>
           </Formula>
           <Conversions />
-        </Conversion>        
+        </Conversion>
         <Conversion>
           <ClassName>Bars</ClassName>
           <Symbol>bar</Symbol>

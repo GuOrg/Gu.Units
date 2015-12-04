@@ -1,6 +1,5 @@
-﻿namespace Gu.Units.Generator.Tests
+﻿namespace Gu.Units.Generator.Tests.Descriptors
 {
-    using System;
     using System.Linq;
     using NUnit.Framework;
 
@@ -12,15 +11,15 @@
         [SetUp]
         public void SetUp()
         {
-            _settings = new MockSettings();
-            _metres = _settings.Metres;
-            _seconds = _settings.Seconds;
+            this._settings = new MockSettings();
+            this._metres = this._settings.Metres;
+            this._seconds = this._settings.Seconds;
         }
 
         [TestCase("Length", "IQuantity<LengthUnit, I1>")]
         public void BaseQuantityInterface(string quantityName, string expected)
         {
-            var quantity = _settings.Length;
+            var quantity = this._settings.Length;
             var @interface = quantity.Interface;
             Assert.AreEqual(expected, @interface);
         }
@@ -30,7 +29,7 @@
         [TestCase(-2, "IQuantity<LengthUnit, INeg2>")]
         public void PowerQuantityInterface(int power, string expected)
         {
-            var unitAndPower = new UnitAndPower(_metres, power);
+            var unitAndPower = new UnitAndPower(this._metres, power);
             var derivedUnit = new DerivedUnit("sdf", "ssf", unitAndPower) { QuantityName = "Qty" };
             var quantity = new Quantity(derivedUnit);
             var @interface = quantity.Interface;
@@ -40,8 +39,8 @@
         [TestCase(1, -1, "IQuantity<LengthUnit, I1, TimeUnit, INeg1>")]
         public void ComposedQuantityInterface(int p1, int p2, string expected)
         {
-            var unitAndPower1 = new UnitAndPower(_metres, p1);
-            var unitAndPower2 = new UnitAndPower(_seconds, p2);
+            var unitAndPower1 = new UnitAndPower(this._metres, p1);
+            var unitAndPower2 = new UnitAndPower(this._seconds, p2);
             var quantities = new[]
             {
                 new Quantity(new DerivedUnit("", "", unitAndPower1, unitAndPower2)),
@@ -57,14 +56,14 @@
         [Test]
         public void LengthOverloads()
         {
-            var actual = _settings.Length.OperatorOverloads.ToArray();
+            var actual = this._settings.Length.OperatorOverloads.ToArray();
             var expected = new[]
                                {
-                                   new OperatorOverload(_settings.Length, _settings.Time, _settings),
-                                   new OperatorOverload(_settings.Length, _settings.Speed, _settings),
-                                   new OperatorOverload(_settings.Length, _settings.Energy, _settings),
-                                   new OperatorOverload(_settings.Length, _settings.Area, _settings),
-                                   new OperatorOverload(_settings.Length, _settings.Volume, _settings)
+                                   new OperatorOverload(this._settings.Length, this._settings.Time, this._settings),
+                                   new OperatorOverload(this._settings.Length, this._settings.Speed, this._settings),
+                                   new OperatorOverload(this._settings.Length, this._settings.Energy, this._settings),
+                                   new OperatorOverload(this._settings.Length, this._settings.Area, this._settings),
+                                   new OperatorOverload(this._settings.Length, this._settings.Volume, this._settings)
                                };
             CollectionAssert.AreEqual(expected.Select(x => x.ToString()), actual.Select(x => x.ToString()));
         }
@@ -72,11 +71,11 @@
         [Test]
         public void TimeOverloads()
         {
-            var actual = _settings.Time.OperatorOverloads.ToArray();
+            var actual = this._settings.Time.OperatorOverloads.ToArray();
             var expected = new[]
                                {
-                                   new OperatorOverload(_settings.Time, _settings.Length, _settings),
-                                   new OperatorOverload(_settings.Time, _settings.ElectricCharge, _settings),
+                                   new OperatorOverload(this._settings.Time, this._settings.Length, this._settings),
+                                   new OperatorOverload(this._settings.Time, this._settings.ElectricCharge, this._settings),
                                };
             CollectionAssert.AreEqual(expected.Select(x => x.ToString()), actual.Select(x => x.ToString()));
         }
@@ -84,9 +83,9 @@
         [Test]
         public void Inversions()
         {
-            var actual = _settings.Time.Inverse;
+            var actual = this._settings.Time.Inverse;
             Assert.AreEqual("1 / Time = Frequency", actual.ToString());
-            Assert.IsNull(_settings.Length.Inverse);
+            Assert.IsNull(this._settings.Length.Inverse);
         }
     }
 }

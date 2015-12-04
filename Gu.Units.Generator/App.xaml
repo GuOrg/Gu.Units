@@ -4,6 +4,14 @@
              xmlns:generator="clr-namespace:Gu.Units.Generator"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <Style TargetType="{x:Type DataGridCell}">
+            <Style.Triggers>
+                <Trigger Property="IsReadOnly" Value="True">
+                    <Setter Property="Background" Value="LightGray" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
         <GroupStyle x:Key="GroupStyle">
             <GroupStyle.HeaderTemplate>
                 <DataTemplate DataType="{x:Type generator:IUnit}">

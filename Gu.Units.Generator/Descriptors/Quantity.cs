@@ -5,36 +5,36 @@
     using System.Linq;
     using System.Xml.Serialization;
 
-    using Gu.Units.Generator.WpfStuff;
+    using WpfStuff;
 
     [Serializable]
     public class Quantity : TypeMetaData
     {
-        private IUnit _unit;
-        private string _unitName;
+        private IUnit unit;
+        private string unitName;
 
         public Quantity(IUnit unit)
             : base(null)
         {
-            _unit = unit;
-            _unit.Quantity = this;
-            if (_unit.Settings == null)
+            this.unit = unit;
+            this.unit.Quantity = this;
+            if (this.unit.Settings == null)
             {
-                _unit.PropertyChanged += (_, e) =>
+                this.unit.PropertyChanged += (_, e) =>
                 {
-                    if (e.PropertyName == NameOf.Property(() => _unit.Settings, true))
+                    if (e.PropertyName == nameof(this.unit.Settings))
                     {
-                        _unit.Settings.SiUnits.CollectionChanged += (__, _e) => OnPropertyChanged("OperatorOverloads");
-                        _unit.Settings.DerivedUnits.CollectionChanged += (__, _e) => OnPropertyChanged("OperatorOverloads");
+                        this.unit.Settings.SiUnits.CollectionChanged += (__, _e) => OnPropertyChanged(nameof(OperatorOverloads));
+                        this.unit.Settings.DerivedUnits.CollectionChanged += (__, _e) => OnPropertyChanged(nameof(OperatorOverloads));
                     }
                 };
             }
             else
             {
-                _unit.Settings.SiUnits.CollectionChanged += (_, e) => OnPropertyChanged("OperatorOverloads");
-                _unit.Settings.DerivedUnits.CollectionChanged += (_, e) => OnPropertyChanged("OperatorOverloads");
+                this.unit.Settings.SiUnits.CollectionChanged += (_, e) => OnPropertyChanged(nameof(OperatorOverloads));
+                this.unit.Settings.DerivedUnits.CollectionChanged += (_, e) => OnPropertyChanged(nameof(OperatorOverloads));
             }
-            _unit.PropertyChanged += (_, e) => OnPropertyChanged("Interface");
+            this.unit.PropertyChanged += (_, e) => OnPropertyChanged(nameof(Interface));
         }
 
         public string UnitName
@@ -43,19 +43,19 @@
             {
                 if (Unit != null)
                 {
-                    return this.Unit.ClassName;
+                    return Unit.ClassName;
                 }
-                return _unitName;
+                return this.unitName;
             }
             set
             {
                 if (Unit != null)
                 {
-                    this.Unit.ClassName = value;
+                    Unit.ClassName = value;
                 }
                 else
                 {
-                    _unitName = value;
+                    this.unitName = value;
                 }
             }
         }
@@ -65,22 +65,22 @@
         {
             get
             {
-                return _unit;
+                return this.unit;
             }
             set
             {
-                if (Equals(value, _unit))
+                if (Equals(value, this.unit))
                 {
                     return;
                 }
-                _unit = value;
-                if (_unit != null)
+                this.unit = value;
+                if (this.unit != null)
                 {
-                    _unit.Quantity = this;
+                    this.unit.Quantity = this;
                 }
-                this.OnPropertyChanged();
-                this.OnPropertyChanged("UnitName");
-                this.OnPropertyChanged("Interface");
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(UnitName));
+                OnPropertyChanged(nameof(Interface));
             }
         }
 
@@ -94,12 +94,12 @@
                 {
                     siUnit.PropertyChanged += (sender, eventArgs) =>
                     {
-                        if (eventArgs.PropertyName == NameOf.Property(() => siUnit.QuantityName, true))
+                        if (eventArgs.PropertyName == nameof(siUnit.QuantityName))
                         {
                             OnPropertyChanged();
                         }
                     };
-                    return string.Format("IQuantity<{0}Unit, I1>", siUnit.Quantity.ClassName);
+                    return $"IQuantity<{siUnit.Quantity.ClassName}Unit, I1>";
                 }
                 var derivedUnit = Unit as DerivedUnit;
                 if (derivedUnit == null)
@@ -113,11 +113,8 @@
                     return null;
                 }
                 var args = string.Join(", ",
-                    flattened.Select(u => string.Format("{0}Unit, I{1}{2}",
-                        u.Unit.Quantity.ClassName,
-                        u.Power < 0 ? "Neg" : "",
-                        u.Power < 0 ? -1 * u.Power : u.Power)));
-                return string.Format("IQuantity<{0}>", args);
+                    flattened.Select(u => $"{u.Unit.Quantity.ClassName}Unit, I{(u.Power < 0 ? "Neg" : "")}{(u.Power < 0 ? -1 * u.Power : u.Power)}"));
+                return $"IQuantity<{args}>";
             }
         }
 
@@ -155,14 +152,11 @@
         }
 
         [XmlIgnore]
-        public Settings Settings
-        {
-            get { return Unit.Settings; }
-        }
+        public Settings Settings => Unit.Settings;
 
         public override string ToString()
         {
-            return string.Format("{0} ({1})", ClassName, Unit.ToString());
+            return $"{ClassName} ({Unit.ToString()})";
         }
     }
 }
