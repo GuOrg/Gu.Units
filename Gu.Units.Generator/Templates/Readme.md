@@ -1,7 +1,9 @@
 ﻿# Code generation
-The code generation uses the contents of GeneratorSettings.xml.
+The code generation uses the contents of Units.txt.
 The preferred way to edit this file is by running the Gu.Units.Generator WPF project.
 By inputting units this way all needed operator overloads are calculated.
+The UI-project is buggy, never bothered to polish it much. It looks like this:
+![screenie](http://i.imgur.com/hY4CvIn.png)
 
 When you are happy with the units and quantities it is T4 time:
 
@@ -13,6 +15,7 @@ When you are happy with the units and quantities it is T4 time:
 The T4 is really buggy and I'm not even sure it is deterministic.
 
 Cleaning up here might be required:
-%LOCALAPPDATA%\Microsoft\VisualStudio\14.0\ProjectAssemblies\
-%LOCALAPPDATA%\assembly\dl3
-%TEMP%
+
+- %LOCALAPPDATA%\Microsoft\VisualStudio\14.0\ProjectAssemblies\
+- %LOCALAPPDATA%\assembly\dl3
+- %TEMP%
