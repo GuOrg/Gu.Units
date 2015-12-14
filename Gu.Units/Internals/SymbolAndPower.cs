@@ -2,6 +2,7 @@
 {
     using System;
 
+    [Serializable]
     internal struct SymbolAndPower : IEquatable<SymbolAndPower>
     {
         public readonly string Symbol;

@@ -67,59 +67,29 @@
         }
 
         /// <summary>
-        /// The quantity in degreesPerSquareSecond
+        /// The quantity in DegreesPerSquareSecond
         /// </summary>
-        public double DegreesPerSquareSecond
-        {
-            get
-            {
-                return AngularAccelerationUnit.DegreesPerSquareSecond.FromSiUnit(this.radiansPerSecondSquared);
-            }
-        }
+        public double DegreesPerSquareSecond => this.radiansPerSecondSquared / 0.0174532925199433;
 
         /// <summary>
-        /// The quantity in radiansPerSquareHour
+        /// The quantity in RadiansPerSquareHour
         /// </summary>
-        public double RadiansPerSquareHour
-        {
-            get
-            {
-                return AngularAccelerationUnit.RadiansPerSquareHour.FromSiUnit(this.radiansPerSecondSquared);
-            }
-        }
+        public double RadiansPerSquareHour => 12960000 * this.radiansPerSecondSquared;
 
         /// <summary>
-        /// The quantity in degreesPerSquareHour
+        /// The quantity in DegreesPerSquareHour
         /// </summary>
-        public double DegreesPerSquareHour
-        {
-            get
-            {
-                return AngularAccelerationUnit.DegreesPerSquareHour.FromSiUnit(this.radiansPerSecondSquared);
-            }
-        }
+        public double DegreesPerSquareHour => this.radiansPerSecondSquared / 1.34670466974871E-09;
 
         /// <summary>
-        /// The quantity in degreesPerSquareMinute
+        /// The quantity in DegreesPerSquareMinute
         /// </summary>
-        public double DegreesPerSquareMinute
-        {
-            get
-            {
-                return AngularAccelerationUnit.DegreesPerSquareMinute.FromSiUnit(this.radiansPerSecondSquared);
-            }
-        }
+        public double DegreesPerSquareMinute => this.radiansPerSecondSquared / 4.84813681109536E-06;
 
         /// <summary>
-        /// The quantity in radiansPerSquareMinute
+        /// The quantity in RadiansPerSquareMinute
         /// </summary>
-        public double RadiansPerSquareMinute
-        {
-            get
-            {
-                return AngularAccelerationUnit.RadiansPerSquareMinute.FromSiUnit(this.radiansPerSecondSquared);
-            }
-        }
+        public double RadiansPerSquareMinute => 3600 * this.radiansPerSecondSquared;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.AngularAcceleration"/> from its string representation
@@ -203,7 +173,7 @@
         /// <param name="degreesPerSquareSecond">The value in °⋅s⁻²</param>
         public static AngularAcceleration FromDegreesPerSquareSecond(double degreesPerSquareSecond)
         {
-            return From(degreesPerSquareSecond, AngularAccelerationUnit.DegreesPerSquareSecond);
+            return new AngularAcceleration(0.0174532925199433 * degreesPerSquareSecond);
         }
 
         /// <summary>
@@ -212,7 +182,7 @@
         /// <param name="radiansPerSquareHour">The value in h⁻²⋅rad</param>
         public static AngularAcceleration FromRadiansPerSquareHour(double radiansPerSquareHour)
         {
-            return From(radiansPerSquareHour, AngularAccelerationUnit.RadiansPerSquareHour);
+            return new AngularAcceleration(radiansPerSquareHour / 12960000);
         }
 
         /// <summary>
@@ -221,7 +191,7 @@
         /// <param name="degreesPerSquareHour">The value in h⁻²⋅°</param>
         public static AngularAcceleration FromDegreesPerSquareHour(double degreesPerSquareHour)
         {
-            return From(degreesPerSquareHour, AngularAccelerationUnit.DegreesPerSquareHour);
+            return new AngularAcceleration(1.34670466974871E-09 * degreesPerSquareHour);
         }
 
         /// <summary>
@@ -230,7 +200,7 @@
         /// <param name="degreesPerSquareMinute">The value in min⁻²⋅°</param>
         public static AngularAcceleration FromDegreesPerSquareMinute(double degreesPerSquareMinute)
         {
-            return From(degreesPerSquareMinute, AngularAccelerationUnit.DegreesPerSquareMinute);
+            return new AngularAcceleration(4.84813681109536E-06 * degreesPerSquareMinute);
         }
 
         /// <summary>
@@ -239,12 +209,7 @@
         /// <param name="radiansPerSquareMinute">The value in min⁻²⋅rad</param>
         public static AngularAcceleration FromRadiansPerSquareMinute(double radiansPerSquareMinute)
         {
-            return From(radiansPerSquareMinute, AngularAccelerationUnit.RadiansPerSquareMinute);
-        }
-
-        public static Time operator /(AngularAcceleration left, AngularJerk right)
-        {
-            return Time.FromSeconds(left.radiansPerSecondSquared / right.radiansPerSecondCubed);
+            return new AngularAcceleration(radiansPerSquareMinute / 3600);
         }
 
         public static AngularSpeed operator *(AngularAcceleration left, Time right)
@@ -252,14 +217,29 @@
             return AngularSpeed.FromRadiansPerSecond(left.radiansPerSecondSquared * right.seconds);
         }
 
+        public static AngularJerk operator /(AngularAcceleration left, Time right)
+        {
+            return AngularJerk.FromRadiansPerSecondCubed(left.radiansPerSecondSquared / right.seconds);
+        }
+
         public static Frequency operator /(AngularAcceleration left, AngularSpeed right)
         {
             return Frequency.FromHertz(left.radiansPerSecondSquared / right.radiansPerSecond);
         }
 
-        public static AngularJerk operator /(AngularAcceleration left, Time right)
+        public static AngularJerk operator *(AngularAcceleration left, Frequency right)
         {
-            return AngularJerk.FromRadiansPerSecondCubed(left.radiansPerSecondSquared / right.seconds);
+            return AngularJerk.FromRadiansPerSecondCubed(left.radiansPerSecondSquared * right.hertz);
+        }
+
+        public static AngularSpeed operator /(AngularAcceleration left, Frequency right)
+        {
+            return AngularSpeed.FromRadiansPerSecond(left.radiansPerSecondSquared / right.hertz);
+        }
+
+        public static Time operator /(AngularAcceleration left, AngularJerk right)
+        {
+            return Time.FromSeconds(left.radiansPerSecondSquared / right.radiansPerSecondCubed);
         }
 
         public static double operator /(AngularAcceleration left, AngularAcceleration right)

@@ -5,101 +5,79 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.VoltageUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Voltage"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(VoltageUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Volts.symbol}")]
+    [Serializable, TypeConverter(typeof(VoltageUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{VoltageUnit.symbol}")]
     public struct VoltageUnit : IUnit, IUnit<Voltage>, IEquatable<VoltageUnit>
     {
         /// <summary>
-        /// The Volts unit
-        /// Contains conversion logic to from and formatting.
+        /// The VoltageUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly VoltageUnit Volts = new VoltageUnit(1.0, "V");
-
-        /// <summary>
-        /// The Volts unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly VoltageUnit V = Volts;
+        public static readonly VoltageUnit Volts = new VoltageUnit(volts => volts, volts => volts, "V");
 
         /// <summary>
         /// The Millivolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly VoltageUnit Millivolts = new VoltageUnit(0.001, "mV");
-
-        /// <summary>
-        /// The Millivolts unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly VoltageUnit mV = Millivolts;
+        public static readonly VoltageUnit Millivolts = new VoltageUnit(millivolts => millivolts / 1000, volts => 1000 * volts, "mV");
 
         /// <summary>
         /// The Kilovolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly VoltageUnit Kilovolts = new VoltageUnit(1000, "kV");
-
-        /// <summary>
-        /// The Kilovolts unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly VoltageUnit kV = Kilovolts;
+        public static readonly VoltageUnit Kilovolts = new VoltageUnit(kilovolts => 1000 * kilovolts, volts => volts / 1000, "kV");
 
         /// <summary>
         /// The Megavolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly VoltageUnit Megavolts = new VoltageUnit(1000000, "MV");
-
-        /// <summary>
-        /// The Megavolts unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly VoltageUnit MV = Megavolts;
+        public static readonly VoltageUnit Megavolts = new VoltageUnit(megavolts => 1000000 * megavolts, volts => volts / 1000000, "MV");
 
         /// <summary>
         /// The Microvolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly VoltageUnit Microvolts = new VoltageUnit(1E-06, "µV");
+        public static readonly VoltageUnit Microvolts = new VoltageUnit(microvolts => microvolts / 1000000, volts => 1000000 * volts, "µV");
 
         /// <summary>
-        /// The Microvolts unit
+        /// The Nanovolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly VoltageUnit µV = Microvolts;
+        public static readonly VoltageUnit Nanovolts = new VoltageUnit(nanovolts => nanovolts / 1000000000, volts => 1000000000 * volts, "nV");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        /// <summary>
+        /// The Gigavolts unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VoltageUnit Gigavolts = new VoltageUnit(gigavolts => 1000000000 * gigavolts, volts => volts / 1000000000, "GV");
 
-        public VoltageUnit(double conversionFactor, string symbol)
+        private readonly Func<double, double> toVolts;
+        private readonly Func<double, double> fromVolts;
+        internal readonly string symbol;
+
+        public VoltageUnit(Func<double, double> toVolts, Func<double, double> fromVolts, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toVolts = toVolts;
+            this.fromVolts = fromVolts;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.VoltageUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.VoltageUnit"/>
         /// </summary>
-        public VoltageUnit SiUnit => VoltageUnit.Volts;
+        public VoltageUnit SiUnit => Volts;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.VoltageUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => VoltageUnit.Volts;
+        IUnit IUnit.SiUnit => Volts;
 
         public static Voltage operator *(double left, VoltageUnit right)
         {
@@ -133,7 +111,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toVolts(value);
         }
 
         /// <summary>
@@ -141,9 +119,9 @@
         /// </summary>
         /// <param name="value">The value in Volts</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double volts)
         {
-            return value / this.conversionFactor;
+            return this.fromVolts(volts);
         }
 
         /// <summary>
@@ -157,7 +135,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Volts
+        /// Gets the scalar value of <paramref name="quantity"/> in VoltageUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

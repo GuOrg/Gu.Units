@@ -11,8 +11,8 @@
     {
         public static readonly UnitlessJsonConverter Default = new UnitlessJsonConverter(UnitlessUnit.Scalar);
         public static readonly UnitlessJsonConverter Scalar = new UnitlessJsonConverter(UnitlessUnit.Scalar);
-        public static readonly UnitlessJsonConverter PartsPerMillion = new UnitlessJsonConverter(UnitlessUnit.PartsPerMillion);
         public static readonly UnitlessJsonConverter Promilles = new UnitlessJsonConverter(UnitlessUnit.Promilles);
+        public static readonly UnitlessJsonConverter PartsPerMillion = new UnitlessJsonConverter(UnitlessUnit.PartsPerMillion);
         public static readonly UnitlessJsonConverter Percents = new UnitlessJsonConverter(UnitlessUnit.Percents);
 
         private readonly UnitlessUnit unit;

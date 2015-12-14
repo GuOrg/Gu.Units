@@ -67,48 +67,34 @@
         }
 
         /// <summary>
-        /// The quantity in millivolts
+        /// The quantity in Millivolts
         /// </summary>
-        public double Millivolts
-        {
-            get
-            {
-                return VoltageUnit.Millivolts.FromSiUnit(this.volts);
-            }
-        }
+        public double Millivolts => 1000 * this.volts;
 
         /// <summary>
-        /// The quantity in kilovolts
+        /// The quantity in Kilovolts
         /// </summary>
-        public double Kilovolts
-        {
-            get
-            {
-                return VoltageUnit.Kilovolts.FromSiUnit(this.volts);
-            }
-        }
+        public double Kilovolts => this.volts / 1000;
 
         /// <summary>
-        /// The quantity in megavolts
+        /// The quantity in Megavolts
         /// </summary>
-        public double Megavolts
-        {
-            get
-            {
-                return VoltageUnit.Megavolts.FromSiUnit(this.volts);
-            }
-        }
+        public double Megavolts => this.volts / 1000000;
 
         /// <summary>
-        /// The quantity in microvolts
+        /// The quantity in Microvolts
         /// </summary>
-        public double Microvolts
-        {
-            get
-            {
-                return VoltageUnit.Microvolts.FromSiUnit(this.volts);
-            }
-        }
+        public double Microvolts => 1000000 * this.volts;
+
+        /// <summary>
+        /// The quantity in Nanovolts
+        /// </summary>
+        public double Nanovolts => 1000000000 * this.volts;
+
+        /// <summary>
+        /// The quantity in Gigavolts
+        /// </summary>
+        public double Gigavolts => this.volts / 1000000000;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Voltage"/> from its string representation
@@ -192,7 +178,7 @@
         /// <param name="millivolts">The value in mV</param>
         public static Voltage FromMillivolts(double millivolts)
         {
-            return From(millivolts, VoltageUnit.Millivolts);
+            return new Voltage(millivolts / 1000);
         }
 
         /// <summary>
@@ -201,7 +187,7 @@
         /// <param name="kilovolts">The value in kV</param>
         public static Voltage FromKilovolts(double kilovolts)
         {
-            return From(kilovolts, VoltageUnit.Kilovolts);
+            return new Voltage(1000 * kilovolts);
         }
 
         /// <summary>
@@ -210,7 +196,7 @@
         /// <param name="megavolts">The value in MV</param>
         public static Voltage FromMegavolts(double megavolts)
         {
-            return From(megavolts, VoltageUnit.Megavolts);
+            return new Voltage(1000000 * megavolts);
         }
 
         /// <summary>
@@ -219,12 +205,30 @@
         /// <param name="microvolts">The value in µV</param>
         public static Voltage FromMicrovolts(double microvolts)
         {
-            return From(microvolts, VoltageUnit.Microvolts);
+            return new Voltage(microvolts / 1000000);
         }
 
-        public static Energy operator *(Voltage left, ElectricCharge right)
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
+        /// </summary>
+        /// <param name="nanovolts">The value in nV</param>
+        public static Voltage FromNanovolts(double nanovolts)
         {
-            return Energy.FromJoules(left.volts * right.coulombs);
+            return new Voltage(nanovolts / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
+        /// </summary>
+        /// <param name="gigavolts">The value in GV</param>
+        public static Voltage FromGigavolts(double gigavolts)
+        {
+            return new Voltage(1000000000 * gigavolts);
+        }
+
+        public static MagneticFlux operator *(Voltage left, Time right)
+        {
+            return MagneticFlux.FromWebers(left.volts * right.seconds);
         }
 
         public static Power operator *(Voltage left, Current right)
@@ -235,6 +239,46 @@
         public static Resistance operator /(Voltage left, Current right)
         {
             return Resistance.FromOhm(left.volts / right.amperes);
+        }
+
+        public static MagneticFlux operator /(Voltage left, Frequency right)
+        {
+            return MagneticFlux.FromWebers(left.volts / right.hertz);
+        }
+
+        public static Current operator /(Voltage left, Resistance right)
+        {
+            return Current.FromAmperes(left.volts / right.ohm);
+        }
+
+        public static Energy operator *(Voltage left, ElectricCharge right)
+        {
+            return Energy.FromJoules(left.volts * right.coulombs);
+        }
+
+        public static ElectricCharge operator *(Voltage left, Capacitance right)
+        {
+            return ElectricCharge.FromCoulombs(left.volts * right.farads);
+        }
+
+        public static Frequency operator /(Voltage left, MagneticFlux right)
+        {
+            return Frequency.FromHertz(left.volts / right.webers);
+        }
+
+        public static Current operator *(Voltage left, ElectricalConductance right)
+        {
+            return Current.FromAmperes(left.volts * right.siemens);
+        }
+
+        public static KinematicViscosity operator /(Voltage left, MagneticFieldStrength right)
+        {
+            return KinematicViscosity.FromSquareMetresPerSecond(left.volts / right.teslas);
+        }
+
+        public static MagneticFieldStrength operator /(Voltage left, KinematicViscosity right)
+        {
+            return MagneticFieldStrength.FromTeslas(left.volts / right.squareMetresPerSecond);
         }
 
         public static double operator /(Voltage left, Voltage right)

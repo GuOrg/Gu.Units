@@ -10,9 +10,11 @@
     {
         public ConversionProvider()
         {
-            Add("1.2cm", "0.012m", Length.Parse);
-            Add("1.2cm", "12mm", Length.Parse);
-            Add("1.2mm^2", "1.2E-6m^2", Area.Parse);
+            Add("1.2 g", "0.0012 kg", Mass.Parse);
+            Add("1.2 mg", "0.0000012 kg", Mass.Parse);
+            Add("1.2cm", "0.012 m", Length.Parse);
+            Add("1.2 cm", "12 mm", Length.Parse);
+            Add("1.2 mm^2", "1.2E-6 m^2", Area.Parse);
             Add("90°", "1.5707963267948966rad", Angle.Parse);
             Add("1°", "0.017453292519943295rad", Angle.Parse);
             Add("0°C", "32°F", Temperature.Parse);
@@ -31,6 +33,8 @@
             Add("1.2 Pa", "0.012 mbar", Pressure.Parse);
             Add("1.2 mm/s^2", "0.0012 m/s^2", Acceleration.Parse);
             Add("1.2 mm/s^2", "0.0012 m/s^2", Acceleration.Parse);
+            Add("1.2 L", "0.0012 m^3", Volume.Parse);
+            Add("1.2 ml", "0.0000012 m^3", Volume.Parse);
         }
 
         public void Add<TQuantity>(string @from,
@@ -51,13 +55,13 @@
         public class Conversion<T> : IConversion<IQuantity>
             where T : IQuantity
         {
-            private readonly Func<string, T> _parser;
+            private readonly Func<string, T> parser;
 
             public Conversion(string from, string to, Func<string, T> parser)
             {
                 using (Thread.CurrentThread.UsingTempCulture(CultureInfo.InvariantCulture))
                 {
-                    this._parser = parser;
+                    this.parser = parser;
                     this.From = @from;
                     FromQuantity = Parse(from);
                     this.To = to;
@@ -65,22 +69,30 @@
                 }
             }
 
-            public T Parse(string s)
+            public Conversion(IQuantity from, IQuantity to)
             {
-                return _parser(s);
+                From = @from.ToString(null, CultureInfo.InvariantCulture);
+                FromQuantity = @from;
+                To = to.ToString(null, CultureInfo.InvariantCulture);
+                ToQuantity = to;
             }
 
-            public string From { get; private set; }
+            public T Parse(string s)
+            {
+                return this.parser(s);
+            }
 
-            public IQuantity FromQuantity { get; private set; }
+            public string From { get; }
 
-            public string To { get; private set; }
+            public IQuantity FromQuantity { get; }
 
-            public IQuantity ToQuantity { get; private set; }
+            public string To { get; }
+
+            public IQuantity ToQuantity { get; }
 
             public override string ToString()
             {
-                return string.Format("{0} -> {1}", From, To);
+                return $"{From} -> {To}";
             }
         }
     }

@@ -11,16 +11,16 @@
     {
         public static readonly LengthJsonConverter Default = new LengthJsonConverter(LengthUnit.Metres);
         public static readonly LengthJsonConverter Metres = new LengthJsonConverter(LengthUnit.Metres);
+        public static readonly LengthJsonConverter Inches = new LengthJsonConverter(LengthUnit.Inches);
+        public static readonly LengthJsonConverter Mile = new LengthJsonConverter(LengthUnit.Mile);
+        public static readonly LengthJsonConverter Yard = new LengthJsonConverter(LengthUnit.Yard);
+        public static readonly LengthJsonConverter NauticalMile = new LengthJsonConverter(LengthUnit.NauticalMile);
         public static readonly LengthJsonConverter Nanometres = new LengthJsonConverter(LengthUnit.Nanometres);
         public static readonly LengthJsonConverter Micrometres = new LengthJsonConverter(LengthUnit.Micrometres);
         public static readonly LengthJsonConverter Millimetres = new LengthJsonConverter(LengthUnit.Millimetres);
         public static readonly LengthJsonConverter Centimetres = new LengthJsonConverter(LengthUnit.Centimetres);
         public static readonly LengthJsonConverter Decimetres = new LengthJsonConverter(LengthUnit.Decimetres);
         public static readonly LengthJsonConverter Kilometres = new LengthJsonConverter(LengthUnit.Kilometres);
-        public static readonly LengthJsonConverter Inches = new LengthJsonConverter(LengthUnit.Inches);
-        public static readonly LengthJsonConverter Mile = new LengthJsonConverter(LengthUnit.Mile);
-        public static readonly LengthJsonConverter Yard = new LengthJsonConverter(LengthUnit.Yard);
-        public static readonly LengthJsonConverter NauticalMile = new LengthJsonConverter(LengthUnit.NauticalMile);
 
         private readonly LengthUnit unit;
 

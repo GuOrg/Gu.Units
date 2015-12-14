@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:generator="clr-namespace:Gu.Units.Generator"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:reactive="http://Gu.com/Reactive"
         Title="MainWindow"
-        Width="525"
-        Height="350"
+        Width="1200"
+        Height="800"
         DataContext="{x:Static generator:MainVm.Instance}"
         mc:Ignorable="d">
     <DockPanel>
@@ -14,10 +15,6 @@
             <MenuItem Header="_File">
                 <MenuItem Command="Save" />
             </MenuItem>
-            <!--<MenuItem Header="_Edit" />
-            <MenuItem Header="_View" />
-            <MenuItem Header="_Window" />
-            <MenuItem Header="_Help" />-->
         </Menu>
 
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
@@ -30,7 +27,6 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="5" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
             <GroupBox Grid.Column="0" Header="Units">
@@ -46,13 +42,23 @@
                         </Grid.ColumnDefinitions>
                         <GroupBox Grid.Column="0" Header="Base Units:">
                             <DataGrid AutoGenerateColumns="False"
-                                      ItemsSource="{Binding SiUnits}"
-                                      SelectedItem="{Binding Conversions.BaseUnit}">
+                                      ItemsSource="{Binding BaseUnits}"
+                                      SelectedItem="{Binding Conversions.SelectedBaseUnit}">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Binding="{Binding QuantityName}" Header="Quantity" />
-                                    <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
-                                    <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
-                                    <!--  <DataGridTextColumn Binding="{Binding Quantity.Interface}" Header="Interface" />  -->
+                                    <DataGridTemplateColumn Header="Status">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate DataType="{x:Type generator:BaseUnitViewModel}">
+                                                <Ellipse Width="10"
+                                                         Height="10"
+                                                         Fill="{Binding IsOk,
+                                                                        Converter={reactive:BooleanToBrushConverter WhenFalse=Red,
+                                                                                                                    WhenTrue=GreenYellow}}" />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
+                                    <DataGridTextColumn Binding="{Binding Unit.QuantityName}" Header="Quantity" />
+                                    <DataGridTextColumn Binding="{Binding Unit.Name}" Header="Unit" />
+                                    <DataGridTextColumn Binding="{Binding Unit.Symbol}" Header="Symbol" />
                                 </DataGrid.Columns>
                             </DataGrid>
                         </GroupBox>
@@ -71,13 +77,24 @@
                     <GroupBox Grid.Row="1" Header="Derived Units:">
                         <DataGrid AutoGenerateColumns="False"
                                   ItemsSource="{Binding DerivedUnits}"
-                                  SelectedItem="{Binding Conversions.BaseUnit}">
+                                  SelectedItem="{Binding Conversions.SelectedDerivedUnit}">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Binding="{Binding QuantityName}" Header="Quantity" />
-                                <DataGridTextColumn Binding="{Binding ClassName}" Header="Unit" />
-                                <DataGridTextColumn Binding="{Binding Parts}" Header="Parts" />
-                                <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
-                                <DataGridTextColumn Binding="{Binding Parts.BaseUnitExpression}"
+                                <DataGridTemplateColumn Header="Status">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate DataType="{x:Type generator:BaseUnitViewModel}">
+                                            <Ellipse Width="10"
+                                                     Height="10"
+                                                     Fill="{Binding IsOk,
+                                                                    Converter={reactive:BooleanToBrushConverter WhenFalse=Red,
+                                                                                                                WhenTrue=GreenYellow}}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <DataGridTextColumn Binding="{Binding Unit.QuantityName}" Header="Quantity" />
+                                <DataGridTextColumn Binding="{Binding Unit.Name}" Header="Unit" />
+                                <DataGridTextColumn Binding="{Binding Unit.Symbol}" Header="Symbol" />
+                                <DataGridTextColumn Binding="{Binding UnitParts}" Header="Parts" />
+                                <DataGridTextColumn Binding="{Binding Unit.Parts.BaseUnitSymbol}"
                                                     Header="In base Units"
                                                     IsReadOnly="True" />
                             </DataGrid.Columns>

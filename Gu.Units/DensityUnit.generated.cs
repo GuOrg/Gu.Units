@@ -5,59 +5,73 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.DensityUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Density"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(DensityUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{KilogramsPerCubicMetre.symbol}")]
+    [Serializable, TypeConverter(typeof(DensityUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{DensityUnit.symbol}")]
     public struct DensityUnit : IUnit, IUnit<Density>, IEquatable<DensityUnit>
     {
         /// <summary>
-        /// The KilogramsPerCubicMetre unit
-        /// Contains conversion logic to from and formatting.
+        /// The DensityUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly DensityUnit KilogramsPerCubicMetre = new DensityUnit(1.0, "kg/m³");
+        public static readonly DensityUnit KilogramsPerCubicMetre = new DensityUnit(kilogramsPerCubicMetre => kilogramsPerCubicMetre, kilogramsPerCubicMetre => kilogramsPerCubicMetre, "kg/m³");
 
         /// <summary>
         /// The GramsPerCubicMillimetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly DensityUnit GramsPerCubicMillimetre = new DensityUnit(999999.99999999988, "g/mm³");
+        public static readonly DensityUnit GramsPerCubicMillimetre = new DensityUnit(gramsPerCubicMillimetre => 1000000 * gramsPerCubicMillimetre, kilogramsPerCubicMetre => kilogramsPerCubicMetre / 1000000, "g/mm³");
 
         /// <summary>
         /// The GramsPerCubicCentimetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly DensityUnit GramsPerCubicCentimetre = new DensityUnit(999.99999999999989, "g/cm³");
+        public static readonly DensityUnit GramsPerCubicCentimetre = new DensityUnit(gramsPerCubicCentimetre => 1000 * gramsPerCubicCentimetre, kilogramsPerCubicMetre => kilogramsPerCubicMetre / 1000, "g/cm³");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        /// <summary>
+        /// The MilligramsPerCubicMillimetre unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly DensityUnit MilligramsPerCubicMillimetre = new DensityUnit(milligramsPerCubicMillimetre => 1000 * milligramsPerCubicMillimetre, kilogramsPerCubicMetre => kilogramsPerCubicMetre / 1000, "mg/mm³");
 
-        public DensityUnit(double conversionFactor, string symbol)
+        /// <summary>
+        /// The GramsPerCubicMetre unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly DensityUnit GramsPerCubicMetre = new DensityUnit(gramsPerCubicMetre => gramsPerCubicMetre / 1000, kilogramsPerCubicMetre => 1000 * kilogramsPerCubicMetre, "g/m³");
+
+        /// <summary>
+        /// The MilligramsPerCubicMetre unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly DensityUnit MilligramsPerCubicMetre = new DensityUnit(milligramsPerCubicMetre => milligramsPerCubicMetre / 1000000, kilogramsPerCubicMetre => 1000000 * kilogramsPerCubicMetre, "mg/m³");
+
+        private readonly Func<double, double> toKilogramsPerCubicMetre;
+        private readonly Func<double, double> fromKilogramsPerCubicMetre;
+        internal readonly string symbol;
+
+        public DensityUnit(Func<double, double> toKilogramsPerCubicMetre, Func<double, double> fromKilogramsPerCubicMetre, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toKilogramsPerCubicMetre = toKilogramsPerCubicMetre;
+            this.fromKilogramsPerCubicMetre = fromKilogramsPerCubicMetre;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.DensityUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.DensityUnit"/>
         /// </summary>
-        public DensityUnit SiUnit => DensityUnit.KilogramsPerCubicMetre;
+        public DensityUnit SiUnit => KilogramsPerCubicMetre;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.DensityUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => DensityUnit.KilogramsPerCubicMetre;
+        IUnit IUnit.SiUnit => KilogramsPerCubicMetre;
 
         public static Density operator *(double left, DensityUnit right)
         {
@@ -91,7 +105,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toKilogramsPerCubicMetre(value);
         }
 
         /// <summary>
@@ -99,9 +113,9 @@
         /// </summary>
         /// <param name="value">The value in KilogramsPerCubicMetre</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double kilogramsPerCubicMetre)
         {
-            return value / this.conversionFactor;
+            return this.fromKilogramsPerCubicMetre(kilogramsPerCubicMetre);
         }
 
         /// <summary>
@@ -115,7 +129,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in KilogramsPerCubicMetre
+        /// Gets the scalar value of <paramref name="quantity"/> in DensityUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

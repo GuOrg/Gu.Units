@@ -42,6 +42,9 @@
     <Compile Include="AccelerationConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="AmountOfSubstanceConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="AngleConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
@@ -60,13 +63,25 @@
     <Compile Include="AreaConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="AreaDensityConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="CapacitanceConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="CatalyticActivityConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="CurrentConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="DataConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="DensityConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="ElectricalConductanceConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="ElectricChargeConverter.generated.cs">
@@ -87,10 +102,16 @@
     <Compile Include="FrequencyConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="IlluminanceConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="InductanceConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="JerkConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="KinematicViscosityConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="LengthConverter.generated.cs">
@@ -99,10 +120,25 @@
     <Compile Include="LengthPerUnitlessConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="LuminousFluxConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="LuminousIntensityConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="MagneticFieldStrengthConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MagneticFluxConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="MassConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MassFlowConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MomentumConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="PowerConverter.generated.cs">
@@ -114,7 +150,13 @@
     <Compile Include="ResistanceConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="SolidAngleConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="SpecificEnergyConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="SpecificVolumeConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="SpeedConverter.generated.cs">
@@ -146,6 +188,9 @@
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="VolumetricFlowConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="WavenumberConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
   </ItemGroup>

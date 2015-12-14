@@ -67,59 +67,29 @@
         }
 
         /// <summary>
-        /// The quantity in nanoseconds
+        /// The quantity in Hours
         /// </summary>
-        public double Nanoseconds
-        {
-            get
-            {
-                return TimeUnit.Nanoseconds.FromSiUnit(this.seconds);
-            }
-        }
+        public double Hours => this.seconds / 3600;
 
         /// <summary>
-        /// The quantity in microseconds
+        /// The quantity in Minutes
         /// </summary>
-        public double Microseconds
-        {
-            get
-            {
-                return TimeUnit.Microseconds.FromSiUnit(this.seconds);
-            }
-        }
+        public double Minutes => this.seconds / 60;
 
         /// <summary>
-        /// The quantity in milliseconds
+        /// The quantity in Nanoseconds
         /// </summary>
-        public double Milliseconds
-        {
-            get
-            {
-                return TimeUnit.Milliseconds.FromSiUnit(this.seconds);
-            }
-        }
+        public double Nanoseconds => 1000000000 * this.seconds;
 
         /// <summary>
-        /// The quantity in hours
+        /// The quantity in Microseconds
         /// </summary>
-        public double Hours
-        {
-            get
-            {
-                return TimeUnit.Hours.FromSiUnit(this.seconds);
-            }
-        }
+        public double Microseconds => 1000000 * this.seconds;
 
         /// <summary>
-        /// The quantity in minutes
+        /// The quantity in Milliseconds
         /// </summary>
-        public double Minutes
-        {
-            get
-            {
-                return TimeUnit.Minutes.FromSiUnit(this.seconds);
-            }
-        }
+        public double Milliseconds => 1000 * this.seconds;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
@@ -200,37 +170,10 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="nanoseconds">The value in ns</param>
-        public static Time FromNanoseconds(double nanoseconds)
-        {
-            return From(nanoseconds, TimeUnit.Nanoseconds);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
-        /// </summary>
-        /// <param name="microseconds">The value in µs</param>
-        public static Time FromMicroseconds(double microseconds)
-        {
-            return From(microseconds, TimeUnit.Microseconds);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
-        /// </summary>
-        /// <param name="milliseconds">The value in ms</param>
-        public static Time FromMilliseconds(double milliseconds)
-        {
-            return From(milliseconds, TimeUnit.Milliseconds);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
-        /// </summary>
         /// <param name="hours">The value in h</param>
         public static Time FromHours(double hours)
         {
-            return From(hours, TimeUnit.Hours);
+            return new Time(3600 * hours);
         }
 
         /// <summary>
@@ -239,7 +182,49 @@
         /// <param name="minutes">The value in min</param>
         public static Time FromMinutes(double minutes)
         {
-            return From(minutes, TimeUnit.Minutes);
+            return new Time(60 * minutes);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="nanoseconds">The value in ns</param>
+        public static Time FromNanoseconds(double nanoseconds)
+        {
+            return new Time(nanoseconds / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="microseconds">The value in µs</param>
+        public static Time FromMicroseconds(double microseconds)
+        {
+            return new Time(microseconds / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="milliseconds">The value in ms</param>
+        public static Time FromMilliseconds(double milliseconds)
+        {
+            return new Time(milliseconds / 1000);
+        }
+
+        public static ElectricCharge operator *(Time left, Current right)
+        {
+            return ElectricCharge.FromCoulombs(left.seconds * right.amperes);
+        }
+
+        public static Momentum operator *(Time left, Force right)
+        {
+            return Momentum.FromNewtonSecond(left.seconds * right.newtons);
+        }
+
+        public static Energy operator *(Time left, Power right)
+        {
+            return Energy.FromJoules(left.seconds * right.watts);
         }
 
         public static Length operator *(Time left, Speed right)
@@ -257,9 +242,59 @@
             return Speed.FromMetresPerSecond(left.seconds * right.metresPerSecondSquared);
         }
 
+        public static MassFlow operator *(Time left, Stiffness right)
+        {
+            return MassFlow.FromKilogramsPerSecond(left.seconds * right.newtonsPerMetre);
+        }
+
+        public static Volume operator *(Time left, VolumetricFlow right)
+        {
+            return Volume.FromCubicMetres(left.seconds * right.cubicMetresPerSecond);
+        }
+
+        public static MagneticFlux operator *(Time left, Voltage right)
+        {
+            return MagneticFlux.FromWebers(left.seconds * right.volts);
+        }
+
+        public static Inductance operator *(Time left, Resistance right)
+        {
+            return Inductance.FromHenrys(left.seconds * right.ohm);
+        }
+
+        public static Capacitance operator /(Time left, Resistance right)
+        {
+            return Capacitance.FromFarads(left.seconds / right.ohm);
+        }
+
+        public static KinematicViscosity operator *(Time left, SpecificEnergy right)
+        {
+            return KinematicViscosity.FromSquareMetresPerSecond(left.seconds * right.joulesPerKilogram);
+        }
+
+        public static ElectricalConductance operator /(Time left, Inductance right)
+        {
+            return ElectricalConductance.FromSiemens(left.seconds / right.henrys);
+        }
+
+        public static Resistance operator /(Time left, Capacitance right)
+        {
+            return Resistance.FromOhm(left.seconds / right.farads);
+        }
+
+        public static MassFlow operator /(Time left, Flexibility right)
+        {
+            return MassFlow.FromKilogramsPerSecond(left.seconds / right.metresPerNewton);
+        }
+
         public static AngularSpeed operator *(Time left, AngularAcceleration right)
         {
             return AngularSpeed.FromRadiansPerSecond(left.seconds * right.radiansPerSecondSquared);
+        }
+
+        public static AngularAcceleration operator *(Time left, AngularJerk right)
+        {
+            return AngularAcceleration.FromRadiansPerSecondSquared(left.seconds * right.radiansPerSecondCubed);
         }
 
         public static Acceleration operator *(Time left, Jerk right)
@@ -267,14 +302,34 @@
             return Acceleration.FromMetresPerSecondSquared(left.seconds * right.metresPerSecondCubed);
         }
 
-        public static ElectricCharge operator *(Time left, Current right)
+        public static Capacitance operator *(Time left, ElectricalConductance right)
         {
-            return ElectricCharge.FromCoulombs(left.seconds * right.amperes);
+            return Capacitance.FromFarads(left.seconds * right.siemens);
         }
 
-        public static AngularAcceleration operator *(Time left, AngularJerk right)
+        public static Inductance operator /(Time left, ElectricalConductance right)
         {
-            return AngularAcceleration.FromRadiansPerSecondSquared(left.seconds * right.radiansPerSecondCubed);
+            return Inductance.FromHenrys(left.seconds / right.siemens);
+        }
+
+        public static AmountOfSubstance operator *(Time left, CatalyticActivity right)
+        {
+            return AmountOfSubstance.FromMoles(left.seconds * right.katals);
+        }
+
+        public static Mass operator *(Time left, MassFlow right)
+        {
+            return Mass.FromKilograms(left.seconds * right.kilogramsPerSecond);
+        }
+
+        public static Flexibility operator /(Time left, MassFlow right)
+        {
+            return Flexibility.FromMetresPerNewton(left.seconds / right.kilogramsPerSecond);
+        }
+
+        public static Area operator *(Time left, KinematicViscosity right)
+        {
+            return Area.FromSquareMetres(left.seconds * right.squareMetresPerSecond);
         }
 
         public static Frequency operator /(double left, Time right)

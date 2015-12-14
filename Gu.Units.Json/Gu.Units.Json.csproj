@@ -38,6 +38,9 @@
     <Compile Include="AccelerationJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="AmountOfSubstanceJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="AngleJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
@@ -53,16 +56,28 @@
     <Compile Include="AngularSpeedJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="AreaDensityJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="AreaJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="CapacitanceJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="CatalyticActivityJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="CurrentJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="DataJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="DensityJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="ElectricalConductanceJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="ElectricChargeJsonConverter.generated.cs">
@@ -83,10 +98,16 @@
     <Compile Include="FrequencyJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="IlluminanceJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="InductanceJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="JerkJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="KinematicViscosityJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="LengthJsonConverter.generated.cs">
@@ -95,10 +116,25 @@
     <Compile Include="LengthPerUnitlessJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="LuminousFluxJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="LuminousIntensityJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="MagneticFieldStrengthJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MagneticFluxJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MassFlowJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="MassJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MomentumJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="PowerJsonConverter.generated.cs">
@@ -111,7 +147,13 @@
     <Compile Include="ResistanceJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="SolidAngleJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="SpecificEnergyJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="SpecificVolumeJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="SpeedJsonConverter.generated.cs">
@@ -139,6 +181,9 @@
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="VolumetricFlowJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="WavenumberJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
   </ItemGroup>

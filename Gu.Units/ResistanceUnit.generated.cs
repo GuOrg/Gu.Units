@@ -5,101 +5,67 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.ResistanceUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Resistance"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(ResistanceUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Ohm.symbol}")]
+    [Serializable, TypeConverter(typeof(ResistanceUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{ResistanceUnit.symbol}")]
     public struct ResistanceUnit : IUnit, IUnit<Resistance>, IEquatable<ResistanceUnit>
     {
         /// <summary>
-        /// The Ohm unit
-        /// Contains conversion logic to from and formatting.
+        /// The ResistanceUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly ResistanceUnit Ohm = new ResistanceUnit(1.0, "Ω");
-
-        /// <summary>
-        /// The Ohm unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly ResistanceUnit Ω = Ohm;
+        public static readonly ResistanceUnit Ohm = new ResistanceUnit(ohm => ohm, ohm => ohm, "Ω");
 
         /// <summary>
         /// The Microohm unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly ResistanceUnit Microohm = new ResistanceUnit(1E-06, "µΩ");
-
-        /// <summary>
-        /// The Microohm unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly ResistanceUnit µΩ = Microohm;
+        public static readonly ResistanceUnit Microohm = new ResistanceUnit(microohm => microohm / 1000000, ohm => 1000000 * ohm, "µΩ");
 
         /// <summary>
         /// The Milliohm unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly ResistanceUnit Milliohm = new ResistanceUnit(0.001, "mΩ");
-
-        /// <summary>
-        /// The Milliohm unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly ResistanceUnit mΩ = Milliohm;
+        public static readonly ResistanceUnit Milliohm = new ResistanceUnit(milliohm => milliohm / 1000, ohm => 1000 * ohm, "mΩ");
 
         /// <summary>
         /// The Kiloohm unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly ResistanceUnit Kiloohm = new ResistanceUnit(1000, "kΩ");
-
-        /// <summary>
-        /// The Kiloohm unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly ResistanceUnit kΩ = Kiloohm;
+        public static readonly ResistanceUnit Kiloohm = new ResistanceUnit(kiloohm => 1000 * kiloohm, ohm => ohm / 1000, "kΩ");
 
         /// <summary>
         /// The Megaohm unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly ResistanceUnit Megaohm = new ResistanceUnit(1000000, "MΩ");
+        public static readonly ResistanceUnit Megaohm = new ResistanceUnit(megaohm => 1000000 * megaohm, ohm => ohm / 1000000, "MΩ");
 
-        /// <summary>
-        /// The Megaohm unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly ResistanceUnit MΩ = Megaohm;
+        private readonly Func<double, double> toOhm;
+        private readonly Func<double, double> fromOhm;
+        internal readonly string symbol;
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
-
-        public ResistanceUnit(double conversionFactor, string symbol)
+        public ResistanceUnit(Func<double, double> toOhm, Func<double, double> fromOhm, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toOhm = toOhm;
+            this.fromOhm = fromOhm;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.ResistanceUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.ResistanceUnit"/>
         /// </summary>
-        public ResistanceUnit SiUnit => ResistanceUnit.Ohm;
+        public ResistanceUnit SiUnit => Ohm;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.ResistanceUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => ResistanceUnit.Ohm;
+        IUnit IUnit.SiUnit => Ohm;
 
         public static Resistance operator *(double left, ResistanceUnit right)
         {
@@ -133,7 +99,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toOhm(value);
         }
 
         /// <summary>
@@ -141,9 +107,9 @@
         /// </summary>
         /// <param name="value">The value in Ohm</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double ohm)
         {
-            return value / this.conversionFactor;
+            return this.fromOhm(ohm);
         }
 
         /// <summary>
@@ -157,7 +123,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Ohm
+        /// Gets the scalar value of <paramref name="quantity"/> in ResistanceUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

@@ -1,18 +1,27 @@
 ﻿namespace Gu.Units.Generator.Tests
 {
+    using System.Collections.ObjectModel;
+
     public class MockSettings : Settings
     {
-        public readonly SiUnit Metres;
+        public readonly BaseUnit Metres;
         public readonly Quantity Length;
 
-        public readonly SiUnit Kilograms;
+        public readonly BaseUnit Kilograms;
+        public FactorConversion Grams;
         public readonly Quantity Mass;
 
-        public readonly SiUnit Seconds;
+        public readonly BaseUnit Kelvins;
+        public readonly Quantity Temperature;
+
+        public readonly BaseUnit Seconds;
         public readonly Quantity Time;
 
         public readonly DerivedUnit MetresPerSecond;
         public readonly Quantity Speed;
+
+        public readonly DerivedUnit MetresPerSecondSquared;
+        public readonly Quantity Acceleration;
 
         public readonly DerivedUnit SquareMetres;
         public readonly Quantity Area;
@@ -20,7 +29,10 @@
         public readonly DerivedUnit CubicMetres;
         public readonly Quantity Volume;
 
-        public readonly SiUnit Amperes;
+        public readonly DerivedUnit KilogramsPerCubicMetre;
+        public readonly Quantity Density;
+
+        public readonly BaseUnit Amperes;
         public readonly Quantity Current;
 
         public readonly DerivedUnit Newtons;
@@ -40,94 +52,127 @@
 
         public readonly DerivedUnit Hertz;
         public readonly Quantity Frequency;
+        public Prefix Micro = new Prefix("Micro", "µ", -6);
+        public Prefix Milli = new Prefix("Milli", "m", -3);
+        public Prefix Kilo = new Prefix("Kilo", "k", 3);
 
-        public MockSettings()
+        private MockSettings()
+            : base(new ObservableCollection<Prefix>(), new ObservableCollection<BaseUnit>(), new ObservableCollection<DerivedUnit>())
         {
-            Metres = new SiUnit("Metres", "m") { QuantityName = "Length" };
-            SiUnits.Add(Metres);
-            Length = Metres.Quantity;
+            Prefixes.Add(this.Micro);
+            Prefixes.Add(this.Milli);
+            Prefixes.Add(this.Kilo);
+            this.Metres = new BaseUnit("Metres", "m", "Length");
+            BaseUnits.Add(this.Metres);
+            this.Length = this.Metres.Quantity;
 
-            Seconds = new SiUnit("Seconds", "s") { QuantityName = "Time" };
-            SiUnits.Add(Seconds);
-            Time = Seconds.Quantity;
+            this.Kelvins = new BaseUnit("Kelvin", "K", "Temperature");
+            BaseUnits.Add(this.Kelvins);
+            this.Temperature = this.Kelvins.Quantity;
 
-            Kilograms = new SiUnit("Kilograms", "kg") { QuantityName = "Mass" };
-            SiUnits.Add(Kilograms);
-            Mass = Kilograms.Quantity;
+            this.Seconds = new BaseUnit("Seconds", "s", "Time");
+            BaseUnits.Add(this.Seconds);
+            this.Time = this.Seconds.Quantity;
 
-            Amperes = new SiUnit("Amperes", "A") { QuantityName = "ElectricalCurrent" };
-            SiUnits.Add(Amperes);
-            Current = Amperes.Quantity;
+            this.Kilograms = new BaseUnit("Kilograms", "kg", "Mass");
+            this.Grams = new FactorConversion("Grams", "g", 0.001);
+            this.Kilograms.FactorConversions.Add(this.Grams);
+            BaseUnits.Add(this.Kilograms);
+            this.Mass = this.Kilograms.Quantity;
 
-            MetresPerSecond = new DerivedUnit(
+            this.Amperes = new BaseUnit("Amperes", "A", "ElectricalCurrent");
+            BaseUnits.Add(this.Amperes);
+            this.Current = this.Amperes.Quantity;
+
+            this.MetresPerSecond = new DerivedUnit(
                 "MetresPerSecond",
                 "m/s",
-                new UnitAndPower(Metres, 1),
-                new UnitAndPower(Seconds, -1)) { QuantityName = "Speed" };
-            DerivedUnits.Add(MetresPerSecond);
-            Speed = MetresPerSecond.Quantity;
+                "Speed",
+              new[]{ UnitAndPower.Create(this.Metres, 1),
+               UnitAndPower.Create(this.Seconds, -1)});
+            DerivedUnits.Add(this.MetresPerSecond);
+            this.Speed = this.MetresPerSecond.Quantity;
 
-            Newtons = new DerivedUnit(
+            this.MetresPerSecondSquared = new DerivedUnit(
+                "MetresPerSecondSquared",
+                "m/s^2",
+                "Acceleration",
+                new[]
+                {
+                    UnitAndPower.Create(this.Metres, 1),
+                    UnitAndPower.Create(this.Seconds, -2)
+                });
+            DerivedUnits.Add(this.MetresPerSecondSquared);
+            this.Acceleration = this.MetresPerSecondSquared.Quantity;
+
+            this.Newtons = new DerivedUnit(
                 "Newtons",
                 "N",
-                new UnitAndPower(Kilograms, 1),
-                new UnitAndPower(Metres, 1),
-                new UnitAndPower(Seconds, -2)) { QuantityName = "Force" };
-            DerivedUnits.Add(Newtons);
-            Force = Newtons.Quantity;
+                "Force",
+              new[]{   UnitAndPower.Create(this.Kilograms, 1),
+               UnitAndPower.Create(this.Metres, 1),
+               UnitAndPower.Create(this.Seconds, -2)});
+            DerivedUnits.Add(this.Newtons);
+            this.Force = this.Newtons.Quantity;
 
-            Joules = new DerivedUnit(
+            this.Joules = new DerivedUnit(
                 "Joules",
                 "J",
-                new UnitAndPower(Newtons, 1),
-                new UnitAndPower(Metres, 1)) { QuantityName = "Energy" };
-            DerivedUnits.Add(Joules);
-            Energy = Joules.Quantity;
+                "Energy",
+              new[]{   UnitAndPower.Create(this.Newtons, 1),
+               UnitAndPower.Create(this.Metres, 1)});
+            DerivedUnits.Add(this.Joules);
+            this.Energy = this.Joules.Quantity;
 
-            Watts = new DerivedUnit(
+            this.Watts = new DerivedUnit(
                 "Watts",
                 "W",
-                new UnitAndPower(Joules, 1),
-                new UnitAndPower(Seconds, -1)) { QuantityName = "Power" };
-            DerivedUnits.Add(Watts);
-            Power = Watts.Quantity;
+                "Power",
+             new[]{    UnitAndPower.Create(this.Joules, 1),
+               UnitAndPower.Create(this.Seconds, -1)});
+            DerivedUnits.Add(this.Watts);
+            this.Power = this.Watts.Quantity;
 
-            Volts = new DerivedUnit(
+            this.Volts = new DerivedUnit(
                 "Volts",
                 "V",
-                new UnitAndPower(Watts, 1),
-                new UnitAndPower(Amperes, -1)) { QuantityName = "Voltage" };
-            DerivedUnits.Add(Volts);
-            Voltage = Volts.Quantity;
+                "Voltage",
+             new[]{    UnitAndPower.Create(this.Watts, 1),
+               UnitAndPower.Create(this.Amperes, -1)});
+            DerivedUnits.Add(this.Volts);
+            this.Voltage = this.Volts.Quantity;
 
-            Coloumbs = new DerivedUnit(
+            this.Coloumbs = new DerivedUnit(
                 "Coloumbs",
                 "C",
-                new UnitAndPower(Seconds, 1),
-                new UnitAndPower(Amperes, 1)) { QuantityName = "ElectricCharge" };
-            DerivedUnits.Add(Coloumbs);
-            ElectricCharge = Coloumbs.Quantity;
+                "ElectricCharge",
+              new[]{   UnitAndPower.Create(this.Seconds, 1),
+               UnitAndPower.Create(this.Amperes, 1)});
+            DerivedUnits.Add(this.Coloumbs);
+            this.ElectricCharge = this.Coloumbs.Quantity;
 
-            SquareMetres = new DerivedUnit("SquareMetres", "m^2", new UnitAndPower(Metres, 2))
-            {
-                QuantityName = "Area"
-            };
-            DerivedUnits.Add(SquareMetres);
-            Area = SquareMetres.Quantity;
+            this.SquareMetres = new DerivedUnit("SquareMetres", "m^2", "Area", new[] { UnitAndPower.Create(this.Metres, 2) });
+            DerivedUnits.Add(this.SquareMetres);
+            this.Area = this.SquareMetres.Quantity;
 
-            CubicMetres = new DerivedUnit("CubicMetres", "m^3", new UnitAndPower(Metres, 3))
-            {
-                QuantityName = "Volume"
-            };
-            DerivedUnits.Add(CubicMetres);
-            Volume = CubicMetres.Quantity;
+            this.CubicMetres = new DerivedUnit("CubicMetres", "m^3", "Volume", new[] { UnitAndPower.Create(this.Metres, 3) });
+            DerivedUnits.Add(this.CubicMetres);
+            this.Volume = this.CubicMetres.Quantity;
 
-            Hertz = new DerivedUnit("Hertz", "1/s", new UnitAndPower(Seconds, -1))
-            {
-                QuantityName = "Frequency"
-            };
-            DerivedUnits.Add(Hertz);
-            Frequency = Hertz.Quantity;
+            this.KilogramsPerCubicMetre = new DerivedUnit("KilogramsPerCubicMetre", "kg/m^3", "Density", new[] {UnitAndPower.Create(this.Kilograms,1), UnitAndPower.Create(this.Metres, -3) });
+            DerivedUnits.Add(this.KilogramsPerCubicMetre);
+            this.Density = this.CubicMetres.Quantity;
+
+            this.Hertz = new DerivedUnit("Hertz", "1/s", "Frequency", new[] { UnitAndPower.Create(this.Seconds, -1) });
+
+            DerivedUnits.Add(this.Hertz);
+            this.Frequency = this.Hertz.Quantity;
+        }
+
+        public static MockSettings Create()
+        {
+            InnerInstance = null;
+            return new MockSettings();
         }
     }
 }

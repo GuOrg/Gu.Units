@@ -3,69 +3,63 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.IO;
+    using System.ComponentModel;
     using System.Linq;
-    using System.Reflection;
-    using System.Text;
-    using System.Xml.Serialization;
+    using System.Reactive.Linq;
+    using System.Runtime.CompilerServices;
+    using JetBrains.Annotations;
+    using Newtonsoft.Json;
+    using Reactive;
 
-    using Gu.Units.Generator.WpfStuff;
-
-    public class Settings
+    [Serializable]
+    public class Settings : INotifyPropertyChanged
     {
-        private static Settings _instance;
-        private readonly ParentCollection<Settings, DerivedUnit> derivedUnits;
-        private readonly ParentCollection<Settings, SiUnit> siUnits;
-        private readonly ObservableCollection<Prefix> prefixes = new ObservableCollection<Prefix>();
+        internal static Settings InnerInstance; // huge hairy hack here for T4
+        private IReadOnlyList<MissingOverloads> missing;
 
-        protected Settings()
-        {
-            this.derivedUnits = new ParentCollection<Settings, DerivedUnit>(this, (unit, settings) => unit.Settings = settings);
-            this.siUnits = new ParentCollection<Settings, SiUnit>(this, (unit, settings) => unit.Settings = settings);
-        }
+        public static Settings Instance => InnerInstance ?? FromResource;
 
-        public static Settings Instance
+        public static Settings FromResource
         {
             get
             {
-                if (_instance != null)
-                {
-                    return _instance;
-                }
-                try
-                {
-                    var serializer = new XmlSerializer(typeof(Settings));
-                    Settings settings;
-                    using (var reader = new StringReader(Properties.Resources.GeneratorSettings))
-                    {
-                        settings = (Settings)serializer.Deserialize(reader);
-                    }
-                    _instance = settings;
-                    return settings;
-                }
-                catch (Exception e)
-                {
-                    _instance = new Settings();
-                    return _instance;
-                }
+                InnerInstance = JsonConvert.DeserializeObject<Settings>(Properties.Resources.Units, Persister.SerializerSettings);
+                return InnerInstance;
             }
         }
+
+        private Settings()
+        {
+        }
+
+        public Settings(ObservableCollection<Prefix> prefixes, ObservableCollection<BaseUnit> baseUnits, ObservableCollection<DerivedUnit> derivedUnits)
+        {
+            if (InnerInstance != null)
+            {
+                throw new InvalidOperationException("This is nasty design but there can only be one read from file. Reason is resolving units and prefixes by key.");
+            }
+
+            Prefixes = prefixes;
+            BaseUnits = baseUnits;
+            DerivedUnits = derivedUnits;
+            InnerInstance = this;
+
+            Observable.Merge(BaseUnits.ObserveCollectionChangedSlim(true),
+                             DerivedUnits.ObserveCollectionChangedSlim(true))
+                .Subscribe(_ =>
+                {
+                    this.missing = OverloadFinder.Find(AllUnits);
+                    OnPropertyChanged(nameof(Missing));
+                    OnPropertyChanged(nameof(AllUnits));
+                    OnPropertyChanged(nameof(Quantities));
+                });
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public static string Namespace => "Gu.Units";
 
-        public static string FullFileName
-        {
-            get
-            {
-                var directoryInfo = new DirectoryInfo(Assembly.GetExecutingAssembly().Location);
-                var directory = directoryInfo.Parent.Parent.Parent.FullName; // Perhaps not the most elegant code ever written
-                return System.IO.Path.Combine(directory, "GeneratorSettings.xml");
-            }
-        }
-
         public static string ProjectName => "Gu.Units";
-
-        public static string FolderName => null;
 
         /// <summary>
         /// The extension for the generated files, set to txt if it does not build so you can´inspect the reult
@@ -73,53 +67,61 @@
         /// </summary>
         public static string Extension => "cs";
 
-        public ObservableCollection<DerivedUnit> DerivedUnits => this.derivedUnits;
+        public ObservableCollection<Prefix> Prefixes { get; }
 
-        public ObservableCollection<SiUnit> SiUnits => this.siUnits;
+        public ObservableCollection<BaseUnit> BaseUnits { get; }
 
-        public ObservableCollection<Prefix> Prefixes => this.prefixes;
+        public ObservableCollection<DerivedUnit> DerivedUnits { get; }
 
-        public IReadOnlyList<IUnit> AllUnits => SiUnits.Concat<IUnit>(DerivedUnits).ToList();
+        public IReadOnlyList<Unit> AllUnits => BaseUnits.Concat<Unit>(DerivedUnits).ToList();
 
         public IReadOnlyList<Quantity> Quantities => AllUnits.Select(x => x.Quantity).ToList();
 
-        public static Settings FromFile(string fullFileName)
+        public IReadOnlyList<MissingOverloads> Missing => this.missing; 
+
+        public static Settings CreateEmpty()
         {
-            var serializer = new XmlSerializer(typeof(Settings));
+            return new Settings(new ObservableCollection<Prefix>(), new ObservableCollection<BaseUnit>(), new ObservableCollection<DerivedUnit>());
+        }
+
+        public Unit GetUnitByName(string name)
+        {
             try
             {
-                Settings settings;
-                using (var reader = new StringReader(fullFileName))
+                var match = AllUnits.SingleOrDefault(x => x.Name == name);
+                if (match == null)
                 {
-                    settings = (Settings)serializer.Deserialize(reader);
+                    throw new ArgumentOutOfRangeException($"Did not find a unit with name {name}");
                 }
-                return settings;
+                return match;
             }
-            catch (FileNotFoundException)
+            catch (Exception e)
             {
-                var settings = new Settings();
-                using (var stream = File.Create(fullFileName))
-                {
-                    serializer.Serialize(stream, settings);
-                }
-                return settings;
+                throw new ArgumentOutOfRangeException($"Found more than one unit with name {name}");
             }
         }
 
-        public static void Save(Settings settings, string fullFileName)
+        public Quantity GetQuantityByName(string name)
         {
-            var serializer = new XmlSerializer(typeof(Settings));
-            var toSave = new Settings();
-            toSave.DerivedUnits.InvokeAddRange(settings.DerivedUnits.Where(x => x != null && !x.IsEmpty));
-            toSave.SiUnits.InvokeAddRange(settings.SiUnits.Where(x => x != null && !x.IsEmpty));
-            toSave.Prefixes.InvokeAddRange(settings.Prefixes.Where(x => x != null).OrderBy(x => x.Power));
-            using (var stream = File.Create(fullFileName))
+            try
             {
-                using (var writer = new StreamWriter(stream, Encoding.UTF8))
+                var match = Quantities.SingleOrDefault(x => x.Name == name);
+                if (match == null)
                 {
-                    serializer.Serialize(writer, toSave);
+                    throw new ArgumentOutOfRangeException($"Did not find a unit with name {name}");
                 }
+                return match;
             }
+            catch (Exception e)
+            {
+                throw new ArgumentOutOfRangeException($"Found more than one unit with name {name}");
+            }
+        }
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

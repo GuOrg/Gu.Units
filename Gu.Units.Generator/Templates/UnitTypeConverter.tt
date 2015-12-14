@@ -1,24 +1,13 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ assembly name="$(TargetPath)" #>
+<#@ import namespace="Gu.Units" #>
 <#@ import namespace="Gu.Units.Generator" #>
-<#@ parameter name="UnitTypeConverterData" type="Gu.Units.Generator.IUnit" #>
+<#@ parameter name="UnitName" type="System.String" #>
 <#@ output extension=".txt" #>
 <#
+var settings = Settings.Instance;
 // Template used by UnitTypeConverterGenerator.tt
-IUnit unit;
-if(UnitTypeConverterData != null)
-{
-    unit = UnitTypeConverterData;
-}
-else
-{
-    unit = new SiUnit("Metres", "m")
-                    {
-                        QuantityName =  "Length"
-                    };
-    unit.Conversions.Add(new Conversion("Centimetres", "cm"));
-    unit.Conversions.Add(new Conversion("Millimetres", "mm"));
-}
+var unit = settings.GetUnitByName(UnitName ?? settings.AllUnits[0].Name);
 #>
 namespace <#= Settings.Namespace #>
 {
@@ -29,15 +18,15 @@ namespace <#= Settings.Namespace #>
     using System.Reflection;
 
     /// <devdoc>
-    /// <para>Provides a type converter to convert <see cref='<#= Settings.Namespace #>.<#= unit.UnitName #>'/>
+    /// <para>Provides a type converter to convert <see cref='<#= Settings.Namespace #>.<#= unit.ClassName #>'/>
     /// objects to and from various
     /// other representations.</para>
     /// </devdoc>
-    public class <#= unit.UnitName #>TypeConverter : TypeConverter
+    public class <#= unit.ClassName #>TypeConverter : TypeConverter
     {
         /// <devdoc>
         ///    <para>Gets a value indicating whether this converter can
-        ///       convert an object in the given source type to a <see cref='<#= Settings.Namespace #>.<#= unit.UnitName #>'/> object using the
+        ///       convert an object in the given source type to a <see cref='<#= Settings.Namespace #>.<#= unit.ClassName #>'/> object using the
         ///       specified context.</para>
         /// </devdoc>
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
@@ -65,7 +54,7 @@ namespace <#= Settings.Namespace #>
         }
 
         /// <devdoc>
-        /// <para>Converts the given object to a <see cref='<#= Settings.Namespace #>.<#= unit.UnitName #>'/>
+        /// <para>Converts the given object to a <see cref='<#= Settings.Namespace #>.<#= unit.ClassName #>'/>
         /// object.</para>
         /// </devdoc>
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
@@ -74,7 +63,7 @@ namespace <#= Settings.Namespace #>
             if (text != null)
             {
                 text = text.Trim();
-                return <#= unit.UnitName #>.Parse(text);
+                return <#= unit.ClassName #>.Parse(text);
             }
 
             return base.ConvertFrom(context, culture, value);
@@ -94,12 +83,12 @@ namespace <#= Settings.Namespace #>
                 throw new ArgumentNullException(nameof(destinationType));
             }
 
-            if (destinationType == typeof(InstanceDescriptor) && value is <#= unit.UnitName #>)
+            if (destinationType == typeof(InstanceDescriptor) && value is <#= unit.ClassName #>)
             {
-                MethodInfo method = typeof(<#= unit.UnitName #>).GetMethod(nameof(<#= unit.UnitName #>.Parse), new Type[] { typeof(string) });
+                MethodInfo method = typeof(<#= unit.ClassName #>).GetMethod(nameof(<#= unit.ClassName #>.Parse), new Type[] { typeof(string) });
                 if (method != null)
                 {
-					var args = new object[] { ((<#= unit.UnitName #>)value).Symbol };
+					var args = new object[] { ((<#= unit.ClassName #>)value).Symbol };
                     return new InstanceDescriptor(method, args);
                 }
             }

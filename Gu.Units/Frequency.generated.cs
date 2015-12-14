@@ -67,48 +67,24 @@
         }
 
         /// <summary>
-        /// The quantity in millihertz
+        /// The quantity in Millihertz
         /// </summary>
-        public double Millihertz
-        {
-            get
-            {
-                return FrequencyUnit.Millihertz.FromSiUnit(this.hertz);
-            }
-        }
+        public double Millihertz => 1000 * this.hertz;
 
         /// <summary>
-        /// The quantity in kilohertz
+        /// The quantity in Kilohertz
         /// </summary>
-        public double Kilohertz
-        {
-            get
-            {
-                return FrequencyUnit.Kilohertz.FromSiUnit(this.hertz);
-            }
-        }
+        public double Kilohertz => this.hertz / 1000;
 
         /// <summary>
-        /// The quantity in megahertz
+        /// The quantity in Megahertz
         /// </summary>
-        public double Megahertz
-        {
-            get
-            {
-                return FrequencyUnit.Megahertz.FromSiUnit(this.hertz);
-            }
-        }
+        public double Megahertz => this.hertz / 1000000;
 
         /// <summary>
-        /// The quantity in gigahertz
+        /// The quantity in Gigahertz
         /// </summary>
-        public double Gigahertz
-        {
-            get
-            {
-                return FrequencyUnit.Gigahertz.FromSiUnit(this.hertz);
-            }
-        }
+        public double Gigahertz => this.hertz / 1000000000;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
@@ -192,7 +168,7 @@
         /// <param name="millihertz">The value in mHz</param>
         public static Frequency FromMillihertz(double millihertz)
         {
-            return From(millihertz, FrequencyUnit.Millihertz);
+            return new Frequency(millihertz / 1000);
         }
 
         /// <summary>
@@ -201,7 +177,7 @@
         /// <param name="kilohertz">The value in kHz</param>
         public static Frequency FromKilohertz(double kilohertz)
         {
-            return From(kilohertz, FrequencyUnit.Kilohertz);
+            return new Frequency(1000 * kilohertz);
         }
 
         /// <summary>
@@ -210,7 +186,7 @@
         /// <param name="megahertz">The value in MHz</param>
         public static Frequency FromMegahertz(double megahertz)
         {
-            return From(megahertz, FrequencyUnit.Megahertz);
+            return new Frequency(1000000 * megahertz);
         }
 
         /// <summary>
@@ -219,17 +195,12 @@
         /// <param name="gigahertz">The value in GHz</param>
         public static Frequency FromGigahertz(double gigahertz)
         {
-            return From(gigahertz, FrequencyUnit.Gigahertz);
+            return new Frequency(1000000000 * gigahertz);
         }
 
-        public static Current operator *(Frequency left, ElectricCharge right)
+        public static MassFlow operator *(Frequency left, Mass right)
         {
-            return Current.FromAmperes(left.hertz * right.coulombs);
-        }
-
-        public static Power operator *(Frequency left, Energy right)
-        {
-            return Power.FromWatts(left.hertz * right.joules);
+            return MassFlow.FromKilogramsPerSecond(left.hertz * right.kilograms);
         }
 
         public static Speed operator *(Frequency left, Length right)
@@ -242,9 +213,14 @@
             return AngularSpeed.FromRadiansPerSecond(left.hertz * right.radians);
         }
 
-        public static Acceleration operator *(Frequency left, Speed right)
+        public static CatalyticActivity operator *(Frequency left, AmountOfSubstance right)
         {
-            return Acceleration.FromMetresPerSecondSquared(left.hertz * right.metresPerSecond);
+            return CatalyticActivity.FromKatals(left.hertz * right.moles);
+        }
+
+        public static KinematicViscosity operator *(Frequency left, Area right)
+        {
+            return KinematicViscosity.FromSquareMetresPerSecond(left.hertz * right.squareMetres);
         }
 
         public static VolumetricFlow operator *(Frequency left, Volume right)
@@ -252,9 +228,44 @@
             return VolumetricFlow.FromCubicMetresPerSecond(left.hertz * right.cubicMetres);
         }
 
+        public static Power operator *(Frequency left, Energy right)
+        {
+            return Power.FromWatts(left.hertz * right.joules);
+        }
+
+        public static Acceleration operator *(Frequency left, Speed right)
+        {
+            return Acceleration.FromMetresPerSecondSquared(left.hertz * right.metresPerSecond);
+        }
+
+        public static Wavenumber operator /(Frequency left, Speed right)
+        {
+            return Wavenumber.FromReciprocalMetres(left.hertz / right.metresPerSecond);
+        }
+
         public static AngularAcceleration operator *(Frequency left, AngularSpeed right)
         {
             return AngularAcceleration.FromRadiansPerSecondSquared(left.hertz * right.radiansPerSecond);
+        }
+
+        public static Jerk operator *(Frequency left, Acceleration right)
+        {
+            return Jerk.FromMetresPerSecondCubed(left.hertz * right.metresPerSecondSquared);
+        }
+
+        public static Current operator *(Frequency left, ElectricCharge right)
+        {
+            return Current.FromAmperes(left.hertz * right.coulombs);
+        }
+
+        public static Resistance operator *(Frequency left, Inductance right)
+        {
+            return Resistance.FromOhm(left.hertz * right.henrys);
+        }
+
+        public static ElectricalConductance operator *(Frequency left, Capacitance right)
+        {
+            return ElectricalConductance.FromSiemens(left.hertz * right.farads);
         }
 
         public static AngularJerk operator *(Frequency left, AngularAcceleration right)
@@ -262,9 +273,29 @@
             return AngularJerk.FromRadiansPerSecondCubed(left.hertz * right.radiansPerSecondSquared);
         }
 
-        public static Jerk operator *(Frequency left, Acceleration right)
+        public static Voltage operator *(Frequency left, MagneticFlux right)
         {
-            return Jerk.FromMetresPerSecondCubed(left.hertz * right.metresPerSecondSquared);
+            return Voltage.FromVolts(left.hertz * right.webers);
+        }
+
+        public static Force operator *(Frequency left, Momentum right)
+        {
+            return Force.FromNewtons(left.hertz * right.newtonSecond);
+        }
+
+        public static Speed operator /(Frequency left, Wavenumber right)
+        {
+            return Speed.FromMetresPerSecond(left.hertz / right.reciprocalMetres);
+        }
+
+        public static Stiffness operator *(Frequency left, MassFlow right)
+        {
+            return Stiffness.FromNewtonsPerMetre(left.hertz * right.kilogramsPerSecond);
+        }
+
+        public static SpecificEnergy operator *(Frequency left, KinematicViscosity right)
+        {
+            return SpecificEnergy.FromJoulesPerKilogram(left.hertz * right.squareMetresPerSecond);
         }
 
         public static Time operator /(double left, Frequency right)

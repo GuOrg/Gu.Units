@@ -67,114 +67,54 @@
         }
 
         /// <summary>
-        /// The quantity in nanometres
+        /// The quantity in Inches
         /// </summary>
-        public double Nanometres
-        {
-            get
-            {
-                return LengthUnit.Nanometres.FromSiUnit(this.metres);
-            }
-        }
+        public double Inches => this.metres / 0.0254;
 
         /// <summary>
-        /// The quantity in micrometres
+        /// The quantity in Mile
         /// </summary>
-        public double Micrometres
-        {
-            get
-            {
-                return LengthUnit.Micrometres.FromSiUnit(this.metres);
-            }
-        }
+        public double Mile => this.metres / 1609.344;
 
         /// <summary>
-        /// The quantity in millimetres
+        /// The quantity in Yard
         /// </summary>
-        public double Millimetres
-        {
-            get
-            {
-                return LengthUnit.Millimetres.FromSiUnit(this.metres);
-            }
-        }
+        public double Yard => this.metres / 0.9144;
 
         /// <summary>
-        /// The quantity in centimetres
+        /// The quantity in NauticalMile
         /// </summary>
-        public double Centimetres
-        {
-            get
-            {
-                return LengthUnit.Centimetres.FromSiUnit(this.metres);
-            }
-        }
+        public double NauticalMile => this.metres / 1852;
 
         /// <summary>
-        /// The quantity in decimetres
+        /// The quantity in Nanometres
         /// </summary>
-        public double Decimetres
-        {
-            get
-            {
-                return LengthUnit.Decimetres.FromSiUnit(this.metres);
-            }
-        }
+        public double Nanometres => 1000000000 * this.metres;
 
         /// <summary>
-        /// The quantity in kilometres
+        /// The quantity in Micrometres
         /// </summary>
-        public double Kilometres
-        {
-            get
-            {
-                return LengthUnit.Kilometres.FromSiUnit(this.metres);
-            }
-        }
+        public double Micrometres => 1000000 * this.metres;
 
         /// <summary>
-        /// The quantity in inches
+        /// The quantity in Millimetres
         /// </summary>
-        public double Inches
-        {
-            get
-            {
-                return LengthUnit.Inches.FromSiUnit(this.metres);
-            }
-        }
+        public double Millimetres => 1000 * this.metres;
 
         /// <summary>
-        /// The quantity in mile
+        /// The quantity in Centimetres
         /// </summary>
-        public double Mile
-        {
-            get
-            {
-                return LengthUnit.Mile.FromSiUnit(this.metres);
-            }
-        }
+        public double Centimetres => 100 * this.metres;
 
         /// <summary>
-        /// The quantity in yard
+        /// The quantity in Decimetres
         /// </summary>
-        public double Yard
-        {
-            get
-            {
-                return LengthUnit.Yard.FromSiUnit(this.metres);
-            }
-        }
+        public double Decimetres => 10 * this.metres;
 
         /// <summary>
-        /// The quantity in nauticalMile
+        /// The quantity in Kilometres
         /// </summary>
-        public double NauticalMile
-        {
-            get
-            {
-                return LengthUnit.NauticalMile.FromSiUnit(this.metres);
-            }
-        }
+        public double Kilometres => this.metres / 1000;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
@@ -255,64 +195,10 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="nanometres">The value in nm</param>
-        public static Length FromNanometres(double nanometres)
-        {
-            return From(nanometres, LengthUnit.Nanometres);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="micrometres">The value in µm</param>
-        public static Length FromMicrometres(double micrometres)
-        {
-            return From(micrometres, LengthUnit.Micrometres);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="millimetres">The value in mm</param>
-        public static Length FromMillimetres(double millimetres)
-        {
-            return From(millimetres, LengthUnit.Millimetres);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="centimetres">The value in cm</param>
-        public static Length FromCentimetres(double centimetres)
-        {
-            return From(centimetres, LengthUnit.Centimetres);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="decimetres">The value in dm</param>
-        public static Length FromDecimetres(double decimetres)
-        {
-            return From(decimetres, LengthUnit.Decimetres);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="kilometres">The value in km</param>
-        public static Length FromKilometres(double kilometres)
-        {
-            return From(kilometres, LengthUnit.Kilometres);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
         /// <param name="inches">The value in in</param>
         public static Length FromInches(double inches)
         {
-            return From(inches, LengthUnit.Inches);
+            return new Length(0.0254 * inches);
         }
 
         /// <summary>
@@ -321,7 +207,7 @@
         /// <param name="mile">The value in mi</param>
         public static Length FromMile(double mile)
         {
-            return From(mile, LengthUnit.Mile);
+            return new Length(1609.344 * mile);
         }
 
         /// <summary>
@@ -330,7 +216,7 @@
         /// <param name="yard">The value in yd</param>
         public static Length FromYard(double yard)
         {
-            return From(yard, LengthUnit.Yard);
+            return new Length(0.9144 * yard);
         }
 
         /// <summary>
@@ -339,17 +225,61 @@
         /// <param name="nauticalMile">The value in nmi</param>
         public static Length FromNauticalMile(double nauticalMile)
         {
-            return From(nauticalMile, LengthUnit.NauticalMile);
+            return new Length(1852 * nauticalMile);
         }
 
-        public static Time operator /(Length left, Speed right)
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="nanometres">The value in nm</param>
+        public static Length FromNanometres(double nanometres)
         {
-            return Time.FromSeconds(left.metres / right.metresPerSecond);
+            return new Length(nanometres / 1000000000);
         }
 
-        public static Unitless operator /(Length left, LengthPerUnitless right)
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="micrometres">The value in µm</param>
+        public static Length FromMicrometres(double micrometres)
         {
-            return Unitless.FromScalar(left.metres / right.metresPerUnitless);
+            return new Length(micrometres / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="millimetres">The value in mm</param>
+        public static Length FromMillimetres(double millimetres)
+        {
+            return new Length(millimetres / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="centimetres">The value in cm</param>
+        public static Length FromCentimetres(double centimetres)
+        {
+            return new Length(centimetres / 100);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="decimetres">The value in dm</param>
+        public static Length FromDecimetres(double decimetres)
+        {
+            return new Length(decimetres / 10);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="kilometres">The value in km</param>
+        public static Length FromKilometres(double kilometres)
+        {
+            return new Length(1000 * kilometres);
         }
 
         public static Area operator *(Length left, Length right)
@@ -357,9 +287,24 @@
             return Area.FromSquareMetres(left.metres * right.metres);
         }
 
+        public static Speed operator /(Length left, Time right)
+        {
+            return Speed.FromMetresPerSecond(left.metres / right.seconds);
+        }
+
+        public static LengthPerUnitless operator /(Length left, Unitless right)
+        {
+            return LengthPerUnitless.FromMetresPerUnitless(left.metres / right.scalar);
+        }
+
         public static Volume operator *(Length left, Area right)
         {
             return Volume.FromCubicMetres(left.metres * right.squareMetres);
+        }
+
+        public static Wavenumber operator /(Length left, Area right)
+        {
+            return Wavenumber.FromReciprocalMetres(left.metres / right.squareMetres);
         }
 
         public static Energy operator *(Length left, Force right)
@@ -367,9 +312,34 @@
             return Energy.FromJoules(left.metres * right.newtons);
         }
 
-        public static Speed operator /(Length left, Time right)
+        public static Flexibility operator /(Length left, Force right)
         {
-            return Speed.FromMetresPerSecond(left.metres / right.seconds);
+            return Flexibility.FromMetresPerNewton(left.metres / right.newtons);
+        }
+
+        public static Stiffness operator *(Length left, Pressure right)
+        {
+            return Stiffness.FromNewtonsPerMetre(left.metres * right.pascals);
+        }
+
+        public static AreaDensity operator *(Length left, Density right)
+        {
+            return AreaDensity.FromKilogramsPerSquareMetre(left.metres * right.kilogramsPerCubicMetre);
+        }
+
+        public static KinematicViscosity operator *(Length left, Speed right)
+        {
+            return KinematicViscosity.FromSquareMetresPerSecond(left.metres * right.metresPerSecond);
+        }
+
+        public static Time operator /(Length left, Speed right)
+        {
+            return Time.FromSeconds(left.metres / right.metresPerSecond);
+        }
+
+        public static Speed operator *(Length left, Frequency right)
+        {
+            return Speed.FromMetresPerSecond(left.metres * right.hertz);
         }
 
         public static SpecificEnergy operator *(Length left, Acceleration right)
@@ -377,14 +347,44 @@
             return SpecificEnergy.FromJoulesPerKilogram(left.metres * right.metresPerSecondSquared);
         }
 
-        public static Flexibility operator /(Length left, Force right)
+        public static Force operator *(Length left, Stiffness right)
         {
-            return Flexibility.FromMetresPerNewton(left.metres / right.newtons);
+            return Force.FromNewtons(left.metres * right.newtonsPerMetre);
         }
 
-        public static LengthPerUnitless operator /(Length left, Unitless right)
+        public static Force operator /(Length left, Flexibility right)
         {
-            return LengthPerUnitless.FromMetresPerUnitless(left.metres / right.scalar);
+            return Force.FromNewtons(left.metres / right.metresPerNewton);
+        }
+
+        public static Unitless operator /(Length left, LengthPerUnitless right)
+        {
+            return Unitless.FromScalar(left.metres / right.metresPerUnitless);
+        }
+
+        public static SpecificVolume operator /(Length left, AreaDensity right)
+        {
+            return SpecificVolume.FromCubicMetresPerKilogram(left.metres / right.kilogramsPerSquareMetre);
+        }
+
+        public static AreaDensity operator /(Length left, SpecificVolume right)
+        {
+            return AreaDensity.FromKilogramsPerSquareMetre(left.metres / right.cubicMetresPerKilogram);
+        }
+
+        public static Momentum operator *(Length left, MassFlow right)
+        {
+            return Momentum.FromNewtonSecond(left.metres * right.kilogramsPerSecond);
+        }
+
+        public static VolumetricFlow operator *(Length left, KinematicViscosity right)
+        {
+            return VolumetricFlow.FromCubicMetresPerSecond(left.metres * right.squareMetresPerSecond);
+        }
+
+        public static Wavenumber operator /(double left, Length right)
+        {
+            return Wavenumber.FromReciprocalMetres(left / right.metres);
         }
 
         public static double operator /(Length left, Length right)

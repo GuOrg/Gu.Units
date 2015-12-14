@@ -1,147 +1,73 @@
 ﻿namespace Gu.Units.Generator
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Linq;
-    using System.Runtime.CompilerServices;
-    using System.Xml.Serialization;
-    using Annotations;
 
+    [Serializable]
     public class UnitAndPower : INotifyPropertyChanged
     {
-        public static readonly IEqualityComparer<UnitAndPower> Comparer = new UnitNamePowerEqualityComparer();
-
-        private IUnit unit;
-        private string unitName;
-        private int power;
-        private IUnit parent;
-        private UnitAndPower()
+        private Unit unit;
+        public UnitAndPower(string unitName, int power)
         {
-        }
-
-        public UnitAndPower(IUnit unit)
-        {
-            this.unit = unit;
-            this.power = 1;
-        }
-
-        public UnitAndPower(IUnit unit, int power)
-        {
-            if (power == 0)
-            {
-                throw new ArgumentException("power == 0", nameof(power));
-            }
-            this.unit = unit;
-            this.power = power;
+            UnitName = unitName;
+            Power = power;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        [XmlIgnore]
-        public IUnit Unit
+        public string UnitName { get; }
+
+        public Unit Unit => this.unit ?? (this.unit = Settings.Instance.AllUnits.Single(x => x.Name == UnitName));
+
+        public int Power { get; }
+
+        public static bool operator ==(UnitAndPower left, UnitAndPower right)
         {
-            get
-            {
-                return this.unit ?? (this.unit = Parent.Settings.AllUnits.Single(x => x.ClassName == this.unitName));
-            }
-            set
-            {
-                if (Equals(value, this.unit))
-                {
-                    return;
-                }
-                this.unit = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(UnitName));
-            }
+            return Equals(left, right);
         }
 
-        public string UnitName
+        public static bool operator !=(UnitAndPower left, UnitAndPower right)
         {
-            get
-            {
-                if (Unit != null)
-                {
-                    return this.Unit.ClassName;
-                }
-                return this.unitName;
-            }
-            set
-            {
-                this.unitName = value;
-            }
+            return !Equals(left, right);
         }
 
-        public int Power
+        public static UnitAndPower Create(Unit unit)
         {
-            get { return this.power; }
-            set
-            {
-                if (value == this.power)
-                {
-                    return;
-                }
-                this.power = value;
-                OnPropertyChanged();
-            }
+            Ensure.NotNull(unit, nameof(unit));
+            return new UnitAndPower(unit.Name, 1) { unit = unit };
         }
 
-        [XmlIgnore]
-        public IUnit Parent
+        public static UnitAndPower Create(Unit unit, int power)
         {
-            get { return this.parent; }
-            set
-            {
-                this.parent = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(Unit));
-            }
-        }
-
-        public static UnitAndPower operator ^(UnitAndPower up, int i)
-        {
-            return new UnitAndPower(up.Unit, up.Power * i);
+            Ensure.NotNull(unit, nameof(unit));
+            Ensure.NotEqual(power, 0, nameof(power));
+            return new UnitAndPower(unit.Name, power) { unit = unit };
         }
 
         public override string ToString()
         {
             if (Power == 1)
             {
-                if (Unit == null)
-                {
-                    return $"(({UnitName})null)^1";
-                }
                 return this.Unit.Symbol;
             }
-            return $"({(this.Unit == null ? "null" : "")}){this.UnitName}^{Power}";
-        }
 
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            return $"{Unit.Symbol}{SuperScript.GetString(Power)}";
         }
 
         protected bool Equals(UnitAndPower other)
         {
-            return Equals(this.unit, other.unit) && this.power == other.power;
+            return string.Equals(UnitName, other.UnitName) && Power == other.Power;
         }
 
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
-            {
                 return false;
-            }
             if (ReferenceEquals(this, obj))
-            {
                 return true;
-            }
             if (obj.GetType() != this.GetType())
-            {
                 return false;
-            }
             return Equals((UnitAndPower)obj);
         }
 
@@ -149,39 +75,7 @@
         {
             unchecked
             {
-                return ((this.unit?.GetHashCode() ?? 0) * 397) ^ this.power;
-            }
-        }
-
-        private sealed class UnitNamePowerEqualityComparer : IEqualityComparer<UnitAndPower>
-        {
-            public bool Equals(UnitAndPower x, UnitAndPower y)
-            {
-                if (ReferenceEquals(x, y))
-                {
-                    return true;
-                }
-                if (ReferenceEquals(x, null))
-                {
-                    return false;
-                }
-                if (ReferenceEquals(y, null))
-                {
-                    return false;
-                }
-                if (x.GetType() != y.GetType())
-                {
-                    return false;
-                }
-                return string.Equals(x.UnitName, y.UnitName) && x.power == y.power;
-            }
-
-            public int GetHashCode(UnitAndPower obj)
-            {
-                unchecked
-                {
-                    return ((obj.unitName?.GetHashCode() ?? 0) * 397) ^ obj.power;
-                }
+                return (UnitName.GetHashCode() * 397) ^ Power;
             }
         }
     }

@@ -5,71 +5,67 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.ForcePerUnitlessUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.ForcePerUnitless"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(ForcePerUnitlessUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{NewtonsPerUnitless.symbol}")]
+    [Serializable, TypeConverter(typeof(ForcePerUnitlessUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{ForcePerUnitlessUnit.symbol}")]
     public struct ForcePerUnitlessUnit : IUnit, IUnit<ForcePerUnitless>, IEquatable<ForcePerUnitlessUnit>
     {
         /// <summary>
-        /// The NewtonsPerUnitless unit
-        /// Contains conversion logic to from and formatting.
+        /// The ForcePerUnitlessUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly ForcePerUnitlessUnit NewtonsPerUnitless = new ForcePerUnitlessUnit(1.0, "N/ul");
+        public static readonly ForcePerUnitlessUnit NewtonsPerUnitless = new ForcePerUnitlessUnit(newtonsPerUnitless => newtonsPerUnitless, newtonsPerUnitless => newtonsPerUnitless, "N/ul");
 
         /// <summary>
         /// The NewtonsPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly ForcePerUnitlessUnit NewtonsPerPercent = new ForcePerUnitlessUnit(100, "N/%");
+        public static readonly ForcePerUnitlessUnit NewtonsPerPercent = new ForcePerUnitlessUnit(newtonsPerPercent => 100 * newtonsPerPercent, newtonsPerUnitless => newtonsPerUnitless / 100, "N/%");
 
         /// <summary>
         /// The KilonewtonsPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly ForcePerUnitlessUnit KilonewtonsPerPercent = new ForcePerUnitlessUnit(100000, "kN/%");
+        public static readonly ForcePerUnitlessUnit KilonewtonsPerPercent = new ForcePerUnitlessUnit(kilonewtonsPerPercent => 100000 * kilonewtonsPerPercent, newtonsPerUnitless => newtonsPerUnitless / 100000, "kN/%");
 
         /// <summary>
         /// The MeganewtonsPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly ForcePerUnitlessUnit MeganewtonsPerPercent = new ForcePerUnitlessUnit(100000000, "MN/%");
+        public static readonly ForcePerUnitlessUnit MeganewtonsPerPercent = new ForcePerUnitlessUnit(meganewtonsPerPercent => 100000000 * meganewtonsPerPercent, newtonsPerUnitless => newtonsPerUnitless / 100000000, "MN/%");
 
         /// <summary>
         /// The GiganewtonsPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly ForcePerUnitlessUnit GiganewtonsPerPercent = new ForcePerUnitlessUnit(100000000000, "GN/%");
+        public static readonly ForcePerUnitlessUnit GiganewtonsPerPercent = new ForcePerUnitlessUnit(giganewtonsPerPercent => 100000000000 * giganewtonsPerPercent, newtonsPerUnitless => newtonsPerUnitless / 100000000000, "GN/%");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        private readonly Func<double, double> toNewtonsPerUnitless;
+        private readonly Func<double, double> fromNewtonsPerUnitless;
+        internal readonly string symbol;
 
-        public ForcePerUnitlessUnit(double conversionFactor, string symbol)
+        public ForcePerUnitlessUnit(Func<double, double> toNewtonsPerUnitless, Func<double, double> fromNewtonsPerUnitless, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toNewtonsPerUnitless = toNewtonsPerUnitless;
+            this.fromNewtonsPerUnitless = fromNewtonsPerUnitless;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.ForcePerUnitlessUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.ForcePerUnitlessUnit"/>
         /// </summary>
-        public ForcePerUnitlessUnit SiUnit => ForcePerUnitlessUnit.NewtonsPerUnitless;
+        public ForcePerUnitlessUnit SiUnit => NewtonsPerUnitless;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.ForcePerUnitlessUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => ForcePerUnitlessUnit.NewtonsPerUnitless;
+        IUnit IUnit.SiUnit => NewtonsPerUnitless;
 
         public static ForcePerUnitless operator *(double left, ForcePerUnitlessUnit right)
         {
@@ -103,7 +99,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toNewtonsPerUnitless(value);
         }
 
         /// <summary>
@@ -111,9 +107,9 @@
         /// </summary>
         /// <param name="value">The value in NewtonsPerUnitless</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double newtonsPerUnitless)
         {
-            return value / this.conversionFactor;
+            return this.fromNewtonsPerUnitless(newtonsPerUnitless);
         }
 
         /// <summary>
@@ -127,7 +123,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in NewtonsPerUnitless
+        /// Gets the scalar value of <paramref name="quantity"/> in ForcePerUnitlessUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

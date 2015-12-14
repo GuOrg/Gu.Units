@@ -5,101 +5,67 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.FrequencyUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Frequency"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(FrequencyUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Hertz.symbol}")]
+    [Serializable, TypeConverter(typeof(FrequencyUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{FrequencyUnit.symbol}")]
     public struct FrequencyUnit : IUnit, IUnit<Frequency>, IEquatable<FrequencyUnit>
     {
         /// <summary>
-        /// The Hertz unit
-        /// Contains conversion logic to from and formatting.
+        /// The FrequencyUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly FrequencyUnit Hertz = new FrequencyUnit(1.0, "Hz");
-
-        /// <summary>
-        /// The Hertz unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly FrequencyUnit Hz = Hertz;
+        public static readonly FrequencyUnit Hertz = new FrequencyUnit(hertz => hertz, hertz => hertz, "Hz");
 
         /// <summary>
         /// The Millihertz unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly FrequencyUnit Millihertz = new FrequencyUnit(0.001, "mHz");
-
-        /// <summary>
-        /// The Millihertz unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly FrequencyUnit mHz = Millihertz;
+        public static readonly FrequencyUnit Millihertz = new FrequencyUnit(millihertz => millihertz / 1000, hertz => 1000 * hertz, "mHz");
 
         /// <summary>
         /// The Kilohertz unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly FrequencyUnit Kilohertz = new FrequencyUnit(1000, "kHz");
-
-        /// <summary>
-        /// The Kilohertz unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly FrequencyUnit kHz = Kilohertz;
+        public static readonly FrequencyUnit Kilohertz = new FrequencyUnit(kilohertz => 1000 * kilohertz, hertz => hertz / 1000, "kHz");
 
         /// <summary>
         /// The Megahertz unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly FrequencyUnit Megahertz = new FrequencyUnit(1000000, "MHz");
-
-        /// <summary>
-        /// The Megahertz unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly FrequencyUnit MHz = Megahertz;
+        public static readonly FrequencyUnit Megahertz = new FrequencyUnit(megahertz => 1000000 * megahertz, hertz => hertz / 1000000, "MHz");
 
         /// <summary>
         /// The Gigahertz unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly FrequencyUnit Gigahertz = new FrequencyUnit(1000000000, "GHz");
+        public static readonly FrequencyUnit Gigahertz = new FrequencyUnit(gigahertz => 1000000000 * gigahertz, hertz => hertz / 1000000000, "GHz");
 
-        /// <summary>
-        /// The Gigahertz unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly FrequencyUnit GHz = Gigahertz;
+        private readonly Func<double, double> toHertz;
+        private readonly Func<double, double> fromHertz;
+        internal readonly string symbol;
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
-
-        public FrequencyUnit(double conversionFactor, string symbol)
+        public FrequencyUnit(Func<double, double> toHertz, Func<double, double> fromHertz, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toHertz = toHertz;
+            this.fromHertz = fromHertz;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.FrequencyUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.FrequencyUnit"/>
         /// </summary>
-        public FrequencyUnit SiUnit => FrequencyUnit.Hertz;
+        public FrequencyUnit SiUnit => Hertz;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.FrequencyUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => FrequencyUnit.Hertz;
+        IUnit IUnit.SiUnit => Hertz;
 
         public static Frequency operator *(double left, FrequencyUnit right)
         {
@@ -133,7 +99,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toHertz(value);
         }
 
         /// <summary>
@@ -141,9 +107,9 @@
         /// </summary>
         /// <param name="value">The value in Hertz</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double hertz)
         {
-            return value / this.conversionFactor;
+            return this.fromHertz(hertz);
         }
 
         /// <summary>
@@ -157,7 +123,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Hertz
+        /// Gets the scalar value of <paramref name="quantity"/> in FrequencyUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

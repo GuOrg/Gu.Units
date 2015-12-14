@@ -13,6 +13,9 @@
         public static readonly DensityJsonConverter KilogramsPerCubicMetre = new DensityJsonConverter(DensityUnit.KilogramsPerCubicMetre);
         public static readonly DensityJsonConverter GramsPerCubicMillimetre = new DensityJsonConverter(DensityUnit.GramsPerCubicMillimetre);
         public static readonly DensityJsonConverter GramsPerCubicCentimetre = new DensityJsonConverter(DensityUnit.GramsPerCubicCentimetre);
+        public static readonly DensityJsonConverter MilligramsPerCubicMillimetre = new DensityJsonConverter(DensityUnit.MilligramsPerCubicMillimetre);
+        public static readonly DensityJsonConverter GramsPerCubicMetre = new DensityJsonConverter(DensityUnit.GramsPerCubicMetre);
+        public static readonly DensityJsonConverter MilligramsPerCubicMetre = new DensityJsonConverter(DensityUnit.MilligramsPerCubicMetre);
 
         private readonly DensityUnit unit;
 

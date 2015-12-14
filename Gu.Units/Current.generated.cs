@@ -67,48 +67,34 @@
         }
 
         /// <summary>
-        /// The quantity in milliamperes
+        /// The quantity in Milliamperes
         /// </summary>
-        public double Milliamperes
-        {
-            get
-            {
-                return CurrentUnit.Milliamperes.FromSiUnit(this.amperes);
-            }
-        }
+        public double Milliamperes => 1000 * this.amperes;
 
         /// <summary>
-        /// The quantity in kiloamperes
+        /// The quantity in Kiloamperes
         /// </summary>
-        public double Kiloamperes
-        {
-            get
-            {
-                return CurrentUnit.Kiloamperes.FromSiUnit(this.amperes);
-            }
-        }
+        public double Kiloamperes => this.amperes / 1000;
 
         /// <summary>
-        /// The quantity in megaamperes
+        /// The quantity in Megaamperes
         /// </summary>
-        public double Megaamperes
-        {
-            get
-            {
-                return CurrentUnit.Megaamperes.FromSiUnit(this.amperes);
-            }
-        }
+        public double Megaamperes => this.amperes / 1000000;
 
         /// <summary>
-        /// The quantity in microamperes
+        /// The quantity in Microamperes
         /// </summary>
-        public double Microamperes
-        {
-            get
-            {
-                return CurrentUnit.Microamperes.FromSiUnit(this.amperes);
-            }
-        }
+        public double Microamperes => 1000000 * this.amperes;
+
+        /// <summary>
+        /// The quantity in Nanoamperes
+        /// </summary>
+        public double Nanoamperes => 1000000000 * this.amperes;
+
+        /// <summary>
+        /// The quantity in Gigaamperes
+        /// </summary>
+        public double Gigaamperes => this.amperes / 1000000000;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
@@ -192,7 +178,7 @@
         /// <param name="milliamperes">The value in mA</param>
         public static Current FromMilliamperes(double milliamperes)
         {
-            return From(milliamperes, CurrentUnit.Milliamperes);
+            return new Current(milliamperes / 1000);
         }
 
         /// <summary>
@@ -201,7 +187,7 @@
         /// <param name="kiloamperes">The value in kA</param>
         public static Current FromKiloamperes(double kiloamperes)
         {
-            return From(kiloamperes, CurrentUnit.Kiloamperes);
+            return new Current(1000 * kiloamperes);
         }
 
         /// <summary>
@@ -210,7 +196,7 @@
         /// <param name="megaamperes">The value in MA</param>
         public static Current FromMegaamperes(double megaamperes)
         {
-            return From(megaamperes, CurrentUnit.Megaamperes);
+            return new Current(1000000 * megaamperes);
         }
 
         /// <summary>
@@ -219,7 +205,50 @@
         /// <param name="microamperes">The value in µA</param>
         public static Current FromMicroamperes(double microamperes)
         {
-            return From(microamperes, CurrentUnit.Microamperes);
+            return new Current(microamperes / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
+        /// </summary>
+        /// <param name="nanoamperes">The value in nA</param>
+        public static Current FromNanoamperes(double nanoamperes)
+        {
+            return new Current(nanoamperes / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
+        /// </summary>
+        /// <param name="gigaamperes">The value in GA</param>
+        public static Current FromGigaamperes(double gigaamperes)
+        {
+            return new Current(1000000000 * gigaamperes);
+        }
+
+        public static ElectricCharge operator *(Current left, Time right)
+        {
+            return ElectricCharge.FromCoulombs(left.amperes * right.seconds);
+        }
+
+        public static ElectricCharge operator /(Current left, Frequency right)
+        {
+            return ElectricCharge.FromCoulombs(left.amperes / right.hertz);
+        }
+
+        public static Power operator *(Current left, Voltage right)
+        {
+            return Power.FromWatts(left.amperes * right.volts);
+        }
+
+        public static ElectricalConductance operator /(Current left, Voltage right)
+        {
+            return ElectricalConductance.FromSiemens(left.amperes / right.volts);
+        }
+
+        public static Voltage operator *(Current left, Resistance right)
+        {
+            return Voltage.FromVolts(left.amperes * right.ohm);
         }
 
         public static Frequency operator /(Current left, ElectricCharge right)
@@ -227,9 +256,24 @@
             return Frequency.FromHertz(left.amperes / right.coulombs);
         }
 
-        public static ElectricCharge operator *(Current left, Time right)
+        public static MagneticFlux operator *(Current left, Inductance right)
         {
-            return ElectricCharge.FromCoulombs(left.amperes * right.seconds);
+            return MagneticFlux.FromWebers(left.amperes * right.henrys);
+        }
+
+        public static Energy operator *(Current left, MagneticFlux right)
+        {
+            return Energy.FromJoules(left.amperes * right.webers);
+        }
+
+        public static Voltage operator /(Current left, ElectricalConductance right)
+        {
+            return Voltage.FromVolts(left.amperes / right.siemens);
+        }
+
+        public static Stiffness operator *(Current left, MagneticFieldStrength right)
+        {
+            return Stiffness.FromNewtonsPerMetre(left.amperes * right.teslas);
         }
 
         public static double operator /(Current left, Current right)

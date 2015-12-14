@@ -11,8 +11,6 @@
     {
         public static readonly SpeedJsonConverter Default = new SpeedJsonConverter(SpeedUnit.MetresPerSecond);
         public static readonly SpeedJsonConverter MetresPerSecond = new SpeedJsonConverter(SpeedUnit.MetresPerSecond);
-        public static readonly SpeedJsonConverter MillimetresPerSecond = new SpeedJsonConverter(SpeedUnit.MillimetresPerSecond);
-        public static readonly SpeedJsonConverter CentimetresPerSecond = new SpeedJsonConverter(SpeedUnit.CentimetresPerSecond);
         public static readonly SpeedJsonConverter KilometresPerHour = new SpeedJsonConverter(SpeedUnit.KilometresPerHour);
         public static readonly SpeedJsonConverter CentimetresPerMinute = new SpeedJsonConverter(SpeedUnit.CentimetresPerMinute);
         public static readonly SpeedJsonConverter MetresPerMinute = new SpeedJsonConverter(SpeedUnit.MetresPerMinute);
@@ -20,6 +18,8 @@
         public static readonly SpeedJsonConverter MillimetresPerHour = new SpeedJsonConverter(SpeedUnit.MillimetresPerHour);
         public static readonly SpeedJsonConverter CentimetresPerHour = new SpeedJsonConverter(SpeedUnit.CentimetresPerHour);
         public static readonly SpeedJsonConverter MillimetresPerMinute = new SpeedJsonConverter(SpeedUnit.MillimetresPerMinute);
+        public static readonly SpeedJsonConverter MillimetresPerSecond = new SpeedJsonConverter(SpeedUnit.MillimetresPerSecond);
+        public static readonly SpeedJsonConverter CentimetresPerSecond = new SpeedJsonConverter(SpeedUnit.CentimetresPerSecond);
 
         private readonly SpeedUnit unit;
 

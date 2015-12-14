@@ -1,6 +1,10 @@
 source http://www.nuget.org/api/v2/
 
 nuget Moq
-nuget Newtonsoft.Json
+nuget Newtonsoft.Json 7.0.1
 nuget NUnit ~> 2
 nuget T4.TemplateFileManager
+nuget Gu.Wpf.Reactive
+nuget Gu.ChangeTracking
+nuget JetBrains.Annotations
+nuget Microsoft.CodeAnalysis.CSharp.Scripting

@@ -38,7 +38,7 @@
         [TestCase(SymbolFormat.FractionSuperScript, "Hz")]
         public void GetOrCreateSymbolFormatFrequency(SymbolFormat symbolFormat, string expected)
         {
-            var format = UnitFormatCache<FrequencyUnit>.GetOrCreate(FrequencyUnit.Hz, symbolFormat);
+            var format = UnitFormatCache<FrequencyUnit>.GetOrCreate(FrequencyUnit.Hertz, symbolFormat);
             Assert.AreEqual(null, format.PrePadding);
             Assert.AreEqual(expected, format.Format);
             Assert.AreEqual(null, format.PostPadding);

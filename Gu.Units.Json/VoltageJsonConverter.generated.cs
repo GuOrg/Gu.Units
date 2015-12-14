@@ -15,6 +15,8 @@
         public static readonly VoltageJsonConverter Kilovolts = new VoltageJsonConverter(VoltageUnit.Kilovolts);
         public static readonly VoltageJsonConverter Megavolts = new VoltageJsonConverter(VoltageUnit.Megavolts);
         public static readonly VoltageJsonConverter Microvolts = new VoltageJsonConverter(VoltageUnit.Microvolts);
+        public static readonly VoltageJsonConverter Nanovolts = new VoltageJsonConverter(VoltageUnit.Nanovolts);
+        public static readonly VoltageJsonConverter Gigavolts = new VoltageJsonConverter(VoltageUnit.Gigavolts);
 
         private readonly VoltageUnit unit;
 

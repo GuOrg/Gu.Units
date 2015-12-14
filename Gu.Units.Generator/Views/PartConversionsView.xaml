@@ -6,7 +6,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              DataContext="{x:Static local:MainVm.Instance}"
              mc:Ignorable="d">
-    <ItemsControl ItemsSource="{Binding Conversions.PartConversions.SubParts}">
+    <ItemsControl ItemsSource="{Binding Conversions.PartConversions.Conversions}">
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
                 <StackPanel Orientation="Horizontal" />
@@ -17,7 +17,9 @@
                 <ItemsControl ItemsSource="{Binding}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate DataType="{x:Type local:PartConversionVm}">
-                            <CheckBox Content="{Binding Conversion.Symbol}" IsChecked="{Binding IsUsed}" />
+                            <CheckBox Content="{Binding Conversion.Symbol}"
+                                      IsChecked="{Binding IsUsed}"
+                                      IsEnabled="{Binding IsEditable}" />
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>

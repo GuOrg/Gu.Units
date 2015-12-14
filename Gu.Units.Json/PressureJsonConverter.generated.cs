@@ -11,14 +11,14 @@
     {
         public static readonly PressureJsonConverter Default = new PressureJsonConverter(PressureUnit.Pascals);
         public static readonly PressureJsonConverter Pascals = new PressureJsonConverter(PressureUnit.Pascals);
+        public static readonly PressureJsonConverter Bars = new PressureJsonConverter(PressureUnit.Bars);
+        public static readonly PressureJsonConverter Millibars = new PressureJsonConverter(PressureUnit.Millibars);
         public static readonly PressureJsonConverter Nanopascals = new PressureJsonConverter(PressureUnit.Nanopascals);
         public static readonly PressureJsonConverter Micropascals = new PressureJsonConverter(PressureUnit.Micropascals);
         public static readonly PressureJsonConverter Millipascals = new PressureJsonConverter(PressureUnit.Millipascals);
         public static readonly PressureJsonConverter Kilopascals = new PressureJsonConverter(PressureUnit.Kilopascals);
         public static readonly PressureJsonConverter Megapascals = new PressureJsonConverter(PressureUnit.Megapascals);
         public static readonly PressureJsonConverter Gigapascals = new PressureJsonConverter(PressureUnit.Gigapascals);
-        public static readonly PressureJsonConverter Bars = new PressureJsonConverter(PressureUnit.Bars);
-        public static readonly PressureJsonConverter Millibars = new PressureJsonConverter(PressureUnit.Millibars);
         public static readonly PressureJsonConverter NewtonsPerSquareMillimetre = new PressureJsonConverter(PressureUnit.NewtonsPerSquareMillimetre);
         public static readonly PressureJsonConverter KilonewtonsPerSquareMillimetre = new PressureJsonConverter(PressureUnit.KilonewtonsPerSquareMillimetre);
         public static readonly PressureJsonConverter NewtonsPerSquareMetre = new PressureJsonConverter(PressureUnit.NewtonsPerSquareMetre);

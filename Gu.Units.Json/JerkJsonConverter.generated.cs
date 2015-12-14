@@ -12,13 +12,11 @@
         public static readonly JerkJsonConverter Default = new JerkJsonConverter(JerkUnit.MetresPerSecondCubed);
         public static readonly JerkJsonConverter MetresPerSecondCubed = new JerkJsonConverter(JerkUnit.MetresPerSecondCubed);
         public static readonly JerkJsonConverter MillimetresPerSecondCubed = new JerkJsonConverter(JerkUnit.MillimetresPerSecondCubed);
+        public static readonly JerkJsonConverter CentimetresPerSecondCubed = new JerkJsonConverter(JerkUnit.CentimetresPerSecondCubed);
         public static readonly JerkJsonConverter MillimetresPerHourCubed = new JerkJsonConverter(JerkUnit.MillimetresPerHourCubed);
         public static readonly JerkJsonConverter MillimetresPerMinuteCubed = new JerkJsonConverter(JerkUnit.MillimetresPerMinuteCubed);
         public static readonly JerkJsonConverter MetresPerHourCubed = new JerkJsonConverter(JerkUnit.MetresPerHourCubed);
         public static readonly JerkJsonConverter MetresPerMinuteCubed = new JerkJsonConverter(JerkUnit.MetresPerMinuteCubed);
-        public static readonly JerkJsonConverter NanometresPerHourCubed = new JerkJsonConverter(JerkUnit.NanometresPerHourCubed);
-        public static readonly JerkJsonConverter NanometresPerMinuteCubed = new JerkJsonConverter(JerkUnit.NanometresPerMinuteCubed);
-        public static readonly JerkJsonConverter CentimetresPerSecondCubed = new JerkJsonConverter(JerkUnit.CentimetresPerSecondCubed);
         public static readonly JerkJsonConverter CentimetresPerHourCubed = new JerkJsonConverter(JerkUnit.CentimetresPerHourCubed);
         public static readonly JerkJsonConverter CentimetresPerMinuteCubed = new JerkJsonConverter(JerkUnit.CentimetresPerMinuteCubed);
 

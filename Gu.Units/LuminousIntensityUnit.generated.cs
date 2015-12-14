@@ -5,53 +5,43 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.LuminousIntensityUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.LuminousIntensity"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(LuminousIntensityUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Candelas.symbol}")]
+    [Serializable, TypeConverter(typeof(LuminousIntensityUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{LuminousIntensityUnit.symbol}")]
     public struct LuminousIntensityUnit : IUnit, IUnit<LuminousIntensity>, IEquatable<LuminousIntensityUnit>
     {
         /// <summary>
-        /// The Candelas unit
-        /// Contains conversion logic to from and formatting.
+        /// The LuminousIntensityUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly LuminousIntensityUnit Candelas = new LuminousIntensityUnit(1.0, "cd");
+        public static readonly LuminousIntensityUnit Candelas = new LuminousIntensityUnit(candelas => candelas, candelas => candelas, "cd");
 
-        /// <summary>
-        /// The Candelas unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LuminousIntensityUnit cd = Candelas;
+        private readonly Func<double, double> toCandelas;
+        private readonly Func<double, double> fromCandelas;
+        internal readonly string symbol;
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
-
-        public LuminousIntensityUnit(double conversionFactor, string symbol)
+        public LuminousIntensityUnit(Func<double, double> toCandelas, Func<double, double> fromCandelas, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toCandelas = toCandelas;
+            this.fromCandelas = fromCandelas;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.LuminousIntensityUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.LuminousIntensityUnit"/>
         /// </summary>
-        public LuminousIntensityUnit SiUnit => LuminousIntensityUnit.Candelas;
+        public LuminousIntensityUnit SiUnit => Candelas;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.LuminousIntensityUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => LuminousIntensityUnit.Candelas;
+        IUnit IUnit.SiUnit => Candelas;
 
         public static LuminousIntensity operator *(double left, LuminousIntensityUnit right)
         {
@@ -85,7 +75,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toCandelas(value);
         }
 
         /// <summary>
@@ -93,9 +83,9 @@
         /// </summary>
         /// <param name="value">The value in Candelas</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double candelas)
         {
-            return value / this.conversionFactor;
+            return this.fromCandelas(candelas);
         }
 
         /// <summary>
@@ -109,7 +99,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Candelas
+        /// Gets the scalar value of <paramref name="quantity"/> in LuminousIntensityUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

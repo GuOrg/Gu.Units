@@ -5,65 +5,61 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.FlexibilityUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Flexibility"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(FlexibilityUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MetresPerNewton.symbol}")]
+    [Serializable, TypeConverter(typeof(FlexibilityUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{FlexibilityUnit.symbol}")]
     public struct FlexibilityUnit : IUnit, IUnit<Flexibility>, IEquatable<FlexibilityUnit>
     {
         /// <summary>
-        /// The MetresPerNewton unit
-        /// Contains conversion logic to from and formatting.
+        /// The FlexibilityUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly FlexibilityUnit MetresPerNewton = new FlexibilityUnit(1.0, "m/N");
+        public static readonly FlexibilityUnit MetresPerNewton = new FlexibilityUnit(metresPerNewton => metresPerNewton, metresPerNewton => metresPerNewton, "m/N");
 
         /// <summary>
         /// The MillimetresPerNewton unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly FlexibilityUnit MillimetresPerNewton = new FlexibilityUnit(0.001, "mm/N");
+        public static readonly FlexibilityUnit MillimetresPerNewton = new FlexibilityUnit(millimetresPerNewton => millimetresPerNewton / 1000, metresPerNewton => 1000 * metresPerNewton, "mm/N");
 
         /// <summary>
         /// The MillimetresPerKilonewton unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly FlexibilityUnit MillimetresPerKilonewton = new FlexibilityUnit(1E-06, "mm/kN");
+        public static readonly FlexibilityUnit MillimetresPerKilonewton = new FlexibilityUnit(millimetresPerKilonewton => millimetresPerKilonewton / 1000000, metresPerNewton => 1000000 * metresPerNewton, "mm/kN");
 
         /// <summary>
         /// The MicrometresPerKilonewton unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly FlexibilityUnit MicrometresPerKilonewton = new FlexibilityUnit(1E-09, "µm/kN");
+        public static readonly FlexibilityUnit MicrometresPerKilonewton = new FlexibilityUnit(micrometresPerKilonewton => micrometresPerKilonewton / 1000000000, metresPerNewton => 1000000000 * metresPerNewton, "µm/kN");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        private readonly Func<double, double> toMetresPerNewton;
+        private readonly Func<double, double> fromMetresPerNewton;
+        internal readonly string symbol;
 
-        public FlexibilityUnit(double conversionFactor, string symbol)
+        public FlexibilityUnit(Func<double, double> toMetresPerNewton, Func<double, double> fromMetresPerNewton, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toMetresPerNewton = toMetresPerNewton;
+            this.fromMetresPerNewton = fromMetresPerNewton;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.FlexibilityUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.FlexibilityUnit"/>
         /// </summary>
-        public FlexibilityUnit SiUnit => FlexibilityUnit.MetresPerNewton;
+        public FlexibilityUnit SiUnit => MetresPerNewton;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.FlexibilityUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => FlexibilityUnit.MetresPerNewton;
+        IUnit IUnit.SiUnit => MetresPerNewton;
 
         public static Flexibility operator *(double left, FlexibilityUnit right)
         {
@@ -97,7 +93,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toMetresPerNewton(value);
         }
 
         /// <summary>
@@ -105,9 +101,9 @@
         /// </summary>
         /// <param name="value">The value in MetresPerNewton</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double metresPerNewton)
         {
-            return value / this.conversionFactor;
+            return this.fromMetresPerNewton(metresPerNewton);
         }
 
         /// <summary>
@@ -121,7 +117,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in MetresPerNewton
+        /// Gets the scalar value of <paramref name="quantity"/> in FlexibilityUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

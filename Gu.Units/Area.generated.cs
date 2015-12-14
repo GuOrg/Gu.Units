@@ -67,92 +67,44 @@
         }
 
         /// <summary>
-        /// The quantity in squareMillimetres
+        /// The quantity in Hectare
         /// </summary>
-        public double SquareMillimetres
-        {
-            get
-            {
-                return AreaUnit.SquareMillimetres.FromSiUnit(this.squareMetres);
-            }
-        }
+        public double Hectare => this.squareMetres / 10000;
 
         /// <summary>
-        /// The quantity in squareCentimetres
+        /// The quantity in SquareMillimetres
         /// </summary>
-        public double SquareCentimetres
-        {
-            get
-            {
-                return AreaUnit.SquareCentimetres.FromSiUnit(this.squareMetres);
-            }
-        }
+        public double SquareMillimetres => 1000000 * this.squareMetres;
 
         /// <summary>
-        /// The quantity in squareDecimetres
+        /// The quantity in SquareCentimetres
         /// </summary>
-        public double SquareDecimetres
-        {
-            get
-            {
-                return AreaUnit.SquareDecimetres.FromSiUnit(this.squareMetres);
-            }
-        }
+        public double SquareCentimetres => 10000 * this.squareMetres;
 
         /// <summary>
-        /// The quantity in squareKilometres
+        /// The quantity in SquareDecimetres
         /// </summary>
-        public double SquareKilometres
-        {
-            get
-            {
-                return AreaUnit.SquareKilometres.FromSiUnit(this.squareMetres);
-            }
-        }
+        public double SquareDecimetres => 100 * this.squareMetres;
 
         /// <summary>
-        /// The quantity in squareInches
+        /// The quantity in SquareKilometres
         /// </summary>
-        public double SquareInches
-        {
-            get
-            {
-                return AreaUnit.SquareInches.FromSiUnit(this.squareMetres);
-            }
-        }
+        public double SquareKilometres => this.squareMetres / 1000000;
 
         /// <summary>
-        /// The quantity in hectare
+        /// The quantity in SquareMile
         /// </summary>
-        public double Hectare
-        {
-            get
-            {
-                return AreaUnit.Hectare.FromSiUnit(this.squareMetres);
-            }
-        }
+        public double SquareMile => this.squareMetres / 2589988.110336;
 
         /// <summary>
-        /// The quantity in squareMile
+        /// The quantity in SquareYard
         /// </summary>
-        public double SquareMile
-        {
-            get
-            {
-                return AreaUnit.SquareMile.FromSiUnit(this.squareMetres);
-            }
-        }
+        public double SquareYard => this.squareMetres / 0.83612736;
 
         /// <summary>
-        /// The quantity in squareYard
+        /// The quantity in SquareInches
         /// </summary>
-        public double SquareYard
-        {
-            get
-            {
-                return AreaUnit.SquareYard.FromSiUnit(this.squareMetres);
-            }
-        }
+        public double SquareInches => this.squareMetres / 0.00064516;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
@@ -233,10 +185,19 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
+        /// <param name="hectare">The value in ha</param>
+        public static Area FromHectare(double hectare)
+        {
+            return new Area(10000 * hectare);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
+        /// </summary>
         /// <param name="squareMillimetres">The value in mm²</param>
         public static Area FromSquareMillimetres(double squareMillimetres)
         {
-            return From(squareMillimetres, AreaUnit.SquareMillimetres);
+            return new Area(squareMillimetres / 1000000);
         }
 
         /// <summary>
@@ -245,7 +206,7 @@
         /// <param name="squareCentimetres">The value in cm²</param>
         public static Area FromSquareCentimetres(double squareCentimetres)
         {
-            return From(squareCentimetres, AreaUnit.SquareCentimetres);
+            return new Area(squareCentimetres / 10000);
         }
 
         /// <summary>
@@ -254,7 +215,7 @@
         /// <param name="squareDecimetres">The value in dm²</param>
         public static Area FromSquareDecimetres(double squareDecimetres)
         {
-            return From(squareDecimetres, AreaUnit.SquareDecimetres);
+            return new Area(squareDecimetres / 100);
         }
 
         /// <summary>
@@ -263,25 +224,7 @@
         /// <param name="squareKilometres">The value in km²</param>
         public static Area FromSquareKilometres(double squareKilometres)
         {
-            return From(squareKilometres, AreaUnit.SquareKilometres);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
-        /// </summary>
-        /// <param name="squareInches">The value in in²</param>
-        public static Area FromSquareInches(double squareInches)
-        {
-            return From(squareInches, AreaUnit.SquareInches);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
-        /// </summary>
-        /// <param name="hectare">The value in ha</param>
-        public static Area FromHectare(double hectare)
-        {
-            return From(hectare, AreaUnit.Hectare);
+            return new Area(1000000 * squareKilometres);
         }
 
         /// <summary>
@@ -290,7 +233,7 @@
         /// <param name="squareMile">The value in mi²</param>
         public static Area FromSquareMile(double squareMile)
         {
-            return From(squareMile, AreaUnit.SquareMile);
+            return new Area(2589988.110336 * squareMile);
         }
 
         /// <summary>
@@ -299,12 +242,16 @@
         /// <param name="squareYard">The value in yd²</param>
         public static Area FromSquareYard(double squareYard)
         {
-            return From(squareYard, AreaUnit.SquareYard);
+            return new Area(0.83612736 * squareYard);
         }
 
-        public static Length operator /(Area left, Length right)
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="squareInches">The value in in²</param>
+        public static Area FromSquareInches(double squareInches)
         {
-            return Length.FromMetres(left.squareMetres / right.metres);
+            return new Area(0.00064516 * squareInches);
         }
 
         public static Volume operator *(Area left, Length right)
@@ -312,14 +259,79 @@
             return Volume.FromCubicMetres(left.squareMetres * right.metres);
         }
 
-        public static VolumetricFlow operator *(Area left, Speed right)
+        public static Length operator /(Area left, Length right)
         {
-            return VolumetricFlow.FromCubicMetresPerSecond(left.squareMetres * right.metresPerSecond);
+            return Length.FromMetres(left.squareMetres / right.metres);
+        }
+
+        public static KinematicViscosity operator /(Area left, Time right)
+        {
+            return KinematicViscosity.FromSquareMetresPerSecond(left.squareMetres / right.seconds);
+        }
+
+        public static Wavenumber operator /(Area left, Volume right)
+        {
+            return Wavenumber.FromReciprocalMetres(left.squareMetres / right.cubicMetres);
+        }
+
+        public static Force operator *(Area left, Pressure right)
+        {
+            return Force.FromNewtons(left.squareMetres * right.pascals);
         }
 
         public static Flexibility operator /(Area left, Energy right)
         {
             return Flexibility.FromMetresPerNewton(left.squareMetres / right.joules);
+        }
+
+        public static VolumetricFlow operator *(Area left, Speed right)
+        {
+            return VolumetricFlow.FromCubicMetresPerSecond(left.squareMetres * right.metresPerSecond);
+        }
+
+        public static KinematicViscosity operator *(Area left, Frequency right)
+        {
+            return KinematicViscosity.FromSquareMetresPerSecond(left.squareMetres * right.hertz);
+        }
+
+        public static Energy operator *(Area left, Stiffness right)
+        {
+            return Energy.FromJoules(left.squareMetres * right.newtonsPerMetre);
+        }
+
+        public static Energy operator /(Area left, Flexibility right)
+        {
+            return Energy.FromJoules(left.squareMetres / right.metresPerNewton);
+        }
+
+        public static LuminousFlux operator *(Area left, Illuminance right)
+        {
+            return LuminousFlux.FromLumens(left.squareMetres * right.lux);
+        }
+
+        public static MagneticFlux operator *(Area left, MagneticFieldStrength right)
+        {
+            return MagneticFlux.FromWebers(left.squareMetres * right.teslas);
+        }
+
+        public static Length operator *(Area left, Wavenumber right)
+        {
+            return Length.FromMetres(left.squareMetres * right.reciprocalMetres);
+        }
+
+        public static Volume operator /(Area left, Wavenumber right)
+        {
+            return Volume.FromCubicMetres(left.squareMetres / right.reciprocalMetres);
+        }
+
+        public static Mass operator *(Area left, AreaDensity right)
+        {
+            return Mass.FromKilograms(left.squareMetres * right.kilogramsPerSquareMetre);
+        }
+
+        public static Time operator /(Area left, KinematicViscosity right)
+        {
+            return Time.FromSeconds(left.squareMetres / right.squareMetresPerSecond);
         }
 
         public static double operator /(Area left, Area right)

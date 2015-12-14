@@ -67,103 +67,49 @@
         }
 
         /// <summary>
-        /// The quantity in millimetresPerSecond
+        /// The quantity in KilometresPerHour
         /// </summary>
-        public double MillimetresPerSecond
-        {
-            get
-            {
-                return SpeedUnit.MillimetresPerSecond.FromSiUnit(this.metresPerSecond);
-            }
-        }
+        public double KilometresPerHour => this.metresPerSecond / 0.277777777777778;
 
         /// <summary>
-        /// The quantity in centimetresPerSecond
+        /// The quantity in CentimetresPerMinute
         /// </summary>
-        public double CentimetresPerSecond
-        {
-            get
-            {
-                return SpeedUnit.CentimetresPerSecond.FromSiUnit(this.metresPerSecond);
-            }
-        }
+        public double CentimetresPerMinute => 6000 * this.metresPerSecond;
 
         /// <summary>
-        /// The quantity in kilometresPerHour
+        /// The quantity in MetresPerMinute
         /// </summary>
-        public double KilometresPerHour
-        {
-            get
-            {
-                return SpeedUnit.KilometresPerHour.FromSiUnit(this.metresPerSecond);
-            }
-        }
+        public double MetresPerMinute => 60 * this.metresPerSecond;
 
         /// <summary>
-        /// The quantity in centimetresPerMinute
+        /// The quantity in MetresPerHour
         /// </summary>
-        public double CentimetresPerMinute
-        {
-            get
-            {
-                return SpeedUnit.CentimetresPerMinute.FromSiUnit(this.metresPerSecond);
-            }
-        }
+        public double MetresPerHour => 3600 * this.metresPerSecond;
 
         /// <summary>
-        /// The quantity in metresPerMinute
+        /// The quantity in MillimetresPerHour
         /// </summary>
-        public double MetresPerMinute
-        {
-            get
-            {
-                return SpeedUnit.MetresPerMinute.FromSiUnit(this.metresPerSecond);
-            }
-        }
+        public double MillimetresPerHour => 3600000 * this.metresPerSecond;
 
         /// <summary>
-        /// The quantity in metresPerHour
+        /// The quantity in CentimetresPerHour
         /// </summary>
-        public double MetresPerHour
-        {
-            get
-            {
-                return SpeedUnit.MetresPerHour.FromSiUnit(this.metresPerSecond);
-            }
-        }
+        public double CentimetresPerHour => 360000 * this.metresPerSecond;
 
         /// <summary>
-        /// The quantity in millimetresPerHour
+        /// The quantity in MillimetresPerMinute
         /// </summary>
-        public double MillimetresPerHour
-        {
-            get
-            {
-                return SpeedUnit.MillimetresPerHour.FromSiUnit(this.metresPerSecond);
-            }
-        }
+        public double MillimetresPerMinute => 60000 * this.metresPerSecond;
 
         /// <summary>
-        /// The quantity in centimetresPerHour
+        /// The quantity in MillimetresPerSecond
         /// </summary>
-        public double CentimetresPerHour
-        {
-            get
-            {
-                return SpeedUnit.CentimetresPerHour.FromSiUnit(this.metresPerSecond);
-            }
-        }
+        public double MillimetresPerSecond => 1000 * this.metresPerSecond;
 
         /// <summary>
-        /// The quantity in millimetresPerMinute
+        /// The quantity in CentimetresPerSecond
         /// </summary>
-        public double MillimetresPerMinute
-        {
-            get
-            {
-                return SpeedUnit.MillimetresPerMinute.FromSiUnit(this.metresPerSecond);
-            }
-        }
+        public double CentimetresPerSecond => 100 * this.metresPerSecond;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
@@ -244,28 +190,10 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
         /// </summary>
-        /// <param name="millimetresPerSecond">The value in mm/s</param>
-        public static Speed FromMillimetresPerSecond(double millimetresPerSecond)
-        {
-            return From(millimetresPerSecond, SpeedUnit.MillimetresPerSecond);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
-        /// </summary>
-        /// <param name="centimetresPerSecond">The value in cm/s</param>
-        public static Speed FromCentimetresPerSecond(double centimetresPerSecond)
-        {
-            return From(centimetresPerSecond, SpeedUnit.CentimetresPerSecond);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
-        /// </summary>
         /// <param name="kilometresPerHour">The value in km/h</param>
         public static Speed FromKilometresPerHour(double kilometresPerHour)
         {
-            return From(kilometresPerHour, SpeedUnit.KilometresPerHour);
+            return new Speed(0.277777777777778 * kilometresPerHour);
         }
 
         /// <summary>
@@ -274,7 +202,7 @@
         /// <param name="centimetresPerMinute">The value in cm/min</param>
         public static Speed FromCentimetresPerMinute(double centimetresPerMinute)
         {
-            return From(centimetresPerMinute, SpeedUnit.CentimetresPerMinute);
+            return new Speed(centimetresPerMinute / 6000);
         }
 
         /// <summary>
@@ -283,7 +211,7 @@
         /// <param name="metresPerMinute">The value in m/min</param>
         public static Speed FromMetresPerMinute(double metresPerMinute)
         {
-            return From(metresPerMinute, SpeedUnit.MetresPerMinute);
+            return new Speed(metresPerMinute / 60);
         }
 
         /// <summary>
@@ -292,7 +220,7 @@
         /// <param name="metresPerHour">The value in m/h</param>
         public static Speed FromMetresPerHour(double metresPerHour)
         {
-            return From(metresPerHour, SpeedUnit.MetresPerHour);
+            return new Speed(metresPerHour / 3600);
         }
 
         /// <summary>
@@ -301,7 +229,7 @@
         /// <param name="millimetresPerHour">The value in mm/h</param>
         public static Speed FromMillimetresPerHour(double millimetresPerHour)
         {
-            return From(millimetresPerHour, SpeedUnit.MillimetresPerHour);
+            return new Speed(millimetresPerHour / 3600000);
         }
 
         /// <summary>
@@ -310,7 +238,7 @@
         /// <param name="centimetresPerHour">The value in cm/h</param>
         public static Speed FromCentimetresPerHour(double centimetresPerHour)
         {
-            return From(centimetresPerHour, SpeedUnit.CentimetresPerHour);
+            return new Speed(centimetresPerHour / 360000);
         }
 
         /// <summary>
@@ -319,27 +247,45 @@
         /// <param name="millimetresPerMinute">The value in mm/min</param>
         public static Speed FromMillimetresPerMinute(double millimetresPerMinute)
         {
-            return From(millimetresPerMinute, SpeedUnit.MillimetresPerMinute);
+            return new Speed(millimetresPerMinute / 60000);
         }
 
-        public static Length operator *(Speed left, Time right)
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
+        /// </summary>
+        /// <param name="millimetresPerSecond">The value in mm/s</param>
+        public static Speed FromMillimetresPerSecond(double millimetresPerSecond)
         {
-            return Length.FromMetres(left.metresPerSecond * right.seconds);
+            return new Speed(millimetresPerSecond / 1000);
         }
 
-        public static Time operator /(Speed left, Acceleration right)
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
+        /// </summary>
+        /// <param name="centimetresPerSecond">The value in cm/s</param>
+        public static Speed FromCentimetresPerSecond(double centimetresPerSecond)
         {
-            return Time.FromSeconds(left.metresPerSecond / right.metresPerSecondSquared);
+            return new Speed(centimetresPerSecond / 100);
         }
 
-        public static Power operator *(Speed left, Force right)
+        public static Momentum operator *(Speed left, Mass right)
         {
-            return Power.FromWatts(left.metresPerSecond * right.newtons);
+            return Momentum.FromNewtonSecond(left.metresPerSecond * right.kilograms);
+        }
+
+        public static KinematicViscosity operator *(Speed left, Length right)
+        {
+            return KinematicViscosity.FromSquareMetresPerSecond(left.metresPerSecond * right.metres);
         }
 
         public static Frequency operator /(Speed left, Length right)
         {
             return Frequency.FromHertz(left.metresPerSecond / right.metres);
+        }
+
+        public static Length operator *(Speed left, Time right)
+        {
+            return Length.FromMetres(left.metresPerSecond * right.seconds);
         }
 
         public static Acceleration operator /(Speed left, Time right)
@@ -352,9 +298,54 @@
             return VolumetricFlow.FromCubicMetresPerSecond(left.metresPerSecond * right.squareMetres);
         }
 
+        public static Power operator *(Speed left, Force right)
+        {
+            return Power.FromWatts(left.metresPerSecond * right.newtons);
+        }
+
         public static SpecificEnergy operator *(Speed left, Speed right)
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.metresPerSecond * right.metresPerSecond);
+        }
+
+        public static Acceleration operator *(Speed left, Frequency right)
+        {
+            return Acceleration.FromMetresPerSecondSquared(left.metresPerSecond * right.hertz);
+        }
+
+        public static Length operator /(Speed left, Frequency right)
+        {
+            return Length.FromMetres(left.metresPerSecond / right.hertz);
+        }
+
+        public static Time operator /(Speed left, Acceleration right)
+        {
+            return Time.FromSeconds(left.metresPerSecond / right.metresPerSecondSquared);
+        }
+
+        public static Energy operator *(Speed left, Momentum right)
+        {
+            return Energy.FromJoules(left.metresPerSecond * right.newtonSecond);
+        }
+
+        public static Frequency operator *(Speed left, Wavenumber right)
+        {
+            return Frequency.FromHertz(left.metresPerSecond * right.reciprocalMetres);
+        }
+
+        public static KinematicViscosity operator /(Speed left, Wavenumber right)
+        {
+            return KinematicViscosity.FromSquareMetresPerSecond(left.metresPerSecond / right.reciprocalMetres);
+        }
+
+        public static Force operator *(Speed left, MassFlow right)
+        {
+            return Force.FromNewtons(left.metresPerSecond * right.kilogramsPerSecond);
+        }
+
+        public static Wavenumber operator /(Speed left, KinematicViscosity right)
+        {
+            return Wavenumber.FromReciprocalMetres(left.metresPerSecond / right.squareMetresPerSecond);
         }
 
         public static double operator /(Speed left, Speed right)

@@ -67,26 +67,14 @@
         }
 
         /// <summary>
-        /// The quantity in degreesPerPercent
+        /// The quantity in DegreesPerPercent
         /// </summary>
-        public double DegreesPerPercent
-        {
-            get
-            {
-                return AnglePerUnitlessUnit.DegreesPerPercent.FromSiUnit(this.radiansPerUnitless);
-            }
-        }
+        public double DegreesPerPercent => this.radiansPerUnitless / 1.74532925199433;
 
         /// <summary>
-        /// The quantity in radiansPerPercent
+        /// The quantity in RadiansPerPercent
         /// </summary>
-        public double RadiansPerPercent
-        {
-            get
-            {
-                return AnglePerUnitlessUnit.RadiansPerPercent.FromSiUnit(this.radiansPerUnitless);
-            }
-        }
+        public double RadiansPerPercent => this.radiansPerUnitless / 100;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.AnglePerUnitless"/> from its string representation
@@ -170,7 +158,7 @@
         /// <param name="degreesPerPercent">The value in °/%</param>
         public static AnglePerUnitless FromDegreesPerPercent(double degreesPerPercent)
         {
-            return From(degreesPerPercent, AnglePerUnitlessUnit.DegreesPerPercent);
+            return new AnglePerUnitless(1.74532925199433 * degreesPerPercent);
         }
 
         /// <summary>
@@ -179,7 +167,7 @@
         /// <param name="radiansPerPercent">The value in rad/%</param>
         public static AnglePerUnitless FromRadiansPerPercent(double radiansPerPercent)
         {
-            return From(radiansPerPercent, AnglePerUnitlessUnit.RadiansPerPercent);
+            return new AnglePerUnitless(100 * radiansPerPercent);
         }
 
         public static Angle operator *(AnglePerUnitless left, Unitless right)

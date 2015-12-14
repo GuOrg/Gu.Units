@@ -5,47 +5,109 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.VolumetricFlowUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.VolumetricFlow"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(VolumetricFlowUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{CubicMetresPerSecond.symbol}")]
+    [Serializable, TypeConverter(typeof(VolumetricFlowUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{VolumetricFlowUnit.symbol}")]
     public struct VolumetricFlowUnit : IUnit, IUnit<VolumetricFlow>, IEquatable<VolumetricFlowUnit>
     {
         /// <summary>
-        /// The CubicMetresPerSecond unit
+        /// The VolumetricFlowUnit unit
+        /// Contains logic for conversion and formatting.
+        /// </summary>
+        public static readonly VolumetricFlowUnit CubicMetresPerSecond = new VolumetricFlowUnit(cubicMetresPerSecond => cubicMetresPerSecond, cubicMetresPerSecond => cubicMetresPerSecond, "m³/s");
+
+        /// <summary>
+        /// The CubicMetresPerMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VolumetricFlowUnit CubicMetresPerSecond = new VolumetricFlowUnit(1.0, "m³/s");
+        public static readonly VolumetricFlowUnit CubicMetresPerMinute = new VolumetricFlowUnit(cubicMetresPerMinute => cubicMetresPerMinute / 60, cubicMetresPerSecond => 60 * cubicMetresPerSecond, "m³/min");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        /// <summary>
+        /// The CubicMetresPerHour unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumetricFlowUnit CubicMetresPerHour = new VolumetricFlowUnit(cubicMetresPerHour => cubicMetresPerHour / 3600, cubicMetresPerSecond => 3600 * cubicMetresPerSecond, "m³/h");
 
-        public VolumetricFlowUnit(double conversionFactor, string symbol)
+        /// <summary>
+        /// The LitresPerSecond unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumetricFlowUnit LitresPerSecond = new VolumetricFlowUnit(litresPerSecond => litresPerSecond / 1000, cubicMetresPerSecond => 1000 * cubicMetresPerSecond, "L/s");
+
+        /// <summary>
+        /// The LitresPerHour unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumetricFlowUnit LitresPerHour = new VolumetricFlowUnit(litresPerHour => litresPerHour / 3600000, cubicMetresPerSecond => 3600000 * cubicMetresPerSecond, "L/h");
+
+        /// <summary>
+        /// The LitresPerMinute unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumetricFlowUnit LitresPerMinute = new VolumetricFlowUnit(litresPerMinute => litresPerMinute / 60000, cubicMetresPerSecond => 60000 * cubicMetresPerSecond, "L/min");
+
+        /// <summary>
+        /// The MillilitresPerSecond unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumetricFlowUnit MillilitresPerSecond = new VolumetricFlowUnit(millilitresPerSecond => millilitresPerSecond / 1000000, cubicMetresPerSecond => 1000000 * cubicMetresPerSecond, "ml/s");
+
+        /// <summary>
+        /// The MillilitresPerHour unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumetricFlowUnit MillilitresPerHour = new VolumetricFlowUnit(millilitresPerHour => millilitresPerHour / 3600000000, cubicMetresPerSecond => 3600000000 * cubicMetresPerSecond, "ml/h");
+
+        /// <summary>
+        /// The MillilitresPerMinute unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumetricFlowUnit MillilitresPerMinute = new VolumetricFlowUnit(millilitresPerMinute => millilitresPerMinute / 60000000, cubicMetresPerSecond => 60000000 * cubicMetresPerSecond, "ml/min");
+
+        /// <summary>
+        /// The CentilitresPerSecond unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumetricFlowUnit CentilitresPerSecond = new VolumetricFlowUnit(centilitresPerSecond => centilitresPerSecond / 100000, cubicMetresPerSecond => 100000 * cubicMetresPerSecond, "cl/s");
+
+        /// <summary>
+        /// The CentilitresPerHour unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumetricFlowUnit CentilitresPerHour = new VolumetricFlowUnit(centilitresPerHour => centilitresPerHour / 360000000, cubicMetresPerSecond => 360000000 * cubicMetresPerSecond, "cl/h");
+
+        /// <summary>
+        /// The CentilitresPerMinute unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumetricFlowUnit CentilitresPerMinute = new VolumetricFlowUnit(centilitresPerMinute => centilitresPerMinute / 6000000, cubicMetresPerSecond => 6000000 * cubicMetresPerSecond, "cl/min");
+
+        private readonly Func<double, double> toCubicMetresPerSecond;
+        private readonly Func<double, double> fromCubicMetresPerSecond;
+        internal readonly string symbol;
+
+        public VolumetricFlowUnit(Func<double, double> toCubicMetresPerSecond, Func<double, double> fromCubicMetresPerSecond, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toCubicMetresPerSecond = toCubicMetresPerSecond;
+            this.fromCubicMetresPerSecond = fromCubicMetresPerSecond;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.VolumetricFlowUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.VolumetricFlowUnit"/>
         /// </summary>
-        public VolumetricFlowUnit SiUnit => VolumetricFlowUnit.CubicMetresPerSecond;
+        public VolumetricFlowUnit SiUnit => CubicMetresPerSecond;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.VolumetricFlowUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => VolumetricFlowUnit.CubicMetresPerSecond;
+        IUnit IUnit.SiUnit => CubicMetresPerSecond;
 
         public static VolumetricFlow operator *(double left, VolumetricFlowUnit right)
         {
@@ -79,7 +141,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toCubicMetresPerSecond(value);
         }
 
         /// <summary>
@@ -87,9 +149,9 @@
         /// </summary>
         /// <param name="value">The value in CubicMetresPerSecond</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double cubicMetresPerSecond)
         {
-            return value / this.conversionFactor;
+            return this.fromCubicMetresPerSecond(cubicMetresPerSecond);
         }
 
         /// <summary>
@@ -103,7 +165,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in CubicMetresPerSecond
+        /// Gets the scalar value of <paramref name="quantity"/> in VolumetricFlowUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

@@ -11,6 +11,12 @@
     {
         public static readonly InductanceJsonConverter Default = new InductanceJsonConverter(InductanceUnit.Henrys);
         public static readonly InductanceJsonConverter Henrys = new InductanceJsonConverter(InductanceUnit.Henrys);
+        public static readonly InductanceJsonConverter Nanohenrys = new InductanceJsonConverter(InductanceUnit.Nanohenrys);
+        public static readonly InductanceJsonConverter Microhenrys = new InductanceJsonConverter(InductanceUnit.Microhenrys);
+        public static readonly InductanceJsonConverter Millihenrys = new InductanceJsonConverter(InductanceUnit.Millihenrys);
+        public static readonly InductanceJsonConverter Kilohenrys = new InductanceJsonConverter(InductanceUnit.Kilohenrys);
+        public static readonly InductanceJsonConverter Megahenrys = new InductanceJsonConverter(InductanceUnit.Megahenrys);
+        public static readonly InductanceJsonConverter Gigahenrys = new InductanceJsonConverter(InductanceUnit.Gigahenrys);
 
         private readonly InductanceUnit unit;
 

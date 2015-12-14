@@ -5,47 +5,43 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.TorqueUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Torque"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(TorqueUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{NewtonMetres.symbol}")]
+    [Serializable, TypeConverter(typeof(TorqueUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{TorqueUnit.symbol}")]
     public struct TorqueUnit : IUnit, IUnit<Torque>, IEquatable<TorqueUnit>
     {
         /// <summary>
-        /// The NewtonMetres unit
-        /// Contains conversion logic to from and formatting.
+        /// The TorqueUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly TorqueUnit NewtonMetres = new TorqueUnit(1.0, "N⋅m");
+        public static readonly TorqueUnit NewtonMetres = new TorqueUnit(newtonMetres => newtonMetres, newtonMetres => newtonMetres, "N⋅m");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        private readonly Func<double, double> toNewtonMetres;
+        private readonly Func<double, double> fromNewtonMetres;
+        internal readonly string symbol;
 
-        public TorqueUnit(double conversionFactor, string symbol)
+        public TorqueUnit(Func<double, double> toNewtonMetres, Func<double, double> fromNewtonMetres, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toNewtonMetres = toNewtonMetres;
+            this.fromNewtonMetres = fromNewtonMetres;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.TorqueUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.TorqueUnit"/>
         /// </summary>
-        public TorqueUnit SiUnit => TorqueUnit.NewtonMetres;
+        public TorqueUnit SiUnit => NewtonMetres;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.TorqueUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => TorqueUnit.NewtonMetres;
+        IUnit IUnit.SiUnit => NewtonMetres;
 
         public static Torque operator *(double left, TorqueUnit right)
         {
@@ -79,7 +75,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toNewtonMetres(value);
         }
 
         /// <summary>
@@ -87,9 +83,9 @@
         /// </summary>
         /// <param name="value">The value in NewtonMetres</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double newtonMetres)
         {
-            return value / this.conversionFactor;
+            return this.fromNewtonMetres(newtonMetres);
         }
 
         /// <summary>
@@ -103,7 +99,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in NewtonMetres
+        /// Gets the scalar value of <paramref name="quantity"/> in TorqueUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

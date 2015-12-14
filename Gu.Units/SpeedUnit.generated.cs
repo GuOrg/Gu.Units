@@ -5,101 +5,97 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.SpeedUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Speed"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(SpeedUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MetresPerSecond.symbol}")]
+    [Serializable, TypeConverter(typeof(SpeedUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{SpeedUnit.symbol}")]
     public struct SpeedUnit : IUnit, IUnit<Speed>, IEquatable<SpeedUnit>
     {
         /// <summary>
-        /// The MetresPerSecond unit
-        /// Contains conversion logic to from and formatting.
+        /// The SpeedUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly SpeedUnit MetresPerSecond = new SpeedUnit(1.0, "m/s");
-
-        /// <summary>
-        /// The MillimetresPerSecond unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly SpeedUnit MillimetresPerSecond = new SpeedUnit(0.001, "mm/s");
-
-        /// <summary>
-        /// The CentimetresPerSecond unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly SpeedUnit CentimetresPerSecond = new SpeedUnit(0.01, "cm/s");
+        public static readonly SpeedUnit MetresPerSecond = new SpeedUnit(metresPerSecond => metresPerSecond, metresPerSecond => metresPerSecond, "m/s");
 
         /// <summary>
         /// The KilometresPerHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly SpeedUnit KilometresPerHour = new SpeedUnit(0.27777777777777779, "km/h");
+        public static readonly SpeedUnit KilometresPerHour = new SpeedUnit(kilometresPerHour => 0.277777777777778 * kilometresPerHour, metresPerSecond => metresPerSecond / 0.277777777777778, "km/h");
 
         /// <summary>
         /// The CentimetresPerMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly SpeedUnit CentimetresPerMinute = new SpeedUnit(0.00016666666666666666, "cm/min");
+        public static readonly SpeedUnit CentimetresPerMinute = new SpeedUnit(centimetresPerMinute => centimetresPerMinute / 6000, metresPerSecond => 6000 * metresPerSecond, "cm/min");
 
         /// <summary>
         /// The MetresPerMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly SpeedUnit MetresPerMinute = new SpeedUnit(0.016666666666666666, "m/min");
+        public static readonly SpeedUnit MetresPerMinute = new SpeedUnit(metresPerMinute => metresPerMinute / 60, metresPerSecond => 60 * metresPerSecond, "m/min");
 
         /// <summary>
         /// The MetresPerHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly SpeedUnit MetresPerHour = new SpeedUnit(0.00027777777777777778, "m/h");
+        public static readonly SpeedUnit MetresPerHour = new SpeedUnit(metresPerHour => metresPerHour / 3600, metresPerSecond => 3600 * metresPerSecond, "m/h");
 
         /// <summary>
         /// The MillimetresPerHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly SpeedUnit MillimetresPerHour = new SpeedUnit(2.7777777777777776E-07, "mm/h");
+        public static readonly SpeedUnit MillimetresPerHour = new SpeedUnit(millimetresPerHour => millimetresPerHour / 3600000, metresPerSecond => 3600000 * metresPerSecond, "mm/h");
 
         /// <summary>
         /// The CentimetresPerHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly SpeedUnit CentimetresPerHour = new SpeedUnit(2.7777777777777779E-06, "cm/h");
+        public static readonly SpeedUnit CentimetresPerHour = new SpeedUnit(centimetresPerHour => centimetresPerHour / 360000, metresPerSecond => 360000 * metresPerSecond, "cm/h");
 
         /// <summary>
         /// The MillimetresPerMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly SpeedUnit MillimetresPerMinute = new SpeedUnit(1.6666666666666667E-05, "mm/min");
+        public static readonly SpeedUnit MillimetresPerMinute = new SpeedUnit(millimetresPerMinute => millimetresPerMinute / 60000, metresPerSecond => 60000 * metresPerSecond, "mm/min");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        /// <summary>
+        /// The MillimetresPerSecond unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly SpeedUnit MillimetresPerSecond = new SpeedUnit(millimetresPerSecond => millimetresPerSecond / 1000, metresPerSecond => 1000 * metresPerSecond, "mm/s");
 
-        public SpeedUnit(double conversionFactor, string symbol)
+        /// <summary>
+        /// The CentimetresPerSecond unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly SpeedUnit CentimetresPerSecond = new SpeedUnit(centimetresPerSecond => centimetresPerSecond / 100, metresPerSecond => 100 * metresPerSecond, "cm/s");
+
+        private readonly Func<double, double> toMetresPerSecond;
+        private readonly Func<double, double> fromMetresPerSecond;
+        internal readonly string symbol;
+
+        public SpeedUnit(Func<double, double> toMetresPerSecond, Func<double, double> fromMetresPerSecond, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toMetresPerSecond = toMetresPerSecond;
+            this.fromMetresPerSecond = fromMetresPerSecond;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.SpeedUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.SpeedUnit"/>
         /// </summary>
-        public SpeedUnit SiUnit => SpeedUnit.MetresPerSecond;
+        public SpeedUnit SiUnit => MetresPerSecond;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.SpeedUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => SpeedUnit.MetresPerSecond;
+        IUnit IUnit.SiUnit => MetresPerSecond;
 
         public static Speed operator *(double left, SpeedUnit right)
         {
@@ -133,7 +129,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toMetresPerSecond(value);
         }
 
         /// <summary>
@@ -141,9 +137,9 @@
         /// </summary>
         /// <param name="value">The value in MetresPerSecond</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double metresPerSecond)
         {
-            return value / this.conversionFactor;
+            return this.fromMetresPerSecond(metresPerSecond);
         }
 
         /// <summary>
@@ -157,7 +153,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in MetresPerSecond
+        /// Gets the scalar value of <paramref name="quantity"/> in SpeedUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

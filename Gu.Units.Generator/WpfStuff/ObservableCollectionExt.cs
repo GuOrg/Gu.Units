@@ -7,14 +7,14 @@
     using System.Windows;
     using System.Windows.Threading;
 
-    public static class ObservableCollectionExt
+    internal static class ObservableCollectionExt
     {
-        public static void InvokeAdd<T>(this ObservableCollection<T> collection, T newItem)
+        internal static void InvokeAdd<T>(this ObservableCollection<T> collection, T newItem)
         {
             collection.Invoke(() => collection.Add(newItem));
         }
 
-        public static void InvokeAddRange<T>(this ObservableCollection<T> collection, IEnumerable<T> newItems)
+        internal static void InvokeAddRange<T>(this ObservableCollection<T> collection, IEnumerable<T> newItems)
         {
             collection.Invoke(
                 () =>
@@ -26,17 +26,17 @@
                 });
         }
 
-        public static void InvokeRemove<T>(this ObservableCollection<T> collection, T oldItem)
+        internal static void InvokeRemove<T>(this ObservableCollection<T> collection, T oldItem)
         {
             collection.Invoke(() => collection.Remove(oldItem));
         }
 
-        public static void InvokeRemove<T>(this ObservableCollection<T> collection, Func<T, bool> criteria)
+        internal static void InvokeRemove<T>(this ObservableCollection<T> collection, Func<T, bool> criteria)
         {
             collection.InvokeRemove(collection.Where(criteria).ToArray());
         }
 
-        public static void InvokeRemove<T>(this ObservableCollection<T> collection, IEnumerable<T> oldItems)
+        internal static void InvokeRemove<T>(this ObservableCollection<T> collection, IEnumerable<T> oldItems)
         {
             collection.Invoke(
                 () =>
@@ -48,12 +48,12 @@
                 });
         }
 
-        public static void InvokeClear<T>(this ObservableCollection<T> collection)
+        internal static void InvokeClear<T>(this ObservableCollection<T> collection)
         {
             collection.Invoke(() => collection.Clear());
         }
 
-        public static void Invoke<T>(this ObservableCollection<T> col, Action action)
+        internal static void Invoke<T>(this ObservableCollection<T> col, Action action)
         {
             Dispatcher dispatcher = Application.Current != null
                 ? Application.Current.Dispatcher
@@ -61,12 +61,12 @@
             dispatcher.Invoke(action);
         }
 
-        public static DispatcherOperation AddAsync<T>(this ObservableCollection<T> collection, T newItem)
+        internal static DispatcherOperation AddAsync<T>(this ObservableCollection<T> collection, T newItem)
         {
             return collection.InvokeAsync(() => collection.Add(newItem));
         }
 
-        public static DispatcherOperation AddRangeAsync<T>(
+        internal static DispatcherOperation AddRangeAsync<T>(
             this ObservableCollection<T> collection,
             IEnumerable<T> newItems)
         {
@@ -80,17 +80,17 @@
                 });
         }
 
-        public static DispatcherOperation RemoveAsync<T>(this ObservableCollection<T> collection, T oldItem)
+        internal static DispatcherOperation RemoveAsync<T>(this ObservableCollection<T> collection, T oldItem)
         {
             return collection.InvokeAsync(() => collection.Remove(oldItem));
         }
 
-        public static DispatcherOperation ClearAsync<T>(this ObservableCollection<T> collection)
+        internal static DispatcherOperation ClearAsync<T>(this ObservableCollection<T> collection)
         {
             return collection.InvokeAsync(() => collection.Clear());
         }
 
-        public static DispatcherOperation InvokeAsync<T>(this ObservableCollection<T> col, Action action)
+        internal static DispatcherOperation InvokeAsync<T>(this ObservableCollection<T> col, Action action)
         {
             Dispatcher dispatcher = Application.Current != null // For testst
                 ? Application.Current.Dispatcher

@@ -5,101 +5,91 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.AreaUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Area"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(AreaUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{SquareMetres.symbol}")]
+    [Serializable, TypeConverter(typeof(AreaUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{AreaUnit.symbol}")]
     public struct AreaUnit : IUnit, IUnit<Area>, IEquatable<AreaUnit>
     {
         /// <summary>
-        /// The SquareMetres unit
+        /// The AreaUnit unit
+        /// Contains logic for conversion and formatting.
+        /// </summary>
+        public static readonly AreaUnit SquareMetres = new AreaUnit(squareMetres => squareMetres, squareMetres => squareMetres, "m²");
+
+        /// <summary>
+        /// The Hectare unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AreaUnit SquareMetres = new AreaUnit(1.0, "m²");
+        public static readonly AreaUnit Hectare = new AreaUnit(hectare => 10000 * hectare, squareMetres => squareMetres / 10000, "ha");
 
         /// <summary>
         /// The SquareMillimetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AreaUnit SquareMillimetres = new AreaUnit(1E-06, "mm²");
+        public static readonly AreaUnit SquareMillimetres = new AreaUnit(squareMillimetres => squareMillimetres / 1000000, squareMetres => 1000000 * squareMetres, "mm²");
 
         /// <summary>
         /// The SquareCentimetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AreaUnit SquareCentimetres = new AreaUnit(0.0001, "cm²");
+        public static readonly AreaUnit SquareCentimetres = new AreaUnit(squareCentimetres => squareCentimetres / 10000, squareMetres => 10000 * squareMetres, "cm²");
 
         /// <summary>
         /// The SquareDecimetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AreaUnit SquareDecimetres = new AreaUnit(0.010000000000000002, "dm²");
+        public static readonly AreaUnit SquareDecimetres = new AreaUnit(squareDecimetres => squareDecimetres / 100, squareMetres => 100 * squareMetres, "dm²");
 
         /// <summary>
         /// The SquareKilometres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AreaUnit SquareKilometres = new AreaUnit(1000000, "km²");
-
-        /// <summary>
-        /// The SquareInches unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly AreaUnit SquareInches = new AreaUnit(0.00064516, "in²");
-
-        /// <summary>
-        /// The Hectare unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly AreaUnit Hectare = new AreaUnit(10000, "ha");
-
-        /// <summary>
-        /// The Hectare unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly AreaUnit ha = Hectare;
+        public static readonly AreaUnit SquareKilometres = new AreaUnit(squareKilometres => 1000000 * squareKilometres, squareMetres => squareMetres / 1000000, "km²");
 
         /// <summary>
         /// The SquareMile unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AreaUnit SquareMile = new AreaUnit(2589988.110336, "mi²");
+        public static readonly AreaUnit SquareMile = new AreaUnit(squareMile => 2589988.110336 * squareMile, squareMetres => squareMetres / 2589988.110336, "mi²");
 
         /// <summary>
         /// The SquareYard unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AreaUnit SquareYard = new AreaUnit(0.83612736, "yd²");
+        public static readonly AreaUnit SquareYard = new AreaUnit(squareYard => 0.83612736 * squareYard, squareMetres => squareMetres / 0.83612736, "yd²");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        /// <summary>
+        /// The SquareInches unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly AreaUnit SquareInches = new AreaUnit(squareInches => 0.00064516 * squareInches, squareMetres => squareMetres / 0.00064516, "in²");
 
-        public AreaUnit(double conversionFactor, string symbol)
+        private readonly Func<double, double> toSquareMetres;
+        private readonly Func<double, double> fromSquareMetres;
+        internal readonly string symbol;
+
+        public AreaUnit(Func<double, double> toSquareMetres, Func<double, double> fromSquareMetres, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toSquareMetres = toSquareMetres;
+            this.fromSquareMetres = fromSquareMetres;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.AreaUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.AreaUnit"/>
         /// </summary>
-        public AreaUnit SiUnit => AreaUnit.SquareMetres;
+        public AreaUnit SiUnit => SquareMetres;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.AreaUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => AreaUnit.SquareMetres;
+        IUnit IUnit.SiUnit => SquareMetres;
 
         public static Area operator *(double left, AreaUnit right)
         {
@@ -133,7 +123,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toSquareMetres(value);
         }
 
         /// <summary>
@@ -141,9 +131,9 @@
         /// </summary>
         /// <param name="value">The value in SquareMetres</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double squareMetres)
         {
-            return value / this.conversionFactor;
+            return this.fromSquareMetres(squareMetres);
         }
 
         /// <summary>
@@ -157,7 +147,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in SquareMetres
+        /// Gets the scalar value of <paramref name="quantity"/> in AreaUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

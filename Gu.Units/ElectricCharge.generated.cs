@@ -67,6 +67,36 @@
         }
 
         /// <summary>
+        /// The quantity in Nanocoulombs
+        /// </summary>
+        public double Nanocoulombs => 1000000000 * this.coulombs;
+
+        /// <summary>
+        /// The quantity in Microcoulombs
+        /// </summary>
+        public double Microcoulombs => 1000000 * this.coulombs;
+
+        /// <summary>
+        /// The quantity in Millicoulombs
+        /// </summary>
+        public double Millicoulombs => 1000 * this.coulombs;
+
+        /// <summary>
+        /// The quantity in Kilocoulombs
+        /// </summary>
+        public double Kilocoulombs => this.coulombs / 1000;
+
+        /// <summary>
+        /// The quantity in Megacoulombs
+        /// </summary>
+        public double Megacoulombs => this.coulombs / 1000000;
+
+        /// <summary>
+        /// The quantity in Gigacoulombs
+        /// </summary>
+        public double Gigacoulombs => this.coulombs / 1000000000;
+
+        /// <summary>
         /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
         /// </summary>
         /// <param name="s">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
@@ -142,14 +172,108 @@
             return new ElectricCharge(coulombs);
         }
 
-        public static Time operator /(ElectricCharge left, Current right)
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
+        /// </summary>
+        /// <param name="nanocoulombs">The value in nC</param>
+        public static ElectricCharge FromNanocoulombs(double nanocoulombs)
         {
-            return Time.FromSeconds(left.coulombs / right.amperes);
+            return new ElectricCharge(nanocoulombs / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
+        /// </summary>
+        /// <param name="microcoulombs">The value in µC</param>
+        public static ElectricCharge FromMicrocoulombs(double microcoulombs)
+        {
+            return new ElectricCharge(microcoulombs / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
+        /// </summary>
+        /// <param name="millicoulombs">The value in mC</param>
+        public static ElectricCharge FromMillicoulombs(double millicoulombs)
+        {
+            return new ElectricCharge(millicoulombs / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
+        /// </summary>
+        /// <param name="kilocoulombs">The value in kC</param>
+        public static ElectricCharge FromKilocoulombs(double kilocoulombs)
+        {
+            return new ElectricCharge(1000 * kilocoulombs);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
+        /// </summary>
+        /// <param name="megacoulombs">The value in MC</param>
+        public static ElectricCharge FromMegacoulombs(double megacoulombs)
+        {
+            return new ElectricCharge(1000000 * megacoulombs);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
+        /// </summary>
+        /// <param name="gigacoulombs">The value in GC</param>
+        public static ElectricCharge FromGigacoulombs(double gigacoulombs)
+        {
+            return new ElectricCharge(1000000000 * gigacoulombs);
         }
 
         public static Current operator /(ElectricCharge left, Time right)
         {
             return Current.FromAmperes(left.coulombs / right.seconds);
+        }
+
+        public static Time operator /(ElectricCharge left, Current right)
+        {
+            return Time.FromSeconds(left.coulombs / right.amperes);
+        }
+
+        public static Current operator *(ElectricCharge left, Frequency right)
+        {
+            return Current.FromAmperes(left.coulombs * right.hertz);
+        }
+
+        public static Energy operator *(ElectricCharge left, Voltage right)
+        {
+            return Energy.FromJoules(left.coulombs * right.volts);
+        }
+
+        public static Capacitance operator /(ElectricCharge left, Voltage right)
+        {
+            return Capacitance.FromFarads(left.coulombs / right.volts);
+        }
+
+        public static MagneticFlux operator *(ElectricCharge left, Resistance right)
+        {
+            return MagneticFlux.FromWebers(left.coulombs * right.ohm);
+        }
+
+        public static Voltage operator /(ElectricCharge left, Capacitance right)
+        {
+            return Voltage.FromVolts(left.coulombs / right.farads);
+        }
+
+        public static ElectricalConductance operator /(ElectricCharge left, MagneticFlux right)
+        {
+            return ElectricalConductance.FromSiemens(left.coulombs / right.webers);
+        }
+
+        public static MagneticFlux operator /(ElectricCharge left, ElectricalConductance right)
+        {
+            return MagneticFlux.FromWebers(left.coulombs / right.siemens);
+        }
+
+        public static MassFlow operator *(ElectricCharge left, MagneticFieldStrength right)
+        {
+            return MassFlow.FromKilogramsPerSecond(left.coulombs * right.teslas);
         }
 
         public static double operator /(ElectricCharge left, ElectricCharge right)

@@ -11,8 +11,8 @@ namespace Gu.Units.Tests.Samples
 
     public class Samples
     {
-        private static LengthUnit m = LengthUnit.m;
-        private static TimeUnit s = TimeUnit.s;
+        private static LengthUnit m = LengthUnit.Metres;
+        private static TimeUnit s = TimeUnit.Seconds;
 
         [Test]
         public void ArithmeticSample()

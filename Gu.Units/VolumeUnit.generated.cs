@@ -5,77 +5,91 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.VolumeUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Volume"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(VolumeUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{CubicMetres.symbol}")]
+    [Serializable, TypeConverter(typeof(VolumeUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{VolumeUnit.symbol}")]
     public struct VolumeUnit : IUnit, IUnit<Volume>, IEquatable<VolumeUnit>
     {
         /// <summary>
-        /// The CubicMetres unit
-        /// Contains conversion logic to from and formatting.
+        /// The VolumeUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly VolumeUnit CubicMetres = new VolumeUnit(1.0, "m³");
+        public static readonly VolumeUnit CubicMetres = new VolumeUnit(cubicMetres => cubicMetres, cubicMetres => cubicMetres, "m³");
 
         /// <summary>
         /// The Litres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly VolumeUnit Litres = new VolumeUnit(0.0010000000000000002, "L");
+        public static readonly VolumeUnit Litres = new VolumeUnit(litres => litres / 1000, cubicMetres => 1000 * cubicMetres, "L");
 
         /// <summary>
-        /// The Litres unit
+        /// The Millilitres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly VolumeUnit L = Litres;
+        public static readonly VolumeUnit Millilitres = new VolumeUnit(millilitres => millilitres / 1000000, cubicMetres => 1000000 * cubicMetres, "ml");
+
+        /// <summary>
+        /// The Centilitres unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumeUnit Centilitres = new VolumeUnit(centilitres => centilitres / 100000, cubicMetres => 100000 * cubicMetres, "cl");
+
+        /// <summary>
+        /// The Decilitres unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumeUnit Decilitres = new VolumeUnit(decilitres => decilitres / 10000, cubicMetres => 10000 * cubicMetres, "dl");
 
         /// <summary>
         /// The CubicCentimetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly VolumeUnit CubicCentimetres = new VolumeUnit(1.0000000000000002E-06, "cm³");
+        public static readonly VolumeUnit CubicCentimetres = new VolumeUnit(cubicCentimetres => cubicCentimetres / 1000000, cubicMetres => 1000000 * cubicMetres, "cm³");
 
         /// <summary>
         /// The CubicMillimetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly VolumeUnit CubicMillimetres = new VolumeUnit(1E-09, "mm³");
+        public static readonly VolumeUnit CubicMillimetres = new VolumeUnit(cubicMillimetres => cubicMillimetres / 1000000000, cubicMetres => 1000000000 * cubicMetres, "mm³");
 
         /// <summary>
         /// The CubicInches unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly VolumeUnit CubicInches = new VolumeUnit(1.6387064E-05, "in³");
+        public static readonly VolumeUnit CubicInches = new VolumeUnit(cubicInches => 1.6387064E-05 * cubicInches, cubicMetres => cubicMetres / 1.6387064E-05, "in³");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        /// <summary>
+        /// The CubicDecimetres unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumeUnit CubicDecimetres = new VolumeUnit(cubicDecimetres => cubicDecimetres / 1000, cubicMetres => 1000 * cubicMetres, "dm³");
 
-        public VolumeUnit(double conversionFactor, string symbol)
+        private readonly Func<double, double> toCubicMetres;
+        private readonly Func<double, double> fromCubicMetres;
+        internal readonly string symbol;
+
+        public VolumeUnit(Func<double, double> toCubicMetres, Func<double, double> fromCubicMetres, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toCubicMetres = toCubicMetres;
+            this.fromCubicMetres = fromCubicMetres;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.VolumeUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.VolumeUnit"/>
         /// </summary>
-        public VolumeUnit SiUnit => VolumeUnit.CubicMetres;
+        public VolumeUnit SiUnit => CubicMetres;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.VolumeUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => VolumeUnit.CubicMetres;
+        IUnit IUnit.SiUnit => CubicMetres;
 
         public static Volume operator *(double left, VolumeUnit right)
         {
@@ -109,7 +123,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toCubicMetres(value);
         }
 
         /// <summary>
@@ -117,9 +131,9 @@
         /// </summary>
         /// <param name="value">The value in CubicMetres</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double cubicMetres)
         {
-            return value / this.conversionFactor;
+            return this.fromCubicMetres(cubicMetres);
         }
 
         /// <summary>
@@ -133,7 +147,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in CubicMetres
+        /// Gets the scalar value of <paramref name="quantity"/> in VolumeUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

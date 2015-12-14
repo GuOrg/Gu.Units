@@ -17,6 +17,18 @@
             return GetCharUnchecked(i);
         }
 
+        public static string GetString(int i)
+        {
+            Ensure.GreaterThanOrEqual(i, -9, nameof(i));
+            Ensure.LessThanOrEqual(i, 9, nameof(i));
+            if (i < 0)
+            {
+                return $"{Minus}{GetCharUnchecked(i)}";
+            }
+
+            return $"{GetCharUnchecked(i)}";
+        }
+
         public static int GetDigit(char c)
         {
             try

@@ -67,48 +67,24 @@
         }
 
         /// <summary>
-        /// The quantity in microohm
+        /// The quantity in Microohm
         /// </summary>
-        public double Microohm
-        {
-            get
-            {
-                return ResistanceUnit.Microohm.FromSiUnit(this.ohm);
-            }
-        }
+        public double Microohm => 1000000 * this.ohm;
 
         /// <summary>
-        /// The quantity in milliohm
+        /// The quantity in Milliohm
         /// </summary>
-        public double Milliohm
-        {
-            get
-            {
-                return ResistanceUnit.Milliohm.FromSiUnit(this.ohm);
-            }
-        }
+        public double Milliohm => 1000 * this.ohm;
 
         /// <summary>
-        /// The quantity in kiloohm
+        /// The quantity in Kiloohm
         /// </summary>
-        public double Kiloohm
-        {
-            get
-            {
-                return ResistanceUnit.Kiloohm.FromSiUnit(this.ohm);
-            }
-        }
+        public double Kiloohm => this.ohm / 1000;
 
         /// <summary>
-        /// The quantity in megaohm
+        /// The quantity in Megaohm
         /// </summary>
-        public double Megaohm
-        {
-            get
-            {
-                return ResistanceUnit.Megaohm.FromSiUnit(this.ohm);
-            }
-        }
+        public double Megaohm => this.ohm / 1000000;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
@@ -192,7 +168,7 @@
         /// <param name="microohm">The value in µΩ</param>
         public static Resistance FromMicroohm(double microohm)
         {
-            return From(microohm, ResistanceUnit.Microohm);
+            return new Resistance(microohm / 1000000);
         }
 
         /// <summary>
@@ -201,7 +177,7 @@
         /// <param name="milliohm">The value in mΩ</param>
         public static Resistance FromMilliohm(double milliohm)
         {
-            return From(milliohm, ResistanceUnit.Milliohm);
+            return new Resistance(milliohm / 1000);
         }
 
         /// <summary>
@@ -210,7 +186,7 @@
         /// <param name="kiloohm">The value in kΩ</param>
         public static Resistance FromKiloohm(double kiloohm)
         {
-            return From(kiloohm, ResistanceUnit.Kiloohm);
+            return new Resistance(1000 * kiloohm);
         }
 
         /// <summary>
@@ -219,7 +195,12 @@
         /// <param name="megaohm">The value in MΩ</param>
         public static Resistance FromMegaohm(double megaohm)
         {
-            return From(megaohm, ResistanceUnit.Megaohm);
+            return new Resistance(1000000 * megaohm);
+        }
+
+        public static Inductance operator *(Resistance left, Time right)
+        {
+            return Inductance.FromHenrys(left.ohm * right.seconds);
         }
 
         public static Voltage operator *(Resistance left, Current right)
@@ -227,9 +208,29 @@
             return Voltage.FromVolts(left.ohm * right.amperes);
         }
 
-        public static Inductance operator *(Resistance left, Time right)
+        public static Inductance operator /(Resistance left, Frequency right)
         {
-            return Inductance.FromHenrys(left.ohm * right.seconds);
+            return Inductance.FromHenrys(left.ohm / right.hertz);
+        }
+
+        public static MagneticFlux operator *(Resistance left, ElectricCharge right)
+        {
+            return MagneticFlux.FromWebers(left.ohm * right.coulombs);
+        }
+
+        public static Frequency operator /(Resistance left, Inductance right)
+        {
+            return Frequency.FromHertz(left.ohm / right.henrys);
+        }
+
+        public static Time operator *(Resistance left, Capacitance right)
+        {
+            return Time.FromSeconds(left.ohm * right.farads);
+        }
+
+        public static ElectricalConductance operator /(double left, Resistance right)
+        {
+            return ElectricalConductance.FromSiemens(left / right.ohm);
         }
 
         public static double operator /(Resistance left, Resistance right)

@@ -15,6 +15,8 @@
         public static readonly CurrentJsonConverter Kiloamperes = new CurrentJsonConverter(CurrentUnit.Kiloamperes);
         public static readonly CurrentJsonConverter Megaamperes = new CurrentJsonConverter(CurrentUnit.Megaamperes);
         public static readonly CurrentJsonConverter Microamperes = new CurrentJsonConverter(CurrentUnit.Microamperes);
+        public static readonly CurrentJsonConverter Nanoamperes = new CurrentJsonConverter(CurrentUnit.Nanoamperes);
+        public static readonly CurrentJsonConverter Gigaamperes = new CurrentJsonConverter(CurrentUnit.Gigaamperes);
 
         private readonly CurrentUnit unit;
 

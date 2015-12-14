@@ -5,59 +5,55 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.AnglePerUnitlessUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.AnglePerUnitless"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(AnglePerUnitlessUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{RadiansPerUnitless.symbol}")]
+    [Serializable, TypeConverter(typeof(AnglePerUnitlessUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{AnglePerUnitlessUnit.symbol}")]
     public struct AnglePerUnitlessUnit : IUnit, IUnit<AnglePerUnitless>, IEquatable<AnglePerUnitlessUnit>
     {
         /// <summary>
-        /// The RadiansPerUnitless unit
-        /// Contains conversion logic to from and formatting.
+        /// The AnglePerUnitlessUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly AnglePerUnitlessUnit RadiansPerUnitless = new AnglePerUnitlessUnit(1.0, "rad/ul");
+        public static readonly AnglePerUnitlessUnit RadiansPerUnitless = new AnglePerUnitlessUnit(radiansPerUnitless => radiansPerUnitless, radiansPerUnitless => radiansPerUnitless, "rad/ul");
 
         /// <summary>
         /// The DegreesPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AnglePerUnitlessUnit DegreesPerPercent = new AnglePerUnitlessUnit(1.7453292519943295, "°/%");
+        public static readonly AnglePerUnitlessUnit DegreesPerPercent = new AnglePerUnitlessUnit(degreesPerPercent => 1.74532925199433 * degreesPerPercent, radiansPerUnitless => radiansPerUnitless / 1.74532925199433, "°/%");
 
         /// <summary>
         /// The RadiansPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AnglePerUnitlessUnit RadiansPerPercent = new AnglePerUnitlessUnit(100, "rad/%");
+        public static readonly AnglePerUnitlessUnit RadiansPerPercent = new AnglePerUnitlessUnit(radiansPerPercent => 100 * radiansPerPercent, radiansPerUnitless => radiansPerUnitless / 100, "rad/%");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        private readonly Func<double, double> toRadiansPerUnitless;
+        private readonly Func<double, double> fromRadiansPerUnitless;
+        internal readonly string symbol;
 
-        public AnglePerUnitlessUnit(double conversionFactor, string symbol)
+        public AnglePerUnitlessUnit(Func<double, double> toRadiansPerUnitless, Func<double, double> fromRadiansPerUnitless, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toRadiansPerUnitless = toRadiansPerUnitless;
+            this.fromRadiansPerUnitless = fromRadiansPerUnitless;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.AnglePerUnitlessUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.AnglePerUnitlessUnit"/>
         /// </summary>
-        public AnglePerUnitlessUnit SiUnit => AnglePerUnitlessUnit.RadiansPerUnitless;
+        public AnglePerUnitlessUnit SiUnit => RadiansPerUnitless;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.AnglePerUnitlessUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => AnglePerUnitlessUnit.RadiansPerUnitless;
+        IUnit IUnit.SiUnit => RadiansPerUnitless;
 
         public static AnglePerUnitless operator *(double left, AnglePerUnitlessUnit right)
         {
@@ -91,7 +87,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toRadiansPerUnitless(value);
         }
 
         /// <summary>
@@ -99,9 +95,9 @@
         /// </summary>
         /// <param name="value">The value in RadiansPerUnitless</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double radiansPerUnitless)
         {
-            return value / this.conversionFactor;
+            return this.fromRadiansPerUnitless(radiansPerUnitless);
         }
 
         /// <summary>
@@ -115,7 +111,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in RadiansPerUnitless
+        /// Gets the scalar value of <paramref name="quantity"/> in AnglePerUnitlessUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

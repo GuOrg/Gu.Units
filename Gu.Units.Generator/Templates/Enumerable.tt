@@ -17,12 +17,13 @@ namespace <#= Settings.Namespace #>
     foreach(var quantity in quantities)
     {
 		#>
-        public static <#= quantity.ClassName #> Sum(this IEnumerable<<#= quantity.ClassName #>> source)
+        public static <#= quantity.Name #> Sum(this IEnumerable<<#= quantity.Name #>> source)
         {
             if (source == null)
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -31,7 +32,8 @@ namespace <#= Settings.Namespace #>
                     sum += v.<#= quantity.Unit.ParameterName #>;
                 }
             }
-            return <#= quantity.ClassName #>.From<#= quantity.Unit.ClassName #>(sum);
+
+            return <#= quantity.Name #>.From<#= quantity.Unit.Name #>(sum);
         }
 
 <# } #>
@@ -39,7 +41,7 @@ namespace <#= Settings.Namespace #>
     foreach(var quantity in quantities)
     {
 		#>
-        public static <#= quantity.ClassName #>? Sum(this IEnumerable<<#= quantity.ClassName #>?> source)
+        public static <#= quantity.Name #>? Sum(this IEnumerable<<#= quantity.Name #>?> source)
         {
             if (source == null)
             {
@@ -56,7 +58,7 @@ namespace <#= Settings.Namespace #>
                     }
                 }
             }
-            return <#= quantity.ClassName #>.From<#= quantity.Unit.ClassName #>(sum);
+            return <#= quantity.Name #>.From<#= quantity.Unit.Name #>(sum);
         }
 
 <# } #>
@@ -64,13 +66,13 @@ namespace <#= Settings.Namespace #>
     foreach(var quantity in quantities)
     {
 		#>
-        public static <#= quantity.ClassName #> Min(this IEnumerable<<#= quantity.ClassName #>> source)
+        public static <#= quantity.Name #> Min(this IEnumerable<<#= quantity.Name #>> source)
         {
             if (source == null)
             {
                 throw new ArgumentNullException("source");
             }
-            var value = default(<#= quantity.ClassName #>);
+            var value = default(<#= quantity.Name #>);
             bool hasValue = false;
             foreach (var x in source)
             {
@@ -100,13 +102,13 @@ namespace <#= Settings.Namespace #>
     foreach(var quantity in quantities)
     {
 		#>
-        public static <#= quantity.ClassName #>? Min(this IEnumerable<<#= quantity.ClassName #>?> source)
+        public static <#= quantity.Name #>? Min(this IEnumerable<<#= quantity.Name #>?> source)
         {
             if (source == null)
             {
                 throw new ArgumentNullException("source");
             }
-            <#= quantity.ClassName #>? value = null;
+            <#= quantity.Name #>? value = null;
             foreach (var x in source)
             {
                 if (x == null)
@@ -130,15 +132,15 @@ namespace <#= Settings.Namespace #>
     foreach(var quantity in quantities)
     {
 		#>
-        public static <#= quantity.ClassName #> Max(this IEnumerable<<#= quantity.ClassName #>> source)
+        public static <#= quantity.Name #> Max(this IEnumerable<<#= quantity.Name #>> source)
         {
             if (source == null)
             {
                 throw new ArgumentNullException("source");
             }
-            <#= quantity.ClassName #> value = default(<#= quantity.ClassName #>);
+            <#= quantity.Name #> value = default(<#= quantity.Name #>);
             bool hasValue = false;
-            foreach (<#= quantity.ClassName #> x in source)
+            foreach (<#= quantity.Name #> x in source)
             {
                 if (System.Double.IsNaN(x.<#= quantity.Unit.ParameterName #>))
                 {
@@ -166,13 +168,13 @@ namespace <#= Settings.Namespace #>
     foreach(var quantity in quantities)
     {
 		#>
-        public static <#= quantity.ClassName #>? Max(this IEnumerable<<#= quantity.ClassName #>?> source)
+        public static <#= quantity.Name #>? Max(this IEnumerable<<#= quantity.Name #>?> source)
         {
             if (source == null)
             {
                 throw new ArgumentNullException("source");
             }
-            <#= quantity.ClassName #>? value = null;
+            <#= quantity.Name #>? value = null;
             foreach (var x in source)
             {
                 if (x == null)
@@ -196,7 +198,7 @@ namespace <#= Settings.Namespace #>
     foreach(var quantity in quantities)
     {
 		#>
-        public static <#= quantity.ClassName #> Average(this IEnumerable<<#= quantity.ClassName #>> source)
+        public static <#= quantity.Name #> Average(this IEnumerable<<#= quantity.Name #>> source)
         {
             if (source == null)
             {
@@ -214,7 +216,7 @@ namespace <#= Settings.Namespace #>
             }
             if (count > 0)
             {
-                return <#= quantity.ClassName #>.From<#= quantity.Unit.ClassName #>(sum / count);
+                return <#= quantity.Name #>.From<#= quantity.Unit.Name #>(sum / count);
             }
             throw new ArgumentException("No elements", "source");
         }
@@ -225,7 +227,7 @@ namespace <#= Settings.Namespace #>
     {
 		#>
 
-        public static <#= quantity.ClassName #>? Average(this IEnumerable<<#= quantity.ClassName #>?> source)
+        public static <#= quantity.Name #>? Average(this IEnumerable<<#= quantity.Name #>?> source)
         {
             if (source == null)
             {
@@ -246,7 +248,7 @@ namespace <#= Settings.Namespace #>
             }
             if (count > 0)
             {
-                return <#= quantity.ClassName #>.From<#= quantity.Unit.ClassName #>(sum / count);
+                return <#= quantity.Name #>.From<#= quantity.Unit.Name #>(sum / count);
             }
             return null;
         }

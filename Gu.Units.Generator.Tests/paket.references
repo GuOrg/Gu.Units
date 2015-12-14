@@ -1,1 +1,6 @@
+Moq
 NUnit
+Gu.Wpf.Reactive
+Gu.ChangeTracking
+Newtonsoft.Json
+Microsoft.CodeAnalysis.CSharp.Scripting

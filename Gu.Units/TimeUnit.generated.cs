@@ -5,113 +5,73 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.TimeUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Time"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(TimeUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Seconds.symbol}")]
+    [Serializable, TypeConverter(typeof(TimeUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{TimeUnit.symbol}")]
     public struct TimeUnit : IUnit, IUnit<Time>, IEquatable<TimeUnit>
     {
         /// <summary>
-        /// The Seconds unit
-        /// Contains conversion logic to from and formatting.
+        /// The TimeUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly TimeUnit Seconds = new TimeUnit(1.0, "s");
-
-        /// <summary>
-        /// The Seconds unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly TimeUnit s = Seconds;
-
-        /// <summary>
-        /// The Nanoseconds unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly TimeUnit Nanoseconds = new TimeUnit(1E-09, "ns");
-
-        /// <summary>
-        /// The Nanoseconds unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly TimeUnit ns = Nanoseconds;
-
-        /// <summary>
-        /// The Microseconds unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly TimeUnit Microseconds = new TimeUnit(1E-06, "µs");
-
-        /// <summary>
-        /// The Microseconds unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly TimeUnit µs = Microseconds;
-
-        /// <summary>
-        /// The Milliseconds unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly TimeUnit Milliseconds = new TimeUnit(0.001, "ms");
-
-        /// <summary>
-        /// The Milliseconds unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly TimeUnit ms = Milliseconds;
+        public static readonly TimeUnit Seconds = new TimeUnit(seconds => seconds, seconds => seconds, "s");
 
         /// <summary>
         /// The Hours unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly TimeUnit Hours = new TimeUnit(3600, "h");
-
-        /// <summary>
-        /// The Hours unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly TimeUnit h = Hours;
+        public static readonly TimeUnit Hours = new TimeUnit(hours => 3600 * hours, seconds => seconds / 3600, "h");
 
         /// <summary>
         /// The Minutes unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly TimeUnit Minutes = new TimeUnit(60, "min");
+        public static readonly TimeUnit Minutes = new TimeUnit(minutes => 60 * minutes, seconds => seconds / 60, "min");
 
         /// <summary>
-        /// The Minutes unit
+        /// The Nanoseconds unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly TimeUnit min = Minutes;
+        public static readonly TimeUnit Nanoseconds = new TimeUnit(nanoseconds => nanoseconds / 1000000000, seconds => 1000000000 * seconds, "ns");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        /// <summary>
+        /// The Microseconds unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly TimeUnit Microseconds = new TimeUnit(microseconds => microseconds / 1000000, seconds => 1000000 * seconds, "µs");
 
-        public TimeUnit(double conversionFactor, string symbol)
+        /// <summary>
+        /// The Milliseconds unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly TimeUnit Milliseconds = new TimeUnit(milliseconds => milliseconds / 1000, seconds => 1000 * seconds, "ms");
+
+        private readonly Func<double, double> toSeconds;
+        private readonly Func<double, double> fromSeconds;
+        internal readonly string symbol;
+
+        public TimeUnit(Func<double, double> toSeconds, Func<double, double> fromSeconds, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toSeconds = toSeconds;
+            this.fromSeconds = fromSeconds;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.TimeUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.TimeUnit"/>
         /// </summary>
-        public TimeUnit SiUnit => TimeUnit.Seconds;
+        public TimeUnit SiUnit => Seconds;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.TimeUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => TimeUnit.Seconds;
+        IUnit IUnit.SiUnit => Seconds;
 
         public static Time operator *(double left, TimeUnit right)
         {
@@ -145,7 +105,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toSeconds(value);
         }
 
         /// <summary>
@@ -153,9 +113,9 @@
         /// </summary>
         /// <param name="value">The value in Seconds</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double seconds)
         {
-            return value / this.conversionFactor;
+            return this.fromSeconds(seconds);
         }
 
         /// <summary>
@@ -169,7 +129,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Seconds
+        /// Gets the scalar value of <paramref name="quantity"/> in TimeUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

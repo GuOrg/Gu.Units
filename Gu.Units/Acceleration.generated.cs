@@ -67,26 +67,34 @@
         }
 
         /// <summary>
-        /// The quantity in millimetresPerSecondSquared
+        /// The quantity in CentimetresPerSecondSquared
         /// </summary>
-        public double MillimetresPerSecondSquared
-        {
-            get
-            {
-                return AccelerationUnit.MillimetresPerSecondSquared.FromSiUnit(this.metresPerSecondSquared);
-            }
-        }
+        public double CentimetresPerSecondSquared => 100 * this.metresPerSecondSquared;
 
         /// <summary>
-        /// The quantity in centimetresPerSecondSquared
+        /// The quantity in MillimetresPerSecondSquared
         /// </summary>
-        public double CentimetresPerSecondSquared
-        {
-            get
-            {
-                return AccelerationUnit.CentimetresPerSecondSquared.FromSiUnit(this.metresPerSecondSquared);
-            }
-        }
+        public double MillimetresPerSecondSquared => 1000 * this.metresPerSecondSquared;
+
+        /// <summary>
+        /// The quantity in MillimetresPerHourSquared
+        /// </summary>
+        public double MillimetresPerHourSquared => 12960000000 * this.metresPerSecondSquared;
+
+        /// <summary>
+        /// The quantity in CentimetresPerHourSquared
+        /// </summary>
+        public double CentimetresPerHourSquared => 1296000000 * this.metresPerSecondSquared;
+
+        /// <summary>
+        /// The quantity in MetresPerHourSquared
+        /// </summary>
+        public double MetresPerHourSquared => 12960000 * this.metresPerSecondSquared;
+
+        /// <summary>
+        /// The quantity in MetresPerMinuteSquared
+        /// </summary>
+        public double MetresPerMinuteSquared => 3600 * this.metresPerSecondSquared;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
@@ -167,24 +175,55 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
         /// </summary>
-        /// <param name="millimetresPerSecondSquared">The value in mm/s²</param>
-        public static Acceleration FromMillimetresPerSecondSquared(double millimetresPerSecondSquared)
+        /// <param name="centimetresPerSecondSquared">The value in cm/s²</param>
+        public static Acceleration FromCentimetresPerSecondSquared(double centimetresPerSecondSquared)
         {
-            return From(millimetresPerSecondSquared, AccelerationUnit.MillimetresPerSecondSquared);
+            return new Acceleration(centimetresPerSecondSquared / 100);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
         /// </summary>
-        /// <param name="centimetresPerSecondSquared">The value in cm/s²</param>
-        public static Acceleration FromCentimetresPerSecondSquared(double centimetresPerSecondSquared)
+        /// <param name="millimetresPerSecondSquared">The value in mm/s²</param>
+        public static Acceleration FromMillimetresPerSecondSquared(double millimetresPerSecondSquared)
         {
-            return From(centimetresPerSecondSquared, AccelerationUnit.CentimetresPerSecondSquared);
+            return new Acceleration(millimetresPerSecondSquared / 1000);
         }
 
-        public static Time operator /(Acceleration left, Jerk right)
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
+        /// </summary>
+        /// <param name="millimetresPerHourSquared">The value in mm/h²</param>
+        public static Acceleration FromMillimetresPerHourSquared(double millimetresPerHourSquared)
         {
-            return Time.FromSeconds(left.metresPerSecondSquared / right.metresPerSecondCubed);
+            return new Acceleration(millimetresPerHourSquared / 12960000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
+        /// </summary>
+        /// <param name="centimetresPerHourSquared">The value in cm/h²</param>
+        public static Acceleration FromCentimetresPerHourSquared(double centimetresPerHourSquared)
+        {
+            return new Acceleration(centimetresPerHourSquared / 1296000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
+        /// </summary>
+        /// <param name="metresPerHourSquared">The value in m/h²</param>
+        public static Acceleration FromMetresPerHourSquared(double metresPerHourSquared)
+        {
+            return new Acceleration(metresPerHourSquared / 12960000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
+        /// </summary>
+        /// <param name="metresPerMinuteSquared">The value in m/min²</param>
+        public static Acceleration FromMetresPerMinuteSquared(double metresPerMinuteSquared)
+        {
+            return new Acceleration(metresPerMinuteSquared / 3600);
         }
 
         public static Force operator *(Acceleration left, Mass right)
@@ -192,9 +231,19 @@
             return Force.FromNewtons(left.metresPerSecondSquared * right.kilograms);
         }
 
+        public static SpecificEnergy operator *(Acceleration left, Length right)
+        {
+            return SpecificEnergy.FromJoulesPerKilogram(left.metresPerSecondSquared * right.metres);
+        }
+
         public static Speed operator *(Acceleration left, Time right)
         {
             return Speed.FromMetresPerSecond(left.metresPerSecondSquared * right.seconds);
+        }
+
+        public static Jerk operator /(Acceleration left, Time right)
+        {
+            return Jerk.FromMetresPerSecondCubed(left.metresPerSecondSquared / right.seconds);
         }
 
         public static Frequency operator /(Acceleration left, Speed right)
@@ -202,14 +251,39 @@
             return Frequency.FromHertz(left.metresPerSecondSquared / right.metresPerSecond);
         }
 
-        public static SpecificEnergy operator *(Acceleration left, Length right)
+        public static Jerk operator *(Acceleration left, Frequency right)
         {
-            return SpecificEnergy.FromJoulesPerKilogram(left.metresPerSecondSquared * right.metres);
+            return Jerk.FromMetresPerSecondCubed(left.metresPerSecondSquared * right.hertz);
         }
 
-        public static Jerk operator /(Acceleration left, Time right)
+        public static Speed operator /(Acceleration left, Frequency right)
         {
-            return Jerk.FromMetresPerSecondCubed(left.metresPerSecondSquared / right.seconds);
+            return Speed.FromMetresPerSecond(left.metresPerSecondSquared / right.hertz);
+        }
+
+        public static Wavenumber operator /(Acceleration left, SpecificEnergy right)
+        {
+            return Wavenumber.FromReciprocalMetres(left.metresPerSecondSquared / right.joulesPerKilogram);
+        }
+
+        public static Time operator /(Acceleration left, Jerk right)
+        {
+            return Time.FromSeconds(left.metresPerSecondSquared / right.metresPerSecondCubed);
+        }
+
+        public static Power operator *(Acceleration left, Momentum right)
+        {
+            return Power.FromWatts(left.metresPerSecondSquared * right.newtonSecond);
+        }
+
+        public static SpecificEnergy operator /(Acceleration left, Wavenumber right)
+        {
+            return SpecificEnergy.FromJoulesPerKilogram(left.metresPerSecondSquared / right.reciprocalMetres);
+        }
+
+        public static Pressure operator *(Acceleration left, AreaDensity right)
+        {
+            return Pressure.FromPascals(left.metresPerSecondSquared * right.kilogramsPerSquareMetre);
         }
 
         public static double operator /(Acceleration left, Acceleration right)

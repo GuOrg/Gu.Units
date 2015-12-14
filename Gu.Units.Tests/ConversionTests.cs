@@ -1,5 +1,8 @@
 ﻿namespace Gu.Units.Tests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Globalization;
     using NUnit.Framework;
     using Sources;
 
@@ -14,7 +17,6 @@
                           {
                               Length.FromCentimetres(Centimetres),
                               new Length(Centimetres, LengthUnit.Centimetres),
-                              Length.From(Centimetres, LengthUnit.cm)
                           };
             foreach (var cm in cms)
             {
@@ -32,7 +34,6 @@
                           {
                               Length.FromCentimetres(Centimetres),
                               new Length(Centimetres, LengthUnit.Centimetres),
-                              Length.From(Centimetres, LengthUnit.cm)
                           };
             foreach (var cm in cms)
             {
@@ -43,7 +44,13 @@
         }
 
         [TestCaseSource(typeof(ConversionProvider))]
-        public void Convert(ConversionProvider.IConversion<IQuantity> conversion)
+        public void UnitConvert(ConversionProvider.IConversion<IQuantity> conversion)
+        {
+            Assert.AreEqual(conversion.FromQuantity, conversion.ToQuantity);
+        }
+
+        [TestCaseSource(nameof(QuantityConversions))]
+        public void QtyConvert(ConversionProvider.IConversion<IQuantity> conversion)
         {
             Assert.AreEqual(conversion.FromQuantity, conversion.ToQuantity);
         }
@@ -69,7 +76,7 @@
                 dynamic u = (dynamic)unit;
                 var qty = u.CreateQuantity(value); // Hacking it with dynamic here
                 Assert.IsInstanceOf<IQuantity>(qty);
-                
+
                 var d = qty.GetValue(u);
                 Assert.AreEqual(value, d, 1E-9);
 
@@ -77,5 +84,19 @@
                 Assert.AreEqual(value, d, 1E-9);
             }
         }
+
+        private readonly IReadOnlyList<ConversionProvider.IConversion<IQuantity>> QuantityConversions = new[]
+        {
+            new ConversionProvider.Conversion<IQuantity>(Length.FromMillimetres(1.2), Length.FromMetres(0.0012)),
+            new ConversionProvider.Conversion<IQuantity>(Length.FromCentimetres(-1.2), Length.FromMetres(-0.012)),
+            new ConversionProvider.Conversion<IQuantity>(Length.FromKilometres(1.2), Length.FromMetres(1200)),
+            new ConversionProvider.Conversion<IQuantity>(Angle.FromRadians(-1.2), Angle.FromDegrees(-1.2*180/Math.PI)),
+            new ConversionProvider.Conversion<IQuantity>(Angle.FromRadians(1.2*Math.PI/180), Angle.FromDegrees(1.2)),
+            new ConversionProvider.Conversion<IQuantity>(Volume.FromLitres(1.2), Volume.FromCubicMetres(0.0012)),
+            new ConversionProvider.Conversion<IQuantity>(Volume.FromMillilitres(1.2), Volume.FromCubicMetres(0.0000012)),
+            new ConversionProvider.Conversion<IQuantity>(Temperature.FromKelvin(1.2), Temperature.FromCelsius(1.2 -273.15)),
+            new ConversionProvider.Conversion<IQuantity>(Pressure.FromBars(1.2), Pressure.FromMegapascals(0.12)),
+            new ConversionProvider.Conversion<IQuantity>(Pressure.FromNewtonsPerSquareMillimetre(1.2), Pressure.FromMegapascals(1.2)),
+        };
     }
 }

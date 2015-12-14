@@ -5,77 +5,61 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.UnitlessUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Unitless"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(UnitlessUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Scalar.symbol}")]
+    [Serializable, TypeConverter(typeof(UnitlessUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{UnitlessUnit.symbol}")]
     public struct UnitlessUnit : IUnit, IUnit<Unitless>, IEquatable<UnitlessUnit>
     {
         /// <summary>
-        /// The Scalar unit
-        /// Contains conversion logic to from and formatting.
+        /// The UnitlessUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly UnitlessUnit Scalar = new UnitlessUnit(1.0, "ul");
-
-        /// <summary>
-        /// The Scalar unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly UnitlessUnit ul = Scalar;
-
-        /// <summary>
-        /// The PartsPerMillion unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly UnitlessUnit PartsPerMillion = new UnitlessUnit(1E-06, "ppm");
-
-        /// <summary>
-        /// The PartsPerMillion unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly UnitlessUnit ppm = PartsPerMillion;
+        public static readonly UnitlessUnit Scalar = new UnitlessUnit(scalar => scalar, scalar => scalar, "ul");
 
         /// <summary>
         /// The Promilles unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly UnitlessUnit Promilles = new UnitlessUnit(0.001, "‰");
+        public static readonly UnitlessUnit Promilles = new UnitlessUnit(promilles => promilles / 1000, scalar => 1000 * scalar, "‰");
+
+        /// <summary>
+        /// The PartsPerMillion unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly UnitlessUnit PartsPerMillion = new UnitlessUnit(partsPerMillion => partsPerMillion / 1000000, scalar => 1000000 * scalar, "ppm");
 
         /// <summary>
         /// The Percents unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly UnitlessUnit Percents = new UnitlessUnit(0.01, "%");
+        public static readonly UnitlessUnit Percents = new UnitlessUnit(percents => percents / 100, scalar => 100 * scalar, "%");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        private readonly Func<double, double> toScalar;
+        private readonly Func<double, double> fromScalar;
+        internal readonly string symbol;
 
-        public UnitlessUnit(double conversionFactor, string symbol)
+        public UnitlessUnit(Func<double, double> toScalar, Func<double, double> fromScalar, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toScalar = toScalar;
+            this.fromScalar = fromScalar;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.UnitlessUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.UnitlessUnit"/>
         /// </summary>
-        public UnitlessUnit SiUnit => UnitlessUnit.Scalar;
+        public UnitlessUnit SiUnit => Scalar;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.UnitlessUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => UnitlessUnit.Scalar;
+        IUnit IUnit.SiUnit => Scalar;
 
         public static Unitless operator *(double left, UnitlessUnit right)
         {
@@ -109,7 +93,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toScalar(value);
         }
 
         /// <summary>
@@ -117,9 +101,9 @@
         /// </summary>
         /// <param name="value">The value in Scalar</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double scalar)
         {
-            return value / this.conversionFactor;
+            return this.fromScalar(scalar);
         }
 
         /// <summary>
@@ -133,7 +117,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Scalar
+        /// Gets the scalar value of <paramref name="quantity"/> in UnitlessUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

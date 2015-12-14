@@ -13,7 +13,6 @@
         public static readonly LengthPerUnitlessJsonConverter MetresPerUnitless = new LengthPerUnitlessJsonConverter(LengthPerUnitlessUnit.MetresPerUnitless);
         public static readonly LengthPerUnitlessJsonConverter MillimetresPerPercent = new LengthPerUnitlessJsonConverter(LengthPerUnitlessUnit.MillimetresPerPercent);
         public static readonly LengthPerUnitlessJsonConverter MicrometresPerPercent = new LengthPerUnitlessJsonConverter(LengthPerUnitlessUnit.MicrometresPerPercent);
-        public static readonly LengthPerUnitlessJsonConverter NanometresPerPercent = new LengthPerUnitlessJsonConverter(LengthPerUnitlessUnit.NanometresPerPercent);
         public static readonly LengthPerUnitlessJsonConverter MetresPerPercent = new LengthPerUnitlessJsonConverter(LengthPerUnitlessUnit.MetresPerPercent);
 
         private readonly LengthPerUnitlessUnit unit;

@@ -5,125 +5,79 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.PowerUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Power"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(PowerUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Watts.symbol}")]
+    [Serializable, TypeConverter(typeof(PowerUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{PowerUnit.symbol}")]
     public struct PowerUnit : IUnit, IUnit<Power>, IEquatable<PowerUnit>
     {
         /// <summary>
-        /// The Watts unit
-        /// Contains conversion logic to from and formatting.
+        /// The PowerUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly PowerUnit Watts = new PowerUnit(1.0, "W");
-
-        /// <summary>
-        /// The Watts unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PowerUnit W = Watts;
+        public static readonly PowerUnit Watts = new PowerUnit(watts => watts, watts => watts, "W");
 
         /// <summary>
         /// The Nanowatts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly PowerUnit Nanowatts = new PowerUnit(1E-09, "nW");
-
-        /// <summary>
-        /// The Nanowatts unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PowerUnit nW = Nanowatts;
+        public static readonly PowerUnit Nanowatts = new PowerUnit(nanowatts => nanowatts / 1000000000, watts => 1000000000 * watts, "nW");
 
         /// <summary>
         /// The Microwatts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly PowerUnit Microwatts = new PowerUnit(1E-06, "µW");
-
-        /// <summary>
-        /// The Microwatts unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PowerUnit µW = Microwatts;
+        public static readonly PowerUnit Microwatts = new PowerUnit(microwatts => microwatts / 1000000, watts => 1000000 * watts, "µW");
 
         /// <summary>
         /// The Milliwatts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly PowerUnit Milliwatts = new PowerUnit(0.001, "mW");
-
-        /// <summary>
-        /// The Milliwatts unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PowerUnit mW = Milliwatts;
+        public static readonly PowerUnit Milliwatts = new PowerUnit(milliwatts => milliwatts / 1000, watts => 1000 * watts, "mW");
 
         /// <summary>
         /// The Kilowatts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly PowerUnit Kilowatts = new PowerUnit(1000, "kW");
-
-        /// <summary>
-        /// The Kilowatts unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PowerUnit kW = Kilowatts;
+        public static readonly PowerUnit Kilowatts = new PowerUnit(kilowatts => 1000 * kilowatts, watts => watts / 1000, "kW");
 
         /// <summary>
         /// The Megawatts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly PowerUnit Megawatts = new PowerUnit(1000000, "MW");
-
-        /// <summary>
-        /// The Megawatts unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PowerUnit MW = Megawatts;
+        public static readonly PowerUnit Megawatts = new PowerUnit(megawatts => 1000000 * megawatts, watts => watts / 1000000, "MW");
 
         /// <summary>
         /// The Gigawatts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly PowerUnit Gigawatts = new PowerUnit(1000000000, "GW");
+        public static readonly PowerUnit Gigawatts = new PowerUnit(gigawatts => 1000000000 * gigawatts, watts => watts / 1000000000, "GW");
 
-        /// <summary>
-        /// The Gigawatts unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PowerUnit GW = Gigawatts;
+        private readonly Func<double, double> toWatts;
+        private readonly Func<double, double> fromWatts;
+        internal readonly string symbol;
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
-
-        public PowerUnit(double conversionFactor, string symbol)
+        public PowerUnit(Func<double, double> toWatts, Func<double, double> fromWatts, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toWatts = toWatts;
+            this.fromWatts = fromWatts;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.PowerUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.PowerUnit"/>
         /// </summary>
-        public PowerUnit SiUnit => PowerUnit.Watts;
+        public PowerUnit SiUnit => Watts;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.PowerUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => PowerUnit.Watts;
+        IUnit IUnit.SiUnit => Watts;
 
         public static Power operator *(double left, PowerUnit right)
         {
@@ -157,7 +111,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toWatts(value);
         }
 
         /// <summary>
@@ -165,9 +119,9 @@
         /// </summary>
         /// <param name="value">The value in Watts</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double watts)
         {
-            return value / this.conversionFactor;
+            return this.fromWatts(watts);
         }
 
         /// <summary>
@@ -181,7 +135,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Watts
+        /// Gets the scalar value of <paramref name="quantity"/> in PowerUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

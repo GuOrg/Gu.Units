@@ -1,0 +1,1942 @@
+{
+  "Prefixes": [
+    {
+      "Name": "Nano",
+      "Symbol": "n",
+      "Power": -9
+    },
+    {
+      "Name": "Micro",
+      "Symbol": "µ",
+      "Power": -6
+    },
+    {
+      "Name": "Milli",
+      "Symbol": "m",
+      "Power": -3
+    },
+    {
+      "Name": "Centi",
+      "Symbol": "c",
+      "Power": -2
+    },
+    {
+      "Name": "Deci",
+      "Symbol": "d",
+      "Power": -1
+    },
+    {
+      "Name": "Kilo",
+      "Symbol": "k",
+      "Power": 3
+    },
+    {
+      "Name": "Mega",
+      "Symbol": "M",
+      "Power": 6
+    },
+    {
+      "Name": "Giga",
+      "Symbol": "G",
+      "Power": 9
+    },
+    {
+      "Name": "Tera",
+      "Symbol": "T",
+      "Power": 12
+    }
+  ],
+  "BaseUnits": [
+    {
+      "Name": "Kilograms",
+      "Symbol": "kg",
+      "QuantityName": "Mass",
+      "FactorConversions": [
+        {
+          "Name": "Grams",
+          "Symbol": "g",
+          "Factor": 0.001,
+          "PrefixConversions": [
+            {
+              "Name": "Milligrams",
+              "Symbol": "mg",
+              "PrefixName": "Milli"
+            },
+            {
+              "Name": "Micrograms",
+              "Symbol": "µg",
+              "PrefixName": "Micro"
+            }
+          ]
+        }
+      ],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Name": "Metres",
+      "Symbol": "m",
+      "QuantityName": "Length",
+      "FactorConversions": [
+        {
+          "Name": "Inches",
+          "Symbol": "in",
+          "Factor": 0.0254,
+          "PrefixConversions": []
+        },
+        {
+          "Name": "Mile",
+          "Symbol": "mi",
+          "Factor": 1609.344,
+          "PrefixConversions": []
+        },
+        {
+          "Name": "Yard",
+          "Symbol": "yd",
+          "Factor": 0.9144,
+          "PrefixConversions": []
+        },
+        {
+          "Name": "NauticalMile",
+          "Symbol": "nmi",
+          "Factor": 1852.0,
+          "PrefixConversions": []
+        }
+      ],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "Nanometres",
+          "Symbol": "nm",
+          "PrefixName": "Nano"
+        },
+        {
+          "Name": "Micrometres",
+          "Symbol": "µm",
+          "PrefixName": "Micro"
+        },
+        {
+          "Name": "Millimetres",
+          "Symbol": "mm",
+          "PrefixName": "Milli"
+        },
+        {
+          "Name": "Centimetres",
+          "Symbol": "cm",
+          "PrefixName": "Centi"
+        },
+        {
+          "Name": "Decimetres",
+          "Symbol": "dm",
+          "PrefixName": "Deci"
+        },
+        {
+          "Name": "Kilometres",
+          "Symbol": "km",
+          "PrefixName": "Kilo"
+        }
+      ],
+      "PartConversions": []
+    },
+    {
+      "Name": "Seconds",
+      "Symbol": "s",
+      "QuantityName": "Time",
+      "FactorConversions": [
+        {
+          "Name": "Hours",
+          "Symbol": "h",
+          "Factor": 3600.0,
+          "PrefixConversions": []
+        },
+        {
+          "Name": "Minutes",
+          "Symbol": "min",
+          "Factor": 60.0,
+          "PrefixConversions": []
+        }
+      ],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "Nanoseconds",
+          "Symbol": "ns",
+          "PrefixName": "Nano"
+        },
+        {
+          "Name": "Microseconds",
+          "Symbol": "µs",
+          "PrefixName": "Micro"
+        },
+        {
+          "Name": "Milliseconds",
+          "Symbol": "ms",
+          "PrefixName": "Milli"
+        }
+      ],
+      "PartConversions": []
+    },
+    {
+      "Name": "Kelvin",
+      "Symbol": "K",
+      "QuantityName": "Temperature",
+      "FactorConversions": [],
+      "CustomConversions": [
+        {
+          "Name": "Celsius",
+          "Symbol": "°C",
+          "ToSi": "celsius + 273.15",
+          "FromSi": "kelvin - 273.15"
+        },
+        {
+          "Name": "Fahrenheit",
+          "Symbol": "°F",
+          "ToSi": "(fahrenheit + 459.67)/1.8",
+          "FromSi": "1.8*kelvin - 459.67"
+        }
+      ],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Name": "Radians",
+      "Symbol": "rad",
+      "QuantityName": "Angle",
+      "FactorConversions": [],
+      "CustomConversions": [
+        {
+          "Name": "Degrees",
+          "Symbol": "°",
+          "ToSi": "degrees/57.295779513082323",
+          "FromSi": "57.295779513082323*radians"
+        }
+      ],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Name": "Scalar",
+      "Symbol": "ul",
+      "QuantityName": "Unitless",
+      "FactorConversions": [
+        {
+          "Name": "Promilles",
+          "Symbol": "‰",
+          "Factor": 0.001,
+          "PrefixConversions": []
+        },
+        {
+          "Name": "PartsPerMillion",
+          "Symbol": "ppm",
+          "Factor": 1E-06,
+          "PrefixConversions": []
+        },
+        {
+          "Name": "Percents",
+          "Symbol": "%",
+          "Factor": 0.01,
+          "PrefixConversions": []
+        }
+      ],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Name": "Amperes",
+      "Symbol": "A",
+      "QuantityName": "Current",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "Milliamperes",
+          "Symbol": "mA",
+          "PrefixName": "Milli"
+        },
+        {
+          "Name": "Kiloamperes",
+          "Symbol": "kA",
+          "PrefixName": "Kilo"
+        },
+        {
+          "Name": "Megaamperes",
+          "Symbol": "MA",
+          "PrefixName": "Mega"
+        },
+        {
+          "Name": "Microamperes",
+          "Symbol": "µA",
+          "PrefixName": "Micro"
+        },
+        {
+          "Name": "Nanoamperes",
+          "Symbol": "nA",
+          "PrefixName": "Nano"
+        },
+        {
+          "Name": "Gigaamperes",
+          "Symbol": "GA",
+          "PrefixName": "Giga"
+        }
+      ],
+      "PartConversions": []
+    },
+    {
+      "Name": "Candelas",
+      "Symbol": "cd",
+      "QuantityName": "LuminousIntensity",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Name": "Bits",
+      "Symbol": "bit",
+      "QuantityName": "Data",
+      "FactorConversions": [
+        {
+          "Name": "Byte",
+          "Symbol": "B",
+          "Factor": 8.0,
+          "PrefixConversions": [
+            {
+              "Name": "Kilobyte",
+              "Symbol": "kB",
+              "PrefixName": "Kilo"
+            },
+            {
+              "Name": "Megabyte",
+              "Symbol": "MB",
+              "PrefixName": "Mega"
+            },
+            {
+              "Name": "Gigabyte",
+              "Symbol": "GB",
+              "PrefixName": "Giga"
+            },
+            {
+              "Name": "Terabyte",
+              "Symbol": "TB",
+              "PrefixName": "Tera"
+            }
+          ]
+        }
+      ],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "Megabits",
+          "Symbol": "Mbit",
+          "PrefixName": "Mega"
+        },
+        {
+          "Name": "Gigabits",
+          "Symbol": "Gbit",
+          "PrefixName": "Giga"
+        },
+        {
+          "Name": "Kilobits",
+          "Symbol": "kbit",
+          "PrefixName": "Kilo"
+        }
+      ],
+      "PartConversions": []
+    },
+    {
+      "Name": "Moles",
+      "Symbol": "mol",
+      "QuantityName": "AmountOfSubstance",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Name": "Steradians",
+      "Symbol": "sr",
+      "QuantityName": "SolidAngle",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    }
+  ],
+  "DerivedUnits": [
+    {
+      "Parts": [
+        {
+          "UnitName": "Metres",
+          "Power": 2
+        }
+      ],
+      "Name": "SquareMetres",
+      "Symbol": "m²",
+      "QuantityName": "Area",
+      "FactorConversions": [
+        {
+          "Name": "Hectare",
+          "Symbol": "ha",
+          "Factor": 10000.0,
+          "PrefixConversions": []
+        }
+      ],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "SquareMillimetres",
+          "Symbol": "mm²",
+          "Factor": 1E-06
+        },
+        {
+          "Name": "SquareCentimetres",
+          "Symbol": "cm²",
+          "Factor": 0.0001
+        },
+        {
+          "Name": "SquareDecimetres",
+          "Symbol": "dm²",
+          "Factor": 0.010000000000000002
+        },
+        {
+          "Name": "SquareKilometres",
+          "Symbol": "km²",
+          "Factor": 1000000.0
+        },
+        {
+          "Name": "SquareMile",
+          "Symbol": "mi²",
+          "Factor": 2589988.110336
+        },
+        {
+          "Name": "SquareYard",
+          "Symbol": "yd²",
+          "Factor": 0.83612736
+        },
+        {
+          "Name": "SquareInches",
+          "Symbol": "in²",
+          "Factor": 0.00064516
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Metres",
+          "Power": 3
+        }
+      ],
+      "Name": "CubicMetres",
+      "Symbol": "m³",
+      "QuantityName": "Volume",
+      "FactorConversions": [
+        {
+          "Name": "Litres",
+          "Symbol": "L",
+          "Factor": 0.0010000000000000002,
+          "PrefixConversions": [
+            {
+              "Name": "Millilitres",
+              "Symbol": "ml",
+              "PrefixName": "Milli"
+            },
+            {
+              "Name": "Centilitres",
+              "Symbol": "cl",
+              "PrefixName": "Centi"
+            },
+            {
+              "Name": "Decilitres",
+              "Symbol": "dl",
+              "PrefixName": "Deci"
+            }
+          ]
+        }
+      ],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "CubicCentimetres",
+          "Symbol": "cm³",
+          "Factor": 1.0000000000000002E-06
+        },
+        {
+          "Name": "CubicMillimetres",
+          "Symbol": "mm³",
+          "Factor": 1E-09
+        },
+        {
+          "Name": "CubicInches",
+          "Symbol": "in³",
+          "Factor": 1.6387064E-05
+        },
+        {
+          "Name": "CubicDecimetres",
+          "Symbol": "dm³",
+          "Factor": 0.0010000000000000002
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Kilograms",
+          "Power": 1
+        },
+        {
+          "UnitName": "Metres",
+          "Power": 1
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": -2
+        }
+      ],
+      "Name": "Newtons",
+      "Symbol": "N",
+      "QuantityName": "Force",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "Nanonewtons",
+          "Symbol": "nN",
+          "PrefixName": "Nano"
+        },
+        {
+          "Name": "Micronewtons",
+          "Symbol": "µN",
+          "PrefixName": "Micro"
+        },
+        {
+          "Name": "Millinewtons",
+          "Symbol": "mN",
+          "PrefixName": "Milli"
+        },
+        {
+          "Name": "Kilonewtons",
+          "Symbol": "kN",
+          "PrefixName": "Kilo"
+        },
+        {
+          "Name": "Meganewtons",
+          "Symbol": "MN",
+          "PrefixName": "Mega"
+        },
+        {
+          "Name": "Giganewtons",
+          "Symbol": "GN",
+          "PrefixName": "Giga"
+        }
+      ],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Newtons",
+          "Power": 1
+        },
+        {
+          "UnitName": "Metres",
+          "Power": -2
+        }
+      ],
+      "Name": "Pascals",
+      "Symbol": "Pa",
+      "QuantityName": "Pressure",
+      "FactorConversions": [
+        {
+          "Name": "Bars",
+          "Symbol": "bar",
+          "Factor": 100000.0,
+          "PrefixConversions": [
+            {
+              "Name": "Millibars",
+              "Symbol": "mbar",
+              "PrefixName": "Milli"
+            }
+          ]
+        }
+      ],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "Nanopascals",
+          "Symbol": "nPa",
+          "PrefixName": "Nano"
+        },
+        {
+          "Name": "Micropascals",
+          "Symbol": "µPa",
+          "PrefixName": "Micro"
+        },
+        {
+          "Name": "Millipascals",
+          "Symbol": "mPa",
+          "PrefixName": "Milli"
+        },
+        {
+          "Name": "Kilopascals",
+          "Symbol": "kPa",
+          "PrefixName": "Kilo"
+        },
+        {
+          "Name": "Megapascals",
+          "Symbol": "MPa",
+          "PrefixName": "Mega"
+        },
+        {
+          "Name": "Gigapascals",
+          "Symbol": "GPa",
+          "PrefixName": "Giga"
+        }
+      ],
+      "PartConversions": [
+        {
+          "Name": "NewtonsPerSquareMillimetre",
+          "Symbol": "N⋅mm⁻²",
+          "Factor": 1000000.0
+        },
+        {
+          "Name": "KilonewtonsPerSquareMillimetre",
+          "Symbol": "kN⋅mm⁻²",
+          "Factor": 1000000000.0
+        },
+        {
+          "Name": "NewtonsPerSquareMetre",
+          "Symbol": "N/m²",
+          "Factor": 1.0
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Kilograms",
+          "Power": 1
+        },
+        {
+          "UnitName": "Metres",
+          "Power": -3
+        }
+      ],
+      "Name": "KilogramsPerCubicMetre",
+      "Symbol": "kg/m³",
+      "QuantityName": "Density",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "GramsPerCubicMillimetre",
+          "Symbol": "g/mm³",
+          "Factor": 999999.99999999988
+        },
+        {
+          "Name": "GramsPerCubicCentimetre",
+          "Symbol": "g/cm³",
+          "Factor": 999.99999999999989
+        },
+        {
+          "Name": "MilligramsPerCubicMillimetre",
+          "Symbol": "mg/mm³",
+          "Factor": 999.99999999999989
+        },
+        {
+          "Name": "GramsPerCubicMetre",
+          "Symbol": "g/m³",
+          "Factor": 0.001
+        },
+        {
+          "Name": "MilligramsPerCubicMetre",
+          "Symbol": "mg/m³",
+          "Factor": 1E-06
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Kilograms",
+          "Power": 1
+        },
+        {
+          "UnitName": "Metres",
+          "Power": 2
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": -2
+        }
+      ],
+      "Name": "Joules",
+      "Symbol": "J",
+      "QuantityName": "Energy",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "Nanojoules",
+          "Symbol": "nJ",
+          "PrefixName": "Nano"
+        },
+        {
+          "Name": "Microjoules",
+          "Symbol": "µJ",
+          "PrefixName": "Micro"
+        },
+        {
+          "Name": "Millijoules",
+          "Symbol": "mJ",
+          "PrefixName": "Milli"
+        },
+        {
+          "Name": "Kilojoules",
+          "Symbol": "kJ",
+          "PrefixName": "Kilo"
+        },
+        {
+          "Name": "Megajoules",
+          "Symbol": "MJ",
+          "PrefixName": "Mega"
+        },
+        {
+          "Name": "Gigajoules",
+          "Symbol": "GJ",
+          "PrefixName": "Giga"
+        }
+      ],
+      "PartConversions": [
+        {
+          "Name": "KilowattHours",
+          "Symbol": "kWh",
+          "Factor": 3600000.0
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Joules",
+          "Power": 1
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": -1
+        }
+      ],
+      "Name": "Watts",
+      "Symbol": "W",
+      "QuantityName": "Power",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "Nanowatts",
+          "Symbol": "nW",
+          "PrefixName": "Nano"
+        },
+        {
+          "Name": "Microwatts",
+          "Symbol": "µW",
+          "PrefixName": "Micro"
+        },
+        {
+          "Name": "Milliwatts",
+          "Symbol": "mW",
+          "PrefixName": "Milli"
+        },
+        {
+          "Name": "Kilowatts",
+          "Symbol": "kW",
+          "PrefixName": "Kilo"
+        },
+        {
+          "Name": "Megawatts",
+          "Symbol": "MW",
+          "PrefixName": "Mega"
+        },
+        {
+          "Name": "Gigawatts",
+          "Symbol": "GW",
+          "PrefixName": "Giga"
+        }
+      ],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Metres",
+          "Power": 1
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": -1
+        }
+      ],
+      "Name": "MetresPerSecond",
+      "Symbol": "m/s",
+      "QuantityName": "Speed",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "KilometresPerHour",
+          "Symbol": "km/h",
+          "Factor": 0.27777777777777779
+        },
+        {
+          "Name": "CentimetresPerMinute",
+          "Symbol": "cm/min",
+          "Factor": 0.00016666666666666666
+        },
+        {
+          "Name": "MetresPerMinute",
+          "Symbol": "m/min",
+          "Factor": 0.016666666666666666
+        },
+        {
+          "Name": "MetresPerHour",
+          "Symbol": "m/h",
+          "Factor": 0.00027777777777777778
+        },
+        {
+          "Name": "MillimetresPerHour",
+          "Symbol": "mm/h",
+          "Factor": 2.7777777777777776E-07
+        },
+        {
+          "Name": "CentimetresPerHour",
+          "Symbol": "cm/h",
+          "Factor": 2.7777777777777779E-06
+        },
+        {
+          "Name": "MillimetresPerMinute",
+          "Symbol": "mm/min",
+          "Factor": 1.6666666666666667E-05
+        },
+        {
+          "Name": "MillimetresPerSecond",
+          "Symbol": "mm/s",
+          "Factor": 0.001
+        },
+        {
+          "Name": "CentimetresPerSecond",
+          "Symbol": "cm/s",
+          "Factor": 0.01
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Radians",
+          "Power": 1
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": -1
+        }
+      ],
+      "Name": "RadiansPerSecond",
+      "Symbol": "rad/s",
+      "QuantityName": "AngularSpeed",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "RevolutionsPerMinute",
+          "Symbol": "rpm",
+          "Factor": 0.10471975511966
+        },
+        {
+          "Name": "DegreesPerSecond",
+          "Symbol": "°⋅s⁻¹",
+          "Factor": 0.017453292519943295
+        },
+        {
+          "Name": "DegreesPerMinute",
+          "Symbol": "min⁻¹⋅°",
+          "Factor": 0.00029088820866572158
+        },
+        {
+          "Name": "RadiansPerMinute",
+          "Symbol": "min⁻¹⋅rad",
+          "Factor": 0.016666666666666666
+        },
+        {
+          "Name": "DegreesPerHour",
+          "Symbol": "h⁻¹⋅°",
+          "Factor": 4.84813681109536E-06
+        },
+        {
+          "Name": "RadiansPerHour",
+          "Symbol": "h⁻¹⋅rad",
+          "Factor": 0.00027777777777777778
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Seconds",
+          "Power": -1
+        }
+      ],
+      "Name": "Hertz",
+      "Symbol": "Hz",
+      "QuantityName": "Frequency",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "Millihertz",
+          "Symbol": "mHz",
+          "PrefixName": "Milli"
+        },
+        {
+          "Name": "Kilohertz",
+          "Symbol": "kHz",
+          "PrefixName": "Kilo"
+        },
+        {
+          "Name": "Megahertz",
+          "Symbol": "MHz",
+          "PrefixName": "Mega"
+        },
+        {
+          "Name": "Gigahertz",
+          "Symbol": "GHz",
+          "PrefixName": "Giga"
+        }
+      ],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Metres",
+          "Power": 1
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": -2
+        }
+      ],
+      "Name": "MetresPerSecondSquared",
+      "Symbol": "m/s²",
+      "QuantityName": "Acceleration",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "CentimetresPerSecondSquared",
+          "Symbol": "cm/s²",
+          "Factor": 0.01
+        },
+        {
+          "Name": "MillimetresPerSecondSquared",
+          "Symbol": "mm/s²",
+          "Factor": 0.001
+        },
+        {
+          "Name": "MillimetresPerHourSquared",
+          "Symbol": "mm/h²",
+          "Factor": 7.7160493827160491E-11
+        },
+        {
+          "Name": "CentimetresPerHourSquared",
+          "Symbol": "cm/h²",
+          "Factor": 7.71604938271605E-10
+        },
+        {
+          "Name": "MetresPerHourSquared",
+          "Symbol": "m/h²",
+          "Factor": 7.71604938271605E-08
+        },
+        {
+          "Name": "MetresPerMinuteSquared",
+          "Symbol": "m/min²",
+          "Factor": 0.00027777777777777778
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Newtons",
+          "Power": 1
+        },
+        {
+          "UnitName": "Metres",
+          "Power": 1
+        },
+        {
+          "UnitName": "Radians",
+          "Power": -1
+        }
+      ],
+      "Name": "NewtonMetres",
+      "Symbol": "N⋅m",
+      "QuantityName": "Torque",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Newtons",
+          "Power": 1
+        },
+        {
+          "UnitName": "Metres",
+          "Power": -1
+        }
+      ],
+      "Name": "NewtonsPerMetre",
+      "Symbol": "N/m",
+      "QuantityName": "Stiffness",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "NewtonsPerNanometre",
+          "Symbol": "N/nm",
+          "Factor": 999999999.99999988
+        },
+        {
+          "Name": "NewtonsPerMicrometre",
+          "Symbol": "N/µm",
+          "Factor": 1000000.0
+        },
+        {
+          "Name": "NewtonsPerMillimetre",
+          "Symbol": "N/mm",
+          "Factor": 1000.0
+        },
+        {
+          "Name": "KilonewtonsPerNanometre",
+          "Symbol": "kN/nm",
+          "Factor": 999999999999.99988
+        },
+        {
+          "Name": "KilonewtonsPerMicrometre",
+          "Symbol": "kN/µm",
+          "Factor": 1000000000.0
+        },
+        {
+          "Name": "KilonewtonsPerMillimetre",
+          "Symbol": "kN/mm",
+          "Factor": 1000000.0
+        },
+        {
+          "Name": "MeganewtonsPerNanometre",
+          "Symbol": "MN/nm",
+          "Factor": 999999999999999.88
+        },
+        {
+          "Name": "MeganewtonsPerMicrometre",
+          "Symbol": "MN/µm",
+          "Factor": 1000000000000.0
+        },
+        {
+          "Name": "MeganewtonsPerMillimetre",
+          "Symbol": "MN/mm",
+          "Factor": 1000000000.0
+        },
+        {
+          "Name": "GiganewtonsPerMicrometre",
+          "Symbol": "GN/µm",
+          "Factor": 1E+15
+        },
+        {
+          "Name": "GiganewtonsPerMillimetre",
+          "Symbol": "GN/mm",
+          "Factor": 1000000000000.0
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "CubicMetres",
+          "Power": 1
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": -1
+        }
+      ],
+      "Name": "CubicMetresPerSecond",
+      "Symbol": "m³/s",
+      "QuantityName": "VolumetricFlow",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "CubicMetresPerMinute",
+          "Symbol": "m³/min",
+          "Factor": 0.016666666666666666
+        },
+        {
+          "Name": "CubicMetresPerHour",
+          "Symbol": "m³/h",
+          "Factor": 0.00027777777777777778
+        },
+        {
+          "Name": "LitresPerSecond",
+          "Symbol": "L/s",
+          "Factor": 0.0010000000000000002
+        },
+        {
+          "Name": "LitresPerHour",
+          "Symbol": "L/h",
+          "Factor": 2.7777777777777787E-07
+        },
+        {
+          "Name": "LitresPerMinute",
+          "Symbol": "L/min",
+          "Factor": 1.6666666666666671E-05
+        },
+        {
+          "Name": "MillilitresPerSecond",
+          "Symbol": "ml/s",
+          "Factor": 1.0000000000000002E-06
+        },
+        {
+          "Name": "MillilitresPerHour",
+          "Symbol": "ml/h",
+          "Factor": 2.7777777777777782E-10
+        },
+        {
+          "Name": "MillilitresPerMinute",
+          "Symbol": "ml/min",
+          "Factor": 1.666666666666667E-08
+        },
+        {
+          "Name": "CentilitresPerSecond",
+          "Symbol": "cl/s",
+          "Factor": 1.0000000000000003E-05
+        },
+        {
+          "Name": "CentilitresPerHour",
+          "Symbol": "cl/h",
+          "Factor": 2.7777777777777784E-09
+        },
+        {
+          "Name": "CentilitresPerMinute",
+          "Symbol": "cl/min",
+          "Factor": 1.666666666666667E-07
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Watts",
+          "Power": 1
+        },
+        {
+          "UnitName": "Amperes",
+          "Power": -1
+        }
+      ],
+      "Name": "Volts",
+      "Symbol": "V",
+      "QuantityName": "Voltage",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "Millivolts",
+          "Symbol": "mV",
+          "PrefixName": "Milli"
+        },
+        {
+          "Name": "Kilovolts",
+          "Symbol": "kV",
+          "PrefixName": "Kilo"
+        },
+        {
+          "Name": "Megavolts",
+          "Symbol": "MV",
+          "PrefixName": "Mega"
+        },
+        {
+          "Name": "Microvolts",
+          "Symbol": "µV",
+          "PrefixName": "Micro"
+        },
+        {
+          "Name": "Nanovolts",
+          "Symbol": "nV",
+          "PrefixName": "Nano"
+        },
+        {
+          "Name": "Gigavolts",
+          "Symbol": "GV",
+          "PrefixName": "Giga"
+        }
+      ],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Volts",
+          "Power": 1
+        },
+        {
+          "UnitName": "Amperes",
+          "Power": -1
+        }
+      ],
+      "Name": "Ohm",
+      "Symbol": "Ω",
+      "QuantityName": "Resistance",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "Microohm",
+          "Symbol": "µΩ",
+          "PrefixName": "Micro"
+        },
+        {
+          "Name": "Milliohm",
+          "Symbol": "mΩ",
+          "PrefixName": "Milli"
+        },
+        {
+          "Name": "Kiloohm",
+          "Symbol": "kΩ",
+          "PrefixName": "Kilo"
+        },
+        {
+          "Name": "Megaohm",
+          "Symbol": "MΩ",
+          "PrefixName": "Mega"
+        }
+      ],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Joules",
+          "Power": 1
+        },
+        {
+          "UnitName": "Kilograms",
+          "Power": -1
+        }
+      ],
+      "Name": "JoulesPerKilogram",
+      "Symbol": "J/kg",
+      "QuantityName": "SpecificEnergy",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Seconds",
+          "Power": 1
+        },
+        {
+          "UnitName": "Amperes",
+          "Power": 1
+        }
+      ],
+      "Name": "Coulombs",
+      "Symbol": "C",
+      "QuantityName": "ElectricCharge",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "Nanocoulombs",
+          "Symbol": "nC",
+          "PrefixName": "Nano"
+        },
+        {
+          "Name": "Microcoulombs",
+          "Symbol": "µC",
+          "PrefixName": "Micro"
+        },
+        {
+          "Name": "Millicoulombs",
+          "Symbol": "mC",
+          "PrefixName": "Milli"
+        },
+        {
+          "Name": "Kilocoulombs",
+          "Symbol": "kC",
+          "PrefixName": "Kilo"
+        },
+        {
+          "Name": "Megacoulombs",
+          "Symbol": "MC",
+          "PrefixName": "Mega"
+        },
+        {
+          "Name": "Gigacoulombs",
+          "Symbol": "GC",
+          "PrefixName": "Giga"
+        }
+      ],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Volts",
+          "Power": 1
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": 1
+        },
+        {
+          "UnitName": "Amperes",
+          "Power": -1
+        }
+      ],
+      "Name": "Henrys",
+      "Symbol": "H",
+      "QuantityName": "Inductance",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "Nanohenrys",
+          "Symbol": "nH",
+          "PrefixName": "Nano"
+        },
+        {
+          "Name": "Microhenrys",
+          "Symbol": "µH",
+          "PrefixName": "Micro"
+        },
+        {
+          "Name": "Millihenrys",
+          "Symbol": "mH",
+          "PrefixName": "Milli"
+        },
+        {
+          "Name": "Kilohenrys",
+          "Symbol": "kH",
+          "PrefixName": "Kilo"
+        },
+        {
+          "Name": "Megahenrys",
+          "Symbol": "MH",
+          "PrefixName": "Mega"
+        },
+        {
+          "Name": "Gigahenrys",
+          "Symbol": "GH",
+          "PrefixName": "Giga"
+        }
+      ],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Coulombs",
+          "Power": 1
+        },
+        {
+          "UnitName": "Volts",
+          "Power": -1
+        }
+      ],
+      "Name": "Farads",
+      "Symbol": "F",
+      "QuantityName": "Capacitance",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "Nanofarads",
+          "Symbol": "nF",
+          "PrefixName": "Nano"
+        },
+        {
+          "Name": "Microfarads",
+          "Symbol": "µF",
+          "PrefixName": "Micro"
+        },
+        {
+          "Name": "Millifarads",
+          "Symbol": "mF",
+          "PrefixName": "Milli"
+        },
+        {
+          "Name": "Kilofarads",
+          "Symbol": "kF",
+          "PrefixName": "Kilo"
+        },
+        {
+          "Name": "Megafarads",
+          "Symbol": "MF",
+          "PrefixName": "Mega"
+        },
+        {
+          "Name": "Gigafarads",
+          "Symbol": "GF",
+          "PrefixName": "Giga"
+        }
+      ],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Metres",
+          "Power": 1
+        },
+        {
+          "UnitName": "Newtons",
+          "Power": -1
+        }
+      ],
+      "Name": "MetresPerNewton",
+      "Symbol": "m/N",
+      "QuantityName": "Flexibility",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "MillimetresPerNewton",
+          "Symbol": "mm/N",
+          "PrefixName": "Milli"
+        }
+      ],
+      "PartConversions": [
+        {
+          "Name": "MillimetresPerKilonewton",
+          "Symbol": "mm/kN",
+          "Factor": 1E-06
+        },
+        {
+          "Name": "MicrometresPerKilonewton",
+          "Symbol": "µm/kN",
+          "Factor": 1E-09
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Radians",
+          "Power": 1
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": -2
+        }
+      ],
+      "Name": "RadiansPerSecondSquared",
+      "Symbol": "rad/s²",
+      "QuantityName": "AngularAcceleration",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "DegreesPerSquareSecond",
+          "Symbol": "°⋅s⁻²",
+          "Factor": 0.017453292519943295
+        },
+        {
+          "Name": "RadiansPerSquareHour",
+          "Symbol": "h⁻²⋅rad",
+          "Factor": 7.71604938271605E-08
+        },
+        {
+          "Name": "DegreesPerSquareHour",
+          "Symbol": "h⁻²⋅°",
+          "Factor": 1.346704669748711E-09
+        },
+        {
+          "Name": "DegreesPerSquareMinute",
+          "Symbol": "min⁻²⋅°",
+          "Factor": 4.84813681109536E-06
+        },
+        {
+          "Name": "RadiansPerSquareMinute",
+          "Symbol": "min⁻²⋅rad",
+          "Factor": 0.00027777777777777778
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Radians",
+          "Power": 1
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": -3
+        }
+      ],
+      "Name": "RadiansPerSecondCubed",
+      "Symbol": "rad/s³",
+      "QuantityName": "AngularJerk",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "DegreesPerSecondCubed",
+          "Symbol": "°⋅s⁻³",
+          "Factor": 0.017453292519943295
+        },
+        {
+          "Name": "RadiansPerHourCubed",
+          "Symbol": "rad⋅h⁻³",
+          "Factor": 2.1433470507544583E-11
+        },
+        {
+          "Name": "DegreesPerHourCubed",
+          "Symbol": "°⋅h⁻³",
+          "Factor": 3.7408463048575307E-13
+        },
+        {
+          "Name": "RadiansPerMinuteCubed",
+          "Symbol": "rad⋅min⁻³",
+          "Factor": 4.6296296296296296E-06
+        },
+        {
+          "Name": "DegreesPerMinuteCubed",
+          "Symbol": "°⋅min⁻³",
+          "Factor": 8.0802280184922666E-08
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Metres",
+          "Power": 1
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": -3
+        }
+      ],
+      "Name": "MetresPerSecondCubed",
+      "Symbol": "m/s³",
+      "QuantityName": "Jerk",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "MillimetresPerSecondCubed",
+          "Symbol": "mm⋅s⁻³",
+          "PrefixName": "Milli"
+        },
+        {
+          "Name": "CentimetresPerSecondCubed",
+          "Symbol": "cm⋅s⁻³",
+          "PrefixName": "Centi"
+        }
+      ],
+      "PartConversions": [
+        {
+          "Name": "MillimetresPerHourCubed",
+          "Symbol": "mm⋅h⁻³",
+          "Factor": 2.1433470507544584E-14
+        },
+        {
+          "Name": "MillimetresPerMinuteCubed",
+          "Symbol": "mm⋅min⁻³",
+          "Factor": 4.6296296296296295E-09
+        },
+        {
+          "Name": "MetresPerHourCubed",
+          "Symbol": "m⋅h⁻³",
+          "Factor": 2.1433470507544583E-11
+        },
+        {
+          "Name": "MetresPerMinuteCubed",
+          "Symbol": "m⋅min⁻³",
+          "Factor": 4.6296296296296296E-06
+        },
+        {
+          "Name": "CentimetresPerHourCubed",
+          "Symbol": "cm⋅h⁻³",
+          "Factor": 2.1433470507544584E-13
+        },
+        {
+          "Name": "CentimetresPerMinuteCubed",
+          "Symbol": "cm⋅min⁻³",
+          "Factor": 4.6296296296296295E-08
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Metres",
+          "Power": 1
+        },
+        {
+          "UnitName": "Scalar",
+          "Power": -1
+        }
+      ],
+      "Name": "MetresPerUnitless",
+      "Symbol": "m/ul",
+      "QuantityName": "LengthPerUnitless",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "MillimetresPerPercent",
+          "Symbol": "mm/%",
+          "Factor": 0.1
+        },
+        {
+          "Name": "MicrometresPerPercent",
+          "Symbol": "µm/%",
+          "Factor": 9.9999999999999991E-05
+        },
+        {
+          "Name": "MetresPerPercent",
+          "Symbol": "m/%",
+          "Factor": 100.0
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Radians",
+          "Power": 1
+        },
+        {
+          "UnitName": "Scalar",
+          "Power": -1
+        }
+      ],
+      "Name": "RadiansPerUnitless",
+      "Symbol": "rad/ul",
+      "QuantityName": "AnglePerUnitless",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "DegreesPerPercent",
+          "Symbol": "°/%",
+          "Factor": 1.7453292519943295
+        },
+        {
+          "Name": "RadiansPerPercent",
+          "Symbol": "rad/%",
+          "Factor": 100.0
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Newtons",
+          "Power": 1
+        },
+        {
+          "UnitName": "Scalar",
+          "Power": -1
+        }
+      ],
+      "Name": "NewtonsPerUnitless",
+      "Symbol": "N/ul",
+      "QuantityName": "ForcePerUnitless",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "NewtonsPerPercent",
+          "Symbol": "N/%",
+          "Factor": 100.0
+        },
+        {
+          "Name": "KilonewtonsPerPercent",
+          "Symbol": "kN/%",
+          "Factor": 100000.0
+        },
+        {
+          "Name": "MeganewtonsPerPercent",
+          "Symbol": "MN/%",
+          "Factor": 100000000.0
+        },
+        {
+          "Name": "GiganewtonsPerPercent",
+          "Symbol": "GN/%",
+          "Factor": 100000000000.0
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Candelas",
+          "Power": 1
+        },
+        {
+          "UnitName": "Steradians",
+          "Power": 1
+        }
+      ],
+      "Name": "Lumens",
+      "Symbol": "lm",
+      "QuantityName": "LuminousFlux",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Lumens",
+          "Power": 1
+        },
+        {
+          "UnitName": "Metres",
+          "Power": -2
+        }
+      ],
+      "Name": "Lux",
+      "Symbol": "lx",
+      "QuantityName": "Illuminance",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Joules",
+          "Power": 1
+        },
+        {
+          "UnitName": "Amperes",
+          "Power": -1
+        }
+      ],
+      "Name": "Webers",
+      "Symbol": "Wb",
+      "QuantityName": "MagneticFlux",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Amperes",
+          "Power": 1
+        },
+        {
+          "UnitName": "Volts",
+          "Power": -1
+        }
+      ],
+      "Name": "Siemens",
+      "Symbol": "S",
+      "QuantityName": "ElectricalConductance",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Volts",
+          "Power": 1
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": 1
+        },
+        {
+          "UnitName": "Metres",
+          "Power": -2
+        }
+      ],
+      "Name": "Teslas",
+      "Symbol": "T",
+      "QuantityName": "MagneticFieldStrength",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Moles",
+          "Power": 1
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": -1
+        }
+      ],
+      "Name": "Katals",
+      "Symbol": "kat",
+      "QuantityName": "CatalyticActivity",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Newtons",
+          "Power": 1
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": 1
+        }
+      ],
+      "Name": "NewtonSecond",
+      "Symbol": "N⋅s",
+      "QuantityName": "Momentum",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Metres",
+          "Power": -1
+        }
+      ],
+      "Name": "ReciprocalMetres",
+      "Symbol": "m⁻¹",
+      "QuantityName": "Wavenumber",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Kilograms",
+          "Power": 1
+        },
+        {
+          "UnitName": "Metres",
+          "Power": -2
+        }
+      ],
+      "Name": "KilogramsPerSquareMetre",
+      "Symbol": "kg/m²",
+      "QuantityName": "AreaDensity",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Metres",
+          "Power": 3
+        },
+        {
+          "UnitName": "Kilograms",
+          "Power": -1
+        }
+      ],
+      "Name": "CubicMetresPerKilogram",
+      "Symbol": "m³/kg",
+      "QuantityName": "SpecificVolume",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "CubicMetresPerGram",
+          "Symbol": "m³/g",
+          "Factor": 1000.0
+        },
+        {
+          "Name": "CubicCentimetresPerGram",
+          "Symbol": "cm³/g",
+          "Factor": 0.0010000000000000002
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Kilograms",
+          "Power": 1
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": -1
+        }
+      ],
+      "Name": "KilogramsPerSecond",
+      "Symbol": "kg/s",
+      "QuantityName": "MassFlow",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Metres",
+          "Power": 2
+        },
+        {
+          "UnitName": "Seconds",
+          "Power": -1
+        }
+      ],
+      "Name": "SquareMetresPerSecond",
+      "Symbol": "m²/s",
+      "QuantityName": "KinematicViscosity",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
+    }
+  ]
+}

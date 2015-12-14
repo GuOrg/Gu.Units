@@ -67,15 +67,9 @@
         }
 
         /// <summary>
-        /// The quantity in degrees
+        /// The quantity in Degrees
         /// </summary>
-        public double Degrees
-        {
-            get
-            {
-                return AngleUnit.Degrees.FromSiUnit(this.radians);
-            }
-        }
+        public double Degrees => 57.295779513082323 * this.radians;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
@@ -159,17 +153,7 @@
         /// <param name="degrees">The value in °</param>
         public static Angle FromDegrees(double degrees)
         {
-            return From(degrees, AngleUnit.Degrees);
-        }
-
-        public static Time operator /(Angle left, AngularSpeed right)
-        {
-            return Time.FromSeconds(left.radians / right.radiansPerSecond);
-        }
-
-        public static Unitless operator /(Angle left, AnglePerUnitless right)
-        {
-            return Unitless.FromScalar(left.radians / right.radiansPerUnitless);
+            return new Angle(degrees / 57.295779513082323);
         }
 
         public static AngularSpeed operator /(Angle left, Time right)
@@ -180,6 +164,26 @@
         public static AnglePerUnitless operator /(Angle left, Unitless right)
         {
             return AnglePerUnitless.FromRadiansPerUnitless(left.radians / right.scalar);
+        }
+
+        public static Time operator /(Angle left, AngularSpeed right)
+        {
+            return Time.FromSeconds(left.radians / right.radiansPerSecond);
+        }
+
+        public static AngularSpeed operator *(Angle left, Frequency right)
+        {
+            return AngularSpeed.FromRadiansPerSecond(left.radians * right.hertz);
+        }
+
+        public static Energy operator *(Angle left, Torque right)
+        {
+            return Energy.FromJoules(left.radians * right.newtonMetres);
+        }
+
+        public static Unitless operator /(Angle left, AnglePerUnitless right)
+        {
+            return Unitless.FromScalar(left.radians / right.radiansPerUnitless);
         }
 
         public static double operator /(Angle left, Angle right)

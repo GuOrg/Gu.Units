@@ -1,41 +1,39 @@
 ﻿namespace Gu.Units.Generator
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel;
+    using System.Diagnostics;
     using System.Linq;
     using System.Runtime.CompilerServices;
-    using Annotations;
-    using WpfStuff;
+    using JetBrains.Annotations;
+    using Reactive;
 
+    [DebuggerDisplay("{Conversion.Symbol}")]
     public class PrefixConversionVm : INotifyPropertyChanged
     {
-        public PrefixConversionVm(Prefix prefix, IUnit unit)
+        private readonly IList<PrefixConversion> conversions;
+        private readonly IConversion baseConversion;
+
+        private PrefixConversionVm(ObservableCollection<PrefixConversion> conversions, IConversion baseConversion, PrefixConversion prefixConversion)
         {
-            this.Unit = unit;
-            Prefix = prefix;
-            this.Conversion = new Conversion
-            {
-                BaseUnit = unit,
-                Prefix = prefix
-            };
+            this.conversions = conversions;
+            this.baseConversion = baseConversion;
+            Conversion = prefixConversion;
+            conversions.ObservePropertyChangedSlim()
+                       .Subscribe(_ => OnPropertyChanged(nameof(IsUsed))); // no need for IDisposable
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public IUnit Unit { get; }
-
-        public Prefix Prefix { get; }
-
-        public Conversion Conversion { get; }
+        public PrefixConversion Conversion { get; }
 
         public bool IsUsed
         {
             get
             {
-                if (this.Unit == null)
-                {
-                    return false;
-                }
-                return this.Unit.Conversions.Any(x => x.Formula.ConversionFactor == this.Conversion.Formula.ConversionFactor && x.Symbol == this.Conversion.Symbol);
+                return conversions.Any(IsMatch);
             }
             set
             {
@@ -45,11 +43,15 @@
                 }
                 if (value)
                 {
-                    this.Unit.Conversions.Add(new Conversion { Prefix = Prefix });
+                    conversions.Add(Conversion);
                 }
                 else
                 {
-                    this.Unit.Conversions.InvokeRemove(x => x.Prefix != null && x.Prefix.Name == Prefix.Name);
+                    var match = this.conversions.FirstOrDefault(IsMatch);
+                    if (match != null)
+                    {
+                        conversions.Remove(match);
+                    }
                 }
                 OnPropertyChanged();
             }
@@ -59,6 +61,29 @@
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private bool IsMatch(PrefixConversion x)
+        {
+            if (Conversion.Prefix.Power != x.Prefix.Power)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public static PrefixConversionVm Create(Unit unit, Prefix prefix)
+        {
+            var identityConversion = new PartConversion.IdentityConversion(unit);
+            var prefixConversion = PrefixConversion.Create(unit, prefix);
+            return new PrefixConversionVm(unit.PrefixConversions, identityConversion, prefixConversion);
+        }
+
+        public static PrefixConversionVm Create(FactorConversion factorConversion, Prefix prefix)
+        {
+            var prefixConversion = PrefixConversion.Create(factorConversion, prefix);
+            return new PrefixConversionVm(factorConversion.PrefixConversions, factorConversion, prefixConversion);
         }
     }
 }

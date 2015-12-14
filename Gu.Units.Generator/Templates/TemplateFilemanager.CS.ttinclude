@@ -71,10 +71,8 @@ void WriteLineToBuildPane (string message){
 /// </summary>
 /// <param name="message">Text to output</param>
 void WriteToBuildPane (string message){
-       IVsOutputWindow outWindow = (this.Host as IServiceProvider).GetService(
-typeof( SVsOutputWindow ) ) as IVsOutputWindow;
-       Guid generalPaneGuid =
-Microsoft.VisualStudio.VSConstants.OutputWindowPaneGuid.BuildOutputPane_guid;
+       var outWindow = (IVsOutputWindow) ((IServiceProvider) this.Host).GetService(typeof( SVsOutputWindow ) );
+       var generalPaneGuid = Microsoft.VisualStudio.VSConstants.OutputWindowPaneGuid.BuildOutputPane_guid;
 		// P.S. There's also the GUID_OutWindowDebugPane available.
        IVsOutputWindowPane generalPane;
        outWindow.GetPane( ref generalPaneGuid , out generalPane );
@@ -89,30 +87,30 @@ Microsoft.VisualStudio.VSConstants.OutputWindowPaneGuid.BuildOutputPane_guid;
 /// <author>R. Leupold</author>
 public class TemplateFileManager
 {
-	private EnvDTE.ProjectItem templateProjectItem;
-    private Action<string> checkOutAction;
-    private Action<IEnumerable<OutputFile>> projectSyncAction;
-	private EnvDTE.DTE dte;
-	private List<string> templatePlaceholderList = new List<string>();
+	private readonly ProjectItem templateProjectItem;
+    private readonly Action<string> checkOutAction;
+    private readonly Action<IEnumerable<OutputFile>> projectSyncAction;
+	private readonly DTE dte;
+	private readonly List<string> templatePlaceholderList = new List<string>();
 
     /// <summary>
     /// Creates files with VS sync
     /// </summary>
     public static TemplateFileManager Create(object textTransformation)
     {
-        DynamicTextTransformation2 transformation = DynamicTextTransformation2.Create(textTransformation);
-        IDynamicHost2 host = transformation.Host;
+        var transformation = DynamicTextTransformation2.Create(textTransformation);
+        var host = transformation.Host;
         return new TemplateFileManager(transformation);
     }
 
     private readonly List<Block> files = new List<Block>();
     private readonly Block footer = new Block();
     private readonly Block header = new Block();
-    private readonly DynamicTextTransformation2 _textTransformation;
+    private readonly DynamicTextTransformation2 textTransformation;
 
     // reference to the GenerationEnvironment StringBuilder on the
     // TextTransformation object
-    private readonly StringBuilder _generationEnvironment;
+    private readonly StringBuilder generationEnvironment;
 
     private Block currentBlock;
 
@@ -127,27 +125,27 @@ public class TemplateFileManager
             throw new ArgumentNullException("textTransformation");
         }
 
-        _textTransformation = DynamicTextTransformation2.Create(textTransformation);
-        _generationEnvironment = _textTransformation.GenerationEnvironment;
+        this.textTransformation = DynamicTextTransformation2.Create(textTransformation);
+        this.generationEnvironment = this.textTransformation.GenerationEnvironment;
 
-		var hostServiceProvider = _textTransformation.Host.AsIServiceProvider();
+		var hostServiceProvider = this.textTransformation.Host.AsIServiceProvider();
         if (hostServiceProvider == null)
         {
             throw new ArgumentNullException("Could not obtain hostServiceProvider");
         }
 
-        dte = (EnvDTE.DTE) hostServiceProvider.GetService(typeof(EnvDTE.DTE));
-        if (dte == null)
+        this.dte = (DTE) hostServiceProvider.GetService(typeof(DTE));
+        if (this.dte == null)
         {
             throw new ArgumentNullException("Could not obtain DTE from host");
         }
 
-		this.templateProjectItem = dte.Solution.FindProjectItem(_textTransformation.Host.TemplateFile);
-		this.CanOverrideExistingFile = true;
-		this.IsAutoIndentEnabled = false;
-		this.Encoding = System.Text.Encoding.UTF8;
-        checkOutAction = fileName => dte.SourceControl.CheckOutItem(fileName);
-        projectSyncAction = keepFileNames => ProjectSync(templateProjectItem, keepFileNames);
+		this.templateProjectItem = this.dte.Solution.FindProjectItem(this.textTransformation.Host.TemplateFile);
+		CanOverrideExistingFile = true;
+		IsAutoIndentEnabled = false;
+		Encoding = Encoding.UTF8;
+        this.checkOutAction = fileName => this.dte.SourceControl.CheckOutItem(fileName);
+        this.projectSyncAction = keepFileNames => ProjectSync(this.templateProjectItem, keepFileNames);
     }
 
 	/// <summary>
@@ -155,7 +153,7 @@ public class TemplateFileManager
 	/// </summary>
 	/// <returns></returns>
 	public bool CanOverrideExistingFile { get; set; }
-	public bool CanOverwriteExistingFile { get { return this.CanOverrideExistingFile; } set { this.CanOverrideExistingFile = value;} }
+	public bool CanOverwriteExistingFile { get { return CanOverrideExistingFile; } set { CanOverrideExistingFile = value;} }
 
 	/// <summary>
 	/// If set to true, output files (c#, vb) are formatted based on the vs settings.
@@ -167,7 +165,7 @@ public class TemplateFileManager
 	/// Defines Encoding format for generated output file. (Default UTF8)
 	/// </summary>
 	/// <returns></returns>
-	public System.Text.Encoding Encoding { get; set; }
+	public Encoding Encoding { get; set; }
 
     /// <summary>
     /// Marks the end of the last file if there was one, and starts a new
@@ -180,7 +178,7 @@ public class TemplateFileManager
     public void StartNewFile(string name
 		, string projectName = "", string folderName = "", FileProperties fileProperties = null)
     {
-        if (String.IsNullOrWhiteSpace(name) == true)
+        if (string.IsNullOrWhiteSpace(name) == true)
         {
             throw new ArgumentException("name");
         }
@@ -196,12 +194,12 @@ public class TemplateFileManager
 
     public void StartFooter()
     {
-        CurrentBlock = footer;
+        CurrentBlock = this.footer;
     }
 
     public void StartHeader()
     {
-        CurrentBlock = header;
+        CurrentBlock = this.header;
     }
 
     public void EndBlock()
@@ -211,14 +209,14 @@ public class TemplateFileManager
             return;
         }
 
-        CurrentBlock.Length = _generationEnvironment.Length - CurrentBlock.Start;
+        CurrentBlock.Length = this.generationEnvironment.Length - CurrentBlock.Start;
 
-        if (CurrentBlock != header && CurrentBlock != footer)
+        if (CurrentBlock != this.header && CurrentBlock != this.footer)
         {
-            files.Add(CurrentBlock);
+            this.files.Add(CurrentBlock);
         }
 
-        currentBlock = null;
+        this.currentBlock = null;
     }
 
     /// <summary>
@@ -232,16 +230,16 @@ public class TemplateFileManager
         {
             EndBlock();
 
-            var headerText = _generationEnvironment.ToString(header.Start, header.Length);
-            var footerText = _generationEnvironment.ToString(footer.Start, footer.Length);
-            files.Reverse();
+            var headerText = this.generationEnvironment.ToString(this.header.Start, this.header.Length);
+            var footerText = this.generationEnvironment.ToString(this.footer.Start, this.footer.Length);
+            this.files.Reverse();
 
-            foreach (var block in files)
+            foreach (var block in this.files)
             {
-				var outputPath = VSHelper.GetOutputPath(dte, block, Path.GetDirectoryName(_textTransformation.Host.TemplateFile));
+				var outputPath = VsHelper.GetOutputPath(this.dte, block, Path.GetDirectoryName(this.textTransformation.Host.TemplateFile));
                 var fileName = Path.Combine(outputPath, block.Name);
-                var content = this.ReplaceParameter(headerText, block) +
-				_generationEnvironment.ToString(block.Start, block.Length) +
+                var content = ReplaceParameter(headerText, block) +
+				this.generationEnvironment.ToString(block.Start, block.Length) +
 				footerText;
 
                 var file = new OutputFile
@@ -254,52 +252,52 @@ public class TemplateFileManager
 					};
 
                 CreateFile(file);
-                _generationEnvironment.Remove(block.Start, block.Length);
+                this.generationEnvironment.Remove(block.Start, block.Length);
 
 				list.Add(file);
             }
         }
 
-		projectSyncAction.EndInvoke(projectSyncAction.BeginInvoke(list, null, null));
-		this.CleanUpTemplatePlaceholders();
-		var items = VSHelper.GetOutputFilesAsProjectItems(this.dte, list);
-		this.WriteVsProperties(items, list);
+        this.projectSyncAction.EndInvoke(this.projectSyncAction.BeginInvoke(list, null, null));
+		CleanUpTemplatePlaceholders();
+		var items = VsHelper.GetOutputFilesAsProjectItems(this.dte, list);
+		WriteVsProperties(items, list);
 
-		if (this.IsAutoIndentEnabled == true && split == true)
+		if (IsAutoIndentEnabled == true && split == true)
 		{
-			this.FormatProjectItems(items);
+			FormatProjectItems(items);
 		}
 
-		this.WriteLog(list);
+		WriteLog(list);
 
 		return list;
     }
 
-	private void FormatProjectItems(IEnumerable<EnvDTE.ProjectItem> items)
+	private void FormatProjectItems(IEnumerable<ProjectItem> items)
 	{
 		foreach (var item in items)
 		{
-			this._textTransformation.WriteLine(
-			VSHelper.ExecuteVsCommand(this.dte, item, "Edit.FormatDocument")); //, "Edit.RemoveAndSort"));
-			this._textTransformation.WriteLine("//-> " + item.Name);
+			this.textTransformation.WriteLine(
+			VsHelper.ExecuteVsCommand(this.dte, item, "Edit.FormatDocument")); //, "Edit.RemoveAndSort"));
+			this.textTransformation.WriteLine("//-> " + item.Name);
 		}
 	}
 
-	private void WriteVsProperties(IEnumerable<EnvDTE.ProjectItem> items, IEnumerable<OutputFile> outputFiles)
+	private void WriteVsProperties(IEnumerable<ProjectItem> items, IEnumerable<OutputFile> outputFiles)
 	{
 		foreach (var file in outputFiles)
 		{
-			var item = items.Where(p => p.Name == Path.GetFileName(file.FileName)).FirstOrDefault();
+			var item = items.FirstOrDefault(p => p.Name == Path.GetFileName(file.FileName));
 			if (item == null) continue;
 
 			if (String.IsNullOrEmpty(file.FileProperties.CustomTool) == false)
 			{
-				VSHelper.SetPropertyValue(item, "CustomTool", file.FileProperties.CustomTool);
+				VsHelper.SetPropertyValue(item, "CustomTool", file.FileProperties.CustomTool);
 			}
 
 			if (String.IsNullOrEmpty(file.FileProperties.BuildActionString) == false)
 			{
-				VSHelper.SetPropertyValue(item, "ItemType", file.FileProperties.BuildActionString);
+				VsHelper.SetPropertyValue(item, "ItemType", file.FileProperties.BuildActionString);
 			}
 		}
 	}
@@ -325,16 +323,16 @@ public class TemplateFileManager
 	/// <param name="list"></param>
 	private void WriteLog(IEnumerable<OutputFile> list)
 	{
-		this._textTransformation.WriteLine("// Generated helper templates");
-		foreach (var item in templatePlaceholderList)
+		this.textTransformation.WriteLine("// Generated helper templates");
+		foreach (var item in this.templatePlaceholderList)
 		{
-			this._textTransformation.WriteLine("// " + this.GetDirectorySolutionRelative(item));
+			this.textTransformation.WriteLine("// " + GetDirectorySolutionRelative(item));
 		}
 
-		this._textTransformation.WriteLine("// Generated items");
+		this.textTransformation.WriteLine("// Generated items");
 		foreach (var item in list)
 		{
-			this._textTransformation.WriteLine("// " + this.GetDirectorySolutionRelative(item.FileName));
+			this.textTransformation.WriteLine("// " + GetDirectorySolutionRelative(item.FileName));
 		}
 	}
 
@@ -343,16 +341,16 @@ public class TemplateFileManager
 	/// </summary>
 	private void CleanUpTemplatePlaceholders()
 	{
-		string[] activeTemplateFullNames = this.templatePlaceholderList.ToArray();
-		string[] allHelperTemplateFullNames = VSHelper.GetAllSolutionItems(this.dte)
-			.Where(p => p.Name == VSHelper.GetTemplatePlaceholderName(this.templateProjectItem))
-			.Select(p => VSHelper.GetProjectItemFullPath(p))
+		var activeTemplateFullNames = this.templatePlaceholderList.ToArray();
+		string[] allHelperTemplateFullNames = VsHelper.GetAllSolutionItems(this.dte)
+			.Where(p => p.Name == VsHelper.GetTemplatePlaceholderName(this.templateProjectItem))
+			.Select(p => VsHelper.GetProjectItemFullPath(p))
 			.ToArray();
 
 		var delta = allHelperTemplateFullNames.Except(activeTemplateFullNames).ToArray();
 
-		var dirtyHelperTemplates = VSHelper.GetAllSolutionItems(this.dte)
-			.Where(p => delta.Contains(VSHelper.GetProjectItemFullPath(p)));
+		var dirtyHelperTemplates = VsHelper.GetAllSolutionItems(this.dte)
+			.Where(p => delta.Contains(VsHelper.GetProjectItemFullPath(p)));
 
 		foreach (ProjectItem item in dirtyHelperTemplates)
 		{
@@ -374,15 +372,15 @@ public class TemplateFileManager
 	/// <returns>List of generated helper templates.</returns>
 	private string[] GetPreviousTemplatePlaceholdersFromLog()
 	{
-		string path = Path.GetDirectoryName(this._textTransformation.Host.ResolvePath(this._textTransformation.Host.TemplateFile));
-		string file1 = Path.GetFileNameWithoutExtension(this._textTransformation.Host.TemplateFile) + ".txt";
-		string contentPrevious = File.ReadAllText(Path.Combine(path, file1));
+		var path = Path.GetDirectoryName(this.textTransformation.Host.ResolvePath(this.textTransformation.Host.TemplateFile));
+		var file1 = Path.GetFileNameWithoutExtension(this.textTransformation.Host.TemplateFile) + ".txt";
+		var contentPrevious = File.ReadAllText(Path.Combine(path, file1));
 
 		var result = contentPrevious
               .Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)
               .Select(x => x.Split(new[] { "=>" }, StringSplitOptions.RemoveEmptyEntries).First())
               .Select(x => Regex.Replace(x, "//", String.Empty).Trim())
-			  .Where(x => x.EndsWith(VSHelper.GetTemplatePlaceholderName(this.templateProjectItem)))
+			  .Where(x => x.EndsWith(VsHelper.GetTemplatePlaceholderName(this.templateProjectItem)))
 			  .ToArray();
 
 		return result;
@@ -390,7 +388,7 @@ public class TemplateFileManager
 
 	private string GetDirectorySolutionRelative(string fullName)
 	{
-		int slnPos = fullName.IndexOf(Path.GetFileNameWithoutExtension(this.dte.Solution.FileName));
+		var slnPos = fullName.IndexOf(Path.GetFileNameWithoutExtension(this.dte.Solution.FileName), StringComparison.Ordinal);
 		if (slnPos < 0)
 		{
 			slnPos = 0;
@@ -401,7 +399,7 @@ public class TemplateFileManager
 
     protected virtual void CreateFile(OutputFile file)
     {
-		if (this.CanOverrideExistingFile == false && File.Exists(file.FileName) == true)
+		if (CanOverrideExistingFile == false && File.Exists(file.FileName) == true)
 		{
 			return;
 		}
@@ -409,7 +407,7 @@ public class TemplateFileManager
         if (IsFileContentDifferent(file))
         {
 			CheckoutFileIfRequired(file.FileName);
-            File.WriteAllText(file.FileName, file.Content, this.Encoding);
+            File.WriteAllText(file.FileName, file.Content, Encoding);
         }
     }
 
@@ -420,7 +418,7 @@ public class TemplateFileManager
 
     private Block CurrentBlock
     {
-        get { return currentBlock; }
+        get { return this.currentBlock; }
         set
         {
             if (CurrentBlock != null)
@@ -430,14 +428,14 @@ public class TemplateFileManager
 
             if (value != null)
             {
-                value.Start = _generationEnvironment.Length;
+                value.Start = this.generationEnvironment.Length;
             }
 
-            currentBlock = value;
+            this.currentBlock = value;
         }
     }
 
-	private void ProjectSync(EnvDTE.ProjectItem templateProjectItem, IEnumerable<OutputFile> keepFileNames)
+	private void ProjectSync(ProjectItem templateProjectItem, IEnumerable<OutputFile> keepFileNames)
 	{
 		var groupedFileNames = from f in keepFileNames
 								group f by new { f.ProjectName, f.FolderName }
@@ -453,28 +451,28 @@ public class TemplateFileManager
 
 		foreach (var item in groupedFileNames)
 		{
-			EnvDTE.ProjectItem pi = VSHelper.GetTemplateProjectItem(templateProjectItem.DTE, item.FirstItem, templateProjectItem);
+			var pi = VsHelper.GetTemplateProjectItem(templateProjectItem.DTE, item.FirstItem, templateProjectItem);
 			ProjectSyncPart(pi, item.OutputFiles);
 
 			if (pi.Name.EndsWith("txt4"))
-				this.templatePlaceholderList.Add(VSHelper.GetProjectItemFullPath(pi));
+				this.templatePlaceholderList.Add(VsHelper.GetProjectItemFullPath(pi));
 		}
 
 		// clean up
-		bool hasDefaultItems = groupedFileNames.Where(f => String.IsNullOrEmpty(f.ProjectName) && String.IsNullOrEmpty(f.FolderName)).Count() > 0;
+		var hasDefaultItems = groupedFileNames.Where(f => String.IsNullOrEmpty(f.ProjectName) && String.IsNullOrEmpty(f.FolderName)).Count() > 0;
 		if (hasDefaultItems == false)
 		{
 			ProjectSyncPart(templateProjectItem, new List<OutputFile>());
 		}
 	}
 
-    private static void ProjectSyncPart(EnvDTE.ProjectItem templateProjectItem, IEnumerable<OutputFile> keepFileNames)
+    private static void ProjectSyncPart(ProjectItem templateProjectItem, IEnumerable<OutputFile> keepFileNames)
     {
         var keepFileNameSet = new HashSet<OutputFile>(keepFileNames);
-        var projectFiles = new Dictionary<string, EnvDTE.ProjectItem>();
+        var projectFiles = new Dictionary<string, ProjectItem>();
         var originalOutput = Path.GetFileNameWithoutExtension(templateProjectItem.FileNames[0]);
 
-        foreach (EnvDTE.ProjectItem projectItem in templateProjectItem.ProjectItems)
+        foreach (ProjectItem projectItem in templateProjectItem.ProjectItems)
         {
             projectFiles.Add(projectItem.FileNames[0], projectItem);
         }
@@ -482,7 +480,7 @@ public class TemplateFileManager
         // Remove unused items from the project
         foreach (var pair in projectFiles)
         {
-			bool isNotFound = keepFileNames.Where(f=>f.FileName == pair.Key).Count() == 0;
+			var isNotFound = keepFileNames.Count(f => f.FileName == pair.Key) == 0;
             if (isNotFound == true
                 && !(Path.GetFileNameWithoutExtension(pair.Key) + ".").StartsWith(originalOutput + "."))
             {
@@ -502,15 +500,16 @@ public class TemplateFileManager
 
     private void CheckoutFileIfRequired(string fileName)
     {
-        if (dte.SourceControl == null
-            || !dte.SourceControl.IsItemUnderSCC(fileName)
-                || dte.SourceControl.IsItemCheckedOut(fileName))
+        if (this.dte.SourceControl == null
+            || !this.dte.SourceControl.IsItemUnderSCC(fileName)
+                ||
+                this.dte.SourceControl.IsItemCheckedOut(fileName))
         {
             return;
         }
 
         // run on worker thread to prevent T4 calling back into VS
-        checkOutAction.EndInvoke(checkOutAction.BeginInvoke(fileName, null, null));
+        this.checkOutAction.EndInvoke(this.checkOutAction.BeginInvoke(fileName, null, null));
     }
 }
 
@@ -525,18 +524,18 @@ public class TemplateFileManager
 /// </summary>
 public class DynamicTextTransformation2
 {
-    private object _instance;
-    IDynamicHost2 _dynamicHost;
+    private readonly object instance;
+    IDynamicHost2 dynamicHost;
 
-    private readonly MethodInfo _write;
-    private readonly MethodInfo _writeLine;
-    private readonly PropertyInfo _generationEnvironment;
-    private readonly PropertyInfo _errors;
-    private readonly PropertyInfo _host;
+    private readonly MethodInfo write;
+    private readonly MethodInfo writeLine;
+    private readonly PropertyInfo generationEnvironment;
+    private readonly PropertyInfo errors;
+    private readonly PropertyInfo host;
 
     /// <summary>
     /// Creates an instance of the DynamicTextTransformation class around the passed in
-    /// TextTransformation shapped instance passed in, or if the passed in instance
+    /// TextTransformation shaped instance passed in, or if the passed in instance
     /// already is a DynamicTextTransformation, it casts it and sends it back.
     /// </summary>
     public static DynamicTextTransformation2 Create(object instance)
@@ -546,7 +545,7 @@ public class DynamicTextTransformation2
             throw new ArgumentNullException("instance");
         }
 
-        DynamicTextTransformation2 textTransformation = instance as DynamicTextTransformation2;
+        var textTransformation = instance as DynamicTextTransformation2;
         if (textTransformation != null)
         {
             return textTransformation;
@@ -557,31 +556,31 @@ public class DynamicTextTransformation2
 
     private DynamicTextTransformation2(object instance)
     {
-        _instance = instance;
-        Type type = _instance.GetType();
-        _write = type.GetMethod("Write", new Type[] { typeof(string) });
-        _writeLine = type.GetMethod("WriteLine", new Type[] { typeof(string) });
-        _generationEnvironment = type.GetProperty("GenerationEnvironment", BindingFlags.Instance | BindingFlags.NonPublic);
-        _host = type.GetProperty("Host");
-        _errors = type.GetProperty("Errors");
+        this.instance = instance;
+        var type = this.instance.GetType();
+        this.write = type.GetMethod("Write", new Type[] { typeof(string) });
+        this.writeLine = type.GetMethod("WriteLine", new Type[] { typeof(string) });
+        this.generationEnvironment = type.GetProperty("GenerationEnvironment", BindingFlags.Instance | BindingFlags.NonPublic);
+        this.host = type.GetProperty("Host");
+        this.errors = type.GetProperty("Errors");
     }
 
     /// <summary>
     /// Gets the value of the wrapped TextTranformation instance's GenerationEnvironment property
     /// </summary>
-    public StringBuilder GenerationEnvironment { get { return (StringBuilder)_generationEnvironment.GetValue(_instance, null); } }
+    public StringBuilder GenerationEnvironment { get { return (StringBuilder) this.generationEnvironment.GetValue(this.instance, null); } }
 
     /// <summary>
     /// Gets the value of the wrapped TextTranformation instance's Errors property
     /// </summary>
-    public System.CodeDom.Compiler.CompilerErrorCollection Errors { get { return (System.CodeDom.Compiler.CompilerErrorCollection)_errors.GetValue(_instance, null); } }
+    public System.CodeDom.Compiler.CompilerErrorCollection Errors { get { return (System.CodeDom.Compiler.CompilerErrorCollection) this.errors.GetValue(this.instance, null); } }
 
     /// <summary>
     /// Calls the wrapped TextTranformation instance's Write method.
     /// </summary>
     public void Write(string text)
     {
-        _write.Invoke(_instance, new object[] { text });
+        this.write.Invoke(this.instance, new object[] { text });
     }
 
     /// <summary>
@@ -589,7 +588,7 @@ public class DynamicTextTransformation2
     /// </summary>
     public void WriteLine(string text)
     {
-        _writeLine.Invoke(_instance, new object[] { text });
+        this.writeLine.Invoke(this.instance, new object[] { text });
     }
 
     /// <summary>
@@ -601,24 +600,24 @@ public class DynamicTextTransformation2
     {
         get
         {
-            if (_dynamicHost == null)
+            if (this.dynamicHost == null)
             {
-                if(_host == null)
+                if(this.host == null)
                 {
-                    _dynamicHost = new NullHost2();
+                    this.dynamicHost = new NullHost2();
                 }
                 else
                 {
-                    _dynamicHost = new DynamicHost2(_host.GetValue(_instance, null));
+                    this.dynamicHost = new DynamicHost2(this.host.GetValue(this.instance, null));
                 }
             }
-            return _dynamicHost;
+            return this.dynamicHost;
         }
     }
 }
 
 /// <summary>
-/// Reponsible for abstracting the use of Host between times
+/// Responsible for abstracting the use of Host between times
 /// when it is available and not
 /// </summary>
 public interface IDynamicHost2
@@ -645,7 +644,7 @@ public interface IDynamicHost2
 }
 
 /// <summary>
-/// Reponsible for implementing the IDynamicHost as a dynamic
+/// Responsible for implementing the IDynamicHost as a dynamic
 /// shape wrapper over the Microsoft.VisualStudio.TextTemplating.ITextTemplatingEngineHost interface
 /// rather than type dependent wrapper.  We don't use the
 /// interface type so that the code can be run in preprocessed mode
@@ -653,22 +652,22 @@ public interface IDynamicHost2
 /// </summary>
 public class DynamicHost2 : IDynamicHost2
 {
-    private readonly object _instance;
-    private readonly MethodInfo _resolveParameterValue;
-    private readonly MethodInfo _resolvePath;
-    private readonly PropertyInfo _templateFile;
+    private readonly object instance;
+    private readonly MethodInfo resolveParameterValue;
+    private readonly MethodInfo resolvePath;
+    private readonly PropertyInfo templateFile;
 
     /// <summary>
     /// Creates an instance of the DynamicHost class around the passed in
-    /// Microsoft.VisualStudio.TextTemplating.ITextTemplatingEngineHost shapped instance passed in.
+    /// Microsoft.VisualStudio.TextTemplating.ITextTemplatingEngineHost shaped instance passed in.
     /// </summary>
     public DynamicHost2(object instance)
     {
-        _instance = instance;
-        Type type = _instance.GetType();
-        _resolveParameterValue = type.GetMethod("ResolveParameterValue", new Type[] { typeof(string), typeof(string), typeof(string) });
-        _resolvePath = type.GetMethod("ResolvePath", new Type[] { typeof(string) });
-        _templateFile = type.GetProperty("TemplateFile");
+        this.instance = instance;
+        var type = this.instance.GetType();
+        this.resolveParameterValue = type.GetMethod("ResolveParameterValue", new Type[] { typeof(string), typeof(string), typeof(string) });
+        this.resolvePath = type.GetMethod("ResolvePath", new Type[] { typeof(string) });
+        this.templateFile = type.GetProperty("TemplateFile");
 
     }
 
@@ -677,7 +676,7 @@ public class DynamicHost2 : IDynamicHost2
     /// </summary>
     public string ResolveParameterValue(string id, string name, string otherName)
     {
-        return (string)_resolveParameterValue.Invoke(_instance, new object[] { id, name, otherName });
+        return (string) this.resolveParameterValue.Invoke(this.instance, new object[] { id, name, otherName });
     }
 
     /// <summary>
@@ -685,7 +684,7 @@ public class DynamicHost2 : IDynamicHost2
     /// </summary>
     public string ResolvePath(string path)
     {
-        return (string)_resolvePath.Invoke(_instance, new object[] { path });
+        return (string) this.resolvePath.Invoke(this.instance, new object[] { path });
     }
 
     /// <summary>
@@ -695,7 +694,7 @@ public class DynamicHost2 : IDynamicHost2
     {
         get
         {
-            return (string)_templateFile.GetValue(_instance, null);
+            return (string) this.templateFile.GetValue(this.instance, null);
         }
     }
 
@@ -704,12 +703,12 @@ public class DynamicHost2 : IDynamicHost2
     /// </summary>
     public IServiceProvider AsIServiceProvider()
     {
-        return _instance as IServiceProvider;
+        return this.instance as IServiceProvider;
     }
 }
 
 /// <summary>
-/// Reponsible for implementing the IDynamicHost when the
+/// Responsible for implementing the IDynamicHost when the
 /// Host property is not available on the TextTemplating type. The Host
 /// property only exists when the hostspecific attribute of the template
 /// directive is set to true.
@@ -766,15 +765,16 @@ public sealed class Block
 
 public class ParamTextTemplate
 {
-    private string template;
-    private ITextTemplatingEngineHost Host { get; set; }
+    private readonly string template;
 
     private ParamTextTemplate(ITextTemplatingEngineHost host, string templateName)
     {
-        this.Host = host;
-        string fullName = this.Host.ResolvePath(templateName);
+        Host = host;
+        var fullName = Host.ResolvePath(templateName);
         this.template = File.ReadAllText(fullName);
     }
+
+    private ITextTemplatingEngineHost Host { get; set; }
 
     public static ParamTextTemplate Create(ITextTemplatingEngineHost host, string templateName)
 	{
@@ -788,16 +788,15 @@ public class ParamTextTemplate
 
 	public string TransformText(TextTemplatingSession session)
 	{
-		// test
-		var sessionHost = this.Host as ITextTemplatingSessionHost;
+		var sessionHost = (ITextTemplatingSessionHost) Host;
 		sessionHost.Session = session;
 
-		var engine = new Microsoft.VisualStudio.TextTemplating.Engine();
-		return engine.ProcessTemplate(this.template, this.Host);
+		var engine = new Engine();
+		return engine.ProcessTemplate(this.template, Host);
 	}
 }
 
-public class VSHelper
+public class VsHelper
 {
 	/// <summary>
 	/// Execute Visual Studio commands against the project item.
@@ -805,18 +804,18 @@ public class VSHelper
 	/// <param name="item">The current project item.</param>
 	/// <param name="command">The vs command as string.</param>
 	/// <returns>An error message if the command fails.</returns>
-	public static string ExecuteVsCommand(EnvDTE.DTE dte, EnvDTE.ProjectItem item, params string[] command)
+	public static string ExecuteVsCommand(DTE dte, ProjectItem item, params string[] command)
 	{
 		if (item == null)
 		{
 			throw new ArgumentNullException("item");
 		}
 
-		string error = String.Empty;
+		var error = String.Empty;
 
 		try
 		{
-			EnvDTE.Window window = item.Open();
+			var window = item.Open();
 			window.Activate();
 
 			foreach (var cmd in command)
@@ -826,7 +825,7 @@ public class VSHelper
 					continue;
 				}
 
-				EnvDTE80.DTE2 dte2 = dte as EnvDTE80.DTE2;
+				var dte2 = dte as EnvDTE80.DTE2;
 				dte2.ExecuteCommand(cmd, String.Empty);
 			}
 
@@ -845,9 +844,9 @@ public class VSHelper
 	/// <summary>
 	/// Sets a property value for the vs project item.
 	/// </summary>
-	public static void SetPropertyValue(EnvDTE.ProjectItem item, string propertyName, object value)
+	public static void SetPropertyValue(ProjectItem item, string propertyName, object value)
 	{
-		EnvDTE.Property property = item.Properties.Item(propertyName);
+		var property = item.Properties.Item(propertyName);
 		if (property == null)
 		{
 			throw new ArgumentException(String.Format("The property {0} was not found.", propertyName));
@@ -858,23 +857,23 @@ public class VSHelper
 		}
 	}
 
-	public static IEnumerable<ProjectItem> GetOutputFilesAsProjectItems(EnvDTE.DTE dte, IEnumerable<OutputFile> outputFiles)
+	public static IEnumerable<ProjectItem> GetOutputFilesAsProjectItems(DTE dte, IEnumerable<OutputFile> outputFiles)
 	{
 		var fileNames = (from o in outputFiles
 						select Path.GetFileName(o.FileName)).ToArray();
 
-		return VSHelper.GetAllSolutionItems(dte).Where(f => fileNames.Contains(f.Name));
+		return GetAllSolutionItems(dte).Where(f => fileNames.Contains(f.Name));
 	}
 
-	public static string GetOutputPath(EnvDTE.DTE dte, Block block, string defaultPath)
+	public static string GetOutputPath(DTE dte, Block block, string defaultPath)
 	{
 		if (String.IsNullOrEmpty(block.ProjectName) == true && String.IsNullOrEmpty(block.FolderName) == true)
 		{
 			return defaultPath;
 		}
 
-		EnvDTE.Project prj = null;
-		EnvDTE.ProjectItem item = null;
+		Project prj = null;
+		ProjectItem item = null;
 
 		if (String.IsNullOrEmpty(block.ProjectName) == false)
 		{
@@ -905,7 +904,7 @@ public class VSHelper
 		return defaultPath;
 	}
 
-	public static EnvDTE.ProjectItem FindFolderByName(EnvDTE.ProjectItems inItems, string withName)
+	public static ProjectItem FindFolderByName(ProjectItems inItems, string withName)
 	{
 		var folders = withName.Split(new char[] {'.', '/', '\\'});
 
@@ -916,9 +915,9 @@ public class VSHelper
 			if (items.Count() == 1)
 				return items.First();
 
-			foreach (EnvDTE.ProjectItem r in items)
+			foreach (ProjectItem r in items)
 			{
-				if (r.Collection.Parent is EnvDTE.Project)
+				if (r.Collection.Parent is Project)
 					return r;
 			}
 
@@ -927,9 +926,9 @@ public class VSHelper
 
 		var startItemEnumerator = GetAllProjectItemsRecursive(inItems).Where(p => p.Name == folders[0])
 			.Cast<ProjectItem>().GetEnumerator();
-		EnvDTE.ProjectItem item = null;
-		int idx = 1;
-		string joinedNames = string.Empty;
+		ProjectItem item = null;
+		var idx = 1;
+		var joinedNames = string.Empty;
 		while (startItemEnumerator.MoveNext() && item == null)
 		{
 			item = startItemEnumerator.Current;
@@ -948,23 +947,23 @@ public class VSHelper
 		return item;
 	}
 
-	public static string GetTemplatePlaceholderName(EnvDTE.ProjectItem item)
+	public static string GetTemplatePlaceholderName(ProjectItem item)
 	{
 		return String.Format("{0}.txt4", Path.GetFileNameWithoutExtension(item.Name));
 	}
 
-	public static EnvDTE.ProjectItem GetTemplateProjectItem(EnvDTE.DTE dte, OutputFile file, EnvDTE.ProjectItem defaultItem)
+	public static ProjectItem GetTemplateProjectItem(DTE dte, OutputFile file, ProjectItem defaultItem)
 	{
 		if (String.IsNullOrEmpty(file.ProjectName) == true && String.IsNullOrEmpty(file.FolderName) == true)
 		{
 			return defaultItem;
 		}
 
-		string templatePlaceholder = GetTemplatePlaceholderName(defaultItem);
-		string itemPath = Path.GetDirectoryName(file.FileName); 
-		string fullName = Path.Combine(itemPath, templatePlaceholder);
-		EnvDTE.Project prj = null;
-		EnvDTE.ProjectItem item = null;
+		var templatePlaceholder = GetTemplatePlaceholderName(defaultItem);
+		var itemPath = Path.GetDirectoryName(file.FileName); 
+		var fullName = Path.Combine(itemPath, templatePlaceholder);
+		Project prj = null;
+		ProjectItem item = null;
 
 		if (String.IsNullOrEmpty(file.ProjectName) == false)
 		{
@@ -992,9 +991,9 @@ public class VSHelper
 		return defaultItem;
 	}
 
-	private static EnvDTE.ProjectItem FindProjectItem(EnvDTE.ProjectItems items, string fullName, bool canCreateIfNotExists)
+	private static ProjectItem FindProjectItem(ProjectItems items, string fullName, bool canCreateIfNotExists)
 	{
-		EnvDTE.ProjectItem item = (from i in items.Cast<EnvDTE.ProjectItem>()
+		ProjectItem item = (from i in items.Cast<ProjectItem>()
 								  where i.Name == Path.GetFileName(fullName)
 								  select i).FirstOrDefault();
 		if (item == null)
@@ -1006,42 +1005,49 @@ public class VSHelper
 		return item;
 	}
 
-	public static EnvDTE.Project GetProject(EnvDTE.DTE dte, string projectName)
+	public static Project GetProject(DTE dte, string projectName)
 	{
-		return GetAllProjects(dte).Where(p=>p.Name == projectName).First();
+		return GetAllProjects(dte).First(p => p.Name == projectName);
 	}
 
-	public static IEnumerable<EnvDTE.Project> GetAllProjects(EnvDTE.DTE dte)
+	public static IEnumerable<Project> GetAllProjects(DTE dte)
 	{
-		List<EnvDTE.Project> projectList = new List<EnvDTE.Project>();
+		var projectList = new List<Project>();
 
-		var folders = dte.Solution.Projects.Cast<EnvDTE.Project>().Where(p=>p.Kind == EnvDTE80.ProjectKinds.vsProjectKindSolutionFolder);
+		var folders = dte.Solution.Projects.Cast<Project>()
+										   .Where(p=>p.Kind == EnvDTE80.ProjectKinds.vsProjectKindSolutionFolder);
 
-		foreach (EnvDTE.Project folder in folders)
+		foreach (Project folder in folders)
 		{
-			if (folder.ProjectItems == null) continue;
+		    if (folder.ProjectItems == null)
+		    {
+		        continue;
+		    }
 
-			foreach (EnvDTE.ProjectItem item in folder.ProjectItems)
+			foreach (ProjectItem item in folder.ProjectItems)
 			{
-				if (item.Object is EnvDTE.Project)
-					projectList.Add(item.Object as EnvDTE.Project);
+			    var project = item.Object as Project;
+			    if (project != null)
+			    {
+			        projectList.Add(project);
+			    }
 			}
 		}
 
-		var projects = dte.Solution.Projects.Cast<EnvDTE.Project>().Where(p=>p.Kind != EnvDTE80.ProjectKinds.vsProjectKindSolutionFolder);
+		var projects = dte.Solution.Projects.Cast<Project>().Where(p=>p.Kind != EnvDTE80.ProjectKinds.vsProjectKindSolutionFolder);
 
-		if (projects.Count() > 0)
+		if (projects.Any())
 			projectList.AddRange(projects);
 
 		return projectList;
 	}
 
-	public static EnvDTE.ProjectItem GetProjectItemWithName(EnvDTE.ProjectItems items, string itemName)
+	public static ProjectItem GetProjectItemWithName(ProjectItems items, string itemName)
 	{
 		return GetAllProjectItemsRecursive(items).Cast<ProjectItem>().Where(i=>i.Name == itemName).First();
 	}
 
-	public static string GetProjectItemFullPath(EnvDTE.ProjectItem item)
+	public static string GetProjectItemFullPath(ProjectItem item)
 	{
 		if (item == null)
 			return null;
@@ -1052,11 +1058,11 @@ public class VSHelper
 		return item.Properties.Item("FullPath").Value.ToString();
 	}
 
-	public static IEnumerable<EnvDTE.ProjectItem> GetAllSolutionItems(EnvDTE.DTE dte)
+	public static IEnumerable<ProjectItem> GetAllSolutionItems(DTE dte)
 	{
-		List<EnvDTE.ProjectItem> itemList = new List<EnvDTE.ProjectItem>();
+		var itemList = new List<ProjectItem>();
 
-		foreach (Project item in GetAllProjects(dte))
+		foreach (var item in GetAllProjects(dte))
 		{
 			if (item == null || item.ProjectItems == null) continue;
 
@@ -1066,13 +1072,13 @@ public class VSHelper
 		return itemList;
 	}
 
-	public static IEnumerable<EnvDTE.ProjectItem> GetAllProjectItemsRecursive(EnvDTE.ProjectItems projectItems)
+	public static IEnumerable<ProjectItem> GetAllProjectItemsRecursive(ProjectItems projectItems)
 	{
-    	foreach (EnvDTE.ProjectItem projectItem in projectItems)
+    	foreach (ProjectItem projectItem in projectItems)
 		{
 			if (projectItem.ProjectItems == null) continue;
 
-        	foreach (EnvDTE.ProjectItem subItem in GetAllProjectItemsRecursive(projectItem.ProjectItems))
+        	foreach (var subItem in GetAllProjectItemsRecursive(projectItem.ProjectItems))
         	{
             	yield return subItem;
         	}
@@ -1086,7 +1092,7 @@ public sealed class OutputFile
 {
 	public OutputFile()
 	{
-		this.FileProperties = new FileProperties
+		FileProperties = new FileProperties
 		{
 			CustomTool = String.Empty,
 			BuildAction = BuildAction.None
@@ -1113,7 +1119,7 @@ public sealed class FileProperties
 {
 	public FileProperties ()
 	{
-		this.TemplateParameter = new Dictionary<string,string>();
+		TemplateParameter = new Dictionary<string,string>();
 	}
 
 	public string CustomTool { get; set; }
@@ -1124,7 +1130,7 @@ public sealed class FileProperties
 	{
 		get
 		{
-			return this.BuildAction;
+			return BuildAction;
 		}
 	}
 }

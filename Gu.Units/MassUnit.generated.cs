@@ -5,89 +5,61 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.MassUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Mass"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(MassUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Kilograms.symbol}")]
+    [Serializable, TypeConverter(typeof(MassUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MassUnit.symbol}")]
     public struct MassUnit : IUnit, IUnit<Mass>, IEquatable<MassUnit>
     {
         /// <summary>
-        /// The Kilograms unit
-        /// Contains conversion logic to from and formatting.
+        /// The MassUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly MassUnit Kilograms = new MassUnit(1.0, "kg");
-
-        /// <summary>
-        /// The Kilograms unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly MassUnit kg = Kilograms;
+        public static readonly MassUnit Kilograms = new MassUnit(kilograms => kilograms, kilograms => kilograms, "kg");
 
         /// <summary>
         /// The Grams unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly MassUnit Grams = new MassUnit(0.001, "g");
-
-        /// <summary>
-        /// The Grams unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly MassUnit g = Grams;
+        public static readonly MassUnit Grams = new MassUnit(grams => grams / 1000, kilograms => 1000 * kilograms, "g");
 
         /// <summary>
         /// The Milligrams unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly MassUnit Milligrams = new MassUnit(1E-06, "mg");
-
-        /// <summary>
-        /// The Milligrams unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly MassUnit mg = Milligrams;
+        public static readonly MassUnit Milligrams = new MassUnit(milligrams => milligrams / 1000000, kilograms => 1000000 * kilograms, "mg");
 
         /// <summary>
         /// The Micrograms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly MassUnit Micrograms = new MassUnit(1E-09, "µg");
+        public static readonly MassUnit Micrograms = new MassUnit(micrograms => micrograms / 1000000000, kilograms => 1000000000 * kilograms, "µg");
 
-        /// <summary>
-        /// The Micrograms unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly MassUnit µg = Micrograms;
+        private readonly Func<double, double> toKilograms;
+        private readonly Func<double, double> fromKilograms;
+        internal readonly string symbol;
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
-
-        public MassUnit(double conversionFactor, string symbol)
+        public MassUnit(Func<double, double> toKilograms, Func<double, double> fromKilograms, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toKilograms = toKilograms;
+            this.fromKilograms = fromKilograms;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.MassUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.MassUnit"/>
         /// </summary>
-        public MassUnit SiUnit => MassUnit.Kilograms;
+        public MassUnit SiUnit => Kilograms;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.MassUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => MassUnit.Kilograms;
+        IUnit IUnit.SiUnit => Kilograms;
 
         public static Mass operator *(double left, MassUnit right)
         {
@@ -121,7 +93,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toKilograms(value);
         }
 
         /// <summary>
@@ -129,9 +101,9 @@
         /// </summary>
         /// <param name="value">The value in Kilograms</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double kilograms)
         {
-            return value / this.conversionFactor;
+            return this.fromKilograms(kilograms);
         }
 
         /// <summary>
@@ -145,7 +117,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Kilograms
+        /// Gets the scalar value of <paramref name="quantity"/> in MassUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

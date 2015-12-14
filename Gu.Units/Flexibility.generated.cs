@@ -67,37 +67,19 @@
         }
 
         /// <summary>
-        /// The quantity in millimetresPerNewton
+        /// The quantity in MillimetresPerNewton
         /// </summary>
-        public double MillimetresPerNewton
-        {
-            get
-            {
-                return FlexibilityUnit.MillimetresPerNewton.FromSiUnit(this.metresPerNewton);
-            }
-        }
+        public double MillimetresPerNewton => 1000 * this.metresPerNewton;
 
         /// <summary>
-        /// The quantity in millimetresPerKilonewton
+        /// The quantity in MillimetresPerKilonewton
         /// </summary>
-        public double MillimetresPerKilonewton
-        {
-            get
-            {
-                return FlexibilityUnit.MillimetresPerKilonewton.FromSiUnit(this.metresPerNewton);
-            }
-        }
+        public double MillimetresPerKilonewton => 1000000 * this.metresPerNewton;
 
         /// <summary>
-        /// The quantity in micrometresPerKilonewton
+        /// The quantity in MicrometresPerKilonewton
         /// </summary>
-        public double MicrometresPerKilonewton
-        {
-            get
-            {
-                return FlexibilityUnit.MicrometresPerKilonewton.FromSiUnit(this.metresPerNewton);
-            }
-        }
+        public double MicrometresPerKilonewton => 1000000000 * this.metresPerNewton;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
@@ -181,7 +163,7 @@
         /// <param name="millimetresPerNewton">The value in mm/N</param>
         public static Flexibility FromMillimetresPerNewton(double millimetresPerNewton)
         {
-            return From(millimetresPerNewton, FlexibilityUnit.MillimetresPerNewton);
+            return new Flexibility(millimetresPerNewton / 1000);
         }
 
         /// <summary>
@@ -190,7 +172,7 @@
         /// <param name="millimetresPerKilonewton">The value in mm/kN</param>
         public static Flexibility FromMillimetresPerKilonewton(double millimetresPerKilonewton)
         {
-            return From(millimetresPerKilonewton, FlexibilityUnit.MillimetresPerKilonewton);
+            return new Flexibility(millimetresPerKilonewton / 1000000);
         }
 
         /// <summary>
@@ -199,7 +181,7 @@
         /// <param name="micrometresPerKilonewton">The value in µm/kN</param>
         public static Flexibility FromMicrometresPerKilonewton(double micrometresPerKilonewton)
         {
-            return From(micrometresPerKilonewton, FlexibilityUnit.MicrometresPerKilonewton);
+            return new Flexibility(micrometresPerKilonewton / 1000000000);
         }
 
         public static Length operator *(Flexibility left, Force right)
@@ -207,9 +189,29 @@
             return Length.FromMetres(left.metresPerNewton * right.newtons);
         }
 
+        public static Wavenumber operator *(Flexibility left, Pressure right)
+        {
+            return Wavenumber.FromReciprocalMetres(left.metresPerNewton * right.pascals);
+        }
+
         public static Area operator *(Flexibility left, Energy right)
         {
             return Area.FromSquareMetres(left.metresPerNewton * right.joules);
+        }
+
+        public static KinematicViscosity operator *(Flexibility left, Power right)
+        {
+            return KinematicViscosity.FromSquareMetresPerSecond(left.metresPerNewton * right.watts);
+        }
+
+        public static LengthPerUnitless operator *(Flexibility left, ForcePerUnitless right)
+        {
+            return LengthPerUnitless.FromMetresPerUnitless(left.metresPerNewton * right.newtonsPerUnitless);
+        }
+
+        public static Time operator *(Flexibility left, MassFlow right)
+        {
+            return Time.FromSeconds(left.metresPerNewton * right.kilogramsPerSecond);
         }
 
         public static Stiffness operator /(double left, Flexibility right)

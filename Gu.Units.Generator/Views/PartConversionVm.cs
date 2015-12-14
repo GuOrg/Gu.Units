@@ -1,52 +1,65 @@
 ﻿namespace Gu.Units.Generator
 {
+    using System;
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
-    using Annotations;
-    using WpfStuff;
+    using JetBrains.Annotations;
+    using Reactive;
 
     public class PartConversionVm : INotifyPropertyChanged
     {
-        private readonly IUnit unit;
-        private readonly Conversion[] subParts;
-        public PartConversionVm(IUnit unit, params Conversion[] subParts)
+        private readonly Unit unit;
+
+        public PartConversionVm(Unit unit, PartConversion conversion)
         {
             this.unit = unit;
-            this.subParts = subParts;
-            Conversion = new Conversion { BaseUnit = unit };
-            Conversion.SetParts(subParts);
+            Conversion = conversion;
+            IsEditable = Conversion.Name != unit.Name;
+            unit.PartConversions.ObservePropertyChangedSlim()
+                .Subscribe(_ => OnPropertyChanged(nameof(IsUsed))); // no need for IDisposable
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Conversion Conversion { get; }
+        public PartConversion Conversion { get; }
 
         public bool IsUsed
         {
             get
             {
-                return this.unit.Conversions.Any(x => x.Formula.ConversionFactor == Conversion.Formula.ConversionFactor && x.Symbol == Conversion.Symbol);
+                if (!IsEditable)
+                {
+                    return true;
+                }
+
+                return this.unit.PartConversions.Any(IsMatch);
             }
             set
             {
-                if (value.Equals(IsUsed))
+                if (value.Equals(IsUsed) || !IsEditable)
                 {
                     return;
                 }
+
                 if (value)
                 {
-                    var subUnit = new Conversion { BaseUnit = this.unit };
-                    subUnit.SetParts(this.subParts);
-                    this.unit.Conversions.Add(subUnit);
+                    this.unit.PartConversions.Add(Conversion);
                 }
                 else
                 {
-                    this.unit.Conversions.InvokeRemove(x => x.Formula.ConversionFactor == Conversion.Formula.ConversionFactor);
+                    var match = this.unit.PartConversions.FirstOrDefault(IsMatch);
+                    if (match != null)
+                    {
+                        this.unit.PartConversions.Remove(match);
+                    }
                 }
+
                 OnPropertyChanged();
             }
         }
+
+        public bool IsEditable { get; }
 
         public override string ToString()
         {
@@ -57,6 +70,21 @@
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private bool IsMatch(PartConversion x)
+        {
+            if (Conversion.Factor != x.Factor)
+            {
+                return false;
+            }
+
+            if (Conversion.Name != x.Name)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

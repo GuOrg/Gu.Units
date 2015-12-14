@@ -1,5 +1,4 @@
 ﻿<#@ template debug="false" hostspecific="true" language="C#" #>
-<#@ CleanupBehavior processor="T4VSHost" CleanupAfterProcessingtemplate="true" #>
 <#@ include file="TemplateFilemanager.CS.ttinclude" #>
 <#@ output extension=".txt" #>
 <#@ assembly name="System.Core" #>
@@ -16,7 +15,7 @@ var paramTmpl = ParamTextTemplate.Create(this.Host, "Enumerable.tt");
 var settings = Settings.Instance;
 this.Write(string.Format("Read Settings found {0} quantities", settings.Quantities.Count));
 
-fileManager.StartNewFile("Enumerable.generated." + Settings.Extension, Settings.ProjectName, Settings.FolderName, null);
+fileManager.StartNewFile("Enumerable.generated." + Settings.Extension, Settings.ProjectName, null, null);
 var output = paramTmpl.TransformText(null);
 this.Write(output);
 

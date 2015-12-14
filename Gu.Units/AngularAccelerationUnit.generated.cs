@@ -5,77 +5,73 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.AngularAccelerationUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.AngularAcceleration"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(AngularAccelerationUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{RadiansPerSecondSquared.symbol}")]
+    [Serializable, TypeConverter(typeof(AngularAccelerationUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{AngularAccelerationUnit.symbol}")]
     public struct AngularAccelerationUnit : IUnit, IUnit<AngularAcceleration>, IEquatable<AngularAccelerationUnit>
     {
         /// <summary>
-        /// The RadiansPerSecondSquared unit
-        /// Contains conversion logic to from and formatting.
+        /// The AngularAccelerationUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly AngularAccelerationUnit RadiansPerSecondSquared = new AngularAccelerationUnit(1.0, "rad/s²");
+        public static readonly AngularAccelerationUnit RadiansPerSecondSquared = new AngularAccelerationUnit(radiansPerSecondSquared => radiansPerSecondSquared, radiansPerSecondSquared => radiansPerSecondSquared, "rad/s²");
 
         /// <summary>
         /// The DegreesPerSquareSecond unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AngularAccelerationUnit DegreesPerSquareSecond = new AngularAccelerationUnit(0.017453292519943295, "°⋅s⁻²");
+        public static readonly AngularAccelerationUnit DegreesPerSquareSecond = new AngularAccelerationUnit(degreesPerSquareSecond => 0.0174532925199433 * degreesPerSquareSecond, radiansPerSecondSquared => radiansPerSecondSquared / 0.0174532925199433, "°⋅s⁻²");
 
         /// <summary>
         /// The RadiansPerSquareHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AngularAccelerationUnit RadiansPerSquareHour = new AngularAccelerationUnit(7.71604938271605E-08, "h⁻²⋅rad");
+        public static readonly AngularAccelerationUnit RadiansPerSquareHour = new AngularAccelerationUnit(radiansPerSquareHour => radiansPerSquareHour / 12960000, radiansPerSecondSquared => 12960000 * radiansPerSecondSquared, "h⁻²⋅rad");
 
         /// <summary>
         /// The DegreesPerSquareHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AngularAccelerationUnit DegreesPerSquareHour = new AngularAccelerationUnit(1.346704669748711E-09, "h⁻²⋅°");
+        public static readonly AngularAccelerationUnit DegreesPerSquareHour = new AngularAccelerationUnit(degreesPerSquareHour => 1.34670466974871E-09 * degreesPerSquareHour, radiansPerSecondSquared => radiansPerSecondSquared / 1.34670466974871E-09, "h⁻²⋅°");
 
         /// <summary>
         /// The DegreesPerSquareMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AngularAccelerationUnit DegreesPerSquareMinute = new AngularAccelerationUnit(4.84813681109536E-06, "min⁻²⋅°");
+        public static readonly AngularAccelerationUnit DegreesPerSquareMinute = new AngularAccelerationUnit(degreesPerSquareMinute => 4.84813681109536E-06 * degreesPerSquareMinute, radiansPerSecondSquared => radiansPerSecondSquared / 4.84813681109536E-06, "min⁻²⋅°");
 
         /// <summary>
         /// The RadiansPerSquareMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AngularAccelerationUnit RadiansPerSquareMinute = new AngularAccelerationUnit(0.00027777777777777778, "min⁻²⋅rad");
+        public static readonly AngularAccelerationUnit RadiansPerSquareMinute = new AngularAccelerationUnit(radiansPerSquareMinute => radiansPerSquareMinute / 3600, radiansPerSecondSquared => 3600 * radiansPerSecondSquared, "min⁻²⋅rad");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        private readonly Func<double, double> toRadiansPerSecondSquared;
+        private readonly Func<double, double> fromRadiansPerSecondSquared;
+        internal readonly string symbol;
 
-        public AngularAccelerationUnit(double conversionFactor, string symbol)
+        public AngularAccelerationUnit(Func<double, double> toRadiansPerSecondSquared, Func<double, double> fromRadiansPerSecondSquared, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toRadiansPerSecondSquared = toRadiansPerSecondSquared;
+            this.fromRadiansPerSecondSquared = fromRadiansPerSecondSquared;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.AngularAccelerationUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.AngularAccelerationUnit"/>
         /// </summary>
-        public AngularAccelerationUnit SiUnit => AngularAccelerationUnit.RadiansPerSecondSquared;
+        public AngularAccelerationUnit SiUnit => RadiansPerSecondSquared;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.AngularAccelerationUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => AngularAccelerationUnit.RadiansPerSecondSquared;
+        IUnit IUnit.SiUnit => RadiansPerSecondSquared;
 
         public static AngularAcceleration operator *(double left, AngularAccelerationUnit right)
         {
@@ -109,7 +105,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toRadiansPerSecondSquared(value);
         }
 
         /// <summary>
@@ -117,9 +113,9 @@
         /// </summary>
         /// <param name="value">The value in RadiansPerSecondSquared</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double radiansPerSecondSquared)
         {
-            return value / this.conversionFactor;
+            return this.fromRadiansPerSecondSquared(radiansPerSecondSquared);
         }
 
         /// <summary>
@@ -133,7 +129,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in RadiansPerSecondSquared
+        /// Gets the scalar value of <paramref name="quantity"/> in AngularAccelerationUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

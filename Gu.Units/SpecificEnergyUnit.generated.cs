@@ -5,47 +5,43 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.SpecificEnergyUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.SpecificEnergy"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(SpecificEnergyUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{JoulesPerKilogram.symbol}")]
+    [Serializable, TypeConverter(typeof(SpecificEnergyUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{SpecificEnergyUnit.symbol}")]
     public struct SpecificEnergyUnit : IUnit, IUnit<SpecificEnergy>, IEquatable<SpecificEnergyUnit>
     {
         /// <summary>
-        /// The JoulesPerKilogram unit
-        /// Contains conversion logic to from and formatting.
+        /// The SpecificEnergyUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly SpecificEnergyUnit JoulesPerKilogram = new SpecificEnergyUnit(1.0, "J/kg");
+        public static readonly SpecificEnergyUnit JoulesPerKilogram = new SpecificEnergyUnit(joulesPerKilogram => joulesPerKilogram, joulesPerKilogram => joulesPerKilogram, "J/kg");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        private readonly Func<double, double> toJoulesPerKilogram;
+        private readonly Func<double, double> fromJoulesPerKilogram;
+        internal readonly string symbol;
 
-        public SpecificEnergyUnit(double conversionFactor, string symbol)
+        public SpecificEnergyUnit(Func<double, double> toJoulesPerKilogram, Func<double, double> fromJoulesPerKilogram, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toJoulesPerKilogram = toJoulesPerKilogram;
+            this.fromJoulesPerKilogram = fromJoulesPerKilogram;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.SpecificEnergyUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.SpecificEnergyUnit"/>
         /// </summary>
-        public SpecificEnergyUnit SiUnit => SpecificEnergyUnit.JoulesPerKilogram;
+        public SpecificEnergyUnit SiUnit => JoulesPerKilogram;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.SpecificEnergyUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => SpecificEnergyUnit.JoulesPerKilogram;
+        IUnit IUnit.SiUnit => JoulesPerKilogram;
 
         public static SpecificEnergy operator *(double left, SpecificEnergyUnit right)
         {
@@ -79,7 +75,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toJoulesPerKilogram(value);
         }
 
         /// <summary>
@@ -87,9 +83,9 @@
         /// </summary>
         /// <param name="value">The value in JoulesPerKilogram</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double joulesPerKilogram)
         {
-            return value / this.conversionFactor;
+            return this.fromJoulesPerKilogram(joulesPerKilogram);
         }
 
         /// <summary>
@@ -103,7 +99,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in JoulesPerKilogram
+        /// Gets the scalar value of <paramref name="quantity"/> in SpecificEnergyUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

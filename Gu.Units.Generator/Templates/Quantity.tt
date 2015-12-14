@@ -1,25 +1,13 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #>
-<#@ parameter name="QuantityData" type="Gu.Units.Generator.Quantity" #>
+<#@ parameter name="QuantityName" type="System.String" #>
 <#@ output extension=".txt" #>
 <#
+
+var settings = Settings.Instance;
 // Template used by QuantityGenerator.tt
-Quantity quantity = null;
-if(QuantityData != null)
-{
-    quantity = QuantityData;
-}
-else
-{
-    var unit = new SiUnit("Metres", "m")
-                    {
-                        QuantityName = "Length"
-                    };
-    unit.Conversions.Add(new Conversion("Centimetres", "cm"));
-    unit.Conversions.Add(new Conversion("Millimetres", "mm"));
-    quantity = unit.Quantity;
-}
+var quantity = settings.GetQuantityByName(QuantityName ?? settings.Quantities[0].Name);
 #>
 namespace <#= Settings.Namespace #>
 {
@@ -29,36 +17,36 @@ namespace <#= Settings.Namespace #>
     using System.Xml.Schema;
 
 	/// <summary>
-    /// A type for the quantity <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.
+    /// A type for the quantity <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
     /// </summary>
-	// [TypeConverter(typeof(<#= quantity.ClassName #>TypeConverter))]
+	// [TypeConverter(typeof(<#= quantity.Name #>TypeConverter))]
     [Serializable]
-	public partial struct <#= quantity.ClassName #> : IQuantity<<#= quantity.ClassName #>Unit>, IComparable<<#= quantity.ClassName #>>, IEquatable<<#= quantity.ClassName #>>
+	public partial struct <#= quantity.Name #> : IQuantity<<#= quantity.UnitName #>>, IComparable<<#= quantity.Name #>>, IEquatable<<#= quantity.Name #>>
 	{
-		public static readonly <#= quantity.ClassName #> Zero = new <#= quantity.ClassName #>();
+		public static readonly <#= quantity.Name #> Zero = new <#= quantity.Name #>();
 	    
 		/// <summary>
-        /// The quantity in <see cref="<#= Settings.Namespace #>.<#= quantity.Unit.UnitName #>.<#= quantity.Unit.ClassName #>"/>.
+        /// The quantity in <see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>.<#= quantity.Unit.Name #>"/>.
         /// </summary>
 		internal readonly double <#= quantity.Unit.ParameterName #>;
 		
-		private <#= quantity.ClassName #>(double <#= quantity.Unit.ParameterName #>)
+		private <#= quantity.Name #>(double <#= quantity.Unit.ParameterName #>)
         {
             this.<#= quantity.Unit.ParameterName #> = <#= quantity.Unit.ParameterName #>;
         }
 
 		/// <summary>
-        /// Initializes a new instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.
+        /// Initializes a new instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="unit"><see cref="<#= Settings.Namespace #>.<#= quantity.Unit.UnitName #>"/>.</param>
-        public <#= quantity.ClassName #>(double value, <#= quantity.ClassName #>Unit unit)
+        /// <param name="unit"><see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>"/>.</param>
+        public <#= quantity.Name #>(double value, <#= quantity.UnitName #> unit)
         {
             this.<#= quantity.Unit.ParameterName #> = unit.<#= Names.ToSiUnit #>(value);
         }
 
         /// <summary>
-        /// The quantity in <see cref="<#= Settings.Namespace #>.<#= quantity.Unit.UnitName #>.<#= quantity.Unit.ClassName #>"/>
+        /// The quantity in <see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>.<#= quantity.Unit.Name #>"/>
         /// </summary>
         public double <#= Names.SiValue #>
         {
@@ -69,19 +57,19 @@ namespace <#= Settings.Namespace #>
         }
 
 		/// <summary>
-        /// The <see cref="<#= Settings.Namespace #>.<#= quantity.Unit.UnitName #>"/> for the <see cref="SiValue"/>
+        /// The <see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>"/> for the <see cref="SiValue"/>
         /// </summary>
-        public <#= quantity.Unit.UnitName #> SiUnit => <#= quantity.Unit.UnitName #>.<#= quantity.Unit.ClassName #>;
+        public <#= quantity.UnitName #> SiUnit => <#= quantity.UnitName #>.<#= quantity.Unit.Name #>;
 
 		/// <summary>
         /// The <see cref="<#= Settings.Namespace #>.IUnit"/> for the <see cref="SiValue"/>
         /// </summary>
-        IUnit IQuantity.SiUnit => <#= quantity.Unit.UnitName #>.<#= quantity.Unit.ClassName #>;
+        IUnit IQuantity.SiUnit => <#= quantity.UnitName #>.<#= quantity.Unit.Name #>;
 
 	    /// <summary>
         /// The quantity in <#= quantity.Unit.ParameterName #>".
         /// </summary>
-		public double <#= quantity.Unit.ClassName #>
+		public double <#= quantity.Unit.Name #>
         {
             get
             {
@@ -90,110 +78,106 @@ namespace <#= Settings.Namespace #>
         }
 
 <#
-		foreach(var unit in quantity.Unit.Conversions)
+		foreach(var unit in quantity.Unit.AllConversions)
 		{
+		var fromSi = unit.FromSi.Replace(quantity.Unit.ParameterName, "this." + quantity.Unit.ParameterName);
 		#>
         /// <summary>
-        /// The quantity in <#= unit.ParameterName #>
+        /// The quantity in <#= unit.Name #>
         /// </summary>
-        public double <#= unit.ClassName #>
-        {
-            get
-            {
-                return <#= quantity.ClassName #>Unit.<#= unit.ClassName #>.<#= Names.FromSiUnit #>(this.<#= quantity.Unit.ParameterName #>);
-            }
-        }
+        public double <#= unit.Name #> => <#= fromSi #>;
 
 <#
 		} 
 		#>
         /// <summary>
-        /// Creates an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> from its string representation
+        /// Creates an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/></param>
+        /// <param name="s">The string representation of the <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></param>
         /// <returns></returns>
-		public static <#= quantity.ClassName #> Parse(string s)
+		public static <#= quantity.Name #> Parse(string s)
         {
-            return QuantityParser.Parse<<#= quantity.ClassName #>Unit, <#= quantity.ClassName #>>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<<#= quantity.UnitName #>, <#= quantity.Name #>>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-		public static <#= quantity.ClassName #> Parse(string s, IFormatProvider provider)
+		public static <#= quantity.Name #> Parse(string s, IFormatProvider provider)
         {
-            return QuantityParser.Parse<<#= quantity.ClassName #>Unit, <#= quantity.ClassName #>>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<<#= quantity.UnitName #>, <#= quantity.Name #>>(s, From, NumberStyles.Float, provider);
         }
 
-        public static <#= quantity.ClassName #> Parse(string s, NumberStyles styles)
+        public static <#= quantity.Name #> Parse(string s, NumberStyles styles)
         {
-            return QuantityParser.Parse<<#= quantity.ClassName #>Unit, <#= quantity.ClassName #>>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<<#= quantity.UnitName #>, <#= quantity.Name #>>(s, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static <#= quantity.ClassName #> Parse(string s, NumberStyles styles, IFormatProvider provider)
+        public static <#= quantity.Name #> Parse(string s, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<<#= quantity.ClassName #>Unit, <#= quantity.ClassName #>>(s, From, styles, provider);
+            return QuantityParser.Parse<<#= quantity.UnitName #>, <#= quantity.Name #>>(s, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out <#= quantity.ClassName #> value)
+        public static bool TryParse(string s, out <#= quantity.Name #> value)
         {
-            return QuantityParser.TryParse<<#= quantity.ClassName #>Unit, <#= quantity.ClassName #>>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<<#= quantity.UnitName #>, <#= quantity.Name #>>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
         }
 		
-        public static bool TryParse(string s, IFormatProvider provider, out <#= quantity.ClassName #> value)
+        public static bool TryParse(string s, IFormatProvider provider, out <#= quantity.Name #> value)
         {
-            return QuantityParser.TryParse<<#= quantity.ClassName #>Unit, <#= quantity.ClassName #>>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<<#= quantity.UnitName #>, <#= quantity.Name #>>(s, From, NumberStyles.Float, provider, out value);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out <#= quantity.ClassName #> value)
+        public static bool TryParse(string s, NumberStyles styles, out <#= quantity.Name #> value)
         {
-            return QuantityParser.TryParse<<#= quantity.ClassName #>Unit, <#= quantity.ClassName #>>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<<#= quantity.UnitName #>, <#= quantity.Name #>>(s, From, styles, CultureInfo.CurrentCulture, out value);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out <#= quantity.ClassName #> value)
+        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out <#= quantity.Name #> value)
         {
-            return QuantityParser.TryParse<<#= quantity.ClassName #>Unit, <#= quantity.ClassName #>>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<<#= quantity.UnitName #>, <#= quantity.Name #>>(s, From, styles, provider, out value);
         }
  
         /// <summary>
-        /// Reads an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> from the <paramref name="reader"/>
+        /// Reads an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> from the <paramref name="reader"/>
         /// </summary>
         /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/></returns>
-        public static <#= quantity.ClassName #> ReadFrom(XmlReader reader)
+        /// <returns>An instance of  <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></returns>
+        public static <#= quantity.Name #> ReadFrom(XmlReader reader)
         {
-            var v = new <#= quantity.ClassName #>();
+            var v = new <#= quantity.Name #>();
             v.ReadXml(reader);
             return v;
         }
  
         /// <summary>
-        /// Creates a new instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.
+        /// Creates a new instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
         /// <param name="value"></param>
         /// <param name="unit"></param>
-        public static <#= quantity.ClassName #> From(double value, <#= quantity.ClassName #>Unit unit)
+        public static <#= quantity.Name #> From(double value, <#= quantity.UnitName #> unit)
         {
-            return new <#= quantity.ClassName #>(unit.<#= Names.ToSiUnit #>(value));
+            return new <#= quantity.Name #>(unit.<#= Names.ToSiUnit #>(value));
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.
+        /// Creates a new instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
-        /// <param name="<#= quantity.Unit.ParameterName #>">The value in <see cref="<#= Settings.Namespace #>.<#= quantity.Unit.UnitName #>.<#= quantity.Unit.ClassName #>"/></param>
-        public static <#= quantity.ClassName #> From<#= quantity.Unit.ClassName #>(double <#= quantity.Unit.ParameterName #>)
+        /// <param name="<#= quantity.Unit.ParameterName #>">The value in <see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>.<#= quantity.Unit.Name #>"/></param>
+        public static <#= quantity.Name #> From<#= quantity.Unit.Name #>(double <#= quantity.Unit.ParameterName #>)
         {
-            return new <#= quantity.ClassName #>(<#= quantity.Unit.ParameterName #>);
+            return new <#= quantity.Name #>(<#= quantity.Unit.ParameterName #>);
         }
 <#
-		foreach(var su in quantity.Unit.Conversions)
+		foreach(var su in quantity.Unit.AllConversions)
 		{
+		    var toSi = su.ToSi;
 		#>
 
         /// <summary>
-        /// Creates a new instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.
+        /// Creates a new instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
         /// <param name="<#= su.ParameterName #>">The value in <#= su.Symbol #></param>
-        public static <#= quantity.ClassName #> From<#= su.ClassName #>(double <#= su.ParameterName #>)
+        public static <#= quantity.Name #> From<#= su.Name #>(double <#= su.ParameterName #>)
         {
-            return From(<#= su.ParameterName #>, <#= quantity.ClassName #>Unit.<#= su.ClassName #>);
+            return new <#= quantity.Name #>(<#= toSi #>);
         }
 <#
 		} 
@@ -203,9 +187,9 @@ namespace <#= Settings.Namespace #>
 		{
 		#>
 
-        public static <#= op.Result.ClassName #> operator<#= op.Operator #>(<#= op.Left.ClassName #> left, <#= op.Right.ClassName #> right)
+        public static <#= op.Result.Name #> operator<#= op.Operator #>(<#= op.Left.Name #> left, <#= op.Right.Name #> right)
         {
-            return <#= op.Result.ClassName #>.From<#= op.Result.Unit.ClassName #>(left.<#= op.Left.Unit.ParameterName #> <#= op.Operator #> right.<#= op.Right.Unit.ParameterName #>);
+            return <#= op.Result.Name #>.From<#= op.Result.Unit.Name #>(left.<#= op.Left.Unit.ParameterName #> <#= op.Operator #> right.<#= op.Right.Unit.ParameterName #>);
         }
 <#
 		} 
@@ -215,176 +199,176 @@ namespace <#= Settings.Namespace #>
 		{
 		#>
 
-        public static <#= quantity.Inverse.Inverted.ClassName #> operator/(double left, <#= quantity.ClassName #> right)
+        public static <#= quantity.Inverse.Inverted.Name #> operator/(double left, <#= quantity.Name #> right)
         {
-            return <#= quantity.Inverse.Inverted.ClassName #>.From<#= quantity.Inverse.Inverted.Unit.ClassName #>(left / right.<#= quantity.Unit.ParameterName #>);
+            return <#= quantity.Inverse.Inverted.Name #>.From<#= quantity.Inverse.Inverted.Unit.Name #>(left / right.<#= quantity.Unit.ParameterName #>);
         }
 <#
 		} 
 		#>
 
-        public static double operator /(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
+        public static double operator /(<#= quantity.Name #> left, <#= quantity.Name #> right)
         {
             return left.<#= quantity.Unit.ParameterName #> / right.<#= quantity.Unit.ParameterName #>;
         }
 
         /// <summary>
-        /// Indicates whether two <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> instances are equal.
+        /// Indicates whether two <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> instances are equal.
         /// </summary>
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.</param>
-        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.</param>
-        public static bool operator ==(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
+        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
+        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
+        public static bool operator ==(<#= quantity.Name #> left, <#= quantity.Name #> right)
         {
             return left.Equals(right);
         }
  
         /// <summary>
-        /// Indicates whether two <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> instances are not equal.
+        /// Indicates whether two <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> instances are not equal.
         /// </summary>
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.</param>
-        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.</param>
-        public static bool operator !=(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
+        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
+        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
+        public static bool operator !=(<#= quantity.Name #> left, <#= quantity.Name #> right)
         {
             return !left.Equals(right);
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> is less than another specified <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.
+        /// Indicates whether a specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> is less than another specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.</param>
-        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.</param>
-        public static bool operator <(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
+        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
+        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
+        public static bool operator <(<#= quantity.Name #> left, <#= quantity.Name #> right)
         {
             return left.<#= quantity.Unit.ParameterName #> < right.<#= quantity.Unit.ParameterName #>;
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> is greater than another specified <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.
+        /// Indicates whether a specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> is greater than another specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.</param>
-        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.</param>
-        public static bool operator >(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
+        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
+        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
+        public static bool operator >(<#= quantity.Name #> left, <#= quantity.Name #> right)
         {
             return left.<#= quantity.Unit.ParameterName #> > right.<#= quantity.Unit.ParameterName #>;
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> is less than or equal to another specified <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.
+        /// Indicates whether a specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> is less than or equal to another specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.</param>
-        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.</param>
-        public static bool operator <=(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
+        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
+        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
+        public static bool operator <=(<#= quantity.Name #> left, <#= quantity.Name #> right)
         {
             return left.<#= quantity.Unit.ParameterName #> <= right.<#= quantity.Unit.ParameterName #>;
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> is greater than or equal to another specified <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.
+        /// Indicates whether a specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> is greater than or equal to another specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.</param>
-        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.</param>
-        public static bool operator >=(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
+        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
+        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
+        public static bool operator >=(<#= quantity.Name #> left, <#= quantity.Name #> right)
         {
             return left.<#= quantity.Unit.ParameterName #> >= right.<#= quantity.Unit.ParameterName #>;
         }
  
         /// <summary>
-        /// Multiplies an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> with <paramref name="left"/> and returns the result.
+        /// Multiplies an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> with <paramref name="left"/> and returns the result.
         /// </summary>
-        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/></param>
+        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></param>
         /// <param name="left">An instance of <seealso cref="System.Double"/></param>
-        /// <returns>Multiplies an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> with <paramref name="left"/> and returns the result.</returns>
-        public static <#= quantity.ClassName #> operator *(double left, <#= quantity.ClassName #> right)
+        /// <returns>Multiplies an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> with <paramref name="left"/> and returns the result.</returns>
+        public static <#= quantity.Name #> operator *(double left, <#= quantity.Name #> right)
         {
-            return new <#= quantity.ClassName #>(left*right.<#= quantity.Unit.ParameterName #>);
+            return new <#= quantity.Name #>(left*right.<#= quantity.Unit.ParameterName #>);
         }
  
         /// <summary>
-        /// Multiplies an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> with <paramref name="right"/> and returns the result.
+        /// Multiplies an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/></param>
+        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></param>
         /// <param name="right">An instance of <seealso cref="System.Double"/></param>
-        /// <returns>Multiplies an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> with <paramref name="right"/> and returns the result.</returns>
-        public static <#= quantity.ClassName #> operator *(<#= quantity.ClassName #> left, double right)
+        /// <returns>Multiplies an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> with <paramref name="right"/> and returns the result.</returns>
+        public static <#= quantity.Name #> operator *(<#= quantity.Name #> left, double right)
         {
-            return new <#= quantity.ClassName #>(left.<#= quantity.Unit.ParameterName #>*right);
+            return new <#= quantity.Name #>(left.<#= quantity.Unit.ParameterName #>*right);
         }
  
         /// <summary>
-        /// Divides an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> with <paramref name="right"/> and returns the result.
+        /// Divides an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/></param>
+        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></param>
         /// <param name="right">An instance of <seealso cref="System.Double"/></param>
-        /// <returns>Divides an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> with <paramref name="right"/> and returns the result.</returns>
-        public static <#= quantity.ClassName #> operator /(<#= quantity.ClassName #> left, double right)
+        /// <returns>Divides an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> with <paramref name="right"/> and returns the result.</returns>
+        public static <#= quantity.Name #> operator /(<#= quantity.Name #> left, double right)
         {
-            return new <#= quantity.ClassName #>(left.<#= quantity.Unit.ParameterName #> / right);
+            return new <#= quantity.Name #>(left.<#= quantity.Unit.ParameterName #> / right);
         }
  
         /// <summary>
-        /// Adds two specified <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> instances.
+        /// Adds two specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> instances.
         /// </summary>
         /// <returns>
-        /// An <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
+        /// An <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.</param>
-        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.</param>
-        public static <#= quantity.ClassName #> operator +(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
+        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
+        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
+        public static <#= quantity.Name #> operator +(<#= quantity.Name #> left, <#= quantity.Name #> right)
         {
-            return new <#= quantity.ClassName #>(left.<#= quantity.Unit.ParameterName #> + right.<#= quantity.Unit.ParameterName #>);
+            return new <#= quantity.Name #>(left.<#= quantity.Unit.ParameterName #> + right.<#= quantity.Unit.ParameterName #>);
         }
  
         /// <summary>
-        /// Subtracts an <#= quantity.ClassName #> from another <#= quantity.ClassName #> and returns the difference.
+        /// Subtracts an <#= quantity.Name #> from another <#= quantity.Name #> and returns the difference.
         /// </summary>
         /// <returns>
-        /// An <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> that is the difference
+        /// An <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> that is the difference
         /// </returns>
-        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> (the minuend).</param>
-        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> (the subtrahend).</param>
-        public static <#= quantity.ClassName #> operator -(<#= quantity.ClassName #> left, <#= quantity.ClassName #> right)
+        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> (the subtrahend).</param>
+        public static <#= quantity.Name #> operator -(<#= quantity.Name #> left, <#= quantity.Name #> right)
         {
-            return new <#= quantity.ClassName #>(left.<#= quantity.Unit.ParameterName #> - right.<#= quantity.Unit.ParameterName #>);
+            return new <#= quantity.Name #>(left.<#= quantity.Unit.ParameterName #> - right.<#= quantity.Unit.ParameterName #>);
         }
  
         /// <summary>
-        /// Returns an <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> whose quantity is the negated quantity of the specified instance.
+        /// Returns an <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
         /// <returns>
-        /// An <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> with the same numeric quantity as this instance, but the opposite sign.
+        /// An <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="<#= quantity.ParameterName #>">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/></param>
-        public static <#= quantity.ClassName #> operator -(<#= quantity.ClassName #> <#= quantity.ParameterName #>)
+        /// <param name="<#= quantity.ParameterName #>">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></param>
+        public static <#= quantity.Name #> operator -(<#= quantity.Name #> <#= quantity.ParameterName #>)
         {
-            return new <#= quantity.ClassName #>(-1*<#= quantity.ParameterName #>.<#= quantity.Unit.ParameterName #>);
+            return new <#= quantity.Name #>(-1*<#= quantity.ParameterName #>.<#= quantity.Unit.ParameterName #>);
         }
  
         /// <summary>
-        /// Returns the specified instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.
+        /// Returns the specified instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
         /// <returns>
         /// Returns <paramref name="<#= quantity.ParameterName #>"/>.
         /// </returns>
-        /// <param name="<#= quantity.ParameterName #>">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/></param>
-        public static <#= quantity.ClassName #> operator +(<#= quantity.ClassName #> <#= quantity.ParameterName #>)
+        /// <param name="<#= quantity.ParameterName #>">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></param>
+        public static <#= quantity.Name #> operator +(<#= quantity.Name #> <#= quantity.ParameterName #>)
         {
             return <#= quantity.ParameterName #>;
         }
@@ -394,7 +378,7 @@ namespace <#= Settings.Namespace #>
         /// </summary>
         /// <param name="unit"></param>
         /// <returns>The scalar value of this in the specified unit</returns>
-        public double GetValue(<#= quantity.ClassName #>Unit unit)
+        public double GetValue(<#= quantity.UnitName #> unit)
         {
             return unit.FromSiUnit(this.<#= quantity.Unit.ParameterName #>);
         }
@@ -402,20 +386,20 @@ namespace <#= Settings.Namespace #>
         /// <summary>
         /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
         /// </summary>
-        /// <returns>The string representation of the <see cref="<#= quantity.ClassName #>"/></returns>
+        /// <returns>The string representation of the <see cref="<#= quantity.Name #>"/></returns>
         public override string ToString()
         {
-            var quantityFormat = FormatCache<<#= quantity.ClassName #>Unit>.GetOrCreate(null, this.SiUnit);
+            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(null, this.SiUnit);
             return this.ToString(quantityFormat, (IFormatProvider)null);
         }
  
         /// <summary>
         /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
         /// </summary>
-        /// <returns>The string representation of the <see cref="<#= quantity.ClassName #>"/></returns>
+        /// <returns>The string representation of the <see cref="<#= quantity.Name #>"/></returns>
         public string ToString(IFormatProvider provider)
         {
-            var quantityFormat = FormatCache<<#= quantity.ClassName #>Unit>.GetOrCreate(string.Empty, SiUnit);
+            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(string.Empty, SiUnit);
             return ToString(quantityFormat, provider);
         }
 
@@ -423,10 +407,10 @@ namespace <#= Settings.Namespace #>
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 <#= quantity.Unit.Symbol #>\"</param>
-        /// <returns>The string representation of the <see cref="<#= quantity.ClassName #>"/></returns>
+        /// <returns>The string representation of the <see cref="<#= quantity.Name #>"/></returns>
         public string ToString(string format)
         {
-            var quantityFormat = FormatCache<<#= quantity.ClassName #>Unit>.GetOrCreate(format);
+            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(format);
             return ToString(quantityFormat, (IFormatProvider)null);
         }
 
@@ -434,10 +418,10 @@ namespace <#= Settings.Namespace #>
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 <#= quantity.Unit.Symbol #>\"</param>
-        /// <returns>The string representation of the <see cref="<#= quantity.ClassName #>"/></returns> 
+        /// <returns>The string representation of the <see cref="<#= quantity.Name #>"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
-            var quantityFormat = FormatCache<<#= quantity.ClassName #>Unit>.GetOrCreate(format);
+            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(format);
             return ToString(quantityFormat, formatProvider);
         }
 
@@ -447,10 +431,10 @@ namespace <#= Settings.Namespace #>
         /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting of the unit ex <#= quantity.Unit.Symbol #></param>
-        /// <returns>The string representation of the <see cref="<#= quantity.ClassName #>"/></returns>
+        /// <returns>The string representation of the <see cref="<#= quantity.Name #>"/></returns>
         public string ToString(string valueFormat, string symbolFormat)
         {
-            var quantityFormat = FormatCache<<#= quantity.ClassName #>Unit>.GetOrCreate(valueFormat, symbolFormat);
+            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(valueFormat, symbolFormat);
             return ToString(quantityFormat, (IFormatProvider)null);
         }
 
@@ -461,62 +445,62 @@ namespace <#= Settings.Namespace #>
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting the unit ex <#= quantity.Unit.Symbol #></param>
         /// <param name="formatProvider"></param>
-        /// <returns>The string representation of the <see cref="<#= quantity.ClassName #>"/></returns>
+        /// <returns>The string representation of the <see cref="<#= quantity.Name #>"/></returns>
         public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
         {
-            var quantityFormat = FormatCache<<#= quantity.ClassName #>Unit>.GetOrCreate(valueFormat, symbolFormat);
+            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(valueFormat, symbolFormat);
             return ToString(quantityFormat, formatProvider);
         }
 
-        public string ToString(<#= quantity.ClassName #>Unit unit)
+        public string ToString(<#= quantity.UnitName #> unit)
         {
-            var quantityFormat = FormatCache<<#= quantity.ClassName #>Unit>.GetOrCreate(null, unit);
+            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(null, unit);
             return ToString(quantityFormat, null);
         }
 
-		public string ToString(<#= quantity.ClassName #>Unit unit, SymbolFormat symbolFormat)
+		public string ToString(<#= quantity.UnitName #> unit, SymbolFormat symbolFormat)
         {
-            var quantityFormat = FormatCache<<#= quantity.ClassName #>Unit>.GetOrCreate(null, unit, symbolFormat);
+            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
-		public string ToString(<#= quantity.ClassName #>Unit unit, IFormatProvider formatProvider)
+		public string ToString(<#= quantity.UnitName #> unit, IFormatProvider formatProvider)
         {
-            var quantityFormat = FormatCache<<#= quantity.ClassName #>Unit>.GetOrCreate(null, unit);
+            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
-		public string ToString(<#= quantity.ClassName #>Unit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+		public string ToString(<#= quantity.UnitName #> unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
-            var quantityFormat = FormatCache<<#= quantity.ClassName #>Unit>.GetOrCreate(null, unit, symbolFormat);
+            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
         }
 
-        public string ToString(string valueFormat, <#= quantity.ClassName #>Unit unit)
+        public string ToString(string valueFormat, <#= quantity.UnitName #> unit)
         {
-            var quantityFormat = FormatCache<<#= quantity.ClassName #>Unit>.GetOrCreate(valueFormat, unit);
+            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, null);
         }
 
-		public string ToString(string valueFormat, <#= quantity.ClassName #>Unit unit, SymbolFormat symbolFormat)
+		public string ToString(string valueFormat, <#= quantity.UnitName #> unit, SymbolFormat symbolFormat)
         {
-            var quantityFormat = FormatCache<<#= quantity.ClassName #>Unit>.GetOrCreate(valueFormat, unit, symbolFormat);
+            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(string valueFormat, <#= quantity.ClassName #>Unit unit, IFormatProvider formatProvider)
+        public string ToString(string valueFormat, <#= quantity.UnitName #> unit, IFormatProvider formatProvider)
         {
-            var quantityFormat = FormatCache<<#= quantity.ClassName #>Unit>.GetOrCreate(valueFormat, unit);
+            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
-        public string ToString(string valueFormat, <#= quantity.ClassName #>Unit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(string valueFormat, <#= quantity.UnitName #> unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
-            var quantityFormat = FormatCache<<#= quantity.ClassName #>Unit>.GetOrCreate(valueFormat, unit, symbolFormat);
+            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
         }
 
-        internal string ToString(QuantityFormat<<#= quantity.ClassName #>Unit> format, IFormatProvider formatProvider)
+        internal string ToString(QuantityFormat<<#= quantity.UnitName #>> format, IFormatProvider formatProvider)
         {
             using (var builder = StringBuilderPool.Borrow())
             {
@@ -526,7 +510,7 @@ namespace <#= Settings.Namespace #>
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> object.
+        /// Compares this instance to a specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -548,33 +532,33 @@ namespace <#= Settings.Namespace #>
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> object to compare to this instance.</param>
-        public int CompareTo(<#= quantity.ClassName #> quantity)
+        /// <param name="quantity">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> object to compare to this instance.</param>
+        public int CompareTo(<#= quantity.Name #> quantity)
         {
             return this.<#= quantity.Unit.ParameterName #>.CompareTo(quantity.<#= quantity.Unit.ParameterName #>);
         }
  
         /// <summary>
-        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> object.
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> object.
         /// </summary>
         /// <returns>
-        /// true if <paramref name="other"/> represents the same <#= quantity.ClassName #> as this instance; otherwise, false.
+        /// true if <paramref name="other"/> represents the same <#= quantity.Name #> as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> object to compare with this instance.</param>
-        public bool Equals(<#= quantity.ClassName #> other)
+        /// <param name="other">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> object to compare with this instance.</param>
+        public bool Equals(<#= quantity.Name #> other)
         {
             return this.<#= quantity.Unit.ParameterName #>.Equals(other.<#= quantity.Unit.ParameterName #>);
         }
  
         /// <summary>
-        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> object within the given tolerance.
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> object within the given tolerance.
         /// </summary>
         /// <returns>
-        /// true if <paramref name="other"/> represents the same <#= quantity.ClassName #> as this instance; otherwise, false.
+        /// true if <paramref name="other"/> represents the same <#= quantity.Name #> as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal. Must be greater than zero.</param>
-        public bool Equals(<#= quantity.ClassName #> other, <#= quantity.ClassName #> tolerance)
+        public bool Equals(<#= quantity.Name #> other, <#= quantity.Name #> tolerance)
         {
 		    Ensure.GreaterThan(tolerance.<#= quantity.Unit.ParameterName #>, 0, nameof(tolerance));
             return Math.Abs(this.<#= quantity.Unit.ParameterName #> - other.<#= quantity.Unit.ParameterName #>) < tolerance.<#= quantity.Unit.ParameterName #>;
@@ -587,7 +571,7 @@ namespace <#= Settings.Namespace #>
                 return false;
             }
  
-            return obj is <#= quantity.ClassName #> && this.Equals((<#= quantity.ClassName #>)obj);
+            return obj is <#= quantity.Name #> && this.Equals((<#= quantity.Name #>)obj);
         }
  
         public override int GetHashCode()

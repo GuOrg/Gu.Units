@@ -5,101 +5,79 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.CurrentUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Current"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(CurrentUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Amperes.symbol}")]
+    [Serializable, TypeConverter(typeof(CurrentUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{CurrentUnit.symbol}")]
     public struct CurrentUnit : IUnit, IUnit<Current>, IEquatable<CurrentUnit>
     {
         /// <summary>
-        /// The Amperes unit
-        /// Contains conversion logic to from and formatting.
+        /// The CurrentUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly CurrentUnit Amperes = new CurrentUnit(1.0, "A");
-
-        /// <summary>
-        /// The Amperes unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly CurrentUnit A = Amperes;
+        public static readonly CurrentUnit Amperes = new CurrentUnit(amperes => amperes, amperes => amperes, "A");
 
         /// <summary>
         /// The Milliamperes unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly CurrentUnit Milliamperes = new CurrentUnit(0.001, "mA");
-
-        /// <summary>
-        /// The Milliamperes unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly CurrentUnit mA = Milliamperes;
+        public static readonly CurrentUnit Milliamperes = new CurrentUnit(milliamperes => milliamperes / 1000, amperes => 1000 * amperes, "mA");
 
         /// <summary>
         /// The Kiloamperes unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly CurrentUnit Kiloamperes = new CurrentUnit(1000, "kA");
-
-        /// <summary>
-        /// The Kiloamperes unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly CurrentUnit kA = Kiloamperes;
+        public static readonly CurrentUnit Kiloamperes = new CurrentUnit(kiloamperes => 1000 * kiloamperes, amperes => amperes / 1000, "kA");
 
         /// <summary>
         /// The Megaamperes unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly CurrentUnit Megaamperes = new CurrentUnit(1000000, "MA");
-
-        /// <summary>
-        /// The Megaamperes unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly CurrentUnit MA = Megaamperes;
+        public static readonly CurrentUnit Megaamperes = new CurrentUnit(megaamperes => 1000000 * megaamperes, amperes => amperes / 1000000, "MA");
 
         /// <summary>
         /// The Microamperes unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly CurrentUnit Microamperes = new CurrentUnit(1E-06, "µA");
+        public static readonly CurrentUnit Microamperes = new CurrentUnit(microamperes => microamperes / 1000000, amperes => 1000000 * amperes, "µA");
 
         /// <summary>
-        /// The Microamperes unit
+        /// The Nanoamperes unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly CurrentUnit µA = Microamperes;
+        public static readonly CurrentUnit Nanoamperes = new CurrentUnit(nanoamperes => nanoamperes / 1000000000, amperes => 1000000000 * amperes, "nA");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        /// <summary>
+        /// The Gigaamperes unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly CurrentUnit Gigaamperes = new CurrentUnit(gigaamperes => 1000000000 * gigaamperes, amperes => amperes / 1000000000, "GA");
 
-        public CurrentUnit(double conversionFactor, string symbol)
+        private readonly Func<double, double> toAmperes;
+        private readonly Func<double, double> fromAmperes;
+        internal readonly string symbol;
+
+        public CurrentUnit(Func<double, double> toAmperes, Func<double, double> fromAmperes, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toAmperes = toAmperes;
+            this.fromAmperes = fromAmperes;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.CurrentUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.CurrentUnit"/>
         /// </summary>
-        public CurrentUnit SiUnit => CurrentUnit.Amperes;
+        public CurrentUnit SiUnit => Amperes;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.CurrentUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => CurrentUnit.Amperes;
+        IUnit IUnit.SiUnit => Amperes;
 
         public static Current operator *(double left, CurrentUnit right)
         {
@@ -133,7 +111,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toAmperes(value);
         }
 
         /// <summary>
@@ -141,9 +119,9 @@
         /// </summary>
         /// <param name="value">The value in Amperes</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double amperes)
         {
-            return value / this.conversionFactor;
+            return this.fromAmperes(amperes);
         }
 
         /// <summary>
@@ -157,7 +135,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Amperes
+        /// Gets the scalar value of <paramref name="quantity"/> in CurrentUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

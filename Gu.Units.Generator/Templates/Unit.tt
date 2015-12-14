@@ -1,25 +1,13 @@
-﻿<#@ template debug="false" hostspecific="false" language="C#" #>
-<#@ import namespace="System.Globalization" #>
+﻿<#@ template debug="true" hostspecific="false" language="C#" #>
 <#@ assembly name="$(TargetPath)" #>
+<#@ import namespace="Gu.Units" #>
 <#@ import namespace="Gu.Units.Generator" #>
-<#@ parameter name="UnitData" type="Gu.Units.Generator.IUnit" #>
+<#@ parameter name="UnitName" type="System.String" #>
 <#@ output extension=".txt" #>
 <#
 // Template used by UnitGenerator.tt
-IUnit unit;
-if(UnitData != null)
-{
-    unit = UnitData;
-}
-else
-{
-    unit = new SiUnit("Metres", "m")
-                    {
-                        QuantityName =  "Length"
-                    };
-    unit.Conversions.Add(new Conversion("Centimetres", "cm"));
-    unit.Conversions.Add(new Conversion("Millimetres", "mm"));
-}
+var settings = Settings.Instance;
+var unit = settings.GetUnitByName(UnitName ?? settings.AllUnits[0].Name);
 #>
 namespace <#= Settings.Namespace #>
 {
@@ -28,208 +16,100 @@ namespace <#= Settings.Namespace #>
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="<#= Settings.Namespace #>.<#= unit.UnitName #>"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="<#= Settings.Namespace #>.<#= unit.QuantityName #>"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(<#= unit.UnitName #>TypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{<#= unit.ClassName #>.symbol}")]
-    public struct <#= unit.UnitName #> : IUnit, IUnit<<#= unit.QuantityName #>>, IEquatable<<#= unit.UnitName #>>
+    [Serializable, TypeConverter(typeof(<#= unit.ClassName #>TypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{<#= unit.ClassName #>.symbol}")]
+    public struct <#= unit.ClassName #> : IUnit, IUnit<<#= unit.QuantityName #>>, IEquatable<<#= unit.ClassName #>>
     {
         /// <summary>
         /// The <#= unit.ClassName #> unit
-        /// Contains conversion logic to from and formatting.
+        /// Contains logic for conversion and formatting.
         /// </summary>
+        public static readonly <#= unit.ClassName #> <#= unit.Name #> = new <#= unit.ClassName #>(<#= unit.ParameterName #> => <#= unit.ParameterName #>, <#= unit.ParameterName #> => <#= unit.ParameterName #>, "<#= unit.Symbol #>");
 <#
-	if (unit.AnyOffsetConversion)
-	{
-	    #>
-        public static readonly <#= unit.UnitName #> <#= unit.ClassName #> = new <#= unit.UnitName #>(1.0, 0, "<#= unit.Symbol #>");
-<#
-	}
-	else
-	{
-	    #>
-        public static readonly <#= unit.UnitName #> <#= unit.ClassName #> = new <#= unit.UnitName #>(1.0, "<#= unit.Symbol #>");
-<#
-	}
-        #>
-<#
-		    if(unit.IsSymbolNameValid)
-            {
-		    #>
-
-        /// <summary>
-        /// The <#= unit.ClassName #> unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly <#= unit.UnitName #> <#= unit.Symbol #> = <#= unit.ClassName #>;
-<#
-            }
-            #><#
-		foreach(var su in unit.Conversions)
+		foreach(var su in unit.AllConversions)
         {
 		#>
 
         /// <summary>
-        /// The <#= su.ClassName #> unit
+        /// The <#= su.Name #> unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
+        public static readonly <#= unit.ClassName #> <#= su.Name #> = new <#= unit.ClassName #>(<#= su.ParameterName #> => <#= su.ToSi #>, <#= unit.ParameterName #> => <#= su.FromSi #>, "<#= su.Symbol #>");
 <#
-	if (unit.AnyOffsetConversion)
-	{
-	    #>
-		public static readonly <#= unit.UnitName #> <#= su.ClassName #> = new <#= unit.UnitName #>(<#= su.Formula.ConversionFactor #>, <#= su.Formula.Offset #>, "<#= su.Symbol #>");
-<#
-	}
-	else
-	{
-	    #>
-		public static readonly <#= unit.UnitName #> <#= su.ClassName #> = new <#= unit.UnitName #>(<#= su.Formula.ConversionFactor.ToString("R", CultureInfo.InvariantCulture) #>, "<#= su.Symbol #>");
-<#
-	}
-        #><#
-		    if(su.IsSymbolNameValid)
-            {
-		    #>
-
-        /// <summary>
-        /// The <#= su.ClassName #> unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly <#= unit.UnitName #> <#= su.Symbol #> = <#= su.ClassName #>;
-<#
-            }
-            #><#
         }
         #>
 
-		private readonly double conversionFactor;
-<#
-	if(unit.AnyOffsetConversion)
-    {
-	#>
-        private readonly double offset;
-<#
-    }
-        #>
-        private readonly string symbol;
+		private readonly Func<double, double> to<#= unit.Name #>;
+		private readonly Func<double, double> from<#= unit.Name #>;
+        internal readonly string symbol;
 
-<#
-	if (unit.AnyOffsetConversion)
-	{
-	    #>
-        public <#= unit.UnitName #>(double conversionFactor, double offset, string symbol)
-<#
-	}
-	else
-	{
-	    #>
-        public <#= unit.UnitName #>(double conversionFactor, string symbol)
-<#
-	}
-        #>
+        public <#= unit.ClassName #>(Func<double, double> to<#= unit.Name #>, Func<double, double> from<#= unit.Name #>, string symbol)
         {
-            this.conversionFactor = conversionFactor;
-<#
-	if(unit.AnyOffsetConversion)
-    {
-	#>
-        this.offset = offset;
-<#
-    }
-        #>
+			this.to<#= unit.Name #> = to<#= unit.Name #>;
+            this.from<#= unit.Name #> = from<#= unit.Name #>;
             this.symbol = symbol;
         }
 
 		/// <summary>
-        /// The symbol for the <see cref="<#= Settings.Namespace #>.<#= unit.UnitName #>"/>.
+        /// The symbol for the <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
 		/// <summary>
-        /// The default unit for <see cref="<#= Settings.Namespace #>.<#= unit.UnitName #>"/>
+        /// The default unit for <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>
         /// </summary>
-        public <#= unit.UnitName #> SiUnit => <#= unit.UnitName #>.<#= unit.ClassName #>;
+        public <#= unit.ClassName #> SiUnit => <#= unit.Name #>;
 
 		/// <summary>
-        /// The default <see cref="<#= Settings.Namespace #>.IUnit"/> for <see cref="<#= Settings.Namespace #>.<#= unit.UnitName #>"/>
+        /// The default <see cref="<#= Settings.Namespace #>.IUnit"/> for <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>
         /// </summary>
-        IUnit IUnit.SiUnit => <#= unit.UnitName #>.<#= unit.ClassName #>;
+        IUnit IUnit.SiUnit => <#= unit.Name #>;
 
-        public static <#= unit.QuantityName #> operator *(double left, <#= unit.UnitName #> right)
+        public static <#= unit.QuantityName #> operator *(double left, <#= unit.ClassName #> right)
         {
             return <#= unit.QuantityName #>.From(left, right);
         }
 
-	    public static bool operator ==(<#= unit.UnitName #> left, <#= unit.UnitName #> right)
+	    public static bool operator ==(<#= unit.ClassName #> left, <#= unit.ClassName #> right)
         {
             return left.Equals(right);
         }
 
-        public static bool operator !=(<#= unit.UnitName #> left, <#= unit.UnitName #> right)
+        public static bool operator !=(<#= unit.ClassName #> left, <#= unit.ClassName #> right)
         {
             return !left.Equals(right);
         }
 
-        public static <#= unit.UnitName #> Parse(string text)
+        public static <#= unit.ClassName #> Parse(string text)
         {
-            return UnitParser<<#= unit.UnitName #>>.Parse(text);
+            return UnitParser<<#= unit.ClassName #>>.Parse(text);
         }
 
-        public static bool TryParse(string text, out <#= unit.UnitName #> value)
+        public static bool TryParse(string text, out <#= unit.ClassName #> value)
         {
-            return UnitParser<<#= unit.UnitName #>>.TryParse(text, out value);
+            return UnitParser<<#= unit.ClassName #>>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts <paramref name="value"/> to <#= unit.ClassName #>.
+        /// Converts <paramref name="value"/> to <#= unit.Name #>.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
         public double <#= Gu.Units.Generator.Names.ToSiUnit #>(double value)
         {
-<#
-	if (unit.AnyOffsetConversion)
-	{
-	    #>
-			return (value - this.offset) /  this.conversionFactor;
-<#
-	}
-	else
-	{
-	    #>
-            return this.conversionFactor * value;
-<#
-	}
-        #>
+			return this.to<#= unit.Name #>(value);
         }
 
         /// <summary>
-        /// Converts a value from <#= unit.ClassName #>.
+        /// Converts a value from <#= unit.Name #>.
         /// </summary>
-        /// <param name="value">The value in <#= unit.ClassName #></param>
+        /// <param name="value">The value in <#= unit.Name #></param>
         /// <returns>The converted value</returns>
-        public double <#= Gu.Units.Generator.Names.FromSiUnit #>(double value)
+        public double <#= Gu.Units.Generator.Names.FromSiUnit #>(double <#= unit.ParameterName #>)
         {
-<#
-	if (unit.AnyOffsetConversion)
-	{
-	    #>
-			return this.conversionFactor * value + this.offset;
-<#
-	}
-	else
-	{
-	    #>
-            return value / this.conversionFactor;
-<#
-	}
-        #>
+			return this.from<#= unit.Name #>(<#= unit.ParameterName #>);
         }
 
         /// <summary>
@@ -257,7 +137,7 @@ namespace <#= Settings.Namespace #>
             return this.symbol;
         }
 
-		public bool Equals(<#= unit.UnitName #> other)
+		public bool Equals(<#= unit.ClassName #> other)
         {
             return this.symbol == other.symbol;
         }
@@ -269,7 +149,7 @@ namespace <#= Settings.Namespace #>
                 return false;
             }
 
-            return obj is <#= unit.UnitName #> && Equals((<#= unit.UnitName #>) obj);
+            return obj is <#= unit.ClassName #> && Equals((<#= unit.ClassName #>) obj);
         }
 
         public override int GetHashCode()

@@ -67,6 +67,61 @@
         }
 
         /// <summary>
+        /// The quantity in CubicMetresPerMinute
+        /// </summary>
+        public double CubicMetresPerMinute => 60 * this.cubicMetresPerSecond;
+
+        /// <summary>
+        /// The quantity in CubicMetresPerHour
+        /// </summary>
+        public double CubicMetresPerHour => 3600 * this.cubicMetresPerSecond;
+
+        /// <summary>
+        /// The quantity in LitresPerSecond
+        /// </summary>
+        public double LitresPerSecond => 1000 * this.cubicMetresPerSecond;
+
+        /// <summary>
+        /// The quantity in LitresPerHour
+        /// </summary>
+        public double LitresPerHour => 3600000 * this.cubicMetresPerSecond;
+
+        /// <summary>
+        /// The quantity in LitresPerMinute
+        /// </summary>
+        public double LitresPerMinute => 60000 * this.cubicMetresPerSecond;
+
+        /// <summary>
+        /// The quantity in MillilitresPerSecond
+        /// </summary>
+        public double MillilitresPerSecond => 1000000 * this.cubicMetresPerSecond;
+
+        /// <summary>
+        /// The quantity in MillilitresPerHour
+        /// </summary>
+        public double MillilitresPerHour => 3600000000 * this.cubicMetresPerSecond;
+
+        /// <summary>
+        /// The quantity in MillilitresPerMinute
+        /// </summary>
+        public double MillilitresPerMinute => 60000000 * this.cubicMetresPerSecond;
+
+        /// <summary>
+        /// The quantity in CentilitresPerSecond
+        /// </summary>
+        public double CentilitresPerSecond => 100000 * this.cubicMetresPerSecond;
+
+        /// <summary>
+        /// The quantity in CentilitresPerHour
+        /// </summary>
+        public double CentilitresPerHour => 360000000 * this.cubicMetresPerSecond;
+
+        /// <summary>
+        /// The quantity in CentilitresPerMinute
+        /// </summary>
+        public double CentilitresPerMinute => 6000000 * this.cubicMetresPerSecond;
+
+        /// <summary>
         /// Creates an instance of <see cref="Gu.Units.VolumetricFlow"/> from its string representation
         /// </summary>
         /// <param name="s">The string representation of the <see cref="Gu.Units.VolumetricFlow"/></param>
@@ -142,9 +197,108 @@
             return new VolumetricFlow(cubicMetresPerSecond);
         }
 
-        public static Area operator /(VolumetricFlow left, Speed right)
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
+        /// </summary>
+        /// <param name="cubicMetresPerMinute">The value in m³/min</param>
+        public static VolumetricFlow FromCubicMetresPerMinute(double cubicMetresPerMinute)
         {
-            return Area.FromSquareMetres(left.cubicMetresPerSecond / right.metresPerSecond);
+            return new VolumetricFlow(cubicMetresPerMinute / 60);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
+        /// </summary>
+        /// <param name="cubicMetresPerHour">The value in m³/h</param>
+        public static VolumetricFlow FromCubicMetresPerHour(double cubicMetresPerHour)
+        {
+            return new VolumetricFlow(cubicMetresPerHour / 3600);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
+        /// </summary>
+        /// <param name="litresPerSecond">The value in L/s</param>
+        public static VolumetricFlow FromLitresPerSecond(double litresPerSecond)
+        {
+            return new VolumetricFlow(litresPerSecond / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
+        /// </summary>
+        /// <param name="litresPerHour">The value in L/h</param>
+        public static VolumetricFlow FromLitresPerHour(double litresPerHour)
+        {
+            return new VolumetricFlow(litresPerHour / 3600000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
+        /// </summary>
+        /// <param name="litresPerMinute">The value in L/min</param>
+        public static VolumetricFlow FromLitresPerMinute(double litresPerMinute)
+        {
+            return new VolumetricFlow(litresPerMinute / 60000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
+        /// </summary>
+        /// <param name="millilitresPerSecond">The value in ml/s</param>
+        public static VolumetricFlow FromMillilitresPerSecond(double millilitresPerSecond)
+        {
+            return new VolumetricFlow(millilitresPerSecond / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
+        /// </summary>
+        /// <param name="millilitresPerHour">The value in ml/h</param>
+        public static VolumetricFlow FromMillilitresPerHour(double millilitresPerHour)
+        {
+            return new VolumetricFlow(millilitresPerHour / 3600000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
+        /// </summary>
+        /// <param name="millilitresPerMinute">The value in ml/min</param>
+        public static VolumetricFlow FromMillilitresPerMinute(double millilitresPerMinute)
+        {
+            return new VolumetricFlow(millilitresPerMinute / 60000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
+        /// </summary>
+        /// <param name="centilitresPerSecond">The value in cl/s</param>
+        public static VolumetricFlow FromCentilitresPerSecond(double centilitresPerSecond)
+        {
+            return new VolumetricFlow(centilitresPerSecond / 100000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
+        /// </summary>
+        /// <param name="centilitresPerHour">The value in cl/h</param>
+        public static VolumetricFlow FromCentilitresPerHour(double centilitresPerHour)
+        {
+            return new VolumetricFlow(centilitresPerHour / 360000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
+        /// </summary>
+        /// <param name="centilitresPerMinute">The value in cl/min</param>
+        public static VolumetricFlow FromCentilitresPerMinute(double centilitresPerMinute)
+        {
+            return new VolumetricFlow(centilitresPerMinute / 6000000);
+        }
+
+        public static KinematicViscosity operator /(VolumetricFlow left, Length right)
+        {
+            return KinematicViscosity.FromSquareMetresPerSecond(left.cubicMetresPerSecond / right.metres);
         }
 
         public static Volume operator *(VolumetricFlow left, Time right)
@@ -160,6 +314,51 @@
         public static Frequency operator /(VolumetricFlow left, Volume right)
         {
             return Frequency.FromHertz(left.cubicMetresPerSecond / right.cubicMetres);
+        }
+
+        public static Power operator *(VolumetricFlow left, Pressure right)
+        {
+            return Power.FromWatts(left.cubicMetresPerSecond * right.pascals);
+        }
+
+        public static MassFlow operator *(VolumetricFlow left, Density right)
+        {
+            return MassFlow.FromKilogramsPerSecond(left.cubicMetresPerSecond * right.kilogramsPerCubicMetre);
+        }
+
+        public static Area operator /(VolumetricFlow left, Speed right)
+        {
+            return Area.FromSquareMetres(left.cubicMetresPerSecond / right.metresPerSecond);
+        }
+
+        public static Volume operator /(VolumetricFlow left, Frequency right)
+        {
+            return Volume.FromCubicMetres(left.cubicMetresPerSecond / right.hertz);
+        }
+
+        public static KinematicViscosity operator *(VolumetricFlow left, Wavenumber right)
+        {
+            return KinematicViscosity.FromSquareMetresPerSecond(left.cubicMetresPerSecond * right.reciprocalMetres);
+        }
+
+        public static Momentum operator *(VolumetricFlow left, AreaDensity right)
+        {
+            return Momentum.FromNewtonSecond(left.cubicMetresPerSecond * right.kilogramsPerSquareMetre);
+        }
+
+        public static MassFlow operator /(VolumetricFlow left, SpecificVolume right)
+        {
+            return MassFlow.FromKilogramsPerSecond(left.cubicMetresPerSecond / right.cubicMetresPerKilogram);
+        }
+
+        public static SpecificVolume operator /(VolumetricFlow left, MassFlow right)
+        {
+            return SpecificVolume.FromCubicMetresPerKilogram(left.cubicMetresPerSecond / right.kilogramsPerSecond);
+        }
+
+        public static Length operator /(VolumetricFlow left, KinematicViscosity right)
+        {
+            return Length.FromMetres(left.cubicMetresPerSecond / right.squareMetresPerSecond);
         }
 
         public static double operator /(VolumetricFlow left, VolumetricFlow right)

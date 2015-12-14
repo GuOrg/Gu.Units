@@ -67,6 +67,61 @@
         }
 
         /// <summary>
+        /// The quantity in NewtonsPerNanometre
+        /// </summary>
+        public double NewtonsPerNanometre => this.newtonsPerMetre / 1000000000;
+
+        /// <summary>
+        /// The quantity in NewtonsPerMicrometre
+        /// </summary>
+        public double NewtonsPerMicrometre => this.newtonsPerMetre / 1000000;
+
+        /// <summary>
+        /// The quantity in NewtonsPerMillimetre
+        /// </summary>
+        public double NewtonsPerMillimetre => this.newtonsPerMetre / 1000;
+
+        /// <summary>
+        /// The quantity in KilonewtonsPerNanometre
+        /// </summary>
+        public double KilonewtonsPerNanometre => this.newtonsPerMetre / 1000000000000;
+
+        /// <summary>
+        /// The quantity in KilonewtonsPerMicrometre
+        /// </summary>
+        public double KilonewtonsPerMicrometre => this.newtonsPerMetre / 1000000000;
+
+        /// <summary>
+        /// The quantity in KilonewtonsPerMillimetre
+        /// </summary>
+        public double KilonewtonsPerMillimetre => this.newtonsPerMetre / 1000000;
+
+        /// <summary>
+        /// The quantity in MeganewtonsPerNanometre
+        /// </summary>
+        public double MeganewtonsPerNanometre => this.newtonsPerMetre / 1000000000000000;
+
+        /// <summary>
+        /// The quantity in MeganewtonsPerMicrometre
+        /// </summary>
+        public double MeganewtonsPerMicrometre => this.newtonsPerMetre / 1000000000000;
+
+        /// <summary>
+        /// The quantity in MeganewtonsPerMillimetre
+        /// </summary>
+        public double MeganewtonsPerMillimetre => this.newtonsPerMetre / 1000000000;
+
+        /// <summary>
+        /// The quantity in GiganewtonsPerMicrometre
+        /// </summary>
+        public double GiganewtonsPerMicrometre => this.newtonsPerMetre / 1000000000000000;
+
+        /// <summary>
+        /// The quantity in GiganewtonsPerMillimetre
+        /// </summary>
+        public double GiganewtonsPerMillimetre => this.newtonsPerMetre / 1000000000000;
+
+        /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Stiffness"/> from its string representation
         /// </summary>
         /// <param name="s">The string representation of the <see cref="Gu.Units.Stiffness"/></param>
@@ -142,6 +197,105 @@
             return new Stiffness(newtonsPerMetre);
         }
 
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
+        /// </summary>
+        /// <param name="newtonsPerNanometre">The value in N/nm</param>
+        public static Stiffness FromNewtonsPerNanometre(double newtonsPerNanometre)
+        {
+            return new Stiffness(1000000000 * newtonsPerNanometre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
+        /// </summary>
+        /// <param name="newtonsPerMicrometre">The value in N/µm</param>
+        public static Stiffness FromNewtonsPerMicrometre(double newtonsPerMicrometre)
+        {
+            return new Stiffness(1000000 * newtonsPerMicrometre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
+        /// </summary>
+        /// <param name="newtonsPerMillimetre">The value in N/mm</param>
+        public static Stiffness FromNewtonsPerMillimetre(double newtonsPerMillimetre)
+        {
+            return new Stiffness(1000 * newtonsPerMillimetre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
+        /// </summary>
+        /// <param name="kilonewtonsPerNanometre">The value in kN/nm</param>
+        public static Stiffness FromKilonewtonsPerNanometre(double kilonewtonsPerNanometre)
+        {
+            return new Stiffness(1000000000000 * kilonewtonsPerNanometre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
+        /// </summary>
+        /// <param name="kilonewtonsPerMicrometre">The value in kN/µm</param>
+        public static Stiffness FromKilonewtonsPerMicrometre(double kilonewtonsPerMicrometre)
+        {
+            return new Stiffness(1000000000 * kilonewtonsPerMicrometre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
+        /// </summary>
+        /// <param name="kilonewtonsPerMillimetre">The value in kN/mm</param>
+        public static Stiffness FromKilonewtonsPerMillimetre(double kilonewtonsPerMillimetre)
+        {
+            return new Stiffness(1000000 * kilonewtonsPerMillimetre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
+        /// </summary>
+        /// <param name="meganewtonsPerNanometre">The value in MN/nm</param>
+        public static Stiffness FromMeganewtonsPerNanometre(double meganewtonsPerNanometre)
+        {
+            return new Stiffness(1000000000000000 * meganewtonsPerNanometre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
+        /// </summary>
+        /// <param name="meganewtonsPerMicrometre">The value in MN/µm</param>
+        public static Stiffness FromMeganewtonsPerMicrometre(double meganewtonsPerMicrometre)
+        {
+            return new Stiffness(1000000000000 * meganewtonsPerMicrometre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
+        /// </summary>
+        /// <param name="meganewtonsPerMillimetre">The value in MN/mm</param>
+        public static Stiffness FromMeganewtonsPerMillimetre(double meganewtonsPerMillimetre)
+        {
+            return new Stiffness(1000000000 * meganewtonsPerMillimetre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
+        /// </summary>
+        /// <param name="giganewtonsPerMicrometre">The value in GN/µm</param>
+        public static Stiffness FromGiganewtonsPerMicrometre(double giganewtonsPerMicrometre)
+        {
+            return new Stiffness(1000000000000000 * giganewtonsPerMicrometre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
+        /// </summary>
+        /// <param name="giganewtonsPerMillimetre">The value in GN/mm</param>
+        public static Stiffness FromGiganewtonsPerMillimetre(double giganewtonsPerMillimetre)
+        {
+            return new Stiffness(1000000000000 * giganewtonsPerMillimetre);
+        }
+
         public static Force operator *(Stiffness left, Length right)
         {
             return Force.FromNewtons(left.newtonsPerMetre * right.metres);
@@ -152,14 +306,74 @@
             return Pressure.FromPascals(left.newtonsPerMetre / right.metres);
         }
 
+        public static MassFlow operator *(Stiffness left, Time right)
+        {
+            return MassFlow.FromKilogramsPerSecond(left.newtonsPerMetre * right.seconds);
+        }
+
+        public static MagneticFieldStrength operator /(Stiffness left, Current right)
+        {
+            return MagneticFieldStrength.FromTeslas(left.newtonsPerMetre / right.amperes);
+        }
+
         public static Energy operator *(Stiffness left, Area right)
         {
             return Energy.FromJoules(left.newtonsPerMetre * right.squareMetres);
         }
 
+        public static Wavenumber operator /(Stiffness left, Force right)
+        {
+            return Wavenumber.FromReciprocalMetres(left.newtonsPerMetre / right.newtons);
+        }
+
+        public static Length operator /(Stiffness left, Pressure right)
+        {
+            return Length.FromMetres(left.newtonsPerMetre / right.pascals);
+        }
+
+        public static MassFlow operator /(Stiffness left, Frequency right)
+        {
+            return MassFlow.FromKilogramsPerSecond(left.newtonsPerMetre / right.hertz);
+        }
+
+        public static AreaDensity operator /(Stiffness left, SpecificEnergy right)
+        {
+            return AreaDensity.FromKilogramsPerSquareMetre(left.newtonsPerMetre / right.joulesPerKilogram);
+        }
+
         public static ForcePerUnitless operator *(Stiffness left, LengthPerUnitless right)
         {
             return ForcePerUnitless.FromNewtonsPerUnitless(left.newtonsPerMetre * right.metresPerUnitless);
+        }
+
+        public static Current operator /(Stiffness left, MagneticFieldStrength right)
+        {
+            return Current.FromAmperes(left.newtonsPerMetre / right.teslas);
+        }
+
+        public static Pressure operator *(Stiffness left, Wavenumber right)
+        {
+            return Pressure.FromPascals(left.newtonsPerMetre * right.reciprocalMetres);
+        }
+
+        public static Force operator /(Stiffness left, Wavenumber right)
+        {
+            return Force.FromNewtons(left.newtonsPerMetre / right.reciprocalMetres);
+        }
+
+        public static SpecificEnergy operator /(Stiffness left, AreaDensity right)
+        {
+            return SpecificEnergy.FromJoulesPerKilogram(left.newtonsPerMetre / right.kilogramsPerSquareMetre);
+        }
+
+        public static Frequency operator /(Stiffness left, MassFlow right)
+        {
+            return Frequency.FromHertz(left.newtonsPerMetre / right.kilogramsPerSecond);
+        }
+
+        public static Power operator *(Stiffness left, KinematicViscosity right)
+        {
+            return Power.FromWatts(left.newtonsPerMetre * right.squareMetresPerSecond);
         }
 
         public static Flexibility operator /(double left, Stiffness right)

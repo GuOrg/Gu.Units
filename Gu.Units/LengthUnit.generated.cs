@@ -5,167 +5,103 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.LengthUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Length"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(LengthUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Metres.symbol}")]
+    [Serializable, TypeConverter(typeof(LengthUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{LengthUnit.symbol}")]
     public struct LengthUnit : IUnit, IUnit<Length>, IEquatable<LengthUnit>
     {
         /// <summary>
-        /// The Metres unit
-        /// Contains conversion logic to from and formatting.
+        /// The LengthUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly LengthUnit Metres = new LengthUnit(1.0, "m");
-
-        /// <summary>
-        /// The Metres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthUnit m = Metres;
-
-        /// <summary>
-        /// The Nanometres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthUnit Nanometres = new LengthUnit(1E-09, "nm");
-
-        /// <summary>
-        /// The Nanometres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthUnit nm = Nanometres;
-
-        /// <summary>
-        /// The Micrometres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthUnit Micrometres = new LengthUnit(1E-06, "µm");
-
-        /// <summary>
-        /// The Micrometres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthUnit µm = Micrometres;
-
-        /// <summary>
-        /// The Millimetres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthUnit Millimetres = new LengthUnit(0.001, "mm");
-
-        /// <summary>
-        /// The Millimetres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthUnit mm = Millimetres;
-
-        /// <summary>
-        /// The Centimetres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthUnit Centimetres = new LengthUnit(0.01, "cm");
-
-        /// <summary>
-        /// The Centimetres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthUnit cm = Centimetres;
-
-        /// <summary>
-        /// The Decimetres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthUnit Decimetres = new LengthUnit(0.1, "dm");
-
-        /// <summary>
-        /// The Decimetres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthUnit dm = Decimetres;
-
-        /// <summary>
-        /// The Kilometres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthUnit Kilometres = new LengthUnit(1000, "km");
-
-        /// <summary>
-        /// The Kilometres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthUnit km = Kilometres;
+        public static readonly LengthUnit Metres = new LengthUnit(metres => metres, metres => metres, "m");
 
         /// <summary>
         /// The Inches unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly LengthUnit Inches = new LengthUnit(0.0254, "in");
+        public static readonly LengthUnit Inches = new LengthUnit(inches => 0.0254 * inches, metres => metres / 0.0254, "in");
 
         /// <summary>
         /// The Mile unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly LengthUnit Mile = new LengthUnit(1609.344, "mi");
-
-        /// <summary>
-        /// The Mile unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthUnit mi = Mile;
+        public static readonly LengthUnit Mile = new LengthUnit(mile => 1609.344 * mile, metres => metres / 1609.344, "mi");
 
         /// <summary>
         /// The Yard unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly LengthUnit Yard = new LengthUnit(0.9144, "yd");
-
-        /// <summary>
-        /// The Yard unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthUnit yd = Yard;
+        public static readonly LengthUnit Yard = new LengthUnit(yard => 0.9144 * yard, metres => metres / 0.9144, "yd");
 
         /// <summary>
         /// The NauticalMile unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly LengthUnit NauticalMile = new LengthUnit(1852, "nmi");
+        public static readonly LengthUnit NauticalMile = new LengthUnit(nauticalMile => 1852 * nauticalMile, metres => metres / 1852, "nmi");
 
         /// <summary>
-        /// The NauticalMile unit
+        /// The Nanometres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly LengthUnit nmi = NauticalMile;
+        public static readonly LengthUnit Nanometres = new LengthUnit(nanometres => nanometres / 1000000000, metres => 1000000000 * metres, "nm");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        /// <summary>
+        /// The Micrometres unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly LengthUnit Micrometres = new LengthUnit(micrometres => micrometres / 1000000, metres => 1000000 * metres, "µm");
 
-        public LengthUnit(double conversionFactor, string symbol)
+        /// <summary>
+        /// The Millimetres unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly LengthUnit Millimetres = new LengthUnit(millimetres => millimetres / 1000, metres => 1000 * metres, "mm");
+
+        /// <summary>
+        /// The Centimetres unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly LengthUnit Centimetres = new LengthUnit(centimetres => centimetres / 100, metres => 100 * metres, "cm");
+
+        /// <summary>
+        /// The Decimetres unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly LengthUnit Decimetres = new LengthUnit(decimetres => decimetres / 10, metres => 10 * metres, "dm");
+
+        /// <summary>
+        /// The Kilometres unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly LengthUnit Kilometres = new LengthUnit(kilometres => 1000 * kilometres, metres => metres / 1000, "km");
+
+        private readonly Func<double, double> toMetres;
+        private readonly Func<double, double> fromMetres;
+        internal readonly string symbol;
+
+        public LengthUnit(Func<double, double> toMetres, Func<double, double> fromMetres, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toMetres = toMetres;
+            this.fromMetres = fromMetres;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.LengthUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.LengthUnit"/>
         /// </summary>
-        public LengthUnit SiUnit => LengthUnit.Metres;
+        public LengthUnit SiUnit => Metres;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.LengthUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => LengthUnit.Metres;
+        IUnit IUnit.SiUnit => Metres;
 
         public static Length operator *(double left, LengthUnit right)
         {
@@ -199,7 +135,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toMetres(value);
         }
 
         /// <summary>
@@ -207,9 +143,9 @@
         /// </summary>
         /// <param name="value">The value in Metres</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double metres)
         {
-            return value / this.conversionFactor;
+            return this.fromMetres(metres);
         }
 
         /// <summary>
@@ -223,7 +159,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Metres
+        /// Gets the scalar value of <paramref name="quantity"/> in LengthUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

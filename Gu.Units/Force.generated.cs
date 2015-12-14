@@ -67,70 +67,34 @@
         }
 
         /// <summary>
-        /// The quantity in nanonewtons
+        /// The quantity in Nanonewtons
         /// </summary>
-        public double Nanonewtons
-        {
-            get
-            {
-                return ForceUnit.Nanonewtons.FromSiUnit(this.newtons);
-            }
-        }
+        public double Nanonewtons => 1000000000 * this.newtons;
 
         /// <summary>
-        /// The quantity in micronewtons
+        /// The quantity in Micronewtons
         /// </summary>
-        public double Micronewtons
-        {
-            get
-            {
-                return ForceUnit.Micronewtons.FromSiUnit(this.newtons);
-            }
-        }
+        public double Micronewtons => 1000000 * this.newtons;
 
         /// <summary>
-        /// The quantity in millinewtons
+        /// The quantity in Millinewtons
         /// </summary>
-        public double Millinewtons
-        {
-            get
-            {
-                return ForceUnit.Millinewtons.FromSiUnit(this.newtons);
-            }
-        }
+        public double Millinewtons => 1000 * this.newtons;
 
         /// <summary>
-        /// The quantity in kilonewtons
+        /// The quantity in Kilonewtons
         /// </summary>
-        public double Kilonewtons
-        {
-            get
-            {
-                return ForceUnit.Kilonewtons.FromSiUnit(this.newtons);
-            }
-        }
+        public double Kilonewtons => this.newtons / 1000;
 
         /// <summary>
-        /// The quantity in meganewtons
+        /// The quantity in Meganewtons
         /// </summary>
-        public double Meganewtons
-        {
-            get
-            {
-                return ForceUnit.Meganewtons.FromSiUnit(this.newtons);
-            }
-        }
+        public double Meganewtons => this.newtons / 1000000;
 
         /// <summary>
-        /// The quantity in giganewtons
+        /// The quantity in Giganewtons
         /// </summary>
-        public double Giganewtons
-        {
-            get
-            {
-                return ForceUnit.Giganewtons.FromSiUnit(this.newtons);
-            }
-        }
+        public double Giganewtons => this.newtons / 1000000000;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
@@ -214,7 +178,7 @@
         /// <param name="nanonewtons">The value in nN</param>
         public static Force FromNanonewtons(double nanonewtons)
         {
-            return From(nanonewtons, ForceUnit.Nanonewtons);
+            return new Force(nanonewtons / 1000000000);
         }
 
         /// <summary>
@@ -223,7 +187,7 @@
         /// <param name="micronewtons">The value in µN</param>
         public static Force FromMicronewtons(double micronewtons)
         {
-            return From(micronewtons, ForceUnit.Micronewtons);
+            return new Force(micronewtons / 1000000);
         }
 
         /// <summary>
@@ -232,7 +196,7 @@
         /// <param name="millinewtons">The value in mN</param>
         public static Force FromMillinewtons(double millinewtons)
         {
-            return From(millinewtons, ForceUnit.Millinewtons);
+            return new Force(millinewtons / 1000);
         }
 
         /// <summary>
@@ -241,7 +205,7 @@
         /// <param name="kilonewtons">The value in kN</param>
         public static Force FromKilonewtons(double kilonewtons)
         {
-            return From(kilonewtons, ForceUnit.Kilonewtons);
+            return new Force(1000 * kilonewtons);
         }
 
         /// <summary>
@@ -250,7 +214,7 @@
         /// <param name="meganewtons">The value in MN</param>
         public static Force FromMeganewtons(double meganewtons)
         {
-            return From(meganewtons, ForceUnit.Meganewtons);
+            return new Force(1000000 * meganewtons);
         }
 
         /// <summary>
@@ -259,27 +223,7 @@
         /// <param name="giganewtons">The value in GN</param>
         public static Force FromGiganewtons(double giganewtons)
         {
-            return From(giganewtons, ForceUnit.Giganewtons);
-        }
-
-        public static Mass operator /(Force left, Acceleration right)
-        {
-            return Mass.FromKilograms(left.newtons / right.metresPerSecondSquared);
-        }
-
-        public static Pressure operator /(Force left, Area right)
-        {
-            return Pressure.FromPascals(left.newtons / right.squareMetres);
-        }
-
-        public static Energy operator *(Force left, Length right)
-        {
-            return Energy.FromJoules(left.newtons * right.metres);
-        }
-
-        public static Power operator *(Force left, Speed right)
-        {
-            return Power.FromWatts(left.newtons * right.metresPerSecond);
+            return new Force(1000000000 * giganewtons);
         }
 
         public static Acceleration operator /(Force left, Mass right)
@@ -287,14 +231,94 @@
             return Acceleration.FromMetresPerSecondSquared(left.newtons / right.kilograms);
         }
 
+        public static Energy operator *(Force left, Length right)
+        {
+            return Energy.FromJoules(left.newtons * right.metres);
+        }
+
         public static Stiffness operator /(Force left, Length right)
         {
             return Stiffness.FromNewtonsPerMetre(left.newtons / right.metres);
         }
 
+        public static Momentum operator *(Force left, Time right)
+        {
+            return Momentum.FromNewtonSecond(left.newtons * right.seconds);
+        }
+
         public static ForcePerUnitless operator /(Force left, Unitless right)
         {
             return ForcePerUnitless.FromNewtonsPerUnitless(left.newtons / right.scalar);
+        }
+
+        public static Pressure operator /(Force left, Area right)
+        {
+            return Pressure.FromPascals(left.newtons / right.squareMetres);
+        }
+
+        public static Area operator /(Force left, Pressure right)
+        {
+            return Area.FromSquareMetres(left.newtons / right.pascals);
+        }
+
+        public static Wavenumber operator /(Force left, Energy right)
+        {
+            return Wavenumber.FromReciprocalMetres(left.newtons / right.joules);
+        }
+
+        public static Power operator *(Force left, Speed right)
+        {
+            return Power.FromWatts(left.newtons * right.metresPerSecond);
+        }
+
+        public static MassFlow operator /(Force left, Speed right)
+        {
+            return MassFlow.FromKilogramsPerSecond(left.newtons / right.metresPerSecond);
+        }
+
+        public static Momentum operator /(Force left, Frequency right)
+        {
+            return Momentum.FromNewtonSecond(left.newtons / right.hertz);
+        }
+
+        public static Mass operator /(Force left, Acceleration right)
+        {
+            return Mass.FromKilograms(left.newtons / right.metresPerSecondSquared);
+        }
+
+        public static Length operator /(Force left, Stiffness right)
+        {
+            return Length.FromMetres(left.newtons / right.newtonsPerMetre);
+        }
+
+        public static Length operator *(Force left, Flexibility right)
+        {
+            return Length.FromMetres(left.newtons * right.metresPerNewton);
+        }
+
+        public static Unitless operator /(Force left, ForcePerUnitless right)
+        {
+            return Unitless.FromScalar(left.newtons / right.newtonsPerUnitless);
+        }
+
+        public static Frequency operator /(Force left, Momentum right)
+        {
+            return Frequency.FromHertz(left.newtons / right.newtonSecond);
+        }
+
+        public static Stiffness operator *(Force left, Wavenumber right)
+        {
+            return Stiffness.FromNewtonsPerMetre(left.newtons * right.reciprocalMetres);
+        }
+
+        public static Energy operator /(Force left, Wavenumber right)
+        {
+            return Energy.FromJoules(left.newtons / right.reciprocalMetres);
+        }
+
+        public static Speed operator /(Force left, MassFlow right)
+        {
+            return Speed.FromMetresPerSecond(left.newtons / right.kilogramsPerSecond);
         }
 
         public static double operator /(Force left, Force right)

@@ -5,107 +5,91 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.JerkUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Jerk"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(JerkUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MetresPerSecondCubed.symbol}")]
+    [Serializable, TypeConverter(typeof(JerkUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{JerkUnit.symbol}")]
     public struct JerkUnit : IUnit, IUnit<Jerk>, IEquatable<JerkUnit>
     {
         /// <summary>
-        /// The MetresPerSecondCubed unit
-        /// Contains conversion logic to from and formatting.
+        /// The JerkUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly JerkUnit MetresPerSecondCubed = new JerkUnit(1.0, "m/s³");
+        public static readonly JerkUnit MetresPerSecondCubed = new JerkUnit(metresPerSecondCubed => metresPerSecondCubed, metresPerSecondCubed => metresPerSecondCubed, "m/s³");
 
         /// <summary>
         /// The MillimetresPerSecondCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly JerkUnit MillimetresPerSecondCubed = new JerkUnit(0.001, "mm⋅s⁻³");
-
-        /// <summary>
-        /// The MillimetresPerHourCubed unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly JerkUnit MillimetresPerHourCubed = new JerkUnit(2.1433470507544584E-14, "mm⋅h⁻³");
-
-        /// <summary>
-        /// The MillimetresPerMinuteCubed unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly JerkUnit MillimetresPerMinuteCubed = new JerkUnit(4.6296296296296295E-09, "mm⋅min⁻³");
-
-        /// <summary>
-        /// The MetresPerHourCubed unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly JerkUnit MetresPerHourCubed = new JerkUnit(2.1433470507544583E-11, "m⋅h⁻³");
-
-        /// <summary>
-        /// The MetresPerMinuteCubed unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly JerkUnit MetresPerMinuteCubed = new JerkUnit(4.6296296296296296E-06, "m⋅min⁻³");
-
-        /// <summary>
-        /// The NanometresPerHourCubed unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly JerkUnit NanometresPerHourCubed = new JerkUnit(2.1433470507544585E-20, "nm⋅h⁻³");
-
-        /// <summary>
-        /// The NanometresPerMinuteCubed unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly JerkUnit NanometresPerMinuteCubed = new JerkUnit(4.62962962962963E-15, "nm⋅min⁻³");
+        public static readonly JerkUnit MillimetresPerSecondCubed = new JerkUnit(millimetresPerSecondCubed => millimetresPerSecondCubed / 1000, metresPerSecondCubed => 1000 * metresPerSecondCubed, "mm⋅s⁻³");
 
         /// <summary>
         /// The CentimetresPerSecondCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly JerkUnit CentimetresPerSecondCubed = new JerkUnit(0.01, "cm⋅s⁻³");
+        public static readonly JerkUnit CentimetresPerSecondCubed = new JerkUnit(centimetresPerSecondCubed => centimetresPerSecondCubed / 100, metresPerSecondCubed => 100 * metresPerSecondCubed, "cm⋅s⁻³");
+
+        /// <summary>
+        /// The MillimetresPerHourCubed unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly JerkUnit MillimetresPerHourCubed = new JerkUnit(millimetresPerHourCubed => millimetresPerHourCubed / 46656000000000, metresPerSecondCubed => 46656000000000 * metresPerSecondCubed, "mm⋅h⁻³");
+
+        /// <summary>
+        /// The MillimetresPerMinuteCubed unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly JerkUnit MillimetresPerMinuteCubed = new JerkUnit(millimetresPerMinuteCubed => millimetresPerMinuteCubed / 216000000, metresPerSecondCubed => 216000000 * metresPerSecondCubed, "mm⋅min⁻³");
+
+        /// <summary>
+        /// The MetresPerHourCubed unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly JerkUnit MetresPerHourCubed = new JerkUnit(metresPerHourCubed => metresPerHourCubed / 46656000000, metresPerSecondCubed => 46656000000 * metresPerSecondCubed, "m⋅h⁻³");
+
+        /// <summary>
+        /// The MetresPerMinuteCubed unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly JerkUnit MetresPerMinuteCubed = new JerkUnit(metresPerMinuteCubed => metresPerMinuteCubed / 216000, metresPerSecondCubed => 216000 * metresPerSecondCubed, "m⋅min⁻³");
 
         /// <summary>
         /// The CentimetresPerHourCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly JerkUnit CentimetresPerHourCubed = new JerkUnit(2.1433470507544584E-13, "cm⋅h⁻³");
+        public static readonly JerkUnit CentimetresPerHourCubed = new JerkUnit(centimetresPerHourCubed => centimetresPerHourCubed / 4665600000000, metresPerSecondCubed => 4665600000000 * metresPerSecondCubed, "cm⋅h⁻³");
 
         /// <summary>
         /// The CentimetresPerMinuteCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly JerkUnit CentimetresPerMinuteCubed = new JerkUnit(4.6296296296296295E-08, "cm⋅min⁻³");
+        public static readonly JerkUnit CentimetresPerMinuteCubed = new JerkUnit(centimetresPerMinuteCubed => centimetresPerMinuteCubed / 21600000, metresPerSecondCubed => 21600000 * metresPerSecondCubed, "cm⋅min⁻³");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        private readonly Func<double, double> toMetresPerSecondCubed;
+        private readonly Func<double, double> fromMetresPerSecondCubed;
+        internal readonly string symbol;
 
-        public JerkUnit(double conversionFactor, string symbol)
+        public JerkUnit(Func<double, double> toMetresPerSecondCubed, Func<double, double> fromMetresPerSecondCubed, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toMetresPerSecondCubed = toMetresPerSecondCubed;
+            this.fromMetresPerSecondCubed = fromMetresPerSecondCubed;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.JerkUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.JerkUnit"/>
         /// </summary>
-        public JerkUnit SiUnit => JerkUnit.MetresPerSecondCubed;
+        public JerkUnit SiUnit => MetresPerSecondCubed;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.JerkUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => JerkUnit.MetresPerSecondCubed;
+        IUnit IUnit.SiUnit => MetresPerSecondCubed;
 
         public static Jerk operator *(double left, JerkUnit right)
         {
@@ -139,7 +123,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toMetresPerSecondCubed(value);
         }
 
         /// <summary>
@@ -147,9 +131,9 @@
         /// </summary>
         /// <param name="value">The value in MetresPerSecondCubed</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double metresPerSecondCubed)
         {
-            return value / this.conversionFactor;
+            return this.fromMetresPerSecondCubed(metresPerSecondCubed);
         }
 
         /// <summary>
@@ -163,7 +147,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in MetresPerSecondCubed
+        /// Gets the scalar value of <paramref name="quantity"/> in JerkUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

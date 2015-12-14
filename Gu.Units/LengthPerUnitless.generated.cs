@@ -67,48 +67,19 @@
         }
 
         /// <summary>
-        /// The quantity in millimetresPerPercent
+        /// The quantity in MillimetresPerPercent
         /// </summary>
-        public double MillimetresPerPercent
-        {
-            get
-            {
-                return LengthPerUnitlessUnit.MillimetresPerPercent.FromSiUnit(this.metresPerUnitless);
-            }
-        }
+        public double MillimetresPerPercent => 10 * this.metresPerUnitless;
 
         /// <summary>
-        /// The quantity in micrometresPerPercent
+        /// The quantity in MicrometresPerPercent
         /// </summary>
-        public double MicrometresPerPercent
-        {
-            get
-            {
-                return LengthPerUnitlessUnit.MicrometresPerPercent.FromSiUnit(this.metresPerUnitless);
-            }
-        }
+        public double MicrometresPerPercent => 10000 * this.metresPerUnitless;
 
         /// <summary>
-        /// The quantity in nanometresPerPercent
+        /// The quantity in MetresPerPercent
         /// </summary>
-        public double NanometresPerPercent
-        {
-            get
-            {
-                return LengthPerUnitlessUnit.NanometresPerPercent.FromSiUnit(this.metresPerUnitless);
-            }
-        }
-
-        /// <summary>
-        /// The quantity in metresPerPercent
-        /// </summary>
-        public double MetresPerPercent
-        {
-            get
-            {
-                return LengthPerUnitlessUnit.MetresPerPercent.FromSiUnit(this.metresPerUnitless);
-            }
-        }
+        public double MetresPerPercent => this.metresPerUnitless / 100;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
@@ -192,7 +163,7 @@
         /// <param name="millimetresPerPercent">The value in mm/%</param>
         public static LengthPerUnitless FromMillimetresPerPercent(double millimetresPerPercent)
         {
-            return From(millimetresPerPercent, LengthPerUnitlessUnit.MillimetresPerPercent);
+            return new LengthPerUnitless(millimetresPerPercent / 10);
         }
 
         /// <summary>
@@ -201,16 +172,7 @@
         /// <param name="micrometresPerPercent">The value in µm/%</param>
         public static LengthPerUnitless FromMicrometresPerPercent(double micrometresPerPercent)
         {
-            return From(micrometresPerPercent, LengthPerUnitlessUnit.MicrometresPerPercent);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
-        /// </summary>
-        /// <param name="nanometresPerPercent">The value in nm/%</param>
-        public static LengthPerUnitless FromNanometresPerPercent(double nanometresPerPercent)
-        {
-            return From(nanometresPerPercent, LengthPerUnitlessUnit.NanometresPerPercent);
+            return new LengthPerUnitless(micrometresPerPercent / 10000);
         }
 
         /// <summary>
@@ -219,12 +181,27 @@
         /// <param name="metresPerPercent">The value in m/%</param>
         public static LengthPerUnitless FromMetresPerPercent(double metresPerPercent)
         {
-            return From(metresPerPercent, LengthPerUnitlessUnit.MetresPerPercent);
+            return new LengthPerUnitless(100 * metresPerPercent);
         }
 
         public static Length operator *(LengthPerUnitless left, Unitless right)
         {
             return Length.FromMetres(left.metresPerUnitless * right.scalar);
+        }
+
+        public static ForcePerUnitless operator *(LengthPerUnitless left, Stiffness right)
+        {
+            return ForcePerUnitless.FromNewtonsPerUnitless(left.metresPerUnitless * right.newtonsPerMetre);
+        }
+
+        public static ForcePerUnitless operator /(LengthPerUnitless left, Flexibility right)
+        {
+            return ForcePerUnitless.FromNewtonsPerUnitless(left.metresPerUnitless / right.metresPerNewton);
+        }
+
+        public static Flexibility operator /(LengthPerUnitless left, ForcePerUnitless right)
+        {
+            return Flexibility.FromMetresPerNewton(left.metresPerUnitless / right.newtonsPerUnitless);
         }
 
         public static double operator /(LengthPerUnitless left, LengthPerUnitless right)

@@ -5,125 +5,79 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.ForceUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Force"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(ForceUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Newtons.symbol}")]
+    [Serializable, TypeConverter(typeof(ForceUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{ForceUnit.symbol}")]
     public struct ForceUnit : IUnit, IUnit<Force>, IEquatable<ForceUnit>
     {
         /// <summary>
-        /// The Newtons unit
-        /// Contains conversion logic to from and formatting.
+        /// The ForceUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly ForceUnit Newtons = new ForceUnit(1.0, "N");
-
-        /// <summary>
-        /// The Newtons unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly ForceUnit N = Newtons;
+        public static readonly ForceUnit Newtons = new ForceUnit(newtons => newtons, newtons => newtons, "N");
 
         /// <summary>
         /// The Nanonewtons unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly ForceUnit Nanonewtons = new ForceUnit(1E-09, "nN");
-
-        /// <summary>
-        /// The Nanonewtons unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly ForceUnit nN = Nanonewtons;
+        public static readonly ForceUnit Nanonewtons = new ForceUnit(nanonewtons => nanonewtons / 1000000000, newtons => 1000000000 * newtons, "nN");
 
         /// <summary>
         /// The Micronewtons unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly ForceUnit Micronewtons = new ForceUnit(1E-06, "µN");
-
-        /// <summary>
-        /// The Micronewtons unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly ForceUnit µN = Micronewtons;
+        public static readonly ForceUnit Micronewtons = new ForceUnit(micronewtons => micronewtons / 1000000, newtons => 1000000 * newtons, "µN");
 
         /// <summary>
         /// The Millinewtons unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly ForceUnit Millinewtons = new ForceUnit(0.001, "mN");
-
-        /// <summary>
-        /// The Millinewtons unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly ForceUnit mN = Millinewtons;
+        public static readonly ForceUnit Millinewtons = new ForceUnit(millinewtons => millinewtons / 1000, newtons => 1000 * newtons, "mN");
 
         /// <summary>
         /// The Kilonewtons unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly ForceUnit Kilonewtons = new ForceUnit(1000, "kN");
-
-        /// <summary>
-        /// The Kilonewtons unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly ForceUnit kN = Kilonewtons;
+        public static readonly ForceUnit Kilonewtons = new ForceUnit(kilonewtons => 1000 * kilonewtons, newtons => newtons / 1000, "kN");
 
         /// <summary>
         /// The Meganewtons unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly ForceUnit Meganewtons = new ForceUnit(1000000, "MN");
-
-        /// <summary>
-        /// The Meganewtons unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly ForceUnit MN = Meganewtons;
+        public static readonly ForceUnit Meganewtons = new ForceUnit(meganewtons => 1000000 * meganewtons, newtons => newtons / 1000000, "MN");
 
         /// <summary>
         /// The Giganewtons unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly ForceUnit Giganewtons = new ForceUnit(1000000000, "GN");
+        public static readonly ForceUnit Giganewtons = new ForceUnit(giganewtons => 1000000000 * giganewtons, newtons => newtons / 1000000000, "GN");
 
-        /// <summary>
-        /// The Giganewtons unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly ForceUnit GN = Giganewtons;
+        private readonly Func<double, double> toNewtons;
+        private readonly Func<double, double> fromNewtons;
+        internal readonly string symbol;
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
-
-        public ForceUnit(double conversionFactor, string symbol)
+        public ForceUnit(Func<double, double> toNewtons, Func<double, double> fromNewtons, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toNewtons = toNewtons;
+            this.fromNewtons = fromNewtons;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.ForceUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.ForceUnit"/>
         /// </summary>
-        public ForceUnit SiUnit => ForceUnit.Newtons;
+        public ForceUnit SiUnit => Newtons;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.ForceUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => ForceUnit.Newtons;
+        IUnit IUnit.SiUnit => Newtons;
 
         public static Force operator *(double left, ForceUnit right)
         {
@@ -157,7 +111,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toNewtons(value);
         }
 
         /// <summary>
@@ -165,9 +119,9 @@
         /// </summary>
         /// <param name="value">The value in Newtons</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double newtons)
         {
-            return value / this.conversionFactor;
+            return this.fromNewtons(newtons);
         }
 
         /// <summary>
@@ -181,7 +135,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Newtons
+        /// Gets the scalar value of <paramref name="quantity"/> in ForceUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

@@ -5,53 +5,79 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.CapacitanceUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Capacitance"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(CapacitanceUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Farads.symbol}")]
+    [Serializable, TypeConverter(typeof(CapacitanceUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{CapacitanceUnit.symbol}")]
     public struct CapacitanceUnit : IUnit, IUnit<Capacitance>, IEquatable<CapacitanceUnit>
     {
         /// <summary>
-        /// The Farads unit
-        /// Contains conversion logic to from and formatting.
+        /// The CapacitanceUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly CapacitanceUnit Farads = new CapacitanceUnit(1.0, "F");
+        public static readonly CapacitanceUnit Farads = new CapacitanceUnit(farads => farads, farads => farads, "F");
 
         /// <summary>
-        /// The Farads unit
+        /// The Nanofarads unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly CapacitanceUnit F = Farads;
+        public static readonly CapacitanceUnit Nanofarads = new CapacitanceUnit(nanofarads => nanofarads / 1000000000, farads => 1000000000 * farads, "nF");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        /// <summary>
+        /// The Microfarads unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly CapacitanceUnit Microfarads = new CapacitanceUnit(microfarads => microfarads / 1000000, farads => 1000000 * farads, "µF");
 
-        public CapacitanceUnit(double conversionFactor, string symbol)
+        /// <summary>
+        /// The Millifarads unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly CapacitanceUnit Millifarads = new CapacitanceUnit(millifarads => millifarads / 1000, farads => 1000 * farads, "mF");
+
+        /// <summary>
+        /// The Kilofarads unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly CapacitanceUnit Kilofarads = new CapacitanceUnit(kilofarads => 1000 * kilofarads, farads => farads / 1000, "kF");
+
+        /// <summary>
+        /// The Megafarads unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly CapacitanceUnit Megafarads = new CapacitanceUnit(megafarads => 1000000 * megafarads, farads => farads / 1000000, "MF");
+
+        /// <summary>
+        /// The Gigafarads unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly CapacitanceUnit Gigafarads = new CapacitanceUnit(gigafarads => 1000000000 * gigafarads, farads => farads / 1000000000, "GF");
+
+        private readonly Func<double, double> toFarads;
+        private readonly Func<double, double> fromFarads;
+        internal readonly string symbol;
+
+        public CapacitanceUnit(Func<double, double> toFarads, Func<double, double> fromFarads, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toFarads = toFarads;
+            this.fromFarads = fromFarads;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.CapacitanceUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.CapacitanceUnit"/>
         /// </summary>
-        public CapacitanceUnit SiUnit => CapacitanceUnit.Farads;
+        public CapacitanceUnit SiUnit => Farads;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.CapacitanceUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => CapacitanceUnit.Farads;
+        IUnit IUnit.SiUnit => Farads;
 
         public static Capacitance operator *(double left, CapacitanceUnit right)
         {
@@ -85,7 +111,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toFarads(value);
         }
 
         /// <summary>
@@ -93,9 +119,9 @@
         /// </summary>
         /// <param name="value">The value in Farads</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double farads)
         {
-            return value / this.conversionFactor;
+            return this.fromFarads(farads);
         }
 
         /// <summary>
@@ -109,7 +135,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Farads
+        /// Gets the scalar value of <paramref name="quantity"/> in CapacitanceUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

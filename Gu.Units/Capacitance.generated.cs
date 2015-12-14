@@ -67,6 +67,36 @@
         }
 
         /// <summary>
+        /// The quantity in Nanofarads
+        /// </summary>
+        public double Nanofarads => 1000000000 * this.farads;
+
+        /// <summary>
+        /// The quantity in Microfarads
+        /// </summary>
+        public double Microfarads => 1000000 * this.farads;
+
+        /// <summary>
+        /// The quantity in Millifarads
+        /// </summary>
+        public double Millifarads => 1000 * this.farads;
+
+        /// <summary>
+        /// The quantity in Kilofarads
+        /// </summary>
+        public double Kilofarads => this.farads / 1000;
+
+        /// <summary>
+        /// The quantity in Megafarads
+        /// </summary>
+        public double Megafarads => this.farads / 1000000;
+
+        /// <summary>
+        /// The quantity in Gigafarads
+        /// </summary>
+        public double Gigafarads => this.farads / 1000000000;
+
+        /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
         /// </summary>
         /// <param name="s">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
@@ -140,6 +170,85 @@
         public static Capacitance FromFarads(double farads)
         {
             return new Capacitance(farads);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
+        /// </summary>
+        /// <param name="nanofarads">The value in nF</param>
+        public static Capacitance FromNanofarads(double nanofarads)
+        {
+            return new Capacitance(nanofarads / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
+        /// </summary>
+        /// <param name="microfarads">The value in µF</param>
+        public static Capacitance FromMicrofarads(double microfarads)
+        {
+            return new Capacitance(microfarads / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
+        /// </summary>
+        /// <param name="millifarads">The value in mF</param>
+        public static Capacitance FromMillifarads(double millifarads)
+        {
+            return new Capacitance(millifarads / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
+        /// </summary>
+        /// <param name="kilofarads">The value in kF</param>
+        public static Capacitance FromKilofarads(double kilofarads)
+        {
+            return new Capacitance(1000 * kilofarads);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
+        /// </summary>
+        /// <param name="megafarads">The value in MF</param>
+        public static Capacitance FromMegafarads(double megafarads)
+        {
+            return new Capacitance(1000000 * megafarads);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
+        /// </summary>
+        /// <param name="gigafarads">The value in GF</param>
+        public static Capacitance FromGigafarads(double gigafarads)
+        {
+            return new Capacitance(1000000000 * gigafarads);
+        }
+
+        public static ElectricalConductance operator /(Capacitance left, Time right)
+        {
+            return ElectricalConductance.FromSiemens(left.farads / right.seconds);
+        }
+
+        public static ElectricalConductance operator *(Capacitance left, Frequency right)
+        {
+            return ElectricalConductance.FromSiemens(left.farads * right.hertz);
+        }
+
+        public static ElectricCharge operator *(Capacitance left, Voltage right)
+        {
+            return ElectricCharge.FromCoulombs(left.farads * right.volts);
+        }
+
+        public static Time operator *(Capacitance left, Resistance right)
+        {
+            return Time.FromSeconds(left.farads * right.ohm);
+        }
+
+        public static Time operator /(Capacitance left, ElectricalConductance right)
+        {
+            return Time.FromSeconds(left.farads / right.siemens);
         }
 
         public static double operator /(Capacitance left, Capacitance right)

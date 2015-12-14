@@ -67,70 +67,34 @@
         }
 
         /// <summary>
-        /// The quantity in nanowatts
+        /// The quantity in Nanowatts
         /// </summary>
-        public double Nanowatts
-        {
-            get
-            {
-                return PowerUnit.Nanowatts.FromSiUnit(this.watts);
-            }
-        }
+        public double Nanowatts => 1000000000 * this.watts;
 
         /// <summary>
-        /// The quantity in microwatts
+        /// The quantity in Microwatts
         /// </summary>
-        public double Microwatts
-        {
-            get
-            {
-                return PowerUnit.Microwatts.FromSiUnit(this.watts);
-            }
-        }
+        public double Microwatts => 1000000 * this.watts;
 
         /// <summary>
-        /// The quantity in milliwatts
+        /// The quantity in Milliwatts
         /// </summary>
-        public double Milliwatts
-        {
-            get
-            {
-                return PowerUnit.Milliwatts.FromSiUnit(this.watts);
-            }
-        }
+        public double Milliwatts => 1000 * this.watts;
 
         /// <summary>
-        /// The quantity in kilowatts
+        /// The quantity in Kilowatts
         /// </summary>
-        public double Kilowatts
-        {
-            get
-            {
-                return PowerUnit.Kilowatts.FromSiUnit(this.watts);
-            }
-        }
+        public double Kilowatts => this.watts / 1000;
 
         /// <summary>
-        /// The quantity in megawatts
+        /// The quantity in Megawatts
         /// </summary>
-        public double Megawatts
-        {
-            get
-            {
-                return PowerUnit.Megawatts.FromSiUnit(this.watts);
-            }
-        }
+        public double Megawatts => this.watts / 1000000;
 
         /// <summary>
-        /// The quantity in gigawatts
+        /// The quantity in Gigawatts
         /// </summary>
-        public double Gigawatts
-        {
-            get
-            {
-                return PowerUnit.Gigawatts.FromSiUnit(this.watts);
-            }
-        }
+        public double Gigawatts => this.watts / 1000000000;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
@@ -214,7 +178,7 @@
         /// <param name="nanowatts">The value in nW</param>
         public static Power FromNanowatts(double nanowatts)
         {
-            return From(nanowatts, PowerUnit.Nanowatts);
+            return new Power(nanowatts / 1000000000);
         }
 
         /// <summary>
@@ -223,7 +187,7 @@
         /// <param name="microwatts">The value in µW</param>
         public static Power FromMicrowatts(double microwatts)
         {
-            return From(microwatts, PowerUnit.Microwatts);
+            return new Power(microwatts / 1000000);
         }
 
         /// <summary>
@@ -232,7 +196,7 @@
         /// <param name="milliwatts">The value in mW</param>
         public static Power FromMilliwatts(double milliwatts)
         {
-            return From(milliwatts, PowerUnit.Milliwatts);
+            return new Power(milliwatts / 1000);
         }
 
         /// <summary>
@@ -241,7 +205,7 @@
         /// <param name="kilowatts">The value in kW</param>
         public static Power FromKilowatts(double kilowatts)
         {
-            return From(kilowatts, PowerUnit.Kilowatts);
+            return new Power(1000 * kilowatts);
         }
 
         /// <summary>
@@ -250,7 +214,7 @@
         /// <param name="megawatts">The value in MW</param>
         public static Power FromMegawatts(double megawatts)
         {
-            return From(megawatts, PowerUnit.Megawatts);
+            return new Power(1000000 * megawatts);
         }
 
         /// <summary>
@@ -259,12 +223,7 @@
         /// <param name="gigawatts">The value in GW</param>
         public static Power FromGigawatts(double gigawatts)
         {
-            return From(gigawatts, PowerUnit.Gigawatts);
-        }
-
-        public static Force operator /(Power left, Speed right)
-        {
-            return Force.FromNewtons(left.watts / right.metresPerSecond);
+            return new Power(1000000000 * gigawatts);
         }
 
         public static Energy operator *(Power left, Time right)
@@ -272,9 +231,19 @@
             return Energy.FromJoules(left.watts * right.seconds);
         }
 
+        public static Voltage operator /(Power left, Current right)
+        {
+            return Voltage.FromVolts(left.watts / right.amperes);
+        }
+
         public static Speed operator /(Power left, Force right)
         {
             return Speed.FromMetresPerSecond(left.watts / right.newtons);
+        }
+
+        public static VolumetricFlow operator /(Power left, Pressure right)
+        {
+            return VolumetricFlow.FromCubicMetresPerSecond(left.watts / right.pascals);
         }
 
         public static Frequency operator /(Power left, Energy right)
@@ -282,14 +251,69 @@
             return Frequency.FromHertz(left.watts / right.joules);
         }
 
+        public static Force operator /(Power left, Speed right)
+        {
+            return Force.FromNewtons(left.watts / right.metresPerSecond);
+        }
+
         public static Torque operator /(Power left, AngularSpeed right)
         {
             return Torque.FromNewtonMetres(left.watts / right.radiansPerSecond);
         }
 
-        public static Voltage operator /(Power left, Current right)
+        public static Energy operator /(Power left, Frequency right)
         {
-            return Voltage.FromVolts(left.watts / right.amperes);
+            return Energy.FromJoules(left.watts / right.hertz);
+        }
+
+        public static Momentum operator /(Power left, Acceleration right)
+        {
+            return Momentum.FromNewtonSecond(left.watts / right.metresPerSecondSquared);
+        }
+
+        public static AngularSpeed operator /(Power left, Torque right)
+        {
+            return AngularSpeed.FromRadiansPerSecond(left.watts / right.newtonMetres);
+        }
+
+        public static KinematicViscosity operator /(Power left, Stiffness right)
+        {
+            return KinematicViscosity.FromSquareMetresPerSecond(left.watts / right.newtonsPerMetre);
+        }
+
+        public static Pressure operator /(Power left, VolumetricFlow right)
+        {
+            return Pressure.FromPascals(left.watts / right.cubicMetresPerSecond);
+        }
+
+        public static Current operator /(Power left, Voltage right)
+        {
+            return Current.FromAmperes(left.watts / right.volts);
+        }
+
+        public static MassFlow operator /(Power left, SpecificEnergy right)
+        {
+            return MassFlow.FromKilogramsPerSecond(left.watts / right.joulesPerKilogram);
+        }
+
+        public static KinematicViscosity operator *(Power left, Flexibility right)
+        {
+            return KinematicViscosity.FromSquareMetresPerSecond(left.watts * right.metresPerNewton);
+        }
+
+        public static Acceleration operator /(Power left, Momentum right)
+        {
+            return Acceleration.FromMetresPerSecondSquared(left.watts / right.newtonSecond);
+        }
+
+        public static SpecificEnergy operator /(Power left, MassFlow right)
+        {
+            return SpecificEnergy.FromJoulesPerKilogram(left.watts / right.kilogramsPerSecond);
+        }
+
+        public static Stiffness operator /(Power left, KinematicViscosity right)
+        {
+            return Stiffness.FromNewtonsPerMetre(left.watts / right.squareMetresPerSecond);
         }
 
         public static double operator /(Power left, Power right)

@@ -12,9 +12,13 @@
         public static readonly VolumeJsonConverter Default = new VolumeJsonConverter(VolumeUnit.CubicMetres);
         public static readonly VolumeJsonConverter CubicMetres = new VolumeJsonConverter(VolumeUnit.CubicMetres);
         public static readonly VolumeJsonConverter Litres = new VolumeJsonConverter(VolumeUnit.Litres);
+        public static readonly VolumeJsonConverter Millilitres = new VolumeJsonConverter(VolumeUnit.Millilitres);
+        public static readonly VolumeJsonConverter Centilitres = new VolumeJsonConverter(VolumeUnit.Centilitres);
+        public static readonly VolumeJsonConverter Decilitres = new VolumeJsonConverter(VolumeUnit.Decilitres);
         public static readonly VolumeJsonConverter CubicCentimetres = new VolumeJsonConverter(VolumeUnit.CubicCentimetres);
         public static readonly VolumeJsonConverter CubicMillimetres = new VolumeJsonConverter(VolumeUnit.CubicMillimetres);
         public static readonly VolumeJsonConverter CubicInches = new VolumeJsonConverter(VolumeUnit.CubicInches);
+        public static readonly VolumeJsonConverter CubicDecimetres = new VolumeJsonConverter(VolumeUnit.CubicDecimetres);
 
         private readonly VolumeUnit unit;
 

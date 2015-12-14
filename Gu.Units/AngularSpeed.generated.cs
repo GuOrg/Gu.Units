@@ -67,70 +67,34 @@
         }
 
         /// <summary>
-        /// The quantity in revolutionsPerMinute
+        /// The quantity in RevolutionsPerMinute
         /// </summary>
-        public double RevolutionsPerMinute
-        {
-            get
-            {
-                return AngularSpeedUnit.RevolutionsPerMinute.FromSiUnit(this.radiansPerSecond);
-            }
-        }
+        public double RevolutionsPerMinute => this.radiansPerSecond / 0.10471975511966;
 
         /// <summary>
-        /// The quantity in degreesPerSecond
+        /// The quantity in DegreesPerSecond
         /// </summary>
-        public double DegreesPerSecond
-        {
-            get
-            {
-                return AngularSpeedUnit.DegreesPerSecond.FromSiUnit(this.radiansPerSecond);
-            }
-        }
+        public double DegreesPerSecond => this.radiansPerSecond / 0.0174532925199433;
 
         /// <summary>
-        /// The quantity in degreesPerMinute
+        /// The quantity in DegreesPerMinute
         /// </summary>
-        public double DegreesPerMinute
-        {
-            get
-            {
-                return AngularSpeedUnit.DegreesPerMinute.FromSiUnit(this.radiansPerSecond);
-            }
-        }
+        public double DegreesPerMinute => this.radiansPerSecond / 0.000290888208665722;
 
         /// <summary>
-        /// The quantity in radiansPerMinute
+        /// The quantity in RadiansPerMinute
         /// </summary>
-        public double RadiansPerMinute
-        {
-            get
-            {
-                return AngularSpeedUnit.RadiansPerMinute.FromSiUnit(this.radiansPerSecond);
-            }
-        }
+        public double RadiansPerMinute => 60 * this.radiansPerSecond;
 
         /// <summary>
-        /// The quantity in degreesPerHour
+        /// The quantity in DegreesPerHour
         /// </summary>
-        public double DegreesPerHour
-        {
-            get
-            {
-                return AngularSpeedUnit.DegreesPerHour.FromSiUnit(this.radiansPerSecond);
-            }
-        }
+        public double DegreesPerHour => this.radiansPerSecond / 4.84813681109536E-06;
 
         /// <summary>
-        /// The quantity in radiansPerHour
+        /// The quantity in RadiansPerHour
         /// </summary>
-        public double RadiansPerHour
-        {
-            get
-            {
-                return AngularSpeedUnit.RadiansPerHour.FromSiUnit(this.radiansPerSecond);
-            }
-        }
+        public double RadiansPerHour => 3600 * this.radiansPerSecond;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
@@ -214,7 +178,7 @@
         /// <param name="revolutionsPerMinute">The value in rpm</param>
         public static AngularSpeed FromRevolutionsPerMinute(double revolutionsPerMinute)
         {
-            return From(revolutionsPerMinute, AngularSpeedUnit.RevolutionsPerMinute);
+            return new AngularSpeed(0.10471975511966 * revolutionsPerMinute);
         }
 
         /// <summary>
@@ -223,7 +187,7 @@
         /// <param name="degreesPerSecond">The value in °⋅s⁻¹</param>
         public static AngularSpeed FromDegreesPerSecond(double degreesPerSecond)
         {
-            return From(degreesPerSecond, AngularSpeedUnit.DegreesPerSecond);
+            return new AngularSpeed(0.0174532925199433 * degreesPerSecond);
         }
 
         /// <summary>
@@ -232,7 +196,7 @@
         /// <param name="degreesPerMinute">The value in min⁻¹⋅°</param>
         public static AngularSpeed FromDegreesPerMinute(double degreesPerMinute)
         {
-            return From(degreesPerMinute, AngularSpeedUnit.DegreesPerMinute);
+            return new AngularSpeed(0.000290888208665722 * degreesPerMinute);
         }
 
         /// <summary>
@@ -241,7 +205,7 @@
         /// <param name="radiansPerMinute">The value in min⁻¹⋅rad</param>
         public static AngularSpeed FromRadiansPerMinute(double radiansPerMinute)
         {
-            return From(radiansPerMinute, AngularSpeedUnit.RadiansPerMinute);
+            return new AngularSpeed(radiansPerMinute / 60);
         }
 
         /// <summary>
@@ -250,7 +214,7 @@
         /// <param name="degreesPerHour">The value in h⁻¹⋅°</param>
         public static AngularSpeed FromDegreesPerHour(double degreesPerHour)
         {
-            return From(degreesPerHour, AngularSpeedUnit.DegreesPerHour);
+            return new AngularSpeed(4.84813681109536E-06 * degreesPerHour);
         }
 
         /// <summary>
@@ -259,12 +223,7 @@
         /// <param name="radiansPerHour">The value in h⁻¹⋅rad</param>
         public static AngularSpeed FromRadiansPerHour(double radiansPerHour)
         {
-            return From(radiansPerHour, AngularSpeedUnit.RadiansPerHour);
-        }
-
-        public static Time operator /(AngularSpeed left, AngularAcceleration right)
-        {
-            return Time.FromSeconds(left.radiansPerSecond / right.radiansPerSecondSquared);
+            return new AngularSpeed(radiansPerHour / 3600);
         }
 
         public static Angle operator *(AngularSpeed left, Time right)
@@ -272,14 +231,34 @@
             return Angle.FromRadians(left.radiansPerSecond * right.seconds);
         }
 
+        public static AngularAcceleration operator /(AngularSpeed left, Time right)
+        {
+            return AngularAcceleration.FromRadiansPerSecondSquared(left.radiansPerSecond / right.seconds);
+        }
+
         public static Frequency operator /(AngularSpeed left, Angle right)
         {
             return Frequency.FromHertz(left.radiansPerSecond / right.radians);
         }
 
-        public static AngularAcceleration operator /(AngularSpeed left, Time right)
+        public static AngularAcceleration operator *(AngularSpeed left, Frequency right)
         {
-            return AngularAcceleration.FromRadiansPerSecondSquared(left.radiansPerSecond / right.seconds);
+            return AngularAcceleration.FromRadiansPerSecondSquared(left.radiansPerSecond * right.hertz);
+        }
+
+        public static Angle operator /(AngularSpeed left, Frequency right)
+        {
+            return Angle.FromRadians(left.radiansPerSecond / right.hertz);
+        }
+
+        public static Power operator *(AngularSpeed left, Torque right)
+        {
+            return Power.FromWatts(left.radiansPerSecond * right.newtonMetres);
+        }
+
+        public static Time operator /(AngularSpeed left, AngularAcceleration right)
+        {
+            return Time.FromSeconds(left.radiansPerSecond / right.radiansPerSecondSquared);
         }
 
         public static double operator /(AngularSpeed left, AngularSpeed right)

@@ -7,17 +7,21 @@
              DataContext="{x:Static local:MainVm.Instance}"
              mc:Ignorable="d">
     <ItemsControl ItemsSource="{Binding Conversions.PrefixConversions.Prefixes}">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+
         <ItemsControl.ItemTemplate>
-            <DataTemplate DataType="{x:Type local:PrefixConversionVm}">
-                <CheckBox IsChecked="{Binding IsUsed}">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="{Binding Conversion.Symbol}" />
-                        <TextBlock Text="(" />
-                        <TextBlock Text="{Binding Prefix.Name}" />
-                        <TextBlock Text="{Binding Unit.ClassName}" />
-                        <TextBlock Text=")" />
-                    </StackPanel>
-                </CheckBox>
+            <DataTemplate DataType="{x:Type local:PrefixConversionVm[]}">
+                <ItemsControl ItemsSource="{Binding}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type local:PrefixConversionVm}">
+                            <CheckBox Content="{Binding Conversion.Name}" IsChecked="{Binding IsUsed}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </DataTemplate>
         </ItemsControl.ItemTemplate>
     </ItemsControl>

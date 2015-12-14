@@ -5,59 +5,79 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.AccelerationUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Acceleration"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(AccelerationUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MetresPerSecondSquared.symbol}")]
+    [Serializable, TypeConverter(typeof(AccelerationUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{AccelerationUnit.symbol}")]
     public struct AccelerationUnit : IUnit, IUnit<Acceleration>, IEquatable<AccelerationUnit>
     {
         /// <summary>
-        /// The MetresPerSecondSquared unit
-        /// Contains conversion logic to from and formatting.
+        /// The AccelerationUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly AccelerationUnit MetresPerSecondSquared = new AccelerationUnit(1.0, "m/s²");
-
-        /// <summary>
-        /// The MillimetresPerSecondSquared unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly AccelerationUnit MillimetresPerSecondSquared = new AccelerationUnit(0.001, "mm/s²");
+        public static readonly AccelerationUnit MetresPerSecondSquared = new AccelerationUnit(metresPerSecondSquared => metresPerSecondSquared, metresPerSecondSquared => metresPerSecondSquared, "m/s²");
 
         /// <summary>
         /// The CentimetresPerSecondSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AccelerationUnit CentimetresPerSecondSquared = new AccelerationUnit(0.01, "cm/s²");
+        public static readonly AccelerationUnit CentimetresPerSecondSquared = new AccelerationUnit(centimetresPerSecondSquared => centimetresPerSecondSquared / 100, metresPerSecondSquared => 100 * metresPerSecondSquared, "cm/s²");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        /// <summary>
+        /// The MillimetresPerSecondSquared unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly AccelerationUnit MillimetresPerSecondSquared = new AccelerationUnit(millimetresPerSecondSquared => millimetresPerSecondSquared / 1000, metresPerSecondSquared => 1000 * metresPerSecondSquared, "mm/s²");
 
-        public AccelerationUnit(double conversionFactor, string symbol)
+        /// <summary>
+        /// The MillimetresPerHourSquared unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly AccelerationUnit MillimetresPerHourSquared = new AccelerationUnit(millimetresPerHourSquared => millimetresPerHourSquared / 12960000000, metresPerSecondSquared => 12960000000 * metresPerSecondSquared, "mm/h²");
+
+        /// <summary>
+        /// The CentimetresPerHourSquared unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly AccelerationUnit CentimetresPerHourSquared = new AccelerationUnit(centimetresPerHourSquared => centimetresPerHourSquared / 1296000000, metresPerSecondSquared => 1296000000 * metresPerSecondSquared, "cm/h²");
+
+        /// <summary>
+        /// The MetresPerHourSquared unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly AccelerationUnit MetresPerHourSquared = new AccelerationUnit(metresPerHourSquared => metresPerHourSquared / 12960000, metresPerSecondSquared => 12960000 * metresPerSecondSquared, "m/h²");
+
+        /// <summary>
+        /// The MetresPerMinuteSquared unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly AccelerationUnit MetresPerMinuteSquared = new AccelerationUnit(metresPerMinuteSquared => metresPerMinuteSquared / 3600, metresPerSecondSquared => 3600 * metresPerSecondSquared, "m/min²");
+
+        private readonly Func<double, double> toMetresPerSecondSquared;
+        private readonly Func<double, double> fromMetresPerSecondSquared;
+        internal readonly string symbol;
+
+        public AccelerationUnit(Func<double, double> toMetresPerSecondSquared, Func<double, double> fromMetresPerSecondSquared, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toMetresPerSecondSquared = toMetresPerSecondSquared;
+            this.fromMetresPerSecondSquared = fromMetresPerSecondSquared;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.AccelerationUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.AccelerationUnit"/>
         /// </summary>
-        public AccelerationUnit SiUnit => AccelerationUnit.MetresPerSecondSquared;
+        public AccelerationUnit SiUnit => MetresPerSecondSquared;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.AccelerationUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => AccelerationUnit.MetresPerSecondSquared;
+        IUnit IUnit.SiUnit => MetresPerSecondSquared;
 
         public static Acceleration operator *(double left, AccelerationUnit right)
         {
@@ -91,7 +111,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toMetresPerSecondSquared(value);
         }
 
         /// <summary>
@@ -99,9 +119,9 @@
         /// </summary>
         /// <param name="value">The value in MetresPerSecondSquared</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double metresPerSecondSquared)
         {
-            return value / this.conversionFactor;
+            return this.fromMetresPerSecondSquared(metresPerSecondSquared);
         }
 
         /// <summary>
@@ -115,7 +135,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in MetresPerSecondSquared
+        /// Gets the scalar value of <paramref name="quantity"/> in AccelerationUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

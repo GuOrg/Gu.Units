@@ -67,26 +67,29 @@
         }
 
         /// <summary>
-        /// The quantity in gramsPerCubicMillimetre
+        /// The quantity in GramsPerCubicMillimetre
         /// </summary>
-        public double GramsPerCubicMillimetre
-        {
-            get
-            {
-                return DensityUnit.GramsPerCubicMillimetre.FromSiUnit(this.kilogramsPerCubicMetre);
-            }
-        }
+        public double GramsPerCubicMillimetre => this.kilogramsPerCubicMetre / 1000000;
 
         /// <summary>
-        /// The quantity in gramsPerCubicCentimetre
+        /// The quantity in GramsPerCubicCentimetre
         /// </summary>
-        public double GramsPerCubicCentimetre
-        {
-            get
-            {
-                return DensityUnit.GramsPerCubicCentimetre.FromSiUnit(this.kilogramsPerCubicMetre);
-            }
-        }
+        public double GramsPerCubicCentimetre => this.kilogramsPerCubicMetre / 1000;
+
+        /// <summary>
+        /// The quantity in MilligramsPerCubicMillimetre
+        /// </summary>
+        public double MilligramsPerCubicMillimetre => this.kilogramsPerCubicMetre / 1000;
+
+        /// <summary>
+        /// The quantity in GramsPerCubicMetre
+        /// </summary>
+        public double GramsPerCubicMetre => 1000 * this.kilogramsPerCubicMetre;
+
+        /// <summary>
+        /// The quantity in MilligramsPerCubicMetre
+        /// </summary>
+        public double MilligramsPerCubicMetre => 1000000 * this.kilogramsPerCubicMetre;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Density"/> from its string representation
@@ -170,7 +173,7 @@
         /// <param name="gramsPerCubicMillimetre">The value in g/mm³</param>
         public static Density FromGramsPerCubicMillimetre(double gramsPerCubicMillimetre)
         {
-            return From(gramsPerCubicMillimetre, DensityUnit.GramsPerCubicMillimetre);
+            return new Density(1000000 * gramsPerCubicMillimetre);
         }
 
         /// <summary>
@@ -179,12 +182,69 @@
         /// <param name="gramsPerCubicCentimetre">The value in g/cm³</param>
         public static Density FromGramsPerCubicCentimetre(double gramsPerCubicCentimetre)
         {
-            return From(gramsPerCubicCentimetre, DensityUnit.GramsPerCubicCentimetre);
+            return new Density(1000 * gramsPerCubicCentimetre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Density"/>.
+        /// </summary>
+        /// <param name="milligramsPerCubicMillimetre">The value in mg/mm³</param>
+        public static Density FromMilligramsPerCubicMillimetre(double milligramsPerCubicMillimetre)
+        {
+            return new Density(1000 * milligramsPerCubicMillimetre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Density"/>.
+        /// </summary>
+        /// <param name="gramsPerCubicMetre">The value in g/m³</param>
+        public static Density FromGramsPerCubicMetre(double gramsPerCubicMetre)
+        {
+            return new Density(gramsPerCubicMetre / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Density"/>.
+        /// </summary>
+        /// <param name="milligramsPerCubicMetre">The value in mg/m³</param>
+        public static Density FromMilligramsPerCubicMetre(double milligramsPerCubicMetre)
+        {
+            return new Density(milligramsPerCubicMetre / 1000000);
+        }
+
+        public static AreaDensity operator *(Density left, Length right)
+        {
+            return AreaDensity.FromKilogramsPerSquareMetre(left.kilogramsPerCubicMetre * right.metres);
         }
 
         public static Mass operator *(Density left, Volume right)
         {
             return Mass.FromKilograms(left.kilogramsPerCubicMetre * right.cubicMetres);
+        }
+
+        public static MassFlow operator *(Density left, VolumetricFlow right)
+        {
+            return MassFlow.FromKilogramsPerSecond(left.kilogramsPerCubicMetre * right.cubicMetresPerSecond);
+        }
+
+        public static Pressure operator *(Density left, SpecificEnergy right)
+        {
+            return Pressure.FromPascals(left.kilogramsPerCubicMetre * right.joulesPerKilogram);
+        }
+
+        public static AreaDensity operator /(Density left, Wavenumber right)
+        {
+            return AreaDensity.FromKilogramsPerSquareMetre(left.kilogramsPerCubicMetre / right.reciprocalMetres);
+        }
+
+        public static Wavenumber operator /(Density left, AreaDensity right)
+        {
+            return Wavenumber.FromReciprocalMetres(left.kilogramsPerCubicMetre / right.kilogramsPerSquareMetre);
+        }
+
+        public static SpecificVolume operator /(double left, Density right)
+        {
+            return SpecificVolume.FromCubicMetresPerKilogram(left / right.kilogramsPerCubicMetre);
         }
 
         public static double operator /(Density left, Density right)

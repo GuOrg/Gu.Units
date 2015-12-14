@@ -67,26 +67,14 @@
         }
 
         /// <summary>
-        /// The quantity in celsius
+        /// The quantity in Celsius
         /// </summary>
-        public double Celsius
-        {
-            get
-            {
-                return TemperatureUnit.Celsius.FromSiUnit(this.kelvin);
-            }
-        }
+        public double Celsius => this.kelvin - 273.15;
 
         /// <summary>
-        /// The quantity in fahrenheit
+        /// The quantity in Fahrenheit
         /// </summary>
-        public double Fahrenheit
-        {
-            get
-            {
-                return TemperatureUnit.Fahrenheit.FromSiUnit(this.kelvin);
-            }
-        }
+        public double Fahrenheit => 1.8 * this.kelvin - 459.67;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Temperature"/> from its string representation
@@ -170,7 +158,7 @@
         /// <param name="celsius">The value in °C</param>
         public static Temperature FromCelsius(double celsius)
         {
-            return From(celsius, TemperatureUnit.Celsius);
+            return new Temperature(celsius + 273.15);
         }
 
         /// <summary>
@@ -179,7 +167,7 @@
         /// <param name="fahrenheit">The value in °F</param>
         public static Temperature FromFahrenheit(double fahrenheit)
         {
-            return From(fahrenheit, TemperatureUnit.Fahrenheit);
+            return new Temperature((fahrenheit + 459.67) / 1.8);
         }
 
         public static double operator /(Temperature left, Temperature right)

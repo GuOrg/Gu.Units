@@ -5,71 +5,61 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.LengthPerUnitlessUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.LengthPerUnitless"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(LengthPerUnitlessUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MetresPerUnitless.symbol}")]
+    [Serializable, TypeConverter(typeof(LengthPerUnitlessUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{LengthPerUnitlessUnit.symbol}")]
     public struct LengthPerUnitlessUnit : IUnit, IUnit<LengthPerUnitless>, IEquatable<LengthPerUnitlessUnit>
     {
         /// <summary>
-        /// The MetresPerUnitless unit
-        /// Contains conversion logic to from and formatting.
+        /// The LengthPerUnitlessUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly LengthPerUnitlessUnit MetresPerUnitless = new LengthPerUnitlessUnit(1.0, "m/ul");
+        public static readonly LengthPerUnitlessUnit MetresPerUnitless = new LengthPerUnitlessUnit(metresPerUnitless => metresPerUnitless, metresPerUnitless => metresPerUnitless, "m/ul");
 
         /// <summary>
         /// The MillimetresPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly LengthPerUnitlessUnit MillimetresPerPercent = new LengthPerUnitlessUnit(0.1, "mm/%");
+        public static readonly LengthPerUnitlessUnit MillimetresPerPercent = new LengthPerUnitlessUnit(millimetresPerPercent => millimetresPerPercent / 10, metresPerUnitless => 10 * metresPerUnitless, "mm/%");
 
         /// <summary>
         /// The MicrometresPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly LengthPerUnitlessUnit MicrometresPerPercent = new LengthPerUnitlessUnit(9.9999999999999991E-05, "µm/%");
-
-        /// <summary>
-        /// The NanometresPerPercent unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly LengthPerUnitlessUnit NanometresPerPercent = new LengthPerUnitlessUnit(1.0000000000000001E-07, "nm/%");
+        public static readonly LengthPerUnitlessUnit MicrometresPerPercent = new LengthPerUnitlessUnit(micrometresPerPercent => micrometresPerPercent / 10000, metresPerUnitless => 10000 * metresPerUnitless, "µm/%");
 
         /// <summary>
         /// The MetresPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly LengthPerUnitlessUnit MetresPerPercent = new LengthPerUnitlessUnit(100, "m/%");
+        public static readonly LengthPerUnitlessUnit MetresPerPercent = new LengthPerUnitlessUnit(metresPerPercent => 100 * metresPerPercent, metresPerUnitless => metresPerUnitless / 100, "m/%");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        private readonly Func<double, double> toMetresPerUnitless;
+        private readonly Func<double, double> fromMetresPerUnitless;
+        internal readonly string symbol;
 
-        public LengthPerUnitlessUnit(double conversionFactor, string symbol)
+        public LengthPerUnitlessUnit(Func<double, double> toMetresPerUnitless, Func<double, double> fromMetresPerUnitless, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toMetresPerUnitless = toMetresPerUnitless;
+            this.fromMetresPerUnitless = fromMetresPerUnitless;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.LengthPerUnitlessUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.LengthPerUnitlessUnit"/>
         /// </summary>
-        public LengthPerUnitlessUnit SiUnit => LengthPerUnitlessUnit.MetresPerUnitless;
+        public LengthPerUnitlessUnit SiUnit => MetresPerUnitless;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.LengthPerUnitlessUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => LengthPerUnitlessUnit.MetresPerUnitless;
+        IUnit IUnit.SiUnit => MetresPerUnitless;
 
         public static LengthPerUnitless operator *(double left, LengthPerUnitlessUnit right)
         {
@@ -103,7 +93,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toMetresPerUnitless(value);
         }
 
         /// <summary>
@@ -111,9 +101,9 @@
         /// </summary>
         /// <param name="value">The value in MetresPerUnitless</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double metresPerUnitless)
         {
-            return value / this.conversionFactor;
+            return this.fromMetresPerUnitless(metresPerUnitless);
         }
 
         /// <summary>
@@ -127,7 +117,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in MetresPerUnitless
+        /// Gets the scalar value of <paramref name="quantity"/> in LengthPerUnitlessUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

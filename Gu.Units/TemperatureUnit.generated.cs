@@ -5,67 +5,55 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.TemperatureUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Temperature"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(TemperatureUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Kelvin.symbol}")]
+    [Serializable, TypeConverter(typeof(TemperatureUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{TemperatureUnit.symbol}")]
     public struct TemperatureUnit : IUnit, IUnit<Temperature>, IEquatable<TemperatureUnit>
     {
         /// <summary>
-        /// The Kelvin unit
-        /// Contains conversion logic to from and formatting.
+        /// The TemperatureUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly TemperatureUnit Kelvin = new TemperatureUnit(1.0, 0, "K");
-
-        /// <summary>
-        /// The Kelvin unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly TemperatureUnit K = Kelvin;
+        public static readonly TemperatureUnit Kelvin = new TemperatureUnit(kelvin => kelvin, kelvin => kelvin, "K");
 
         /// <summary>
         /// The Celsius unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly TemperatureUnit Celsius = new TemperatureUnit(1, -273.15, "°C");
+        public static readonly TemperatureUnit Celsius = new TemperatureUnit(celsius => celsius + 273.15, kelvin => kelvin - 273.15, "°C");
 
         /// <summary>
         /// The Fahrenheit unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly TemperatureUnit Fahrenheit = new TemperatureUnit(1.8, -459.67, "°F");
+        public static readonly TemperatureUnit Fahrenheit = new TemperatureUnit(fahrenheit => (fahrenheit + 459.67) / 1.8, kelvin => 1.8 * kelvin - 459.67, "°F");
 
-        private readonly double conversionFactor;
-        private readonly double offset;
-        private readonly string symbol;
+        private readonly Func<double, double> toKelvin;
+        private readonly Func<double, double> fromKelvin;
+        internal readonly string symbol;
 
-        public TemperatureUnit(double conversionFactor, double offset, string symbol)
+        public TemperatureUnit(Func<double, double> toKelvin, Func<double, double> fromKelvin, string symbol)
         {
-            this.conversionFactor = conversionFactor;
-            this.offset = offset;
+            this.toKelvin = toKelvin;
+            this.fromKelvin = fromKelvin;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.TemperatureUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.TemperatureUnit"/>
         /// </summary>
-        public TemperatureUnit SiUnit => TemperatureUnit.Kelvin;
+        public TemperatureUnit SiUnit => Kelvin;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.TemperatureUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => TemperatureUnit.Kelvin;
+        IUnit IUnit.SiUnit => Kelvin;
 
         public static Temperature operator *(double left, TemperatureUnit right)
         {
@@ -99,7 +87,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return (value - this.offset) / this.conversionFactor;
+            return this.toKelvin(value);
         }
 
         /// <summary>
@@ -107,9 +95,9 @@
         /// </summary>
         /// <param name="value">The value in Kelvin</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double kelvin)
         {
-            return this.conversionFactor * value + this.offset;
+            return this.fromKelvin(kelvin);
         }
 
         /// <summary>
@@ -123,7 +111,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Kelvin
+        /// Gets the scalar value of <paramref name="quantity"/> in TemperatureUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

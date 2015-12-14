@@ -67,48 +67,24 @@
         }
 
         /// <summary>
-        /// The quantity in newtonsPerPercent
+        /// The quantity in NewtonsPerPercent
         /// </summary>
-        public double NewtonsPerPercent
-        {
-            get
-            {
-                return ForcePerUnitlessUnit.NewtonsPerPercent.FromSiUnit(this.newtonsPerUnitless);
-            }
-        }
+        public double NewtonsPerPercent => this.newtonsPerUnitless / 100;
 
         /// <summary>
-        /// The quantity in kilonewtonsPerPercent
+        /// The quantity in KilonewtonsPerPercent
         /// </summary>
-        public double KilonewtonsPerPercent
-        {
-            get
-            {
-                return ForcePerUnitlessUnit.KilonewtonsPerPercent.FromSiUnit(this.newtonsPerUnitless);
-            }
-        }
+        public double KilonewtonsPerPercent => this.newtonsPerUnitless / 100000;
 
         /// <summary>
-        /// The quantity in meganewtonsPerPercent
+        /// The quantity in MeganewtonsPerPercent
         /// </summary>
-        public double MeganewtonsPerPercent
-        {
-            get
-            {
-                return ForcePerUnitlessUnit.MeganewtonsPerPercent.FromSiUnit(this.newtonsPerUnitless);
-            }
-        }
+        public double MeganewtonsPerPercent => this.newtonsPerUnitless / 100000000;
 
         /// <summary>
-        /// The quantity in giganewtonsPerPercent
+        /// The quantity in GiganewtonsPerPercent
         /// </summary>
-        public double GiganewtonsPerPercent
-        {
-            get
-            {
-                return ForcePerUnitlessUnit.GiganewtonsPerPercent.FromSiUnit(this.newtonsPerUnitless);
-            }
-        }
+        public double GiganewtonsPerPercent => this.newtonsPerUnitless / 100000000000;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.ForcePerUnitless"/> from its string representation
@@ -192,7 +168,7 @@
         /// <param name="newtonsPerPercent">The value in N/%</param>
         public static ForcePerUnitless FromNewtonsPerPercent(double newtonsPerPercent)
         {
-            return From(newtonsPerPercent, ForcePerUnitlessUnit.NewtonsPerPercent);
+            return new ForcePerUnitless(100 * newtonsPerPercent);
         }
 
         /// <summary>
@@ -201,7 +177,7 @@
         /// <param name="kilonewtonsPerPercent">The value in kN/%</param>
         public static ForcePerUnitless FromKilonewtonsPerPercent(double kilonewtonsPerPercent)
         {
-            return From(kilonewtonsPerPercent, ForcePerUnitlessUnit.KilonewtonsPerPercent);
+            return new ForcePerUnitless(100000 * kilonewtonsPerPercent);
         }
 
         /// <summary>
@@ -210,7 +186,7 @@
         /// <param name="meganewtonsPerPercent">The value in MN/%</param>
         public static ForcePerUnitless FromMeganewtonsPerPercent(double meganewtonsPerPercent)
         {
-            return From(meganewtonsPerPercent, ForcePerUnitlessUnit.MeganewtonsPerPercent);
+            return new ForcePerUnitless(100000000 * meganewtonsPerPercent);
         }
 
         /// <summary>
@@ -219,12 +195,22 @@
         /// <param name="giganewtonsPerPercent">The value in GN/%</param>
         public static ForcePerUnitless FromGiganewtonsPerPercent(double giganewtonsPerPercent)
         {
-            return From(giganewtonsPerPercent, ForcePerUnitlessUnit.GiganewtonsPerPercent);
+            return new ForcePerUnitless(100000000000 * giganewtonsPerPercent);
         }
 
         public static Force operator *(ForcePerUnitless left, Unitless right)
         {
             return Force.FromNewtons(left.newtonsPerUnitless * right.scalar);
+        }
+
+        public static LengthPerUnitless operator /(ForcePerUnitless left, Stiffness right)
+        {
+            return LengthPerUnitless.FromMetresPerUnitless(left.newtonsPerUnitless / right.newtonsPerMetre);
+        }
+
+        public static LengthPerUnitless operator *(ForcePerUnitless left, Flexibility right)
+        {
+            return LengthPerUnitless.FromMetresPerUnitless(left.newtonsPerUnitless * right.metresPerNewton);
         }
 
         public static Stiffness operator /(ForcePerUnitless left, LengthPerUnitless right)

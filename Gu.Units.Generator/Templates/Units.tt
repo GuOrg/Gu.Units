@@ -1,31 +1,29 @@
-﻿<#@ template debug="false" hostspecific="true" language="C#" #>
-<#@ CleanupBehavior processor="T4VSHost" CleanupAfterProcessingtemplate="true" #>
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
 <#@ include file="TemplateFilemanager.CS.ttinclude" #>
+<#@ output extension=".txt" #>
 <#@ assembly name="System.Core" #>
 <#@ assembly name="$(TargetPath)" #>
+<#@ import namespace="Gu.Units" #>
 <#@ import namespace="Gu.Units.Generator" #>
-<#@ output extension=".txt" #>
 <# 
-
 var fileManager = TemplateFileManager.Create(this);
 fileManager.IsAutoIndentEnabled = true;
 fileManager.CanOverwriteExistingFile = true;
-
 // init handling for parameter templates
 var paramTmpl = ParamTextTemplate.Create(this.Host, "Unit.tt");
 var session = ParamTextTemplate.GetSessionObject();
 var settings = Settings.Instance;
-this.Write(string.Format("Read Settings and found {0} si units and {1} derived units", settings.SiUnits.Count, settings.DerivedUnits.Count));
+this.WriteLine("Read Settings and found {0} si units and {1} derived units", settings.BaseUnits.Count, settings.DerivedUnits.Count);
 
-foreach (var unit in settings.SiUnits.Concat<IUnit>(settings.DerivedUnits))
+foreach (var unit in settings.AllUnits)
 {
-    var fileName = unit.Quantity.ClassName + "Unit.generated." + Settings.Extension;
-    fileManager.StartNewFile(fileName, Settings.ProjectName, Settings.FolderName, null);
-	session["UnitData"] = unit;
+    var fileName = unit.ClassName + ".generated." + Settings.Extension;
+    fileManager.StartNewFile(fileName, Settings.ProjectName, null, null);
+	session["UnitName"] = unit.Name;
 	var output = paramTmpl.TransformText(session);
 	if (output == "ErrorGeneratingOutput")
     {
-		this.WriteLine("Error transforming {0}", unit.UnitName);
+		this.WriteLine("Error transforming {0}", unit.ClassName);
         throw new InvalidOperationException("output");
     }
 

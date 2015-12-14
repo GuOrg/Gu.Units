@@ -11,11 +11,11 @@
     {
         public static readonly TimeJsonConverter Default = new TimeJsonConverter(TimeUnit.Seconds);
         public static readonly TimeJsonConverter Seconds = new TimeJsonConverter(TimeUnit.Seconds);
+        public static readonly TimeJsonConverter Hours = new TimeJsonConverter(TimeUnit.Hours);
+        public static readonly TimeJsonConverter Minutes = new TimeJsonConverter(TimeUnit.Minutes);
         public static readonly TimeJsonConverter Nanoseconds = new TimeJsonConverter(TimeUnit.Nanoseconds);
         public static readonly TimeJsonConverter Microseconds = new TimeJsonConverter(TimeUnit.Microseconds);
         public static readonly TimeJsonConverter Milliseconds = new TimeJsonConverter(TimeUnit.Milliseconds);
-        public static readonly TimeJsonConverter Hours = new TimeJsonConverter(TimeUnit.Hours);
-        public static readonly TimeJsonConverter Minutes = new TimeJsonConverter(TimeUnit.Minutes);
 
         private readonly TimeUnit unit;
 

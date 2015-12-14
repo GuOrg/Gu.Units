@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Security.Policy;
 
     internal static class SymbolAndPowerReader
     {
@@ -20,6 +21,13 @@
             }
 
             throw new FormatException($"No symbol found at {pos} in {text}");
+        }
+
+        internal static bool TryRead(string text, out IReadOnlyList<SymbolAndPower> result)
+        {
+            var pos = 0;
+            var success = TryRead(text, ref pos, out result);
+            return success && WhiteSpaceReader.IsRestWhiteSpace(text, pos);
         }
 
         internal static bool TryRead(string text, ref int pos, out IReadOnlyList<SymbolAndPower> result)

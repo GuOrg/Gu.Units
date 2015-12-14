@@ -14,6 +14,15 @@
             }
         }
 
+        internal static void NotEqualTo<T>(T value, T expected, string parameterName) where T : class
+        {
+            Debug.Assert(!string.IsNullOrEmpty(parameterName), $"{nameof(parameterName)} cannot be null");
+            if (value == expected)
+            {
+                throw new ArgumentException($"Expected {parameterName} to not be equal to {expected}", parameterName);
+            }
+        }
+
         internal static void IsTrue(bool condition, string parameterName, string message)
         {
             Debug.Assert(!string.IsNullOrEmpty(parameterName), $"{nameof(parameterName)} cannot be null");

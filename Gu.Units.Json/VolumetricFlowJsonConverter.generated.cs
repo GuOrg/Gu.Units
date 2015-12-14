@@ -11,6 +11,17 @@
     {
         public static readonly VolumetricFlowJsonConverter Default = new VolumetricFlowJsonConverter(VolumetricFlowUnit.CubicMetresPerSecond);
         public static readonly VolumetricFlowJsonConverter CubicMetresPerSecond = new VolumetricFlowJsonConverter(VolumetricFlowUnit.CubicMetresPerSecond);
+        public static readonly VolumetricFlowJsonConverter CubicMetresPerMinute = new VolumetricFlowJsonConverter(VolumetricFlowUnit.CubicMetresPerMinute);
+        public static readonly VolumetricFlowJsonConverter CubicMetresPerHour = new VolumetricFlowJsonConverter(VolumetricFlowUnit.CubicMetresPerHour);
+        public static readonly VolumetricFlowJsonConverter LitresPerSecond = new VolumetricFlowJsonConverter(VolumetricFlowUnit.LitresPerSecond);
+        public static readonly VolumetricFlowJsonConverter LitresPerHour = new VolumetricFlowJsonConverter(VolumetricFlowUnit.LitresPerHour);
+        public static readonly VolumetricFlowJsonConverter LitresPerMinute = new VolumetricFlowJsonConverter(VolumetricFlowUnit.LitresPerMinute);
+        public static readonly VolumetricFlowJsonConverter MillilitresPerSecond = new VolumetricFlowJsonConverter(VolumetricFlowUnit.MillilitresPerSecond);
+        public static readonly VolumetricFlowJsonConverter MillilitresPerHour = new VolumetricFlowJsonConverter(VolumetricFlowUnit.MillilitresPerHour);
+        public static readonly VolumetricFlowJsonConverter MillilitresPerMinute = new VolumetricFlowJsonConverter(VolumetricFlowUnit.MillilitresPerMinute);
+        public static readonly VolumetricFlowJsonConverter CentilitresPerSecond = new VolumetricFlowJsonConverter(VolumetricFlowUnit.CentilitresPerSecond);
+        public static readonly VolumetricFlowJsonConverter CentilitresPerHour = new VolumetricFlowJsonConverter(VolumetricFlowUnit.CentilitresPerHour);
+        public static readonly VolumetricFlowJsonConverter CentilitresPerMinute = new VolumetricFlowJsonConverter(VolumetricFlowUnit.CentilitresPerMinute);
 
         private readonly VolumetricFlowUnit unit;
 

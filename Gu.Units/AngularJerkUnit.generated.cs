@@ -5,77 +5,73 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.AngularJerkUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.AngularJerk"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(AngularJerkUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{RadiansPerSecondCubed.symbol}")]
+    [Serializable, TypeConverter(typeof(AngularJerkUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{AngularJerkUnit.symbol}")]
     public struct AngularJerkUnit : IUnit, IUnit<AngularJerk>, IEquatable<AngularJerkUnit>
     {
         /// <summary>
-        /// The RadiansPerSecondCubed unit
-        /// Contains conversion logic to from and formatting.
+        /// The AngularJerkUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly AngularJerkUnit RadiansPerSecondCubed = new AngularJerkUnit(1.0, "rad/s³");
+        public static readonly AngularJerkUnit RadiansPerSecondCubed = new AngularJerkUnit(radiansPerSecondCubed => radiansPerSecondCubed, radiansPerSecondCubed => radiansPerSecondCubed, "rad/s³");
 
         /// <summary>
         /// The DegreesPerSecondCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AngularJerkUnit DegreesPerSecondCubed = new AngularJerkUnit(0.017453292519943295, "°⋅s⁻³");
+        public static readonly AngularJerkUnit DegreesPerSecondCubed = new AngularJerkUnit(degreesPerSecondCubed => 0.0174532925199433 * degreesPerSecondCubed, radiansPerSecondCubed => radiansPerSecondCubed / 0.0174532925199433, "°⋅s⁻³");
 
         /// <summary>
         /// The RadiansPerHourCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AngularJerkUnit RadiansPerHourCubed = new AngularJerkUnit(2.1433470507544583E-11, "rad⋅h⁻³");
+        public static readonly AngularJerkUnit RadiansPerHourCubed = new AngularJerkUnit(radiansPerHourCubed => radiansPerHourCubed / 46656000000, radiansPerSecondCubed => 46656000000 * radiansPerSecondCubed, "rad⋅h⁻³");
 
         /// <summary>
         /// The DegreesPerHourCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AngularJerkUnit DegreesPerHourCubed = new AngularJerkUnit(3.7408463048575307E-13, "°⋅h⁻³");
+        public static readonly AngularJerkUnit DegreesPerHourCubed = new AngularJerkUnit(degreesPerHourCubed => 3.74084630485753E-13 * degreesPerHourCubed, radiansPerSecondCubed => radiansPerSecondCubed / 3.74084630485753E-13, "°⋅h⁻³");
 
         /// <summary>
         /// The RadiansPerMinuteCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AngularJerkUnit RadiansPerMinuteCubed = new AngularJerkUnit(4.6296296296296296E-06, "rad⋅min⁻³");
+        public static readonly AngularJerkUnit RadiansPerMinuteCubed = new AngularJerkUnit(radiansPerMinuteCubed => radiansPerMinuteCubed / 216000, radiansPerSecondCubed => 216000 * radiansPerSecondCubed, "rad⋅min⁻³");
 
         /// <summary>
         /// The DegreesPerMinuteCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly AngularJerkUnit DegreesPerMinuteCubed = new AngularJerkUnit(8.0802280184922666E-08, "°⋅min⁻³");
+        public static readonly AngularJerkUnit DegreesPerMinuteCubed = new AngularJerkUnit(degreesPerMinuteCubed => 8.08022801849227E-08 * degreesPerMinuteCubed, radiansPerSecondCubed => radiansPerSecondCubed / 8.08022801849227E-08, "°⋅min⁻³");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        private readonly Func<double, double> toRadiansPerSecondCubed;
+        private readonly Func<double, double> fromRadiansPerSecondCubed;
+        internal readonly string symbol;
 
-        public AngularJerkUnit(double conversionFactor, string symbol)
+        public AngularJerkUnit(Func<double, double> toRadiansPerSecondCubed, Func<double, double> fromRadiansPerSecondCubed, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toRadiansPerSecondCubed = toRadiansPerSecondCubed;
+            this.fromRadiansPerSecondCubed = fromRadiansPerSecondCubed;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.AngularJerkUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.AngularJerkUnit"/>
         /// </summary>
-        public AngularJerkUnit SiUnit => AngularJerkUnit.RadiansPerSecondCubed;
+        public AngularJerkUnit SiUnit => RadiansPerSecondCubed;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.AngularJerkUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => AngularJerkUnit.RadiansPerSecondCubed;
+        IUnit IUnit.SiUnit => RadiansPerSecondCubed;
 
         public static AngularJerk operator *(double left, AngularJerkUnit right)
         {
@@ -109,7 +105,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toRadiansPerSecondCubed(value);
         }
 
         /// <summary>
@@ -117,9 +113,9 @@
         /// </summary>
         /// <param name="value">The value in RadiansPerSecondCubed</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double radiansPerSecondCubed)
         {
-            return value / this.conversionFactor;
+            return this.fromRadiansPerSecondCubed(radiansPerSecondCubed);
         }
 
         /// <summary>
@@ -133,7 +129,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in RadiansPerSecondCubed
+        /// Gets the scalar value of <paramref name="quantity"/> in AngularJerkUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

@@ -142,6 +142,11 @@
             return new LuminousIntensity(candelas);
         }
 
+        public static LuminousFlux operator *(LuminousIntensity left, SolidAngle right)
+        {
+            return LuminousFlux.FromLumens(left.candelas * right.steradians);
+        }
+
         public static double operator /(LuminousIntensity left, LuminousIntensity right)
         {
             return left.candelas / right.candelas;

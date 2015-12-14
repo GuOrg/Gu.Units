@@ -5,8 +5,8 @@
 
     public class RelayCommand<T> : ICommand
     {
-        private readonly Action<T> _execute = null;
-        private readonly Predicate<T> _canExecute = null;
+        private readonly Action<T> execute = null;
+        private readonly Predicate<T> canExecute = null;
 
         /// <summary>
         /// Creates a new command that can always execute.
@@ -25,34 +25,34 @@
         public RelayCommand(Action<T> execute, Predicate<T> canExecute)
         {
             if (execute == null)
-                throw new ArgumentNullException("execute");
+                throw new ArgumentNullException(nameof(execute));
 
-            _execute = execute;
-            _canExecute = canExecute ?? (x => true);
+            this.execute = execute;
+            this.canExecute = canExecute ?? (x => true);
         }
 
         public bool CanExecute(object parameter)
         {
-            return _canExecute((T)parameter);
+            return this.canExecute((T)parameter);
         }
 
         public event EventHandler CanExecuteChanged
         {
             add
             {
-                if (_canExecute != null)
+                if (this.canExecute != null)
                     CommandManager.RequerySuggested += value;
             }
             remove
             {
-                if (_canExecute != null)
+                if (this.canExecute != null)
                     CommandManager.RequerySuggested -= value;
             }
         }
 
         public void Execute(object parameter)
         {
-            _execute((T)parameter);
+            this.execute((T)parameter);
         }
     }
 }

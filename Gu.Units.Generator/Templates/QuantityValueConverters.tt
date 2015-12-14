@@ -14,16 +14,16 @@ fileManager.CanOverwriteExistingFile = true;
 var paramTmpl = ParamTextTemplate.Create(this.Host, "QuantityValueConverter.tt");
 var session = ParamTextTemplate.GetSessionObject();
 var settings = Settings.Instance;
-this.Write(string.Format("Read Settings found {0} units", settings.Quantities.Count));
+WriteLine("Read Settings found {0} units", settings.Quantities.Count);
 foreach (var quantity in settings.Quantities)
 {
-    var fileName = quantity.ClassName + "Converter.generated." + Settings.Extension;
+    var fileName = quantity.Name + "Converter.generated." + Settings.Extension;
     fileManager.StartNewFile(fileName , "Gu.Units.Wpf", null, null);
-	session["QuantityValueConverterData"] = quantity;
+	session["QuantityName"] = quantity.Name;
 	string output = paramTmpl.TransformText(session);
 	if (output == "ErrorGeneratingOutput")
     {
-		this.WriteLine("Error transforming {0}", quantity.ClassName);
+		this.WriteLine("Error transforming {0}", quantity.Name);
         throw new InvalidOperationException("output");
     }
 

@@ -1,29 +1,19 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #>
-<#@ parameter name="QuantityValueConverterData" type="Gu.Units.Generator.Quantity" #>
+<#@ parameter name="QuantityName" type="System.String" #>
 <#@ output extension=".txt" #>
 <#
+
+var settings = Settings.Instance;
 // Template used by QuantityValueConverters.tt
-Quantity quantity = null;
-if(QuantityValueConverterData != null)
-{
-    quantity = QuantityValueConverterData;
-}
-else
-{
-    var unit = new SiUnit("Metres", "m")
-                    {
-                        QuantityName = "Length"
-                    };
-    quantity = unit.Quantity;
-}
+var quantity = settings.GetQuantityByName(QuantityName ?? settings.Quantities[0].Name);
 #>
 using System.Runtime.CompilerServices;
 using Gu.Units;
 
-[assembly: TypeForwardedTo(typeof(<#= quantity.ClassName #>))]
-[assembly: TypeForwardedTo(typeof(<#= quantity.ClassName #>Unit))]
+[assembly: TypeForwardedTo(typeof(<#= quantity.Name #>))]
+[assembly: TypeForwardedTo(typeof(<#= quantity.UnitName #>))]
 
 namespace Gu.Units.Wpf
 {
@@ -35,27 +25,27 @@ namespace Gu.Units.Wpf
     using System.Windows.Markup;
 
     [MarkupExtensionReturnType(typeof(IValueConverter))]
-    public class <#= quantity.ClassName #>Converter : MarkupExtension, IValueConverter
+    public class <#= quantity.Name #>Converter : MarkupExtension, IValueConverter
     {
         private static readonly string StringFormatNotSet = "Not Set";
-        private <#= quantity.ClassName #>Unit? unit;
+        private <#= quantity.UnitName #>? unit;
         private IProvideValueTarget provideValueTarget;
         private string stringFormat = StringFormatNotSet;
-        private QuantityFormat<<#= quantity.ClassName #>Unit> quantityFormat;
+        private QuantityFormat<<#= quantity.UnitName #>> quantityFormat;
         private string bindingStringFormat = StringFormatNotSet;
         private string errorText;
 
-        public <#= quantity.ClassName #>Converter()
+        public <#= quantity.Name #>Converter()
         {
         }
 
-        public <#= quantity.ClassName #>Converter([TypeConverter(typeof(<#= quantity.ClassName #>UnitTypeConverter))]<#= quantity.ClassName #>Unit unit)
+        public <#= quantity.Name #>Converter([TypeConverter(typeof(<#= quantity.UnitName #>TypeConverter))]<#= quantity.UnitName #> unit)
         {
             Unit = unit;
         }
 
-        [ConstructorArgument("unit"), TypeConverter(typeof(<#= quantity.ClassName #>UnitTypeConverter))]
-        public <#= quantity.ClassName #>Unit? Unit
+        [ConstructorArgument("unit"), TypeConverter(typeof(<#= quantity.UnitName #>TypeConverter))]
+        public <#= quantity.UnitName #>? Unit
         {
             get { return this.unit; }
             set
@@ -103,9 +93,9 @@ namespace Gu.Units.Wpf
                 throw new ArgumentException(message, nameof(targetType));
             }
 
-            if (value != null && !(value is <#= quantity.ClassName #>) && Is.DesignMode)
+            if (value != null && !(value is <#= quantity.Name #>) && Is.DesignMode)
             {
-                var message = $"{GetType().Name} only supports converting from {typeof(<#= quantity.ClassName #>)}";
+                var message = $"{GetType().Name} only supports converting from {typeof(<#= quantity.Name #>)}";
                 throw new ArgumentException(message, nameof(value));
             }
 
@@ -138,7 +128,7 @@ namespace Gu.Units.Wpf
                     : null;
             }
 
-            var <#= quantity.ParameterName #> = (<#= quantity.ClassName #>)value;
+            var <#= quantity.ParameterName #> = (<#= quantity.Name #>)value;
 
 			var format = this.bindingStringFormat != null && this.bindingStringFormat != StringFormatNotSet
                 ? this.bindingStringFormat
@@ -177,7 +167,7 @@ namespace Gu.Units.Wpf
             object parameter,
             CultureInfo culture)
         {
-            if (!(targetType == typeof(<#= quantity.ClassName #>) || targetType == typeof(<#= quantity.ClassName #>?)))
+            if (!(targetType == typeof(<#= quantity.Name #>) || targetType == typeof(<#= quantity.Name #>?)))
             {
                 var message = $"{GetType().Name} does not support converting to {targetType.Name}";
                 throw new NotSupportedException(message);
@@ -207,7 +197,7 @@ namespace Gu.Units.Wpf
 
             if (value is double)
             {
-                return new <#= quantity.ClassName #>((double)value, this.unit.Value);
+                return new <#= quantity.Name #>((double)value, this.unit.Value);
             }
 
             var text = value as string;
@@ -224,7 +214,7 @@ namespace Gu.Units.Wpf
                         double d;
                         if (double.TryParse(text, NumberStyles.Float, culture, out d))
                         {
-                            return new <#= quantity.ClassName #>(d, this.unit.Value);
+                            return new <#= quantity.Name #>(d, this.unit.Value);
                         }
 
                         return value; // returning raw to trigger error
@@ -239,7 +229,7 @@ namespace Gu.Units.Wpf
                             WhiteSpaceReader.TryRead(text, ref pos);
                             if (pos == text.Length)
                             {
-                                return new <#= quantity.ClassName #>(d, this.unit.Value);
+                                return new <#= quantity.Name #>(d, this.unit.Value);
                             }
                         }
 
@@ -247,8 +237,8 @@ namespace Gu.Units.Wpf
                     }
                 case Wpf.UnitInput.SymbolRequired:
                     {
-                        <#= quantity.ClassName #> result;
-                        if (<#= quantity.ClassName #>.TryParse(text, NumberStyles.Float, culture, out result))
+                        <#= quantity.Name #> result;
+                        if (<#= quantity.Name #>.TryParse(text, NumberStyles.Float, culture, out result))
                         {
                             return result;
                         }
@@ -298,7 +288,7 @@ namespace Gu.Units.Wpf
             var format = this.stringFormat == StringFormatNotSet
                 ? this.bindingStringFormat
                 : this.stringFormat;
-            if (StringFormatParser<<#= quantity.ClassName #>Unit>.TryParse(format, out this.quantityFormat))
+            if (StringFormatParser<<#= quantity.UnitName #>>.TryParse(format, out this.quantityFormat))
             {
                 if (UnitInput == null && this.quantityFormat.SymbolFormat != null)
                 {

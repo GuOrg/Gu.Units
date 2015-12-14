@@ -5,53 +5,79 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.InductanceUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Inductance"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(InductanceUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Henrys.symbol}")]
+    [Serializable, TypeConverter(typeof(InductanceUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{InductanceUnit.symbol}")]
     public struct InductanceUnit : IUnit, IUnit<Inductance>, IEquatable<InductanceUnit>
     {
         /// <summary>
-        /// The Henrys unit
-        /// Contains conversion logic to from and formatting.
+        /// The InductanceUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly InductanceUnit Henrys = new InductanceUnit(1.0, "H");
+        public static readonly InductanceUnit Henrys = new InductanceUnit(henrys => henrys, henrys => henrys, "H");
 
         /// <summary>
-        /// The Henrys unit
+        /// The Nanohenrys unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly InductanceUnit H = Henrys;
+        public static readonly InductanceUnit Nanohenrys = new InductanceUnit(nanohenrys => nanohenrys / 1000000000, henrys => 1000000000 * henrys, "nH");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        /// <summary>
+        /// The Microhenrys unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly InductanceUnit Microhenrys = new InductanceUnit(microhenrys => microhenrys / 1000000, henrys => 1000000 * henrys, "µH");
 
-        public InductanceUnit(double conversionFactor, string symbol)
+        /// <summary>
+        /// The Millihenrys unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly InductanceUnit Millihenrys = new InductanceUnit(millihenrys => millihenrys / 1000, henrys => 1000 * henrys, "mH");
+
+        /// <summary>
+        /// The Kilohenrys unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly InductanceUnit Kilohenrys = new InductanceUnit(kilohenrys => 1000 * kilohenrys, henrys => henrys / 1000, "kH");
+
+        /// <summary>
+        /// The Megahenrys unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly InductanceUnit Megahenrys = new InductanceUnit(megahenrys => 1000000 * megahenrys, henrys => henrys / 1000000, "MH");
+
+        /// <summary>
+        /// The Gigahenrys unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly InductanceUnit Gigahenrys = new InductanceUnit(gigahenrys => 1000000000 * gigahenrys, henrys => henrys / 1000000000, "GH");
+
+        private readonly Func<double, double> toHenrys;
+        private readonly Func<double, double> fromHenrys;
+        internal readonly string symbol;
+
+        public InductanceUnit(Func<double, double> toHenrys, Func<double, double> fromHenrys, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toHenrys = toHenrys;
+            this.fromHenrys = fromHenrys;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.InductanceUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.InductanceUnit"/>
         /// </summary>
-        public InductanceUnit SiUnit => InductanceUnit.Henrys;
+        public InductanceUnit SiUnit => Henrys;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.InductanceUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => InductanceUnit.Henrys;
+        IUnit IUnit.SiUnit => Henrys;
 
         public static Inductance operator *(double left, InductanceUnit right)
         {
@@ -85,7 +111,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toHenrys(value);
         }
 
         /// <summary>
@@ -93,9 +119,9 @@
         /// </summary>
         /// <param name="value">The value in Henrys</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double henrys)
         {
-            return value / this.conversionFactor;
+            return this.fromHenrys(henrys);
         }
 
         /// <summary>
@@ -109,7 +135,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Henrys
+        /// Gets the scalar value of <paramref name="quantity"/> in InductanceUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

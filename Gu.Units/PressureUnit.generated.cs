@@ -5,167 +5,109 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.PressureUnit"/>.
-	/// Contains conversion logic.
+    /// A type for the unit <see cref="Gu.Units.Pressure"/>.
+	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(PressureUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{Pascals.symbol}")]
+    [Serializable, TypeConverter(typeof(PressureUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{PressureUnit.symbol}")]
     public struct PressureUnit : IUnit, IUnit<Pressure>, IEquatable<PressureUnit>
     {
         /// <summary>
-        /// The Pascals unit
-        /// Contains conversion logic to from and formatting.
+        /// The PressureUnit unit
+        /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly PressureUnit Pascals = new PressureUnit(1.0, "Pa");
-
-        /// <summary>
-        /// The Pascals unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PressureUnit Pa = Pascals;
-
-        /// <summary>
-        /// The Nanopascals unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PressureUnit Nanopascals = new PressureUnit(1E-09, "nPa");
-
-        /// <summary>
-        /// The Nanopascals unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PressureUnit nPa = Nanopascals;
-
-        /// <summary>
-        /// The Micropascals unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PressureUnit Micropascals = new PressureUnit(1E-06, "µPa");
-
-        /// <summary>
-        /// The Micropascals unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PressureUnit µPa = Micropascals;
-
-        /// <summary>
-        /// The Millipascals unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PressureUnit Millipascals = new PressureUnit(0.001, "mPa");
-
-        /// <summary>
-        /// The Millipascals unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PressureUnit mPa = Millipascals;
-
-        /// <summary>
-        /// The Kilopascals unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PressureUnit Kilopascals = new PressureUnit(1000, "kPa");
-
-        /// <summary>
-        /// The Kilopascals unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PressureUnit kPa = Kilopascals;
-
-        /// <summary>
-        /// The Megapascals unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PressureUnit Megapascals = new PressureUnit(1000000, "MPa");
-
-        /// <summary>
-        /// The Megapascals unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PressureUnit MPa = Megapascals;
-
-        /// <summary>
-        /// The Gigapascals unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PressureUnit Gigapascals = new PressureUnit(1000000000, "GPa");
-
-        /// <summary>
-        /// The Gigapascals unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PressureUnit GPa = Gigapascals;
+        public static readonly PressureUnit Pascals = new PressureUnit(pascals => pascals, pascals => pascals, "Pa");
 
         /// <summary>
         /// The Bars unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly PressureUnit Bars = new PressureUnit(100000, "bar");
-
-        /// <summary>
-        /// The Bars unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-		public static readonly PressureUnit bar = Bars;
+        public static readonly PressureUnit Bars = new PressureUnit(bars => 100000 * bars, pascals => pascals / 100000, "bar");
 
         /// <summary>
         /// The Millibars unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly PressureUnit Millibars = new PressureUnit(100, "mbar");
+        public static readonly PressureUnit Millibars = new PressureUnit(millibars => 100 * millibars, pascals => pascals / 100, "mbar");
 
         /// <summary>
-        /// The Millibars unit
+        /// The Nanopascals unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly PressureUnit mbar = Millibars;
+        public static readonly PressureUnit Nanopascals = new PressureUnit(nanopascals => nanopascals / 1000000000, pascals => 1000000000 * pascals, "nPa");
+
+        /// <summary>
+        /// The Micropascals unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly PressureUnit Micropascals = new PressureUnit(micropascals => micropascals / 1000000, pascals => 1000000 * pascals, "µPa");
+
+        /// <summary>
+        /// The Millipascals unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly PressureUnit Millipascals = new PressureUnit(millipascals => millipascals / 1000, pascals => 1000 * pascals, "mPa");
+
+        /// <summary>
+        /// The Kilopascals unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly PressureUnit Kilopascals = new PressureUnit(kilopascals => 1000 * kilopascals, pascals => pascals / 1000, "kPa");
+
+        /// <summary>
+        /// The Megapascals unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly PressureUnit Megapascals = new PressureUnit(megapascals => 1000000 * megapascals, pascals => pascals / 1000000, "MPa");
+
+        /// <summary>
+        /// The Gigapascals unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly PressureUnit Gigapascals = new PressureUnit(gigapascals => 1000000000 * gigapascals, pascals => pascals / 1000000000, "GPa");
 
         /// <summary>
         /// The NewtonsPerSquareMillimetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly PressureUnit NewtonsPerSquareMillimetre = new PressureUnit(1000000, "N⋅mm⁻²");
+        public static readonly PressureUnit NewtonsPerSquareMillimetre = new PressureUnit(newtonsPerSquareMillimetre => 1000000 * newtonsPerSquareMillimetre, pascals => pascals / 1000000, "N⋅mm⁻²");
 
         /// <summary>
         /// The KilonewtonsPerSquareMillimetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly PressureUnit KilonewtonsPerSquareMillimetre = new PressureUnit(1000000000, "kN⋅mm⁻²");
+        public static readonly PressureUnit KilonewtonsPerSquareMillimetre = new PressureUnit(kilonewtonsPerSquareMillimetre => 1000000000 * kilonewtonsPerSquareMillimetre, pascals => pascals / 1000000000, "kN⋅mm⁻²");
 
         /// <summary>
         /// The NewtonsPerSquareMetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-		public static readonly PressureUnit NewtonsPerSquareMetre = new PressureUnit(1, "N/m²");
+        public static readonly PressureUnit NewtonsPerSquareMetre = new PressureUnit(newtonsPerSquareMetre => newtonsPerSquareMetre, pascals => pascals, "N/m²");
 
-        private readonly double conversionFactor;
-        private readonly string symbol;
+        private readonly Func<double, double> toPascals;
+        private readonly Func<double, double> fromPascals;
+        internal readonly string symbol;
 
-        public PressureUnit(double conversionFactor, string symbol)
+        public PressureUnit(Func<double, double> toPascals, Func<double, double> fromPascals, string symbol)
         {
-            this.conversionFactor = conversionFactor;
+            this.toPascals = toPascals;
+            this.fromPascals = fromPascals;
             this.symbol = symbol;
         }
 
         /// <summary>
         /// The symbol for the <see cref="Gu.Units.PressureUnit"/>.
         /// </summary>
-        public string Symbol
-        {
-            get
-            {
-                return this.symbol;
-            }
-        }
+        public string Symbol => this.symbol;
 
         /// <summary>
         /// The default unit for <see cref="Gu.Units.PressureUnit"/>
         /// </summary>
-        public PressureUnit SiUnit => PressureUnit.Pascals;
+        public PressureUnit SiUnit => Pascals;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.PressureUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => PressureUnit.Pascals;
+        IUnit IUnit.SiUnit => Pascals;
 
         public static Pressure operator *(double left, PressureUnit right)
         {
@@ -199,7 +141,7 @@
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.conversionFactor * value;
+            return this.toPascals(value);
         }
 
         /// <summary>
@@ -207,9 +149,9 @@
         /// </summary>
         /// <param name="value">The value in Pascals</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double value)
+        public double FromSiUnit(double pascals)
         {
-            return value / this.conversionFactor;
+            return this.fromPascals(pascals);
         }
 
         /// <summary>
@@ -223,7 +165,7 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Pascals
+        /// Gets the scalar value of <paramref name="quantity"/> in PressureUnit
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>

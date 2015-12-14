@@ -11,14 +11,14 @@
     {
         public static readonly AreaJsonConverter Default = new AreaJsonConverter(AreaUnit.SquareMetres);
         public static readonly AreaJsonConverter SquareMetres = new AreaJsonConverter(AreaUnit.SquareMetres);
+        public static readonly AreaJsonConverter Hectare = new AreaJsonConverter(AreaUnit.Hectare);
         public static readonly AreaJsonConverter SquareMillimetres = new AreaJsonConverter(AreaUnit.SquareMillimetres);
         public static readonly AreaJsonConverter SquareCentimetres = new AreaJsonConverter(AreaUnit.SquareCentimetres);
         public static readonly AreaJsonConverter SquareDecimetres = new AreaJsonConverter(AreaUnit.SquareDecimetres);
         public static readonly AreaJsonConverter SquareKilometres = new AreaJsonConverter(AreaUnit.SquareKilometres);
-        public static readonly AreaJsonConverter SquareInches = new AreaJsonConverter(AreaUnit.SquareInches);
-        public static readonly AreaJsonConverter Hectare = new AreaJsonConverter(AreaUnit.Hectare);
         public static readonly AreaJsonConverter SquareMile = new AreaJsonConverter(AreaUnit.SquareMile);
         public static readonly AreaJsonConverter SquareYard = new AreaJsonConverter(AreaUnit.SquareYard);
+        public static readonly AreaJsonConverter SquareInches = new AreaJsonConverter(AreaUnit.SquareInches);
 
         private readonly AreaUnit unit;
 

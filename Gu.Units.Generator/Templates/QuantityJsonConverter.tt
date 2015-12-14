@@ -1,25 +1,12 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ import namespace="Gu.Units.Generator" #>
-<#@ parameter name="QuantityJsonData" type="Gu.Units.Generator.Quantity" #>
+<#@ parameter name="QuantityName" type="System.String" #>
 <#@ output extension=".txt" #>
 <#
+var settings = Settings.Instance;
 // Template used by QuantityGenerator.tt
-Quantity quantity = null;
-if(QuantityJsonData != null)
-{
-    quantity = QuantityJsonData;
-}
-else
-{
-    var unit = new SiUnit("Metres", "m")
-                    {
-                        QuantityName = "Length"
-                    };
-    unit.Conversions.Add(new Conversion("Centimetres", "cm"));
-    unit.Conversions.Add(new Conversion("Millimetres", "mm"));
-    quantity = unit.Quantity;
-}
+var quantity = settings.GetQuantityByName(QuantityName ?? settings.Quantities[0].Name);
 #>
 namespace Gu.Units.Json
 {
@@ -27,44 +14,44 @@ namespace Gu.Units.Json
     using Newtonsoft.Json;
 
 	/// <summary>
-    /// <see cref="Newtonsoft.Json.JsonConverter" /> for the quantity <see cref="<#= Settings.Namespace #>.<#= quantity.ClassName #>"/>.
+    /// <see cref="Newtonsoft.Json.JsonConverter" /> for the quantity <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
     /// </summary>
     [Serializable]
-	public class <#= quantity.ClassName #>JsonConverter : JsonConverter
+	public class <#= quantity.Name #>JsonConverter : JsonConverter
 	{
-        public static readonly <#= quantity.ClassName #>JsonConverter Default = new <#= quantity.ClassName #>JsonConverter(<#= quantity.Unit.UnitName #>.<#= quantity.Unit.ClassName #>);
-        public static readonly <#= quantity.ClassName #>JsonConverter <#= quantity.Unit.ClassName #> = new <#= quantity.ClassName #>JsonConverter(<#= quantity.Unit.UnitName #>.<#= quantity.Unit.ClassName #>);
+        public static readonly <#= quantity.Name #>JsonConverter Default = new <#= quantity.Name #>JsonConverter(<#= quantity.UnitName #>.<#= quantity.Unit.Name #>);
+        public static readonly <#= quantity.Name #>JsonConverter <#= quantity.Unit.Name #> = new <#= quantity.Name #>JsonConverter(<#= quantity.UnitName #>.<#= quantity.Unit.Name #>);
 <#
-		foreach(var unit in quantity.Unit.Conversions)
+		foreach(var unit in quantity.Unit.AllConversions)
 		{
 		#>
-        public static readonly <#= quantity.ClassName #>JsonConverter <#= unit.ClassName #> = new <#= quantity.ClassName #>JsonConverter(<#= unit.UnitName #>.<#= unit.ClassName #>);
+        public static readonly <#= quantity.Name #>JsonConverter <#= unit.Name #> = new <#= quantity.Name #>JsonConverter(<#= quantity.UnitName #>.<#= unit.Name #>);
 <#
 		} 
 		#>
 
-        private readonly <#= quantity.ClassName #>Unit unit;
+        private readonly <#= quantity.UnitName #> unit;
 
-        private <#= quantity.ClassName #>JsonConverter(<#= quantity.ClassName #>Unit unit)
+        private <#= quantity.Name #>JsonConverter(<#= quantity.UnitName #> unit)
         {
             this.unit = unit;
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var <#= quantity.ParameterName #> = (<#= quantity.ClassName #>)value;
+            var <#= quantity.ParameterName #> = (<#= quantity.Name #>)value;
             serializer.Serialize(writer, <#= quantity.ParameterName #>.ToString(this.unit, serializer.Culture));
         }
 
         public override bool CanConvert(Type objectType)
         {
-            return objectType == typeof(<#= quantity.ClassName #>);
+            return objectType == typeof(<#= quantity.Name #>);
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;
-            return <#= quantity.ClassName #>.Parse(stringValue, serializer.Culture);
+            return <#= quantity.Name #>.Parse(stringValue, serializer.Culture);
         }
     }
 }

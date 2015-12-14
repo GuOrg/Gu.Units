@@ -67,81 +67,39 @@
         }
 
         /// <summary>
-        /// The quantity in nanojoules
+        /// The quantity in Nanojoules
         /// </summary>
-        public double Nanojoules
-        {
-            get
-            {
-                return EnergyUnit.Nanojoules.FromSiUnit(this.joules);
-            }
-        }
+        public double Nanojoules => 1000000000 * this.joules;
 
         /// <summary>
-        /// The quantity in microjoules
+        /// The quantity in Microjoules
         /// </summary>
-        public double Microjoules
-        {
-            get
-            {
-                return EnergyUnit.Microjoules.FromSiUnit(this.joules);
-            }
-        }
+        public double Microjoules => 1000000 * this.joules;
 
         /// <summary>
-        /// The quantity in millijoules
+        /// The quantity in Millijoules
         /// </summary>
-        public double Millijoules
-        {
-            get
-            {
-                return EnergyUnit.Millijoules.FromSiUnit(this.joules);
-            }
-        }
+        public double Millijoules => 1000 * this.joules;
 
         /// <summary>
-        /// The quantity in kilojoules
+        /// The quantity in Kilojoules
         /// </summary>
-        public double Kilojoules
-        {
-            get
-            {
-                return EnergyUnit.Kilojoules.FromSiUnit(this.joules);
-            }
-        }
+        public double Kilojoules => this.joules / 1000;
 
         /// <summary>
-        /// The quantity in megajoules
+        /// The quantity in Megajoules
         /// </summary>
-        public double Megajoules
-        {
-            get
-            {
-                return EnergyUnit.Megajoules.FromSiUnit(this.joules);
-            }
-        }
+        public double Megajoules => this.joules / 1000000;
 
         /// <summary>
-        /// The quantity in gigajoules
+        /// The quantity in Gigajoules
         /// </summary>
-        public double Gigajoules
-        {
-            get
-            {
-                return EnergyUnit.Gigajoules.FromSiUnit(this.joules);
-            }
-        }
+        public double Gigajoules => this.joules / 1000000000;
 
         /// <summary>
-        /// The quantity in kilowattHours
+        /// The quantity in KilowattHours
         /// </summary>
-        public double KilowattHours
-        {
-            get
-            {
-                return EnergyUnit.KilowattHours.FromSiUnit(this.joules);
-            }
-        }
+        public double KilowattHours => this.joules / 3600000;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
@@ -225,7 +183,7 @@
         /// <param name="nanojoules">The value in nJ</param>
         public static Energy FromNanojoules(double nanojoules)
         {
-            return From(nanojoules, EnergyUnit.Nanojoules);
+            return new Energy(nanojoules / 1000000000);
         }
 
         /// <summary>
@@ -234,7 +192,7 @@
         /// <param name="microjoules">The value in µJ</param>
         public static Energy FromMicrojoules(double microjoules)
         {
-            return From(microjoules, EnergyUnit.Microjoules);
+            return new Energy(microjoules / 1000000);
         }
 
         /// <summary>
@@ -243,7 +201,7 @@
         /// <param name="millijoules">The value in mJ</param>
         public static Energy FromMillijoules(double millijoules)
         {
-            return From(millijoules, EnergyUnit.Millijoules);
+            return new Energy(millijoules / 1000);
         }
 
         /// <summary>
@@ -252,7 +210,7 @@
         /// <param name="kilojoules">The value in kJ</param>
         public static Energy FromKilojoules(double kilojoules)
         {
-            return From(kilojoules, EnergyUnit.Kilojoules);
+            return new Energy(1000 * kilojoules);
         }
 
         /// <summary>
@@ -261,7 +219,7 @@
         /// <param name="megajoules">The value in MJ</param>
         public static Energy FromMegajoules(double megajoules)
         {
-            return From(megajoules, EnergyUnit.Megajoules);
+            return new Energy(1000000 * megajoules);
         }
 
         /// <summary>
@@ -270,7 +228,7 @@
         /// <param name="gigajoules">The value in GJ</param>
         public static Energy FromGigajoules(double gigajoules)
         {
-            return From(gigajoules, EnergyUnit.Gigajoules);
+            return new Energy(1000000000 * gigajoules);
         }
 
         /// <summary>
@@ -279,22 +237,17 @@
         /// <param name="kilowattHours">The value in kWh</param>
         public static Energy FromKilowattHours(double kilowattHours)
         {
-            return From(kilowattHours, EnergyUnit.KilowattHours);
+            return new Energy(3600000 * kilowattHours);
         }
 
-        public static Length operator /(Energy left, Force right)
+        public static SpecificEnergy operator /(Energy left, Mass right)
         {
-            return Length.FromMetres(left.joules / right.newtons);
+            return SpecificEnergy.FromJoulesPerKilogram(left.joules / right.kilograms);
         }
 
         public static Force operator /(Energy left, Length right)
         {
             return Force.FromNewtons(left.joules / right.metres);
-        }
-
-        public static Pressure operator /(Energy left, Volume right)
-        {
-            return Pressure.FromPascals(left.joules / right.cubicMetres);
         }
 
         public static Power operator /(Energy left, Time right)
@@ -307,9 +260,64 @@
             return Torque.FromNewtonMetres(left.joules / right.radians);
         }
 
+        public static MagneticFlux operator /(Energy left, Current right)
+        {
+            return MagneticFlux.FromWebers(left.joules / right.amperes);
+        }
+
         public static Stiffness operator /(Energy left, Area right)
         {
             return Stiffness.FromNewtonsPerMetre(left.joules / right.squareMetres);
+        }
+
+        public static Pressure operator /(Energy left, Volume right)
+        {
+            return Pressure.FromPascals(left.joules / right.cubicMetres);
+        }
+
+        public static Length operator /(Energy left, Force right)
+        {
+            return Length.FromMetres(left.joules / right.newtons);
+        }
+
+        public static Volume operator /(Energy left, Pressure right)
+        {
+            return Volume.FromCubicMetres(left.joules / right.pascals);
+        }
+
+        public static Time operator /(Energy left, Power right)
+        {
+            return Time.FromSeconds(left.joules / right.watts);
+        }
+
+        public static Momentum operator /(Energy left, Speed right)
+        {
+            return Momentum.FromNewtonSecond(left.joules / right.metresPerSecond);
+        }
+
+        public static Power operator *(Energy left, Frequency right)
+        {
+            return Power.FromWatts(left.joules * right.hertz);
+        }
+
+        public static Angle operator /(Energy left, Torque right)
+        {
+            return Angle.FromRadians(left.joules / right.newtonMetres);
+        }
+
+        public static Area operator /(Energy left, Stiffness right)
+        {
+            return Area.FromSquareMetres(left.joules / right.newtonsPerMetre);
+        }
+
+        public static ElectricCharge operator /(Energy left, Voltage right)
+        {
+            return ElectricCharge.FromCoulombs(left.joules / right.volts);
+        }
+
+        public static Mass operator /(Energy left, SpecificEnergy right)
+        {
+            return Mass.FromKilograms(left.joules / right.joulesPerKilogram);
         }
 
         public static Voltage operator /(Energy left, ElectricCharge right)
@@ -317,9 +325,34 @@
             return Voltage.FromVolts(left.joules / right.coulombs);
         }
 
-        public static SpecificEnergy operator /(Energy left, Mass right)
+        public static Area operator *(Energy left, Flexibility right)
         {
-            return SpecificEnergy.FromJoulesPerKilogram(left.joules / right.kilograms);
+            return Area.FromSquareMetres(left.joules * right.metresPerNewton);
+        }
+
+        public static Current operator /(Energy left, MagneticFlux right)
+        {
+            return Current.FromAmperes(left.joules / right.webers);
+        }
+
+        public static Speed operator /(Energy left, Momentum right)
+        {
+            return Speed.FromMetresPerSecond(left.joules / right.newtonSecond);
+        }
+
+        public static Force operator *(Energy left, Wavenumber right)
+        {
+            return Force.FromNewtons(left.joules * right.reciprocalMetres);
+        }
+
+        public static KinematicViscosity operator /(Energy left, MassFlow right)
+        {
+            return KinematicViscosity.FromSquareMetresPerSecond(left.joules / right.kilogramsPerSecond);
+        }
+
+        public static MassFlow operator /(Energy left, KinematicViscosity right)
+        {
+            return MassFlow.FromKilogramsPerSecond(left.joules / right.squareMetresPerSecond);
         }
 
         public static double operator /(Energy left, Energy right)

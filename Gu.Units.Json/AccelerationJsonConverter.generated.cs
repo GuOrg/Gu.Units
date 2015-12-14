@@ -11,8 +11,12 @@
     {
         public static readonly AccelerationJsonConverter Default = new AccelerationJsonConverter(AccelerationUnit.MetresPerSecondSquared);
         public static readonly AccelerationJsonConverter MetresPerSecondSquared = new AccelerationJsonConverter(AccelerationUnit.MetresPerSecondSquared);
-        public static readonly AccelerationJsonConverter MillimetresPerSecondSquared = new AccelerationJsonConverter(AccelerationUnit.MillimetresPerSecondSquared);
         public static readonly AccelerationJsonConverter CentimetresPerSecondSquared = new AccelerationJsonConverter(AccelerationUnit.CentimetresPerSecondSquared);
+        public static readonly AccelerationJsonConverter MillimetresPerSecondSquared = new AccelerationJsonConverter(AccelerationUnit.MillimetresPerSecondSquared);
+        public static readonly AccelerationJsonConverter MillimetresPerHourSquared = new AccelerationJsonConverter(AccelerationUnit.MillimetresPerHourSquared);
+        public static readonly AccelerationJsonConverter CentimetresPerHourSquared = new AccelerationJsonConverter(AccelerationUnit.CentimetresPerHourSquared);
+        public static readonly AccelerationJsonConverter MetresPerHourSquared = new AccelerationJsonConverter(AccelerationUnit.MetresPerHourSquared);
+        public static readonly AccelerationJsonConverter MetresPerMinuteSquared = new AccelerationJsonConverter(AccelerationUnit.MetresPerMinuteSquared);
 
         private readonly AccelerationUnit unit;
 

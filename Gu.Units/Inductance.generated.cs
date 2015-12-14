@@ -67,6 +67,36 @@
         }
 
         /// <summary>
+        /// The quantity in Nanohenrys
+        /// </summary>
+        public double Nanohenrys => 1000000000 * this.henrys;
+
+        /// <summary>
+        /// The quantity in Microhenrys
+        /// </summary>
+        public double Microhenrys => 1000000 * this.henrys;
+
+        /// <summary>
+        /// The quantity in Millihenrys
+        /// </summary>
+        public double Millihenrys => 1000 * this.henrys;
+
+        /// <summary>
+        /// The quantity in Kilohenrys
+        /// </summary>
+        public double Kilohenrys => this.henrys / 1000;
+
+        /// <summary>
+        /// The quantity in Megahenrys
+        /// </summary>
+        public double Megahenrys => this.henrys / 1000000;
+
+        /// <summary>
+        /// The quantity in Gigahenrys
+        /// </summary>
+        public double Gigahenrys => this.henrys / 1000000000;
+
+        /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Inductance"/> from its string representation
         /// </summary>
         /// <param name="s">The string representation of the <see cref="Gu.Units.Inductance"/></param>
@@ -142,9 +172,83 @@
             return new Inductance(henrys);
         }
 
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
+        /// </summary>
+        /// <param name="nanohenrys">The value in nH</param>
+        public static Inductance FromNanohenrys(double nanohenrys)
+        {
+            return new Inductance(nanohenrys / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
+        /// </summary>
+        /// <param name="microhenrys">The value in µH</param>
+        public static Inductance FromMicrohenrys(double microhenrys)
+        {
+            return new Inductance(microhenrys / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
+        /// </summary>
+        /// <param name="millihenrys">The value in mH</param>
+        public static Inductance FromMillihenrys(double millihenrys)
+        {
+            return new Inductance(millihenrys / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
+        /// </summary>
+        /// <param name="kilohenrys">The value in kH</param>
+        public static Inductance FromKilohenrys(double kilohenrys)
+        {
+            return new Inductance(1000 * kilohenrys);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
+        /// </summary>
+        /// <param name="megahenrys">The value in MH</param>
+        public static Inductance FromMegahenrys(double megahenrys)
+        {
+            return new Inductance(1000000 * megahenrys);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
+        /// </summary>
+        /// <param name="gigahenrys">The value in GH</param>
+        public static Inductance FromGigahenrys(double gigahenrys)
+        {
+            return new Inductance(1000000000 * gigahenrys);
+        }
+
         public static Resistance operator /(Inductance left, Time right)
         {
             return Resistance.FromOhm(left.henrys / right.seconds);
+        }
+
+        public static MagneticFlux operator *(Inductance left, Current right)
+        {
+            return MagneticFlux.FromWebers(left.henrys * right.amperes);
+        }
+
+        public static Resistance operator *(Inductance left, Frequency right)
+        {
+            return Resistance.FromOhm(left.henrys * right.hertz);
+        }
+
+        public static Time operator /(Inductance left, Resistance right)
+        {
+            return Time.FromSeconds(left.henrys / right.ohm);
+        }
+
+        public static Time operator *(Inductance left, ElectricalConductance right)
+        {
+            return Time.FromSeconds(left.henrys * right.siemens);
         }
 
         public static double operator /(Inductance left, Inductance right)

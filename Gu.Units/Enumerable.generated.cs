@@ -11,6 +11,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -19,6 +20,7 @@
                     sum += v.kilograms;
                 }
             }
+
             return Mass.FromKilograms(sum);
         }
 
@@ -28,6 +30,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -36,6 +39,7 @@
                     sum += v.metres;
                 }
             }
+
             return Length.FromMetres(sum);
         }
 
@@ -45,6 +49,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -53,6 +58,7 @@
                     sum += v.seconds;
                 }
             }
+
             return Time.FromSeconds(sum);
         }
 
@@ -62,6 +68,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -70,6 +77,7 @@
                     sum += v.kelvin;
                 }
             }
+
             return Temperature.FromKelvin(sum);
         }
 
@@ -79,6 +87,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -87,6 +96,7 @@
                     sum += v.radians;
                 }
             }
+
             return Angle.FromRadians(sum);
         }
 
@@ -96,6 +106,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -104,6 +115,7 @@
                     sum += v.scalar;
                 }
             }
+
             return Unitless.FromScalar(sum);
         }
 
@@ -113,6 +125,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -121,6 +134,7 @@
                     sum += v.amperes;
                 }
             }
+
             return Current.FromAmperes(sum);
         }
 
@@ -130,6 +144,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -138,7 +153,65 @@
                     sum += v.candelas;
                 }
             }
+
             return LuminousIntensity.FromCandelas(sum);
+        }
+
+        public static Data Sum(this IEnumerable<Data> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.bits;
+                }
+            }
+
+            return Data.FromBits(sum);
+        }
+
+        public static AmountOfSubstance Sum(this IEnumerable<AmountOfSubstance> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.moles;
+                }
+            }
+
+            return AmountOfSubstance.FromMoles(sum);
+        }
+
+        public static SolidAngle Sum(this IEnumerable<SolidAngle> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.steradians;
+                }
+            }
+
+            return SolidAngle.FromSteradians(sum);
         }
 
         public static Area Sum(this IEnumerable<Area> source)
@@ -147,6 +220,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -155,6 +229,7 @@
                     sum += v.squareMetres;
                 }
             }
+
             return Area.FromSquareMetres(sum);
         }
 
@@ -164,6 +239,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -172,6 +248,7 @@
                     sum += v.cubicMetres;
                 }
             }
+
             return Volume.FromCubicMetres(sum);
         }
 
@@ -181,6 +258,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -189,6 +267,7 @@
                     sum += v.newtons;
                 }
             }
+
             return Force.FromNewtons(sum);
         }
 
@@ -198,6 +277,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -206,6 +286,7 @@
                     sum += v.pascals;
                 }
             }
+
             return Pressure.FromPascals(sum);
         }
 
@@ -215,6 +296,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -223,6 +305,7 @@
                     sum += v.kilogramsPerCubicMetre;
                 }
             }
+
             return Density.FromKilogramsPerCubicMetre(sum);
         }
 
@@ -232,6 +315,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -240,6 +324,7 @@
                     sum += v.joules;
                 }
             }
+
             return Energy.FromJoules(sum);
         }
 
@@ -249,6 +334,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -257,6 +343,7 @@
                     sum += v.watts;
                 }
             }
+
             return Power.FromWatts(sum);
         }
 
@@ -266,6 +353,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -274,6 +362,7 @@
                     sum += v.metresPerSecond;
                 }
             }
+
             return Speed.FromMetresPerSecond(sum);
         }
 
@@ -283,6 +372,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -291,6 +381,7 @@
                     sum += v.radiansPerSecond;
                 }
             }
+
             return AngularSpeed.FromRadiansPerSecond(sum);
         }
 
@@ -300,6 +391,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -308,6 +400,7 @@
                     sum += v.hertz;
                 }
             }
+
             return Frequency.FromHertz(sum);
         }
 
@@ -317,6 +410,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -325,6 +419,7 @@
                     sum += v.metresPerSecondSquared;
                 }
             }
+
             return Acceleration.FromMetresPerSecondSquared(sum);
         }
 
@@ -334,6 +429,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -342,6 +438,7 @@
                     sum += v.newtonMetres;
                 }
             }
+
             return Torque.FromNewtonMetres(sum);
         }
 
@@ -351,6 +448,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -359,6 +457,7 @@
                     sum += v.newtonsPerMetre;
                 }
             }
+
             return Stiffness.FromNewtonsPerMetre(sum);
         }
 
@@ -368,6 +467,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -376,6 +476,7 @@
                     sum += v.cubicMetresPerSecond;
                 }
             }
+
             return VolumetricFlow.FromCubicMetresPerSecond(sum);
         }
 
@@ -385,6 +486,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -393,6 +495,7 @@
                     sum += v.volts;
                 }
             }
+
             return Voltage.FromVolts(sum);
         }
 
@@ -402,6 +505,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -410,6 +514,7 @@
                     sum += v.ohm;
                 }
             }
+
             return Resistance.FromOhm(sum);
         }
 
@@ -419,6 +524,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -427,6 +533,7 @@
                     sum += v.joulesPerKilogram;
                 }
             }
+
             return SpecificEnergy.FromJoulesPerKilogram(sum);
         }
 
@@ -436,6 +543,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -444,6 +552,7 @@
                     sum += v.coulombs;
                 }
             }
+
             return ElectricCharge.FromCoulombs(sum);
         }
 
@@ -453,6 +562,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -461,6 +571,7 @@
                     sum += v.henrys;
                 }
             }
+
             return Inductance.FromHenrys(sum);
         }
 
@@ -470,6 +581,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -478,6 +590,7 @@
                     sum += v.farads;
                 }
             }
+
             return Capacitance.FromFarads(sum);
         }
 
@@ -487,6 +600,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -495,6 +609,7 @@
                     sum += v.metresPerNewton;
                 }
             }
+
             return Flexibility.FromMetresPerNewton(sum);
         }
 
@@ -504,6 +619,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -512,6 +628,7 @@
                     sum += v.radiansPerSecondSquared;
                 }
             }
+
             return AngularAcceleration.FromRadiansPerSecondSquared(sum);
         }
 
@@ -521,6 +638,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -529,6 +647,7 @@
                     sum += v.radiansPerSecondCubed;
                 }
             }
+
             return AngularJerk.FromRadiansPerSecondCubed(sum);
         }
 
@@ -538,6 +657,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -546,6 +666,7 @@
                     sum += v.metresPerSecondCubed;
                 }
             }
+
             return Jerk.FromMetresPerSecondCubed(sum);
         }
 
@@ -555,6 +676,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -563,6 +685,7 @@
                     sum += v.metresPerUnitless;
                 }
             }
+
             return LengthPerUnitless.FromMetresPerUnitless(sum);
         }
 
@@ -572,6 +695,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -580,6 +704,7 @@
                     sum += v.radiansPerUnitless;
                 }
             }
+
             return AnglePerUnitless.FromRadiansPerUnitless(sum);
         }
 
@@ -589,6 +714,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -597,7 +723,236 @@
                     sum += v.newtonsPerUnitless;
                 }
             }
+
             return ForcePerUnitless.FromNewtonsPerUnitless(sum);
+        }
+
+        public static LuminousFlux Sum(this IEnumerable<LuminousFlux> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.lumens;
+                }
+            }
+
+            return LuminousFlux.FromLumens(sum);
+        }
+
+        public static Illuminance Sum(this IEnumerable<Illuminance> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.lux;
+                }
+            }
+
+            return Illuminance.FromLux(sum);
+        }
+
+        public static MagneticFlux Sum(this IEnumerable<MagneticFlux> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.webers;
+                }
+            }
+
+            return MagneticFlux.FromWebers(sum);
+        }
+
+        public static ElectricalConductance Sum(this IEnumerable<ElectricalConductance> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.siemens;
+                }
+            }
+
+            return ElectricalConductance.FromSiemens(sum);
+        }
+
+        public static MagneticFieldStrength Sum(this IEnumerable<MagneticFieldStrength> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.teslas;
+                }
+            }
+
+            return MagneticFieldStrength.FromTeslas(sum);
+        }
+
+        public static CatalyticActivity Sum(this IEnumerable<CatalyticActivity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.katals;
+                }
+            }
+
+            return CatalyticActivity.FromKatals(sum);
+        }
+
+        public static Momentum Sum(this IEnumerable<Momentum> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.newtonSecond;
+                }
+            }
+
+            return Momentum.FromNewtonSecond(sum);
+        }
+
+        public static Wavenumber Sum(this IEnumerable<Wavenumber> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.reciprocalMetres;
+                }
+            }
+
+            return Wavenumber.FromReciprocalMetres(sum);
+        }
+
+        public static AreaDensity Sum(this IEnumerable<AreaDensity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.kilogramsPerSquareMetre;
+                }
+            }
+
+            return AreaDensity.FromKilogramsPerSquareMetre(sum);
+        }
+
+        public static SpecificVolume Sum(this IEnumerable<SpecificVolume> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.cubicMetresPerKilogram;
+                }
+            }
+
+            return SpecificVolume.FromCubicMetresPerKilogram(sum);
+        }
+
+        public static MassFlow Sum(this IEnumerable<MassFlow> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.kilogramsPerSecond;
+                }
+            }
+
+            return MassFlow.FromKilogramsPerSecond(sum);
+        }
+
+        public static KinematicViscosity Sum(this IEnumerable<KinematicViscosity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.squareMetresPerSecond;
+                }
+            }
+
+            return KinematicViscosity.FromSquareMetresPerSecond(sum);
         }
 
         public static Mass? Sum(this IEnumerable<Mass?> source)
@@ -758,6 +1113,66 @@
                 }
             }
             return LuminousIntensity.FromCandelas(sum);
+        }
+
+        public static Data? Sum(this IEnumerable<Data?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.bits;
+                    }
+                }
+            }
+            return Data.FromBits(sum);
+        }
+
+        public static AmountOfSubstance? Sum(this IEnumerable<AmountOfSubstance?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.moles;
+                    }
+                }
+            }
+            return AmountOfSubstance.FromMoles(sum);
+        }
+
+        public static SolidAngle? Sum(this IEnumerable<SolidAngle?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.steradians;
+                    }
+                }
+            }
+            return SolidAngle.FromSteradians(sum);
         }
 
         public static Area? Sum(this IEnumerable<Area?> source)
@@ -1300,6 +1715,246 @@
             return ForcePerUnitless.FromNewtonsPerUnitless(sum);
         }
 
+        public static LuminousFlux? Sum(this IEnumerable<LuminousFlux?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.lumens;
+                    }
+                }
+            }
+            return LuminousFlux.FromLumens(sum);
+        }
+
+        public static Illuminance? Sum(this IEnumerable<Illuminance?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.lux;
+                    }
+                }
+            }
+            return Illuminance.FromLux(sum);
+        }
+
+        public static MagneticFlux? Sum(this IEnumerable<MagneticFlux?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.webers;
+                    }
+                }
+            }
+            return MagneticFlux.FromWebers(sum);
+        }
+
+        public static ElectricalConductance? Sum(this IEnumerable<ElectricalConductance?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.siemens;
+                    }
+                }
+            }
+            return ElectricalConductance.FromSiemens(sum);
+        }
+
+        public static MagneticFieldStrength? Sum(this IEnumerable<MagneticFieldStrength?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.teslas;
+                    }
+                }
+            }
+            return MagneticFieldStrength.FromTeslas(sum);
+        }
+
+        public static CatalyticActivity? Sum(this IEnumerable<CatalyticActivity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.katals;
+                    }
+                }
+            }
+            return CatalyticActivity.FromKatals(sum);
+        }
+
+        public static Momentum? Sum(this IEnumerable<Momentum?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.newtonSecond;
+                    }
+                }
+            }
+            return Momentum.FromNewtonSecond(sum);
+        }
+
+        public static Wavenumber? Sum(this IEnumerable<Wavenumber?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.reciprocalMetres;
+                    }
+                }
+            }
+            return Wavenumber.FromReciprocalMetres(sum);
+        }
+
+        public static AreaDensity? Sum(this IEnumerable<AreaDensity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.kilogramsPerSquareMetre;
+                    }
+                }
+            }
+            return AreaDensity.FromKilogramsPerSquareMetre(sum);
+        }
+
+        public static SpecificVolume? Sum(this IEnumerable<SpecificVolume?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.cubicMetresPerKilogram;
+                    }
+                }
+            }
+            return SpecificVolume.FromCubicMetresPerKilogram(sum);
+        }
+
+        public static MassFlow? Sum(this IEnumerable<MassFlow?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.kilogramsPerSecond;
+                    }
+                }
+            }
+            return MassFlow.FromKilogramsPerSecond(sum);
+        }
+
+        public static KinematicViscosity? Sum(this IEnumerable<KinematicViscosity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.squareMetresPerSecond;
+                    }
+                }
+            }
+            return KinematicViscosity.FromSquareMetresPerSecond(sum);
+        }
+
         public static Mass Min(this IEnumerable<Mass> source)
         {
             if (source == null)
@@ -1534,6 +2189,99 @@
                 if (hasValue)
                 {
                     if (x.candelas < value.candelas)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static Data Min(this IEnumerable<Data> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(Data);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.bits))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.bits < value.bits)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static AmountOfSubstance Min(this IEnumerable<AmountOfSubstance> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(AmountOfSubstance);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.moles))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.moles < value.moles)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static SolidAngle Min(this IEnumerable<SolidAngle> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(SolidAngle);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.steradians))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.steradians < value.steradians)
                     {
                         value = x;
                     }
@@ -2385,6 +3133,378 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        public static LuminousFlux Min(this IEnumerable<LuminousFlux> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(LuminousFlux);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.lumens))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.lumens < value.lumens)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static Illuminance Min(this IEnumerable<Illuminance> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(Illuminance);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.lux))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.lux < value.lux)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static MagneticFlux Min(this IEnumerable<MagneticFlux> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(MagneticFlux);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.webers))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.webers < value.webers)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static ElectricalConductance Min(this IEnumerable<ElectricalConductance> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(ElectricalConductance);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.siemens))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.siemens < value.siemens)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static MagneticFieldStrength Min(this IEnumerable<MagneticFieldStrength> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(MagneticFieldStrength);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.teslas))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.teslas < value.teslas)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static CatalyticActivity Min(this IEnumerable<CatalyticActivity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(CatalyticActivity);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.katals))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.katals < value.katals)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static Momentum Min(this IEnumerable<Momentum> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(Momentum);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.newtonSecond))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.newtonSecond < value.newtonSecond)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static Wavenumber Min(this IEnumerable<Wavenumber> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(Wavenumber);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.reciprocalMetres))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.reciprocalMetres < value.reciprocalMetres)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static AreaDensity Min(this IEnumerable<AreaDensity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(AreaDensity);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.kilogramsPerSquareMetre))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.kilogramsPerSquareMetre < value.kilogramsPerSquareMetre)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static SpecificVolume Min(this IEnumerable<SpecificVolume> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(SpecificVolume);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.cubicMetresPerKilogram))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.cubicMetresPerKilogram < value.cubicMetresPerKilogram)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static MassFlow Min(this IEnumerable<MassFlow> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(MassFlow);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.kilogramsPerSecond))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.kilogramsPerSecond < value.kilogramsPerSecond)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static KinematicViscosity Min(this IEnumerable<KinematicViscosity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(KinematicViscosity);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.squareMetresPerSecond))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.squareMetresPerSecond < value.squareMetresPerSecond)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
         public static Mass? Min(this IEnumerable<Mass?> source)
         {
             if (source == null)
@@ -2578,6 +3698,81 @@
                     return x;
                 }
                 if (value == null || x.Value.candelas < value.Value.candelas)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static Data? Min(this IEnumerable<Data?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            Data? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.bits))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.bits < value.Value.bits)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static AmountOfSubstance? Min(this IEnumerable<AmountOfSubstance?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            AmountOfSubstance? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.moles))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.moles < value.Value.moles)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static SolidAngle? Min(this IEnumerable<SolidAngle?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            SolidAngle? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.steradians))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.steradians < value.Value.steradians)
                 {
                     value = x;
                 }
@@ -3260,6 +4455,306 @@
             return value;
         }
 
+        public static LuminousFlux? Min(this IEnumerable<LuminousFlux?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            LuminousFlux? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.lumens))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.lumens < value.Value.lumens)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static Illuminance? Min(this IEnumerable<Illuminance?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            Illuminance? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.lux))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.lux < value.Value.lux)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static MagneticFlux? Min(this IEnumerable<MagneticFlux?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            MagneticFlux? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.webers))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.webers < value.Value.webers)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static ElectricalConductance? Min(this IEnumerable<ElectricalConductance?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            ElectricalConductance? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.siemens))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.siemens < value.Value.siemens)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static MagneticFieldStrength? Min(this IEnumerable<MagneticFieldStrength?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            MagneticFieldStrength? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.teslas))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.teslas < value.Value.teslas)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static CatalyticActivity? Min(this IEnumerable<CatalyticActivity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            CatalyticActivity? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.katals))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.katals < value.Value.katals)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static Momentum? Min(this IEnumerable<Momentum?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            Momentum? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.newtonSecond))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.newtonSecond < value.Value.newtonSecond)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static Wavenumber? Min(this IEnumerable<Wavenumber?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            Wavenumber? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.reciprocalMetres))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.reciprocalMetres < value.Value.reciprocalMetres)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static AreaDensity? Min(this IEnumerable<AreaDensity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            AreaDensity? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.kilogramsPerSquareMetre))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.kilogramsPerSquareMetre < value.Value.kilogramsPerSquareMetre)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static SpecificVolume? Min(this IEnumerable<SpecificVolume?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            SpecificVolume? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.cubicMetresPerKilogram))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.cubicMetresPerKilogram < value.Value.cubicMetresPerKilogram)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static MassFlow? Min(this IEnumerable<MassFlow?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            MassFlow? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.kilogramsPerSecond))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.kilogramsPerSecond < value.Value.kilogramsPerSecond)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static KinematicViscosity? Min(this IEnumerable<KinematicViscosity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            KinematicViscosity? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.squareMetresPerSecond))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.squareMetresPerSecond < value.Value.squareMetresPerSecond)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
         public static Mass Max(this IEnumerable<Mass> source)
         {
             if (source == null)
@@ -3494,6 +4989,99 @@
                 if (hasValue)
                 {
                     if (x.candelas > value.candelas)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static Data Max(this IEnumerable<Data> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            Data value = default(Data);
+            bool hasValue = false;
+            foreach (Data x in source)
+            {
+                if (System.Double.IsNaN(x.bits))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.bits > value.bits)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static AmountOfSubstance Max(this IEnumerable<AmountOfSubstance> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            AmountOfSubstance value = default(AmountOfSubstance);
+            bool hasValue = false;
+            foreach (AmountOfSubstance x in source)
+            {
+                if (System.Double.IsNaN(x.moles))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.moles > value.moles)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static SolidAngle Max(this IEnumerable<SolidAngle> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            SolidAngle value = default(SolidAngle);
+            bool hasValue = false;
+            foreach (SolidAngle x in source)
+            {
+                if (System.Double.IsNaN(x.steradians))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.steradians > value.steradians)
                     {
                         value = x;
                     }
@@ -4345,6 +5933,378 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        public static LuminousFlux Max(this IEnumerable<LuminousFlux> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            LuminousFlux value = default(LuminousFlux);
+            bool hasValue = false;
+            foreach (LuminousFlux x in source)
+            {
+                if (System.Double.IsNaN(x.lumens))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.lumens > value.lumens)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static Illuminance Max(this IEnumerable<Illuminance> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            Illuminance value = default(Illuminance);
+            bool hasValue = false;
+            foreach (Illuminance x in source)
+            {
+                if (System.Double.IsNaN(x.lux))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.lux > value.lux)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static MagneticFlux Max(this IEnumerable<MagneticFlux> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            MagneticFlux value = default(MagneticFlux);
+            bool hasValue = false;
+            foreach (MagneticFlux x in source)
+            {
+                if (System.Double.IsNaN(x.webers))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.webers > value.webers)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static ElectricalConductance Max(this IEnumerable<ElectricalConductance> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            ElectricalConductance value = default(ElectricalConductance);
+            bool hasValue = false;
+            foreach (ElectricalConductance x in source)
+            {
+                if (System.Double.IsNaN(x.siemens))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.siemens > value.siemens)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static MagneticFieldStrength Max(this IEnumerable<MagneticFieldStrength> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            MagneticFieldStrength value = default(MagneticFieldStrength);
+            bool hasValue = false;
+            foreach (MagneticFieldStrength x in source)
+            {
+                if (System.Double.IsNaN(x.teslas))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.teslas > value.teslas)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static CatalyticActivity Max(this IEnumerable<CatalyticActivity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            CatalyticActivity value = default(CatalyticActivity);
+            bool hasValue = false;
+            foreach (CatalyticActivity x in source)
+            {
+                if (System.Double.IsNaN(x.katals))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.katals > value.katals)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static Momentum Max(this IEnumerable<Momentum> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            Momentum value = default(Momentum);
+            bool hasValue = false;
+            foreach (Momentum x in source)
+            {
+                if (System.Double.IsNaN(x.newtonSecond))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.newtonSecond > value.newtonSecond)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static Wavenumber Max(this IEnumerable<Wavenumber> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            Wavenumber value = default(Wavenumber);
+            bool hasValue = false;
+            foreach (Wavenumber x in source)
+            {
+                if (System.Double.IsNaN(x.reciprocalMetres))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.reciprocalMetres > value.reciprocalMetres)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static AreaDensity Max(this IEnumerable<AreaDensity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            AreaDensity value = default(AreaDensity);
+            bool hasValue = false;
+            foreach (AreaDensity x in source)
+            {
+                if (System.Double.IsNaN(x.kilogramsPerSquareMetre))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.kilogramsPerSquareMetre > value.kilogramsPerSquareMetre)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static SpecificVolume Max(this IEnumerable<SpecificVolume> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            SpecificVolume value = default(SpecificVolume);
+            bool hasValue = false;
+            foreach (SpecificVolume x in source)
+            {
+                if (System.Double.IsNaN(x.cubicMetresPerKilogram))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.cubicMetresPerKilogram > value.cubicMetresPerKilogram)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static MassFlow Max(this IEnumerable<MassFlow> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            MassFlow value = default(MassFlow);
+            bool hasValue = false;
+            foreach (MassFlow x in source)
+            {
+                if (System.Double.IsNaN(x.kilogramsPerSecond))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.kilogramsPerSecond > value.kilogramsPerSecond)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static KinematicViscosity Max(this IEnumerable<KinematicViscosity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            KinematicViscosity value = default(KinematicViscosity);
+            bool hasValue = false;
+            foreach (KinematicViscosity x in source)
+            {
+                if (System.Double.IsNaN(x.squareMetresPerSecond))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.squareMetresPerSecond > value.squareMetresPerSecond)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
         public static Mass? Max(this IEnumerable<Mass?> source)
         {
             if (source == null)
@@ -4538,6 +6498,81 @@
                     return x;
                 }
                 if (value == null || x.Value.candelas > value.Value.candelas)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static Data? Max(this IEnumerable<Data?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            Data? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.bits))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.bits > value.Value.bits)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static AmountOfSubstance? Max(this IEnumerable<AmountOfSubstance?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            AmountOfSubstance? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.moles))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.moles > value.Value.moles)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static SolidAngle? Max(this IEnumerable<SolidAngle?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            SolidAngle? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.steradians))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.steradians > value.Value.steradians)
                 {
                     value = x;
                 }
@@ -5220,6 +7255,306 @@
             return value;
         }
 
+        public static LuminousFlux? Max(this IEnumerable<LuminousFlux?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            LuminousFlux? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.lumens))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.lumens > value.Value.lumens)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static Illuminance? Max(this IEnumerable<Illuminance?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            Illuminance? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.lux))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.lux > value.Value.lux)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static MagneticFlux? Max(this IEnumerable<MagneticFlux?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            MagneticFlux? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.webers))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.webers > value.Value.webers)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static ElectricalConductance? Max(this IEnumerable<ElectricalConductance?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            ElectricalConductance? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.siemens))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.siemens > value.Value.siemens)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static MagneticFieldStrength? Max(this IEnumerable<MagneticFieldStrength?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            MagneticFieldStrength? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.teslas))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.teslas > value.Value.teslas)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static CatalyticActivity? Max(this IEnumerable<CatalyticActivity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            CatalyticActivity? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.katals))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.katals > value.Value.katals)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static Momentum? Max(this IEnumerable<Momentum?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            Momentum? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.newtonSecond))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.newtonSecond > value.Value.newtonSecond)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static Wavenumber? Max(this IEnumerable<Wavenumber?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            Wavenumber? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.reciprocalMetres))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.reciprocalMetres > value.Value.reciprocalMetres)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static AreaDensity? Max(this IEnumerable<AreaDensity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            AreaDensity? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.kilogramsPerSquareMetre))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.kilogramsPerSquareMetre > value.Value.kilogramsPerSquareMetre)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static SpecificVolume? Max(this IEnumerable<SpecificVolume?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            SpecificVolume? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.cubicMetresPerKilogram))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.cubicMetresPerKilogram > value.Value.cubicMetresPerKilogram)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static MassFlow? Max(this IEnumerable<MassFlow?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            MassFlow? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.kilogramsPerSecond))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.kilogramsPerSecond > value.Value.kilogramsPerSecond)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+        public static KinematicViscosity? Max(this IEnumerable<KinematicViscosity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            KinematicViscosity? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.squareMetresPerSecond))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.squareMetresPerSecond > value.Value.squareMetresPerSecond)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
         public static Mass Average(this IEnumerable<Mass> source)
         {
             if (source == null)
@@ -5400,6 +7735,75 @@
             if (count > 0)
             {
                 return LuminousIntensity.FromCandelas(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static Data Average(this IEnumerable<Data> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.bits;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return Data.FromBits(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static AmountOfSubstance Average(this IEnumerable<AmountOfSubstance> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.moles;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return AmountOfSubstance.FromMoles(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static SolidAngle Average(this IEnumerable<SolidAngle> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.steradians;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return SolidAngle.FromSteradians(sum / count);
             }
             throw new ArgumentException("No elements", "source");
         }
@@ -6025,6 +8429,282 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        public static LuminousFlux Average(this IEnumerable<LuminousFlux> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.lumens;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return LuminousFlux.FromLumens(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static Illuminance Average(this IEnumerable<Illuminance> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.lux;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return Illuminance.FromLux(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static MagneticFlux Average(this IEnumerable<MagneticFlux> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.webers;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return MagneticFlux.FromWebers(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static ElectricalConductance Average(this IEnumerable<ElectricalConductance> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.siemens;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return ElectricalConductance.FromSiemens(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static MagneticFieldStrength Average(this IEnumerable<MagneticFieldStrength> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.teslas;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return MagneticFieldStrength.FromTeslas(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static CatalyticActivity Average(this IEnumerable<CatalyticActivity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.katals;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return CatalyticActivity.FromKatals(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static Momentum Average(this IEnumerable<Momentum> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.newtonSecond;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return Momentum.FromNewtonSecond(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static Wavenumber Average(this IEnumerable<Wavenumber> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.reciprocalMetres;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return Wavenumber.FromReciprocalMetres(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static AreaDensity Average(this IEnumerable<AreaDensity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.kilogramsPerSquareMetre;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return AreaDensity.FromKilogramsPerSquareMetre(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static SpecificVolume Average(this IEnumerable<SpecificVolume> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.cubicMetresPerKilogram;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return SpecificVolume.FromCubicMetresPerKilogram(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static MassFlow Average(this IEnumerable<MassFlow> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.kilogramsPerSecond;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return MassFlow.FromKilogramsPerSecond(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+        public static KinematicViscosity Average(this IEnumerable<KinematicViscosity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.squareMetresPerSecond;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return KinematicViscosity.FromSquareMetresPerSecond(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
 
         public static Mass? Average(this IEnumerable<Mass?> source)
         {
@@ -6230,6 +8910,84 @@
             if (count > 0)
             {
                 return LuminousIntensity.FromCandelas(sum / count);
+            }
+            return null;
+        }
+
+        public static Data? Average(this IEnumerable<Data?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.bits;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return Data.FromBits(sum / count);
+            }
+            return null;
+        }
+
+        public static AmountOfSubstance? Average(this IEnumerable<AmountOfSubstance?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.moles;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return AmountOfSubstance.FromMoles(sum / count);
+            }
+            return null;
+        }
+
+        public static SolidAngle? Average(this IEnumerable<SolidAngle?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.steradians;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return SolidAngle.FromSteradians(sum / count);
             }
             return null;
         }
@@ -6932,6 +9690,318 @@
             if (count > 0)
             {
                 return ForcePerUnitless.FromNewtonsPerUnitless(sum / count);
+            }
+            return null;
+        }
+
+        public static LuminousFlux? Average(this IEnumerable<LuminousFlux?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.lumens;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return LuminousFlux.FromLumens(sum / count);
+            }
+            return null;
+        }
+
+        public static Illuminance? Average(this IEnumerable<Illuminance?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.lux;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return Illuminance.FromLux(sum / count);
+            }
+            return null;
+        }
+
+        public static MagneticFlux? Average(this IEnumerable<MagneticFlux?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.webers;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return MagneticFlux.FromWebers(sum / count);
+            }
+            return null;
+        }
+
+        public static ElectricalConductance? Average(this IEnumerable<ElectricalConductance?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.siemens;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return ElectricalConductance.FromSiemens(sum / count);
+            }
+            return null;
+        }
+
+        public static MagneticFieldStrength? Average(this IEnumerable<MagneticFieldStrength?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.teslas;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return MagneticFieldStrength.FromTeslas(sum / count);
+            }
+            return null;
+        }
+
+        public static CatalyticActivity? Average(this IEnumerable<CatalyticActivity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.katals;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return CatalyticActivity.FromKatals(sum / count);
+            }
+            return null;
+        }
+
+        public static Momentum? Average(this IEnumerable<Momentum?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.newtonSecond;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return Momentum.FromNewtonSecond(sum / count);
+            }
+            return null;
+        }
+
+        public static Wavenumber? Average(this IEnumerable<Wavenumber?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.reciprocalMetres;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return Wavenumber.FromReciprocalMetres(sum / count);
+            }
+            return null;
+        }
+
+        public static AreaDensity? Average(this IEnumerable<AreaDensity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.kilogramsPerSquareMetre;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return AreaDensity.FromKilogramsPerSquareMetre(sum / count);
+            }
+            return null;
+        }
+
+        public static SpecificVolume? Average(this IEnumerable<SpecificVolume?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.cubicMetresPerKilogram;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return SpecificVolume.FromCubicMetresPerKilogram(sum / count);
+            }
+            return null;
+        }
+
+        public static MassFlow? Average(this IEnumerable<MassFlow?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.kilogramsPerSecond;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return MassFlow.FromKilogramsPerSecond(sum / count);
+            }
+            return null;
+        }
+
+        public static KinematicViscosity? Average(this IEnumerable<KinematicViscosity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.squareMetresPerSecond;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return KinematicViscosity.FromSquareMetresPerSecond(sum / count);
             }
             return null;
         }

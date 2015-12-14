@@ -67,37 +67,19 @@
         }
 
         /// <summary>
-        /// The quantity in grams
+        /// The quantity in Grams
         /// </summary>
-        public double Grams
-        {
-            get
-            {
-                return MassUnit.Grams.FromSiUnit(this.kilograms);
-            }
-        }
+        public double Grams => 1000 * this.kilograms;
 
         /// <summary>
-        /// The quantity in milligrams
+        /// The quantity in Milligrams
         /// </summary>
-        public double Milligrams
-        {
-            get
-            {
-                return MassUnit.Milligrams.FromSiUnit(this.kilograms);
-            }
-        }
+        public double Milligrams => 1000000 * this.kilograms;
 
         /// <summary>
-        /// The quantity in micrograms
+        /// The quantity in Micrograms
         /// </summary>
-        public double Micrograms
-        {
-            get
-            {
-                return MassUnit.Micrograms.FromSiUnit(this.kilograms);
-            }
-        }
+        public double Micrograms => 1000000000 * this.kilograms;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
@@ -181,7 +163,7 @@
         /// <param name="grams">The value in g</param>
         public static Mass FromGrams(double grams)
         {
-            return From(grams, MassUnit.Grams);
+            return new Mass(grams / 1000);
         }
 
         /// <summary>
@@ -190,7 +172,7 @@
         /// <param name="milligrams">The value in mg</param>
         public static Mass FromMilligrams(double milligrams)
         {
-            return From(milligrams, MassUnit.Milligrams);
+            return new Mass(milligrams / 1000000);
         }
 
         /// <summary>
@@ -199,7 +181,22 @@
         /// <param name="micrograms">The value in µg</param>
         public static Mass FromMicrograms(double micrograms)
         {
-            return From(micrograms, MassUnit.Micrograms);
+            return new Mass(micrograms / 1000000000);
+        }
+
+        public static MassFlow operator /(Mass left, Time right)
+        {
+            return MassFlow.FromKilogramsPerSecond(left.kilograms / right.seconds);
+        }
+
+        public static AreaDensity operator /(Mass left, Area right)
+        {
+            return AreaDensity.FromKilogramsPerSquareMetre(left.kilograms / right.squareMetres);
+        }
+
+        public static Density operator /(Mass left, Volume right)
+        {
+            return Density.FromKilogramsPerCubicMetre(left.kilograms / right.cubicMetres);
         }
 
         public static Volume operator /(Mass left, Density right)
@@ -207,14 +204,39 @@
             return Volume.FromCubicMetres(left.kilograms / right.kilogramsPerCubicMetre);
         }
 
+        public static Momentum operator *(Mass left, Speed right)
+        {
+            return Momentum.FromNewtonSecond(left.kilograms * right.metresPerSecond);
+        }
+
+        public static MassFlow operator *(Mass left, Frequency right)
+        {
+            return MassFlow.FromKilogramsPerSecond(left.kilograms * right.hertz);
+        }
+
         public static Force operator *(Mass left, Acceleration right)
         {
             return Force.FromNewtons(left.kilograms * right.metresPerSecondSquared);
         }
 
-        public static Density operator /(Mass left, Volume right)
+        public static Energy operator *(Mass left, SpecificEnergy right)
         {
-            return Density.FromKilogramsPerCubicMetre(left.kilograms / right.cubicMetres);
+            return Energy.FromJoules(left.kilograms * right.joulesPerKilogram);
+        }
+
+        public static Area operator /(Mass left, AreaDensity right)
+        {
+            return Area.FromSquareMetres(left.kilograms / right.kilogramsPerSquareMetre);
+        }
+
+        public static Volume operator *(Mass left, SpecificVolume right)
+        {
+            return Volume.FromCubicMetres(left.kilograms * right.cubicMetresPerKilogram);
+        }
+
+        public static Time operator /(Mass left, MassFlow right)
+        {
+            return Time.FromSeconds(left.kilograms / right.kilogramsPerSecond);
         }
 
         public static double operator /(Mass left, Mass right)

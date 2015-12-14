@@ -1,5 +1,8 @@
 ﻿namespace Gu.Units
 {
+    using System;
+
+    [Serializable]
     internal enum Sign
     {
         Negative = -1,

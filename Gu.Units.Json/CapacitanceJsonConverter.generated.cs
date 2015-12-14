@@ -11,6 +11,12 @@
     {
         public static readonly CapacitanceJsonConverter Default = new CapacitanceJsonConverter(CapacitanceUnit.Farads);
         public static readonly CapacitanceJsonConverter Farads = new CapacitanceJsonConverter(CapacitanceUnit.Farads);
+        public static readonly CapacitanceJsonConverter Nanofarads = new CapacitanceJsonConverter(CapacitanceUnit.Nanofarads);
+        public static readonly CapacitanceJsonConverter Microfarads = new CapacitanceJsonConverter(CapacitanceUnit.Microfarads);
+        public static readonly CapacitanceJsonConverter Millifarads = new CapacitanceJsonConverter(CapacitanceUnit.Millifarads);
+        public static readonly CapacitanceJsonConverter Kilofarads = new CapacitanceJsonConverter(CapacitanceUnit.Kilofarads);
+        public static readonly CapacitanceJsonConverter Megafarads = new CapacitanceJsonConverter(CapacitanceUnit.Megafarads);
+        public static readonly CapacitanceJsonConverter Gigafarads = new CapacitanceJsonConverter(CapacitanceUnit.Gigafarads);
 
         private readonly CapacitanceUnit unit;
 
