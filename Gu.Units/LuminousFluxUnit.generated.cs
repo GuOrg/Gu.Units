@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.LuminousFlux"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(LuminousFluxUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{LuminousFluxUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(LuminousFluxUnitTypeConverter))]
     public struct LuminousFluxUnit : IUnit, IUnit<LuminousFlux>, IEquatable<LuminousFluxUnit>
     {
         /// <summary>
@@ -58,6 +59,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="LuminousFluxUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="LuminousFluxUnit"/></returns>
         public static LuminousFluxUnit Parse(string text)
         {
             return UnitParser<LuminousFluxUnit>.Parse(text);
@@ -79,9 +86,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Lumens.
+        /// Converts a value from lumens.
         /// </summary>
-        /// <param name="value">The value in Lumens</param>
+        /// <param name="Lumens">The value in Lumens</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double lumens)
         {
@@ -91,15 +98,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new LuminousFlux(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new LuminousFlux(<paramref name="value"/>, this)</returns>
         public LuminousFlux CreateQuantity(double value)
         {
             return new LuminousFlux(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in LuminousFluxUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Lumens
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -111,6 +118,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            LuminousFluxUnit unit;
+            var paddedFormat = UnitFormatCache<LuminousFluxUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<LuminousFluxUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(LuminousFluxUnit other)
@@ -128,6 +165,10 @@
             return obj is LuminousFluxUnit && Equals((LuminousFluxUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

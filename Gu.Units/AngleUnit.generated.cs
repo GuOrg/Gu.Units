@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Angle"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(AngleUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{AngleUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(AngleUnitTypeConverter))]
     public struct AngleUnit : IUnit, IUnit<Angle>, IEquatable<AngleUnit>
     {
         /// <summary>
@@ -64,6 +65,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="AngleUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="AngleUnit"/></returns>
         public static AngleUnit Parse(string text)
         {
             return UnitParser<AngleUnit>.Parse(text);
@@ -85,9 +92,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Radians.
+        /// Converts a value from radians.
         /// </summary>
-        /// <param name="value">The value in Radians</param>
+        /// <param name="Radians">The value in Radians</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double radians)
         {
@@ -97,15 +104,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Angle(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Angle(<paramref name="value"/>, this)</returns>
         public Angle CreateQuantity(double value)
         {
             return new Angle(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in AngleUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Radians
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -117,6 +124,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            AngleUnit unit;
+            var paddedFormat = UnitFormatCache<AngleUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<AngleUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(AngleUnit other)
@@ -134,6 +171,10 @@
             return obj is AngleUnit && Equals((AngleUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

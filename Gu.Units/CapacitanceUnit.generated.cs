@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Capacitance"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(CapacitanceUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{CapacitanceUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(CapacitanceUnitTypeConverter))]
     public struct CapacitanceUnit : IUnit, IUnit<Capacitance>, IEquatable<CapacitanceUnit>
     {
         /// <summary>
@@ -94,6 +95,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="CapacitanceUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="CapacitanceUnit"/></returns>
         public static CapacitanceUnit Parse(string text)
         {
             return UnitParser<CapacitanceUnit>.Parse(text);
@@ -115,9 +122,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Farads.
+        /// Converts a value from farads.
         /// </summary>
-        /// <param name="value">The value in Farads</param>
+        /// <param name="Farads">The value in Farads</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double farads)
         {
@@ -127,15 +134,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Capacitance(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Capacitance(<paramref name="value"/>, this)</returns>
         public Capacitance CreateQuantity(double value)
         {
             return new Capacitance(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in CapacitanceUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Farads
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -147,6 +154,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            CapacitanceUnit unit;
+            var paddedFormat = UnitFormatCache<CapacitanceUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<CapacitanceUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(CapacitanceUnit other)
@@ -164,6 +201,10 @@
             return obj is CapacitanceUnit && Equals((CapacitanceUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

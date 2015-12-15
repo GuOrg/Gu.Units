@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.ForcePerUnitless"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(ForcePerUnitlessUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{ForcePerUnitlessUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(ForcePerUnitlessUnitTypeConverter))]
     public struct ForcePerUnitlessUnit : IUnit, IUnit<ForcePerUnitless>, IEquatable<ForcePerUnitlessUnit>
     {
         /// <summary>
@@ -82,6 +83,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="ForcePerUnitlessUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="ForcePerUnitlessUnit"/></returns>
         public static ForcePerUnitlessUnit Parse(string text)
         {
             return UnitParser<ForcePerUnitlessUnit>.Parse(text);
@@ -103,9 +110,9 @@
         }
 
         /// <summary>
-        /// Converts a value from NewtonsPerUnitless.
+        /// Converts a value from newtonsPerUnitless.
         /// </summary>
-        /// <param name="value">The value in NewtonsPerUnitless</param>
+        /// <param name="NewtonsPerUnitless">The value in NewtonsPerUnitless</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double newtonsPerUnitless)
         {
@@ -115,15 +122,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new ForcePerUnitless(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new ForcePerUnitless(<paramref name="value"/>, this)</returns>
         public ForcePerUnitless CreateQuantity(double value)
         {
             return new ForcePerUnitless(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in ForcePerUnitlessUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in NewtonsPerUnitless
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -135,6 +142,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            ForcePerUnitlessUnit unit;
+            var paddedFormat = UnitFormatCache<ForcePerUnitlessUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<ForcePerUnitlessUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(ForcePerUnitlessUnit other)
@@ -152,6 +189,10 @@
             return obj is ForcePerUnitlessUnit && Equals((ForcePerUnitlessUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

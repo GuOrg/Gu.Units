@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.AngularAcceleration"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(AngularAccelerationUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{AngularAccelerationUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(AngularAccelerationUnitTypeConverter))]
     public struct AngularAccelerationUnit : IUnit, IUnit<AngularAcceleration>, IEquatable<AngularAccelerationUnit>
     {
         /// <summary>
@@ -88,6 +89,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="AngularAccelerationUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="AngularAccelerationUnit"/></returns>
         public static AngularAccelerationUnit Parse(string text)
         {
             return UnitParser<AngularAccelerationUnit>.Parse(text);
@@ -109,9 +116,9 @@
         }
 
         /// <summary>
-        /// Converts a value from RadiansPerSecondSquared.
+        /// Converts a value from radiansPerSecondSquared.
         /// </summary>
-        /// <param name="value">The value in RadiansPerSecondSquared</param>
+        /// <param name="RadiansPerSecondSquared">The value in RadiansPerSecondSquared</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double radiansPerSecondSquared)
         {
@@ -121,15 +128,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new AngularAcceleration(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new AngularAcceleration(<paramref name="value"/>, this)</returns>
         public AngularAcceleration CreateQuantity(double value)
         {
             return new AngularAcceleration(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in AngularAccelerationUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in RadiansPerSecondSquared
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -141,6 +148,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            AngularAccelerationUnit unit;
+            var paddedFormat = UnitFormatCache<AngularAccelerationUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<AngularAccelerationUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(AngularAccelerationUnit other)
@@ -158,6 +195,10 @@
             return obj is AngularAccelerationUnit && Equals((AngularAccelerationUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

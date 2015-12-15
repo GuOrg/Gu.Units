@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Flexibility"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(FlexibilityUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{FlexibilityUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(FlexibilityUnitTypeConverter))]
     public struct FlexibilityUnit : IUnit, IUnit<Flexibility>, IEquatable<FlexibilityUnit>
     {
         /// <summary>
@@ -76,6 +77,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="FlexibilityUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="FlexibilityUnit"/></returns>
         public static FlexibilityUnit Parse(string text)
         {
             return UnitParser<FlexibilityUnit>.Parse(text);
@@ -97,9 +104,9 @@
         }
 
         /// <summary>
-        /// Converts a value from MetresPerNewton.
+        /// Converts a value from metresPerNewton.
         /// </summary>
-        /// <param name="value">The value in MetresPerNewton</param>
+        /// <param name="MetresPerNewton">The value in MetresPerNewton</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double metresPerNewton)
         {
@@ -109,15 +116,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Flexibility(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Flexibility(<paramref name="value"/>, this)</returns>
         public Flexibility CreateQuantity(double value)
         {
             return new Flexibility(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in FlexibilityUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in MetresPerNewton
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -129,6 +136,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            FlexibilityUnit unit;
+            var paddedFormat = UnitFormatCache<FlexibilityUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<FlexibilityUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(FlexibilityUnit other)
@@ -146,6 +183,10 @@
             return obj is FlexibilityUnit && Equals((FlexibilityUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Density"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(DensityUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{DensityUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(DensityUnitTypeConverter))]
     public struct DensityUnit : IUnit, IUnit<Density>, IEquatable<DensityUnit>
     {
         /// <summary>
@@ -88,6 +89,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="DensityUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="DensityUnit"/></returns>
         public static DensityUnit Parse(string text)
         {
             return UnitParser<DensityUnit>.Parse(text);
@@ -109,9 +116,9 @@
         }
 
         /// <summary>
-        /// Converts a value from KilogramsPerCubicMetre.
+        /// Converts a value from kilogramsPerCubicMetre.
         /// </summary>
-        /// <param name="value">The value in KilogramsPerCubicMetre</param>
+        /// <param name="KilogramsPerCubicMetre">The value in KilogramsPerCubicMetre</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double kilogramsPerCubicMetre)
         {
@@ -121,15 +128,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Density(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Density(<paramref name="value"/>, this)</returns>
         public Density CreateQuantity(double value)
         {
             return new Density(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in DensityUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in KilogramsPerCubicMetre
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -141,6 +148,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            DensityUnit unit;
+            var paddedFormat = UnitFormatCache<DensityUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<DensityUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(DensityUnit other)
@@ -158,6 +195,10 @@
             return obj is DensityUnit && Equals((DensityUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

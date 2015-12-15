@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Power"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(PowerUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{PowerUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(PowerUnitTypeConverter))]
     public struct PowerUnit : IUnit, IUnit<Power>, IEquatable<PowerUnit>
     {
         /// <summary>
@@ -94,6 +95,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="PowerUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="PowerUnit"/></returns>
         public static PowerUnit Parse(string text)
         {
             return UnitParser<PowerUnit>.Parse(text);
@@ -115,9 +122,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Watts.
+        /// Converts a value from watts.
         /// </summary>
-        /// <param name="value">The value in Watts</param>
+        /// <param name="Watts">The value in Watts</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double watts)
         {
@@ -127,15 +134,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Power(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Power(<paramref name="value"/>, this)</returns>
         public Power CreateQuantity(double value)
         {
             return new Power(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in PowerUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Watts
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -147,6 +154,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            PowerUnit unit;
+            var paddedFormat = UnitFormatCache<PowerUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<PowerUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(PowerUnit other)
@@ -164,6 +201,10 @@
             return obj is PowerUnit && Equals((PowerUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

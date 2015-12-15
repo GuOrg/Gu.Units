@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.MagneticFlux"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(MagneticFluxUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MagneticFluxUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(MagneticFluxUnitTypeConverter))]
     public struct MagneticFluxUnit : IUnit, IUnit<MagneticFlux>, IEquatable<MagneticFluxUnit>
     {
         /// <summary>
@@ -58,6 +59,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="MagneticFluxUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="MagneticFluxUnit"/></returns>
         public static MagneticFluxUnit Parse(string text)
         {
             return UnitParser<MagneticFluxUnit>.Parse(text);
@@ -79,9 +86,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Webers.
+        /// Converts a value from webers.
         /// </summary>
-        /// <param name="value">The value in Webers</param>
+        /// <param name="Webers">The value in Webers</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double webers)
         {
@@ -91,15 +98,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new MagneticFlux(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new MagneticFlux(<paramref name="value"/>, this)</returns>
         public MagneticFlux CreateQuantity(double value)
         {
             return new MagneticFlux(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in MagneticFluxUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Webers
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -111,6 +118,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            MagneticFluxUnit unit;
+            var paddedFormat = UnitFormatCache<MagneticFluxUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<MagneticFluxUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(MagneticFluxUnit other)
@@ -128,6 +165,10 @@
             return obj is MagneticFluxUnit && Equals((MagneticFluxUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

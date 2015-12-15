@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.LengthPerUnitless"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(LengthPerUnitlessUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{LengthPerUnitlessUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(LengthPerUnitlessUnitTypeConverter))]
     public struct LengthPerUnitlessUnit : IUnit, IUnit<LengthPerUnitless>, IEquatable<LengthPerUnitlessUnit>
     {
         /// <summary>
@@ -76,6 +77,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="LengthPerUnitlessUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="LengthPerUnitlessUnit"/></returns>
         public static LengthPerUnitlessUnit Parse(string text)
         {
             return UnitParser<LengthPerUnitlessUnit>.Parse(text);
@@ -97,9 +104,9 @@
         }
 
         /// <summary>
-        /// Converts a value from MetresPerUnitless.
+        /// Converts a value from metresPerUnitless.
         /// </summary>
-        /// <param name="value">The value in MetresPerUnitless</param>
+        /// <param name="MetresPerUnitless">The value in MetresPerUnitless</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double metresPerUnitless)
         {
@@ -109,15 +116,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new LengthPerUnitless(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new LengthPerUnitless(<paramref name="value"/>, this)</returns>
         public LengthPerUnitless CreateQuantity(double value)
         {
             return new LengthPerUnitless(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in LengthPerUnitlessUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in MetresPerUnitless
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -129,6 +136,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            LengthPerUnitlessUnit unit;
+            var paddedFormat = UnitFormatCache<LengthPerUnitlessUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<LengthPerUnitlessUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(LengthPerUnitlessUnit other)
@@ -146,6 +183,10 @@
             return obj is LengthPerUnitlessUnit && Equals((LengthPerUnitlessUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

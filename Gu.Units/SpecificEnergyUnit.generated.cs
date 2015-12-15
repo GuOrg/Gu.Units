@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.SpecificEnergy"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(SpecificEnergyUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{SpecificEnergyUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(SpecificEnergyUnitTypeConverter))]
     public struct SpecificEnergyUnit : IUnit, IUnit<SpecificEnergy>, IEquatable<SpecificEnergyUnit>
     {
         /// <summary>
@@ -58,6 +59,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="SpecificEnergyUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="SpecificEnergyUnit"/></returns>
         public static SpecificEnergyUnit Parse(string text)
         {
             return UnitParser<SpecificEnergyUnit>.Parse(text);
@@ -79,9 +86,9 @@
         }
 
         /// <summary>
-        /// Converts a value from JoulesPerKilogram.
+        /// Converts a value from joulesPerKilogram.
         /// </summary>
-        /// <param name="value">The value in JoulesPerKilogram</param>
+        /// <param name="JoulesPerKilogram">The value in JoulesPerKilogram</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double joulesPerKilogram)
         {
@@ -91,15 +98,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new SpecificEnergy(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new SpecificEnergy(<paramref name="value"/>, this)</returns>
         public SpecificEnergy CreateQuantity(double value)
         {
             return new SpecificEnergy(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in SpecificEnergyUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in JoulesPerKilogram
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -111,6 +118,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            SpecificEnergyUnit unit;
+            var paddedFormat = UnitFormatCache<SpecificEnergyUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<SpecificEnergyUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(SpecificEnergyUnit other)
@@ -128,6 +165,10 @@
             return obj is SpecificEnergyUnit && Equals((SpecificEnergyUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

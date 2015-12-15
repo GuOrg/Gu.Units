@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Unitless"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(UnitlessUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{UnitlessUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(UnitlessUnitTypeConverter))]
     public struct UnitlessUnit : IUnit, IUnit<Unitless>, IEquatable<UnitlessUnit>
     {
         /// <summary>
@@ -76,6 +77,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="UnitlessUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="UnitlessUnit"/></returns>
         public static UnitlessUnit Parse(string text)
         {
             return UnitParser<UnitlessUnit>.Parse(text);
@@ -97,9 +104,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Scalar.
+        /// Converts a value from scalar.
         /// </summary>
-        /// <param name="value">The value in Scalar</param>
+        /// <param name="Scalar">The value in Scalar</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double scalar)
         {
@@ -109,15 +116,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Unitless(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Unitless(<paramref name="value"/>, this)</returns>
         public Unitless CreateQuantity(double value)
         {
             return new Unitless(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in UnitlessUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Scalar
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -129,6 +136,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            UnitlessUnit unit;
+            var paddedFormat = UnitFormatCache<UnitlessUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<UnitlessUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(UnitlessUnit other)
@@ -146,6 +183,10 @@
             return obj is UnitlessUnit && Equals((UnitlessUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

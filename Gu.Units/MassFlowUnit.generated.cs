@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.MassFlow"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(MassFlowUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MassFlowUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(MassFlowUnitTypeConverter))]
     public struct MassFlowUnit : IUnit, IUnit<MassFlow>, IEquatable<MassFlowUnit>
     {
         /// <summary>
@@ -58,6 +59,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="MassFlowUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="MassFlowUnit"/></returns>
         public static MassFlowUnit Parse(string text)
         {
             return UnitParser<MassFlowUnit>.Parse(text);
@@ -79,9 +86,9 @@
         }
 
         /// <summary>
-        /// Converts a value from KilogramsPerSecond.
+        /// Converts a value from kilogramsPerSecond.
         /// </summary>
-        /// <param name="value">The value in KilogramsPerSecond</param>
+        /// <param name="KilogramsPerSecond">The value in KilogramsPerSecond</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double kilogramsPerSecond)
         {
@@ -91,15 +98,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new MassFlow(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new MassFlow(<paramref name="value"/>, this)</returns>
         public MassFlow CreateQuantity(double value)
         {
             return new MassFlow(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in MassFlowUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in KilogramsPerSecond
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -111,6 +118,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            MassFlowUnit unit;
+            var paddedFormat = UnitFormatCache<MassFlowUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<MassFlowUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(MassFlowUnit other)
@@ -128,6 +165,10 @@
             return obj is MassFlowUnit && Equals((MassFlowUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

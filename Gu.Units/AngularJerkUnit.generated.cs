@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.AngularJerk"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(AngularJerkUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{AngularJerkUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(AngularJerkUnitTypeConverter))]
     public struct AngularJerkUnit : IUnit, IUnit<AngularJerk>, IEquatable<AngularJerkUnit>
     {
         /// <summary>
@@ -88,6 +89,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="AngularJerkUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="AngularJerkUnit"/></returns>
         public static AngularJerkUnit Parse(string text)
         {
             return UnitParser<AngularJerkUnit>.Parse(text);
@@ -109,9 +116,9 @@
         }
 
         /// <summary>
-        /// Converts a value from RadiansPerSecondCubed.
+        /// Converts a value from radiansPerSecondCubed.
         /// </summary>
-        /// <param name="value">The value in RadiansPerSecondCubed</param>
+        /// <param name="RadiansPerSecondCubed">The value in RadiansPerSecondCubed</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double radiansPerSecondCubed)
         {
@@ -121,15 +128,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new AngularJerk(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new AngularJerk(<paramref name="value"/>, this)</returns>
         public AngularJerk CreateQuantity(double value)
         {
             return new AngularJerk(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in AngularJerkUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in RadiansPerSecondCubed
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -141,6 +148,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            AngularJerkUnit unit;
+            var paddedFormat = UnitFormatCache<AngularJerkUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<AngularJerkUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(AngularJerkUnit other)
@@ -158,6 +195,10 @@
             return obj is AngularJerkUnit && Equals((AngularJerkUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

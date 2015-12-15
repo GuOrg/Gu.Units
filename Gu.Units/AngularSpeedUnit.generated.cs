@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.AngularSpeed"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(AngularSpeedUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{AngularSpeedUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(AngularSpeedUnitTypeConverter))]
     public struct AngularSpeedUnit : IUnit, IUnit<AngularSpeed>, IEquatable<AngularSpeedUnit>
     {
         /// <summary>
@@ -94,6 +95,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="AngularSpeedUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="AngularSpeedUnit"/></returns>
         public static AngularSpeedUnit Parse(string text)
         {
             return UnitParser<AngularSpeedUnit>.Parse(text);
@@ -115,9 +122,9 @@
         }
 
         /// <summary>
-        /// Converts a value from RadiansPerSecond.
+        /// Converts a value from radiansPerSecond.
         /// </summary>
-        /// <param name="value">The value in RadiansPerSecond</param>
+        /// <param name="RadiansPerSecond">The value in RadiansPerSecond</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double radiansPerSecond)
         {
@@ -127,15 +134,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new AngularSpeed(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new AngularSpeed(<paramref name="value"/>, this)</returns>
         public AngularSpeed CreateQuantity(double value)
         {
             return new AngularSpeed(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in AngularSpeedUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in RadiansPerSecond
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -147,6 +154,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            AngularSpeedUnit unit;
+            var paddedFormat = UnitFormatCache<AngularSpeedUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<AngularSpeedUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(AngularSpeedUnit other)
@@ -164,6 +201,10 @@
             return obj is AngularSpeedUnit && Equals((AngularSpeedUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

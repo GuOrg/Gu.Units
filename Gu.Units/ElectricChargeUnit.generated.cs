@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.ElectricCharge"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(ElectricChargeUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{ElectricChargeUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(ElectricChargeUnitTypeConverter))]
     public struct ElectricChargeUnit : IUnit, IUnit<ElectricCharge>, IEquatable<ElectricChargeUnit>
     {
         /// <summary>
@@ -94,6 +95,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="ElectricChargeUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="ElectricChargeUnit"/></returns>
         public static ElectricChargeUnit Parse(string text)
         {
             return UnitParser<ElectricChargeUnit>.Parse(text);
@@ -115,9 +122,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Coulombs.
+        /// Converts a value from coulombs.
         /// </summary>
-        /// <param name="value">The value in Coulombs</param>
+        /// <param name="Coulombs">The value in Coulombs</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double coulombs)
         {
@@ -127,15 +134,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new ElectricCharge(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new ElectricCharge(<paramref name="value"/>, this)</returns>
         public ElectricCharge CreateQuantity(double value)
         {
             return new ElectricCharge(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in ElectricChargeUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Coulombs
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -147,6 +154,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            ElectricChargeUnit unit;
+            var paddedFormat = UnitFormatCache<ElectricChargeUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<ElectricChargeUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(ElectricChargeUnit other)
@@ -164,6 +201,10 @@
             return obj is ElectricChargeUnit && Equals((ElectricChargeUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

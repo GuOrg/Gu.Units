@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Momentum"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(MomentumUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{MomentumUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(MomentumUnitTypeConverter))]
     public struct MomentumUnit : IUnit, IUnit<Momentum>, IEquatable<MomentumUnit>
     {
         /// <summary>
@@ -58,6 +59,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="MomentumUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="MomentumUnit"/></returns>
         public static MomentumUnit Parse(string text)
         {
             return UnitParser<MomentumUnit>.Parse(text);
@@ -79,9 +86,9 @@
         }
 
         /// <summary>
-        /// Converts a value from NewtonSecond.
+        /// Converts a value from newtonSecond.
         /// </summary>
-        /// <param name="value">The value in NewtonSecond</param>
+        /// <param name="NewtonSecond">The value in NewtonSecond</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double newtonSecond)
         {
@@ -91,15 +98,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Momentum(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Momentum(<paramref name="value"/>, this)</returns>
         public Momentum CreateQuantity(double value)
         {
             return new Momentum(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in MomentumUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in NewtonSecond
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -111,6 +118,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            MomentumUnit unit;
+            var paddedFormat = UnitFormatCache<MomentumUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<MomentumUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(MomentumUnit other)
@@ -128,6 +165,10 @@
             return obj is MomentumUnit && Equals((MomentumUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

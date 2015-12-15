@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Inductance"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(InductanceUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{InductanceUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(InductanceUnitTypeConverter))]
     public struct InductanceUnit : IUnit, IUnit<Inductance>, IEquatable<InductanceUnit>
     {
         /// <summary>
@@ -94,6 +95,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="InductanceUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="InductanceUnit"/></returns>
         public static InductanceUnit Parse(string text)
         {
             return UnitParser<InductanceUnit>.Parse(text);
@@ -115,9 +122,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Henrys.
+        /// Converts a value from henrys.
         /// </summary>
-        /// <param name="value">The value in Henrys</param>
+        /// <param name="Henrys">The value in Henrys</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double henrys)
         {
@@ -127,15 +134,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Inductance(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Inductance(<paramref name="value"/>, this)</returns>
         public Inductance CreateQuantity(double value)
         {
             return new Inductance(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in InductanceUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Henrys
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -147,6 +154,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            InductanceUnit unit;
+            var paddedFormat = UnitFormatCache<InductanceUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<InductanceUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(InductanceUnit other)
@@ -164,6 +201,10 @@
             return obj is InductanceUnit && Equals((InductanceUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

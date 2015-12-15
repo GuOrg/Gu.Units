@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.CatalyticActivity"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(CatalyticActivityUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{CatalyticActivityUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(CatalyticActivityUnitTypeConverter))]
     public struct CatalyticActivityUnit : IUnit, IUnit<CatalyticActivity>, IEquatable<CatalyticActivityUnit>
     {
         /// <summary>
@@ -58,6 +59,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="CatalyticActivityUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="CatalyticActivityUnit"/></returns>
         public static CatalyticActivityUnit Parse(string text)
         {
             return UnitParser<CatalyticActivityUnit>.Parse(text);
@@ -79,9 +86,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Katals.
+        /// Converts a value from katals.
         /// </summary>
-        /// <param name="value">The value in Katals</param>
+        /// <param name="Katals">The value in Katals</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double katals)
         {
@@ -91,15 +98,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new CatalyticActivity(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new CatalyticActivity(<paramref name="value"/>, this)</returns>
         public CatalyticActivity CreateQuantity(double value)
         {
             return new CatalyticActivity(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in CatalyticActivityUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Katals
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -111,6 +118,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            CatalyticActivityUnit unit;
+            var paddedFormat = UnitFormatCache<CatalyticActivityUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<CatalyticActivityUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(CatalyticActivityUnit other)
@@ -128,6 +165,10 @@
             return obj is CatalyticActivityUnit && Equals((CatalyticActivityUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

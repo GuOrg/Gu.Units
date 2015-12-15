@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.VolumetricFlow"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(VolumetricFlowUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{VolumetricFlowUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(VolumetricFlowUnitTypeConverter))]
     public struct VolumetricFlowUnit : IUnit, IUnit<VolumetricFlow>, IEquatable<VolumetricFlowUnit>
     {
         /// <summary>
@@ -124,6 +125,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="VolumetricFlowUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="VolumetricFlowUnit"/></returns>
         public static VolumetricFlowUnit Parse(string text)
         {
             return UnitParser<VolumetricFlowUnit>.Parse(text);
@@ -145,9 +152,9 @@
         }
 
         /// <summary>
-        /// Converts a value from CubicMetresPerSecond.
+        /// Converts a value from cubicMetresPerSecond.
         /// </summary>
-        /// <param name="value">The value in CubicMetresPerSecond</param>
+        /// <param name="CubicMetresPerSecond">The value in CubicMetresPerSecond</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double cubicMetresPerSecond)
         {
@@ -157,15 +164,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new VolumetricFlow(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new VolumetricFlow(<paramref name="value"/>, this)</returns>
         public VolumetricFlow CreateQuantity(double value)
         {
             return new VolumetricFlow(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in VolumetricFlowUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in CubicMetresPerSecond
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -177,6 +184,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            VolumetricFlowUnit unit;
+            var paddedFormat = UnitFormatCache<VolumetricFlowUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<VolumetricFlowUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(VolumetricFlowUnit other)
@@ -194,6 +231,10 @@
             return obj is VolumetricFlowUnit && Equals((VolumetricFlowUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

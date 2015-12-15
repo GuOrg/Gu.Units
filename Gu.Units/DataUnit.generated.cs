@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Data"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(DataUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{DataUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(DataUnitTypeConverter))]
     public struct DataUnit : IUnit, IUnit<Data>, IEquatable<DataUnit>
     {
         /// <summary>
@@ -106,6 +107,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="DataUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="DataUnit"/></returns>
         public static DataUnit Parse(string text)
         {
             return UnitParser<DataUnit>.Parse(text);
@@ -127,9 +134,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Bits.
+        /// Converts a value from bits.
         /// </summary>
-        /// <param name="value">The value in Bits</param>
+        /// <param name="Bits">The value in Bits</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double bits)
         {
@@ -139,15 +146,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Data(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Data(<paramref name="value"/>, this)</returns>
         public Data CreateQuantity(double value)
         {
             return new Data(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in DataUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Bits
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -159,6 +166,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            DataUnit unit;
+            var paddedFormat = UnitFormatCache<DataUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<DataUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(DataUnit other)
@@ -176,6 +213,10 @@
             return obj is DataUnit && Equals((DataUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

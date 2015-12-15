@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Wavenumber"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(WavenumberUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{WavenumberUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(WavenumberUnitTypeConverter))]
     public struct WavenumberUnit : IUnit, IUnit<Wavenumber>, IEquatable<WavenumberUnit>
     {
         /// <summary>
@@ -58,6 +59,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="WavenumberUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="WavenumberUnit"/></returns>
         public static WavenumberUnit Parse(string text)
         {
             return UnitParser<WavenumberUnit>.Parse(text);
@@ -79,9 +86,9 @@
         }
 
         /// <summary>
-        /// Converts a value from ReciprocalMetres.
+        /// Converts a value from reciprocalMetres.
         /// </summary>
-        /// <param name="value">The value in ReciprocalMetres</param>
+        /// <param name="ReciprocalMetres">The value in ReciprocalMetres</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double reciprocalMetres)
         {
@@ -91,15 +98,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Wavenumber(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Wavenumber(<paramref name="value"/>, this)</returns>
         public Wavenumber CreateQuantity(double value)
         {
             return new Wavenumber(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in WavenumberUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in ReciprocalMetres
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -111,6 +118,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            WavenumberUnit unit;
+            var paddedFormat = UnitFormatCache<WavenumberUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<WavenumberUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(WavenumberUnit other)
@@ -128,6 +165,10 @@
             return obj is WavenumberUnit && Equals((WavenumberUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

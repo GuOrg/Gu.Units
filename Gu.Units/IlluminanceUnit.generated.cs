@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Illuminance"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(IlluminanceUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{IlluminanceUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(IlluminanceUnitTypeConverter))]
     public struct IlluminanceUnit : IUnit, IUnit<Illuminance>, IEquatable<IlluminanceUnit>
     {
         /// <summary>
@@ -58,6 +59,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="IlluminanceUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="IlluminanceUnit"/></returns>
         public static IlluminanceUnit Parse(string text)
         {
             return UnitParser<IlluminanceUnit>.Parse(text);
@@ -79,9 +86,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Lux.
+        /// Converts a value from lux.
         /// </summary>
-        /// <param name="value">The value in Lux</param>
+        /// <param name="Lux">The value in Lux</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double lux)
         {
@@ -91,15 +98,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Illuminance(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Illuminance(<paramref name="value"/>, this)</returns>
         public Illuminance CreateQuantity(double value)
         {
             return new Illuminance(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in IlluminanceUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Lux
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -111,6 +118,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            IlluminanceUnit unit;
+            var paddedFormat = UnitFormatCache<IlluminanceUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<IlluminanceUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(IlluminanceUnit other)
@@ -128,6 +165,10 @@
             return obj is IlluminanceUnit && Equals((IlluminanceUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

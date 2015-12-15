@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.AnglePerUnitless"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(AnglePerUnitlessUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{AnglePerUnitlessUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(AnglePerUnitlessUnitTypeConverter))]
     public struct AnglePerUnitlessUnit : IUnit, IUnit<AnglePerUnitless>, IEquatable<AnglePerUnitlessUnit>
     {
         /// <summary>
@@ -70,6 +71,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="AnglePerUnitlessUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="AnglePerUnitlessUnit"/></returns>
         public static AnglePerUnitlessUnit Parse(string text)
         {
             return UnitParser<AnglePerUnitlessUnit>.Parse(text);
@@ -91,9 +98,9 @@
         }
 
         /// <summary>
-        /// Converts a value from RadiansPerUnitless.
+        /// Converts a value from radiansPerUnitless.
         /// </summary>
-        /// <param name="value">The value in RadiansPerUnitless</param>
+        /// <param name="RadiansPerUnitless">The value in RadiansPerUnitless</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double radiansPerUnitless)
         {
@@ -103,15 +110,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new AnglePerUnitless(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new AnglePerUnitless(<paramref name="value"/>, this)</returns>
         public AnglePerUnitless CreateQuantity(double value)
         {
             return new AnglePerUnitless(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in AnglePerUnitlessUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in RadiansPerUnitless
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -123,6 +130,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            AnglePerUnitlessUnit unit;
+            var paddedFormat = UnitFormatCache<AnglePerUnitlessUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<AnglePerUnitlessUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(AnglePerUnitlessUnit other)
@@ -140,6 +177,10 @@
             return obj is AnglePerUnitlessUnit && Equals((AnglePerUnitlessUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

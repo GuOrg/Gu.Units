@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Resistance"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(ResistanceUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{ResistanceUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(ResistanceUnitTypeConverter))]
     public struct ResistanceUnit : IUnit, IUnit<Resistance>, IEquatable<ResistanceUnit>
     {
         /// <summary>
@@ -82,6 +83,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="ResistanceUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="ResistanceUnit"/></returns>
         public static ResistanceUnit Parse(string text)
         {
             return UnitParser<ResistanceUnit>.Parse(text);
@@ -103,9 +110,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Ohm.
+        /// Converts a value from ohm.
         /// </summary>
-        /// <param name="value">The value in Ohm</param>
+        /// <param name="Ohm">The value in Ohm</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double ohm)
         {
@@ -115,15 +122,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Resistance(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Resistance(<paramref name="value"/>, this)</returns>
         public Resistance CreateQuantity(double value)
         {
             return new Resistance(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in ResistanceUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Ohm
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -135,6 +142,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            ResistanceUnit unit;
+            var paddedFormat = UnitFormatCache<ResistanceUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<ResistanceUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(ResistanceUnit other)
@@ -152,6 +189,10 @@
             return obj is ResistanceUnit && Equals((ResistanceUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

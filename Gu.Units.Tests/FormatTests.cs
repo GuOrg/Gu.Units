@@ -106,6 +106,7 @@
 
         private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
         private const char MultiplyDot = '⋅';
+
         [Test]
         public void FormatPressure()
         {

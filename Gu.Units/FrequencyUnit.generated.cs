@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Frequency"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(FrequencyUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{FrequencyUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(FrequencyUnitTypeConverter))]
     public struct FrequencyUnit : IUnit, IUnit<Frequency>, IEquatable<FrequencyUnit>
     {
         /// <summary>
@@ -82,6 +83,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="FrequencyUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="FrequencyUnit"/></returns>
         public static FrequencyUnit Parse(string text)
         {
             return UnitParser<FrequencyUnit>.Parse(text);
@@ -103,9 +110,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Hertz.
+        /// Converts a value from hertz.
         /// </summary>
-        /// <param name="value">The value in Hertz</param>
+        /// <param name="Hertz">The value in Hertz</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double hertz)
         {
@@ -115,15 +122,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Frequency(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Frequency(<paramref name="value"/>, this)</returns>
         public Frequency CreateQuantity(double value)
         {
             return new Frequency(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in FrequencyUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Hertz
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -135,6 +142,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            FrequencyUnit unit;
+            var paddedFormat = UnitFormatCache<FrequencyUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<FrequencyUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(FrequencyUnit other)
@@ -152,6 +189,10 @@
             return obj is FrequencyUnit && Equals((FrequencyUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

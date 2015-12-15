@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.SpecificVolume"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(SpecificVolumeUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{SpecificVolumeUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(SpecificVolumeUnitTypeConverter))]
     public struct SpecificVolumeUnit : IUnit, IUnit<SpecificVolume>, IEquatable<SpecificVolumeUnit>
     {
         /// <summary>
@@ -70,6 +71,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="SpecificVolumeUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="SpecificVolumeUnit"/></returns>
         public static SpecificVolumeUnit Parse(string text)
         {
             return UnitParser<SpecificVolumeUnit>.Parse(text);
@@ -91,9 +98,9 @@
         }
 
         /// <summary>
-        /// Converts a value from CubicMetresPerKilogram.
+        /// Converts a value from cubicMetresPerKilogram.
         /// </summary>
-        /// <param name="value">The value in CubicMetresPerKilogram</param>
+        /// <param name="CubicMetresPerKilogram">The value in CubicMetresPerKilogram</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double cubicMetresPerKilogram)
         {
@@ -103,15 +110,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new SpecificVolume(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new SpecificVolume(<paramref name="value"/>, this)</returns>
         public SpecificVolume CreateQuantity(double value)
         {
             return new SpecificVolume(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in SpecificVolumeUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in CubicMetresPerKilogram
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -123,6 +130,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            SpecificVolumeUnit unit;
+            var paddedFormat = UnitFormatCache<SpecificVolumeUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<SpecificVolumeUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(SpecificVolumeUnit other)
@@ -140,6 +177,10 @@
             return obj is SpecificVolumeUnit && Equals((SpecificVolumeUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

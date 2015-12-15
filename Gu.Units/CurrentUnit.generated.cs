@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Current"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(CurrentUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{CurrentUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(CurrentUnitTypeConverter))]
     public struct CurrentUnit : IUnit, IUnit<Current>, IEquatable<CurrentUnit>
     {
         /// <summary>
@@ -94,6 +95,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="CurrentUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="CurrentUnit"/></returns>
         public static CurrentUnit Parse(string text)
         {
             return UnitParser<CurrentUnit>.Parse(text);
@@ -115,9 +122,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Amperes.
+        /// Converts a value from amperes.
         /// </summary>
-        /// <param name="value">The value in Amperes</param>
+        /// <param name="Amperes">The value in Amperes</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double amperes)
         {
@@ -127,15 +134,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Current(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Current(<paramref name="value"/>, this)</returns>
         public Current CreateQuantity(double value)
         {
             return new Current(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in CurrentUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Amperes
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -147,6 +154,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            CurrentUnit unit;
+            var paddedFormat = UnitFormatCache<CurrentUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<CurrentUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(CurrentUnit other)
@@ -164,6 +201,10 @@
             return obj is CurrentUnit && Equals((CurrentUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

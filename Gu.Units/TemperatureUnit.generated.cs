@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Temperature"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(TemperatureUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{TemperatureUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(TemperatureUnitTypeConverter))]
     public struct TemperatureUnit : IUnit, IUnit<Temperature>, IEquatable<TemperatureUnit>
     {
         /// <summary>
@@ -70,6 +71,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="TemperatureUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="TemperatureUnit"/></returns>
         public static TemperatureUnit Parse(string text)
         {
             return UnitParser<TemperatureUnit>.Parse(text);
@@ -91,9 +98,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Kelvin.
+        /// Converts a value from kelvin.
         /// </summary>
-        /// <param name="value">The value in Kelvin</param>
+        /// <param name="Kelvin">The value in Kelvin</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double kelvin)
         {
@@ -103,15 +110,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Temperature(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Temperature(<paramref name="value"/>, this)</returns>
         public Temperature CreateQuantity(double value)
         {
             return new Temperature(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in TemperatureUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Kelvin
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -123,6 +130,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            TemperatureUnit unit;
+            var paddedFormat = UnitFormatCache<TemperatureUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<TemperatureUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(TemperatureUnit other)
@@ -140,6 +177,10 @@
             return obj is TemperatureUnit && Equals((TemperatureUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

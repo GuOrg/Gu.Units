@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.Energy"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(EnergyUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{EnergyUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(EnergyUnitTypeConverter))]
     public struct EnergyUnit : IUnit, IUnit<Energy>, IEquatable<EnergyUnit>
     {
         /// <summary>
@@ -100,6 +101,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="EnergyUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="EnergyUnit"/></returns>
         public static EnergyUnit Parse(string text)
         {
             return UnitParser<EnergyUnit>.Parse(text);
@@ -121,9 +128,9 @@
         }
 
         /// <summary>
-        /// Converts a value from Joules.
+        /// Converts a value from joules.
         /// </summary>
-        /// <param name="value">The value in Joules</param>
+        /// <param name="Joules">The value in Joules</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double joules)
         {
@@ -133,15 +140,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new Energy(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new Energy(<paramref name="value"/>, this)</returns>
         public Energy CreateQuantity(double value)
         {
             return new Energy(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in EnergyUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in Joules
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -153,6 +160,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            EnergyUnit unit;
+            var paddedFormat = UnitFormatCache<EnergyUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<EnergyUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(EnergyUnit other)
@@ -170,6 +207,10 @@
             return obj is EnergyUnit && Equals((EnergyUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)

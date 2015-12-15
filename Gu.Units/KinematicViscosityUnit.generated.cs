@@ -8,7 +8,8 @@
     /// A type for the unit <see cref="Gu.Units.KinematicViscosity"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
-    [Serializable, TypeConverter(typeof(KinematicViscosityUnitTypeConverter)), DebuggerDisplay("1{symbol} == {ToSiUnit(1)}{KinematicViscosityUnit.symbol}")]
+    [Serializable]
+    [TypeConverter(typeof(KinematicViscosityUnitTypeConverter))]
     public struct KinematicViscosityUnit : IUnit, IUnit<KinematicViscosity>, IEquatable<KinematicViscosityUnit>
     {
         /// <summary>
@@ -58,6 +59,12 @@
             return !left.Equals(right);
         }
 
+        /// <summary>
+        /// Constructs a <see cref="KinematicViscosityUnit"/> from a string.
+        /// Leading and trailing whitespace characters are allowed.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns>An instance of <see cref="KinematicViscosityUnit"/></returns>
         public static KinematicViscosityUnit Parse(string text)
         {
             return UnitParser<KinematicViscosityUnit>.Parse(text);
@@ -79,9 +86,9 @@
         }
 
         /// <summary>
-        /// Converts a value from SquareMetresPerSecond.
+        /// Converts a value from squareMetresPerSecond.
         /// </summary>
-        /// <param name="value">The value in SquareMetresPerSecond</param>
+        /// <param name="SquareMetresPerSecond">The value in SquareMetresPerSecond</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double squareMetresPerSecond)
         {
@@ -91,15 +98,15 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
-        /// <returns>new KinematicViscosity(value, this)</returns>
+        /// <param name="value">The scalar value"</param>
+        /// <returns>new KinematicViscosity(<paramref name="value"/>, this)</returns>
         public KinematicViscosity CreateQuantity(double value)
         {
             return new KinematicViscosity(value, this);
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in KinematicViscosityUnit
+        /// Gets the scalar value of <paramref name="quantity"/> in SquareMetresPerSecond
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
@@ -111,6 +118,36 @@
         public override string ToString()
         {
             return this.symbol;
+        }
+
+        public string ToString(string format)
+        {
+            KinematicViscosityUnit unit;
+            var paddedFormat = UnitFormatCache<KinematicViscosityUnit>.GetOrCreate(format, out unit);
+            if (unit != this)
+            {
+                return format;
+            }
+
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
+        }
+
+        public string ToString(SymbolFormat format)
+        {
+            var paddedFormat = UnitFormatCache<KinematicViscosityUnit>.GetOrCreate(this, format);
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(paddedFormat.PrePadding);
+                builder.Append(paddedFormat.Format);
+                builder.Append(paddedFormat.PostPadding);
+                return builder.ToString();
+            }
         }
 
         public bool Equals(KinematicViscosityUnit other)
@@ -128,6 +165,10 @@
             return obj is KinematicViscosityUnit && Equals((KinematicViscosityUnit)obj);
         }
 
+        /// <summary>
+        /// Returns the hashcode for this <see cref="LengthUnit"/>
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (this.symbol == null)
