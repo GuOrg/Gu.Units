@@ -1,0 +1,155 @@
+﻿
+Read Settings and found 50 units
+
+//-> Acceleration.generated.cs
+
+//-> AmountOfSubstance.generated.cs
+
+//-> Angle.generated.cs
+
+//-> AnglePerUnitless.generated.cs
+
+//-> AngularAcceleration.generated.cs
+
+//-> AngularJerk.generated.cs
+
+//-> AngularSpeed.generated.cs
+
+//-> Area.generated.cs
+
+//-> AreaDensity.generated.cs
+
+//-> Capacitance.generated.cs
+
+//-> CatalyticActivity.generated.cs
+
+//-> Current.generated.cs
+
+//-> Data.generated.cs
+
+//-> Density.generated.cs
+
+//-> ElectricalConductance.generated.cs
+
+//-> ElectricCharge.generated.cs
+
+//-> Energy.generated.cs
+
+//-> Flexibility.generated.cs
+
+//-> Force.generated.cs
+
+//-> ForcePerUnitless.generated.cs
+
+//-> Frequency.generated.cs
+
+//-> Illuminance.generated.cs
+
+//-> Inductance.generated.cs
+
+//-> Jerk.generated.cs
+
+//-> KinematicViscosity.generated.cs
+
+//-> Length.generated.cs
+
+//-> LengthPerUnitless.generated.cs
+
+//-> LuminousFlux.generated.cs
+
+//-> LuminousIntensity.generated.cs
+
+//-> MagneticFieldStrength.generated.cs
+
+//-> MagneticFlux.generated.cs
+
+//-> Mass.generated.cs
+
+//-> MassFlow.generated.cs
+
+//-> Momentum.generated.cs
+
+//-> Power.generated.cs
+
+//-> Pressure.generated.cs
+
+//-> Resistance.generated.cs
+
+//-> SolidAngle.generated.cs
+
+//-> SpecificEnergy.generated.cs
+
+//-> SpecificVolume.generated.cs
+
+//-> Speed.generated.cs
+
+//-> Stiffness.generated.cs
+
+//-> Temperature.generated.cs
+
+//-> Time.generated.cs
+
+//-> Torque.generated.cs
+
+//-> Unitless.generated.cs
+
+//-> Wavenumber.generated.cs
+
+//-> Voltage.generated.cs
+
+//-> Volume.generated.cs
+
+//-> VolumetricFlow.generated.cs
+// Generated helper templates
+// Gu.Units\Gu.Units\Quantties.txt4
+// Generated items
+// Gu.Units\Gu.Units\KinematicViscosity.generated.cs
+// Gu.Units\Gu.Units\MassFlow.generated.cs
+// Gu.Units\Gu.Units\SpecificVolume.generated.cs
+// Gu.Units\Gu.Units\AreaDensity.generated.cs
+// Gu.Units\Gu.Units\Wavenumber.generated.cs
+// Gu.Units\Gu.Units\Momentum.generated.cs
+// Gu.Units\Gu.Units\CatalyticActivity.generated.cs
+// Gu.Units\Gu.Units\MagneticFieldStrength.generated.cs
+// Gu.Units\Gu.Units\ElectricalConductance.generated.cs
+// Gu.Units\Gu.Units\MagneticFlux.generated.cs
+// Gu.Units\Gu.Units\Illuminance.generated.cs
+// Gu.Units\Gu.Units\LuminousFlux.generated.cs
+// Gu.Units\Gu.Units\ForcePerUnitless.generated.cs
+// Gu.Units\Gu.Units\AnglePerUnitless.generated.cs
+// Gu.Units\Gu.Units\LengthPerUnitless.generated.cs
+// Gu.Units\Gu.Units\Jerk.generated.cs
+// Gu.Units\Gu.Units\AngularJerk.generated.cs
+// Gu.Units\Gu.Units\AngularAcceleration.generated.cs
+// Gu.Units\Gu.Units\Flexibility.generated.cs
+// Gu.Units\Gu.Units\Capacitance.generated.cs
+// Gu.Units\Gu.Units\Inductance.generated.cs
+// Gu.Units\Gu.Units\ElectricCharge.generated.cs
+// Gu.Units\Gu.Units\SpecificEnergy.generated.cs
+// Gu.Units\Gu.Units\Resistance.generated.cs
+// Gu.Units\Gu.Units\Voltage.generated.cs
+// Gu.Units\Gu.Units\VolumetricFlow.generated.cs
+// Gu.Units\Gu.Units\Stiffness.generated.cs
+// Gu.Units\Gu.Units\Torque.generated.cs
+// Gu.Units\Gu.Units\Acceleration.generated.cs
+// Gu.Units\Gu.Units\Frequency.generated.cs
+// Gu.Units\Gu.Units\AngularSpeed.generated.cs
+// Gu.Units\Gu.Units\Speed.generated.cs
+// Gu.Units\Gu.Units\Power.generated.cs
+// Gu.Units\Gu.Units\Energy.generated.cs
+// Gu.Units\Gu.Units\Density.generated.cs
+// Gu.Units\Gu.Units\Pressure.generated.cs
+// Gu.Units\Gu.Units\Force.generated.cs
+// Gu.Units\Gu.Units\Volume.generated.cs
+// Gu.Units\Gu.Units\Area.generated.cs
+// Gu.Units\Gu.Units\SolidAngle.generated.cs
+// Gu.Units\Gu.Units\AmountOfSubstance.generated.cs
+// Gu.Units\Gu.Units\Data.generated.cs
+// Gu.Units\Gu.Units\LuminousIntensity.generated.cs
+// Gu.Units\Gu.Units\Current.generated.cs
+// Gu.Units\Gu.Units\Unitless.generated.cs
+// Gu.Units\Gu.Units\Angle.generated.cs
+// Gu.Units\Gu.Units\Temperature.generated.cs
+// Gu.Units\Gu.Units\Time.generated.cs
+// Gu.Units\Gu.Units\Length.generated.cs
+// Gu.Units\Gu.Units\Mass.generated.cs

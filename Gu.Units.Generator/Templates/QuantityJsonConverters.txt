@@ -1,0 +1,155 @@
+﻿
+Read Settings found 50 units
+
+//-> AccelerationJsonConverter.generated.cs
+
+//-> AmountOfSubstanceJsonConverter.generated.cs
+
+//-> AngleJsonConverter.generated.cs
+
+//-> AnglePerUnitlessJsonConverter.generated.cs
+
+//-> AngularAccelerationJsonConverter.generated.cs
+
+//-> AngularJerkJsonConverter.generated.cs
+
+//-> AngularSpeedJsonConverter.generated.cs
+
+//-> AreaDensityJsonConverter.generated.cs
+
+//-> AreaJsonConverter.generated.cs
+
+//-> CapacitanceJsonConverter.generated.cs
+
+//-> CatalyticActivityJsonConverter.generated.cs
+
+//-> CurrentJsonConverter.generated.cs
+
+//-> DataJsonConverter.generated.cs
+
+//-> DensityJsonConverter.generated.cs
+
+//-> ElectricalConductanceJsonConverter.generated.cs
+
+//-> ElectricChargeJsonConverter.generated.cs
+
+//-> EnergyJsonConverter.generated.cs
+
+//-> FlexibilityJsonConverter.generated.cs
+
+//-> ForceJsonConverter.generated.cs
+
+//-> ForcePerUnitlessJsonConverter.generated.cs
+
+//-> FrequencyJsonConverter.generated.cs
+
+//-> IlluminanceJsonConverter.generated.cs
+
+//-> InductanceJsonConverter.generated.cs
+
+//-> JerkJsonConverter.generated.cs
+
+//-> KinematicViscosityJsonConverter.generated.cs
+
+//-> LengthJsonConverter.generated.cs
+
+//-> LengthPerUnitlessJsonConverter.generated.cs
+
+//-> LuminousFluxJsonConverter.generated.cs
+
+//-> LuminousIntensityJsonConverter.generated.cs
+
+//-> MagneticFieldStrengthJsonConverter.generated.cs
+
+//-> MagneticFluxJsonConverter.generated.cs
+
+//-> MassFlowJsonConverter.generated.cs
+
+//-> MassJsonConverter.generated.cs
+
+//-> MomentumJsonConverter.generated.cs
+
+//-> PowerJsonConverter.generated.cs
+
+//-> PressureJsonConverter.generated.cs
+
+//-> ResistanceJsonConverter.generated.cs
+
+//-> SolidAngleJsonConverter.generated.cs
+
+//-> SpecificEnergyJsonConverter.generated.cs
+
+//-> SpecificVolumeJsonConverter.generated.cs
+
+//-> SpeedJsonConverter.generated.cs
+
+//-> StiffnessJsonConverter.generated.cs
+
+//-> TemperatureJsonConverter.generated.cs
+
+//-> TimeJsonConverter.generated.cs
+
+//-> TorqueJsonConverter.generated.cs
+
+//-> UnitlessJsonConverter.generated.cs
+
+//-> WavenumberJsonConverter.generated.cs
+
+//-> VoltageJsonConverter.generated.cs
+
+//-> VolumeJsonConverter.generated.cs
+
+//-> VolumetricFlowJsonConverter.generated.cs
+// Generated helper templates
+// Gu.Units\Gu.Units.Json\QuantityJsonConverters.txt4
+// Generated items
+// Gu.Units\Gu.Units.Json\KinematicViscosityJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\MassFlowJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\SpecificVolumeJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\AreaDensityJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\WavenumberJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\MomentumJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\CatalyticActivityJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\MagneticFieldStrengthJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\ElectricalConductanceJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\MagneticFluxJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\IlluminanceJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\LuminousFluxJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\ForcePerUnitlessJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\AnglePerUnitlessJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\LengthPerUnitlessJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\JerkJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\AngularJerkJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\AngularAccelerationJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\FlexibilityJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\CapacitanceJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\InductanceJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\ElectricChargeJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\SpecificEnergyJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\ResistanceJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\VoltageJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\VolumetricFlowJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\StiffnessJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\TorqueJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\AccelerationJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\FrequencyJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\AngularSpeedJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\SpeedJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\PowerJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\EnergyJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\DensityJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\PressureJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\ForceJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\VolumeJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\AreaJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\SolidAngleJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\AmountOfSubstanceJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\DataJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\LuminousIntensityJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\CurrentJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\UnitlessJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\AngleJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\TemperatureJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\TimeJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\LengthJsonConverter.generated.cs
+// Gu.Units\Gu.Units.Json\MassJsonConverter.generated.cs

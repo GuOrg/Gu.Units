@@ -1,0 +1,155 @@
+﻿
+Read Settings found 50 units
+
+//-> AccelerationTypeConverter.generated.cs
+
+//-> AmountOfSubstanceTypeConverter.generated.cs
+
+//-> AnglePerUnitlessTypeConverter.generated.cs
+
+//-> AngleTypeConverter.generated.cs
+
+//-> AngularAccelerationTypeConverter.generated.cs
+
+//-> AngularJerkTypeConverter.generated.cs
+
+//-> AngularSpeedTypeConverter.generated.cs
+
+//-> AreaDensityTypeConverter.generated.cs
+
+//-> AreaTypeConverter.generated.cs
+
+//-> CapacitanceTypeConverter.generated.cs
+
+//-> CatalyticActivityTypeConverter.generated.cs
+
+//-> CurrentTypeConverter.generated.cs
+
+//-> DataTypeConverter.generated.cs
+
+//-> DensityTypeConverter.generated.cs
+
+//-> ElectricalConductanceTypeConverter.generated.cs
+
+//-> ElectricChargeTypeConverter.generated.cs
+
+//-> EnergyTypeConverter.generated.cs
+
+//-> FlexibilityTypeConverter.generated.cs
+
+//-> ForcePerUnitlessTypeConverter.generated.cs
+
+//-> ForceTypeConverter.generated.cs
+
+//-> FrequencyTypeConverter.generated.cs
+
+//-> IlluminanceTypeConverter.generated.cs
+
+//-> InductanceTypeConverter.generated.cs
+
+//-> JerkTypeConverter.generated.cs
+
+//-> KinematicViscosityTypeConverter.generated.cs
+
+//-> LengthPerUnitlessTypeConverter.generated.cs
+
+//-> LengthTypeConverter.generated.cs
+
+//-> LuminousFluxTypeConverter.generated.cs
+
+//-> LuminousIntensityTypeConverter.generated.cs
+
+//-> MagneticFieldStrengthTypeConverter.generated.cs
+
+//-> MagneticFluxTypeConverter.generated.cs
+
+//-> MassFlowTypeConverter.generated.cs
+
+//-> MassTypeConverter.generated.cs
+
+//-> MomentumTypeConverter.generated.cs
+
+//-> PowerTypeConverter.generated.cs
+
+//-> PressureTypeConverter.generated.cs
+
+//-> ResistanceTypeConverter.generated.cs
+
+//-> SolidAngleTypeConverter.generated.cs
+
+//-> SpecificEnergyTypeConverter.generated.cs
+
+//-> SpecificVolumeTypeConverter.generated.cs
+
+//-> SpeedTypeConverter.generated.cs
+
+//-> StiffnessTypeConverter.generated.cs
+
+//-> TemperatureTypeConverter.generated.cs
+
+//-> TimeTypeConverter.generated.cs
+
+//-> TorqueTypeConverter.generated.cs
+
+//-> UnitlessTypeConverter.generated.cs
+
+//-> WavenumberTypeConverter.generated.cs
+
+//-> VoltageTypeConverter.generated.cs
+
+//-> VolumetricFlowTypeConverter.generated.cs
+
+//-> VolumeTypeConverter.generated.cs
+// Generated helper templates
+// Gu.Units\Gu.Units\QuantityTypeConverters.txt4
+// Generated items
+// Gu.Units\Gu.Units\KinematicViscosityTypeConverter.generated.cs
+// Gu.Units\Gu.Units\MassFlowTypeConverter.generated.cs
+// Gu.Units\Gu.Units\SpecificVolumeTypeConverter.generated.cs
+// Gu.Units\Gu.Units\AreaDensityTypeConverter.generated.cs
+// Gu.Units\Gu.Units\WavenumberTypeConverter.generated.cs
+// Gu.Units\Gu.Units\MomentumTypeConverter.generated.cs
+// Gu.Units\Gu.Units\CatalyticActivityTypeConverter.generated.cs
+// Gu.Units\Gu.Units\MagneticFieldStrengthTypeConverter.generated.cs
+// Gu.Units\Gu.Units\ElectricalConductanceTypeConverter.generated.cs
+// Gu.Units\Gu.Units\MagneticFluxTypeConverter.generated.cs
+// Gu.Units\Gu.Units\IlluminanceTypeConverter.generated.cs
+// Gu.Units\Gu.Units\LuminousFluxTypeConverter.generated.cs
+// Gu.Units\Gu.Units\ForcePerUnitlessTypeConverter.generated.cs
+// Gu.Units\Gu.Units\AnglePerUnitlessTypeConverter.generated.cs
+// Gu.Units\Gu.Units\LengthPerUnitlessTypeConverter.generated.cs
+// Gu.Units\Gu.Units\JerkTypeConverter.generated.cs
+// Gu.Units\Gu.Units\AngularJerkTypeConverter.generated.cs
+// Gu.Units\Gu.Units\AngularAccelerationTypeConverter.generated.cs
+// Gu.Units\Gu.Units\FlexibilityTypeConverter.generated.cs
+// Gu.Units\Gu.Units\CapacitanceTypeConverter.generated.cs
+// Gu.Units\Gu.Units\InductanceTypeConverter.generated.cs
+// Gu.Units\Gu.Units\ElectricChargeTypeConverter.generated.cs
+// Gu.Units\Gu.Units\SpecificEnergyTypeConverter.generated.cs
+// Gu.Units\Gu.Units\ResistanceTypeConverter.generated.cs
+// Gu.Units\Gu.Units\VoltageTypeConverter.generated.cs
+// Gu.Units\Gu.Units\VolumetricFlowTypeConverter.generated.cs
+// Gu.Units\Gu.Units\StiffnessTypeConverter.generated.cs
+// Gu.Units\Gu.Units\TorqueTypeConverter.generated.cs
+// Gu.Units\Gu.Units\AccelerationTypeConverter.generated.cs
+// Gu.Units\Gu.Units\FrequencyTypeConverter.generated.cs
+// Gu.Units\Gu.Units\AngularSpeedTypeConverter.generated.cs
+// Gu.Units\Gu.Units\SpeedTypeConverter.generated.cs
+// Gu.Units\Gu.Units\PowerTypeConverter.generated.cs
+// Gu.Units\Gu.Units\EnergyTypeConverter.generated.cs
+// Gu.Units\Gu.Units\DensityTypeConverter.generated.cs
+// Gu.Units\Gu.Units\PressureTypeConverter.generated.cs
+// Gu.Units\Gu.Units\ForceTypeConverter.generated.cs
+// Gu.Units\Gu.Units\VolumeTypeConverter.generated.cs
+// Gu.Units\Gu.Units\AreaTypeConverter.generated.cs
+// Gu.Units\Gu.Units\SolidAngleTypeConverter.generated.cs
+// Gu.Units\Gu.Units\AmountOfSubstanceTypeConverter.generated.cs
+// Gu.Units\Gu.Units\DataTypeConverter.generated.cs
+// Gu.Units\Gu.Units\LuminousIntensityTypeConverter.generated.cs
+// Gu.Units\Gu.Units\CurrentTypeConverter.generated.cs
+// Gu.Units\Gu.Units\UnitlessTypeConverter.generated.cs
+// Gu.Units\Gu.Units\AngleTypeConverter.generated.cs
+// Gu.Units\Gu.Units\TemperatureTypeConverter.generated.cs
+// Gu.Units\Gu.Units\TimeTypeConverter.generated.cs
+// Gu.Units\Gu.Units\LengthTypeConverter.generated.cs
+// Gu.Units\Gu.Units\MassTypeConverter.generated.cs
