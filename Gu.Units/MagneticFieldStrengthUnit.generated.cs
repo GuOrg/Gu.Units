@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.MagneticFieldStrength"/>.
@@ -88,7 +87,7 @@
         /// <summary>
         /// Converts a value from teslas.
         /// </summary>
-        /// <param name="Teslas">The value in Teslas</param>
+        /// <param name="teslas">The value in Teslas</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double teslas)
         {

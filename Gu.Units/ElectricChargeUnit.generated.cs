@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.ElectricCharge"/>.
@@ -124,7 +123,7 @@
         /// <summary>
         /// Converts a value from coulombs.
         /// </summary>
-        /// <param name="Coulombs">The value in Coulombs</param>
+        /// <param name="coulombs">The value in Coulombs</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double coulombs)
         {

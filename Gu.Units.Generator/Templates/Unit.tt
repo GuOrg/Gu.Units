@@ -13,7 +13,6 @@ namespace <#= Settings.Namespace #>
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="<#= Settings.Namespace #>.<#= unit.QuantityName #>"/>.
@@ -112,7 +111,7 @@ namespace <#= Settings.Namespace #>
         /// <summary>
         /// Converts a value from <#= unit.ParameterName #>.
         /// </summary>
-        /// <param name="<#= unit.Name #>">The value in <#= unit.Name #></param>
+        /// <param name="<#= unit.ParameterName #>">The value in <#= unit.Name #></param>
         /// <returns>The converted value</returns>
         public double <#= Gu.Units.Generator.Names.FromSiUnit #>(double <#= unit.ParameterName #>)
         {

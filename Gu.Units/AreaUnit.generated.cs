@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Area"/>.
@@ -136,7 +135,7 @@
         /// <summary>
         /// Converts a value from squareMetres.
         /// </summary>
-        /// <param name="SquareMetres">The value in SquareMetres</param>
+        /// <param name="squareMetres">The value in SquareMetres</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double squareMetres)
         {

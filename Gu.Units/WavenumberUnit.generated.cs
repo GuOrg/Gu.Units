@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Wavenumber"/>.
@@ -88,7 +87,7 @@
         /// <summary>
         /// Converts a value from reciprocalMetres.
         /// </summary>
-        /// <param name="ReciprocalMetres">The value in ReciprocalMetres</param>
+        /// <param name="reciprocalMetres">The value in ReciprocalMetres</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double reciprocalMetres)
         {

@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Volume"/>.
@@ -136,7 +135,7 @@
         /// <summary>
         /// Converts a value from cubicMetres.
         /// </summary>
-        /// <param name="CubicMetres">The value in CubicMetres</param>
+        /// <param name="cubicMetres">The value in CubicMetres</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double cubicMetres)
         {

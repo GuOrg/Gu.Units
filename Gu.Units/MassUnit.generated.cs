@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Mass"/>.
@@ -106,7 +105,7 @@
         /// <summary>
         /// Converts a value from kilograms.
         /// </summary>
-        /// <param name="Kilograms">The value in Kilograms</param>
+        /// <param name="kilograms">The value in Kilograms</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double kilograms)
         {

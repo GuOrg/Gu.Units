@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.AreaDensity"/>.
@@ -88,7 +87,7 @@
         /// <summary>
         /// Converts a value from kilogramsPerSquareMetre.
         /// </summary>
-        /// <param name="KilogramsPerSquareMetre">The value in KilogramsPerSquareMetre</param>
+        /// <param name="kilogramsPerSquareMetre">The value in KilogramsPerSquareMetre</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double kilogramsPerSquareMetre)
         {

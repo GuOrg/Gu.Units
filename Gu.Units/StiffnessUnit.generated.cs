@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Stiffness"/>.
@@ -154,7 +153,7 @@
         /// <summary>
         /// Converts a value from newtonsPerMetre.
         /// </summary>
-        /// <param name="NewtonsPerMetre">The value in NewtonsPerMetre</param>
+        /// <param name="newtonsPerMetre">The value in NewtonsPerMetre</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double newtonsPerMetre)
         {

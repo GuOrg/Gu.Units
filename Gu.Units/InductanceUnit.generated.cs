@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Inductance"/>.
@@ -124,7 +123,7 @@
         /// <summary>
         /// Converts a value from henrys.
         /// </summary>
-        /// <param name="Henrys">The value in Henrys</param>
+        /// <param name="henrys">The value in Henrys</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double henrys)
         {

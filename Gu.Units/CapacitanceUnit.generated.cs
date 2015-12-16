@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Capacitance"/>.
@@ -124,7 +123,7 @@
         /// <summary>
         /// Converts a value from farads.
         /// </summary>
-        /// <param name="Farads">The value in Farads</param>
+        /// <param name="farads">The value in Farads</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double farads)
         {

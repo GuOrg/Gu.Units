@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Current"/>.
@@ -124,7 +123,7 @@
         /// <summary>
         /// Converts a value from amperes.
         /// </summary>
-        /// <param name="Amperes">The value in Amperes</param>
+        /// <param name="amperes">The value in Amperes</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double amperes)
         {

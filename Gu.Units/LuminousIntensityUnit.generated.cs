@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.LuminousIntensity"/>.
@@ -88,7 +87,7 @@
         /// <summary>
         /// Converts a value from candelas.
         /// </summary>
-        /// <param name="Candelas">The value in Candelas</param>
+        /// <param name="candelas">The value in Candelas</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double candelas)
         {

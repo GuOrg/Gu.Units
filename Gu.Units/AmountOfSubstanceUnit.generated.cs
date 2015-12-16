@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.AmountOfSubstance"/>.
@@ -88,7 +87,7 @@
         /// <summary>
         /// Converts a value from moles.
         /// </summary>
-        /// <param name="Moles">The value in Moles</param>
+        /// <param name="moles">The value in Moles</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double moles)
         {

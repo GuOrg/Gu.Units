@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.AnglePerUnitless"/>.
@@ -100,7 +99,7 @@
         /// <summary>
         /// Converts a value from radiansPerUnitless.
         /// </summary>
-        /// <param name="RadiansPerUnitless">The value in RadiansPerUnitless</param>
+        /// <param name="radiansPerUnitless">The value in RadiansPerUnitless</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double radiansPerUnitless)
         {

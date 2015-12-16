@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Flexibility"/>.
@@ -106,7 +105,7 @@
         /// <summary>
         /// Converts a value from metresPerNewton.
         /// </summary>
-        /// <param name="MetresPerNewton">The value in MetresPerNewton</param>
+        /// <param name="metresPerNewton">The value in MetresPerNewton</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double metresPerNewton)
         {

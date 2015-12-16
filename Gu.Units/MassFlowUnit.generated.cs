@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.MassFlow"/>.
@@ -88,7 +87,7 @@
         /// <summary>
         /// Converts a value from kilogramsPerSecond.
         /// </summary>
-        /// <param name="KilogramsPerSecond">The value in KilogramsPerSecond</param>
+        /// <param name="kilogramsPerSecond">The value in KilogramsPerSecond</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double kilogramsPerSecond)
         {

@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.LengthPerUnitless"/>.
@@ -106,7 +105,7 @@
         /// <summary>
         /// Converts a value from metresPerUnitless.
         /// </summary>
-        /// <param name="MetresPerUnitless">The value in MetresPerUnitless</param>
+        /// <param name="metresPerUnitless">The value in MetresPerUnitless</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double metresPerUnitless)
         {

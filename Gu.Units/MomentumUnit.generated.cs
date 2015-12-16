@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Momentum"/>.
@@ -88,7 +87,7 @@
         /// <summary>
         /// Converts a value from newtonSecond.
         /// </summary>
-        /// <param name="NewtonSecond">The value in NewtonSecond</param>
+        /// <param name="newtonSecond">The value in NewtonSecond</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double newtonSecond)
         {

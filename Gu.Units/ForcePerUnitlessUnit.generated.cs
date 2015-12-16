@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.ForcePerUnitless"/>.
@@ -112,7 +111,7 @@
         /// <summary>
         /// Converts a value from newtonsPerUnitless.
         /// </summary>
-        /// <param name="NewtonsPerUnitless">The value in NewtonsPerUnitless</param>
+        /// <param name="newtonsPerUnitless">The value in NewtonsPerUnitless</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double newtonsPerUnitless)
         {

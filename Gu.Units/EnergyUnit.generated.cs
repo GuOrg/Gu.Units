@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Energy"/>.
@@ -130,7 +129,7 @@
         /// <summary>
         /// Converts a value from joules.
         /// </summary>
-        /// <param name="Joules">The value in Joules</param>
+        /// <param name="joules">The value in Joules</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double joules)
         {

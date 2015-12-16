@@ -241,7 +241,13 @@ namespace Gu.Units.Wpf
 
         private void TryGetStringFormatFromBinding()
         {
-            var target = this.provideValueTarget?.TargetObject as DependencyObject;
+			if(this.provideValueTarget == null)
+			{
+				this.bindingStringFormat = null;
+				return;
+			}
+
+            var target = this.provideValueTarget.TargetObject as DependencyObject;
             Binding binding = null;
             if (target != null)
             {
@@ -252,7 +258,7 @@ namespace Gu.Units.Wpf
                 }
             }
 
-            binding = binding ?? this.provideValueTarget?.TargetObject as Binding;
+            binding = binding ?? this.provideValueTarget.TargetObject as Binding;
             this.bindingStringFormat = binding?.StringFormat;
             if (this.bindingStringFormat != null)
             {

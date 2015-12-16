@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Data"/>.
@@ -136,7 +135,7 @@
         /// <summary>
         /// Converts a value from bits.
         /// </summary>
-        /// <param name="Bits">The value in Bits</param>
+        /// <param name="bits">The value in Bits</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double bits)
         {

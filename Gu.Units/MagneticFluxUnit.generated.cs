@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.MagneticFlux"/>.
@@ -88,7 +87,7 @@
         /// <summary>
         /// Converts a value from webers.
         /// </summary>
-        /// <param name="Webers">The value in Webers</param>
+        /// <param name="webers">The value in Webers</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double webers)
         {

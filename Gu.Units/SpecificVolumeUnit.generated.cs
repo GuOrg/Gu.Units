@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.SpecificVolume"/>.
@@ -100,7 +99,7 @@
         /// <summary>
         /// Converts a value from cubicMetresPerKilogram.
         /// </summary>
-        /// <param name="CubicMetresPerKilogram">The value in CubicMetresPerKilogram</param>
+        /// <param name="cubicMetresPerKilogram">The value in CubicMetresPerKilogram</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double cubicMetresPerKilogram)
         {

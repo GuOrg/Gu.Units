@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Angle"/>.
@@ -94,7 +93,7 @@
         /// <summary>
         /// Converts a value from radians.
         /// </summary>
-        /// <param name="Radians">The value in Radians</param>
+        /// <param name="radians">The value in Radians</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double radians)
         {

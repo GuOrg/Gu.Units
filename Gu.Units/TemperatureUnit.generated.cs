@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Temperature"/>.
@@ -100,7 +99,7 @@
         /// <summary>
         /// Converts a value from kelvin.
         /// </summary>
-        /// <param name="Kelvin">The value in Kelvin</param>
+        /// <param name="kelvin">The value in Kelvin</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double kelvin)
         {

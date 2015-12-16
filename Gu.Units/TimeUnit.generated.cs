@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Time"/>.
@@ -118,7 +117,7 @@
         /// <summary>
         /// Converts a value from seconds.
         /// </summary>
-        /// <param name="Seconds">The value in Seconds</param>
+        /// <param name="seconds">The value in Seconds</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double seconds)
         {

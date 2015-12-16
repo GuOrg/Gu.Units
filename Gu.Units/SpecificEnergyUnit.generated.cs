@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.SpecificEnergy"/>.
@@ -88,7 +87,7 @@
         /// <summary>
         /// Converts a value from joulesPerKilogram.
         /// </summary>
-        /// <param name="JoulesPerKilogram">The value in JoulesPerKilogram</param>
+        /// <param name="joulesPerKilogram">The value in JoulesPerKilogram</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double joulesPerKilogram)
         {

@@ -2,117 +2,134 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
-    /// A type for the unit <see cref="Gu.Units.KinematicViscosity"/>.
+    /// A type for the unit <see cref="Gu.Units.Mass"/>.
 	/// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
-	[TypeConverter(typeof(KinematicViscosityUnitTypeConverter))]
-    public struct KinematicViscosityUnit : IUnit, IUnit<KinematicViscosity>, IEquatable<KinematicViscosityUnit>
+	[TypeConverter(typeof(MassUnitTypeConverter))]
+    public struct MassUnit : IUnit, IUnit<Mass>, IEquatable<MassUnit>
     {
         /// <summary>
-        /// The KinematicViscosityUnit unit
+        /// The MassUnit unit
         /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly KinematicViscosityUnit SquareMetresPerSecond = new KinematicViscosityUnit(squareMetresPerSecond => squareMetresPerSecond, squareMetresPerSecond => squareMetresPerSecond, "m²/s");
+        public static readonly MassUnit Kilograms = new MassUnit(kilograms => kilograms, kilograms => kilograms, "kg");
 
-		private readonly Func<double, double> toSquareMetresPerSecond;
-		private readonly Func<double, double> fromSquareMetresPerSecond;
+        /// <summary>
+        /// The Grams unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly MassUnit Grams = new MassUnit(grams => grams/1000, kilograms => 1000*kilograms, "g");
+
+        /// <summary>
+        /// The Milligrams unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly MassUnit Milligrams = new MassUnit(milligrams => milligrams/1000000, kilograms => 1000000*kilograms, "mg");
+
+        /// <summary>
+        /// The Micrograms unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly MassUnit Micrograms = new MassUnit(micrograms => micrograms/1000000000, kilograms => 1000000000*kilograms, "µg");
+
+		private readonly Func<double, double> toKilograms;
+		private readonly Func<double, double> fromKilograms;
         internal readonly string symbol;
 
-        public KinematicViscosityUnit(Func<double, double> toSquareMetresPerSecond, Func<double, double> fromSquareMetresPerSecond, string symbol)
+        public MassUnit(Func<double, double> toKilograms, Func<double, double> fromKilograms, string symbol)
         {
-			this.toSquareMetresPerSecond = toSquareMetresPerSecond;
-            this.fromSquareMetresPerSecond = fromSquareMetresPerSecond;
+			this.toKilograms = toKilograms;
+            this.fromKilograms = fromKilograms;
             this.symbol = symbol;
         }
 
 		/// <summary>
-        /// The symbol for the <see cref="Gu.Units.KinematicViscosityUnit"/>.
+        /// The symbol for the <see cref="Gu.Units.MassUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
 		/// <summary>
-        /// The default unit for <see cref="Gu.Units.KinematicViscosityUnit"/>
+        /// The default unit for <see cref="Gu.Units.MassUnit"/>
         /// </summary>
-        public KinematicViscosityUnit SiUnit => SquareMetresPerSecond;
+        public MassUnit SiUnit => Kilograms;
 
 		/// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.KinematicViscosityUnit"/>
+        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.MassUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => SquareMetresPerSecond;
+        IUnit IUnit.SiUnit => Kilograms;
 
-        public static KinematicViscosity operator *(double left, KinematicViscosityUnit right)
+        public static Mass operator *(double left, MassUnit right)
         {
-            return KinematicViscosity.From(left, right);
+            return Mass.From(left, right);
         }
 
-	    public static bool operator ==(KinematicViscosityUnit left, KinematicViscosityUnit right)
+	    public static bool operator ==(MassUnit left, MassUnit right)
         {
             return left.Equals(right);
         }
 
-        public static bool operator !=(KinematicViscosityUnit left, KinematicViscosityUnit right)
+        public static bool operator !=(MassUnit left, MassUnit right)
         {
             return !left.Equals(right);
         }
 
 		/// <summary>
-        /// Constructs a <see cref="KinematicViscosityUnit"/> from a string.
+        /// Constructs a <see cref="MassUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
         /// <param name="text"></param>
-        /// <returns>An instance of <see cref="KinematicViscosityUnit"/></returns>
-        public static KinematicViscosityUnit Parse(string text)
+        /// <returns>An instance of <see cref="MassUnit"/></returns>
+        public static MassUnit Parse(string text)
         {
-            return UnitParser<KinematicViscosityUnit>.Parse(text);
+            return UnitParser<MassUnit>.Parse(text);
         }
 
-        public static bool TryParse(string text, out KinematicViscosityUnit value)
+        public static bool TryParse(string text, out MassUnit value)
         {
-            return UnitParser<KinematicViscosityUnit>.TryParse(text, out value);
+            return UnitParser<MassUnit>.TryParse(text, out value);
         }
 
         /// <summary>
-        /// Converts <paramref name="value"/> to SquareMetresPerSecond.
+        /// Converts <paramref name="value"/> to Kilograms.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-			return this.toSquareMetresPerSecond(value);
+			return this.toKilograms(value);
         }
 
         /// <summary>
-        /// Converts a value from squareMetresPerSecond.
+        /// Converts a value from kilograms.
         /// </summary>
-        /// <param name="SquareMetresPerSecond">The value in SquareMetresPerSecond</param>
+        /// <param name="kilograms">The value in Kilograms</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double squareMetresPerSecond)
+        public double FromSiUnit(double kilograms)
         {
-			return this.fromSquareMetresPerSecond(squareMetresPerSecond);
+			return this.fromKilograms(kilograms);
         }
 
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
         /// <param name="value">The scalar value"</param>
-        /// <returns>new KinematicViscosity(<paramref name="value"/>, this)</returns>
-        public KinematicViscosity CreateQuantity(double value)
+        /// <returns>new Mass(<paramref name="value"/>, this)</returns>
+        public Mass CreateQuantity(double value)
         {
-            return new KinematicViscosity(value, this);
+            return new Mass(value, this);
         }
 
 		/// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in SquareMetresPerSecond
+        /// Gets the scalar value of <paramref name="quantity"/> in Kilograms
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
-        public double GetScalarValue(KinematicViscosity quantity)
+        public double GetScalarValue(Mass quantity)
         {
-            return FromSiUnit(quantity.squareMetresPerSecond);
+            return FromSiUnit(quantity.kilograms);
         }
 
         public override string ToString()
@@ -122,8 +139,8 @@
 		
         public string ToString(string format)
         {
-            KinematicViscosityUnit unit;
-            var paddedFormat = UnitFormatCache<KinematicViscosityUnit>.GetOrCreate(format, out unit);
+            MassUnit unit;
+            var paddedFormat = UnitFormatCache<MassUnit>.GetOrCreate(format, out unit);
             if (unit != this)
             {
                 return format;
@@ -140,7 +157,7 @@
 
         public string ToString(SymbolFormat format)
         {
-            var paddedFormat = UnitFormatCache<KinematicViscosityUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<MassUnit>.GetOrCreate(this, format);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);
@@ -150,7 +167,7 @@
             }
         }
 
-		public bool Equals(KinematicViscosityUnit other)
+		public bool Equals(MassUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -162,7 +179,7 @@
                 return false;
             }
 
-            return obj is KinematicViscosityUnit && Equals((KinematicViscosityUnit) obj);
+            return obj is MassUnit && Equals((MassUnit) obj);
         }
 
 		/// <summary>

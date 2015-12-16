@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.ElectricalConductance"/>.
@@ -88,7 +87,7 @@
         /// <summary>
         /// Converts a value from siemens.
         /// </summary>
-        /// <param name="Siemens">The value in Siemens</param>
+        /// <param name="siemens">The value in Siemens</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double siemens)
         {

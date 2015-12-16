@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Unitless"/>.
@@ -106,7 +105,7 @@
         /// <summary>
         /// Converts a value from scalar.
         /// </summary>
-        /// <param name="Scalar">The value in Scalar</param>
+        /// <param name="scalar">The value in Scalar</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double scalar)
         {

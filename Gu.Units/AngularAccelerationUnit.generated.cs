@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.AngularAcceleration"/>.
@@ -118,7 +117,7 @@
         /// <summary>
         /// Converts a value from radiansPerSecondSquared.
         /// </summary>
-        /// <param name="RadiansPerSecondSquared">The value in RadiansPerSecondSquared</param>
+        /// <param name="radiansPerSecondSquared">The value in RadiansPerSecondSquared</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double radiansPerSecondSquared)
         {

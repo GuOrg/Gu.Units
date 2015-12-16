@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Acceleration"/>.
@@ -124,7 +123,7 @@
         /// <summary>
         /// Converts a value from metresPerSecondSquared.
         /// </summary>
-        /// <param name="MetresPerSecondSquared">The value in MetresPerSecondSquared</param>
+        /// <param name="metresPerSecondSquared">The value in MetresPerSecondSquared</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double metresPerSecondSquared)
         {

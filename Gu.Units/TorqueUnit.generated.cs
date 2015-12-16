@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Torque"/>.
@@ -88,7 +87,7 @@
         /// <summary>
         /// Converts a value from newtonMetres.
         /// </summary>
-        /// <param name="NewtonMetres">The value in NewtonMetres</param>
+        /// <param name="newtonMetres">The value in NewtonMetres</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double newtonMetres)
         {

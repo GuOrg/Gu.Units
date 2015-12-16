@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Density"/>.
@@ -118,7 +117,7 @@
         /// <summary>
         /// Converts a value from kilogramsPerCubicMetre.
         /// </summary>
-        /// <param name="KilogramsPerCubicMetre">The value in KilogramsPerCubicMetre</param>
+        /// <param name="kilogramsPerCubicMetre">The value in KilogramsPerCubicMetre</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double kilogramsPerCubicMetre)
         {

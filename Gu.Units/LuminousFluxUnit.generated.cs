@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.LuminousFlux"/>.
@@ -88,7 +87,7 @@
         /// <summary>
         /// Converts a value from lumens.
         /// </summary>
-        /// <param name="Lumens">The value in Lumens</param>
+        /// <param name="lumens">The value in Lumens</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double lumens)
         {

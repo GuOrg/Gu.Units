@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Jerk"/>.
@@ -136,7 +135,7 @@
         /// <summary>
         /// Converts a value from metresPerSecondCubed.
         /// </summary>
-        /// <param name="MetresPerSecondCubed">The value in MetresPerSecondCubed</param>
+        /// <param name="metresPerSecondCubed">The value in MetresPerSecondCubed</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double metresPerSecondCubed)
         {

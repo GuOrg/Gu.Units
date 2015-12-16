@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.CatalyticActivity"/>.
@@ -88,7 +87,7 @@
         /// <summary>
         /// Converts a value from katals.
         /// </summary>
-        /// <param name="Katals">The value in Katals</param>
+        /// <param name="katals">The value in Katals</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double katals)
         {

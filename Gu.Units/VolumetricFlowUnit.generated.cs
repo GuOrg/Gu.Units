@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.VolumetricFlow"/>.
@@ -154,7 +153,7 @@
         /// <summary>
         /// Converts a value from cubicMetresPerSecond.
         /// </summary>
-        /// <param name="CubicMetresPerSecond">The value in CubicMetresPerSecond</param>
+        /// <param name="cubicMetresPerSecond">The value in CubicMetresPerSecond</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double cubicMetresPerSecond)
         {

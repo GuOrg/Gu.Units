@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Force"/>.
@@ -124,7 +123,7 @@
         /// <summary>
         /// Converts a value from newtons.
         /// </summary>
-        /// <param name="Newtons">The value in Newtons</param>
+        /// <param name="newtons">The value in Newtons</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double newtons)
         {

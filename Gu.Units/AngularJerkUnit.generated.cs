@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.AngularJerk"/>.
@@ -118,7 +117,7 @@
         /// <summary>
         /// Converts a value from radiansPerSecondCubed.
         /// </summary>
-        /// <param name="RadiansPerSecondCubed">The value in RadiansPerSecondCubed</param>
+        /// <param name="radiansPerSecondCubed">The value in RadiansPerSecondCubed</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double radiansPerSecondCubed)
         {

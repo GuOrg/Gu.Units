@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Resistance"/>.
@@ -112,7 +111,7 @@
         /// <summary>
         /// Converts a value from ohm.
         /// </summary>
-        /// <param name="Ohm">The value in Ohm</param>
+        /// <param name="ohm">The value in Ohm</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double ohm)
         {

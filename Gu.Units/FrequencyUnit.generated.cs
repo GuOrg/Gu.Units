@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Frequency"/>.
@@ -112,7 +111,7 @@
         /// <summary>
         /// Converts a value from hertz.
         /// </summary>
-        /// <param name="Hertz">The value in Hertz</param>
+        /// <param name="hertz">The value in Hertz</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double hertz)
         {

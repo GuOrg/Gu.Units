@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Power"/>.
@@ -124,7 +123,7 @@
         /// <summary>
         /// Converts a value from watts.
         /// </summary>
-        /// <param name="Watts">The value in Watts</param>
+        /// <param name="watts">The value in Watts</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double watts)
         {
