@@ -108,6 +108,7 @@
     <Compile Include="InductanceConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="Internal\BindingStringFormat.cs" />
     <Compile Include="JerkConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>

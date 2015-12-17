@@ -94,6 +94,19 @@
             }
 
             [Test]
+            public void WhenProvideValueTargetThrows()
+            {
+                var converter = new LengthConverter { Unit = LengthUnit.Metres };
+                var providerMock = new ServiceProviderMock();
+                providerMock.ProvideValueTargetMock.Setup(x => x.TargetObject).Throws<NullReferenceException>();
+
+                converter.ProvideValue(providerMock.Object);
+                var length = Length.FromMillimetres(1234);
+                var actual = converter.Convert(length, typeof(string), null, null);
+                Assert.AreEqual(1.234, actual);
+            }
+
+            [Test]
             public void WithBindingStringFormatAndExplicitStringFormat()
             {
                 var converter = new LengthConverter
@@ -109,12 +122,12 @@
                 converter.ProvideValue(providerMock.Object);
                 var length = Length.FromMillimetres(1234);
                 Gu.Units.Wpf.Is.DesignMode = true;
-                var ex = Assert.Throws<InvalidOperationException>(()=> converter.Convert(length, typeof(string), null, null));
+                var ex = Assert.Throws<InvalidOperationException>(() => converter.Convert(length, typeof(string), null, null));
                 var expected = "Both Binding.StringFormat and StringFormat are set.";
                 Assert.AreEqual(expected, ex.Message);
 
                 Gu.Units.Wpf.Is.DesignMode = false;
-                var convert = converter.Convert(length, typeof (string), null, null);
+                var convert = converter.Convert(length, typeof(string), null, null);
                 Assert.AreEqual(expected, convert);
             }
 

@@ -1,8 +1,8 @@
 ﻿using System.Runtime.CompilerServices;
 using Gu.Units;
 
-[assembly: TypeForwardedTo(typeof(KinematicViscosity))]
-[assembly: TypeForwardedTo(typeof(KinematicViscosityUnit))]
+[assembly: TypeForwardedTo(typeof(Mass))]
+[assembly: TypeForwardedTo(typeof(MassUnit))]
 
 namespace Gu.Units.Wpf
 {
@@ -14,27 +14,27 @@ namespace Gu.Units.Wpf
     using System.Windows.Markup;
 
     [MarkupExtensionReturnType(typeof(IValueConverter))]
-    public class KinematicViscosityConverter : MarkupExtension, IValueConverter
+    public class MassConverter : MarkupExtension, IValueConverter
     {
         private static readonly string StringFormatNotSet = "Not Set";
-        private KinematicViscosityUnit? unit;
+        private MassUnit? unit;
         private IProvideValueTarget provideValueTarget;
         private string stringFormat = StringFormatNotSet;
-        private QuantityFormat<KinematicViscosityUnit> quantityFormat;
+        private QuantityFormat<MassUnit> quantityFormat;
         private string bindingStringFormat = StringFormatNotSet;
         private string errorText;
 
-        public KinematicViscosityConverter()
+        public MassConverter()
         {
         }
 
-        public KinematicViscosityConverter([TypeConverter(typeof(KinematicViscosityUnitTypeConverter))]KinematicViscosityUnit unit)
+        public MassConverter([TypeConverter(typeof(MassUnitTypeConverter))]MassUnit unit)
         {
             Unit = unit;
         }
 
-        [ConstructorArgument("unit"), TypeConverter(typeof(KinematicViscosityUnitTypeConverter))]
-        public KinematicViscosityUnit? Unit
+        [ConstructorArgument("unit"), TypeConverter(typeof(MassUnitTypeConverter))]
+        public MassUnit? Unit
         {
             get { return this.unit; }
             set
@@ -82,9 +82,9 @@ namespace Gu.Units.Wpf
                 throw new ArgumentException(message, nameof(targetType));
             }
 
-            if (value != null && !(value is KinematicViscosity) && Is.DesignMode)
+            if (value != null && !(value is Mass) && Is.DesignMode)
             {
-                var message = $"{GetType().Name} only supports converting from {typeof(KinematicViscosity)}";
+                var message = $"{GetType().Name} only supports converting from {typeof(Mass)}";
                 throw new ArgumentException(message, nameof(value));
             }
 
@@ -117,14 +117,14 @@ namespace Gu.Units.Wpf
                     : null;
             }
 
-            var kinematicViscosity = (KinematicViscosity)value;
+            var mass = (Mass)value;
 
 			var format = this.bindingStringFormat != null && this.bindingStringFormat != StringFormatNotSet
                 ? this.bindingStringFormat
                 : null;
             if (format != null)
             {
-                return kinematicViscosity;
+                return mass;
             }
 
             format = this.stringFormat != null && this.stringFormat != StringFormatNotSet
@@ -133,19 +133,19 @@ namespace Gu.Units.Wpf
             if (format != null &&
                 (targetType == typeof(string) || targetType== typeof(object)))
             {
-                return kinematicViscosity.ToString(this.quantityFormat, culture);
+                return mass.ToString(this.quantityFormat, culture);
             }
 
 			
             if ((SymbolFormat != null || UnitInput == Wpf.UnitInput.SymbolRequired) &&
                (targetType == typeof(string) || targetType == typeof(object)))
             {
-                return kinematicViscosity.ToString(Unit.Value, SymbolFormat?? Units.SymbolFormat.FractionSuperScript, culture);
+                return mass.ToString(Unit.Value, SymbolFormat?? Units.SymbolFormat.FractionSuperScript, culture);
             }
 
             if (IsValidConvertTargetType(targetType))
             {
-                return kinematicViscosity.GetValue(this.unit.Value);
+                return mass.GetValue(this.unit.Value);
             }
 
             return value;
@@ -156,7 +156,7 @@ namespace Gu.Units.Wpf
             object parameter,
             CultureInfo culture)
         {
-            if (!(targetType == typeof(KinematicViscosity) || targetType == typeof(KinematicViscosity?)))
+            if (!(targetType == typeof(Mass) || targetType == typeof(Mass?)))
             {
                 var message = $"{GetType().Name} does not support converting to {targetType.Name}";
                 throw new NotSupportedException(message);
@@ -186,7 +186,7 @@ namespace Gu.Units.Wpf
 
             if (value is double)
             {
-                return new KinematicViscosity((double)value, this.unit.Value);
+                return new Mass((double)value, this.unit.Value);
             }
 
             var text = value as string;
@@ -203,7 +203,7 @@ namespace Gu.Units.Wpf
                         double d;
                         if (double.TryParse(text, NumberStyles.Float, culture, out d))
                         {
-                            return new KinematicViscosity(d, this.unit.Value);
+                            return new Mass(d, this.unit.Value);
                         }
 
                         return value; // returning raw to trigger error
@@ -218,7 +218,7 @@ namespace Gu.Units.Wpf
                             WhiteSpaceReader.TryRead(text, ref pos);
                             if (pos == text.Length)
                             {
-                                return new KinematicViscosity(d, this.unit.Value);
+                                return new Mass(d, this.unit.Value);
                             }
                         }
 
@@ -226,8 +226,8 @@ namespace Gu.Units.Wpf
                     }
                 case Wpf.UnitInput.SymbolRequired:
                     {
-                        KinematicViscosity result;
-                        if (KinematicViscosity.TryParse(text, NumberStyles.Float, culture, out result))
+                        Mass result;
+                        if (Mass.TryParse(text, NumberStyles.Float, culture, out result))
                         {
                             return result;
                         }
@@ -241,26 +241,7 @@ namespace Gu.Units.Wpf
 
         private void TryGetStringFormatFromBinding()
         {
-			if(this.provideValueTarget == null)
-			{
-				this.bindingStringFormat = null;
-				return;
-			}
-
-            var target = this.provideValueTarget.TargetObject as DependencyObject;
-            Binding binding = null;
-            if (target != null)
-            {
-                var targetProperty = this.provideValueTarget.TargetProperty as DependencyProperty;
-                if (targetProperty != null)
-                {
-                    binding = BindingOperations.GetBinding(target, targetProperty);
-                }
-            }
-
-            binding = binding ?? this.provideValueTarget.TargetObject as Binding;
-            this.bindingStringFormat = binding?.StringFormat;
-            if (this.bindingStringFormat != null)
+		    if (BindingStringFormat.Tryget(this.provideValueTarget, out this.bindingStringFormat))
             {
                 OnStringFormatChanged();
             }
@@ -283,7 +264,7 @@ namespace Gu.Units.Wpf
             var format = this.stringFormat == StringFormatNotSet
                 ? this.bindingStringFormat
                 : this.stringFormat;
-            if (StringFormatParser<KinematicViscosityUnit>.TryParse(format, out this.quantityFormat))
+            if (StringFormatParser<MassUnit>.TryParse(format, out this.quantityFormat))
             {
                 if (UnitInput == null && this.quantityFormat.SymbolFormat != null)
                 {

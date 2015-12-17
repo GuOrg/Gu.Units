@@ -102,4 +102,7 @@
       <Paket>True</Paket>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Internals\" />
+  </ItemGroup>
 </Project>
