@@ -93,6 +93,21 @@
                 Assert.AreEqual(length, actual);
             }
 
+            [TestCase(typeof(string), 1.234)]
+            [TestCase(typeof(double), 1.234)]
+            public void WithBindingStringFormatNull(Type targetType, object expected)
+            {
+                var converter = new LengthConverter { Unit = LengthUnit.Metres };
+                var providerMock = new ServiceProviderMock
+                {
+                    BindingStringFormat = null
+                };
+
+                converter.ProvideValue(providerMock.Object);
+                var length = Length.FromMillimetres(1234);
+                var actual = converter.Convert(length, targetType, null, CultureInfo.GetCultureInfo("sv-SE"));
+                Assert.AreEqual(expected, actual);
+            }
             [Test]
             public void WhenProvideValueTargetThrows()
             {

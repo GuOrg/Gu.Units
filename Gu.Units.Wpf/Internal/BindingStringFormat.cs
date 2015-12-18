@@ -30,6 +30,12 @@
 
                 binding = binding ?? provideValueTarget.TargetObject as Binding;
                 stringFormat = binding?.StringFormat;
+                if (string.IsNullOrWhiteSpace(stringFormat))
+                {
+                    stringFormat = null;
+                    return false;
+                }
+
                 return true;
             }
             catch (Exception)
