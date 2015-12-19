@@ -51,8 +51,14 @@
             var text = value as string;
             if (text != null)
             {
-                text = text.Trim();
-                return IlluminanceUnit.Parse(text);
+                IlluminanceUnit result;
+                if (IlluminanceUnit.TryParse(text, out result))
+                {
+                    return result;
+                }
+
+                var message = $"Could not convert the string '{text}' to an instance of IlluminanceUnit)";
+                throw new NotSupportedException(message);
             }
 
             return base.ConvertFrom(context, culture, value);

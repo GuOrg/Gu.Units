@@ -51,8 +51,14 @@
             var text = value as string;
             if (text != null)
             {
-                text = text.Trim();
-                return UnitlessUnit.Parse(text);
+                UnitlessUnit result;
+                if (UnitlessUnit.TryParse(text, out result))
+                {
+                    return result;
+                }
+
+                var message = $"Could not convert the string '{text}' to an instance of UnitlessUnit)";
+                throw new NotSupportedException(message);
             }
 
             return base.ConvertFrom(context, culture, value);

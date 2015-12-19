@@ -51,7 +51,6 @@
             var text = value as string;
             if (text != null)
             {
-                text = text.Trim();
                 return SolidAngle.Parse(text, culture);
             }
 

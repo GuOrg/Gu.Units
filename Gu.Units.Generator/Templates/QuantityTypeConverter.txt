@@ -7,15 +7,15 @@
     using System.Reflection;
 
     /// <devdoc>
-    /// <para>Provides a type converter to convert <see cref='Gu.Units.KinematicViscosity'/>
+    /// <para>Provides a type converter to convert <see cref='Gu.Units.Mass'/>
     /// objects to and from various
     /// other representations.</para>
     /// </devdoc>
-    public class KinematicViscosityTypeConverter : TypeConverter
+    public class MassTypeConverter : TypeConverter
     {
         /// <devdoc>
         ///    <para>Gets a value indicating whether this converter can
-        ///       convert an object in the given source type to a <see cref='Gu.Units.KinematicViscosity'/> object using the
+        ///       convert an object in the given source type to a <see cref='Gu.Units.Mass'/> object using the
         ///       specified context.</para>
         /// </devdoc>
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
@@ -43,7 +43,7 @@
         }
 
         /// <devdoc>
-        /// <para>Converts the given object to a <see cref='Gu.Units.KinematicViscosity'/>
+        /// <para>Converts the given object to a <see cref='Gu.Units.Mass'/>
         /// object.</para>
         /// </devdoc>
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
@@ -51,8 +51,7 @@
             var text = value as string;
             if (text != null)
             {
-                text = text.Trim();
-                return KinematicViscosity.Parse(text, culture);
+                return Mass.Parse(text, culture);
             }
 
             return base.ConvertFrom(context, culture, value);
@@ -72,9 +71,9 @@
                 throw new ArgumentNullException(nameof(destinationType));
             }
 
-            if (destinationType == typeof(InstanceDescriptor) && value is KinematicViscosity)
+            if (destinationType == typeof(InstanceDescriptor) && value is Mass)
             {
-                MethodInfo method = typeof(KinematicViscosity).GetMethod(nameof(KinematicViscosity.Parse), new Type[] { typeof(string) });
+                MethodInfo method = typeof(Mass).GetMethod(nameof(Mass.Parse), new Type[] { typeof(string) });
                 if (method != null)
                 {
                     return new InstanceDescriptor(method, new object[] { value.ToString() });

@@ -26,7 +26,7 @@
             }
 
             sw.Stop();
-            Console.WriteLine($"// {DateTime.Today.ToShortDateString()}|  Summing {n:N0} doubles took: {sw.ElapsedMilliseconds} ms");
+            Console.WriteLine($"// {DateTime.Today.ToShortDateString()}| Summing {n:N0} doubles took: {sw.ElapsedMilliseconds} ms");
             sw.Restart();
             var sum2 = Length.FromMetres(1);
             for (var i = 0; i < n; i++)
@@ -35,7 +35,7 @@
             }
 
             sw.Stop();
-            Console.WriteLine($"// {DateTime.Today.ToShortDateString()}|  Summing {n:N0} Lengths took: {sw.ElapsedMilliseconds} ms");
+            Console.WriteLine($"// {DateTime.Today.ToShortDateString()}| Summing {n:N0} Lengths took: {sw.ElapsedMilliseconds} ms");
         }
 
         // Summing 1E+007 Int32s took: 5 ms
@@ -52,7 +52,7 @@
                 sum1 += i;
             }
             sw.Stop();
-            Console.WriteLine($"// {DateTime.Today.ToShortDateString()}|  Summing {n:N0} ints    took: {sw.ElapsedMilliseconds} ms");
+            Console.WriteLine($"// {DateTime.Today.ToShortDateString()}| Summing {n:N0} ints    took: {sw.ElapsedMilliseconds} ms");
             sw.Restart();
             var sum2 = Length.FromMetres(1);
             for (var i = 0; i < n; i++)
@@ -60,8 +60,7 @@
                 sum2 += Length.FromMetres(i);
             }
             sw.Stop();
-            Console.WriteLine($"// {DateTime.Today.ToShortDateString()}|  Summing {n:N0} Lengths took: {sw.ElapsedMilliseconds} ms");
-
+            Console.WriteLine($"// {DateTime.Today.ToShortDateString()}| Summing {n:N0} Lengths took: {sw.ElapsedMilliseconds} ms");
         }
     }
 }

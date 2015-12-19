@@ -51,8 +51,14 @@
             var text = value as string;
             if (text != null)
             {
-                text = text.Trim();
-                return ForceUnit.Parse(text);
+                ForceUnit result;
+                if (ForceUnit.TryParse(text, out result))
+                {
+                    return result;
+                }
+
+                var message = $"Could not convert the string '{text}' to an instance of ForceUnit)";
+                throw new NotSupportedException(message);
             }
 
             return base.ConvertFrom(context, culture, value);

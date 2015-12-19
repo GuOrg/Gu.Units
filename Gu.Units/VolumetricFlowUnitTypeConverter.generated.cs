@@ -51,8 +51,14 @@
             var text = value as string;
             if (text != null)
             {
-                text = text.Trim();
-                return VolumetricFlowUnit.Parse(text);
+                VolumetricFlowUnit result;
+                if (VolumetricFlowUnit.TryParse(text, out result))
+                {
+                    return result;
+                }
+
+                var message = $"Could not convert the string '{text}' to an instance of VolumetricFlowUnit)";
+                throw new NotSupportedException(message);
             }
 
             return base.ConvertFrom(context, culture, value);

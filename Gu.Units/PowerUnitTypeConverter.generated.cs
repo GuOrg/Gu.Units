@@ -51,8 +51,14 @@
             var text = value as string;
             if (text != null)
             {
-                text = text.Trim();
-                return PowerUnit.Parse(text);
+                PowerUnit result;
+                if (PowerUnit.TryParse(text, out result))
+                {
+                    return result;
+                }
+
+                var message = $"Could not convert the string '{text}' to an instance of PowerUnit)";
+                throw new NotSupportedException(message);
             }
 
             return base.ConvertFrom(context, culture, value);

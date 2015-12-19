@@ -62,8 +62,14 @@ namespace <#= Settings.Namespace #>
             var text = value as string;
             if (text != null)
             {
-                text = text.Trim();
-                return <#= unit.ClassName #>.Parse(text);
+                <#= unit.ClassName #> result;
+                if (<#= unit.ClassName #>.TryParse(text, out result))
+                {
+                    return result;
+                }
+
+                var message = $"Could not convert the string '{text}' to an instance of <#= unit.ClassName #>)";
+                throw new NotSupportedException(message);
             }
 
             return base.ConvertFrom(context, culture, value);

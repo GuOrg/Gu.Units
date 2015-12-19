@@ -61,7 +61,6 @@ namespace <#= Settings.Namespace #>
             var text = value as string;
             if (text != null)
             {
-                text = text.Trim();
                 return <#= quantity.Name #>.Parse(text, culture);
             }
 

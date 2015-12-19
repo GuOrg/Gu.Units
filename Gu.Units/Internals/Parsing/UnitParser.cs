@@ -31,8 +31,10 @@ namespace Gu.Units
 
         internal static bool TryParse(string text, out TUnit value)
         {
-            var temp = 0;
-            return TryParse(text, ref temp, out value);
+            var pos = 0;
+            WhiteSpaceReader.TryRead(text, ref pos);
+            return TryParse(text, ref pos, out value) &&
+                   WhiteSpaceReader.IsRestWhiteSpace(text, pos);
         }
 
         internal static bool TryParse(string text, ref int pos, out TUnit result)
@@ -40,7 +42,6 @@ namespace Gu.Units
             var start = pos;
             if (UnitFormatCache<TUnit>.Cache.TryGetUnitForSymbol(text, ref pos, out result))
             {
-
                 return true;
             }
 
@@ -57,13 +58,13 @@ namespace Gu.Units
                     return false;
                 }
 
-                UnitFormatCache<TUnit>.Cache.Add(symbol, symbolsAndPowers);
+
                 if (UnitFormatCache<TUnit>.Cache.TryGetUnitForParts(symbolsAndPowers, out result))
                 {
+                    UnitFormatCache<TUnit>.Cache.Add(symbol, symbolsAndPowers);
                     UnitFormatCache<TUnit>.Cache.Add(symbol, result);
+                    return true;
                 }
-
-                return true;
             }
 
             pos = start;

@@ -1,10 +1,7 @@
 ﻿namespace Gu.Units.Tests
 {
-    using System.Globalization;
     using System.Reflection;
-    using System.Threading;
     using Gu.Units.Tests.Sources;
-    using Internals.Parsing;
     using NUnit.Framework;
 
     public class UnitTests
