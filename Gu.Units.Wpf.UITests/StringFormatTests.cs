@@ -28,9 +28,9 @@
 
                 converterCmBox.Enter(text);
                 converterMmBox.Click();
-                Assert.AreEqual("6.780\u00A0cm", converterCmBox.Text);
-                Assert.AreEqual("67.80\u00A0mm", converterMmBox.Text);
-                Assert.AreEqual("6.78\u00A0cm", bindinCmBox.Text);
+                Assert.AreEqual("6.78 cm", converterCmBox.Text);
+                Assert.AreEqual("67.800 mm", converterMmBox.Text);
+                Assert.AreEqual("6.78 cm", bindinCmBox.Text);
             }
         }
     }
