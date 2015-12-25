@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="Helpers\Info.cs" />
     <Compile Include="Helpers\UIItemExt.cs" />
+    <Compile Include="StringFormatTests.cs" />
+    <Compile Include="SymbolFormatTests.cs" />
     <Compile Include="InputOptionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitsOnlyViewTests.cs" />

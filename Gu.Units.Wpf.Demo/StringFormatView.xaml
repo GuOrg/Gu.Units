@@ -30,13 +30,20 @@
                Grid.Column="0"
                Content="Converter={units:LengthConverter StringFormat='F3 mm'}}" />
 
-        <TextBox Grid.Row="1" Text="{Binding Length, Converter={units:LengthConverter StringFormat='F3 mm'}}" />
+        <TextBox Grid.Row="1"
+                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.ConverterMillimetreFormat}"
+                 Text="{Binding Length,
+                                Converter={units:LengthConverter StringFormat='F3 mm'}}" />
 
         <Label Grid.Row="2"
                Grid.Column="0"
                Content="Binding Length, Converter={units:LengthConverter}, StringFormat='F2 cm'" />
 
-        <TextBox Grid.Row="3" Text="{Binding Length, Converter={units:LengthConverter}, StringFormat='F2 cm'}" />
+        <TextBox Grid.Row="3"
+                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.BindingCentimetreFormat}"
+                 Text="{Binding Length,
+                                Converter={units:LengthConverter},
+                                StringFormat='F2 cm'}" />
 
         <!--<Label Grid.Row="4"
                Grid.Column="0"
@@ -48,6 +55,10 @@
                Grid.Column="0"
                Content="Binding Length, Converter={units:LengthConverter}, StringFormat='{}{0:F2 cm}'" />
 
-        <TextBox Grid.Row="7" Text="{Binding Length, Converter={units:LengthConverter}, StringFormat='{}{0:F2 cm}'}" />
+        <TextBox Grid.Row="7"
+                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.ConverterCentimetreFormat}"
+                 Text="{Binding Length,
+                                Converter={units:LengthConverter},
+                                StringFormat='{}{0:F2 cm}'}" />
     </Grid>
 </UserControl>

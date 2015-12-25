@@ -19,11 +19,11 @@
             <local:InputOptionsView />
         </TabItem>
 
-        <TabItem Header="Symbol options">
+        <TabItem AutomationProperties.AutomationId="{x:Static local:AutomationIds.SymbolFormatTab}" Header="Symbol options">
             <local:SymbolOptions />
         </TabItem>
 
-        <TabItem Header="String formats">
+        <TabItem AutomationProperties.AutomationId="{x:Static local:AutomationIds.StringFormatTab}" Header="String formats">
             <local:StringFormatView />
         </TabItem>
     </TabControl>

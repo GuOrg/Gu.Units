@@ -7,6 +7,8 @@
         public static readonly string MainWindow = Create();
         public static readonly string UnitsOnlyTab = Create();
         public static readonly string InputOptionsTab = Create();
+        public static readonly string SymbolFormatTab = Create();
+        public static readonly string StringFormatTab = Create();
         public static readonly string CentimetresStringCtor = Create();
         public static readonly string MillimetresPerSecondStringProp = Create();
         public static readonly string MetresCtor = Create();
@@ -18,6 +20,15 @@
         public static readonly string ScalarOnly = Create();
         public static readonly string SymbolAllowed = Create();
         public static readonly string SymbolRequired = Create();
+
+        public static readonly string SignedHatPowers = Create();
+        public static readonly string FractionHatPowers = Create();
+        public static readonly string SignedSuperScript = Create();
+        public static readonly string FractionSuperScript = Create();
+
+        public static readonly string BindingCentimetreFormat = Create();
+        public static readonly string ConverterMillimetreFormat = Create();
+        public static readonly string ConverterCentimetreFormat = Create();
 
         private static string Create([CallerMemberName] string name = null)
         {

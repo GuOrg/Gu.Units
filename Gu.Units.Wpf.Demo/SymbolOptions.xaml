@@ -31,25 +31,44 @@
                Grid.Column="0"
                Content="SymbolFormat=FractionHatPowers" />
 
-        <TextBox Grid.Row="1" Text="{Binding Pressure, Converter={units:PressureConverter Unit={x:Static units:PressureUnit.NewtonsPerSquareMillimetre}, UnitInput=SymbolRequired, SymbolFormat=FractionHatPowers}}" />
+        <TextBox Grid.Row="1"
+                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.FractionHatPowers}"
+                 Text="{Binding Pressure,
+                                Converter={units:PressureConverter Unit={x:Static units:PressureUnit.NewtonsPerSquareMillimetre},
+                                                                   UnitInput=SymbolRequired,
+                                                                   SymbolFormat=FractionHatPowers}}" />
 
         <Label Grid.Row="2"
                Grid.Column="0"
                Content="SymbolFormat=SignedHatPowers}" />
 
-        <TextBox Grid.Row="3" Text="{Binding Pressure, Converter={units:PressureConverter Unit={x:Static units:PressureUnit.NewtonsPerSquareMillimetre}, UnitInput=SymbolRequired, SymbolFormat=SignedHatPowers}}" />
+        <TextBox Grid.Row="3"
+                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.SignedHatPowers}"
+                 Text="{Binding Pressure,
+                                Converter={units:PressureConverter Unit={x:Static units:PressureUnit.NewtonsPerSquareMillimetre},
+                                                                   UnitInput=SymbolRequired,
+                                                                   SymbolFormat=SignedHatPowers}}" />
 
         <Label Grid.Row="4"
                Grid.Column="0"
                Content="SymbolFormat=SignedSuperScript" />
 
-        <TextBox Grid.Row="5" Text="{Binding Pressure, Converter={units:PressureConverter Unit={x:Static units:PressureUnit.NewtonsPerSquareMillimetre}, UnitInput=SymbolRequired, SymbolFormat=FractionSuperScript}}" />
+        <TextBox Grid.Row="5"
+                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.FractionSuperScript}"
+                 Text="{Binding Pressure,
+                                Converter={units:PressureConverter Unit={x:Static units:PressureUnit.NewtonsPerSquareMillimetre},
+                                                                   UnitInput=SymbolRequired,
+                                                                   SymbolFormat=FractionSuperScript}}" />
 
-        
         <Label Grid.Row="6"
                Grid.Column="0"
                Content="SymbolFormat=SignedSuperScript" />
 
-        <TextBox Grid.Row="7" Text="{Binding Pressure, Converter={units:PressureConverter Unit={x:Static units:PressureUnit.NewtonsPerSquareMillimetre}, UnitInput=SymbolRequired, SymbolFormat=SignedSuperScript}}" />
+        <TextBox Grid.Row="7"
+                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.SignedSuperScript}"
+                 Text="{Binding Pressure,
+                                Converter={units:PressureConverter Unit={x:Static units:PressureUnit.NewtonsPerSquareMillimetre},
+                                                                   UnitInput=SymbolRequired,
+                                                                   SymbolFormat=SignedSuperScript}}" />
     </Grid>
 </UserControl>
