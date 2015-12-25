@@ -75,7 +75,9 @@
     <Compile Include="Internals\Helpers\StringMapTests.cs" />
     <Compile Include="Internals\Caching\UnitFormatCacheTests.cs" />
     <Compile Include="LengthTests.cs" />
+    <Compile Include="LengthTypeConverterTests.cs" />
     <Compile Include="LengthUnitTests.cs" />
+    <Compile Include="LengthUnitTypeConverterTests.cs" />
     <Compile Include="Samples\Samples.cs" />
     <Compile Include="Sources\ConversionProvider.cs" />
     <Compile Include="TestHelpers\DummyUnit.cs" />

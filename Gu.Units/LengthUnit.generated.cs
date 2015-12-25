@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Length"/>.
