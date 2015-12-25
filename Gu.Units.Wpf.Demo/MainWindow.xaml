@@ -4,19 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Gu.Units.Wpf.Demo"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:units="http://Gu.com/Units"
-        xmlns:units1="clr-namespace:Gu.Units;assembly=Gu.Units"
         Title="MainWindow"
         Width="525"
         Height="350"
+        AutomationProperties.AutomationId="{x:Static local:AutomationIds.MainWindow}"
         DataContext="{x:Static local:ViewModel.Instance}"
         mc:Ignorable="d">
     <TabControl>
-        <TabItem Header="Units only">
+        <TabItem AutomationProperties.AutomationId="{x:Static local:AutomationIds.UnitsOnlyTab}" Header="Units only">
             <local:UnitsOnlyView />
         </TabItem>
 
-        <TabItem Header="Input options">
+        <TabItem AutomationProperties.AutomationId="{x:Static local:AutomationIds.InputOptionsTab}" Header="Input options">
             <local:InputOptionsView />
         </TabItem>
 

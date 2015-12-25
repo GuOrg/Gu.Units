@@ -31,34 +31,55 @@
                    Grid.Column="0"
                    Content="Converter={units:LengthConverter m}}" />
 
-            <TextBox Grid.Row="1" Text="{Binding Length, Converter={units:LengthConverter cm}}" />
+            <TextBox Grid.Row="1"
+                     AutomationProperties.AutomationId="{x:Static local:AutomationIds.CentimetresStringCtor}"
+                     Text="{Binding Length,
+                                    Converter={units:LengthConverter cm}}" />
 
             <Label Grid.Row="2"
                    Grid.Column="0"
                    Content="Converter={units:SpeedConverter Unit=mm/s}}" />
 
-            <TextBox Grid.Row="3" Text="{Binding Speed, Converter={units:SpeedConverter Unit=mm/s}}" />
+            <TextBox Grid.Row="3"
+                     AutomationProperties.AutomationId="{x:Static local:AutomationIds.MillimetresPerSecondStringProp}"
+                     Text="{Binding Speed,
+                                    Converter={units:SpeedConverter Unit=mm/s}}" />
 
             <Label Grid.Row="4"
                    Grid.Column="0"
                    Content="Converter={units:LengthConverter {x:Static units:LengthUnit.Metres}}}" />
 
-            <TextBox Grid.Row="6" Text="{Binding Length, Converter={units:LengthConverter {x:Static units:LengthUnit.Metres}}}" />
+            <TextBox Grid.Row="6"
+                     AutomationProperties.AutomationId="{x:Static local:AutomationIds.MetresCtor}"
+                     Text="{Binding Length,
+                                    Converter={units:LengthConverter {x:Static units:LengthUnit.Metres}}}" />
             <!--  Resharper nags about ^ even if it is valid  -->
 
             <Label Grid.Row="7" Content="Converter={units:LengthConverter Unit={x:Static units:LengthUnit.Millimetres}}}" />
 
-            <TextBox Grid.Row="8" Text="{Binding Length, Converter={units:LengthConverter Unit={x:Static units:LengthUnit.Millimetres}}}" />
+            <TextBox Grid.Row="8"
+                     AutomationProperties.AutomationId="{x:Static local:AutomationIds.MillimetresProp}"
+                     Text="{Binding Length,
+                                    Converter={units:LengthConverter Unit={x:Static units:LengthUnit.Millimetres}}}" />
 
             <Label Grid.Row="9" Content="DoubleControl Converter={units:LengthConverter mm}}" />
 
-            <local:DoubleControl Grid.Row="10" Value="{Binding Length, Converter={units:LengthConverter mm}}" />
+            <local:DoubleControl Grid.Row="10"
+                                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.DoubleControlMillimetresStringCtor}"
+                                 Value="{Binding Length,
+                                                 Converter={units:LengthConverter mm}}" />
 
             <Label Grid.Row="11" Content="DoubleControl Converter={units:PressureConverter N*mm^-2}}" />
-            <local:DoubleControl Grid.Row="12" Value="{Binding Pressure, Converter={units:PressureConverter N*mm^-2}}" />
+            <local:DoubleControl Grid.Row="12"
+                                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.DoubleControlNewtonsPerSquareMillimetreStringCtor}"
+                                 Value="{Binding Pressure,
+                                                 Converter={units:PressureConverter N*mm^-2}}" />
 
             <Label Grid.Row="13" Content="DoubleControl Converter={units:PressureConverter MPa}}" />
-            <local:DoubleControl Grid.Row="14" Value="{Binding Pressure, Converter={units:PressureConverter MPa}}" />
+            <local:DoubleControl Grid.Row="14"
+                                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.DoubleControlMPaStringCtor}"
+                                 Value="{Binding Pressure,
+                                                 Converter={units:PressureConverter MPa}}" />
         </Grid>
     </Grid>
 </UserControl>

@@ -8,3 +8,4 @@ nuget Gu.Wpf.Reactive
 nuget Gu.ChangeTracking
 nuget JetBrains.Annotations
 nuget Microsoft.CodeAnalysis.CSharp.Scripting
+nuget TestStack.White

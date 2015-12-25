@@ -5,13 +5,13 @@
     using System.Windows.Data;
 
     // Dummy control for testing binding of doubles.
-    public class DoubleControl : Control
+    public class DoubleControl : TextBox
     {
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value",
             typeof(double),
             typeof(DoubleControl),
-            new FrameworkPropertyMetadata(default(double), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault) {DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged});
+            new FrameworkPropertyMetadata(default(double), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault) { DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged });
 
         public double Value
         {

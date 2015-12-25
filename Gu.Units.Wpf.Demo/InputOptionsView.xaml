@@ -30,18 +30,30 @@
                Grid.Column="0"
                Content="Converter={units:LengthConverter m, UnitInput=ScalarOnly}" />
 
-        <TextBox Grid.Row="1" Text="{Binding Length, Converter={units:LengthConverter m, UnitInput=ScalarOnly}}" />
+        <TextBox Grid.Row="1"
+                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.ScalarOnly}"
+                 Text="{Binding Length,
+                                Converter={units:LengthConverter m,
+                                                                 UnitInput=ScalarOnly}}" />
 
         <Label Grid.Row="2"
                Grid.Column="0"
                Content="Converter={units:LengthConverter Unit=mm, UnitInput=SymbolAllowed}" />
 
-        <TextBox Grid.Row="3" Text="{Binding Length, Converter={units:LengthConverter Unit=mm, UnitInput=SymbolAllowed}}" />
+        <TextBox Grid.Row="3"
+                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.SymbolAllowed}"
+                 Text="{Binding Length,
+                                Converter={units:LengthConverter Unit=mm,
+                                                                 UnitInput=SymbolAllowed}}" />
 
         <Label Grid.Row="4"
                Grid.Column="0"
                Content="Converter={units:LengthConverter Unit=cm, UnitInput=SymbolRequired}" />
 
-        <TextBox Grid.Row="6" Text="{Binding Length, Converter={units:LengthConverter Unit=cm, UnitInput=SymbolRequired}}" />
+        <TextBox Grid.Row="6"
+                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.SymbolRequired}"
+                 Text="{Binding Length,
+                                Converter={units:LengthConverter Unit=cm,
+                                                                 UnitInput=SymbolRequired}}" />
     </Grid>
 </UserControl>

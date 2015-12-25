@@ -48,6 +48,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AutomationIds.cs" />
     <Compile Include="DoubleControl.cs" />
     <Compile Include="InputOptionsView.xaml.cs">
       <DependentUpon>InputOptionsView.xaml</DependentUpon>

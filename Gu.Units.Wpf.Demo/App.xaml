@@ -12,8 +12,8 @@
             <Setter Property="HorizontalAlignment" Value="Right" />
             <Setter Property="TextAlignment" Value="Right" />
             <Setter Property="Width" Value="250" />
+            <Setter Property="AutomationProperties.ItemStatus" Value="{Binding Path=(Validation.HasError), RelativeSource={RelativeSource Self}, StringFormat='HasValidationError: {0}'}" />
         </Style>
-
 
         <Style TargetType="{x:Type Label}">
             <Setter Property="HorizontalAlignment" Value="Right" />

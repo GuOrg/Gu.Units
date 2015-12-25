@@ -1,14 +1,15 @@
 NUGET
   remote: http://www.nuget.org/api/v2
   specs:
-    Gu.ChangeTracking (1.0.2.0)
-    Gu.Reactive (1.10.0.0)
+    Castle.Core (3.3.3)
+    Gu.ChangeTracking (1.0.2)
+    Gu.Reactive (1.10.0)
       Rx-Main (>= 2.0.0 < 3.0.0)
-    Gu.Wpf.Reactive (1.10.0.0)
+    Gu.Wpf.Reactive (1.10.0)
       Gu.Reactive (>= 1.10.0)
       Gu.Wpf.ToolTips (>= 0.2.0 < 1.0.0)
       Rx-WPF (>= 2.0.0 < 3.0.0)
-    Gu.Wpf.ToolTips (0.2.0.0)
+    Gu.Wpf.ToolTips (0.2.0)
     JetBrains.Annotations (10.0.0)
     Microsoft.CodeAnalysis.Analyzers (1.1.0)
     Microsoft.CodeAnalysis.Common (1.1.1)
@@ -259,3 +260,5 @@ NUGET
     System.Threading.Tasks (4.0.10)
       System.Runtime (>= 4.0.0) - framework: dnxcore50
     T4.TemplateFileManager (2.2.1)
+    TestStack.White (0.13.3)
+      Castle.Core (>= 3.3.0)
