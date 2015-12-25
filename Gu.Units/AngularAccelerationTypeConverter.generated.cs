@@ -34,7 +34,7 @@
         /// </devdoc>
         public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
         {
-            if (destinationType == typeof(InstanceDescriptor))
+            if (destinationType == typeof(InstanceDescriptor) || destinationType == typeof(string))
             {
                 return true;
             }
@@ -66,17 +66,21 @@
         /// </devdoc>
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            if (destinationType == null)
+            if (value is AngularAcceleration && destinationType != null)
             {
-                throw new ArgumentNullException(nameof(destinationType));
-            }
-
-            if (destinationType == typeof(InstanceDescriptor) && value is AngularAcceleration)
-            {
-                MethodInfo method = typeof(AngularAcceleration).GetMethod(nameof(AngularAcceleration.Parse), new Type[] { typeof(string) });
-                if (method != null)
+                var angularAcceleration = (AngularAcceleration)value;
+                if (destinationType == typeof(string))
                 {
-                    return new InstanceDescriptor(method, new object[] { value.ToString() });
+                    return angularAcceleration.ToString(culture);
+                }
+                else if (destinationType == typeof(InstanceDescriptor))
+                {
+                    var ctor = typeof(AngularAcceleration).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(double) }, null);
+                    if (ctor != null)
+                    {
+                        var args = new object[] { angularAcceleration.radiansPerSecondSquared };
+                        return new InstanceDescriptor(ctor, args);
+                    }
                 }
             }
 

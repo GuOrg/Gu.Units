@@ -34,7 +34,7 @@
         /// </devdoc>
         public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
         {
-            if (destinationType == typeof(InstanceDescriptor))
+            if (destinationType == typeof(InstanceDescriptor) || destinationType == typeof(string))
             {
                 return true;
             }
@@ -66,17 +66,21 @@
         /// </devdoc>
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            if (destinationType == null)
+            if (value is Current && destinationType != null)
             {
-                throw new ArgumentNullException(nameof(destinationType));
-            }
-
-            if (destinationType == typeof(InstanceDescriptor) && value is Current)
-            {
-                MethodInfo method = typeof(Current).GetMethod(nameof(Current.Parse), new Type[] { typeof(string) });
-                if (method != null)
+                var current = (Current)value;
+                if (destinationType == typeof(string))
                 {
-                    return new InstanceDescriptor(method, new object[] { value.ToString() });
+                    return current.ToString(culture);
+                }
+                else if (destinationType == typeof(InstanceDescriptor))
+                {
+                    var ctor = typeof(Current).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(double) }, null);
+                    if (ctor != null)
+                    {
+                        var args = new object[] { current.amperes };
+                        return new InstanceDescriptor(ctor, args);
+                    }
                 }
             }
 

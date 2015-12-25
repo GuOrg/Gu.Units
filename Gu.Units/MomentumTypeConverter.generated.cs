@@ -34,7 +34,7 @@
         /// </devdoc>
         public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
         {
-            if (destinationType == typeof(InstanceDescriptor))
+            if (destinationType == typeof(InstanceDescriptor) || destinationType == typeof(string))
             {
                 return true;
             }
@@ -66,17 +66,21 @@
         /// </devdoc>
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            if (destinationType == null)
+            if (value is Momentum && destinationType != null)
             {
-                throw new ArgumentNullException(nameof(destinationType));
-            }
-
-            if (destinationType == typeof(InstanceDescriptor) && value is Momentum)
-            {
-                MethodInfo method = typeof(Momentum).GetMethod(nameof(Momentum.Parse), new Type[] { typeof(string) });
-                if (method != null)
+                var momentum = (Momentum)value;
+                if (destinationType == typeof(string))
                 {
-                    return new InstanceDescriptor(method, new object[] { value.ToString() });
+                    return momentum.ToString(culture);
+                }
+                else if (destinationType == typeof(InstanceDescriptor))
+                {
+                    var ctor = typeof(Momentum).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(double) }, null);
+                    if (ctor != null)
+                    {
+                        var args = new object[] { momentum.newtonSecond };
+                        return new InstanceDescriptor(ctor, args);
+                    }
                 }
             }
 

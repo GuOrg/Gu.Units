@@ -4,7 +4,6 @@
     using System.ComponentModel;
     using System.ComponentModel.Design.Serialization;
     using System.Globalization;
-    using System.Reflection;
 
     /// <devdoc>
     /// <para>Provides a type converter to convert <see cref='Gu.Units.CapacitanceUnit'/>
@@ -34,7 +33,7 @@
         /// </devdoc>
         public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
         {
-            if (destinationType == typeof(InstanceDescriptor))
+            if (destinationType == typeof(InstanceDescriptor) || destinationType == typeof(string))
             {
                 return true;
             }
@@ -73,18 +72,21 @@
         /// </devdoc>
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            if (destinationType == null)
+            if (value is CapacitanceUnit && destinationType != null)
             {
-                throw new ArgumentNullException(nameof(destinationType));
-            }
-
-            if (destinationType == typeof(InstanceDescriptor) && value is CapacitanceUnit)
-            {
-                MethodInfo method = typeof(CapacitanceUnit).GetMethod(nameof(CapacitanceUnit.Parse), new Type[] { typeof(string) });
-                if (method != null)
+                var unit = (CapacitanceUnit)value;
+                if (destinationType == typeof(string))
                 {
-                    var args = new object[] { ((CapacitanceUnit)value).Symbol };
-                    return new InstanceDescriptor(method, args);
+                    return unit.ToString();
+                }
+                else if (destinationType == typeof(InstanceDescriptor))
+                {
+                    var parseMethod = typeof(CapacitanceUnit).GetMethod(nameof(CapacitanceUnit.Parse), new Type[] { typeof(string) });
+                    if (parseMethod != null)
+                    {
+                        var args = new object[] { unit.Symbol };
+                        return new InstanceDescriptor(parseMethod, args);
+                    }
                 }
             }
 

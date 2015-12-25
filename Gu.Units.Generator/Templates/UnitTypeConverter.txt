@@ -4,18 +4,17 @@
     using System.ComponentModel;
     using System.ComponentModel.Design.Serialization;
     using System.Globalization;
-    using System.Reflection;
 
     /// <devdoc>
-    /// <para>Provides a type converter to convert <see cref='Gu.Units.KinematicViscosityUnit'/>
+    /// <para>Provides a type converter to convert <see cref='Gu.Units.MassUnit'/>
     /// objects to and from various
     /// other representations.</para>
     /// </devdoc>
-    public class KinematicViscosityUnitTypeConverter : TypeConverter
+    public class MassUnitTypeConverter : TypeConverter
     {
         /// <devdoc>
         ///    <para>Gets a value indicating whether this converter can
-        ///       convert an object in the given source type to a <see cref='Gu.Units.KinematicViscosityUnit'/> object using the
+        ///       convert an object in the given source type to a <see cref='Gu.Units.MassUnit'/> object using the
         ///       specified context.</para>
         /// </devdoc>
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
@@ -34,7 +33,7 @@
         /// </devdoc>
         public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
         {
-            if (destinationType == typeof(InstanceDescriptor))
+            if (destinationType == typeof(InstanceDescriptor) || destinationType == typeof(string))
             {
                 return true;
             }
@@ -43,7 +42,7 @@
         }
 
         /// <devdoc>
-        /// <para>Converts the given object to a <see cref='Gu.Units.KinematicViscosityUnit'/>
+        /// <para>Converts the given object to a <see cref='Gu.Units.MassUnit'/>
         /// object.</para>
         /// </devdoc>
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
@@ -51,13 +50,13 @@
             var text = value as string;
             if (text != null)
             {
-                KinematicViscosityUnit result;
-                if (KinematicViscosityUnit.TryParse(text, out result))
+                MassUnit result;
+                if (MassUnit.TryParse(text, out result))
                 {
                     return result;
                 }
 
-                var message = $"Could not convert the string '{text}' to an instance of KinematicViscosityUnit)";
+                var message = $"Could not convert the string '{text}' to an instance of MassUnit)";
                 throw new NotSupportedException(message);
             }
 
@@ -73,18 +72,21 @@
         /// </devdoc>
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            if (destinationType == null)
+            if (value is MassUnit && destinationType != null)
             {
-                throw new ArgumentNullException(nameof(destinationType));
-            }
-
-            if (destinationType == typeof(InstanceDescriptor) && value is KinematicViscosityUnit)
-            {
-                MethodInfo method = typeof(KinematicViscosityUnit).GetMethod(nameof(KinematicViscosityUnit.Parse), new Type[] { typeof(string) });
-                if (method != null)
+                var unit = (MassUnit) value;
+                if (destinationType == typeof (string))
                 {
-					var args = new object[] { ((KinematicViscosityUnit)value).Symbol };
-                    return new InstanceDescriptor(method, args);
+                    return unit.ToString();
+                }
+                else if(destinationType == typeof(InstanceDescriptor))
+                {
+                    var parseMethod = typeof(MassUnit).GetMethod(nameof(MassUnit.Parse), new Type[] { typeof(string) });
+                    if (parseMethod != null)
+                    {
+                        var args = new object[] { unit.Symbol };
+                        return new InstanceDescriptor(parseMethod, args);
+                    }
                 }
             }
 

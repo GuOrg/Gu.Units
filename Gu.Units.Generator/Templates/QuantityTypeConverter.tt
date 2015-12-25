@@ -44,7 +44,7 @@ namespace <#= Settings.Namespace #>
         /// </devdoc>
         public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
         {
-            if (destinationType == typeof(InstanceDescriptor))
+            if (destinationType == typeof(InstanceDescriptor) || destinationType == typeof(string))
             {
                 return true;
             }
@@ -76,17 +76,21 @@ namespace <#= Settings.Namespace #>
         /// </devdoc>
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            if (destinationType == null)
+            if (value is <#= quantity.Name #> && destinationType != null)
             {
-                throw new ArgumentNullException(nameof(destinationType));
-            }
-
-            if (destinationType == typeof(InstanceDescriptor) && value is <#= quantity.Name #>)
-            {
-                MethodInfo method = typeof(<#= quantity.Name #>).GetMethod(nameof(<#= quantity.Name #>.Parse), new Type[] { typeof(string) });
-                if (method != null)
+                var <#= quantity.ParameterName #> = (<#= quantity.Name #>)value;
+                if (destinationType == typeof(string))
                 {
-                    return new InstanceDescriptor(method, new object[] { value.ToString() });
+                    return <#= quantity.ParameterName #>.ToString(culture);
+                }
+                else if (destinationType == typeof(InstanceDescriptor))
+                {
+                    var ctor = typeof(<#= quantity.Name #>).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(double) }, null);
+                    if (ctor != null)
+                    {
+                        var args = new object[] { <#= quantity.ParameterName #>.<#= quantity.Unit.ParameterName #> };
+                        return new InstanceDescriptor(ctor, args);
+                    }
                 }
             }
 
