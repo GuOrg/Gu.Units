@@ -9,12 +9,6 @@ var settings = Settings.Instance;
 // Template used by QuantityValueConverters.tt
 var quantity = settings.GetQuantityByName(QuantityName ?? settings.Quantities[0].Name);
 #>
-using System.Runtime.CompilerServices;
-using Gu.Units;
-
-[assembly: TypeForwardedTo(typeof(<#= quantity.Name #>))]
-[assembly: TypeForwardedTo(typeof(<#= quantity.UnitName #>))]
-
 namespace Gu.Units.Wpf
 {
     using System;
@@ -69,6 +63,7 @@ namespace Gu.Units.Wpf
             get { return this.stringFormat; }
             set
             {
+				StringFormatParser<<#= quantity.UnitName #>>.VerifyFormat(value);
                 this.stringFormat = value;
                 OnStringFormatChanged();
             }
@@ -249,6 +244,12 @@ namespace Gu.Units.Wpf
                     throw new ArgumentOutOfRangeException();
             }
         }
+
+		private static bool IsInTemplate(IServiceProvider serviceProvider)
+		{
+			var target = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
+			return target != null && !(target.TargetObject is DependencyObject);
+		}
 
         private void TryGetStringFormatFromBinding()
         {

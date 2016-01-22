@@ -17,7 +17,7 @@
                 {
                     FileName = fileName,
                     UseShellExecute = false,
-                    CreateNoWindow = true,
+                    //CreateNoWindow = true,
                     RedirectStandardOutput = true,
                     RedirectStandardError = true
                 };

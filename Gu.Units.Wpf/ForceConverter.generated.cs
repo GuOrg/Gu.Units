@@ -1,10 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using Gu.Units;
-
-[assembly: TypeForwardedTo(typeof(Force))]
-[assembly: TypeForwardedTo(typeof(ForceUnit))]
-
-namespace Gu.Units.Wpf
+﻿namespace Gu.Units.Wpf
 {
     using System;
     using System.ComponentModel;
@@ -58,6 +52,7 @@ namespace Gu.Units.Wpf
             get { return this.stringFormat; }
             set
             {
+                StringFormatParser<ForceUnit>.VerifyFormat(value);
                 this.stringFormat = value;
                 OnStringFormatChanged();
             }
@@ -237,6 +232,12 @@ namespace Gu.Units.Wpf
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        private static bool IsInTemplate(IServiceProvider serviceProvider)
+        {
+            var target = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
+            return target != null && !(target.TargetObject is DependencyObject);
         }
 
         private void TryGetStringFormatFromBinding()

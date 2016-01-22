@@ -7,6 +7,25 @@
     {
         private static readonly Dictionary<string, QuantityFormat<TUnit>> Cache = new Dictionary<string, QuantityFormat<TUnit>>();
 
+        internal static void VerifyFormat(string format)
+        {
+            if (CanParse(format))
+            {
+                return;
+            }
+
+            if (Is.DesignMode)
+            {
+                throw new FormatException($"Error parsing: 'unknown format' for {typeof(TUnit)}");
+            }
+        }
+
+        internal static bool CanParse(string format)
+        {
+            QuantityFormat<TUnit> result;
+            return TryParse(format, out result);
+        }
+
         internal static bool TryParse(string format, out QuantityFormat<TUnit> result)
         {
             if (string.IsNullOrWhiteSpace(format))

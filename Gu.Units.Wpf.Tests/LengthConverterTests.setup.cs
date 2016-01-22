@@ -30,14 +30,14 @@
             {
                 var converter = new LengthConverter { Unit = LengthUnit.Centimetres };
                 Wpf.Is.DesignMode = true;
-                var ex = Assert.Throws<ArgumentException>(() => converter.StringFormat = stringFormat);
-                var expected = $"Error parsing: '{stringFormat}'";
+                var ex = Assert.Throws<FormatException>(() => converter.StringFormat = stringFormat);
+                var expected = $"Error parsing: '{stringFormat}' for Gu.Units.LengthUnit";
                 Assert.AreEqual(expected, ex.Message);
 
                 Wpf.Is.DesignMode = false;
-
+                converter.StringFormat = stringFormat;
                 var convert = converter.Convert(Length.Zero, typeof(string), null, null);
-                Assert.AreEqual(stringFormat, convert);
+                Assert.AreEqual("Unit is set to 'cm' but StringFormat is 'unknown format'", convert);
             }
 
             [TestCase("F1 cm")]

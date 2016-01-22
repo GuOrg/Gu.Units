@@ -9,6 +9,8 @@
         public static readonly string InputOptionsTab = Create();
         public static readonly string SymbolFormatTab = Create();
         public static readonly string StringFormatTab = Create();
+        public static readonly string MillimetresPerSecondInDataTemplate = Create();
+        public static readonly string CentimetresInControlTemplate = Create();
         public static readonly string CentimetresStringCtor = Create();
         public static readonly string MillimetresPerSecondStringProp = Create();
         public static readonly string MetresCtor = Create();

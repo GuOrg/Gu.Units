@@ -6,10 +6,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:units="http://Gu.com/Units"
              DataContext="{x:Static local:ViewModel.Instance}"
-             d:DesignHeight="300"
-             d:DesignWidth="300"
              mc:Ignorable="d">
-    <Grid Grid.Column="0">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -25,32 +23,37 @@
             <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-        <Label Grid.Row="0"
-               Grid.Column="0"
-               Content="Converter={units:LengthConverter m, UnitInput=ScalarOnly}" />
-
-        <TextBox Grid.Row="1"
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   Text="Converter={units:LengthConverter m, UnitInput=ScalarOnly}" />
+        <TextBox Grid.Row="0"
+                 Grid.Column="1"
                  AutomationProperties.AutomationId="{x:Static local:AutomationIds.ScalarOnly}"
                  Text="{Binding Length,
                                 Converter={units:LengthConverter m,
                                                                  UnitInput=ScalarOnly}}" />
 
-        <Label Grid.Row="2"
-               Grid.Column="0"
-               Content="Converter={units:LengthConverter Unit=mm, UnitInput=SymbolAllowed}" />
-
-        <TextBox Grid.Row="3"
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   Text="Converter={units:LengthConverter Unit=mm, UnitInput=SymbolAllowed}" />
+        <TextBox Grid.Row="1"
+                 Grid.Column="1"
                  AutomationProperties.AutomationId="{x:Static local:AutomationIds.SymbolAllowed}"
                  Text="{Binding Length,
                                 Converter={units:LengthConverter Unit=mm,
                                                                  UnitInput=SymbolAllowed}}" />
 
-        <Label Grid.Row="4"
-               Grid.Column="0"
-               Content="Converter={units:LengthConverter Unit=cm, UnitInput=SymbolRequired}" />
-
-        <TextBox Grid.Row="6"
+        <TextBlock Grid.Row="2"
+                   Grid.Column="0"
+                   Text="Converter={units:LengthConverter Unit=cm, UnitInput=SymbolRequired}" />
+        <TextBox Grid.Row="2"
+                 Grid.Column="1"
                  AutomationProperties.AutomationId="{x:Static local:AutomationIds.SymbolRequired}"
                  Text="{Binding Length,
                                 Converter={units:LengthConverter Unit=cm,

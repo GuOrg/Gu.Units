@@ -4,8 +4,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows.Markup;
 
-using Gu.Units;
-
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
@@ -44,5 +42,3 @@ using Gu.Units;
 [assembly: XmlnsDefinition("http://Gu.com/Units", clrNamespace: "Gu.Units.Wpf", AssemblyName = "Gu.Units.Wpf")]
 [assembly: XmlnsPrefix("http://Gu.com/Units", "units")]
 [assembly: NeutralResourcesLanguage("en")]
-
-namespace Gu.Units {} // testing hacking it like this

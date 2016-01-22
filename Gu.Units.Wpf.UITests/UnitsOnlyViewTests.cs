@@ -45,6 +45,7 @@
                 var page = window.Get<TabPage>(TabId);
                 page.Select();
                 var cmBox = page.Get<TextBox>(AutomationIds.CentimetresStringCtor);
+                var cmTemplateBox = page.Get<TextBox>(AutomationIds.CentimetresInControlTemplate);
                 var mBox = page.Get<TextBox>(AutomationIds.MetresCtor);
                 var mmBox = page.Get<TextBox>(AutomationIds.MillimetresProp);
                 var mmDoubleBox = (TextBox)page.Get<UIItem>(AutomationIds.DoubleControlMillimetresStringCtor).Get(SearchCriteria.ByControlType(typeof(TextBox), WindowsFramework.Wpf));
@@ -52,6 +53,7 @@
                 cmBox.Enter(text);
                 mmBox.Click();
                 Assert.AreEqual("67.89", mmBox.Text);
+                Assert.AreEqual(text.Trim(), cmTemplateBox.Text);
                 Assert.AreEqual("67.89", mmDoubleBox.Text);
                 Assert.AreEqual("0.06789", mBox.Text);
             }
