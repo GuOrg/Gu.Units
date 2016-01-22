@@ -12,7 +12,7 @@
     {
         private static readonly string StringFormatNotSet = "Not Set";
         private LengthPerUnitlessUnit? unit;
-        private IProvideValueTarget provideValueTarget;
+        private Binding binding;
         private string stringFormat = StringFormatNotSet;
         private QuantityFormat<LengthPerUnitlessUnit> quantityFormat;
         private string bindingStringFormat = StringFormatNotSet;
@@ -61,8 +61,28 @@
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             // the binding does not have stringformat set at this point
-            // caching IProvideValueTarget to resolve later.
-            this.provideValueTarget = (IProvideValueTarget)serviceProvider.GetService(typeof(IProvideValueTarget));
+            // caching the binding to resolve later.
+            try
+            {
+                var provideValueTarget = (IProvideValueTarget)serviceProvider.GetService(typeof(IProvideValueTarget));
+                var targetObject = provideValueTarget?.TargetObject;
+                this.binding = targetObject as Binding;
+                if (this.binding == null && targetObject != null)
+                {
+                    if (Is.DesignMode)
+                    {
+                        throw new InvalidOperationException("TargetObject is not a binding");
+                    }
+                }
+            }
+            catch (NullReferenceException)
+            {
+                if (Is.DesignMode)
+                {
+                    throw new InvalidOperationException("Touching provideValueTarget?.TargetObject threw");
+                }
+            }
+
             return this;
         }
 
@@ -234,15 +254,10 @@
             }
         }
 
-        private static bool IsInTemplate(IServiceProvider serviceProvider)
-        {
-            var target = serviceProvider.GetService(typeof(IProvideValueTarget)) as IProvideValueTarget;
-            return target != null && !(target.TargetObject is DependencyObject);
-        }
-
         private void TryGetStringFormatFromBinding()
         {
-            if (BindingStringFormat.Tryget(this.provideValueTarget, out this.bindingStringFormat))
+            this.bindingStringFormat = this.binding?.StringFormat;
+            if (!string.IsNullOrEmpty(bindingStringFormat))
             {
                 OnStringFormatChanged();
             }

@@ -29,6 +29,7 @@
                 converterCmBox.Enter(text);
                 converterMmBox.Click();
                 Assert.AreEqual("6.78 cm", converterCmBox.Text);
+                Assert.AreEqual("6.78 cm", page.Get<TextBox>(AutomationIds.CentimetresInControlTemplate).Text);
                 Assert.AreEqual("67.800 mm", converterMmBox.Text);
                 Assert.AreEqual("6.78 cm", bindinCmBox.Text);
             }
