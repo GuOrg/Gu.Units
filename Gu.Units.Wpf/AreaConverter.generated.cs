@@ -184,6 +184,11 @@
                     return area.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return area.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return area.GetValue(this.unit.Value);
             }
 

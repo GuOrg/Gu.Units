@@ -184,6 +184,11 @@
                     return luminousIntensity.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return luminousIntensity.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return luminousIntensity.GetValue(this.unit.Value);
             }
 

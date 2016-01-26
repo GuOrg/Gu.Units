@@ -184,6 +184,11 @@
                     return wavenumber.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return wavenumber.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return wavenumber.GetValue(this.unit.Value);
             }
 

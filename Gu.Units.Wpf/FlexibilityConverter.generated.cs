@@ -184,6 +184,11 @@
                     return flexibility.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return flexibility.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return flexibility.GetValue(this.unit.Value);
             }
 

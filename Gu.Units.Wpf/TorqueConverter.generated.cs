@@ -184,6 +184,11 @@
                     return torque.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return torque.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return torque.GetValue(this.unit.Value);
             }
 

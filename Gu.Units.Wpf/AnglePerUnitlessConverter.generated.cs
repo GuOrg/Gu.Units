@@ -184,6 +184,11 @@
                     return anglePerUnitless.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return anglePerUnitless.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return anglePerUnitless.GetValue(this.unit.Value);
             }
 

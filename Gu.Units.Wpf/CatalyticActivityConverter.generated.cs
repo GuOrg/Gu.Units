@@ -184,6 +184,11 @@
                     return catalyticActivity.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return catalyticActivity.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return catalyticActivity.GetValue(this.unit.Value);
             }
 

@@ -194,6 +194,11 @@ namespace Gu.Units.Wpf
                 {
                     return <#= quantity.ParameterName #>.ToString(this.quantityFormat, culture);
                 }
+				
+                if (this.ValueFormat != null)
+                {
+                    return <#= quantity.ParameterName #>.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
 
                 return <#= quantity.ParameterName #>.GetValue(this.unit.Value);
             }

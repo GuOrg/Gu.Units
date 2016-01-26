@@ -184,6 +184,11 @@
                     return electricCharge.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return electricCharge.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return electricCharge.GetValue(this.unit.Value);
             }
 

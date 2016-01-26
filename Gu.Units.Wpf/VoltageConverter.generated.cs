@@ -184,6 +184,11 @@
                     return voltage.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return voltage.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return voltage.GetValue(this.unit.Value);
             }
 

@@ -184,6 +184,11 @@
                     return illuminance.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return illuminance.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return illuminance.GetValue(this.unit.Value);
             }
 

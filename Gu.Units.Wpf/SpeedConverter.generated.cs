@@ -184,6 +184,11 @@
                     return speed.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return speed.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return speed.GetValue(this.unit.Value);
             }
 

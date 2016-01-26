@@ -184,6 +184,11 @@
                     return momentum.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return momentum.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return momentum.GetValue(this.unit.Value);
             }
 

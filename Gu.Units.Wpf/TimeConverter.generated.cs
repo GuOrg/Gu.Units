@@ -184,6 +184,11 @@
                     return time.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return time.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return time.GetValue(this.unit.Value);
             }
 

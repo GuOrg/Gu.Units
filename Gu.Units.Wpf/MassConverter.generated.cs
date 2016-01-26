@@ -184,6 +184,11 @@
                     return mass.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return mass.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return mass.GetValue(this.unit.Value);
             }
 

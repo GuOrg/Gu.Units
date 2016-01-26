@@ -184,6 +184,11 @@
                     return data.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return data.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return data.GetValue(this.unit.Value);
             }
 

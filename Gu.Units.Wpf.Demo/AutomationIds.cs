@@ -12,8 +12,9 @@
         public static readonly string MillimetresPerSecondInDataTemplate = Create();
         public static readonly string MillimetresPerSecondAndValueFormatF2 = Create();
         public static readonly string MillimetresPerSecondSignedSuperScriptAndValueFormatF2 = Create();
-        public static readonly string ConverterCentimetreBindingF2Format = Create();
-        public static readonly string CentimetresInControlTemplate = Create();
+        public static readonly string CmF2BindingStringFormat = Create();
+        public static readonly string F2CmInDataTemplate = Create();
+        public static readonly string F2CmBindingStringFormatInControlTemplate = Create();
         public static readonly string CentimetresStringCtor = Create();
         public static readonly string MillimetresPerSecondStringProp = Create();
         public static readonly string MetresCtor = Create();
@@ -31,9 +32,9 @@
         public static readonly string SignedSuperScript = Create();
         public static readonly string FractionSuperScript = Create();
 
-        public static readonly string BindingCentimetreFormat = Create();
-        public static readonly string ConverterMillimetreFormat = Create();
-        public static readonly string ConverterCentimetreFormat = Create();
+        public static readonly string F2CmBindingStringFormat = Create();
+        public static readonly string F3MmStringFormat = Create();
+        public static readonly string F2CmStringFormat = Create();
 
         private static string Create([CallerMemberName] string name = null)
         {

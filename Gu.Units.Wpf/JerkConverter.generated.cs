@@ -184,6 +184,11 @@
                     return jerk.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return jerk.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return jerk.GetValue(this.unit.Value);
             }
 

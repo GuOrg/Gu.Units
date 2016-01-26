@@ -184,6 +184,11 @@
                     return power.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return power.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return power.GetValue(this.unit.Value);
             }
 

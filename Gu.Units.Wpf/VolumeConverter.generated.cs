@@ -184,6 +184,11 @@
                     return volume.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return volume.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return volume.GetValue(this.unit.Value);
             }
 

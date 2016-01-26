@@ -184,6 +184,11 @@
                     return angularSpeed.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return angularSpeed.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return angularSpeed.GetValue(this.unit.Value);
             }
 

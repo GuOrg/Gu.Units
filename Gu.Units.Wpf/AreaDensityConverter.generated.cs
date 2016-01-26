@@ -184,6 +184,11 @@
                     return areaDensity.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return areaDensity.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return areaDensity.GetValue(this.unit.Value);
             }
 

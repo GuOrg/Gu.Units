@@ -184,6 +184,11 @@
                     return pressure.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return pressure.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return pressure.GetValue(this.unit.Value);
             }
 

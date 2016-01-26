@@ -184,6 +184,11 @@
                     return temperature.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return temperature.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return temperature.GetValue(this.unit.Value);
             }
 

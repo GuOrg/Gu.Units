@@ -184,6 +184,11 @@
                     return luminousFlux.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return luminousFlux.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return luminousFlux.GetValue(this.unit.Value);
             }
 

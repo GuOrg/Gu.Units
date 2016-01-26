@@ -184,6 +184,11 @@
                     return resistance.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return resistance.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return resistance.GetValue(this.unit.Value);
             }
 

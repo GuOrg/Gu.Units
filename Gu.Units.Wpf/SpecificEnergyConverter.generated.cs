@@ -184,6 +184,11 @@
                     return specificEnergy.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return specificEnergy.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return specificEnergy.GetValue(this.unit.Value);
             }
 

@@ -184,6 +184,11 @@
                     return magneticFieldStrength.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return magneticFieldStrength.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return magneticFieldStrength.GetValue(this.unit.Value);
             }
 

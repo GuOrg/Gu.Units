@@ -184,6 +184,11 @@
                     return angularJerk.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return angularJerk.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return angularJerk.GetValue(this.unit.Value);
             }
 

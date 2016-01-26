@@ -184,6 +184,11 @@
                     return magneticFlux.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return magneticFlux.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return magneticFlux.GetValue(this.unit.Value);
             }
 

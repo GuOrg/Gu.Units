@@ -184,6 +184,11 @@
                     return density.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return density.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return density.GetValue(this.unit.Value);
             }
 

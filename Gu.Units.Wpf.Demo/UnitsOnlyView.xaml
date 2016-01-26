@@ -125,7 +125,7 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="{TemplateBinding Header}" />
                         <TextBox Grid.Column="1"
-                                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.CentimetresInControlTemplate}"
+                                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.F2CmBindingStringFormatInControlTemplate}"
                                  Text="{Binding Content,
                                                 RelativeSource={RelativeSource AncestorType=HeaderedContentControl},
                                                 Converter={units:LengthConverter cm}}" />

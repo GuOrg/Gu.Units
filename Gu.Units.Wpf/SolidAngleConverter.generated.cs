@@ -184,6 +184,11 @@
                     return solidAngle.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return solidAngle.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return solidAngle.GetValue(this.unit.Value);
             }
 

@@ -184,6 +184,11 @@
                     return kinematicViscosity.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return kinematicViscosity.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return kinematicViscosity.GetValue(this.unit.Value);
             }
 

@@ -184,6 +184,11 @@
                     return inductance.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return inductance.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return inductance.GetValue(this.unit.Value);
             }
 

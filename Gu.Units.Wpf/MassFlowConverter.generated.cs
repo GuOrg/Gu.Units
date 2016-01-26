@@ -184,6 +184,11 @@
                     return massFlow.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return massFlow.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return massFlow.GetValue(this.unit.Value);
             }
 

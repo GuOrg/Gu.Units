@@ -184,6 +184,11 @@
                     return volumetricFlow.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return volumetricFlow.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return volumetricFlow.GetValue(this.unit.Value);
             }
 

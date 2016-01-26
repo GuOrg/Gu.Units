@@ -184,6 +184,11 @@
                     return amountOfSubstance.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return amountOfSubstance.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return amountOfSubstance.GetValue(this.unit.Value);
             }
 

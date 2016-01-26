@@ -184,6 +184,11 @@
                     return frequency.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return frequency.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return frequency.GetValue(this.unit.Value);
             }
 

@@ -184,6 +184,11 @@
                     return electricalConductance.ToString(this.quantityFormat, culture);
                 }
 
+                if (this.ValueFormat != null)
+                {
+                    return electricalConductance.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                }
+
                 return electricalConductance.GetValue(this.unit.Value);
             }
 
