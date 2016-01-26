@@ -24,7 +24,7 @@
 
         public LengthConverter([TypeConverter(typeof(LengthUnitTypeConverter))]LengthUnit unit)
         {
-            this.unit = unit;
+            Unit = unit;
         }
 
         [ConstructorArgument("unit"), TypeConverter(typeof(LengthUnitTypeConverter))]
@@ -364,7 +364,7 @@
                             {
                                 this.UnitInput = Wpf.UnitInput.SymbolRequired;
                             }
-                            else if(this.UnitInput == Wpf.UnitInput.ScalarOnly)
+                            else if (this.UnitInput == Wpf.UnitInput.ScalarOnly)
                             {
                                 this.errorText.AppendLine("Cannot have ScalarOnly and SymbolFormat specified");
                             }
@@ -399,7 +399,7 @@
             }
         }
 
-        private bool IsValidConvertTargetType(Type targetType)
+        private static bool IsValidConvertTargetType(Type targetType)
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||

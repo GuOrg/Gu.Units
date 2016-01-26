@@ -10,6 +10,8 @@
         public static readonly string SymbolFormatTab = Create();
         public static readonly string StringFormatTab = Create();
         public static readonly string MillimetresPerSecondInDataTemplate = Create();
+        public static readonly string MillimetresPerSecondAndValueFormatF2 = Create();
+        public static readonly string MillimetresPerSecondSignedSuperScriptAndValueFormatF2 = Create();
         public static readonly string ConverterCentimetreBindingF2Format = Create();
         public static readonly string CentimetresInControlTemplate = Create();
         public static readonly string CentimetresStringCtor = Create();

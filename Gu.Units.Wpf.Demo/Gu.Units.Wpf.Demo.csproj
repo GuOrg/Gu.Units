@@ -50,6 +50,15 @@
     </ApplicationDefinition>
     <Compile Include="AutomationIds.cs" />
     <Compile Include="DoubleControl.cs" />
+    <Compile Include="Errors\AmbiguousStringFormats.xaml.cs">
+      <DependentUpon>AmbiguousStringFormats.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Errors\InvalidUnit.xaml.cs">
+      <DependentUpon>InvalidUnit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Errors\UnitAndStringFormatDoesNotMatch.xaml.cs">
+      <DependentUpon>UnitAndStringFormatDoesNotMatch.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InputOptionsView.xaml.cs">
       <DependentUpon>InputOptionsView.xaml</DependentUpon>
     </Compile>
@@ -63,6 +72,18 @@
     <Compile Include="UnitsOnlyView.xaml.cs">
       <DependentUpon>UnitsOnlyView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Errors\AmbiguousStringFormats.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Errors\InvalidUnit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Errors\UnitAndStringFormatDoesNotMatch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="InputOptionsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

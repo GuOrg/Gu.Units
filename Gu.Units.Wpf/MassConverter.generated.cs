@@ -3,20 +3,20 @@
     using System;
     using System.ComponentModel;
     using System.Globalization;
-    using System.Windows;
+    using System.Text;
     using System.Windows.Data;
     using System.Windows.Markup;
 
     [MarkupExtensionReturnType(typeof(IValueConverter))]
     public class MassConverter : MarkupExtension, IValueConverter
     {
-        private static readonly string StringFormatNotSet = "Not Set";
         private MassUnit? unit;
         private Binding binding;
-        private string stringFormat = StringFormatNotSet;
         private QuantityFormat<MassUnit> quantityFormat;
-        private string bindingStringFormat = StringFormatNotSet;
-        private string errorText;
+        private QuantityFormat<MassUnit> bindingQuantityFormat;
+        private string valueFormat;
+        private bool initialized;
+        private StringBuilder errorText = new StringBuilder();
 
         public MassConverter()
         {
@@ -35,11 +35,33 @@
             {
                 if (value == null)
                 {
-                    var message = $"{nameof(Unit)} cannot be null";
-                    throw new ArgumentException(message, nameof(value));
+                    this.errorText.AppendLine($"{nameof(Unit)} cannot be null");
+                    if (Is.DesignMode)
+                    {
+                        throw new ArgumentException(this.errorText.ToString(), nameof(value));
+                    }
                 }
 
                 this.unit = value.Value;
+            }
+        }
+
+        public string ValueFormat
+        {
+            get { return this.valueFormat; }
+            set
+            {
+                if (!StringFormatParser<MassUnit>.CanParseValueFormat(value))
+                {
+                    if (Is.DesignMode)
+                    {
+                        StringFormatParser<MassUnit>.VerifyValueFormat(value);
+                    }
+
+                    this.errorText.AppendLine(StringFormatParser<MassUnit>.CreateFormatErrorString(value, typeof(double)));
+                }
+
+                this.valueFormat = value;
             }
         }
 
@@ -49,12 +71,29 @@
 
         public string StringFormat
         {
-            get { return this.stringFormat; }
+            get { return this.quantityFormat?.CompositeFormat; }
             set
             {
-                StringFormatParser<MassUnit>.VerifyQuantityFormat(value);
-                this.stringFormat = value;
-                OnStringFormatChanged();
+                if (StringFormatParser<MassUnit>.TryParse(value, out this.quantityFormat))
+                {
+                    if (this.unit != null && this.unit != this.quantityFormat.Unit)
+                    {
+                        var message = $"Unit is set to '{this.unit.Value.symbol}' but StringFormat is '{value}'";
+                        if (Is.DesignMode)
+                        {
+                            throw new InvalidOperationException(message);
+                        }
+                    }
+                }
+                else
+                {
+                    if (Is.DesignMode)
+                    {
+                        StringFormatParser<MassUnit>.VerifyQuantityFormat(value);
+                    }
+
+                    this.errorText.AppendLine(StringFormatParser<MassUnit>.CreateFormatErrorString(value, typeof(MassUnit)));
+                }
             }
         }
 
@@ -69,17 +108,19 @@
                 this.binding = targetObject as Binding;
                 if (this.binding == null && targetObject != null)
                 {
+                    this.errorText.AppendLine("TargetObject is not a binding");
                     if (Is.DesignMode)
                     {
-                        throw new InvalidOperationException("TargetObject is not a binding");
+                        throw new InvalidOperationException(this.errorText.ToString());
                     }
                 }
             }
             catch (NullReferenceException)
             {
+                this.errorText.AppendLine("Touching provideValueTarget?.TargetObject threw");
                 if (Is.DesignMode)
                 {
-                    throw new InvalidOperationException("Touching provideValueTarget?.TargetObject threw");
+                    throw new InvalidOperationException(this.errorText.ToString());
                 }
             }
 
@@ -91,38 +132,31 @@
             object parameter,
             CultureInfo culture)
         {
-            if (!IsValidConvertTargetType(targetType) && Is.DesignMode)
+            if (!this.initialized)
             {
-                var message = $"{GetType().Name} does not support converting to {targetType.Name}";
-                throw new ArgumentException(message, nameof(targetType));
+                Initialize();
             }
 
-            if (value != null && !(value is Mass) && Is.DesignMode)
+            var message = this.errorText.ToString();
+            if (!IsValidConvertTargetType(targetType))
             {
-                var message = $"{GetType().Name} only supports converting from {typeof(Mass)}";
-                throw new ArgumentException(message, nameof(value));
+                message += $"{GetType().Name} does not support converting to {targetType.Name}";
             }
 
-            if (this.bindingStringFormat == StringFormatNotSet)
+            if (value != null && !(value is Mass))
             {
-                TryGetStringFormatFromBinding();
+                message += $"{GetType().Name} only supports converting from {typeof(Mass)}";
             }
 
-            if (this.unit == null)
+            if (message != string.Empty)
             {
+                message = message.TrimEnd('\r', '\n');
                 if (Is.DesignMode)
                 {
-                    var message = $"{nameof(Unit)} cannot be null\r\n" +
-                                  $"Must be specified Explicitly or in Binding.StringFormat";
-                    throw new ArgumentException(message);
+                    throw new InvalidOperationException(message);
                 }
 
-                return "No unit set";
-            }
-
-            if (this.errorText != null)
-            {
-                return this.errorText;
+                return message;
             }
 
             if (value == null)
@@ -133,37 +167,27 @@
             }
 
             var mass = (Mass)value;
-
-            var format = this.bindingStringFormat != null && this.bindingStringFormat != StringFormatNotSet
-                ? this.bindingStringFormat
-                : null;
-            if (format != null)
+            if (this.bindingQuantityFormat != null)
             {
+                if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
+                {
+                    return mass.GetValue(this.unit.Value);
+                }
+
                 return mass;
             }
 
-            format = this.stringFormat != null && this.stringFormat != StringFormatNotSet
-                ? this.stringFormat
-                : null;
-            if (format != null &&
-                (targetType == typeof(string) || targetType == typeof(object)))
+            if (targetType == typeof(string) || targetType == typeof(object))
             {
-                return mass.ToString(this.quantityFormat, culture);
-            }
+                if (UnitInput == Wpf.UnitInput.SymbolRequired)
+                {
+                    return mass.ToString(this.quantityFormat, culture);
+                }
 
-
-            if ((SymbolFormat != null || UnitInput == Wpf.UnitInput.SymbolRequired) &&
-               (targetType == typeof(string) || targetType == typeof(object)))
-            {
-                return mass.ToString(Unit.Value, SymbolFormat ?? Units.SymbolFormat.FractionSuperScript, culture);
-            }
-
-            if (IsValidConvertTargetType(targetType))
-            {
                 return mass.GetValue(this.unit.Value);
             }
 
-            return value;
+            return mass.GetValue(this.unit.Value);
         }
 
         public object ConvertBack(object value,
@@ -171,10 +195,26 @@
             object parameter,
             CultureInfo culture)
         {
+            if (!this.initialized)
+            {
+                Initialize();
+            }
+
+            var message = this.errorText.ToString();
             if (!(targetType == typeof(Mass) || targetType == typeof(Mass?)))
             {
-                var message = $"{GetType().Name} does not support converting to {targetType.Name}";
-                throw new NotSupportedException(message);
+                message += $"{GetType().Name} does not support converting to {targetType.Name}";
+            }
+
+            if (message != string.Empty)
+            {
+                message = message.TrimEnd('\r', '\n');
+                if (Is.DesignMode)
+                {
+                    throw new InvalidOperationException(message);
+                }
+
+                return message;
             }
 
             if (value == null)
@@ -182,22 +222,6 @@
                 return null;
             }
 
-            if (this.StringFormat == null)
-            {
-                TryGetStringFormatFromBinding();
-            }
-
-            if (this.unit == null)
-            {
-                if (Is.DesignMode)
-                {
-                    var message = $"{nameof(Unit)} cannot be null\r\n" +
-                                  $"Must be specified Explicitly or in Binding.StringFormat";
-                    throw new ArgumentException(message);
-                }
-
-                return value;
-            }
 
             if (value is double)
             {
@@ -254,66 +278,128 @@
             }
         }
 
-        private void TryGetStringFormatFromBinding()
+        private void Initialize()
         {
-            this.bindingStringFormat = this.binding?.StringFormat;
-            if (!string.IsNullOrEmpty(bindingStringFormat))
+            this.initialized = true;
+            BindingStringFormat.TryGet(this.binding, out this.bindingQuantityFormat);
+            if (!string.IsNullOrEmpty(this.bindingQuantityFormat?.SymbolFormat))
             {
-                OnStringFormatChanged();
-            }
-        }
-
-        private void OnStringFormatChanged()
-        {
-            if (this.bindingStringFormat != StringFormatNotSet &&
-                this.stringFormat != StringFormatNotSet &&
-                this.bindingStringFormat != this.stringFormat)
-            {
-                this.errorText += $"Both {nameof(Binding)}.{nameof(Binding.StringFormat)} and {nameof(StringFormat)} are set.";
-
-                if (Is.DesignMode)
+                if (this.ValueFormat != null)
                 {
-                    throw new InvalidOperationException(this.errorText);
+                    this.errorText.AppendLine($"ValueFormat cannot be set when Binding.StringFormat is a unit format.");
+                }
+                if (this.StringFormat != null)
+                {
+                    this.errorText.AppendLine($"ValueFormat cannot be set when Binding.StringFormat is a unit format.");
                 }
             }
 
-            var format = this.stringFormat == StringFormatNotSet
-                ? this.bindingStringFormat
-                : this.stringFormat;
-            if (StringFormatParser<MassUnit>.TryParse(format, out this.quantityFormat))
+            if (this.quantityFormat != null)
             {
-                if (UnitInput == null && this.quantityFormat.SymbolFormat != null)
+                if (this.ValueFormat != null)
                 {
-                    UnitInput = Wpf.UnitInput.SymbolRequired;
+                    this.errorText.AppendLine($"Both ValueFormat and StringFormat cannot be set.");
                 }
+            }
+            else
+            {
+                if (this.unit != null && SymbolFormat != null)
+                {
+                    this.quantityFormat = FormatCache<MassUnit>.GetOrCreate(ValueFormat, this.unit.Value, SymbolFormat.Value);
+                }
+            }
 
-                if (this.unit == null)
+            if (this.unit == null)
+            {
+                var hasFmtUnit = !string.IsNullOrEmpty(this.quantityFormat?.SymbolFormat);
+                var hasBindingUnit = !string.IsNullOrEmpty(this.bindingQuantityFormat?.SymbolFormat);
+                if (!hasFmtUnit && !hasBindingUnit)
+                {
+                    this.errorText.AppendLine($"Unit cannot be null.");
+                    this.errorText.AppendLine($"Must be specified Explicitly or in StringFormat or in Binding.StringFormat.");
+                }
+                else if (hasFmtUnit && !hasBindingUnit)
                 {
                     this.unit = this.quantityFormat.Unit;
                 }
-
-                else if (this.unit != this.quantityFormat.Unit)
+                else if (!hasFmtUnit && hasBindingUnit)
                 {
-                    this.errorText += $"Unit is set to '{Unit}' but {nameof(StringFormat)} is '{format}'";
-                    if (Is.DesignMode)
+                    this.unit = this.bindingQuantityFormat.Unit;
+                }
+                else
+                {
+                    if (this.quantityFormat.Unit != this.bindingQuantityFormat.Unit)
                     {
-                        throw new InvalidOperationException(this.errorText);
+                        this.errorText.AppendLine($"Ambiguous units StringFormat: {quantityFormat.CompositeFormat} Binding.StringFormat: {this.bindingQuantityFormat.CompositeFormat}");
                     }
+
+                    this.unit = this.quantityFormat.Unit;
+                }
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(this.quantityFormat?.SymbolFormat) &&
+                    this.unit != this.quantityFormat.Unit)
+                {
+                    this.errorText.AppendLine($"Unit is set to '{this.unit}' but StringFormat is '{StringFormat.Replace("{0:", string.Empty).Replace("}", string.Empty)}'");
                 }
 
-                return;
+                var hasBindingUnit = !string.IsNullOrEmpty(this.bindingQuantityFormat?.SymbolFormat);
             }
 
-            this.errorText = this.quantityFormat.ErrorText;
-            if (Is.DesignMode)
+            if (this.UnitInput == Wpf.UnitInput.SymbolRequired)
             {
-                throw new ArgumentException($"Error parsing: '{this.errorText}'");
+                if (string.IsNullOrEmpty(this.quantityFormat?.SymbolFormat))
+                {
+                    if (string.IsNullOrEmpty(this.bindingQuantityFormat?.SymbolFormat))
+                    {
+                        if (this.unit == null)
+                        {
+                            this.errorText.AppendLine("UnitInput == SymbolRequired but no unit format is specified");
+                        }
+                        else if (this.SymbolFormat != null)
+                        {
+                            this.quantityFormat = FormatCache<MassUnit>.GetOrCreate(this.ValueFormat, this.unit.Value, this.SymbolFormat.Value);
+                            if (this.UnitInput == null)
+                            {
+                                this.UnitInput = Wpf.UnitInput.SymbolRequired;
+                            }
+                            else if (this.UnitInput == Wpf.UnitInput.ScalarOnly)
+                            {
+                                this.errorText.AppendLine("Cannot have ScalarOnly and SymbolFormat specified");
+                            }
+                        }
+                        else
+                        {
+                            this.quantityFormat = FormatCache<MassUnit>.GetOrCreate(this.ValueFormat, this.unit.Value);
+                            if (this.UnitInput == null)
+                            {
+                                this.UnitInput = Wpf.UnitInput.ScalarOnly;
+                            }
+                            else if (this.UnitInput == Wpf.UnitInput.ScalarOnly)
+                            {
+                                this.errorText.AppendLine("Cannot have ScalarOnly and SymbolFormat specified");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        this.quantityFormat = this.bindingQuantityFormat;
+                    }
+                }
             }
 
-            this.stringFormat = null;
+            if (UnitInput == null)
+            {
+                if (!string.IsNullOrEmpty(this.quantityFormat?.SymbolFormat) ||
+                    !string.IsNullOrEmpty(this.bindingQuantityFormat?.SymbolFormat))
+                {
+                    UnitInput = Wpf.UnitInput.SymbolRequired;
+                }
+            }
         }
 
-        private bool IsValidConvertTargetType(Type targetType)
+        private static bool IsValidConvertTargetType(Type targetType)
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||

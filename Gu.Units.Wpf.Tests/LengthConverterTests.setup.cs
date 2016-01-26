@@ -45,18 +45,17 @@
             [Test]
             public void ValueFormatUnitAndUnitFormat()
             {
-                Assert.Fail();
-                //var converter = new SpeedConverter
-                //{
-                //    ValueFormat = "F4",
-                //    Unit = LengthUnit.Centimetres,
-                //    SymbolFormat = SymbolFormat.FractionHatPowers
-                //};
+                var converter = new SpeedConverter
+                {
+                    ValueFormat = "F2",
+                    Unit = SpeedUnit.MillimetresPerSecond,
+                    SymbolFormat = SymbolFormat.SignedSuperScript
+                };
 
-                //var convert = converter.Convert(Length.FromMillimetres(12.34), typeof(string), null, CultureInfo.InvariantCulture);
-                //Assert.AreEqual("12.3 mm", convert);
-                //Assert.AreEqual(LengthUnit.Millimetres, converter.Unit);
-                //Assert.AreEqual(UnitInput.ScalarOnly, converter.UnitInput);
+                var convert = converter.Convert(Speed.FromMetresPerMinute(12.34), typeof(string), null, CultureInfo.InvariantCulture);
+                Assert.AreEqual("205.67\u00A0mm⋅s⁻¹", convert);
+                Assert.AreEqual(SpeedUnit.MillimetresPerSecond, converter.Unit);
+                Assert.AreEqual(UnitInput.SymbolRequired, converter.UnitInput);
             }
 
             [TestCase("unknown format")]

@@ -98,12 +98,30 @@
 
         <TextBlock Grid.Row="5"
                    Grid.Column="0"
-                   Text="Binding Length, Converter={units:LengthConverter}, StringFormat='{}{0:F2 cm}'" />
+                   Text="Binding Length, Converter={units:LengthConverter cm}, StringFormat='{}{0:F2}'" />
         <TextBox Grid.Row="5"
                  Grid.Column="1"
                  AutomationProperties.AutomationId="{x:Static local:AutomationIds.ConverterCentimetreBindingF2Format}"
                  Text="{Binding Length,
                                 Converter={units:LengthConverter cm},
                                 StringFormat='{}{0:F2}'}" />
+
+        <TextBlock Grid.Row="6"
+                   Grid.Column="0"
+                   Text="Binding Speed, Converter={units:SpeedConverter mm/s, ValueFormat='F2', SymbolFormat=SignedSuperScript}" />
+        <TextBox Grid.Row="6"
+                 Grid.Column="1"
+                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.MillimetresPerSecondSignedSuperScriptAndValueFormatF2}"
+                 Text="{Binding Speed,
+                                Converter={units:SpeedConverter mm/s, ValueFormat='F2', SymbolFormat=SignedSuperScript}}" />
+
+        <TextBlock Grid.Row="7"
+                   Grid.Column="0"
+                   Text="Binding Speed, Converter={units:SpeedConverter mm/s, ValueFormat='F2', SymbolFormat=SignedSuperScript}" />
+        <TextBox Grid.Row="7"
+                 Grid.Column="1"
+                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.MillimetresPerSecondAndValueFormatF2}"
+                 Text="{Binding Speed,
+                                Converter={units:SpeedConverter mm/s, ValueFormat='F2'}}" />
     </Grid>
 </UserControl>
