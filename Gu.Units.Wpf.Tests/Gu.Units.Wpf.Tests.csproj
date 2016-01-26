@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="LengthConverterTests.convertback.cs" />
     <Compile Include="LengthConverterTests.convert.cs" />
-    <Compile Include="LengthConverterTests.cs" />
+    <Compile Include="ConverterTests.cs" />
     <Compile Include="LengthConverterTests.setup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reminder.cs" />

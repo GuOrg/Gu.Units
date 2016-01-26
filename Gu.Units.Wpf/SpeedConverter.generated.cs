@@ -52,7 +52,7 @@
             get { return this.stringFormat; }
             set
             {
-                StringFormatParser<SpeedUnit>.VerifyFormat(value);
+                StringFormatParser<SpeedUnit>.VerifyQuantityFormat(value);
                 this.stringFormat = value;
                 OnStringFormatChanged();
             }

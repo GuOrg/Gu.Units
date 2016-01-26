@@ -52,7 +52,7 @@
             get { return this.stringFormat; }
             set
             {
-                StringFormatParser<KinematicViscosityUnit>.VerifyFormat(value);
+                StringFormatParser<KinematicViscosityUnit>.VerifyQuantityFormat(value);
                 this.stringFormat = value;
                 OnStringFormatChanged();
             }

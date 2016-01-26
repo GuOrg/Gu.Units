@@ -52,7 +52,7 @@
             get { return this.stringFormat; }
             set
             {
-                StringFormatParser<VolumetricFlowUnit>.VerifyFormat(value);
+                StringFormatParser<VolumetricFlowUnit>.VerifyQuantityFormat(value);
                 this.stringFormat = value;
                 OnStringFormatChanged();
             }

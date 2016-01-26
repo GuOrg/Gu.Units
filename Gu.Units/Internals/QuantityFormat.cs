@@ -30,8 +30,7 @@
             Unit = unit;
         }
 
-        public QuantityFormat(string errorText,
-            TUnit unit)
+        private QuantityFormat(string errorText, TUnit unit)
         {
             ErrorText = errorText;
             Unit = unit;
@@ -136,10 +135,6 @@
                 {
                     padding = NoBreakingSpaceString;
                 }
-                else
-                {
-                    padding = null;
-                }
             }
             else
             {
@@ -167,6 +162,7 @@
             {
                 return true;
             }
+
             return char.IsLetter(symbol[0]);
         }
 

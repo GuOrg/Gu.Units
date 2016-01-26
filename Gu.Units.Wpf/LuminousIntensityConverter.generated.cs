@@ -52,7 +52,7 @@
             get { return this.stringFormat; }
             set
             {
-                StringFormatParser<LuminousIntensityUnit>.VerifyFormat(value);
+                StringFormatParser<LuminousIntensityUnit>.VerifyQuantityFormat(value);
                 this.stringFormat = value;
                 OnStringFormatChanged();
             }

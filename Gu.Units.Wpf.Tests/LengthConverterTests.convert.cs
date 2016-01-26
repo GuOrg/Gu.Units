@@ -4,7 +4,7 @@
     using System.Globalization;
     using NUnit.Framework;
 
-    public partial class LengthConverterTests
+    public partial class ConverterTests
     {
         [RequiresSTA]
         public class Convert
@@ -19,6 +19,27 @@
                     Unit = LengthUnit.Centimetres,
                 };
 
+                var length = Length.FromMillimetres(12);
+                var actual = converter.Convert(length, targetType, null, null);
+                Assert.AreEqual(expected, actual);
+            }
+
+            [TestCase(typeof(string), 1.2)]
+            [TestCase(typeof(object), 1.2)]
+            [TestCase(typeof(double), 1.2)]
+            public void WithExplicitUnitAndBindingNonUnitStringFormat(Type targetType, object expected)
+            {
+                var converter = new LengthConverter
+                {
+                    Unit = LengthUnit.Centimetres,
+                };
+
+                var providerMock = new ServiceProviderMock
+                {
+                    BindingStringFormat = "{}{0:F2}"
+                };
+
+                converter.ProvideValue(providerMock.Object);
                 var length = Length.FromMillimetres(12);
                 var actual = converter.Convert(length, targetType, null, null);
                 Assert.AreEqual(expected, actual);
@@ -108,21 +129,24 @@
                 var actual = converter.Convert(length, targetType, null, CultureInfo.GetCultureInfo("sv-SE"));
                 Assert.AreEqual(expected, actual);
             }
+
             [Test]
-            public void WhenProvideValueTargetThrows()
+            public void ErrorWhenProvideValueTargetThrows()
             {
                 var converter = new LengthConverter { Unit = LengthUnit.Metres };
                 var providerMock = new ServiceProviderMock();
                 providerMock.ProvideValueTargetMock.Setup(x => x.TargetObject).Throws<NullReferenceException>();
+                Gu.Units.Wpf.Is.DesignMode = true;
+                Assert.Throws<InvalidOperationException>(() => converter.ProvideValue(providerMock.Object));
 
-                converter.ProvideValue(providerMock.Object);
+                Gu.Units.Wpf.Is.DesignMode = false;
                 var length = Length.FromMillimetres(1234);
                 var actual = converter.Convert(length, typeof(string), null, null);
-                Assert.AreEqual(1.234, actual);
+                Assert.AreEqual("Touching provideValueTarget?.TargetObject threw", actual);
             }
 
             [Test]
-            public void WithBindingStringFormatAndExplicitStringFormat()
+            public void ErrorWhenBindingStringFormatAndExplicitStringFormat()
             {
                 var converter = new LengthConverter
                 {
@@ -138,7 +162,8 @@
                 var length = Length.FromMillimetres(1234);
                 Gu.Units.Wpf.Is.DesignMode = true;
                 var ex = Assert.Throws<InvalidOperationException>(() => converter.Convert(length, typeof(string), null, null));
-                var expected = "Both Binding.StringFormat and StringFormat are set.";
+                var expected = "ValueFormat cannot be set when Binding.StringFormat is a unit format.\r\n" +
+                               "Ambiguous units StringFormat: {0:F1} mm Binding.StringFormat: {0:F2} cm";
                 Assert.AreEqual(expected, ex.Message);
 
                 Gu.Units.Wpf.Is.DesignMode = false;

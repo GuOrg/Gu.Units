@@ -63,16 +63,16 @@
                                 Converter={units:LengthConverter},
                                 StringFormat='{}{0:F2 cm}'}" />
 
-        <TextBlock Grid.Row="7"
+        <TextBlock Grid.Row="3"
                    Grid.Column="0"
                    Text="Converter={units:SpeedConverter Unit=mm/s}}" />
-        <ContentPresenter Grid.Row="7"
+        <ContentPresenter Grid.Row="3"
                           Grid.Column="1"
                           Content="{Binding}"
                           ContentTemplate="{StaticResource DataTemplate}" />
 
 
-        <HeaderedContentControl Grid.Row="8"
+        <HeaderedContentControl Grid.Row="4"
                                 Grid.Column="0"
                                 Grid.ColumnSpan="2"
                                 Content="{Binding Length}"
@@ -95,5 +95,15 @@
                 </ControlTemplate>
             </HeaderedContentControl.Template>
         </HeaderedContentControl>
+
+        <TextBlock Grid.Row="5"
+                   Grid.Column="0"
+                   Text="Binding Length, Converter={units:LengthConverter}, StringFormat='{}{0:F2 cm}'" />
+        <TextBox Grid.Row="5"
+                 Grid.Column="1"
+                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.ConverterCentimetreBindingF2Format}"
+                 Text="{Binding Length,
+                                Converter={units:LengthConverter cm},
+                                StringFormat='{}{0:F2}'}" />
     </Grid>
 </UserControl>

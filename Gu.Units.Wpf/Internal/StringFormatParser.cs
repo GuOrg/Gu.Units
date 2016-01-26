@@ -7,23 +7,57 @@
     {
         private static readonly Dictionary<string, QuantityFormat<TUnit>> Cache = new Dictionary<string, QuantityFormat<TUnit>>();
 
-        internal static void VerifyFormat(string format)
+        internal static bool CanParseValueFormat(string format)
         {
-            if (CanParse(format))
+            try
+            {
+                var text = 1.2.ToString(format);
+                double temp;
+                return double.TryParse(text, out temp);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        internal static void VerifyValueFormat(string format)
+        {
+            if (CanParseValueFormat(format))
             {
                 return;
             }
 
             if (Is.DesignMode)
             {
-                throw new FormatException($"Error parsing: 'unknown format' for {typeof(TUnit)}");
+                var message = CreateFormatErrorString(format, typeof(double));
+                throw new FormatException(message);
             }
         }
 
-        internal static bool CanParse(string format)
+        internal static void VerifyQuantityFormat(string format)
+        {
+            if (CanParseQuantityFormat(format))
+            {
+                return;
+            }
+
+            if (Is.DesignMode)
+            {
+                var message = CreateFormatErrorString(format, typeof (TUnit));
+                throw new FormatException(message);
+            }
+        }
+
+        internal static bool CanParseQuantityFormat(string format)
         {
             QuantityFormat<TUnit> result;
             return TryParse(format, out result);
+        }
+
+        internal static string CreateFormatErrorString(string format, Type type)
+        {
+            return $"Error parsing: '{format}' for {type}";
         }
 
         internal static bool TryParse(string format, out QuantityFormat<TUnit> result)
@@ -62,12 +96,15 @@
                 ? format.Substring(pos, end - pos)
                 : format;
             var success = CompositeFormatParser.TryParse(trimmedFormat, out result);
-            Cache.Add(format, result);
+            if (success)
+            {
+                Cache.Add(format, result);
+            }
+
             return success;
         }
 
-        private static bool TryReadPrefix(string format,
-            ref int pos)
+        private static bool TryReadPrefix(string format, ref int pos)
         {
             var start = pos;
 
@@ -88,9 +125,7 @@
             return true;
         }
 
-        private static bool TryReadChar(string format,
-            ref int pos,
-            char c)
+        private static bool TryReadChar(string format, ref int pos, char c)
         {
             var start = pos;
             if (format[pos] != c)

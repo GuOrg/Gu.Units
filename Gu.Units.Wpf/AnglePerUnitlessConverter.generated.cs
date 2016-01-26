@@ -52,7 +52,7 @@
             get { return this.stringFormat; }
             set
             {
-                StringFormatParser<AnglePerUnitlessUnit>.VerifyFormat(value);
+                StringFormatParser<AnglePerUnitlessUnit>.VerifyQuantityFormat(value);
                 this.stringFormat = value;
                 OnStringFormatChanged();
             }

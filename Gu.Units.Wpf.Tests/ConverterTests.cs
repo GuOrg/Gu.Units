@@ -2,7 +2,7 @@
 {
     using NUnit.Framework;
 
-    public partial class LengthConverterTests
+    public partial class ConverterTests
     {
         //[Test]
         //public void Reminders()

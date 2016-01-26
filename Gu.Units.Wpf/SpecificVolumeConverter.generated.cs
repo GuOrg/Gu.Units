@@ -52,7 +52,7 @@
             get { return this.stringFormat; }
             set
             {
-                StringFormatParser<SpecificVolumeUnit>.VerifyFormat(value);
+                StringFormatParser<SpecificVolumeUnit>.VerifyQuantityFormat(value);
                 this.stringFormat = value;
                 OnStringFormatChanged();
             }

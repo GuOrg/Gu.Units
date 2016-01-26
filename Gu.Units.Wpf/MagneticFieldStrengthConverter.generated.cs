@@ -52,7 +52,7 @@
             get { return this.stringFormat; }
             set
             {
-                StringFormatParser<MagneticFieldStrengthUnit>.VerifyFormat(value);
+                StringFormatParser<MagneticFieldStrengthUnit>.VerifyQuantityFormat(value);
                 this.stringFormat = value;
                 OnStringFormatChanged();
             }

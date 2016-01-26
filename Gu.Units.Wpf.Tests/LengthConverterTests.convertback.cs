@@ -4,7 +4,7 @@
     using NUnit.Framework;
 
     [TestFixture]
-    public partial class LengthConverterTests
+    public partial class ConverterTests
     {
         public class ConvertBack
         {
