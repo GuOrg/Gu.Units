@@ -2,7 +2,6 @@
 {
     using System;
     using System.ComponentModel;
-    using System.Diagnostics;
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Pressure"/>.
@@ -154,7 +153,7 @@
         /// <summary>
         /// Converts a value from pascals.
         /// </summary>
-        /// <param name="Pascals">The value in Pascals</param>
+        /// <param name="pascals">The value in Pascals</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double pascals)
         {
