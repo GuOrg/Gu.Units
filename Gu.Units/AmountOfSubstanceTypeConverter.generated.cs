@@ -75,11 +75,11 @@
                 }
                 else if (destinationType == typeof(InstanceDescriptor))
                 {
-                    var ctor = typeof(AmountOfSubstance).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(double) }, null);
-                    if (ctor != null)
+                    var factoryMethod = typeof(AmountOfSubstance).GetMethod(nameof(AmountOfSubstance.FromMoles), BindingFlags.Public | BindingFlags.Static, null, new Type[] { typeof(double) }, null);
+                    if (factoryMethod != null)
                     {
                         var args = new object[] { amountOfSubstance.moles };
-                        return new InstanceDescriptor(ctor, args);
+                        return new InstanceDescriptor(factoryMethod, args);
                     }
                 }
             }

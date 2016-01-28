@@ -75,11 +75,11 @@
                 }
                 else if (destinationType == typeof(InstanceDescriptor))
                 {
-                    var ctor = typeof(Temperature).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(double) }, null);
-                    if (ctor != null)
+                    var factoryMethod = typeof(Temperature).GetMethod(nameof(Temperature.FromKelvin), BindingFlags.Public | BindingFlags.Static, null, new Type[] { typeof(double) }, null);
+                    if (factoryMethod != null)
                     {
                         var args = new object[] { temperature.kelvin };
-                        return new InstanceDescriptor(ctor, args);
+                        return new InstanceDescriptor(factoryMethod, args);
                     }
                 }
             }

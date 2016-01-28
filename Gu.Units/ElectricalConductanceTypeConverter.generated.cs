@@ -75,11 +75,11 @@
                 }
                 else if (destinationType == typeof(InstanceDescriptor))
                 {
-                    var ctor = typeof(ElectricalConductance).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(double) }, null);
-                    if (ctor != null)
+                    var factoryMethod = typeof(ElectricalConductance).GetMethod(nameof(ElectricalConductance.FromSiemens), BindingFlags.Public | BindingFlags.Static, null, new Type[] { typeof(double) }, null);
+                    if (factoryMethod != null)
                     {
                         var args = new object[] { electricalConductance.siemens };
-                        return new InstanceDescriptor(ctor, args);
+                        return new InstanceDescriptor(factoryMethod, args);
                     }
                 }
             }

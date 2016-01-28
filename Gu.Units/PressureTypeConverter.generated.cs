@@ -75,11 +75,11 @@
                 }
                 else if (destinationType == typeof(InstanceDescriptor))
                 {
-                    var ctor = typeof(Pressure).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(double) }, null);
-                    if (ctor != null)
+                    var factoryMethod = typeof(Pressure).GetMethod(nameof(Pressure.FromPascals), BindingFlags.Public | BindingFlags.Static, null, new Type[] { typeof(double) }, null);
+                    if (factoryMethod != null)
                     {
                         var args = new object[] { pressure.pascals };
-                        return new InstanceDescriptor(ctor, args);
+                        return new InstanceDescriptor(factoryMethod, args);
                     }
                 }
             }

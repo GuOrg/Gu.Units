@@ -75,11 +75,11 @@
                 }
                 else if (destinationType == typeof(InstanceDescriptor))
                 {
-                    var ctor = typeof(LuminousFlux).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(double) }, null);
-                    if (ctor != null)
+                    var factoryMethod = typeof(LuminousFlux).GetMethod(nameof(LuminousFlux.FromLumens), BindingFlags.Public | BindingFlags.Static, null, new Type[] { typeof(double) }, null);
+                    if (factoryMethod != null)
                     {
                         var args = new object[] { luminousFlux.lumens };
-                        return new InstanceDescriptor(ctor, args);
+                        return new InstanceDescriptor(factoryMethod, args);
                     }
                 }
             }

@@ -85,11 +85,11 @@ namespace <#= Settings.Namespace #>
                 }
                 else if (destinationType == typeof(InstanceDescriptor))
                 {
-                    var ctor = typeof(<#= quantity.Name #>).GetConstructor(BindingFlags.NonPublic | BindingFlags.Instance, null, new Type[] { typeof(double) }, null);
-                    if (ctor != null)
+                    var factoryMethod = typeof(<#= quantity.Name #>).GetMethod(nameof(<#= quantity.Name #>.From<#= quantity.Unit.Name #>), BindingFlags.Public | BindingFlags.Static, null, new Type[] { typeof(double) }, null);
+                    if (factoryMethod != null)
                     {
                         var args = new object[] { <#= quantity.ParameterName #>.<#= quantity.Unit.ParameterName #> };
-                        return new InstanceDescriptor(ctor, args);
+                        return new InstanceDescriptor(factoryMethod, args);
                     }
                 }
             }
