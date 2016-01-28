@@ -22,7 +22,7 @@
         {
         }
 
-        public LuminousFluxConverter([TypeConverter(typeof(LuminousFluxUnitTypeConverter))]LuminousFluxUnit unit)
+        public LuminousFluxConverter(LuminousFluxUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

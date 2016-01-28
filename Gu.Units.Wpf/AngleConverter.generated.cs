@@ -22,7 +22,7 @@
         {
         }
 
-        public AngleConverter([TypeConverter(typeof(AngleUnitTypeConverter))]AngleUnit unit)
+        public AngleConverter(AngleUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

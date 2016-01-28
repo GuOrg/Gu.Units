@@ -22,7 +22,7 @@
         {
         }
 
-        public DensityConverter([TypeConverter(typeof(DensityUnitTypeConverter))]DensityUnit unit)
+        public DensityConverter(DensityUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

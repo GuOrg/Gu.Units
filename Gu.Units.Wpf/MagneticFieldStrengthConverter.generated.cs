@@ -22,7 +22,7 @@
         {
         }
 
-        public MagneticFieldStrengthConverter([TypeConverter(typeof(MagneticFieldStrengthUnitTypeConverter))]MagneticFieldStrengthUnit unit)
+        public MagneticFieldStrengthConverter(MagneticFieldStrengthUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

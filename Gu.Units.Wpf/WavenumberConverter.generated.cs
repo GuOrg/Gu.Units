@@ -22,7 +22,7 @@
         {
         }
 
-        public WavenumberConverter([TypeConverter(typeof(WavenumberUnitTypeConverter))]WavenumberUnit unit)
+        public WavenumberConverter(WavenumberUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

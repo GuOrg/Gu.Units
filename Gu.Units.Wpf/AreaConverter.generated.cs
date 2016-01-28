@@ -22,7 +22,7 @@
         {
         }
 
-        public AreaConverter([TypeConverter(typeof(AreaUnitTypeConverter))]AreaUnit unit)
+        public AreaConverter(AreaUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

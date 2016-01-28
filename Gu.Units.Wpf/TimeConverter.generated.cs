@@ -22,7 +22,7 @@
         {
         }
 
-        public TimeConverter([TypeConverter(typeof(TimeUnitTypeConverter))]TimeUnit unit)
+        public TimeConverter(TimeUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

@@ -22,7 +22,7 @@
         {
         }
 
-        public IlluminanceConverter([TypeConverter(typeof(IlluminanceUnitTypeConverter))]IlluminanceUnit unit)
+        public IlluminanceConverter(IlluminanceUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

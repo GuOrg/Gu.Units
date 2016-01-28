@@ -127,7 +127,10 @@
             return this;
         }
 
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object Convert(object value,
+            Type targetType,
+            object parameter,
+            CultureInfo culture)
         {
             if (!this.initialized)
             {
@@ -192,7 +195,10 @@
             return length.GetValue(this.unit.Value);
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object ConvertBack(object value,
+            Type targetType,
+            object parameter,
+            CultureInfo culture)
         {
             if (!this.initialized)
             {
@@ -200,7 +206,7 @@
             }
 
             var message = this.errorText.ToString();
-            if (!(targetType == typeof(Length) || targetType == typeof(Length?) || targetType == typeof(object)))
+            if (!(targetType == typeof(Length) || targetType == typeof(Length?)))
             {
                 message += $"{GetType().Name} does not support converting to {targetType.Name}";
             }

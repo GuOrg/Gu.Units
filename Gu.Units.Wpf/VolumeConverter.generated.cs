@@ -22,7 +22,7 @@
         {
         }
 
-        public VolumeConverter([TypeConverter(typeof(VolumeUnitTypeConverter))]VolumeUnit unit)
+        public VolumeConverter(VolumeUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

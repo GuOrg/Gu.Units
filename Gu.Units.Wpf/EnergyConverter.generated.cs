@@ -22,7 +22,7 @@
         {
         }
 
-        public EnergyConverter([TypeConverter(typeof(EnergyUnitTypeConverter))]EnergyUnit unit)
+        public EnergyConverter(EnergyUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

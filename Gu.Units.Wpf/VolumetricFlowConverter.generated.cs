@@ -22,7 +22,7 @@
         {
         }
 
-        public VolumetricFlowConverter([TypeConverter(typeof(VolumetricFlowUnitTypeConverter))]VolumetricFlowUnit unit)
+        public VolumetricFlowConverter(VolumetricFlowUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

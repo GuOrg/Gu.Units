@@ -22,7 +22,7 @@
         {
         }
 
-        public TorqueConverter([TypeConverter(typeof(TorqueUnitTypeConverter))]TorqueUnit unit)
+        public TorqueConverter(TorqueUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

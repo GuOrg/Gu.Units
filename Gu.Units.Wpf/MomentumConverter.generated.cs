@@ -22,7 +22,7 @@
         {
         }
 
-        public MomentumConverter([TypeConverter(typeof(MomentumUnitTypeConverter))]MomentumUnit unit)
+        public MomentumConverter(MomentumUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

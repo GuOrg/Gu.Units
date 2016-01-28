@@ -22,7 +22,7 @@
         {
         }
 
-        public AmountOfSubstanceConverter([TypeConverter(typeof(AmountOfSubstanceUnitTypeConverter))]AmountOfSubstanceUnit unit)
+        public AmountOfSubstanceConverter(AmountOfSubstanceUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

@@ -22,7 +22,7 @@
         {
         }
 
-        public VoltageConverter([TypeConverter(typeof(VoltageUnitTypeConverter))]VoltageUnit unit)
+        public VoltageConverter(VoltageUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

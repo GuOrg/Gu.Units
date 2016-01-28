@@ -22,7 +22,7 @@
         {
         }
 
-        public JerkConverter([TypeConverter(typeof(JerkUnitTypeConverter))]JerkUnit unit)
+        public JerkConverter(JerkUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

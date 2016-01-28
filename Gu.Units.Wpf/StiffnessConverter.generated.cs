@@ -22,7 +22,7 @@
         {
         }
 
-        public StiffnessConverter([TypeConverter(typeof(StiffnessUnitTypeConverter))]StiffnessUnit unit)
+        public StiffnessConverter(StiffnessUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

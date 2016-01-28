@@ -22,7 +22,7 @@
         {
         }
 
-        public LengthPerUnitlessConverter([TypeConverter(typeof(LengthPerUnitlessUnitTypeConverter))]LengthPerUnitlessUnit unit)
+        public LengthPerUnitlessConverter(LengthPerUnitlessUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

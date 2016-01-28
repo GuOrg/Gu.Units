@@ -22,7 +22,7 @@
         {
         }
 
-        public PressureConverter([TypeConverter(typeof(PressureUnitTypeConverter))]PressureUnit unit)
+        public PressureConverter(PressureUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

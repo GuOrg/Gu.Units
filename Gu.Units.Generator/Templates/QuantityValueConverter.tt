@@ -33,7 +33,7 @@ namespace Gu.Units.Wpf
         {
         }
 
-        public <#= quantity.Name #>Converter([TypeConverter(typeof(<#= quantity.UnitName #>TypeConverter))]<#= quantity.UnitName #> unit)
+        public <#= quantity.Name #>Converter(<#= quantity.UnitName #> unit)
         {
             Unit = unit;
         }
@@ -419,6 +419,7 @@ namespace Gu.Units.Wpf
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

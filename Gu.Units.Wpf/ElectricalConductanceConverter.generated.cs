@@ -22,7 +22,7 @@
         {
         }
 
-        public ElectricalConductanceConverter([TypeConverter(typeof(ElectricalConductanceUnitTypeConverter))]ElectricalConductanceUnit unit)
+        public ElectricalConductanceConverter(ElectricalConductanceUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

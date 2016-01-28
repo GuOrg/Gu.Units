@@ -22,7 +22,7 @@
         {
         }
 
-        public CapacitanceConverter([TypeConverter(typeof(CapacitanceUnitTypeConverter))]CapacitanceUnit unit)
+        public CapacitanceConverter(CapacitanceUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

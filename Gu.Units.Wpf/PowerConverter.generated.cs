@@ -22,7 +22,7 @@
         {
         }
 
-        public PowerConverter([TypeConverter(typeof(PowerUnitTypeConverter))]PowerUnit unit)
+        public PowerConverter(PowerUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

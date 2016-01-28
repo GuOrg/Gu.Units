@@ -8,27 +8,27 @@
     using System.Windows.Markup;
 
     [MarkupExtensionReturnType(typeof(IValueConverter))]
-    public class KinematicViscosityConverter : MarkupExtension, IValueConverter
+    public class MassConverter : MarkupExtension, IValueConverter
     {
-        private KinematicViscosityUnit? unit;
+        private MassUnit? unit;
         private Binding binding;
-        private QuantityFormat<KinematicViscosityUnit> quantityFormat;
-        private QuantityFormat<KinematicViscosityUnit> bindingQuantityFormat;
+        private QuantityFormat<MassUnit> quantityFormat;
+        private QuantityFormat<MassUnit> bindingQuantityFormat;
         private string valueFormat;
         private bool initialized;
         private StringBuilder errorText = new StringBuilder();
 
-        public KinematicViscosityConverter()
+        public MassConverter()
         {
         }
 
-        public KinematicViscosityConverter([TypeConverter(typeof(KinematicViscosityUnitTypeConverter))]KinematicViscosityUnit unit)
+        public MassConverter(MassUnit unit)
         {
             Unit = unit;
         }
 
-        [ConstructorArgument("unit"), TypeConverter(typeof(KinematicViscosityUnitTypeConverter))]
-        public KinematicViscosityUnit? Unit
+        [ConstructorArgument("unit"), TypeConverter(typeof(MassUnitTypeConverter))]
+        public MassUnit? Unit
         {
             get { return this.unit; }
             set
@@ -51,14 +51,14 @@
             get { return this.valueFormat; }
             set
             {
-                if (!StringFormatParser<KinematicViscosityUnit>.CanParseValueFormat(value))
+                if (!StringFormatParser<MassUnit>.CanParseValueFormat(value))
                 {
                     if (Is.DesignMode)
                     {
-                        StringFormatParser<KinematicViscosityUnit>.VerifyValueFormat(value);
+                        StringFormatParser<MassUnit>.VerifyValueFormat(value);
                     }
 
-                    this.errorText.AppendLine(StringFormatParser<KinematicViscosityUnit>.CreateFormatErrorString(value, typeof(double)));
+                    this.errorText.AppendLine(StringFormatParser<MassUnit>.CreateFormatErrorString(value, typeof(double)));
                 }
 
                 this.valueFormat = value;
@@ -74,7 +74,7 @@
             get { return this.quantityFormat?.CompositeFormat; }
             set
             {
-                if (StringFormatParser<KinematicViscosityUnit>.TryParse(value, out this.quantityFormat))
+                if (StringFormatParser<MassUnit>.TryParse(value, out this.quantityFormat))
                 {
                     if (this.unit != null && this.unit != this.quantityFormat.Unit)
                     {
@@ -89,10 +89,10 @@
                 {
                     if (Is.DesignMode)
                     {
-                        StringFormatParser<KinematicViscosityUnit>.VerifyQuantityFormat(value);
+                        StringFormatParser<MassUnit>.VerifyQuantityFormat(value);
                     }
 
-                    this.errorText.AppendLine(StringFormatParser<KinematicViscosityUnit>.CreateFormatErrorString(value, typeof(KinematicViscosityUnit)));
+                    this.errorText.AppendLine(StringFormatParser<MassUnit>.CreateFormatErrorString(value, typeof(MassUnit)));
                 }
             }
         }
@@ -143,9 +143,9 @@
                 message += $"{GetType().Name} does not support converting to {targetType.Name}";
             }
 
-            if (value != null && !(value is KinematicViscosity))
+            if (value != null && !(value is Mass))
             {
-                message += $"{GetType().Name} only supports converting from {typeof(KinematicViscosity)}";
+                message += $"{GetType().Name} only supports converting from {typeof(Mass)}";
             }
 
             if (message != string.Empty)
@@ -166,33 +166,33 @@
                     : null;
             }
 
-            var kinematicViscosity = (KinematicViscosity)value;
+            var mass = (Mass)value;
             if (this.bindingQuantityFormat != null)
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return kinematicViscosity.GetValue(this.unit.Value);
+                    return mass.GetValue(this.unit.Value);
                 }
 
-                return kinematicViscosity;
+                return mass;
             }
 
             if (targetType == typeof(string) || targetType == typeof(object))
             {
                 if (UnitInput == Wpf.UnitInput.SymbolRequired)
                 {
-                    return kinematicViscosity.ToString(this.quantityFormat, culture);
+                    return mass.ToString(this.quantityFormat, culture);
                 }
 				
                 if (this.ValueFormat != null)
                 {
-                    return kinematicViscosity.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                    return mass.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
                 }
 
-                return kinematicViscosity.GetValue(this.unit.Value);
+                return mass.GetValue(this.unit.Value);
             }
 
-            return kinematicViscosity.GetValue(this.unit.Value);
+            return mass.GetValue(this.unit.Value);
         }
 
         public object ConvertBack(object value,
@@ -206,7 +206,7 @@
             }
 
             var message = this.errorText.ToString();
-            if (!(targetType == typeof(KinematicViscosity) || targetType == typeof(KinematicViscosity?)))
+            if (!(targetType == typeof(Mass) || targetType == typeof(Mass?)))
             {
                 message += $"{GetType().Name} does not support converting to {targetType.Name}";
             }
@@ -230,7 +230,7 @@
 
             if (value is double)
             {
-                return new KinematicViscosity((double)value, this.unit.Value);
+                return new Mass((double)value, this.unit.Value);
             }
 
             var text = value as string;
@@ -247,7 +247,7 @@
                         double d;
                         if (double.TryParse(text, NumberStyles.Float, culture, out d))
                         {
-                            return new KinematicViscosity(d, this.unit.Value);
+                            return new Mass(d, this.unit.Value);
                         }
 
                         return value; // returning raw to trigger error
@@ -262,7 +262,7 @@
                             WhiteSpaceReader.TryRead(text, ref pos);
                             if (pos == text.Length)
                             {
-                                return new KinematicViscosity(d, this.unit.Value);
+                                return new Mass(d, this.unit.Value);
                             }
                         }
 
@@ -270,8 +270,8 @@
                     }
                 case Wpf.UnitInput.SymbolRequired:
                     {
-                        KinematicViscosity result;
-                        if (KinematicViscosity.TryParse(text, NumberStyles.Float, culture, out result))
+                        Mass result;
+                        if (Mass.TryParse(text, NumberStyles.Float, culture, out result))
                         {
                             return result;
                         }
@@ -310,7 +310,7 @@
             {
                 if (this.unit != null && SymbolFormat != null)
                 {
-                    this.quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(ValueFormat, this.unit.Value, SymbolFormat.Value);
+                    this.quantityFormat = FormatCache<MassUnit>.GetOrCreate(ValueFormat, this.unit.Value, SymbolFormat.Value);
                 }
             }
 
@@ -364,7 +364,7 @@
                         }
                         else if (this.SymbolFormat != null)
                         {
-                            this.quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(this.ValueFormat, this.unit.Value, this.SymbolFormat.Value);
+                            this.quantityFormat = FormatCache<MassUnit>.GetOrCreate(this.ValueFormat, this.unit.Value, this.SymbolFormat.Value);
                             if (this.UnitInput == null)
                             {
                                 this.UnitInput = Wpf.UnitInput.SymbolRequired;
@@ -376,7 +376,7 @@
                         }
                         else
                         {
-                            this.quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(this.ValueFormat, this.unit.Value);
+                            this.quantityFormat = FormatCache<MassUnit>.GetOrCreate(this.ValueFormat, this.unit.Value);
                             if (this.UnitInput == null)
                             {
                                 this.UnitInput = Wpf.UnitInput.ScalarOnly;
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

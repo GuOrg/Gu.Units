@@ -22,7 +22,7 @@
         {
         }
 
-        public AngularJerkConverter([TypeConverter(typeof(AngularJerkUnitTypeConverter))]AngularJerkUnit unit)
+        public AngularJerkConverter(AngularJerkUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

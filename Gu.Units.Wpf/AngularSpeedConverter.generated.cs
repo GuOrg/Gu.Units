@@ -22,7 +22,7 @@
         {
         }
 
-        public AngularSpeedConverter([TypeConverter(typeof(AngularSpeedUnitTypeConverter))]AngularSpeedUnit unit)
+        public AngularSpeedConverter(AngularSpeedUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

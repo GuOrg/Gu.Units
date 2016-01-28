@@ -22,7 +22,7 @@
         {
         }
 
-        public MassFlowConverter([TypeConverter(typeof(MassFlowUnitTypeConverter))]MassFlowUnit unit)
+        public MassFlowConverter(MassFlowUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

@@ -22,7 +22,7 @@
         {
         }
 
-        public ForceConverter([TypeConverter(typeof(ForceUnitTypeConverter))]ForceUnit unit)
+        public ForceConverter(ForceUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

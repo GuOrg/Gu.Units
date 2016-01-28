@@ -22,7 +22,7 @@
         {
         }
 
-        public ElectricChargeConverter([TypeConverter(typeof(ElectricChargeUnitTypeConverter))]ElectricChargeUnit unit)
+        public ElectricChargeConverter(ElectricChargeUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }

@@ -22,7 +22,7 @@
         {
         }
 
-        public CatalyticActivityConverter([TypeConverter(typeof(CatalyticActivityUnitTypeConverter))]CatalyticActivityUnit unit)
+        public CatalyticActivityConverter(CatalyticActivityUnit unit)
         {
             Unit = unit;
         }
@@ -408,6 +408,7 @@
         {
             return targetType == typeof(string) ||
                    targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
                    targetType == typeof(object);
         }
     }
