@@ -2,11 +2,11 @@ namespace Gu.Units.Wpf.Demo
 {
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
-    using Annotations;
+    using JetBrains.Annotations;
 
     public class ViewModel : INotifyPropertyChanged
     {
-        private Length _length = Length.FromMillimetres(1234.567);
+        private Length length = Length.FromMillimetres(1234.567);
         private Speed speed = Speed.FromMetresPerSecond(1.2);
         private Pressure pressure = Pressure.FromMegapascals(1.23);
 
@@ -20,12 +20,12 @@ namespace Gu.Units.Wpf.Demo
 
         public Length Length
         {
-            get { return this._length; }
+            get { return this.length; }
             set
             {
-                if (value.Equals(this._length))
+                if (value.Equals(this.length))
                     return;
-                this._length = value;
+                this.length = value;
                 OnPropertyChanged();
             }
         }
