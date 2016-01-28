@@ -48,7 +48,7 @@
                 var cmTemplateBox = page.Get<TextBox>(AutomationIds.F2CmBindingStringFormatInControlTemplate);
                 var mBox = page.Get<TextBox>(AutomationIds.MetresCtor);
                 var mmBox = page.Get<TextBox>(AutomationIds.MillimetresProp);
-                var mmDoubleBox = (TextBox)page.Get<UIItem>(AutomationIds.DoubleControlMillimetresStringCtor).Get(SearchCriteria.ByControlType(typeof(TextBox), WindowsFramework.Wpf));
+                var mmDoubleBox = (TextBox)page.Get<UIItem>(AutomationIds.DoubleBoxMillimetresStringCtor).Get(SearchCriteria.ByControlType(typeof(TextBox), WindowsFramework.Wpf));
 
                 cmBox.Enter(text);
                 mmBox.Click();
@@ -70,7 +70,7 @@
                 var cmBox = page.Get<TextBox>(AutomationIds.CentimetresStringCtor);
                 var mBox = page.Get<TextBox>(AutomationIds.MetresCtor);
                 var mmBox = page.Get<TextBox>(AutomationIds.MillimetresProp);
-                var mmDoubleBox = (TextBox)page.Get<UIItem>(AutomationIds.DoubleControlMillimetresStringCtor).Get(SearchCriteria.ByControlType(typeof(TextBox), WindowsFramework.Wpf));
+                var mmDoubleBox = (TextBox)page.Get<UIItem>(AutomationIds.DoubleBoxMillimetresStringCtor).Get(SearchCriteria.ByControlType(typeof(TextBox), WindowsFramework.Wpf));
 
                 mmDoubleBox.Enter("6789");
                 mmBox.Click();

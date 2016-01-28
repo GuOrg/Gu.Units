@@ -4,6 +4,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Gu.Units.Wpf.Demo"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:numeric="http://gu.se/NumericInput"
              xmlns:units="http://Gu.com/Units"
              xmlns:units1="clr-namespace:Gu.Units;assembly=Gu.Units"
              DataContext="{x:Static local:ViewModel.Instance}"
@@ -15,6 +16,8 @@
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -37,7 +40,6 @@
         <TextBlock Grid.Row="0"
                    Grid.Column="0"
                    Text="Converter={units:LengthConverter cm}}" />
-
         <TextBox Grid.Row="0"
                  Grid.Column="1"
                  AutomationProperties.AutomationId="{x:Static local:AutomationIds.CentimetresStringCtor}"
@@ -56,7 +58,6 @@
         <TextBlock Grid.Row="2"
                    Grid.Column="0"
                    Text="Converter={units:LengthConverter {x:Static units:LengthUnit.Metres}}}" />
-
         <TextBox Grid.Row="2"
                  Grid.Column="1"
                  AutomationProperties.AutomationId="{x:Static local:AutomationIds.MetresCtor}"
@@ -67,7 +68,6 @@
         <TextBlock Grid.Row="3"
                    Grid.Column="0"
                    Text="Converter={units:LengthConverter Unit={x:Static units:LengthUnit.Millimetres}}}" />
-
         <TextBox Grid.Row="3"
                  Grid.Column="1"
                  AutomationProperties.AutomationId="{x:Static local:AutomationIds.MillimetresProp}"
@@ -76,42 +76,53 @@
 
         <TextBlock Grid.Row="4"
                    Grid.Column="0"
-                   Text="DoubleControl Converter={units:LengthConverter mm}}" />
-
-        <local:DoubleControl Grid.Row="4"
-                             Grid.Column="1"
-                             AutomationProperties.AutomationId="{x:Static local:AutomationIds.DoubleControlMillimetresStringCtor}"
-                             Value="{Binding Length,
-                                             Converter={units:LengthConverter mm}}" />
+                   Text="DoubleBox Converter={units:LengthConverter mm}}" />
+        <numeric:DoubleBox Grid.Row="4"
+                           Grid.Column="1"
+                           AutomationProperties.AutomationId="{x:Static local:AutomationIds.DoubleBoxMillimetresStringCtor}"
+                           DecimalDigits="5"
+                           Value="{Binding Length,
+                                           Converter={units:LengthConverter mm}}" />
 
         <TextBlock Grid.Row="5"
                    Grid.Column="0"
+                   Text="DoubleBox, NullableLength, Converter={units:LengthConverter mm}}" />
+        <numeric:DoubleBox Grid.Row="5"
+                           Grid.Column="1"
+                           AutomationProperties.AutomationId="{x:Static local:AutomationIds.DoubleBoxNullableMillimetresStringCtor}"
+                           CanValueBeNull="True"
+                           DecimalDigits="5"
+                           Value="{Binding NullableLength,
+                                           Converter={units:LengthConverter mm},
+                                           TargetNullValue=''}" />
+
+        <TextBlock Grid.Row="6"
+                   Grid.Column="0"
                    Text="DoubleControl Converter={units:PressureConverter N*mm^-2}}" />
-        <local:DoubleControl Grid.Row="5"
+        <local:DoubleControl Grid.Row="6"
                              Grid.Column="1"
                              AutomationProperties.AutomationId="{x:Static local:AutomationIds.DoubleControlNewtonsPerSquareMillimetreStringCtor}"
                              Value="{Binding Pressure,
                                              Converter={units:PressureConverter N*mm^-2}}" />
 
-        <TextBlock Grid.Row="6"
+        <TextBlock Grid.Row="7"
                    Grid.Column="0"
                    Text="DoubleControl Converter={units:PressureConverter MPa}}" />
-        <local:DoubleControl Grid.Row="6"
+        <local:DoubleControl Grid.Row="7"
                              Grid.Column="1"
                              AutomationProperties.AutomationId="{x:Static local:AutomationIds.DoubleControlMPaStringCtor}"
                              Value="{Binding Pressure,
                                              Converter={units:PressureConverter MPa}}" />
 
-        <TextBlock Grid.Row="7"
+        <TextBlock Grid.Row="8"
                    Grid.Column="0"
                    Text="Converter={units:SpeedConverter Unit=mm/s}}" />
-        <ContentPresenter Grid.Row="7"
+        <ContentPresenter Grid.Row="8"
                           Grid.Column="1"
                           Content="{Binding}"
                           ContentTemplate="{StaticResource DataTemplate}" />
 
-
-        <HeaderedContentControl Grid.Row="8"
+        <HeaderedContentControl Grid.Row="9"
                                 Grid.Column="0"
                                 Grid.ColumnSpan="2"
                                 Content="{Binding Length}"
@@ -133,5 +144,16 @@
                 </ControlTemplate>
             </HeaderedContentControl.Template>
         </HeaderedContentControl>
+
+        <TextBlock Grid.Row="10"
+                   Grid.Column="0"
+                   Text="NullableLength Converter={units:LengthConverter cm}" />
+        <TextBox Grid.Row="10"
+                 Grid.Column="1"
+                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.NullableLengthCm}"
+                 Text="{Binding NullableLength,
+                                Converter={units:LengthConverter cm},
+                                TargetNullValue=''}" />
+
     </Grid>
 </UserControl>

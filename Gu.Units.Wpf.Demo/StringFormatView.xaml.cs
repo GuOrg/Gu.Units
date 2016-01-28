@@ -9,7 +9,7 @@
     {
         public StringFormatView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

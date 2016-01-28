@@ -72,7 +72,6 @@
                           Content="{Binding}"
                           ContentTemplate="{StaticResource DataTemplate}" />
 
-
         <HeaderedContentControl Grid.Row="4"
                                 Grid.Column="0"
                                 Grid.ColumnSpan="2"

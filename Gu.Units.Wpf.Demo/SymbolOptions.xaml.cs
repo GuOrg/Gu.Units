@@ -9,7 +9,7 @@
     {
         public SymbolOptions()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

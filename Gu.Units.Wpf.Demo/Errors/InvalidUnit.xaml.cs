@@ -6,7 +6,7 @@
     {
         public InvalidUnit()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

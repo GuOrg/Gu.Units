@@ -22,7 +22,7 @@ namespace Gu.Units.Wpf.Demo.Errors
     {
         public UnitAndStringFormatDoesNotMatch()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

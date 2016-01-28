@@ -9,7 +9,7 @@
     {
         public QuantityExtensionsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

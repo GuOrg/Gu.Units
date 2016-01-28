@@ -9,6 +9,8 @@ namespace Gu.Units.Wpf.Demo
         private Length length = Length.FromMillimetres(1234.567);
         private Speed speed = Speed.FromMetresPerSecond(1.2);
         private Pressure pressure = Pressure.FromMegapascals(1.23);
+        private Length? nullableLength = Length.FromMillimetres(1234.567);
+        private object objectLength = Length.FromMillimetres(1234.567);
 
         public static readonly ViewModel Instance = new ViewModel();
 
@@ -26,7 +28,31 @@ namespace Gu.Units.Wpf.Demo
                 if (value.Equals(this.length))
                     return;
                 this.length = value;
-                OnPropertyChanged();
+                this.OnPropertyChanged();
+            }
+        }
+
+        public Length? NullableLength
+        {
+            get { return this.nullableLength; }
+            set
+            {
+                if (value.Equals(this.nullableLength))
+                    return;
+                this.nullableLength = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public object ObjectLength
+        {
+            get { return this.objectLength; }
+            set
+            {
+                if (Equals(value, this.objectLength))
+                    return;
+                this.objectLength = value;
+                this.OnPropertyChanged();
             }
         }
 
@@ -38,7 +64,7 @@ namespace Gu.Units.Wpf.Demo
                 if (value.Equals(this.speed))
                     return;
                 this.speed = value;
-                OnPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
@@ -50,14 +76,14 @@ namespace Gu.Units.Wpf.Demo
                 if (value.Equals(this.pressure))
                     return;
                 this.pressure = value;
-                OnPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

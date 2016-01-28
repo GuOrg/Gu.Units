@@ -15,8 +15,8 @@
 
         public double Value
         {
-            get { return (double)GetValue(ValueProperty); }
-            set { SetValue(ValueProperty, value); }
+            get { return (double) this.GetValue(ValueProperty); }
+            set { this.SetValue(ValueProperty, value); }
         }
     }
 }

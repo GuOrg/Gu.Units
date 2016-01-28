@@ -9,7 +9,7 @@
     {
         public UnitsOnlyView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

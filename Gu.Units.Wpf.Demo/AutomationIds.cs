@@ -16,6 +16,7 @@
         public static readonly string MillimetresPerSecondSignedSuperScriptAndValueFormatF2 = Create();
         public static readonly string CmF2BindingStringFormat = Create();
         public static readonly string F2CmInDataTemplate = Create();
+        public static readonly string NullableLengthCm = Create();
         public static readonly string F2CmBindingStringFormatInControlTemplate = Create();
         public static readonly string CentimetresStringCtor = Create();
         public static readonly string MillimetresPerSecondStringProp = Create();
@@ -23,7 +24,8 @@
         public static readonly string MillimetresProp = Create();
         public static readonly string MillimetresDoubleBox = Create();
         public static readonly string MillimetresDoubleBoxInControlTemplate = Create();
-        public static readonly string DoubleControlMillimetresStringCtor = Create();
+        public static readonly string DoubleBoxNullableMillimetresStringCtor = Create();
+        public static readonly string DoubleBoxMillimetresStringCtor = Create();
         public static readonly string DoubleControlNewtonsPerSquareMillimetreStringCtor = Create();
         public static readonly string DoubleControlMPaStringCtor = Create();
 

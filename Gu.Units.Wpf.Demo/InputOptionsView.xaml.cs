@@ -9,7 +9,7 @@
     {
         public InputOptionsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }
