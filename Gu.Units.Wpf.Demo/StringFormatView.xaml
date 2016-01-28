@@ -4,6 +4,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Gu.Units.Wpf.Demo"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:numeric="http://gu.se/NumericInput"
              xmlns:units="http://Gu.com/Units"
              DataContext="{x:Static local:ViewModel.Instance}"
              mc:Ignorable="d">
@@ -109,11 +110,13 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="{TemplateBinding Header}" />
-                        <TextBox Grid.Column="1"
-                                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.MillimetresProp}"
-                                 Text="{Binding Content,
-                                                Converter={units:LengthConverter mm},
-                                                RelativeSource={RelativeSource AncestorType={x:Type HeaderedContentControl}}}" />
+                        <numeric:DoubleBox Grid.Column="1"
+                                           AutomationProperties.AutomationId="{x:Static local:AutomationIds.MillimetresDoubleBoxInControlTemplate}"
+                                           CanValueBeNull="True"
+                                           DecimalDigits="-2"
+                                           Value="{Binding Content,
+                                                           Converter={units:LengthConverter mm},
+                                                           RelativeSource={RelativeSource AncestorType={x:Type HeaderedContentControl}}}" />
                     </Grid>
                 </ControlTemplate>
             </HeaderedContentControl.Template>
@@ -149,5 +152,14 @@
                  Text="{Binding Speed,
                                 Converter={units:SpeedConverter mm/s,
                                                                 ValueFormat='F2'}}" />
+
+        <TextBlock Grid.Row="9"
+                   Grid.Column="0"
+                   Text="Binding Speed, Converter={units:SpeedConverter mm/s, ValueFormat='F2', SymbolFormat=SignedSuperScript}" />
+        <numeric:DoubleBox Grid.Row="9"
+                           Grid.Column="1"
+                           AutomationProperties.AutomationId="{x:Static local:AutomationIds.MillimetresDoubleBox}"
+                           Value="{Binding Length,
+                                           Converter={units:LengthConverter mm}}" />
     </Grid>
 </UserControl>

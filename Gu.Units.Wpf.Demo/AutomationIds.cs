@@ -21,6 +21,8 @@
         public static readonly string MillimetresPerSecondStringProp = Create();
         public static readonly string MetresCtor = Create();
         public static readonly string MillimetresProp = Create();
+        public static readonly string MillimetresDoubleBox = Create();
+        public static readonly string MillimetresDoubleBoxInControlTemplate = Create();
         public static readonly string DoubleControlMillimetresStringCtor = Create();
         public static readonly string DoubleControlNewtonsPerSquareMillimetreStringCtor = Create();
         public static readonly string DoubleControlMPaStringCtor = Create();
