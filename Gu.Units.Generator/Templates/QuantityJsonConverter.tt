@@ -6,7 +6,7 @@
 <#
 var settings = Settings.Instance;
 // Template used by QuantityGenerator.tt
-var quantity = settings.GetQuantityByName(QuantityName ?? settings.Quantities[0].Name);
+var quantity = settings.GetQuantityByName(this.QuantityName ?? settings.Quantities[0].Name);
 #>
 namespace Gu.Units.Json
 {

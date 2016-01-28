@@ -100,6 +100,106 @@ Read Settings found 50 units
 //-> VolumeJsonConverter.generated.cs
 
 //-> VolumetricFlowJsonConverter.generated.cs
+
+//-> AccelerationJsonConverter.generated.cs
+
+//-> AmountOfSubstanceJsonConverter.generated.cs
+
+//-> AngleJsonConverter.generated.cs
+
+//-> AnglePerUnitlessJsonConverter.generated.cs
+
+//-> AngularAccelerationJsonConverter.generated.cs
+
+//-> AngularJerkJsonConverter.generated.cs
+
+//-> AngularSpeedJsonConverter.generated.cs
+
+//-> AreaDensityJsonConverter.generated.cs
+
+//-> AreaJsonConverter.generated.cs
+
+//-> CapacitanceJsonConverter.generated.cs
+
+//-> CatalyticActivityJsonConverter.generated.cs
+
+//-> CurrentJsonConverter.generated.cs
+
+//-> DataJsonConverter.generated.cs
+
+//-> DensityJsonConverter.generated.cs
+
+//-> ElectricalConductanceJsonConverter.generated.cs
+
+//-> ElectricChargeJsonConverter.generated.cs
+
+//-> EnergyJsonConverter.generated.cs
+
+//-> FlexibilityJsonConverter.generated.cs
+
+//-> ForceJsonConverter.generated.cs
+
+//-> ForcePerUnitlessJsonConverter.generated.cs
+
+//-> FrequencyJsonConverter.generated.cs
+
+//-> IlluminanceJsonConverter.generated.cs
+
+//-> InductanceJsonConverter.generated.cs
+
+//-> JerkJsonConverter.generated.cs
+
+//-> KinematicViscosityJsonConverter.generated.cs
+
+//-> LengthJsonConverter.generated.cs
+
+//-> LengthPerUnitlessJsonConverter.generated.cs
+
+//-> LuminousFluxJsonConverter.generated.cs
+
+//-> LuminousIntensityJsonConverter.generated.cs
+
+//-> MagneticFieldStrengthJsonConverter.generated.cs
+
+//-> MagneticFluxJsonConverter.generated.cs
+
+//-> MassFlowJsonConverter.generated.cs
+
+//-> MassJsonConverter.generated.cs
+
+//-> MomentumJsonConverter.generated.cs
+
+//-> PowerJsonConverter.generated.cs
+
+//-> PressureJsonConverter.generated.cs
+
+//-> ResistanceJsonConverter.generated.cs
+
+//-> SolidAngleJsonConverter.generated.cs
+
+//-> SpecificEnergyJsonConverter.generated.cs
+
+//-> SpecificVolumeJsonConverter.generated.cs
+
+//-> SpeedJsonConverter.generated.cs
+
+//-> StiffnessJsonConverter.generated.cs
+
+//-> TemperatureJsonConverter.generated.cs
+
+//-> TimeJsonConverter.generated.cs
+
+//-> TorqueJsonConverter.generated.cs
+
+//-> UnitlessJsonConverter.generated.cs
+
+//-> WavenumberJsonConverter.generated.cs
+
+//-> VoltageJsonConverter.generated.cs
+
+//-> VolumeJsonConverter.generated.cs
+
+//-> VolumetricFlowJsonConverter.generated.cs
 // Generated helper templates
 // Gu.Units\Gu.Units.Json\QuantityJsonConverters.txt4
 // Generated items

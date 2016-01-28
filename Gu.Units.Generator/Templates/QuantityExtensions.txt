@@ -1,0 +1,155 @@
+﻿
+Read Settings found 50 units
+
+//-> AccelerationExtension.generated.cs
+
+//-> AmountOfSubstanceExtension.generated.cs
+
+//-> AngleExtension.generated.cs
+
+//-> AnglePerUnitlessExtension.generated.cs
+
+//-> AngularAccelerationExtension.generated.cs
+
+//-> AngularJerkExtension.generated.cs
+
+//-> AngularSpeedExtension.generated.cs
+
+//-> AreaDensityExtension.generated.cs
+
+//-> AreaExtension.generated.cs
+
+//-> CapacitanceExtension.generated.cs
+
+//-> CatalyticActivityExtension.generated.cs
+
+//-> CurrentExtension.generated.cs
+
+//-> DataExtension.generated.cs
+
+//-> DensityExtension.generated.cs
+
+//-> ElectricalConductanceExtension.generated.cs
+
+//-> ElectricChargeExtension.generated.cs
+
+//-> EnergyExtension.generated.cs
+
+//-> FlexibilityExtension.generated.cs
+
+//-> ForceExtension.generated.cs
+
+//-> ForcePerUnitlessExtension.generated.cs
+
+//-> FrequencyExtension.generated.cs
+
+//-> IlluminanceExtension.generated.cs
+
+//-> InductanceExtension.generated.cs
+
+//-> JerkExtension.generated.cs
+
+//-> KinematicViscosityExtension.generated.cs
+
+//-> LengthExtension.generated.cs
+
+//-> LengthPerUnitlessExtension.generated.cs
+
+//-> LuminousFluxExtension.generated.cs
+
+//-> LuminousIntensityExtension.generated.cs
+
+//-> MagneticFieldStrengthExtension.generated.cs
+
+//-> MagneticFluxExtension.generated.cs
+
+//-> MassExtension.generated.cs
+
+//-> MassFlowExtension.generated.cs
+
+//-> MomentumExtension.generated.cs
+
+//-> PowerExtension.generated.cs
+
+//-> PressureExtension.generated.cs
+
+//-> ResistanceExtension.generated.cs
+
+//-> SolidAngleExtension.generated.cs
+
+//-> SpecificEnergyExtension.generated.cs
+
+//-> SpecificVolumeExtension.generated.cs
+
+//-> SpeedExtension.generated.cs
+
+//-> StiffnessExtension.generated.cs
+
+//-> TemperatureExtension.generated.cs
+
+//-> TimeExtension.generated.cs
+
+//-> TorqueExtension.generated.cs
+
+//-> UnitlessExtension.generated.cs
+
+//-> WavenumberExtension.generated.cs
+
+//-> VoltageExtension.generated.cs
+
+//-> VolumeExtension.generated.cs
+
+//-> VolumetricFlowExtension.generated.cs
+// Generated helper templates
+// Gu.Units\Gu.Units.Wpf\QuantityExtensions.txt4
+// Generated items
+// Gu.Units\Gu.Units.Wpf\KinematicViscosityExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\MassFlowExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\SpecificVolumeExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\AreaDensityExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\WavenumberExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\MomentumExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\CatalyticActivityExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\MagneticFieldStrengthExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\ElectricalConductanceExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\MagneticFluxExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\IlluminanceExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\LuminousFluxExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\ForcePerUnitlessExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\AnglePerUnitlessExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\LengthPerUnitlessExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\JerkExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\AngularJerkExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\AngularAccelerationExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\FlexibilityExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\CapacitanceExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\InductanceExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\ElectricChargeExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\SpecificEnergyExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\ResistanceExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\VoltageExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\VolumetricFlowExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\StiffnessExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\TorqueExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\AccelerationExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\FrequencyExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\AngularSpeedExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\SpeedExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\PowerExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\EnergyExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\DensityExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\PressureExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\ForceExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\VolumeExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\AreaExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\SolidAngleExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\AmountOfSubstanceExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\DataExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\LuminousIntensityExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\CurrentExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\UnitlessExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\AngleExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\TemperatureExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\TimeExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\LengthExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\MassExtension.generated.cs

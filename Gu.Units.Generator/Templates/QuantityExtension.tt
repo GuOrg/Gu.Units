@@ -1,0 +1,32 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="$(TargetPath)" #>
+<#@ import namespace="Gu.Units.Generator" #>
+<#@ parameter name="QuantityName" type="System.String" #>
+<#@ output extension=".txt" #>
+<#
+var settings = Settings.Instance;
+// Template used by QuantityGenerator.tt
+var quantity = settings.GetQuantityByName(this.QuantityName ?? settings.Quantities[0].Name);
+#>
+namespace Gu.Units.Wpf
+{
+    using System;
+    using System.Globalization;
+    using System.Windows.Markup;
+
+    [MarkupExtensionReturnType(typeof(<#= quantity.Name #>))]
+    public class <#= quantity.Name #>Extension : MarkupExtension
+    {
+        public <#= quantity.Name #>Extension(string value)
+        {
+            this.Value = <#= quantity.Name #>.Parse(value, CultureInfo.InvariantCulture);
+        }
+
+        public <#= quantity.Name #> Value { get; private set; }
+
+        public override object ProvideValue(IServiceProvider serviceProvider)
+        {
+            return this.Value;
+        }
+    }
+}
