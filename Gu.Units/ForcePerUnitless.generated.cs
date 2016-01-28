@@ -89,46 +89,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.ForcePerUnitless"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.ForcePerUnitless"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ForcePerUnitless"/></param>
         /// <returns></returns>
-		public static ForcePerUnitless Parse(string s)
+		public static ForcePerUnitless Parse(string text)
         {
-            return QuantityParser.Parse<ForcePerUnitlessUnit, ForcePerUnitless>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<ForcePerUnitlessUnit, ForcePerUnitless>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static ForcePerUnitless Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ForcePerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ForcePerUnitless"/></param>
+        /// <returns></returns>
+        public static ForcePerUnitless Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<ForcePerUnitlessUnit, ForcePerUnitless>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<ForcePerUnitlessUnit, ForcePerUnitless>(text, From, NumberStyles.Float, provider);
         }
 
-        public static ForcePerUnitless Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ForcePerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ForcePerUnitless"/></param>
+        /// <returns></returns>
+        public static ForcePerUnitless Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<ForcePerUnitlessUnit, ForcePerUnitless>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<ForcePerUnitlessUnit, ForcePerUnitless>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static ForcePerUnitless Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ForcePerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ForcePerUnitless"/></param>
+        /// <returns></returns>
+        public static ForcePerUnitless Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<ForcePerUnitlessUnit, ForcePerUnitless>(s, From, styles, provider);
+            return QuantityParser.Parse<ForcePerUnitlessUnit, ForcePerUnitless>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out ForcePerUnitless value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ForcePerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ForcePerUnitless"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out ForcePerUnitless result)
         {
-            return QuantityParser.TryParse<ForcePerUnitlessUnit, ForcePerUnitless>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<ForcePerUnitlessUnit, ForcePerUnitless>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out ForcePerUnitless value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ForcePerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ForcePerUnitless"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out ForcePerUnitless result)
         {
-            return QuantityParser.TryParse<ForcePerUnitlessUnit, ForcePerUnitless>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<ForcePerUnitlessUnit, ForcePerUnitless>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out ForcePerUnitless value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ForcePerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ForcePerUnitless"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out ForcePerUnitless result)
         {
-            return QuantityParser.TryParse<ForcePerUnitlessUnit, ForcePerUnitless>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<ForcePerUnitlessUnit, ForcePerUnitless>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out ForcePerUnitless value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ForcePerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ForcePerUnitless"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out ForcePerUnitless result)
         {
-            return QuantityParser.TryParse<ForcePerUnitlessUnit, ForcePerUnitless>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<ForcePerUnitlessUnit, ForcePerUnitless>(text, From, styles, provider, out result);
         }
 
         /// <summary>

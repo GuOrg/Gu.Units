@@ -69,46 +69,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Wavenumber"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.Wavenumber"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Wavenumber"/></param>
         /// <returns></returns>
-		public static Wavenumber Parse(string s)
+		public static Wavenumber Parse(string text)
         {
-            return QuantityParser.Parse<WavenumberUnit, Wavenumber>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<WavenumberUnit, Wavenumber>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static Wavenumber Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Wavenumber"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Wavenumber"/></param>
+        /// <returns></returns>
+        public static Wavenumber Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<WavenumberUnit, Wavenumber>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<WavenumberUnit, Wavenumber>(text, From, NumberStyles.Float, provider);
         }
 
-        public static Wavenumber Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Wavenumber"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Wavenumber"/></param>
+        /// <returns></returns>
+        public static Wavenumber Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<WavenumberUnit, Wavenumber>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<WavenumberUnit, Wavenumber>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static Wavenumber Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Wavenumber"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Wavenumber"/></param>
+        /// <returns></returns>
+        public static Wavenumber Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<WavenumberUnit, Wavenumber>(s, From, styles, provider);
+            return QuantityParser.Parse<WavenumberUnit, Wavenumber>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out Wavenumber value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Wavenumber"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Wavenumber"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out Wavenumber result)
         {
-            return QuantityParser.TryParse<WavenumberUnit, Wavenumber>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<WavenumberUnit, Wavenumber>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out Wavenumber value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Wavenumber"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Wavenumber"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out Wavenumber result)
         {
-            return QuantityParser.TryParse<WavenumberUnit, Wavenumber>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<WavenumberUnit, Wavenumber>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out Wavenumber value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Wavenumber"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Wavenumber"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Wavenumber result)
         {
-            return QuantityParser.TryParse<WavenumberUnit, Wavenumber>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<WavenumberUnit, Wavenumber>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Wavenumber value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Wavenumber"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Wavenumber"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Wavenumber result)
         {
-            return QuantityParser.TryParse<WavenumberUnit, Wavenumber>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<WavenumberUnit, Wavenumber>(text, From, styles, provider, out result);
         }
 
         /// <summary>

@@ -69,46 +69,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
         /// <returns></returns>
-		public static MassFlow Parse(string s)
+		public static MassFlow Parse(string text)
         {
-            return QuantityParser.Parse<MassFlowUnit, MassFlow>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<MassFlowUnit, MassFlow>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static MassFlow Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
+        /// <returns></returns>
+        public static MassFlow Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<MassFlowUnit, MassFlow>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<MassFlowUnit, MassFlow>(text, From, NumberStyles.Float, provider);
         }
 
-        public static MassFlow Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
+        /// <returns></returns>
+        public static MassFlow Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<MassFlowUnit, MassFlow>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<MassFlowUnit, MassFlow>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static MassFlow Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
+        /// <returns></returns>
+        public static MassFlow Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<MassFlowUnit, MassFlow>(s, From, styles, provider);
+            return QuantityParser.Parse<MassFlowUnit, MassFlow>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out MassFlow value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out MassFlow result)
         {
-            return QuantityParser.TryParse<MassFlowUnit, MassFlow>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<MassFlowUnit, MassFlow>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out MassFlow value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out MassFlow result)
         {
-            return QuantityParser.TryParse<MassFlowUnit, MassFlow>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<MassFlowUnit, MassFlow>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out MassFlow value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out MassFlow result)
         {
-            return QuantityParser.TryParse<MassFlowUnit, MassFlow>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<MassFlowUnit, MassFlow>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out MassFlow value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out MassFlow result)
         {
-            return QuantityParser.TryParse<MassFlowUnit, MassFlow>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<MassFlowUnit, MassFlow>(text, From, styles, provider, out result);
         }
 
         /// <summary>

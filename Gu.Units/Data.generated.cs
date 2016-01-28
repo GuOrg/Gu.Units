@@ -109,46 +109,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Data"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.Data"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Data"/></param>
         /// <returns></returns>
-		public static Data Parse(string s)
+		public static Data Parse(string text)
         {
-            return QuantityParser.Parse<DataUnit, Data>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<DataUnit, Data>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static Data Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Data"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Data"/></param>
+        /// <returns></returns>
+        public static Data Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<DataUnit, Data>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<DataUnit, Data>(text, From, NumberStyles.Float, provider);
         }
 
-        public static Data Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Data"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Data"/></param>
+        /// <returns></returns>
+        public static Data Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<DataUnit, Data>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<DataUnit, Data>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static Data Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Data"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Data"/></param>
+        /// <returns></returns>
+        public static Data Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<DataUnit, Data>(s, From, styles, provider);
+            return QuantityParser.Parse<DataUnit, Data>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out Data value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Data"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Data"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out Data result)
         {
-            return QuantityParser.TryParse<DataUnit, Data>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<DataUnit, Data>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out Data value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Data"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Data"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out Data result)
         {
-            return QuantityParser.TryParse<DataUnit, Data>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<DataUnit, Data>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out Data value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Data"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Data"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Data result)
         {
-            return QuantityParser.TryParse<DataUnit, Data>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<DataUnit, Data>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Data value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Data"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Data"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Data result)
         {
-            return QuantityParser.TryParse<DataUnit, Data>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<DataUnit, Data>(text, From, styles, provider, out result);
         }
 
         /// <summary>

@@ -109,46 +109,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
         /// <returns></returns>
-		public static Volume Parse(string s)
+		public static Volume Parse(string text)
         {
-            return QuantityParser.Parse<VolumeUnit, Volume>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<VolumeUnit, Volume>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static Volume Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <returns></returns>
+        public static Volume Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<VolumeUnit, Volume>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<VolumeUnit, Volume>(text, From, NumberStyles.Float, provider);
         }
 
-        public static Volume Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <returns></returns>
+        public static Volume Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<VolumeUnit, Volume>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<VolumeUnit, Volume>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static Volume Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <returns></returns>
+        public static Volume Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<VolumeUnit, Volume>(s, From, styles, provider);
+            return QuantityParser.Parse<VolumeUnit, Volume>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out Volume value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out Volume result)
         {
-            return QuantityParser.TryParse<VolumeUnit, Volume>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<VolumeUnit, Volume>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out Volume value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out Volume result)
         {
-            return QuantityParser.TryParse<VolumeUnit, Volume>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<VolumeUnit, Volume>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out Volume value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Volume result)
         {
-            return QuantityParser.TryParse<VolumeUnit, Volume>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<VolumeUnit, Volume>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Volume value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Volume result)
         {
-            return QuantityParser.TryParse<VolumeUnit, Volume>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<VolumeUnit, Volume>(text, From, styles, provider, out result);
         }
 
         /// <summary>

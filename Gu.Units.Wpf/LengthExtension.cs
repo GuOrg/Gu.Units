@@ -1,6 +1,7 @@
 namespace Gu.Units.Wpf
 {
     using System;
+    using System.Globalization;
     using System.Windows.Markup;
 
     [MarkupExtensionReturnType(typeof(Length))]
@@ -8,7 +9,7 @@ namespace Gu.Units.Wpf
     {
         public LengthExtension(string value)
         {
-            this.Value = Length.Parse(value);
+            this.Value = Length.Parse(value, CultureInfo.InvariantCulture);
         }
 
         public Length Value { get; private set; }

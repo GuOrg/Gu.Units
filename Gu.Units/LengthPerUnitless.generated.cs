@@ -84,46 +84,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
         /// <returns></returns>
-		public static LengthPerUnitless Parse(string s)
+		public static LengthPerUnitless Parse(string text)
         {
-            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static LengthPerUnitless Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <returns></returns>
+        public static LengthPerUnitless Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, NumberStyles.Float, provider);
         }
 
-        public static LengthPerUnitless Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <returns></returns>
+        public static LengthPerUnitless Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static LengthPerUnitless Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <returns></returns>
+        public static LengthPerUnitless Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(s, From, styles, provider);
+            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out LengthPerUnitless value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out LengthPerUnitless result)
         {
-            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out LengthPerUnitless value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out LengthPerUnitless result)
         {
-            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out LengthPerUnitless value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out LengthPerUnitless result)
         {
-            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out LengthPerUnitless value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out LengthPerUnitless result)
         {
-            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, styles, provider, out result);
         }
 
         /// <summary>

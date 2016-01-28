@@ -99,46 +99,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Inductance"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.Inductance"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Inductance"/></param>
         /// <returns></returns>
-		public static Inductance Parse(string s)
+		public static Inductance Parse(string text)
         {
-            return QuantityParser.Parse<InductanceUnit, Inductance>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<InductanceUnit, Inductance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static Inductance Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Inductance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Inductance"/></param>
+        /// <returns></returns>
+        public static Inductance Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<InductanceUnit, Inductance>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<InductanceUnit, Inductance>(text, From, NumberStyles.Float, provider);
         }
 
-        public static Inductance Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Inductance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Inductance"/></param>
+        /// <returns></returns>
+        public static Inductance Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<InductanceUnit, Inductance>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<InductanceUnit, Inductance>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static Inductance Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Inductance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Inductance"/></param>
+        /// <returns></returns>
+        public static Inductance Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<InductanceUnit, Inductance>(s, From, styles, provider);
+            return QuantityParser.Parse<InductanceUnit, Inductance>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out Inductance value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Inductance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Inductance"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out Inductance result)
         {
-            return QuantityParser.TryParse<InductanceUnit, Inductance>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<InductanceUnit, Inductance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out Inductance value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Inductance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Inductance"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out Inductance result)
         {
-            return QuantityParser.TryParse<InductanceUnit, Inductance>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<InductanceUnit, Inductance>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out Inductance value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Inductance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Inductance"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Inductance result)
         {
-            return QuantityParser.TryParse<InductanceUnit, Inductance>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<InductanceUnit, Inductance>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Inductance value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Inductance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Inductance"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Inductance result)
         {
-            return QuantityParser.TryParse<InductanceUnit, Inductance>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<InductanceUnit, Inductance>(text, From, styles, provider, out result);
         }
 
         /// <summary>

@@ -84,46 +84,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
         /// <returns></returns>
-		public static Flexibility Parse(string s)
+		public static Flexibility Parse(string text)
         {
-            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static Flexibility Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <returns></returns>
+        public static Flexibility Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(text, From, NumberStyles.Float, provider);
         }
 
-        public static Flexibility Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <returns></returns>
+        public static Flexibility Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static Flexibility Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <returns></returns>
+        public static Flexibility Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(s, From, styles, provider);
+            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out Flexibility value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out Flexibility result)
         {
-            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out Flexibility value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out Flexibility result)
         {
-            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out Flexibility value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Flexibility result)
         {
-            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Flexibility value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Flexibility result)
         {
-            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(text, From, styles, provider, out result);
         }
 
         /// <summary>

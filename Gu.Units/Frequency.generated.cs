@@ -89,46 +89,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
         /// <returns></returns>
-		public static Frequency Parse(string s)
+		public static Frequency Parse(string text)
         {
-            return QuantityParser.Parse<FrequencyUnit, Frequency>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static Frequency Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <returns></returns>
+        public static Frequency Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<FrequencyUnit, Frequency>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, provider);
         }
 
-        public static Frequency Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <returns></returns>
+        public static Frequency Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<FrequencyUnit, Frequency>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static Frequency Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <returns></returns>
+        public static Frequency Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<FrequencyUnit, Frequency>(s, From, styles, provider);
+            return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out Frequency value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out Frequency result)
         {
-            return QuantityParser.TryParse<FrequencyUnit, Frequency>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out Frequency value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out Frequency result)
         {
-            return QuantityParser.TryParse<FrequencyUnit, Frequency>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out Frequency value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Frequency result)
         {
-            return QuantityParser.TryParse<FrequencyUnit, Frequency>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Frequency value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Frequency result)
         {
-            return QuantityParser.TryParse<FrequencyUnit, Frequency>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, styles, provider, out result);
         }
 
         /// <summary>

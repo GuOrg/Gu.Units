@@ -94,46 +94,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
         /// <returns></returns>
-		public static AngularJerk Parse(string s)
+		public static AngularJerk Parse(string text)
         {
-            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static AngularJerk Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <returns></returns>
+        public static AngularJerk Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(text, From, NumberStyles.Float, provider);
         }
 
-        public static AngularJerk Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <returns></returns>
+        public static AngularJerk Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static AngularJerk Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <returns></returns>
+        public static AngularJerk Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(s, From, styles, provider);
+            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out AngularJerk value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out AngularJerk result)
         {
-            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out AngularJerk value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out AngularJerk result)
         {
-            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out AngularJerk value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out AngularJerk result)
         {
-            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out AngularJerk value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out AngularJerk result)
         {
-            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, styles, provider, out result);
         }
 
         /// <summary>

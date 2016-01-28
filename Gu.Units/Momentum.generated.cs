@@ -69,46 +69,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Momentum"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.Momentum"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Momentum"/></param>
         /// <returns></returns>
-		public static Momentum Parse(string s)
+		public static Momentum Parse(string text)
         {
-            return QuantityParser.Parse<MomentumUnit, Momentum>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<MomentumUnit, Momentum>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static Momentum Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Momentum"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Momentum"/></param>
+        /// <returns></returns>
+        public static Momentum Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<MomentumUnit, Momentum>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<MomentumUnit, Momentum>(text, From, NumberStyles.Float, provider);
         }
 
-        public static Momentum Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Momentum"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Momentum"/></param>
+        /// <returns></returns>
+        public static Momentum Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<MomentumUnit, Momentum>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<MomentumUnit, Momentum>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static Momentum Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Momentum"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Momentum"/></param>
+        /// <returns></returns>
+        public static Momentum Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<MomentumUnit, Momentum>(s, From, styles, provider);
+            return QuantityParser.Parse<MomentumUnit, Momentum>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out Momentum value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Momentum"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Momentum"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out Momentum result)
         {
-            return QuantityParser.TryParse<MomentumUnit, Momentum>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<MomentumUnit, Momentum>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out Momentum value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Momentum"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Momentum"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out Momentum result)
         {
-            return QuantityParser.TryParse<MomentumUnit, Momentum>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<MomentumUnit, Momentum>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out Momentum value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Momentum"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Momentum"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Momentum result)
         {
-            return QuantityParser.TryParse<MomentumUnit, Momentum>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<MomentumUnit, Momentum>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Momentum value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Momentum"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Momentum"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Momentum result)
         {
-            return QuantityParser.TryParse<MomentumUnit, Momentum>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<MomentumUnit, Momentum>(text, From, styles, provider, out result);
         }
 
         /// <summary>

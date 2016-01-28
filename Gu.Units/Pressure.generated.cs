@@ -124,46 +124,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.Pressure"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
         /// <returns></returns>
-		public static Pressure Parse(string s)
+		public static Pressure Parse(string text)
         {
-            return QuantityParser.Parse<PressureUnit, Pressure>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<PressureUnit, Pressure>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static Pressure Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
+        /// <returns></returns>
+        public static Pressure Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<PressureUnit, Pressure>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<PressureUnit, Pressure>(text, From, NumberStyles.Float, provider);
         }
 
-        public static Pressure Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
+        /// <returns></returns>
+        public static Pressure Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<PressureUnit, Pressure>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<PressureUnit, Pressure>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static Pressure Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
+        /// <returns></returns>
+        public static Pressure Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<PressureUnit, Pressure>(s, From, styles, provider);
+            return QuantityParser.Parse<PressureUnit, Pressure>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out Pressure value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out Pressure result)
         {
-            return QuantityParser.TryParse<PressureUnit, Pressure>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<PressureUnit, Pressure>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out Pressure value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out Pressure result)
         {
-            return QuantityParser.TryParse<PressureUnit, Pressure>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<PressureUnit, Pressure>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out Pressure value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Pressure result)
         {
-            return QuantityParser.TryParse<PressureUnit, Pressure>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<PressureUnit, Pressure>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Pressure value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Pressure result)
         {
-            return QuantityParser.TryParse<PressureUnit, Pressure>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<PressureUnit, Pressure>(text, From, styles, provider, out result);
         }
 
         /// <summary>

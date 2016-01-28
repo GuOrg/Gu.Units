@@ -104,46 +104,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.Energy"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
         /// <returns></returns>
-		public static Energy Parse(string s)
+		public static Energy Parse(string text)
         {
-            return QuantityParser.Parse<EnergyUnit, Energy>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<EnergyUnit, Energy>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static Energy Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
+        /// <returns></returns>
+        public static Energy Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<EnergyUnit, Energy>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<EnergyUnit, Energy>(text, From, NumberStyles.Float, provider);
         }
 
-        public static Energy Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
+        /// <returns></returns>
+        public static Energy Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<EnergyUnit, Energy>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<EnergyUnit, Energy>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static Energy Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
+        /// <returns></returns>
+        public static Energy Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<EnergyUnit, Energy>(s, From, styles, provider);
+            return QuantityParser.Parse<EnergyUnit, Energy>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out Energy value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out Energy result)
         {
-            return QuantityParser.TryParse<EnergyUnit, Energy>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<EnergyUnit, Energy>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out Energy value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out Energy result)
         {
-            return QuantityParser.TryParse<EnergyUnit, Energy>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<EnergyUnit, Energy>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out Energy value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Energy result)
         {
-            return QuantityParser.TryParse<EnergyUnit, Energy>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<EnergyUnit, Energy>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Energy value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Energy result)
         {
-            return QuantityParser.TryParse<EnergyUnit, Energy>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<EnergyUnit, Energy>(text, From, styles, provider, out result);
         }
 
         /// <summary>

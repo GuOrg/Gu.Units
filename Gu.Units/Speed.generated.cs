@@ -114,46 +114,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
         /// <returns></returns>
-		public static Speed Parse(string s)
+		public static Speed Parse(string text)
         {
-            return QuantityParser.Parse<SpeedUnit, Speed>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<SpeedUnit, Speed>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static Speed Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <returns></returns>
+        public static Speed Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<SpeedUnit, Speed>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<SpeedUnit, Speed>(text, From, NumberStyles.Float, provider);
         }
 
-        public static Speed Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <returns></returns>
+        public static Speed Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<SpeedUnit, Speed>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<SpeedUnit, Speed>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static Speed Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <returns></returns>
+        public static Speed Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<SpeedUnit, Speed>(s, From, styles, provider);
+            return QuantityParser.Parse<SpeedUnit, Speed>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out Speed value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out Speed result)
         {
-            return QuantityParser.TryParse<SpeedUnit, Speed>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out Speed value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out Speed result)
         {
-            return QuantityParser.TryParse<SpeedUnit, Speed>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out Speed value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Speed result)
         {
-            return QuantityParser.TryParse<SpeedUnit, Speed>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Speed value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Speed result)
         {
-            return QuantityParser.TryParse<SpeedUnit, Speed>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, styles, provider, out result);
         }
 
         /// <summary>

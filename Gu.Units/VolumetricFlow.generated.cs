@@ -124,46 +124,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.VolumetricFlow"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.VolumetricFlow"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.VolumetricFlow"/></param>
         /// <returns></returns>
-		public static VolumetricFlow Parse(string s)
+		public static VolumetricFlow Parse(string text)
         {
-            return QuantityParser.Parse<VolumetricFlowUnit, VolumetricFlow>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<VolumetricFlowUnit, VolumetricFlow>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static VolumetricFlow Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.VolumetricFlow"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.VolumetricFlow"/></param>
+        /// <returns></returns>
+        public static VolumetricFlow Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<VolumetricFlowUnit, VolumetricFlow>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<VolumetricFlowUnit, VolumetricFlow>(text, From, NumberStyles.Float, provider);
         }
 
-        public static VolumetricFlow Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.VolumetricFlow"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.VolumetricFlow"/></param>
+        /// <returns></returns>
+        public static VolumetricFlow Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<VolumetricFlowUnit, VolumetricFlow>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<VolumetricFlowUnit, VolumetricFlow>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static VolumetricFlow Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.VolumetricFlow"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.VolumetricFlow"/></param>
+        /// <returns></returns>
+        public static VolumetricFlow Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<VolumetricFlowUnit, VolumetricFlow>(s, From, styles, provider);
+            return QuantityParser.Parse<VolumetricFlowUnit, VolumetricFlow>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out VolumetricFlow value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.VolumetricFlow"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.VolumetricFlow"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out VolumetricFlow result)
         {
-            return QuantityParser.TryParse<VolumetricFlowUnit, VolumetricFlow>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<VolumetricFlowUnit, VolumetricFlow>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out VolumetricFlow value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.VolumetricFlow"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.VolumetricFlow"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out VolumetricFlow result)
         {
-            return QuantityParser.TryParse<VolumetricFlowUnit, VolumetricFlow>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<VolumetricFlowUnit, VolumetricFlow>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out VolumetricFlow value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.VolumetricFlow"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.VolumetricFlow"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out VolumetricFlow result)
         {
-            return QuantityParser.TryParse<VolumetricFlowUnit, VolumetricFlow>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<VolumetricFlowUnit, VolumetricFlow>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out VolumetricFlow value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.VolumetricFlow"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.VolumetricFlow"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out VolumetricFlow result)
         {
-            return QuantityParser.TryParse<VolumetricFlowUnit, VolumetricFlow>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<VolumetricFlowUnit, VolumetricFlow>(text, From, styles, provider, out result);
         }
 
         /// <summary>

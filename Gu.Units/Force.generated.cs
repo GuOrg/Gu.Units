@@ -99,46 +99,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
         /// <returns></returns>
-		public static Force Parse(string s)
+		public static Force Parse(string text)
         {
-            return QuantityParser.Parse<ForceUnit, Force>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<ForceUnit, Force>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static Force Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <returns></returns>
+        public static Force Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<ForceUnit, Force>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<ForceUnit, Force>(text, From, NumberStyles.Float, provider);
         }
 
-        public static Force Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <returns></returns>
+        public static Force Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<ForceUnit, Force>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<ForceUnit, Force>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static Force Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <returns></returns>
+        public static Force Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<ForceUnit, Force>(s, From, styles, provider);
+            return QuantityParser.Parse<ForceUnit, Force>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out Force value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out Force result)
         {
-            return QuantityParser.TryParse<ForceUnit, Force>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<ForceUnit, Force>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out Force value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out Force result)
         {
-            return QuantityParser.TryParse<ForceUnit, Force>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<ForceUnit, Force>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out Force value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Force result)
         {
-            return QuantityParser.TryParse<ForceUnit, Force>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<ForceUnit, Force>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out Force value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Force result)
         {
-            return QuantityParser.TryParse<ForceUnit, Force>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<ForceUnit, Force>(text, From, styles, provider, out result);
         }
 
         /// <summary>

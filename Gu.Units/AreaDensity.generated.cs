@@ -69,46 +69,81 @@
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
         /// </summary>
-        /// <param name="s">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
         /// <returns></returns>
-		public static AreaDensity Parse(string s)
+		public static AreaDensity Parse(string text)
         {
-            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
-        public static AreaDensity Parse(string s, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <returns></returns>
+        public static AreaDensity Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(s, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(text, From, NumberStyles.Float, provider);
         }
 
-        public static AreaDensity Parse(string s, NumberStyles styles)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <returns></returns>
+        public static AreaDensity Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(s, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
-        public static AreaDensity Parse(string s, NumberStyles styles, IFormatProvider provider)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <returns></returns>
+        public static AreaDensity Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(s, From, styles, provider);
+            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(text, From, styles, provider);
         }
 
-        public static bool TryParse(string s, out AreaDensity value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, out AreaDensity result)
         {
-            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(s, From, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, IFormatProvider provider, out AreaDensity value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <returns></returns>		
+        public static bool TryParse(string text, IFormatProvider provider, out AreaDensity result)
         {
-            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(s, From, NumberStyles.Float, provider, out value);
+            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(text, From, NumberStyles.Float, provider, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, out AreaDensity value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, out AreaDensity result)
         {
-            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(s, From, styles, CultureInfo.CurrentCulture, out value);
+            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles styles, IFormatProvider provider, out AreaDensity value)
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <returns></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out AreaDensity result)
         {
-            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(s, From, styles, provider, out value);
+            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(text, From, styles, provider, out result);
         }
 
         /// <summary>
