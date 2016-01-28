@@ -147,7 +147,7 @@
         /// <summary>
         /// Converts a value from metres.
         /// </summary>
-        /// <param name="Metres">The value in Metres</param>
+        /// <param name="metres">The value in Metres</param>
         /// <returns>The converted value</returns>
         public double FromSiUnit(double metres)
         {

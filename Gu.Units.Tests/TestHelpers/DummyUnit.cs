@@ -14,5 +14,10 @@ namespace Gu.Units.Tests
         {
             throw new System.NotImplementedException();
         }
+
+        public string ToString(SymbolFormat format)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

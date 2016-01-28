@@ -9,6 +9,8 @@
         public static readonly string InputOptionsTab = Create();
         public static readonly string SymbolFormatTab = Create();
         public static readonly string StringFormatTab = Create();
+        public static readonly string QuantityExtensionsTab = Create();
+
         public static readonly string MillimetresPerSecondInDataTemplate = Create();
         public static readonly string MillimetresPerSecondAndValueFormatF2 = Create();
         public static readonly string MillimetresPerSecondSignedSuperScriptAndValueFormatF2 = Create();

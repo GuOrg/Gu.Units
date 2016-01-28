@@ -72,6 +72,7 @@
     <Compile Include="CatalyticActivityConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="UnitFormatConverterExtension.cs" />
     <Compile Include="CurrentConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
@@ -118,9 +119,11 @@
     <Compile Include="LengthConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="LengthExtension.cs" />
     <Compile Include="LengthPerUnitlessConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="LengthUnitExtension.cs" />
     <Compile Include="LuminousFluxConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>

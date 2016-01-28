@@ -26,5 +26,9 @@
         <TabItem AutomationProperties.AutomationId="{x:Static local:AutomationIds.StringFormatTab}" Header="String formats">
             <local:StringFormatView />
         </TabItem>
+
+        <TabItem AutomationProperties.AutomationId="{x:Static local:AutomationIds.QuantityExtensionsTab}" Header="Quantity extensions">
+            <local:QuantityExtensionsView />
+        </TabItem>
     </TabControl>
 </Window>

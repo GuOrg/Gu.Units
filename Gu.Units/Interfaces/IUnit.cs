@@ -25,5 +25,12 @@
         /// <param name="value">The value in base unit</param>
         /// <returns>The converted value</returns>
         double FromSiUnit(double value);
+
+        /// <summary>
+        /// Converts the unit to its string representation
+        /// </summary>
+        /// <param name="format">How to format the return value</param>
+        /// <returns></returns>
+        string ToString(SymbolFormat format);
     }
 }
