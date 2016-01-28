@@ -96,20 +96,43 @@
             </HeaderedContentControl.Template>
         </HeaderedContentControl>
 
-        <TextBlock Grid.Row="5"
+        <HeaderedContentControl Grid.Row="5"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Content="{Binding Length}"
+                                Header="ControlTemplate">
+            <HeaderedContentControl.Template>
+                <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{TemplateBinding Header}" />
+                        <TextBox Grid.Column="1"
+                                 AutomationProperties.AutomationId="{x:Static local:AutomationIds.MillimetresProp}"
+                                 Text="{Binding Content,
+                                                Converter={units:LengthConverter mm},
+                                                RelativeSource={RelativeSource AncestorType={x:Type HeaderedContentControl}}}" />
+                    </Grid>
+                </ControlTemplate>
+            </HeaderedContentControl.Template>
+        </HeaderedContentControl>
+
+        <TextBlock Grid.Row="6"
                    Grid.Column="0"
                    Text="Binding Length, Converter={units:LengthConverter cm}, StringFormat='{}{0:F2}'" />
-        <TextBox Grid.Row="5"
+        <TextBox Grid.Row="6"
                  Grid.Column="1"
                  AutomationProperties.AutomationId="{x:Static local:AutomationIds.CmF2BindingStringFormat}"
                  Text="{Binding Length,
                                 Converter={units:LengthConverter cm},
                                 StringFormat='{}{0:F2}'}" />
 
-        <TextBlock Grid.Row="6"
+        <TextBlock Grid.Row="7"
                    Grid.Column="0"
                    Text="Binding Speed, Converter={units:SpeedConverter mm/s, ValueFormat='F2', SymbolFormat=SignedSuperScript}" />
-        <TextBox Grid.Row="6"
+        <TextBox Grid.Row="7"
                  Grid.Column="1"
                  AutomationProperties.AutomationId="{x:Static local:AutomationIds.MillimetresPerSecondSignedSuperScriptAndValueFormatF2}"
                  Text="{Binding Speed,
@@ -117,10 +140,10 @@
                                                                 ValueFormat='F2',
                                                                 SymbolFormat=SignedSuperScript}}" />
 
-        <TextBlock Grid.Row="7"
+        <TextBlock Grid.Row="8"
                    Grid.Column="0"
                    Text="Binding Speed, Converter={units:SpeedConverter mm/s, ValueFormat='F2', SymbolFormat=SignedSuperScript}" />
-        <TextBox Grid.Row="7"
+        <TextBox Grid.Row="8"
                  Grid.Column="1"
                  AutomationProperties.AutomationId="{x:Static local:AutomationIds.MillimetresPerSecondAndValueFormatF2}"
                  Text="{Binding Speed,

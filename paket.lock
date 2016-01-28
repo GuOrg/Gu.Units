@@ -5,6 +5,7 @@ NUGET
     Gu.ChangeTracking (1.0.2)
     Gu.Reactive (1.10.0)
       Rx-Main (>= 2.0.0 < 3.0.0)
+    Gu.Wpf.NumericInput (0.4.4.1)
     Gu.Wpf.Reactive (1.10.0)
       Gu.Reactive (>= 1.10.0)
       Gu.Wpf.ToolTips (>= 0.2.0 < 1.0.0)

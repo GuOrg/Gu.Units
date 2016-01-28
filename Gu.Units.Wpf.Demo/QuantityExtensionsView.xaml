@@ -5,13 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:units="http://Gu.com/Units"
              xmlns:units1="clr-namespace:Gu.Units;assembly=Gu.Units"
-             d:DesignHeight="300"
-             d:DesignWidth="300"
              mc:Ignorable="d">
     <StackPanel>
-        <Label Content="{units:Length 1 mm}" />
+        <Label Content="{units:Length 1.2 mm}" />
         <Label Content="{Binding Source={units:Length 1.234 mm}, Converter={units:LengthConverter StringFormat='F3 mm'}}" />
-        <TextBlock Text="{Binding Source={units:Length 1.234 mm}, Converter={units:LengthConverter StringFormat='F3 mm'}}" />
+        <TextBlock Text="{Binding Source={units:Length 1.23456 mm}, Converter={units:LengthConverter StringFormat='F4 mm'}}" />
         <TextBlock Text="{Binding Source={x:Static units1:SpeedUnit.KilometresPerHour}, Converter={units:UnitFormatConverter SignedSuperScript}}" />
         <TextBlock Text="{Binding Symbol, Source={units:LengthUnit mm}}" />
         <TextBlock Text="{Binding Symbol, Source={x:Static units:LengthUnitExtension.Millimetres}}" />

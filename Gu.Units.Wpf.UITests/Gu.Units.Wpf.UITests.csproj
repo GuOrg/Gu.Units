@@ -87,6 +87,20 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <ProjectReference Include="..\Gu.Units.Wpf.Demo\Gu.Units.Wpf.Demo.csproj">
+      <Project>{8CB38BA2-254B-4B0F-9C9F-57D17DE5D8B5}</Project>
+      <Name>Gu.Units.Wpf.Demo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gu.Units.Wpf\Gu.Units.Wpf.csproj">
+      <Project>{ea4bce51-a58d-4fa7-bba4-6f0056d753ca}</Project>
+      <Name>Gu.Units.Wpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gu.Units\Gu.Units.csproj">
+      <Project>{f1f8b138-becc-4475-a7ab-b3019338bc7b}</Project>
+      <Name>Gu.Units</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
       <ItemGroup>
@@ -169,20 +183,6 @@
       <Private>True</Private>
       <Paket>True</Paket>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Gu.Units.Wpf.Demo\Gu.Units.Wpf.Demo.csproj">
-      <Project>{8CB38BA2-254B-4B0F-9C9F-57D17DE5D8B5}</Project>
-      <Name>Gu.Units.Wpf.Demo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gu.Units.Wpf\Gu.Units.Wpf.csproj">
-      <Project>{ea4bce51-a58d-4fa7-bba4-6f0056d753ca}</Project>
-      <Name>Gu.Units.Wpf</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Gu.Units\Gu.Units.csproj">
-      <Project>{f1f8b138-becc-4475-a7ab-b3019338bc7b}</Project>
-      <Name>Gu.Units</Name>
-    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
