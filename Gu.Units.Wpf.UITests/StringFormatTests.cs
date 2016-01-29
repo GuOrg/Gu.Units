@@ -35,6 +35,7 @@
                 Assert.AreEqual("6.78", page.Get<TextBox>(AutomationIds.CmF2BindingStringFormat).Text);
                 Assert.AreEqual("1200.00\u00A0mm⋅s⁻¹", page.Get<TextBox>(AutomationIds.MillimetresPerSecondSignedSuperScriptAndValueFormatF2).Text);
                 Assert.AreEqual("1200.00", page.Get<TextBox>(AutomationIds.MillimetresPerSecondAndValueFormatF2).Text);
+                Assert.AreEqual("67.8", page.Get<TextBox>(AutomationIds.MillimetresDoubleBox).Text);
             }
         }
     }

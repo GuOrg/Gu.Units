@@ -1,6 +1,7 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
@@ -8,7 +9,7 @@
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.ForcePerUnitless"/>.
     /// </summary>
-    // [TypeConverter(typeof(ForcePerUnitlessTypeConverter))]
+    [TypeConverter(typeof(ForcePerUnitlessTypeConverter))]
     [Serializable]
     public partial struct ForcePerUnitless : IQuantity<ForcePerUnitlessUnit>, IComparable<ForcePerUnitless>, IEquatable<ForcePerUnitless>
     {

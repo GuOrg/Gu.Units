@@ -249,8 +249,13 @@
                         {
                             return new AreaDensity(d, this.unit.Value);
                         }
+                        AreaDensity result;
+                        if (AreaDensity.TryParse(text, NumberStyles.Float, culture, out result))
+                        {
+                            return $"#{text}#"; // returning modified text so that TypeConverter fails and we get an error
+                        }
 
-                        return value; // returning raw to trigger error
+                        return text; // returning raw to trigger error
                     }
                 case Wpf.UnitInput.SymbolAllowed:
                     {

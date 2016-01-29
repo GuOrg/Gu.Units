@@ -1,6 +1,7 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
@@ -8,7 +9,7 @@
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.ElectricCharge"/>.
     /// </summary>
-    // [TypeConverter(typeof(ElectricChargeTypeConverter))]
+    [TypeConverter(typeof(ElectricChargeTypeConverter))]
     [Serializable]
     public partial struct ElectricCharge : IQuantity<ElectricChargeUnit>, IComparable<ElectricCharge>, IEquatable<ElectricCharge>
     {

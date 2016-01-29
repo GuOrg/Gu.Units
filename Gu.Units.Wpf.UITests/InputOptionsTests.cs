@@ -23,7 +23,6 @@ namespace Gu.Units.Wpf.UITests
                 page.Select();
                 var scalarBox = page.Get<TextBox>(AutomationIds.ScalarOnly);
                 var symbolAllowedBox = page.Get<TextBox>(AutomationIds.SymbolAllowed);
-                var symbolRequiredBox = page.Get<TextBox>(AutomationIds.SymbolRequired);
 
                 var before = symbolAllowedBox.Text;
                 Assert.AreEqual("HasValidationError: False", scalarBox.ItemStatus());

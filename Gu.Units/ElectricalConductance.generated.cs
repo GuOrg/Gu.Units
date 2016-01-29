@@ -1,6 +1,7 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
@@ -8,7 +9,7 @@
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.ElectricalConductance"/>.
     /// </summary>
-    // [TypeConverter(typeof(ElectricalConductanceTypeConverter))]
+    [TypeConverter(typeof(ElectricalConductanceTypeConverter))]
     [Serializable]
     public partial struct ElectricalConductance : IQuantity<ElectricalConductanceUnit>, IComparable<ElectricalConductance>, IEquatable<ElectricalConductance>
     {

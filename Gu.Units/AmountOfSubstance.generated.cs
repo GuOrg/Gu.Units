@@ -1,6 +1,7 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
@@ -8,7 +9,7 @@
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.AmountOfSubstance"/>.
     /// </summary>
-    // [TypeConverter(typeof(AmountOfSubstanceTypeConverter))]
+    [TypeConverter(typeof(AmountOfSubstanceTypeConverter))]
     [Serializable]
     public partial struct AmountOfSubstance : IQuantity<AmountOfSubstanceUnit>, IComparable<AmountOfSubstance>, IEquatable<AmountOfSubstance>
     {

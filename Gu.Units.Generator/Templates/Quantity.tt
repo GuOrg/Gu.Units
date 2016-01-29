@@ -7,11 +7,12 @@
 
 var settings = Settings.Instance;
 // Template used by QuantityGenerator.tt
-var quantity = settings.GetQuantityByName(QuantityName ?? settings.Quantities[0].Name);
+var quantity = settings.GetQuantityByName(this.QuantityName ?? settings.Quantities[0].Name);
 #>
 namespace <#= Settings.Namespace #>
 {
     using System;
+    using System.ComponentModel;
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
@@ -19,7 +20,7 @@ namespace <#= Settings.Namespace #>
 	/// <summary>
     /// A type for the quantity <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
     /// </summary>
-	// [TypeConverter(typeof(<#= quantity.Name #>TypeConverter))]
+	[TypeConverter(typeof(<#= quantity.Name #>TypeConverter))]
     [Serializable]
 	public partial struct <#= quantity.Name #> : IQuantity<<#= quantity.UnitName #>>, IComparable<<#= quantity.Name #>>, IEquatable<<#= quantity.Name #>>
 	{

@@ -11,7 +11,7 @@
              mc:Ignorable="d">
     <UserControl.Resources>
         <DataTemplate x:Key="DataTemplate" DataType="{x:Type local:ViewModel}">
-            <TextBox AutomationProperties.AutomationId="{x:Static local:AutomationIds.MillimetresPerSecondInDataTemplate}" Text="{Binding Speed, Converter={units:SpeedConverter mm/s}}" />
+            <TextBox AutomationProperties.AutomationId="{x:Static local:AutomationIds.MillimetresInDataTemplate}" Text="{Binding Length, Converter={units:LengthConverter mm}}" />
         </DataTemplate>
     </UserControl.Resources>
     <Grid>
@@ -99,24 +99,24 @@
         <TextBlock Grid.Row="6"
                    Grid.Column="0"
                    Text="DoubleControl Converter={units:PressureConverter N*mm^-2}}" />
-        <local:DoubleControl Grid.Row="6"
-                             Grid.Column="1"
-                             AutomationProperties.AutomationId="{x:Static local:AutomationIds.DoubleControlNewtonsPerSquareMillimetreStringCtor}"
-                             Value="{Binding Pressure,
-                                             Converter={units:PressureConverter N*mm^-2}}" />
+        <numeric:DoubleBox Grid.Row="6"
+                           Grid.Column="1"
+                           AutomationProperties.AutomationId="{x:Static local:AutomationIds.DoubleBoxNewtonsPerSquareMillimetreStringCtor}"
+                           Value="{Binding Pressure,
+                                           Converter={units:PressureConverter N*mm^-2}}" />
 
         <TextBlock Grid.Row="7"
                    Grid.Column="0"
                    Text="DoubleControl Converter={units:PressureConverter MPa}}" />
-        <local:DoubleControl Grid.Row="7"
-                             Grid.Column="1"
-                             AutomationProperties.AutomationId="{x:Static local:AutomationIds.DoubleControlMPaStringCtor}"
-                             Value="{Binding Pressure,
-                                             Converter={units:PressureConverter MPa}}" />
+        <numeric:DoubleBox Grid.Row="7"
+                           Grid.Column="1"
+                           AutomationProperties.AutomationId="{x:Static local:AutomationIds.DoubleBoxMPaStringCtor}"
+                           Value="{Binding Pressure,
+                                           Converter={units:PressureConverter MPa}}" />
 
         <TextBlock Grid.Row="8"
                    Grid.Column="0"
-                   Text="Converter={units:SpeedConverter Unit=mm/s}}" />
+                   Text="DataTemplate Converter={units:LengthConverter mm}}" />
         <ContentPresenter Grid.Row="8"
                           Grid.Column="1"
                           Content="{Binding}"
@@ -139,7 +139,8 @@
                                  AutomationProperties.AutomationId="{x:Static local:AutomationIds.F2CmBindingStringFormatInControlTemplate}"
                                  Text="{Binding Content,
                                                 RelativeSource={RelativeSource AncestorType=HeaderedContentControl},
-                                                Converter={units:LengthConverter cm}}" />
+                                                Converter={units:LengthConverter cm},
+                                                StringFormat='F2'}" />
                     </Grid>
                 </ControlTemplate>
             </HeaderedContentControl.Template>
@@ -154,6 +155,5 @@
                  Text="{Binding NullableLength,
                                 Converter={units:LengthConverter cm},
                                 TargetNullValue=''}" />
-
     </Grid>
 </UserControl>

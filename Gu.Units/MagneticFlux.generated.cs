@@ -1,6 +1,7 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
@@ -8,7 +9,7 @@
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.MagneticFlux"/>.
     /// </summary>
-    // [TypeConverter(typeof(MagneticFluxTypeConverter))]
+    [TypeConverter(typeof(MagneticFluxTypeConverter))]
     [Serializable]
     public partial struct MagneticFlux : IQuantity<MagneticFluxUnit>, IComparable<MagneticFlux>, IEquatable<MagneticFlux>
     {

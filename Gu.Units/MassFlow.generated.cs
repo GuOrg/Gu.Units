@@ -1,6 +1,7 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
@@ -8,7 +9,7 @@
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.MassFlow"/>.
     /// </summary>
-    // [TypeConverter(typeof(MassFlowTypeConverter))]
+    [TypeConverter(typeof(MassFlowTypeConverter))]
     [Serializable]
     public partial struct MassFlow : IQuantity<MassFlowUnit>, IComparable<MassFlow>, IEquatable<MassFlow>
     {

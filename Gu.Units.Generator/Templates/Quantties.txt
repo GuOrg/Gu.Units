@@ -82,7 +82,7 @@ Read Settings and found 50 units
 //-> SpecificVolume.generated.cs
 
 //-> Speed.generated.cs
-Error processing file Stiffness.generated.cs The process cannot access the file 'C:\Git\Gu.Units\Gu.Units\Stiffness.generated.cs' because it is being used by another process.
+
 //-> Stiffness.generated.cs
 
 //-> Temperature.generated.cs

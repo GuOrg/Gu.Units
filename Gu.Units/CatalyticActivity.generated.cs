@@ -1,6 +1,7 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
@@ -8,7 +9,7 @@
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.CatalyticActivity"/>.
     /// </summary>
-    // [TypeConverter(typeof(CatalyticActivityTypeConverter))]
+    [TypeConverter(typeof(CatalyticActivityTypeConverter))]
     [Serializable]
     public partial struct CatalyticActivity : IQuantity<CatalyticActivityUnit>, IComparable<CatalyticActivity>, IEquatable<CatalyticActivity>
     {

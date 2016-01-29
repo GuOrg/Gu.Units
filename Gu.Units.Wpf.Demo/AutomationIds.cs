@@ -11,7 +11,7 @@
         public static readonly string StringFormatTab = Create();
         public static readonly string QuantityExtensionsTab = Create();
 
-        public static readonly string MillimetresPerSecondInDataTemplate = Create();
+        public static readonly string MillimetresInDataTemplate = Create();
         public static readonly string MillimetresPerSecondAndValueFormatF2 = Create();
         public static readonly string MillimetresPerSecondSignedSuperScriptAndValueFormatF2 = Create();
         public static readonly string CmF2BindingStringFormat = Create();
@@ -26,8 +26,8 @@
         public static readonly string MillimetresDoubleBoxInControlTemplate = Create();
         public static readonly string DoubleBoxNullableMillimetresStringCtor = Create();
         public static readonly string DoubleBoxMillimetresStringCtor = Create();
-        public static readonly string DoubleControlNewtonsPerSquareMillimetreStringCtor = Create();
-        public static readonly string DoubleControlMPaStringCtor = Create();
+        public static readonly string DoubleBoxNewtonsPerSquareMillimetreStringCtor = Create();
+        public static readonly string DoubleBoxMPaStringCtor = Create();
 
         public static readonly string ScalarOnly = Create();
         public static readonly string SymbolAllowed = Create();
