@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(AreaDensity))]
     public class AreaDensityExtension : MarkupExtension
     {
-        public AreaDensityExtension(string value)
+        public AreaDensityExtension(AreaDensity value)
         {
-            this.Value = AreaDensity.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public AreaDensity Value { get; private set; }

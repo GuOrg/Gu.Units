@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Speed))]
     public class SpeedExtension : MarkupExtension
     {
-        public SpeedExtension(string value)
+        public SpeedExtension(Speed value)
         {
-            this.Value = Speed.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Speed Value { get; private set; }

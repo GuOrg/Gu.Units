@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Energy))]
     public class EnergyExtension : MarkupExtension
     {
-        public EnergyExtension(string value)
+        public EnergyExtension(Energy value)
         {
-            this.Value = Energy.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Energy Value { get; private set; }

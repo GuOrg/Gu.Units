@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(AngularJerk))]
     public class AngularJerkExtension : MarkupExtension
     {
-        public AngularJerkExtension(string value)
+        public AngularJerkExtension(AngularJerk value)
         {
-            this.Value = AngularJerk.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public AngularJerk Value { get; private set; }

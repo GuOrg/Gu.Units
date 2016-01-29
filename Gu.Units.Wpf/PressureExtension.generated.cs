@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Pressure))]
     public class PressureExtension : MarkupExtension
     {
-        public PressureExtension(string value)
+        public PressureExtension(Pressure value)
         {
-            this.Value = Pressure.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Pressure Value { get; private set; }

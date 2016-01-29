@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(AngularAcceleration))]
     public class AngularAccelerationExtension : MarkupExtension
     {
-        public AngularAccelerationExtension(string value)
+        public AngularAccelerationExtension(AngularAcceleration value)
         {
-            this.Value = AngularAcceleration.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public AngularAcceleration Value { get; private set; }

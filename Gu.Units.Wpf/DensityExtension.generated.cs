@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Density))]
     public class DensityExtension : MarkupExtension
     {
-        public DensityExtension(string value)
+        public DensityExtension(Density value)
         {
-            this.Value = Density.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Density Value { get; private set; }

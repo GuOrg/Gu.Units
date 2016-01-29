@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Inductance))]
     public class InductanceExtension : MarkupExtension
     {
-        public InductanceExtension(string value)
+        public InductanceExtension(Inductance value)
         {
-            this.Value = Inductance.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Inductance Value { get; private set; }

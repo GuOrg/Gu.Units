@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Mass))]
     public class MassExtension : MarkupExtension
     {
-        public MassExtension(string value)
+        public MassExtension(Mass value)
         {
-            this.Value = Mass.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Mass Value { get; private set; }

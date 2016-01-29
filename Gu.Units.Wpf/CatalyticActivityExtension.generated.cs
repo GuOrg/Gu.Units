@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(CatalyticActivity))]
     public class CatalyticActivityExtension : MarkupExtension
     {
-        public CatalyticActivityExtension(string value)
+        public CatalyticActivityExtension(CatalyticActivity value)
         {
-            this.Value = CatalyticActivity.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public CatalyticActivity Value { get; private set; }

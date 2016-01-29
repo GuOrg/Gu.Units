@@ -9,6 +9,7 @@
     <StackPanel>
         <Label Content="{units:Length 1.2 mm}" />
         <Label Content="{Binding Source={units:Length 1.234 mm}, Converter={units:LengthConverter StringFormat='F3 mm'}}" />
+        <Label Content="{Binding Source={units:Speed 1.234 m/s}, Converter={units:SpeedConverter km/h}, StringFormat='F2'}" />
         <TextBlock Text="{Binding Source={units:Length 1.23456 mm}, Converter={units:LengthConverter StringFormat='F4 mm'}}" />
         <TextBlock Text="{Binding Source={x:Static units1:SpeedUnit.KilometresPerHour}, Converter={units:UnitFormatConverter SignedSuperScript}}" />
         <TextBlock Text="{Binding Symbol, Source={units:LengthUnit mm}}" />

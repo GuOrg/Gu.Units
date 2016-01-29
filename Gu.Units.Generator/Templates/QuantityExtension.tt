@@ -17,9 +17,9 @@ namespace Gu.Units.Wpf
     [MarkupExtensionReturnType(typeof(<#= quantity.Name #>))]
     public class <#= quantity.Name #>Extension : MarkupExtension
     {
-        public <#= quantity.Name #>Extension(string value)
+        public <#= quantity.Name #>Extension(<#= quantity.Name #> value)
         {
-            this.Value = <#= quantity.Name #>.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public <#= quantity.Name #> Value { get; private set; }

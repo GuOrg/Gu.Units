@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Capacitance))]
     public class CapacitanceExtension : MarkupExtension
     {
-        public CapacitanceExtension(string value)
+        public CapacitanceExtension(Capacitance value)
         {
-            this.Value = Capacitance.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Capacitance Value { get; private set; }

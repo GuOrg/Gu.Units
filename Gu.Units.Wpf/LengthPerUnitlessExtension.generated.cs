@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(LengthPerUnitless))]
     public class LengthPerUnitlessExtension : MarkupExtension
     {
-        public LengthPerUnitlessExtension(string value)
+        public LengthPerUnitlessExtension(LengthPerUnitless value)
         {
-            this.Value = LengthPerUnitless.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public LengthPerUnitless Value { get; private set; }

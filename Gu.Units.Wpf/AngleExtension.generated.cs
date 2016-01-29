@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Angle))]
     public class AngleExtension : MarkupExtension
     {
-        public AngleExtension(string value)
+        public AngleExtension(Angle value)
         {
-            this.Value = Angle.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Angle Value { get; private set; }

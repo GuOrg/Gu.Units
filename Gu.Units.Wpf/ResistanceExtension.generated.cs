@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Resistance))]
     public class ResistanceExtension : MarkupExtension
     {
-        public ResistanceExtension(string value)
+        public ResistanceExtension(Resistance value)
         {
-            this.Value = Resistance.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Resistance Value { get; private set; }

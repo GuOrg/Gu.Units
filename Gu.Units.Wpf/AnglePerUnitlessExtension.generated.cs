@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(AnglePerUnitless))]
     public class AnglePerUnitlessExtension : MarkupExtension
     {
-        public AnglePerUnitlessExtension(string value)
+        public AnglePerUnitlessExtension(AnglePerUnitless value)
         {
-            this.Value = AnglePerUnitless.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public AnglePerUnitless Value { get; private set; }

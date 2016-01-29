@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(LuminousIntensity))]
     public class LuminousIntensityExtension : MarkupExtension
     {
-        public LuminousIntensityExtension(string value)
+        public LuminousIntensityExtension(LuminousIntensity value)
         {
-            this.Value = LuminousIntensity.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public LuminousIntensity Value { get; private set; }

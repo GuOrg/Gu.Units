@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(SpecificVolume))]
     public class SpecificVolumeExtension : MarkupExtension
     {
-        public SpecificVolumeExtension(string value)
+        public SpecificVolumeExtension(SpecificVolume value)
         {
-            this.Value = SpecificVolume.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public SpecificVolume Value { get; private set; }

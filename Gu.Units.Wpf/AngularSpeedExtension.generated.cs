@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(AngularSpeed))]
     public class AngularSpeedExtension : MarkupExtension
     {
-        public AngularSpeedExtension(string value)
+        public AngularSpeedExtension(AngularSpeed value)
         {
-            this.Value = AngularSpeed.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public AngularSpeed Value { get; private set; }

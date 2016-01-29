@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Temperature))]
     public class TemperatureExtension : MarkupExtension
     {
-        public TemperatureExtension(string value)
+        public TemperatureExtension(Temperature value)
         {
-            this.Value = Temperature.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Temperature Value { get; private set; }

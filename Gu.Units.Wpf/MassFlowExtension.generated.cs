@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(MassFlow))]
     public class MassFlowExtension : MarkupExtension
     {
-        public MassFlowExtension(string value)
+        public MassFlowExtension(MassFlow value)
         {
-            this.Value = MassFlow.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public MassFlow Value { get; private set; }

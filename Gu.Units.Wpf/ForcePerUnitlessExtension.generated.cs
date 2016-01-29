@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(ForcePerUnitless))]
     public class ForcePerUnitlessExtension : MarkupExtension
     {
-        public ForcePerUnitlessExtension(string value)
+        public ForcePerUnitlessExtension(ForcePerUnitless value)
         {
-            this.Value = ForcePerUnitless.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public ForcePerUnitless Value { get; private set; }

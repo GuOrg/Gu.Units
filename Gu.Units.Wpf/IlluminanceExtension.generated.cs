@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Illuminance))]
     public class IlluminanceExtension : MarkupExtension
     {
-        public IlluminanceExtension(string value)
+        public IlluminanceExtension(Illuminance value)
         {
-            this.Value = Illuminance.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Illuminance Value { get; private set; }

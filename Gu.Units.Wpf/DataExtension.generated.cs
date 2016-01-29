@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Data))]
     public class DataExtension : MarkupExtension
     {
-        public DataExtension(string value)
+        public DataExtension(Data value)
         {
-            this.Value = Data.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Data Value { get; private set; }

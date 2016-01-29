@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(AmountOfSubstance))]
     public class AmountOfSubstanceExtension : MarkupExtension
     {
-        public AmountOfSubstanceExtension(string value)
+        public AmountOfSubstanceExtension(AmountOfSubstance value)
         {
-            this.Value = AmountOfSubstance.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public AmountOfSubstance Value { get; private set; }

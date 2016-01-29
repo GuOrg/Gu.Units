@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(ElectricCharge))]
     public class ElectricChargeExtension : MarkupExtension
     {
-        public ElectricChargeExtension(string value)
+        public ElectricChargeExtension(ElectricCharge value)
         {
-            this.Value = ElectricCharge.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public ElectricCharge Value { get; private set; }

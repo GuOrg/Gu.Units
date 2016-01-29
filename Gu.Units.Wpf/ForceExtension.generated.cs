@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Force))]
     public class ForceExtension : MarkupExtension
     {
-        public ForceExtension(string value)
+        public ForceExtension(Force value)
         {
-            this.Value = Force.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Force Value { get; private set; }

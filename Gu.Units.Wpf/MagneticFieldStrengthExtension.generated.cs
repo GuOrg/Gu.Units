@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(MagneticFieldStrength))]
     public class MagneticFieldStrengthExtension : MarkupExtension
     {
-        public MagneticFieldStrengthExtension(string value)
+        public MagneticFieldStrengthExtension(MagneticFieldStrength value)
         {
-            this.Value = MagneticFieldStrength.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public MagneticFieldStrength Value { get; private set; }

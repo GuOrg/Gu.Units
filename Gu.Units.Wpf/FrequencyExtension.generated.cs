@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Frequency))]
     public class FrequencyExtension : MarkupExtension
     {
-        public FrequencyExtension(string value)
+        public FrequencyExtension(Frequency value)
         {
-            this.Value = Frequency.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Frequency Value { get; private set; }

@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(MagneticFlux))]
     public class MagneticFluxExtension : MarkupExtension
     {
-        public MagneticFluxExtension(string value)
+        public MagneticFluxExtension(MagneticFlux value)
         {
-            this.Value = MagneticFlux.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public MagneticFlux Value { get; private set; }

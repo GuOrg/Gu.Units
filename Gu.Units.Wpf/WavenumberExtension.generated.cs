@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Wavenumber))]
     public class WavenumberExtension : MarkupExtension
     {
-        public WavenumberExtension(string value)
+        public WavenumberExtension(Wavenumber value)
         {
-            this.Value = Wavenumber.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Wavenumber Value { get; private set; }

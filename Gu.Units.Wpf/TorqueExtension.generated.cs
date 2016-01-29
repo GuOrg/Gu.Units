@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Torque))]
     public class TorqueExtension : MarkupExtension
     {
-        public TorqueExtension(string value)
+        public TorqueExtension(Torque value)
         {
-            this.Value = Torque.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Torque Value { get; private set; }

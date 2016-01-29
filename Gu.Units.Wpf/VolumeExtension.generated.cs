@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Volume))]
     public class VolumeExtension : MarkupExtension
     {
-        public VolumeExtension(string value)
+        public VolumeExtension(Volume value)
         {
-            this.Value = Volume.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Volume Value { get; private set; }

@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Voltage))]
     public class VoltageExtension : MarkupExtension
     {
-        public VoltageExtension(string value)
+        public VoltageExtension(Voltage value)
         {
-            this.Value = Voltage.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Voltage Value { get; private set; }

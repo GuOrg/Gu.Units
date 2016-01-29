@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(KinematicViscosity))]
     public class KinematicViscosityExtension : MarkupExtension
     {
-        public KinematicViscosityExtension(string value)
+        public KinematicViscosityExtension(KinematicViscosity value)
         {
-            this.Value = KinematicViscosity.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public KinematicViscosity Value { get; private set; }

@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Length))]
     public class LengthExtension : MarkupExtension
     {
-        public LengthExtension(string value)
+        public LengthExtension(Length value)
         {
-            this.Value = Length.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Length Value { get; private set; }

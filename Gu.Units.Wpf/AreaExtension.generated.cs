@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Area))]
     public class AreaExtension : MarkupExtension
     {
-        public AreaExtension(string value)
+        public AreaExtension(Area value)
         {
-            this.Value = Area.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Area Value { get; private set; }

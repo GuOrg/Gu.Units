@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Current))]
     public class CurrentExtension : MarkupExtension
     {
-        public CurrentExtension(string value)
+        public CurrentExtension(Current value)
         {
-            this.Value = Current.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Current Value { get; private set; }

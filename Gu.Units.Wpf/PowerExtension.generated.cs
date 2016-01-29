@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Power))]
     public class PowerExtension : MarkupExtension
     {
-        public PowerExtension(string value)
+        public PowerExtension(Power value)
         {
-            this.Value = Power.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Power Value { get; private set; }

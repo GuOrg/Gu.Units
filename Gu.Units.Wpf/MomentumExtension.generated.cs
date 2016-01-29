@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Momentum))]
     public class MomentumExtension : MarkupExtension
     {
-        public MomentumExtension(string value)
+        public MomentumExtension(Momentum value)
         {
-            this.Value = Momentum.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Momentum Value { get; private set; }

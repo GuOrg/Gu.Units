@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(VolumetricFlow))]
     public class VolumetricFlowExtension : MarkupExtension
     {
-        public VolumetricFlowExtension(string value)
+        public VolumetricFlowExtension(VolumetricFlow value)
         {
-            this.Value = VolumetricFlow.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public VolumetricFlow Value { get; private set; }

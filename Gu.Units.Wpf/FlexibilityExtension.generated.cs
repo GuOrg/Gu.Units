@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Flexibility))]
     public class FlexibilityExtension : MarkupExtension
     {
-        public FlexibilityExtension(string value)
+        public FlexibilityExtension(Flexibility value)
         {
-            this.Value = Flexibility.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Flexibility Value { get; private set; }

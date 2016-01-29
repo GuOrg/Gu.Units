@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Stiffness))]
     public class StiffnessExtension : MarkupExtension
     {
-        public StiffnessExtension(string value)
+        public StiffnessExtension(Stiffness value)
         {
-            this.Value = Stiffness.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Stiffness Value { get; private set; }

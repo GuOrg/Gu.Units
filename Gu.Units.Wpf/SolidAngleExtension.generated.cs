@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(SolidAngle))]
     public class SolidAngleExtension : MarkupExtension
     {
-        public SolidAngleExtension(string value)
+        public SolidAngleExtension(SolidAngle value)
         {
-            this.Value = SolidAngle.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public SolidAngle Value { get; private set; }

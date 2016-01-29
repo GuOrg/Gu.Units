@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Unitless))]
     public class UnitlessExtension : MarkupExtension
     {
-        public UnitlessExtension(string value)
+        public UnitlessExtension(Unitless value)
         {
-            this.Value = Unitless.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Unitless Value { get; private set; }

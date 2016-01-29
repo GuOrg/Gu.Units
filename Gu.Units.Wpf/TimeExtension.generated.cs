@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Time))]
     public class TimeExtension : MarkupExtension
     {
-        public TimeExtension(string value)
+        public TimeExtension(Time value)
         {
-            this.Value = Time.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Time Value { get; private set; }

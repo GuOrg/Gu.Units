@@ -7,9 +7,9 @@
     [MarkupExtensionReturnType(typeof(Jerk))]
     public class JerkExtension : MarkupExtension
     {
-        public JerkExtension(string value)
+        public JerkExtension(Jerk value)
         {
-            this.Value = Jerk.Parse(value, CultureInfo.InvariantCulture);
+            this.Value = value;
         }
 
         public Jerk Value { get; private set; }
