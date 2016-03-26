@@ -11,7 +11,7 @@
         internal static void NotNullOrEmpty<T>(IEnumerable<T> value, string parameterName)
         {
             Debug.Assert(!string.IsNullOrEmpty(parameterName), $"{nameof(parameterName)} cannot be null");
-            Ensure.NotNull(value, parameterName);
+            NotNull(value, parameterName);
 
             if (!value.Any())
             {
@@ -22,7 +22,7 @@
         internal static void MinCount(ICollection value, int min, string parameterName)
         {
             Debug.Assert(!string.IsNullOrEmpty(parameterName), $"{nameof(parameterName)} cannot be null");
-            Ensure.NotNull(value, parameterName);
+            NotNull(value, parameterName);
 
             if (value.Count < min)
             {
@@ -34,7 +34,7 @@
         internal static void MaxCount(ICollection value, int max, string parameterName)
         {
             Debug.Assert(!string.IsNullOrEmpty(parameterName), $"{nameof(parameterName)} cannot be null");
-            Ensure.NotNull(value, parameterName);
+            NotNull(value, parameterName);
 
             if (value.Count > max)
             {
@@ -46,7 +46,7 @@
         internal static void Distinct<T>(IEnumerable<T> value, string parameterName)
         {
             Debug.Assert(!string.IsNullOrEmpty(parameterName), $"{nameof(parameterName)} cannot be null");
-            Ensure.NotNull(value, parameterName);
+            NotNull(value, parameterName);
 
             if (value.Distinct().Count() != value.Count())
             {
@@ -58,7 +58,7 @@
         internal static void Distinct<T>(IEnumerable<T> value, Func<T, object> selector, string parameterName)
         {
             Debug.Assert(!string.IsNullOrEmpty(parameterName), $"{nameof(parameterName)} cannot be null");
-            Ensure.NotNull(value, parameterName);
+            NotNull(value, parameterName);
 
             if (value.Select(selector).Distinct().Count() != value.Count())
             {

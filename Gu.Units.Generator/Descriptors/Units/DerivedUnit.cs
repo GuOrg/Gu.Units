@@ -16,7 +16,7 @@
         {
             Ensure.NotNullOrEmpty(parts, nameof(parts));
             Ensure.Distinct(parts, x => x.UnitName, nameof(parts));
-            Parts = new UnitParts(parts);
+            this.Parts = new UnitParts(parts);
         }
 
         public override UnitParts Parts { get; }

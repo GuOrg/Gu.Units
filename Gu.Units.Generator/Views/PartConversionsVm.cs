@@ -22,7 +22,7 @@
 
         public ObservableCollection<PartConversionVm[]> Conversions => this.conversions;
 
-        public bool HasItems => Conversions.Any(x => x.Length > 0);
+        public bool HasItems => this.Conversions.Any(x => x.Length > 0);
 
         public void SetUnit(Unit value)
         {
@@ -31,7 +31,7 @@
 
             if (this.unit == null)
             {
-                OnPropertyChanged(nameof(HasItems));
+                this.OnPropertyChanged(nameof(this.HasItems));
                 return;
             }
 
@@ -75,13 +75,13 @@
                 }
             }
 
-            OnPropertyChanged(nameof(HasItems));
+            this.OnPropertyChanged(nameof(this.HasItems));
         }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private static IReadOnlyList<PartConversion.PowerPart> CreatePowerParts(IReadOnlyList<UnitAndPower> parts, int index)

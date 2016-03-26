@@ -6,7 +6,7 @@
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Linq;
-    using Gu.Units.Generator.WpfStuff;
+    using WpfStuff;
 
     [TypeConverter(typeof(UnitPartsConverter))]
     [Serializable]
@@ -22,15 +22,15 @@
 
         public IReadOnlyList<UnitAndPower> Parts { get; }
 
-        public int Count => Parts.Count;
+        public int Count => this.Parts.Count;
 
-        public UnitAndPower this[int index] => Parts[index];
+        public UnitAndPower this[int index] => this.Parts[index];
 
-        internal ReadonlySet<UnitAndPower> BaseParts => this.baseParts ?? (this.baseParts = CreateBaseParts());
+        internal ReadonlySet<UnitAndPower> BaseParts => this.baseParts ?? (this.baseParts = this.CreateBaseParts());
 
-        public string Symbol => Parts.AsSymbol();
+        public string Symbol => this.Parts.AsSymbol();
 
-        public string BaseUnitSymbol => BaseParts.AsSymbol();
+        public string BaseUnitSymbol => this.BaseParts.AsSymbol();
 
         public static UnitParts operator *(UnitParts left, UnitParts right)
         {
@@ -81,13 +81,13 @@
             return !(left == right);
         }
 
-        public IEnumerator<UnitAndPower> GetEnumerator() => Parts.GetEnumerator();
+        public IEnumerator<UnitAndPower> GetEnumerator() => this.Parts.GetEnumerator();
 
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
         protected bool Equals(UnitParts other)
         {
-            return BaseParts.Equals(other.BaseParts);
+            return this.BaseParts.Equals(other.BaseParts);
         }
 
         public override bool Equals(object obj)
@@ -98,12 +98,12 @@
                 return true;
             if (obj.GetType() != this.GetType())
                 return false;
-            return Equals((UnitParts) obj);
+            return this.Equals((UnitParts) obj);
         }
 
         public override int GetHashCode()
         {
-            return BaseParts.GetHashCode();
+            return this.BaseParts.GetHashCode();
         }
 
         public override string ToString()
@@ -114,9 +114,9 @@
         private ReadonlySet<UnitAndPower> CreateBaseParts()
         {
             var all = new List<UnitAndPower>();
-            foreach (var part in Parts)
+            foreach (var part in this.Parts)
             {
-                GetBaseParts(part, part.Power, all);
+                this.GetBaseParts(part, part.Power, all);
             }
 
             var distinct = all.Select(x => x.Unit).Distinct().ToArray();
@@ -147,13 +147,13 @@
             var derivedUnit = (DerivedUnit)up.Unit;
             foreach (var unitPart in derivedUnit.Parts)
             {
-                GetBaseParts(unitPart, unitPart.Power * power, list);
+                this.GetBaseParts(unitPart, unitPart.Power * power, list);
             }
         }
 
         public UnitParts Inverse()
         {
-            var unitAndPowers = Parts.Select(x => UnitAndPower.Create(x.Unit, -1 * x.Power))
+            var unitAndPowers = this.Parts.Select(x => UnitAndPower.Create(x.Unit, -1 * x.Power))
                                      .ToList();
             return new UnitParts(unitAndPowers);
         }

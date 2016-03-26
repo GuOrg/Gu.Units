@@ -9,7 +9,7 @@
     {
         public FactorConversionsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

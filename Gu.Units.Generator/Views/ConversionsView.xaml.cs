@@ -9,7 +9,7 @@ namespace Gu.Units.Generator
     {
         public ConversionsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

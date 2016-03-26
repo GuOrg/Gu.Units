@@ -14,19 +14,19 @@
 
         public OperatorOverload(Quantity left, Operator @operator, Quantity right, Quantity result)
         {
-            Left = left;
-            Right = right;
-            Result = result;
+            this.Left = left;
+            this.Right = right;
+            this.Result = result;
 
             switch (@operator)
             {
                 case Generator.Operator.None:
                     throw new InvalidOperationException($"Could not create overload for {left} * x^y = {result}");
                 case Generator.Operator.Multiply:
-                    Operator = Multiply;
+                    this.Operator = Multiply;
                     break;
                 case Generator.Operator.Divide:
-                    Operator = Divide;
+                    this.Operator = Divide;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -87,10 +87,8 @@
 
         protected bool Equals(OperatorOverload other)
         {
-            return Left.Name.Equals(other.Left.Name) &&
-                   Right.Name.Equals(other.Right.Name) &&
-                   Result.Name.Equals(other.Result.Name) &&
-                   string.Equals(Operator, other.Operator);
+            return this.Left.Name.Equals(other.Left.Name) && this.Right.Name.Equals(other.Right.Name) && this.Result.Name.Equals(other.Result.Name) &&
+                   string.Equals(this.Operator, other.Operator);
         }
 
         public override bool Equals(object obj)
@@ -101,24 +99,24 @@
                 return true;
             if (obj.GetType() != this.GetType())
                 return false;
-            return Equals((OperatorOverload)obj);
+            return this.Equals((OperatorOverload)obj);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                var hashCode = Left.Name.GetHashCode();
-                hashCode = (hashCode * 397) ^ Right.Name.GetHashCode();
-                hashCode = (hashCode * 397) ^ Result.Name.GetHashCode();
-                hashCode = (hashCode * 397) ^ Operator.GetHashCode();
+                var hashCode = this.Left.Name.GetHashCode();
+                hashCode = (hashCode * 397) ^ this.Right.Name.GetHashCode();
+                hashCode = (hashCode * 397) ^ this.Result.Name.GetHashCode();
+                hashCode = (hashCode * 397) ^ this.Operator.GetHashCode();
                 return hashCode;
             }
         }
 
         public override string ToString()
         {
-            return $"{Left.Name} {Operator} {Right.Name} = {Result.Name}";
+            return $"{this.Left.Name} {this.Operator} {this.Right.Name} = {this.Result.Name}";
         }
 
         /// <summary>

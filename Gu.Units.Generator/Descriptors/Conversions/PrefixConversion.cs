@@ -18,7 +18,7 @@
         {
             this.name = name;
             this.symbol = symbol;
-            PrefixName = prefixName;
+            this.PrefixName = prefixName;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -34,14 +34,14 @@
                 }
 
                 this.name = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(ToSi));
-                OnPropertyChanged(nameof(FromSi));
-                OnPropertyChanged(nameof(ParameterName));
+                this.OnPropertyChanged();
+                this.OnPropertyChanged(nameof(this.ToSi));
+                this.OnPropertyChanged(nameof(this.FromSi));
+                this.OnPropertyChanged(nameof(this.ParameterName));
             }
         }
 
-        public string ParameterName => Name.ToParameterName();
+        public string ParameterName => this.Name.ToParameterName();
 
         public string Symbol
         {
@@ -54,31 +54,31 @@
                 }
 
                 this.symbol = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(SymbolConversion));
+                this.OnPropertyChanged();
+                this.OnPropertyChanged(nameof(this.SymbolConversion));
             }
         }
 
         public string PrefixName { get; }
 
-        public Prefix Prefix => Settings.Instance.Prefixes.Single(x => x.Name == PrefixName);
+        public Prefix Prefix => Settings.Instance.Prefixes.Single(x => x.Name == this.PrefixName);
 
         public double Factor
         {
             get
             {
-                if (string.Equals($"{Prefix.Name}{Unit.Name}", Name, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals($"{this.Prefix.Name}{this.Unit.Name}", this.Name, StringComparison.OrdinalIgnoreCase))
                 {
-                    return Math.Pow(10, Prefix.Power);
+                    return Math.Pow(10, this.Prefix.Power);
                 }
 
-                var factorConversion = Unit.FactorConversions.SingleOrDefault(x => string.Equals($"{Prefix.Name}{x.Name}", Name, StringComparison.OrdinalIgnoreCase));
+                var factorConversion = this.Unit.FactorConversions.SingleOrDefault(x => string.Equals($"{this.Prefix.Name}{x.Name}", this.Name, StringComparison.OrdinalIgnoreCase));
                 if (factorConversion != null)
                 {
-                    return factorConversion.Factor * Math.Pow(10, Prefix.Power);
+                    return factorConversion.Factor * Math.Pow(10, this.Prefix.Power);
                 }
 
-                throw new ArgumentOutOfRangeException($"Could not calculate factor for {Name}");
+                throw new ArgumentOutOfRangeException($"Could not calculate factor for {this.Name}");
             }
         }
 
@@ -114,7 +114,7 @@
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

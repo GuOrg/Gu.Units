@@ -9,8 +9,8 @@
         public MissingOverloads(UnitParts parts,
             IReadOnlyList<MissingOverload> missing)
         {
-            Parts = parts;
-            Missing = missing;
+            this.Parts = parts;
+            this.Missing = missing;
         }
 
         public UnitParts Parts { get; }

@@ -8,16 +8,16 @@
         public BaseUnitViewModel()
             : this(new BaseUnit(UnknownName, UnknownSymbol, UnknownName))
         {
-            Unit.ObservePropertyChangedSlim().Subscribe(_ =>
+            this.Unit.ObservePropertyChangedSlim().Subscribe(_ =>
             {
-                if (Settings.Instance.BaseUnits.Contains(Unit))
+                if (Settings.Instance.BaseUnits.Contains(this.Unit))
                 {
                     return;
                 }
 
-                if (!IsUnknown)
+                if (!this.IsUnknown)
                 {
-                    Settings.Instance.BaseUnits.Add(Unit);
+                    Settings.Instance.BaseUnits.Add(this.Unit);
                 }
             });
         }

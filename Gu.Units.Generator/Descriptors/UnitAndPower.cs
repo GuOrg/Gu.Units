@@ -1,24 +1,22 @@
 ﻿namespace Gu.Units.Generator
 {
     using System;
-    using System.ComponentModel;
     using System.Linq;
 
     [Serializable]
-    public class UnitAndPower : INotifyPropertyChanged
+    public class UnitAndPower
     {
         private Unit unit;
+
         public UnitAndPower(string unitName, int power)
         {
-            UnitName = unitName;
-            Power = power;
+            this.UnitName = unitName;
+            this.Power = power;
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public string UnitName { get; }
 
-        public Unit Unit => this.unit ?? (this.unit = Settings.Instance.AllUnits.Single(x => x.Name == UnitName));
+        public Unit Unit => this.unit ?? (this.unit = Settings.Instance.AllUnits.Single(x => x.Name == this.UnitName));
 
         public int Power { get; }
 
@@ -47,17 +45,17 @@
 
         public override string ToString()
         {
-            if (Power == 1)
+            if (this.Power == 1)
             {
                 return this.Unit.Symbol;
             }
 
-            return $"{Unit.Symbol}{SuperScript.GetString(Power)}";
+            return $"{this.Unit.Symbol}{SuperScript.GetString(this.Power)}";
         }
 
         protected bool Equals(UnitAndPower other)
         {
-            return string.Equals(UnitName, other.UnitName) && Power == other.Power;
+            return string.Equals(this.UnitName, other.UnitName) && this.Power == other.Power;
         }
 
         public override bool Equals(object obj)
@@ -68,14 +66,14 @@
                 return true;
             if (obj.GetType() != this.GetType())
                 return false;
-            return Equals((UnitAndPower)obj);
+            return this.Equals((UnitAndPower)obj);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                return (UnitName.GetHashCode() * 397) ^ Power;
+                return (this.UnitName.GetHashCode() * 397) ^ this.Power;
             }
         }
     }

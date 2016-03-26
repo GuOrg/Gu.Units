@@ -9,7 +9,7 @@
     {
         public PartConversionsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

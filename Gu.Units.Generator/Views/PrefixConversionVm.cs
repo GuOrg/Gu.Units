@@ -20,9 +20,9 @@
         {
             this.conversions = conversions;
             this.baseConversion = baseConversion;
-            Conversion = prefixConversion;
+            this.Conversion = prefixConversion;
             conversions.ObservePropertyChangedSlim()
-                       .Subscribe(_ => OnPropertyChanged(nameof(IsUsed))); // no need for IDisposable
+                       .Subscribe(_ => this.OnPropertyChanged(nameof(this.IsUsed))); // no need for IDisposable
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -33,39 +33,39 @@
         {
             get
             {
-                return conversions.Any(IsMatch);
+                return this.conversions.Any(this.IsMatch);
             }
             set
             {
-                if (value.Equals(IsUsed))
+                if (value.Equals(this.IsUsed))
                 {
                     return;
                 }
                 if (value)
                 {
-                    conversions.Add(Conversion);
+                    this.conversions.Add(this.Conversion);
                 }
                 else
                 {
-                    var match = this.conversions.FirstOrDefault(IsMatch);
+                    var match = this.conversions.FirstOrDefault(this.IsMatch);
                     if (match != null)
                     {
-                        conversions.Remove(match);
+                        this.conversions.Remove(match);
                     }
                 }
-                OnPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private bool IsMatch(PrefixConversion x)
         {
-            if (Conversion.Prefix.Power != x.Prefix.Power)
+            if (this.Conversion.Prefix.Power != x.Prefix.Power)
             {
                 return false;
             }

@@ -4,12 +4,12 @@
     {
         public FactorConversionVm(FactorConversion conversion)
         {
-            Conversion = conversion;
+            this.Conversion = conversion;
         }
 
         public FactorConversionVm()
         {
-            Conversion = new FactorConversion("Unknown", "??", 0);
+            this.Conversion = new FactorConversion("Unknown", "??", 0);
         }
 
         public FactorConversion Conversion { get; }

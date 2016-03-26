@@ -34,10 +34,10 @@
                 }
 
                 this.unit = value;
-                OnPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
-        public bool HasItems => Prefixes.Any();
+        public bool HasItems => this.Prefixes.Any();
 
         public void SetBaseUnit(Unit value)
         {
@@ -45,7 +45,7 @@
             this.prefixes.Clear();
             if (this.unit != null)
             {
-                if (IsValidPrefixUnit(this.unit))
+                if (this.IsValidPrefixUnit(this.unit))
                 {
                     this.prefixes.Add(this.settings.Prefixes.Select(x => PrefixConversionVm.Create(this.unit, x)).ToArray());
                 }
@@ -59,7 +59,7 @@
                 }
             }
 
-            OnPropertyChanged(nameof(HasItems));
+            this.OnPropertyChanged(nameof(this.HasItems));
         }
 
         private bool IsValidPrefixUnit(INameAndSymbol item)
@@ -99,7 +99,7 @@
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

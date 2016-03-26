@@ -112,7 +112,6 @@
         [Test]
         public void ReadException()
         {
-            int endPos;
             var text = "abcdef";
             var culture = CultureInfo.InvariantCulture;
             var pos = 3;

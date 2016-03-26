@@ -6,10 +6,8 @@
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
-    using System.Windows.Input;
     using JetBrains.Annotations;
     using Reactive;
-    using Wpf.Reactive;
 
     public class MainVm : INotifyPropertyChanged
     {
@@ -21,14 +19,14 @@
         private MainVm()
         {
             this.settings = Settings.FromResource;
-            NameSpace = Settings.ProjectName;
-            BaseUnits = new ObservableCollection<BaseUnitViewModel>(this.settings.BaseUnits.Select(x => new BaseUnitViewModel(x)));
-            BaseUnits.ObserveCollectionChangedSlim(false)
-                .Subscribe(OnBaseUnitsChanged);
-            DerivedUnits = new ObservableCollection<DerivedUnitViewModel>(this.settings.DerivedUnits.Select(x => new DerivedUnitViewModel(x)));
+            this.NameSpace = Settings.ProjectName;
+            this.BaseUnits = new ObservableCollection<BaseUnitViewModel>(this.settings.BaseUnits.Select(x => new BaseUnitViewModel(x)));
+            this.BaseUnits.ObserveCollectionChangedSlim(false)
+                .Subscribe(this.OnBaseUnitsChanged);
+            this.DerivedUnits = new ObservableCollection<DerivedUnitViewModel>(this.settings.DerivedUnits.Select(x => new DerivedUnitViewModel(x)));
 
-            DerivedUnits.ObserveCollectionChangedSlim(false)
-                .Subscribe(OnDerivedUnitsChanged);
+            this.DerivedUnits.ObserveCollectionChangedSlim(false)
+                .Subscribe(this.OnDerivedUnitsChanged);
             this.conversions = new ConversionsVm(this.settings);
         }
 
@@ -67,7 +65,7 @@
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private void OnBaseUnitsChanged(NotifyCollectionChangedEventArgs args)
@@ -87,7 +85,6 @@
                     break;
                 case NotifyCollectionChangedAction.Reset:
                     throw new NotImplementedException();
-                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -110,7 +107,6 @@
                     break;
                 case NotifyCollectionChangedAction.Reset:
                     throw new NotImplementedException();
-                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

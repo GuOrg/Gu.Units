@@ -9,7 +9,7 @@
     {
         public PrefixConversionsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

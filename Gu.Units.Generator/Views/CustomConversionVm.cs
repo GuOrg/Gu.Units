@@ -9,7 +9,7 @@
         }
         public CustomConversionVm(CustomConversion conversion)
         {
-            Conversion = conversion;
+            this.Conversion = conversion;
         }
 
         public CustomConversion Conversion { get; }

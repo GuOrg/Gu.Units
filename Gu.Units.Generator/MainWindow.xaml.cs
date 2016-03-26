@@ -10,8 +10,8 @@
     {
         public MainWindow()
         {
-            InitializeComponent();
-            CommandBindings.Add(new CommandBinding(ApplicationCommands.Save, Executed));
+            this.InitializeComponent();
+            this.CommandBindings.Add(new CommandBinding(ApplicationCommands.Save, this.Executed));
         }
 
         private void Executed(object sender, ExecutedRoutedEventArgs executedRoutedEventArgs)

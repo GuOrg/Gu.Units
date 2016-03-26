@@ -26,10 +26,10 @@
         public ConversionsVm(Settings settings)
         {
             this.settings = settings;
-            PrefixConversions = new PrefixConversionsVm(settings);
-            PartConversions = new PartConversionsVm(settings);
-            Unit = settings.AllUnits.FirstOrDefault(x => x.QuantityName == "Angle"); // for designtime
-            DeleteSelectedCommand = new RelayCommand(DeleteSelected);
+            this.PrefixConversions = new PrefixConversionsVm(settings);
+            this.PartConversions = new PartConversionsVm(settings);
+            this.Unit = settings.AllUnits.FirstOrDefault(x => x.QuantityName == "Angle"); // for designtime
+            this.DeleteSelectedCommand = new RelayCommand(this.DeleteSelected);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -43,15 +43,15 @@
                 {
                     return;
                 }
-                SelectedConversion = null;
+                this.SelectedConversion = null;
                 this.unit = value;
-                UpdateAllConversionsSubscription();
+                this.UpdateAllConversionsSubscription();
 
-                PrefixConversions.SetBaseUnit(value);
-                PartConversions.SetUnit(value);
-                FactorConversions.SetUnit(value);
-                CustomConversions.SetUnit(value);
-                OnPropertyChanged();
+                this.PrefixConversions.SetBaseUnit(value);
+                this.PartConversions.SetUnit(value);
+                this.FactorConversions.SetUnit(value);
+                this.CustomConversions.SetUnit(value);
+                this.OnPropertyChanged();
             }
         }
 
@@ -71,7 +71,7 @@
                 if (Equals(value, this.selectedConversion))
                     return;
                 this.selectedConversion = value;
-                OnPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
@@ -92,9 +92,9 @@
                 this.selectedBaseUnit = selected;
                 if (selected != null && !selected.IsUnknown)
                 {
-                    Unit = selected.Unit;
+                    this.Unit = selected.Unit;
                 }
-                OnPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
@@ -111,17 +111,17 @@
                 this.selectedDerivedUnit = selected;
                 if (selected != null && !selected.IsUnknown)
                 {
-                    Unit = selected.Unit;
+                    this.Unit = selected.Unit;
                 }
 
-                OnPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private void UpdateAllConversionsSubscription()
@@ -140,7 +140,7 @@
                                                   this.unit.CustomConversions.ObservePropertyChangedSlim(),
                                                   this.unit.PrefixConversions.ObservePropertyChangedSlim(),
                                                   this.unit.PartConversions.ObservePropertyChangedSlim());
-                this.subscription.Disposable = observable.Subscribe(_ => UpdateAllConversionsSubscription());
+                this.subscription.Disposable = observable.Subscribe(_ => this.UpdateAllConversionsSubscription());
             }
         }
 

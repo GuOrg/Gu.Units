@@ -1,5 +1,9 @@
 ﻿namespace Gu.Units
 {
+    /// <summary>
+    /// The unit of <typeparamref name="TQuantity"/>
+    /// </summary>
+    /// <typeparam name="TQuantity">The quantity type</typeparam>
     public interface IUnit<TQuantity> : IUnit
         where TQuantity : IQuantity
     {
@@ -13,9 +17,8 @@
         /// <summary>
         /// Get the scalar value
         /// </summary>
-        /// <typeparam name="TQuantity"></typeparam>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quantity value</param>
+        /// <returns>The scalar value in the unit of this</returns>
         double GetScalarValue(TQuantity quantity);
     }
 }

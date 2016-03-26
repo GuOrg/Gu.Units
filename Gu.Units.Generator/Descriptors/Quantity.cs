@@ -15,18 +15,18 @@
 
         public Quantity(Unit unit)
         {
-            Unit = unit;
+            this.Unit = unit;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public Unit Unit { get; }
 
-        public string Name => Unit.QuantityName;
+        public string Name => this.Unit.QuantityName;
 
-        public string UnitName => Unit.ClassName;
+        public string UnitName => this.Unit.ClassName;
 
-        public string ParameterName => Name.ToParameterName();
+        public string ParameterName => this.Name.ToParameterName();
 
         public ObservableCollection<OperatorOverload> OperatorOverloads { get; } = new ObservableCollection<OperatorOverload>();
 
@@ -38,14 +38,14 @@
                 if (Equals(value, this.inverse))
                     return;
                 this.inverse = value;
-                OnPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

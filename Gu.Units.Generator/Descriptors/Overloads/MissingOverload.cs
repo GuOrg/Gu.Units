@@ -10,10 +10,10 @@
             Quantity right,
             UnitParts result)
         {
-            Left = left;
-            Operator = @operator;
-            Right = right;
-            Result = result;
+            this.Left = left;
+            this.Operator = @operator;
+            this.Right = right;
+            this.Result = result;
         }
 
         public Quantity Left { get; }

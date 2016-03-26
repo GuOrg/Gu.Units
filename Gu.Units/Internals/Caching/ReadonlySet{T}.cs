@@ -37,9 +37,9 @@
                     Enumerable.Empty<T>().GetEnumerator();
         }
 
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
-        internal bool IsEmpty => Count == 0;
+        internal bool IsEmpty => this.Count == 0;
 
         public static bool operator ==(ReadonlySet<T> left, ReadonlySet<T> right)
         {
@@ -84,7 +84,7 @@
                 return true;
             if (obj.GetType() != this.GetType())
                 return false;
-            return Equals((ReadonlySet<T>)obj);
+            return this.Equals((ReadonlySet<T>)obj);
         }
 
         public override int GetHashCode()

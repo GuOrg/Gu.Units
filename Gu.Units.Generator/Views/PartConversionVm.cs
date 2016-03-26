@@ -14,10 +14,10 @@
         public PartConversionVm(Unit unit, PartConversion conversion)
         {
             this.unit = unit;
-            Conversion = conversion;
-            IsEditable = Conversion.Name != unit.Name;
+            this.Conversion = conversion;
+            this.IsEditable = this.Conversion.Name != unit.Name;
             unit.PartConversions.ObservePropertyChangedSlim()
-                .Subscribe(_ => OnPropertyChanged(nameof(IsUsed))); // no need for IDisposable
+                .Subscribe(_ => this.OnPropertyChanged(nameof(this.IsUsed))); // no need for IDisposable
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -28,34 +28,34 @@
         {
             get
             {
-                if (!IsEditable)
+                if (!this.IsEditable)
                 {
                     return true;
                 }
 
-                return this.unit.PartConversions.Any(IsMatch);
+                return this.unit.PartConversions.Any(this.IsMatch);
             }
             set
             {
-                if (value.Equals(IsUsed) || !IsEditable)
+                if (value.Equals(this.IsUsed) || !this.IsEditable)
                 {
                     return;
                 }
 
                 if (value)
                 {
-                    this.unit.PartConversions.Add(Conversion);
+                    this.unit.PartConversions.Add(this.Conversion);
                 }
                 else
                 {
-                    var match = this.unit.PartConversions.FirstOrDefault(IsMatch);
+                    var match = this.unit.PartConversions.FirstOrDefault(this.IsMatch);
                     if (match != null)
                     {
                         this.unit.PartConversions.Remove(match);
                     }
                 }
 
-                OnPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
@@ -63,23 +63,23 @@
 
         public override string ToString()
         {
-            return Conversion.Symbol;
+            return this.Conversion.Symbol;
         }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private bool IsMatch(PartConversion x)
         {
-            if (Conversion.Factor != x.Factor)
+            if (this.Conversion.Factor != x.Factor)
             {
                 return false;
             }
 
-            if (Conversion.Name != x.Name)
+            if (this.Conversion.Name != x.Name)
             {
                 return false;
             }

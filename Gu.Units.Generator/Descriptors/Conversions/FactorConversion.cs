@@ -34,14 +34,14 @@
                 }
 
                 this.name = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(ToSi));
-                OnPropertyChanged(nameof(FromSi));
-                OnPropertyChanged(nameof(ParameterName));
+                this.OnPropertyChanged();
+                this.OnPropertyChanged(nameof(this.ToSi));
+                this.OnPropertyChanged(nameof(this.FromSi));
+                this.OnPropertyChanged(nameof(this.ParameterName));
             }
         }
 
-        public string ParameterName => Name.ToParameterName();
+        public string ParameterName => this.Name.ToParameterName();
 
         public string Symbol
         {
@@ -54,7 +54,7 @@
                 }
 
                 this.symbol = value;
-                OnPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
@@ -66,11 +66,11 @@
                 if (value.Equals(this.factor))
                     return;
                 this.factor = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(ToSi));
-                OnPropertyChanged(nameof(FromSi));
-                OnPropertyChanged(nameof(SymbolConversion));
-                OnPropertyChanged(nameof(CanRoundtrip));
+                this.OnPropertyChanged();
+                this.OnPropertyChanged(nameof(this.ToSi));
+                this.OnPropertyChanged(nameof(this.FromSi));
+                this.OnPropertyChanged(nameof(this.SymbolConversion));
+                this.OnPropertyChanged(nameof(this.CanRoundtrip));
             }
         }
 
@@ -89,7 +89,7 @@
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

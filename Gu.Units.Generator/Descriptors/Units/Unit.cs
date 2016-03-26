@@ -35,13 +35,13 @@ namespace Gu.Units.Generator
                 if (value == this.name)
                     return;
                 this.name = value;
-                OnPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
-        public string ClassName => QuantityName + "Unit";
+        public string ClassName => this.QuantityName + "Unit";
 
-        public string ParameterName => Name.ToParameterName();
+        public string ParameterName => this.Name.ToParameterName();
 
         public string Symbol
         {
@@ -51,7 +51,7 @@ namespace Gu.Units.Generator
                 if (value == this.symbol)
                     return;
                 this.symbol = value;
-                OnPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
@@ -65,7 +65,7 @@ namespace Gu.Units.Generator
                 if (value == this.quantityName)
                     return;
                 this.quantityName = value;
-                OnPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
@@ -83,7 +83,7 @@ namespace Gu.Units.Generator
         {
             get
             {
-                foreach (var conversion in FactorConversions)
+                foreach (var conversion in this.FactorConversions)
                 {
                     yield return conversion;
                     foreach (var nested in conversion.PrefixConversions)
@@ -92,17 +92,17 @@ namespace Gu.Units.Generator
                     }
                 }
 
-                foreach (var offsetConversion in CustomConversions)
+                foreach (var offsetConversion in this.CustomConversions)
                 {
                     yield return offsetConversion;
                 }
 
-                foreach (var prefixConversion in PrefixConversions)
+                foreach (var prefixConversion in this.PrefixConversions)
                 {
                     yield return prefixConversion;
                 }
 
-                foreach (var partConversion in PartConversions)
+                foreach (var partConversion in this.PartConversions)
                 {
                     yield return partConversion;
                 }
@@ -112,7 +112,7 @@ namespace Gu.Units.Generator
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

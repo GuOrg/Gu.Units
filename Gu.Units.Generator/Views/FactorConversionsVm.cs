@@ -12,8 +12,8 @@
         private bool isUpdating;
         public FactorConversionsVm()
         {
-            Conversions.ObserveCollectionChangedSlim(false)
-                       .Subscribe(Synchronize);
+            this.Conversions.ObserveCollectionChangedSlim(false)
+                       .Subscribe(this.Synchronize);
         }
 
         public ObservableCollection<FactorConversionVm> Conversions { get; } = new ObservableCollection<FactorConversionVm>();
@@ -21,7 +21,7 @@
         public void SetUnit(Unit unit)
         {
             this.unit = unit;
-            Conversions.Clear();
+            this.Conversions.Clear();
             if (unit == null)
             {
                 return;
@@ -31,7 +31,7 @@
                 this.isUpdating = true;
                 foreach (var conversion in unit.FactorConversions)
                 {
-                    Conversions.Add(new FactorConversionVm(conversion));
+                    this.Conversions.Add(new FactorConversionVm(conversion));
                 }
             }
             finally

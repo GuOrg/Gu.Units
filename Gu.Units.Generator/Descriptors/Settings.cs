@@ -39,19 +39,18 @@
                 throw new InvalidOperationException("This is nasty design but there can only be one read from file. Reason is resolving units and prefixes by key.");
             }
 
-            Prefixes = prefixes;
-            BaseUnits = baseUnits;
-            DerivedUnits = derivedUnits;
+            this.Prefixes = prefixes;
+            this.BaseUnits = baseUnits;
+            this.DerivedUnits = derivedUnits;
             InnerInstance = this;
 
-            Observable.Merge(BaseUnits.ObserveCollectionChangedSlim(true),
-                             DerivedUnits.ObserveCollectionChangedSlim(true))
+            Observable.Merge(this.BaseUnits.ObserveCollectionChangedSlim(true), this.DerivedUnits.ObserveCollectionChangedSlim(true))
                 .Subscribe(_ =>
                 {
-                    this.missing = OverloadFinder.Find(AllUnits);
-                    OnPropertyChanged(nameof(Missing));
-                    OnPropertyChanged(nameof(AllUnits));
-                    OnPropertyChanged(nameof(Quantities));
+                    this.missing = OverloadFinder.Find(this.AllUnits);
+                    this.OnPropertyChanged(nameof(this.Missing));
+                    this.OnPropertyChanged(nameof(this.AllUnits));
+                    this.OnPropertyChanged(nameof(this.Quantities));
                 });
         }
 
@@ -73,9 +72,9 @@
 
         public ObservableCollection<DerivedUnit> DerivedUnits { get; }
 
-        public IReadOnlyList<Unit> AllUnits => BaseUnits.Concat<Unit>(DerivedUnits).ToList();
+        public IReadOnlyList<Unit> AllUnits => this.BaseUnits.Concat<Unit>(this.DerivedUnits).ToList();
 
-        public IReadOnlyList<Quantity> Quantities => AllUnits.Select(x => x.Quantity).ToList();
+        public IReadOnlyList<Quantity> Quantities => this.AllUnits.Select(x => x.Quantity).ToList();
 
         public IReadOnlyList<MissingOverloads> Missing => this.missing; 
 
@@ -88,7 +87,7 @@
         {
             try
             {
-                var match = AllUnits.SingleOrDefault(x => x.Name == name);
+                var match = this.AllUnits.SingleOrDefault(x => x.Name == name);
                 if (match == null)
                 {
                     throw new ArgumentOutOfRangeException($"Did not find a unit with name {name}");
@@ -97,7 +96,7 @@
             }
             catch (Exception e)
             {
-                throw new ArgumentOutOfRangeException($"Found more than one unit with name {name}");
+                throw new ArgumentOutOfRangeException($"Found more than one unit with name {name}", e);
             }
         }
 
@@ -105,7 +104,7 @@
         {
             try
             {
-                var match = Quantities.SingleOrDefault(x => x.Name == name);
+                var match = this.Quantities.SingleOrDefault(x => x.Name == name);
                 if (match == null)
                 {
                     throw new ArgumentOutOfRangeException($"Did not find a unit with name {name}");
@@ -114,14 +113,14 @@
             }
             catch (Exception e)
             {
-                throw new ArgumentOutOfRangeException($"Found more than one unit with name {name}");
+                throw new ArgumentOutOfRangeException($"Found more than one unit with name {name}", e);
             }
         }
 
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

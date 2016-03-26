@@ -13,7 +13,7 @@
             {
                 var directoryInfo = new DirectoryInfo(Assembly.GetExecutingAssembly().Location);
                 var directory = directoryInfo.Parent.Parent.Parent.FullName; // Perhaps not the most elegant code ever written
-                return System.IO.Path.Combine(directory, "Units.txt");
+                return Path.Combine(directory, "Units.txt");
             }
         }
 

@@ -28,8 +28,8 @@
                 .ObservePropertyChangedSlim()
                 .Subscribe(_ =>
                 {
-                    OnPropertyChanged(nameof(IsUnknown));
-                    OnPropertyChanged(nameof(IsOk));
+                    this.OnPropertyChanged(nameof(this.IsUnknown));
+                    this.OnPropertyChanged(nameof(this.IsOk));
                 });
         }
 
@@ -49,38 +49,35 @@
                     .ObservePropertyChangedSlim()
                     .Subscribe(_ =>
                     {
-                        OnPropertyChanged(nameof(IsUnknown));
-                        OnPropertyChanged(nameof(IsOk));
+                        this.OnPropertyChanged(nameof(this.IsUnknown));
+                        this.OnPropertyChanged(nameof(this.IsOk));
                     });
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(IsUnknown));
+                this.OnPropertyChanged();
+                this.OnPropertyChanged(nameof(this.IsUnknown));
             }
         }
 
-        public bool IsUnknown => Unit.Name == UnknownName ||
-                                 Unit.QuantityName == UnknownName ||
-                                 Unit.Symbol == UnknownSymbol ||
-                                 Unit.Parts.Any(p => p.UnitName.Contains("?"));
+        public bool IsUnknown => this.Unit.Name == UnknownName || this.Unit.QuantityName == UnknownName || this.Unit.Symbol == UnknownSymbol || this.Unit.Parts.Any(p => p.UnitName.Contains("?"));
 
-        public bool IsOk => IsEverythingOk();
+        public bool IsOk => this.IsEverythingOk();
 
         public ObservableCollection<string> Errors { get; } = new ObservableCollection<string>();
 
         protected bool IsEverythingOk()
         {
-            Errors.Clear();
-            if (!Unit.AllConversions.All(c => c.CanRoundtrip))
+            this.Errors.Clear();
+            if (!this.Unit.AllConversions.All(c => c.CanRoundtrip))
             {
-                foreach (var conversion in Unit.AllConversions.Where(x => !x.CanRoundtrip))
+                foreach (var conversion in this.Unit.AllConversions.Where(x => !x.CanRoundtrip))
                 {
-                    Errors.Add($"{conversion.Name} cannot roundtrip");
+                    this.Errors.Add($"{conversion.Name} cannot roundtrip");
                 }
                 return false;
             }
 
-            if (IsUnknown)
+            if (this.IsUnknown)
             {
-                Errors.Add("IsUnknown");
+                this.Errors.Add("IsUnknown");
                 return false;
             }
 
@@ -90,7 +87,7 @@
         [NotifyPropertyChangedInvocator]
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private static ChangeTrackerSettings CreateChangeTrackerSettings()

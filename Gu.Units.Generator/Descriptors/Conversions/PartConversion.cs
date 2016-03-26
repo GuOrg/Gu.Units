@@ -11,14 +11,14 @@
 
         public PartConversion(string name, string symbol, double factor)
         {
-            Name = name;
-            Symbol = symbol;
-            Factor = factor;
+            this.Name = name;
+            this.Symbol = symbol;
+            this.Factor = factor;
         }
 
         public string Name { get; }
 
-        public string ParameterName => Name.ToParameterName();
+        public string ParameterName => this.Name.ToParameterName();
 
         public string Symbol { get; }
 
@@ -80,8 +80,8 @@
         {
             public PowerPart(int power, IFactorConversion conversion)
             {
-                Power = power;
-                Conversion = conversion;
+                this.Power = power;
+                this.Conversion = conversion;
             }
 
             public int Power { get; }
@@ -92,8 +92,8 @@
             {
                 get
                 {
-                    var isLength = IsLength(Conversion);
-                    return CreateName(Power, Conversion.Name, isLength);
+                    var isLength = IsLength(this.Conversion);
+                    return CreateName(this.Power, this.Conversion.Name, isLength);
                 }
             }
 
@@ -101,9 +101,9 @@
             {
                 get
                 {
-                    var trimmedS = Conversion.Name.TrimEnd('s');
-                    var isLength = IsLength(Conversion);
-                    return CreateName(Power, trimmedS, isLength);
+                    var trimmedS = this.Conversion.Name.TrimEnd('s');
+                    var isLength = IsLength(this.Conversion);
+                    return CreateName(this.Power, trimmedS, isLength);
                 }
             }
 
@@ -143,23 +143,23 @@
                 get
                 {
                     IReadOnlyList<SymbolAndPower> symbolAndPowers;
-                    if (SymbolAndPowerReader.TryRead(Conversion.Symbol, out symbolAndPowers))
+                    if (SymbolAndPowerReader.TryRead(this.Conversion.Symbol, out symbolAndPowers))
                     {
-                        return symbolAndPowers.Select(x => new SymbolAndPower(x.Symbol, x.Power * Power)).AsSymbol();
+                        return symbolAndPowers.Select(x => new SymbolAndPower(x.Symbol, x.Power *this.Power)).AsSymbol();
                     }
 
                     return "Error";
                 }
             }
 
-            public double Factor => Math.Pow(Conversion.Factor, Power);
+            public double Factor => Math.Pow(this.Conversion.Factor, this.Power);
 
             internal IReadOnlyList<SymbolAndPower> AsSymbolAndPowers()
             {
                 IReadOnlyList<SymbolAndPower> symbolAndPowers;
-                if (SymbolAndPowerReader.TryRead(Conversion.Symbol, out symbolAndPowers))
+                if (SymbolAndPowerReader.TryRead(this.Conversion.Symbol, out symbolAndPowers))
                 {
-                    return symbolAndPowers.Select(x => new SymbolAndPower(x.Symbol, x.Power * Power)).ToList();
+                    return symbolAndPowers.Select(x => new SymbolAndPower(x.Symbol, x.Power *this.Power)).ToList();
                 }
 
                 throw new InvalidOperationException();
@@ -176,14 +176,14 @@
 
             public IdentityConversion(Unit unit)
             {
-                Unit = unit;
+                this.Unit = unit;
             }
 
-            public string Name => Unit.Name;
+            public string Name => this.Unit.Name;
 
-            public string ParameterName => Name.ToParameterName();
+            public string ParameterName => this.Name.ToParameterName();
 
-            public string Symbol => Unit.Symbol;
+            public string Symbol => this.Unit.Symbol;
 
             public double Factor => 1;
 

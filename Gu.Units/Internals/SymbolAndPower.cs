@@ -14,8 +14,8 @@
             Ensure.LessThan(power, 5, nameof(power));
             Ensure.GreaterThan(power, -5, nameof(power));
             // not sure about throwing here but I think it means something is wrong more often.
-            Symbol = symbol;
-            Power = power;
+            this.Symbol = symbol;
+            this.Power = power;
         }
 
         public static bool operator ==(SymbolAndPower left, SymbolAndPower right)
@@ -31,17 +31,17 @@
         public override string ToString()
         {
             string p;
-            if (Power == 1)
+            if (this.Power == 1)
             {
                 p = string.Empty;
             }
-            else if (Power > 1)
+            else if (this.Power > 1)
             {
-                p = new string(SuperScript.GetChar(Power), 1);
+                p = new string(SuperScript.GetChar(this.Power), 1);
             }
             else
             {
-                p = new string(new[] { '⁻', SuperScript.GetChar(-1 * Power) });
+                p = new string(new[] { '⁻', SuperScript.GetChar(-1 *this.Power) });
             }
 
             return $"{this.Symbol}{p}";
@@ -49,7 +49,7 @@
 
         public bool Equals(SymbolAndPower other)
         {
-            return string.Equals(Symbol, other.Symbol) && Power == other.Power;
+            return string.Equals(this.Symbol, other.Symbol) && this.Power == other.Power;
         }
 
         public override bool Equals(object obj)
@@ -59,14 +59,14 @@
                 return false;
             }
 
-            return obj is SymbolAndPower && Equals((SymbolAndPower)obj);
+            return obj is SymbolAndPower && this.Equals((SymbolAndPower)obj);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                return (Symbol.GetHashCode() * 397) ^ Power;
+                return (this.Symbol.GetHashCode() * 397) ^ this.Power;
             }
         }
     }

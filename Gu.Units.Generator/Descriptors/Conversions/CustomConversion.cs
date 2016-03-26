@@ -38,14 +38,14 @@
                 }
 
                 this.name = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(ToSi));
-                OnPropertyChanged(nameof(FromSi));
-                OnPropertyChanged(nameof(ParameterName));
+                this.OnPropertyChanged();
+                this.OnPropertyChanged(nameof(this.ToSi));
+                this.OnPropertyChanged(nameof(this.FromSi));
+                this.OnPropertyChanged(nameof(this.ParameterName));
             }
         }
 
-        public string ParameterName => Name.ToParameterName();
+        public string ParameterName => this.Name.ToParameterName();
 
         public string Symbol
         {
@@ -58,8 +58,8 @@
                 }
 
                 this.symbol = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(SymbolConversion));
+                this.OnPropertyChanged();
+                this.OnPropertyChanged(nameof(this.SymbolConversion));
             }
         }
 
@@ -71,12 +71,12 @@
                 if (value == this.toSi)
                     return;
                 this.toSi = value;
-                OnPropertyChanged();
-                OnPropertyChanged(SymbolConversion);
-                OnPropertyChanged(nameof(CanRoundtrip));
+                this.OnPropertyChanged();
+                this.OnPropertyChanged(this.SymbolConversion);
+                this.OnPropertyChanged(nameof(this.CanRoundtrip));
                 try
                 {
-                    var temp = ExpressionParser.Evaluate(1, ParameterName, value);
+                    var temp = ExpressionParser.Evaluate(1, this.ParameterName, value);
                 }
                 catch (Exception e)
                 {
@@ -96,13 +96,13 @@
                 }
 
                 this.fromSi = value;
-                OnPropertyChanged();
-                OnPropertyChanged(SymbolConversion);
-                OnPropertyChanged(nameof(CanRoundtrip));
+                this.OnPropertyChanged();
+                this.OnPropertyChanged(this.SymbolConversion);
+                this.OnPropertyChanged(nameof(this.CanRoundtrip));
 
                 try
                 {
-                    var temp = ExpressionParser.Evaluate(1, Unit.ParameterName, value);
+                    var temp = ExpressionParser.Evaluate(1, this.Unit.ParameterName, value);
                 }
                 catch (Exception e)
                 {
@@ -120,7 +120,7 @@
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

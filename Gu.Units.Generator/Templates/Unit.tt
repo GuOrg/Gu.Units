@@ -1,6 +1,5 @@
 ﻿<#@ template debug="true" hostspecific="false" language="C#" #>
 <#@ assembly name="$(TargetPath)" #>
-<#@ import namespace="Gu.Units" #>
 <#@ import namespace="Gu.Units.Generator" #>
 <#@ parameter name="UnitName" type="System.String" #>
 <#@ output extension=".txt" #>
