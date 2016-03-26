@@ -259,6 +259,12 @@
             return ElectricCharge.FromCoulombs(left.siemens * right.webers);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The Resistance that is the result from the division.</returns>
         public static Resistance operator /(double left, ElectricalConductance right)
         {
             return Resistance.FromOhm(left / right.siemens);

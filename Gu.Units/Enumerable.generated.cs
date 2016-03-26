@@ -3,6 +3,10 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+
+    /// <summary>
+    /// Provides common linq operations for quantity types
+    /// </summary>
     public static partial class EnumerableUnits
     {
         /// <summary>

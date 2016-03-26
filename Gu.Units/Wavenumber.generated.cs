@@ -336,6 +336,12 @@
             return Speed.FromMetresPerSecond(left.reciprocalMetres * right.squareMetresPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The Length that is the result from the division.</returns>
         public static Length operator /(double left, Wavenumber right)
         {
             return Length.FromMetres(left / right.reciprocalMetres);

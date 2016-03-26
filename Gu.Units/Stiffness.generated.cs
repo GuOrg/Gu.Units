@@ -523,6 +523,12 @@
             return Power.FromWatts(left.newtonsPerMetre * right.squareMetresPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The Flexibility that is the result from the division.</returns>
         public static Flexibility operator /(double left, Stiffness right)
         {
             return Flexibility.FromMetresPerNewton(left / right.newtonsPerMetre);

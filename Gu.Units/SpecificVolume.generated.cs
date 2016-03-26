@@ -265,6 +265,12 @@
             return VolumetricFlow.FromCubicMetresPerSecond(left.cubicMetresPerKilogram * right.kilogramsPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The Density that is the result from the division.</returns>
         public static Density operator /(double left, SpecificVolume right)
         {
             return Density.FromKilogramsPerCubicMetre(left / right.cubicMetresPerKilogram);

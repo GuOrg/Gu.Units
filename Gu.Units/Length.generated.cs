@@ -553,6 +553,12 @@
             return VolumetricFlow.FromCubicMetresPerSecond(left.metres * right.squareMetresPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The Wavenumber that is the result from the division.</returns>
         public static Wavenumber operator /(double left, Length right)
         {
             return Wavenumber.FromReciprocalMetres(left / right.metres);

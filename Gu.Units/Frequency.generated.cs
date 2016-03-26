@@ -469,6 +469,12 @@
             return SpecificEnergy.FromJoulesPerKilogram(left.hertz * right.squareMetresPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The Time that is the result from the division.</returns>
         public static Time operator /(double left, Frequency right)
         {
             return Time.FromSeconds(left / right.hertz);

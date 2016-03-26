@@ -1,5 +1,8 @@
 ﻿namespace Gu.Units.Wpf
 {
+    /// <summary>
+    /// Specifies the requirements for unit input
+    /// </summary>
     public enum UnitInput
     {       
         /// <summary>

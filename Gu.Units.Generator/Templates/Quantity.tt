@@ -256,6 +256,12 @@ namespace <#= Settings.Namespace #>
 		{
 		#>
 
+		/// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <#= quantity.Inverse.Inverted.Name #> that is the result from the division.</returns>
         public static <#= quantity.Inverse.Inverted.Name #> operator/(double left, <#= quantity.Name #> right)
         {
             return <#= quantity.Inverse.Inverted.Name #>.From<#= quantity.Inverse.Inverted.Unit.Name #>(left / right.<#= quantity.Unit.ParameterName #>);

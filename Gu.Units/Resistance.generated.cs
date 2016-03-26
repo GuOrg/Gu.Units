@@ -315,6 +315,12 @@
             return Time.FromSeconds(left.ohm * right.farads);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The ElectricalConductance that is the result from the division.</returns>
         public static ElectricalConductance operator /(double left, Resistance right)
         {
             return ElectricalConductance.FromSiemens(left / right.ohm);

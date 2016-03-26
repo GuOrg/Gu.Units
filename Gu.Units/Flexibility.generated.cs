@@ -301,6 +301,12 @@
             return Time.FromSeconds(left.metresPerNewton * right.kilogramsPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The Stiffness that is the result from the division.</returns>
         public static Stiffness operator /(double left, Flexibility right)
         {
             return Stiffness.FromNewtonsPerMetre(left / right.metresPerNewton);

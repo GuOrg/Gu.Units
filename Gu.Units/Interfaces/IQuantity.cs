@@ -3,6 +3,9 @@ namespace Gu.Units
     using System;
     using System.Xml.Serialization;
 
+    /// <summary>
+    /// An amount of a <see cref="IUnit"/>
+    /// </summary>
     public interface IQuantity : IFormattable, IXmlSerializable
     {
         /// <summary>

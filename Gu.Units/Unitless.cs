@@ -1,4 +1,5 @@
-﻿namespace Gu.Units
+﻿#pragma warning disable 1591
+namespace Gu.Units
 {
     public partial struct Unitless
     {

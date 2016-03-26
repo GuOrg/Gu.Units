@@ -7,190 +7,276 @@
     using System.Xml.Schema;
 
 	/// <summary>
-    /// A type for the quantity <see cref="Gu.Units.KinematicViscosity"/>.
+    /// A type for the quantity <see cref="Gu.Units.Mass"/>.
     /// </summary>
-	[TypeConverter(typeof(KinematicViscosityTypeConverter))]
+	[TypeConverter(typeof(MassTypeConverter))]
     [Serializable]
-	public partial struct KinematicViscosity : IQuantity<KinematicViscosityUnit>, IComparable<KinematicViscosity>, IEquatable<KinematicViscosity>
+	public partial struct Mass : IQuantity<MassUnit>, IComparable<Mass>, IEquatable<Mass>
 	{
         /// <summary>
-        /// Gets a value that is zero <see cref="Gu.Units.KinematicViscosityUnit.SquareMetresPerSecond"/>
+        /// Gets a value that is zero <see cref="Gu.Units.MassUnit.Kilograms"/>
         /// </summary>
-		public static readonly KinematicViscosity Zero = new KinematicViscosity();
+		public static readonly Mass Zero = new Mass();
 	    
 		/// <summary>
-        /// The quantity in <see cref="Gu.Units.KinematicViscosityUnit.SquareMetresPerSecond"/>.
+        /// The quantity in <see cref="Gu.Units.MassUnit.Kilograms"/>.
         /// </summary>
-		internal readonly double squareMetresPerSecond;
+		internal readonly double kilograms;
 		
-		private KinematicViscosity(double squareMetresPerSecond)
+		private Mass(double kilograms)
         {
-            this.squareMetresPerSecond = squareMetresPerSecond;
+            this.kilograms = kilograms;
         }
 
 		/// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.KinematicViscosity"/>.
+        /// Initializes a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <param name="value"></param>
-        /// <param name="unit"><see cref="Gu.Units.KinematicViscosityUnit"/>.</param>
-        public KinematicViscosity(double value, KinematicViscosityUnit unit)
+        /// <param name="unit"><see cref="Gu.Units.MassUnit"/>.</param>
+        public Mass(double value, MassUnit unit)
         {
-            this.squareMetresPerSecond = unit.ToSiUnit(value);
+            this.kilograms = unit.ToSiUnit(value);
         }
 
         /// <summary>
-        /// The quantity in <see cref="Gu.Units.KinematicViscosityUnit.SquareMetresPerSecond"/>
+        /// The quantity in <see cref="Gu.Units.MassUnit.Kilograms"/>
         /// </summary>
         public double SiValue
         {
             get
             {
-                return this.squareMetresPerSecond;
+                return this.kilograms;
             }
         }
 
 		/// <summary>
-        /// The <see cref="Gu.Units.KinematicViscosityUnit"/> for the <see cref="SiValue"/>
+        /// The <see cref="Gu.Units.MassUnit"/> for the <see cref="SiValue"/>
         /// </summary>
-        public KinematicViscosityUnit SiUnit => KinematicViscosityUnit.SquareMetresPerSecond;
+        public MassUnit SiUnit => MassUnit.Kilograms;
 
 		/// <summary>
         /// The <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
         /// </summary>
-        IUnit IQuantity.SiUnit => KinematicViscosityUnit.SquareMetresPerSecond;
+        IUnit IQuantity.SiUnit => MassUnit.Kilograms;
 
 	    /// <summary>
-        /// The quantity in squareMetresPerSecond".
+        /// The quantity in kilograms".
         /// </summary>
-		public double SquareMetresPerSecond
+		public double Kilograms
         {
             get
             {
-                return this.squareMetresPerSecond;
+                return this.kilograms;
             }
         }
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// The quantity in Grams
         /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
-        /// <returns>The <see cref="Gu.Units.KinematicViscosity"/> parsed from <paramref name="text"/></returns>
-		public static KinematicViscosity Parse(string text)
+        public double Grams => 1000*this.kilograms;
+
+        /// <summary>
+        /// The quantity in Milligrams
+        /// </summary>
+        public double Milligrams => 1000000*this.kilograms;
+
+        /// <summary>
+        /// The quantity in Micrograms
+        /// </summary>
+        public double Micrograms => 1000000000*this.kilograms;
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
+        /// <returns>The <see cref="Gu.Units.Mass"/> parsed from <paramref name="text"/></returns>
+		public static Mass Parse(string text)
         {
-            return QuantityParser.Parse<KinematicViscosityUnit, KinematicViscosity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<MassUnit, Mass>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
 
 		/// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
         /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
 		/// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.KinematicViscosity"/> parsed from <paramref name="text"/></returns>
-		public static KinematicViscosity Parse(string text, IFormatProvider provider)
+        /// <returns>The <see cref="Gu.Units.Mass"/> parsed from <paramref name="text"/></returns>
+		public static Mass Parse(string text, IFormatProvider provider)
         {
-            return QuantityParser.Parse<KinematicViscosityUnit, KinematicViscosity>(text, From, NumberStyles.Float, provider);
+            return QuantityParser.Parse<MassUnit, Mass>(text, From, NumberStyles.Float, provider);
         }
 
 		/// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
         /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
 		/// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.KinematicViscosity"/> parsed from <paramref name="text"/></returns>
-        public static KinematicViscosity Parse(string text, NumberStyles styles)
+        /// <returns>The <see cref="Gu.Units.Mass"/> parsed from <paramref name="text"/></returns>
+        public static Mass Parse(string text, NumberStyles styles)
         {
-            return QuantityParser.Parse<KinematicViscosityUnit, KinematicViscosity>(text, From, styles, CultureInfo.CurrentCulture);
+            return QuantityParser.Parse<MassUnit, Mass>(text, From, styles, CultureInfo.CurrentCulture);
         }
 
 		/// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
         /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.KinematicViscosity"/> parsed from <paramref name="text"/></returns>
-        public static KinematicViscosity Parse(string text, NumberStyles styles, IFormatProvider provider)
+        /// <returns>The <see cref="Gu.Units.Mass"/> parsed from <paramref name="text"/></returns>
+        public static Mass Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
-            return QuantityParser.Parse<KinematicViscosityUnit, KinematicViscosity>(text, From, styles, provider);
+            return QuantityParser.Parse<MassUnit, Mass>(text, From, styles, provider);
         }
 
 		/// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
         /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
-        /// <param name="result">The parsed <see cref="KinematicViscosity"/></param>
-        /// <returns>True if an instance of <see cref="KinematicViscosity"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out KinematicViscosity result)
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
+        /// <param name="result">The parsed <see cref="Mass"/></param>
+        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Mass result)
         {
-            return QuantityParser.TryParse<KinematicViscosityUnit, KinematicViscosity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+            return QuantityParser.TryParse<MassUnit, Mass>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
         }
 
 		/// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
         /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
 		/// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="KinematicViscosity"/></param>
-        /// <returns>True if an instance of <see cref="KinematicViscosity"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, IFormatProvider provider, out KinematicViscosity result)
+        /// <param name="result">The parsed <see cref="Mass"/></param>
+        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>	
+        public static bool TryParse(string text, IFormatProvider provider, out Mass result)
         {
-            return QuantityParser.TryParse<KinematicViscosityUnit, KinematicViscosity>(text, From, NumberStyles.Float, provider, out result);
+            return QuantityParser.TryParse<MassUnit, Mass>(text, From, NumberStyles.Float, provider, out result);
         }
 
 		/// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
         /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="KinematicViscosity"/></param>
-        /// <returns>True if an instance of <see cref="KinematicViscosity"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, NumberStyles styles, out KinematicViscosity result)
+        /// <param name="result">The parsed <see cref="Mass"/></param>
+        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>	
+        public static bool TryParse(string text, NumberStyles styles, out Mass result)
         {
-            return QuantityParser.TryParse<KinematicViscosityUnit, KinematicViscosity>(text, From, styles, CultureInfo.CurrentCulture, out result);
+            return QuantityParser.TryParse<MassUnit, Mass>(text, From, styles, CultureInfo.CurrentCulture, out result);
         }
 
 		/// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
         /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
 		/// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="KinematicViscosity"/></param>
-        /// <returns>True if an instance of <see cref="KinematicViscosity"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out KinematicViscosity result)
+        /// <param name="result">The parsed <see cref="Mass"/></param>
+        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>	
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Mass result)
         {
-            return QuantityParser.TryParse<KinematicViscosityUnit, KinematicViscosity>(text, From, styles, provider, out result);
+            return QuantityParser.TryParse<MassUnit, Mass>(text, From, styles, provider, out result);
         }
  
         /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.KinematicViscosity"/> from the <paramref name="reader"/>
+        /// Reads an instance of <see cref="Gu.Units.Mass"/> from the <paramref name="reader"/>
         /// </summary>
         /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.KinematicViscosity"/></returns>
-        public static KinematicViscosity ReadFrom(XmlReader reader)
+        /// <returns>An instance of  <see cref="Gu.Units.Mass"/></returns>
+        public static Mass ReadFrom(XmlReader reader)
         {
-            var v = new KinematicViscosity();
+            var v = new Mass();
             v.ReadXml(reader);
             return v;
         }
  
         /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.KinematicViscosity"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <param name="value"></param>
         /// <param name="unit"></param>
-        public static KinematicViscosity From(double value, KinematicViscosityUnit unit)
+        public static Mass From(double value, MassUnit unit)
         {
-            return new KinematicViscosity(unit.ToSiUnit(value));
+            return new Mass(unit.ToSiUnit(value));
         }
 
         /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.KinematicViscosity"/>.
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
-        /// <param name="squareMetresPerSecond">The value in <see cref="Gu.Units.KinematicViscosityUnit.SquareMetresPerSecond"/></param>
-        public static KinematicViscosity FromSquareMetresPerSecond(double squareMetresPerSecond)
+        /// <param name="kilograms">The value in <see cref="Gu.Units.MassUnit.Kilograms"/></param>
+        public static Mass FromKilograms(double kilograms)
         {
-            return new KinematicViscosity(squareMetresPerSecond);
+            return new Mass(kilograms);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="grams">The value in g</param>
+        public static Mass FromGrams(double grams)
+        {
+            return new Mass(grams/1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="milligrams">The value in mg</param>
+        public static Mass FromMilligrams(double milligrams)
+        {
+            return new Mass(milligrams/1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="micrograms">The value in µg</param>
+        public static Mass FromMicrograms(double micrograms)
+        {
+            return new Mass(micrograms/1000000000);
+        }
+
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="MassFlow"/> that is the result from the division.</returns>
+        public static MassFlow operator/(Mass left, Time right)
+        {
+            return MassFlow.FromKilogramsPerSecond(left.kilograms / right.seconds);
+        }
+
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="AreaDensity"/> that is the result from the division.</returns>
+        public static AreaDensity operator/(Mass left, Area right)
+        {
+            return AreaDensity.FromKilogramsPerSquareMetre(left.kilograms / right.squareMetres);
+        }
+
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Density"/> that is the result from the division.</returns>
+        public static Density operator/(Mass left, Volume right)
+        {
+            return Density.FromKilogramsPerCubicMetre(left.kilograms / right.cubicMetres);
+        }
+
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Volume"/> that is the result from the division.</returns>
+        public static Volume operator/(Mass left, Density right)
+        {
+            return Volume.FromCubicMetres(left.kilograms / right.kilogramsPerCubicMetre);
         }
 
         /// <summary>
@@ -198,175 +284,10 @@
         /// </summary>
         /// <param name="left">The left value</param>
         /// <param name="right">The right value</param>
-        /// <returns>The <see cref="VolumetricFlow"/> that is the result from the multiplication.</returns>
-        public static VolumetricFlow operator*(KinematicViscosity left, Length right)
+        /// <returns>The <see cref="Momentum"/> that is the result from the multiplication.</returns>
+        public static Momentum operator*(Mass left, Speed right)
         {
-            return VolumetricFlow.FromCubicMetresPerSecond(left.squareMetresPerSecond * right.metres);
-        }
-
-        /// <summary>
-        /// Divides <paramref name="left"/> by <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="Speed"/> that is the result from the division.</returns>
-        public static Speed operator/(KinematicViscosity left, Length right)
-        {
-            return Speed.FromMetresPerSecond(left.squareMetresPerSecond / right.metres);
-        }
-
-        /// <summary>
-        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="Area"/> that is the result from the multiplication.</returns>
-        public static Area operator*(KinematicViscosity left, Time right)
-        {
-            return Area.FromSquareMetres(left.squareMetresPerSecond * right.seconds);
-        }
-
-        /// <summary>
-        /// Divides <paramref name="left"/> by <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="SpecificEnergy"/> that is the result from the division.</returns>
-        public static SpecificEnergy operator/(KinematicViscosity left, Time right)
-        {
-            return SpecificEnergy.FromJoulesPerKilogram(left.squareMetresPerSecond / right.seconds);
-        }
-
-        /// <summary>
-        /// Divides <paramref name="left"/> by <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="Frequency"/> that is the result from the division.</returns>
-        public static Frequency operator/(KinematicViscosity left, Area right)
-        {
-            return Frequency.FromHertz(left.squareMetresPerSecond / right.squareMetres);
-        }
-
-        /// <summary>
-        /// Divides <paramref name="left"/> by <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="Flexibility"/> that is the result from the division.</returns>
-        public static Flexibility operator/(KinematicViscosity left, Power right)
-        {
-            return Flexibility.FromMetresPerNewton(left.squareMetresPerSecond / right.watts);
-        }
-
-        /// <summary>
-        /// Divides <paramref name="left"/> by <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="Length"/> that is the result from the division.</returns>
-        public static Length operator/(KinematicViscosity left, Speed right)
-        {
-            return Length.FromMetres(left.squareMetresPerSecond / right.metresPerSecond);
-        }
-
-        /// <summary>
-        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="SpecificEnergy"/> that is the result from the multiplication.</returns>
-        public static SpecificEnergy operator*(KinematicViscosity left, Frequency right)
-        {
-            return SpecificEnergy.FromJoulesPerKilogram(left.squareMetresPerSecond * right.hertz);
-        }
-
-        /// <summary>
-        /// Divides <paramref name="left"/> by <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="Area"/> that is the result from the division.</returns>
-        public static Area operator/(KinematicViscosity left, Frequency right)
-        {
-            return Area.FromSquareMetres(left.squareMetresPerSecond / right.hertz);
-        }
-
-        /// <summary>
-        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="Power"/> that is the result from the multiplication.</returns>
-        public static Power operator*(KinematicViscosity left, Stiffness right)
-        {
-            return Power.FromWatts(left.squareMetresPerSecond * right.newtonsPerMetre);
-        }
-
-        /// <summary>
-        /// Divides <paramref name="left"/> by <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="Wavenumber"/> that is the result from the division.</returns>
-        public static Wavenumber operator/(KinematicViscosity left, VolumetricFlow right)
-        {
-            return Wavenumber.FromReciprocalMetres(left.squareMetresPerSecond / right.cubicMetresPerSecond);
-        }
-
-        /// <summary>
-        /// Divides <paramref name="left"/> by <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="Time"/> that is the result from the division.</returns>
-        public static Time operator/(KinematicViscosity left, SpecificEnergy right)
-        {
-            return Time.FromSeconds(left.squareMetresPerSecond / right.joulesPerKilogram);
-        }
-
-        /// <summary>
-        /// Divides <paramref name="left"/> by <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="Power"/> that is the result from the division.</returns>
-        public static Power operator/(KinematicViscosity left, Flexibility right)
-        {
-            return Power.FromWatts(left.squareMetresPerSecond / right.metresPerNewton);
-        }
-
-        /// <summary>
-        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="Voltage"/> that is the result from the multiplication.</returns>
-        public static Voltage operator*(KinematicViscosity left, MagneticFieldStrength right)
-        {
-            return Voltage.FromVolts(left.squareMetresPerSecond * right.teslas);
-        }
-
-        /// <summary>
-        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="Speed"/> that is the result from the multiplication.</returns>
-        public static Speed operator*(KinematicViscosity left, Wavenumber right)
-        {
-            return Speed.FromMetresPerSecond(left.squareMetresPerSecond * right.reciprocalMetres);
-        }
-
-        /// <summary>
-        /// Divides <paramref name="left"/> by <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="VolumetricFlow"/> that is the result from the division.</returns>
-        public static VolumetricFlow operator/(KinematicViscosity left, Wavenumber right)
-        {
-            return VolumetricFlow.FromCubicMetresPerSecond(left.squareMetresPerSecond / right.reciprocalMetres);
+            return Momentum.FromNewtonSecond(left.kilograms * right.metresPerSecond);
         }
 
         /// <summary>
@@ -375,9 +296,20 @@
         /// <param name="left">The left value</param>
         /// <param name="right">The right value</param>
         /// <returns>The <see cref="MassFlow"/> that is the result from the multiplication.</returns>
-        public static MassFlow operator*(KinematicViscosity left, AreaDensity right)
+        public static MassFlow operator*(Mass left, Frequency right)
         {
-            return MassFlow.FromKilogramsPerSecond(left.squareMetresPerSecond * right.kilogramsPerSquareMetre);
+            return MassFlow.FromKilogramsPerSecond(left.kilograms * right.hertz);
+        }
+
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Force"/> that is the result from the multiplication.</returns>
+        public static Force operator*(Mass left, Acceleration right)
+        {
+            return Force.FromNewtons(left.kilograms * right.metresPerSecondSquared);
         }
 
         /// <summary>
@@ -386,9 +318,42 @@
         /// <param name="left">The left value</param>
         /// <param name="right">The right value</param>
         /// <returns>The <see cref="Energy"/> that is the result from the multiplication.</returns>
-        public static Energy operator*(KinematicViscosity left, MassFlow right)
+        public static Energy operator*(Mass left, SpecificEnergy right)
         {
-            return Energy.FromJoules(left.squareMetresPerSecond * right.kilogramsPerSecond);
+            return Energy.FromJoules(left.kilograms * right.joulesPerKilogram);
+        }
+
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Area"/> that is the result from the division.</returns>
+        public static Area operator/(Mass left, AreaDensity right)
+        {
+            return Area.FromSquareMetres(left.kilograms / right.kilogramsPerSquareMetre);
+        }
+
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Volume"/> that is the result from the multiplication.</returns>
+        public static Volume operator*(Mass left, SpecificVolume right)
+        {
+            return Volume.FromCubicMetres(left.kilograms * right.cubicMetresPerKilogram);
+        }
+
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Time"/> that is the result from the division.</returns>
+        public static Time operator/(Mass left, MassFlow right)
+        {
+            return Time.FromSeconds(left.kilograms / right.kilogramsPerSecond);
         }
 
         /// <summary>
@@ -397,170 +362,170 @@
         /// <param name="left">The left value</param>
         /// <param name="right">The right value</param>
         /// <returns>The <see cref="double"/> that is the result from the division.</returns>
-        public static double operator /(KinematicViscosity left, KinematicViscosity right)
+        public static double operator /(Mass left, Mass right)
         {
-            return left.squareMetresPerSecond / right.squareMetresPerSecond;
+            return left.kilograms / right.kilograms;
         }
 
         /// <summary>
-        /// Indicates whether two <see cref="Gu.Units.KinematicViscosity"/> instances are equal.
+        /// Indicates whether two <see cref="Gu.Units.Mass"/> instances are equal.
         /// </summary>
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.KinematicViscosity"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.KinematicViscosity"/>.</param>
-        public static bool operator ==(KinematicViscosity left, KinematicViscosity right)
+        /// <param name="left">An instance of <see cref="Gu.Units.Mass"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Mass"/>.</param>
+        public static bool operator ==(Mass left, Mass right)
         {
             return left.Equals(right);
         }
  
         /// <summary>
-        /// Indicates whether two <see cref="Gu.Units.KinematicViscosity"/> instances are not equal.
+        /// Indicates whether two <see cref="Gu.Units.Mass"/> instances are not equal.
         /// </summary>
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.KinematicViscosity"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.KinematicViscosity"/>.</param>
-        public static bool operator !=(KinematicViscosity left, KinematicViscosity right)
+        /// <param name="left">An instance of <see cref="Gu.Units.Mass"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Mass"/>.</param>
+        public static bool operator !=(Mass left, Mass right)
         {
             return !left.Equals(right);
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="Gu.Units.KinematicViscosity"/> is less than another specified <see cref="Gu.Units.KinematicViscosity"/>.
+        /// Indicates whether a specified <see cref="Gu.Units.Mass"/> is less than another specified <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.KinematicViscosity"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.KinematicViscosity"/>.</param>
-        public static bool operator <(KinematicViscosity left, KinematicViscosity right)
+        /// <param name="left">An instance of <see cref="Gu.Units.Mass"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Mass"/>.</param>
+        public static bool operator <(Mass left, Mass right)
         {
-            return left.squareMetresPerSecond < right.squareMetresPerSecond;
+            return left.kilograms < right.kilograms;
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="Gu.Units.KinematicViscosity"/> is greater than another specified <see cref="Gu.Units.KinematicViscosity"/>.
+        /// Indicates whether a specified <see cref="Gu.Units.Mass"/> is greater than another specified <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.KinematicViscosity"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.KinematicViscosity"/>.</param>
-        public static bool operator >(KinematicViscosity left, KinematicViscosity right)
+        /// <param name="left">An instance of <see cref="Gu.Units.Mass"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Mass"/>.</param>
+        public static bool operator >(Mass left, Mass right)
         {
-            return left.squareMetresPerSecond > right.squareMetresPerSecond;
+            return left.kilograms > right.kilograms;
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="Gu.Units.KinematicViscosity"/> is less than or equal to another specified <see cref="Gu.Units.KinematicViscosity"/>.
+        /// Indicates whether a specified <see cref="Gu.Units.Mass"/> is less than or equal to another specified <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.KinematicViscosity"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.KinematicViscosity"/>.</param>
-        public static bool operator <=(KinematicViscosity left, KinematicViscosity right)
+        /// <param name="left">An instance of <see cref="Gu.Units.Mass"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Mass"/>.</param>
+        public static bool operator <=(Mass left, Mass right)
         {
-            return left.squareMetresPerSecond <= right.squareMetresPerSecond;
+            return left.kilograms <= right.kilograms;
         }
  
         /// <summary>
-        /// Indicates whether a specified <see cref="Gu.Units.KinematicViscosity"/> is greater than or equal to another specified <see cref="Gu.Units.KinematicViscosity"/>.
+        /// Indicates whether a specified <see cref="Gu.Units.Mass"/> is greater than or equal to another specified <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.KinematicViscosity"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.KinematicViscosity"/>.</param>
-        public static bool operator >=(KinematicViscosity left, KinematicViscosity right)
+        /// <param name="left">An instance of <see cref="Gu.Units.Mass"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Mass"/>.</param>
+        public static bool operator >=(Mass left, Mass right)
         {
-            return left.squareMetresPerSecond >= right.squareMetresPerSecond;
+            return left.kilograms >= right.kilograms;
         }
  
         /// <summary>
-        /// Multiplies an instance of <see cref="Gu.Units.KinematicViscosity"/> with <paramref name="left"/> and returns the result.
+        /// Multiplies an instance of <see cref="Gu.Units.Mass"/> with <paramref name="left"/> and returns the result.
         /// </summary>
-        /// <param name="right">An instance of <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Mass"/></param>
         /// <param name="left">An instance of <seealso cref="System.Double"/></param>
-        /// <returns>Multiplies an instance of <see cref="Gu.Units.KinematicViscosity"/> with <paramref name="left"/> and returns the result.</returns>
-        public static KinematicViscosity operator *(double left, KinematicViscosity right)
+        /// <returns>Multiplies an instance of <see cref="Gu.Units.Mass"/> with <paramref name="left"/> and returns the result.</returns>
+        public static Mass operator *(double left, Mass right)
         {
-            return new KinematicViscosity(left*right.squareMetresPerSecond);
+            return new Mass(left*right.kilograms);
         }
  
         /// <summary>
-        /// Multiplies an instance of <see cref="Gu.Units.KinematicViscosity"/> with <paramref name="right"/> and returns the result.
+        /// Multiplies an instance of <see cref="Gu.Units.Mass"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Mass"/></param>
         /// <param name="right">An instance of <seealso cref="System.Double"/></param>
-        /// <returns>Multiplies an instance of <see cref="Gu.Units.KinematicViscosity"/> with <paramref name="right"/> and returns the result.</returns>
-        public static KinematicViscosity operator *(KinematicViscosity left, double right)
+        /// <returns>Multiplies an instance of <see cref="Gu.Units.Mass"/> with <paramref name="right"/> and returns the result.</returns>
+        public static Mass operator *(Mass left, double right)
         {
-            return new KinematicViscosity(left.squareMetresPerSecond*right);
+            return new Mass(left.kilograms*right);
         }
  
         /// <summary>
-        /// Divides an instance of <see cref="Gu.Units.KinematicViscosity"/> with <paramref name="right"/> and returns the result.
+        /// Divides an instance of <see cref="Gu.Units.Mass"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="left">An instance of <see cref="Gu.Units.Mass"/></param>
         /// <param name="right">An instance of <seealso cref="System.Double"/></param>
-        /// <returns>Divides an instance of <see cref="Gu.Units.KinematicViscosity"/> with <paramref name="right"/> and returns the result.</returns>
-        public static KinematicViscosity operator /(KinematicViscosity left, double right)
+        /// <returns>Divides an instance of <see cref="Gu.Units.Mass"/> with <paramref name="right"/> and returns the result.</returns>
+        public static Mass operator /(Mass left, double right)
         {
-            return new KinematicViscosity(left.squareMetresPerSecond / right);
+            return new Mass(left.kilograms / right);
         }
  
         /// <summary>
-        /// Adds two specified <see cref="Gu.Units.KinematicViscosity"/> instances.
+        /// Adds two specified <see cref="Gu.Units.Mass"/> instances.
         /// </summary>
         /// <returns>
-        /// An <see cref="Gu.Units.KinematicViscosity"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
+        /// An <see cref="Gu.Units.Mass"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.KinematicViscosity"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.KinematicViscosity"/>.</param>
-        public static KinematicViscosity operator +(KinematicViscosity left, KinematicViscosity right)
+        /// <param name="left">An instance of <see cref="Gu.Units.Mass"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Mass"/>.</param>
+        public static Mass operator +(Mass left, Mass right)
         {
-            return new KinematicViscosity(left.squareMetresPerSecond + right.squareMetresPerSecond);
+            return new Mass(left.kilograms + right.kilograms);
         }
  
         /// <summary>
-        /// Subtracts an KinematicViscosity from another KinematicViscosity and returns the difference.
+        /// Subtracts an Mass from another Mass and returns the difference.
         /// </summary>
         /// <returns>
-        /// An <see cref="Gu.Units.KinematicViscosity"/> that is the difference
+        /// An <see cref="Gu.Units.Mass"/> that is the difference
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.KinematicViscosity"/> (the minuend).</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.KinematicViscosity"/> (the subtrahend).</param>
-        public static KinematicViscosity operator -(KinematicViscosity left, KinematicViscosity right)
+        /// <param name="left">An instance of <see cref="Gu.Units.Mass"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Mass"/> (the subtrahend).</param>
+        public static Mass operator -(Mass left, Mass right)
         {
-            return new KinematicViscosity(left.squareMetresPerSecond - right.squareMetresPerSecond);
+            return new Mass(left.kilograms - right.kilograms);
         }
  
         /// <summary>
-        /// Returns an <see cref="Gu.Units.KinematicViscosity"/> whose quantity is the negated quantity of the specified instance.
+        /// Returns an <see cref="Gu.Units.Mass"/> whose quantity is the negated quantity of the specified instance.
         /// </summary>
         /// <returns>
-        /// An <see cref="Gu.Units.KinematicViscosity"/> with the same numeric quantity as this instance, but the opposite sign.
+        /// An <see cref="Gu.Units.Mass"/> with the same numeric quantity as this instance, but the opposite sign.
         /// </returns>
-        /// <param name="kinematicViscosity">An instance of <see cref="Gu.Units.KinematicViscosity"/></param>
-        public static KinematicViscosity operator -(KinematicViscosity kinematicViscosity)
+        /// <param name="mass">An instance of <see cref="Gu.Units.Mass"/></param>
+        public static Mass operator -(Mass mass)
         {
-            return new KinematicViscosity(-1*kinematicViscosity.squareMetresPerSecond);
+            return new Mass(-1*mass.kilograms);
         }
  
         /// <summary>
-        /// Returns the specified instance of <see cref="Gu.Units.KinematicViscosity"/>.
+        /// Returns the specified instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <returns>
-        /// Returns <paramref name="kinematicViscosity"/>.
+        /// Returns <paramref name="mass"/>.
         /// </returns>
-        /// <param name="kinematicViscosity">An instance of <see cref="Gu.Units.KinematicViscosity"/></param>
-        public static KinematicViscosity operator +(KinematicViscosity kinematicViscosity)
+        /// <param name="mass">An instance of <see cref="Gu.Units.Mass"/></param>
+        public static Mass operator +(Mass mass)
         {
-            return kinematicViscosity;
+            return mass;
         }
 
         /// <summary>
@@ -568,18 +533,18 @@
         /// </summary>
         /// <param name="unit"></param>
         /// <returns>The scalar value of this in the specified unit</returns>
-        public double GetValue(KinematicViscosityUnit unit)
+        public double GetValue(MassUnit unit)
         {
-            return unit.FromSiUnit(this.squareMetresPerSecond);
+            return unit.FromSiUnit(this.kilograms);
         }
  
         /// <summary>
         /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
         /// </summary>
-        /// <returns>The string representation of the <see cref="KinematicViscosity"/></returns>
+        /// <returns>The string representation of the <see cref="Mass"/></returns>
         public override string ToString()
         {
-            var quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(null, this.SiUnit);
+            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(null, this.SiUnit);
             return this.ToString(quantityFormat, (IFormatProvider)null);
         }
  
@@ -587,33 +552,33 @@
         /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
         /// </summary>
 		/// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The string representation of the <see cref="KinematicViscosity"/></returns>
+        /// <returns>The string representation of the <see cref="Mass"/></returns>
         public string ToString(IFormatProvider provider)
         {
-            var quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(string.Empty, SiUnit);
+            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(string.Empty, SiUnit);
             return ToString(quantityFormat, provider);
         }
 
         /// <summary>
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="format">Must be a composite format ex: \"F2 m²/s\"</param>
-        /// <returns>The string representation of the <see cref="KinematicViscosity"/></returns>
+        /// <param name="format">Must be a composite format ex: \"F2 kg\"</param>
+        /// <returns>The string representation of the <see cref="Mass"/></returns>
         public string ToString(string format)
         {
-            var quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(format);
+            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(format);
             return ToString(quantityFormat, (IFormatProvider)null);
         }
 
         /// <summary>
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="format">Must be a composite format ex: \"F2 m²/s\"</param>
+        /// <param name="format">Must be a composite format ex: \"F2 kg\"</param>
 		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
-        /// <returns>The string representation of the <see cref="KinematicViscosity"/></returns> 
+        /// <returns>The string representation of the <see cref="Mass"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
-            var quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(format);
+            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(format);
             return ToString(quantityFormat, formatProvider);
         }
 
@@ -622,11 +587,11 @@
         /// </summary>
         /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
         ///  ex: F2</param>
-        /// <param name="symbolFormat">For formatting of the unit ex m²/s</param>
-        /// <returns>The string representation of the <see cref="KinematicViscosity"/></returns>
+        /// <param name="symbolFormat">For formatting of the unit ex kg</param>
+        /// <returns>The string representation of the <see cref="Mass"/></returns>
         public string ToString(string valueFormat, string symbolFormat)
         {
-            var quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(valueFormat, symbolFormat);
+            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(valueFormat, symbolFormat);
             return ToString(quantityFormat, (IFormatProvider)null);
         }
 
@@ -635,12 +600,12 @@
         /// </summary>
         /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
         ///  ex: F2</param>
-        /// <param name="symbolFormat">For formatting the unit ex m²/s</param>
+        /// <param name="symbolFormat">For formatting the unit ex kg</param>
         /// <param name="formatProvider"></param>
-        /// <returns>The string representation of the <see cref="KinematicViscosity"/></returns>
+        /// <returns>The string representation of the <see cref="Mass"/></returns>
         public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
         {
-            var quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(valueFormat, symbolFormat);
+            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(valueFormat, symbolFormat);
             return ToString(quantityFormat, formatProvider);
         }
 
@@ -649,9 +614,9 @@
         /// </summary>
         /// <param name="unit">The unit to use in the conversion</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(KinematicViscosityUnit unit)
+        public string ToString(MassUnit unit)
         {
-            var quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(null, unit);
+            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, null);
         }
 
@@ -661,9 +626,9 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(KinematicViscosityUnit unit, SymbolFormat symbolFormat)
+		public string ToString(MassUnit unit, SymbolFormat symbolFormat)
         {
-            var quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(null, unit, symbolFormat);
+            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
@@ -673,9 +638,9 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(KinematicViscosityUnit unit, IFormatProvider formatProvider)
+		public string ToString(MassUnit unit, IFormatProvider formatProvider)
         {
-            var quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(null, unit);
+            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
@@ -686,9 +651,9 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(KinematicViscosityUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+		public string ToString(MassUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
-            var quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(null, unit, symbolFormat);
+            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
         }
 
@@ -698,9 +663,9 @@
         /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
         /// <param name="unit">The unit to use in the conversion</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(string valueFormat, KinematicViscosityUnit unit)
+        public string ToString(string valueFormat, MassUnit unit)
         {
-            var quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(valueFormat, unit);
+            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, null);
         }
 
@@ -711,9 +676,9 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(string valueFormat, KinematicViscosityUnit unit, SymbolFormat symbolFormat)
+		public string ToString(string valueFormat, MassUnit unit, SymbolFormat symbolFormat)
         {
-            var quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
+            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
@@ -724,9 +689,9 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(string valueFormat, KinematicViscosityUnit unit, IFormatProvider formatProvider)
+        public string ToString(string valueFormat, MassUnit unit, IFormatProvider formatProvider)
         {
-            var quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(valueFormat, unit);
+            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
@@ -738,13 +703,13 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(string valueFormat, KinematicViscosityUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(string valueFormat, MassUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
-            var quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
+            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
         }
 
-        internal string ToString(QuantityFormat<KinematicViscosityUnit> format, IFormatProvider formatProvider)
+        internal string ToString(QuantityFormat<MassUnit> format, IFormatProvider formatProvider)
         {
             using (var builder = StringBuilderPool.Borrow())
             {
@@ -754,7 +719,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="Gu.Units.KinematicViscosity"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.KinematicViscosity"/> object.
+        /// Compares this instance to a specified <see cref="Gu.Units.Mass"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Mass"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -776,44 +741,44 @@
         ///                     This instance is larger than <paramref name="quantity"/>.
         /// 
         /// </returns>
-        /// <param name="quantity">An instance of <see cref="Gu.Units.KinematicViscosity"/> object to compare to this instance.</param>
-        public int CompareTo(KinematicViscosity quantity)
+        /// <param name="quantity">An instance of <see cref="Gu.Units.Mass"/> object to compare to this instance.</param>
+        public int CompareTo(Mass quantity)
         {
-            return this.squareMetresPerSecond.CompareTo(quantity.squareMetresPerSecond);
+            return this.kilograms.CompareTo(quantity.kilograms);
         }
  
         /// <summary>
-        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.KinematicViscosity"/> object.
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.Mass"/> object.
         /// </summary>
         /// <returns>
-        /// true if <paramref name="other"/> represents the same KinematicViscosity as this instance; otherwise, false.
+        /// true if <paramref name="other"/> represents the same Mass as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An instance of <see cref="Gu.Units.KinematicViscosity"/> object to compare with this instance.</param>
-        public bool Equals(KinematicViscosity other)
+        /// <param name="other">An instance of <see cref="Gu.Units.Mass"/> object to compare with this instance.</param>
+        public bool Equals(Mass other)
         {
-            return this.squareMetresPerSecond.Equals(other.squareMetresPerSecond);
+            return this.kilograms.Equals(other.kilograms);
         }
  
         /// <summary>
-        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.KinematicViscosity"/> object within the given tolerance.
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.Mass"/> object within the given tolerance.
         /// </summary>
         /// <returns>
-        /// true if <paramref name="other"/> represents the same KinematicViscosity as this instance; otherwise, false.
+        /// true if <paramref name="other"/> represents the same Mass as this instance; otherwise, false.
         /// </returns>
-        /// <param name="other">An instance of <see cref="Gu.Units.KinematicViscosity"/> object to compare with this instance.</param>
+        /// <param name="other">An instance of <see cref="Gu.Units.Mass"/> object to compare with this instance.</param>
         /// <param name="tolerance">The maximum difference for being considered equal. Must be greater than zero.</param>
-        public bool Equals(KinematicViscosity other, KinematicViscosity tolerance)
+        public bool Equals(Mass other, Mass tolerance)
         {
-		    Ensure.GreaterThan(tolerance.squareMetresPerSecond, 0, nameof(tolerance));
-            return Math.Abs(this.squareMetresPerSecond - other.squareMetresPerSecond) < tolerance.squareMetresPerSecond;
+		    Ensure.GreaterThan(tolerance.kilograms, 0, nameof(tolerance));
+            return Math.Abs(this.kilograms - other.kilograms) < tolerance.kilograms;
         }
  
          /// <summary>
-        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.KinematicViscosity"/> object.
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.Mass"/> object.
         /// </summary>
         /// <param name="obj">An object to compare with this instance.</param>
         /// <returns>
-        /// true if <paramref name="obj"/> represents the same <see cref="Gu.Units.KinematicViscosity"/> as this instance; otherwise, false.
+        /// true if <paramref name="obj"/> represents the same <see cref="Gu.Units.Mass"/> as this instance; otherwise, false.
         /// </returns>
         public override bool Equals(object obj)
         {
@@ -822,7 +787,7 @@
                 return false;
             }
  
-            return obj is KinematicViscosity && this.Equals((KinematicViscosity)obj);
+            return obj is Mass && this.Equals((Mass)obj);
         }
  
         /// <summary>
@@ -831,7 +796,7 @@
         /// <returns>A 32-bit signed integer hash code.</returns>
         public override int GetHashCode()
         {
-            return this.squareMetresPerSecond.GetHashCode();
+            return this.kilograms.GetHashCode();
         }
  
         /// <summary>
@@ -856,7 +821,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-			XmlExt.SetReadonlyField(ref this, "squareMetresPerSecond", reader, "Value");
+			XmlExt.SetReadonlyField(ref this, "kilograms", reader, "Value");
         }
  
         /// <summary>
@@ -865,7 +830,7 @@
         /// <param name="writer">The <see cref="System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.squareMetresPerSecond);
+            XmlExt.WriteAttribute(writer, "Value", this.kilograms);
         }
 	}
 }

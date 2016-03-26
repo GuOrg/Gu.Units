@@ -329,6 +329,12 @@
             return Wavenumber.FromReciprocalMetres(left.kilogramsPerCubicMetre / right.kilogramsPerSquareMetre);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The SpecificVolume that is the result from the division.</returns>
         public static SpecificVolume operator /(double left, Density right)
         {
             return SpecificVolume.FromCubicMetresPerKilogram(left / right.kilogramsPerCubicMetre);

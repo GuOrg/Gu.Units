@@ -1,5 +1,8 @@
 ﻿namespace Gu.Units
 {
+    /// <summary>
+    /// A unit of a quantity
+    /// </summary>
     public interface IUnit
     {
         /// <summary>

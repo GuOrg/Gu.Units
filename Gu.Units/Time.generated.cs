@@ -527,6 +527,12 @@
             return Area.FromSquareMetres(left.seconds * right.squareMetresPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The Frequency that is the result from the division.</returns>
         public static Frequency operator /(double left, Time right)
         {
             return Frequency.FromHertz(left / right.seconds);
