@@ -25,9 +25,9 @@
                 Assert.AreEqual(UnitInput.SymbolRequired, converter.UnitInput);
             }
 
-            [TestCase(null, 1.234, null, UnitInput.ScalarOnly)]
+            [TestCase(null, "1.2340", null)]
             [TestCase(UnitInput.SymbolRequired, "1.2340\u00A0cm", UnitInput.SymbolRequired)]
-            public void ValueFormatAndUnit(UnitInput? unitInput, object expectedValue, UnitInput expectedUnitInput)
+            public void ValueFormatAndUnit(UnitInput? unitInput, object expectedValue, UnitInput? expectedUnitInput)
             {
                 Wpf.Is.DesignMode = true;
                 var converter = new LengthConverter
