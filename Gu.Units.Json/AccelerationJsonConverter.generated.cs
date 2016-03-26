@@ -9,7 +9,13 @@
     [Serializable]
     public class AccelerationJsonConverter : JsonConverter
     {
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AccelerationUnit.MetresPerSecondSquared"/>
+        /// </summary>
         public static readonly AccelerationJsonConverter Default = new AccelerationJsonConverter(AccelerationUnit.MetresPerSecondSquared);
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AccelerationUnit.MetresPerSecondSquared"/>
+        /// </summary>
         public static readonly AccelerationJsonConverter MetresPerSecondSquared = new AccelerationJsonConverter(AccelerationUnit.MetresPerSecondSquared);
         public static readonly AccelerationJsonConverter CentimetresPerSecondSquared = new AccelerationJsonConverter(AccelerationUnit.CentimetresPerSecondSquared);
         public static readonly AccelerationJsonConverter MillimetresPerSecondSquared = new AccelerationJsonConverter(AccelerationUnit.MillimetresPerSecondSquared);
@@ -25,17 +31,20 @@
             this.unit = unit;
         }
 
+        /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var acceleration = (Acceleration)value;
             serializer.Serialize(writer, acceleration.ToString(this.unit, serializer.Culture));
         }
 
+        /// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(Acceleration);
         }
 
+        /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;

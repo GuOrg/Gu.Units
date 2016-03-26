@@ -9,7 +9,14 @@
     [Serializable]
     public class IlluminanceJsonConverter : JsonConverter
     {
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="IlluminanceUnit.Lux"/>
+        /// </summary>
         public static readonly IlluminanceJsonConverter Default = new IlluminanceJsonConverter(IlluminanceUnit.Lux);
+
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="IlluminanceUnit.Lux"/>
+        /// </summary>
         public static readonly IlluminanceJsonConverter Lux = new IlluminanceJsonConverter(IlluminanceUnit.Lux);
 
         private readonly IlluminanceUnit unit;
@@ -19,17 +26,20 @@
             this.unit = unit;
         }
 
+        /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var illuminance = (Illuminance)value;
             serializer.Serialize(writer, illuminance.ToString(this.unit, serializer.Culture));
         }
 
+        /// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(Illuminance);
         }
 
+        /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;

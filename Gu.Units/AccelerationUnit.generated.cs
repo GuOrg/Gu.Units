@@ -84,11 +84,27 @@
             return Acceleration.From(left, right);
         }
 
-        public static bool operator ==(AccelerationUnit left, AccelerationUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.AccelerationUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.AccelerationUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.AccelerationUnit"/>.</param>
+	    public static bool operator ==(AccelerationUnit left, AccelerationUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.AccelerationUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.AccelerationUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.AccelerationUnit"/>.</param>
         public static bool operator !=(AccelerationUnit left, AccelerationUnit right)
         {
             return !left.Equals(right);
@@ -105,6 +121,14 @@
             return UnitParser<AccelerationUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AccelerationUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AccelerationUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="AccelerationUnit"/></param>
+        /// <returns>True if an instance of <see cref="AccelerationUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out AccelerationUnit value)
         {
             return UnitParser<AccelerationUnit>.TryParse(text, out value);
@@ -150,11 +174,17 @@
             return FromSiUnit(quantity.metresPerSecondSquared);
         }
 
+        /// <inheritdoc />
         public override string ToString()
         {
             return this.symbol;
         }
 
+        /// <summary>
+        /// Converts the unit value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="format">The format to use when convereting</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string format)
         {
             AccelerationUnit unit;
@@ -173,6 +203,11 @@
             }
         }
 
+        /// <summary>
+        /// Converts the unit value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(SymbolFormat format)
         {
             var paddedFormat = UnitFormatCache<AccelerationUnit>.GetOrCreate(this, format);
@@ -185,11 +220,19 @@
             }
         }
 
-        public bool Equals(AccelerationUnit other)
+        /// <summary>
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.AccelerationUnit"/> object.
+        /// </summary>
+        /// <param name="other">An instance of <see cref="Gu.Units.AccelerationUnit"/> object to compare with this instance.</param>
+        /// <returns>
+        /// true if <paramref name="other"/> represents the same AccelerationUnit as this instance; otherwise, false.
+        /// </returns>
+		public bool Equals(AccelerationUnit other)
         {
             return this.symbol == other.symbol;
         }
 
+        /// <inheritdoc />
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -200,10 +243,7 @@
             return obj is AccelerationUnit && Equals((AccelerationUnit)obj);
         }
 
-        /// <summary>
-        /// Returns the hashcode for this <see cref="LengthUnit"/>
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc />
         public override int GetHashCode()
         {
             if (this.symbol == null)

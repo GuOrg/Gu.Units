@@ -9,7 +9,14 @@
     [Serializable]
     public class WavenumberJsonConverter : JsonConverter
     {
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="WavenumberUnit.ReciprocalMetres"/>
+        /// </summary>
         public static readonly WavenumberJsonConverter Default = new WavenumberJsonConverter(WavenumberUnit.ReciprocalMetres);
+
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="WavenumberUnit.ReciprocalMetres"/>
+        /// </summary>
         public static readonly WavenumberJsonConverter ReciprocalMetres = new WavenumberJsonConverter(WavenumberUnit.ReciprocalMetres);
 
         private readonly WavenumberUnit unit;
@@ -19,17 +26,20 @@
             this.unit = unit;
         }
 
+        /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var wavenumber = (Wavenumber)value;
             serializer.Serialize(writer, wavenumber.ToString(this.unit, serializer.Culture));
         }
 
+        /// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(Wavenumber);
         }
 
+        /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;

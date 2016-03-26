@@ -150,11 +150,17 @@
             return FromSiUnit(quantity.kelvin);
         }
 
+        /// <inheritdoc />
         public override string ToString()
         {
             return this.symbol;
         }
 
+        /// <summary>
+        /// Converts the unit value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="format">The format to use when convereting</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string format)
         {
             TemperatureUnit unit;
@@ -173,6 +179,11 @@
             }
         }
 
+        /// <summary>
+        /// Converts the unit value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(SymbolFormat format)
         {
             var paddedFormat = UnitFormatCache<TemperatureUnit>.GetOrCreate(this, format);
@@ -185,11 +196,19 @@
             }
         }
 
-        public bool Equals(TemperatureUnit other)
+        /// <summary>
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.TemperatureUnit"/> object.
+        /// </summary>
+        /// <param name="other">An instance of <see cref="Gu.Units.TemperatureUnit"/> object to compare with this instance.</param>
+        /// <returns>
+        /// true if <paramref name="other"/> represents the same TemperatureUnit as this instance; otherwise, false.
+        /// </returns>
+		public bool Equals(TemperatureUnit other)
         {
             return this.symbol == other.symbol;
         }
 
+        /// <inheritdoc />
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -200,10 +219,7 @@
             return obj is TemperatureUnit && Equals((TemperatureUnit)obj);
         }
 
-        /// <summary>
-        /// Returns the hashcode for this <see cref="LengthUnit"/>
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc />
         public override int GetHashCode()
         {
             if (this.symbol == null)

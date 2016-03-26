@@ -9,7 +9,14 @@
     [Serializable]
     public class ElectricalConductanceJsonConverter : JsonConverter
     {
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="ElectricalConductanceUnit.Siemens"/>
+        /// </summary>
         public static readonly ElectricalConductanceJsonConverter Default = new ElectricalConductanceJsonConverter(ElectricalConductanceUnit.Siemens);
+
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="ElectricalConductanceUnit.Siemens"/>
+        /// </summary>
         public static readonly ElectricalConductanceJsonConverter Siemens = new ElectricalConductanceJsonConverter(ElectricalConductanceUnit.Siemens);
 
         private readonly ElectricalConductanceUnit unit;
@@ -19,17 +26,20 @@
             this.unit = unit;
         }
 
+        /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var electricalConductance = (ElectricalConductance)value;
             serializer.Serialize(writer, electricalConductance.ToString(this.unit, serializer.Culture));
         }
 
+        /// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(ElectricalConductance);
         }
 
+        /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;

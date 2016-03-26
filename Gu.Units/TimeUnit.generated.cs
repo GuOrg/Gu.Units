@@ -168,11 +168,17 @@
             return FromSiUnit(quantity.seconds);
         }
 
+        /// <inheritdoc />
         public override string ToString()
         {
             return this.symbol;
         }
 
+        /// <summary>
+        /// Converts the unit value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="format">The format to use when convereting</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string format)
         {
             TimeUnit unit;
@@ -191,6 +197,11 @@
             }
         }
 
+        /// <summary>
+        /// Converts the unit value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(SymbolFormat format)
         {
             var paddedFormat = UnitFormatCache<TimeUnit>.GetOrCreate(this, format);
@@ -203,11 +214,19 @@
             }
         }
 
-        public bool Equals(TimeUnit other)
+        /// <summary>
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.TimeUnit"/> object.
+        /// </summary>
+        /// <param name="other">An instance of <see cref="Gu.Units.TimeUnit"/> object to compare with this instance.</param>
+        /// <returns>
+        /// true if <paramref name="other"/> represents the same TimeUnit as this instance; otherwise, false.
+        /// </returns>
+		public bool Equals(TimeUnit other)
         {
             return this.symbol == other.symbol;
         }
 
+        /// <inheritdoc />
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -218,10 +237,7 @@
             return obj is TimeUnit && Equals((TimeUnit)obj);
         }
 
-        /// <summary>
-        /// Returns the hashcode for this <see cref="LengthUnit"/>
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc />
         public override int GetHashCode()
         {
             if (this.symbol == null)

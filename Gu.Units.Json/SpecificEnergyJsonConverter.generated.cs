@@ -9,7 +9,14 @@
     [Serializable]
     public class SpecificEnergyJsonConverter : JsonConverter
     {
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="SpecificEnergyUnit.JoulesPerKilogram"/>
+        /// </summary>
         public static readonly SpecificEnergyJsonConverter Default = new SpecificEnergyJsonConverter(SpecificEnergyUnit.JoulesPerKilogram);
+
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="SpecificEnergyUnit.JoulesPerKilogram"/>
+        /// </summary>
         public static readonly SpecificEnergyJsonConverter JoulesPerKilogram = new SpecificEnergyJsonConverter(SpecificEnergyUnit.JoulesPerKilogram);
 
         private readonly SpecificEnergyUnit unit;
@@ -19,17 +26,20 @@
             this.unit = unit;
         }
 
+        /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var specificEnergy = (SpecificEnergy)value;
             serializer.Serialize(writer, specificEnergy.ToString(this.unit, serializer.Culture));
         }
 
+        /// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(SpecificEnergy);
         }
 
+        /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;
