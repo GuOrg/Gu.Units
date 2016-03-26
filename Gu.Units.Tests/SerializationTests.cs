@@ -27,14 +27,14 @@
             var quantity = ctor.Invoke(new object[] { 1.2 });
             var serializer = new XmlSerializer(quantityType);
             var stringBuilder = new StringBuilder();
-            string xml = "";
+            var xml = "";
             using (var writer = new StringWriter(stringBuilder))
             {
                 serializer.Serialize(writer, quantity);
                 xml = stringBuilder.ToString();
                 Console.Write(xml);
-                var expected = string.Format(@"<?xml version=""1.0"" encoding=""utf-16""?>
-<{0} Value=""1.2"" />", quantity.GetType().Name);
+                var expected = $"<?xml version=\"1.0\" encoding=\"utf-16\"?>" + Environment.NewLine +
+                               $"<{quantity.GetType().Name} Value=\"1.2\" />";
                 Assert.AreEqual(expected, xml);
             }
             using (var reader = new StringReader(xml))
@@ -56,14 +56,15 @@
             var quantity = ctor.Invoke(new object[] { 1.2 });
             var serializer = new DataContractSerializer(quantityType);
             var stringBuilder = new StringBuilder();
-            string xml = "";
+            var xml = "";
             using (var writer = XmlWriter.Create(stringBuilder))
             {
                 serializer.WriteObject(writer, quantity);
                 writer.Flush();
                 xml = stringBuilder.ToString();
                 Console.Write(xml);
-                var expected = string.Format(@"<?xml version=""1.0"" encoding=""utf-16""?><{0} Value=""1.2"" xmlns=""http://schemas.datacontract.org/2004/07/Gu.Units"" />", quantity.GetType().Name);
+                var expected = $"<?xml version=\"1.0\" encoding=\"utf-16\"?>" +
+                               $"<{quantity.GetType().Name} Value=\"1.2\" xmlns=\"http://schemas.datacontract.org/2004/07/Gu.Units\" />";
                 Assert.AreEqual(expected, xml);
             }
             using (var reader = XmlReader.Create(new StringReader(xml)))
