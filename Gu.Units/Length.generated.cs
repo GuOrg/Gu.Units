@@ -13,7 +13,10 @@
     [Serializable]
     public partial struct Length : IQuantity<LengthUnit>, IComparable<Length>, IEquatable<Length>
     {
-        public static readonly Length Zero = new Length();
+        /// <summary>
+        /// Gets a value that is zero <see cref="Gu.Units.LengthUnit.Metres"/>
+        /// </summary>
+		public static readonly Length Zero = new Length();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.LengthUnit.Metres"/>.
@@ -121,7 +124,7 @@
         /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <returns></returns>
+        /// <returns>The <see cref="Gu.Units.Length"/> parsed from <paramref name="text"/></returns>
 		public static Length Parse(string text)
         {
             return QuantityParser.Parse<LengthUnit, Length>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
@@ -131,7 +134,8 @@
         /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <returns></returns>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Length"/> parsed from <paramref name="text"/></returns>
         public static Length Parse(string text, IFormatProvider provider)
         {
             return QuantityParser.Parse<LengthUnit, Length>(text, From, NumberStyles.Float, provider);
@@ -141,7 +145,8 @@
         /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Length"/> parsed from <paramref name="text"/></returns>
         public static Length Parse(string text, NumberStyles styles)
         {
             return QuantityParser.Parse<LengthUnit, Length>(text, From, styles, CultureInfo.CurrentCulture);
@@ -151,7 +156,9 @@
         /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Length"/> parsed from <paramref name="text"/></returns>
         public static Length Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
             return QuantityParser.Parse<LengthUnit, Length>(text, From, styles, provider);
@@ -161,7 +168,8 @@
         /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <returns></returns>
+        /// <param name="result">The parsed <see cref="Length"/></param>
+        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out Length result)
         {
             return QuantityParser.TryParse<LengthUnit, Length>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
@@ -171,7 +179,9 @@
         /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <returns></returns>		
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Length"/></param>
+        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, IFormatProvider provider, out Length result)
         {
             return QuantityParser.TryParse<LengthUnit, Length>(text, From, NumberStyles.Float, provider, out result);
@@ -181,7 +191,9 @@
         /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Length"/></param>
+        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, out Length result)
         {
             return QuantityParser.TryParse<LengthUnit, Length>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -191,7 +203,10 @@
         /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Length"/></param>
+        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Length result)
         {
             return QuantityParser.TryParse<LengthUnit, Length>(text, From, styles, provider, out result);
@@ -318,101 +333,221 @@
             return new Length(1000 * kilometres);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Area"/> that is the result from the multiplication.</returns>
         public static Area operator *(Length left, Length right)
         {
             return Area.FromSquareMetres(left.metres * right.metres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Speed"/> that is the result from the division.</returns>
         public static Speed operator /(Length left, Time right)
         {
             return Speed.FromMetresPerSecond(left.metres / right.seconds);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="LengthPerUnitless"/> that is the result from the division.</returns>
         public static LengthPerUnitless operator /(Length left, Unitless right)
         {
             return LengthPerUnitless.FromMetresPerUnitless(left.metres / right.scalar);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Volume"/> that is the result from the multiplication.</returns>
         public static Volume operator *(Length left, Area right)
         {
             return Volume.FromCubicMetres(left.metres * right.squareMetres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Wavenumber"/> that is the result from the division.</returns>
         public static Wavenumber operator /(Length left, Area right)
         {
             return Wavenumber.FromReciprocalMetres(left.metres / right.squareMetres);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Energy"/> that is the result from the multiplication.</returns>
         public static Energy operator *(Length left, Force right)
         {
             return Energy.FromJoules(left.metres * right.newtons);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Flexibility"/> that is the result from the division.</returns>
         public static Flexibility operator /(Length left, Force right)
         {
             return Flexibility.FromMetresPerNewton(left.metres / right.newtons);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Stiffness"/> that is the result from the multiplication.</returns>
         public static Stiffness operator *(Length left, Pressure right)
         {
             return Stiffness.FromNewtonsPerMetre(left.metres * right.pascals);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="AreaDensity"/> that is the result from the multiplication.</returns>
         public static AreaDensity operator *(Length left, Density right)
         {
             return AreaDensity.FromKilogramsPerSquareMetre(left.metres * right.kilogramsPerCubicMetre);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="KinematicViscosity"/> that is the result from the multiplication.</returns>
         public static KinematicViscosity operator *(Length left, Speed right)
         {
             return KinematicViscosity.FromSquareMetresPerSecond(left.metres * right.metresPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Time"/> that is the result from the division.</returns>
         public static Time operator /(Length left, Speed right)
         {
             return Time.FromSeconds(left.metres / right.metresPerSecond);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Speed"/> that is the result from the multiplication.</returns>
         public static Speed operator *(Length left, Frequency right)
         {
             return Speed.FromMetresPerSecond(left.metres * right.hertz);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="SpecificEnergy"/> that is the result from the multiplication.</returns>
         public static SpecificEnergy operator *(Length left, Acceleration right)
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.metres * right.metresPerSecondSquared);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Force"/> that is the result from the multiplication.</returns>
         public static Force operator *(Length left, Stiffness right)
         {
             return Force.FromNewtons(left.metres * right.newtonsPerMetre);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Force"/> that is the result from the division.</returns>
         public static Force operator /(Length left, Flexibility right)
         {
             return Force.FromNewtons(left.metres / right.metresPerNewton);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Unitless"/> that is the result from the division.</returns>
         public static Unitless operator /(Length left, LengthPerUnitless right)
         {
             return Unitless.FromScalar(left.metres / right.metresPerUnitless);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="SpecificVolume"/> that is the result from the division.</returns>
         public static SpecificVolume operator /(Length left, AreaDensity right)
         {
             return SpecificVolume.FromCubicMetresPerKilogram(left.metres / right.kilogramsPerSquareMetre);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="AreaDensity"/> that is the result from the division.</returns>
         public static AreaDensity operator /(Length left, SpecificVolume right)
         {
             return AreaDensity.FromKilogramsPerSquareMetre(left.metres / right.cubicMetresPerKilogram);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Momentum"/> that is the result from the multiplication.</returns>
         public static Momentum operator *(Length left, MassFlow right)
         {
             return Momentum.FromNewtonSecond(left.metres * right.kilogramsPerSecond);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="VolumetricFlow"/> that is the result from the multiplication.</returns>
         public static VolumetricFlow operator *(Length left, KinematicViscosity right)
         {
             return VolumetricFlow.FromCubicMetresPerSecond(left.metres * right.squareMetresPerSecond);
@@ -423,6 +558,12 @@
             return Wavenumber.FromReciprocalMetres(left / right.metres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="double"/> that is the result from the division.</returns>
         public static double operator /(Length left, Length right)
         {
             return left.metres / right.metres;
@@ -612,6 +753,7 @@
         /// <summary>
         /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
         /// </summary>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Length"/></returns>
         public string ToString(IFormatProvider provider)
         {
@@ -634,6 +776,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 m\"</param>
+		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Length"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -668,48 +811,100 @@
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(LengthUnit unit)
         {
             var quantityFormat = FormatCache<LengthUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(LengthUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(LengthUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<LengthUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(LengthUnit unit, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(LengthUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<LengthUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
-        public string ToString(LengthUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(LengthUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<LengthUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, LengthUnit unit)
         {
             var quantityFormat = FormatCache<LengthUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(string valueFormat, LengthUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(string valueFormat, LengthUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<LengthUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, LengthUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<LengthUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, LengthUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<LengthUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
@@ -726,7 +921,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="Gu.Units.Length"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Length"/> object.
+        /// Compares this instance to a specified <see cref="Gu.Units.Length"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Length"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -780,6 +975,13 @@
             return Math.Abs(this.metres - other.metres) < tolerance.metres;
         }
 
+        /// <summary>
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.Length"/> object.
+        /// </summary>
+        /// <param name="obj">An object to compare with this instance.</param>
+        /// <returns>
+        /// true if <paramref name="obj"/> represents the same <see cref="Gu.Units.Length"/> as this instance; otherwise, false.
+        /// </returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -790,6 +992,10 @@
             return obj is Length && this.Equals((Length)obj);
         }
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
         public override int GetHashCode()
         {
             return this.metres.GetHashCode();

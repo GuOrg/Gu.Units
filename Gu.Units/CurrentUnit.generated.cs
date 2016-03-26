@@ -84,11 +84,27 @@
             return Current.From(left, right);
         }
 
-        public static bool operator ==(CurrentUnit left, CurrentUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.CurrentUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.CurrentUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.CurrentUnit"/>.</param>
+	    public static bool operator ==(CurrentUnit left, CurrentUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.CurrentUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.CurrentUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.CurrentUnit"/>.</param>
         public static bool operator !=(CurrentUnit left, CurrentUnit right)
         {
             return !left.Equals(right);
@@ -105,6 +121,14 @@
             return UnitParser<CurrentUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.CurrentUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.CurrentUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="CurrentUnit"/></param>
+        /// <returns>True if an instance of <see cref="CurrentUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out CurrentUnit value)
         {
             return UnitParser<CurrentUnit>.TryParse(text, out value);

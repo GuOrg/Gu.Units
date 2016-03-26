@@ -54,11 +54,27 @@
             return Angle.From(left, right);
         }
 
-        public static bool operator ==(AngleUnit left, AngleUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.AngleUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.AngleUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.AngleUnit"/>.</param>
+	    public static bool operator ==(AngleUnit left, AngleUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.AngleUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.AngleUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.AngleUnit"/>.</param>
         public static bool operator !=(AngleUnit left, AngleUnit right)
         {
             return !left.Equals(right);
@@ -75,6 +91,14 @@
             return UnitParser<AngleUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngleUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngleUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="AngleUnit"/></param>
+        /// <returns>True if an instance of <see cref="AngleUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out AngleUnit value)
         {
             return UnitParser<AngleUnit>.TryParse(text, out value);

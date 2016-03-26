@@ -13,7 +13,10 @@
     [Serializable]
     public partial struct Speed : IQuantity<SpeedUnit>, IComparable<Speed>, IEquatable<Speed>
     {
-        public static readonly Speed Zero = new Speed();
+        /// <summary>
+        /// Gets a value that is zero <see cref="Gu.Units.SpeedUnit.MetresPerSecond"/>
+        /// </summary>
+		public static readonly Speed Zero = new Speed();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.SpeedUnit.MetresPerSecond"/>.
@@ -116,7 +119,7 @@
         /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <returns></returns>
+        /// <returns>The <see cref="Gu.Units.Speed"/> parsed from <paramref name="text"/></returns>
 		public static Speed Parse(string text)
         {
             return QuantityParser.Parse<SpeedUnit, Speed>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
@@ -126,7 +129,8 @@
         /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <returns></returns>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Speed"/> parsed from <paramref name="text"/></returns>
         public static Speed Parse(string text, IFormatProvider provider)
         {
             return QuantityParser.Parse<SpeedUnit, Speed>(text, From, NumberStyles.Float, provider);
@@ -136,7 +140,8 @@
         /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Speed"/> parsed from <paramref name="text"/></returns>
         public static Speed Parse(string text, NumberStyles styles)
         {
             return QuantityParser.Parse<SpeedUnit, Speed>(text, From, styles, CultureInfo.CurrentCulture);
@@ -146,7 +151,9 @@
         /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Speed"/> parsed from <paramref name="text"/></returns>
         public static Speed Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
             return QuantityParser.Parse<SpeedUnit, Speed>(text, From, styles, provider);
@@ -156,7 +163,8 @@
         /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <returns></returns>
+        /// <param name="result">The parsed <see cref="Speed"/></param>
+        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out Speed result)
         {
             return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
@@ -166,7 +174,9 @@
         /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <returns></returns>		
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Speed"/></param>
+        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, IFormatProvider provider, out Speed result)
         {
             return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, NumberStyles.Float, provider, out result);
@@ -176,7 +186,9 @@
         /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Speed"/></param>
+        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, out Speed result)
         {
             return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -186,7 +198,10 @@
         /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Speed"/></param>
+        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Speed result)
         {
             return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, styles, provider, out result);
@@ -304,86 +319,188 @@
             return new Speed(centimetresPerSecond / 100);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Momentum"/> that is the result from the multiplication.</returns>
         public static Momentum operator *(Speed left, Mass right)
         {
             return Momentum.FromNewtonSecond(left.metresPerSecond * right.kilograms);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="KinematicViscosity"/> that is the result from the multiplication.</returns>
         public static KinematicViscosity operator *(Speed left, Length right)
         {
             return KinematicViscosity.FromSquareMetresPerSecond(left.metresPerSecond * right.metres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Frequency"/> that is the result from the division.</returns>
         public static Frequency operator /(Speed left, Length right)
         {
             return Frequency.FromHertz(left.metresPerSecond / right.metres);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Length"/> that is the result from the multiplication.</returns>
         public static Length operator *(Speed left, Time right)
         {
             return Length.FromMetres(left.metresPerSecond * right.seconds);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Acceleration"/> that is the result from the division.</returns>
         public static Acceleration operator /(Speed left, Time right)
         {
             return Acceleration.FromMetresPerSecondSquared(left.metresPerSecond / right.seconds);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="VolumetricFlow"/> that is the result from the multiplication.</returns>
         public static VolumetricFlow operator *(Speed left, Area right)
         {
             return VolumetricFlow.FromCubicMetresPerSecond(left.metresPerSecond * right.squareMetres);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Power"/> that is the result from the multiplication.</returns>
         public static Power operator *(Speed left, Force right)
         {
             return Power.FromWatts(left.metresPerSecond * right.newtons);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="SpecificEnergy"/> that is the result from the multiplication.</returns>
         public static SpecificEnergy operator *(Speed left, Speed right)
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.metresPerSecond * right.metresPerSecond);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Acceleration"/> that is the result from the multiplication.</returns>
         public static Acceleration operator *(Speed left, Frequency right)
         {
             return Acceleration.FromMetresPerSecondSquared(left.metresPerSecond * right.hertz);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Length"/> that is the result from the division.</returns>
         public static Length operator /(Speed left, Frequency right)
         {
             return Length.FromMetres(left.metresPerSecond / right.hertz);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Time"/> that is the result from the division.</returns>
         public static Time operator /(Speed left, Acceleration right)
         {
             return Time.FromSeconds(left.metresPerSecond / right.metresPerSecondSquared);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Energy"/> that is the result from the multiplication.</returns>
         public static Energy operator *(Speed left, Momentum right)
         {
             return Energy.FromJoules(left.metresPerSecond * right.newtonSecond);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Frequency"/> that is the result from the multiplication.</returns>
         public static Frequency operator *(Speed left, Wavenumber right)
         {
             return Frequency.FromHertz(left.metresPerSecond * right.reciprocalMetres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="KinematicViscosity"/> that is the result from the division.</returns>
         public static KinematicViscosity operator /(Speed left, Wavenumber right)
         {
             return KinematicViscosity.FromSquareMetresPerSecond(left.metresPerSecond / right.reciprocalMetres);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Force"/> that is the result from the multiplication.</returns>
         public static Force operator *(Speed left, MassFlow right)
         {
             return Force.FromNewtons(left.metresPerSecond * right.kilogramsPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Wavenumber"/> that is the result from the division.</returns>
         public static Wavenumber operator /(Speed left, KinematicViscosity right)
         {
             return Wavenumber.FromReciprocalMetres(left.metresPerSecond / right.squareMetresPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="double"/> that is the result from the division.</returns>
         public static double operator /(Speed left, Speed right)
         {
             return left.metresPerSecond / right.metresPerSecond;
@@ -573,6 +690,7 @@
         /// <summary>
         /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
         /// </summary>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Speed"/></returns>
         public string ToString(IFormatProvider provider)
         {
@@ -595,6 +713,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 m/s\"</param>
+		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Speed"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -629,48 +748,100 @@
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(SpeedUnit unit)
         {
             var quantityFormat = FormatCache<SpeedUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(SpeedUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(SpeedUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<SpeedUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(SpeedUnit unit, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(SpeedUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<SpeedUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
-        public string ToString(SpeedUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(SpeedUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<SpeedUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, SpeedUnit unit)
         {
             var quantityFormat = FormatCache<SpeedUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(string valueFormat, SpeedUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(string valueFormat, SpeedUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<SpeedUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, SpeedUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<SpeedUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, SpeedUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<SpeedUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
@@ -687,7 +858,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="Gu.Units.Speed"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Speed"/> object.
+        /// Compares this instance to a specified <see cref="Gu.Units.Speed"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Speed"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -741,6 +912,13 @@
             return Math.Abs(this.metresPerSecond - other.metresPerSecond) < tolerance.metresPerSecond;
         }
 
+        /// <summary>
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.Speed"/> object.
+        /// </summary>
+        /// <param name="obj">An object to compare with this instance.</param>
+        /// <returns>
+        /// true if <paramref name="obj"/> represents the same <see cref="Gu.Units.Speed"/> as this instance; otherwise, false.
+        /// </returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -751,6 +929,10 @@
             return obj is Speed && this.Equals((Speed)obj);
         }
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
         public override int GetHashCode()
         {
             return this.metresPerSecond.GetHashCode();

@@ -48,11 +48,27 @@
             return MassFlow.From(left, right);
         }
 
-        public static bool operator ==(MassFlowUnit left, MassFlowUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.MassFlowUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.MassFlowUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.MassFlowUnit"/>.</param>
+	    public static bool operator ==(MassFlowUnit left, MassFlowUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.MassFlowUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.MassFlowUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.MassFlowUnit"/>.</param>
         public static bool operator !=(MassFlowUnit left, MassFlowUnit right)
         {
             return !left.Equals(right);
@@ -69,6 +85,14 @@
             return UnitParser<MassFlowUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MassFlowUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlowUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="MassFlowUnit"/></param>
+        /// <returns>True if an instance of <see cref="MassFlowUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out MassFlowUnit value)
         {
             return UnitParser<MassFlowUnit>.TryParse(text, out value);

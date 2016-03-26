@@ -13,7 +13,10 @@
     [Serializable]
     public partial struct Frequency : IQuantity<FrequencyUnit>, IComparable<Frequency>, IEquatable<Frequency>
     {
-        public static readonly Frequency Zero = new Frequency();
+        /// <summary>
+        /// Gets a value that is zero <see cref="Gu.Units.FrequencyUnit.Hertz"/>
+        /// </summary>
+		public static readonly Frequency Zero = new Frequency();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.FrequencyUnit.Hertz"/>.
@@ -91,7 +94,7 @@
         /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <returns></returns>
+        /// <returns>The <see cref="Gu.Units.Frequency"/> parsed from <paramref name="text"/></returns>
 		public static Frequency Parse(string text)
         {
             return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
@@ -101,7 +104,8 @@
         /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <returns></returns>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Frequency"/> parsed from <paramref name="text"/></returns>
         public static Frequency Parse(string text, IFormatProvider provider)
         {
             return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, provider);
@@ -111,7 +115,8 @@
         /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Frequency"/> parsed from <paramref name="text"/></returns>
         public static Frequency Parse(string text, NumberStyles styles)
         {
             return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, styles, CultureInfo.CurrentCulture);
@@ -121,7 +126,9 @@
         /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Frequency"/> parsed from <paramref name="text"/></returns>
         public static Frequency Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
             return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, styles, provider);
@@ -131,7 +138,8 @@
         /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <returns></returns>
+        /// <param name="result">The parsed <see cref="Frequency"/></param>
+        /// <returns>True if an instance of <see cref="Frequency"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out Frequency result)
         {
             return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
@@ -141,7 +149,9 @@
         /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <returns></returns>		
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Frequency"/></param>
+        /// <returns>True if an instance of <see cref="Frequency"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, IFormatProvider provider, out Frequency result)
         {
             return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, provider, out result);
@@ -151,7 +161,9 @@
         /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Frequency"/></param>
+        /// <returns>True if an instance of <see cref="Frequency"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, out Frequency result)
         {
             return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -161,7 +173,10 @@
         /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Frequency"/></param>
+        /// <returns>True if an instance of <see cref="Frequency"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Frequency result)
         {
             return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, styles, provider, out result);
@@ -234,101 +249,221 @@
             return new Frequency(1000000000 * gigahertz);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="MassFlow"/> that is the result from the multiplication.</returns>
         public static MassFlow operator *(Frequency left, Mass right)
         {
             return MassFlow.FromKilogramsPerSecond(left.hertz * right.kilograms);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Speed"/> that is the result from the multiplication.</returns>
         public static Speed operator *(Frequency left, Length right)
         {
             return Speed.FromMetresPerSecond(left.hertz * right.metres);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="AngularSpeed"/> that is the result from the multiplication.</returns>
         public static AngularSpeed operator *(Frequency left, Angle right)
         {
             return AngularSpeed.FromRadiansPerSecond(left.hertz * right.radians);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="CatalyticActivity"/> that is the result from the multiplication.</returns>
         public static CatalyticActivity operator *(Frequency left, AmountOfSubstance right)
         {
             return CatalyticActivity.FromKatals(left.hertz * right.moles);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="KinematicViscosity"/> that is the result from the multiplication.</returns>
         public static KinematicViscosity operator *(Frequency left, Area right)
         {
             return KinematicViscosity.FromSquareMetresPerSecond(left.hertz * right.squareMetres);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="VolumetricFlow"/> that is the result from the multiplication.</returns>
         public static VolumetricFlow operator *(Frequency left, Volume right)
         {
             return VolumetricFlow.FromCubicMetresPerSecond(left.hertz * right.cubicMetres);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Power"/> that is the result from the multiplication.</returns>
         public static Power operator *(Frequency left, Energy right)
         {
             return Power.FromWatts(left.hertz * right.joules);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Acceleration"/> that is the result from the multiplication.</returns>
         public static Acceleration operator *(Frequency left, Speed right)
         {
             return Acceleration.FromMetresPerSecondSquared(left.hertz * right.metresPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Wavenumber"/> that is the result from the division.</returns>
         public static Wavenumber operator /(Frequency left, Speed right)
         {
             return Wavenumber.FromReciprocalMetres(left.hertz / right.metresPerSecond);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="AngularAcceleration"/> that is the result from the multiplication.</returns>
         public static AngularAcceleration operator *(Frequency left, AngularSpeed right)
         {
             return AngularAcceleration.FromRadiansPerSecondSquared(left.hertz * right.radiansPerSecond);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Jerk"/> that is the result from the multiplication.</returns>
         public static Jerk operator *(Frequency left, Acceleration right)
         {
             return Jerk.FromMetresPerSecondCubed(left.hertz * right.metresPerSecondSquared);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Current"/> that is the result from the multiplication.</returns>
         public static Current operator *(Frequency left, ElectricCharge right)
         {
             return Current.FromAmperes(left.hertz * right.coulombs);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Resistance"/> that is the result from the multiplication.</returns>
         public static Resistance operator *(Frequency left, Inductance right)
         {
             return Resistance.FromOhm(left.hertz * right.henrys);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="ElectricalConductance"/> that is the result from the multiplication.</returns>
         public static ElectricalConductance operator *(Frequency left, Capacitance right)
         {
             return ElectricalConductance.FromSiemens(left.hertz * right.farads);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="AngularJerk"/> that is the result from the multiplication.</returns>
         public static AngularJerk operator *(Frequency left, AngularAcceleration right)
         {
             return AngularJerk.FromRadiansPerSecondCubed(left.hertz * right.radiansPerSecondSquared);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Voltage"/> that is the result from the multiplication.</returns>
         public static Voltage operator *(Frequency left, MagneticFlux right)
         {
             return Voltage.FromVolts(left.hertz * right.webers);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Force"/> that is the result from the multiplication.</returns>
         public static Force operator *(Frequency left, Momentum right)
         {
             return Force.FromNewtons(left.hertz * right.newtonSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Speed"/> that is the result from the division.</returns>
         public static Speed operator /(Frequency left, Wavenumber right)
         {
             return Speed.FromMetresPerSecond(left.hertz / right.reciprocalMetres);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Stiffness"/> that is the result from the multiplication.</returns>
         public static Stiffness operator *(Frequency left, MassFlow right)
         {
             return Stiffness.FromNewtonsPerMetre(left.hertz * right.kilogramsPerSecond);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="SpecificEnergy"/> that is the result from the multiplication.</returns>
         public static SpecificEnergy operator *(Frequency left, KinematicViscosity right)
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.hertz * right.squareMetresPerSecond);
@@ -339,6 +474,12 @@
             return Time.FromSeconds(left / right.hertz);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="double"/> that is the result from the division.</returns>
         public static double operator /(Frequency left, Frequency right)
         {
             return left.hertz / right.hertz;
@@ -528,6 +669,7 @@
         /// <summary>
         /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
         /// </summary>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Frequency"/></returns>
         public string ToString(IFormatProvider provider)
         {
@@ -550,6 +692,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 Hz\"</param>
+		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Frequency"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -584,48 +727,100 @@
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(FrequencyUnit unit)
         {
             var quantityFormat = FormatCache<FrequencyUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(FrequencyUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(FrequencyUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<FrequencyUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(FrequencyUnit unit, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(FrequencyUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<FrequencyUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
-        public string ToString(FrequencyUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(FrequencyUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<FrequencyUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, FrequencyUnit unit)
         {
             var quantityFormat = FormatCache<FrequencyUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(string valueFormat, FrequencyUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(string valueFormat, FrequencyUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<FrequencyUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, FrequencyUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<FrequencyUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, FrequencyUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<FrequencyUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
@@ -642,7 +837,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="Gu.Units.Frequency"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Frequency"/> object.
+        /// Compares this instance to a specified <see cref="Gu.Units.Frequency"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Frequency"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -696,6 +891,13 @@
             return Math.Abs(this.hertz - other.hertz) < tolerance.hertz;
         }
 
+        /// <summary>
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.Frequency"/> object.
+        /// </summary>
+        /// <param name="obj">An object to compare with this instance.</param>
+        /// <returns>
+        /// true if <paramref name="obj"/> represents the same <see cref="Gu.Units.Frequency"/> as this instance; otherwise, false.
+        /// </returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -706,6 +908,10 @@
             return obj is Frequency && this.Equals((Frequency)obj);
         }
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
         public override int GetHashCode()
         {
             return this.hertz.GetHashCode();

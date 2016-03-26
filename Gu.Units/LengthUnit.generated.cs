@@ -108,11 +108,27 @@
             return Length.From(left, right);
         }
 
-        public static bool operator ==(LengthUnit left, LengthUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.LengthUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.LengthUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.LengthUnit"/>.</param>
+	    public static bool operator ==(LengthUnit left, LengthUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.LengthUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.LengthUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.LengthUnit"/>.</param>
         public static bool operator !=(LengthUnit left, LengthUnit right)
         {
             return !left.Equals(right);
@@ -129,6 +145,14 @@
             return UnitParser<LengthUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="LengthUnit"/></param>
+        /// <returns>True if an instance of <see cref="LengthUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out LengthUnit value)
         {
             return UnitParser<LengthUnit>.TryParse(text, out value);

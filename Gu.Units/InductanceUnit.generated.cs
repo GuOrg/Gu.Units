@@ -84,11 +84,27 @@
             return Inductance.From(left, right);
         }
 
-        public static bool operator ==(InductanceUnit left, InductanceUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.InductanceUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.InductanceUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.InductanceUnit"/>.</param>
+	    public static bool operator ==(InductanceUnit left, InductanceUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.InductanceUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.InductanceUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.InductanceUnit"/>.</param>
         public static bool operator !=(InductanceUnit left, InductanceUnit right)
         {
             return !left.Equals(right);
@@ -105,6 +121,14 @@
             return UnitParser<InductanceUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.InductanceUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.InductanceUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="InductanceUnit"/></param>
+        /// <returns>True if an instance of <see cref="InductanceUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out InductanceUnit value)
         {
             return UnitParser<InductanceUnit>.TryParse(text, out value);

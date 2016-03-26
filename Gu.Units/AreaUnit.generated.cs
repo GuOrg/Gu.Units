@@ -96,11 +96,27 @@
             return Area.From(left, right);
         }
 
-        public static bool operator ==(AreaUnit left, AreaUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.AreaUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.AreaUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.AreaUnit"/>.</param>
+	    public static bool operator ==(AreaUnit left, AreaUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.AreaUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.AreaUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.AreaUnit"/>.</param>
         public static bool operator !=(AreaUnit left, AreaUnit right)
         {
             return !left.Equals(right);
@@ -117,6 +133,14 @@
             return UnitParser<AreaUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="AreaUnit"/></param>
+        /// <returns>True if an instance of <see cref="AreaUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out AreaUnit value)
         {
             return UnitParser<AreaUnit>.TryParse(text, out value);

@@ -13,7 +13,10 @@
     [Serializable]
     public partial struct MassFlow : IQuantity<MassFlowUnit>, IComparable<MassFlow>, IEquatable<MassFlow>
     {
-        public static readonly MassFlow Zero = new MassFlow();
+        /// <summary>
+        /// Gets a value that is zero <see cref="Gu.Units.MassFlowUnit.KilogramsPerSecond"/>
+        /// </summary>
+		public static readonly MassFlow Zero = new MassFlow();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.MassFlowUnit.KilogramsPerSecond"/>.
@@ -71,7 +74,7 @@
         /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
-        /// <returns></returns>
+        /// <returns>The <see cref="Gu.Units.MassFlow"/> parsed from <paramref name="text"/></returns>
 		public static MassFlow Parse(string text)
         {
             return QuantityParser.Parse<MassFlowUnit, MassFlow>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
@@ -81,7 +84,8 @@
         /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
-        /// <returns></returns>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.MassFlow"/> parsed from <paramref name="text"/></returns>
         public static MassFlow Parse(string text, IFormatProvider provider)
         {
             return QuantityParser.Parse<MassFlowUnit, MassFlow>(text, From, NumberStyles.Float, provider);
@@ -91,7 +95,8 @@
         /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.MassFlow"/> parsed from <paramref name="text"/></returns>
         public static MassFlow Parse(string text, NumberStyles styles)
         {
             return QuantityParser.Parse<MassFlowUnit, MassFlow>(text, From, styles, CultureInfo.CurrentCulture);
@@ -101,7 +106,9 @@
         /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.MassFlow"/> parsed from <paramref name="text"/></returns>
         public static MassFlow Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
             return QuantityParser.Parse<MassFlowUnit, MassFlow>(text, From, styles, provider);
@@ -111,7 +118,8 @@
         /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
-        /// <returns></returns>
+        /// <param name="result">The parsed <see cref="MassFlow"/></param>
+        /// <returns>True if an instance of <see cref="MassFlow"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out MassFlow result)
         {
             return QuantityParser.TryParse<MassFlowUnit, MassFlow>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
@@ -121,7 +129,9 @@
         /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
-        /// <returns></returns>		
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="MassFlow"/></param>
+        /// <returns>True if an instance of <see cref="MassFlow"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, IFormatProvider provider, out MassFlow result)
         {
             return QuantityParser.TryParse<MassFlowUnit, MassFlow>(text, From, NumberStyles.Float, provider, out result);
@@ -131,7 +141,9 @@
         /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="MassFlow"/></param>
+        /// <returns>True if an instance of <see cref="MassFlow"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, out MassFlow result)
         {
             return QuantityParser.TryParse<MassFlowUnit, MassFlow>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -141,7 +153,10 @@
         /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlow"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="MassFlow"/></param>
+        /// <returns>True if an instance of <see cref="MassFlow"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out MassFlow result)
         {
             return QuantityParser.TryParse<MassFlowUnit, MassFlow>(text, From, styles, provider, out result);
@@ -178,106 +193,232 @@
             return new MassFlow(kilogramsPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Frequency"/> that is the result from the division.</returns>
         public static Frequency operator /(MassFlow left, Mass right)
         {
             return Frequency.FromHertz(left.kilogramsPerSecond / right.kilograms);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Momentum"/> that is the result from the multiplication.</returns>
         public static Momentum operator *(MassFlow left, Length right)
         {
             return Momentum.FromNewtonSecond(left.kilogramsPerSecond * right.metres);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Mass"/> that is the result from the multiplication.</returns>
         public static Mass operator *(MassFlow left, Time right)
         {
             return Mass.FromKilograms(left.kilogramsPerSecond * right.seconds);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Stiffness"/> that is the result from the division.</returns>
         public static Stiffness operator /(MassFlow left, Time right)
         {
             return Stiffness.FromNewtonsPerMetre(left.kilogramsPerSecond / right.seconds);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="VolumetricFlow"/> that is the result from the division.</returns>
         public static VolumetricFlow operator /(MassFlow left, Density right)
         {
             return VolumetricFlow.FromCubicMetresPerSecond(left.kilogramsPerSecond / right.kilogramsPerCubicMetre);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Force"/> that is the result from the multiplication.</returns>
         public static Force operator *(MassFlow left, Speed right)
         {
             return Force.FromNewtons(left.kilogramsPerSecond * right.metresPerSecond);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Stiffness"/> that is the result from the multiplication.</returns>
         public static Stiffness operator *(MassFlow left, Frequency right)
         {
             return Stiffness.FromNewtonsPerMetre(left.kilogramsPerSecond * right.hertz);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Mass"/> that is the result from the division.</returns>
         public static Mass operator /(MassFlow left, Frequency right)
         {
             return Mass.FromKilograms(left.kilogramsPerSecond / right.hertz);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Time"/> that is the result from the division.</returns>
         public static Time operator /(MassFlow left, Stiffness right)
         {
             return Time.FromSeconds(left.kilogramsPerSecond / right.newtonsPerMetre);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Density"/> that is the result from the division.</returns>
         public static Density operator /(MassFlow left, VolumetricFlow right)
         {
             return Density.FromKilogramsPerCubicMetre(left.kilogramsPerSecond / right.cubicMetresPerSecond);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Power"/> that is the result from the multiplication.</returns>
         public static Power operator *(MassFlow left, SpecificEnergy right)
         {
             return Power.FromWatts(left.kilogramsPerSecond * right.joulesPerKilogram);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="MagneticFieldStrength"/> that is the result from the division.</returns>
         public static MagneticFieldStrength operator /(MassFlow left, ElectricCharge right)
         {
             return MagneticFieldStrength.FromTeslas(left.kilogramsPerSecond / right.coulombs);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Time"/> that is the result from the multiplication.</returns>
         public static Time operator *(MassFlow left, Flexibility right)
         {
             return Time.FromSeconds(left.kilogramsPerSecond * right.metresPerNewton);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="ElectricCharge"/> that is the result from the division.</returns>
         public static ElectricCharge operator /(MassFlow left, MagneticFieldStrength right)
         {
             return ElectricCharge.FromCoulombs(left.kilogramsPerSecond / right.teslas);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Wavenumber"/> that is the result from the division.</returns>
         public static Wavenumber operator /(MassFlow left, Momentum right)
         {
             return Wavenumber.FromReciprocalMetres(left.kilogramsPerSecond / right.newtonSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Momentum"/> that is the result from the division.</returns>
         public static Momentum operator /(MassFlow left, Wavenumber right)
         {
             return Momentum.FromNewtonSecond(left.kilogramsPerSecond / right.reciprocalMetres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="KinematicViscosity"/> that is the result from the division.</returns>
         public static KinematicViscosity operator /(MassFlow left, AreaDensity right)
         {
             return KinematicViscosity.FromSquareMetresPerSecond(left.kilogramsPerSecond / right.kilogramsPerSquareMetre);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="VolumetricFlow"/> that is the result from the multiplication.</returns>
         public static VolumetricFlow operator *(MassFlow left, SpecificVolume right)
         {
             return VolumetricFlow.FromCubicMetresPerSecond(left.kilogramsPerSecond * right.cubicMetresPerKilogram);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Energy"/> that is the result from the multiplication.</returns>
         public static Energy operator *(MassFlow left, KinematicViscosity right)
         {
             return Energy.FromJoules(left.kilogramsPerSecond * right.squareMetresPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="AreaDensity"/> that is the result from the division.</returns>
         public static AreaDensity operator /(MassFlow left, KinematicViscosity right)
         {
             return AreaDensity.FromKilogramsPerSquareMetre(left.kilogramsPerSecond / right.squareMetresPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="double"/> that is the result from the division.</returns>
         public static double operator /(MassFlow left, MassFlow right)
         {
             return left.kilogramsPerSecond / right.kilogramsPerSecond;
@@ -467,6 +608,7 @@
         /// <summary>
         /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
         /// </summary>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="MassFlow"/></returns>
         public string ToString(IFormatProvider provider)
         {
@@ -489,6 +631,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 kg/s\"</param>
+		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="MassFlow"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -523,48 +666,100 @@
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(MassFlowUnit unit)
         {
             var quantityFormat = FormatCache<MassFlowUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(MassFlowUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(MassFlowUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<MassFlowUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(MassFlowUnit unit, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(MassFlowUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MassFlowUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
-        public string ToString(MassFlowUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(MassFlowUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MassFlowUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, MassFlowUnit unit)
         {
             var quantityFormat = FormatCache<MassFlowUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(string valueFormat, MassFlowUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(string valueFormat, MassFlowUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<MassFlowUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, MassFlowUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MassFlowUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, MassFlowUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MassFlowUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
@@ -581,7 +776,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="Gu.Units.MassFlow"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.MassFlow"/> object.
+        /// Compares this instance to a specified <see cref="Gu.Units.MassFlow"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.MassFlow"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -635,6 +830,13 @@
             return Math.Abs(this.kilogramsPerSecond - other.kilogramsPerSecond) < tolerance.kilogramsPerSecond;
         }
 
+        /// <summary>
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.MassFlow"/> object.
+        /// </summary>
+        /// <param name="obj">An object to compare with this instance.</param>
+        /// <returns>
+        /// true if <paramref name="obj"/> represents the same <see cref="Gu.Units.MassFlow"/> as this instance; otherwise, false.
+        /// </returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -645,6 +847,10 @@
             return obj is MassFlow && this.Equals((MassFlow)obj);
         }
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
         public override int GetHashCode()
         {
             return this.kilogramsPerSecond.GetHashCode();

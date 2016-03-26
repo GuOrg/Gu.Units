@@ -13,7 +13,10 @@
     [Serializable]
     public partial struct Pressure : IQuantity<PressureUnit>, IComparable<Pressure>, IEquatable<Pressure>
     {
-        public static readonly Pressure Zero = new Pressure();
+        /// <summary>
+        /// Gets a value that is zero <see cref="Gu.Units.PressureUnit.Pascals"/>
+        /// </summary>
+		public static readonly Pressure Zero = new Pressure();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.PressureUnit.Pascals"/>.
@@ -126,7 +129,7 @@
         /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
-        /// <returns></returns>
+        /// <returns>The <see cref="Gu.Units.Pressure"/> parsed from <paramref name="text"/></returns>
 		public static Pressure Parse(string text)
         {
             return QuantityParser.Parse<PressureUnit, Pressure>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
@@ -136,7 +139,8 @@
         /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
-        /// <returns></returns>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Pressure"/> parsed from <paramref name="text"/></returns>
         public static Pressure Parse(string text, IFormatProvider provider)
         {
             return QuantityParser.Parse<PressureUnit, Pressure>(text, From, NumberStyles.Float, provider);
@@ -146,7 +150,8 @@
         /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Pressure"/> parsed from <paramref name="text"/></returns>
         public static Pressure Parse(string text, NumberStyles styles)
         {
             return QuantityParser.Parse<PressureUnit, Pressure>(text, From, styles, CultureInfo.CurrentCulture);
@@ -156,7 +161,9 @@
         /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Pressure"/> parsed from <paramref name="text"/></returns>
         public static Pressure Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
             return QuantityParser.Parse<PressureUnit, Pressure>(text, From, styles, provider);
@@ -166,7 +173,8 @@
         /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
-        /// <returns></returns>
+        /// <param name="result">The parsed <see cref="Pressure"/></param>
+        /// <returns>True if an instance of <see cref="Pressure"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out Pressure result)
         {
             return QuantityParser.TryParse<PressureUnit, Pressure>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
@@ -176,7 +184,9 @@
         /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
-        /// <returns></returns>		
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Pressure"/></param>
+        /// <returns>True if an instance of <see cref="Pressure"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, IFormatProvider provider, out Pressure result)
         {
             return QuantityParser.TryParse<PressureUnit, Pressure>(text, From, NumberStyles.Float, provider, out result);
@@ -186,7 +196,9 @@
         /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Pressure"/></param>
+        /// <returns>True if an instance of <see cref="Pressure"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, out Pressure result)
         {
             return QuantityParser.TryParse<PressureUnit, Pressure>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -196,7 +208,10 @@
         /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Pressure"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Pressure"/></param>
+        /// <returns>True if an instance of <see cref="Pressure"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Pressure result)
         {
             return QuantityParser.TryParse<PressureUnit, Pressure>(text, From, styles, provider, out result);
@@ -332,66 +347,144 @@
             return new Pressure(newtonsPerSquareMetre);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Stiffness"/> that is the result from the multiplication.</returns>
         public static Stiffness operator *(Pressure left, Length right)
         {
             return Stiffness.FromNewtonsPerMetre(left.pascals * right.metres);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Force"/> that is the result from the multiplication.</returns>
         public static Force operator *(Pressure left, Area right)
         {
             return Force.FromNewtons(left.pascals * right.squareMetres);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Energy"/> that is the result from the multiplication.</returns>
         public static Energy operator *(Pressure left, Volume right)
         {
             return Energy.FromJoules(left.pascals * right.cubicMetres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="SpecificEnergy"/> that is the result from the division.</returns>
         public static SpecificEnergy operator /(Pressure left, Density right)
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.pascals / right.kilogramsPerCubicMetre);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="AreaDensity"/> that is the result from the division.</returns>
         public static AreaDensity operator /(Pressure left, Acceleration right)
         {
             return AreaDensity.FromKilogramsPerSquareMetre(left.pascals / right.metresPerSecondSquared);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Wavenumber"/> that is the result from the division.</returns>
         public static Wavenumber operator /(Pressure left, Stiffness right)
         {
             return Wavenumber.FromReciprocalMetres(left.pascals / right.newtonsPerMetre);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Power"/> that is the result from the multiplication.</returns>
         public static Power operator *(Pressure left, VolumetricFlow right)
         {
             return Power.FromWatts(left.pascals * right.cubicMetresPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Density"/> that is the result from the division.</returns>
         public static Density operator /(Pressure left, SpecificEnergy right)
         {
             return Density.FromKilogramsPerCubicMetre(left.pascals / right.joulesPerKilogram);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Wavenumber"/> that is the result from the multiplication.</returns>
         public static Wavenumber operator *(Pressure left, Flexibility right)
         {
             return Wavenumber.FromReciprocalMetres(left.pascals * right.metresPerNewton);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Stiffness"/> that is the result from the division.</returns>
         public static Stiffness operator /(Pressure left, Wavenumber right)
         {
             return Stiffness.FromNewtonsPerMetre(left.pascals / right.reciprocalMetres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Acceleration"/> that is the result from the division.</returns>
         public static Acceleration operator /(Pressure left, AreaDensity right)
         {
             return Acceleration.FromMetresPerSecondSquared(left.pascals / right.kilogramsPerSquareMetre);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="SpecificEnergy"/> that is the result from the multiplication.</returns>
         public static SpecificEnergy operator *(Pressure left, SpecificVolume right)
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.pascals * right.cubicMetresPerKilogram);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="double"/> that is the result from the division.</returns>
         public static double operator /(Pressure left, Pressure right)
         {
             return left.pascals / right.pascals;
@@ -581,6 +674,7 @@
         /// <summary>
         /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
         /// </summary>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Pressure"/></returns>
         public string ToString(IFormatProvider provider)
         {
@@ -603,6 +697,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 Pa\"</param>
+		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Pressure"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -637,48 +732,100 @@
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(PressureUnit unit)
         {
             var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(PressureUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(PressureUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(PressureUnit unit, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(PressureUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
-        public string ToString(PressureUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(PressureUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, PressureUnit unit)
         {
             var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(string valueFormat, PressureUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(string valueFormat, PressureUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, PressureUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, PressureUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<PressureUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
@@ -695,7 +842,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="Gu.Units.Pressure"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Pressure"/> object.
+        /// Compares this instance to a specified <see cref="Gu.Units.Pressure"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Pressure"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -749,6 +896,13 @@
             return Math.Abs(this.pascals - other.pascals) < tolerance.pascals;
         }
 
+        /// <summary>
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.Pressure"/> object.
+        /// </summary>
+        /// <param name="obj">An object to compare with this instance.</param>
+        /// <returns>
+        /// true if <paramref name="obj"/> represents the same <see cref="Gu.Units.Pressure"/> as this instance; otherwise, false.
+        /// </returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -759,6 +913,10 @@
             return obj is Pressure && this.Equals((Pressure)obj);
         }
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
         public override int GetHashCode()
         {
             return this.pascals.GetHashCode();

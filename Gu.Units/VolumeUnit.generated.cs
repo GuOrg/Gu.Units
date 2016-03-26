@@ -96,11 +96,27 @@
             return Volume.From(left, right);
         }
 
-        public static bool operator ==(VolumeUnit left, VolumeUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.VolumeUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.VolumeUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.VolumeUnit"/>.</param>
+	    public static bool operator ==(VolumeUnit left, VolumeUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.VolumeUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.VolumeUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.VolumeUnit"/>.</param>
         public static bool operator !=(VolumeUnit left, VolumeUnit right)
         {
             return !left.Equals(right);
@@ -117,6 +133,14 @@
             return UnitParser<VolumeUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.VolumeUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.VolumeUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="VolumeUnit"/></param>
+        /// <returns>True if an instance of <see cref="VolumeUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out VolumeUnit value)
         {
             return UnitParser<VolumeUnit>.TryParse(text, out value);

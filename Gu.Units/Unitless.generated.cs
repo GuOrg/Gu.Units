@@ -13,7 +13,10 @@
     [Serializable]
     public partial struct Unitless : IQuantity<UnitlessUnit>, IComparable<Unitless>, IEquatable<Unitless>
     {
-        public static readonly Unitless Zero = new Unitless();
+        /// <summary>
+        /// Gets a value that is zero <see cref="Gu.Units.UnitlessUnit.Scalar"/>
+        /// </summary>
+		public static readonly Unitless Zero = new Unitless();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.UnitlessUnit.Scalar"/>.
@@ -86,7 +89,7 @@
         /// Creates an instance of <see cref="Gu.Units.Unitless"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Unitless"/></param>
-        /// <returns></returns>
+        /// <returns>The <see cref="Gu.Units.Unitless"/> parsed from <paramref name="text"/></returns>
 		public static Unitless Parse(string text)
         {
             return QuantityParser.Parse<UnitlessUnit, Unitless>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
@@ -96,7 +99,8 @@
         /// Creates an instance of <see cref="Gu.Units.Unitless"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Unitless"/></param>
-        /// <returns></returns>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Unitless"/> parsed from <paramref name="text"/></returns>
         public static Unitless Parse(string text, IFormatProvider provider)
         {
             return QuantityParser.Parse<UnitlessUnit, Unitless>(text, From, NumberStyles.Float, provider);
@@ -106,7 +110,8 @@
         /// Creates an instance of <see cref="Gu.Units.Unitless"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Unitless"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Unitless"/> parsed from <paramref name="text"/></returns>
         public static Unitless Parse(string text, NumberStyles styles)
         {
             return QuantityParser.Parse<UnitlessUnit, Unitless>(text, From, styles, CultureInfo.CurrentCulture);
@@ -116,7 +121,9 @@
         /// Creates an instance of <see cref="Gu.Units.Unitless"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Unitless"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Unitless"/> parsed from <paramref name="text"/></returns>
         public static Unitless Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
             return QuantityParser.Parse<UnitlessUnit, Unitless>(text, From, styles, provider);
@@ -126,7 +133,8 @@
         /// Creates an instance of <see cref="Gu.Units.Unitless"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Unitless"/></param>
-        /// <returns></returns>
+        /// <param name="result">The parsed <see cref="Unitless"/></param>
+        /// <returns>True if an instance of <see cref="Unitless"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out Unitless result)
         {
             return QuantityParser.TryParse<UnitlessUnit, Unitless>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
@@ -136,7 +144,9 @@
         /// Creates an instance of <see cref="Gu.Units.Unitless"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Unitless"/></param>
-        /// <returns></returns>		
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Unitless"/></param>
+        /// <returns>True if an instance of <see cref="Unitless"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, IFormatProvider provider, out Unitless result)
         {
             return QuantityParser.TryParse<UnitlessUnit, Unitless>(text, From, NumberStyles.Float, provider, out result);
@@ -146,7 +156,9 @@
         /// Creates an instance of <see cref="Gu.Units.Unitless"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Unitless"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Unitless"/></param>
+        /// <returns>True if an instance of <see cref="Unitless"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, out Unitless result)
         {
             return QuantityParser.TryParse<UnitlessUnit, Unitless>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -156,7 +168,10 @@
         /// Creates an instance of <see cref="Gu.Units.Unitless"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Unitless"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Unitless"/></param>
+        /// <returns>True if an instance of <see cref="Unitless"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Unitless result)
         {
             return QuantityParser.TryParse<UnitlessUnit, Unitless>(text, From, styles, provider, out result);
@@ -220,21 +235,45 @@
             return new Unitless(percents / 100);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Length"/> that is the result from the multiplication.</returns>
         public static Length operator *(Unitless left, LengthPerUnitless right)
         {
             return Length.FromMetres(left.scalar * right.metresPerUnitless);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Angle"/> that is the result from the multiplication.</returns>
         public static Angle operator *(Unitless left, AnglePerUnitless right)
         {
             return Angle.FromRadians(left.scalar * right.radiansPerUnitless);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Force"/> that is the result from the multiplication.</returns>
         public static Force operator *(Unitless left, ForcePerUnitless right)
         {
             return Force.FromNewtons(left.scalar * right.newtonsPerUnitless);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="double"/> that is the result from the division.</returns>
         public static double operator /(Unitless left, Unitless right)
         {
             return left.scalar / right.scalar;
@@ -424,6 +463,7 @@
         /// <summary>
         /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
         /// </summary>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Unitless"/></returns>
         public string ToString(IFormatProvider provider)
         {
@@ -446,6 +486,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 ul\"</param>
+		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Unitless"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -480,48 +521,100 @@
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(UnitlessUnit unit)
         {
             var quantityFormat = FormatCache<UnitlessUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(UnitlessUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(UnitlessUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<UnitlessUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(UnitlessUnit unit, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(UnitlessUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<UnitlessUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
-        public string ToString(UnitlessUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(UnitlessUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<UnitlessUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, UnitlessUnit unit)
         {
             var quantityFormat = FormatCache<UnitlessUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(string valueFormat, UnitlessUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(string valueFormat, UnitlessUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<UnitlessUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, UnitlessUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<UnitlessUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, UnitlessUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<UnitlessUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
@@ -538,7 +631,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="Gu.Units.Unitless"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Unitless"/> object.
+        /// Compares this instance to a specified <see cref="Gu.Units.Unitless"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Unitless"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -592,6 +685,13 @@
             return Math.Abs(this.scalar - other.scalar) < tolerance.scalar;
         }
 
+        /// <summary>
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.Unitless"/> object.
+        /// </summary>
+        /// <param name="obj">An object to compare with this instance.</param>
+        /// <returns>
+        /// true if <paramref name="obj"/> represents the same <see cref="Gu.Units.Unitless"/> as this instance; otherwise, false.
+        /// </returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -602,6 +702,10 @@
             return obj is Unitless && this.Equals((Unitless)obj);
         }
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
         public override int GetHashCode()
         {
             return this.scalar.GetHashCode();

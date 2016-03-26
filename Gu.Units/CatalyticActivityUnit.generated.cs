@@ -48,11 +48,27 @@
             return CatalyticActivity.From(left, right);
         }
 
-        public static bool operator ==(CatalyticActivityUnit left, CatalyticActivityUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.CatalyticActivityUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.CatalyticActivityUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.CatalyticActivityUnit"/>.</param>
+	    public static bool operator ==(CatalyticActivityUnit left, CatalyticActivityUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.CatalyticActivityUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.CatalyticActivityUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.CatalyticActivityUnit"/>.</param>
         public static bool operator !=(CatalyticActivityUnit left, CatalyticActivityUnit right)
         {
             return !left.Equals(right);
@@ -69,6 +85,14 @@
             return UnitParser<CatalyticActivityUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.CatalyticActivityUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivityUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="CatalyticActivityUnit"/></param>
+        /// <returns>True if an instance of <see cref="CatalyticActivityUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out CatalyticActivityUnit value)
         {
             return UnitParser<CatalyticActivityUnit>.TryParse(text, out value);

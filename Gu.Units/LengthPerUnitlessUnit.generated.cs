@@ -66,11 +66,27 @@
             return LengthPerUnitless.From(left, right);
         }
 
-        public static bool operator ==(LengthPerUnitlessUnit left, LengthPerUnitlessUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.LengthPerUnitlessUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.LengthPerUnitlessUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.LengthPerUnitlessUnit"/>.</param>
+	    public static bool operator ==(LengthPerUnitlessUnit left, LengthPerUnitlessUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.LengthPerUnitlessUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.LengthPerUnitlessUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.LengthPerUnitlessUnit"/>.</param>
         public static bool operator !=(LengthPerUnitlessUnit left, LengthPerUnitlessUnit right)
         {
             return !left.Equals(right);
@@ -87,6 +103,14 @@
             return UnitParser<LengthPerUnitlessUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitlessUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitlessUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="LengthPerUnitlessUnit"/></param>
+        /// <returns>True if an instance of <see cref="LengthPerUnitlessUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out LengthPerUnitlessUnit value)
         {
             return UnitParser<LengthPerUnitlessUnit>.TryParse(text, out value);

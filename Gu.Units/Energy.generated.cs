@@ -13,7 +13,10 @@
     [Serializable]
     public partial struct Energy : IQuantity<EnergyUnit>, IComparable<Energy>, IEquatable<Energy>
     {
-        public static readonly Energy Zero = new Energy();
+        /// <summary>
+        /// Gets a value that is zero <see cref="Gu.Units.EnergyUnit.Joules"/>
+        /// </summary>
+		public static readonly Energy Zero = new Energy();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.EnergyUnit.Joules"/>.
@@ -106,7 +109,7 @@
         /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
-        /// <returns></returns>
+        /// <returns>The <see cref="Gu.Units.Energy"/> parsed from <paramref name="text"/></returns>
 		public static Energy Parse(string text)
         {
             return QuantityParser.Parse<EnergyUnit, Energy>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
@@ -116,7 +119,8 @@
         /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
-        /// <returns></returns>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Energy"/> parsed from <paramref name="text"/></returns>
         public static Energy Parse(string text, IFormatProvider provider)
         {
             return QuantityParser.Parse<EnergyUnit, Energy>(text, From, NumberStyles.Float, provider);
@@ -126,7 +130,8 @@
         /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Energy"/> parsed from <paramref name="text"/></returns>
         public static Energy Parse(string text, NumberStyles styles)
         {
             return QuantityParser.Parse<EnergyUnit, Energy>(text, From, styles, CultureInfo.CurrentCulture);
@@ -136,7 +141,9 @@
         /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Energy"/> parsed from <paramref name="text"/></returns>
         public static Energy Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
             return QuantityParser.Parse<EnergyUnit, Energy>(text, From, styles, provider);
@@ -146,7 +153,8 @@
         /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
-        /// <returns></returns>
+        /// <param name="result">The parsed <see cref="Energy"/></param>
+        /// <returns>True if an instance of <see cref="Energy"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out Energy result)
         {
             return QuantityParser.TryParse<EnergyUnit, Energy>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
@@ -156,7 +164,9 @@
         /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
-        /// <returns></returns>		
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Energy"/></param>
+        /// <returns>True if an instance of <see cref="Energy"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, IFormatProvider provider, out Energy result)
         {
             return QuantityParser.TryParse<EnergyUnit, Energy>(text, From, NumberStyles.Float, provider, out result);
@@ -166,7 +176,9 @@
         /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Energy"/></param>
+        /// <returns>True if an instance of <see cref="Energy"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, out Energy result)
         {
             return QuantityParser.TryParse<EnergyUnit, Energy>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -176,7 +188,10 @@
         /// Creates an instance of <see cref="Gu.Units.Energy"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Energy"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Energy"/></param>
+        /// <returns>True if an instance of <see cref="Energy"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Energy result)
         {
             return QuantityParser.TryParse<EnergyUnit, Energy>(text, From, styles, provider, out result);
@@ -276,121 +291,265 @@
             return new Energy(3600000 * kilowattHours);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="SpecificEnergy"/> that is the result from the division.</returns>
         public static SpecificEnergy operator /(Energy left, Mass right)
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.joules / right.kilograms);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Force"/> that is the result from the division.</returns>
         public static Force operator /(Energy left, Length right)
         {
             return Force.FromNewtons(left.joules / right.metres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Power"/> that is the result from the division.</returns>
         public static Power operator /(Energy left, Time right)
         {
             return Power.FromWatts(left.joules / right.seconds);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Torque"/> that is the result from the division.</returns>
         public static Torque operator /(Energy left, Angle right)
         {
             return Torque.FromNewtonMetres(left.joules / right.radians);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="MagneticFlux"/> that is the result from the division.</returns>
         public static MagneticFlux operator /(Energy left, Current right)
         {
             return MagneticFlux.FromWebers(left.joules / right.amperes);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Stiffness"/> that is the result from the division.</returns>
         public static Stiffness operator /(Energy left, Area right)
         {
             return Stiffness.FromNewtonsPerMetre(left.joules / right.squareMetres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Pressure"/> that is the result from the division.</returns>
         public static Pressure operator /(Energy left, Volume right)
         {
             return Pressure.FromPascals(left.joules / right.cubicMetres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Length"/> that is the result from the division.</returns>
         public static Length operator /(Energy left, Force right)
         {
             return Length.FromMetres(left.joules / right.newtons);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Volume"/> that is the result from the division.</returns>
         public static Volume operator /(Energy left, Pressure right)
         {
             return Volume.FromCubicMetres(left.joules / right.pascals);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Time"/> that is the result from the division.</returns>
         public static Time operator /(Energy left, Power right)
         {
             return Time.FromSeconds(left.joules / right.watts);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Momentum"/> that is the result from the division.</returns>
         public static Momentum operator /(Energy left, Speed right)
         {
             return Momentum.FromNewtonSecond(left.joules / right.metresPerSecond);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Power"/> that is the result from the multiplication.</returns>
         public static Power operator *(Energy left, Frequency right)
         {
             return Power.FromWatts(left.joules * right.hertz);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Angle"/> that is the result from the division.</returns>
         public static Angle operator /(Energy left, Torque right)
         {
             return Angle.FromRadians(left.joules / right.newtonMetres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Area"/> that is the result from the division.</returns>
         public static Area operator /(Energy left, Stiffness right)
         {
             return Area.FromSquareMetres(left.joules / right.newtonsPerMetre);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="ElectricCharge"/> that is the result from the division.</returns>
         public static ElectricCharge operator /(Energy left, Voltage right)
         {
             return ElectricCharge.FromCoulombs(left.joules / right.volts);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Mass"/> that is the result from the division.</returns>
         public static Mass operator /(Energy left, SpecificEnergy right)
         {
             return Mass.FromKilograms(left.joules / right.joulesPerKilogram);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Voltage"/> that is the result from the division.</returns>
         public static Voltage operator /(Energy left, ElectricCharge right)
         {
             return Voltage.FromVolts(left.joules / right.coulombs);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Area"/> that is the result from the multiplication.</returns>
         public static Area operator *(Energy left, Flexibility right)
         {
             return Area.FromSquareMetres(left.joules * right.metresPerNewton);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Current"/> that is the result from the division.</returns>
         public static Current operator /(Energy left, MagneticFlux right)
         {
             return Current.FromAmperes(left.joules / right.webers);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Speed"/> that is the result from the division.</returns>
         public static Speed operator /(Energy left, Momentum right)
         {
             return Speed.FromMetresPerSecond(left.joules / right.newtonSecond);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Force"/> that is the result from the multiplication.</returns>
         public static Force operator *(Energy left, Wavenumber right)
         {
             return Force.FromNewtons(left.joules * right.reciprocalMetres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="KinematicViscosity"/> that is the result from the division.</returns>
         public static KinematicViscosity operator /(Energy left, MassFlow right)
         {
             return KinematicViscosity.FromSquareMetresPerSecond(left.joules / right.kilogramsPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="MassFlow"/> that is the result from the division.</returns>
         public static MassFlow operator /(Energy left, KinematicViscosity right)
         {
             return MassFlow.FromKilogramsPerSecond(left.joules / right.squareMetresPerSecond);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="double"/> that is the result from the division.</returns>
         public static double operator /(Energy left, Energy right)
         {
             return left.joules / right.joules;
@@ -580,6 +739,7 @@
         /// <summary>
         /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
         /// </summary>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Energy"/></returns>
         public string ToString(IFormatProvider provider)
         {
@@ -602,6 +762,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 J\"</param>
+		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Energy"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -636,48 +797,100 @@
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(EnergyUnit unit)
         {
             var quantityFormat = FormatCache<EnergyUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(EnergyUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(EnergyUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<EnergyUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(EnergyUnit unit, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(EnergyUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<EnergyUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
-        public string ToString(EnergyUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(EnergyUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<EnergyUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, EnergyUnit unit)
         {
             var quantityFormat = FormatCache<EnergyUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(string valueFormat, EnergyUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(string valueFormat, EnergyUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<EnergyUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, EnergyUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<EnergyUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, EnergyUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<EnergyUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
@@ -694,7 +907,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="Gu.Units.Energy"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Energy"/> object.
+        /// Compares this instance to a specified <see cref="Gu.Units.Energy"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Energy"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -748,6 +961,13 @@
             return Math.Abs(this.joules - other.joules) < tolerance.joules;
         }
 
+        /// <summary>
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.Energy"/> object.
+        /// </summary>
+        /// <param name="obj">An object to compare with this instance.</param>
+        /// <returns>
+        /// true if <paramref name="obj"/> represents the same <see cref="Gu.Units.Energy"/> as this instance; otherwise, false.
+        /// </returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -758,6 +978,10 @@
             return obj is Energy && this.Equals((Energy)obj);
         }
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
         public override int GetHashCode()
         {
             return this.joules.GetHashCode();

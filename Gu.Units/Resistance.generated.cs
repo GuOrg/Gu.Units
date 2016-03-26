@@ -13,7 +13,10 @@
     [Serializable]
     public partial struct Resistance : IQuantity<ResistanceUnit>, IComparable<Resistance>, IEquatable<Resistance>
     {
-        public static readonly Resistance Zero = new Resistance();
+        /// <summary>
+        /// Gets a value that is zero <see cref="Gu.Units.ResistanceUnit.Ohm"/>
+        /// </summary>
+		public static readonly Resistance Zero = new Resistance();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.ResistanceUnit.Ohm"/>.
@@ -91,7 +94,7 @@
         /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <returns></returns>
+        /// <returns>The <see cref="Gu.Units.Resistance"/> parsed from <paramref name="text"/></returns>
 		public static Resistance Parse(string text)
         {
             return QuantityParser.Parse<ResistanceUnit, Resistance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
@@ -101,7 +104,8 @@
         /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <returns></returns>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Resistance"/> parsed from <paramref name="text"/></returns>
         public static Resistance Parse(string text, IFormatProvider provider)
         {
             return QuantityParser.Parse<ResistanceUnit, Resistance>(text, From, NumberStyles.Float, provider);
@@ -111,7 +115,8 @@
         /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Resistance"/> parsed from <paramref name="text"/></returns>
         public static Resistance Parse(string text, NumberStyles styles)
         {
             return QuantityParser.Parse<ResistanceUnit, Resistance>(text, From, styles, CultureInfo.CurrentCulture);
@@ -121,7 +126,9 @@
         /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Resistance"/> parsed from <paramref name="text"/></returns>
         public static Resistance Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
             return QuantityParser.Parse<ResistanceUnit, Resistance>(text, From, styles, provider);
@@ -131,7 +138,8 @@
         /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <returns></returns>
+        /// <param name="result">The parsed <see cref="Resistance"/></param>
+        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out Resistance result)
         {
             return QuantityParser.TryParse<ResistanceUnit, Resistance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
@@ -141,7 +149,9 @@
         /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <returns></returns>		
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Resistance"/></param>
+        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, IFormatProvider provider, out Resistance result)
         {
             return QuantityParser.TryParse<ResistanceUnit, Resistance>(text, From, NumberStyles.Float, provider, out result);
@@ -151,7 +161,9 @@
         /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Resistance"/></param>
+        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, out Resistance result)
         {
             return QuantityParser.TryParse<ResistanceUnit, Resistance>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -161,7 +173,10 @@
         /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Resistance"/></param>
+        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Resistance result)
         {
             return QuantityParser.TryParse<ResistanceUnit, Resistance>(text, From, styles, provider, out result);
@@ -234,31 +249,67 @@
             return new Resistance(1000000 * megaohm);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Inductance"/> that is the result from the multiplication.</returns>
         public static Inductance operator *(Resistance left, Time right)
         {
             return Inductance.FromHenrys(left.ohm * right.seconds);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Voltage"/> that is the result from the multiplication.</returns>
         public static Voltage operator *(Resistance left, Current right)
         {
             return Voltage.FromVolts(left.ohm * right.amperes);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Inductance"/> that is the result from the division.</returns>
         public static Inductance operator /(Resistance left, Frequency right)
         {
             return Inductance.FromHenrys(left.ohm / right.hertz);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="MagneticFlux"/> that is the result from the multiplication.</returns>
         public static MagneticFlux operator *(Resistance left, ElectricCharge right)
         {
             return MagneticFlux.FromWebers(left.ohm * right.coulombs);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Frequency"/> that is the result from the division.</returns>
         public static Frequency operator /(Resistance left, Inductance right)
         {
             return Frequency.FromHertz(left.ohm / right.henrys);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Time"/> that is the result from the multiplication.</returns>
         public static Time operator *(Resistance left, Capacitance right)
         {
             return Time.FromSeconds(left.ohm * right.farads);
@@ -269,6 +320,12 @@
             return ElectricalConductance.FromSiemens(left / right.ohm);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="double"/> that is the result from the division.</returns>
         public static double operator /(Resistance left, Resistance right)
         {
             return left.ohm / right.ohm;
@@ -458,6 +515,7 @@
         /// <summary>
         /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
         /// </summary>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Resistance"/></returns>
         public string ToString(IFormatProvider provider)
         {
@@ -480,6 +538,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 Ω\"</param>
+		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Resistance"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -514,48 +573,100 @@
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(ResistanceUnit unit)
         {
             var quantityFormat = FormatCache<ResistanceUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(ResistanceUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(ResistanceUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<ResistanceUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(ResistanceUnit unit, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(ResistanceUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<ResistanceUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
-        public string ToString(ResistanceUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(ResistanceUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<ResistanceUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, ResistanceUnit unit)
         {
             var quantityFormat = FormatCache<ResistanceUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(string valueFormat, ResistanceUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(string valueFormat, ResistanceUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<ResistanceUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, ResistanceUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<ResistanceUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, ResistanceUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<ResistanceUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
@@ -572,7 +683,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="Gu.Units.Resistance"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Resistance"/> object.
+        /// Compares this instance to a specified <see cref="Gu.Units.Resistance"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Resistance"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -626,6 +737,13 @@
             return Math.Abs(this.ohm - other.ohm) < tolerance.ohm;
         }
 
+        /// <summary>
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.Resistance"/> object.
+        /// </summary>
+        /// <param name="obj">An object to compare with this instance.</param>
+        /// <returns>
+        /// true if <paramref name="obj"/> represents the same <see cref="Gu.Units.Resistance"/> as this instance; otherwise, false.
+        /// </returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -636,6 +754,10 @@
             return obj is Resistance && this.Equals((Resistance)obj);
         }
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
         public override int GetHashCode()
         {
             return this.ohm.GetHashCode();

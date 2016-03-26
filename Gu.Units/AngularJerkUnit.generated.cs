@@ -78,11 +78,27 @@
             return AngularJerk.From(left, right);
         }
 
-        public static bool operator ==(AngularJerkUnit left, AngularJerkUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.AngularJerkUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.AngularJerkUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.AngularJerkUnit"/>.</param>
+	    public static bool operator ==(AngularJerkUnit left, AngularJerkUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.AngularJerkUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.AngularJerkUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.AngularJerkUnit"/>.</param>
         public static bool operator !=(AngularJerkUnit left, AngularJerkUnit right)
         {
             return !left.Equals(right);
@@ -99,6 +115,14 @@
             return UnitParser<AngularJerkUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerkUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerkUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="AngularJerkUnit"/></param>
+        /// <returns>True if an instance of <see cref="AngularJerkUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out AngularJerkUnit value)
         {
             return UnitParser<AngularJerkUnit>.TryParse(text, out value);

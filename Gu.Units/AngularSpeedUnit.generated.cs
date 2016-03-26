@@ -84,11 +84,27 @@
             return AngularSpeed.From(left, right);
         }
 
-        public static bool operator ==(AngularSpeedUnit left, AngularSpeedUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.AngularSpeedUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.AngularSpeedUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.AngularSpeedUnit"/>.</param>
+	    public static bool operator ==(AngularSpeedUnit left, AngularSpeedUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.AngularSpeedUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.AngularSpeedUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.AngularSpeedUnit"/>.</param>
         public static bool operator !=(AngularSpeedUnit left, AngularSpeedUnit right)
         {
             return !left.Equals(right);
@@ -105,6 +121,14 @@
             return UnitParser<AngularSpeedUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularSpeedUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeedUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="AngularSpeedUnit"/></param>
+        /// <returns>True if an instance of <see cref="AngularSpeedUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out AngularSpeedUnit value)
         {
             return UnitParser<AngularSpeedUnit>.TryParse(text, out value);

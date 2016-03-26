@@ -48,11 +48,27 @@
             return KinematicViscosity.From(left, right);
         }
 
-        public static bool operator ==(KinematicViscosityUnit left, KinematicViscosityUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.KinematicViscosityUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.KinematicViscosityUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.KinematicViscosityUnit"/>.</param>
+	    public static bool operator ==(KinematicViscosityUnit left, KinematicViscosityUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.KinematicViscosityUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.KinematicViscosityUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.KinematicViscosityUnit"/>.</param>
         public static bool operator !=(KinematicViscosityUnit left, KinematicViscosityUnit right)
         {
             return !left.Equals(right);
@@ -69,6 +85,14 @@
             return UnitParser<KinematicViscosityUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.KinematicViscosityUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosityUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="KinematicViscosityUnit"/></param>
+        /// <returns>True if an instance of <see cref="KinematicViscosityUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out KinematicViscosityUnit value)
         {
             return UnitParser<KinematicViscosityUnit>.TryParse(text, out value);

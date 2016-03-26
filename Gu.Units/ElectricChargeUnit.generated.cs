@@ -84,11 +84,27 @@
             return ElectricCharge.From(left, right);
         }
 
-        public static bool operator ==(ElectricChargeUnit left, ElectricChargeUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.ElectricChargeUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.ElectricChargeUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.ElectricChargeUnit"/>.</param>
+	    public static bool operator ==(ElectricChargeUnit left, ElectricChargeUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.ElectricChargeUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.ElectricChargeUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.ElectricChargeUnit"/>.</param>
         public static bool operator !=(ElectricChargeUnit left, ElectricChargeUnit right)
         {
             return !left.Equals(right);
@@ -105,6 +121,14 @@
             return UnitParser<ElectricChargeUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricChargeUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricChargeUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="ElectricChargeUnit"/></param>
+        /// <returns>True if an instance of <see cref="ElectricChargeUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out ElectricChargeUnit value)
         {
             return UnitParser<ElectricChargeUnit>.TryParse(text, out value);

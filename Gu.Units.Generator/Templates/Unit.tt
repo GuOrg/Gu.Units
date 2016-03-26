@@ -72,11 +72,27 @@ namespace <#= Settings.Namespace #>
             return <#= unit.QuantityName #>.From(left, right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.</param>
+        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.</param>
 	    public static bool operator ==(<#= unit.ClassName #> left, <#= unit.ClassName #> right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.</param>
+        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.</param>
         public static bool operator !=(<#= unit.ClassName #> left, <#= unit.ClassName #> right)
         {
             return !left.Equals(right);
@@ -93,6 +109,14 @@ namespace <#= Settings.Namespace #>
             return UnitParser<<#= unit.ClassName #>>.Parse(text);
         }
 
+		/// <summary>
+        /// Creates an instance of <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+		/// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="<#= unit.ClassName #>"/></param>
+        /// <returns>True if an instance of <see cref="<#= unit.ClassName #>"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out <#= unit.ClassName #> value)
         {
             return UnitParser<<#= unit.ClassName #>>.TryParse(text, out value);

@@ -13,7 +13,10 @@
     [Serializable]
     public partial struct Stiffness : IQuantity<StiffnessUnit>, IComparable<Stiffness>, IEquatable<Stiffness>
     {
-        public static readonly Stiffness Zero = new Stiffness();
+        /// <summary>
+        /// Gets a value that is zero <see cref="Gu.Units.StiffnessUnit.NewtonsPerMetre"/>
+        /// </summary>
+		public static readonly Stiffness Zero = new Stiffness();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.StiffnessUnit.NewtonsPerMetre"/>.
@@ -126,7 +129,7 @@
         /// Creates an instance of <see cref="Gu.Units.Stiffness"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Stiffness"/></param>
-        /// <returns></returns>
+        /// <returns>The <see cref="Gu.Units.Stiffness"/> parsed from <paramref name="text"/></returns>
 		public static Stiffness Parse(string text)
         {
             return QuantityParser.Parse<StiffnessUnit, Stiffness>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
@@ -136,7 +139,8 @@
         /// Creates an instance of <see cref="Gu.Units.Stiffness"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Stiffness"/></param>
-        /// <returns></returns>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Stiffness"/> parsed from <paramref name="text"/></returns>
         public static Stiffness Parse(string text, IFormatProvider provider)
         {
             return QuantityParser.Parse<StiffnessUnit, Stiffness>(text, From, NumberStyles.Float, provider);
@@ -146,7 +150,8 @@
         /// Creates an instance of <see cref="Gu.Units.Stiffness"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Stiffness"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Stiffness"/> parsed from <paramref name="text"/></returns>
         public static Stiffness Parse(string text, NumberStyles styles)
         {
             return QuantityParser.Parse<StiffnessUnit, Stiffness>(text, From, styles, CultureInfo.CurrentCulture);
@@ -156,7 +161,9 @@
         /// Creates an instance of <see cref="Gu.Units.Stiffness"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Stiffness"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Stiffness"/> parsed from <paramref name="text"/></returns>
         public static Stiffness Parse(string text, NumberStyles styles, IFormatProvider provider)
         {
             return QuantityParser.Parse<StiffnessUnit, Stiffness>(text, From, styles, provider);
@@ -166,7 +173,8 @@
         /// Creates an instance of <see cref="Gu.Units.Stiffness"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Stiffness"/></param>
-        /// <returns></returns>
+        /// <param name="result">The parsed <see cref="Stiffness"/></param>
+        /// <returns>True if an instance of <see cref="Stiffness"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out Stiffness result)
         {
             return QuantityParser.TryParse<StiffnessUnit, Stiffness>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
@@ -176,7 +184,9 @@
         /// Creates an instance of <see cref="Gu.Units.Stiffness"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Stiffness"/></param>
-        /// <returns></returns>		
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Stiffness"/></param>
+        /// <returns>True if an instance of <see cref="Stiffness"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, IFormatProvider provider, out Stiffness result)
         {
             return QuantityParser.TryParse<StiffnessUnit, Stiffness>(text, From, NumberStyles.Float, provider, out result);
@@ -186,7 +196,9 @@
         /// Creates an instance of <see cref="Gu.Units.Stiffness"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Stiffness"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Stiffness"/></param>
+        /// <returns>True if an instance of <see cref="Stiffness"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, out Stiffness result)
         {
             return QuantityParser.TryParse<StiffnessUnit, Stiffness>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -196,7 +208,10 @@
         /// Creates an instance of <see cref="Gu.Units.Stiffness"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Stiffness"/></param>
-        /// <returns></returns>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Stiffness"/></param>
+        /// <returns>True if an instance of <see cref="Stiffness"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Stiffness result)
         {
             return QuantityParser.TryParse<StiffnessUnit, Stiffness>(text, From, styles, provider, out result);
@@ -332,81 +347,177 @@
             return new Stiffness(1000000000000 * giganewtonsPerMillimetre);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Force"/> that is the result from the multiplication.</returns>
         public static Force operator *(Stiffness left, Length right)
         {
             return Force.FromNewtons(left.newtonsPerMetre * right.metres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Pressure"/> that is the result from the division.</returns>
         public static Pressure operator /(Stiffness left, Length right)
         {
             return Pressure.FromPascals(left.newtonsPerMetre / right.metres);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="MassFlow"/> that is the result from the multiplication.</returns>
         public static MassFlow operator *(Stiffness left, Time right)
         {
             return MassFlow.FromKilogramsPerSecond(left.newtonsPerMetre * right.seconds);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="MagneticFieldStrength"/> that is the result from the division.</returns>
         public static MagneticFieldStrength operator /(Stiffness left, Current right)
         {
             return MagneticFieldStrength.FromTeslas(left.newtonsPerMetre / right.amperes);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Energy"/> that is the result from the multiplication.</returns>
         public static Energy operator *(Stiffness left, Area right)
         {
             return Energy.FromJoules(left.newtonsPerMetre * right.squareMetres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Wavenumber"/> that is the result from the division.</returns>
         public static Wavenumber operator /(Stiffness left, Force right)
         {
             return Wavenumber.FromReciprocalMetres(left.newtonsPerMetre / right.newtons);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Length"/> that is the result from the division.</returns>
         public static Length operator /(Stiffness left, Pressure right)
         {
             return Length.FromMetres(left.newtonsPerMetre / right.pascals);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="MassFlow"/> that is the result from the division.</returns>
         public static MassFlow operator /(Stiffness left, Frequency right)
         {
             return MassFlow.FromKilogramsPerSecond(left.newtonsPerMetre / right.hertz);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="AreaDensity"/> that is the result from the division.</returns>
         public static AreaDensity operator /(Stiffness left, SpecificEnergy right)
         {
             return AreaDensity.FromKilogramsPerSquareMetre(left.newtonsPerMetre / right.joulesPerKilogram);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="ForcePerUnitless"/> that is the result from the multiplication.</returns>
         public static ForcePerUnitless operator *(Stiffness left, LengthPerUnitless right)
         {
             return ForcePerUnitless.FromNewtonsPerUnitless(left.newtonsPerMetre * right.metresPerUnitless);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Current"/> that is the result from the division.</returns>
         public static Current operator /(Stiffness left, MagneticFieldStrength right)
         {
             return Current.FromAmperes(left.newtonsPerMetre / right.teslas);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Pressure"/> that is the result from the multiplication.</returns>
         public static Pressure operator *(Stiffness left, Wavenumber right)
         {
             return Pressure.FromPascals(left.newtonsPerMetre * right.reciprocalMetres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Force"/> that is the result from the division.</returns>
         public static Force operator /(Stiffness left, Wavenumber right)
         {
             return Force.FromNewtons(left.newtonsPerMetre / right.reciprocalMetres);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="SpecificEnergy"/> that is the result from the division.</returns>
         public static SpecificEnergy operator /(Stiffness left, AreaDensity right)
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.newtonsPerMetre / right.kilogramsPerSquareMetre);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Frequency"/> that is the result from the division.</returns>
         public static Frequency operator /(Stiffness left, MassFlow right)
         {
             return Frequency.FromHertz(left.newtonsPerMetre / right.kilogramsPerSecond);
         }
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Power"/> that is the result from the multiplication.</returns>
         public static Power operator *(Stiffness left, KinematicViscosity right)
         {
             return Power.FromWatts(left.newtonsPerMetre * right.squareMetresPerSecond);
@@ -417,6 +528,12 @@
             return Flexibility.FromMetresPerNewton(left / right.newtonsPerMetre);
         }
 
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="double"/> that is the result from the division.</returns>
         public static double operator /(Stiffness left, Stiffness right)
         {
             return left.newtonsPerMetre / right.newtonsPerMetre;
@@ -606,6 +723,7 @@
         /// <summary>
         /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
         /// </summary>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Stiffness"/></returns>
         public string ToString(IFormatProvider provider)
         {
@@ -628,6 +746,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 N/m\"</param>
+		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Stiffness"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -662,48 +781,100 @@
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(StiffnessUnit unit)
         {
             var quantityFormat = FormatCache<StiffnessUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(StiffnessUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(StiffnessUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<StiffnessUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(StiffnessUnit unit, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(StiffnessUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<StiffnessUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
-        public string ToString(StiffnessUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(StiffnessUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<StiffnessUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, StiffnessUnit unit)
         {
             var quantityFormat = FormatCache<StiffnessUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, null);
         }
 
-        public string ToString(string valueFormat, StiffnessUnit unit, SymbolFormat symbolFormat)
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
+		public string ToString(string valueFormat, StiffnessUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<StiffnessUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, StiffnessUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<StiffnessUnit>.GetOrCreate(valueFormat, unit);
             return ToString(quantityFormat, formatProvider);
         }
 
+        /// <summary>
+        /// Converts the quantity value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
+        /// <param name="unit">The unit to use in the conversion</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
+        /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, StiffnessUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<StiffnessUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
@@ -720,7 +891,7 @@
         }
 
         /// <summary>
-        /// Compares this instance to a specified <see cref="Gu.Units.Stiffness"/> object and returns an integer that indicates whether this <see cref="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Stiffness"/> object.
+        /// Compares this instance to a specified <see cref="Gu.Units.Stiffness"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Stiffness"/> object.
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
@@ -774,6 +945,13 @@
             return Math.Abs(this.newtonsPerMetre - other.newtonsPerMetre) < tolerance.newtonsPerMetre;
         }
 
+        /// <summary>
+        /// Returns a quantity indicating whether this instance is equal to a specified <see cref="Gu.Units.Stiffness"/> object.
+        /// </summary>
+        /// <param name="obj">An object to compare with this instance.</param>
+        /// <returns>
+        /// true if <paramref name="obj"/> represents the same <see cref="Gu.Units.Stiffness"/> as this instance; otherwise, false.
+        /// </returns>
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -784,6 +962,10 @@
             return obj is Stiffness && this.Equals((Stiffness)obj);
         }
 
+        /// <summary>
+        /// Returns the hash code for this instance.
+        /// </summary>
+        /// <returns>A 32-bit signed integer hash code.</returns>
         public override int GetHashCode()
         {
             return this.newtonsPerMetre.GetHashCode();

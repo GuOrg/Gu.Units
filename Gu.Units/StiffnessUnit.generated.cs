@@ -114,11 +114,27 @@
             return Stiffness.From(left, right);
         }
 
-        public static bool operator ==(StiffnessUnit left, StiffnessUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.StiffnessUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.StiffnessUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.StiffnessUnit"/>.</param>
+	    public static bool operator ==(StiffnessUnit left, StiffnessUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.StiffnessUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.StiffnessUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.StiffnessUnit"/>.</param>
         public static bool operator !=(StiffnessUnit left, StiffnessUnit right)
         {
             return !left.Equals(right);
@@ -135,6 +151,14 @@
             return UnitParser<StiffnessUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.StiffnessUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.StiffnessUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="StiffnessUnit"/></param>
+        /// <returns>True if an instance of <see cref="StiffnessUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out StiffnessUnit value)
         {
             return UnitParser<StiffnessUnit>.TryParse(text, out value);

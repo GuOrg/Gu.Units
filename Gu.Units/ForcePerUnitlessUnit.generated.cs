@@ -72,11 +72,27 @@
             return ForcePerUnitless.From(left, right);
         }
 
-        public static bool operator ==(ForcePerUnitlessUnit left, ForcePerUnitlessUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.ForcePerUnitlessUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.ForcePerUnitlessUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.ForcePerUnitlessUnit"/>.</param>
+	    public static bool operator ==(ForcePerUnitlessUnit left, ForcePerUnitlessUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.ForcePerUnitlessUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.ForcePerUnitlessUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.ForcePerUnitlessUnit"/>.</param>
         public static bool operator !=(ForcePerUnitlessUnit left, ForcePerUnitlessUnit right)
         {
             return !left.Equals(right);
@@ -93,6 +109,14 @@
             return UnitParser<ForcePerUnitlessUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ForcePerUnitlessUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ForcePerUnitlessUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="ForcePerUnitlessUnit"/></param>
+        /// <returns>True if an instance of <see cref="ForcePerUnitlessUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out ForcePerUnitlessUnit value)
         {
             return UnitParser<ForcePerUnitlessUnit>.TryParse(text, out value);

@@ -114,11 +114,27 @@
             return VolumetricFlow.From(left, right);
         }
 
-        public static bool operator ==(VolumetricFlowUnit left, VolumetricFlowUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.VolumetricFlowUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.VolumetricFlowUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.VolumetricFlowUnit"/>.</param>
+	    public static bool operator ==(VolumetricFlowUnit left, VolumetricFlowUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.VolumetricFlowUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.VolumetricFlowUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.VolumetricFlowUnit"/>.</param>
         public static bool operator !=(VolumetricFlowUnit left, VolumetricFlowUnit right)
         {
             return !left.Equals(right);
@@ -135,6 +151,14 @@
             return UnitParser<VolumetricFlowUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.VolumetricFlowUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.VolumetricFlowUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="VolumetricFlowUnit"/></param>
+        /// <returns>True if an instance of <see cref="VolumetricFlowUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out VolumetricFlowUnit value)
         {
             return UnitParser<VolumetricFlowUnit>.TryParse(text, out value);

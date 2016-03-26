@@ -60,11 +60,27 @@
             return AnglePerUnitless.From(left, right);
         }
 
-        public static bool operator ==(AnglePerUnitlessUnit left, AnglePerUnitlessUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.AnglePerUnitlessUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.AnglePerUnitlessUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.AnglePerUnitlessUnit"/>.</param>
+	    public static bool operator ==(AnglePerUnitlessUnit left, AnglePerUnitlessUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.AnglePerUnitlessUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.AnglePerUnitlessUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.AnglePerUnitlessUnit"/>.</param>
         public static bool operator !=(AnglePerUnitlessUnit left, AnglePerUnitlessUnit right)
         {
             return !left.Equals(right);
@@ -81,6 +97,14 @@
             return UnitParser<AnglePerUnitlessUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AnglePerUnitlessUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AnglePerUnitlessUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="AnglePerUnitlessUnit"/></param>
+        /// <returns>True if an instance of <see cref="AnglePerUnitlessUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out AnglePerUnitlessUnit value)
         {
             return UnitParser<AnglePerUnitlessUnit>.TryParse(text, out value);

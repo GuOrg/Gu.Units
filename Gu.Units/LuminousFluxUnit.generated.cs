@@ -48,11 +48,27 @@
             return LuminousFlux.From(left, right);
         }
 
-        public static bool operator ==(LuminousFluxUnit left, LuminousFluxUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.LuminousFluxUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.LuminousFluxUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.LuminousFluxUnit"/>.</param>
+	    public static bool operator ==(LuminousFluxUnit left, LuminousFluxUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.LuminousFluxUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.LuminousFluxUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.LuminousFluxUnit"/>.</param>
         public static bool operator !=(LuminousFluxUnit left, LuminousFluxUnit right)
         {
             return !left.Equals(right);
@@ -69,6 +85,14 @@
             return UnitParser<LuminousFluxUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LuminousFluxUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LuminousFluxUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="LuminousFluxUnit"/></param>
+        /// <returns>True if an instance of <see cref="LuminousFluxUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out LuminousFluxUnit value)
         {
             return UnitParser<LuminousFluxUnit>.TryParse(text, out value);

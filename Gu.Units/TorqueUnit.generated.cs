@@ -48,11 +48,27 @@
             return Torque.From(left, right);
         }
 
-        public static bool operator ==(TorqueUnit left, TorqueUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.TorqueUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.TorqueUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.TorqueUnit"/>.</param>
+	    public static bool operator ==(TorqueUnit left, TorqueUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.TorqueUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.TorqueUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.TorqueUnit"/>.</param>
         public static bool operator !=(TorqueUnit left, TorqueUnit right)
         {
             return !left.Equals(right);
@@ -69,6 +85,14 @@
             return UnitParser<TorqueUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.TorqueUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.TorqueUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="TorqueUnit"/></param>
+        /// <returns>True if an instance of <see cref="TorqueUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out TorqueUnit value)
         {
             return UnitParser<TorqueUnit>.TryParse(text, out value);

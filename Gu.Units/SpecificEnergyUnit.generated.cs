@@ -48,11 +48,27 @@
             return SpecificEnergy.From(left, right);
         }
 
-        public static bool operator ==(SpecificEnergyUnit left, SpecificEnergyUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.SpecificEnergyUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.SpecificEnergyUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.SpecificEnergyUnit"/>.</param>
+	    public static bool operator ==(SpecificEnergyUnit left, SpecificEnergyUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.SpecificEnergyUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.SpecificEnergyUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.SpecificEnergyUnit"/>.</param>
         public static bool operator !=(SpecificEnergyUnit left, SpecificEnergyUnit right)
         {
             return !left.Equals(right);
@@ -69,6 +85,14 @@
             return UnitParser<SpecificEnergyUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SpecificEnergyUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergyUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="SpecificEnergyUnit"/></param>
+        /// <returns>True if an instance of <see cref="SpecificEnergyUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out SpecificEnergyUnit value)
         {
             return UnitParser<SpecificEnergyUnit>.TryParse(text, out value);

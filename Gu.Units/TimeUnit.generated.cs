@@ -78,11 +78,27 @@
             return Time.From(left, right);
         }
 
-        public static bool operator ==(TimeUnit left, TimeUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.TimeUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.TimeUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.TimeUnit"/>.</param>
+	    public static bool operator ==(TimeUnit left, TimeUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.TimeUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.TimeUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.TimeUnit"/>.</param>
         public static bool operator !=(TimeUnit left, TimeUnit right)
         {
             return !left.Equals(right);
@@ -99,6 +115,14 @@
             return UnitParser<TimeUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.TimeUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.TimeUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="TimeUnit"/></param>
+        /// <returns>True if an instance of <see cref="TimeUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out TimeUnit value)
         {
             return UnitParser<TimeUnit>.TryParse(text, out value);

@@ -72,11 +72,27 @@
             return Resistance.From(left, right);
         }
 
-        public static bool operator ==(ResistanceUnit left, ResistanceUnit right)
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.ResistanceUnit"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.ResistanceUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.ResistanceUnit"/>.</param>
+	    public static bool operator ==(ResistanceUnit left, ResistanceUnit right)
         {
             return left.Equals(right);
         }
 
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.ResistanceUnit"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.ResistanceUnit"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.ResistanceUnit"/>.</param>
         public static bool operator !=(ResistanceUnit left, ResistanceUnit right)
         {
             return !left.Equals(right);
@@ -93,6 +109,14 @@
             return UnitParser<ResistanceUnit>.Parse(text);
         }
 
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ResistanceUnit"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ResistanceUnit"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="ResistanceUnit"/></param>
+        /// <returns>True if an instance of <see cref="ResistanceUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out ResistanceUnit value)
         {
             return UnitParser<ResistanceUnit>.TryParse(text, out value);
