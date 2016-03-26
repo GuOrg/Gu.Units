@@ -7,6 +7,9 @@
     using System.Windows.Data;
     using System.Windows.Markup;
 
+    /// <summary>
+    /// An <see cref="IValueConverter"/> for quantities of type <see cref="Pressure"/>
+    /// </summary>
     [MarkupExtensionReturnType(typeof(IValueConverter))]
     public class PressureConverter : MarkupExtension, IValueConverter
     {
@@ -18,15 +21,25 @@
         private bool initialized;
         private StringBuilder errorText = new StringBuilder();
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="Gu.Units.Wpf.PressureConverter"/>.
+        /// </summary>
         public PressureConverter()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="Gu.Units.Wpf.PressureConverter"/>.
+        /// </summary>
+        /// <param name="unit"><see cref="Gu.Units.PressureUnit"/>.</param>
         public PressureConverter(PressureUnit unit)
         {
             Unit = unit;
         }
 
+        /// <summary>
+        /// Gets and sets the <see cref="PressureUnit"/>
+        /// </summary>
         [ConstructorArgument("unit"), TypeConverter(typeof(PressureUnitTypeConverter))]
         public PressureUnit? Unit
         {
@@ -46,6 +59,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets and sets the format to use when formatting the scalar part.
+        /// Formats valid for formatting <see cref="double"/> are valid
+        /// </summary>
         public string ValueFormat
         {
             get { return this.valueFormat; }
@@ -65,10 +82,19 @@
             }
         }
 
+        /// <summary>
+        /// Gets and sets the <see cref="SymbolFormat"/> that is used when formatting the unit.
+        /// </summary>
         public SymbolFormat? SymbolFormat { get; set; }
 
+        /// <summary>
+        /// Gets and sets the <see cref="Gu.Units.Wpf.UnitInput"/> that specifies if unit is allowed or required for user input.
+        /// </summary>
         public UnitInput? UnitInput { get; set; }
 
+        /// <summary>
+        /// Gets and sets the composite string format to use when formatting the quantity value.
+        /// </summary>
         public string StringFormat
         {
             get { return this.quantityFormat?.CompositeFormat; }
@@ -97,6 +123,7 @@
             }
         }
 
+        /// <inheritdoc />
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             // the binding does not have stringformat set at this point
@@ -127,6 +154,7 @@
             return this;
         }
 
+        /// <inheritdoc />
         public object Convert(object value,
             Type targetType,
             object parameter,
@@ -195,6 +223,7 @@
             return pressure.GetValue(this.unit.Value);
         }
 
+        /// <inheritdoc />
         public object ConvertBack(object value,
             Type targetType,
             object parameter,
