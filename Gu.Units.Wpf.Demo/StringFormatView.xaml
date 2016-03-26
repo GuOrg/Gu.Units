@@ -13,7 +13,7 @@
             <TextBox AutomationProperties.AutomationId="{x:Static local:AutomationIds.F2CmInDataTemplate}" Text="{Binding Length, Converter={units:LengthConverter}, StringFormat='{}{0:F2 cm}'}" />
         </DataTemplate>
     </UserControl.Resources>
-    <Grid>
+    <Grid IsSharedSizeScope="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -30,8 +30,8 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" SharedSizeGroup="LabelColumn"/>
+            <ColumnDefinition Width="Auto" SharedSizeGroup="ValueColumn" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
@@ -105,7 +105,8 @@
                 <ControlTemplate TargetType="{x:Type HeaderedContentControl}">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto"  SharedSizeGroup="LabelColumn"/>
+                            <ColumnDefinition Width="Auto"  SharedSizeGroup="ValueColumn" />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="{TemplateBinding Header}" />
