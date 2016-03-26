@@ -21,6 +21,12 @@
         private readonly Func<double, double> fromSteradians;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="SolidAngleUnit"/>.
+        /// </summary>
+        /// <param name="toSteradians">The conversion to <see cref="Steradians"/></param>
+        /// <param name="fromSteradians">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Steradians"/></param>
         public SolidAngleUnit(Func<double, double> toSteradians, Func<double, double> fromSteradians, string symbol)
         {
             this.toSteradians = toSteradians;
@@ -97,9 +103,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngleUnit"/></param>
         /// <param name="result">The parsed <see cref="SolidAngleUnit"/></param>
         /// <returns>True if an instance of <see cref="SolidAngleUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out SolidAngleUnit value)
+        public static bool TryParse(string text, out SolidAngleUnit result)
         {
-            return UnitParser<SolidAngleUnit>.TryParse(text, out value);
+            return UnitParser<SolidAngleUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -176,9 +182,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<SolidAngleUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<SolidAngleUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

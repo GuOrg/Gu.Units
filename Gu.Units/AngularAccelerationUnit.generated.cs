@@ -51,6 +51,12 @@
         private readonly Func<double, double> fromRadiansPerSecondSquared;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="AngularAccelerationUnit"/>.
+        /// </summary>
+        /// <param name="toRadiansPerSecondSquared">The conversion to <see cref="RadiansPerSecondSquared"/></param>
+        /// <param name="fromRadiansPerSecondSquared">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="RadiansPerSecondSquared"/></param>
         public AngularAccelerationUnit(Func<double, double> toRadiansPerSecondSquared, Func<double, double> fromRadiansPerSecondSquared, string symbol)
         {
             this.toRadiansPerSecondSquared = toRadiansPerSecondSquared;
@@ -127,9 +133,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.AngularAccelerationUnit"/></param>
         /// <param name="result">The parsed <see cref="AngularAccelerationUnit"/></param>
         /// <returns>True if an instance of <see cref="AngularAccelerationUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out AngularAccelerationUnit value)
+        public static bool TryParse(string text, out AngularAccelerationUnit result)
         {
-            return UnitParser<AngularAccelerationUnit>.TryParse(text, out value);
+            return UnitParser<AngularAccelerationUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -206,9 +212,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<AngularAccelerationUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<AngularAccelerationUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

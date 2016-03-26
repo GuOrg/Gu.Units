@@ -13,15 +13,40 @@
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AccelerationUnit.MetresPerSecondSquared"/>
         /// </summary>
         public static readonly AccelerationJsonConverter Default = new AccelerationJsonConverter(AccelerationUnit.MetresPerSecondSquared);
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AccelerationUnit.MetresPerSecondSquared"/>
         /// </summary>
         public static readonly AccelerationJsonConverter MetresPerSecondSquared = new AccelerationJsonConverter(AccelerationUnit.MetresPerSecondSquared);
+
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AccelerationUnit.CentimetresPerSecondSquared"/>
+        /// </summary>
         public static readonly AccelerationJsonConverter CentimetresPerSecondSquared = new AccelerationJsonConverter(AccelerationUnit.CentimetresPerSecondSquared);
+
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AccelerationUnit.MillimetresPerSecondSquared"/>
+        /// </summary>
         public static readonly AccelerationJsonConverter MillimetresPerSecondSquared = new AccelerationJsonConverter(AccelerationUnit.MillimetresPerSecondSquared);
+
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AccelerationUnit.MillimetresPerHourSquared"/>
+        /// </summary>
         public static readonly AccelerationJsonConverter MillimetresPerHourSquared = new AccelerationJsonConverter(AccelerationUnit.MillimetresPerHourSquared);
+
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AccelerationUnit.CentimetresPerHourSquared"/>
+        /// </summary>
         public static readonly AccelerationJsonConverter CentimetresPerHourSquared = new AccelerationJsonConverter(AccelerationUnit.CentimetresPerHourSquared);
+
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AccelerationUnit.MetresPerHourSquared"/>
+        /// </summary>
         public static readonly AccelerationJsonConverter MetresPerHourSquared = new AccelerationJsonConverter(AccelerationUnit.MetresPerHourSquared);
+
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AccelerationUnit.MetresPerMinuteSquared"/>
+        /// </summary>
         public static readonly AccelerationJsonConverter MetresPerMinuteSquared = new AccelerationJsonConverter(AccelerationUnit.MetresPerMinuteSquared);
 
         private readonly AccelerationUnit unit;

@@ -74,12 +74,12 @@
         {
             if (value is StiffnessUnit && destinationType != null)
             {
-                var unit = (StiffnessUnit)value;
-                if (destinationType == typeof(string))
+                var unit = (StiffnessUnit) value;
+                if (destinationType == typeof (string))
                 {
                     return unit.ToString();
                 }
-                else if (destinationType == typeof(InstanceDescriptor))
+                else if(destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(StiffnessUnit).GetMethod(nameof(StiffnessUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

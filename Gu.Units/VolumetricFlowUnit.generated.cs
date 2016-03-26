@@ -87,6 +87,12 @@
         private readonly Func<double, double> fromCubicMetresPerSecond;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="VolumetricFlowUnit"/>.
+        /// </summary>
+        /// <param name="toCubicMetresPerSecond">The conversion to <see cref="CubicMetresPerSecond"/></param>
+        /// <param name="fromCubicMetresPerSecond">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="CubicMetresPerSecond"/></param>
         public VolumetricFlowUnit(Func<double, double> toCubicMetresPerSecond, Func<double, double> fromCubicMetresPerSecond, string symbol)
         {
             this.toCubicMetresPerSecond = toCubicMetresPerSecond;
@@ -163,9 +169,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.VolumetricFlowUnit"/></param>
         /// <param name="result">The parsed <see cref="VolumetricFlowUnit"/></param>
         /// <returns>True if an instance of <see cref="VolumetricFlowUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out VolumetricFlowUnit value)
+        public static bool TryParse(string text, out VolumetricFlowUnit result)
         {
-            return UnitParser<VolumetricFlowUnit>.TryParse(text, out value);
+            return UnitParser<VolumetricFlowUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -242,9 +248,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<VolumetricFlowUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<VolumetricFlowUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

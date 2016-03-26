@@ -21,6 +21,12 @@
         private readonly Func<double, double> fromKilogramsPerSecond;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="MassFlowUnit"/>.
+        /// </summary>
+        /// <param name="toKilogramsPerSecond">The conversion to <see cref="KilogramsPerSecond"/></param>
+        /// <param name="fromKilogramsPerSecond">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="KilogramsPerSecond"/></param>
         public MassFlowUnit(Func<double, double> toKilogramsPerSecond, Func<double, double> fromKilogramsPerSecond, string symbol)
         {
             this.toKilogramsPerSecond = toKilogramsPerSecond;
@@ -97,9 +103,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlowUnit"/></param>
         /// <param name="result">The parsed <see cref="MassFlowUnit"/></param>
         /// <returns>True if an instance of <see cref="MassFlowUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out MassFlowUnit value)
+        public static bool TryParse(string text, out MassFlowUnit result)
         {
-            return UnitParser<MassFlowUnit>.TryParse(text, out value);
+            return UnitParser<MassFlowUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -176,9 +182,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<MassFlowUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<MassFlowUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

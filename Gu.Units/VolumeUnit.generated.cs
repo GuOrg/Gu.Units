@@ -69,6 +69,12 @@
         private readonly Func<double, double> fromCubicMetres;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="VolumeUnit"/>.
+        /// </summary>
+        /// <param name="toCubicMetres">The conversion to <see cref="CubicMetres"/></param>
+        /// <param name="fromCubicMetres">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="CubicMetres"/></param>
         public VolumeUnit(Func<double, double> toCubicMetres, Func<double, double> fromCubicMetres, string symbol)
         {
             this.toCubicMetres = toCubicMetres;
@@ -145,9 +151,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.VolumeUnit"/></param>
         /// <param name="result">The parsed <see cref="VolumeUnit"/></param>
         /// <returns>True if an instance of <see cref="VolumeUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out VolumeUnit value)
+        public static bool TryParse(string text, out VolumeUnit result)
         {
-            return UnitParser<VolumeUnit>.TryParse(text, out value);
+            return UnitParser<VolumeUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -224,9 +230,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<VolumeUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<VolumeUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

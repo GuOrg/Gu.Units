@@ -69,6 +69,12 @@
         private readonly Func<double, double> fromSquareMetres;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="AreaUnit"/>.
+        /// </summary>
+        /// <param name="toSquareMetres">The conversion to <see cref="SquareMetres"/></param>
+        /// <param name="fromSquareMetres">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="SquareMetres"/></param>
         public AreaUnit(Func<double, double> toSquareMetres, Func<double, double> fromSquareMetres, string symbol)
         {
             this.toSquareMetres = toSquareMetres;
@@ -145,9 +151,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.AreaUnit"/></param>
         /// <param name="result">The parsed <see cref="AreaUnit"/></param>
         /// <returns>True if an instance of <see cref="AreaUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out AreaUnit value)
+        public static bool TryParse(string text, out AreaUnit result)
         {
-            return UnitParser<AreaUnit>.TryParse(text, out value);
+            return UnitParser<AreaUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -224,9 +230,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<AreaUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<AreaUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

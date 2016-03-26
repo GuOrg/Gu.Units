@@ -3,18 +3,18 @@
     using System;
     using Newtonsoft.Json;
 
-    /// <summary>
+	/// <summary>
     /// <see cref="Newtonsoft.Json.JsonConverter" /> for the quantity <see cref="Gu.Units.Power"/>.
     /// </summary>
     [Serializable]
-    public class PowerJsonConverter : JsonConverter
-    {
+	public class PowerJsonConverter : JsonConverter
+	{
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="PowerUnit.Watts"/>
         /// </summary>
         public static readonly PowerJsonConverter Default = new PowerJsonConverter(PowerUnit.Watts);
-
-        /// <summary>
+       
+	    /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="PowerUnit.Watts"/>
         /// </summary>
         public static readonly PowerJsonConverter Watts = new PowerJsonConverter(PowerUnit.Watts);
@@ -56,20 +56,20 @@
             this.unit = unit;
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var power = (Power)value;
             serializer.Serialize(writer, power.ToString(this.unit, serializer.Culture));
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(Power);
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;

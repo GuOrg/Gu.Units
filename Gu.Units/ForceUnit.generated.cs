@@ -57,6 +57,12 @@
         private readonly Func<double, double> fromNewtons;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="ForceUnit"/>.
+        /// </summary>
+        /// <param name="toNewtons">The conversion to <see cref="Newtons"/></param>
+        /// <param name="fromNewtons">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Newtons"/></param>
         public ForceUnit(Func<double, double> toNewtons, Func<double, double> fromNewtons, string symbol)
         {
             this.toNewtons = toNewtons;
@@ -133,9 +139,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.ForceUnit"/></param>
         /// <param name="result">The parsed <see cref="ForceUnit"/></param>
         /// <returns>True if an instance of <see cref="ForceUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out ForceUnit value)
+        public static bool TryParse(string text, out ForceUnit result)
         {
-            return UnitParser<ForceUnit>.TryParse(text, out value);
+            return UnitParser<ForceUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -212,9 +218,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<ForceUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<ForceUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

@@ -74,12 +74,12 @@
         {
             if (value is SolidAngleUnit && destinationType != null)
             {
-                var unit = (SolidAngleUnit)value;
-                if (destinationType == typeof(string))
+                var unit = (SolidAngleUnit) value;
+                if (destinationType == typeof (string))
                 {
                     return unit.ToString();
                 }
-                else if (destinationType == typeof(InstanceDescriptor))
+                else if(destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(SolidAngleUnit).GetMethod(nameof(SolidAngleUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

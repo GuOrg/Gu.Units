@@ -21,6 +21,12 @@
         private readonly Func<double, double> fromWebers;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="MagneticFluxUnit"/>.
+        /// </summary>
+        /// <param name="toWebers">The conversion to <see cref="Webers"/></param>
+        /// <param name="fromWebers">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Webers"/></param>
         public MagneticFluxUnit(Func<double, double> toWebers, Func<double, double> fromWebers, string symbol)
         {
             this.toWebers = toWebers;
@@ -97,9 +103,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFluxUnit"/></param>
         /// <param name="result">The parsed <see cref="MagneticFluxUnit"/></param>
         /// <returns>True if an instance of <see cref="MagneticFluxUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out MagneticFluxUnit value)
+        public static bool TryParse(string text, out MagneticFluxUnit result)
         {
-            return UnitParser<MagneticFluxUnit>.TryParse(text, out value);
+            return UnitParser<MagneticFluxUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -176,9 +182,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<MagneticFluxUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<MagneticFluxUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

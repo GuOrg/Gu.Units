@@ -3,18 +3,18 @@
     using System;
     using Newtonsoft.Json;
 
-    /// <summary>
+	/// <summary>
     /// <see cref="Newtonsoft.Json.JsonConverter" /> for the quantity <see cref="Gu.Units.Pressure"/>.
     /// </summary>
     [Serializable]
-    public class PressureJsonConverter : JsonConverter
-    {
+	public class PressureJsonConverter : JsonConverter
+	{
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="PressureUnit.Pascals"/>
         /// </summary>
         public static readonly PressureJsonConverter Default = new PressureJsonConverter(PressureUnit.Pascals);
-
-        /// <summary>
+       
+	    /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="PressureUnit.Pascals"/>
         /// </summary>
         public static readonly PressureJsonConverter Pascals = new PressureJsonConverter(PressureUnit.Pascals);
@@ -81,20 +81,20 @@
             this.unit = unit;
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var pressure = (Pressure)value;
             serializer.Serialize(writer, pressure.ToString(this.unit, serializer.Culture));
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(Pressure);
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;

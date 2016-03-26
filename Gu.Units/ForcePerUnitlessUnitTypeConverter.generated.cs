@@ -74,12 +74,12 @@
         {
             if (value is ForcePerUnitlessUnit && destinationType != null)
             {
-                var unit = (ForcePerUnitlessUnit)value;
-                if (destinationType == typeof(string))
+                var unit = (ForcePerUnitlessUnit) value;
+                if (destinationType == typeof (string))
                 {
                     return unit.ToString();
                 }
-                else if (destinationType == typeof(InstanceDescriptor))
+                else if(destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(ForcePerUnitlessUnit).GetMethod(nameof(ForcePerUnitlessUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

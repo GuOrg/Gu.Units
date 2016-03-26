@@ -21,6 +21,12 @@
         private readonly Func<double, double> fromJoulesPerKilogram;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="SpecificEnergyUnit"/>.
+        /// </summary>
+        /// <param name="toJoulesPerKilogram">The conversion to <see cref="JoulesPerKilogram"/></param>
+        /// <param name="fromJoulesPerKilogram">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="JoulesPerKilogram"/></param>
         public SpecificEnergyUnit(Func<double, double> toJoulesPerKilogram, Func<double, double> fromJoulesPerKilogram, string symbol)
         {
             this.toJoulesPerKilogram = toJoulesPerKilogram;
@@ -97,9 +103,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergyUnit"/></param>
         /// <param name="result">The parsed <see cref="SpecificEnergyUnit"/></param>
         /// <returns>True if an instance of <see cref="SpecificEnergyUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out SpecificEnergyUnit value)
+        public static bool TryParse(string text, out SpecificEnergyUnit result)
         {
-            return UnitParser<SpecificEnergyUnit>.TryParse(text, out value);
+            return UnitParser<SpecificEnergyUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -176,9 +182,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<SpecificEnergyUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<SpecificEnergyUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

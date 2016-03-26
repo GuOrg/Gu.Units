@@ -81,6 +81,12 @@
         private readonly Func<double, double> fromMetres;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="LengthUnit"/>.
+        /// </summary>
+        /// <param name="toMetres">The conversion to <see cref="Metres"/></param>
+        /// <param name="fromMetres">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Metres"/></param>
         public LengthUnit(Func<double, double> toMetres, Func<double, double> fromMetres, string symbol)
         {
             this.toMetres = toMetres;
@@ -157,9 +163,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.LengthUnit"/></param>
         /// <param name="result">The parsed <see cref="LengthUnit"/></param>
         /// <returns>True if an instance of <see cref="LengthUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out LengthUnit value)
+        public static bool TryParse(string text, out LengthUnit result)
         {
-            return UnitParser<LengthUnit>.TryParse(text, out value);
+            return UnitParser<LengthUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -236,9 +242,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<LengthUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<LengthUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

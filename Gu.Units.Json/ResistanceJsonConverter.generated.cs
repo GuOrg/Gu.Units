@@ -3,18 +3,18 @@
     using System;
     using Newtonsoft.Json;
 
-    /// <summary>
+	/// <summary>
     /// <see cref="Newtonsoft.Json.JsonConverter" /> for the quantity <see cref="Gu.Units.Resistance"/>.
     /// </summary>
     [Serializable]
-    public class ResistanceJsonConverter : JsonConverter
-    {
+	public class ResistanceJsonConverter : JsonConverter
+	{
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Ohm"/>
         /// </summary>
         public static readonly ResistanceJsonConverter Default = new ResistanceJsonConverter(ResistanceUnit.Ohm);
-
-        /// <summary>
+       
+	    /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Ohm"/>
         /// </summary>
         public static readonly ResistanceJsonConverter Ohm = new ResistanceJsonConverter(ResistanceUnit.Ohm);
@@ -46,20 +46,20 @@
             this.unit = unit;
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var resistance = (Resistance)value;
             serializer.Serialize(writer, resistance.ToString(this.unit, serializer.Culture));
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(Resistance);
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;

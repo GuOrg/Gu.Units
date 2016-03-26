@@ -3,18 +3,18 @@
     using System;
     using Newtonsoft.Json;
 
-    /// <summary>
+	/// <summary>
     /// <see cref="Newtonsoft.Json.JsonConverter" /> for the quantity <see cref="Gu.Units.Unitless"/>.
     /// </summary>
     [Serializable]
-    public class UnitlessJsonConverter : JsonConverter
-    {
+	public class UnitlessJsonConverter : JsonConverter
+	{
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="UnitlessUnit.Scalar"/>
         /// </summary>
         public static readonly UnitlessJsonConverter Default = new UnitlessJsonConverter(UnitlessUnit.Scalar);
-
-        /// <summary>
+       
+	    /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="UnitlessUnit.Scalar"/>
         /// </summary>
         public static readonly UnitlessJsonConverter Scalar = new UnitlessJsonConverter(UnitlessUnit.Scalar);
@@ -41,20 +41,20 @@
             this.unit = unit;
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var unitless = (Unitless)value;
             serializer.Serialize(writer, unitless.ToString(this.unit, serializer.Culture));
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(Unitless);
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;

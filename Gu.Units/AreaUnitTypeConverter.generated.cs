@@ -74,12 +74,12 @@
         {
             if (value is AreaUnit && destinationType != null)
             {
-                var unit = (AreaUnit)value;
-                if (destinationType == typeof(string))
+                var unit = (AreaUnit) value;
+                if (destinationType == typeof (string))
                 {
                     return unit.ToString();
                 }
-                else if (destinationType == typeof(InstanceDescriptor))
+                else if(destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(AreaUnit).GetMethod(nameof(AreaUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

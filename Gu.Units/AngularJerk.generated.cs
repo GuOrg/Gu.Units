@@ -143,8 +143,8 @@
         /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
-        /// <param name="result">The parsed <see cref="Resistance"/></param>
-        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>
+        /// <param name="result">The parsed <see cref="AngularJerk"/></param>
+        /// <returns>True if an instance of <see cref="AngularJerk"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out AngularJerk result)
         {
             return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
@@ -155,8 +155,8 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Resistance"/></param>
-        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>	
+        /// <param name="result">The parsed <see cref="AngularJerk"/></param>
+        /// <returns>True if an instance of <see cref="AngularJerk"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, IFormatProvider provider, out AngularJerk result)
         {
             return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, NumberStyles.Float, provider, out result);
@@ -167,8 +167,8 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Resistance"/></param>
-        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>	
+        /// <param name="result">The parsed <see cref="AngularJerk"/></param>
+        /// <returns>True if an instance of <see cref="AngularJerk"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, out AngularJerk result)
         {
             return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -180,8 +180,8 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Resistance"/></param>
-        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>	
+        /// <param name="result">The parsed <see cref="AngularJerk"/></param>
+        /// <returns>True if an instance of <see cref="AngularJerk"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out AngularJerk result)
         {
             return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, styles, provider, out result);

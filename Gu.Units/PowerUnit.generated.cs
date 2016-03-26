@@ -57,6 +57,12 @@
         private readonly Func<double, double> fromWatts;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="PowerUnit"/>.
+        /// </summary>
+        /// <param name="toWatts">The conversion to <see cref="Watts"/></param>
+        /// <param name="fromWatts">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Watts"/></param>
         public PowerUnit(Func<double, double> toWatts, Func<double, double> fromWatts, string symbol)
         {
             this.toWatts = toWatts;
@@ -133,9 +139,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.PowerUnit"/></param>
         /// <param name="result">The parsed <see cref="PowerUnit"/></param>
         /// <returns>True if an instance of <see cref="PowerUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out PowerUnit value)
+        public static bool TryParse(string text, out PowerUnit result)
         {
-            return UnitParser<PowerUnit>.TryParse(text, out value);
+            return UnitParser<PowerUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -212,9 +218,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<PowerUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<PowerUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

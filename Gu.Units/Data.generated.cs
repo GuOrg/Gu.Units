@@ -158,8 +158,8 @@
         /// Creates an instance of <see cref="Gu.Units.Data"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Data"/></param>
-        /// <param name="result">The parsed <see cref="Resistance"/></param>
-        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>
+        /// <param name="result">The parsed <see cref="Data"/></param>
+        /// <returns>True if an instance of <see cref="Data"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out Data result)
         {
             return QuantityParser.TryParse<DataUnit, Data>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
@@ -170,8 +170,8 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Data"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Resistance"/></param>
-        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>	
+        /// <param name="result">The parsed <see cref="Data"/></param>
+        /// <returns>True if an instance of <see cref="Data"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, IFormatProvider provider, out Data result)
         {
             return QuantityParser.TryParse<DataUnit, Data>(text, From, NumberStyles.Float, provider, out result);
@@ -182,8 +182,8 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Data"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Resistance"/></param>
-        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>	
+        /// <param name="result">The parsed <see cref="Data"/></param>
+        /// <returns>True if an instance of <see cref="Data"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, out Data result)
         {
             return QuantityParser.TryParse<DataUnit, Data>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -195,8 +195,8 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.Data"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Resistance"/></param>
-        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>	
+        /// <param name="result">The parsed <see cref="Data"/></param>
+        /// <returns>True if an instance of <see cref="Data"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Data result)
         {
             return QuantityParser.TryParse<DataUnit, Data>(text, From, styles, provider, out result);
@@ -236,7 +236,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
-        /// <param name="byte">The value in B</param>
+        /// <param name="@byte">The value in B</param>
         public static Data FromByte(double @byte)
         {
             return new Data(8 * @byte);

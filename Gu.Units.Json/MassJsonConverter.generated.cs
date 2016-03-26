@@ -3,18 +3,18 @@
     using System;
     using Newtonsoft.Json;
 
-    /// <summary>
+	/// <summary>
     /// <see cref="Newtonsoft.Json.JsonConverter" /> for the quantity <see cref="Gu.Units.Mass"/>.
     /// </summary>
     [Serializable]
-    public class MassJsonConverter : JsonConverter
-    {
+	public class MassJsonConverter : JsonConverter
+	{
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="MassUnit.Kilograms"/>
         /// </summary>
         public static readonly MassJsonConverter Default = new MassJsonConverter(MassUnit.Kilograms);
-
-        /// <summary>
+       
+	    /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="MassUnit.Kilograms"/>
         /// </summary>
         public static readonly MassJsonConverter Kilograms = new MassJsonConverter(MassUnit.Kilograms);
@@ -41,20 +41,20 @@
             this.unit = unit;
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var mass = (Mass)value;
             serializer.Serialize(writer, mass.ToString(this.unit, serializer.Culture));
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(Mass);
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;

@@ -3,18 +3,18 @@
     using System;
     using Newtonsoft.Json;
 
-    /// <summary>
+	/// <summary>
     /// <see cref="Newtonsoft.Json.JsonConverter" /> for the quantity <see cref="Gu.Units.Stiffness"/>.
     /// </summary>
     [Serializable]
-    public class StiffnessJsonConverter : JsonConverter
-    {
+	public class StiffnessJsonConverter : JsonConverter
+	{
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="StiffnessUnit.NewtonsPerMetre"/>
         /// </summary>
         public static readonly StiffnessJsonConverter Default = new StiffnessJsonConverter(StiffnessUnit.NewtonsPerMetre);
-
-        /// <summary>
+       
+	    /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="StiffnessUnit.NewtonsPerMetre"/>
         /// </summary>
         public static readonly StiffnessJsonConverter NewtonsPerMetre = new StiffnessJsonConverter(StiffnessUnit.NewtonsPerMetre);
@@ -81,20 +81,20 @@
             this.unit = unit;
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var stiffness = (Stiffness)value;
             serializer.Serialize(writer, stiffness.ToString(this.unit, serializer.Culture));
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(Stiffness);
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;

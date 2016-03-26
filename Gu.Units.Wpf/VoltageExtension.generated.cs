@@ -3,13 +3,13 @@
     using System;
     using System.Windows.Markup;
 
-    /// <summary>
+	/// <summary>
     /// An <see cref="MarkupExtension"/> for quantities of type <see cref="Voltage"/> in XAML.
     /// </summary>
     [MarkupExtensionReturnType(typeof(Voltage))]
     public class VoltageExtension : MarkupExtension
     {
-        /// <summary>
+		/// <summary>
         /// Initializes a new instance of <see cref="Gu.Units.Wpf.VoltageExtension"/>.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Voltage"/>.</param>
@@ -18,12 +18,12 @@
             this.Value = value;
         }
 
-        /// <summary>
+		/// <summary>
         /// Gets the <see cref="Voltage"/> value
         /// </summary>		
         public Voltage Value { get; private set; }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             return this.Value;

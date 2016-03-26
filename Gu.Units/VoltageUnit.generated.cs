@@ -57,6 +57,12 @@
         private readonly Func<double, double> fromVolts;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="VoltageUnit"/>.
+        /// </summary>
+        /// <param name="toVolts">The conversion to <see cref="Volts"/></param>
+        /// <param name="fromVolts">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Volts"/></param>
         public VoltageUnit(Func<double, double> toVolts, Func<double, double> fromVolts, string symbol)
         {
             this.toVolts = toVolts;
@@ -133,9 +139,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.VoltageUnit"/></param>
         /// <param name="result">The parsed <see cref="VoltageUnit"/></param>
         /// <returns>True if an instance of <see cref="VoltageUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out VoltageUnit value)
+        public static bool TryParse(string text, out VoltageUnit result)
         {
-            return UnitParser<VoltageUnit>.TryParse(text, out value);
+            return UnitParser<VoltageUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -212,9 +218,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<VoltageUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<VoltageUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

@@ -75,6 +75,12 @@
         private readonly Func<double, double> fromMetresPerSecond;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="SpeedUnit"/>.
+        /// </summary>
+        /// <param name="toMetresPerSecond">The conversion to <see cref="MetresPerSecond"/></param>
+        /// <param name="fromMetresPerSecond">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="MetresPerSecond"/></param>
         public SpeedUnit(Func<double, double> toMetresPerSecond, Func<double, double> fromMetresPerSecond, string symbol)
         {
             this.toMetresPerSecond = toMetresPerSecond;
@@ -151,9 +157,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.SpeedUnit"/></param>
         /// <param name="result">The parsed <see cref="SpeedUnit"/></param>
         /// <returns>True if an instance of <see cref="SpeedUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out SpeedUnit value)
+        public static bool TryParse(string text, out SpeedUnit result)
         {
-            return UnitParser<SpeedUnit>.TryParse(text, out value);
+            return UnitParser<SpeedUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -230,9 +236,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<SpeedUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<SpeedUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

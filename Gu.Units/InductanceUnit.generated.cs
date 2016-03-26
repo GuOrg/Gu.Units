@@ -57,6 +57,12 @@
         private readonly Func<double, double> fromHenrys;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="InductanceUnit"/>.
+        /// </summary>
+        /// <param name="toHenrys">The conversion to <see cref="Henrys"/></param>
+        /// <param name="fromHenrys">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Henrys"/></param>
         public InductanceUnit(Func<double, double> toHenrys, Func<double, double> fromHenrys, string symbol)
         {
             this.toHenrys = toHenrys;
@@ -133,9 +139,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.InductanceUnit"/></param>
         /// <param name="result">The parsed <see cref="InductanceUnit"/></param>
         /// <returns>True if an instance of <see cref="InductanceUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out InductanceUnit value)
+        public static bool TryParse(string text, out InductanceUnit result)
         {
-            return UnitParser<InductanceUnit>.TryParse(text, out value);
+            return UnitParser<InductanceUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -212,9 +218,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<InductanceUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<InductanceUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

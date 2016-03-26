@@ -87,6 +87,12 @@
         private readonly Func<double, double> fromPascals;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="PressureUnit"/>.
+        /// </summary>
+        /// <param name="toPascals">The conversion to <see cref="Pascals"/></param>
+        /// <param name="fromPascals">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Pascals"/></param>
         public PressureUnit(Func<double, double> toPascals, Func<double, double> fromPascals, string symbol)
         {
             this.toPascals = toPascals;
@@ -163,9 +169,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.PressureUnit"/></param>
         /// <param name="result">The parsed <see cref="PressureUnit"/></param>
         /// <returns>True if an instance of <see cref="PressureUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out PressureUnit value)
+        public static bool TryParse(string text, out PressureUnit result)
         {
-            return UnitParser<PressureUnit>.TryParse(text, out value);
+            return UnitParser<PressureUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -242,9 +248,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<PressureUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<PressureUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

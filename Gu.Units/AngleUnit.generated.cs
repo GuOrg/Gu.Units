@@ -27,6 +27,12 @@
         private readonly Func<double, double> fromRadians;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="AngleUnit"/>.
+        /// </summary>
+        /// <param name="toRadians">The conversion to <see cref="Radians"/></param>
+        /// <param name="fromRadians">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Radians"/></param>
         public AngleUnit(Func<double, double> toRadians, Func<double, double> fromRadians, string symbol)
         {
             this.toRadians = toRadians;
@@ -103,9 +109,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.AngleUnit"/></param>
         /// <param name="result">The parsed <see cref="AngleUnit"/></param>
         /// <returns>True if an instance of <see cref="AngleUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out AngleUnit value)
+        public static bool TryParse(string text, out AngleUnit result)
         {
-            return UnitParser<AngleUnit>.TryParse(text, out value);
+            return UnitParser<AngleUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -182,9 +188,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<AngleUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<AngleUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

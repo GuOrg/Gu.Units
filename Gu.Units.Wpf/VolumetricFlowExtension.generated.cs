@@ -3,13 +3,13 @@
     using System;
     using System.Windows.Markup;
 
-    /// <summary>
+	/// <summary>
     /// An <see cref="MarkupExtension"/> for quantities of type <see cref="VolumetricFlow"/> in XAML.
     /// </summary>
     [MarkupExtensionReturnType(typeof(VolumetricFlow))]
     public class VolumetricFlowExtension : MarkupExtension
     {
-        /// <summary>
+		/// <summary>
         /// Initializes a new instance of <see cref="Gu.Units.Wpf.VolumetricFlowExtension"/>.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.VolumetricFlow"/>.</param>
@@ -18,12 +18,12 @@
             this.Value = value;
         }
 
-        /// <summary>
+		/// <summary>
         /// Gets the <see cref="VolumetricFlow"/> value
         /// </summary>		
         public VolumetricFlow Value { get; private set; }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             return this.Value;

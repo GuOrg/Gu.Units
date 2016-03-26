@@ -74,12 +74,12 @@
         {
             if (value is CatalyticActivityUnit && destinationType != null)
             {
-                var unit = (CatalyticActivityUnit)value;
-                if (destinationType == typeof(string))
+                var unit = (CatalyticActivityUnit) value;
+                if (destinationType == typeof (string))
                 {
                     return unit.ToString();
                 }
-                else if (destinationType == typeof(InstanceDescriptor))
+                else if(destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(CatalyticActivityUnit).GetMethod(nameof(CatalyticActivityUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

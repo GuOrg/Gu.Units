@@ -21,6 +21,12 @@
         private readonly Func<double, double> fromReciprocalMetres;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="WavenumberUnit"/>.
+        /// </summary>
+        /// <param name="toReciprocalMetres">The conversion to <see cref="ReciprocalMetres"/></param>
+        /// <param name="fromReciprocalMetres">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="ReciprocalMetres"/></param>
         public WavenumberUnit(Func<double, double> toReciprocalMetres, Func<double, double> fromReciprocalMetres, string symbol)
         {
             this.toReciprocalMetres = toReciprocalMetres;
@@ -97,9 +103,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.WavenumberUnit"/></param>
         /// <param name="result">The parsed <see cref="WavenumberUnit"/></param>
         /// <returns>True if an instance of <see cref="WavenumberUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out WavenumberUnit value)
+        public static bool TryParse(string text, out WavenumberUnit result)
         {
-            return UnitParser<WavenumberUnit>.TryParse(text, out value);
+            return UnitParser<WavenumberUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -176,9 +182,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<WavenumberUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<WavenumberUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

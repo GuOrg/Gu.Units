@@ -74,12 +74,12 @@
         {
             if (value is DataUnit && destinationType != null)
             {
-                var unit = (DataUnit)value;
-                if (destinationType == typeof(string))
+                var unit = (DataUnit) value;
+                if (destinationType == typeof (string))
                 {
                     return unit.ToString();
                 }
-                else if (destinationType == typeof(InstanceDescriptor))
+                else if(destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(DataUnit).GetMethod(nameof(DataUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

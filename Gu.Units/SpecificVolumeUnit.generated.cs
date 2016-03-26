@@ -33,6 +33,12 @@
         private readonly Func<double, double> fromCubicMetresPerKilogram;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="SpecificVolumeUnit"/>.
+        /// </summary>
+        /// <param name="toCubicMetresPerKilogram">The conversion to <see cref="CubicMetresPerKilogram"/></param>
+        /// <param name="fromCubicMetresPerKilogram">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="CubicMetresPerKilogram"/></param>
         public SpecificVolumeUnit(Func<double, double> toCubicMetresPerKilogram, Func<double, double> fromCubicMetresPerKilogram, string symbol)
         {
             this.toCubicMetresPerKilogram = toCubicMetresPerKilogram;
@@ -109,9 +115,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificVolumeUnit"/></param>
         /// <param name="result">The parsed <see cref="SpecificVolumeUnit"/></param>
         /// <returns>True if an instance of <see cref="SpecificVolumeUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out SpecificVolumeUnit value)
+        public static bool TryParse(string text, out SpecificVolumeUnit result)
         {
-            return UnitParser<SpecificVolumeUnit>.TryParse(text, out value);
+            return UnitParser<SpecificVolumeUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -188,9 +194,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<SpecificVolumeUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<SpecificVolumeUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

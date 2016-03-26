@@ -39,6 +39,12 @@
         private readonly Func<double, double> fromMetresPerUnitless;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="LengthPerUnitlessUnit"/>.
+        /// </summary>
+        /// <param name="toMetresPerUnitless">The conversion to <see cref="MetresPerUnitless"/></param>
+        /// <param name="fromMetresPerUnitless">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="MetresPerUnitless"/></param>
         public LengthPerUnitlessUnit(Func<double, double> toMetresPerUnitless, Func<double, double> fromMetresPerUnitless, string symbol)
         {
             this.toMetresPerUnitless = toMetresPerUnitless;
@@ -115,9 +121,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitlessUnit"/></param>
         /// <param name="result">The parsed <see cref="LengthPerUnitlessUnit"/></param>
         /// <returns>True if an instance of <see cref="LengthPerUnitlessUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out LengthPerUnitlessUnit value)
+        public static bool TryParse(string text, out LengthPerUnitlessUnit result)
         {
-            return UnitParser<LengthPerUnitlessUnit>.TryParse(text, out value);
+            return UnitParser<LengthPerUnitlessUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -194,9 +200,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<LengthPerUnitlessUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<LengthPerUnitlessUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

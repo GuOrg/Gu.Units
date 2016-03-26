@@ -45,6 +45,12 @@
         private readonly Func<double, double> fromHertz;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="FrequencyUnit"/>.
+        /// </summary>
+        /// <param name="toHertz">The conversion to <see cref="Hertz"/></param>
+        /// <param name="fromHertz">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Hertz"/></param>
         public FrequencyUnit(Func<double, double> toHertz, Func<double, double> fromHertz, string symbol)
         {
             this.toHertz = toHertz;
@@ -121,9 +127,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.FrequencyUnit"/></param>
         /// <param name="result">The parsed <see cref="FrequencyUnit"/></param>
         /// <returns>True if an instance of <see cref="FrequencyUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out FrequencyUnit value)
+        public static bool TryParse(string text, out FrequencyUnit result)
         {
-            return UnitParser<FrequencyUnit>.TryParse(text, out value);
+            return UnitParser<FrequencyUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -200,9 +206,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<FrequencyUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<FrequencyUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

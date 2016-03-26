@@ -74,12 +74,12 @@
         {
             if (value is KinematicViscosityUnit && destinationType != null)
             {
-                var unit = (KinematicViscosityUnit)value;
-                if (destinationType == typeof(string))
+                var unit = (KinematicViscosityUnit) value;
+                if (destinationType == typeof (string))
                 {
                     return unit.ToString();
                 }
-                else if (destinationType == typeof(InstanceDescriptor))
+                else if(destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(KinematicViscosityUnit).GetMethod(nameof(KinematicViscosityUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

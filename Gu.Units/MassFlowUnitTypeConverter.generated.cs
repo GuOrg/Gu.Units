@@ -74,12 +74,12 @@
         {
             if (value is MassFlowUnit && destinationType != null)
             {
-                var unit = (MassFlowUnit)value;
-                if (destinationType == typeof(string))
+                var unit = (MassFlowUnit) value;
+                if (destinationType == typeof (string))
                 {
                     return unit.ToString();
                 }
-                else if (destinationType == typeof(InstanceDescriptor))
+                else if(destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(MassFlowUnit).GetMethod(nameof(MassFlowUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

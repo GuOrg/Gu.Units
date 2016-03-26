@@ -74,12 +74,12 @@
         {
             if (value is MagneticFieldStrengthUnit && destinationType != null)
             {
-                var unit = (MagneticFieldStrengthUnit)value;
-                if (destinationType == typeof(string))
+                var unit = (MagneticFieldStrengthUnit) value;
+                if (destinationType == typeof (string))
                 {
                     return unit.ToString();
                 }
-                else if (destinationType == typeof(InstanceDescriptor))
+                else if(destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(MagneticFieldStrengthUnit).GetMethod(nameof(MagneticFieldStrengthUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

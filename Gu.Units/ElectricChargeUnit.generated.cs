@@ -57,6 +57,12 @@
         private readonly Func<double, double> fromCoulombs;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="ElectricChargeUnit"/>.
+        /// </summary>
+        /// <param name="toCoulombs">The conversion to <see cref="Coulombs"/></param>
+        /// <param name="fromCoulombs">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Coulombs"/></param>
         public ElectricChargeUnit(Func<double, double> toCoulombs, Func<double, double> fromCoulombs, string symbol)
         {
             this.toCoulombs = toCoulombs;
@@ -133,9 +139,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricChargeUnit"/></param>
         /// <param name="result">The parsed <see cref="ElectricChargeUnit"/></param>
         /// <returns>True if an instance of <see cref="ElectricChargeUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out ElectricChargeUnit value)
+        public static bool TryParse(string text, out ElectricChargeUnit result)
         {
-            return UnitParser<ElectricChargeUnit>.TryParse(text, out value);
+            return UnitParser<ElectricChargeUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -212,9 +218,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<ElectricChargeUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<ElectricChargeUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

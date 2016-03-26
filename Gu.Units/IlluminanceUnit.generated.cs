@@ -21,6 +21,12 @@
         private readonly Func<double, double> fromLux;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="IlluminanceUnit"/>.
+        /// </summary>
+        /// <param name="toLux">The conversion to <see cref="Lux"/></param>
+        /// <param name="fromLux">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Lux"/></param>
         public IlluminanceUnit(Func<double, double> toLux, Func<double, double> fromLux, string symbol)
         {
             this.toLux = toLux;
@@ -97,9 +103,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.IlluminanceUnit"/></param>
         /// <param name="result">The parsed <see cref="IlluminanceUnit"/></param>
         /// <returns>True if an instance of <see cref="IlluminanceUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out IlluminanceUnit value)
+        public static bool TryParse(string text, out IlluminanceUnit result)
         {
-            return UnitParser<IlluminanceUnit>.TryParse(text, out value);
+            return UnitParser<IlluminanceUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -176,9 +182,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<IlluminanceUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<IlluminanceUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

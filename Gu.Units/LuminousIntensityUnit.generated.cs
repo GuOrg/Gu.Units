@@ -21,6 +21,12 @@
         private readonly Func<double, double> fromCandelas;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="LuminousIntensityUnit"/>.
+        /// </summary>
+        /// <param name="toCandelas">The conversion to <see cref="Candelas"/></param>
+        /// <param name="fromCandelas">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Candelas"/></param>
         public LuminousIntensityUnit(Func<double, double> toCandelas, Func<double, double> fromCandelas, string symbol)
         {
             this.toCandelas = toCandelas;
@@ -97,9 +103,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.LuminousIntensityUnit"/></param>
         /// <param name="result">The parsed <see cref="LuminousIntensityUnit"/></param>
         /// <returns>True if an instance of <see cref="LuminousIntensityUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out LuminousIntensityUnit value)
+        public static bool TryParse(string text, out LuminousIntensityUnit result)
         {
-            return UnitParser<LuminousIntensityUnit>.TryParse(text, out value);
+            return UnitParser<LuminousIntensityUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -176,9 +182,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<LuminousIntensityUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<LuminousIntensityUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

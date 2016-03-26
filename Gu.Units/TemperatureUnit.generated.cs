@@ -33,6 +33,12 @@
         private readonly Func<double, double> fromKelvin;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="TemperatureUnit"/>.
+        /// </summary>
+        /// <param name="toKelvin">The conversion to <see cref="Kelvin"/></param>
+        /// <param name="fromKelvin">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Kelvin"/></param>
         public TemperatureUnit(Func<double, double> toKelvin, Func<double, double> fromKelvin, string symbol)
         {
             this.toKelvin = toKelvin;
@@ -109,9 +115,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.TemperatureUnit"/></param>
         /// <param name="result">The parsed <see cref="TemperatureUnit"/></param>
         /// <returns>True if an instance of <see cref="TemperatureUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out TemperatureUnit value)
+        public static bool TryParse(string text, out TemperatureUnit result)
         {
-            return UnitParser<TemperatureUnit>.TryParse(text, out value);
+            return UnitParser<TemperatureUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -188,9 +194,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<TemperatureUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<TemperatureUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

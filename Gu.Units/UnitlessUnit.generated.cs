@@ -39,6 +39,12 @@
         private readonly Func<double, double> fromScalar;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="UnitlessUnit"/>.
+        /// </summary>
+        /// <param name="toScalar">The conversion to <see cref="Scalar"/></param>
+        /// <param name="fromScalar">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Scalar"/></param>
         public UnitlessUnit(Func<double, double> toScalar, Func<double, double> fromScalar, string symbol)
         {
             this.toScalar = toScalar;
@@ -115,9 +121,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.UnitlessUnit"/></param>
         /// <param name="result">The parsed <see cref="UnitlessUnit"/></param>
         /// <returns>True if an instance of <see cref="UnitlessUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out UnitlessUnit value)
+        public static bool TryParse(string text, out UnitlessUnit result)
         {
-            return UnitParser<UnitlessUnit>.TryParse(text, out value);
+            return UnitParser<UnitlessUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -194,9 +200,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<UnitlessUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<UnitlessUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

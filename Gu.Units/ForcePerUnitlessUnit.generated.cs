@@ -45,6 +45,12 @@
         private readonly Func<double, double> fromNewtonsPerUnitless;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="ForcePerUnitlessUnit"/>.
+        /// </summary>
+        /// <param name="toNewtonsPerUnitless">The conversion to <see cref="NewtonsPerUnitless"/></param>
+        /// <param name="fromNewtonsPerUnitless">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="NewtonsPerUnitless"/></param>
         public ForcePerUnitlessUnit(Func<double, double> toNewtonsPerUnitless, Func<double, double> fromNewtonsPerUnitless, string symbol)
         {
             this.toNewtonsPerUnitless = toNewtonsPerUnitless;
@@ -121,9 +127,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.ForcePerUnitlessUnit"/></param>
         /// <param name="result">The parsed <see cref="ForcePerUnitlessUnit"/></param>
         /// <returns>True if an instance of <see cref="ForcePerUnitlessUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out ForcePerUnitlessUnit value)
+        public static bool TryParse(string text, out ForcePerUnitlessUnit result)
         {
-            return UnitParser<ForcePerUnitlessUnit>.TryParse(text, out value);
+            return UnitParser<ForcePerUnitlessUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -200,9 +206,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<ForcePerUnitlessUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<ForcePerUnitlessUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

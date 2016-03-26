@@ -74,12 +74,12 @@
         {
             if (value is VoltageUnit && destinationType != null)
             {
-                var unit = (VoltageUnit)value;
-                if (destinationType == typeof(string))
+                var unit = (VoltageUnit) value;
+                if (destinationType == typeof (string))
                 {
                     return unit.ToString();
                 }
-                else if (destinationType == typeof(InstanceDescriptor))
+                else if(destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(VoltageUnit).GetMethod(nameof(VoltageUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

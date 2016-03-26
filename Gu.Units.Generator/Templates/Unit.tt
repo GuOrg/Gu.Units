@@ -7,7 +7,7 @@
 <#
 // Template used by UnitGenerator.tt
 var settings = Settings.Instance;
-var unit = settings.GetUnitByName(UnitName ?? settings.AllUnits[0].Name);
+var unit = settings.GetUnitByName(this.UnitName ?? settings.AllUnits[0].Name);
 #>
 namespace <#= Settings.Namespace #>
 {
@@ -45,6 +45,12 @@ namespace <#= Settings.Namespace #>
 		private readonly Func<double, double> from<#= unit.Name #>;
         internal readonly string symbol;
 
+		/// <summary>
+        /// Initializes a new instance of <see cref="<#= unit.ClassName #>"/>.
+        /// </summary>
+        /// <param name="to<#= unit.Name #>">The conversion to <see cref="<#= unit.Name #>"/></param>
+        /// <param name="from<#= unit.Name #>">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="<#= unit.Name #>"/></param>
         public <#= unit.ClassName #>(Func<double, double> to<#= unit.Name #>, Func<double, double> from<#= unit.Name #>, string symbol)
         {
 			this.to<#= unit.Name #> = to<#= unit.Name #>;
@@ -200,9 +206,9 @@ namespace <#= Settings.Namespace #>
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<<#= unit.ClassName #>>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<<#= unit.ClassName #>>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

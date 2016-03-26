@@ -3,18 +3,18 @@
     using System;
     using Newtonsoft.Json;
 
-    /// <summary>
+	/// <summary>
     /// <see cref="Newtonsoft.Json.JsonConverter" /> for the quantity <see cref="Gu.Units.Torque"/>.
     /// </summary>
     [Serializable]
-    public class TorqueJsonConverter : JsonConverter
-    {
+	public class TorqueJsonConverter : JsonConverter
+	{
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="TorqueUnit.NewtonMetres"/>
         /// </summary>
         public static readonly TorqueJsonConverter Default = new TorqueJsonConverter(TorqueUnit.NewtonMetres);
-
-        /// <summary>
+       
+	    /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="TorqueUnit.NewtonMetres"/>
         /// </summary>
         public static readonly TorqueJsonConverter NewtonMetres = new TorqueJsonConverter(TorqueUnit.NewtonMetres);
@@ -26,20 +26,20 @@
             this.unit = unit;
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var torque = (Torque)value;
             serializer.Serialize(writer, torque.ToString(this.unit, serializer.Culture));
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(Torque);
         }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;

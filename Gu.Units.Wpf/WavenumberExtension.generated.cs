@@ -3,13 +3,13 @@
     using System;
     using System.Windows.Markup;
 
-    /// <summary>
+	/// <summary>
     /// An <see cref="MarkupExtension"/> for quantities of type <see cref="Wavenumber"/> in XAML.
     /// </summary>
     [MarkupExtensionReturnType(typeof(Wavenumber))]
     public class WavenumberExtension : MarkupExtension
     {
-        /// <summary>
+		/// <summary>
         /// Initializes a new instance of <see cref="Gu.Units.Wpf.WavenumberExtension"/>.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Wavenumber"/>.</param>
@@ -18,12 +18,12 @@
             this.Value = value;
         }
 
-        /// <summary>
+		/// <summary>
         /// Gets the <see cref="Wavenumber"/> value
         /// </summary>		
         public Wavenumber Value { get; private set; }
 
-        /// <inheritdoc />
+		/// <inheritdoc />
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             return this.Value;

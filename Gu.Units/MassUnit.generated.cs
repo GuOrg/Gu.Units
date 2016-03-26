@@ -39,6 +39,12 @@
         private readonly Func<double, double> fromKilograms;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="MassUnit"/>.
+        /// </summary>
+        /// <param name="toKilograms">The conversion to <see cref="Kilograms"/></param>
+        /// <param name="fromKilograms">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Kilograms"/></param>
         public MassUnit(Func<double, double> toKilograms, Func<double, double> fromKilograms, string symbol)
         {
             this.toKilograms = toKilograms;
@@ -115,9 +121,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.MassUnit"/></param>
         /// <param name="result">The parsed <see cref="MassUnit"/></param>
         /// <returns>True if an instance of <see cref="MassUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out MassUnit value)
+        public static bool TryParse(string text, out MassUnit result)
         {
-            return UnitParser<MassUnit>.TryParse(text, out value);
+            return UnitParser<MassUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -194,9 +200,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<MassUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<MassUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

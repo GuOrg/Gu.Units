@@ -31,4 +31,5 @@ foreach (var quantity in settings.Quantities)
 }
 
 fileManager.Process();
+this.Dispose();
 #>

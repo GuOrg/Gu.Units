@@ -57,6 +57,12 @@
         private readonly Func<double, double> fromAmperes;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="CurrentUnit"/>.
+        /// </summary>
+        /// <param name="toAmperes">The conversion to <see cref="Amperes"/></param>
+        /// <param name="fromAmperes">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Amperes"/></param>
         public CurrentUnit(Func<double, double> toAmperes, Func<double, double> fromAmperes, string symbol)
         {
             this.toAmperes = toAmperes;
@@ -133,9 +139,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.CurrentUnit"/></param>
         /// <param name="result">The parsed <see cref="CurrentUnit"/></param>
         /// <returns>True if an instance of <see cref="CurrentUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out CurrentUnit value)
+        public static bool TryParse(string text, out CurrentUnit result)
         {
-            return UnitParser<CurrentUnit>.TryParse(text, out value);
+            return UnitParser<CurrentUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -212,9 +218,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<CurrentUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<CurrentUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

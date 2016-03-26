@@ -21,6 +21,12 @@
         private readonly Func<double, double> fromSquareMetresPerSecond;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="KinematicViscosityUnit"/>.
+        /// </summary>
+        /// <param name="toSquareMetresPerSecond">The conversion to <see cref="SquareMetresPerSecond"/></param>
+        /// <param name="fromSquareMetresPerSecond">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="SquareMetresPerSecond"/></param>
         public KinematicViscosityUnit(Func<double, double> toSquareMetresPerSecond, Func<double, double> fromSquareMetresPerSecond, string symbol)
         {
             this.toSquareMetresPerSecond = toSquareMetresPerSecond;
@@ -97,9 +103,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosityUnit"/></param>
         /// <param name="result">The parsed <see cref="KinematicViscosityUnit"/></param>
         /// <returns>True if an instance of <see cref="KinematicViscosityUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out KinematicViscosityUnit value)
+        public static bool TryParse(string text, out KinematicViscosityUnit result)
         {
-            return UnitParser<KinematicViscosityUnit>.TryParse(text, out value);
+            return UnitParser<KinematicViscosityUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -176,9 +182,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<KinematicViscosityUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<KinematicViscosityUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);

@@ -21,6 +21,12 @@
         private readonly Func<double, double> fromTeslas;
         internal readonly string symbol;
 
+        /// <summary>
+        /// Initializes a new instance of <see cref="MagneticFieldStrengthUnit"/>.
+        /// </summary>
+        /// <param name="toTeslas">The conversion to <see cref="Teslas"/></param>
+        /// <param name="fromTeslas">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Teslas"/></param>
         public MagneticFieldStrengthUnit(Func<double, double> toTeslas, Func<double, double> fromTeslas, string symbol)
         {
             this.toTeslas = toTeslas;
@@ -97,9 +103,9 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFieldStrengthUnit"/></param>
         /// <param name="result">The parsed <see cref="MagneticFieldStrengthUnit"/></param>
         /// <returns>True if an instance of <see cref="MagneticFieldStrengthUnit"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out MagneticFieldStrengthUnit value)
+        public static bool TryParse(string text, out MagneticFieldStrengthUnit result)
         {
-            return UnitParser<MagneticFieldStrengthUnit>.TryParse(text, out value);
+            return UnitParser<MagneticFieldStrengthUnit>.TryParse(text, out result);
         }
 
         /// <summary>
@@ -176,9 +182,9 @@
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-        public string ToString(SymbolFormat format)
+        public string ToString(SymbolFormat symbolFormat)
         {
-            var paddedFormat = UnitFormatCache<MagneticFieldStrengthUnit>.GetOrCreate(this, format);
+            var paddedFormat = UnitFormatCache<MagneticFieldStrengthUnit>.GetOrCreate(this, symbolFormat);
             using (var builder = StringBuilderPool.Borrow())
             {
                 builder.Append(paddedFormat.PrePadding);
