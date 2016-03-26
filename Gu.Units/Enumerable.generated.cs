@@ -5,6 +5,11 @@
     using System.Linq;
     public static partial class EnumerableUnits
     {
+        /// <summary>
+        /// Calculates the sum <see cref="Mass"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Mass}"/></param>
+        /// <returns>The sum</returns>
         public static Mass Sum(this IEnumerable<Mass> source)
         {
             if (source == null)
@@ -24,6 +29,11 @@
             return Mass.FromKilograms(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Length"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Length}"/></param>
+        /// <returns>The sum</returns>
         public static Length Sum(this IEnumerable<Length> source)
         {
             if (source == null)
@@ -43,6 +53,11 @@
             return Length.FromMetres(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Time"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Time}"/></param>
+        /// <returns>The sum</returns>
         public static Time Sum(this IEnumerable<Time> source)
         {
             if (source == null)
@@ -62,6 +77,11 @@
             return Time.FromSeconds(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Temperature"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Temperature}"/></param>
+        /// <returns>The sum</returns>
         public static Temperature Sum(this IEnumerable<Temperature> source)
         {
             if (source == null)
@@ -81,6 +101,11 @@
             return Temperature.FromKelvin(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Angle"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Angle}"/></param>
+        /// <returns>The sum</returns>
         public static Angle Sum(this IEnumerable<Angle> source)
         {
             if (source == null)
@@ -100,6 +125,11 @@
             return Angle.FromRadians(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Unitless"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Unitless}"/></param>
+        /// <returns>The sum</returns>
         public static Unitless Sum(this IEnumerable<Unitless> source)
         {
             if (source == null)
@@ -119,6 +149,11 @@
             return Unitless.FromScalar(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Current"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Current}"/></param>
+        /// <returns>The sum</returns>
         public static Current Sum(this IEnumerable<Current> source)
         {
             if (source == null)
@@ -138,6 +173,11 @@
             return Current.FromAmperes(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="LuminousIntensity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousIntensity}"/></param>
+        /// <returns>The sum</returns>
         public static LuminousIntensity Sum(this IEnumerable<LuminousIntensity> source)
         {
             if (source == null)
@@ -157,6 +197,11 @@
             return LuminousIntensity.FromCandelas(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Data"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Data}"/></param>
+        /// <returns>The sum</returns>
         public static Data Sum(this IEnumerable<Data> source)
         {
             if (source == null)
@@ -176,6 +221,11 @@
             return Data.FromBits(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="AmountOfSubstance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AmountOfSubstance}"/></param>
+        /// <returns>The sum</returns>
         public static AmountOfSubstance Sum(this IEnumerable<AmountOfSubstance> source)
         {
             if (source == null)
@@ -195,6 +245,11 @@
             return AmountOfSubstance.FromMoles(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="SolidAngle"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SolidAngle}"/></param>
+        /// <returns>The sum</returns>
         public static SolidAngle Sum(this IEnumerable<SolidAngle> source)
         {
             if (source == null)
@@ -214,6 +269,11 @@
             return SolidAngle.FromSteradians(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Area"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Area}"/></param>
+        /// <returns>The sum</returns>
         public static Area Sum(this IEnumerable<Area> source)
         {
             if (source == null)
@@ -233,6 +293,11 @@
             return Area.FromSquareMetres(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Volume"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Volume}"/></param>
+        /// <returns>The sum</returns>
         public static Volume Sum(this IEnumerable<Volume> source)
         {
             if (source == null)
@@ -252,6 +317,11 @@
             return Volume.FromCubicMetres(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Force"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Force}"/></param>
+        /// <returns>The sum</returns>
         public static Force Sum(this IEnumerable<Force> source)
         {
             if (source == null)
@@ -271,6 +341,11 @@
             return Force.FromNewtons(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Pressure"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Pressure}"/></param>
+        /// <returns>The sum</returns>
         public static Pressure Sum(this IEnumerable<Pressure> source)
         {
             if (source == null)
@@ -290,6 +365,11 @@
             return Pressure.FromPascals(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Density"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Density}"/></param>
+        /// <returns>The sum</returns>
         public static Density Sum(this IEnumerable<Density> source)
         {
             if (source == null)
@@ -309,6 +389,11 @@
             return Density.FromKilogramsPerCubicMetre(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Energy"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Energy}"/></param>
+        /// <returns>The sum</returns>
         public static Energy Sum(this IEnumerable<Energy> source)
         {
             if (source == null)
@@ -328,6 +413,11 @@
             return Energy.FromJoules(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Power"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Power}"/></param>
+        /// <returns>The sum</returns>
         public static Power Sum(this IEnumerable<Power> source)
         {
             if (source == null)
@@ -347,6 +437,11 @@
             return Power.FromWatts(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Speed"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Speed}"/></param>
+        /// <returns>The sum</returns>
         public static Speed Sum(this IEnumerable<Speed> source)
         {
             if (source == null)
@@ -366,6 +461,11 @@
             return Speed.FromMetresPerSecond(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="AngularSpeed"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularSpeed}"/></param>
+        /// <returns>The sum</returns>
         public static AngularSpeed Sum(this IEnumerable<AngularSpeed> source)
         {
             if (source == null)
@@ -385,6 +485,11 @@
             return AngularSpeed.FromRadiansPerSecond(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Frequency"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Frequency}"/></param>
+        /// <returns>The sum</returns>
         public static Frequency Sum(this IEnumerable<Frequency> source)
         {
             if (source == null)
@@ -404,6 +509,11 @@
             return Frequency.FromHertz(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Acceleration"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Acceleration}"/></param>
+        /// <returns>The sum</returns>
         public static Acceleration Sum(this IEnumerable<Acceleration> source)
         {
             if (source == null)
@@ -423,6 +533,11 @@
             return Acceleration.FromMetresPerSecondSquared(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Torque"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Torque}"/></param>
+        /// <returns>The sum</returns>
         public static Torque Sum(this IEnumerable<Torque> source)
         {
             if (source == null)
@@ -442,6 +557,11 @@
             return Torque.FromNewtonMetres(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Stiffness"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Stiffness}"/></param>
+        /// <returns>The sum</returns>
         public static Stiffness Sum(this IEnumerable<Stiffness> source)
         {
             if (source == null)
@@ -461,6 +581,11 @@
             return Stiffness.FromNewtonsPerMetre(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="VolumetricFlow"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{VolumetricFlow}"/></param>
+        /// <returns>The sum</returns>
         public static VolumetricFlow Sum(this IEnumerable<VolumetricFlow> source)
         {
             if (source == null)
@@ -480,6 +605,11 @@
             return VolumetricFlow.FromCubicMetresPerSecond(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Voltage"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Voltage}"/></param>
+        /// <returns>The sum</returns>
         public static Voltage Sum(this IEnumerable<Voltage> source)
         {
             if (source == null)
@@ -499,6 +629,11 @@
             return Voltage.FromVolts(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Resistance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Resistance}"/></param>
+        /// <returns>The sum</returns>
         public static Resistance Sum(this IEnumerable<Resistance> source)
         {
             if (source == null)
@@ -518,6 +653,11 @@
             return Resistance.FromOhm(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="SpecificEnergy"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificEnergy}"/></param>
+        /// <returns>The sum</returns>
         public static SpecificEnergy Sum(this IEnumerable<SpecificEnergy> source)
         {
             if (source == null)
@@ -537,6 +677,11 @@
             return SpecificEnergy.FromJoulesPerKilogram(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="ElectricCharge"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricCharge}"/></param>
+        /// <returns>The sum</returns>
         public static ElectricCharge Sum(this IEnumerable<ElectricCharge> source)
         {
             if (source == null)
@@ -556,6 +701,11 @@
             return ElectricCharge.FromCoulombs(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Inductance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Inductance}"/></param>
+        /// <returns>The sum</returns>
         public static Inductance Sum(this IEnumerable<Inductance> source)
         {
             if (source == null)
@@ -575,6 +725,11 @@
             return Inductance.FromHenrys(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Capacitance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Capacitance}"/></param>
+        /// <returns>The sum</returns>
         public static Capacitance Sum(this IEnumerable<Capacitance> source)
         {
             if (source == null)
@@ -594,6 +749,11 @@
             return Capacitance.FromFarads(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Flexibility"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Flexibility}"/></param>
+        /// <returns>The sum</returns>
         public static Flexibility Sum(this IEnumerable<Flexibility> source)
         {
             if (source == null)
@@ -613,6 +773,11 @@
             return Flexibility.FromMetresPerNewton(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="AngularAcceleration"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularAcceleration}"/></param>
+        /// <returns>The sum</returns>
         public static AngularAcceleration Sum(this IEnumerable<AngularAcceleration> source)
         {
             if (source == null)
@@ -632,6 +797,11 @@
             return AngularAcceleration.FromRadiansPerSecondSquared(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="AngularJerk"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularJerk}"/></param>
+        /// <returns>The sum</returns>
         public static AngularJerk Sum(this IEnumerable<AngularJerk> source)
         {
             if (source == null)
@@ -651,6 +821,11 @@
             return AngularJerk.FromRadiansPerSecondCubed(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Jerk"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Jerk}"/></param>
+        /// <returns>The sum</returns>
         public static Jerk Sum(this IEnumerable<Jerk> source)
         {
             if (source == null)
@@ -670,6 +845,11 @@
             return Jerk.FromMetresPerSecondCubed(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="LengthPerUnitless"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LengthPerUnitless}"/></param>
+        /// <returns>The sum</returns>
         public static LengthPerUnitless Sum(this IEnumerable<LengthPerUnitless> source)
         {
             if (source == null)
@@ -689,6 +869,11 @@
             return LengthPerUnitless.FromMetresPerUnitless(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="AnglePerUnitless"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AnglePerUnitless}"/></param>
+        /// <returns>The sum</returns>
         public static AnglePerUnitless Sum(this IEnumerable<AnglePerUnitless> source)
         {
             if (source == null)
@@ -708,6 +893,11 @@
             return AnglePerUnitless.FromRadiansPerUnitless(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="ForcePerUnitless"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ForcePerUnitless}"/></param>
+        /// <returns>The sum</returns>
         public static ForcePerUnitless Sum(this IEnumerable<ForcePerUnitless> source)
         {
             if (source == null)
@@ -727,6 +917,11 @@
             return ForcePerUnitless.FromNewtonsPerUnitless(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="LuminousFlux"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousFlux}"/></param>
+        /// <returns>The sum</returns>
         public static LuminousFlux Sum(this IEnumerable<LuminousFlux> source)
         {
             if (source == null)
@@ -746,6 +941,11 @@
             return LuminousFlux.FromLumens(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Illuminance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Illuminance}"/></param>
+        /// <returns>The sum</returns>
         public static Illuminance Sum(this IEnumerable<Illuminance> source)
         {
             if (source == null)
@@ -765,6 +965,11 @@
             return Illuminance.FromLux(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="MagneticFlux"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFlux}"/></param>
+        /// <returns>The sum</returns>
         public static MagneticFlux Sum(this IEnumerable<MagneticFlux> source)
         {
             if (source == null)
@@ -784,6 +989,11 @@
             return MagneticFlux.FromWebers(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="ElectricalConductance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricalConductance}"/></param>
+        /// <returns>The sum</returns>
         public static ElectricalConductance Sum(this IEnumerable<ElectricalConductance> source)
         {
             if (source == null)
@@ -803,6 +1013,11 @@
             return ElectricalConductance.FromSiemens(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="MagneticFieldStrength"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFieldStrength}"/></param>
+        /// <returns>The sum</returns>
         public static MagneticFieldStrength Sum(this IEnumerable<MagneticFieldStrength> source)
         {
             if (source == null)
@@ -822,6 +1037,11 @@
             return MagneticFieldStrength.FromTeslas(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="CatalyticActivity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{CatalyticActivity}"/></param>
+        /// <returns>The sum</returns>
         public static CatalyticActivity Sum(this IEnumerable<CatalyticActivity> source)
         {
             if (source == null)
@@ -841,6 +1061,11 @@
             return CatalyticActivity.FromKatals(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Momentum"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Momentum}"/></param>
+        /// <returns>The sum</returns>
         public static Momentum Sum(this IEnumerable<Momentum> source)
         {
             if (source == null)
@@ -860,6 +1085,11 @@
             return Momentum.FromNewtonSecond(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Wavenumber"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Wavenumber}"/></param>
+        /// <returns>The sum</returns>
         public static Wavenumber Sum(this IEnumerable<Wavenumber> source)
         {
             if (source == null)
@@ -879,6 +1109,11 @@
             return Wavenumber.FromReciprocalMetres(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="AreaDensity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AreaDensity}"/></param>
+        /// <returns>The sum</returns>
         public static AreaDensity Sum(this IEnumerable<AreaDensity> source)
         {
             if (source == null)
@@ -898,6 +1133,11 @@
             return AreaDensity.FromKilogramsPerSquareMetre(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="SpecificVolume"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificVolume}"/></param>
+        /// <returns>The sum</returns>
         public static SpecificVolume Sum(this IEnumerable<SpecificVolume> source)
         {
             if (source == null)
@@ -917,6 +1157,11 @@
             return SpecificVolume.FromCubicMetresPerKilogram(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="MassFlow"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MassFlow}"/></param>
+        /// <returns>The sum</returns>
         public static MassFlow Sum(this IEnumerable<MassFlow> source)
         {
             if (source == null)
@@ -936,6 +1181,11 @@
             return MassFlow.FromKilogramsPerSecond(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="KinematicViscosity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{KinematicViscosity}"/></param>
+        /// <returns>The sum</returns>
         public static KinematicViscosity Sum(this IEnumerable<KinematicViscosity> source)
         {
             if (source == null)
@@ -955,6 +1205,11 @@
             return KinematicViscosity.FromSquareMetresPerSecond(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Mass}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Mass}"/></param>
+        /// <returns>The sum</returns>
         public static Mass? Sum(this IEnumerable<Mass?> source)
         {
             if (source == null)
@@ -975,6 +1230,11 @@
             return Mass.FromKilograms(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Length}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Length}"/></param>
+        /// <returns>The sum</returns>
         public static Length? Sum(this IEnumerable<Length?> source)
         {
             if (source == null)
@@ -995,6 +1255,11 @@
             return Length.FromMetres(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Time}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Time}"/></param>
+        /// <returns>The sum</returns>
         public static Time? Sum(this IEnumerable<Time?> source)
         {
             if (source == null)
@@ -1015,6 +1280,11 @@
             return Time.FromSeconds(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Temperature}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Temperature}"/></param>
+        /// <returns>The sum</returns>
         public static Temperature? Sum(this IEnumerable<Temperature?> source)
         {
             if (source == null)
@@ -1035,6 +1305,11 @@
             return Temperature.FromKelvin(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Angle}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Angle}"/></param>
+        /// <returns>The sum</returns>
         public static Angle? Sum(this IEnumerable<Angle?> source)
         {
             if (source == null)
@@ -1055,6 +1330,11 @@
             return Angle.FromRadians(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Unitless}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Unitless}"/></param>
+        /// <returns>The sum</returns>
         public static Unitless? Sum(this IEnumerable<Unitless?> source)
         {
             if (source == null)
@@ -1075,6 +1355,11 @@
             return Unitless.FromScalar(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Current}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Current}"/></param>
+        /// <returns>The sum</returns>
         public static Current? Sum(this IEnumerable<Current?> source)
         {
             if (source == null)
@@ -1095,6 +1380,11 @@
             return Current.FromAmperes(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{LuminousIntensity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousIntensity}"/></param>
+        /// <returns>The sum</returns>
         public static LuminousIntensity? Sum(this IEnumerable<LuminousIntensity?> source)
         {
             if (source == null)
@@ -1115,6 +1405,11 @@
             return LuminousIntensity.FromCandelas(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Data}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Data}"/></param>
+        /// <returns>The sum</returns>
         public static Data? Sum(this IEnumerable<Data?> source)
         {
             if (source == null)
@@ -1135,6 +1430,11 @@
             return Data.FromBits(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{AmountOfSubstance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AmountOfSubstance}"/></param>
+        /// <returns>The sum</returns>
         public static AmountOfSubstance? Sum(this IEnumerable<AmountOfSubstance?> source)
         {
             if (source == null)
@@ -1155,6 +1455,11 @@
             return AmountOfSubstance.FromMoles(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{SolidAngle}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SolidAngle}"/></param>
+        /// <returns>The sum</returns>
         public static SolidAngle? Sum(this IEnumerable<SolidAngle?> source)
         {
             if (source == null)
@@ -1175,6 +1480,11 @@
             return SolidAngle.FromSteradians(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Area}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Area}"/></param>
+        /// <returns>The sum</returns>
         public static Area? Sum(this IEnumerable<Area?> source)
         {
             if (source == null)
@@ -1195,6 +1505,11 @@
             return Area.FromSquareMetres(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Volume}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Volume}"/></param>
+        /// <returns>The sum</returns>
         public static Volume? Sum(this IEnumerable<Volume?> source)
         {
             if (source == null)
@@ -1215,6 +1530,11 @@
             return Volume.FromCubicMetres(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Force}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Force}"/></param>
+        /// <returns>The sum</returns>
         public static Force? Sum(this IEnumerable<Force?> source)
         {
             if (source == null)
@@ -1235,6 +1555,11 @@
             return Force.FromNewtons(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Pressure}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Pressure}"/></param>
+        /// <returns>The sum</returns>
         public static Pressure? Sum(this IEnumerable<Pressure?> source)
         {
             if (source == null)
@@ -1255,6 +1580,11 @@
             return Pressure.FromPascals(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Density}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Density}"/></param>
+        /// <returns>The sum</returns>
         public static Density? Sum(this IEnumerable<Density?> source)
         {
             if (source == null)
@@ -1275,6 +1605,11 @@
             return Density.FromKilogramsPerCubicMetre(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Energy}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Energy}"/></param>
+        /// <returns>The sum</returns>
         public static Energy? Sum(this IEnumerable<Energy?> source)
         {
             if (source == null)
@@ -1295,6 +1630,11 @@
             return Energy.FromJoules(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Power}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Power}"/></param>
+        /// <returns>The sum</returns>
         public static Power? Sum(this IEnumerable<Power?> source)
         {
             if (source == null)
@@ -1315,6 +1655,11 @@
             return Power.FromWatts(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Speed}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Speed}"/></param>
+        /// <returns>The sum</returns>
         public static Speed? Sum(this IEnumerable<Speed?> source)
         {
             if (source == null)
@@ -1335,6 +1680,11 @@
             return Speed.FromMetresPerSecond(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{AngularSpeed}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularSpeed}"/></param>
+        /// <returns>The sum</returns>
         public static AngularSpeed? Sum(this IEnumerable<AngularSpeed?> source)
         {
             if (source == null)
@@ -1355,6 +1705,11 @@
             return AngularSpeed.FromRadiansPerSecond(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Frequency}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Frequency}"/></param>
+        /// <returns>The sum</returns>
         public static Frequency? Sum(this IEnumerable<Frequency?> source)
         {
             if (source == null)
@@ -1375,6 +1730,11 @@
             return Frequency.FromHertz(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Acceleration}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Acceleration}"/></param>
+        /// <returns>The sum</returns>
         public static Acceleration? Sum(this IEnumerable<Acceleration?> source)
         {
             if (source == null)
@@ -1395,6 +1755,11 @@
             return Acceleration.FromMetresPerSecondSquared(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Torque}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Torque}"/></param>
+        /// <returns>The sum</returns>
         public static Torque? Sum(this IEnumerable<Torque?> source)
         {
             if (source == null)
@@ -1415,6 +1780,11 @@
             return Torque.FromNewtonMetres(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Stiffness}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Stiffness}"/></param>
+        /// <returns>The sum</returns>
         public static Stiffness? Sum(this IEnumerable<Stiffness?> source)
         {
             if (source == null)
@@ -1435,6 +1805,11 @@
             return Stiffness.FromNewtonsPerMetre(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{VolumetricFlow}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{VolumetricFlow}"/></param>
+        /// <returns>The sum</returns>
         public static VolumetricFlow? Sum(this IEnumerable<VolumetricFlow?> source)
         {
             if (source == null)
@@ -1455,6 +1830,11 @@
             return VolumetricFlow.FromCubicMetresPerSecond(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Voltage}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Voltage}"/></param>
+        /// <returns>The sum</returns>
         public static Voltage? Sum(this IEnumerable<Voltage?> source)
         {
             if (source == null)
@@ -1475,6 +1855,11 @@
             return Voltage.FromVolts(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Resistance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Resistance}"/></param>
+        /// <returns>The sum</returns>
         public static Resistance? Sum(this IEnumerable<Resistance?> source)
         {
             if (source == null)
@@ -1495,6 +1880,11 @@
             return Resistance.FromOhm(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{SpecificEnergy}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificEnergy}"/></param>
+        /// <returns>The sum</returns>
         public static SpecificEnergy? Sum(this IEnumerable<SpecificEnergy?> source)
         {
             if (source == null)
@@ -1515,6 +1905,11 @@
             return SpecificEnergy.FromJoulesPerKilogram(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{ElectricCharge}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricCharge}"/></param>
+        /// <returns>The sum</returns>
         public static ElectricCharge? Sum(this IEnumerable<ElectricCharge?> source)
         {
             if (source == null)
@@ -1535,6 +1930,11 @@
             return ElectricCharge.FromCoulombs(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Inductance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Inductance}"/></param>
+        /// <returns>The sum</returns>
         public static Inductance? Sum(this IEnumerable<Inductance?> source)
         {
             if (source == null)
@@ -1555,6 +1955,11 @@
             return Inductance.FromHenrys(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Capacitance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Capacitance}"/></param>
+        /// <returns>The sum</returns>
         public static Capacitance? Sum(this IEnumerable<Capacitance?> source)
         {
             if (source == null)
@@ -1575,6 +1980,11 @@
             return Capacitance.FromFarads(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Flexibility}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Flexibility}"/></param>
+        /// <returns>The sum</returns>
         public static Flexibility? Sum(this IEnumerable<Flexibility?> source)
         {
             if (source == null)
@@ -1595,6 +2005,11 @@
             return Flexibility.FromMetresPerNewton(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{AngularAcceleration}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularAcceleration}"/></param>
+        /// <returns>The sum</returns>
         public static AngularAcceleration? Sum(this IEnumerable<AngularAcceleration?> source)
         {
             if (source == null)
@@ -1615,6 +2030,11 @@
             return AngularAcceleration.FromRadiansPerSecondSquared(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{AngularJerk}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularJerk}"/></param>
+        /// <returns>The sum</returns>
         public static AngularJerk? Sum(this IEnumerable<AngularJerk?> source)
         {
             if (source == null)
@@ -1635,6 +2055,11 @@
             return AngularJerk.FromRadiansPerSecondCubed(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Jerk}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Jerk}"/></param>
+        /// <returns>The sum</returns>
         public static Jerk? Sum(this IEnumerable<Jerk?> source)
         {
             if (source == null)
@@ -1655,6 +2080,11 @@
             return Jerk.FromMetresPerSecondCubed(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{LengthPerUnitless}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LengthPerUnitless}"/></param>
+        /// <returns>The sum</returns>
         public static LengthPerUnitless? Sum(this IEnumerable<LengthPerUnitless?> source)
         {
             if (source == null)
@@ -1675,6 +2105,11 @@
             return LengthPerUnitless.FromMetresPerUnitless(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{AnglePerUnitless}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AnglePerUnitless}"/></param>
+        /// <returns>The sum</returns>
         public static AnglePerUnitless? Sum(this IEnumerable<AnglePerUnitless?> source)
         {
             if (source == null)
@@ -1695,6 +2130,11 @@
             return AnglePerUnitless.FromRadiansPerUnitless(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{ForcePerUnitless}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ForcePerUnitless}"/></param>
+        /// <returns>The sum</returns>
         public static ForcePerUnitless? Sum(this IEnumerable<ForcePerUnitless?> source)
         {
             if (source == null)
@@ -1715,6 +2155,11 @@
             return ForcePerUnitless.FromNewtonsPerUnitless(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{LuminousFlux}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousFlux}"/></param>
+        /// <returns>The sum</returns>
         public static LuminousFlux? Sum(this IEnumerable<LuminousFlux?> source)
         {
             if (source == null)
@@ -1735,6 +2180,11 @@
             return LuminousFlux.FromLumens(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Illuminance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Illuminance}"/></param>
+        /// <returns>The sum</returns>
         public static Illuminance? Sum(this IEnumerable<Illuminance?> source)
         {
             if (source == null)
@@ -1755,6 +2205,11 @@
             return Illuminance.FromLux(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{MagneticFlux}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFlux}"/></param>
+        /// <returns>The sum</returns>
         public static MagneticFlux? Sum(this IEnumerable<MagneticFlux?> source)
         {
             if (source == null)
@@ -1775,6 +2230,11 @@
             return MagneticFlux.FromWebers(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{ElectricalConductance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricalConductance}"/></param>
+        /// <returns>The sum</returns>
         public static ElectricalConductance? Sum(this IEnumerable<ElectricalConductance?> source)
         {
             if (source == null)
@@ -1795,6 +2255,11 @@
             return ElectricalConductance.FromSiemens(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{MagneticFieldStrength}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFieldStrength}"/></param>
+        /// <returns>The sum</returns>
         public static MagneticFieldStrength? Sum(this IEnumerable<MagneticFieldStrength?> source)
         {
             if (source == null)
@@ -1815,6 +2280,11 @@
             return MagneticFieldStrength.FromTeslas(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{CatalyticActivity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{CatalyticActivity}"/></param>
+        /// <returns>The sum</returns>
         public static CatalyticActivity? Sum(this IEnumerable<CatalyticActivity?> source)
         {
             if (source == null)
@@ -1835,6 +2305,11 @@
             return CatalyticActivity.FromKatals(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Momentum}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Momentum}"/></param>
+        /// <returns>The sum</returns>
         public static Momentum? Sum(this IEnumerable<Momentum?> source)
         {
             if (source == null)
@@ -1855,6 +2330,11 @@
             return Momentum.FromNewtonSecond(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Wavenumber}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Wavenumber}"/></param>
+        /// <returns>The sum</returns>
         public static Wavenumber? Sum(this IEnumerable<Wavenumber?> source)
         {
             if (source == null)
@@ -1875,6 +2355,11 @@
             return Wavenumber.FromReciprocalMetres(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{AreaDensity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AreaDensity}"/></param>
+        /// <returns>The sum</returns>
         public static AreaDensity? Sum(this IEnumerable<AreaDensity?> source)
         {
             if (source == null)
@@ -1895,6 +2380,11 @@
             return AreaDensity.FromKilogramsPerSquareMetre(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{SpecificVolume}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificVolume}"/></param>
+        /// <returns>The sum</returns>
         public static SpecificVolume? Sum(this IEnumerable<SpecificVolume?> source)
         {
             if (source == null)
@@ -1915,6 +2405,11 @@
             return SpecificVolume.FromCubicMetresPerKilogram(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{MassFlow}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MassFlow}"/></param>
+        /// <returns>The sum</returns>
         public static MassFlow? Sum(this IEnumerable<MassFlow?> source)
         {
             if (source == null)
@@ -1935,6 +2430,11 @@
             return MassFlow.FromKilogramsPerSecond(sum);
         }
 
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{KinematicViscosity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{KinematicViscosity}"/></param>
+        /// <returns>The sum</returns>
         public static KinematicViscosity? Sum(this IEnumerable<KinematicViscosity?> source)
         {
             if (source == null)
@@ -1955,6 +2455,11 @@
             return KinematicViscosity.FromSquareMetresPerSecond(sum);
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Mass"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Mass}"/></param>
+        /// <returns>The min</returns>
         public static Mass Min(this IEnumerable<Mass> source)
         {
             if (source == null)
@@ -1986,6 +2491,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Length"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Length}"/></param>
+        /// <returns>The min</returns>
         public static Length Min(this IEnumerable<Length> source)
         {
             if (source == null)
@@ -2017,6 +2527,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Time"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Time}"/></param>
+        /// <returns>The min</returns>
         public static Time Min(this IEnumerable<Time> source)
         {
             if (source == null)
@@ -2048,6 +2563,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Temperature"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Temperature}"/></param>
+        /// <returns>The min</returns>
         public static Temperature Min(this IEnumerable<Temperature> source)
         {
             if (source == null)
@@ -2079,6 +2599,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Angle"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Angle}"/></param>
+        /// <returns>The min</returns>
         public static Angle Min(this IEnumerable<Angle> source)
         {
             if (source == null)
@@ -2110,6 +2635,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Unitless"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Unitless}"/></param>
+        /// <returns>The min</returns>
         public static Unitless Min(this IEnumerable<Unitless> source)
         {
             if (source == null)
@@ -2141,6 +2671,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Current"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Current}"/></param>
+        /// <returns>The min</returns>
         public static Current Min(this IEnumerable<Current> source)
         {
             if (source == null)
@@ -2172,6 +2707,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="LuminousIntensity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousIntensity}"/></param>
+        /// <returns>The min</returns>
         public static LuminousIntensity Min(this IEnumerable<LuminousIntensity> source)
         {
             if (source == null)
@@ -2203,6 +2743,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Data"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Data}"/></param>
+        /// <returns>The min</returns>
         public static Data Min(this IEnumerable<Data> source)
         {
             if (source == null)
@@ -2234,6 +2779,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="AmountOfSubstance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AmountOfSubstance}"/></param>
+        /// <returns>The min</returns>
         public static AmountOfSubstance Min(this IEnumerable<AmountOfSubstance> source)
         {
             if (source == null)
@@ -2265,6 +2815,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="SolidAngle"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SolidAngle}"/></param>
+        /// <returns>The min</returns>
         public static SolidAngle Min(this IEnumerable<SolidAngle> source)
         {
             if (source == null)
@@ -2296,6 +2851,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Area"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Area}"/></param>
+        /// <returns>The min</returns>
         public static Area Min(this IEnumerable<Area> source)
         {
             if (source == null)
@@ -2327,6 +2887,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Volume"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Volume}"/></param>
+        /// <returns>The min</returns>
         public static Volume Min(this IEnumerable<Volume> source)
         {
             if (source == null)
@@ -2358,6 +2923,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Force"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Force}"/></param>
+        /// <returns>The min</returns>
         public static Force Min(this IEnumerable<Force> source)
         {
             if (source == null)
@@ -2389,6 +2959,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Pressure"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Pressure}"/></param>
+        /// <returns>The min</returns>
         public static Pressure Min(this IEnumerable<Pressure> source)
         {
             if (source == null)
@@ -2420,6 +2995,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Density"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Density}"/></param>
+        /// <returns>The min</returns>
         public static Density Min(this IEnumerable<Density> source)
         {
             if (source == null)
@@ -2451,6 +3031,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Energy"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Energy}"/></param>
+        /// <returns>The min</returns>
         public static Energy Min(this IEnumerable<Energy> source)
         {
             if (source == null)
@@ -2482,6 +3067,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Power"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Power}"/></param>
+        /// <returns>The min</returns>
         public static Power Min(this IEnumerable<Power> source)
         {
             if (source == null)
@@ -2513,6 +3103,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Speed"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Speed}"/></param>
+        /// <returns>The min</returns>
         public static Speed Min(this IEnumerable<Speed> source)
         {
             if (source == null)
@@ -2544,6 +3139,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="AngularSpeed"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularSpeed}"/></param>
+        /// <returns>The min</returns>
         public static AngularSpeed Min(this IEnumerable<AngularSpeed> source)
         {
             if (source == null)
@@ -2575,6 +3175,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Frequency"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Frequency}"/></param>
+        /// <returns>The min</returns>
         public static Frequency Min(this IEnumerable<Frequency> source)
         {
             if (source == null)
@@ -2606,6 +3211,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Acceleration"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Acceleration}"/></param>
+        /// <returns>The min</returns>
         public static Acceleration Min(this IEnumerable<Acceleration> source)
         {
             if (source == null)
@@ -2637,6 +3247,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Torque"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Torque}"/></param>
+        /// <returns>The min</returns>
         public static Torque Min(this IEnumerable<Torque> source)
         {
             if (source == null)
@@ -2668,6 +3283,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Stiffness"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Stiffness}"/></param>
+        /// <returns>The min</returns>
         public static Stiffness Min(this IEnumerable<Stiffness> source)
         {
             if (source == null)
@@ -2699,6 +3319,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="VolumetricFlow"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{VolumetricFlow}"/></param>
+        /// <returns>The min</returns>
         public static VolumetricFlow Min(this IEnumerable<VolumetricFlow> source)
         {
             if (source == null)
@@ -2730,6 +3355,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Voltage"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Voltage}"/></param>
+        /// <returns>The min</returns>
         public static Voltage Min(this IEnumerable<Voltage> source)
         {
             if (source == null)
@@ -2761,6 +3391,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Resistance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Resistance}"/></param>
+        /// <returns>The min</returns>
         public static Resistance Min(this IEnumerable<Resistance> source)
         {
             if (source == null)
@@ -2792,6 +3427,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="SpecificEnergy"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificEnergy}"/></param>
+        /// <returns>The min</returns>
         public static SpecificEnergy Min(this IEnumerable<SpecificEnergy> source)
         {
             if (source == null)
@@ -2823,6 +3463,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="ElectricCharge"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricCharge}"/></param>
+        /// <returns>The min</returns>
         public static ElectricCharge Min(this IEnumerable<ElectricCharge> source)
         {
             if (source == null)
@@ -2854,6 +3499,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Inductance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Inductance}"/></param>
+        /// <returns>The min</returns>
         public static Inductance Min(this IEnumerable<Inductance> source)
         {
             if (source == null)
@@ -2885,6 +3535,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Capacitance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Capacitance}"/></param>
+        /// <returns>The min</returns>
         public static Capacitance Min(this IEnumerable<Capacitance> source)
         {
             if (source == null)
@@ -2916,6 +3571,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Flexibility"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Flexibility}"/></param>
+        /// <returns>The min</returns>
         public static Flexibility Min(this IEnumerable<Flexibility> source)
         {
             if (source == null)
@@ -2947,6 +3607,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="AngularAcceleration"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularAcceleration}"/></param>
+        /// <returns>The min</returns>
         public static AngularAcceleration Min(this IEnumerable<AngularAcceleration> source)
         {
             if (source == null)
@@ -2978,6 +3643,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="AngularJerk"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularJerk}"/></param>
+        /// <returns>The min</returns>
         public static AngularJerk Min(this IEnumerable<AngularJerk> source)
         {
             if (source == null)
@@ -3009,6 +3679,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Jerk"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Jerk}"/></param>
+        /// <returns>The min</returns>
         public static Jerk Min(this IEnumerable<Jerk> source)
         {
             if (source == null)
@@ -3040,6 +3715,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="LengthPerUnitless"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LengthPerUnitless}"/></param>
+        /// <returns>The min</returns>
         public static LengthPerUnitless Min(this IEnumerable<LengthPerUnitless> source)
         {
             if (source == null)
@@ -3071,6 +3751,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="AnglePerUnitless"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AnglePerUnitless}"/></param>
+        /// <returns>The min</returns>
         public static AnglePerUnitless Min(this IEnumerable<AnglePerUnitless> source)
         {
             if (source == null)
@@ -3102,6 +3787,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="ForcePerUnitless"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ForcePerUnitless}"/></param>
+        /// <returns>The min</returns>
         public static ForcePerUnitless Min(this IEnumerable<ForcePerUnitless> source)
         {
             if (source == null)
@@ -3133,6 +3823,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="LuminousFlux"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousFlux}"/></param>
+        /// <returns>The min</returns>
         public static LuminousFlux Min(this IEnumerable<LuminousFlux> source)
         {
             if (source == null)
@@ -3164,6 +3859,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Illuminance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Illuminance}"/></param>
+        /// <returns>The min</returns>
         public static Illuminance Min(this IEnumerable<Illuminance> source)
         {
             if (source == null)
@@ -3195,6 +3895,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="MagneticFlux"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFlux}"/></param>
+        /// <returns>The min</returns>
         public static MagneticFlux Min(this IEnumerable<MagneticFlux> source)
         {
             if (source == null)
@@ -3226,6 +3931,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="ElectricalConductance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricalConductance}"/></param>
+        /// <returns>The min</returns>
         public static ElectricalConductance Min(this IEnumerable<ElectricalConductance> source)
         {
             if (source == null)
@@ -3257,6 +3967,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="MagneticFieldStrength"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFieldStrength}"/></param>
+        /// <returns>The min</returns>
         public static MagneticFieldStrength Min(this IEnumerable<MagneticFieldStrength> source)
         {
             if (source == null)
@@ -3288,6 +4003,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="CatalyticActivity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{CatalyticActivity}"/></param>
+        /// <returns>The min</returns>
         public static CatalyticActivity Min(this IEnumerable<CatalyticActivity> source)
         {
             if (source == null)
@@ -3319,6 +4039,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Momentum"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Momentum}"/></param>
+        /// <returns>The min</returns>
         public static Momentum Min(this IEnumerable<Momentum> source)
         {
             if (source == null)
@@ -3350,6 +4075,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Wavenumber"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Wavenumber}"/></param>
+        /// <returns>The min</returns>
         public static Wavenumber Min(this IEnumerable<Wavenumber> source)
         {
             if (source == null)
@@ -3381,6 +4111,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="AreaDensity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AreaDensity}"/></param>
+        /// <returns>The min</returns>
         public static AreaDensity Min(this IEnumerable<AreaDensity> source)
         {
             if (source == null)
@@ -3412,6 +4147,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="SpecificVolume"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificVolume}"/></param>
+        /// <returns>The min</returns>
         public static SpecificVolume Min(this IEnumerable<SpecificVolume> source)
         {
             if (source == null)
@@ -3443,6 +4183,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="MassFlow"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MassFlow}"/></param>
+        /// <returns>The min</returns>
         public static MassFlow Min(this IEnumerable<MassFlow> source)
         {
             if (source == null)
@@ -3474,6 +4219,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="KinematicViscosity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{KinematicViscosity}"/></param>
+        /// <returns>The min</returns>
         public static KinematicViscosity Min(this IEnumerable<KinematicViscosity> source)
         {
             if (source == null)
@@ -3505,6 +4255,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Mass}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Mass}"/></param>
+        /// <returns>The min</returns>
         public static Mass? Min(this IEnumerable<Mass?> source)
         {
             if (source == null)
@@ -3530,6 +4285,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Length}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Length}"/></param>
+        /// <returns>The min</returns>
         public static Length? Min(this IEnumerable<Length?> source)
         {
             if (source == null)
@@ -3555,6 +4315,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Time}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Time}"/></param>
+        /// <returns>The min</returns>
         public static Time? Min(this IEnumerable<Time?> source)
         {
             if (source == null)
@@ -3580,6 +4345,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Temperature}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Temperature}"/></param>
+        /// <returns>The min</returns>
         public static Temperature? Min(this IEnumerable<Temperature?> source)
         {
             if (source == null)
@@ -3605,6 +4375,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Angle}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Angle}"/></param>
+        /// <returns>The min</returns>
         public static Angle? Min(this IEnumerable<Angle?> source)
         {
             if (source == null)
@@ -3630,6 +4405,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Unitless}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Unitless}"/></param>
+        /// <returns>The min</returns>
         public static Unitless? Min(this IEnumerable<Unitless?> source)
         {
             if (source == null)
@@ -3655,6 +4435,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Current}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Current}"/></param>
+        /// <returns>The min</returns>
         public static Current? Min(this IEnumerable<Current?> source)
         {
             if (source == null)
@@ -3680,6 +4465,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{LuminousIntensity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousIntensity}"/></param>
+        /// <returns>The min</returns>
         public static LuminousIntensity? Min(this IEnumerable<LuminousIntensity?> source)
         {
             if (source == null)
@@ -3705,6 +4495,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Data}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Data}"/></param>
+        /// <returns>The min</returns>
         public static Data? Min(this IEnumerable<Data?> source)
         {
             if (source == null)
@@ -3730,6 +4525,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{AmountOfSubstance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AmountOfSubstance}"/></param>
+        /// <returns>The min</returns>
         public static AmountOfSubstance? Min(this IEnumerable<AmountOfSubstance?> source)
         {
             if (source == null)
@@ -3755,6 +4555,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{SolidAngle}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SolidAngle}"/></param>
+        /// <returns>The min</returns>
         public static SolidAngle? Min(this IEnumerable<SolidAngle?> source)
         {
             if (source == null)
@@ -3780,6 +4585,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Area}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Area}"/></param>
+        /// <returns>The min</returns>
         public static Area? Min(this IEnumerable<Area?> source)
         {
             if (source == null)
@@ -3805,6 +4615,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Volume}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Volume}"/></param>
+        /// <returns>The min</returns>
         public static Volume? Min(this IEnumerable<Volume?> source)
         {
             if (source == null)
@@ -3830,6 +4645,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Force}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Force}"/></param>
+        /// <returns>The min</returns>
         public static Force? Min(this IEnumerable<Force?> source)
         {
             if (source == null)
@@ -3855,6 +4675,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Pressure}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Pressure}"/></param>
+        /// <returns>The min</returns>
         public static Pressure? Min(this IEnumerable<Pressure?> source)
         {
             if (source == null)
@@ -3880,6 +4705,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Density}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Density}"/></param>
+        /// <returns>The min</returns>
         public static Density? Min(this IEnumerable<Density?> source)
         {
             if (source == null)
@@ -3905,6 +4735,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Energy}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Energy}"/></param>
+        /// <returns>The min</returns>
         public static Energy? Min(this IEnumerable<Energy?> source)
         {
             if (source == null)
@@ -3930,6 +4765,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Power}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Power}"/></param>
+        /// <returns>The min</returns>
         public static Power? Min(this IEnumerable<Power?> source)
         {
             if (source == null)
@@ -3955,6 +4795,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Speed}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Speed}"/></param>
+        /// <returns>The min</returns>
         public static Speed? Min(this IEnumerable<Speed?> source)
         {
             if (source == null)
@@ -3980,6 +4825,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{AngularSpeed}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularSpeed}"/></param>
+        /// <returns>The min</returns>
         public static AngularSpeed? Min(this IEnumerable<AngularSpeed?> source)
         {
             if (source == null)
@@ -4005,6 +4855,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Frequency}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Frequency}"/></param>
+        /// <returns>The min</returns>
         public static Frequency? Min(this IEnumerable<Frequency?> source)
         {
             if (source == null)
@@ -4030,6 +4885,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Acceleration}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Acceleration}"/></param>
+        /// <returns>The min</returns>
         public static Acceleration? Min(this IEnumerable<Acceleration?> source)
         {
             if (source == null)
@@ -4055,6 +4915,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Torque}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Torque}"/></param>
+        /// <returns>The min</returns>
         public static Torque? Min(this IEnumerable<Torque?> source)
         {
             if (source == null)
@@ -4080,6 +4945,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Stiffness}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Stiffness}"/></param>
+        /// <returns>The min</returns>
         public static Stiffness? Min(this IEnumerable<Stiffness?> source)
         {
             if (source == null)
@@ -4105,6 +4975,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{VolumetricFlow}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{VolumetricFlow}"/></param>
+        /// <returns>The min</returns>
         public static VolumetricFlow? Min(this IEnumerable<VolumetricFlow?> source)
         {
             if (source == null)
@@ -4130,6 +5005,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Voltage}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Voltage}"/></param>
+        /// <returns>The min</returns>
         public static Voltage? Min(this IEnumerable<Voltage?> source)
         {
             if (source == null)
@@ -4155,6 +5035,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Resistance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Resistance}"/></param>
+        /// <returns>The min</returns>
         public static Resistance? Min(this IEnumerable<Resistance?> source)
         {
             if (source == null)
@@ -4180,6 +5065,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{SpecificEnergy}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificEnergy}"/></param>
+        /// <returns>The min</returns>
         public static SpecificEnergy? Min(this IEnumerable<SpecificEnergy?> source)
         {
             if (source == null)
@@ -4205,6 +5095,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{ElectricCharge}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricCharge}"/></param>
+        /// <returns>The min</returns>
         public static ElectricCharge? Min(this IEnumerable<ElectricCharge?> source)
         {
             if (source == null)
@@ -4230,6 +5125,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Inductance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Inductance}"/></param>
+        /// <returns>The min</returns>
         public static Inductance? Min(this IEnumerable<Inductance?> source)
         {
             if (source == null)
@@ -4255,6 +5155,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Capacitance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Capacitance}"/></param>
+        /// <returns>The min</returns>
         public static Capacitance? Min(this IEnumerable<Capacitance?> source)
         {
             if (source == null)
@@ -4280,6 +5185,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Flexibility}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Flexibility}"/></param>
+        /// <returns>The min</returns>
         public static Flexibility? Min(this IEnumerable<Flexibility?> source)
         {
             if (source == null)
@@ -4305,6 +5215,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{AngularAcceleration}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularAcceleration}"/></param>
+        /// <returns>The min</returns>
         public static AngularAcceleration? Min(this IEnumerable<AngularAcceleration?> source)
         {
             if (source == null)
@@ -4330,6 +5245,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{AngularJerk}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularJerk}"/></param>
+        /// <returns>The min</returns>
         public static AngularJerk? Min(this IEnumerable<AngularJerk?> source)
         {
             if (source == null)
@@ -4355,6 +5275,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Jerk}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Jerk}"/></param>
+        /// <returns>The min</returns>
         public static Jerk? Min(this IEnumerable<Jerk?> source)
         {
             if (source == null)
@@ -4380,6 +5305,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{LengthPerUnitless}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LengthPerUnitless}"/></param>
+        /// <returns>The min</returns>
         public static LengthPerUnitless? Min(this IEnumerable<LengthPerUnitless?> source)
         {
             if (source == null)
@@ -4405,6 +5335,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{AnglePerUnitless}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AnglePerUnitless}"/></param>
+        /// <returns>The min</returns>
         public static AnglePerUnitless? Min(this IEnumerable<AnglePerUnitless?> source)
         {
             if (source == null)
@@ -4430,6 +5365,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{ForcePerUnitless}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ForcePerUnitless}"/></param>
+        /// <returns>The min</returns>
         public static ForcePerUnitless? Min(this IEnumerable<ForcePerUnitless?> source)
         {
             if (source == null)
@@ -4455,6 +5395,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{LuminousFlux}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousFlux}"/></param>
+        /// <returns>The min</returns>
         public static LuminousFlux? Min(this IEnumerable<LuminousFlux?> source)
         {
             if (source == null)
@@ -4480,6 +5425,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Illuminance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Illuminance}"/></param>
+        /// <returns>The min</returns>
         public static Illuminance? Min(this IEnumerable<Illuminance?> source)
         {
             if (source == null)
@@ -4505,6 +5455,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{MagneticFlux}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFlux}"/></param>
+        /// <returns>The min</returns>
         public static MagneticFlux? Min(this IEnumerable<MagneticFlux?> source)
         {
             if (source == null)
@@ -4530,6 +5485,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{ElectricalConductance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricalConductance}"/></param>
+        /// <returns>The min</returns>
         public static ElectricalConductance? Min(this IEnumerable<ElectricalConductance?> source)
         {
             if (source == null)
@@ -4555,6 +5515,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{MagneticFieldStrength}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFieldStrength}"/></param>
+        /// <returns>The min</returns>
         public static MagneticFieldStrength? Min(this IEnumerable<MagneticFieldStrength?> source)
         {
             if (source == null)
@@ -4580,6 +5545,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{CatalyticActivity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{CatalyticActivity}"/></param>
+        /// <returns>The min</returns>
         public static CatalyticActivity? Min(this IEnumerable<CatalyticActivity?> source)
         {
             if (source == null)
@@ -4605,6 +5575,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Momentum}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Momentum}"/></param>
+        /// <returns>The min</returns>
         public static Momentum? Min(this IEnumerable<Momentum?> source)
         {
             if (source == null)
@@ -4630,6 +5605,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Wavenumber}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Wavenumber}"/></param>
+        /// <returns>The min</returns>
         public static Wavenumber? Min(this IEnumerable<Wavenumber?> source)
         {
             if (source == null)
@@ -4655,6 +5635,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{AreaDensity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AreaDensity}"/></param>
+        /// <returns>The min</returns>
         public static AreaDensity? Min(this IEnumerable<AreaDensity?> source)
         {
             if (source == null)
@@ -4680,6 +5665,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{SpecificVolume}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificVolume}"/></param>
+        /// <returns>The min</returns>
         public static SpecificVolume? Min(this IEnumerable<SpecificVolume?> source)
         {
             if (source == null)
@@ -4705,6 +5695,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{MassFlow}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MassFlow}"/></param>
+        /// <returns>The min</returns>
         public static MassFlow? Min(this IEnumerable<MassFlow?> source)
         {
             if (source == null)
@@ -4730,6 +5725,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{KinematicViscosity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{KinematicViscosity}"/></param>
+        /// <returns>The min</returns>
         public static KinematicViscosity? Min(this IEnumerable<KinematicViscosity?> source)
         {
             if (source == null)
@@ -4755,6 +5755,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Mass"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Mass}"/></param>
+        /// <returns>The max</returns>
         public static Mass Max(this IEnumerable<Mass> source)
         {
             if (source == null)
@@ -4786,6 +5791,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Length"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Length}"/></param>
+        /// <returns>The max</returns>
         public static Length Max(this IEnumerable<Length> source)
         {
             if (source == null)
@@ -4817,6 +5827,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Time"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Time}"/></param>
+        /// <returns>The max</returns>
         public static Time Max(this IEnumerable<Time> source)
         {
             if (source == null)
@@ -4848,6 +5863,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Temperature"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Temperature}"/></param>
+        /// <returns>The max</returns>
         public static Temperature Max(this IEnumerable<Temperature> source)
         {
             if (source == null)
@@ -4879,6 +5899,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Angle"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Angle}"/></param>
+        /// <returns>The max</returns>
         public static Angle Max(this IEnumerable<Angle> source)
         {
             if (source == null)
@@ -4910,6 +5935,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Unitless"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Unitless}"/></param>
+        /// <returns>The max</returns>
         public static Unitless Max(this IEnumerable<Unitless> source)
         {
             if (source == null)
@@ -4941,6 +5971,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Current"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Current}"/></param>
+        /// <returns>The max</returns>
         public static Current Max(this IEnumerable<Current> source)
         {
             if (source == null)
@@ -4972,6 +6007,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="LuminousIntensity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousIntensity}"/></param>
+        /// <returns>The max</returns>
         public static LuminousIntensity Max(this IEnumerable<LuminousIntensity> source)
         {
             if (source == null)
@@ -5003,6 +6043,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Data"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Data}"/></param>
+        /// <returns>The max</returns>
         public static Data Max(this IEnumerable<Data> source)
         {
             if (source == null)
@@ -5034,6 +6079,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="AmountOfSubstance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AmountOfSubstance}"/></param>
+        /// <returns>The max</returns>
         public static AmountOfSubstance Max(this IEnumerable<AmountOfSubstance> source)
         {
             if (source == null)
@@ -5065,6 +6115,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="SolidAngle"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SolidAngle}"/></param>
+        /// <returns>The max</returns>
         public static SolidAngle Max(this IEnumerable<SolidAngle> source)
         {
             if (source == null)
@@ -5096,6 +6151,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Area"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Area}"/></param>
+        /// <returns>The max</returns>
         public static Area Max(this IEnumerable<Area> source)
         {
             if (source == null)
@@ -5127,6 +6187,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Volume"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Volume}"/></param>
+        /// <returns>The max</returns>
         public static Volume Max(this IEnumerable<Volume> source)
         {
             if (source == null)
@@ -5158,6 +6223,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Force"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Force}"/></param>
+        /// <returns>The max</returns>
         public static Force Max(this IEnumerable<Force> source)
         {
             if (source == null)
@@ -5189,6 +6259,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Pressure"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Pressure}"/></param>
+        /// <returns>The max</returns>
         public static Pressure Max(this IEnumerable<Pressure> source)
         {
             if (source == null)
@@ -5220,6 +6295,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Density"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Density}"/></param>
+        /// <returns>The max</returns>
         public static Density Max(this IEnumerable<Density> source)
         {
             if (source == null)
@@ -5251,6 +6331,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Energy"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Energy}"/></param>
+        /// <returns>The max</returns>
         public static Energy Max(this IEnumerable<Energy> source)
         {
             if (source == null)
@@ -5282,6 +6367,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Power"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Power}"/></param>
+        /// <returns>The max</returns>
         public static Power Max(this IEnumerable<Power> source)
         {
             if (source == null)
@@ -5313,6 +6403,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Speed"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Speed}"/></param>
+        /// <returns>The max</returns>
         public static Speed Max(this IEnumerable<Speed> source)
         {
             if (source == null)
@@ -5344,6 +6439,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="AngularSpeed"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularSpeed}"/></param>
+        /// <returns>The max</returns>
         public static AngularSpeed Max(this IEnumerable<AngularSpeed> source)
         {
             if (source == null)
@@ -5375,6 +6475,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Frequency"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Frequency}"/></param>
+        /// <returns>The max</returns>
         public static Frequency Max(this IEnumerable<Frequency> source)
         {
             if (source == null)
@@ -5406,6 +6511,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Acceleration"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Acceleration}"/></param>
+        /// <returns>The max</returns>
         public static Acceleration Max(this IEnumerable<Acceleration> source)
         {
             if (source == null)
@@ -5437,6 +6547,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Torque"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Torque}"/></param>
+        /// <returns>The max</returns>
         public static Torque Max(this IEnumerable<Torque> source)
         {
             if (source == null)
@@ -5468,6 +6583,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Stiffness"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Stiffness}"/></param>
+        /// <returns>The max</returns>
         public static Stiffness Max(this IEnumerable<Stiffness> source)
         {
             if (source == null)
@@ -5499,6 +6619,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="VolumetricFlow"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{VolumetricFlow}"/></param>
+        /// <returns>The max</returns>
         public static VolumetricFlow Max(this IEnumerable<VolumetricFlow> source)
         {
             if (source == null)
@@ -5530,6 +6655,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Voltage"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Voltage}"/></param>
+        /// <returns>The max</returns>
         public static Voltage Max(this IEnumerable<Voltage> source)
         {
             if (source == null)
@@ -5561,6 +6691,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Resistance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Resistance}"/></param>
+        /// <returns>The max</returns>
         public static Resistance Max(this IEnumerable<Resistance> source)
         {
             if (source == null)
@@ -5592,6 +6727,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="SpecificEnergy"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificEnergy}"/></param>
+        /// <returns>The max</returns>
         public static SpecificEnergy Max(this IEnumerable<SpecificEnergy> source)
         {
             if (source == null)
@@ -5623,6 +6763,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="ElectricCharge"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricCharge}"/></param>
+        /// <returns>The max</returns>
         public static ElectricCharge Max(this IEnumerable<ElectricCharge> source)
         {
             if (source == null)
@@ -5654,6 +6799,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Inductance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Inductance}"/></param>
+        /// <returns>The max</returns>
         public static Inductance Max(this IEnumerable<Inductance> source)
         {
             if (source == null)
@@ -5685,6 +6835,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Capacitance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Capacitance}"/></param>
+        /// <returns>The max</returns>
         public static Capacitance Max(this IEnumerable<Capacitance> source)
         {
             if (source == null)
@@ -5716,6 +6871,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Flexibility"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Flexibility}"/></param>
+        /// <returns>The max</returns>
         public static Flexibility Max(this IEnumerable<Flexibility> source)
         {
             if (source == null)
@@ -5747,6 +6907,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="AngularAcceleration"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularAcceleration}"/></param>
+        /// <returns>The max</returns>
         public static AngularAcceleration Max(this IEnumerable<AngularAcceleration> source)
         {
             if (source == null)
@@ -5778,6 +6943,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="AngularJerk"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularJerk}"/></param>
+        /// <returns>The max</returns>
         public static AngularJerk Max(this IEnumerable<AngularJerk> source)
         {
             if (source == null)
@@ -5809,6 +6979,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Jerk"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Jerk}"/></param>
+        /// <returns>The max</returns>
         public static Jerk Max(this IEnumerable<Jerk> source)
         {
             if (source == null)
@@ -5840,6 +7015,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="LengthPerUnitless"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LengthPerUnitless}"/></param>
+        /// <returns>The max</returns>
         public static LengthPerUnitless Max(this IEnumerable<LengthPerUnitless> source)
         {
             if (source == null)
@@ -5871,6 +7051,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="AnglePerUnitless"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AnglePerUnitless}"/></param>
+        /// <returns>The max</returns>
         public static AnglePerUnitless Max(this IEnumerable<AnglePerUnitless> source)
         {
             if (source == null)
@@ -5902,6 +7087,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="ForcePerUnitless"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ForcePerUnitless}"/></param>
+        /// <returns>The max</returns>
         public static ForcePerUnitless Max(this IEnumerable<ForcePerUnitless> source)
         {
             if (source == null)
@@ -5933,6 +7123,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="LuminousFlux"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousFlux}"/></param>
+        /// <returns>The max</returns>
         public static LuminousFlux Max(this IEnumerable<LuminousFlux> source)
         {
             if (source == null)
@@ -5964,6 +7159,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Illuminance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Illuminance}"/></param>
+        /// <returns>The max</returns>
         public static Illuminance Max(this IEnumerable<Illuminance> source)
         {
             if (source == null)
@@ -5995,6 +7195,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="MagneticFlux"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFlux}"/></param>
+        /// <returns>The max</returns>
         public static MagneticFlux Max(this IEnumerable<MagneticFlux> source)
         {
             if (source == null)
@@ -6026,6 +7231,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="ElectricalConductance"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricalConductance}"/></param>
+        /// <returns>The max</returns>
         public static ElectricalConductance Max(this IEnumerable<ElectricalConductance> source)
         {
             if (source == null)
@@ -6057,6 +7267,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="MagneticFieldStrength"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFieldStrength}"/></param>
+        /// <returns>The max</returns>
         public static MagneticFieldStrength Max(this IEnumerable<MagneticFieldStrength> source)
         {
             if (source == null)
@@ -6088,6 +7303,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="CatalyticActivity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{CatalyticActivity}"/></param>
+        /// <returns>The max</returns>
         public static CatalyticActivity Max(this IEnumerable<CatalyticActivity> source)
         {
             if (source == null)
@@ -6119,6 +7339,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Momentum"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Momentum}"/></param>
+        /// <returns>The max</returns>
         public static Momentum Max(this IEnumerable<Momentum> source)
         {
             if (source == null)
@@ -6150,6 +7375,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Wavenumber"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Wavenumber}"/></param>
+        /// <returns>The max</returns>
         public static Wavenumber Max(this IEnumerable<Wavenumber> source)
         {
             if (source == null)
@@ -6181,6 +7411,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="AreaDensity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AreaDensity}"/></param>
+        /// <returns>The max</returns>
         public static AreaDensity Max(this IEnumerable<AreaDensity> source)
         {
             if (source == null)
@@ -6212,6 +7447,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="SpecificVolume"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificVolume}"/></param>
+        /// <returns>The max</returns>
         public static SpecificVolume Max(this IEnumerable<SpecificVolume> source)
         {
             if (source == null)
@@ -6243,6 +7483,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="MassFlow"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MassFlow}"/></param>
+        /// <returns>The max</returns>
         public static MassFlow Max(this IEnumerable<MassFlow> source)
         {
             if (source == null)
@@ -6274,6 +7519,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="KinematicViscosity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{KinematicViscosity}"/></param>
+        /// <returns>The max</returns>
         public static KinematicViscosity Max(this IEnumerable<KinematicViscosity> source)
         {
             if (source == null)
@@ -6305,6 +7555,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Mass}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Mass}"/></param>
+        /// <returns>The max</returns>
         public static Mass? Max(this IEnumerable<Mass?> source)
         {
             if (source == null)
@@ -6330,6 +7585,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Length}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Length}"/></param>
+        /// <returns>The max</returns>
         public static Length? Max(this IEnumerable<Length?> source)
         {
             if (source == null)
@@ -6355,6 +7615,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Time}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Time}"/></param>
+        /// <returns>The max</returns>
         public static Time? Max(this IEnumerable<Time?> source)
         {
             if (source == null)
@@ -6380,6 +7645,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Temperature}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Temperature}"/></param>
+        /// <returns>The max</returns>
         public static Temperature? Max(this IEnumerable<Temperature?> source)
         {
             if (source == null)
@@ -6405,6 +7675,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Angle}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Angle}"/></param>
+        /// <returns>The max</returns>
         public static Angle? Max(this IEnumerable<Angle?> source)
         {
             if (source == null)
@@ -6430,6 +7705,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Unitless}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Unitless}"/></param>
+        /// <returns>The max</returns>
         public static Unitless? Max(this IEnumerable<Unitless?> source)
         {
             if (source == null)
@@ -6455,6 +7735,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Current}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Current}"/></param>
+        /// <returns>The max</returns>
         public static Current? Max(this IEnumerable<Current?> source)
         {
             if (source == null)
@@ -6480,6 +7765,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{LuminousIntensity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousIntensity}"/></param>
+        /// <returns>The max</returns>
         public static LuminousIntensity? Max(this IEnumerable<LuminousIntensity?> source)
         {
             if (source == null)
@@ -6505,6 +7795,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Data}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Data}"/></param>
+        /// <returns>The max</returns>
         public static Data? Max(this IEnumerable<Data?> source)
         {
             if (source == null)
@@ -6530,6 +7825,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{AmountOfSubstance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AmountOfSubstance}"/></param>
+        /// <returns>The max</returns>
         public static AmountOfSubstance? Max(this IEnumerable<AmountOfSubstance?> source)
         {
             if (source == null)
@@ -6555,6 +7855,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{SolidAngle}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SolidAngle}"/></param>
+        /// <returns>The max</returns>
         public static SolidAngle? Max(this IEnumerable<SolidAngle?> source)
         {
             if (source == null)
@@ -6580,6 +7885,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Area}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Area}"/></param>
+        /// <returns>The max</returns>
         public static Area? Max(this IEnumerable<Area?> source)
         {
             if (source == null)
@@ -6605,6 +7915,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Volume}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Volume}"/></param>
+        /// <returns>The max</returns>
         public static Volume? Max(this IEnumerable<Volume?> source)
         {
             if (source == null)
@@ -6630,6 +7945,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Force}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Force}"/></param>
+        /// <returns>The max</returns>
         public static Force? Max(this IEnumerable<Force?> source)
         {
             if (source == null)
@@ -6655,6 +7975,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Pressure}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Pressure}"/></param>
+        /// <returns>The max</returns>
         public static Pressure? Max(this IEnumerable<Pressure?> source)
         {
             if (source == null)
@@ -6680,6 +8005,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Density}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Density}"/></param>
+        /// <returns>The max</returns>
         public static Density? Max(this IEnumerable<Density?> source)
         {
             if (source == null)
@@ -6705,6 +8035,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Energy}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Energy}"/></param>
+        /// <returns>The max</returns>
         public static Energy? Max(this IEnumerable<Energy?> source)
         {
             if (source == null)
@@ -6730,6 +8065,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Power}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Power}"/></param>
+        /// <returns>The max</returns>
         public static Power? Max(this IEnumerable<Power?> source)
         {
             if (source == null)
@@ -6755,6 +8095,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Speed}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Speed}"/></param>
+        /// <returns>The max</returns>
         public static Speed? Max(this IEnumerable<Speed?> source)
         {
             if (source == null)
@@ -6780,6 +8125,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{AngularSpeed}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularSpeed}"/></param>
+        /// <returns>The max</returns>
         public static AngularSpeed? Max(this IEnumerable<AngularSpeed?> source)
         {
             if (source == null)
@@ -6805,6 +8155,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Frequency}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Frequency}"/></param>
+        /// <returns>The max</returns>
         public static Frequency? Max(this IEnumerable<Frequency?> source)
         {
             if (source == null)
@@ -6830,6 +8185,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Acceleration}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Acceleration}"/></param>
+        /// <returns>The max</returns>
         public static Acceleration? Max(this IEnumerable<Acceleration?> source)
         {
             if (source == null)
@@ -6855,6 +8215,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Torque}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Torque}"/></param>
+        /// <returns>The max</returns>
         public static Torque? Max(this IEnumerable<Torque?> source)
         {
             if (source == null)
@@ -6880,6 +8245,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Stiffness}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Stiffness}"/></param>
+        /// <returns>The max</returns>
         public static Stiffness? Max(this IEnumerable<Stiffness?> source)
         {
             if (source == null)
@@ -6905,6 +8275,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{VolumetricFlow}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{VolumetricFlow}"/></param>
+        /// <returns>The max</returns>
         public static VolumetricFlow? Max(this IEnumerable<VolumetricFlow?> source)
         {
             if (source == null)
@@ -6930,6 +8305,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Voltage}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Voltage}"/></param>
+        /// <returns>The max</returns>
         public static Voltage? Max(this IEnumerable<Voltage?> source)
         {
             if (source == null)
@@ -6955,6 +8335,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Resistance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Resistance}"/></param>
+        /// <returns>The max</returns>
         public static Resistance? Max(this IEnumerable<Resistance?> source)
         {
             if (source == null)
@@ -6980,6 +8365,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{SpecificEnergy}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificEnergy}"/></param>
+        /// <returns>The max</returns>
         public static SpecificEnergy? Max(this IEnumerable<SpecificEnergy?> source)
         {
             if (source == null)
@@ -7005,6 +8395,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{ElectricCharge}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricCharge}"/></param>
+        /// <returns>The max</returns>
         public static ElectricCharge? Max(this IEnumerable<ElectricCharge?> source)
         {
             if (source == null)
@@ -7030,6 +8425,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Inductance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Inductance}"/></param>
+        /// <returns>The max</returns>
         public static Inductance? Max(this IEnumerable<Inductance?> source)
         {
             if (source == null)
@@ -7055,6 +8455,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Capacitance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Capacitance}"/></param>
+        /// <returns>The max</returns>
         public static Capacitance? Max(this IEnumerable<Capacitance?> source)
         {
             if (source == null)
@@ -7080,6 +8485,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Flexibility}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Flexibility}"/></param>
+        /// <returns>The max</returns>
         public static Flexibility? Max(this IEnumerable<Flexibility?> source)
         {
             if (source == null)
@@ -7105,6 +8515,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{AngularAcceleration}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularAcceleration}"/></param>
+        /// <returns>The max</returns>
         public static AngularAcceleration? Max(this IEnumerable<AngularAcceleration?> source)
         {
             if (source == null)
@@ -7130,6 +8545,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{AngularJerk}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularJerk}"/></param>
+        /// <returns>The max</returns>
         public static AngularJerk? Max(this IEnumerable<AngularJerk?> source)
         {
             if (source == null)
@@ -7155,6 +8575,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Jerk}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Jerk}"/></param>
+        /// <returns>The max</returns>
         public static Jerk? Max(this IEnumerable<Jerk?> source)
         {
             if (source == null)
@@ -7180,6 +8605,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{LengthPerUnitless}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LengthPerUnitless}"/></param>
+        /// <returns>The max</returns>
         public static LengthPerUnitless? Max(this IEnumerable<LengthPerUnitless?> source)
         {
             if (source == null)
@@ -7205,6 +8635,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{AnglePerUnitless}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AnglePerUnitless}"/></param>
+        /// <returns>The max</returns>
         public static AnglePerUnitless? Max(this IEnumerable<AnglePerUnitless?> source)
         {
             if (source == null)
@@ -7230,6 +8665,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{ForcePerUnitless}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ForcePerUnitless}"/></param>
+        /// <returns>The max</returns>
         public static ForcePerUnitless? Max(this IEnumerable<ForcePerUnitless?> source)
         {
             if (source == null)
@@ -7255,6 +8695,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{LuminousFlux}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousFlux}"/></param>
+        /// <returns>The max</returns>
         public static LuminousFlux? Max(this IEnumerable<LuminousFlux?> source)
         {
             if (source == null)
@@ -7280,6 +8725,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Illuminance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Illuminance}"/></param>
+        /// <returns>The max</returns>
         public static Illuminance? Max(this IEnumerable<Illuminance?> source)
         {
             if (source == null)
@@ -7305,6 +8755,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{MagneticFlux}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFlux}"/></param>
+        /// <returns>The max</returns>
         public static MagneticFlux? Max(this IEnumerable<MagneticFlux?> source)
         {
             if (source == null)
@@ -7330,6 +8785,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{ElectricalConductance}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricalConductance}"/></param>
+        /// <returns>The max</returns>
         public static ElectricalConductance? Max(this IEnumerable<ElectricalConductance?> source)
         {
             if (source == null)
@@ -7355,6 +8815,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{MagneticFieldStrength}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFieldStrength}"/></param>
+        /// <returns>The max</returns>
         public static MagneticFieldStrength? Max(this IEnumerable<MagneticFieldStrength?> source)
         {
             if (source == null)
@@ -7380,6 +8845,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{CatalyticActivity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{CatalyticActivity}"/></param>
+        /// <returns>The max</returns>
         public static CatalyticActivity? Max(this IEnumerable<CatalyticActivity?> source)
         {
             if (source == null)
@@ -7405,6 +8875,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Momentum}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Momentum}"/></param>
+        /// <returns>The max</returns>
         public static Momentum? Max(this IEnumerable<Momentum?> source)
         {
             if (source == null)
@@ -7430,6 +8905,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{Wavenumber}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Wavenumber}"/></param>
+        /// <returns>The max</returns>
         public static Wavenumber? Max(this IEnumerable<Wavenumber?> source)
         {
             if (source == null)
@@ -7455,6 +8935,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{AreaDensity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AreaDensity}"/></param>
+        /// <returns>The max</returns>
         public static AreaDensity? Max(this IEnumerable<AreaDensity?> source)
         {
             if (source == null)
@@ -7480,6 +8965,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{SpecificVolume}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificVolume}"/></param>
+        /// <returns>The max</returns>
         public static SpecificVolume? Max(this IEnumerable<SpecificVolume?> source)
         {
             if (source == null)
@@ -7505,6 +8995,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{MassFlow}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MassFlow}"/></param>
+        /// <returns>The max</returns>
         public static MassFlow? Max(this IEnumerable<MassFlow?> source)
         {
             if (source == null)
@@ -7530,6 +9025,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{KinematicViscosity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{KinematicViscosity}"/></param>
+        /// <returns>The max</returns>
         public static KinematicViscosity? Max(this IEnumerable<KinematicViscosity?> source)
         {
             if (source == null)
@@ -7555,6 +9055,11 @@
             return value;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Mass"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Mass}"/></param>
+        /// <returns>The average</returns>
         public static Mass Average(this IEnumerable<Mass> source)
         {
             if (source == null)
@@ -7578,6 +9083,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Length"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Length}"/></param>
+        /// <returns>The average</returns>
         public static Length Average(this IEnumerable<Length> source)
         {
             if (source == null)
@@ -7601,6 +9111,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Time"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Time}"/></param>
+        /// <returns>The average</returns>
         public static Time Average(this IEnumerable<Time> source)
         {
             if (source == null)
@@ -7624,6 +9139,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Temperature"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Temperature}"/></param>
+        /// <returns>The average</returns>
         public static Temperature Average(this IEnumerable<Temperature> source)
         {
             if (source == null)
@@ -7647,6 +9167,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Angle"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Angle}"/></param>
+        /// <returns>The average</returns>
         public static Angle Average(this IEnumerable<Angle> source)
         {
             if (source == null)
@@ -7670,6 +9195,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Unitless"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Unitless}"/></param>
+        /// <returns>The average</returns>
         public static Unitless Average(this IEnumerable<Unitless> source)
         {
             if (source == null)
@@ -7693,6 +9223,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Current"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Current}"/></param>
+        /// <returns>The average</returns>
         public static Current Average(this IEnumerable<Current> source)
         {
             if (source == null)
@@ -7716,6 +9251,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="LuminousIntensity"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousIntensity}"/></param>
+        /// <returns>The average</returns>
         public static LuminousIntensity Average(this IEnumerable<LuminousIntensity> source)
         {
             if (source == null)
@@ -7739,6 +9279,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Data"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Data}"/></param>
+        /// <returns>The average</returns>
         public static Data Average(this IEnumerable<Data> source)
         {
             if (source == null)
@@ -7762,6 +9307,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="AmountOfSubstance"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AmountOfSubstance}"/></param>
+        /// <returns>The average</returns>
         public static AmountOfSubstance Average(this IEnumerable<AmountOfSubstance> source)
         {
             if (source == null)
@@ -7785,6 +9335,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="SolidAngle"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SolidAngle}"/></param>
+        /// <returns>The average</returns>
         public static SolidAngle Average(this IEnumerable<SolidAngle> source)
         {
             if (source == null)
@@ -7808,6 +9363,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Area"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Area}"/></param>
+        /// <returns>The average</returns>
         public static Area Average(this IEnumerable<Area> source)
         {
             if (source == null)
@@ -7831,6 +9391,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Volume"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Volume}"/></param>
+        /// <returns>The average</returns>
         public static Volume Average(this IEnumerable<Volume> source)
         {
             if (source == null)
@@ -7854,6 +9419,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Force"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Force}"/></param>
+        /// <returns>The average</returns>
         public static Force Average(this IEnumerable<Force> source)
         {
             if (source == null)
@@ -7877,6 +9447,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Pressure"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Pressure}"/></param>
+        /// <returns>The average</returns>
         public static Pressure Average(this IEnumerable<Pressure> source)
         {
             if (source == null)
@@ -7900,6 +9475,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Density"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Density}"/></param>
+        /// <returns>The average</returns>
         public static Density Average(this IEnumerable<Density> source)
         {
             if (source == null)
@@ -7923,6 +9503,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Energy"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Energy}"/></param>
+        /// <returns>The average</returns>
         public static Energy Average(this IEnumerable<Energy> source)
         {
             if (source == null)
@@ -7946,6 +9531,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Power"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Power}"/></param>
+        /// <returns>The average</returns>
         public static Power Average(this IEnumerable<Power> source)
         {
             if (source == null)
@@ -7969,6 +9559,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Speed"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Speed}"/></param>
+        /// <returns>The average</returns>
         public static Speed Average(this IEnumerable<Speed> source)
         {
             if (source == null)
@@ -7992,6 +9587,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="AngularSpeed"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularSpeed}"/></param>
+        /// <returns>The average</returns>
         public static AngularSpeed Average(this IEnumerable<AngularSpeed> source)
         {
             if (source == null)
@@ -8015,6 +9615,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Frequency"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Frequency}"/></param>
+        /// <returns>The average</returns>
         public static Frequency Average(this IEnumerable<Frequency> source)
         {
             if (source == null)
@@ -8038,6 +9643,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Acceleration"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Acceleration}"/></param>
+        /// <returns>The average</returns>
         public static Acceleration Average(this IEnumerable<Acceleration> source)
         {
             if (source == null)
@@ -8061,6 +9671,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Torque"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Torque}"/></param>
+        /// <returns>The average</returns>
         public static Torque Average(this IEnumerable<Torque> source)
         {
             if (source == null)
@@ -8084,6 +9699,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Stiffness"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Stiffness}"/></param>
+        /// <returns>The average</returns>
         public static Stiffness Average(this IEnumerable<Stiffness> source)
         {
             if (source == null)
@@ -8107,6 +9727,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="VolumetricFlow"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{VolumetricFlow}"/></param>
+        /// <returns>The average</returns>
         public static VolumetricFlow Average(this IEnumerable<VolumetricFlow> source)
         {
             if (source == null)
@@ -8130,6 +9755,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Voltage"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Voltage}"/></param>
+        /// <returns>The average</returns>
         public static Voltage Average(this IEnumerable<Voltage> source)
         {
             if (source == null)
@@ -8153,6 +9783,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Resistance"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Resistance}"/></param>
+        /// <returns>The average</returns>
         public static Resistance Average(this IEnumerable<Resistance> source)
         {
             if (source == null)
@@ -8176,6 +9811,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="SpecificEnergy"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificEnergy}"/></param>
+        /// <returns>The average</returns>
         public static SpecificEnergy Average(this IEnumerable<SpecificEnergy> source)
         {
             if (source == null)
@@ -8199,6 +9839,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="ElectricCharge"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricCharge}"/></param>
+        /// <returns>The average</returns>
         public static ElectricCharge Average(this IEnumerable<ElectricCharge> source)
         {
             if (source == null)
@@ -8222,6 +9867,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Inductance"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Inductance}"/></param>
+        /// <returns>The average</returns>
         public static Inductance Average(this IEnumerable<Inductance> source)
         {
             if (source == null)
@@ -8245,6 +9895,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Capacitance"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Capacitance}"/></param>
+        /// <returns>The average</returns>
         public static Capacitance Average(this IEnumerable<Capacitance> source)
         {
             if (source == null)
@@ -8268,6 +9923,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Flexibility"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Flexibility}"/></param>
+        /// <returns>The average</returns>
         public static Flexibility Average(this IEnumerable<Flexibility> source)
         {
             if (source == null)
@@ -8291,6 +9951,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="AngularAcceleration"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularAcceleration}"/></param>
+        /// <returns>The average</returns>
         public static AngularAcceleration Average(this IEnumerable<AngularAcceleration> source)
         {
             if (source == null)
@@ -8314,6 +9979,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="AngularJerk"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularJerk}"/></param>
+        /// <returns>The average</returns>
         public static AngularJerk Average(this IEnumerable<AngularJerk> source)
         {
             if (source == null)
@@ -8337,6 +10007,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Jerk"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Jerk}"/></param>
+        /// <returns>The average</returns>
         public static Jerk Average(this IEnumerable<Jerk> source)
         {
             if (source == null)
@@ -8360,6 +10035,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="LengthPerUnitless"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LengthPerUnitless}"/></param>
+        /// <returns>The average</returns>
         public static LengthPerUnitless Average(this IEnumerable<LengthPerUnitless> source)
         {
             if (source == null)
@@ -8383,6 +10063,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="AnglePerUnitless"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AnglePerUnitless}"/></param>
+        /// <returns>The average</returns>
         public static AnglePerUnitless Average(this IEnumerable<AnglePerUnitless> source)
         {
             if (source == null)
@@ -8406,6 +10091,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="ForcePerUnitless"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ForcePerUnitless}"/></param>
+        /// <returns>The average</returns>
         public static ForcePerUnitless Average(this IEnumerable<ForcePerUnitless> source)
         {
             if (source == null)
@@ -8429,6 +10119,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="LuminousFlux"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousFlux}"/></param>
+        /// <returns>The average</returns>
         public static LuminousFlux Average(this IEnumerable<LuminousFlux> source)
         {
             if (source == null)
@@ -8452,6 +10147,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Illuminance"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Illuminance}"/></param>
+        /// <returns>The average</returns>
         public static Illuminance Average(this IEnumerable<Illuminance> source)
         {
             if (source == null)
@@ -8475,6 +10175,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="MagneticFlux"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFlux}"/></param>
+        /// <returns>The average</returns>
         public static MagneticFlux Average(this IEnumerable<MagneticFlux> source)
         {
             if (source == null)
@@ -8498,6 +10203,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="ElectricalConductance"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricalConductance}"/></param>
+        /// <returns>The average</returns>
         public static ElectricalConductance Average(this IEnumerable<ElectricalConductance> source)
         {
             if (source == null)
@@ -8521,6 +10231,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="MagneticFieldStrength"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFieldStrength}"/></param>
+        /// <returns>The average</returns>
         public static MagneticFieldStrength Average(this IEnumerable<MagneticFieldStrength> source)
         {
             if (source == null)
@@ -8544,6 +10259,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="CatalyticActivity"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{CatalyticActivity}"/></param>
+        /// <returns>The average</returns>
         public static CatalyticActivity Average(this IEnumerable<CatalyticActivity> source)
         {
             if (source == null)
@@ -8567,6 +10287,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Momentum"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Momentum}"/></param>
+        /// <returns>The average</returns>
         public static Momentum Average(this IEnumerable<Momentum> source)
         {
             if (source == null)
@@ -8590,6 +10315,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Wavenumber"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Wavenumber}"/></param>
+        /// <returns>The average</returns>
         public static Wavenumber Average(this IEnumerable<Wavenumber> source)
         {
             if (source == null)
@@ -8613,6 +10343,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="AreaDensity"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AreaDensity}"/></param>
+        /// <returns>The average</returns>
         public static AreaDensity Average(this IEnumerable<AreaDensity> source)
         {
             if (source == null)
@@ -8636,6 +10371,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="SpecificVolume"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificVolume}"/></param>
+        /// <returns>The average</returns>
         public static SpecificVolume Average(this IEnumerable<SpecificVolume> source)
         {
             if (source == null)
@@ -8659,6 +10399,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="MassFlow"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MassFlow}"/></param>
+        /// <returns>The average</returns>
         public static MassFlow Average(this IEnumerable<MassFlow> source)
         {
             if (source == null)
@@ -8682,6 +10427,11 @@
             throw new ArgumentException("No elements", "source");
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="KinematicViscosity"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{KinematicViscosity}"/></param>
+        /// <returns>The average</returns>
         public static KinematicViscosity Average(this IEnumerable<KinematicViscosity> source)
         {
             if (source == null)
@@ -8706,6 +10456,11 @@
         }
 
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Mass}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Mass}"/></param>
+        /// <returns>The average</returns>
         public static Mass? Average(this IEnumerable<Mass?> source)
         {
             if (source == null)
@@ -8732,6 +10487,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Length}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Length}"/></param>
+        /// <returns>The average</returns>
         public static Length? Average(this IEnumerable<Length?> source)
         {
             if (source == null)
@@ -8758,6 +10518,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Time}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Time}"/></param>
+        /// <returns>The average</returns>
         public static Time? Average(this IEnumerable<Time?> source)
         {
             if (source == null)
@@ -8784,6 +10549,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Temperature}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Temperature}"/></param>
+        /// <returns>The average</returns>
         public static Temperature? Average(this IEnumerable<Temperature?> source)
         {
             if (source == null)
@@ -8810,6 +10580,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Angle}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Angle}"/></param>
+        /// <returns>The average</returns>
         public static Angle? Average(this IEnumerable<Angle?> source)
         {
             if (source == null)
@@ -8836,6 +10611,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Unitless}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Unitless}"/></param>
+        /// <returns>The average</returns>
         public static Unitless? Average(this IEnumerable<Unitless?> source)
         {
             if (source == null)
@@ -8862,6 +10642,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Current}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Current}"/></param>
+        /// <returns>The average</returns>
         public static Current? Average(this IEnumerable<Current?> source)
         {
             if (source == null)
@@ -8888,6 +10673,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{LuminousIntensity}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousIntensity}"/></param>
+        /// <returns>The average</returns>
         public static LuminousIntensity? Average(this IEnumerable<LuminousIntensity?> source)
         {
             if (source == null)
@@ -8914,6 +10704,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Data}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Data}"/></param>
+        /// <returns>The average</returns>
         public static Data? Average(this IEnumerable<Data?> source)
         {
             if (source == null)
@@ -8940,6 +10735,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{AmountOfSubstance}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AmountOfSubstance}"/></param>
+        /// <returns>The average</returns>
         public static AmountOfSubstance? Average(this IEnumerable<AmountOfSubstance?> source)
         {
             if (source == null)
@@ -8966,6 +10766,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{SolidAngle}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SolidAngle}"/></param>
+        /// <returns>The average</returns>
         public static SolidAngle? Average(this IEnumerable<SolidAngle?> source)
         {
             if (source == null)
@@ -8992,6 +10797,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Area}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Area}"/></param>
+        /// <returns>The average</returns>
         public static Area? Average(this IEnumerable<Area?> source)
         {
             if (source == null)
@@ -9018,6 +10828,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Volume}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Volume}"/></param>
+        /// <returns>The average</returns>
         public static Volume? Average(this IEnumerable<Volume?> source)
         {
             if (source == null)
@@ -9044,6 +10859,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Force}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Force}"/></param>
+        /// <returns>The average</returns>
         public static Force? Average(this IEnumerable<Force?> source)
         {
             if (source == null)
@@ -9070,6 +10890,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Pressure}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Pressure}"/></param>
+        /// <returns>The average</returns>
         public static Pressure? Average(this IEnumerable<Pressure?> source)
         {
             if (source == null)
@@ -9096,6 +10921,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Density}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Density}"/></param>
+        /// <returns>The average</returns>
         public static Density? Average(this IEnumerable<Density?> source)
         {
             if (source == null)
@@ -9122,6 +10952,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Energy}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Energy}"/></param>
+        /// <returns>The average</returns>
         public static Energy? Average(this IEnumerable<Energy?> source)
         {
             if (source == null)
@@ -9148,6 +10983,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Power}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Power}"/></param>
+        /// <returns>The average</returns>
         public static Power? Average(this IEnumerable<Power?> source)
         {
             if (source == null)
@@ -9174,6 +11014,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Speed}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Speed}"/></param>
+        /// <returns>The average</returns>
         public static Speed? Average(this IEnumerable<Speed?> source)
         {
             if (source == null)
@@ -9200,6 +11045,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{AngularSpeed}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularSpeed}"/></param>
+        /// <returns>The average</returns>
         public static AngularSpeed? Average(this IEnumerable<AngularSpeed?> source)
         {
             if (source == null)
@@ -9226,6 +11076,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Frequency}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Frequency}"/></param>
+        /// <returns>The average</returns>
         public static Frequency? Average(this IEnumerable<Frequency?> source)
         {
             if (source == null)
@@ -9252,6 +11107,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Acceleration}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Acceleration}"/></param>
+        /// <returns>The average</returns>
         public static Acceleration? Average(this IEnumerable<Acceleration?> source)
         {
             if (source == null)
@@ -9278,6 +11138,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Torque}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Torque}"/></param>
+        /// <returns>The average</returns>
         public static Torque? Average(this IEnumerable<Torque?> source)
         {
             if (source == null)
@@ -9304,6 +11169,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Stiffness}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Stiffness}"/></param>
+        /// <returns>The average</returns>
         public static Stiffness? Average(this IEnumerable<Stiffness?> source)
         {
             if (source == null)
@@ -9330,6 +11200,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{VolumetricFlow}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{VolumetricFlow}"/></param>
+        /// <returns>The average</returns>
         public static VolumetricFlow? Average(this IEnumerable<VolumetricFlow?> source)
         {
             if (source == null)
@@ -9356,6 +11231,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Voltage}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Voltage}"/></param>
+        /// <returns>The average</returns>
         public static Voltage? Average(this IEnumerable<Voltage?> source)
         {
             if (source == null)
@@ -9382,6 +11262,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Resistance}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Resistance}"/></param>
+        /// <returns>The average</returns>
         public static Resistance? Average(this IEnumerable<Resistance?> source)
         {
             if (source == null)
@@ -9408,6 +11293,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{SpecificEnergy}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificEnergy}"/></param>
+        /// <returns>The average</returns>
         public static SpecificEnergy? Average(this IEnumerable<SpecificEnergy?> source)
         {
             if (source == null)
@@ -9434,6 +11324,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{ElectricCharge}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricCharge}"/></param>
+        /// <returns>The average</returns>
         public static ElectricCharge? Average(this IEnumerable<ElectricCharge?> source)
         {
             if (source == null)
@@ -9460,6 +11355,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Inductance}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Inductance}"/></param>
+        /// <returns>The average</returns>
         public static Inductance? Average(this IEnumerable<Inductance?> source)
         {
             if (source == null)
@@ -9486,6 +11386,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Capacitance}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Capacitance}"/></param>
+        /// <returns>The average</returns>
         public static Capacitance? Average(this IEnumerable<Capacitance?> source)
         {
             if (source == null)
@@ -9512,6 +11417,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Flexibility}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Flexibility}"/></param>
+        /// <returns>The average</returns>
         public static Flexibility? Average(this IEnumerable<Flexibility?> source)
         {
             if (source == null)
@@ -9538,6 +11448,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{AngularAcceleration}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularAcceleration}"/></param>
+        /// <returns>The average</returns>
         public static AngularAcceleration? Average(this IEnumerable<AngularAcceleration?> source)
         {
             if (source == null)
@@ -9564,6 +11479,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{AngularJerk}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AngularJerk}"/></param>
+        /// <returns>The average</returns>
         public static AngularJerk? Average(this IEnumerable<AngularJerk?> source)
         {
             if (source == null)
@@ -9590,6 +11510,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Jerk}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Jerk}"/></param>
+        /// <returns>The average</returns>
         public static Jerk? Average(this IEnumerable<Jerk?> source)
         {
             if (source == null)
@@ -9616,6 +11541,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{LengthPerUnitless}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LengthPerUnitless}"/></param>
+        /// <returns>The average</returns>
         public static LengthPerUnitless? Average(this IEnumerable<LengthPerUnitless?> source)
         {
             if (source == null)
@@ -9642,6 +11572,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{AnglePerUnitless}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AnglePerUnitless}"/></param>
+        /// <returns>The average</returns>
         public static AnglePerUnitless? Average(this IEnumerable<AnglePerUnitless?> source)
         {
             if (source == null)
@@ -9668,6 +11603,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{ForcePerUnitless}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ForcePerUnitless}"/></param>
+        /// <returns>The average</returns>
         public static ForcePerUnitless? Average(this IEnumerable<ForcePerUnitless?> source)
         {
             if (source == null)
@@ -9694,6 +11634,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{LuminousFlux}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{LuminousFlux}"/></param>
+        /// <returns>The average</returns>
         public static LuminousFlux? Average(this IEnumerable<LuminousFlux?> source)
         {
             if (source == null)
@@ -9720,6 +11665,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Illuminance}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Illuminance}"/></param>
+        /// <returns>The average</returns>
         public static Illuminance? Average(this IEnumerable<Illuminance?> source)
         {
             if (source == null)
@@ -9746,6 +11696,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{MagneticFlux}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFlux}"/></param>
+        /// <returns>The average</returns>
         public static MagneticFlux? Average(this IEnumerable<MagneticFlux?> source)
         {
             if (source == null)
@@ -9772,6 +11727,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{ElectricalConductance}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{ElectricalConductance}"/></param>
+        /// <returns>The average</returns>
         public static ElectricalConductance? Average(this IEnumerable<ElectricalConductance?> source)
         {
             if (source == null)
@@ -9798,6 +11758,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{MagneticFieldStrength}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MagneticFieldStrength}"/></param>
+        /// <returns>The average</returns>
         public static MagneticFieldStrength? Average(this IEnumerable<MagneticFieldStrength?> source)
         {
             if (source == null)
@@ -9824,6 +11789,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{CatalyticActivity}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{CatalyticActivity}"/></param>
+        /// <returns>The average</returns>
         public static CatalyticActivity? Average(this IEnumerable<CatalyticActivity?> source)
         {
             if (source == null)
@@ -9850,6 +11820,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Momentum}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Momentum}"/></param>
+        /// <returns>The average</returns>
         public static Momentum? Average(this IEnumerable<Momentum?> source)
         {
             if (source == null)
@@ -9876,6 +11851,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Wavenumber}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Wavenumber}"/></param>
+        /// <returns>The average</returns>
         public static Wavenumber? Average(this IEnumerable<Wavenumber?> source)
         {
             if (source == null)
@@ -9902,6 +11882,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{AreaDensity}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{AreaDensity}"/></param>
+        /// <returns>The average</returns>
         public static AreaDensity? Average(this IEnumerable<AreaDensity?> source)
         {
             if (source == null)
@@ -9928,6 +11913,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{SpecificVolume}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{SpecificVolume}"/></param>
+        /// <returns>The average</returns>
         public static SpecificVolume? Average(this IEnumerable<SpecificVolume?> source)
         {
             if (source == null)
@@ -9954,6 +11944,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{MassFlow}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MassFlow}"/></param>
+        /// <returns>The average</returns>
         public static MassFlow? Average(this IEnumerable<MassFlow?> source)
         {
             if (source == null)
@@ -9980,6 +11975,11 @@
             return null;
         }
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{KinematicViscosity}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{KinematicViscosity}"/></param>
+        /// <returns>The average</returns>
         public static KinematicViscosity? Average(this IEnumerable<KinematicViscosity?> source)
         {
             if (source == null)

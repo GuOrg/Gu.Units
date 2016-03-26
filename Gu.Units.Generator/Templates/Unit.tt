@@ -119,13 +119,11 @@ namespace <#= Settings.Namespace #>
         /// Creates an instance of <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-		/// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="<#= unit.ClassName #>"/></param>
         /// <returns>True if an instance of <see cref="<#= unit.ClassName #>"/> could be parsed from <paramref name="text"/></returns>	
-        public static bool TryParse(string text, out <#= unit.ClassName #> value)
+        public static bool TryParse(string text, out <#= unit.ClassName #> result)
         {
-            return UnitParser<<#= unit.ClassName #>>.TryParse(text, out value);
+            return UnitParser<<#= unit.ClassName #>>.TryParse(text, out result);
         }
 
         /// <summary>

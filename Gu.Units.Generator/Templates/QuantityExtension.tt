@@ -11,19 +11,29 @@ var quantity = settings.GetQuantityByName(this.QuantityName ?? settings.Quantiti
 namespace Gu.Units.Wpf
 {
     using System;
-    using System.Globalization;
     using System.Windows.Markup;
 
+	/// <summary>
+    /// An <see cref="MarkupExtension"/> for quantities of type <see cref="<#= quantity.Name #>"/> in XAML.
+    /// </summary>
     [MarkupExtensionReturnType(typeof(<#= quantity.Name #>))]
     public class <#= quantity.Name #>Extension : MarkupExtension
     {
+		/// <summary>
+        /// Initializes a new instance of <see cref="Gu.Units.Wpf.<#= quantity.Name #>Extension"/>.
+        /// </summary>
+        /// <param name="value"><see cref="Gu.Units.<#= quantity.Name #>"/>.</param>
         public <#= quantity.Name #>Extension(<#= quantity.Name #> value)
         {
             this.Value = value;
         }
 
+		/// <summary>
+        /// Gets the <see cref="<#= quantity.Name #>"/> value
+        /// </summary>		
         public <#= quantity.Name #> Value { get; private set; }
 
+		/// <inheritdoc />
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             return this.Value;

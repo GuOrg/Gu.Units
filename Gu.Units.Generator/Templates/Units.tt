@@ -31,5 +31,5 @@ foreach (var unit in settings.AllUnits)
 }
 
 fileManager.Process();
-Dispose();
+this.Dispose();
 #>

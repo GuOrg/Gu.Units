@@ -109,6 +109,12 @@
         /// </summary>
         IUnit IUnit.SiUnit => CubicMetresPerSecond;
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="VolumetricFlow"/> that is the result from the multiplication.</returns>
         public static VolumetricFlow operator *(double left, VolumetricFlowUnit right)
         {
             return VolumetricFlow.From(left, right);
@@ -155,8 +161,6 @@
         /// Creates an instance of <see cref="Gu.Units.VolumetricFlowUnit"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.VolumetricFlowUnit"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="VolumetricFlowUnit"/></param>
         /// <returns>True if an instance of <see cref="VolumetricFlowUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out VolumetricFlowUnit value)

@@ -43,6 +43,12 @@
         /// </summary>
         IUnit IUnit.SiUnit => KilogramsPerSecond;
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="MassFlow"/> that is the result from the multiplication.</returns>
         public static MassFlow operator *(double left, MassFlowUnit right)
         {
             return MassFlow.From(left, right);
@@ -89,8 +95,6 @@
         /// Creates an instance of <see cref="Gu.Units.MassFlowUnit"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MassFlowUnit"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="MassFlowUnit"/></param>
         /// <returns>True if an instance of <see cref="MassFlowUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out MassFlowUnit value)

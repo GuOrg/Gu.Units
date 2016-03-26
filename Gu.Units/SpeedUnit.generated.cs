@@ -97,6 +97,12 @@
         /// </summary>
         IUnit IUnit.SiUnit => MetresPerSecond;
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Speed"/> that is the result from the multiplication.</returns>
         public static Speed operator *(double left, SpeedUnit right)
         {
             return Speed.From(left, right);
@@ -143,8 +149,6 @@
         /// Creates an instance of <see cref="Gu.Units.SpeedUnit"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.SpeedUnit"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="SpeedUnit"/></param>
         /// <returns>True if an instance of <see cref="SpeedUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out SpeedUnit value)

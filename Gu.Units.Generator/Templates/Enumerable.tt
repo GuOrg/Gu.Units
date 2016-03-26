@@ -17,6 +17,11 @@ namespace <#= Settings.Namespace #>
     foreach(var quantity in quantities)
     {
 		#>
+        /// <summary>
+        /// Calculates the sum <see cref="<#= quantity.Name #>"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{<#= quantity.Name #>}"/></param>
+        /// <returns>The sum</returns>
         public static <#= quantity.Name #> Sum(this IEnumerable<<#= quantity.Name #>> source)
         {
             if (source == null)
@@ -41,6 +46,11 @@ namespace <#= Settings.Namespace #>
     foreach(var quantity in quantities)
     {
 		#>
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{<#= quantity.Name #>}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{<#= quantity.Name #>}"/></param>
+        /// <returns>The sum</returns>
         public static <#= quantity.Name #>? Sum(this IEnumerable<<#= quantity.Name #>?> source)
         {
             if (source == null)
@@ -66,6 +76,11 @@ namespace <#= Settings.Namespace #>
     foreach(var quantity in quantities)
     {
 		#>
+        /// <summary>
+        /// Calculates the min <see cref="<#= quantity.Name #>"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{<#= quantity.Name #>}"/></param>
+        /// <returns>The min</returns>
         public static <#= quantity.Name #> Min(this IEnumerable<<#= quantity.Name #>> source)
         {
             if (source == null)
@@ -102,6 +117,11 @@ namespace <#= Settings.Namespace #>
     foreach(var quantity in quantities)
     {
 		#>
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{<#= quantity.Name #>}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{<#= quantity.Name #>}"/></param>
+        /// <returns>The min</returns>
         public static <#= quantity.Name #>? Min(this IEnumerable<<#= quantity.Name #>?> source)
         {
             if (source == null)
@@ -132,6 +152,11 @@ namespace <#= Settings.Namespace #>
     foreach(var quantity in quantities)
     {
 		#>
+        /// <summary>
+        /// Calculates the max <see cref="<#= quantity.Name #>"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{<#= quantity.Name #>}"/></param>
+        /// <returns>The max</returns>
         public static <#= quantity.Name #> Max(this IEnumerable<<#= quantity.Name #>> source)
         {
             if (source == null)
@@ -168,6 +193,11 @@ namespace <#= Settings.Namespace #>
     foreach(var quantity in quantities)
     {
 		#>
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{<#= quantity.Name #>}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{<#= quantity.Name #>}"/></param>
+        /// <returns>The max</returns>
         public static <#= quantity.Name #>? Max(this IEnumerable<<#= quantity.Name #>?> source)
         {
             if (source == null)
@@ -198,6 +228,11 @@ namespace <#= Settings.Namespace #>
     foreach(var quantity in quantities)
     {
 		#>
+        /// <summary>
+        /// Calculates the average <see cref="<#= quantity.Name #>"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{<#= quantity.Name #>}"/></param>
+        /// <returns>The average</returns>
         public static <#= quantity.Name #> Average(this IEnumerable<<#= quantity.Name #>> source)
         {
             if (source == null)
@@ -227,6 +262,11 @@ namespace <#= Settings.Namespace #>
     {
 		#>
 
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{<#= quantity.Name #>}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{<#= quantity.Name #>}"/></param>
+        /// <returns>The average</returns>
         public static <#= quantity.Name #>? Average(this IEnumerable<<#= quantity.Name #>?> source)
         {
             if (source == null)

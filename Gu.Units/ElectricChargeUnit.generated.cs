@@ -79,6 +79,12 @@
         /// </summary>
         IUnit IUnit.SiUnit => Coulombs;
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="ElectricCharge"/> that is the result from the multiplication.</returns>
         public static ElectricCharge operator *(double left, ElectricChargeUnit right)
         {
             return ElectricCharge.From(left, right);
@@ -125,8 +131,6 @@
         /// Creates an instance of <see cref="Gu.Units.ElectricChargeUnit"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricChargeUnit"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="ElectricChargeUnit"/></param>
         /// <returns>True if an instance of <see cref="ElectricChargeUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out ElectricChargeUnit value)

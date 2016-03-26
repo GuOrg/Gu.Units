@@ -79,6 +79,12 @@
         /// </summary>
         IUnit IUnit.SiUnit => Watts;
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Power"/> that is the result from the multiplication.</returns>
         public static Power operator *(double left, PowerUnit right)
         {
             return Power.From(left, right);
@@ -125,8 +131,6 @@
         /// Creates an instance of <see cref="Gu.Units.PowerUnit"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.PowerUnit"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="PowerUnit"/></param>
         /// <returns>True if an instance of <see cref="PowerUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out PowerUnit value)

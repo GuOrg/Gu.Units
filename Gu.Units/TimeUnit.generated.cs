@@ -73,6 +73,12 @@
         /// </summary>
         IUnit IUnit.SiUnit => Seconds;
 
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Time"/> that is the result from the multiplication.</returns>
         public static Time operator *(double left, TimeUnit right)
         {
             return Time.From(left, right);
@@ -119,8 +125,6 @@
         /// Creates an instance of <see cref="Gu.Units.TimeUnit"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.TimeUnit"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="TimeUnit"/></param>
         /// <returns>True if an instance of <see cref="TimeUnit"/> could be parsed from <paramref name="text"/></returns>	
         public static bool TryParse(string text, out TimeUnit value)
