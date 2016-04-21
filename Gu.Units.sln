@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{4596217D-657C-443F-83BD-4D850760E094}"
 	ProjectSection(SolutionItems) = preProject
@@ -35,6 +35,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeGen", "CodeGen", "{57FAC692-6AC4-4D35-BFED-F208817451ED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Wpf.UITests", "Gu.Units.Wpf.UITests\Gu.Units.Wpf.UITests.csproj", "{E166E55C-B836-4F38-B89A-B6EB72F2FE28}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{C00F5859-B944-4EB3-8BE4-3211A1028C9D}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+		.paket\Readme.paket.md = .paket\Readme.paket.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

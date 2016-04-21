@@ -79,6 +79,7 @@
     <Compile Include="LengthUnitTests.cs" />
     <Compile Include="LengthUnitTypeConverterTests.cs" />
     <Compile Include="Samples\Samples.cs" />
+    <Compile Include="Sandbox\DumpMarkdown.cs" />
     <Compile Include="Sources\ConversionProvider.cs" />
     <Compile Include="TestHelpers\DummyUnit.cs" />
     <Compile Include="Sources\ParseProvider.cs" />
@@ -110,9 +111,7 @@
   </Target>
   -->
   <Import Project="..\.paket\paket.targets" />
-  <ItemGroup>
-    <Folder Include="Sandbox\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
       <ItemGroup>
