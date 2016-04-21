@@ -14,7 +14,7 @@
   - [WPF.](#wpf)
     - [ValueFormat](#valueformat)
     - [SymbolFormat](#symbolformat)
-    - [SymbolFormat](#symbolformat)
+    - [UnitInput](#unitinput)
   - [JSON.](#json)
   - [Code generation when adding new quantities.](#code-generation-when-adding-new-quantities)
 
@@ -216,7 +216,7 @@ Text="{Binding Speed,
                Converter={units:SpeedConverter mm/s, SymbolFormat=SignedSuperScript}}" />
 ```
 
-### SymbolFormat
+### UnitInput
 Specifies how the symbol is formatted. The default value is `ScalarOnly`.
 
 ```xaml
