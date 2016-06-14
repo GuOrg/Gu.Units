@@ -18,7 +18,7 @@
 
         int IComparer.Compare(object x, object y)
         {
-            return Compare((PrefixConversionVm)x, (PrefixConversionVm)y);
+            return this.Compare((PrefixConversionVm)x, (PrefixConversionVm)y);
         }
     }
 }

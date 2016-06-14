@@ -54,7 +54,7 @@
             var toString = speed.ToString("F1 m/s");
             toString = speed.ToString("F0", "s⁻¹⋅mm");
             toString = speed.ToString("F2 m⋅s⁻¹");
-            var string_Format = $"{speed.metresPerSecond:F1} {SpeedUnit.MetresPerSecond}";
+            var stringFormat = $"{speed.metresPerSecond:F1} {SpeedUnit.MetresPerSecond}";
             // end warmup
 
             var n = 1000000;

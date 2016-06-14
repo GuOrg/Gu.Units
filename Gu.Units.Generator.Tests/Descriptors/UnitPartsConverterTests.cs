@@ -71,16 +71,16 @@
                 this.Parts = parts;
             }
 
-            public string Value { get; private set; }
+            public string Value { get; }
 
-            public string Formatted { get; private set; }
+            public string Formatted { get; }
 
-            public IEnumerable<UnitAndPower> Parts { get; private set; }
+            public IEnumerable<UnitAndPower> Parts { get; }
 
             public override string ToString()
             {
                 var units = string.Join(", ", this.Parts.Select(x => $"{x.Unit.Symbol}^{x.Power}"));
-                return $"{Value} Formatted: {Formatted} Units: {{{units}}}";
+                return $"{this.Value} Formatted: {this.Formatted} Units: {{{units}}}";
             }
         }
     }

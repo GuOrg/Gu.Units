@@ -113,7 +113,7 @@
             var centi = new Prefix("Centi", "c", -2);
             settings.Prefixes.Add(centi);
             var centimetresConversion = PrefixConversion.Create(settings.Metres, centi);
-            var minuteConversion = new Generator.FactorConversion("Minute", "min", 60);
+            var minuteConversion = new FactorConversion("Minute", "min", 60);
             settings.Seconds.FactorConversions.Add(minuteConversion);
             settings.Metres.PrefixConversions.Add(centimetresConversion);
             var centiMetresPart = PartConversion.CreatePart(1, centimetresConversion);

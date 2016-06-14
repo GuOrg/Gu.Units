@@ -1,6 +1,6 @@
 Moq
 NUnit
-Gu.Wpf.Reactive
-Gu.ChangeTracking
 Newtonsoft.Json
 Microsoft.CodeAnalysis.CSharp.Scripting
+Gu.Wpf.Reactive
+Gu.State

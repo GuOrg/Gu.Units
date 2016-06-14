@@ -76,7 +76,7 @@
                 this.OnPropertyChanged(nameof(this.CanRoundtrip));
                 try
                 {
-                    var temp = ExpressionParser.Evaluate(1, this.ParameterName, value);
+                    ExpressionParser.Evaluate(1, this.ParameterName, value);
                 }
                 catch (Exception e)
                 {
@@ -102,7 +102,7 @@
 
                 try
                 {
-                    var temp = ExpressionParser.Evaluate(1, this.Unit.ParameterName, value);
+                    ExpressionParser.Evaluate(1, this.Unit.ParameterName, value);
                 }
                 catch (Exception e)
                 {

@@ -39,7 +39,7 @@ namespace Gu.Units.Generator.Tests
 
         int IComparer.Compare(object x, object y)
         {
-            return Compare((BaseUnit)x, (BaseUnit)y);
+            return this.Compare((BaseUnit)x, (BaseUnit)y);
         }
     }
 }

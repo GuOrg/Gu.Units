@@ -32,7 +32,7 @@
 
         int IComparer.Compare(object x, object y)
         {
-            return Compare((PrefixConversion)x, (PrefixConversion)y);
+            return this.Compare((PrefixConversion)x, (PrefixConversion)y);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Gu.Units.Generator.Tests
 
         public int Compare(object x, object y)
         {
-            return Compare(x, y, new List<ComparedPair>());
+            return this.Compare(x, y, new List<ComparedPair>());
         }
 
         private int Compare(object x, object y, List<ComparedPair> compared)
@@ -55,7 +55,7 @@ namespace Gu.Units.Generator.Tests
                     }
 
                     compared.Add(new ComparedPair(oX, oY));
-                    if (Compare(oX, oY, compared) != 0)
+                    if (this.Compare(oX, oY, compared) != 0)
                     {
                         return -1;
                     }

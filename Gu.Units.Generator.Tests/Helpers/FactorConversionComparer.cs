@@ -23,7 +23,7 @@ namespace Gu.Units.Generator.Tests
 
         int IComparer.Compare(object x, object y)
         {
-            return Compare((FactorConversion) x, (FactorConversion) y);
+            return this.Compare((FactorConversion) x, (FactorConversion) y);
         }
     }
 }
