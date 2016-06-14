@@ -3,12 +3,12 @@ NUGET
   specs:
     Castle.Core (3.3.3)
     Gu.ChangeTracking (1.0.2)
-    Gu.Reactive (1.10)
-      Rx-Main (>= 2.0 < 3.0)
-    Gu.Wpf.NumericInput (0.4.4.1)
-    Gu.Wpf.Reactive (1.10)
-      Gu.Reactive (>= 1.10)
-      Gu.Wpf.ToolTips (>= 0.2 < 1.0)
+    Gu.Reactive (1.11)
+      Rx-Main (>= 2.2.5)
+    Gu.Wpf.NumericInput (0.4.7)
+    Gu.Wpf.Reactive (1.11)
+      Gu.Reactive (>= 1.11)
+      Gu.Wpf.ToolTips
       Rx-WPF (>= 2.0 < 3.0)
     Gu.Wpf.ToolTips (0.2)
     JetBrains.Annotations (10.1.4)
