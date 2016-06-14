@@ -1,7 +1,7 @@
 source http://www.nuget.org/api/v2/
 
 nuget Moq
-nuget Newtonsoft.Json 7.0.1
+nuget Newtonsoft.Json
 nuget NUnit ~> 2
 nuget T4.TemplateFileManager
 nuget Gu.Wpf.Reactive
