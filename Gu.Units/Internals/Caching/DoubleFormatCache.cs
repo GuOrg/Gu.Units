@@ -33,7 +33,7 @@ namespace Gu.Units
         internal static PaddedFormat GetOrCreate(string format, ref int pos)
         {
             string prePadding;
-            format.TryRead(ref pos, out prePadding);
+            WhiteSpaceReader.TryRead(format, ref pos, out prePadding);
             string valueFormat;
             if (DoubleFormatReader.TryRead(format, ref pos, out valueFormat))
             {

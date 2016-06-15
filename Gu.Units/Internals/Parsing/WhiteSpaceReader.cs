@@ -18,7 +18,7 @@ namespace Gu.Units
             return pos != start;
         }
 
-        internal static bool TryRead(this string text,
+        internal static bool TryRead(string text,
             ref int pos,
             out string padding)
         {
