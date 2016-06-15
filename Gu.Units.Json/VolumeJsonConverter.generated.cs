@@ -3,18 +3,18 @@
     using System;
     using Newtonsoft.Json;
 
-	/// <summary>
+    /// <summary>
     /// <see cref="Newtonsoft.Json.JsonConverter" /> for the quantity <see cref="Gu.Units.Volume"/>.
     /// </summary>
     [Serializable]
-	public class VolumeJsonConverter : JsonConverter
-	{
+    public class VolumeJsonConverter : JsonConverter
+    {
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="VolumeUnit.CubicMetres"/>
         /// </summary>
         public static readonly VolumeJsonConverter Default = new VolumeJsonConverter(VolumeUnit.CubicMetres);
-       
-	    /// <summary>
+
+        /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="VolumeUnit.CubicMetres"/>
         /// </summary>
         public static readonly VolumeJsonConverter CubicMetres = new VolumeJsonConverter(VolumeUnit.CubicMetres);
@@ -66,20 +66,20 @@
             this.unit = unit;
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var volume = (Volume)value;
             serializer.Serialize(writer, volume.ToString(this.unit, serializer.Culture));
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(Volume);
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;

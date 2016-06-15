@@ -3,18 +3,18 @@
     using System;
     using Newtonsoft.Json;
 
-	/// <summary>
+    /// <summary>
     /// <see cref="Newtonsoft.Json.JsonConverter" /> for the quantity <see cref="Gu.Units.Wavenumber"/>.
     /// </summary>
     [Serializable]
-	public class WavenumberJsonConverter : JsonConverter
-	{
+    public class WavenumberJsonConverter : JsonConverter
+    {
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="WavenumberUnit.ReciprocalMetres"/>
         /// </summary>
         public static readonly WavenumberJsonConverter Default = new WavenumberJsonConverter(WavenumberUnit.ReciprocalMetres);
-       
-	    /// <summary>
+
+        /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="WavenumberUnit.ReciprocalMetres"/>
         /// </summary>
         public static readonly WavenumberJsonConverter ReciprocalMetres = new WavenumberJsonConverter(WavenumberUnit.ReciprocalMetres);
@@ -26,20 +26,20 @@
             this.unit = unit;
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var wavenumber = (Wavenumber)value;
             serializer.Serialize(writer, wavenumber.ToString(this.unit, serializer.Culture));
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(Wavenumber);
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;

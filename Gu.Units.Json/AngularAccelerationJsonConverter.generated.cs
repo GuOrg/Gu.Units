@@ -20,29 +20,29 @@
         public static readonly AngularAccelerationJsonConverter RadiansPerSecondSquared = new AngularAccelerationJsonConverter(AngularAccelerationUnit.RadiansPerSecondSquared);
 
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularAccelerationUnit.DegreesPerSquareSecond"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularAccelerationUnit.DegreesPerSecondSquared"/>
         /// </summary>
-        public static readonly AngularAccelerationJsonConverter DegreesPerSquareSecond = new AngularAccelerationJsonConverter(AngularAccelerationUnit.DegreesPerSquareSecond);
+        public static readonly AngularAccelerationJsonConverter DegreesPerSecondSquared = new AngularAccelerationJsonConverter(AngularAccelerationUnit.DegreesPerSecondSquared);
 
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularAccelerationUnit.RadiansPerSquareHour"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularAccelerationUnit.RadiansPerHourSquared"/>
         /// </summary>
-        public static readonly AngularAccelerationJsonConverter RadiansPerSquareHour = new AngularAccelerationJsonConverter(AngularAccelerationUnit.RadiansPerSquareHour);
+        public static readonly AngularAccelerationJsonConverter RadiansPerHourSquared = new AngularAccelerationJsonConverter(AngularAccelerationUnit.RadiansPerHourSquared);
 
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularAccelerationUnit.DegreesPerSquareHour"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularAccelerationUnit.DegreesPerHourSquared"/>
         /// </summary>
-        public static readonly AngularAccelerationJsonConverter DegreesPerSquareHour = new AngularAccelerationJsonConverter(AngularAccelerationUnit.DegreesPerSquareHour);
+        public static readonly AngularAccelerationJsonConverter DegreesPerHourSquared = new AngularAccelerationJsonConverter(AngularAccelerationUnit.DegreesPerHourSquared);
 
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularAccelerationUnit.DegreesPerSquareMinute"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularAccelerationUnit.DegreesPerMinuteSquared"/>
         /// </summary>
-        public static readonly AngularAccelerationJsonConverter DegreesPerSquareMinute = new AngularAccelerationJsonConverter(AngularAccelerationUnit.DegreesPerSquareMinute);
+        public static readonly AngularAccelerationJsonConverter DegreesPerMinuteSquared = new AngularAccelerationJsonConverter(AngularAccelerationUnit.DegreesPerMinuteSquared);
 
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularAccelerationUnit.RadiansPerSquareMinute"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularAccelerationUnit.RadiansPerMinuteSquared"/>
         /// </summary>
-        public static readonly AngularAccelerationJsonConverter RadiansPerSquareMinute = new AngularAccelerationJsonConverter(AngularAccelerationUnit.RadiansPerSquareMinute);
+        public static readonly AngularAccelerationJsonConverter RadiansPerMinuteSquared = new AngularAccelerationJsonConverter(AngularAccelerationUnit.RadiansPerMinuteSquared);
 
         private readonly AngularAccelerationUnit unit;
 

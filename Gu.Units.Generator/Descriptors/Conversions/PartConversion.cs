@@ -2,12 +2,18 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Linq;
+    using System.Runtime.CompilerServices;
+
+    using JetBrains.Annotations;
 
     [Serializable]
-    public class PartConversion : IFactorConversion
+    public class PartConversion : IFactorConversion, INotifyPropertyChanged
     {
         private Unit unit;
+
+        private string name;
 
         public PartConversion(string name, string symbol, double factor)
         {
@@ -16,7 +22,25 @@
             this.Factor = factor;
         }
 
-        public string Name { get; }
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+            set
+            {
+                if (value == this.name)
+                    return;
+                this.name = value;
+                this.OnPropertyChanged();
+                this.OnPropertyChanged(nameof(this.ToSi));
+                this.OnPropertyChanged(nameof(this.FromSi));
+                this.OnPropertyChanged(nameof(this.ParameterName));
+            }
+        }
 
         public string ParameterName => this.Name.ToParameterName();
 
@@ -196,6 +220,13 @@
             public string SymbolConversion => this.GetSymbolConversion();
 
             public bool CanRoundtrip => true;
+        }
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged(
+            [CallerMemberName] string propertyName = null)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

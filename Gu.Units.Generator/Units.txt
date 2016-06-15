@@ -1467,33 +1467,28 @@
       "PrefixConversions": [],
       "PartConversions": [
         {
-          "Name": "DegreesPerSquareSecond",
+          "Name": "DegreesPerSecondSquared",
           "Symbol": "°⋅s⁻²",
           "Factor": 0.017453292519943295
         },
         {
-          "Name": "RadiansPerSquareHour",
+          "Name": "RadiansPerHourSquared",
           "Symbol": "h⁻²⋅rad",
           "Factor": 7.71604938271605E-08
         },
         {
-          "Name": "DegreesPerSquareHour",
+          "Name": "DegreesPerHourSquared",
           "Symbol": "h⁻²⋅°",
           "Factor": 1.346704669748711E-09
         },
         {
-          "Name": "DegreesPerSquareMinute",
+          "Name": "DegreesPerMinuteSquared",
           "Symbol": "min⁻²⋅°",
           "Factor": 4.84813681109536E-06
         },
         {
-          "Name": "RadiansPerSquareMinute",
-          "Symbol": "min⁻²⋅rad",
-          "Factor": 0.00027777777777777778
-        },
-        {
           "Name": "RadiansPerMinuteSquared",
-          "Symbol": "rad/min²",
+          "Symbol": "min⁻²⋅rad",
           "Factor": 0.00027777777777777778
         }
       ]

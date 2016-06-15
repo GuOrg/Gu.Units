@@ -3,18 +3,18 @@
     using System;
     using Newtonsoft.Json;
 
-	/// <summary>
+    /// <summary>
     /// <see cref="Newtonsoft.Json.JsonConverter" /> for the quantity <see cref="Gu.Units.SpecificVolume"/>.
     /// </summary>
     [Serializable]
-	public class SpecificVolumeJsonConverter : JsonConverter
-	{
+    public class SpecificVolumeJsonConverter : JsonConverter
+    {
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="SpecificVolumeUnit.CubicMetresPerKilogram"/>
         /// </summary>
         public static readonly SpecificVolumeJsonConverter Default = new SpecificVolumeJsonConverter(SpecificVolumeUnit.CubicMetresPerKilogram);
-       
-	    /// <summary>
+
+        /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="SpecificVolumeUnit.CubicMetresPerKilogram"/>
         /// </summary>
         public static readonly SpecificVolumeJsonConverter CubicMetresPerKilogram = new SpecificVolumeJsonConverter(SpecificVolumeUnit.CubicMetresPerKilogram);
@@ -36,20 +36,20 @@
             this.unit = unit;
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var specificVolume = (SpecificVolume)value;
             serializer.Serialize(writer, specificVolume.ToString(this.unit, serializer.Culture));
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(SpecificVolume);
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;

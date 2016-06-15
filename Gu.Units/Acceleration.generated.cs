@@ -101,6 +101,11 @@
         public double MetresPerMinuteSquared => 3600 * this.metresPerSecondSquared;
 
         /// <summary>
+        /// The quantity in MillimetresPerMinuteSquared
+        /// </summary>
+        public double MillimetresPerMinuteSquared => 3600000 * this.metresPerSecondSquared;
+
+        /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
@@ -275,6 +280,15 @@
         public static Acceleration FromMetresPerMinuteSquared(double metresPerMinuteSquared)
         {
             return new Acceleration(metresPerMinuteSquared / 3600);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
+        /// </summary>
+        /// <param name="millimetresPerMinuteSquared">The value in mm/min²</param>
+        public static Acceleration FromMillimetresPerMinuteSquared(double millimetresPerMinuteSquared)
+        {
+            return new Acceleration(millimetresPerMinuteSquared / 3600000);
         }
 
         /// <summary>

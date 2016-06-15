@@ -49,6 +49,11 @@
         /// </summary>
         public static readonly AccelerationJsonConverter MetresPerMinuteSquared = new AccelerationJsonConverter(AccelerationUnit.MetresPerMinuteSquared);
 
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AccelerationUnit.MillimetresPerMinuteSquared"/>
+        /// </summary>
+        public static readonly AccelerationJsonConverter MillimetresPerMinuteSquared = new AccelerationJsonConverter(AccelerationUnit.MillimetresPerMinuteSquared);
+
         private readonly AccelerationUnit unit;
 
         private AccelerationJsonConverter(AccelerationUnit unit)

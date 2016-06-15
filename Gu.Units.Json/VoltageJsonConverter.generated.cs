@@ -3,18 +3,18 @@
     using System;
     using Newtonsoft.Json;
 
-	/// <summary>
+    /// <summary>
     /// <see cref="Newtonsoft.Json.JsonConverter" /> for the quantity <see cref="Gu.Units.Voltage"/>.
     /// </summary>
     [Serializable]
-	public class VoltageJsonConverter : JsonConverter
-	{
+    public class VoltageJsonConverter : JsonConverter
+    {
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="VoltageUnit.Volts"/>
         /// </summary>
         public static readonly VoltageJsonConverter Default = new VoltageJsonConverter(VoltageUnit.Volts);
-       
-	    /// <summary>
+
+        /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="VoltageUnit.Volts"/>
         /// </summary>
         public static readonly VoltageJsonConverter Volts = new VoltageJsonConverter(VoltageUnit.Volts);
@@ -56,20 +56,20 @@
             this.unit = unit;
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
             var voltage = (Voltage)value;
             serializer.Serialize(writer, voltage.ToString(this.unit, serializer.Culture));
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override bool CanConvert(Type objectType)
         {
             return objectType == typeof(Voltage);
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var stringValue = reader.Value as string;

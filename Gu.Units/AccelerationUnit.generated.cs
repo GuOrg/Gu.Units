@@ -53,6 +53,12 @@
         /// </summary>
         public static readonly AccelerationUnit MetresPerMinuteSquared = new AccelerationUnit(metresPerMinuteSquared => metresPerMinuteSquared / 3600, metresPerSecondSquared => 3600 * metresPerSecondSquared, "m/min²");
 
+        /// <summary>
+        /// The MillimetresPerMinuteSquared unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly AccelerationUnit MillimetresPerMinuteSquared = new AccelerationUnit(millimetresPerMinuteSquared => millimetresPerMinuteSquared / 3600000, metresPerSecondSquared => 3600000 * metresPerSecondSquared, "mm/min²");
+
         private readonly Func<double, double> toMetresPerSecondSquared;
         private readonly Func<double, double> fromMetresPerSecondSquared;
         internal readonly string symbol;

@@ -18,34 +18,34 @@
         public static readonly AngularAccelerationUnit RadiansPerSecondSquared = new AngularAccelerationUnit(radiansPerSecondSquared => radiansPerSecondSquared, radiansPerSecondSquared => radiansPerSecondSquared, "rad/s²");
 
         /// <summary>
-        /// The DegreesPerSquareSecond unit
+        /// The DegreesPerSecondSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularAccelerationUnit DegreesPerSquareSecond = new AngularAccelerationUnit(degreesPerSquareSecond => 0.0174532925199433 * degreesPerSquareSecond, radiansPerSecondSquared => radiansPerSecondSquared / 0.0174532925199433, "°⋅s⁻²");
+        public static readonly AngularAccelerationUnit DegreesPerSecondSquared = new AngularAccelerationUnit(degreesPerSecondSquared => 0.0174532925199433 * degreesPerSecondSquared, radiansPerSecondSquared => radiansPerSecondSquared / 0.0174532925199433, "°⋅s⁻²");
 
         /// <summary>
-        /// The RadiansPerSquareHour unit
+        /// The RadiansPerHourSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularAccelerationUnit RadiansPerSquareHour = new AngularAccelerationUnit(radiansPerSquareHour => radiansPerSquareHour / 12960000, radiansPerSecondSquared => 12960000 * radiansPerSecondSquared, "h⁻²⋅rad");
+        public static readonly AngularAccelerationUnit RadiansPerHourSquared = new AngularAccelerationUnit(radiansPerHourSquared => radiansPerHourSquared / 12960000, radiansPerSecondSquared => 12960000 * radiansPerSecondSquared, "h⁻²⋅rad");
 
         /// <summary>
-        /// The DegreesPerSquareHour unit
+        /// The DegreesPerHourSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularAccelerationUnit DegreesPerSquareHour = new AngularAccelerationUnit(degreesPerSquareHour => 1.34670466974871E-09 * degreesPerSquareHour, radiansPerSecondSquared => radiansPerSecondSquared / 1.34670466974871E-09, "h⁻²⋅°");
+        public static readonly AngularAccelerationUnit DegreesPerHourSquared = new AngularAccelerationUnit(degreesPerHourSquared => 1.34670466974871E-09 * degreesPerHourSquared, radiansPerSecondSquared => radiansPerSecondSquared / 1.34670466974871E-09, "h⁻²⋅°");
 
         /// <summary>
-        /// The DegreesPerSquareMinute unit
+        /// The DegreesPerMinuteSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularAccelerationUnit DegreesPerSquareMinute = new AngularAccelerationUnit(degreesPerSquareMinute => 4.84813681109536E-06 * degreesPerSquareMinute, radiansPerSecondSquared => radiansPerSecondSquared / 4.84813681109536E-06, "min⁻²⋅°");
+        public static readonly AngularAccelerationUnit DegreesPerMinuteSquared = new AngularAccelerationUnit(degreesPerMinuteSquared => 4.84813681109536E-06 * degreesPerMinuteSquared, radiansPerSecondSquared => radiansPerSecondSquared / 4.84813681109536E-06, "min⁻²⋅°");
 
         /// <summary>
-        /// The RadiansPerSquareMinute unit
+        /// The RadiansPerMinuteSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularAccelerationUnit RadiansPerSquareMinute = new AngularAccelerationUnit(radiansPerSquareMinute => radiansPerSquareMinute / 3600, radiansPerSecondSquared => 3600 * radiansPerSecondSquared, "min⁻²⋅rad");
+        public static readonly AngularAccelerationUnit RadiansPerMinuteSquared = new AngularAccelerationUnit(radiansPerMinuteSquared => radiansPerMinuteSquared / 3600, radiansPerSecondSquared => 3600 * radiansPerSecondSquared, "min⁻²⋅rad");
 
         private readonly Func<double, double> toRadiansPerSecondSquared;
         private readonly Func<double, double> fromRadiansPerSecondSquared;
