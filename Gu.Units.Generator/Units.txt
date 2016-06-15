@@ -968,6 +968,11 @@
           "Name": "MetresPerMinuteSquared",
           "Symbol": "m/min²",
           "Factor": 0.00027777777777777778
+        },
+        {
+          "Name": "MillimetresPerMinuteSquared",
+          "Symbol": "mm/min²",
+          "Factor": 2.7777777777777776E-07
         }
       ]
     },
@@ -1484,6 +1489,11 @@
         {
           "Name": "RadiansPerSquareMinute",
           "Symbol": "min⁻²⋅rad",
+          "Factor": 0.00027777777777777778
+        },
+        {
+          "Name": "RadiansPerMinuteSquared",
+          "Symbol": "rad/min²",
           "Factor": 0.00027777777777777778
         }
       ]
