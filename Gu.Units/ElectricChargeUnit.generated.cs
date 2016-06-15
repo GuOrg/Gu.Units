@@ -12,7 +12,7 @@
     public struct ElectricChargeUnit : IUnit, IUnit<ElectricCharge>, IEquatable<ElectricChargeUnit>
     {
         /// <summary>
-        /// The ElectricChargeUnit unit
+        /// The Coulombs unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly ElectricChargeUnit Coulombs = new ElectricChargeUnit(coulombs => coulombs, coulombs => coulombs, "C");

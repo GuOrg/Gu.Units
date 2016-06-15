@@ -12,7 +12,7 @@
     public struct SpecificVolumeUnit : IUnit, IUnit<SpecificVolume>, IEquatable<SpecificVolumeUnit>
     {
         /// <summary>
-        /// The SpecificVolumeUnit unit
+        /// The CubicMetresPerKilogram unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly SpecificVolumeUnit CubicMetresPerKilogram = new SpecificVolumeUnit(cubicMetresPerKilogram => cubicMetresPerKilogram, cubicMetresPerKilogram => cubicMetresPerKilogram, "m³/kg");

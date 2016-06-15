@@ -12,7 +12,7 @@
     public struct TemperatureUnit : IUnit, IUnit<Temperature>, IEquatable<TemperatureUnit>
     {
         /// <summary>
-        /// The TemperatureUnit unit
+        /// The Kelvin unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly TemperatureUnit Kelvin = new TemperatureUnit(kelvin => kelvin, kelvin => kelvin, "K");

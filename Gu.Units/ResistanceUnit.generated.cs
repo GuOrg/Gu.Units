@@ -12,7 +12,7 @@
     public struct ResistanceUnit : IUnit, IUnit<Resistance>, IEquatable<ResistanceUnit>
     {
         /// <summary>
-        /// The ResistanceUnit unit
+        /// The Ohm unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly ResistanceUnit Ohm = new ResistanceUnit(ohm => ohm, ohm => ohm, "Ω");

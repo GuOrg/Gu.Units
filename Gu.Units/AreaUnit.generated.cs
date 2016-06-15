@@ -12,7 +12,7 @@
     public struct AreaUnit : IUnit, IUnit<Area>, IEquatable<AreaUnit>
     {
         /// <summary>
-        /// The AreaUnit unit
+        /// The SquareMetres unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly AreaUnit SquareMetres = new AreaUnit(squareMetres => squareMetres, squareMetres => squareMetres, "m²");

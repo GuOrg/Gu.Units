@@ -12,7 +12,7 @@
     public struct MassFlowUnit : IUnit, IUnit<MassFlow>, IEquatable<MassFlowUnit>
     {
         /// <summary>
-        /// The MassFlowUnit unit
+        /// The KilogramsPerSecond unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly MassFlowUnit KilogramsPerSecond = new MassFlowUnit(kilogramsPerSecond => kilogramsPerSecond, kilogramsPerSecond => kilogramsPerSecond, "kg/s");

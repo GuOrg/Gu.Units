@@ -12,7 +12,7 @@
     public struct WavenumberUnit : IUnit, IUnit<Wavenumber>, IEquatable<WavenumberUnit>
     {
         /// <summary>
-        /// The WavenumberUnit unit
+        /// The ReciprocalMetres unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly WavenumberUnit ReciprocalMetres = new WavenumberUnit(reciprocalMetres => reciprocalMetres, reciprocalMetres => reciprocalMetres, "m⁻¹");

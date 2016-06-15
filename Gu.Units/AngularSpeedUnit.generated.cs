@@ -12,7 +12,7 @@
     public struct AngularSpeedUnit : IUnit, IUnit<AngularSpeed>, IEquatable<AngularSpeedUnit>
     {
         /// <summary>
-        /// The AngularSpeedUnit unit
+        /// The RadiansPerSecond unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly AngularSpeedUnit RadiansPerSecond = new AngularSpeedUnit(radiansPerSecond => radiansPerSecond, radiansPerSecond => radiansPerSecond, "rad/s");

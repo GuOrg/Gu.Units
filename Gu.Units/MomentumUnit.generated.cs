@@ -12,7 +12,7 @@
     public struct MomentumUnit : IUnit, IUnit<Momentum>, IEquatable<MomentumUnit>
     {
         /// <summary>
-        /// The MomentumUnit unit
+        /// The NewtonSecond unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly MomentumUnit NewtonSecond = new MomentumUnit(newtonSecond => newtonSecond, newtonSecond => newtonSecond, "N⋅s");

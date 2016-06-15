@@ -12,7 +12,7 @@
     public struct AmountOfSubstanceUnit : IUnit, IUnit<AmountOfSubstance>, IEquatable<AmountOfSubstanceUnit>
     {
         /// <summary>
-        /// The AmountOfSubstanceUnit unit
+        /// The Moles unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly AmountOfSubstanceUnit Moles = new AmountOfSubstanceUnit(moles => moles, moles => moles, "mol");

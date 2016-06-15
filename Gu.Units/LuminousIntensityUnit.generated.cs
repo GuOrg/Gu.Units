@@ -12,7 +12,7 @@
     public struct LuminousIntensityUnit : IUnit, IUnit<LuminousIntensity>, IEquatable<LuminousIntensityUnit>
     {
         /// <summary>
-        /// The LuminousIntensityUnit unit
+        /// The Candelas unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly LuminousIntensityUnit Candelas = new LuminousIntensityUnit(candelas => candelas, candelas => candelas, "cd");

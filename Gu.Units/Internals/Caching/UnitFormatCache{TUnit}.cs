@@ -139,9 +139,9 @@ namespace Gu.Units
                 this.symbolPartsMap.Add(symbol, parts);
             }
 
-            internal void Add(string symbol, TUnit parts)
+            internal void Add(string symbol, TUnit unit)
             {
-                this.symbolUnitMap.Add(symbol, parts);
+                this.symbolUnitMap.Add(symbol, unit);
             }
 
             internal bool TryGetParts(TUnit unit, out IReadOnlyList<SymbolAndPower> result)

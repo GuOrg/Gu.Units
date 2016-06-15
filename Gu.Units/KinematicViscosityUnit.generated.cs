@@ -12,7 +12,7 @@
     public struct KinematicViscosityUnit : IUnit, IUnit<KinematicViscosity>, IEquatable<KinematicViscosityUnit>
     {
         /// <summary>
-        /// The KinematicViscosityUnit unit
+        /// The SquareMetresPerSecond unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly KinematicViscosityUnit SquareMetresPerSecond = new KinematicViscosityUnit(squareMetresPerSecond => squareMetresPerSecond, squareMetresPerSecond => squareMetresPerSecond, "m²/s");

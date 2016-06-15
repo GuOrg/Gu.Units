@@ -12,7 +12,7 @@
     public struct SpecificEnergyUnit : IUnit, IUnit<SpecificEnergy>, IEquatable<SpecificEnergyUnit>
     {
         /// <summary>
-        /// The SpecificEnergyUnit unit
+        /// The JoulesPerKilogram unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly SpecificEnergyUnit JoulesPerKilogram = new SpecificEnergyUnit(joulesPerKilogram => joulesPerKilogram, joulesPerKilogram => joulesPerKilogram, "J/kg");

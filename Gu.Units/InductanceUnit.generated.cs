@@ -12,7 +12,7 @@
     public struct InductanceUnit : IUnit, IUnit<Inductance>, IEquatable<InductanceUnit>
     {
         /// <summary>
-        /// The InductanceUnit unit
+        /// The Henrys unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly InductanceUnit Henrys = new InductanceUnit(henrys => henrys, henrys => henrys, "H");

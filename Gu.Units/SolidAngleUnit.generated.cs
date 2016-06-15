@@ -12,7 +12,7 @@
     public struct SolidAngleUnit : IUnit, IUnit<SolidAngle>, IEquatable<SolidAngleUnit>
     {
         /// <summary>
-        /// The SolidAngleUnit unit
+        /// The Steradians unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly SolidAngleUnit Steradians = new SolidAngleUnit(steradians => steradians, steradians => steradians, "sr");

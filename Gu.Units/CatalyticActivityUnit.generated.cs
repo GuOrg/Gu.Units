@@ -12,7 +12,7 @@
     public struct CatalyticActivityUnit : IUnit, IUnit<CatalyticActivity>, IEquatable<CatalyticActivityUnit>
     {
         /// <summary>
-        /// The CatalyticActivityUnit unit
+        /// The Katals unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly CatalyticActivityUnit Katals = new CatalyticActivityUnit(katals => katals, katals => katals, "kat");

@@ -12,7 +12,7 @@
     public struct MagneticFluxUnit : IUnit, IUnit<MagneticFlux>, IEquatable<MagneticFluxUnit>
     {
         /// <summary>
-        /// The MagneticFluxUnit unit
+        /// The Webers unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly MagneticFluxUnit Webers = new MagneticFluxUnit(webers => webers, webers => webers, "Wb");

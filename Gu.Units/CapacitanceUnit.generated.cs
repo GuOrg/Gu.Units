@@ -12,7 +12,7 @@
     public struct CapacitanceUnit : IUnit, IUnit<Capacitance>, IEquatable<CapacitanceUnit>
     {
         /// <summary>
-        /// The CapacitanceUnit unit
+        /// The Farads unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly CapacitanceUnit Farads = new CapacitanceUnit(farads => farads, farads => farads, "F");

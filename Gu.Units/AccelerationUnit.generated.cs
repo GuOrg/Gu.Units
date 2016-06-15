@@ -12,7 +12,7 @@
     public struct AccelerationUnit : IUnit, IUnit<Acceleration>, IEquatable<AccelerationUnit>
     {
         /// <summary>
-        /// The AccelerationUnit unit
+        /// The MetresPerSecondSquared unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly AccelerationUnit MetresPerSecondSquared = new AccelerationUnit(metresPerSecondSquared => metresPerSecondSquared, metresPerSecondSquared => metresPerSecondSquared, "m/s²");

@@ -12,7 +12,7 @@
     public struct DensityUnit : IUnit, IUnit<Density>, IEquatable<DensityUnit>
     {
         /// <summary>
-        /// The DensityUnit unit
+        /// The KilogramsPerCubicMetre unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly DensityUnit KilogramsPerCubicMetre = new DensityUnit(kilogramsPerCubicMetre => kilogramsPerCubicMetre, kilogramsPerCubicMetre => kilogramsPerCubicMetre, "kg/m³");

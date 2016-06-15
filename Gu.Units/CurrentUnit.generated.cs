@@ -12,7 +12,7 @@
     public struct CurrentUnit : IUnit, IUnit<Current>, IEquatable<CurrentUnit>
     {
         /// <summary>
-        /// The CurrentUnit unit
+        /// The Amperes unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly CurrentUnit Amperes = new CurrentUnit(amperes => amperes, amperes => amperes, "A");

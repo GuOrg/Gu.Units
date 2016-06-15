@@ -12,7 +12,7 @@
     public struct VoltageUnit : IUnit, IUnit<Voltage>, IEquatable<VoltageUnit>
     {
         /// <summary>
-        /// The VoltageUnit unit
+        /// The Volts unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly VoltageUnit Volts = new VoltageUnit(volts => volts, volts => volts, "V");

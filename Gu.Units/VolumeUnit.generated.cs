@@ -12,7 +12,7 @@
     public struct VolumeUnit : IUnit, IUnit<Volume>, IEquatable<VolumeUnit>
     {
         /// <summary>
-        /// The VolumeUnit unit
+        /// The CubicMetres unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly VolumeUnit CubicMetres = new VolumeUnit(cubicMetres => cubicMetres, cubicMetres => cubicMetres, "m³");

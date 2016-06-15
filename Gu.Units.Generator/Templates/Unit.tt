@@ -22,7 +22,7 @@ namespace <#= Settings.Namespace #>
     public struct <#= unit.ClassName #> : IUnit, IUnit<<#= unit.QuantityName #>>, IEquatable<<#= unit.ClassName #>>
     {
         /// <summary>
-        /// The <#= unit.ClassName #> unit
+        /// The <#= unit.Name #> unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly <#= unit.ClassName #> <#= unit.Name #> = new <#= unit.ClassName #>(<#= unit.ParameterName #> => <#= unit.ParameterName #>, <#= unit.ParameterName #> => <#= unit.ParameterName #>, "<#= unit.Symbol #>");

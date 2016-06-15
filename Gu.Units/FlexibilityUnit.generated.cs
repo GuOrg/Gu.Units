@@ -12,7 +12,7 @@
     public struct FlexibilityUnit : IUnit, IUnit<Flexibility>, IEquatable<FlexibilityUnit>
     {
         /// <summary>
-        /// The FlexibilityUnit unit
+        /// The MetresPerNewton unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly FlexibilityUnit MetresPerNewton = new FlexibilityUnit(metresPerNewton => metresPerNewton, metresPerNewton => metresPerNewton, "m/N");

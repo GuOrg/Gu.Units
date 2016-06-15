@@ -12,7 +12,7 @@
     public struct AreaDensityUnit : IUnit, IUnit<AreaDensity>, IEquatable<AreaDensityUnit>
     {
         /// <summary>
-        /// The AreaDensityUnit unit
+        /// The KilogramsPerSquareMetre unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly AreaDensityUnit KilogramsPerSquareMetre = new AreaDensityUnit(kilogramsPerSquareMetre => kilogramsPerSquareMetre, kilogramsPerSquareMetre => kilogramsPerSquareMetre, "kg/m²");

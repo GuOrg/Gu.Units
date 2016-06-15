@@ -12,7 +12,7 @@
     public struct UnitlessUnit : IUnit, IUnit<Unitless>, IEquatable<UnitlessUnit>
     {
         /// <summary>
-        /// The UnitlessUnit unit
+        /// The Scalar unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly UnitlessUnit Scalar = new UnitlessUnit(scalar => scalar, scalar => scalar, "ul");

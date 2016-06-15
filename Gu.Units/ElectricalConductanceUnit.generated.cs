@@ -12,7 +12,7 @@
     public struct ElectricalConductanceUnit : IUnit, IUnit<ElectricalConductance>, IEquatable<ElectricalConductanceUnit>
     {
         /// <summary>
-        /// The ElectricalConductanceUnit unit
+        /// The Siemens unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly ElectricalConductanceUnit Siemens = new ElectricalConductanceUnit(siemens => siemens, siemens => siemens, "S");

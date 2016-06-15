@@ -12,7 +12,7 @@
     public struct PressureUnit : IUnit, IUnit<Pressure>, IEquatable<PressureUnit>
     {
         /// <summary>
-        /// The PressureUnit unit
+        /// The Pascals unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly PressureUnit Pascals = new PressureUnit(pascals => pascals, pascals => pascals, "Pa");

@@ -12,7 +12,7 @@
     public struct AngleUnit : IUnit, IUnit<Angle>, IEquatable<AngleUnit>
     {
         /// <summary>
-        /// The AngleUnit unit
+        /// The Radians unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly AngleUnit Radians = new AngleUnit(radians => radians, radians => radians, "rad");

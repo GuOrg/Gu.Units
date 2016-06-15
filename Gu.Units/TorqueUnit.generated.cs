@@ -12,7 +12,7 @@
     public struct TorqueUnit : IUnit, IUnit<Torque>, IEquatable<TorqueUnit>
     {
         /// <summary>
-        /// The TorqueUnit unit
+        /// The NewtonMetres unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly TorqueUnit NewtonMetres = new TorqueUnit(newtonMetres => newtonMetres, newtonMetres => newtonMetres, "N⋅m");

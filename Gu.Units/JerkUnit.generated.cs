@@ -12,7 +12,7 @@
     public struct JerkUnit : IUnit, IUnit<Jerk>, IEquatable<JerkUnit>
     {
         /// <summary>
-        /// The JerkUnit unit
+        /// The MetresPerSecondCubed unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly JerkUnit MetresPerSecondCubed = new JerkUnit(metresPerSecondCubed => metresPerSecondCubed, metresPerSecondCubed => metresPerSecondCubed, "m/s³");

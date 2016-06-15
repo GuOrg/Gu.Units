@@ -12,7 +12,7 @@
     public struct LuminousFluxUnit : IUnit, IUnit<LuminousFlux>, IEquatable<LuminousFluxUnit>
     {
         /// <summary>
-        /// The LuminousFluxUnit unit
+        /// The Lumens unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly LuminousFluxUnit Lumens = new LuminousFluxUnit(lumens => lumens, lumens => lumens, "lm");

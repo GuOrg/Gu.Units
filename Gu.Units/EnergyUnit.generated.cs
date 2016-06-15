@@ -12,7 +12,7 @@
     public struct EnergyUnit : IUnit, IUnit<Energy>, IEquatable<EnergyUnit>
     {
         /// <summary>
-        /// The EnergyUnit unit
+        /// The Joules unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly EnergyUnit Joules = new EnergyUnit(joules => joules, joules => joules, "J");

@@ -12,7 +12,7 @@
     public struct AngularJerkUnit : IUnit, IUnit<AngularJerk>, IEquatable<AngularJerkUnit>
     {
         /// <summary>
-        /// The AngularJerkUnit unit
+        /// The RadiansPerSecondCubed unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly AngularJerkUnit RadiansPerSecondCubed = new AngularJerkUnit(radiansPerSecondCubed => radiansPerSecondCubed, radiansPerSecondCubed => radiansPerSecondCubed, "rad/s³");

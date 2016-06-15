@@ -12,7 +12,7 @@
     public struct PowerUnit : IUnit, IUnit<Power>, IEquatable<PowerUnit>
     {
         /// <summary>
-        /// The PowerUnit unit
+        /// The Watts unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly PowerUnit Watts = new PowerUnit(watts => watts, watts => watts, "W");

@@ -12,7 +12,7 @@
     public struct LengthUnit : IUnit, IUnit<Length>, IEquatable<LengthUnit>
     {
         /// <summary>
-        /// The LengthUnit unit
+        /// The Metres unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly LengthUnit Metres = new LengthUnit(metres => metres, metres => metres, "m");

@@ -12,7 +12,7 @@
     public struct StiffnessUnit : IUnit, IUnit<Stiffness>, IEquatable<StiffnessUnit>
     {
         /// <summary>
-        /// The StiffnessUnit unit
+        /// The NewtonsPerMetre unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly StiffnessUnit NewtonsPerMetre = new StiffnessUnit(newtonsPerMetre => newtonsPerMetre, newtonsPerMetre => newtonsPerMetre, "N/m");

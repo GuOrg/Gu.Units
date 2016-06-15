@@ -12,7 +12,7 @@
     public struct IlluminanceUnit : IUnit, IUnit<Illuminance>, IEquatable<IlluminanceUnit>
     {
         /// <summary>
-        /// The IlluminanceUnit unit
+        /// The Lux unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly IlluminanceUnit Lux = new IlluminanceUnit(lux => lux, lux => lux, "lx");

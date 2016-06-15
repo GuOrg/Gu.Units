@@ -12,7 +12,7 @@
     public struct MassUnit : IUnit, IUnit<Mass>, IEquatable<MassUnit>
     {
         /// <summary>
-        /// The MassUnit unit
+        /// The Kilograms unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly MassUnit Kilograms = new MassUnit(kilograms => kilograms, kilograms => kilograms, "kg");

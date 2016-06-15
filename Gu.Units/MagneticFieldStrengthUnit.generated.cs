@@ -12,7 +12,7 @@
     public struct MagneticFieldStrengthUnit : IUnit, IUnit<MagneticFieldStrength>, IEquatable<MagneticFieldStrengthUnit>
     {
         /// <summary>
-        /// The MagneticFieldStrengthUnit unit
+        /// The Teslas unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly MagneticFieldStrengthUnit Teslas = new MagneticFieldStrengthUnit(teslas => teslas, teslas => teslas, "T");

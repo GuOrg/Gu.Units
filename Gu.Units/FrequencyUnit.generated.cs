@@ -12,7 +12,7 @@
     public struct FrequencyUnit : IUnit, IUnit<Frequency>, IEquatable<FrequencyUnit>
     {
         /// <summary>
-        /// The FrequencyUnit unit
+        /// The Hertz unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly FrequencyUnit Hertz = new FrequencyUnit(hertz => hertz, hertz => hertz, "Hz");

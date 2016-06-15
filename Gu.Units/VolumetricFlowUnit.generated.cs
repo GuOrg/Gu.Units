@@ -12,7 +12,7 @@
     public struct VolumetricFlowUnit : IUnit, IUnit<VolumetricFlow>, IEquatable<VolumetricFlowUnit>
     {
         /// <summary>
-        /// The VolumetricFlowUnit unit
+        /// The CubicMetresPerSecond unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly VolumetricFlowUnit CubicMetresPerSecond = new VolumetricFlowUnit(cubicMetresPerSecond => cubicMetresPerSecond, cubicMetresPerSecond => cubicMetresPerSecond, "m³/s");

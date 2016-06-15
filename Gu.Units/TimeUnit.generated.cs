@@ -12,7 +12,7 @@
     public struct TimeUnit : IUnit, IUnit<Time>, IEquatable<TimeUnit>
     {
         /// <summary>
-        /// The TimeUnit unit
+        /// The Seconds unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly TimeUnit Seconds = new TimeUnit(seconds => seconds, seconds => seconds, "s");

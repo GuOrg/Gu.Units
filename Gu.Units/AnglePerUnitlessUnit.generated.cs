@@ -12,7 +12,7 @@
     public struct AnglePerUnitlessUnit : IUnit, IUnit<AnglePerUnitless>, IEquatable<AnglePerUnitlessUnit>
     {
         /// <summary>
-        /// The AnglePerUnitlessUnit unit
+        /// The RadiansPerUnitless unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly AnglePerUnitlessUnit RadiansPerUnitless = new AnglePerUnitlessUnit(radiansPerUnitless => radiansPerUnitless, radiansPerUnitless => radiansPerUnitless, "rad/ul");

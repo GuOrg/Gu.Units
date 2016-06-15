@@ -12,7 +12,7 @@
     public struct ForcePerUnitlessUnit : IUnit, IUnit<ForcePerUnitless>, IEquatable<ForcePerUnitlessUnit>
     {
         /// <summary>
-        /// The ForcePerUnitlessUnit unit
+        /// The NewtonsPerUnitless unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly ForcePerUnitlessUnit NewtonsPerUnitless = new ForcePerUnitlessUnit(newtonsPerUnitless => newtonsPerUnitless, newtonsPerUnitless => newtonsPerUnitless, "N/ul");

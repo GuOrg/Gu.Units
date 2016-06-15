@@ -12,7 +12,7 @@
     public struct ForceUnit : IUnit, IUnit<Force>, IEquatable<ForceUnit>
     {
         /// <summary>
-        /// The ForceUnit unit
+        /// The Newtons unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly ForceUnit Newtons = new ForceUnit(newtons => newtons, newtons => newtons, "N");

@@ -12,7 +12,7 @@
     public struct LengthPerUnitlessUnit : IUnit, IUnit<LengthPerUnitless>, IEquatable<LengthPerUnitlessUnit>
     {
         /// <summary>
-        /// The LengthPerUnitlessUnit unit
+        /// The MetresPerUnitless unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly LengthPerUnitlessUnit MetresPerUnitless = new LengthPerUnitlessUnit(metresPerUnitless => metresPerUnitless, metresPerUnitless => metresPerUnitless, "m/ul");

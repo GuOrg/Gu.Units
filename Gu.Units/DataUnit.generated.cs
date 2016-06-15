@@ -12,7 +12,7 @@
     public struct DataUnit : IUnit, IUnit<Data>, IEquatable<DataUnit>
     {
         /// <summary>
-        /// The DataUnit unit
+        /// The Bits unit
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly DataUnit Bits = new DataUnit(bits => bits, bits => bits, "bit");
