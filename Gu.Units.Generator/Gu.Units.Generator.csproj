@@ -72,9 +72,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Gu.ChangeTracking">
-      <HintPath>..\packages\Gu.ChangeTracking\lib\net45\Gu.ChangeTracking.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CodeAnalysis.CSharp.Scripting">
       <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.Scripting\lib\dotnet\Microsoft.CodeAnalysis.CSharp.Scripting.dll</HintPath>
     </Reference>

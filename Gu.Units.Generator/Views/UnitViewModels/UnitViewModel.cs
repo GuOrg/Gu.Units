@@ -7,14 +7,14 @@
     using System.Linq;
     using System.Reactive.Disposables;
     using System.Runtime.CompilerServices;
-    using ChangeTracking;
     using JetBrains.Annotations;
     using Reactive;
+    using State;
 
     public abstract class UnitViewModel<TUnit> : INotifyPropertyChanged
         where TUnit : Unit
     {
-        private static readonly ChangeTrackerSettings ChangeTrackerSettings = CreateChangeTrackerSettings();
+        private static readonly PropertiesSettings ChangeTrackerSettings = CreateChangeTrackerSettings();
         private readonly SerialDisposable subscription = new SerialDisposable();
         private TUnit unit;
 
@@ -24,7 +24,7 @@
         protected UnitViewModel(TUnit unit)
         {
             this.unit = unit;
-            this.subscription.Disposable = ChangeTracker.Track(unit, ChangeTrackerSettings)
+            this.subscription.Disposable = Track.Changes(unit, ChangeTrackerSettings)
                 .ObservePropertyChangedSlim()
                 .Subscribe(_ =>
                 {
@@ -45,7 +45,7 @@
                     return;
                 }
                 this.unit = value;
-                this.subscription.Disposable = ChangeTracker.Track(this.unit, ChangeTrackerSettings)
+                this.subscription.Disposable = Track.Changes(this.unit, ChangeTrackerSettings)
                     .ObservePropertyChangedSlim()
                     .Subscribe(_ =>
                     {
@@ -90,15 +90,13 @@
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private static ChangeTrackerSettings CreateChangeTrackerSettings()
+        private static PropertiesSettings CreateChangeTrackerSettings()
         {
-            var settings = ChangeTrackerSettings.Default;
-            settings.AddImmutableType<UnitParts>();
-            settings.AddImmutableType<Quantity>();
-            settings.AddImmutableType<OperatorOverload>();
-            settings.AddImmutableType<InverseOverload>();
-            settings.AddExplicitType<IEnumerable<IConversion>>();
-            settings.AddExplicitProperty<IConversion>(x => x.Unit);
+            var settings = PropertiesSettings.Build()
+                                             .AddImmutableType<UnitParts>()
+                                             .AddImmutableType<OperatorOverload>()
+                                             .AddImmutableType<IEnumerable<IConversion>>()
+                                             .CreateSettings();
             return settings;
         }
     }

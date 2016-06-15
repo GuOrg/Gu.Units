@@ -7,7 +7,7 @@
     using JetBrains.Annotations;
 
     [Serializable]
-    public class PrefixConversion : IFactorConversion
+    public class PrefixConversion : IFactorConversion, INotifyPropertyChanged
     {
         private string name;
         private string symbol;
