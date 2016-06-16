@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.DataUnit.Bits"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.bits;
-            }
-        }
+        public double SiValue => this.bits;
 
         /// <summary>
         /// The <see cref="Gu.Units.DataUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in bits".
         /// </summary>
-        public double Bits
-        {
-            get
-            {
-                return this.bits;
-            }
-        }
+        public double Bits => this.bits;
 
         /// <summary>
         /// The quantity in Byte

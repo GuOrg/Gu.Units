@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.EnergyUnit.Joules"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.joules;
-            }
-        }
+        public double SiValue => this.joules;
 
         /// <summary>
         /// The <see cref="Gu.Units.EnergyUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in joules".
         /// </summary>
-        public double Joules
-        {
-            get
-            {
-                return this.joules;
-            }
-        }
+        public double Joules => this.joules;
 
         /// <summary>
         /// The quantity in Nanojoules

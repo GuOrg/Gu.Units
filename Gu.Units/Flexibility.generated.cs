@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.FlexibilityUnit.MetresPerNewton"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.metresPerNewton;
-            }
-        }
+        public double SiValue => this.metresPerNewton;
 
         /// <summary>
         /// The <see cref="Gu.Units.FlexibilityUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in metresPerNewton".
         /// </summary>
-        public double MetresPerNewton
-        {
-            get
-            {
-                return this.metresPerNewton;
-            }
-        }
+        public double MetresPerNewton => this.metresPerNewton;
 
         /// <summary>
         /// The quantity in MillimetresPerNewton

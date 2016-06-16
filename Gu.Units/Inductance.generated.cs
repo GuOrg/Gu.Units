@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.InductanceUnit.Henrys"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.henrys;
-            }
-        }
+        public double SiValue => this.henrys;
 
         /// <summary>
         /// The <see cref="Gu.Units.InductanceUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in henrys".
         /// </summary>
-        public double Henrys
-        {
-            get
-            {
-                return this.henrys;
-            }
-        }
+        public double Henrys => this.henrys;
 
         /// <summary>
         /// The quantity in Nanohenrys

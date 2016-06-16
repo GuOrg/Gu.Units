@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.AnglePerUnitlessUnit.RadiansPerUnitless"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.radiansPerUnitless;
-            }
-        }
+        public double SiValue => this.radiansPerUnitless;
 
         /// <summary>
         /// The <see cref="Gu.Units.AnglePerUnitlessUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in radiansPerUnitless".
         /// </summary>
-        public double RadiansPerUnitless
-        {
-            get
-            {
-                return this.radiansPerUnitless;
-            }
-        }
+        public double RadiansPerUnitless => this.radiansPerUnitless;
 
         /// <summary>
         /// The quantity in DegreesPerPercent

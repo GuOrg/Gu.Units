@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.UnitlessUnit.Scalar"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.scalar;
-            }
-        }
+        public double SiValue => this.scalar;
 
         /// <summary>
         /// The <see cref="Gu.Units.UnitlessUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in scalar".
         /// </summary>
-        public double Scalar
-        {
-            get
-            {
-                return this.scalar;
-            }
-        }
+        public double Scalar => this.scalar;
 
         /// <summary>
         /// The quantity in Promilles

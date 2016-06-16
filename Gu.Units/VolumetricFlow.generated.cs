@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.VolumetricFlowUnit.CubicMetresPerSecond"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.cubicMetresPerSecond;
-            }
-        }
+        public double SiValue => this.cubicMetresPerSecond;
 
         /// <summary>
         /// The <see cref="Gu.Units.VolumetricFlowUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in cubicMetresPerSecond".
         /// </summary>
-        public double CubicMetresPerSecond
-        {
-            get
-            {
-                return this.cubicMetresPerSecond;
-            }
-        }
+        public double CubicMetresPerSecond => this.cubicMetresPerSecond;
 
         /// <summary>
         /// The quantity in CubicMetresPerMinute

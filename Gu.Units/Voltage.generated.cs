@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.VoltageUnit.Volts"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.volts;
-            }
-        }
+        public double SiValue => this.volts;
 
         /// <summary>
         /// The <see cref="Gu.Units.VoltageUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in volts".
         /// </summary>
-        public double Volts
-        {
-            get
-            {
-                return this.volts;
-            }
-        }
+        public double Volts => this.volts;
 
         /// <summary>
         /// The quantity in Millivolts

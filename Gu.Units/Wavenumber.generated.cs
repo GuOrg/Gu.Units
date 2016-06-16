@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.WavenumberUnit.ReciprocalMetres"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.reciprocalMetres;
-            }
-        }
+        public double SiValue => this.reciprocalMetres;
 
         /// <summary>
         /// The <see cref="Gu.Units.WavenumberUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in reciprocalMetres".
         /// </summary>
-        public double ReciprocalMetres
-        {
-            get
-            {
-                return this.reciprocalMetres;
-            }
-        }
+        public double ReciprocalMetres => this.reciprocalMetres;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Wavenumber"/> from its string representation

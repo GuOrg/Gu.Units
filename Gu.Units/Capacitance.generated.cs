@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.CapacitanceUnit.Farads"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.farads;
-            }
-        }
+        public double SiValue => this.farads;
 
         /// <summary>
         /// The <see cref="Gu.Units.CapacitanceUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in farads".
         /// </summary>
-        public double Farads
-        {
-            get
-            {
-                return this.farads;
-            }
-        }
+        public double Farads => this.farads;
 
         /// <summary>
         /// The quantity in Nanofarads

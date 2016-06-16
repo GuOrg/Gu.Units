@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.ElectricalConductanceUnit.Siemens"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.siemens;
-            }
-        }
+        public double SiValue => this.siemens;
 
         /// <summary>
         /// The <see cref="Gu.Units.ElectricalConductanceUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in siemens".
         /// </summary>
-        public double Siemens
-        {
-            get
-            {
-                return this.siemens;
-            }
-        }
+        public double Siemens => this.siemens;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation

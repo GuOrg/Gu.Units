@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.LengthUnit.Metres"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.metres;
-            }
-        }
+        public double SiValue => this.metres;
 
         /// <summary>
         /// The <see cref="Gu.Units.LengthUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in metres".
         /// </summary>
-        public double Metres
-        {
-            get
-            {
-                return this.metres;
-            }
-        }
+        public double Metres => this.metres;
 
         /// <summary>
         /// The quantity in Inches

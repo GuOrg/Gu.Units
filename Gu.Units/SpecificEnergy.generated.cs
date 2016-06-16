@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.SpecificEnergyUnit.JoulesPerKilogram"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.joulesPerKilogram;
-            }
-        }
+        public double SiValue => this.joulesPerKilogram;
 
         /// <summary>
         /// The <see cref="Gu.Units.SpecificEnergyUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in joulesPerKilogram".
         /// </summary>
-        public double JoulesPerKilogram
-        {
-            get
-            {
-                return this.joulesPerKilogram;
-            }
-        }
+        public double JoulesPerKilogram => this.joulesPerKilogram;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation

@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.SpecificVolumeUnit.CubicMetresPerKilogram"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.cubicMetresPerKilogram;
-            }
-        }
+        public double SiValue => this.cubicMetresPerKilogram;
 
         /// <summary>
         /// The <see cref="Gu.Units.SpecificVolumeUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in cubicMetresPerKilogram".
         /// </summary>
-        public double CubicMetresPerKilogram
-        {
-            get
-            {
-                return this.cubicMetresPerKilogram;
-            }
-        }
+        public double CubicMetresPerKilogram => this.cubicMetresPerKilogram;
 
         /// <summary>
         /// The quantity in CubicMetresPerGram

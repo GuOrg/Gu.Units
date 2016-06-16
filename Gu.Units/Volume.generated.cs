@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.VolumeUnit.CubicMetres"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.cubicMetres;
-            }
-        }
+        public double SiValue => this.cubicMetres;
 
         /// <summary>
         /// The <see cref="Gu.Units.VolumeUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in cubicMetres".
         /// </summary>
-        public double CubicMetres
-        {
-            get
-            {
-                return this.cubicMetres;
-            }
-        }
+        public double CubicMetres => this.cubicMetres;
 
         /// <summary>
         /// The quantity in Litres

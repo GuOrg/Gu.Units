@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.AreaDensityUnit.KilogramsPerSquareMetre"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.kilogramsPerSquareMetre;
-            }
-        }
+        public double SiValue => this.kilogramsPerSquareMetre;
 
         /// <summary>
         /// The <see cref="Gu.Units.AreaDensityUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in kilogramsPerSquareMetre".
         /// </summary>
-        public double KilogramsPerSquareMetre
-        {
-            get
-            {
-                return this.kilogramsPerSquareMetre;
-            }
-        }
+        public double KilogramsPerSquareMetre => this.kilogramsPerSquareMetre;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation

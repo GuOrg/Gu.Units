@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.JerkUnit.MetresPerSecondCubed"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.metresPerSecondCubed;
-            }
-        }
+        public double SiValue => this.metresPerSecondCubed;
 
         /// <summary>
         /// The <see cref="Gu.Units.JerkUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in metresPerSecondCubed".
         /// </summary>
-        public double MetresPerSecondCubed
-        {
-            get
-            {
-                return this.metresPerSecondCubed;
-            }
-        }
+        public double MetresPerSecondCubed => this.metresPerSecondCubed;
 
         /// <summary>
         /// The quantity in MillimetresPerSecondCubed

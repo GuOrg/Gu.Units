@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.AreaUnit.SquareMetres"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.squareMetres;
-            }
-        }
+        public double SiValue => this.squareMetres;
 
         /// <summary>
         /// The <see cref="Gu.Units.AreaUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in squareMetres".
         /// </summary>
-        public double SquareMetres
-        {
-            get
-            {
-                return this.squareMetres;
-            }
-        }
+        public double SquareMetres => this.squareMetres;
 
         /// <summary>
         /// The quantity in Hectare

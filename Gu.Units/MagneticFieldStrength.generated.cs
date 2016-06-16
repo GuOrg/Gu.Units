@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.MagneticFieldStrengthUnit.Teslas"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.teslas;
-            }
-        }
+        public double SiValue => this.teslas;
 
         /// <summary>
         /// The <see cref="Gu.Units.MagneticFieldStrengthUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in teslas".
         /// </summary>
-        public double Teslas
-        {
-            get
-            {
-                return this.teslas;
-            }
-        }
+        public double Teslas => this.teslas;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.MagneticFieldStrength"/> from its string representation

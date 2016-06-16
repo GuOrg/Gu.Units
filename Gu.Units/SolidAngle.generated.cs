@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.SolidAngleUnit.Steradians"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.steradians;
-            }
-        }
+        public double SiValue => this.steradians;
 
         /// <summary>
         /// The <see cref="Gu.Units.SolidAngleUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in steradians".
         /// </summary>
-        public double Steradians
-        {
-            get
-            {
-                return this.steradians;
-            }
-        }
+        public double Steradians => this.steradians;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation

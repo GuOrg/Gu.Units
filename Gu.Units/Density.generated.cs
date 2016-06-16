@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.DensityUnit.KilogramsPerCubicMetre"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.kilogramsPerCubicMetre;
-            }
-        }
+        public double SiValue => this.kilogramsPerCubicMetre;
 
         /// <summary>
         /// The <see cref="Gu.Units.DensityUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in kilogramsPerCubicMetre".
         /// </summary>
-        public double KilogramsPerCubicMetre
-        {
-            get
-            {
-                return this.kilogramsPerCubicMetre;
-            }
-        }
+        public double KilogramsPerCubicMetre => this.kilogramsPerCubicMetre;
 
         /// <summary>
         /// The quantity in GramsPerCubicMillimetre

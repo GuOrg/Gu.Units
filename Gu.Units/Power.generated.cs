@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.PowerUnit.Watts"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.watts;
-            }
-        }
+        public double SiValue => this.watts;
 
         /// <summary>
         /// The <see cref="Gu.Units.PowerUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in watts".
         /// </summary>
-        public double Watts
-        {
-            get
-            {
-                return this.watts;
-            }
-        }
+        public double Watts => this.watts;
 
         /// <summary>
         /// The quantity in Nanowatts

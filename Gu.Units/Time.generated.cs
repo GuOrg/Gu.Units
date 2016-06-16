@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.TimeUnit.Seconds"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.seconds;
-            }
-        }
+        public double SiValue => this.seconds;
 
         /// <summary>
         /// The <see cref="Gu.Units.TimeUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in seconds".
         /// </summary>
-        public double Seconds
-        {
-            get
-            {
-                return this.seconds;
-            }
-        }
+        public double Seconds => this.seconds;
 
         /// <summary>
         /// The quantity in Hours

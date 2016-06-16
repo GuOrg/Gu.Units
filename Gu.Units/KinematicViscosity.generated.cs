@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.KinematicViscosityUnit.SquareMetresPerSecond"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.squareMetresPerSecond;
-            }
-        }
+        public double SiValue => this.squareMetresPerSecond;
 
         /// <summary>
         /// The <see cref="Gu.Units.KinematicViscosityUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in squareMetresPerSecond".
         /// </summary>
-        public double SquareMetresPerSecond
-        {
-            get
-            {
-                return this.squareMetresPerSecond;
-            }
-        }
+        public double SquareMetresPerSecond => this.squareMetresPerSecond;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation

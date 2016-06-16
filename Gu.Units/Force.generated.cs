@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.ForceUnit.Newtons"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.newtons;
-            }
-        }
+        public double SiValue => this.newtons;
 
         /// <summary>
         /// The <see cref="Gu.Units.ForceUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in newtons".
         /// </summary>
-        public double Newtons
-        {
-            get
-            {
-                return this.newtons;
-            }
-        }
+        public double Newtons => this.newtons;
 
         /// <summary>
         /// The quantity in Nanonewtons

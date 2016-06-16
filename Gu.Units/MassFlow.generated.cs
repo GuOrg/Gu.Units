@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.MassFlowUnit.KilogramsPerSecond"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.kilogramsPerSecond;
-            }
-        }
+        public double SiValue => this.kilogramsPerSecond;
 
         /// <summary>
         /// The <see cref="Gu.Units.MassFlowUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in kilogramsPerSecond".
         /// </summary>
-        public double KilogramsPerSecond
-        {
-            get
-            {
-                return this.kilogramsPerSecond;
-            }
-        }
+        public double KilogramsPerSecond => this.kilogramsPerSecond;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation

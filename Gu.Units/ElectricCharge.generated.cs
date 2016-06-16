@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.ElectricChargeUnit.Coulombs"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.coulombs;
-            }
-        }
+        public double SiValue => this.coulombs;
 
         /// <summary>
         /// The <see cref="Gu.Units.ElectricChargeUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in coulombs".
         /// </summary>
-        public double Coulombs
-        {
-            get
-            {
-                return this.coulombs;
-            }
-        }
+        public double Coulombs => this.coulombs;
 
         /// <summary>
         /// The quantity in Nanocoulombs

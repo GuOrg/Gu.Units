@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.ForcePerUnitlessUnit.NewtonsPerUnitless"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.newtonsPerUnitless;
-            }
-        }
+        public double SiValue => this.newtonsPerUnitless;
 
         /// <summary>
         /// The <see cref="Gu.Units.ForcePerUnitlessUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in newtonsPerUnitless".
         /// </summary>
-        public double NewtonsPerUnitless
-        {
-            get
-            {
-                return this.newtonsPerUnitless;
-            }
-        }
+        public double NewtonsPerUnitless => this.newtonsPerUnitless;
 
         /// <summary>
         /// The quantity in NewtonsPerPercent

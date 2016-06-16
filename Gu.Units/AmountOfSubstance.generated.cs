@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.AmountOfSubstanceUnit.Moles"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.moles;
-            }
-        }
+        public double SiValue => this.moles;
 
         /// <summary>
         /// The <see cref="Gu.Units.AmountOfSubstanceUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in moles".
         /// </summary>
-        public double Moles
-        {
-            get
-            {
-                return this.moles;
-            }
-        }
+        public double Moles => this.moles;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation

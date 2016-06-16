@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.CatalyticActivityUnit.Katals"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.katals;
-            }
-        }
+        public double SiValue => this.katals;
 
         /// <summary>
         /// The <see cref="Gu.Units.CatalyticActivityUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in katals".
         /// </summary>
-        public double Katals
-        {
-            get
-            {
-                return this.katals;
-            }
-        }
+        public double Katals => this.katals;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation

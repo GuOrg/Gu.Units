@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.TorqueUnit.NewtonMetres"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.newtonMetres;
-            }
-        }
+        public double SiValue => this.newtonMetres;
 
         /// <summary>
         /// The <see cref="Gu.Units.TorqueUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in newtonMetres".
         /// </summary>
-        public double NewtonMetres
-        {
-            get
-            {
-                return this.newtonMetres;
-            }
-        }
+        public double NewtonMetres => this.newtonMetres;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation

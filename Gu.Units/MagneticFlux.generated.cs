@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.MagneticFluxUnit.Webers"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.webers;
-            }
-        }
+        public double SiValue => this.webers;
 
         /// <summary>
         /// The <see cref="Gu.Units.MagneticFluxUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in webers".
         /// </summary>
-        public double Webers
-        {
-            get
-            {
-                return this.webers;
-            }
-        }
+        public double Webers => this.webers;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation

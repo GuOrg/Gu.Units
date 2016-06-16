@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.MassUnit.Kilograms"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.kilograms;
-            }
-        }
+        public double SiValue => this.kilograms;
 
         /// <summary>
         /// The <see cref="Gu.Units.MassUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in kilograms".
         /// </summary>
-        public double Kilograms
-        {
-            get
-            {
-                return this.kilograms;
-            }
-        }
+        public double Kilograms => this.kilograms;
 
         /// <summary>
         /// The quantity in Grams

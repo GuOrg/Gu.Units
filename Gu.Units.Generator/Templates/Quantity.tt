@@ -52,13 +52,7 @@ namespace <#= Settings.Namespace #>
         /// <summary>
         /// The quantity in <see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>.<#= quantity.Unit.Name #>"/>
         /// </summary>
-        public double <#= Names.SiValue #>
-        {
-            get
-            {
-                return this.<#= quantity.Unit.ParameterName #>;
-            }
-        }
+        public double <#= Names.SiValue #> => this.<#= quantity.Unit.ParameterName #>;
 
 		/// <summary>
         /// The <see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>"/> for the <see cref="SiValue"/>
@@ -73,13 +67,7 @@ namespace <#= Settings.Namespace #>
 	    /// <summary>
         /// The quantity in <#= quantity.Unit.ParameterName #>".
         /// </summary>
-		public double <#= quantity.Unit.Name #>
-        {
-            get
-            {
-                return this.<#= quantity.Unit.ParameterName #>;
-            }
-        }
+		public double <#= quantity.Unit.Name #> => this.<#= quantity.Unit.ParameterName #>;
 
 <#
 		foreach(var unit in quantity.Unit.AllConversions)

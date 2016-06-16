@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.AngularSpeedUnit.RadiansPerSecond"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.radiansPerSecond;
-            }
-        }
+        public double SiValue => this.radiansPerSecond;
 
         /// <summary>
         /// The <see cref="Gu.Units.AngularSpeedUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in radiansPerSecond".
         /// </summary>
-        public double RadiansPerSecond
-        {
-            get
-            {
-                return this.radiansPerSecond;
-            }
-        }
+        public double RadiansPerSecond => this.radiansPerSecond;
 
         /// <summary>
         /// The quantity in RevolutionsPerMinute

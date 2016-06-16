@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.SpeedUnit.MetresPerSecond"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.metresPerSecond;
-            }
-        }
+        public double SiValue => this.metresPerSecond;
 
         /// <summary>
         /// The <see cref="Gu.Units.SpeedUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in metresPerSecond".
         /// </summary>
-        public double MetresPerSecond
-        {
-            get
-            {
-                return this.metresPerSecond;
-            }
-        }
+        public double MetresPerSecond => this.metresPerSecond;
 
         /// <summary>
         /// The quantity in KilometresPerHour

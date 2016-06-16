@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.LengthPerUnitlessUnit.MetresPerUnitless"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.metresPerUnitless;
-            }
-        }
+        public double SiValue => this.metresPerUnitless;
 
         /// <summary>
         /// The <see cref="Gu.Units.LengthPerUnitlessUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in metresPerUnitless".
         /// </summary>
-        public double MetresPerUnitless
-        {
-            get
-            {
-                return this.metresPerUnitless;
-            }
-        }
+        public double MetresPerUnitless => this.metresPerUnitless;
 
         /// <summary>
         /// The quantity in MillimetresPerPercent

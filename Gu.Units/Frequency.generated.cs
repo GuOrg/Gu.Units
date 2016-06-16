@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.FrequencyUnit.Hertz"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.hertz;
-            }
-        }
+        public double SiValue => this.hertz;
 
         /// <summary>
         /// The <see cref="Gu.Units.FrequencyUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in hertz".
         /// </summary>
-        public double Hertz
-        {
-            get
-            {
-                return this.hertz;
-            }
-        }
+        public double Hertz => this.hertz;
 
         /// <summary>
         /// The quantity in Millihertz

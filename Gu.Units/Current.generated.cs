@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.CurrentUnit.Amperes"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.amperes;
-            }
-        }
+        public double SiValue => this.amperes;
 
         /// <summary>
         /// The <see cref="Gu.Units.CurrentUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in amperes".
         /// </summary>
-        public double Amperes
-        {
-            get
-            {
-                return this.amperes;
-            }
-        }
+        public double Amperes => this.amperes;
 
         /// <summary>
         /// The quantity in Milliamperes

@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.PressureUnit.Pascals"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.pascals;
-            }
-        }
+        public double SiValue => this.pascals;
 
         /// <summary>
         /// The <see cref="Gu.Units.PressureUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in pascals".
         /// </summary>
-        public double Pascals
-        {
-            get
-            {
-                return this.pascals;
-            }
-        }
+        public double Pascals => this.pascals;
 
         /// <summary>
         /// The quantity in Bars

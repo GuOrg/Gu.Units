@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.TemperatureUnit.Kelvin"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.kelvin;
-            }
-        }
+        public double SiValue => this.kelvin;
 
         /// <summary>
         /// The <see cref="Gu.Units.TemperatureUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in kelvin".
         /// </summary>
-        public double Kelvin
-        {
-            get
-            {
-                return this.kelvin;
-            }
-        }
+        public double Kelvin => this.kelvin;
 
         /// <summary>
         /// The quantity in Celsius

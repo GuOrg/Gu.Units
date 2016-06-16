@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.AngleUnit.Radians"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.radians;
-            }
-        }
+        public double SiValue => this.radians;
 
         /// <summary>
         /// The <see cref="Gu.Units.AngleUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in radians".
         /// </summary>
-        public double Radians
-        {
-            get
-            {
-                return this.radians;
-            }
-        }
+        public double Radians => this.radians;
 
         /// <summary>
         /// The quantity in Degrees

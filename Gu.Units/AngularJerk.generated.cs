@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.AngularJerkUnit.RadiansPerSecondCubed"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.radiansPerSecondCubed;
-            }
-        }
+        public double SiValue => this.radiansPerSecondCubed;
 
         /// <summary>
         /// The <see cref="Gu.Units.AngularJerkUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in radiansPerSecondCubed".
         /// </summary>
-        public double RadiansPerSecondCubed
-        {
-            get
-            {
-                return this.radiansPerSecondCubed;
-            }
-        }
+        public double RadiansPerSecondCubed => this.radiansPerSecondCubed;
 
         /// <summary>
         /// The quantity in DegreesPerSecondCubed

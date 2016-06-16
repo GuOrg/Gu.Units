@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.StiffnessUnit.NewtonsPerMetre"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.newtonsPerMetre;
-            }
-        }
+        public double SiValue => this.newtonsPerMetre;
 
         /// <summary>
         /// The <see cref="Gu.Units.StiffnessUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in newtonsPerMetre".
         /// </summary>
-        public double NewtonsPerMetre
-        {
-            get
-            {
-                return this.newtonsPerMetre;
-            }
-        }
+        public double NewtonsPerMetre => this.newtonsPerMetre;
 
         /// <summary>
         /// The quantity in NewtonsPerNanometre

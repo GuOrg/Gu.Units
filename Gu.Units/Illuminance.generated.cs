@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.IlluminanceUnit.Lux"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.lux;
-            }
-        }
+        public double SiValue => this.lux;
 
         /// <summary>
         /// The <see cref="Gu.Units.IlluminanceUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in lux".
         /// </summary>
-        public double Lux
-        {
-            get
-            {
-                return this.lux;
-            }
-        }
+        public double Lux => this.lux;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation

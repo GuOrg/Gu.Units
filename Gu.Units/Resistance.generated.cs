@@ -41,13 +41,7 @@
         /// <summary>
         /// The quantity in <see cref="Gu.Units.ResistanceUnit.Ohm"/>
         /// </summary>
-        public double SiValue
-        {
-            get
-            {
-                return this.ohm;
-            }
-        }
+        public double SiValue => this.ohm;
 
         /// <summary>
         /// The <see cref="Gu.Units.ResistanceUnit"/> for the <see cref="SiValue"/>
@@ -62,13 +56,7 @@
         /// <summary>
         /// The quantity in ohm".
         /// </summary>
-        public double Ohm
-        {
-            get
-            {
-                return this.ohm;
-            }
-        }
+        public double Ohm => this.ohm;
 
         /// <summary>
         /// The quantity in Microohm
