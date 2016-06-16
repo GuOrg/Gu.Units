@@ -9,7 +9,7 @@
         {
             expression = $"double {parameter} = {value.ToString("G17", CultureInfo.InvariantCulture)};\r\n" +
                          $"return {expression};";
-           return CSharpScript.EvaluateAsync<double>(expression).Result; // don't feel like async all the way :)
+            return CSharpScript.EvaluateAsync<double>(expression).Result; // don't feel like async all the way :)
         }
     }
 }

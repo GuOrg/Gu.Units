@@ -74,12 +74,12 @@
         {
             if (value is FrequencyUnit && destinationType != null)
             {
-                var unit = (FrequencyUnit) value;
-                if (destinationType == typeof (string))
+                var unit = (FrequencyUnit)value;
+                if (destinationType == typeof(string))
                 {
                     return unit.ToString();
                 }
-                else if(destinationType == typeof(InstanceDescriptor))
+                else if (destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(FrequencyUnit).GetMethod(nameof(FrequencyUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

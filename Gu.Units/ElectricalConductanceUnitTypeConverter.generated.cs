@@ -74,12 +74,12 @@
         {
             if (value is ElectricalConductanceUnit && destinationType != null)
             {
-                var unit = (ElectricalConductanceUnit) value;
-                if (destinationType == typeof (string))
+                var unit = (ElectricalConductanceUnit)value;
+                if (destinationType == typeof(string))
                 {
                     return unit.ToString();
                 }
-                else if(destinationType == typeof(InstanceDescriptor))
+                else if (destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(ElectricalConductanceUnit).GetMethod(nameof(ElectricalConductanceUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

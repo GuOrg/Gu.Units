@@ -75,6 +75,7 @@
                                         <Ellipse Width="10"
                                                  Height="10"
                                                  Fill="{Binding CanRoundtrip,
+                                                                Mode=OneWay,
                                                                 Converter={reactive:BooleanToBrushConverter WhenFalse=Red,
                                                                                                             WhenNull=Gray,
                                                                                                             WhenTrue=GreenYellow}}" />

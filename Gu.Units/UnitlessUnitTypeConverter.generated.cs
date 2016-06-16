@@ -74,12 +74,12 @@
         {
             if (value is UnitlessUnit && destinationType != null)
             {
-                var unit = (UnitlessUnit) value;
-                if (destinationType == typeof (string))
+                var unit = (UnitlessUnit)value;
+                if (destinationType == typeof(string))
                 {
                     return unit.ToString();
                 }
-                else if(destinationType == typeof(InstanceDescriptor))
+                else if (destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(UnitlessUnit).GetMethod(nameof(UnitlessUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

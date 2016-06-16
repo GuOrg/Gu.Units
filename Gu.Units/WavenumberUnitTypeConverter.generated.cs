@@ -74,12 +74,12 @@
         {
             if (value is WavenumberUnit && destinationType != null)
             {
-                var unit = (WavenumberUnit) value;
-                if (destinationType == typeof (string))
+                var unit = (WavenumberUnit)value;
+                if (destinationType == typeof(string))
                 {
                     return unit.ToString();
                 }
-                else if(destinationType == typeof(InstanceDescriptor))
+                else if (destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(WavenumberUnit).GetMethod(nameof(WavenumberUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

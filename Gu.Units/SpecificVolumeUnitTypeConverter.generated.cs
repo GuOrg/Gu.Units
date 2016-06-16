@@ -74,12 +74,12 @@
         {
             if (value is SpecificVolumeUnit && destinationType != null)
             {
-                var unit = (SpecificVolumeUnit) value;
-                if (destinationType == typeof (string))
+                var unit = (SpecificVolumeUnit)value;
+                if (destinationType == typeof(string))
                 {
                     return unit.ToString();
                 }
-                else if(destinationType == typeof(InstanceDescriptor))
+                else if (destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(SpecificVolumeUnit).GetMethod(nameof(SpecificVolumeUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

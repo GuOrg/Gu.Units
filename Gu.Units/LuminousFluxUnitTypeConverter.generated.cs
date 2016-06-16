@@ -74,12 +74,12 @@
         {
             if (value is LuminousFluxUnit && destinationType != null)
             {
-                var unit = (LuminousFluxUnit) value;
-                if (destinationType == typeof (string))
+                var unit = (LuminousFluxUnit)value;
+                if (destinationType == typeof(string))
                 {
                     return unit.ToString();
                 }
-                else if(destinationType == typeof(InstanceDescriptor))
+                else if (destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(LuminousFluxUnit).GetMethod(nameof(LuminousFluxUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

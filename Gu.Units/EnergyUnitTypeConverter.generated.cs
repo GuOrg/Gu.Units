@@ -74,12 +74,12 @@
         {
             if (value is EnergyUnit && destinationType != null)
             {
-                var unit = (EnergyUnit) value;
-                if (destinationType == typeof (string))
+                var unit = (EnergyUnit)value;
+                if (destinationType == typeof(string))
                 {
                     return unit.ToString();
                 }
-                else if(destinationType == typeof(InstanceDescriptor))
+                else if (destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(EnergyUnit).GetMethod(nameof(EnergyUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

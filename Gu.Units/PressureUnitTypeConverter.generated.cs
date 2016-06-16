@@ -74,12 +74,12 @@
         {
             if (value is PressureUnit && destinationType != null)
             {
-                var unit = (PressureUnit) value;
-                if (destinationType == typeof (string))
+                var unit = (PressureUnit)value;
+                if (destinationType == typeof(string))
                 {
                     return unit.ToString();
                 }
-                else if(destinationType == typeof(InstanceDescriptor))
+                else if (destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(PressureUnit).GetMethod(nameof(PressureUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

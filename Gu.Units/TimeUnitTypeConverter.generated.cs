@@ -74,12 +74,12 @@
         {
             if (value is TimeUnit && destinationType != null)
             {
-                var unit = (TimeUnit) value;
-                if (destinationType == typeof (string))
+                var unit = (TimeUnit)value;
+                if (destinationType == typeof(string))
                 {
                     return unit.ToString();
                 }
-                else if(destinationType == typeof(InstanceDescriptor))
+                else if (destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(TimeUnit).GetMethod(nameof(TimeUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

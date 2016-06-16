@@ -74,12 +74,12 @@
         {
             if (value is TorqueUnit && destinationType != null)
             {
-                var unit = (TorqueUnit) value;
-                if (destinationType == typeof (string))
+                var unit = (TorqueUnit)value;
+                if (destinationType == typeof(string))
                 {
                     return unit.ToString();
                 }
-                else if(destinationType == typeof(InstanceDescriptor))
+                else if (destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(TorqueUnit).GetMethod(nameof(TorqueUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

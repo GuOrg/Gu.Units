@@ -74,12 +74,12 @@
         {
             if (value is LengthUnit && destinationType != null)
             {
-                var unit = (LengthUnit) value;
-                if (destinationType == typeof (string))
+                var unit = (LengthUnit)value;
+                if (destinationType == typeof(string))
                 {
                     return unit.ToString();
                 }
-                else if(destinationType == typeof(InstanceDescriptor))
+                else if (destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(LengthUnit).GetMethod(nameof(LengthUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

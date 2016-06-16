@@ -16,13 +16,13 @@
         <DataGrid.Columns>
             <DataGridTemplateColumn Header="Status">
                 <DataGridTemplateColumn.CellTemplate>
-                    <DataTemplate DataType="{x:Type local:IConversion}">
+                    <DataTemplate DataType="{x:Type local:FactorConversionVm}">
                         <Ellipse Width="10"
-                                                 Height="10"
-                                                 Fill="{Binding CanRoundtrip,
-                                                                Converter={reactive:BooleanToBrushConverter WhenFalse=Red,
-                                                                                                            WhenNull=Gray,
-                                                                                                            WhenTrue=GreenYellow}}" />
+                                 Height="10"
+                                 Fill="{Binding Conversion. CanRoundtrip,
+                                                Converter={reactive:BooleanToBrushConverter WhenFalse=Red,
+                                                                                            WhenNull=Gray,
+                                                                                            WhenTrue=GreenYellow}}" />
                     </DataTemplate>
                 </DataGridTemplateColumn.CellTemplate>
             </DataGridTemplateColumn>

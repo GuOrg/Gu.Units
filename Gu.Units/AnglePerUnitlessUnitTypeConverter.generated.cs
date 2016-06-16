@@ -74,12 +74,12 @@
         {
             if (value is AnglePerUnitlessUnit && destinationType != null)
             {
-                var unit = (AnglePerUnitlessUnit) value;
-                if (destinationType == typeof (string))
+                var unit = (AnglePerUnitlessUnit)value;
+                if (destinationType == typeof(string))
                 {
                     return unit.ToString();
                 }
-                else if(destinationType == typeof(InstanceDescriptor))
+                else if (destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(AnglePerUnitlessUnit).GetMethod(nameof(AnglePerUnitlessUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)
