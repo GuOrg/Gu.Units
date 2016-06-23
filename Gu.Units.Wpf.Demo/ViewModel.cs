@@ -26,7 +26,10 @@ namespace Gu.Units.Wpf.Demo
             set
             {
                 if (value.Equals(this.length))
+                {
                     return;
+                }
+
                 this.length = value;
                 this.OnPropertyChanged();
             }

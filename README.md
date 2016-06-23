@@ -4,21 +4,24 @@
 [![NuGet](https://img.shields.io/nuget/v/Gu.Units.svg)](https://www.nuget.org/packages/Gu.Units/)
 [![Build status](https://ci.appveyor.com/api/projects/status/oa2o8euq95v12qi7?svg=true)](https://ci.appveyor.com/project/JohanLarsson/gu-units)
 
-## Contents.
+# Contents.
 
-  - [Quantity types.](#quantity-types)
-  - [Arithmetic.](#arithmetic)
-  - [Conversion.](#conversion)
-  - [Formatting.](#formatting)
-  - [Parsing.](#parsing)
-  - [WPF.](#wpf)
-    - [ValueFormat](#valueformat)
-    - [SymbolFormat](#symbolformat)
-    - [UnitInput](#unitinput)
-  - [JSON.](#json)
-  - [Code generation when adding new quantities.](#code-generation-when-adding-new-quantities)
+- [1. Quantity types.](#1-quantity-types)
+- [2. Features](#2-features)
+  - [2.1. Arithmetic.](#21-arithmetic)
+  - [2.2. Conversion.](#22-conversion)
+  - [2.3. Formatting.](#23-formatting)
+  - [2.4. Parsing.](#24-parsing)
+- [3. Gu.Units.WPF.](#3-guunitswpf)
+  - [3.1. Simple sample.](#31-simple-sample)
+  - [3.2. ValueFormat.](#32-valueformat)
+  - [3.3. SymbolFormat.](#33-symbolformat)
+  - [3.4. UnitInput](#34-unitinput)
+- [4. Gu.Units.Json.](#4-guunitsjson)
+- [5. Code generation when adding new quantities.](#5-code-generation-when-adding-new-quantities)
 
-## Quantity types.
+
+# 1. Quantity types.
 
  - Acceleration
  - AmountOfSubstance
@@ -71,7 +74,9 @@
  - VolumetricFlow
  - Wavenumber
 
-## Arithmetic.
+# 2. Features
+
+## 2.1. Arithmetic.
 
 ```c#
 private static LengthUnit m = LengthUnit.m;
@@ -88,7 +93,7 @@ public void ArithmeticSample()
 ```
 
 
-## Conversion.
+## 2.2. Conversion.
 ```c#
 [Test]
 public void Sample()
@@ -98,7 +103,7 @@ public void Sample()
 }
 ```
 
-## Formatting.
+## 2.3. Formatting.
 A large number of overloads for `ToString()`
 
 ```c#
@@ -172,7 +177,7 @@ public void FormatSpeed()
     Assert.AreEqual("1\u00A0200,00 mm⋅s⁻¹", speed.ToString("N mm⋅s⁻¹", sv));
 }
 ```
-## Parsing.
+## 2.4. Parsing.
 
 ```c#
 [TestCase("1.2m/s")]
@@ -191,24 +196,42 @@ public void ParsingSample(string text)
 }
 ```
 
-## WPF.
+# 3. Gu.Units.WPF.
 [![NuGet](https://img.shields.io/nuget/v/Gu.Units.Wpf.svg)](https://www.nuget.org/packages/Gu.Units.Wpf/)
 
 Valueconverters for binding to quantity types.
 
+## 3.1. Simple sample.
 ```xaml
 <TextBox Text="{Binding Length, Converter={units:LengthConverter mm}}" />
 ```
 
-### ValueFormat
+Where the viewmodel has this property.
+```c#
+public Length Length
+{
+    get { return this.length; }
+    set
+    {
+        if (value.Equals(this.length))
+        {
+            return;
+        }
+
+        this.length = value;
+        this.OnPropertyChanged();
+    }
+}
+```
+
+## 3.2. ValueFormat.
 
 Specifies how the scalar part is formatted, formats valid for `double` are valid.
 ```xaml
-Text="{Binding Length,
-               Converter={units:LengthConverter cm, ValueFormat='F2'}}" />
+<TextBox Text="{Binding Length, Converter={units:LengthConverter cm, ValueFormat='F2'}}" />
 ```
 
-### SymbolFormat
+## 3.3. SymbolFormat.
 Specifies how the symbol is formatted.
 
 ```xaml
@@ -216,7 +239,7 @@ Text="{Binding Speed,
                Converter={units:SpeedConverter mm/s, SymbolFormat=SignedSuperScript}}" />
 ```
 
-### UnitInput
+## 3.4. UnitInput
 Specifies how the symbol is formatted. The default value is `ScalarOnly`.
 
 ```xaml
@@ -224,12 +247,12 @@ Text="{Binding Length,
                Converter={units:LengthConverter m, UnitInput=SymbolRequired}}" />
 ```
 
-## JSON.
+# 4. Gu.Units.Json.
 [![NuGet](https://img.shields.io/nuget/v/Gu.Units.Json.svg)](https://www.nuget.org/packages/Gu.Units.Json/)
 
 Jsonconverters for serializtion using [Json.NET](https://www.nuget.org/packages/Newtonsoft.Json/).
 
-## Code generation when adding new quantities.
+# 5. Code generation when adding new quantities.
 
 For adding new units and quantities read [this](https://github.com/JohanLarsson/Gu.Units/blob/master/Gu.Units.Generator/Templates/Readme.md)
 
