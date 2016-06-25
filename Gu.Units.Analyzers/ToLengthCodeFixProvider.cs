@@ -17,7 +17,8 @@
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(ToLengthCodeFixProvider)), Shared]
     public class ToLengthCodeFixProvider : CodeFixProvider
     {
-        private const string Title = "Length.FromMillimetres(...)";
+        private const string Key = "Length.FromMillimetres()";
+        private const string TitleFormat = "Length.FromMillimetres({0})";
 
         public sealed override ImmutableArray<string> FixableDiagnosticIds => ImmutableArray.Create("CS0029");
 
@@ -38,7 +39,7 @@
 
             // Register a code action that will invoke the fix.
             context.RegisterCodeFix(
-                CodeAction.Create(Title, c => ApplyFix(context, c), Title),
+                CodeAction.Create(string.Format(TitleFormat, context.Span), c => ApplyFix(context, c), TitleFormat),
                 diagnostic);
             return Task.FromResult(true);
         }
@@ -51,15 +52,13 @@
             // We need to get the LiteralExpressionSyntax that was found by the Analyser
             var diagnostic = context.Diagnostics.First();
             var position = diagnostic.Location.SourceSpan.Start;
-            var number = root.FindToken(position)
+            var scalarExpression = root.FindToken(position)
                 .Parent
                 .AncestorsAndSelf()
                 .OfType<ExpressionSyntax>()
                 .First();
-
-            var replacement = WrapWithCallToMillimetres(number);
-            root = root.ReplaceNode(number, replacement);
-
+            var replacement = WrapWithCallToMillimetres(scalarExpression);
+            root = root.ReplaceNode(scalarExpression, replacement);
             return document.WithSyntaxRoot(root);
         }
 
