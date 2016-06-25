@@ -54,7 +54,7 @@
             var number = root.FindToken(position)
                 .Parent
                 .AncestorsAndSelf()
-                .OfType<LiteralExpressionSyntax>()
+                .OfType<ExpressionSyntax>()
                 .First();
 
             var replacement = WrapWithCallToMillimetres(number);

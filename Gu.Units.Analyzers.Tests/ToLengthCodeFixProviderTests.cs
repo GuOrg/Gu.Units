@@ -9,9 +9,8 @@
 
     public class ToLengthCodeFixProviderTests : CodeFixVerifier
     {
-        //Diagnostic and CodeFix both triggered and checked for
         [Test]
-        public void ChangeToLengthFromMillimetres()
+        public void IntToMillimetres()
         {
             var before = @"
     namespace ConsoleApplication1
@@ -39,6 +38,43 @@
             public Foo()
             {
                 Bar = Length.FromMillimetres(1);
+            }
+
+            public Length Bar { get; }
+        }
+    }";
+            this.VerifyCSharpFix(before, expected);
+        }
+
+        [Test]
+        public void NegativeIntToMillimetres()
+        {
+            var before = @"
+    namespace ConsoleApplication1
+    {
+        using Gu.Units;
+
+        public class Foo
+        {   
+            public Foo()
+            {
+                Bar = -1;
+            }
+
+            public Length Bar { get; }
+        }
+    }";
+
+            var expected = @"
+    namespace ConsoleApplication1
+    {
+        using Gu.Units;
+
+        public class Foo
+        {   
+            public Foo()
+            {
+                Bar = Length.FromMillimetres(-1);
             }
 
             public Length Bar { get; }

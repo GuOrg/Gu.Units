@@ -1,0 +1,13 @@
+﻿type file
+id Gu.Units.Analyzers
+version 0.1.0.1
+authors Johan Larsson
+description
+    analyzers and code fixes for unit refactorings
+tags unit units quantity quantities unitsofmeasure roslyn analyzer
+projectUrl https://github.com/JohanLarsson/Gu.Units
+licenseUrl http://opensource.org/licenses/MIT
+
+files
+    bin/release/Gu.Units.Analyzers.dll ==> analyzers/dotnet/
+	tools ==> tools
