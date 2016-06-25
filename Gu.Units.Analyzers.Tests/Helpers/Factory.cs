@@ -34,8 +34,8 @@ namespace Gu.Units.Analyzers.Tests
             var solution = new AdhocWorkspace()
                 .CurrentSolution
                 .AddProject(projectId, TestProjectName, TestProjectName, language)
-                .AddMetadataReference(projectId, CorlibReference);
-                //.AddMetadataReference(projectId, GuUnitsReference);
+                .AddMetadataReference(projectId, CorlibReference)
+                .AddMetadataReference(projectId, GuUnitsReference);
 
             int count = 0;
             foreach (var source in sources)
