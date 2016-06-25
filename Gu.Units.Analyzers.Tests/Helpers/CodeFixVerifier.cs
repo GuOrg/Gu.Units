@@ -8,7 +8,6 @@
     using Microsoft.CodeAnalysis.CodeActions;
     using Microsoft.CodeAnalysis.CodeFixes;
     using Microsoft.CodeAnalysis.Formatting;
-
     using NUnit.Framework;
 
     /// <summary>
@@ -44,7 +43,8 @@
         /// <param name="allowNewCompilerDiagnostics">A bool controlling whether or not the test will fail if the CodeFix introduces other warnings after being applied</param>
         protected void VerifyCSharpFix(string oldSource, string newSource, int? codeFixIndex = null, bool allowNewCompilerDiagnostics = false)
         {
-            this.VerifyFix(LanguageNames.CSharp, this.GetCSharpCodeFixProvider(), oldSource, newSource, codeFixIndex, allowNewCompilerDiagnostics);
+            var fixProvider = this.GetCSharpCodeFixProvider();
+            this.VerifyFix(LanguageNames.CSharp, fixProvider, oldSource, newSource, codeFixIndex, allowNewCompilerDiagnostics);
         }
 
         /// <summary>
@@ -73,7 +73,7 @@
         /// <param name="allowNewCompilerDiagnostics">A bool controlling whether or not the test will fail if the CodeFix introduces other warnings after being applied</param>
         private void VerifyFix(string language, CodeFixProvider codeFixProvider, string oldSource, string newSource, int? codeFixIndex, bool allowNewCompilerDiagnostics)
         {
-            var document = CreateDocument(oldSource, language);
+            var document = Factory.CreateDocument(oldSource, language);
             //var analyzerDiagnostics = GetSortedDiagnosticsFromDocuments(analyzer, new[] { document });
             var compilerDiagnostics = GetCompilerDiagnostics(document).ToArray();
             var attempts = compilerDiagnostics.Length;
@@ -110,8 +110,8 @@
                     var message = $"Fix introduced new compiler diagnostics:\r\n" +
                                   $"{string.Join("\r\n", newCompilerDiagnostics.Select(d => d.ToString()))}\r\n" +
                                   $"\r\n" +
-                                  $"New document:\r\n" + 
-                                  $"{document.GetSyntaxRootAsync() .Result.ToFullString()}\r\n";
+                                  $"New document:\r\n" +
+                                  $"{document.GetSyntaxRootAsync().Result.ToFullString()}\r\n";
                     Assert.Fail(message);
                 }
 

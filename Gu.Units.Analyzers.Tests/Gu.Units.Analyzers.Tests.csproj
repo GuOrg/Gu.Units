@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Gu.Units.Analyzers.Tests</RootNamespace>
     <AssemblyName>Gu.Units.Analyzers.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -38,10 +38,15 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.XML" />
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.XML">
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\Factory.cs" />
     <Compile Include="ToLengthCodeFixProviderTests.cs" />
     <Compile Include="Helpers\CodeFixVerifier.cs" />
     <Compile Include="Helpers\CodeFixVerifier.Helper.cs" />
@@ -52,6 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="paket.references" />
   </ItemGroup>
   <ItemGroup>
@@ -69,7 +75,7 @@
   <UsingTask TaskName="CopyRuntimeDependencies" AssemblyFile="..\.paket\paket.exe" />
   <Target Name="AfterBuild" Condition="Exists('..\.paket\paket.exe')">
     <!--<CopyRuntimeDependencies OutputPath="$(OutDir)" TargetFramework="$(TargetFrameworkIdentifier) - $(TargetFrameworkVersion)" ProjectsWithRuntimeLibs="System.Collections;System.Diagnostics.Contracts;System.Diagnostics.Debug;System.Globalization;System.IO;System.Private.Uri;System.Reflection;System.Reflection.Extensions;System.Reflection.Primitives;System.Reflection.TypeExtensions;System.Resources.ResourceManager;System.Runtime;System.Runtime.Extensions;System.Runtime.Handles;System.Runtime.InteropServices;System.Text.Encoding;System.Text.Encoding.Extensions;System.Threading;System.Threading.Tasks" />-->
-    <CopyRuntimeDependencies OutputPath="$(OutDir)" ProjectsWithRuntimeLibs="System.Collections;System.Diagnostics.Contracts;System.Diagnostics.Debug;System.Globalization;System.IO;System.Private.Uri;System.Reflection;System.Reflection.Extensions;System.Reflection.Primitives;System.Reflection.TypeExtensions;System.Resources.ResourceManager;System.Runtime;System.Runtime.Extensions;System.Runtime.Handles;System.Runtime.InteropServices;System.Text.Encoding;System.Text.Encoding.Extensions;System.Threading;System.Threading.Tasks" />
+    <CopyRuntimeDependencies OutputPath="$(OutDir)" TargetFramework="$(TargetFrameworkIdentifier) - $(TargetFrameworkVersion)" ProjectsWithRuntimeLibs="System.Collections;System.Diagnostics.Contracts;System.Diagnostics.Debug;System.Globalization;System.IO;System.Private.Uri;System.Reflection;System.Reflection.Extensions;System.Reflection.Primitives;System.Reflection.TypeExtensions;System.Resources.ResourceManager;System.Runtime;System.Runtime.Extensions;System.Runtime.Handles;System.Runtime.InteropServices;System.Text.Encoding;System.Text.Encoding.Extensions;System.Threading;System.Threading.Tasks" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
@@ -78,6 +84,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Import Project="..\.paket\paket.targets" />
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll">
       <Paket>True</Paket>
@@ -140,6 +147,46 @@
       <ItemGroup>
         <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces">
           <HintPath>..\packages\Microsoft.CodeAnalysis.CSharp.Workspaces\lib\net45\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="($(TargetFrameworkIdentifier) == '.NETCore') Or ($(TargetFrameworkIdentifier) == 'MonoAndroid') Or ($(TargetFrameworkIdentifier) == 'MonoTouch') Or ($(TargetFrameworkIdentifier) == 'Xamarin.iOS') Or ($(TargetFrameworkIdentifier) == 'Xamarin.Mac') Or ($(TargetFrameworkProfile) == 'Profile7') Or ($(TargetFrameworkProfile) == 'Profile44')">
+      <ItemGroup>
+        <Reference Include="Microsoft.CodeAnalysis.VisualBasic">
+          <HintPath>..\packages\Microsoft.CodeAnalysis.VisualBasic\lib\portable-net45+win8\Microsoft.CodeAnalysis.VisualBasic.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkIdentifier) == '.NETStandard' And ($(TargetFrameworkVersion) == 'v1.1' Or $(TargetFrameworkVersion) == 'v1.2' Or $(TargetFrameworkVersion) == 'v1.3' Or $(TargetFrameworkVersion) == 'v1.4' Or $(TargetFrameworkVersion) == 'v1.5')) Or ($(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2'))">
+      <ItemGroup>
+        <Reference Include="Microsoft.CodeAnalysis.VisualBasic">
+          <HintPath>..\packages\Microsoft.CodeAnalysis.VisualBasic\lib\net45\Microsoft.CodeAnalysis.VisualBasic.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="($(TargetFrameworkIdentifier) == '.NETCore') Or ($(TargetFrameworkIdentifier) == 'MonoAndroid') Or ($(TargetFrameworkIdentifier) == 'MonoTouch') Or ($(TargetFrameworkIdentifier) == 'Xamarin.iOS') Or ($(TargetFrameworkIdentifier) == 'Xamarin.Mac') Or ($(TargetFrameworkProfile) == 'Profile7') Or ($(TargetFrameworkProfile) == 'Profile44')">
+      <ItemGroup>
+        <Reference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces">
+          <HintPath>..\packages\Microsoft.CodeAnalysis.VisualBasic.Workspaces\lib\portable-net45+win8\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkIdentifier) == '.NETStandard' And ($(TargetFrameworkVersion) == 'v1.1' Or $(TargetFrameworkVersion) == 'v1.2' Or $(TargetFrameworkVersion) == 'v1.3' Or $(TargetFrameworkVersion) == 'v1.4' Or $(TargetFrameworkVersion) == 'v1.5')) Or ($(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2'))">
+      <ItemGroup>
+        <Reference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces">
+          <HintPath>..\packages\Microsoft.CodeAnalysis.VisualBasic.Workspaces\lib\net45\Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -240,5 +287,4 @@
       </ItemGroup>
     </When>
   </Choose>
-  <Import Project="..\.paket\paket.targets" />
 </Project>

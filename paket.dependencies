@@ -4,7 +4,9 @@ nuget Newtonsoft.Json
 nuget T4.TemplateFileManager
 nuget JetBrains.Annotations
 nuget Microsoft.CodeAnalysis.CSharp.Scripting
-nuget Microsoft.CodeAnalysis.VisualBasic.Workspaces 
+
+nuget Microsoft.CodeAnalysis.CSharp.Workspaces
+nuget Microsoft.CodeAnalysis.VisualBasic.Workspaces
 
 nuget NUnit ~> 2
 nuget Moq

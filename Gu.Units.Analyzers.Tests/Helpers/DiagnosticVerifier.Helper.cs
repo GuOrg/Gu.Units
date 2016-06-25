@@ -16,17 +16,6 @@
     /// </summary>
     public abstract partial class DiagnosticVerifier
     {
-        private static readonly MetadataReference CorlibReference = MetadataReference.CreateFromFile(typeof(object).Assembly.Location);
-        private static readonly MetadataReference SystemCoreReference = MetadataReference.CreateFromFile(typeof(Enumerable).Assembly.Location);
-        private static readonly MetadataReference CSharpSymbolsReference = MetadataReference.CreateFromFile(typeof(CSharpCompilation).Assembly.Location);
-        private static readonly MetadataReference CodeAnalysisReference = MetadataReference.CreateFromFile(typeof(Compilation).Assembly.Location);
-        private static readonly MetadataReference GuUnitsReference = MetadataReference.CreateFromFile(typeof(Gu.Units.Length).Assembly.Location);
-
-        internal static string DefaultFilePathPrefix = "Foo";
-        internal static string CSharpDefaultFileExt = "cs";
-        internal static string VisualBasicDefaultExt = "vb";
-        internal static string TestProjectName = "FooProj";
-
         /// <summary>
         /// Given classes in the form of strings, their language, and an IDiagnosticAnalyzer to apply to it, return the diagnostics found in the string after converting it to a document.
         /// </summary>
@@ -36,7 +25,7 @@
         /// <returns>An IEnumerable of Diagnostics that surfaced in the source code, sorted by Location</returns>
         private static Diagnostic[] GetSortedDiagnostics(string[] sources, string language, DiagnosticAnalyzer analyzer)
         {
-            return GetSortedDiagnosticsFromDocuments(analyzer, GetDocuments(sources, language));
+            return GetSortedDiagnosticsFromDocuments(analyzer, Factory.CreateDocuments(sources, language));
         }
 
         /// <summary>
@@ -93,73 +82,6 @@
         private static Diagnostic[] SortDiagnostics(IEnumerable<Diagnostic> diagnostics)
         {
             return diagnostics.OrderBy(d => d.Location.SourceSpan.Start).ToArray();
-        }
-
-        /// <summary>
-        /// Given an array of strings as sources and a language, turn them into a project and return the documents and spans of it.
-        /// </summary>
-        /// <param name="sources">Classes in the form of strings</param>
-        /// <param name="language">The language the source code is in</param>
-        /// <returns>A Tuple containing the Documents produced from the sources and their TextSpans if relevant</returns>
-        private static Document[] GetDocuments(string[] sources, string language)
-        {
-            if (language != LanguageNames.CSharp && language != LanguageNames.VisualBasic)
-            {
-                throw new ArgumentException("Unsupported Language");
-            }
-
-            var project = CreateProject(sources, language);
-            var documents = project.Documents.ToArray();
-
-            if (sources.Length != documents.Length)
-            {
-                throw new SystemException("Amount of sources did not match amount of Documents created");
-            }
-
-            return documents;
-        }
-
-        /// <summary>
-        /// Create a Document from a string through creating a project that contains it.
-        /// </summary>
-        /// <param name="source">Classes in the form of a string</param>
-        /// <param name="language">The language the source code is in</param>
-        /// <returns>A Document created from the source string</returns>
-        protected static Document CreateDocument(string source, string language = LanguageNames.CSharp)
-        {
-            return CreateProject(new[] { source }, language).Documents.First();
-        }
-
-        /// <summary>
-        /// Create a project using the inputted strings as sources.
-        /// </summary>
-        /// <param name="sources">Classes in the form of strings</param>
-        /// <param name="language">The language the source code is in</param>
-        /// <returns>A Project created out of the Documents created from the source strings</returns>
-        private static Project CreateProject(string[] sources, string language = LanguageNames.CSharp)
-        {
-            string fileNamePrefix = DefaultFilePathPrefix;
-            string fileExt = language == LanguageNames.CSharp ? CSharpDefaultFileExt : VisualBasicDefaultExt;
-
-            var projectId = ProjectId.CreateNewId(debugName: TestProjectName);
-
-            var solution = new AdhocWorkspace()
-                .CurrentSolution
-                .AddProject(projectId, TestProjectName, TestProjectName, language)
-                .AddMetadataReference(projectId, CorlibReference)
-                .AddMetadataReference(projectId, SystemCoreReference)
-                .AddMetadataReference(projectId, CSharpSymbolsReference)
-                .AddMetadataReference(projectId, CodeAnalysisReference)
-                .AddMetadataReference(projectId, GuUnitsReference);
-
-            for (int i = 0; i < sources.Length; i++)
-            {
-                var source = sources[i];
-                var newFileName = $"{fileNamePrefix}{i}.{fileExt}";
-                var documentId = DocumentId.CreateNewId(projectId, debugName: newFileName);
-                solution = solution.AddDocument(documentId, newFileName, SourceText.From(source));
-            }
-            return solution.GetProject(projectId);
         }
     }
 }
