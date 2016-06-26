@@ -47,6 +47,43 @@
         }
 
         [Test]
+        public void IntToNullableDegrees()
+        {
+            var before = @"
+    namespace ConsoleApplication1
+    {
+        using Gu.Units;
+
+        public class Foo
+        {   
+            public Foo()
+            {
+                Bar = 1;
+            }
+
+            public Angle? Bar { get; }
+        }
+    }";
+
+            var expected = @"
+    namespace ConsoleApplication1
+    {
+        using Gu.Units;
+
+        public class Foo
+        {   
+            public Foo()
+            {
+                Bar = Angle.FromDegrees(1);
+            }
+
+            public Angle? Bar { get; }
+        }
+    }";
+            this.VerifyCSharpFix(before, expected);
+        }
+
+        [Test]
         public void NegativeIntToDegrees()
         {
             var before = @"

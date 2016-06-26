@@ -25,7 +25,7 @@ namespace Gu.Units.Analyzers
         {
             this.titleFormat = $"{typename}.{memberName}({0})";
             this.key = $"{typename}.{memberName}()";
-            this.pattern = $"Cannot implicitly convert type '(int|double)' to 'Gu.Units.{typename}'";
+            this.pattern = $@"Cannot implicitly convert type '(int|double)' to '(Gu.Units.{typename}|System.Nullable<Gu.Units.{typename}>|Gu.Units.{typename}\?)'";
             this.wrapSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression,
                                                                    SyntaxFactory.IdentifierName(typename),
                                                                    SyntaxFactory.IdentifierName(memberName))

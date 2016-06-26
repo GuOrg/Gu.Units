@@ -1,6 +1,6 @@
 ﻿type file
 id Gu.Units.Analyzers
-version 0.1.0.5
+version 0.1.0.6
 authors Johan Larsson
 description
     analyzers and code fixes for unit refactorings
