@@ -3,10 +3,10 @@
     public class CustomConversionVm
     {
         public CustomConversionVm()
-            : this(new CustomConversion("Unknown", "??", "??", "??"))
+            : this(new CustomConversion("Unknown", null, null, null))
         {
-
         }
+
         public CustomConversionVm(CustomConversion conversion)
         {
             this.Conversion = conversion;

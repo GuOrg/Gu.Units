@@ -76,25 +76,51 @@
 
         public static string GetSymbolConversion(this IConversion conversion)
         {
-            var unit = conversion.Unit;
-            var toSi = conversion.ToSi;
-            var convert = ConvertToSi(1, conversion.ParameterName, toSi);
+            const string Invalid = "Invalid";
+            if (conversion.ToSi == null || conversion.Symbol == null)
+            {
+                return Invalid;
+            }
 
-            return $"1 {conversion.Symbol.NormalizeSymbol()} = {convert.ToString(CultureInfo.InvariantCulture)} {unit.Symbol.NormalizeSymbol()}";
+            try
+            {
+                var unit = conversion.Unit;
+                var toSi = conversion.ToSi;
+                var convert = ConvertToSi(1, conversion.ParameterName, toSi);
+
+                return $"1 {conversion.Symbol.NormalizeSymbol()} = {convert.ToString(CultureInfo.InvariantCulture)} {unit.Symbol.NormalizeSymbol()}";
+            }
+            catch (Exception)
+            {
+                return Invalid;
+            }
         }
 
         public static bool CanRoundtrip(this IConversion conversion)
         {
-            var toSi = conversion.ToSi;
-            var fromSi = conversion.FromSi;
-            foreach (var value in new[] { 0, 100 })
+            try
             {
-                var si = ConvertToSi(value, conversion.ParameterName, toSi);
-                var roundtrip = ConvertFromSi(si, conversion.Unit.ParameterName, fromSi);
-                if (roundtrip != value)
+                var toSi = conversion.ToSi;
+                var fromSi = conversion.FromSi;
+                if (string.IsNullOrEmpty(toSi) ||
+                    string.IsNullOrEmpty(fromSi))
                 {
                     return false;
                 }
+
+                foreach (var value in new[] { 0, 100 })
+                {
+                    var si = ConvertToSi(value, conversion.ParameterName, toSi);
+                    var roundtrip = ConvertFromSi(si, conversion.Unit.ParameterName, fromSi);
+                    if (roundtrip != value)
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return false; // lazy here only used in the code gen ui.
             }
 
             return true;

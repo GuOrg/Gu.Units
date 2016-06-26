@@ -65,6 +65,18 @@
         }
 
         [Test]
+        public void CustomConversionWithIllegal()
+        {
+            var settings = MockSettings.Create();
+            var conversion = new CustomConversion("Fahrenheit", "°F", "??", null);
+            settings.Kelvins.CustomConversions.Add(conversion);
+            Assert.AreEqual("??", conversion.ToSi);
+            Assert.AreEqual(null, conversion.FromSi);
+            Assert.AreEqual("Invalid", conversion.SymbolConversion);
+            Assert.AreEqual(false, conversion.CanRoundtrip);
+        }
+
+        [Test]
         public void NestedFactorConversion()
         {
             var settings = MockSettings.Create();

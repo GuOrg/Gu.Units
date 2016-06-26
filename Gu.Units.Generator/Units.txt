@@ -68,6 +68,30 @@
               "PrefixName": "Micro"
             }
           ]
+        },
+        {
+          "Name": "AvoirdupoisPounds",
+          "Symbol": "lb",
+          "Factor": 0.45359237,
+          "PrefixConversions": []
+        },
+        {
+          "Name": "AvoirdupoisOunces",
+          "Symbol": "oz",
+          "Factor": 0.028349523125,
+          "PrefixConversions": []
+        },
+        {
+          "Name": "TroyOunces",
+          "Symbol": "troy",
+          "Factor": 0.0311034768,
+          "PrefixConversions": []
+        },
+        {
+          "Name": "TroyGrains",
+          "Symbol": "gr",
+          "Factor": 6.479891E-05,
+          "PrefixConversions": []
         }
       ],
       "CustomConversions": [],
@@ -86,19 +110,19 @@
           "PrefixConversions": []
         },
         {
-          "Name": "Mile",
+          "Name": "Miles",
           "Symbol": "mi",
           "Factor": 1609.344,
           "PrefixConversions": []
         },
         {
-          "Name": "Yard",
+          "Name": "Yards",
           "Symbol": "yd",
           "Factor": 0.9144,
           "PrefixConversions": []
         },
         {
-          "Name": "NauticalMile",
+          "Name": "NauticalMiles",
           "Symbol": "nmi",
           "Factor": 1852.0,
           "PrefixConversions": []
@@ -377,7 +401,7 @@
       "QuantityName": "Area",
       "FactorConversions": [
         {
-          "Name": "Hectare",
+          "Name": "Hectares",
           "Symbol": "ha",
           "Factor": 10000.0,
           "PrefixConversions": []
@@ -412,7 +436,7 @@
           "Factor": 2589988.110336
         },
         {
-          "Name": "SquareYard",
+          "Name": "SquareYards",
           "Symbol": "yd²",
           "Factor": 0.83612736
         },
@@ -1210,29 +1234,29 @@
           "Power": -1
         }
       ],
-      "Name": "Ohm",
+      "Name": "Ohms",
       "Symbol": "Ω",
       "QuantityName": "Resistance",
       "FactorConversions": [],
       "CustomConversions": [],
       "PrefixConversions": [
         {
-          "Name": "Microohm",
+          "Name": "Microohms",
           "Symbol": "µΩ",
           "PrefixName": "Micro"
         },
         {
-          "Name": "Milliohm",
+          "Name": "Milliohms",
           "Symbol": "mΩ",
           "PrefixName": "Milli"
         },
         {
-          "Name": "Kiloohm",
+          "Name": "Kiloohms",
           "Symbol": "kΩ",
           "PrefixName": "Kilo"
         },
         {
-          "Name": "Megaohm",
+          "Name": "Megaohms",
           "Symbol": "MΩ",
           "PrefixName": "Mega"
         }
