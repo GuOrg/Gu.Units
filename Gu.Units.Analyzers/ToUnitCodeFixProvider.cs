@@ -10,20 +10,29 @@ namespace Gu.Units.Analyzers
     using Microsoft.CodeAnalysis.CodeFixes;
     using Microsoft.CodeAnalysis.CSharp;
     using Microsoft.CodeAnalysis.CSharp.Syntax;
+    using Microsoft.CodeAnalysis.Simplification;
 
     public abstract class ToUnitCodeFixProvider : CodeFixProvider
     {
         private static readonly Task FinishedTask = Task.FromResult(false);
+        private readonly string titleFormat;
+        private readonly string key;
+
+        private readonly string pattern;
+
+        private readonly MemberAccessExpressionSyntax wrapSyntax;
+        protected ToUnitCodeFixProvider(string typename, string memberName)
+        {
+            this.titleFormat = $"{typename}.{memberName}({0})";
+            this.key = $"{typename}.{memberName}()";
+            this.pattern = $"Cannot implicitly convert type '(int|double)' to 'Gu.Units.{typename}'";
+            this.wrapSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression,
+                                                                   SyntaxFactory.IdentifierName(typename),
+                                                                   SyntaxFactory.IdentifierName(memberName))
+                                           .WithAdditionalAnnotations(Simplifier.Annotation);
+        }
 
         public sealed override ImmutableArray<string> FixableDiagnosticIds { get; } = ImmutableArray.Create("CS0029");
-
-        protected abstract string TitleFormat { get; }
-
-        protected abstract string Key { get; }
-
-        protected abstract string Pattern { get; }
-
-        protected abstract MemberAccessExpressionSyntax WrapSyntax { get; }
 
         public sealed override FixAllProvider GetFixAllProvider()
         {
@@ -35,7 +44,7 @@ namespace Gu.Units.Analyzers
         {
             var diagnostic = context.Diagnostics[0];
             var message = diagnostic.GetMessage(null);
-            if (!Regex.IsMatch(message, this.Pattern))
+            if (!Regex.IsMatch(message, this.pattern))
             {
                 return FinishedTask;
             }
@@ -48,9 +57,9 @@ namespace Gu.Units.Analyzers
             var sourceText = await diagnostic.Location.SourceTree.GetTextAsync(context.CancellationToken);
             var text = sourceText.GetSubText(context.Span);
             var action = CodeAction.Create(
-                string.Format(this.TitleFormat, text),
+                string.Format(this.titleFormat, text),
                 c => this.ApplyFix(context, c),
-                this.Key);
+                this.key);
             context.RegisterCodeFix(
                 action,
                 diagnostic);
@@ -75,7 +84,7 @@ namespace Gu.Units.Analyzers
 
         private  InvocationExpressionSyntax WrapWithCallToMillimetres(ExpressionSyntax expressionToWrap)
         {
-            return SyntaxFactory.InvocationExpression(this.WrapSyntax,
+            return SyntaxFactory.InvocationExpression(this.wrapSyntax,
                 SyntaxFactory.ArgumentList(SyntaxFactory.SeparatedList(new[] { SyntaxFactory.Argument(expressionToWrap) }))
                 );
         }
