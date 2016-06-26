@@ -147,6 +147,34 @@
             this.VerifyCSharpFix(before, expected);
         }
 
+
+        [Test]
+        public void ExpressionToMillimetres()
+        {
+            var before = @"
+    namespace ConsoleApplication1
+    {
+        using Gu.Units;
+
+        public class Foo
+        {   
+            public Length Bar { get; } = -1.2 + 2.3;
+        }
+    }";
+
+            var expected = @"
+    namespace ConsoleApplication1
+    {
+        using Gu.Units;
+
+        public class Foo
+        {   
+            public Length Bar { get; } = Length.FromMillimetres(-1.2 + 2.3);
+        }
+    }";
+            this.VerifyCSharpFix(before, expected);
+        }
+
         protected override CodeFixProvider GetCSharpCodeFixProvider()
         {
             return new ToLengthCodeFixProvider();
