@@ -17,10 +17,11 @@
     [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(ToLengthCodeFixProvider)), Shared]
     public class ToLengthCodeFixProvider : CodeFixProvider
     {
-        private const string Key = "Length.FromMillimetres()";
+        private static readonly Task FinishedTask = Task.FromResult(false);
         private const string TitleFormat = "Length.FromMillimetres({0})";
+        private const string Key = "Length.FromMillimetres()";
 
-        public sealed override ImmutableArray<string> FixableDiagnosticIds => ImmutableArray.Create("CS0029");
+        public sealed override ImmutableArray<string> FixableDiagnosticIds { get; } = ImmutableArray.Create("CS0029");
 
         public sealed override FixAllProvider GetFixAllProvider()
         {
@@ -30,18 +31,27 @@
 
         public sealed override Task RegisterCodeFixesAsync(CodeFixContext context)
         {
-            var diagnostic = context.Diagnostics.First();
+            var diagnostic = context.Diagnostics[0];
             var message = diagnostic.GetMessage(null);
             if (!Regex.IsMatch(message, "Cannot implicitly convert type '(int|double)' to 'Gu.Units.Length'"))
             {
-                return Task.FromResult(false);
+                return FinishedTask;
             }
 
-            // Register a code action that will invoke the fix.
+            return RegisterCodeFixesCoreAsync(context, diagnostic);
+        }
+
+        private static async Task RegisterCodeFixesCoreAsync(CodeFixContext context, Diagnostic diagnostic)
+        {
+            var sourceText = await diagnostic.Location.SourceTree.GetTextAsync(context.CancellationToken);
+            var text = sourceText.GetSubText(context.Span);
+            var action = CodeAction.Create(
+                string.Format(TitleFormat, text),
+                c => ApplyFix(context, c),
+                Key);
             context.RegisterCodeFix(
-                CodeAction.Create(string.Format(TitleFormat, context.Span), c => ApplyFix(context, c), TitleFormat),
+                action,
                 diagnostic);
-            return Task.FromResult(true);
         }
 
         private static async Task<Document> ApplyFix(CodeFixContext context, CancellationToken cancellationToken)
