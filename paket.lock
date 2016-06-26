@@ -1,6 +1,5 @@
 NUGET
   remote: http://www.nuget.org/api/v2
-  specs:
     Castle.Core (3.3.3)
     Gu.Reactive (1.11)
       Rx-Main (>= 2.2.5)
@@ -23,6 +22,9 @@ NUGET
     Microsoft.CodeAnalysis.CSharp.Scripting (1.2.2)
       Microsoft.CodeAnalysis.CSharp (1.2.2)
       Microsoft.CodeAnalysis.Scripting.Common (1.2.2)
+    Microsoft.CodeAnalysis.CSharp.Workspaces (1.2.2)
+      Microsoft.CodeAnalysis.CSharp (1.2.2)
+      Microsoft.CodeAnalysis.Workspaces.Common (1.2.2)
     Microsoft.CodeAnalysis.Scripting.Common (1.2.2)
       Microsoft.CodeAnalysis.Common (1.2.2)
       System.AppContext (>= 4.0)
@@ -44,6 +46,15 @@ NUGET
       System.Runtime.InteropServices (>= 4.0.20)
       System.Threading (>= 4.0.10)
       System.Threading.Tasks (>= 4.0.10)
+    Microsoft.CodeAnalysis.VisualBasic (1.2.2)
+      Microsoft.CodeAnalysis.Common (>= 1.2.2)
+    Microsoft.CodeAnalysis.VisualBasic.Workspaces (1.2.2)
+      Microsoft.CodeAnalysis.VisualBasic (1.2.2)
+      Microsoft.CodeAnalysis.Workspaces.Common (1.2.2)
+    Microsoft.CodeAnalysis.Workspaces.Common (1.2.2)
+      Microsoft.CodeAnalysis.Common (1.2.2)
+      Microsoft.Composition (>= 1.0.27)
+    Microsoft.Composition (1.0.30)
     Moq (4.5.9)
       Castle.Core (>= 3.3.3) - framework: >= net45
     Newtonsoft.Json (8.0.3)

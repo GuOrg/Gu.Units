@@ -1,12 +1,17 @@
 source http://www.nuget.org/api/v2/
 
-nuget Moq
 nuget Newtonsoft.Json
-nuget NUnit ~> 2
 nuget T4.TemplateFileManager
 nuget JetBrains.Annotations
 nuget Microsoft.CodeAnalysis.CSharp.Scripting
+
+nuget Microsoft.CodeAnalysis.CSharp.Workspaces
+nuget Microsoft.CodeAnalysis.VisualBasic.Workspaces
+
+nuget NUnit ~> 2
+nuget Moq
 nuget TestStack.White
+
 nuget Gu.Wpf.NumericInput
 nuget Gu.Wpf.Reactive
 nuget Gu.State
