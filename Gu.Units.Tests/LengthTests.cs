@@ -8,7 +8,7 @@
     /// <summary>
     /// Just testing for length assuming the other generated units will work.
     /// </summary>
-    public class LengthTests
+    public partial class LengthTests
     {
         [Test]
         public void Equality()

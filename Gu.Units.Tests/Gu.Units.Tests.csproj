@@ -47,6 +47,8 @@
     <Compile Include="Benchmarks\FormattingBenchmarks.cs" />
     <Compile Include="Benchmarks\ParsingBenchmarks.cs" />
     <Compile Include="Benchmarks\SubstringCacheBenchmarks.cs" />
+    <Compile Include="LengthTests.Conversions.cs" />
+    <Compile Include="TemperatureTests.cs" />
     <Compile Include="TestHelpers\ConversionData.cs" />
     <Compile Include="ConversionTests.cs" />
     <Compile Include="FormatTests.cs" />
