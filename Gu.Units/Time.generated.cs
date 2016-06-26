@@ -358,7 +358,7 @@
         /// <returns>The <see cref="Inductance"/> that is the result from the multiplication.</returns>
         public static Inductance operator *(Time left, Resistance right)
         {
-            return Inductance.FromHenrys(left.seconds * right.ohm);
+            return Inductance.FromHenrys(left.seconds * right.ohms);
         }
 
         /// <summary>
@@ -369,7 +369,7 @@
         /// <returns>The <see cref="Capacitance"/> that is the result from the division.</returns>
         public static Capacitance operator /(Time left, Resistance right)
         {
-            return Capacitance.FromFarads(left.seconds / right.ohm);
+            return Capacitance.FromFarads(left.seconds / right.ohms);
         }
 
         /// <summary>
@@ -402,7 +402,7 @@
         /// <returns>The <see cref="Resistance"/> that is the result from the division.</returns>
         public static Resistance operator /(Time left, Capacitance right)
         {
-            return Resistance.FromOhm(left.seconds / right.farads);
+            return Resistance.FromOhms(left.seconds / right.farads);
         }
 
         /// <summary>

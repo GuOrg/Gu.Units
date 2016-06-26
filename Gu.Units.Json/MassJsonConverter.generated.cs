@@ -34,6 +34,26 @@
         /// </summary>
         public static readonly MassJsonConverter Micrograms = new MassJsonConverter(MassUnit.Micrograms);
 
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="MassUnit.AvoirdupoisPounds"/>
+        /// </summary>
+        public static readonly MassJsonConverter AvoirdupoisPounds = new MassJsonConverter(MassUnit.AvoirdupoisPounds);
+
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="MassUnit.AvoirdupoisOunces"/>
+        /// </summary>
+        public static readonly MassJsonConverter AvoirdupoisOunces = new MassJsonConverter(MassUnit.AvoirdupoisOunces);
+
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="MassUnit.TroyOunces"/>
+        /// </summary>
+        public static readonly MassJsonConverter TroyOunces = new MassJsonConverter(MassUnit.TroyOunces);
+
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="MassUnit.TroyGrains"/>
+        /// </summary>
+        public static readonly MassJsonConverter TroyGrains = new MassJsonConverter(MassUnit.TroyGrains);
+
         private readonly MassUnit unit;
 
         private MassJsonConverter(MassUnit unit)

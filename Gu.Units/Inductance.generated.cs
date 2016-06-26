@@ -273,7 +273,7 @@
         /// <returns>The <see cref="Resistance"/> that is the result from the division.</returns>
         public static Resistance operator /(Inductance left, Time right)
         {
-            return Resistance.FromOhm(left.henrys / right.seconds);
+            return Resistance.FromOhms(left.henrys / right.seconds);
         }
 
         /// <summary>
@@ -295,7 +295,7 @@
         /// <returns>The <see cref="Resistance"/> that is the result from the multiplication.</returns>
         public static Resistance operator *(Inductance left, Frequency right)
         {
-            return Resistance.FromOhm(left.henrys * right.hertz);
+            return Resistance.FromOhms(left.henrys * right.hertz);
         }
 
         /// <summary>
@@ -306,7 +306,7 @@
         /// <returns>The <see cref="Time"/> that is the result from the division.</returns>
         public static Time operator /(Inductance left, Resistance right)
         {
-            return Time.FromSeconds(left.henrys / right.ohm);
+            return Time.FromSeconds(left.henrys / right.ohms);
         }
 
         /// <summary>

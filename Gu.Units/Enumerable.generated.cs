@@ -650,11 +650,11 @@
             {
                 foreach (var v in source)
                 {
-                    sum += v.ohm;
+                    sum += v.ohms;
                 }
             }
 
-            return Resistance.FromOhm(sum);
+            return Resistance.FromOhms(sum);
         }
 
         /// <summary>
@@ -1877,11 +1877,11 @@
                 {
                     if (v != null)
                     {
-                        sum += v.Value.ohm;
+                        sum += v.Value.ohms;
                     }
                 }
             }
-            return Resistance.FromOhm(sum);
+            return Resistance.FromOhms(sum);
         }
 
         /// <summary>
@@ -3410,13 +3410,13 @@
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.ohm))
+                if (System.Double.IsNaN(x.ohms))
                 {
                     return x;
                 }
                 if (hasValue)
                 {
-                    if (x.ohm < value.ohm)
+                    if (x.ohms < value.ohms)
                     {
                         value = x;
                     }
@@ -5057,11 +5057,11 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.ohm))
+                if (System.Double.IsNaN(x.Value.ohms))
                 {
                     return x;
                 }
-                if (value == null || x.Value.ohm < value.Value.ohm)
+                if (value == null || x.Value.ohms < value.Value.ohms)
                 {
                     value = x;
                 }
@@ -6710,13 +6710,13 @@
             bool hasValue = false;
             foreach (Resistance x in source)
             {
-                if (System.Double.IsNaN(x.ohm))
+                if (System.Double.IsNaN(x.ohms))
                 {
                     return x;
                 }
                 if (hasValue)
                 {
-                    if (x.ohm > value.ohm)
+                    if (x.ohms > value.ohms)
                     {
                         value = x;
                     }
@@ -8357,11 +8357,11 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.ohm))
+                if (System.Double.IsNaN(x.Value.ohms))
                 {
                     return x;
                 }
-                if (value == null || x.Value.ohm > value.Value.ohm)
+                if (value == null || x.Value.ohms > value.Value.ohms)
                 {
                     value = x;
                 }
@@ -9804,13 +9804,13 @@
             {
                 foreach (var v in source)
                 {
-                    sum += v.ohm;
+                    sum += v.ohms;
                     count++;
                 }
             }
             if (count > 0)
             {
-                return Resistance.FromOhm(sum / count);
+                return Resistance.FromOhms(sum / count);
             }
             throw new ArgumentException("No elements", "source");
         }
@@ -11285,14 +11285,14 @@
                 {
                     if (v != null)
                     {
-                        sum += v.Value.ohm;
+                        sum += v.Value.ohms;
                         count++;
                     }
                 }
             }
             if (count > 0)
             {
-                return Resistance.FromOhm(sum / count);
+                return Resistance.FromOhms(sum / count);
             }
             return null;
         }

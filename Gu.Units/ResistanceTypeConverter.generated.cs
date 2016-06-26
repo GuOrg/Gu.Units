@@ -75,10 +75,10 @@
                 }
                 else if (destinationType == typeof(InstanceDescriptor))
                 {
-                    var factoryMethod = typeof(Resistance).GetMethod(nameof(Resistance.FromOhm), BindingFlags.Public | BindingFlags.Static, null, new Type[] { typeof(double) }, null);
+                    var factoryMethod = typeof(Resistance).GetMethod(nameof(Resistance.FromOhms), BindingFlags.Public | BindingFlags.Static, null, new Type[] { typeof(double) }, null);
                     if (factoryMethod != null)
                     {
-                        var args = new object[] { resistance.ohm };
+                        var args = new object[] { resistance.ohms };
                         return new InstanceDescriptor(factoryMethod, args);
                     }
                 }

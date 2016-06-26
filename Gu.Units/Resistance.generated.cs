@@ -14,18 +14,18 @@
     public partial struct Resistance : IQuantity<ResistanceUnit>, IComparable<Resistance>, IEquatable<Resistance>
     {
         /// <summary>
-        /// Gets a value that is zero <see cref="Gu.Units.ResistanceUnit.Ohm"/>
+        /// Gets a value that is zero <see cref="Gu.Units.ResistanceUnit.Ohms"/>
         /// </summary>
 		public static readonly Resistance Zero = new Resistance();
 
         /// <summary>
-        /// The quantity in <see cref="Gu.Units.ResistanceUnit.Ohm"/>.
+        /// The quantity in <see cref="Gu.Units.ResistanceUnit.Ohms"/>.
         /// </summary>
-        internal readonly double ohm;
+        internal readonly double ohms;
 
-        private Resistance(double ohm)
+        private Resistance(double ohms)
         {
-            this.ohm = ohm;
+            this.ohms = ohms;
         }
 
         /// <summary>
@@ -35,48 +35,48 @@
         /// <param name="unit"><see cref="Gu.Units.ResistanceUnit"/>.</param>
         public Resistance(double value, ResistanceUnit unit)
         {
-            this.ohm = unit.ToSiUnit(value);
+            this.ohms = unit.ToSiUnit(value);
         }
 
         /// <summary>
-        /// The quantity in <see cref="Gu.Units.ResistanceUnit.Ohm"/>
+        /// The quantity in <see cref="Gu.Units.ResistanceUnit.Ohms"/>
         /// </summary>
-        public double SiValue => this.ohm;
+        public double SiValue => this.ohms;
 
         /// <summary>
         /// The <see cref="Gu.Units.ResistanceUnit"/> for the <see cref="SiValue"/>
         /// </summary>
-        public ResistanceUnit SiUnit => ResistanceUnit.Ohm;
+        public ResistanceUnit SiUnit => ResistanceUnit.Ohms;
 
         /// <summary>
         /// The <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
         /// </summary>
-        IUnit IQuantity.SiUnit => ResistanceUnit.Ohm;
+        IUnit IQuantity.SiUnit => ResistanceUnit.Ohms;
 
         /// <summary>
-        /// The quantity in ohm".
+        /// The quantity in ohms".
         /// </summary>
-        public double Ohm => this.ohm;
+        public double Ohms => this.ohms;
 
         /// <summary>
-        /// The quantity in Microohm
+        /// The quantity in Microohms
         /// </summary>
-        public double Microohm => 1000000 * this.ohm;
+        public double Microohms => 1000000 * this.ohms;
 
         /// <summary>
-        /// The quantity in Milliohm
+        /// The quantity in Milliohms
         /// </summary>
-        public double Milliohm => 1000 * this.ohm;
+        public double Milliohms => 1000 * this.ohms;
 
         /// <summary>
-        /// The quantity in Kiloohm
+        /// The quantity in Kiloohms
         /// </summary>
-        public double Kiloohm => this.ohm / 1000;
+        public double Kiloohms => this.ohms / 1000;
 
         /// <summary>
-        /// The quantity in Megaohm
+        /// The quantity in Megaohms
         /// </summary>
-        public double Megaohm => this.ohm / 1000000;
+        public double Megaohms => this.ohms / 1000000;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
@@ -195,46 +195,46 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
-        /// <param name="ohm">The value in <see cref="Gu.Units.ResistanceUnit.Ohm"/></param>
-        public static Resistance FromOhm(double ohm)
+        /// <param name="ohms">The value in <see cref="Gu.Units.ResistanceUnit.Ohms"/></param>
+        public static Resistance FromOhms(double ohms)
         {
-            return new Resistance(ohm);
+            return new Resistance(ohms);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
-        /// <param name="microohm">The value in µΩ</param>
-        public static Resistance FromMicroohm(double microohm)
+        /// <param name="microohms">The value in µΩ</param>
+        public static Resistance FromMicroohms(double microohms)
         {
-            return new Resistance(microohm / 1000000);
+            return new Resistance(microohms / 1000000);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
-        /// <param name="milliohm">The value in mΩ</param>
-        public static Resistance FromMilliohm(double milliohm)
+        /// <param name="milliohms">The value in mΩ</param>
+        public static Resistance FromMilliohms(double milliohms)
         {
-            return new Resistance(milliohm / 1000);
+            return new Resistance(milliohms / 1000);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
-        /// <param name="kiloohm">The value in kΩ</param>
-        public static Resistance FromKiloohm(double kiloohm)
+        /// <param name="kiloohms">The value in kΩ</param>
+        public static Resistance FromKiloohms(double kiloohms)
         {
-            return new Resistance(1000 * kiloohm);
+            return new Resistance(1000 * kiloohms);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
-        /// <param name="megaohm">The value in MΩ</param>
-        public static Resistance FromMegaohm(double megaohm)
+        /// <param name="megaohms">The value in MΩ</param>
+        public static Resistance FromMegaohms(double megaohms)
         {
-            return new Resistance(1000000 * megaohm);
+            return new Resistance(1000000 * megaohms);
         }
 
         /// <summary>
@@ -245,7 +245,7 @@
         /// <returns>The <see cref="Inductance"/> that is the result from the multiplication.</returns>
         public static Inductance operator *(Resistance left, Time right)
         {
-            return Inductance.FromHenrys(left.ohm * right.seconds);
+            return Inductance.FromHenrys(left.ohms * right.seconds);
         }
 
         /// <summary>
@@ -256,7 +256,7 @@
         /// <returns>The <see cref="Voltage"/> that is the result from the multiplication.</returns>
         public static Voltage operator *(Resistance left, Current right)
         {
-            return Voltage.FromVolts(left.ohm * right.amperes);
+            return Voltage.FromVolts(left.ohms * right.amperes);
         }
 
         /// <summary>
@@ -267,7 +267,7 @@
         /// <returns>The <see cref="Inductance"/> that is the result from the division.</returns>
         public static Inductance operator /(Resistance left, Frequency right)
         {
-            return Inductance.FromHenrys(left.ohm / right.hertz);
+            return Inductance.FromHenrys(left.ohms / right.hertz);
         }
 
         /// <summary>
@@ -278,7 +278,7 @@
         /// <returns>The <see cref="MagneticFlux"/> that is the result from the multiplication.</returns>
         public static MagneticFlux operator *(Resistance left, ElectricCharge right)
         {
-            return MagneticFlux.FromWebers(left.ohm * right.coulombs);
+            return MagneticFlux.FromWebers(left.ohms * right.coulombs);
         }
 
         /// <summary>
@@ -289,7 +289,7 @@
         /// <returns>The <see cref="Frequency"/> that is the result from the division.</returns>
         public static Frequency operator /(Resistance left, Inductance right)
         {
-            return Frequency.FromHertz(left.ohm / right.henrys);
+            return Frequency.FromHertz(left.ohms / right.henrys);
         }
 
         /// <summary>
@@ -300,7 +300,7 @@
         /// <returns>The <see cref="Time"/> that is the result from the multiplication.</returns>
         public static Time operator *(Resistance left, Capacitance right)
         {
-            return Time.FromSeconds(left.ohm * right.farads);
+            return Time.FromSeconds(left.ohms * right.farads);
         }
 
         /// <summary>
@@ -311,7 +311,7 @@
         /// <returns>The ElectricalConductance that is the result from the division.</returns>
         public static ElectricalConductance operator /(double left, Resistance right)
         {
-            return ElectricalConductance.FromSiemens(left / right.ohm);
+            return ElectricalConductance.FromSiemens(left / right.ohms);
         }
 
         /// <summary>
@@ -322,7 +322,7 @@
         /// <returns>The <see cref="double"/> that is the result from the division.</returns>
         public static double operator /(Resistance left, Resistance right)
         {
-            return left.ohm / right.ohm;
+            return left.ohms / right.ohms;
         }
 
         /// <summary>
@@ -361,7 +361,7 @@
         /// <param name="right">An instance of <see cref="Gu.Units.Resistance"/>.</param>
         public static bool operator <(Resistance left, Resistance right)
         {
-            return left.ohm < right.ohm;
+            return left.ohms < right.ohms;
         }
 
         /// <summary>
@@ -374,7 +374,7 @@
         /// <param name="right">An instance of <see cref="Gu.Units.Resistance"/>.</param>
         public static bool operator >(Resistance left, Resistance right)
         {
-            return left.ohm > right.ohm;
+            return left.ohms > right.ohms;
         }
 
         /// <summary>
@@ -387,7 +387,7 @@
         /// <param name="right">An instance of <see cref="Gu.Units.Resistance"/>.</param>
         public static bool operator <=(Resistance left, Resistance right)
         {
-            return left.ohm <= right.ohm;
+            return left.ohms <= right.ohms;
         }
 
         /// <summary>
@@ -400,7 +400,7 @@
         /// <param name="right">An instance of <see cref="Gu.Units.Resistance"/>.</param>
         public static bool operator >=(Resistance left, Resistance right)
         {
-            return left.ohm >= right.ohm;
+            return left.ohms >= right.ohms;
         }
 
         /// <summary>
@@ -411,7 +411,7 @@
         /// <returns>Multiplies an instance of <see cref="Gu.Units.Resistance"/> with <paramref name="left"/> and returns the result.</returns>
         public static Resistance operator *(double left, Resistance right)
         {
-            return new Resistance(left * right.ohm);
+            return new Resistance(left * right.ohms);
         }
 
         /// <summary>
@@ -422,7 +422,7 @@
         /// <returns>Multiplies an instance of <see cref="Gu.Units.Resistance"/> with <paramref name="right"/> and returns the result.</returns>
         public static Resistance operator *(Resistance left, double right)
         {
-            return new Resistance(left.ohm * right);
+            return new Resistance(left.ohms * right);
         }
 
         /// <summary>
@@ -433,7 +433,7 @@
         /// <returns>Divides an instance of <see cref="Gu.Units.Resistance"/> with <paramref name="right"/> and returns the result.</returns>
         public static Resistance operator /(Resistance left, double right)
         {
-            return new Resistance(left.ohm / right);
+            return new Resistance(left.ohms / right);
         }
 
         /// <summary>
@@ -446,7 +446,7 @@
         /// <param name="right">An instance of <see cref="Gu.Units.Resistance"/>.</param>
         public static Resistance operator +(Resistance left, Resistance right)
         {
-            return new Resistance(left.ohm + right.ohm);
+            return new Resistance(left.ohms + right.ohms);
         }
 
         /// <summary>
@@ -459,7 +459,7 @@
         /// <param name="right">An instance of <see cref="Gu.Units.Resistance"/> (the subtrahend).</param>
         public static Resistance operator -(Resistance left, Resistance right)
         {
-            return new Resistance(left.ohm - right.ohm);
+            return new Resistance(left.ohms - right.ohms);
         }
 
         /// <summary>
@@ -471,7 +471,7 @@
         /// <param name="resistance">An instance of <see cref="Gu.Units.Resistance"/></param>
         public static Resistance operator -(Resistance resistance)
         {
-            return new Resistance(-1 * resistance.ohm);
+            return new Resistance(-1 * resistance.ohms);
         }
 
         /// <summary>
@@ -493,7 +493,7 @@
         /// <returns>The scalar value of this in the specified unit</returns>
         public double GetValue(ResistanceUnit unit)
         {
-            return unit.FromSiUnit(this.ohm);
+            return unit.FromSiUnit(this.ohms);
         }
 
         /// <summary>
@@ -702,7 +702,7 @@
         /// <param name="quantity">An instance of <see cref="Gu.Units.Resistance"/> object to compare to this instance.</param>
         public int CompareTo(Resistance quantity)
         {
-            return this.ohm.CompareTo(quantity.ohm);
+            return this.ohms.CompareTo(quantity.ohms);
         }
 
         /// <summary>
@@ -714,7 +714,7 @@
         /// <param name="other">An instance of <see cref="Gu.Units.Resistance"/> object to compare with this instance.</param>
         public bool Equals(Resistance other)
         {
-            return this.ohm.Equals(other.ohm);
+            return this.ohms.Equals(other.ohms);
         }
 
         /// <summary>
@@ -727,8 +727,8 @@
         /// <param name="tolerance">The maximum difference for being considered equal. Must be greater than zero.</param>
         public bool Equals(Resistance other, Resistance tolerance)
         {
-            Ensure.GreaterThan(tolerance.ohm, 0, nameof(tolerance));
-            return Math.Abs(this.ohm - other.ohm) < tolerance.ohm;
+            Ensure.GreaterThan(tolerance.ohms, 0, nameof(tolerance));
+            return Math.Abs(this.ohms - other.ohms) < tolerance.ohms;
         }
 
         /// <summary>
@@ -754,7 +754,7 @@
         /// <returns>A 32-bit signed integer hash code.</returns>
         public override int GetHashCode()
         {
-            return this.ohm.GetHashCode();
+            return this.ohms.GetHashCode();
         }
 
         /// <summary>
@@ -779,7 +779,7 @@
         public void ReadXml(XmlReader reader)
         {
             // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "ohm", reader, "Value");
+            XmlExt.SetReadonlyField(ref this, "ohms", reader, "Value");
         }
 
         /// <summary>
@@ -788,7 +788,7 @@
         /// <param name="writer">The <see cref="System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.ohm);
+            XmlExt.WriteAttribute(writer, "Value", this.ohms);
         }
     }
 }

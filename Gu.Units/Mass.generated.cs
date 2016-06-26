@@ -74,6 +74,26 @@
         public double Micrograms => 1000000000 * this.kilograms;
 
         /// <summary>
+        /// The quantity in AvoirdupoisPounds
+        /// </summary>
+        public double AvoirdupoisPounds => this.kilograms / 0.45359237;
+
+        /// <summary>
+        /// The quantity in AvoirdupoisOunces
+        /// </summary>
+        public double AvoirdupoisOunces => this.kilograms / 0.028349523125;
+
+        /// <summary>
+        /// The quantity in TroyOunces
+        /// </summary>
+        public double TroyOunces => this.kilograms / 0.0311034768;
+
+        /// <summary>
+        /// The quantity in TroyGrains
+        /// </summary>
+        public double TroyGrains => this.kilograms / 6.479891E-05;
+
+        /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
@@ -221,6 +241,42 @@
         public static Mass FromMicrograms(double micrograms)
         {
             return new Mass(micrograms / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="avoirdupoisPounds">The value in lb</param>
+        public static Mass FromAvoirdupoisPounds(double avoirdupoisPounds)
+        {
+            return new Mass(0.45359237 * avoirdupoisPounds);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="avoirdupoisOunces">The value in oz</param>
+        public static Mass FromAvoirdupoisOunces(double avoirdupoisOunces)
+        {
+            return new Mass(0.028349523125 * avoirdupoisOunces);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="troyOunces">The value in troy</param>
+        public static Mass FromTroyOunces(double troyOunces)
+        {
+            return new Mass(0.0311034768 * troyOunces);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="troyGrains">The value in gr</param>
+        public static Mass FromTroyGrains(double troyGrains)
+        {
+            return new Mass(6.479891E-05 * troyGrains);
         }
 
         /// <summary>

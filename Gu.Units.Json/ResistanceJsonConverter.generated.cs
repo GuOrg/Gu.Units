@@ -10,34 +10,34 @@
     public class ResistanceJsonConverter : JsonConverter
     {
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Ohm"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Ohms"/>
         /// </summary>
-        public static readonly ResistanceJsonConverter Default = new ResistanceJsonConverter(ResistanceUnit.Ohm);
+        public static readonly ResistanceJsonConverter Default = new ResistanceJsonConverter(ResistanceUnit.Ohms);
 
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Ohm"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Ohms"/>
         /// </summary>
-        public static readonly ResistanceJsonConverter Ohm = new ResistanceJsonConverter(ResistanceUnit.Ohm);
+        public static readonly ResistanceJsonConverter Ohms = new ResistanceJsonConverter(ResistanceUnit.Ohms);
 
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Microohm"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Microohms"/>
         /// </summary>
-        public static readonly ResistanceJsonConverter Microohm = new ResistanceJsonConverter(ResistanceUnit.Microohm);
+        public static readonly ResistanceJsonConverter Microohms = new ResistanceJsonConverter(ResistanceUnit.Microohms);
 
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Milliohm"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Milliohms"/>
         /// </summary>
-        public static readonly ResistanceJsonConverter Milliohm = new ResistanceJsonConverter(ResistanceUnit.Milliohm);
+        public static readonly ResistanceJsonConverter Milliohms = new ResistanceJsonConverter(ResistanceUnit.Milliohms);
 
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Kiloohm"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Kiloohms"/>
         /// </summary>
-        public static readonly ResistanceJsonConverter Kiloohm = new ResistanceJsonConverter(ResistanceUnit.Kiloohm);
+        public static readonly ResistanceJsonConverter Kiloohms = new ResistanceJsonConverter(ResistanceUnit.Kiloohms);
 
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Megaohm"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Megaohms"/>
         /// </summary>
-        public static readonly ResistanceJsonConverter Megaohm = new ResistanceJsonConverter(ResistanceUnit.Megaohm);
+        public static readonly ResistanceJsonConverter Megaohms = new ResistanceJsonConverter(ResistanceUnit.Megaohms);
 
         private readonly ResistanceUnit unit;
 

@@ -317,7 +317,7 @@
         /// <returns>The <see cref="Voltage"/> that is the result from the multiplication.</returns>
         public static Voltage operator *(Current left, Resistance right)
         {
-            return Voltage.FromVolts(left.amperes * right.ohm);
+            return Voltage.FromVolts(left.amperes * right.ohms);
         }
 
         /// <summary>

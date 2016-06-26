@@ -64,19 +64,19 @@
         public double Inches => this.metres / 0.0254;
 
         /// <summary>
-        /// The quantity in Mile
+        /// The quantity in Miles
         /// </summary>
-        public double Mile => this.metres / 1609.344;
+        public double Miles => this.metres / 1609.344;
 
         /// <summary>
-        /// The quantity in Yard
+        /// The quantity in Yards
         /// </summary>
-        public double Yard => this.metres / 0.9144;
+        public double Yards => this.metres / 0.9144;
 
         /// <summary>
-        /// The quantity in NauticalMile
+        /// The quantity in NauticalMiles
         /// </summary>
-        public double NauticalMile => this.metres / 1852;
+        public double NauticalMiles => this.metres / 1852;
 
         /// <summary>
         /// The quantity in Nanometres
@@ -243,28 +243,28 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="mile">The value in mi</param>
-        public static Length FromMile(double mile)
+        /// <param name="miles">The value in mi</param>
+        public static Length FromMiles(double miles)
         {
-            return new Length(1609.344 * mile);
+            return new Length(1609.344 * miles);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="yard">The value in yd</param>
-        public static Length FromYard(double yard)
+        /// <param name="yards">The value in yd</param>
+        public static Length FromYards(double yards)
         {
-            return new Length(0.9144 * yard);
+            return new Length(0.9144 * yards);
         }
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="nauticalMile">The value in nmi</param>
-        public static Length FromNauticalMile(double nauticalMile)
+        /// <param name="nauticalMiles">The value in nmi</param>
+        public static Length FromNauticalMiles(double nauticalMiles)
         {
-            return new Length(1852 * nauticalMile);
+            return new Length(1852 * nauticalMiles);
         }
 
         /// <summary>

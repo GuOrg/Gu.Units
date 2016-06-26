@@ -59,9 +59,9 @@
         public double SquareMetres => this.squareMetres;
 
         /// <summary>
-        /// The quantity in Hectare
+        /// The quantity in Hectares
         /// </summary>
-        public double Hectare => this.squareMetres / 10000;
+        public double Hectares => this.squareMetres / 10000;
 
         /// <summary>
         /// The quantity in SquareMillimetres
@@ -89,9 +89,9 @@
         public double SquareMile => this.squareMetres / 2589988.110336;
 
         /// <summary>
-        /// The quantity in SquareYard
+        /// The quantity in SquareYards
         /// </summary>
-        public double SquareYard => this.squareMetres / 0.83612736;
+        public double SquareYards => this.squareMetres / 0.83612736;
 
         /// <summary>
         /// The quantity in SquareInches
@@ -224,10 +224,10 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="hectare">The value in ha</param>
-        public static Area FromHectare(double hectare)
+        /// <param name="hectares">The value in ha</param>
+        public static Area FromHectares(double hectares)
         {
-            return new Area(10000 * hectare);
+            return new Area(10000 * hectares);
         }
 
         /// <summary>
@@ -278,10 +278,10 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="squareYard">The value in yd²</param>
-        public static Area FromSquareYard(double squareYard)
+        /// <param name="squareYards">The value in yd²</param>
+        public static Area FromSquareYards(double squareYards)
         {
-            return new Area(0.83612736 * squareYard);
+            return new Area(0.83612736 * squareYards);
         }
 
         /// <summary>

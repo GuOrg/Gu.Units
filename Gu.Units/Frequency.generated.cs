@@ -377,7 +377,7 @@
         /// <returns>The <see cref="Resistance"/> that is the result from the multiplication.</returns>
         public static Resistance operator *(Frequency left, Inductance right)
         {
-            return Resistance.FromOhm(left.hertz * right.henrys);
+            return Resistance.FromOhms(left.hertz * right.henrys);
         }
 
         /// <summary>

@@ -24,22 +24,22 @@
         public static readonly LengthUnit Inches = new LengthUnit(inches => 0.0254 * inches, metres => metres / 0.0254, "in");
 
         /// <summary>
-        /// The Mile unit
+        /// The Miles unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit Mile = new LengthUnit(mile => 1609.344 * mile, metres => metres / 1609.344, "mi");
+        public static readonly LengthUnit Miles = new LengthUnit(miles => 1609.344 * miles, metres => metres / 1609.344, "mi");
 
         /// <summary>
-        /// The Yard unit
+        /// The Yards unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit Yard = new LengthUnit(yard => 0.9144 * yard, metres => metres / 0.9144, "yd");
+        public static readonly LengthUnit Yards = new LengthUnit(yards => 0.9144 * yards, metres => metres / 0.9144, "yd");
 
         /// <summary>
-        /// The NauticalMile unit
+        /// The NauticalMiles unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit NauticalMile = new LengthUnit(nauticalMile => 1852 * nauticalMile, metres => metres / 1852, "nmi");
+        public static readonly LengthUnit NauticalMiles = new LengthUnit(nauticalMiles => 1852 * nauticalMiles, metres => metres / 1852, "nmi");
 
         /// <summary>
         /// The Nanometres unit

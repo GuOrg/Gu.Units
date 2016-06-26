@@ -20,9 +20,9 @@
         public static readonly AreaJsonConverter SquareMetres = new AreaJsonConverter(AreaUnit.SquareMetres);
 
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="AreaUnit.Hectare"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AreaUnit.Hectares"/>
         /// </summary>
-        public static readonly AreaJsonConverter Hectare = new AreaJsonConverter(AreaUnit.Hectare);
+        public static readonly AreaJsonConverter Hectares = new AreaJsonConverter(AreaUnit.Hectares);
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AreaUnit.SquareMillimetres"/>
@@ -50,9 +50,9 @@
         public static readonly AreaJsonConverter SquareMile = new AreaJsonConverter(AreaUnit.SquareMile);
 
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="AreaUnit.SquareYard"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="AreaUnit.SquareYards"/>
         /// </summary>
-        public static readonly AreaJsonConverter SquareYard = new AreaJsonConverter(AreaUnit.SquareYard);
+        public static readonly AreaJsonConverter SquareYards = new AreaJsonConverter(AreaUnit.SquareYards);
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AreaUnit.SquareInches"/>

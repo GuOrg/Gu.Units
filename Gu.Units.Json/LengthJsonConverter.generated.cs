@@ -25,19 +25,19 @@
         public static readonly LengthJsonConverter Inches = new LengthJsonConverter(LengthUnit.Inches);
 
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="LengthUnit.Mile"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="LengthUnit.Miles"/>
         /// </summary>
-        public static readonly LengthJsonConverter Mile = new LengthJsonConverter(LengthUnit.Mile);
+        public static readonly LengthJsonConverter Miles = new LengthJsonConverter(LengthUnit.Miles);
 
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="LengthUnit.Yard"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="LengthUnit.Yards"/>
         /// </summary>
-        public static readonly LengthJsonConverter Yard = new LengthJsonConverter(LengthUnit.Yard);
+        public static readonly LengthJsonConverter Yards = new LengthJsonConverter(LengthUnit.Yards);
 
         /// <summary>
-        /// A <see cref="JsonConverter"/> that writes values in <see cref="LengthUnit.NauticalMile"/>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="LengthUnit.NauticalMiles"/>
         /// </summary>
-        public static readonly LengthJsonConverter NauticalMile = new LengthJsonConverter(LengthUnit.NauticalMile);
+        public static readonly LengthJsonConverter NauticalMiles = new LengthJsonConverter(LengthUnit.NauticalMiles);
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="LengthUnit.Nanometres"/>

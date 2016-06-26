@@ -12,49 +12,49 @@
     public struct ResistanceUnit : IUnit, IUnit<Resistance>, IEquatable<ResistanceUnit>
     {
         /// <summary>
-        /// The Ohm unit
+        /// The Ohms unit
         /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly ResistanceUnit Ohm = new ResistanceUnit(ohm => ohm, ohm => ohm, "Ω");
+        public static readonly ResistanceUnit Ohms = new ResistanceUnit(ohms => ohms, ohms => ohms, "Ω");
 
         /// <summary>
-        /// The Microohm unit
+        /// The Microohms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ResistanceUnit Microohm = new ResistanceUnit(microohm => microohm / 1000000, ohm => 1000000 * ohm, "µΩ");
+        public static readonly ResistanceUnit Microohms = new ResistanceUnit(microohms => microohms / 1000000, ohms => 1000000 * ohms, "µΩ");
 
         /// <summary>
-        /// The Milliohm unit
+        /// The Milliohms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ResistanceUnit Milliohm = new ResistanceUnit(milliohm => milliohm / 1000, ohm => 1000 * ohm, "mΩ");
+        public static readonly ResistanceUnit Milliohms = new ResistanceUnit(milliohms => milliohms / 1000, ohms => 1000 * ohms, "mΩ");
 
         /// <summary>
-        /// The Kiloohm unit
+        /// The Kiloohms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ResistanceUnit Kiloohm = new ResistanceUnit(kiloohm => 1000 * kiloohm, ohm => ohm / 1000, "kΩ");
+        public static readonly ResistanceUnit Kiloohms = new ResistanceUnit(kiloohms => 1000 * kiloohms, ohms => ohms / 1000, "kΩ");
 
         /// <summary>
-        /// The Megaohm unit
+        /// The Megaohms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ResistanceUnit Megaohm = new ResistanceUnit(megaohm => 1000000 * megaohm, ohm => ohm / 1000000, "MΩ");
+        public static readonly ResistanceUnit Megaohms = new ResistanceUnit(megaohms => 1000000 * megaohms, ohms => ohms / 1000000, "MΩ");
 
-        private readonly Func<double, double> toOhm;
-        private readonly Func<double, double> fromOhm;
+        private readonly Func<double, double> toOhms;
+        private readonly Func<double, double> fromOhms;
         internal readonly string symbol;
 
         /// <summary>
         /// Initializes a new instance of <see cref="ResistanceUnit"/>.
         /// </summary>
-        /// <param name="toOhm">The conversion to <see cref="Ohm"/></param>
-        /// <param name="fromOhm">The conversion to <paramref name="symbol"/></param>
-        /// <param name="symbol">The symbol for the <see cref="Ohm"/></param>
-        public ResistanceUnit(Func<double, double> toOhm, Func<double, double> fromOhm, string symbol)
+        /// <param name="toOhms">The conversion to <see cref="Ohms"/></param>
+        /// <param name="fromOhms">The conversion to <paramref name="symbol"/></param>
+        /// <param name="symbol">The symbol for the <see cref="Ohms"/></param>
+        public ResistanceUnit(Func<double, double> toOhms, Func<double, double> fromOhms, string symbol)
         {
-            this.toOhm = toOhm;
-            this.fromOhm = fromOhm;
+            this.toOhms = toOhms;
+            this.fromOhms = fromOhms;
             this.symbol = symbol;
         }
 
@@ -66,12 +66,12 @@
         /// <summary>
         /// The default unit for <see cref="Gu.Units.ResistanceUnit"/>
         /// </summary>
-        public ResistanceUnit SiUnit => Ohm;
+        public ResistanceUnit SiUnit => Ohms;
 
         /// <summary>
         /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.ResistanceUnit"/>
         /// </summary>
-        IUnit IUnit.SiUnit => Ohm;
+        IUnit IUnit.SiUnit => Ohms;
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -133,23 +133,23 @@
         }
 
         /// <summary>
-        /// Converts <paramref name="value"/> to Ohm.
+        /// Converts <paramref name="value"/> to Ohms.
         /// </summary>
         /// <param name="value"></param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
-            return this.toOhm(value);
+            return this.toOhms(value);
         }
 
         /// <summary>
-        /// Converts a value from ohm.
+        /// Converts a value from ohms.
         /// </summary>
-        /// <param name="ohm">The value in Ohm</param>
+        /// <param name="ohms">The value in Ohms</param>
         /// <returns>The converted value</returns>
-        public double FromSiUnit(double ohm)
+        public double FromSiUnit(double ohms)
         {
-            return this.fromOhm(ohm);
+            return this.fromOhms(ohms);
         }
 
         /// <summary>
@@ -163,13 +163,13 @@
         }
 
         /// <summary>
-        /// Gets the scalar value of <paramref name="quantity"/> in Ohm
+        /// Gets the scalar value of <paramref name="quantity"/> in Ohms
         /// </summary>
         /// <param name="quantity"></param>
         /// <returns></returns>
         public double GetScalarValue(Resistance quantity)
         {
-            return FromSiUnit(quantity.ohm);
+            return FromSiUnit(quantity.ohms);
         }
 
         /// <inheritdoc />

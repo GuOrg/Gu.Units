@@ -255,7 +255,7 @@
         /// <returns>The <see cref="ElectricCharge"/> that is the result from the division.</returns>
         public static ElectricCharge operator /(MagneticFlux left, Resistance right)
         {
-            return ElectricCharge.FromCoulombs(left.webers / right.ohm);
+            return ElectricCharge.FromCoulombs(left.webers / right.ohms);
         }
 
         /// <summary>
@@ -266,7 +266,7 @@
         /// <returns>The <see cref="Resistance"/> that is the result from the division.</returns>
         public static Resistance operator /(MagneticFlux left, ElectricCharge right)
         {
-            return Resistance.FromOhm(left.webers / right.coulombs);
+            return Resistance.FromOhms(left.webers / right.coulombs);
         }
 
         /// <summary>

@@ -306,7 +306,7 @@
         /// <returns>The <see cref="Time"/> that is the result from the multiplication.</returns>
         public static Time operator *(Capacitance left, Resistance right)
         {
-            return Time.FromSeconds(left.farads * right.ohm);
+            return Time.FromSeconds(left.farads * right.ohms);
         }
 
         /// <summary>

@@ -255,7 +255,7 @@
         /// <returns>The Resistance that is the result from the division.</returns>
         public static Resistance operator /(double left, ElectricalConductance right)
         {
-            return Resistance.FromOhm(left / right.siemens);
+            return Resistance.FromOhms(left / right.siemens);
         }
 
         /// <summary>

@@ -18,10 +18,10 @@
         public static readonly AreaUnit SquareMetres = new AreaUnit(squareMetres => squareMetres, squareMetres => squareMetres, "m²");
 
         /// <summary>
-        /// The Hectare unit
+        /// The Hectares unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AreaUnit Hectare = new AreaUnit(hectare => 10000 * hectare, squareMetres => squareMetres / 10000, "ha");
+        public static readonly AreaUnit Hectares = new AreaUnit(hectares => 10000 * hectares, squareMetres => squareMetres / 10000, "ha");
 
         /// <summary>
         /// The SquareMillimetres unit
@@ -54,10 +54,10 @@
         public static readonly AreaUnit SquareMile = new AreaUnit(squareMile => 2589988.110336 * squareMile, squareMetres => squareMetres / 2589988.110336, "mi²");
 
         /// <summary>
-        /// The SquareYard unit
+        /// The SquareYards unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AreaUnit SquareYard = new AreaUnit(squareYard => 0.83612736 * squareYard, squareMetres => squareMetres / 0.83612736, "yd²");
+        public static readonly AreaUnit SquareYards = new AreaUnit(squareYards => 0.83612736 * squareYards, squareMetres => squareMetres / 0.83612736, "yd²");
 
         /// <summary>
         /// The SquareInches unit

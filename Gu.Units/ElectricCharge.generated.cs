@@ -328,7 +328,7 @@
         /// <returns>The <see cref="MagneticFlux"/> that is the result from the multiplication.</returns>
         public static MagneticFlux operator *(ElectricCharge left, Resistance right)
         {
-            return MagneticFlux.FromWebers(left.coulombs * right.ohm);
+            return MagneticFlux.FromWebers(left.coulombs * right.ohms);
         }
 
         /// <summary>

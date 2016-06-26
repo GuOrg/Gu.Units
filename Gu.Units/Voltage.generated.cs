@@ -295,7 +295,7 @@
         /// <returns>The <see cref="Resistance"/> that is the result from the division.</returns>
         public static Resistance operator /(Voltage left, Current right)
         {
-            return Resistance.FromOhm(left.volts / right.amperes);
+            return Resistance.FromOhms(left.volts / right.amperes);
         }
 
         /// <summary>
@@ -317,7 +317,7 @@
         /// <returns>The <see cref="Current"/> that is the result from the division.</returns>
         public static Current operator /(Voltage left, Resistance right)
         {
-            return Current.FromAmperes(left.volts / right.ohm);
+            return Current.FromAmperes(left.volts / right.ohms);
         }
 
         /// <summary>
