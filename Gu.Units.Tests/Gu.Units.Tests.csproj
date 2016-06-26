@@ -47,6 +47,7 @@
     <Compile Include="Benchmarks\FormattingBenchmarks.cs" />
     <Compile Include="Benchmarks\ParsingBenchmarks.cs" />
     <Compile Include="Benchmarks\SubstringCacheBenchmarks.cs" />
+    <Compile Include="TestHelpers\ConversionData.cs" />
     <Compile Include="ConversionTests.cs" />
     <Compile Include="FormatTests.cs" />
     <Compile Include="Constants\Benchmarks.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="LengthTypeConverterTests.cs" />
     <Compile Include="LengthUnitTests.cs" />
     <Compile Include="LengthUnitTypeConverterTests.cs" />
+    <Compile Include="MassTests.cs" />
     <Compile Include="Samples\Samples.cs" />
     <Compile Include="Sandbox\DumpMarkdown.cs" />
     <Compile Include="Sources\ConversionProvider.cs" />
