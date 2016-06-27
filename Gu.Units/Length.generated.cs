@@ -9,7 +9,7 @@
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.Length"/>.
     /// </summary>
-    [TypeConverter(typeof(LengthTypeConverter))]
+    //[TypeConverter(typeof(LengthTypeConverter))]
     [Serializable]
     public partial struct Length : IQuantity<LengthUnit>, IComparable<Length>, IEquatable<Length>
     {
@@ -59,36 +59,6 @@
         public double Metres => this.metres;
 
         /// <summary>
-        /// The quantity in Inches
-        /// </summary>
-        public double Inches => this.metres / 0.0254;
-
-        /// <summary>
-        /// The quantity in Miles
-        /// </summary>
-        public double Miles => this.metres / 1609.344;
-
-        /// <summary>
-        /// The quantity in Yards
-        /// </summary>
-        public double Yards => this.metres / 0.9144;
-
-        /// <summary>
-        /// The quantity in NauticalMiles
-        /// </summary>
-        public double NauticalMiles => this.metres / 1852;
-
-        /// <summary>
-        /// The quantity in Nanometres
-        /// </summary>
-        public double Nanometres => 1000000000 * this.metres;
-
-        /// <summary>
-        /// The quantity in Micrometres
-        /// </summary>
-        public double Micrometres => 1000000 * this.metres;
-
-        /// <summary>
         /// The quantity in Millimetres
         /// </summary>
         public double Millimetres => 1000 * this.metres;
@@ -97,16 +67,6 @@
         /// The quantity in Centimetres
         /// </summary>
         public double Centimetres => 100 * this.metres;
-
-        /// <summary>
-        /// The quantity in Decimetres
-        /// </summary>
-        public double Decimetres => 10 * this.metres;
-
-        /// <summary>
-        /// The quantity in Kilometres
-        /// </summary>
-        public double Kilometres => this.metres / 1000;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
@@ -234,60 +194,6 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="inches">The value in in</param>
-        public static Length FromInches(double inches)
-        {
-            return new Length(0.0254 * inches);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="miles">The value in mi</param>
-        public static Length FromMiles(double miles)
-        {
-            return new Length(1609.344 * miles);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="yards">The value in yd</param>
-        public static Length FromYards(double yards)
-        {
-            return new Length(0.9144 * yards);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="nauticalMiles">The value in nmi</param>
-        public static Length FromNauticalMiles(double nauticalMiles)
-        {
-            return new Length(1852 * nauticalMiles);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="nanometres">The value in nm</param>
-        public static Length FromNanometres(double nanometres)
-        {
-            return new Length(nanometres / 1000000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="micrometres">The value in µm</param>
-        public static Length FromMicrometres(double micrometres)
-        {
-            return new Length(micrometres / 1000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
         /// <param name="millimetres">The value in mm</param>
         public static Length FromMillimetres(double millimetres)
         {
@@ -301,24 +207,6 @@
         public static Length FromCentimetres(double centimetres)
         {
             return new Length(centimetres / 100);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="decimetres">The value in dm</param>
-        public static Length FromDecimetres(double decimetres)
-        {
-            return new Length(decimetres / 10);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="kilometres">The value in km</param>
-        public static Length FromKilometres(double kilometres)
-        {
-            return new Length(1000 * kilometres);
         }
 
         /// <summary>

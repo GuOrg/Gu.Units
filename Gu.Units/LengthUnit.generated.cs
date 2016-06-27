@@ -8,7 +8,7 @@
 	/// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
-    [TypeConverter(typeof(LengthUnitTypeConverter))]
+    //[TypeConverter(typeof(LengthUnitTypeConverter))]
     public struct LengthUnit : IUnit, IUnit<Length>, IEquatable<LengthUnit>
     {
         /// <summary>
@@ -16,42 +16,6 @@
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly LengthUnit Metres = new LengthUnit(metres => metres, metres => metres, "m");
-
-        /// <summary>
-        /// The Inches unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-        public static readonly LengthUnit Inches = new LengthUnit(inches => 0.0254 * inches, metres => metres / 0.0254, "in");
-
-        /// <summary>
-        /// The Miles unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-        public static readonly LengthUnit Miles = new LengthUnit(miles => 1609.344 * miles, metres => metres / 1609.344, "mi");
-
-        /// <summary>
-        /// The Yards unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-        public static readonly LengthUnit Yards = new LengthUnit(yards => 0.9144 * yards, metres => metres / 0.9144, "yd");
-
-        /// <summary>
-        /// The NauticalMiles unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-        public static readonly LengthUnit NauticalMiles = new LengthUnit(nauticalMiles => 1852 * nauticalMiles, metres => metres / 1852, "nmi");
-
-        /// <summary>
-        /// The Nanometres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-        public static readonly LengthUnit Nanometres = new LengthUnit(nanometres => nanometres / 1000000000, metres => 1000000000 * metres, "nm");
-
-        /// <summary>
-        /// The Micrometres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-        public static readonly LengthUnit Micrometres = new LengthUnit(micrometres => micrometres / 1000000, metres => 1000000 * metres, "µm");
 
         /// <summary>
         /// The Millimetres unit
@@ -64,18 +28,6 @@
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Centimetres = new LengthUnit(centimetres => centimetres / 100, metres => 100 * metres, "cm");
-
-        /// <summary>
-        /// The Decimetres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-        public static readonly LengthUnit Decimetres = new LengthUnit(decimetres => decimetres / 10, metres => 10 * metres, "dm");
-
-        /// <summary>
-        /// The Kilometres unit
-        /// Contains conversion logic to from and formatting.
-        /// </summary>
-        public static readonly LengthUnit Kilometres = new LengthUnit(kilometres => 1000 * kilometres, metres => metres / 1000, "km");
 
         private readonly Func<double, double> toMetres;
         private readonly Func<double, double> fromMetres;
