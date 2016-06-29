@@ -46,6 +46,35 @@
             this.VerifyCSharpFix(before, expected);
         }
 
+        [Test, Explicit("ToDo")]
+        public void NullableIntToMillimetres()
+        {
+            var before = @"
+    namespace ConsoleApplication1
+    {
+        using Gu.Units;
+
+        public class Foo
+        {   
+            private static int? value = 0;
+            private static Length Foo => value.Value; 
+        }
+    }";
+
+            var expected = @"
+    namespace ConsoleApplication1
+    {
+        using Gu.Units;
+
+        public class Foo
+        {   
+            private static int? value = 0;
+            private static Length Foo => Length.FromMillimetres(value.Value); 
+        }
+    }";
+            this.VerifyCSharpFix(before, expected);
+        }
+
         [Test]
         public void NegativeIntToMillimetres()
         {
