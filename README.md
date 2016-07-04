@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/JohanLarsson/Gu.Units?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![NuGet](https://img.shields.io/nuget/v/Gu.Units.svg)](https://www.nuget.org/packages/Gu.Units/)
-[![Build status](https://ci.appveyor.com/api/projects/status/oa2o8euq95v12qi7?svg=true)](https://ci.appveyor.com/project/JohanLarsson/gu-units)
+[![Build status](https://ci.appveyor.com/api/projects/status/oa2o8euq95v12qi7/branch/master?svg=true)](https://ci.appveyor.com/project/JohanLarsson/gu-units/branch/master)
 
 # Contents.
 
