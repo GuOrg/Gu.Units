@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -17,11 +23,13 @@
         /// </summary>
         public static readonly PowerUnit Watts = new PowerUnit(watts => watts, watts => watts, "W");
 
+
         /// <summary>
         /// The Nanowatts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit Nanowatts = new PowerUnit(nanowatts => nanowatts / 1000000000, watts => 1000000000 * watts, "nW");
+
 
         /// <summary>
         /// The Microwatts unit
@@ -29,11 +37,13 @@
         /// </summary>
         public static readonly PowerUnit Microwatts = new PowerUnit(microwatts => microwatts / 1000000, watts => 1000000 * watts, "µW");
 
+
         /// <summary>
         /// The Milliwatts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit Milliwatts = new PowerUnit(milliwatts => milliwatts / 1000, watts => 1000 * watts, "mW");
+
 
         /// <summary>
         /// The Kilowatts unit
@@ -41,17 +51,20 @@
         /// </summary>
         public static readonly PowerUnit Kilowatts = new PowerUnit(kilowatts => 1000 * kilowatts, watts => watts / 1000, "kW");
 
+
         /// <summary>
         /// The Megawatts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit Megawatts = new PowerUnit(megawatts => 1000000 * megawatts, watts => watts / 1000000, "MW");
 
+
         /// <summary>
         /// The Gigawatts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PowerUnit Gigawatts = new PowerUnit(gigawatts => 1000000000 * gigawatts, watts => watts / 1000000000, "GW");
+
 
         private readonly Func<double, double> toWatts;
         private readonly Func<double, double> fromWatts;

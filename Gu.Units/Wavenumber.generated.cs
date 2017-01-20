@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -57,6 +63,7 @@
         /// The quantity in reciprocalMetres".
         /// </summary>
         public double ReciprocalMetres => this.reciprocalMetres;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Wavenumber"/> from its string representation
@@ -181,6 +188,8 @@
             return new Wavenumber(reciprocalMetres);
         }
 
+
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -191,6 +200,7 @@
         {
             return Length.FromMetres(left.reciprocalMetres * right.squareMetres);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -203,6 +213,7 @@
             return Area.FromSquareMetres(left.reciprocalMetres * right.cubicMetres);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -213,6 +224,7 @@
         {
             return Stiffness.FromNewtonsPerMetre(left.reciprocalMetres * right.newtons);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -225,6 +237,7 @@
             return Flexibility.FromMetresPerNewton(left.reciprocalMetres / right.pascals);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -235,6 +248,7 @@
         {
             return Force.FromNewtons(left.reciprocalMetres * right.joules);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -247,6 +261,7 @@
             return Frequency.FromHertz(left.reciprocalMetres * right.metresPerSecond);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -257,6 +272,7 @@
         {
             return Pressure.FromPascals(left.reciprocalMetres * right.newtonsPerMetre);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -269,6 +285,7 @@
             return KinematicViscosity.FromSquareMetresPerSecond(left.reciprocalMetres * right.cubicMetresPerSecond);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -279,6 +296,7 @@
         {
             return Acceleration.FromMetresPerSecondSquared(left.reciprocalMetres * right.joulesPerKilogram);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -291,6 +309,7 @@
             return Pressure.FromPascals(left.reciprocalMetres / right.metresPerNewton);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -301,6 +320,7 @@
         {
             return MassFlow.FromKilogramsPerSecond(left.reciprocalMetres * right.newtonSecond);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -313,6 +333,7 @@
             return Density.FromKilogramsPerCubicMetre(left.reciprocalMetres * right.kilogramsPerSquareMetre);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -324,6 +345,8 @@
             return Speed.FromMetresPerSecond(left.reciprocalMetres * right.squareMetresPerSecond);
         }
 
+
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -334,6 +357,7 @@
         {
             return Length.FromMetres(left / right.reciprocalMetres);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

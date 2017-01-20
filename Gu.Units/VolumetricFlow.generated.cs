@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,60 +64,72 @@
         /// </summary>
         public double CubicMetresPerSecond => this.cubicMetresPerSecond;
 
+
         /// <summary>
         /// The quantity in CubicMetresPerMinute
         /// </summary>
         public double CubicMetresPerMinute => 60 * this.cubicMetresPerSecond;
+
 
         /// <summary>
         /// The quantity in CubicMetresPerHour
         /// </summary>
         public double CubicMetresPerHour => 3600 * this.cubicMetresPerSecond;
 
+
         /// <summary>
         /// The quantity in LitresPerSecond
         /// </summary>
         public double LitresPerSecond => 1000 * this.cubicMetresPerSecond;
+
 
         /// <summary>
         /// The quantity in LitresPerHour
         /// </summary>
         public double LitresPerHour => 3600000 * this.cubicMetresPerSecond;
 
+
         /// <summary>
         /// The quantity in LitresPerMinute
         /// </summary>
         public double LitresPerMinute => 60000 * this.cubicMetresPerSecond;
+
 
         /// <summary>
         /// The quantity in MillilitresPerSecond
         /// </summary>
         public double MillilitresPerSecond => 1000000 * this.cubicMetresPerSecond;
 
+
         /// <summary>
         /// The quantity in MillilitresPerHour
         /// </summary>
         public double MillilitresPerHour => 3600000000 * this.cubicMetresPerSecond;
+
 
         /// <summary>
         /// The quantity in MillilitresPerMinute
         /// </summary>
         public double MillilitresPerMinute => 60000000 * this.cubicMetresPerSecond;
 
+
         /// <summary>
         /// The quantity in CentilitresPerSecond
         /// </summary>
         public double CentilitresPerSecond => 100000 * this.cubicMetresPerSecond;
+
 
         /// <summary>
         /// The quantity in CentilitresPerHour
         /// </summary>
         public double CentilitresPerHour => 360000000 * this.cubicMetresPerSecond;
 
+
         /// <summary>
         /// The quantity in CentilitresPerMinute
         /// </summary>
         public double CentilitresPerMinute => 6000000 * this.cubicMetresPerSecond;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.VolumetricFlow"/> from its string representation
@@ -236,6 +254,7 @@
             return new VolumetricFlow(cubicMetresPerSecond);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
@@ -244,6 +263,7 @@
         {
             return new VolumetricFlow(cubicMetresPerMinute / 60);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
@@ -254,6 +274,7 @@
             return new VolumetricFlow(cubicMetresPerHour / 3600);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
@@ -262,6 +283,7 @@
         {
             return new VolumetricFlow(litresPerSecond / 1000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
@@ -272,6 +294,7 @@
             return new VolumetricFlow(litresPerHour / 3600000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
@@ -280,6 +303,7 @@
         {
             return new VolumetricFlow(litresPerMinute / 60000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
@@ -290,6 +314,7 @@
             return new VolumetricFlow(millilitresPerSecond / 1000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
@@ -298,6 +323,7 @@
         {
             return new VolumetricFlow(millilitresPerHour / 3600000000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
@@ -308,6 +334,7 @@
             return new VolumetricFlow(millilitresPerMinute / 60000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
@@ -316,6 +343,7 @@
         {
             return new VolumetricFlow(centilitresPerSecond / 100000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
@@ -326,6 +354,7 @@
             return new VolumetricFlow(centilitresPerHour / 360000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
@@ -334,6 +363,8 @@
         {
             return new VolumetricFlow(centilitresPerMinute / 6000000);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -346,6 +377,7 @@
             return KinematicViscosity.FromSquareMetresPerSecond(left.cubicMetresPerSecond / right.metres);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -356,6 +388,7 @@
         {
             return Volume.FromCubicMetres(left.cubicMetresPerSecond * right.seconds);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -368,6 +401,7 @@
             return Speed.FromMetresPerSecond(left.cubicMetresPerSecond / right.squareMetres);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -378,6 +412,7 @@
         {
             return Frequency.FromHertz(left.cubicMetresPerSecond / right.cubicMetres);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -390,6 +425,7 @@
             return Power.FromWatts(left.cubicMetresPerSecond * right.pascals);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -400,6 +436,7 @@
         {
             return MassFlow.FromKilogramsPerSecond(left.cubicMetresPerSecond * right.kilogramsPerCubicMetre);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -412,6 +449,7 @@
             return Area.FromSquareMetres(left.cubicMetresPerSecond / right.metresPerSecond);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -422,6 +460,7 @@
         {
             return Volume.FromCubicMetres(left.cubicMetresPerSecond / right.hertz);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -434,6 +473,7 @@
             return KinematicViscosity.FromSquareMetresPerSecond(left.cubicMetresPerSecond * right.reciprocalMetres);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -444,6 +484,7 @@
         {
             return Momentum.FromNewtonSecond(left.cubicMetresPerSecond * right.kilogramsPerSquareMetre);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -456,6 +497,7 @@
             return MassFlow.FromKilogramsPerSecond(left.cubicMetresPerSecond / right.cubicMetresPerKilogram);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -467,6 +509,7 @@
             return SpecificVolume.FromCubicMetresPerKilogram(left.cubicMetresPerSecond / right.kilogramsPerSecond);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -477,6 +520,8 @@
         {
             return Length.FromMetres(left.cubicMetresPerSecond / right.squareMetresPerSecond);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

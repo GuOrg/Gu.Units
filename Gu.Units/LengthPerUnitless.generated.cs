@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,20 +64,24 @@
         /// </summary>
         public double MetresPerUnitless => this.metresPerUnitless;
 
+
         /// <summary>
         /// The quantity in MillimetresPerPercent
         /// </summary>
         public double MillimetresPerPercent => 10 * this.metresPerUnitless;
+
 
         /// <summary>
         /// The quantity in MicrometresPerPercent
         /// </summary>
         public double MicrometresPerPercent => 10000 * this.metresPerUnitless;
 
+
         /// <summary>
         /// The quantity in MetresPerPercent
         /// </summary>
         public double MetresPerPercent => this.metresPerUnitless / 100;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
@@ -196,6 +206,7 @@
             return new LengthPerUnitless(metresPerUnitless);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
         /// </summary>
@@ -204,6 +215,7 @@
         {
             return new LengthPerUnitless(millimetresPerPercent / 10);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
@@ -214,6 +226,7 @@
             return new LengthPerUnitless(micrometresPerPercent / 10000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
         /// </summary>
@@ -222,6 +235,8 @@
         {
             return new LengthPerUnitless(100 * metresPerPercent);
         }
+
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -234,6 +249,7 @@
             return Length.FromMetres(left.metresPerUnitless * right.scalar);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -244,6 +260,7 @@
         {
             return ForcePerUnitless.FromNewtonsPerUnitless(left.metresPerUnitless * right.newtonsPerMetre);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -256,6 +273,7 @@
             return ForcePerUnitless.FromNewtonsPerUnitless(left.metresPerUnitless / right.metresPerNewton);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -266,6 +284,8 @@
         {
             return Flexibility.FromMetresPerNewton(left.metresPerUnitless / right.newtonsPerUnitless);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

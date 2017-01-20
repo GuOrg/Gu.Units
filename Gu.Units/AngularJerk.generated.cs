@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,30 +64,36 @@
         /// </summary>
         public double RadiansPerSecondCubed => this.radiansPerSecondCubed;
 
+
         /// <summary>
         /// The quantity in DegreesPerSecondCubed
         /// </summary>
         public double DegreesPerSecondCubed => this.radiansPerSecondCubed / 0.0174532925199433;
+
 
         /// <summary>
         /// The quantity in RadiansPerHourCubed
         /// </summary>
         public double RadiansPerHourCubed => 46656000000 * this.radiansPerSecondCubed;
 
+
         /// <summary>
         /// The quantity in DegreesPerHourCubed
         /// </summary>
         public double DegreesPerHourCubed => this.radiansPerSecondCubed / 3.74084630485753E-13;
+
 
         /// <summary>
         /// The quantity in RadiansPerMinuteCubed
         /// </summary>
         public double RadiansPerMinuteCubed => 216000 * this.radiansPerSecondCubed;
 
+
         /// <summary>
         /// The quantity in DegreesPerMinuteCubed
         /// </summary>
         public double DegreesPerMinuteCubed => this.radiansPerSecondCubed / 8.08022801849227E-08;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
@@ -206,6 +218,7 @@
             return new AngularJerk(radiansPerSecondCubed);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
         /// </summary>
@@ -214,6 +227,7 @@
         {
             return new AngularJerk(0.0174532925199433 * degreesPerSecondCubed);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
@@ -224,6 +238,7 @@
             return new AngularJerk(radiansPerHourCubed / 46656000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
         /// </summary>
@@ -232,6 +247,7 @@
         {
             return new AngularJerk(3.74084630485753E-13 * degreesPerHourCubed);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
@@ -242,6 +258,7 @@
             return new AngularJerk(radiansPerMinuteCubed / 216000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
         /// </summary>
@@ -250,6 +267,8 @@
         {
             return new AngularJerk(8.08022801849227E-08 * degreesPerMinuteCubed);
         }
+
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -262,6 +281,7 @@
             return AngularAcceleration.FromRadiansPerSecondSquared(left.radiansPerSecondCubed * right.seconds);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -273,6 +293,7 @@
             return AngularAcceleration.FromRadiansPerSecondSquared(left.radiansPerSecondCubed / right.hertz);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -283,6 +304,8 @@
         {
             return Frequency.FromHertz(left.radiansPerSecondCubed / right.radiansPerSecondSquared);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

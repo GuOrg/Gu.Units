@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,20 +64,24 @@
         /// </summary>
         public double MetresPerNewton => this.metresPerNewton;
 
+
         /// <summary>
         /// The quantity in MillimetresPerNewton
         /// </summary>
         public double MillimetresPerNewton => 1000 * this.metresPerNewton;
+
 
         /// <summary>
         /// The quantity in MillimetresPerKilonewton
         /// </summary>
         public double MillimetresPerKilonewton => 1000000 * this.metresPerNewton;
 
+
         /// <summary>
         /// The quantity in MicrometresPerKilonewton
         /// </summary>
         public double MicrometresPerKilonewton => 1000000000 * this.metresPerNewton;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
@@ -196,6 +206,7 @@
             return new Flexibility(metresPerNewton);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
         /// </summary>
@@ -204,6 +215,7 @@
         {
             return new Flexibility(millimetresPerNewton / 1000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
@@ -214,6 +226,7 @@
             return new Flexibility(millimetresPerKilonewton / 1000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
         /// </summary>
@@ -222,6 +235,8 @@
         {
             return new Flexibility(micrometresPerKilonewton / 1000000000);
         }
+
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -234,6 +249,7 @@
             return Length.FromMetres(left.metresPerNewton * right.newtons);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -244,6 +260,7 @@
         {
             return Wavenumber.FromReciprocalMetres(left.metresPerNewton * right.pascals);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -256,6 +273,7 @@
             return Area.FromSquareMetres(left.metresPerNewton * right.joules);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -266,6 +284,7 @@
         {
             return KinematicViscosity.FromSquareMetresPerSecond(left.metresPerNewton * right.watts);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -278,6 +297,7 @@
             return LengthPerUnitless.FromMetresPerUnitless(left.metresPerNewton * right.newtonsPerUnitless);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -289,6 +309,8 @@
             return Time.FromSeconds(left.metresPerNewton * right.kilogramsPerSecond);
         }
 
+
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -299,6 +321,7 @@
         {
             return Stiffness.FromNewtonsPerMetre(left / right.metresPerNewton);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

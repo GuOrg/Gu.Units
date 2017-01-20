@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -16,6 +22,7 @@
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly WavenumberUnit ReciprocalMetres = new WavenumberUnit(reciprocalMetres => reciprocalMetres, reciprocalMetres => reciprocalMetres, "m⁻¹");
+
 
         private readonly Func<double, double> toReciprocalMetres;
         private readonly Func<double, double> fromReciprocalMetres;

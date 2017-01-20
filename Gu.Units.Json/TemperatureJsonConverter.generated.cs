@@ -1,4 +1,10 @@
-﻿namespace Gu.Units.Json
+﻿
+
+
+
+
+
+namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -19,15 +25,18 @@
         /// </summary>
         public static readonly TemperatureJsonConverter Kelvin = new TemperatureJsonConverter(TemperatureUnit.Kelvin);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="TemperatureUnit.Celsius"/>
         /// </summary>
         public static readonly TemperatureJsonConverter Celsius = new TemperatureJsonConverter(TemperatureUnit.Celsius);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="TemperatureUnit.Fahrenheit"/>
         /// </summary>
         public static readonly TemperatureJsonConverter Fahrenheit = new TemperatureJsonConverter(TemperatureUnit.Fahrenheit);
+
 
         private readonly TemperatureUnit unit;
 

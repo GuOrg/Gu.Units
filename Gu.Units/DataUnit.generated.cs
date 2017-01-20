@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -17,11 +23,13 @@
         /// </summary>
         public static readonly DataUnit Bits = new DataUnit(bits => bits, bits => bits, "bit");
 
+
         /// <summary>
         /// The Byte unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly DataUnit Byte = new DataUnit(@byte => 8 * @byte, bits => bits / 8, "B");
+
 
         /// <summary>
         /// The Kilobyte unit
@@ -29,11 +37,13 @@
         /// </summary>
         public static readonly DataUnit Kilobyte = new DataUnit(kilobyte => 8000 * kilobyte, bits => bits / 8000, "kB");
 
+
         /// <summary>
         /// The Megabyte unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly DataUnit Megabyte = new DataUnit(megabyte => 8000000 * megabyte, bits => bits / 8000000, "MB");
+
 
         /// <summary>
         /// The Gigabyte unit
@@ -41,11 +51,13 @@
         /// </summary>
         public static readonly DataUnit Gigabyte = new DataUnit(gigabyte => 8000000000 * gigabyte, bits => bits / 8000000000, "GB");
 
+
         /// <summary>
         /// The Terabyte unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly DataUnit Terabyte = new DataUnit(terabyte => 8000000000000 * terabyte, bits => bits / 8000000000000, "TB");
+
 
         /// <summary>
         /// The Megabits unit
@@ -53,17 +65,20 @@
         /// </summary>
         public static readonly DataUnit Megabits = new DataUnit(megabits => 1000000 * megabits, bits => bits / 1000000, "Mbit");
 
+
         /// <summary>
         /// The Gigabits unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly DataUnit Gigabits = new DataUnit(gigabits => 1000000000 * gigabits, bits => bits / 1000000000, "Gbit");
 
+
         /// <summary>
         /// The Kilobits unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly DataUnit Kilobits = new DataUnit(kilobits => 1000 * kilobits, bits => bits / 1000, "kbit");
+
 
         private readonly Func<double, double> toBits;
         private readonly Func<double, double> fromBits;

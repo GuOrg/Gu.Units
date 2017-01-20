@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -17,11 +23,13 @@
         /// </summary>
         public static readonly AngleUnit Radians = new AngleUnit(radians => radians, radians => radians, "rad");
 
+
         /// <summary>
         /// The Degrees unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngleUnit Degrees = new AngleUnit(degrees => degrees / 57.295779513082323, radians => 57.295779513082323 * radians, "°");
+
 
         private readonly Func<double, double> toRadians;
         private readonly Func<double, double> fromRadians;

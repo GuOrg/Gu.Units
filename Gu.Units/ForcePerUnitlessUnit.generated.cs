@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -17,11 +23,13 @@
         /// </summary>
         public static readonly ForcePerUnitlessUnit NewtonsPerUnitless = new ForcePerUnitlessUnit(newtonsPerUnitless => newtonsPerUnitless, newtonsPerUnitless => newtonsPerUnitless, "N/ul");
 
+
         /// <summary>
         /// The NewtonsPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ForcePerUnitlessUnit NewtonsPerPercent = new ForcePerUnitlessUnit(newtonsPerPercent => 100 * newtonsPerPercent, newtonsPerUnitless => newtonsPerUnitless / 100, "N/%");
+
 
         /// <summary>
         /// The KilonewtonsPerPercent unit
@@ -29,17 +37,20 @@
         /// </summary>
         public static readonly ForcePerUnitlessUnit KilonewtonsPerPercent = new ForcePerUnitlessUnit(kilonewtonsPerPercent => 100000 * kilonewtonsPerPercent, newtonsPerUnitless => newtonsPerUnitless / 100000, "kN/%");
 
+
         /// <summary>
         /// The MeganewtonsPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ForcePerUnitlessUnit MeganewtonsPerPercent = new ForcePerUnitlessUnit(meganewtonsPerPercent => 100000000 * meganewtonsPerPercent, newtonsPerUnitless => newtonsPerUnitless / 100000000, "MN/%");
 
+
         /// <summary>
         /// The GiganewtonsPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ForcePerUnitlessUnit GiganewtonsPerPercent = new ForcePerUnitlessUnit(giganewtonsPerPercent => 100000000000 * giganewtonsPerPercent, newtonsPerUnitless => newtonsPerUnitless / 100000000000, "GN/%");
+
 
         private readonly Func<double, double> toNewtonsPerUnitless;
         private readonly Func<double, double> fromNewtonsPerUnitless;

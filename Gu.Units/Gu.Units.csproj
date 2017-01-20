@@ -434,6 +434,30 @@
     <Compile Include="MassUnitTypeConverter.generated.cs">
       <DependentUpon>UnitTypeConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="MolarHeatCapacity.generated.cs">
+      <DependentUpon>Quantties.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MolarHeatCapacityTypeConverter.generated.cs">
+      <DependentUpon>QuantityTypeConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MolarHeatCapacityUnit.generated.cs">
+      <DependentUpon>Units.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MolarHeatCapacityUnitTypeConverter.generated.cs">
+      <DependentUpon>UnitTypeConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MolarMass.generated.cs">
+      <DependentUpon>Quantties.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MolarMassTypeConverter.generated.cs">
+      <DependentUpon>QuantityTypeConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MolarMassUnit.generated.cs">
+      <DependentUpon>Units.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MolarMassUnitTypeConverter.generated.cs">
+      <DependentUpon>UnitTypeConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="Momentum.generated.cs">
       <DependentUpon>Quantties.txt4</DependentUpon>
     </Compile>

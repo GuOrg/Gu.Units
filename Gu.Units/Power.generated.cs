@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,35 +64,42 @@
         /// </summary>
         public double Watts => this.watts;
 
+
         /// <summary>
         /// The quantity in Nanowatts
         /// </summary>
         public double Nanowatts => 1000000000 * this.watts;
+
 
         /// <summary>
         /// The quantity in Microwatts
         /// </summary>
         public double Microwatts => 1000000 * this.watts;
 
+
         /// <summary>
         /// The quantity in Milliwatts
         /// </summary>
         public double Milliwatts => 1000 * this.watts;
+
 
         /// <summary>
         /// The quantity in Kilowatts
         /// </summary>
         public double Kilowatts => this.watts / 1000;
 
+
         /// <summary>
         /// The quantity in Megawatts
         /// </summary>
         public double Megawatts => this.watts / 1000000;
 
+
         /// <summary>
         /// The quantity in Gigawatts
         /// </summary>
         public double Gigawatts => this.watts / 1000000000;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
@@ -211,6 +224,7 @@
             return new Power(watts);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
@@ -219,6 +233,7 @@
         {
             return new Power(nanowatts / 1000000000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
@@ -229,6 +244,7 @@
             return new Power(microwatts / 1000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
@@ -237,6 +253,7 @@
         {
             return new Power(milliwatts / 1000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
@@ -247,6 +264,7 @@
             return new Power(1000 * kilowatts);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
@@ -256,6 +274,7 @@
             return new Power(1000000 * megawatts);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
@@ -264,6 +283,8 @@
         {
             return new Power(1000000000 * gigawatts);
         }
+
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -276,6 +297,7 @@
             return Energy.FromJoules(left.watts * right.seconds);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -286,6 +308,7 @@
         {
             return Voltage.FromVolts(left.watts / right.amperes);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -298,6 +321,7 @@
             return Speed.FromMetresPerSecond(left.watts / right.newtons);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -308,6 +332,7 @@
         {
             return VolumetricFlow.FromCubicMetresPerSecond(left.watts / right.pascals);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -320,6 +345,7 @@
             return Frequency.FromHertz(left.watts / right.joules);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -330,6 +356,7 @@
         {
             return Force.FromNewtons(left.watts / right.metresPerSecond);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -342,6 +369,7 @@
             return Torque.FromNewtonMetres(left.watts / right.radiansPerSecond);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -352,6 +380,7 @@
         {
             return Energy.FromJoules(left.watts / right.hertz);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -364,6 +393,7 @@
             return Momentum.FromNewtonSecond(left.watts / right.metresPerSecondSquared);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -374,6 +404,7 @@
         {
             return AngularSpeed.FromRadiansPerSecond(left.watts / right.newtonMetres);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -386,6 +417,7 @@
             return KinematicViscosity.FromSquareMetresPerSecond(left.watts / right.newtonsPerMetre);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -396,6 +428,7 @@
         {
             return Pressure.FromPascals(left.watts / right.cubicMetresPerSecond);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -408,6 +441,7 @@
             return Current.FromAmperes(left.watts / right.volts);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -418,6 +452,7 @@
         {
             return MassFlow.FromKilogramsPerSecond(left.watts / right.joulesPerKilogram);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -430,6 +465,7 @@
             return KinematicViscosity.FromSquareMetresPerSecond(left.watts * right.metresPerNewton);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -440,6 +476,7 @@
         {
             return Acceleration.FromMetresPerSecondSquared(left.watts / right.newtonSecond);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -452,6 +489,7 @@
             return SpecificEnergy.FromJoulesPerKilogram(left.watts / right.kilogramsPerSecond);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -462,6 +500,8 @@
         {
             return Stiffness.FromNewtonsPerMetre(left.watts / right.squareMetresPerSecond);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

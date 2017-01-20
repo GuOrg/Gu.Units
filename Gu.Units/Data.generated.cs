@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,45 +64,54 @@
         /// </summary>
         public double Bits => this.bits;
 
+
         /// <summary>
         /// The quantity in Byte
         /// </summary>
         public double Byte => this.bits / 8;
+
 
         /// <summary>
         /// The quantity in Kilobyte
         /// </summary>
         public double Kilobyte => this.bits / 8000;
 
+
         /// <summary>
         /// The quantity in Megabyte
         /// </summary>
         public double Megabyte => this.bits / 8000000;
+
 
         /// <summary>
         /// The quantity in Gigabyte
         /// </summary>
         public double Gigabyte => this.bits / 8000000000;
 
+
         /// <summary>
         /// The quantity in Terabyte
         /// </summary>
         public double Terabyte => this.bits / 8000000000000;
+
 
         /// <summary>
         /// The quantity in Megabits
         /// </summary>
         public double Megabits => this.bits / 1000000;
 
+
         /// <summary>
         /// The quantity in Gigabits
         /// </summary>
         public double Gigabits => this.bits / 1000000000;
 
+
         /// <summary>
         /// The quantity in Kilobits
         /// </summary>
         public double Kilobits => this.bits / 1000;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Data"/> from its string representation
@@ -221,6 +236,7 @@
             return new Data(bits);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
@@ -229,6 +245,7 @@
         {
             return new Data(8 * @byte);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
@@ -239,6 +256,7 @@
             return new Data(8000 * kilobyte);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
@@ -247,6 +265,7 @@
         {
             return new Data(8000000 * megabyte);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
@@ -257,6 +276,7 @@
             return new Data(8000000000 * gigabyte);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
@@ -265,6 +285,7 @@
         {
             return new Data(8000000000000 * terabyte);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
@@ -275,6 +296,7 @@
             return new Data(1000000 * megabits);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
@@ -284,6 +306,7 @@
             return new Data(1000000000 * gigabits);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
@@ -292,6 +315,9 @@
         {
             return new Data(1000 * kilobits);
         }
+
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

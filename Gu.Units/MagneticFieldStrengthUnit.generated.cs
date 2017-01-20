@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -16,6 +22,7 @@
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly MagneticFieldStrengthUnit Teslas = new MagneticFieldStrengthUnit(teslas => teslas, teslas => teslas, "T");
+
 
         private readonly Func<double, double> toTeslas;
         private readonly Func<double, double> fromTeslas;
