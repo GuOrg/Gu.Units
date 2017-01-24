@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -17,11 +23,13 @@
         /// </summary>
         public static readonly FrequencyUnit Hertz = new FrequencyUnit(hertz => hertz, hertz => hertz, "Hz");
 
+
         /// <summary>
         /// The Millihertz unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FrequencyUnit Millihertz = new FrequencyUnit(millihertz => millihertz / 1000, hertz => 1000 * hertz, "mHz");
+
 
         /// <summary>
         /// The Kilohertz unit
@@ -29,17 +37,20 @@
         /// </summary>
         public static readonly FrequencyUnit Kilohertz = new FrequencyUnit(kilohertz => 1000 * kilohertz, hertz => hertz / 1000, "kHz");
 
+
         /// <summary>
         /// The Megahertz unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FrequencyUnit Megahertz = new FrequencyUnit(megahertz => 1000000 * megahertz, hertz => hertz / 1000000, "MHz");
 
+
         /// <summary>
         /// The Gigahertz unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FrequencyUnit Gigahertz = new FrequencyUnit(gigahertz => 1000000000 * gigahertz, hertz => hertz / 1000000000, "GHz");
+
 
         private readonly Func<double, double> toHertz;
         private readonly Func<double, double> fromHertz;

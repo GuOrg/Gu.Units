@@ -1,4 +1,10 @@
-﻿namespace Gu.Units.Json
+﻿
+
+
+
+
+
+namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -19,20 +25,24 @@
         /// </summary>
         public static readonly UnitlessJsonConverter Scalar = new UnitlessJsonConverter(UnitlessUnit.Scalar);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="UnitlessUnit.Promilles"/>
         /// </summary>
         public static readonly UnitlessJsonConverter Promilles = new UnitlessJsonConverter(UnitlessUnit.Promilles);
+
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="UnitlessUnit.PartsPerMillion"/>
         /// </summary>
         public static readonly UnitlessJsonConverter PartsPerMillion = new UnitlessJsonConverter(UnitlessUnit.PartsPerMillion);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="UnitlessUnit.Percents"/>
         /// </summary>
         public static readonly UnitlessJsonConverter Percents = new UnitlessJsonConverter(UnitlessUnit.Percents);
+
 
         private readonly UnitlessUnit unit;
 

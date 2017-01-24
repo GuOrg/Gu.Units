@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,25 +64,30 @@
         /// </summary>
         public double Hertz => this.hertz;
 
+
         /// <summary>
         /// The quantity in Millihertz
         /// </summary>
         public double Millihertz => 1000 * this.hertz;
+
 
         /// <summary>
         /// The quantity in Kilohertz
         /// </summary>
         public double Kilohertz => this.hertz / 1000;
 
+
         /// <summary>
         /// The quantity in Megahertz
         /// </summary>
         public double Megahertz => this.hertz / 1000000;
 
+
         /// <summary>
         /// The quantity in Gigahertz
         /// </summary>
         public double Gigahertz => this.hertz / 1000000000;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
@@ -201,6 +212,7 @@
             return new Frequency(hertz);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
         /// </summary>
@@ -209,6 +221,7 @@
         {
             return new Frequency(millihertz / 1000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
@@ -219,6 +232,7 @@
             return new Frequency(1000 * kilohertz);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
         /// </summary>
@@ -228,6 +242,7 @@
             return new Frequency(1000000 * megahertz);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
         /// </summary>
@@ -236,6 +251,8 @@
         {
             return new Frequency(1000000000 * gigahertz);
         }
+
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -248,6 +265,7 @@
             return MassFlow.FromKilogramsPerSecond(left.hertz * right.kilograms);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -258,6 +276,7 @@
         {
             return Speed.FromMetresPerSecond(left.hertz * right.metres);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -270,6 +289,7 @@
             return AngularSpeed.FromRadiansPerSecond(left.hertz * right.radians);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -280,6 +300,7 @@
         {
             return CatalyticActivity.FromKatals(left.hertz * right.moles);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -292,6 +313,7 @@
             return KinematicViscosity.FromSquareMetresPerSecond(left.hertz * right.squareMetres);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -302,6 +324,7 @@
         {
             return VolumetricFlow.FromCubicMetresPerSecond(left.hertz * right.cubicMetres);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -314,6 +337,7 @@
             return Power.FromWatts(left.hertz * right.joules);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -324,6 +348,7 @@
         {
             return Acceleration.FromMetresPerSecondSquared(left.hertz * right.metresPerSecond);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -336,6 +361,7 @@
             return Wavenumber.FromReciprocalMetres(left.hertz / right.metresPerSecond);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -346,6 +372,7 @@
         {
             return AngularAcceleration.FromRadiansPerSecondSquared(left.hertz * right.radiansPerSecond);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -358,6 +385,7 @@
             return Jerk.FromMetresPerSecondCubed(left.hertz * right.metresPerSecondSquared);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -368,6 +396,7 @@
         {
             return Current.FromAmperes(left.hertz * right.coulombs);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -380,6 +409,7 @@
             return Resistance.FromOhms(left.hertz * right.henrys);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -390,6 +420,7 @@
         {
             return ElectricalConductance.FromSiemens(left.hertz * right.farads);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -402,6 +433,7 @@
             return AngularJerk.FromRadiansPerSecondCubed(left.hertz * right.radiansPerSecondSquared);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -412,6 +444,7 @@
         {
             return Voltage.FromVolts(left.hertz * right.webers);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -424,6 +457,7 @@
             return Force.FromNewtons(left.hertz * right.newtonSecond);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -434,6 +468,7 @@
         {
             return Speed.FromMetresPerSecond(left.hertz / right.reciprocalMetres);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -446,6 +481,7 @@
             return Stiffness.FromNewtonsPerMetre(left.hertz * right.kilogramsPerSecond);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -457,6 +493,8 @@
             return SpecificEnergy.FromJoulesPerKilogram(left.hertz * right.squareMetresPerSecond);
         }
 
+
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -467,6 +505,7 @@
         {
             return Time.FromSeconds(left / right.hertz);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

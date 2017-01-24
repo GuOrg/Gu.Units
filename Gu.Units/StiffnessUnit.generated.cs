@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -17,11 +23,13 @@
         /// </summary>
         public static readonly StiffnessUnit NewtonsPerMetre = new StiffnessUnit(newtonsPerMetre => newtonsPerMetre, newtonsPerMetre => newtonsPerMetre, "N/m");
 
+
         /// <summary>
         /// The NewtonsPerNanometre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly StiffnessUnit NewtonsPerNanometre = new StiffnessUnit(newtonsPerNanometre => 1000000000 * newtonsPerNanometre, newtonsPerMetre => newtonsPerMetre / 1000000000, "N/nm");
+
 
         /// <summary>
         /// The NewtonsPerMicrometre unit
@@ -29,11 +37,13 @@
         /// </summary>
         public static readonly StiffnessUnit NewtonsPerMicrometre = new StiffnessUnit(newtonsPerMicrometre => 1000000 * newtonsPerMicrometre, newtonsPerMetre => newtonsPerMetre / 1000000, "N/µm");
 
+
         /// <summary>
         /// The NewtonsPerMillimetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly StiffnessUnit NewtonsPerMillimetre = new StiffnessUnit(newtonsPerMillimetre => 1000 * newtonsPerMillimetre, newtonsPerMetre => newtonsPerMetre / 1000, "N/mm");
+
 
         /// <summary>
         /// The KilonewtonsPerNanometre unit
@@ -41,11 +51,13 @@
         /// </summary>
         public static readonly StiffnessUnit KilonewtonsPerNanometre = new StiffnessUnit(kilonewtonsPerNanometre => 1000000000000 * kilonewtonsPerNanometre, newtonsPerMetre => newtonsPerMetre / 1000000000000, "kN/nm");
 
+
         /// <summary>
         /// The KilonewtonsPerMicrometre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly StiffnessUnit KilonewtonsPerMicrometre = new StiffnessUnit(kilonewtonsPerMicrometre => 1000000000 * kilonewtonsPerMicrometre, newtonsPerMetre => newtonsPerMetre / 1000000000, "kN/µm");
+
 
         /// <summary>
         /// The KilonewtonsPerMillimetre unit
@@ -53,11 +65,13 @@
         /// </summary>
         public static readonly StiffnessUnit KilonewtonsPerMillimetre = new StiffnessUnit(kilonewtonsPerMillimetre => 1000000 * kilonewtonsPerMillimetre, newtonsPerMetre => newtonsPerMetre / 1000000, "kN/mm");
 
+
         /// <summary>
         /// The MeganewtonsPerNanometre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly StiffnessUnit MeganewtonsPerNanometre = new StiffnessUnit(meganewtonsPerNanometre => 1000000000000000 * meganewtonsPerNanometre, newtonsPerMetre => newtonsPerMetre / 1000000000000000, "MN/nm");
+
 
         /// <summary>
         /// The MeganewtonsPerMicrometre unit
@@ -65,11 +79,13 @@
         /// </summary>
         public static readonly StiffnessUnit MeganewtonsPerMicrometre = new StiffnessUnit(meganewtonsPerMicrometre => 1000000000000 * meganewtonsPerMicrometre, newtonsPerMetre => newtonsPerMetre / 1000000000000, "MN/µm");
 
+
         /// <summary>
         /// The MeganewtonsPerMillimetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly StiffnessUnit MeganewtonsPerMillimetre = new StiffnessUnit(meganewtonsPerMillimetre => 1000000000 * meganewtonsPerMillimetre, newtonsPerMetre => newtonsPerMetre / 1000000000, "MN/mm");
+
 
         /// <summary>
         /// The GiganewtonsPerMicrometre unit
@@ -77,11 +93,13 @@
         /// </summary>
         public static readonly StiffnessUnit GiganewtonsPerMicrometre = new StiffnessUnit(giganewtonsPerMicrometre => 1000000000000000 * giganewtonsPerMicrometre, newtonsPerMetre => newtonsPerMetre / 1000000000000000, "GN/µm");
 
+
         /// <summary>
         /// The GiganewtonsPerMillimetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly StiffnessUnit GiganewtonsPerMillimetre = new StiffnessUnit(giganewtonsPerMillimetre => 1000000000000 * giganewtonsPerMillimetre, newtonsPerMetre => newtonsPerMetre / 1000000000000, "GN/mm");
+
 
         private readonly Func<double, double> toNewtonsPerMetre;
         private readonly Func<double, double> fromNewtonsPerMetre;

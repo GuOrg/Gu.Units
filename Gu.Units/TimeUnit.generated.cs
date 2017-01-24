@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -17,11 +23,13 @@
         /// </summary>
         public static readonly TimeUnit Seconds = new TimeUnit(seconds => seconds, seconds => seconds, "s");
 
+
         /// <summary>
         /// The Hours unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TimeUnit Hours = new TimeUnit(hours => 3600 * hours, seconds => seconds / 3600, "h");
+
 
         /// <summary>
         /// The Minutes unit
@@ -29,11 +37,13 @@
         /// </summary>
         public static readonly TimeUnit Minutes = new TimeUnit(minutes => 60 * minutes, seconds => seconds / 60, "min");
 
+
         /// <summary>
         /// The Nanoseconds unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TimeUnit Nanoseconds = new TimeUnit(nanoseconds => nanoseconds / 1000000000, seconds => 1000000000 * seconds, "ns");
+
 
         /// <summary>
         /// The Microseconds unit
@@ -41,11 +51,13 @@
         /// </summary>
         public static readonly TimeUnit Microseconds = new TimeUnit(microseconds => microseconds / 1000000, seconds => 1000000 * seconds, "µs");
 
+
         /// <summary>
         /// The Milliseconds unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TimeUnit Milliseconds = new TimeUnit(milliseconds => milliseconds / 1000, seconds => 1000 * seconds, "ms");
+
 
         private readonly Func<double, double> toSeconds;
         private readonly Func<double, double> fromSeconds;

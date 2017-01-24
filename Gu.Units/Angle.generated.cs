@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,10 +64,12 @@
         /// </summary>
         public double Radians => this.radians;
 
+
         /// <summary>
         /// The quantity in Degrees
         /// </summary>
         public double Degrees => 57.295779513082323 * this.radians;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
@@ -186,6 +194,7 @@
             return new Angle(radians);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Angle"/>.
         /// </summary>
@@ -194,6 +203,8 @@
         {
             return new Angle(degrees / 57.295779513082323);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -206,6 +217,7 @@
             return AngularSpeed.FromRadiansPerSecond(left.radians / right.seconds);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -216,6 +228,7 @@
         {
             return AnglePerUnitless.FromRadiansPerUnitless(left.radians / right.scalar);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -228,6 +241,7 @@
             return Time.FromSeconds(left.radians / right.radiansPerSecond);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -238,6 +252,7 @@
         {
             return AngularSpeed.FromRadiansPerSecond(left.radians * right.hertz);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -250,6 +265,7 @@
             return Energy.FromJoules(left.radians * right.newtonMetres);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -260,6 +276,8 @@
         {
             return Unitless.FromScalar(left.radians / right.radiansPerUnitless);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

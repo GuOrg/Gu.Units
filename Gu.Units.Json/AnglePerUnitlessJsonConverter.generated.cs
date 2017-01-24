@@ -1,4 +1,10 @@
-﻿namespace Gu.Units.Json
+﻿
+
+
+
+
+
+namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -19,15 +25,18 @@
         /// </summary>
         public static readonly AnglePerUnitlessJsonConverter RadiansPerUnitless = new AnglePerUnitlessJsonConverter(AnglePerUnitlessUnit.RadiansPerUnitless);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AnglePerUnitlessUnit.DegreesPerPercent"/>
         /// </summary>
         public static readonly AnglePerUnitlessJsonConverter DegreesPerPercent = new AnglePerUnitlessJsonConverter(AnglePerUnitlessUnit.DegreesPerPercent);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AnglePerUnitlessUnit.RadiansPerPercent"/>
         /// </summary>
         public static readonly AnglePerUnitlessJsonConverter RadiansPerPercent = new AnglePerUnitlessJsonConverter(AnglePerUnitlessUnit.RadiansPerPercent);
+
 
         private readonly AnglePerUnitlessUnit unit;
 

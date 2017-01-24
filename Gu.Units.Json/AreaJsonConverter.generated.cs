@@ -1,4 +1,10 @@
-﻿namespace Gu.Units.Json
+﻿
+
+
+
+
+
+namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -19,45 +25,54 @@
         /// </summary>
         public static readonly AreaJsonConverter SquareMetres = new AreaJsonConverter(AreaUnit.SquareMetres);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AreaUnit.Hectares"/>
         /// </summary>
         public static readonly AreaJsonConverter Hectares = new AreaJsonConverter(AreaUnit.Hectares);
+
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AreaUnit.SquareMillimetres"/>
         /// </summary>
         public static readonly AreaJsonConverter SquareMillimetres = new AreaJsonConverter(AreaUnit.SquareMillimetres);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AreaUnit.SquareCentimetres"/>
         /// </summary>
         public static readonly AreaJsonConverter SquareCentimetres = new AreaJsonConverter(AreaUnit.SquareCentimetres);
+
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AreaUnit.SquareDecimetres"/>
         /// </summary>
         public static readonly AreaJsonConverter SquareDecimetres = new AreaJsonConverter(AreaUnit.SquareDecimetres);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AreaUnit.SquareKilometres"/>
         /// </summary>
         public static readonly AreaJsonConverter SquareKilometres = new AreaJsonConverter(AreaUnit.SquareKilometres);
+
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AreaUnit.SquareMile"/>
         /// </summary>
         public static readonly AreaJsonConverter SquareMile = new AreaJsonConverter(AreaUnit.SquareMile);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AreaUnit.SquareYards"/>
         /// </summary>
         public static readonly AreaJsonConverter SquareYards = new AreaJsonConverter(AreaUnit.SquareYards);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AreaUnit.SquareInches"/>
         /// </summary>
         public static readonly AreaJsonConverter SquareInches = new AreaJsonConverter(AreaUnit.SquareInches);
+
 
         private readonly AreaUnit unit;
 

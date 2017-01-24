@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,20 +64,24 @@
         /// </summary>
         public double Scalar => this.scalar;
 
+
         /// <summary>
         /// The quantity in Promilles
         /// </summary>
         public double Promilles => 1000 * this.scalar;
+
 
         /// <summary>
         /// The quantity in PartsPerMillion
         /// </summary>
         public double PartsPerMillion => 1000000 * this.scalar;
 
+
         /// <summary>
         /// The quantity in Percents
         /// </summary>
         public double Percents => 100 * this.scalar;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Unitless"/> from its string representation
@@ -196,6 +206,7 @@
             return new Unitless(scalar);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Unitless"/>.
         /// </summary>
@@ -204,6 +215,7 @@
         {
             return new Unitless(promilles / 1000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Unitless"/>.
@@ -214,6 +226,7 @@
             return new Unitless(partsPerMillion / 1000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Unitless"/>.
         /// </summary>
@@ -222,6 +235,8 @@
         {
             return new Unitless(percents / 100);
         }
+
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -234,6 +249,7 @@
             return Length.FromMetres(left.scalar * right.metresPerUnitless);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -245,6 +261,7 @@
             return Angle.FromRadians(left.scalar * right.radiansPerUnitless);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -255,6 +272,8 @@
         {
             return Force.FromNewtons(left.scalar * right.newtonsPerUnitless);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

@@ -1,4 +1,9 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.Collections.Generic;
@@ -9,6 +14,7 @@
     /// </summary>
     public static partial class EnumerableUnits
     {
+
         /// <summary>
         /// Calculates the sum <see cref="Mass"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -32,6 +38,7 @@
 
             return Mass.FromKilograms(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Length"/> of the values in <paramref name="source"/>
@@ -57,6 +64,7 @@
             return Length.FromMetres(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Time"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -80,6 +88,7 @@
 
             return Time.FromSeconds(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Temperature"/> of the values in <paramref name="source"/>
@@ -105,6 +114,7 @@
             return Temperature.FromKelvin(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Angle"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -128,6 +138,7 @@
 
             return Angle.FromRadians(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Unitless"/> of the values in <paramref name="source"/>
@@ -153,6 +164,7 @@
             return Unitless.FromScalar(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Current"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -176,6 +188,7 @@
 
             return Current.FromAmperes(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="LuminousIntensity"/> of the values in <paramref name="source"/>
@@ -201,6 +214,7 @@
             return LuminousIntensity.FromCandelas(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Data"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -224,6 +238,7 @@
 
             return Data.FromBits(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="AmountOfSubstance"/> of the values in <paramref name="source"/>
@@ -249,6 +264,7 @@
             return AmountOfSubstance.FromMoles(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="SolidAngle"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -272,6 +288,7 @@
 
             return SolidAngle.FromSteradians(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Area"/> of the values in <paramref name="source"/>
@@ -297,6 +314,7 @@
             return Area.FromSquareMetres(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Volume"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -320,6 +338,7 @@
 
             return Volume.FromCubicMetres(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Force"/> of the values in <paramref name="source"/>
@@ -345,6 +364,7 @@
             return Force.FromNewtons(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Pressure"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -368,6 +388,7 @@
 
             return Pressure.FromPascals(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Density"/> of the values in <paramref name="source"/>
@@ -393,6 +414,7 @@
             return Density.FromKilogramsPerCubicMetre(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Energy"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -416,6 +438,7 @@
 
             return Energy.FromJoules(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Power"/> of the values in <paramref name="source"/>
@@ -441,6 +464,7 @@
             return Power.FromWatts(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Speed"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -464,6 +488,7 @@
 
             return Speed.FromMetresPerSecond(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="AngularSpeed"/> of the values in <paramref name="source"/>
@@ -489,6 +514,7 @@
             return AngularSpeed.FromRadiansPerSecond(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Frequency"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -512,6 +538,7 @@
 
             return Frequency.FromHertz(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Acceleration"/> of the values in <paramref name="source"/>
@@ -537,6 +564,7 @@
             return Acceleration.FromMetresPerSecondSquared(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Torque"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -560,6 +588,7 @@
 
             return Torque.FromNewtonMetres(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Stiffness"/> of the values in <paramref name="source"/>
@@ -585,6 +614,7 @@
             return Stiffness.FromNewtonsPerMetre(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="VolumetricFlow"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -608,6 +638,7 @@
 
             return VolumetricFlow.FromCubicMetresPerSecond(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Voltage"/> of the values in <paramref name="source"/>
@@ -633,6 +664,7 @@
             return Voltage.FromVolts(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Resistance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -656,6 +688,7 @@
 
             return Resistance.FromOhms(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="SpecificEnergy"/> of the values in <paramref name="source"/>
@@ -681,6 +714,7 @@
             return SpecificEnergy.FromJoulesPerKilogram(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="ElectricCharge"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -704,6 +738,7 @@
 
             return ElectricCharge.FromCoulombs(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Inductance"/> of the values in <paramref name="source"/>
@@ -729,6 +764,7 @@
             return Inductance.FromHenrys(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Capacitance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -752,6 +788,7 @@
 
             return Capacitance.FromFarads(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Flexibility"/> of the values in <paramref name="source"/>
@@ -777,6 +814,7 @@
             return Flexibility.FromMetresPerNewton(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="AngularAcceleration"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -800,6 +838,7 @@
 
             return AngularAcceleration.FromRadiansPerSecondSquared(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="AngularJerk"/> of the values in <paramref name="source"/>
@@ -825,6 +864,7 @@
             return AngularJerk.FromRadiansPerSecondCubed(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Jerk"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -848,6 +888,7 @@
 
             return Jerk.FromMetresPerSecondCubed(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="LengthPerUnitless"/> of the values in <paramref name="source"/>
@@ -873,6 +914,7 @@
             return LengthPerUnitless.FromMetresPerUnitless(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="AnglePerUnitless"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -896,6 +938,7 @@
 
             return AnglePerUnitless.FromRadiansPerUnitless(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="ForcePerUnitless"/> of the values in <paramref name="source"/>
@@ -921,6 +964,7 @@
             return ForcePerUnitless.FromNewtonsPerUnitless(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="LuminousFlux"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -944,6 +988,7 @@
 
             return LuminousFlux.FromLumens(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Illuminance"/> of the values in <paramref name="source"/>
@@ -969,6 +1014,7 @@
             return Illuminance.FromLux(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="MagneticFlux"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -992,6 +1038,7 @@
 
             return MagneticFlux.FromWebers(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="ElectricalConductance"/> of the values in <paramref name="source"/>
@@ -1017,6 +1064,7 @@
             return ElectricalConductance.FromSiemens(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="MagneticFieldStrength"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1040,6 +1088,7 @@
 
             return MagneticFieldStrength.FromTeslas(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="CatalyticActivity"/> of the values in <paramref name="source"/>
@@ -1065,6 +1114,7 @@
             return CatalyticActivity.FromKatals(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Momentum"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1088,6 +1138,7 @@
 
             return Momentum.FromNewtonSecond(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Wavenumber"/> of the values in <paramref name="source"/>
@@ -1113,6 +1164,7 @@
             return Wavenumber.FromReciprocalMetres(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="AreaDensity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1136,6 +1188,7 @@
 
             return AreaDensity.FromKilogramsPerSquareMetre(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="SpecificVolume"/> of the values in <paramref name="source"/>
@@ -1161,6 +1214,7 @@
             return SpecificVolume.FromCubicMetresPerKilogram(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="MassFlow"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1185,6 +1239,7 @@
             return MassFlow.FromKilogramsPerSecond(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="KinematicViscosity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1208,6 +1263,58 @@
 
             return KinematicViscosity.FromSquareMetresPerSecond(sum);
         }
+
+
+        /// <summary>
+        /// Calculates the sum <see cref="MolarMass"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarMass}"/></param>
+        /// <returns>The sum</returns>
+        public static MolarMass Sum(this IEnumerable<MolarMass> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.kilogramsPerMole;
+                }
+            }
+
+            return MolarMass.FromKilogramsPerMole(sum);
+        }
+
+
+        /// <summary>
+        /// Calculates the sum <see cref="MolarHeatCapacity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarHeatCapacity}"/></param>
+        /// <returns>The sum</returns>
+        public static MolarHeatCapacity Sum(this IEnumerable<MolarHeatCapacity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.joulesPerKelvinMole;
+                }
+            }
+
+            return MolarHeatCapacity.FromJoulesPerKelvinMole(sum);
+        }
+
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Mass}"/> of the values in <paramref name="source"/>
@@ -1234,6 +1341,7 @@
             return Mass.FromKilograms(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Length}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1258,6 +1366,7 @@
             }
             return Length.FromMetres(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Time}"/> of the values in <paramref name="source"/>
@@ -1284,6 +1393,7 @@
             return Time.FromSeconds(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Temperature}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1308,6 +1418,7 @@
             }
             return Temperature.FromKelvin(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Angle}"/> of the values in <paramref name="source"/>
@@ -1334,6 +1445,7 @@
             return Angle.FromRadians(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Unitless}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1358,6 +1470,7 @@
             }
             return Unitless.FromScalar(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Current}"/> of the values in <paramref name="source"/>
@@ -1384,6 +1497,7 @@
             return Current.FromAmperes(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{LuminousIntensity}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1408,6 +1522,7 @@
             }
             return LuminousIntensity.FromCandelas(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Data}"/> of the values in <paramref name="source"/>
@@ -1434,6 +1549,7 @@
             return Data.FromBits(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{AmountOfSubstance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1458,6 +1574,7 @@
             }
             return AmountOfSubstance.FromMoles(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{SolidAngle}"/> of the values in <paramref name="source"/>
@@ -1484,6 +1601,7 @@
             return SolidAngle.FromSteradians(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Area}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1508,6 +1626,7 @@
             }
             return Area.FromSquareMetres(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Volume}"/> of the values in <paramref name="source"/>
@@ -1534,6 +1653,7 @@
             return Volume.FromCubicMetres(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Force}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1558,6 +1678,7 @@
             }
             return Force.FromNewtons(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Pressure}"/> of the values in <paramref name="source"/>
@@ -1584,6 +1705,7 @@
             return Pressure.FromPascals(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Density}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1608,6 +1730,7 @@
             }
             return Density.FromKilogramsPerCubicMetre(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Energy}"/> of the values in <paramref name="source"/>
@@ -1634,6 +1757,7 @@
             return Energy.FromJoules(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Power}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1658,6 +1782,7 @@
             }
             return Power.FromWatts(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Speed}"/> of the values in <paramref name="source"/>
@@ -1684,6 +1809,7 @@
             return Speed.FromMetresPerSecond(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{AngularSpeed}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1708,6 +1834,7 @@
             }
             return AngularSpeed.FromRadiansPerSecond(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Frequency}"/> of the values in <paramref name="source"/>
@@ -1734,6 +1861,7 @@
             return Frequency.FromHertz(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Acceleration}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1758,6 +1886,7 @@
             }
             return Acceleration.FromMetresPerSecondSquared(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Torque}"/> of the values in <paramref name="source"/>
@@ -1784,6 +1913,7 @@
             return Torque.FromNewtonMetres(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Stiffness}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1808,6 +1938,7 @@
             }
             return Stiffness.FromNewtonsPerMetre(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{VolumetricFlow}"/> of the values in <paramref name="source"/>
@@ -1834,6 +1965,7 @@
             return VolumetricFlow.FromCubicMetresPerSecond(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Voltage}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1858,6 +1990,7 @@
             }
             return Voltage.FromVolts(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Resistance}"/> of the values in <paramref name="source"/>
@@ -1884,6 +2017,7 @@
             return Resistance.FromOhms(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{SpecificEnergy}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1908,6 +2042,7 @@
             }
             return SpecificEnergy.FromJoulesPerKilogram(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{ElectricCharge}"/> of the values in <paramref name="source"/>
@@ -1934,6 +2069,7 @@
             return ElectricCharge.FromCoulombs(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Inductance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1958,6 +2094,7 @@
             }
             return Inductance.FromHenrys(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Capacitance}"/> of the values in <paramref name="source"/>
@@ -1984,6 +2121,7 @@
             return Capacitance.FromFarads(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Flexibility}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2008,6 +2146,7 @@
             }
             return Flexibility.FromMetresPerNewton(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{AngularAcceleration}"/> of the values in <paramref name="source"/>
@@ -2034,6 +2173,7 @@
             return AngularAcceleration.FromRadiansPerSecondSquared(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{AngularJerk}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2058,6 +2198,7 @@
             }
             return AngularJerk.FromRadiansPerSecondCubed(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Jerk}"/> of the values in <paramref name="source"/>
@@ -2084,6 +2225,7 @@
             return Jerk.FromMetresPerSecondCubed(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{LengthPerUnitless}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2108,6 +2250,7 @@
             }
             return LengthPerUnitless.FromMetresPerUnitless(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{AnglePerUnitless}"/> of the values in <paramref name="source"/>
@@ -2134,6 +2277,7 @@
             return AnglePerUnitless.FromRadiansPerUnitless(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{ForcePerUnitless}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2158,6 +2302,7 @@
             }
             return ForcePerUnitless.FromNewtonsPerUnitless(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{LuminousFlux}"/> of the values in <paramref name="source"/>
@@ -2184,6 +2329,7 @@
             return LuminousFlux.FromLumens(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Illuminance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2208,6 +2354,7 @@
             }
             return Illuminance.FromLux(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{MagneticFlux}"/> of the values in <paramref name="source"/>
@@ -2234,6 +2381,7 @@
             return MagneticFlux.FromWebers(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{ElectricalConductance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2258,6 +2406,7 @@
             }
             return ElectricalConductance.FromSiemens(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{MagneticFieldStrength}"/> of the values in <paramref name="source"/>
@@ -2284,6 +2433,7 @@
             return MagneticFieldStrength.FromTeslas(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{CatalyticActivity}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2308,6 +2458,7 @@
             }
             return CatalyticActivity.FromKatals(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Momentum}"/> of the values in <paramref name="source"/>
@@ -2334,6 +2485,7 @@
             return Momentum.FromNewtonSecond(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Wavenumber}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2358,6 +2510,7 @@
             }
             return Wavenumber.FromReciprocalMetres(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{AreaDensity}"/> of the values in <paramref name="source"/>
@@ -2384,6 +2537,7 @@
             return AreaDensity.FromKilogramsPerSquareMetre(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{SpecificVolume}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2408,6 +2562,7 @@
             }
             return SpecificVolume.FromCubicMetresPerKilogram(sum);
         }
+
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{MassFlow}"/> of the values in <paramref name="source"/>
@@ -2434,6 +2589,7 @@
             return MassFlow.FromKilogramsPerSecond(sum);
         }
 
+
         /// <summary>
         /// Calculates the sum <see cref="Nullable{KinematicViscosity}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2458,6 +2614,60 @@
             }
             return KinematicViscosity.FromSquareMetresPerSecond(sum);
         }
+
+
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{MolarMass}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarMass}"/></param>
+        /// <returns>The sum</returns>
+        public static MolarMass? Sum(this IEnumerable<MolarMass?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.kilogramsPerMole;
+                    }
+                }
+            }
+            return MolarMass.FromKilogramsPerMole(sum);
+        }
+
+
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{MolarHeatCapacity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarHeatCapacity}"/></param>
+        /// <returns>The sum</returns>
+        public static MolarHeatCapacity? Sum(this IEnumerable<MolarHeatCapacity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.joulesPerKelvinMole;
+                    }
+                }
+            }
+            return MolarHeatCapacity.FromJoulesPerKelvinMole(sum);
+        }
+
+
 
         /// <summary>
         /// Calculates the min <see cref="Mass"/> of the values in <paramref name="source"/>
@@ -2495,6 +2705,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Length"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2530,6 +2741,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Time"/> of the values in <paramref name="source"/>
@@ -2567,6 +2779,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Temperature"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2602,6 +2815,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Angle"/> of the values in <paramref name="source"/>
@@ -2639,6 +2853,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Unitless"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2674,6 +2889,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Current"/> of the values in <paramref name="source"/>
@@ -2711,6 +2927,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="LuminousIntensity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2746,6 +2963,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Data"/> of the values in <paramref name="source"/>
@@ -2783,6 +3001,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="AmountOfSubstance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2818,6 +3037,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="SolidAngle"/> of the values in <paramref name="source"/>
@@ -2855,6 +3075,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Area"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2890,6 +3111,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Volume"/> of the values in <paramref name="source"/>
@@ -2927,6 +3149,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Force"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2962,6 +3185,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Pressure"/> of the values in <paramref name="source"/>
@@ -2999,6 +3223,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Density"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3034,6 +3259,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Energy"/> of the values in <paramref name="source"/>
@@ -3071,6 +3297,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Power"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3106,6 +3333,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Speed"/> of the values in <paramref name="source"/>
@@ -3143,6 +3371,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="AngularSpeed"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3178,6 +3407,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Frequency"/> of the values in <paramref name="source"/>
@@ -3215,6 +3445,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Acceleration"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3250,6 +3481,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Torque"/> of the values in <paramref name="source"/>
@@ -3287,6 +3519,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Stiffness"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3322,6 +3555,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="VolumetricFlow"/> of the values in <paramref name="source"/>
@@ -3359,6 +3593,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Voltage"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3394,6 +3629,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Resistance"/> of the values in <paramref name="source"/>
@@ -3431,6 +3667,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="SpecificEnergy"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3466,6 +3703,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="ElectricCharge"/> of the values in <paramref name="source"/>
@@ -3503,6 +3741,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Inductance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3538,6 +3777,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Capacitance"/> of the values in <paramref name="source"/>
@@ -3575,6 +3815,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Flexibility"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3610,6 +3851,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="AngularAcceleration"/> of the values in <paramref name="source"/>
@@ -3647,6 +3889,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="AngularJerk"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3682,6 +3925,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Jerk"/> of the values in <paramref name="source"/>
@@ -3719,6 +3963,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="LengthPerUnitless"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3754,6 +3999,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="AnglePerUnitless"/> of the values in <paramref name="source"/>
@@ -3791,6 +4037,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="ForcePerUnitless"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3826,6 +4073,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="LuminousFlux"/> of the values in <paramref name="source"/>
@@ -3863,6 +4111,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Illuminance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3898,6 +4147,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="MagneticFlux"/> of the values in <paramref name="source"/>
@@ -3935,6 +4185,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="ElectricalConductance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3970,6 +4221,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="MagneticFieldStrength"/> of the values in <paramref name="source"/>
@@ -4007,6 +4259,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="CatalyticActivity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4042,6 +4295,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Momentum"/> of the values in <paramref name="source"/>
@@ -4079,6 +4333,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Wavenumber"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4114,6 +4369,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="AreaDensity"/> of the values in <paramref name="source"/>
@@ -4151,6 +4407,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="SpecificVolume"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4186,6 +4443,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="MassFlow"/> of the values in <paramref name="source"/>
@@ -4223,6 +4481,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="KinematicViscosity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4259,6 +4518,82 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
+        /// <summary>
+        /// Calculates the min <see cref="MolarMass"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarMass}"/></param>
+        /// <returns>The min</returns>
+        public static MolarMass Min(this IEnumerable<MolarMass> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(MolarMass);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.kilogramsPerMole))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.kilogramsPerMole < value.kilogramsPerMole)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+
+        /// <summary>
+        /// Calculates the min <see cref="MolarHeatCapacity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarHeatCapacity}"/></param>
+        /// <returns>The min</returns>
+        public static MolarHeatCapacity Min(this IEnumerable<MolarHeatCapacity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            var value = default(MolarHeatCapacity);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (System.Double.IsNaN(x.joulesPerKelvinMole))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.joulesPerKelvinMole < value.joulesPerKelvinMole)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{Mass}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4288,6 +4623,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Length}"/> of the values in <paramref name="source"/>
@@ -4319,6 +4655,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{Time}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4348,6 +4685,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Temperature}"/> of the values in <paramref name="source"/>
@@ -4379,6 +4717,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{Angle}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4408,6 +4747,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Unitless}"/> of the values in <paramref name="source"/>
@@ -4439,6 +4779,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{Current}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4468,6 +4809,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{LuminousIntensity}"/> of the values in <paramref name="source"/>
@@ -4499,6 +4841,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{Data}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4528,6 +4871,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{AmountOfSubstance}"/> of the values in <paramref name="source"/>
@@ -4559,6 +4903,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{SolidAngle}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4588,6 +4933,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Area}"/> of the values in <paramref name="source"/>
@@ -4619,6 +4965,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{Volume}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4648,6 +4995,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Force}"/> of the values in <paramref name="source"/>
@@ -4679,6 +5027,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{Pressure}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4708,6 +5057,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Density}"/> of the values in <paramref name="source"/>
@@ -4739,6 +5089,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{Energy}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4768,6 +5119,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Power}"/> of the values in <paramref name="source"/>
@@ -4799,6 +5151,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{Speed}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4828,6 +5181,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{AngularSpeed}"/> of the values in <paramref name="source"/>
@@ -4859,6 +5213,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{Frequency}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4888,6 +5243,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Acceleration}"/> of the values in <paramref name="source"/>
@@ -4919,6 +5275,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{Torque}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4948,6 +5305,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Stiffness}"/> of the values in <paramref name="source"/>
@@ -4979,6 +5337,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{VolumetricFlow}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5008,6 +5367,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Voltage}"/> of the values in <paramref name="source"/>
@@ -5039,6 +5399,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{Resistance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5068,6 +5429,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{SpecificEnergy}"/> of the values in <paramref name="source"/>
@@ -5099,6 +5461,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{ElectricCharge}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5128,6 +5491,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Inductance}"/> of the values in <paramref name="source"/>
@@ -5159,6 +5523,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{Capacitance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5188,6 +5553,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Flexibility}"/> of the values in <paramref name="source"/>
@@ -5219,6 +5585,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{AngularAcceleration}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5248,6 +5615,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{AngularJerk}"/> of the values in <paramref name="source"/>
@@ -5279,6 +5647,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{Jerk}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5308,6 +5677,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{LengthPerUnitless}"/> of the values in <paramref name="source"/>
@@ -5339,6 +5709,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{AnglePerUnitless}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5368,6 +5739,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{ForcePerUnitless}"/> of the values in <paramref name="source"/>
@@ -5399,6 +5771,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{LuminousFlux}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5428,6 +5801,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Illuminance}"/> of the values in <paramref name="source"/>
@@ -5459,6 +5833,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{MagneticFlux}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5488,6 +5863,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{ElectricalConductance}"/> of the values in <paramref name="source"/>
@@ -5519,6 +5895,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{MagneticFieldStrength}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5548,6 +5925,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{CatalyticActivity}"/> of the values in <paramref name="source"/>
@@ -5579,6 +5957,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{Momentum}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5608,6 +5987,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Wavenumber}"/> of the values in <paramref name="source"/>
@@ -5639,6 +6019,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{AreaDensity}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5668,6 +6049,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{SpecificVolume}"/> of the values in <paramref name="source"/>
@@ -5699,6 +6081,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{MassFlow}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5729,6 +6112,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the min <see cref="Nullable{KinematicViscosity}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5758,6 +6142,70 @@
             }
             return value;
         }
+
+
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{MolarMass}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarMass}"/></param>
+        /// <returns>The min</returns>
+        public static MolarMass? Min(this IEnumerable<MolarMass?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            MolarMass? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.kilogramsPerMole))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.kilogramsPerMole < value.Value.kilogramsPerMole)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{MolarHeatCapacity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarHeatCapacity}"/></param>
+        /// <returns>The min</returns>
+        public static MolarHeatCapacity? Min(this IEnumerable<MolarHeatCapacity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            MolarHeatCapacity? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.joulesPerKelvinMole))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.joulesPerKelvinMole < value.Value.joulesPerKelvinMole)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+
 
         /// <summary>
         /// Calculates the max <see cref="Mass"/> of the values in <paramref name="source"/>
@@ -5795,6 +6243,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Length"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5830,6 +6279,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Time"/> of the values in <paramref name="source"/>
@@ -5867,6 +6317,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Temperature"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5902,6 +6353,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Angle"/> of the values in <paramref name="source"/>
@@ -5939,6 +6391,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Unitless"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5974,6 +6427,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Current"/> of the values in <paramref name="source"/>
@@ -6011,6 +6465,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="LuminousIntensity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6046,6 +6501,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Data"/> of the values in <paramref name="source"/>
@@ -6083,6 +6539,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="AmountOfSubstance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6118,6 +6575,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="SolidAngle"/> of the values in <paramref name="source"/>
@@ -6155,6 +6613,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Area"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6190,6 +6649,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Volume"/> of the values in <paramref name="source"/>
@@ -6227,6 +6687,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Force"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6262,6 +6723,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Pressure"/> of the values in <paramref name="source"/>
@@ -6299,6 +6761,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Density"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6334,6 +6797,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Energy"/> of the values in <paramref name="source"/>
@@ -6371,6 +6835,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Power"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6406,6 +6871,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Speed"/> of the values in <paramref name="source"/>
@@ -6443,6 +6909,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="AngularSpeed"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6478,6 +6945,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Frequency"/> of the values in <paramref name="source"/>
@@ -6515,6 +6983,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Acceleration"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6550,6 +7019,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Torque"/> of the values in <paramref name="source"/>
@@ -6587,6 +7057,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Stiffness"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6622,6 +7093,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="VolumetricFlow"/> of the values in <paramref name="source"/>
@@ -6659,6 +7131,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Voltage"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6694,6 +7167,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Resistance"/> of the values in <paramref name="source"/>
@@ -6731,6 +7205,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="SpecificEnergy"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6766,6 +7241,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="ElectricCharge"/> of the values in <paramref name="source"/>
@@ -6803,6 +7279,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Inductance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6838,6 +7315,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Capacitance"/> of the values in <paramref name="source"/>
@@ -6875,6 +7353,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Flexibility"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6910,6 +7389,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="AngularAcceleration"/> of the values in <paramref name="source"/>
@@ -6947,6 +7427,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="AngularJerk"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6982,6 +7463,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Jerk"/> of the values in <paramref name="source"/>
@@ -7019,6 +7501,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="LengthPerUnitless"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7054,6 +7537,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="AnglePerUnitless"/> of the values in <paramref name="source"/>
@@ -7091,6 +7575,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="ForcePerUnitless"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7126,6 +7611,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="LuminousFlux"/> of the values in <paramref name="source"/>
@@ -7163,6 +7649,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Illuminance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7198,6 +7685,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="MagneticFlux"/> of the values in <paramref name="source"/>
@@ -7235,6 +7723,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="ElectricalConductance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7270,6 +7759,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="MagneticFieldStrength"/> of the values in <paramref name="source"/>
@@ -7307,6 +7797,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="CatalyticActivity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7342,6 +7833,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Momentum"/> of the values in <paramref name="source"/>
@@ -7379,6 +7871,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Wavenumber"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7414,6 +7907,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="AreaDensity"/> of the values in <paramref name="source"/>
@@ -7451,6 +7945,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="SpecificVolume"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7486,6 +7981,7 @@
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="MassFlow"/> of the values in <paramref name="source"/>
@@ -7523,6 +8019,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="KinematicViscosity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7559,6 +8056,82 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
+        /// <summary>
+        /// Calculates the max <see cref="MolarMass"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarMass}"/></param>
+        /// <returns>The max</returns>
+        public static MolarMass Max(this IEnumerable<MolarMass> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            MolarMass value = default(MolarMass);
+            bool hasValue = false;
+            foreach (MolarMass x in source)
+            {
+                if (System.Double.IsNaN(x.kilogramsPerMole))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.kilogramsPerMole > value.kilogramsPerMole)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+
+        /// <summary>
+        /// Calculates the max <see cref="MolarHeatCapacity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarHeatCapacity}"/></param>
+        /// <returns>The max</returns>
+        public static MolarHeatCapacity Max(this IEnumerable<MolarHeatCapacity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            MolarHeatCapacity value = default(MolarHeatCapacity);
+            bool hasValue = false;
+            foreach (MolarHeatCapacity x in source)
+            {
+                if (System.Double.IsNaN(x.joulesPerKelvinMole))
+                {
+                    return x;
+                }
+                if (hasValue)
+                {
+                    if (x.joulesPerKelvinMole > value.joulesPerKelvinMole)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+            if (hasValue) return value;
+            throw new ArgumentException("No elements", "source");
+        }
+
+
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{Mass}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7588,6 +8161,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Length}"/> of the values in <paramref name="source"/>
@@ -7619,6 +8193,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{Time}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7648,6 +8223,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Temperature}"/> of the values in <paramref name="source"/>
@@ -7679,6 +8255,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{Angle}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7708,6 +8285,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Unitless}"/> of the values in <paramref name="source"/>
@@ -7739,6 +8317,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{Current}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7768,6 +8347,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{LuminousIntensity}"/> of the values in <paramref name="source"/>
@@ -7799,6 +8379,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{Data}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7828,6 +8409,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{AmountOfSubstance}"/> of the values in <paramref name="source"/>
@@ -7859,6 +8441,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{SolidAngle}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7888,6 +8471,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Area}"/> of the values in <paramref name="source"/>
@@ -7919,6 +8503,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{Volume}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7948,6 +8533,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Force}"/> of the values in <paramref name="source"/>
@@ -7979,6 +8565,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{Pressure}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8008,6 +8595,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Density}"/> of the values in <paramref name="source"/>
@@ -8039,6 +8627,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{Energy}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8068,6 +8657,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Power}"/> of the values in <paramref name="source"/>
@@ -8099,6 +8689,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{Speed}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8128,6 +8719,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{AngularSpeed}"/> of the values in <paramref name="source"/>
@@ -8159,6 +8751,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{Frequency}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8188,6 +8781,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Acceleration}"/> of the values in <paramref name="source"/>
@@ -8219,6 +8813,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{Torque}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8248,6 +8843,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Stiffness}"/> of the values in <paramref name="source"/>
@@ -8279,6 +8875,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{VolumetricFlow}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8308,6 +8905,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Voltage}"/> of the values in <paramref name="source"/>
@@ -8339,6 +8937,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{Resistance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8368,6 +8967,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{SpecificEnergy}"/> of the values in <paramref name="source"/>
@@ -8399,6 +8999,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{ElectricCharge}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8428,6 +9029,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Inductance}"/> of the values in <paramref name="source"/>
@@ -8459,6 +9061,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{Capacitance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8488,6 +9091,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Flexibility}"/> of the values in <paramref name="source"/>
@@ -8519,6 +9123,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{AngularAcceleration}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8548,6 +9153,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{AngularJerk}"/> of the values in <paramref name="source"/>
@@ -8579,6 +9185,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{Jerk}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8608,6 +9215,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{LengthPerUnitless}"/> of the values in <paramref name="source"/>
@@ -8639,6 +9247,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{AnglePerUnitless}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8668,6 +9277,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{ForcePerUnitless}"/> of the values in <paramref name="source"/>
@@ -8699,6 +9309,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{LuminousFlux}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8728,6 +9339,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Illuminance}"/> of the values in <paramref name="source"/>
@@ -8759,6 +9371,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{MagneticFlux}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8788,6 +9401,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{ElectricalConductance}"/> of the values in <paramref name="source"/>
@@ -8819,6 +9433,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{MagneticFieldStrength}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8848,6 +9463,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{CatalyticActivity}"/> of the values in <paramref name="source"/>
@@ -8879,6 +9495,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{Momentum}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8908,6 +9525,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Wavenumber}"/> of the values in <paramref name="source"/>
@@ -8939,6 +9557,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{AreaDensity}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8968,6 +9587,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{SpecificVolume}"/> of the values in <paramref name="source"/>
@@ -8999,6 +9619,7 @@
             return value;
         }
 
+
         /// <summary>
         /// Calculates the max <see cref="Nullable{MassFlow}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -9028,6 +9649,7 @@
             }
             return value;
         }
+
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{KinematicViscosity}"/> of the values in <paramref name="source"/>
@@ -9059,6 +9681,70 @@
             return value;
         }
 
+
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{MolarMass}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarMass}"/></param>
+        /// <returns>The max</returns>
+        public static MolarMass? Max(this IEnumerable<MolarMass?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            MolarMass? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.kilogramsPerMole))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.kilogramsPerMole > value.Value.kilogramsPerMole)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+
+        /// <summary>
+        /// Calculates the max <see cref="Nullable{MolarHeatCapacity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarHeatCapacity}"/></param>
+        /// <returns>The max</returns>
+        public static MolarHeatCapacity? Max(this IEnumerable<MolarHeatCapacity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            MolarHeatCapacity? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+                if (System.Double.IsNaN(x.Value.joulesPerKelvinMole))
+                {
+                    return x;
+                }
+                if (value == null || x.Value.joulesPerKelvinMole > value.Value.joulesPerKelvinMole)
+                {
+                    value = x;
+                }
+            }
+            return value;
+        }
+
+
+
         /// <summary>
         /// Calculates the average <see cref="Mass"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9086,6 +9772,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Length"/> for the values in <paramref name="source"/>
@@ -9115,6 +9802,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Time"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9142,6 +9830,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Temperature"/> for the values in <paramref name="source"/>
@@ -9171,6 +9860,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Angle"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9198,6 +9888,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Unitless"/> for the values in <paramref name="source"/>
@@ -9227,6 +9918,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Current"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9254,6 +9946,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="LuminousIntensity"/> for the values in <paramref name="source"/>
@@ -9283,6 +9976,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Data"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9310,6 +10004,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="AmountOfSubstance"/> for the values in <paramref name="source"/>
@@ -9339,6 +10034,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="SolidAngle"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9366,6 +10062,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Area"/> for the values in <paramref name="source"/>
@@ -9395,6 +10092,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Volume"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9422,6 +10120,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Force"/> for the values in <paramref name="source"/>
@@ -9451,6 +10150,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Pressure"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9478,6 +10178,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Density"/> for the values in <paramref name="source"/>
@@ -9507,6 +10208,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Energy"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9534,6 +10236,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Power"/> for the values in <paramref name="source"/>
@@ -9563,6 +10266,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Speed"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9590,6 +10294,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="AngularSpeed"/> for the values in <paramref name="source"/>
@@ -9619,6 +10324,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Frequency"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9646,6 +10352,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Acceleration"/> for the values in <paramref name="source"/>
@@ -9675,6 +10382,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Torque"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9702,6 +10410,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Stiffness"/> for the values in <paramref name="source"/>
@@ -9731,6 +10440,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="VolumetricFlow"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9758,6 +10468,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Voltage"/> for the values in <paramref name="source"/>
@@ -9787,6 +10498,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Resistance"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9814,6 +10526,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="SpecificEnergy"/> for the values in <paramref name="source"/>
@@ -9843,6 +10556,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="ElectricCharge"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9870,6 +10584,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Inductance"/> for the values in <paramref name="source"/>
@@ -9899,6 +10614,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Capacitance"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9926,6 +10642,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Flexibility"/> for the values in <paramref name="source"/>
@@ -9955,6 +10672,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="AngularAcceleration"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9982,6 +10700,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="AngularJerk"/> for the values in <paramref name="source"/>
@@ -10011,6 +10730,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Jerk"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10038,6 +10758,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="LengthPerUnitless"/> for the values in <paramref name="source"/>
@@ -10067,6 +10788,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="AnglePerUnitless"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10094,6 +10816,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="ForcePerUnitless"/> for the values in <paramref name="source"/>
@@ -10123,6 +10846,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="LuminousFlux"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10150,6 +10874,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Illuminance"/> for the values in <paramref name="source"/>
@@ -10179,6 +10904,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="MagneticFlux"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10206,6 +10932,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="ElectricalConductance"/> for the values in <paramref name="source"/>
@@ -10235,6 +10962,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="MagneticFieldStrength"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10262,6 +10990,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="CatalyticActivity"/> for the values in <paramref name="source"/>
@@ -10291,6 +11020,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Momentum"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10318,6 +11048,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Wavenumber"/> for the values in <paramref name="source"/>
@@ -10347,6 +11078,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="AreaDensity"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10374,6 +11106,7 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="SpecificVolume"/> for the values in <paramref name="source"/>
@@ -10403,6 +11136,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="MassFlow"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10431,6 +11165,7 @@
             throw new ArgumentException("No elements", "source");
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="KinematicViscosity"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10458,6 +11193,66 @@
             }
             throw new ArgumentException("No elements", "source");
         }
+
+
+        /// <summary>
+        /// Calculates the average <see cref="MolarMass"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarMass}"/></param>
+        /// <returns>The average</returns>
+        public static MolarMass Average(this IEnumerable<MolarMass> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.kilogramsPerMole;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return MolarMass.FromKilogramsPerMole(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+
+        /// <summary>
+        /// Calculates the average <see cref="MolarHeatCapacity"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarHeatCapacity}"/></param>
+        /// <returns>The average</returns>
+        public static MolarHeatCapacity Average(this IEnumerable<MolarHeatCapacity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.joulesPerKelvinMole;
+                    count++;
+                }
+            }
+            if (count > 0)
+            {
+                return MolarHeatCapacity.FromJoulesPerKelvinMole(sum / count);
+            }
+            throw new ArgumentException("No elements", "source");
+        }
+
+
 
 
         /// <summary>
@@ -10491,6 +11286,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{Length}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10521,6 +11317,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Time}"/> for the values in <paramref name="source"/>
@@ -10553,6 +11350,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{Temperature}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10583,6 +11381,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Angle}"/> for the values in <paramref name="source"/>
@@ -10615,6 +11414,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{Unitless}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10645,6 +11445,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Current}"/> for the values in <paramref name="source"/>
@@ -10677,6 +11478,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{LuminousIntensity}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10707,6 +11509,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Data}"/> for the values in <paramref name="source"/>
@@ -10739,6 +11542,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{AmountOfSubstance}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10769,6 +11573,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{SolidAngle}"/> for the values in <paramref name="source"/>
@@ -10801,6 +11606,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{Area}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10831,6 +11637,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Volume}"/> for the values in <paramref name="source"/>
@@ -10863,6 +11670,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{Force}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10893,6 +11701,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Pressure}"/> for the values in <paramref name="source"/>
@@ -10925,6 +11734,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{Density}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10955,6 +11765,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Energy}"/> for the values in <paramref name="source"/>
@@ -10987,6 +11798,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{Power}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11017,6 +11829,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Speed}"/> for the values in <paramref name="source"/>
@@ -11049,6 +11862,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{AngularSpeed}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11079,6 +11893,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Frequency}"/> for the values in <paramref name="source"/>
@@ -11111,6 +11926,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{Acceleration}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11141,6 +11957,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Torque}"/> for the values in <paramref name="source"/>
@@ -11173,6 +11990,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{Stiffness}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11203,6 +12021,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{VolumetricFlow}"/> for the values in <paramref name="source"/>
@@ -11235,6 +12054,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{Voltage}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11265,6 +12085,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Resistance}"/> for the values in <paramref name="source"/>
@@ -11297,6 +12118,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{SpecificEnergy}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11327,6 +12149,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{ElectricCharge}"/> for the values in <paramref name="source"/>
@@ -11359,6 +12182,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{Inductance}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11389,6 +12213,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Capacitance}"/> for the values in <paramref name="source"/>
@@ -11421,6 +12246,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{Flexibility}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11451,6 +12277,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{AngularAcceleration}"/> for the values in <paramref name="source"/>
@@ -11483,6 +12310,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{AngularJerk}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11513,6 +12341,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Jerk}"/> for the values in <paramref name="source"/>
@@ -11545,6 +12374,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{LengthPerUnitless}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11575,6 +12405,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{AnglePerUnitless}"/> for the values in <paramref name="source"/>
@@ -11607,6 +12438,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{ForcePerUnitless}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11637,6 +12469,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{LuminousFlux}"/> for the values in <paramref name="source"/>
@@ -11669,6 +12502,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{Illuminance}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11699,6 +12533,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{MagneticFlux}"/> for the values in <paramref name="source"/>
@@ -11731,6 +12566,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{ElectricalConductance}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11761,6 +12597,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{MagneticFieldStrength}"/> for the values in <paramref name="source"/>
@@ -11793,6 +12630,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{CatalyticActivity}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11823,6 +12661,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Momentum}"/> for the values in <paramref name="source"/>
@@ -11855,6 +12694,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{Wavenumber}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11885,6 +12725,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{AreaDensity}"/> for the values in <paramref name="source"/>
@@ -11917,6 +12758,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{SpecificVolume}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11947,6 +12789,7 @@
             }
             return null;
         }
+
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{MassFlow}"/> for the values in <paramref name="source"/>
@@ -11979,6 +12822,7 @@
             return null;
         }
 
+
         /// <summary>
         /// Calculates the average <see cref="Nullable{KinematicViscosity}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12009,5 +12853,70 @@
             }
             return null;
         }
+
+
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{MolarMass}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarMass}"/></param>
+        /// <returns>The average</returns>
+        public static MolarMass? Average(this IEnumerable<MolarMass?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.kilogramsPerMole;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return MolarMass.FromKilogramsPerMole(sum / count);
+            }
+            return null;
+        }
+
+
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{MolarHeatCapacity}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{MolarHeatCapacity}"/></param>
+        /// <returns>The average</returns>
+        public static MolarHeatCapacity? Average(this IEnumerable<MolarHeatCapacity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.joulesPerKelvinMole;
+                        count++;
+                    }
+                }
+            }
+            if (count > 0)
+            {
+                return MolarHeatCapacity.FromJoulesPerKelvinMole(sum / count);
+            }
+            return null;
+        }
+
     }
 }

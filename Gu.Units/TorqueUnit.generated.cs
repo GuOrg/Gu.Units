@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -16,6 +22,7 @@
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly TorqueUnit NewtonMetres = new TorqueUnit(newtonMetres => newtonMetres, newtonMetres => newtonMetres, "N⋅m");
+
 
         private readonly Func<double, double> toNewtonMetres;
         private readonly Func<double, double> fromNewtonMetres;

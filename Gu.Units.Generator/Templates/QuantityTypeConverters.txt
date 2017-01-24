@@ -1,5 +1,29 @@
 ﻿
-Read Settings found 50 units
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Read Settings found 52 units
 
 //-> AccelerationTypeConverter.generated.cs
 
@@ -67,6 +91,10 @@ Read Settings found 50 units
 
 //-> MassTypeConverter.generated.cs
 
+//-> MolarHeatCapacityTypeConverter.generated.cs
+
+//-> MolarMassTypeConverter.generated.cs
+
 //-> MomentumTypeConverter.generated.cs
 
 //-> PowerTypeConverter.generated.cs
@@ -93,16 +121,18 @@ Read Settings found 50 units
 
 //-> UnitlessTypeConverter.generated.cs
 
-//-> WavenumberTypeConverter.generated.cs
-
 //-> VoltageTypeConverter.generated.cs
 
 //-> VolumetricFlowTypeConverter.generated.cs
 
 //-> VolumeTypeConverter.generated.cs
+
+//-> WavenumberTypeConverter.generated.cs
 // Generated helper templates
 // Gu.Units\Gu.Units\QuantityTypeConverters.txt4
 // Generated items
+// Gu.Units\Gu.Units\MolarHeatCapacityTypeConverter.generated.cs
+// Gu.Units\Gu.Units\MolarMassTypeConverter.generated.cs
 // Gu.Units\Gu.Units\KinematicViscosityTypeConverter.generated.cs
 // Gu.Units\Gu.Units\MassFlowTypeConverter.generated.cs
 // Gu.Units\Gu.Units\SpecificVolumeTypeConverter.generated.cs

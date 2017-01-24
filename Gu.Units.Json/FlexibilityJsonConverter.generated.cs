@@ -1,4 +1,10 @@
-﻿namespace Gu.Units.Json
+﻿
+
+
+
+
+
+namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -19,20 +25,24 @@
         /// </summary>
         public static readonly FlexibilityJsonConverter MetresPerNewton = new FlexibilityJsonConverter(FlexibilityUnit.MetresPerNewton);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="FlexibilityUnit.MillimetresPerNewton"/>
         /// </summary>
         public static readonly FlexibilityJsonConverter MillimetresPerNewton = new FlexibilityJsonConverter(FlexibilityUnit.MillimetresPerNewton);
+
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="FlexibilityUnit.MillimetresPerKilonewton"/>
         /// </summary>
         public static readonly FlexibilityJsonConverter MillimetresPerKilonewton = new FlexibilityJsonConverter(FlexibilityUnit.MillimetresPerKilonewton);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="FlexibilityUnit.MicrometresPerKilonewton"/>
         /// </summary>
         public static readonly FlexibilityJsonConverter MicrometresPerKilonewton = new FlexibilityJsonConverter(FlexibilityUnit.MicrometresPerKilonewton);
+
 
         private readonly FlexibilityUnit unit;
 

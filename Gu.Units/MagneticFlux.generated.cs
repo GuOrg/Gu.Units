@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -57,6 +63,7 @@
         /// The quantity in webers".
         /// </summary>
         public double Webers => this.webers;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
@@ -181,6 +188,8 @@
             return new MagneticFlux(webers);
         }
 
+
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -191,6 +200,7 @@
         {
             return Voltage.FromVolts(left.webers / right.seconds);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -203,6 +213,7 @@
             return Energy.FromJoules(left.webers * right.amperes);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -213,6 +224,7 @@
         {
             return Inductance.FromHenrys(left.webers / right.amperes);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -225,6 +237,7 @@
             return MagneticFieldStrength.FromTeslas(left.webers / right.squareMetres);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -235,6 +248,7 @@
         {
             return Voltage.FromVolts(left.webers * right.hertz);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -247,6 +261,7 @@
             return Time.FromSeconds(left.webers / right.volts);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -257,6 +272,7 @@
         {
             return ElectricCharge.FromCoulombs(left.webers / right.ohms);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -269,6 +285,7 @@
             return Resistance.FromOhms(left.webers / right.coulombs);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -279,6 +296,7 @@
         {
             return Current.FromAmperes(left.webers / right.henrys);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -291,6 +309,7 @@
             return ElectricCharge.FromCoulombs(left.webers * right.siemens);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -301,6 +320,8 @@
         {
             return Area.FromSquareMetres(left.webers / right.teslas);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

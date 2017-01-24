@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -16,6 +22,7 @@
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly KinematicViscosityUnit SquareMetresPerSecond = new KinematicViscosityUnit(squareMetresPerSecond => squareMetresPerSecond, squareMetresPerSecond => squareMetresPerSecond, "m²/s");
+
 
         private readonly Func<double, double> toSquareMetresPerSecond;
         private readonly Func<double, double> fromSquareMetresPerSecond;

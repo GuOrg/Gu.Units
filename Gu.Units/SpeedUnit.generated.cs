@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -17,11 +23,13 @@
         /// </summary>
         public static readonly SpeedUnit MetresPerSecond = new SpeedUnit(metresPerSecond => metresPerSecond, metresPerSecond => metresPerSecond, "m/s");
 
+
         /// <summary>
         /// The KilometresPerHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly SpeedUnit KilometresPerHour = new SpeedUnit(kilometresPerHour => 0.277777777777778 * kilometresPerHour, metresPerSecond => metresPerSecond / 0.277777777777778, "km/h");
+
 
         /// <summary>
         /// The CentimetresPerMinute unit
@@ -29,11 +37,13 @@
         /// </summary>
         public static readonly SpeedUnit CentimetresPerMinute = new SpeedUnit(centimetresPerMinute => centimetresPerMinute / 6000, metresPerSecond => 6000 * metresPerSecond, "cm/min");
 
+
         /// <summary>
         /// The MetresPerMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly SpeedUnit MetresPerMinute = new SpeedUnit(metresPerMinute => metresPerMinute / 60, metresPerSecond => 60 * metresPerSecond, "m/min");
+
 
         /// <summary>
         /// The MetresPerHour unit
@@ -41,11 +51,13 @@
         /// </summary>
         public static readonly SpeedUnit MetresPerHour = new SpeedUnit(metresPerHour => metresPerHour / 3600, metresPerSecond => 3600 * metresPerSecond, "m/h");
 
+
         /// <summary>
         /// The MillimetresPerHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly SpeedUnit MillimetresPerHour = new SpeedUnit(millimetresPerHour => millimetresPerHour / 3600000, metresPerSecond => 3600000 * metresPerSecond, "mm/h");
+
 
         /// <summary>
         /// The CentimetresPerHour unit
@@ -53,11 +65,13 @@
         /// </summary>
         public static readonly SpeedUnit CentimetresPerHour = new SpeedUnit(centimetresPerHour => centimetresPerHour / 360000, metresPerSecond => 360000 * metresPerSecond, "cm/h");
 
+
         /// <summary>
         /// The MillimetresPerMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly SpeedUnit MillimetresPerMinute = new SpeedUnit(millimetresPerMinute => millimetresPerMinute / 60000, metresPerSecond => 60000 * metresPerSecond, "mm/min");
+
 
         /// <summary>
         /// The MillimetresPerSecond unit
@@ -65,11 +79,13 @@
         /// </summary>
         public static readonly SpeedUnit MillimetresPerSecond = new SpeedUnit(millimetresPerSecond => millimetresPerSecond / 1000, metresPerSecond => 1000 * metresPerSecond, "mm/s");
 
+
         /// <summary>
         /// The CentimetresPerSecond unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly SpeedUnit CentimetresPerSecond = new SpeedUnit(centimetresPerSecond => centimetresPerSecond / 100, metresPerSecond => 100 * metresPerSecond, "cm/s");
+
 
         private readonly Func<double, double> toMetresPerSecond;
         private readonly Func<double, double> fromMetresPerSecond;

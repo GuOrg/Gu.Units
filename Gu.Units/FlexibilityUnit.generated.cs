@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -17,11 +23,13 @@
         /// </summary>
         public static readonly FlexibilityUnit MetresPerNewton = new FlexibilityUnit(metresPerNewton => metresPerNewton, metresPerNewton => metresPerNewton, "m/N");
 
+
         /// <summary>
         /// The MillimetresPerNewton unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FlexibilityUnit MillimetresPerNewton = new FlexibilityUnit(millimetresPerNewton => millimetresPerNewton / 1000, metresPerNewton => 1000 * metresPerNewton, "mm/N");
+
 
         /// <summary>
         /// The MillimetresPerKilonewton unit
@@ -29,11 +37,13 @@
         /// </summary>
         public static readonly FlexibilityUnit MillimetresPerKilonewton = new FlexibilityUnit(millimetresPerKilonewton => millimetresPerKilonewton / 1000000, metresPerNewton => 1000000 * metresPerNewton, "mm/kN");
 
+
         /// <summary>
         /// The MicrometresPerKilonewton unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly FlexibilityUnit MicrometresPerKilonewton = new FlexibilityUnit(micrometresPerKilonewton => micrometresPerKilonewton / 1000000000, metresPerNewton => 1000000000 * metresPerNewton, "µm/kN");
+
 
         private readonly Func<double, double> toMetresPerNewton;
         private readonly Func<double, double> fromMetresPerNewton;

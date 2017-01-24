@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -17,11 +23,13 @@
         /// </summary>
         public static readonly AngularSpeedUnit RadiansPerSecond = new AngularSpeedUnit(radiansPerSecond => radiansPerSecond, radiansPerSecond => radiansPerSecond, "rad/s");
 
+
         /// <summary>
         /// The RevolutionsPerMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngularSpeedUnit RevolutionsPerMinute = new AngularSpeedUnit(revolutionsPerMinute => 0.10471975511966 * revolutionsPerMinute, radiansPerSecond => radiansPerSecond / 0.10471975511966, "rpm");
+
 
         /// <summary>
         /// The DegreesPerSecond unit
@@ -29,11 +37,13 @@
         /// </summary>
         public static readonly AngularSpeedUnit DegreesPerSecond = new AngularSpeedUnit(degreesPerSecond => 0.0174532925199433 * degreesPerSecond, radiansPerSecond => radiansPerSecond / 0.0174532925199433, "°⋅s⁻¹");
 
+
         /// <summary>
         /// The DegreesPerMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngularSpeedUnit DegreesPerMinute = new AngularSpeedUnit(degreesPerMinute => 0.000290888208665722 * degreesPerMinute, radiansPerSecond => radiansPerSecond / 0.000290888208665722, "min⁻¹⋅°");
+
 
         /// <summary>
         /// The RadiansPerMinute unit
@@ -41,17 +51,20 @@
         /// </summary>
         public static readonly AngularSpeedUnit RadiansPerMinute = new AngularSpeedUnit(radiansPerMinute => radiansPerMinute / 60, radiansPerSecond => 60 * radiansPerSecond, "min⁻¹⋅rad");
 
+
         /// <summary>
         /// The DegreesPerHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngularSpeedUnit DegreesPerHour = new AngularSpeedUnit(degreesPerHour => 4.84813681109536E-06 * degreesPerHour, radiansPerSecond => radiansPerSecond / 4.84813681109536E-06, "h⁻¹⋅°");
 
+
         /// <summary>
         /// The RadiansPerHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngularSpeedUnit RadiansPerHour = new AngularSpeedUnit(radiansPerHour => radiansPerHour / 3600, radiansPerSecond => 3600 * radiansPerSecond, "h⁻¹⋅rad");
+
 
         private readonly Func<double, double> toRadiansPerSecond;
         private readonly Func<double, double> fromRadiansPerSecond;
