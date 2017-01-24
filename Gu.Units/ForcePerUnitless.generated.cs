@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,25 +64,30 @@
         /// </summary>
         public double NewtonsPerUnitless => this.newtonsPerUnitless;
 
+
         /// <summary>
         /// The quantity in NewtonsPerPercent
         /// </summary>
         public double NewtonsPerPercent => this.newtonsPerUnitless / 100;
+
 
         /// <summary>
         /// The quantity in KilonewtonsPerPercent
         /// </summary>
         public double KilonewtonsPerPercent => this.newtonsPerUnitless / 100000;
 
+
         /// <summary>
         /// The quantity in MeganewtonsPerPercent
         /// </summary>
         public double MeganewtonsPerPercent => this.newtonsPerUnitless / 100000000;
 
+
         /// <summary>
         /// The quantity in GiganewtonsPerPercent
         /// </summary>
         public double GiganewtonsPerPercent => this.newtonsPerUnitless / 100000000000;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.ForcePerUnitless"/> from its string representation
@@ -201,6 +212,7 @@
             return new ForcePerUnitless(newtonsPerUnitless);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.ForcePerUnitless"/>.
         /// </summary>
@@ -209,6 +221,7 @@
         {
             return new ForcePerUnitless(100 * newtonsPerPercent);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.ForcePerUnitless"/>.
@@ -219,6 +232,7 @@
             return new ForcePerUnitless(100000 * kilonewtonsPerPercent);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.ForcePerUnitless"/>.
         /// </summary>
@@ -228,6 +242,7 @@
             return new ForcePerUnitless(100000000 * meganewtonsPerPercent);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.ForcePerUnitless"/>.
         /// </summary>
@@ -236,6 +251,8 @@
         {
             return new ForcePerUnitless(100000000000 * giganewtonsPerPercent);
         }
+
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -248,6 +265,7 @@
             return Force.FromNewtons(left.newtonsPerUnitless * right.scalar);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -258,6 +276,7 @@
         {
             return LengthPerUnitless.FromMetresPerUnitless(left.newtonsPerUnitless / right.newtonsPerMetre);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -270,6 +289,7 @@
             return LengthPerUnitless.FromMetresPerUnitless(left.newtonsPerUnitless * right.metresPerNewton);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -280,6 +300,8 @@
         {
             return Stiffness.FromNewtonsPerMetre(left.newtonsPerUnitless / right.metresPerUnitless);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -17,11 +23,13 @@
         /// </summary>
         public static readonly UnitlessUnit Scalar = new UnitlessUnit(scalar => scalar, scalar => scalar, "ul");
 
+
         /// <summary>
         /// The Promilles unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly UnitlessUnit Promilles = new UnitlessUnit(promilles => promilles / 1000, scalar => 1000 * scalar, "‰");
+
 
         /// <summary>
         /// The PartsPerMillion unit
@@ -29,11 +37,13 @@
         /// </summary>
         public static readonly UnitlessUnit PartsPerMillion = new UnitlessUnit(partsPerMillion => partsPerMillion / 1000000, scalar => 1000000 * scalar, "ppm");
 
+
         /// <summary>
         /// The Percents unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly UnitlessUnit Percents = new UnitlessUnit(percents => percents / 100, scalar => 100 * scalar, "%");
+
 
         private readonly Func<double, double> toScalar;
         private readonly Func<double, double> fromScalar;

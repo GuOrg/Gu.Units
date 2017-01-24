@@ -1,4 +1,10 @@
-﻿namespace Gu.Units.Json
+﻿
+
+
+
+
+
+namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -19,20 +25,24 @@
         /// </summary>
         public static readonly LengthPerUnitlessJsonConverter MetresPerUnitless = new LengthPerUnitlessJsonConverter(LengthPerUnitlessUnit.MetresPerUnitless);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="LengthPerUnitlessUnit.MillimetresPerPercent"/>
         /// </summary>
         public static readonly LengthPerUnitlessJsonConverter MillimetresPerPercent = new LengthPerUnitlessJsonConverter(LengthPerUnitlessUnit.MillimetresPerPercent);
+
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="LengthPerUnitlessUnit.MicrometresPerPercent"/>
         /// </summary>
         public static readonly LengthPerUnitlessJsonConverter MicrometresPerPercent = new LengthPerUnitlessJsonConverter(LengthPerUnitlessUnit.MicrometresPerPercent);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="LengthPerUnitlessUnit.MetresPerPercent"/>
         /// </summary>
         public static readonly LengthPerUnitlessJsonConverter MetresPerPercent = new LengthPerUnitlessJsonConverter(LengthPerUnitlessUnit.MetresPerPercent);
+
 
         private readonly LengthPerUnitlessUnit unit;
 

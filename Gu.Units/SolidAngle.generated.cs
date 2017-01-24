@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -57,6 +63,7 @@
         /// The quantity in steradians".
         /// </summary>
         public double Steradians => this.steradians;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
@@ -181,6 +188,8 @@
             return new SolidAngle(steradians);
         }
 
+
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -191,6 +200,8 @@
         {
             return LuminousFlux.FromLumens(left.steradians * right.candelas);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

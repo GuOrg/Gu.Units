@@ -1,4 +1,10 @@
-﻿namespace Gu.Units.Wpf
+﻿
+
+
+
+
+
+namespace Gu.Units.Wpf
 {
     using System;
     using System.Windows.Markup;

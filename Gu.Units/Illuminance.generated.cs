@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -57,6 +63,7 @@
         /// The quantity in lux".
         /// </summary>
         public double Lux => this.lux;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
@@ -181,6 +188,8 @@
             return new Illuminance(lux);
         }
 
+
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -191,6 +200,8 @@
         {
             return LuminousFlux.FromLumens(left.lux * right.squareMetres);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

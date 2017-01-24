@@ -1,5 +1,29 @@
 ﻿
-Read Settings found 50 units
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Read Settings found 52 units
 
 //-> AccelerationExtension.generated.cs
 
@@ -67,6 +91,10 @@ Read Settings found 50 units
 
 //-> MassFlowExtension.generated.cs
 
+//-> MolarHeatCapacityExtension.generated.cs
+
+//-> MolarMassExtension.generated.cs
+
 //-> MomentumExtension.generated.cs
 
 //-> PowerExtension.generated.cs
@@ -93,16 +121,18 @@ Read Settings found 50 units
 
 //-> UnitlessExtension.generated.cs
 
-//-> WavenumberExtension.generated.cs
-
 //-> VoltageExtension.generated.cs
 
 //-> VolumeExtension.generated.cs
 
 //-> VolumetricFlowExtension.generated.cs
+
+//-> WavenumberExtension.generated.cs
 // Generated helper templates
 // Gu.Units\Gu.Units.Wpf\QuantityExtensions.txt4
 // Generated items
+// Gu.Units\Gu.Units.Wpf\MolarHeatCapacityExtension.generated.cs
+// Gu.Units\Gu.Units.Wpf\MolarMassExtension.generated.cs
 // Gu.Units\Gu.Units.Wpf\KinematicViscosityExtension.generated.cs
 // Gu.Units\Gu.Units.Wpf\MassFlowExtension.generated.cs
 // Gu.Units\Gu.Units.Wpf\SpecificVolumeExtension.generated.cs

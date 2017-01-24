@@ -1,4 +1,10 @@
-﻿namespace Gu.Units.Json
+﻿
+
+
+
+
+
+namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -18,6 +24,7 @@
         /// A <see cref="JsonConverter"/> that writes values in <see cref="WavenumberUnit.ReciprocalMetres"/>
         /// </summary>
         public static readonly WavenumberJsonConverter ReciprocalMetres = new WavenumberJsonConverter(WavenumberUnit.ReciprocalMetres);
+
 
         private readonly WavenumberUnit unit;
 

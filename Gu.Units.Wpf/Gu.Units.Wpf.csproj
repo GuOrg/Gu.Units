@@ -171,6 +171,18 @@
     <Compile Include="MassFlowExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="MolarHeatCapacityConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MolarHeatCapacityExtension.generated.cs">
+      <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MolarMassConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MolarMassExtension.generated.cs">
+      <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
     <Compile Include="MomentumExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>

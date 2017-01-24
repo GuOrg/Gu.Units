@@ -1,4 +1,10 @@
-﻿namespace Gu.Units.Json
+﻿
+
+
+
+
+
+namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -19,35 +25,42 @@
         /// </summary>
         public static readonly VoltageJsonConverter Volts = new VoltageJsonConverter(VoltageUnit.Volts);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="VoltageUnit.Millivolts"/>
         /// </summary>
         public static readonly VoltageJsonConverter Millivolts = new VoltageJsonConverter(VoltageUnit.Millivolts);
+
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="VoltageUnit.Kilovolts"/>
         /// </summary>
         public static readonly VoltageJsonConverter Kilovolts = new VoltageJsonConverter(VoltageUnit.Kilovolts);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="VoltageUnit.Megavolts"/>
         /// </summary>
         public static readonly VoltageJsonConverter Megavolts = new VoltageJsonConverter(VoltageUnit.Megavolts);
+
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="VoltageUnit.Microvolts"/>
         /// </summary>
         public static readonly VoltageJsonConverter Microvolts = new VoltageJsonConverter(VoltageUnit.Microvolts);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="VoltageUnit.Nanovolts"/>
         /// </summary>
         public static readonly VoltageJsonConverter Nanovolts = new VoltageJsonConverter(VoltageUnit.Nanovolts);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="VoltageUnit.Gigavolts"/>
         /// </summary>
         public static readonly VoltageJsonConverter Gigavolts = new VoltageJsonConverter(VoltageUnit.Gigavolts);
+
 
         private readonly VoltageUnit unit;
 

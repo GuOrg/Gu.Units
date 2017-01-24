@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -57,6 +63,7 @@
         /// The quantity in kilogramsPerSquareMetre".
         /// </summary>
         public double KilogramsPerSquareMetre => this.kilogramsPerSquareMetre;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
@@ -181,6 +188,8 @@
             return new AreaDensity(kilogramsPerSquareMetre);
         }
 
+
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -191,6 +200,7 @@
         {
             return Density.FromKilogramsPerCubicMetre(left.kilogramsPerSquareMetre / right.metres);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -203,6 +213,7 @@
             return Mass.FromKilograms(left.kilogramsPerSquareMetre * right.squareMetres);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -213,6 +224,7 @@
         {
             return Length.FromMetres(left.kilogramsPerSquareMetre / right.kilogramsPerCubicMetre);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -225,6 +237,7 @@
             return Pressure.FromPascals(left.kilogramsPerSquareMetre * right.metresPerSecondSquared);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -235,6 +248,7 @@
         {
             return Momentum.FromNewtonSecond(left.kilogramsPerSquareMetre * right.cubicMetresPerSecond);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -247,6 +261,7 @@
             return Stiffness.FromNewtonsPerMetre(left.kilogramsPerSquareMetre * right.joulesPerKilogram);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -257,6 +272,7 @@
         {
             return Density.FromKilogramsPerCubicMetre(left.kilogramsPerSquareMetre * right.reciprocalMetres);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -269,6 +285,7 @@
             return Length.FromMetres(left.kilogramsPerSquareMetre * right.cubicMetresPerKilogram);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -279,6 +296,8 @@
         {
             return MassFlow.FromKilogramsPerSecond(left.kilogramsPerSquareMetre * right.squareMetresPerSecond);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

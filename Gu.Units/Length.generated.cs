@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,55 +64,66 @@
         /// </summary>
         public double Metres => this.metres;
 
+
         /// <summary>
         /// The quantity in Inches
         /// </summary>
         public double Inches => this.metres / 0.0254;
+
 
         /// <summary>
         /// The quantity in Miles
         /// </summary>
         public double Miles => this.metres / 1609.344;
 
+
         /// <summary>
         /// The quantity in Yards
         /// </summary>
         public double Yards => this.metres / 0.9144;
+
 
         /// <summary>
         /// The quantity in NauticalMiles
         /// </summary>
         public double NauticalMiles => this.metres / 1852;
 
+
         /// <summary>
         /// The quantity in Nanometres
         /// </summary>
         public double Nanometres => 1000000000 * this.metres;
+
 
         /// <summary>
         /// The quantity in Micrometres
         /// </summary>
         public double Micrometres => 1000000 * this.metres;
 
+
         /// <summary>
         /// The quantity in Millimetres
         /// </summary>
         public double Millimetres => 1000 * this.metres;
+
 
         /// <summary>
         /// The quantity in Centimetres
         /// </summary>
         public double Centimetres => 100 * this.metres;
 
+
         /// <summary>
         /// The quantity in Decimetres
         /// </summary>
         public double Decimetres => 10 * this.metres;
 
+
         /// <summary>
         /// The quantity in Kilometres
         /// </summary>
         public double Kilometres => this.metres / 1000;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
@@ -231,6 +248,7 @@
             return new Length(metres);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
@@ -239,6 +257,7 @@
         {
             return new Length(0.0254 * inches);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
@@ -249,6 +268,7 @@
             return new Length(1609.344 * miles);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
@@ -257,6 +277,7 @@
         {
             return new Length(0.9144 * yards);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
@@ -267,6 +288,7 @@
             return new Length(1852 * nauticalMiles);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
@@ -275,6 +297,7 @@
         {
             return new Length(nanometres / 1000000000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
@@ -285,6 +308,7 @@
             return new Length(micrometres / 1000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
@@ -293,6 +317,7 @@
         {
             return new Length(millimetres / 1000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
@@ -303,6 +328,7 @@
             return new Length(centimetres / 100);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
@@ -312,6 +338,7 @@
             return new Length(decimetres / 10);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
@@ -320,6 +347,8 @@
         {
             return new Length(1000 * kilometres);
         }
+
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -332,6 +361,7 @@
             return Area.FromSquareMetres(left.metres * right.metres);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -342,6 +372,7 @@
         {
             return Speed.FromMetresPerSecond(left.metres / right.seconds);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -354,6 +385,7 @@
             return LengthPerUnitless.FromMetresPerUnitless(left.metres / right.scalar);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -364,6 +396,7 @@
         {
             return Volume.FromCubicMetres(left.metres * right.squareMetres);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -376,6 +409,7 @@
             return Wavenumber.FromReciprocalMetres(left.metres / right.squareMetres);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -386,6 +420,7 @@
         {
             return Energy.FromJoules(left.metres * right.newtons);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -398,6 +433,7 @@
             return Flexibility.FromMetresPerNewton(left.metres / right.newtons);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -408,6 +444,7 @@
         {
             return Stiffness.FromNewtonsPerMetre(left.metres * right.pascals);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -420,6 +457,7 @@
             return AreaDensity.FromKilogramsPerSquareMetre(left.metres * right.kilogramsPerCubicMetre);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -430,6 +468,7 @@
         {
             return KinematicViscosity.FromSquareMetresPerSecond(left.metres * right.metresPerSecond);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -442,6 +481,7 @@
             return Time.FromSeconds(left.metres / right.metresPerSecond);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -452,6 +492,7 @@
         {
             return Speed.FromMetresPerSecond(left.metres * right.hertz);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -464,6 +505,7 @@
             return SpecificEnergy.FromJoulesPerKilogram(left.metres * right.metresPerSecondSquared);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -474,6 +516,7 @@
         {
             return Force.FromNewtons(left.metres * right.newtonsPerMetre);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -486,6 +529,7 @@
             return Force.FromNewtons(left.metres / right.metresPerNewton);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -496,6 +540,7 @@
         {
             return Unitless.FromScalar(left.metres / right.metresPerUnitless);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -508,6 +553,7 @@
             return SpecificVolume.FromCubicMetresPerKilogram(left.metres / right.kilogramsPerSquareMetre);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -518,6 +564,7 @@
         {
             return AreaDensity.FromKilogramsPerSquareMetre(left.metres / right.cubicMetresPerKilogram);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -530,6 +577,7 @@
             return Momentum.FromNewtonSecond(left.metres * right.kilogramsPerSecond);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -541,6 +589,8 @@
             return VolumetricFlow.FromCubicMetresPerSecond(left.metres * right.squareMetresPerSecond);
         }
 
+
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -551,6 +601,7 @@
         {
             return Wavenumber.FromReciprocalMetres(left / right.metres);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

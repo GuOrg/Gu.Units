@@ -134,6 +134,12 @@
     <Compile Include="MassJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="MolarHeatCapacityJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MolarMassJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="MomentumJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>

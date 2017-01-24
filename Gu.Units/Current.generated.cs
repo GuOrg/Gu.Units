@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,35 +64,42 @@
         /// </summary>
         public double Amperes => this.amperes;
 
+
         /// <summary>
         /// The quantity in Milliamperes
         /// </summary>
         public double Milliamperes => 1000 * this.amperes;
+
 
         /// <summary>
         /// The quantity in Kiloamperes
         /// </summary>
         public double Kiloamperes => this.amperes / 1000;
 
+
         /// <summary>
         /// The quantity in Megaamperes
         /// </summary>
         public double Megaamperes => this.amperes / 1000000;
+
 
         /// <summary>
         /// The quantity in Microamperes
         /// </summary>
         public double Microamperes => 1000000 * this.amperes;
 
+
         /// <summary>
         /// The quantity in Nanoamperes
         /// </summary>
         public double Nanoamperes => 1000000000 * this.amperes;
 
+
         /// <summary>
         /// The quantity in Gigaamperes
         /// </summary>
         public double Gigaamperes => this.amperes / 1000000000;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
@@ -211,6 +224,7 @@
             return new Current(amperes);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
@@ -219,6 +233,7 @@
         {
             return new Current(milliamperes / 1000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
@@ -229,6 +244,7 @@
             return new Current(1000 * kiloamperes);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
@@ -237,6 +253,7 @@
         {
             return new Current(1000000 * megaamperes);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
@@ -247,6 +264,7 @@
             return new Current(microamperes / 1000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
@@ -256,6 +274,7 @@
             return new Current(nanoamperes / 1000000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
@@ -264,6 +283,8 @@
         {
             return new Current(1000000000 * gigaamperes);
         }
+
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -276,6 +297,7 @@
             return ElectricCharge.FromCoulombs(left.amperes * right.seconds);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -286,6 +308,7 @@
         {
             return ElectricCharge.FromCoulombs(left.amperes / right.hertz);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -298,6 +321,7 @@
             return Power.FromWatts(left.amperes * right.volts);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -308,6 +332,7 @@
         {
             return ElectricalConductance.FromSiemens(left.amperes / right.volts);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -320,6 +345,7 @@
             return Voltage.FromVolts(left.amperes * right.ohms);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -330,6 +356,7 @@
         {
             return Frequency.FromHertz(left.amperes / right.coulombs);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -342,6 +369,7 @@
             return MagneticFlux.FromWebers(left.amperes * right.henrys);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -352,6 +380,7 @@
         {
             return Energy.FromJoules(left.amperes * right.webers);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -364,6 +393,7 @@
             return Voltage.FromVolts(left.amperes / right.siemens);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -374,6 +404,8 @@
         {
             return Stiffness.FromNewtonsPerMetre(left.amperes * right.teslas);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

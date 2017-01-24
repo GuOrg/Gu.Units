@@ -1,4 +1,10 @@
-﻿namespace Gu.Units.Json
+﻿
+
+
+
+
+
+namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -18,6 +24,7 @@
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AreaDensityUnit.KilogramsPerSquareMetre"/>
         /// </summary>
         public static readonly AreaDensityJsonConverter KilogramsPerSquareMetre = new AreaDensityJsonConverter(AreaDensityUnit.KilogramsPerSquareMetre);
+
 
         private readonly AreaDensityUnit unit;
 
