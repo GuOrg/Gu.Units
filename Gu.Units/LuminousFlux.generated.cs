@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -57,6 +63,7 @@
         /// The quantity in lumens".
         /// </summary>
         public double Lumens => this.lumens;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.LuminousFlux"/> from its string representation
@@ -181,6 +188,8 @@
             return new LuminousFlux(lumens);
         }
 
+
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -191,6 +200,7 @@
         {
             return SolidAngle.FromSteradians(left.lumens / right.candelas);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -203,6 +213,7 @@
             return LuminousIntensity.FromCandelas(left.lumens / right.steradians);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -214,6 +225,7 @@
             return Illuminance.FromLux(left.lumens / right.squareMetres);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -224,6 +236,8 @@
         {
             return Area.FromSquareMetres(left.lumens / right.lux);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

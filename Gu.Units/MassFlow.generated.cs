@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -57,6 +63,7 @@
         /// The quantity in kilogramsPerSecond".
         /// </summary>
         public double KilogramsPerSecond => this.kilogramsPerSecond;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.MassFlow"/> from its string representation
@@ -181,6 +188,8 @@
             return new MassFlow(kilogramsPerSecond);
         }
 
+
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -191,6 +200,7 @@
         {
             return Frequency.FromHertz(left.kilogramsPerSecond / right.kilograms);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -203,6 +213,7 @@
             return Momentum.FromNewtonSecond(left.kilogramsPerSecond * right.metres);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -213,6 +224,7 @@
         {
             return Mass.FromKilograms(left.kilogramsPerSecond * right.seconds);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -225,6 +237,7 @@
             return Stiffness.FromNewtonsPerMetre(left.kilogramsPerSecond / right.seconds);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -235,6 +248,7 @@
         {
             return VolumetricFlow.FromCubicMetresPerSecond(left.kilogramsPerSecond / right.kilogramsPerCubicMetre);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -247,6 +261,7 @@
             return Force.FromNewtons(left.kilogramsPerSecond * right.metresPerSecond);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -257,6 +272,7 @@
         {
             return Stiffness.FromNewtonsPerMetre(left.kilogramsPerSecond * right.hertz);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -269,6 +285,7 @@
             return Mass.FromKilograms(left.kilogramsPerSecond / right.hertz);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -279,6 +296,7 @@
         {
             return Time.FromSeconds(left.kilogramsPerSecond / right.newtonsPerMetre);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -291,6 +309,7 @@
             return Density.FromKilogramsPerCubicMetre(left.kilogramsPerSecond / right.cubicMetresPerSecond);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -301,6 +320,7 @@
         {
             return Power.FromWatts(left.kilogramsPerSecond * right.joulesPerKilogram);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -313,6 +333,7 @@
             return MagneticFieldStrength.FromTeslas(left.kilogramsPerSecond / right.coulombs);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -323,6 +344,7 @@
         {
             return Time.FromSeconds(left.kilogramsPerSecond * right.metresPerNewton);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -335,6 +357,19 @@
             return ElectricCharge.FromCoulombs(left.kilogramsPerSecond / right.teslas);
         }
 
+
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="MolarMass"/> that is the result from the division.</returns>
+        public static MolarMass operator /(MassFlow left, CatalyticActivity right)
+        {
+            return MolarMass.FromKilogramsPerMole(left.kilogramsPerSecond / right.katals);
+        }
+
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -345,6 +380,7 @@
         {
             return Wavenumber.FromReciprocalMetres(left.kilogramsPerSecond / right.newtonSecond);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -357,6 +393,7 @@
             return Momentum.FromNewtonSecond(left.kilogramsPerSecond / right.reciprocalMetres);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -367,6 +404,7 @@
         {
             return KinematicViscosity.FromSquareMetresPerSecond(left.kilogramsPerSecond / right.kilogramsPerSquareMetre);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -379,6 +417,7 @@
             return VolumetricFlow.FromCubicMetresPerSecond(left.kilogramsPerSecond * right.cubicMetresPerKilogram);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -390,6 +429,7 @@
             return Energy.FromJoules(left.kilogramsPerSecond * right.squareMetresPerSecond);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -400,6 +440,20 @@
         {
             return AreaDensity.FromKilogramsPerSquareMetre(left.kilogramsPerSecond / right.squareMetresPerSecond);
         }
+
+
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="CatalyticActivity"/> that is the result from the division.</returns>
+        public static CatalyticActivity operator /(MassFlow left, MolarMass right)
+        {
+            return CatalyticActivity.FromKatals(left.kilogramsPerSecond / right.kilogramsPerMole);
+        }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

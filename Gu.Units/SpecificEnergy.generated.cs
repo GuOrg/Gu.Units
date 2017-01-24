@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -57,6 +63,7 @@
         /// The quantity in joulesPerKilogram".
         /// </summary>
         public double JoulesPerKilogram => this.joulesPerKilogram;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
@@ -181,6 +188,8 @@
             return new SpecificEnergy(joulesPerKilogram);
         }
 
+
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -191,6 +200,7 @@
         {
             return Energy.FromJoules(left.joulesPerKilogram * right.kilograms);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -203,6 +213,7 @@
             return Acceleration.FromMetresPerSecondSquared(left.joulesPerKilogram / right.metres);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -213,6 +224,7 @@
         {
             return KinematicViscosity.FromSquareMetresPerSecond(left.joulesPerKilogram * right.seconds);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -225,6 +237,7 @@
             return SpecificVolume.FromCubicMetresPerKilogram(left.joulesPerKilogram / right.pascals);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -235,6 +248,7 @@
         {
             return Pressure.FromPascals(left.joulesPerKilogram * right.kilogramsPerCubicMetre);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -247,6 +261,7 @@
             return Speed.FromMetresPerSecond(left.joulesPerKilogram / right.metresPerSecond);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -257,6 +272,7 @@
         {
             return KinematicViscosity.FromSquareMetresPerSecond(left.joulesPerKilogram / right.hertz);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -269,6 +285,7 @@
             return Length.FromMetres(left.joulesPerKilogram / right.metresPerSecondSquared);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -279,6 +296,7 @@
         {
             return Acceleration.FromMetresPerSecondSquared(left.joulesPerKilogram * right.reciprocalMetres);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -291,6 +309,7 @@
             return Stiffness.FromNewtonsPerMetre(left.joulesPerKilogram * right.kilogramsPerSquareMetre);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -301,6 +320,7 @@
         {
             return Pressure.FromPascals(left.joulesPerKilogram / right.cubicMetresPerKilogram);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -313,6 +333,7 @@
             return Power.FromWatts(left.joulesPerKilogram * right.kilogramsPerSecond);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -323,6 +344,8 @@
         {
             return Frequency.FromHertz(left.joulesPerKilogram / right.squareMetresPerSecond);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

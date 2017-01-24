@@ -1966,6 +1966,54 @@
       "CustomConversions": [],
       "PrefixConversions": [],
       "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Kilograms",
+          "Power": 1
+        },
+        {
+          "UnitName": "Moles",
+          "Power": -1
+        }
+      ],
+      "Name": "KilogramsPerMole",
+      "Symbol": "kg/mol",
+      "QuantityName": "MolarMass",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "GramsPerMole",
+          "Symbol": "g/mol",
+          "Factor": 0.001
+        }
+      ]
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Joules",
+          "Power": 1
+        },
+        {
+          "UnitName": "Kelvin",
+          "Power": -1
+        },
+        {
+          "UnitName": "Moles",
+          "Power": -1
+        }
+      ],
+      "Name": "JoulesPerKelvinMole",
+      "Symbol": "J/K⋅mol",
+      "QuantityName": "MolarHeatCapacity",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": []
     }
   ]
 }

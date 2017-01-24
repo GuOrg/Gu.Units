@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,45 +64,54 @@
         /// </summary>
         public double CubicMetres => this.cubicMetres;
 
+
         /// <summary>
         /// The quantity in Litres
         /// </summary>
         public double Litres => 1000 * this.cubicMetres;
+
 
         /// <summary>
         /// The quantity in Millilitres
         /// </summary>
         public double Millilitres => 1000000 * this.cubicMetres;
 
+
         /// <summary>
         /// The quantity in Centilitres
         /// </summary>
         public double Centilitres => 100000 * this.cubicMetres;
+
 
         /// <summary>
         /// The quantity in Decilitres
         /// </summary>
         public double Decilitres => 10000 * this.cubicMetres;
 
+
         /// <summary>
         /// The quantity in CubicCentimetres
         /// </summary>
         public double CubicCentimetres => 1000000 * this.cubicMetres;
+
 
         /// <summary>
         /// The quantity in CubicMillimetres
         /// </summary>
         public double CubicMillimetres => 1000000000 * this.cubicMetres;
 
+
         /// <summary>
         /// The quantity in CubicInches
         /// </summary>
         public double CubicInches => this.cubicMetres / 1.6387064E-05;
 
+
         /// <summary>
         /// The quantity in CubicDecimetres
         /// </summary>
         public double CubicDecimetres => 1000 * this.cubicMetres;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
@@ -221,6 +236,7 @@
             return new Volume(cubicMetres);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
@@ -229,6 +245,7 @@
         {
             return new Volume(litres / 1000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
@@ -239,6 +256,7 @@
             return new Volume(millilitres / 1000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
@@ -247,6 +265,7 @@
         {
             return new Volume(centilitres / 100000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
@@ -257,6 +276,7 @@
             return new Volume(decilitres / 10000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
@@ -265,6 +285,7 @@
         {
             return new Volume(cubicCentimetres / 1000000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
@@ -275,6 +296,7 @@
             return new Volume(cubicMillimetres / 1000000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
@@ -284,6 +306,7 @@
             return new Volume(1.6387064E-05 * cubicInches);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
@@ -292,6 +315,8 @@
         {
             return new Volume(cubicDecimetres / 1000);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -304,6 +329,7 @@
             return SpecificVolume.FromCubicMetresPerKilogram(left.cubicMetres / right.kilograms);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -314,6 +340,7 @@
         {
             return Area.FromSquareMetres(left.cubicMetres / right.metres);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -326,6 +353,7 @@
             return VolumetricFlow.FromCubicMetresPerSecond(left.cubicMetres / right.seconds);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -336,6 +364,7 @@
         {
             return Length.FromMetres(left.cubicMetres / right.squareMetres);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -348,6 +377,7 @@
             return Energy.FromJoules(left.cubicMetres * right.pascals);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -358,6 +388,7 @@
         {
             return Mass.FromKilograms(left.cubicMetres * right.kilogramsPerCubicMetre);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -370,6 +401,7 @@
             return VolumetricFlow.FromCubicMetresPerSecond(left.cubicMetres * right.hertz);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -380,6 +412,7 @@
         {
             return Time.FromSeconds(left.cubicMetres / right.cubicMetresPerSecond);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -392,6 +425,7 @@
             return Area.FromSquareMetres(left.cubicMetres * right.reciprocalMetres);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -402,6 +436,8 @@
         {
             return Mass.FromKilograms(left.cubicMetres / right.cubicMetresPerKilogram);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

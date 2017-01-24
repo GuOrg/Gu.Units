@@ -1,4 +1,10 @@
-﻿namespace Gu.Units.Json
+﻿
+
+
+
+
+
+namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -18,6 +24,7 @@
         /// A <see cref="JsonConverter"/> that writes values in <see cref="SolidAngleUnit.Steradians"/>
         /// </summary>
         public static readonly SolidAngleJsonConverter Steradians = new SolidAngleJsonConverter(SolidAngleUnit.Steradians);
+
 
         private readonly SolidAngleUnit unit;
 

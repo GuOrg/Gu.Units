@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,35 +64,42 @@
         /// </summary>
         public double Henrys => this.henrys;
 
+
         /// <summary>
         /// The quantity in Nanohenrys
         /// </summary>
         public double Nanohenrys => 1000000000 * this.henrys;
+
 
         /// <summary>
         /// The quantity in Microhenrys
         /// </summary>
         public double Microhenrys => 1000000 * this.henrys;
 
+
         /// <summary>
         /// The quantity in Millihenrys
         /// </summary>
         public double Millihenrys => 1000 * this.henrys;
+
 
         /// <summary>
         /// The quantity in Kilohenrys
         /// </summary>
         public double Kilohenrys => this.henrys / 1000;
 
+
         /// <summary>
         /// The quantity in Megahenrys
         /// </summary>
         public double Megahenrys => this.henrys / 1000000;
 
+
         /// <summary>
         /// The quantity in Gigahenrys
         /// </summary>
         public double Gigahenrys => this.henrys / 1000000000;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Inductance"/> from its string representation
@@ -211,6 +224,7 @@
             return new Inductance(henrys);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
@@ -219,6 +233,7 @@
         {
             return new Inductance(nanohenrys / 1000000000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
@@ -229,6 +244,7 @@
             return new Inductance(microhenrys / 1000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
@@ -237,6 +253,7 @@
         {
             return new Inductance(millihenrys / 1000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
@@ -247,6 +264,7 @@
             return new Inductance(1000 * kilohenrys);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
@@ -256,6 +274,7 @@
             return new Inductance(1000000 * megahenrys);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
@@ -264,6 +283,8 @@
         {
             return new Inductance(1000000000 * gigahenrys);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -276,6 +297,7 @@
             return Resistance.FromOhms(left.henrys / right.seconds);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -286,6 +308,7 @@
         {
             return MagneticFlux.FromWebers(left.henrys * right.amperes);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -298,6 +321,7 @@
             return Resistance.FromOhms(left.henrys * right.hertz);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -309,6 +333,7 @@
             return Time.FromSeconds(left.henrys / right.ohms);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -319,6 +344,8 @@
         {
             return Time.FromSeconds(left.henrys * right.siemens);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

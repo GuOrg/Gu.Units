@@ -1,5 +1,29 @@
 ﻿
-Read Settings and found 50 units
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Read Settings and found 52 units
 
 //-> Acceleration.generated.cs
 
@@ -67,6 +91,10 @@ Read Settings and found 50 units
 
 //-> MassFlow.generated.cs
 
+//-> MolarHeatCapacity.generated.cs
+
+//-> MolarMass.generated.cs
+
 //-> Momentum.generated.cs
 
 //-> Power.generated.cs
@@ -93,16 +121,18 @@ Read Settings and found 50 units
 
 //-> Unitless.generated.cs
 
-//-> Wavenumber.generated.cs
-
 //-> Voltage.generated.cs
 
 //-> Volume.generated.cs
 
 //-> VolumetricFlow.generated.cs
+
+//-> Wavenumber.generated.cs
 // Generated helper templates
 // Gu.Units\Gu.Units\Quantties.txt4
 // Generated items
+// Gu.Units\Gu.Units\MolarHeatCapacity.generated.cs
+// Gu.Units\Gu.Units\MolarMass.generated.cs
 // Gu.Units\Gu.Units\KinematicViscosity.generated.cs
 // Gu.Units\Gu.Units\MassFlow.generated.cs
 // Gu.Units\Gu.Units\SpecificVolume.generated.cs

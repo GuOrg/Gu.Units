@@ -1,4 +1,10 @@
-﻿namespace Gu.Units.Json
+﻿
+
+
+
+
+
+namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -19,25 +25,30 @@
         /// </summary>
         public static readonly ResistanceJsonConverter Ohms = new ResistanceJsonConverter(ResistanceUnit.Ohms);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Microohms"/>
         /// </summary>
         public static readonly ResistanceJsonConverter Microohms = new ResistanceJsonConverter(ResistanceUnit.Microohms);
+
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Milliohms"/>
         /// </summary>
         public static readonly ResistanceJsonConverter Milliohms = new ResistanceJsonConverter(ResistanceUnit.Milliohms);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Kiloohms"/>
         /// </summary>
         public static readonly ResistanceJsonConverter Kiloohms = new ResistanceJsonConverter(ResistanceUnit.Kiloohms);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ResistanceUnit.Megaohms"/>
         /// </summary>
         public static readonly ResistanceJsonConverter Megaohms = new ResistanceJsonConverter(ResistanceUnit.Megaohms);
+
 
         private readonly ResistanceUnit unit;
 

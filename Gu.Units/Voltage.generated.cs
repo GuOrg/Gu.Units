@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,35 +64,42 @@
         /// </summary>
         public double Volts => this.volts;
 
+
         /// <summary>
         /// The quantity in Millivolts
         /// </summary>
         public double Millivolts => 1000 * this.volts;
+
 
         /// <summary>
         /// The quantity in Kilovolts
         /// </summary>
         public double Kilovolts => this.volts / 1000;
 
+
         /// <summary>
         /// The quantity in Megavolts
         /// </summary>
         public double Megavolts => this.volts / 1000000;
+
 
         /// <summary>
         /// The quantity in Microvolts
         /// </summary>
         public double Microvolts => 1000000 * this.volts;
 
+
         /// <summary>
         /// The quantity in Nanovolts
         /// </summary>
         public double Nanovolts => 1000000000 * this.volts;
 
+
         /// <summary>
         /// The quantity in Gigavolts
         /// </summary>
         public double Gigavolts => this.volts / 1000000000;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Voltage"/> from its string representation
@@ -211,6 +224,7 @@
             return new Voltage(volts);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
@@ -219,6 +233,7 @@
         {
             return new Voltage(millivolts / 1000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
@@ -229,6 +244,7 @@
             return new Voltage(1000 * kilovolts);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
@@ -237,6 +253,7 @@
         {
             return new Voltage(1000000 * megavolts);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
@@ -247,6 +264,7 @@
             return new Voltage(microvolts / 1000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
@@ -256,6 +274,7 @@
             return new Voltage(nanovolts / 1000000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
@@ -264,6 +283,8 @@
         {
             return new Voltage(1000000000 * gigavolts);
         }
+
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -276,6 +297,7 @@
             return MagneticFlux.FromWebers(left.volts * right.seconds);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -286,6 +308,7 @@
         {
             return Power.FromWatts(left.volts * right.amperes);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -298,6 +321,7 @@
             return Resistance.FromOhms(left.volts / right.amperes);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -308,6 +332,7 @@
         {
             return MagneticFlux.FromWebers(left.volts / right.hertz);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -320,6 +345,7 @@
             return Current.FromAmperes(left.volts / right.ohms);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -330,6 +356,7 @@
         {
             return Energy.FromJoules(left.volts * right.coulombs);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -342,6 +369,7 @@
             return ElectricCharge.FromCoulombs(left.volts * right.farads);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -352,6 +380,7 @@
         {
             return Frequency.FromHertz(left.volts / right.webers);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -364,6 +393,7 @@
             return Current.FromAmperes(left.volts * right.siemens);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -375,6 +405,7 @@
             return KinematicViscosity.FromSquareMetresPerSecond(left.volts / right.teslas);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -385,6 +416,8 @@
         {
             return MagneticFieldStrength.FromTeslas(left.volts / right.squareMetresPerSecond);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

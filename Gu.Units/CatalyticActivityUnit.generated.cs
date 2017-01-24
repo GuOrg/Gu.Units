@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -16,6 +22,7 @@
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly CatalyticActivityUnit Katals = new CatalyticActivityUnit(katals => katals, katals => katals, "kat");
+
 
         private readonly Func<double, double> toKatals;
         private readonly Func<double, double> fromKatals;

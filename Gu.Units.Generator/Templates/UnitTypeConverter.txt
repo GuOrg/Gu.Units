@@ -1,4 +1,11 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -6,15 +13,15 @@
     using System.Globalization;
 
     /// <devdoc>
-    /// <para>Provides a type converter to convert <see cref='Gu.Units.KinematicViscosityUnit'/>
+    /// <para>Provides a type converter to convert <see cref='Gu.Units.MolarHeatCapacityUnit'/>
     /// objects to and from various
     /// other representations.</para>
     /// </devdoc>
-    public class KinematicViscosityUnitTypeConverter : TypeConverter
+    public class MolarHeatCapacityUnitTypeConverter : TypeConverter
     {
         /// <devdoc>
         ///    <para>Gets a value indicating whether this converter can
-        ///       convert an object in the given source type to a <see cref='Gu.Units.KinematicViscosityUnit'/> object using the
+        ///       convert an object in the given source type to a <see cref='Gu.Units.MolarHeatCapacityUnit'/> object using the
         ///       specified context.</para>
         /// </devdoc>
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
@@ -42,7 +49,7 @@
         }
 
         /// <devdoc>
-        /// <para>Converts the given object to a <see cref='Gu.Units.KinematicViscosityUnit'/>
+        /// <para>Converts the given object to a <see cref='Gu.Units.MolarHeatCapacityUnit'/>
         /// object.</para>
         /// </devdoc>
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
@@ -50,13 +57,13 @@
             var text = value as string;
             if (text != null)
             {
-                KinematicViscosityUnit result;
-                if (KinematicViscosityUnit.TryParse(text, out result))
+                MolarHeatCapacityUnit result;
+                if (MolarHeatCapacityUnit.TryParse(text, out result))
                 {
                     return result;
                 }
 
-                var message = $"Could not convert the string '{text}' to an instance of KinematicViscosityUnit)";
+                var message = $"Could not convert the string '{text}' to an instance of MolarHeatCapacityUnit)";
                 throw new NotSupportedException(message);
             }
 
@@ -72,16 +79,16 @@
         /// </devdoc>
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            if (value is KinematicViscosityUnit && destinationType != null)
+            if (value is MolarHeatCapacityUnit && destinationType != null)
             {
-                var unit = (KinematicViscosityUnit) value;
+                var unit = (MolarHeatCapacityUnit) value;
                 if (destinationType == typeof (string))
                 {
                     return unit.ToString();
                 }
                 else if(destinationType == typeof(InstanceDescriptor))
                 {
-                    var parseMethod = typeof(KinematicViscosityUnit).GetMethod(nameof(KinematicViscosityUnit.Parse), new Type[] { typeof(string) });
+                    var parseMethod = typeof(MolarHeatCapacityUnit).GetMethod(nameof(MolarHeatCapacityUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)
                     {
                         var args = new object[] { unit.Symbol };

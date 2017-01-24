@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,30 +64,36 @@
         /// </summary>
         public double KilogramsPerCubicMetre => this.kilogramsPerCubicMetre;
 
+
         /// <summary>
         /// The quantity in GramsPerCubicMillimetre
         /// </summary>
         public double GramsPerCubicMillimetre => this.kilogramsPerCubicMetre / 1000000;
+
 
         /// <summary>
         /// The quantity in GramsPerCubicCentimetre
         /// </summary>
         public double GramsPerCubicCentimetre => this.kilogramsPerCubicMetre / 1000;
 
+
         /// <summary>
         /// The quantity in MilligramsPerCubicMillimetre
         /// </summary>
         public double MilligramsPerCubicMillimetre => this.kilogramsPerCubicMetre / 1000;
+
 
         /// <summary>
         /// The quantity in GramsPerCubicMetre
         /// </summary>
         public double GramsPerCubicMetre => 1000 * this.kilogramsPerCubicMetre;
 
+
         /// <summary>
         /// The quantity in MilligramsPerCubicMetre
         /// </summary>
         public double MilligramsPerCubicMetre => 1000000 * this.kilogramsPerCubicMetre;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Density"/> from its string representation
@@ -206,6 +218,7 @@
             return new Density(kilogramsPerCubicMetre);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
         /// </summary>
@@ -214,6 +227,7 @@
         {
             return new Density(1000000 * gramsPerCubicMillimetre);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
@@ -224,6 +238,7 @@
             return new Density(1000 * gramsPerCubicCentimetre);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
         /// </summary>
@@ -232,6 +247,7 @@
         {
             return new Density(1000 * milligramsPerCubicMillimetre);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
@@ -242,6 +258,7 @@
             return new Density(gramsPerCubicMetre / 1000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
         /// </summary>
@@ -250,6 +267,8 @@
         {
             return new Density(milligramsPerCubicMetre / 1000000);
         }
+
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -262,6 +281,7 @@
             return AreaDensity.FromKilogramsPerSquareMetre(left.kilogramsPerCubicMetre * right.metres);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -272,6 +292,7 @@
         {
             return Mass.FromKilograms(left.kilogramsPerCubicMetre * right.cubicMetres);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -284,6 +305,7 @@
             return MassFlow.FromKilogramsPerSecond(left.kilogramsPerCubicMetre * right.cubicMetresPerSecond);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -294,6 +316,7 @@
         {
             return Pressure.FromPascals(left.kilogramsPerCubicMetre * right.joulesPerKilogram);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -306,6 +329,7 @@
             return AreaDensity.FromKilogramsPerSquareMetre(left.kilogramsPerCubicMetre / right.reciprocalMetres);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -317,6 +341,8 @@
             return Wavenumber.FromReciprocalMetres(left.kilogramsPerCubicMetre / right.kilogramsPerSquareMetre);
         }
 
+
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -327,6 +353,7 @@
         {
             return SpecificVolume.FromCubicMetresPerKilogram(left / right.kilogramsPerCubicMetre);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

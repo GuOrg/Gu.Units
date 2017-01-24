@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -17,11 +23,13 @@
         /// </summary>
         public static readonly JerkUnit MetresPerSecondCubed = new JerkUnit(metresPerSecondCubed => metresPerSecondCubed, metresPerSecondCubed => metresPerSecondCubed, "m/s³");
 
+
         /// <summary>
         /// The MillimetresPerSecondCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly JerkUnit MillimetresPerSecondCubed = new JerkUnit(millimetresPerSecondCubed => millimetresPerSecondCubed / 1000, metresPerSecondCubed => 1000 * metresPerSecondCubed, "mm⋅s⁻³");
+
 
         /// <summary>
         /// The CentimetresPerSecondCubed unit
@@ -29,11 +37,13 @@
         /// </summary>
         public static readonly JerkUnit CentimetresPerSecondCubed = new JerkUnit(centimetresPerSecondCubed => centimetresPerSecondCubed / 100, metresPerSecondCubed => 100 * metresPerSecondCubed, "cm⋅s⁻³");
 
+
         /// <summary>
         /// The MillimetresPerHourCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly JerkUnit MillimetresPerHourCubed = new JerkUnit(millimetresPerHourCubed => millimetresPerHourCubed / 46656000000000, metresPerSecondCubed => 46656000000000 * metresPerSecondCubed, "mm⋅h⁻³");
+
 
         /// <summary>
         /// The MillimetresPerMinuteCubed unit
@@ -41,11 +51,13 @@
         /// </summary>
         public static readonly JerkUnit MillimetresPerMinuteCubed = new JerkUnit(millimetresPerMinuteCubed => millimetresPerMinuteCubed / 216000000, metresPerSecondCubed => 216000000 * metresPerSecondCubed, "mm⋅min⁻³");
 
+
         /// <summary>
         /// The MetresPerHourCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly JerkUnit MetresPerHourCubed = new JerkUnit(metresPerHourCubed => metresPerHourCubed / 46656000000, metresPerSecondCubed => 46656000000 * metresPerSecondCubed, "m⋅h⁻³");
+
 
         /// <summary>
         /// The MetresPerMinuteCubed unit
@@ -53,17 +65,20 @@
         /// </summary>
         public static readonly JerkUnit MetresPerMinuteCubed = new JerkUnit(metresPerMinuteCubed => metresPerMinuteCubed / 216000, metresPerSecondCubed => 216000 * metresPerSecondCubed, "m⋅min⁻³");
 
+
         /// <summary>
         /// The CentimetresPerHourCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly JerkUnit CentimetresPerHourCubed = new JerkUnit(centimetresPerHourCubed => centimetresPerHourCubed / 4665600000000, metresPerSecondCubed => 4665600000000 * metresPerSecondCubed, "cm⋅h⁻³");
 
+
         /// <summary>
         /// The CentimetresPerMinuteCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly JerkUnit CentimetresPerMinuteCubed = new JerkUnit(centimetresPerMinuteCubed => centimetresPerMinuteCubed / 21600000, metresPerSecondCubed => 21600000 * metresPerSecondCubed, "cm⋅min⁻³");
+
 
         private readonly Func<double, double> toMetresPerSecondCubed;
         private readonly Func<double, double> fromMetresPerSecondCubed;

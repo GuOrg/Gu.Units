@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -17,11 +23,13 @@
         /// </summary>
         public static readonly VolumeUnit CubicMetres = new VolumeUnit(cubicMetres => cubicMetres, cubicMetres => cubicMetres, "m³");
 
+
         /// <summary>
         /// The Litres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumeUnit Litres = new VolumeUnit(litres => litres / 1000, cubicMetres => 1000 * cubicMetres, "L");
+
 
         /// <summary>
         /// The Millilitres unit
@@ -29,11 +37,13 @@
         /// </summary>
         public static readonly VolumeUnit Millilitres = new VolumeUnit(millilitres => millilitres / 1000000, cubicMetres => 1000000 * cubicMetres, "ml");
 
+
         /// <summary>
         /// The Centilitres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumeUnit Centilitres = new VolumeUnit(centilitres => centilitres / 100000, cubicMetres => 100000 * cubicMetres, "cl");
+
 
         /// <summary>
         /// The Decilitres unit
@@ -41,11 +51,13 @@
         /// </summary>
         public static readonly VolumeUnit Decilitres = new VolumeUnit(decilitres => decilitres / 10000, cubicMetres => 10000 * cubicMetres, "dl");
 
+
         /// <summary>
         /// The CubicCentimetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumeUnit CubicCentimetres = new VolumeUnit(cubicCentimetres => cubicCentimetres / 1000000, cubicMetres => 1000000 * cubicMetres, "cm³");
+
 
         /// <summary>
         /// The CubicMillimetres unit
@@ -53,17 +65,20 @@
         /// </summary>
         public static readonly VolumeUnit CubicMillimetres = new VolumeUnit(cubicMillimetres => cubicMillimetres / 1000000000, cubicMetres => 1000000000 * cubicMetres, "mm³");
 
+
         /// <summary>
         /// The CubicInches unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumeUnit CubicInches = new VolumeUnit(cubicInches => 1.6387064E-05 * cubicInches, cubicMetres => cubicMetres / 1.6387064E-05, "in³");
 
+
         /// <summary>
         /// The CubicDecimetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumeUnit CubicDecimetres = new VolumeUnit(cubicDecimetres => cubicDecimetres / 1000, cubicMetres => 1000 * cubicMetres, "dm³");
+
 
         private readonly Func<double, double> toCubicMetres;
         private readonly Func<double, double> fromCubicMetres;

@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -17,17 +23,20 @@
         /// </summary>
         public static readonly TemperatureUnit Kelvin = new TemperatureUnit(kelvin => kelvin, kelvin => kelvin, "K");
 
+
         /// <summary>
         /// The Celsius unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TemperatureUnit Celsius = new TemperatureUnit(celsius => celsius + 273.15, kelvin => kelvin - 273.15, "°C");
 
+
         /// <summary>
         /// The Fahrenheit unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly TemperatureUnit Fahrenheit = new TemperatureUnit(fahrenheit => (fahrenheit + 459.67) / 1.8, kelvin => 1.8 * kelvin - 459.67, "°F");
+
 
         private readonly Func<double, double> toKelvin;
         private readonly Func<double, double> fromKelvin;

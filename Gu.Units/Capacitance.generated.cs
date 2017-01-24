@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,35 +64,42 @@
         /// </summary>
         public double Farads => this.farads;
 
+
         /// <summary>
         /// The quantity in Nanofarads
         /// </summary>
         public double Nanofarads => 1000000000 * this.farads;
+
 
         /// <summary>
         /// The quantity in Microfarads
         /// </summary>
         public double Microfarads => 1000000 * this.farads;
 
+
         /// <summary>
         /// The quantity in Millifarads
         /// </summary>
         public double Millifarads => 1000 * this.farads;
+
 
         /// <summary>
         /// The quantity in Kilofarads
         /// </summary>
         public double Kilofarads => this.farads / 1000;
 
+
         /// <summary>
         /// The quantity in Megafarads
         /// </summary>
         public double Megafarads => this.farads / 1000000;
 
+
         /// <summary>
         /// The quantity in Gigafarads
         /// </summary>
         public double Gigafarads => this.farads / 1000000000;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
@@ -211,6 +224,7 @@
             return new Capacitance(farads);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
@@ -219,6 +233,7 @@
         {
             return new Capacitance(nanofarads / 1000000000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
@@ -229,6 +244,7 @@
             return new Capacitance(microfarads / 1000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
@@ -237,6 +253,7 @@
         {
             return new Capacitance(millifarads / 1000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
@@ -247,6 +264,7 @@
             return new Capacitance(1000 * kilofarads);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
@@ -256,6 +274,7 @@
             return new Capacitance(1000000 * megafarads);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
@@ -264,6 +283,8 @@
         {
             return new Capacitance(1000000000 * gigafarads);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -276,6 +297,7 @@
             return ElectricalConductance.FromSiemens(left.farads / right.seconds);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -286,6 +308,7 @@
         {
             return ElectricalConductance.FromSiemens(left.farads * right.hertz);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -298,6 +321,7 @@
             return ElectricCharge.FromCoulombs(left.farads * right.volts);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -309,6 +333,7 @@
             return Time.FromSeconds(left.farads * right.ohms);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -319,6 +344,8 @@
         {
             return Time.FromSeconds(left.farads / right.siemens);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

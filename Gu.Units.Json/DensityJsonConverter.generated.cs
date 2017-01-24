@@ -1,4 +1,10 @@
-﻿namespace Gu.Units.Json
+﻿
+
+
+
+
+
+namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -19,30 +25,36 @@
         /// </summary>
         public static readonly DensityJsonConverter KilogramsPerCubicMetre = new DensityJsonConverter(DensityUnit.KilogramsPerCubicMetre);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="DensityUnit.GramsPerCubicMillimetre"/>
         /// </summary>
         public static readonly DensityJsonConverter GramsPerCubicMillimetre = new DensityJsonConverter(DensityUnit.GramsPerCubicMillimetre);
+
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="DensityUnit.GramsPerCubicCentimetre"/>
         /// </summary>
         public static readonly DensityJsonConverter GramsPerCubicCentimetre = new DensityJsonConverter(DensityUnit.GramsPerCubicCentimetre);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="DensityUnit.MilligramsPerCubicMillimetre"/>
         /// </summary>
         public static readonly DensityJsonConverter MilligramsPerCubicMillimetre = new DensityJsonConverter(DensityUnit.MilligramsPerCubicMillimetre);
+
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="DensityUnit.GramsPerCubicMetre"/>
         /// </summary>
         public static readonly DensityJsonConverter GramsPerCubicMetre = new DensityJsonConverter(DensityUnit.GramsPerCubicMetre);
 
+
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="DensityUnit.MilligramsPerCubicMetre"/>
         /// </summary>
         public static readonly DensityJsonConverter MilligramsPerCubicMetre = new DensityJsonConverter(DensityUnit.MilligramsPerCubicMetre);
+
 
         private readonly DensityUnit unit;
 

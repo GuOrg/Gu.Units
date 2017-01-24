@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,40 +64,48 @@
         /// </summary>
         public double Kilograms => this.kilograms;
 
+
         /// <summary>
         /// The quantity in Grams
         /// </summary>
         public double Grams => 1000 * this.kilograms;
+
 
         /// <summary>
         /// The quantity in Milligrams
         /// </summary>
         public double Milligrams => 1000000 * this.kilograms;
 
+
         /// <summary>
         /// The quantity in Micrograms
         /// </summary>
         public double Micrograms => 1000000000 * this.kilograms;
+
 
         /// <summary>
         /// The quantity in AvoirdupoisPounds
         /// </summary>
         public double AvoirdupoisPounds => this.kilograms / 0.45359237;
 
+
         /// <summary>
         /// The quantity in AvoirdupoisOunces
         /// </summary>
         public double AvoirdupoisOunces => this.kilograms / 0.028349523125;
+
 
         /// <summary>
         /// The quantity in TroyOunces
         /// </summary>
         public double TroyOunces => this.kilograms / 0.0311034768;
 
+
         /// <summary>
         /// The quantity in TroyGrains
         /// </summary>
         public double TroyGrains => this.kilograms / 6.479891E-05;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
@@ -216,6 +230,7 @@
             return new Mass(kilograms);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
@@ -224,6 +239,7 @@
         {
             return new Mass(grams / 1000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
@@ -234,6 +250,7 @@
             return new Mass(milligrams / 1000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
@@ -242,6 +259,7 @@
         {
             return new Mass(micrograms / 1000000000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
@@ -252,6 +270,7 @@
             return new Mass(0.45359237 * avoirdupoisPounds);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
@@ -260,6 +279,7 @@
         {
             return new Mass(0.028349523125 * avoirdupoisOunces);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
@@ -270,6 +290,7 @@
             return new Mass(0.0311034768 * troyOunces);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
@@ -278,6 +299,8 @@
         {
             return new Mass(6.479891E-05 * troyGrains);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -290,6 +313,19 @@
             return MassFlow.FromKilogramsPerSecond(left.kilograms / right.seconds);
         }
 
+
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="MolarMass"/> that is the result from the division.</returns>
+        public static MolarMass operator /(Mass left, AmountOfSubstance right)
+        {
+            return MolarMass.FromKilogramsPerMole(left.kilograms / right.moles);
+        }
+
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -300,6 +336,7 @@
         {
             return AreaDensity.FromKilogramsPerSquareMetre(left.kilograms / right.squareMetres);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -312,6 +349,7 @@
             return Density.FromKilogramsPerCubicMetre(left.kilograms / right.cubicMetres);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -322,6 +360,7 @@
         {
             return Volume.FromCubicMetres(left.kilograms / right.kilogramsPerCubicMetre);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -334,6 +373,7 @@
             return Momentum.FromNewtonSecond(left.kilograms * right.metresPerSecond);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -344,6 +384,7 @@
         {
             return MassFlow.FromKilogramsPerSecond(left.kilograms * right.hertz);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -356,6 +397,7 @@
             return Force.FromNewtons(left.kilograms * right.metresPerSecondSquared);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -366,6 +408,7 @@
         {
             return Energy.FromJoules(left.kilograms * right.joulesPerKilogram);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -378,6 +421,7 @@
             return Area.FromSquareMetres(left.kilograms / right.kilogramsPerSquareMetre);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -389,6 +433,7 @@
             return Volume.FromCubicMetres(left.kilograms * right.cubicMetresPerKilogram);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -399,6 +444,20 @@
         {
             return Time.FromSeconds(left.kilograms / right.kilogramsPerSecond);
         }
+
+
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="AmountOfSubstance"/> that is the result from the division.</returns>
+        public static AmountOfSubstance operator /(Mass left, MolarMass right)
+        {
+            return AmountOfSubstance.FromMoles(left.kilograms / right.kilogramsPerMole);
+        }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -57,6 +63,7 @@
         /// The quantity in katals".
         /// </summary>
         public double Katals => this.katals;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
@@ -181,6 +188,8 @@
             return new CatalyticActivity(katals);
         }
 
+
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -191,6 +200,7 @@
         {
             return AmountOfSubstance.FromMoles(left.katals * right.seconds);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -203,6 +213,7 @@
             return Frequency.FromHertz(left.katals / right.moles);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -213,6 +224,20 @@
         {
             return AmountOfSubstance.FromMoles(left.katals / right.hertz);
         }
+
+
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="MassFlow"/> that is the result from the multiplication.</returns>
+        public static MassFlow operator *(CatalyticActivity left, MolarMass right)
+        {
+            return MassFlow.FromKilogramsPerSecond(left.katals * right.kilogramsPerMole);
+        }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

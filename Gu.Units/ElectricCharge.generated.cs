@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -58,35 +64,42 @@
         /// </summary>
         public double Coulombs => this.coulombs;
 
+
         /// <summary>
         /// The quantity in Nanocoulombs
         /// </summary>
         public double Nanocoulombs => 1000000000 * this.coulombs;
+
 
         /// <summary>
         /// The quantity in Microcoulombs
         /// </summary>
         public double Microcoulombs => 1000000 * this.coulombs;
 
+
         /// <summary>
         /// The quantity in Millicoulombs
         /// </summary>
         public double Millicoulombs => 1000 * this.coulombs;
+
 
         /// <summary>
         /// The quantity in Kilocoulombs
         /// </summary>
         public double Kilocoulombs => this.coulombs / 1000;
 
+
         /// <summary>
         /// The quantity in Megacoulombs
         /// </summary>
         public double Megacoulombs => this.coulombs / 1000000;
 
+
         /// <summary>
         /// The quantity in Gigacoulombs
         /// </summary>
         public double Gigacoulombs => this.coulombs / 1000000000;
+
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
@@ -211,6 +224,7 @@
             return new ElectricCharge(coulombs);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
         /// </summary>
@@ -219,6 +233,7 @@
         {
             return new ElectricCharge(nanocoulombs / 1000000000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
@@ -229,6 +244,7 @@
             return new ElectricCharge(microcoulombs / 1000000);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
         /// </summary>
@@ -237,6 +253,7 @@
         {
             return new ElectricCharge(millicoulombs / 1000);
         }
+
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
@@ -247,6 +264,7 @@
             return new ElectricCharge(1000 * kilocoulombs);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
         /// </summary>
@@ -256,6 +274,7 @@
             return new ElectricCharge(1000000 * megacoulombs);
         }
 
+
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
         /// </summary>
@@ -264,6 +283,8 @@
         {
             return new ElectricCharge(1000000000 * gigacoulombs);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -276,6 +297,7 @@
             return Current.FromAmperes(left.coulombs / right.seconds);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -286,6 +308,7 @@
         {
             return Time.FromSeconds(left.coulombs / right.amperes);
         }
+
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -298,6 +321,7 @@
             return Current.FromAmperes(left.coulombs * right.hertz);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -308,6 +332,7 @@
         {
             return Energy.FromJoules(left.coulombs * right.volts);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -320,6 +345,7 @@
             return Capacitance.FromFarads(left.coulombs / right.volts);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -330,6 +356,7 @@
         {
             return MagneticFlux.FromWebers(left.coulombs * right.ohms);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -342,6 +369,7 @@
             return Voltage.FromVolts(left.coulombs / right.farads);
         }
 
+
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -352,6 +380,7 @@
         {
             return ElectricalConductance.FromSiemens(left.coulombs / right.webers);
         }
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -364,6 +393,7 @@
             return MagneticFlux.FromWebers(left.coulombs / right.siemens);
         }
 
+
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -374,6 +404,8 @@
         {
             return MassFlow.FromKilogramsPerSecond(left.coulombs * right.teslas);
         }
+
+
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

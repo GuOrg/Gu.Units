@@ -1,4 +1,10 @@
-﻿namespace Gu.Units
+﻿
+
+
+
+
+
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -17,11 +23,13 @@
         /// </summary>
         public static readonly VoltageUnit Volts = new VoltageUnit(volts => volts, volts => volts, "V");
 
+
         /// <summary>
         /// The Millivolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VoltageUnit Millivolts = new VoltageUnit(millivolts => millivolts / 1000, volts => 1000 * volts, "mV");
+
 
         /// <summary>
         /// The Kilovolts unit
@@ -29,11 +37,13 @@
         /// </summary>
         public static readonly VoltageUnit Kilovolts = new VoltageUnit(kilovolts => 1000 * kilovolts, volts => volts / 1000, "kV");
 
+
         /// <summary>
         /// The Megavolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VoltageUnit Megavolts = new VoltageUnit(megavolts => 1000000 * megavolts, volts => volts / 1000000, "MV");
+
 
         /// <summary>
         /// The Microvolts unit
@@ -41,17 +51,20 @@
         /// </summary>
         public static readonly VoltageUnit Microvolts = new VoltageUnit(microvolts => microvolts / 1000000, volts => 1000000 * volts, "µV");
 
+
         /// <summary>
         /// The Nanovolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VoltageUnit Nanovolts = new VoltageUnit(nanovolts => nanovolts / 1000000000, volts => 1000000000 * volts, "nV");
 
+
         /// <summary>
         /// The Gigavolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VoltageUnit Gigavolts = new VoltageUnit(gigavolts => 1000000000 * gigavolts, volts => volts / 1000000000, "GV");
+
 
         private readonly Func<double, double> toVolts;
         private readonly Func<double, double> fromVolts;

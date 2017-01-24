@@ -1,4 +1,10 @@
-﻿namespace Gu.Units.Json
+﻿
+
+
+
+
+
+namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -18,6 +24,7 @@
         /// A <see cref="JsonConverter"/> that writes values in <see cref="TorqueUnit.NewtonMetres"/>
         /// </summary>
         public static readonly TorqueJsonConverter NewtonMetres = new TorqueJsonConverter(TorqueUnit.NewtonMetres);
+
 
         private readonly TorqueUnit unit;
 

@@ -1,4 +1,10 @@
-﻿namespace Gu.Units.Wpf
+﻿
+
+
+
+
+
+namespace Gu.Units.Wpf
 {
     using System;
     using System.ComponentModel;
@@ -8,40 +14,40 @@
     using System.Windows.Markup;
 
     /// <summary>
-    /// An <see cref="IValueConverter"/> for quantities of type <see cref="KinematicViscosity"/>
+    /// An <see cref="IValueConverter"/> for quantities of type <see cref="MolarHeatCapacity"/>
     /// </summary>
     [MarkupExtensionReturnType(typeof(IValueConverter))]
-    public class KinematicViscosityConverter : MarkupExtension, IValueConverter
+    public class MolarHeatCapacityConverter : MarkupExtension, IValueConverter
     {
-        private KinematicViscosityUnit? unit;
+        private MolarHeatCapacityUnit? unit;
         private Binding binding;
-        private QuantityFormat<KinematicViscosityUnit> quantityFormat;
-        private QuantityFormat<KinematicViscosityUnit> bindingQuantityFormat;
+        private QuantityFormat<MolarHeatCapacityUnit> quantityFormat;
+        private QuantityFormat<MolarHeatCapacityUnit> bindingQuantityFormat;
         private string valueFormat;
         private bool initialized;
         private StringBuilder errorText = new StringBuilder();
 
 		/// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.KinematicViscosityConverter"/>.
+        /// Initializes a new instance of <see cref="Gu.Units.Wpf.MolarHeatCapacityConverter"/>.
         /// </summary>
-        public KinematicViscosityConverter()
+        public MolarHeatCapacityConverter()
         {
         }
 
 		/// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.KinematicViscosityConverter"/>.
+        /// Initializes a new instance of <see cref="Gu.Units.Wpf.MolarHeatCapacityConverter"/>.
         /// </summary>
-        /// <param name="unit"><see cref="Gu.Units.KinematicViscosityUnit"/>.</param>
-        public KinematicViscosityConverter(KinematicViscosityUnit unit)
+        /// <param name="unit"><see cref="Gu.Units.MolarHeatCapacityUnit"/>.</param>
+        public MolarHeatCapacityConverter(MolarHeatCapacityUnit unit)
         {
             Unit = unit;
         }
 
 		/// <summary>
-        /// Gets and sets the <see cref="KinematicViscosityUnit"/>
+        /// Gets and sets the <see cref="MolarHeatCapacityUnit"/>
         /// </summary>
-        [ConstructorArgument("unit"), TypeConverter(typeof(KinematicViscosityUnitTypeConverter))]
-        public KinematicViscosityUnit? Unit
+        [ConstructorArgument("unit"), TypeConverter(typeof(MolarHeatCapacityUnitTypeConverter))]
+        public MolarHeatCapacityUnit? Unit
         {
             get { return this.unit; }
             set
@@ -68,14 +74,14 @@
             get { return this.valueFormat; }
             set
             {
-                if (!StringFormatParser<KinematicViscosityUnit>.CanParseValueFormat(value))
+                if (!StringFormatParser<MolarHeatCapacityUnit>.CanParseValueFormat(value))
                 {
                     if (Is.DesignMode)
                     {
-                        StringFormatParser<KinematicViscosityUnit>.VerifyValueFormat(value);
+                        StringFormatParser<MolarHeatCapacityUnit>.VerifyValueFormat(value);
                     }
 
-                    this.errorText.AppendLine(StringFormatParser<KinematicViscosityUnit>.CreateFormatErrorString(value, typeof(double)));
+                    this.errorText.AppendLine(StringFormatParser<MolarHeatCapacityUnit>.CreateFormatErrorString(value, typeof(double)));
                 }
 
                 this.valueFormat = value;
@@ -100,7 +106,7 @@
             get { return this.quantityFormat?.CompositeFormat; }
             set
             {
-                if (StringFormatParser<KinematicViscosityUnit>.TryParse(value, out this.quantityFormat))
+                if (StringFormatParser<MolarHeatCapacityUnit>.TryParse(value, out this.quantityFormat))
                 {
                     if (this.unit != null && this.unit != this.quantityFormat.Unit)
                     {
@@ -115,10 +121,10 @@
                 {
                     if (Is.DesignMode)
                     {
-                        StringFormatParser<KinematicViscosityUnit>.VerifyQuantityFormat(value);
+                        StringFormatParser<MolarHeatCapacityUnit>.VerifyQuantityFormat(value);
                     }
 
-                    this.errorText.AppendLine(StringFormatParser<KinematicViscosityUnit>.CreateFormatErrorString(value, typeof(KinematicViscosityUnit)));
+                    this.errorText.AppendLine(StringFormatParser<MolarHeatCapacityUnit>.CreateFormatErrorString(value, typeof(MolarHeatCapacityUnit)));
                 }
             }
         }
@@ -171,9 +177,9 @@
                 message += $"{GetType().Name} does not support converting to {targetType.Name}";
             }
 
-            if (value != null && !(value is KinematicViscosity))
+            if (value != null && !(value is MolarHeatCapacity))
             {
-                message += $"{GetType().Name} only supports converting from {typeof(KinematicViscosity)}";
+                message += $"{GetType().Name} only supports converting from {typeof(MolarHeatCapacity)}";
             }
 
             if (message != string.Empty)
@@ -194,33 +200,33 @@
                     : null;
             }
 
-            var kinematicViscosity = (KinematicViscosity)value;
+            var molarHeatCapacity = (MolarHeatCapacity)value;
             if (this.bindingQuantityFormat != null)
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return kinematicViscosity.GetValue(this.unit.Value);
+                    return molarHeatCapacity.GetValue(this.unit.Value);
                 }
 
-                return kinematicViscosity;
+                return molarHeatCapacity;
             }
 
             if (targetType == typeof(string) || targetType == typeof(object))
             {
                 if (UnitInput == Wpf.UnitInput.SymbolRequired)
                 {
-                    return kinematicViscosity.ToString(this.quantityFormat, culture);
+                    return molarHeatCapacity.ToString(this.quantityFormat, culture);
                 }
 				
                 if (this.ValueFormat != null)
                 {
-                    return kinematicViscosity.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                    return molarHeatCapacity.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
                 }
 
-                return kinematicViscosity.GetValue(this.unit.Value);
+                return molarHeatCapacity.GetValue(this.unit.Value);
             }
 
-            return kinematicViscosity.GetValue(this.unit.Value);
+            return molarHeatCapacity.GetValue(this.unit.Value);
         }
 
 		/// <inheritdoc />
@@ -235,7 +241,7 @@
             }
 
             var message = this.errorText.ToString();
-            if (!(targetType == typeof(KinematicViscosity) || targetType == typeof(KinematicViscosity?)))
+            if (!(targetType == typeof(MolarHeatCapacity) || targetType == typeof(MolarHeatCapacity?)))
             {
                 message += $"{GetType().Name} does not support converting to {targetType.Name}";
             }
@@ -259,7 +265,7 @@
 
             if (value is double)
             {
-                return new KinematicViscosity((double)value, this.unit.Value);
+                return new MolarHeatCapacity((double)value, this.unit.Value);
             }
 
             var text = value as string;
@@ -276,10 +282,10 @@
                         double d;
                         if (double.TryParse(text, NumberStyles.Float, culture, out d))
                         {
-                            return new KinematicViscosity(d, this.unit.Value);
+                            return new MolarHeatCapacity(d, this.unit.Value);
                         }
-                        KinematicViscosity result;
-                        if (KinematicViscosity.TryParse(text, NumberStyles.Float, culture, out result))
+                        MolarHeatCapacity result;
+                        if (MolarHeatCapacity.TryParse(text, NumberStyles.Float, culture, out result))
                         {
                             return $"#{text}#"; // returning modified text so that TypeConverter fails and we get an error
                         }
@@ -296,7 +302,7 @@
                             WhiteSpaceReader.TryRead(text, ref pos);
                             if (pos == text.Length)
                             {
-                                return new KinematicViscosity(d, this.unit.Value);
+                                return new MolarHeatCapacity(d, this.unit.Value);
                             }
                         }
 
@@ -304,8 +310,8 @@
                     }
                 case Wpf.UnitInput.SymbolRequired:
                     {
-                        KinematicViscosity result;
-                        if (KinematicViscosity.TryParse(text, NumberStyles.Float, culture, out result))
+                        MolarHeatCapacity result;
+                        if (MolarHeatCapacity.TryParse(text, NumberStyles.Float, culture, out result))
                         {
                             return result;
                         }
@@ -344,7 +350,7 @@
             {
                 if (this.unit != null && SymbolFormat != null)
                 {
-                    this.quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(ValueFormat, this.unit.Value, SymbolFormat.Value);
+                    this.quantityFormat = FormatCache<MolarHeatCapacityUnit>.GetOrCreate(ValueFormat, this.unit.Value, SymbolFormat.Value);
                 }
             }
 
@@ -398,7 +404,7 @@
                         }
                         else if (this.SymbolFormat != null)
                         {
-                            this.quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(this.ValueFormat, this.unit.Value, this.SymbolFormat.Value);
+                            this.quantityFormat = FormatCache<MolarHeatCapacityUnit>.GetOrCreate(this.ValueFormat, this.unit.Value, this.SymbolFormat.Value);
                             if (this.UnitInput == null)
                             {
                                 this.UnitInput = Wpf.UnitInput.SymbolRequired;
@@ -410,7 +416,7 @@
                         }
                         else
                         {
-                            this.quantityFormat = FormatCache<KinematicViscosityUnit>.GetOrCreate(this.ValueFormat, this.unit.Value);
+                            this.quantityFormat = FormatCache<MolarHeatCapacityUnit>.GetOrCreate(this.ValueFormat, this.unit.Value);
                             if (this.UnitInput == null)
                             {
                                 this.UnitInput = Wpf.UnitInput.ScalarOnly;
