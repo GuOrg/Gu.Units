@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly ForceUnit Newtons = new ForceUnit(newtons => newtons, newtons => newtons, "N");
 
-
         /// <summary>
         /// The Nanonewtons unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ForceUnit Nanonewtons = new ForceUnit(nanonewtons => nanonewtons / 1000000000, newtons => 1000000000 * newtons, "nN");
-
 
         /// <summary>
         /// The Micronewtons unit
@@ -37,13 +29,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly ForceUnit Micronewtons = new ForceUnit(micronewtons => micronewtons / 1000000, newtons => 1000000 * newtons, "µN");
 
-
         /// <summary>
         /// The Millinewtons unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ForceUnit Millinewtons = new ForceUnit(millinewtons => millinewtons / 1000, newtons => 1000 * newtons, "mN");
-
 
         /// <summary>
         /// The Kilonewtons unit
@@ -51,20 +41,17 @@ namespace Gu.Units
         /// </summary>
         public static readonly ForceUnit Kilonewtons = new ForceUnit(kilonewtons => 1000 * kilonewtons, newtons => newtons / 1000, "kN");
 
-
         /// <summary>
         /// The Meganewtons unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ForceUnit Meganewtons = new ForceUnit(meganewtons => 1000000 * meganewtons, newtons => newtons / 1000000, "MN");
 
-
         /// <summary>
         /// The Giganewtons unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ForceUnit Giganewtons = new ForceUnit(giganewtons => 1000000000 * giganewtons, newtons => newtons / 1000000000, "GN");
-
 
         private readonly Func<double, double> toNewtons;
         private readonly Func<double, double> fromNewtons;

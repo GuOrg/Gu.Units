@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -64,72 +58,60 @@ namespace Gu.Units
         /// </summary>
         public double Pascals => this.pascals;
 
-
         /// <summary>
         /// The quantity in Bars
         /// </summary>
         public double Bars => this.pascals / 100000;
-
 
         /// <summary>
         /// The quantity in Millibars
         /// </summary>
         public double Millibars => this.pascals / 100;
 
-
         /// <summary>
         /// The quantity in Nanopascals
         /// </summary>
         public double Nanopascals => 1000000000 * this.pascals;
-
 
         /// <summary>
         /// The quantity in Micropascals
         /// </summary>
         public double Micropascals => 1000000 * this.pascals;
 
-
         /// <summary>
         /// The quantity in Millipascals
         /// </summary>
         public double Millipascals => 1000 * this.pascals;
-
 
         /// <summary>
         /// The quantity in Kilopascals
         /// </summary>
         public double Kilopascals => this.pascals / 1000;
 
-
         /// <summary>
         /// The quantity in Megapascals
         /// </summary>
         public double Megapascals => this.pascals / 1000000;
-
 
         /// <summary>
         /// The quantity in Gigapascals
         /// </summary>
         public double Gigapascals => this.pascals / 1000000000;
 
-
         /// <summary>
         /// The quantity in NewtonsPerSquareMillimetre
         /// </summary>
         public double NewtonsPerSquareMillimetre => this.pascals / 1000000;
-
 
         /// <summary>
         /// The quantity in KilonewtonsPerSquareMillimetre
         /// </summary>
         public double KilonewtonsPerSquareMillimetre => this.pascals / 1000000000;
 
-
         /// <summary>
         /// The quantity in NewtonsPerSquareMetre
         /// </summary>
         public double NewtonsPerSquareMetre => this.pascals;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Pressure"/> from its string representation
@@ -254,7 +236,6 @@ namespace Gu.Units
             return new Pressure(pascals);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
@@ -263,7 +244,6 @@ namespace Gu.Units
         {
             return new Pressure(100000 * bars);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
@@ -274,7 +254,6 @@ namespace Gu.Units
             return new Pressure(100 * millibars);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
@@ -283,7 +262,6 @@ namespace Gu.Units
         {
             return new Pressure(nanopascals / 1000000000);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
@@ -294,7 +272,6 @@ namespace Gu.Units
             return new Pressure(micropascals / 1000000);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
@@ -303,7 +280,6 @@ namespace Gu.Units
         {
             return new Pressure(millipascals / 1000);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
@@ -314,7 +290,6 @@ namespace Gu.Units
             return new Pressure(1000 * kilopascals);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
@@ -323,7 +298,6 @@ namespace Gu.Units
         {
             return new Pressure(1000000 * megapascals);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
@@ -334,7 +308,6 @@ namespace Gu.Units
             return new Pressure(1000000000 * gigapascals);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
@@ -343,7 +316,6 @@ namespace Gu.Units
         {
             return new Pressure(1000000 * newtonsPerSquareMillimetre);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
@@ -354,7 +326,6 @@ namespace Gu.Units
             return new Pressure(1000000000 * kilonewtonsPerSquareMillimetre);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
@@ -363,8 +334,6 @@ namespace Gu.Units
         {
             return new Pressure(newtonsPerSquareMetre);
         }
-
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -377,7 +346,6 @@ namespace Gu.Units
             return Stiffness.FromNewtonsPerMetre(left.pascals * right.metres);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -388,7 +356,6 @@ namespace Gu.Units
         {
             return Force.FromNewtons(left.pascals * right.squareMetres);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -401,7 +368,6 @@ namespace Gu.Units
             return Energy.FromJoules(left.pascals * right.cubicMetres);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -412,7 +378,6 @@ namespace Gu.Units
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.pascals / right.kilogramsPerCubicMetre);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -425,7 +390,6 @@ namespace Gu.Units
             return AreaDensity.FromKilogramsPerSquareMetre(left.pascals / right.metresPerSecondSquared);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -436,7 +400,6 @@ namespace Gu.Units
         {
             return Wavenumber.FromReciprocalMetres(left.pascals / right.newtonsPerMetre);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -449,7 +412,6 @@ namespace Gu.Units
             return Power.FromWatts(left.pascals * right.cubicMetresPerSecond);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -460,7 +422,6 @@ namespace Gu.Units
         {
             return Density.FromKilogramsPerCubicMetre(left.pascals / right.joulesPerKilogram);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -473,7 +434,6 @@ namespace Gu.Units
             return Wavenumber.FromReciprocalMetres(left.pascals * right.metresPerNewton);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -484,7 +444,6 @@ namespace Gu.Units
         {
             return Stiffness.FromNewtonsPerMetre(left.pascals / right.reciprocalMetres);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -497,7 +456,6 @@ namespace Gu.Units
             return Acceleration.FromMetresPerSecondSquared(left.pascals / right.kilogramsPerSquareMetre);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -508,8 +466,6 @@ namespace Gu.Units
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.pascals * right.cubicMetresPerKilogram);
         }
-
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

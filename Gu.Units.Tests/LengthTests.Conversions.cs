@@ -11,8 +11,9 @@
                                                                        {
                                                                                    new ConversionData("25.4 mm", "1 in"),
                                                                                    new ConversionData("0.0254 m", "1 in"),
-                                                                                   new ConversionData("12 in", "1 ft", status:ConversionData.GenerationStatus.NotGenerated),
-                                                                                   new ConversionData("1 ft", "0.3048 m",status:ConversionData.GenerationStatus.NotGenerated),
+                                                                                   new ConversionData("12 in", "1 ft", false),
+                                                                                   new ConversionData("1 ft", "0.3048 m", false),
+                                                                                   new ConversionData("3 ft", "1 yd", false),
                                                                                    new ConversionData("1 m", "100 cm"),
                                                                                    new ConversionData("1 m", "1000 mm"),
                                                                                    new ConversionData("1 km", "1000 m"),

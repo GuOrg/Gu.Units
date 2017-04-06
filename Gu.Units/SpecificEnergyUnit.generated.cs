@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,6 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly SpecificEnergyUnit JoulesPerKilogram = new SpecificEnergyUnit(joulesPerKilogram => joulesPerKilogram, joulesPerKilogram => joulesPerKilogram, "J/kg");
 
+        /// <summary>
+        /// The KilojoulesPerKilogram unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly SpecificEnergyUnit KilojoulesPerKilogram = new SpecificEnergyUnit(kilojoulesPerKilogram => 1000 * kilojoulesPerKilogram, joulesPerKilogram => joulesPerKilogram / 1000, "kJ/kg");
 
         private readonly Func<double, double> toJoulesPerKilogram;
         private readonly Func<double, double> fromJoulesPerKilogram;

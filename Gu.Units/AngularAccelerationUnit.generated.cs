@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly AngularAccelerationUnit RadiansPerSecondSquared = new AngularAccelerationUnit(radiansPerSecondSquared => radiansPerSecondSquared, radiansPerSecondSquared => radiansPerSecondSquared, "rad/s²");
 
-
         /// <summary>
         /// The DegreesPerSecondSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngularAccelerationUnit DegreesPerSecondSquared = new AngularAccelerationUnit(degreesPerSecondSquared => 0.0174532925199433 * degreesPerSecondSquared, radiansPerSecondSquared => radiansPerSecondSquared / 0.0174532925199433, "°⋅s⁻²");
-
 
         /// <summary>
         /// The RadiansPerHourSquared unit
@@ -37,13 +29,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly AngularAccelerationUnit RadiansPerHourSquared = new AngularAccelerationUnit(radiansPerHourSquared => radiansPerHourSquared / 12960000, radiansPerSecondSquared => 12960000 * radiansPerSecondSquared, "h⁻²⋅rad");
 
-
         /// <summary>
         /// The DegreesPerHourSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngularAccelerationUnit DegreesPerHourSquared = new AngularAccelerationUnit(degreesPerHourSquared => 1.34670466974871E-09 * degreesPerHourSquared, radiansPerSecondSquared => radiansPerSecondSquared / 1.34670466974871E-09, "h⁻²⋅°");
-
 
         /// <summary>
         /// The DegreesPerMinuteSquared unit
@@ -51,13 +41,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly AngularAccelerationUnit DegreesPerMinuteSquared = new AngularAccelerationUnit(degreesPerMinuteSquared => 4.84813681109536E-06 * degreesPerMinuteSquared, radiansPerSecondSquared => radiansPerSecondSquared / 4.84813681109536E-06, "min⁻²⋅°");
 
-
         /// <summary>
         /// The RadiansPerMinuteSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngularAccelerationUnit RadiansPerMinuteSquared = new AngularAccelerationUnit(radiansPerMinuteSquared => radiansPerMinuteSquared / 3600, radiansPerSecondSquared => 3600 * radiansPerSecondSquared, "min⁻²⋅rad");
-
 
         private readonly Func<double, double> toRadiansPerSecondSquared;
         private readonly Func<double, double> fromRadiansPerSecondSquared;

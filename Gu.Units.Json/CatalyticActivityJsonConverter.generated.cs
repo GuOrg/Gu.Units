@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units.Json
+﻿namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -24,7 +18,6 @@ namespace Gu.Units.Json
         /// A <see cref="JsonConverter"/> that writes values in <see cref="CatalyticActivityUnit.Katals"/>
         /// </summary>
         public static readonly CatalyticActivityJsonConverter Katals = new CatalyticActivityJsonConverter(CatalyticActivityUnit.Katals);
-
 
         private readonly CatalyticActivityUnit unit;
 

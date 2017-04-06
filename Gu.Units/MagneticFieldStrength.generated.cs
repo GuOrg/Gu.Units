@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -63,7 +57,6 @@ namespace Gu.Units
         /// The quantity in teslas".
         /// </summary>
         public double Teslas => this.teslas;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.MagneticFieldStrength"/> from its string representation
@@ -188,8 +181,6 @@ namespace Gu.Units
             return new MagneticFieldStrength(teslas);
         }
 
-
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -200,7 +191,6 @@ namespace Gu.Units
         {
             return Stiffness.FromNewtonsPerMetre(left.teslas * right.amperes);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -213,7 +203,6 @@ namespace Gu.Units
             return MagneticFlux.FromWebers(left.teslas * right.squareMetres);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -225,7 +214,6 @@ namespace Gu.Units
             return MassFlow.FromKilogramsPerSecond(left.teslas * right.coulombs);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -236,8 +224,6 @@ namespace Gu.Units
         {
             return Voltage.FromVolts(left.teslas * right.squareMetresPerSecond);
         }
-
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

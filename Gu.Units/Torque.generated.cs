@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -63,7 +57,6 @@ namespace Gu.Units
         /// The quantity in newtonMetres".
         /// </summary>
         public double NewtonMetres => this.newtonMetres;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
@@ -188,8 +181,6 @@ namespace Gu.Units
             return new Torque(newtonMetres);
         }
 
-
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -201,7 +192,6 @@ namespace Gu.Units
             return Energy.FromJoules(left.newtonMetres * right.radians);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -212,8 +202,6 @@ namespace Gu.Units
         {
             return Power.FromWatts(left.newtonMetres * right.radiansPerSecond);
         }
-
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units.Json
+﻿namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -25,42 +19,35 @@ namespace Gu.Units.Json
         /// </summary>
         public static readonly ForceJsonConverter Newtons = new ForceJsonConverter(ForceUnit.Newtons);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ForceUnit.Nanonewtons"/>
         /// </summary>
         public static readonly ForceJsonConverter Nanonewtons = new ForceJsonConverter(ForceUnit.Nanonewtons);
-
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ForceUnit.Micronewtons"/>
         /// </summary>
         public static readonly ForceJsonConverter Micronewtons = new ForceJsonConverter(ForceUnit.Micronewtons);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ForceUnit.Millinewtons"/>
         /// </summary>
         public static readonly ForceJsonConverter Millinewtons = new ForceJsonConverter(ForceUnit.Millinewtons);
-
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ForceUnit.Kilonewtons"/>
         /// </summary>
         public static readonly ForceJsonConverter Kilonewtons = new ForceJsonConverter(ForceUnit.Kilonewtons);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ForceUnit.Meganewtons"/>
         /// </summary>
         public static readonly ForceJsonConverter Meganewtons = new ForceJsonConverter(ForceUnit.Meganewtons);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ForceUnit.Giganewtons"/>
         /// </summary>
         public static readonly ForceJsonConverter Giganewtons = new ForceJsonConverter(ForceUnit.Giganewtons);
-
 
         private readonly ForceUnit unit;
 

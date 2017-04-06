@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -22,7 +16,6 @@ namespace Gu.Units
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly MassFlowUnit KilogramsPerSecond = new MassFlowUnit(kilogramsPerSecond => kilogramsPerSecond, kilogramsPerSecond => kilogramsPerSecond, "kg/s");
-
 
         private readonly Func<double, double> toKilogramsPerSecond;
         private readonly Func<double, double> fromKilogramsPerSecond;

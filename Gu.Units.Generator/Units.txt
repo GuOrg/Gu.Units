@@ -126,6 +126,12 @@
           "Symbol": "nmi",
           "Factor": 1852.0,
           "PrefixConversions": []
+        },
+        {
+          "Name": "Feet",
+          "Symbol": "ft",
+          "Factor": 0.3048,
+          "PrefixConversions": []
         }
       ],
       "CustomConversions": [],
@@ -178,6 +184,12 @@
           "Name": "Minutes",
           "Symbol": "min",
           "Factor": 60.0,
+          "PrefixConversions": []
+        },
+        {
+          "Name": "Days",
+          "Symbol": "d",
+          "Factor": 86400.0,
           "PrefixConversions": []
         }
       ],
@@ -444,6 +456,11 @@
           "Name": "SquareInches",
           "Symbol": "in²",
           "Factor": 0.00064516
+        },
+        {
+          "Name": "SquareFeet",
+          "Symbol": "ft²",
+          "Factor": 0.09290304
         }
       ]
     },
@@ -503,6 +520,11 @@
           "Name": "CubicDecimetres",
           "Symbol": "dm³",
           "Factor": 0.0010000000000000002
+        },
+        {
+          "Name": "CubicFeet",
+          "Symbol": "ft³",
+          "Factor": 0.028316846592000004
         }
       ]
     },
@@ -1170,6 +1192,26 @@
           "Name": "CentilitresPerMinute",
           "Symbol": "cl/min",
           "Factor": 1.666666666666667E-07
+        },
+        {
+          "Name": "CubicFeetPerHour",
+          "Symbol": "ft³/h",
+          "Factor": 7.86579072E-06
+        },
+        {
+          "Name": "CubicFeetPerSecond",
+          "Symbol": "ft³/s",
+          "Factor": 0.028316846592000004
+        },
+        {
+          "Name": "CubicFeetPerMinute",
+          "Symbol": "ft³/min",
+          "Factor": 0.00047194744320000004
+        },
+        {
+          "Name": "CubicFeetPerDay",
+          "Symbol": "ft³/d",
+          "Factor": 3.2774128000000003E-07
         }
       ]
     },
@@ -1280,7 +1322,13 @@
       "FactorConversions": [],
       "CustomConversions": [],
       "PrefixConversions": [],
-      "PartConversions": []
+      "PartConversions": [
+        {
+          "Name": "KilojoulesPerKilogram",
+          "Symbol": "kJ/kg",
+          "Factor": 1000.0
+        }
+      ]
     },
     {
       "Parts": [

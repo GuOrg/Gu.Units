@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -64,18 +58,15 @@ namespace Gu.Units
         /// </summary>
         public double Kelvin => this.kelvin;
 
-
         /// <summary>
         /// The quantity in Celsius
         /// </summary>
         public double Celsius => this.kelvin - 273.15;
 
-
         /// <summary>
         /// The quantity in Fahrenheit
         /// </summary>
         public double Fahrenheit => 1.8 * this.kelvin - 459.67;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Temperature"/> from its string representation
@@ -200,7 +191,6 @@ namespace Gu.Units
             return new Temperature(kelvin);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Temperature"/>.
         /// </summary>
@@ -210,7 +200,6 @@ namespace Gu.Units
             return new Temperature(celsius + 273.15);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Temperature"/>.
         /// </summary>
@@ -219,9 +208,6 @@ namespace Gu.Units
         {
             return new Temperature((fahrenheit + 459.67) / 1.8);
         }
-
-
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

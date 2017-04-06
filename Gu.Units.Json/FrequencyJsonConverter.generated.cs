@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units.Json
+﻿namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -25,30 +19,25 @@ namespace Gu.Units.Json
         /// </summary>
         public static readonly FrequencyJsonConverter Hertz = new FrequencyJsonConverter(FrequencyUnit.Hertz);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="FrequencyUnit.Millihertz"/>
         /// </summary>
         public static readonly FrequencyJsonConverter Millihertz = new FrequencyJsonConverter(FrequencyUnit.Millihertz);
-
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="FrequencyUnit.Kilohertz"/>
         /// </summary>
         public static readonly FrequencyJsonConverter Kilohertz = new FrequencyJsonConverter(FrequencyUnit.Kilohertz);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="FrequencyUnit.Megahertz"/>
         /// </summary>
         public static readonly FrequencyJsonConverter Megahertz = new FrequencyJsonConverter(FrequencyUnit.Megahertz);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="FrequencyUnit.Gigahertz"/>
         /// </summary>
         public static readonly FrequencyJsonConverter Gigahertz = new FrequencyJsonConverter(FrequencyUnit.Gigahertz);
-
 
         private readonly FrequencyUnit unit;
 

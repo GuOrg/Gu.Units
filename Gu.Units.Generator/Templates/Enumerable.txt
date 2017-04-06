@@ -1,9 +1,4 @@
-﻿
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.Collections.Generic;
@@ -14,7 +9,6 @@ namespace Gu.Units
     /// </summary>
     public static partial class EnumerableUnits
     {
-
         /// <summary>
         /// Calculates the sum <see cref="Mass"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -38,7 +32,6 @@ namespace Gu.Units
 
             return Mass.FromKilograms(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Length"/> of the values in <paramref name="source"/>
@@ -64,7 +57,6 @@ namespace Gu.Units
             return Length.FromMetres(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Time"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -88,7 +80,6 @@ namespace Gu.Units
 
             return Time.FromSeconds(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Temperature"/> of the values in <paramref name="source"/>
@@ -114,7 +105,6 @@ namespace Gu.Units
             return Temperature.FromKelvin(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Angle"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -138,7 +128,6 @@ namespace Gu.Units
 
             return Angle.FromRadians(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Unitless"/> of the values in <paramref name="source"/>
@@ -164,7 +153,6 @@ namespace Gu.Units
             return Unitless.FromScalar(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Current"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -188,7 +176,6 @@ namespace Gu.Units
 
             return Current.FromAmperes(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="LuminousIntensity"/> of the values in <paramref name="source"/>
@@ -214,7 +201,6 @@ namespace Gu.Units
             return LuminousIntensity.FromCandelas(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Data"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -238,7 +224,6 @@ namespace Gu.Units
 
             return Data.FromBits(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="AmountOfSubstance"/> of the values in <paramref name="source"/>
@@ -264,7 +249,6 @@ namespace Gu.Units
             return AmountOfSubstance.FromMoles(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="SolidAngle"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -288,7 +272,6 @@ namespace Gu.Units
 
             return SolidAngle.FromSteradians(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Area"/> of the values in <paramref name="source"/>
@@ -314,7 +297,6 @@ namespace Gu.Units
             return Area.FromSquareMetres(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Volume"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -338,7 +320,6 @@ namespace Gu.Units
 
             return Volume.FromCubicMetres(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Force"/> of the values in <paramref name="source"/>
@@ -364,7 +345,6 @@ namespace Gu.Units
             return Force.FromNewtons(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Pressure"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -388,7 +368,6 @@ namespace Gu.Units
 
             return Pressure.FromPascals(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Density"/> of the values in <paramref name="source"/>
@@ -414,7 +393,6 @@ namespace Gu.Units
             return Density.FromKilogramsPerCubicMetre(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Energy"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -438,7 +416,6 @@ namespace Gu.Units
 
             return Energy.FromJoules(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Power"/> of the values in <paramref name="source"/>
@@ -464,7 +441,6 @@ namespace Gu.Units
             return Power.FromWatts(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Speed"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -488,7 +464,6 @@ namespace Gu.Units
 
             return Speed.FromMetresPerSecond(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="AngularSpeed"/> of the values in <paramref name="source"/>
@@ -514,7 +489,6 @@ namespace Gu.Units
             return AngularSpeed.FromRadiansPerSecond(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Frequency"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -538,7 +512,6 @@ namespace Gu.Units
 
             return Frequency.FromHertz(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Acceleration"/> of the values in <paramref name="source"/>
@@ -564,7 +537,6 @@ namespace Gu.Units
             return Acceleration.FromMetresPerSecondSquared(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Torque"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -588,7 +560,6 @@ namespace Gu.Units
 
             return Torque.FromNewtonMetres(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Stiffness"/> of the values in <paramref name="source"/>
@@ -614,7 +585,6 @@ namespace Gu.Units
             return Stiffness.FromNewtonsPerMetre(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="VolumetricFlow"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -638,7 +608,6 @@ namespace Gu.Units
 
             return VolumetricFlow.FromCubicMetresPerSecond(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Voltage"/> of the values in <paramref name="source"/>
@@ -664,7 +633,6 @@ namespace Gu.Units
             return Voltage.FromVolts(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Resistance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -688,7 +656,6 @@ namespace Gu.Units
 
             return Resistance.FromOhms(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="SpecificEnergy"/> of the values in <paramref name="source"/>
@@ -714,7 +681,6 @@ namespace Gu.Units
             return SpecificEnergy.FromJoulesPerKilogram(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="ElectricCharge"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -738,7 +704,6 @@ namespace Gu.Units
 
             return ElectricCharge.FromCoulombs(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Inductance"/> of the values in <paramref name="source"/>
@@ -764,7 +729,6 @@ namespace Gu.Units
             return Inductance.FromHenrys(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Capacitance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -788,7 +752,6 @@ namespace Gu.Units
 
             return Capacitance.FromFarads(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Flexibility"/> of the values in <paramref name="source"/>
@@ -814,7 +777,6 @@ namespace Gu.Units
             return Flexibility.FromMetresPerNewton(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="AngularAcceleration"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -838,7 +800,6 @@ namespace Gu.Units
 
             return AngularAcceleration.FromRadiansPerSecondSquared(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="AngularJerk"/> of the values in <paramref name="source"/>
@@ -864,7 +825,6 @@ namespace Gu.Units
             return AngularJerk.FromRadiansPerSecondCubed(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Jerk"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -888,7 +848,6 @@ namespace Gu.Units
 
             return Jerk.FromMetresPerSecondCubed(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="LengthPerUnitless"/> of the values in <paramref name="source"/>
@@ -914,7 +873,6 @@ namespace Gu.Units
             return LengthPerUnitless.FromMetresPerUnitless(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="AnglePerUnitless"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -938,7 +896,6 @@ namespace Gu.Units
 
             return AnglePerUnitless.FromRadiansPerUnitless(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="ForcePerUnitless"/> of the values in <paramref name="source"/>
@@ -964,7 +921,6 @@ namespace Gu.Units
             return ForcePerUnitless.FromNewtonsPerUnitless(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="LuminousFlux"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -988,7 +944,6 @@ namespace Gu.Units
 
             return LuminousFlux.FromLumens(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Illuminance"/> of the values in <paramref name="source"/>
@@ -1014,7 +969,6 @@ namespace Gu.Units
             return Illuminance.FromLux(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="MagneticFlux"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1038,7 +992,6 @@ namespace Gu.Units
 
             return MagneticFlux.FromWebers(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="ElectricalConductance"/> of the values in <paramref name="source"/>
@@ -1064,7 +1017,6 @@ namespace Gu.Units
             return ElectricalConductance.FromSiemens(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="MagneticFieldStrength"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1088,7 +1040,6 @@ namespace Gu.Units
 
             return MagneticFieldStrength.FromTeslas(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="CatalyticActivity"/> of the values in <paramref name="source"/>
@@ -1114,7 +1065,6 @@ namespace Gu.Units
             return CatalyticActivity.FromKatals(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Momentum"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1138,7 +1088,6 @@ namespace Gu.Units
 
             return Momentum.FromNewtonSecond(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Wavenumber"/> of the values in <paramref name="source"/>
@@ -1164,7 +1113,6 @@ namespace Gu.Units
             return Wavenumber.FromReciprocalMetres(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="AreaDensity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1188,7 +1136,6 @@ namespace Gu.Units
 
             return AreaDensity.FromKilogramsPerSquareMetre(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="SpecificVolume"/> of the values in <paramref name="source"/>
@@ -1214,7 +1161,6 @@ namespace Gu.Units
             return SpecificVolume.FromCubicMetresPerKilogram(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="MassFlow"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1238,7 +1184,6 @@ namespace Gu.Units
 
             return MassFlow.FromKilogramsPerSecond(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="KinematicViscosity"/> of the values in <paramref name="source"/>
@@ -1264,7 +1209,6 @@ namespace Gu.Units
             return KinematicViscosity.FromSquareMetresPerSecond(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="MolarMass"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1289,7 +1233,6 @@ namespace Gu.Units
             return MolarMass.FromKilogramsPerMole(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="MolarHeatCapacity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1313,8 +1256,6 @@ namespace Gu.Units
 
             return MolarHeatCapacity.FromJoulesPerKelvinMole(sum);
         }
-
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Mass}"/> of the values in <paramref name="source"/>
@@ -1341,7 +1282,6 @@ namespace Gu.Units
             return Mass.FromKilograms(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Length}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1366,7 +1306,6 @@ namespace Gu.Units
             }
             return Length.FromMetres(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Time}"/> of the values in <paramref name="source"/>
@@ -1393,7 +1332,6 @@ namespace Gu.Units
             return Time.FromSeconds(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Temperature}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1418,7 +1356,6 @@ namespace Gu.Units
             }
             return Temperature.FromKelvin(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Angle}"/> of the values in <paramref name="source"/>
@@ -1445,7 +1382,6 @@ namespace Gu.Units
             return Angle.FromRadians(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Unitless}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1470,7 +1406,6 @@ namespace Gu.Units
             }
             return Unitless.FromScalar(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Current}"/> of the values in <paramref name="source"/>
@@ -1497,7 +1432,6 @@ namespace Gu.Units
             return Current.FromAmperes(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{LuminousIntensity}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1522,7 +1456,6 @@ namespace Gu.Units
             }
             return LuminousIntensity.FromCandelas(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Data}"/> of the values in <paramref name="source"/>
@@ -1549,7 +1482,6 @@ namespace Gu.Units
             return Data.FromBits(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{AmountOfSubstance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1574,7 +1506,6 @@ namespace Gu.Units
             }
             return AmountOfSubstance.FromMoles(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{SolidAngle}"/> of the values in <paramref name="source"/>
@@ -1601,7 +1532,6 @@ namespace Gu.Units
             return SolidAngle.FromSteradians(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Area}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1626,7 +1556,6 @@ namespace Gu.Units
             }
             return Area.FromSquareMetres(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Volume}"/> of the values in <paramref name="source"/>
@@ -1653,7 +1582,6 @@ namespace Gu.Units
             return Volume.FromCubicMetres(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Force}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1678,7 +1606,6 @@ namespace Gu.Units
             }
             return Force.FromNewtons(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Pressure}"/> of the values in <paramref name="source"/>
@@ -1705,7 +1632,6 @@ namespace Gu.Units
             return Pressure.FromPascals(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Density}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1730,7 +1656,6 @@ namespace Gu.Units
             }
             return Density.FromKilogramsPerCubicMetre(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Energy}"/> of the values in <paramref name="source"/>
@@ -1757,7 +1682,6 @@ namespace Gu.Units
             return Energy.FromJoules(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Power}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1782,7 +1706,6 @@ namespace Gu.Units
             }
             return Power.FromWatts(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Speed}"/> of the values in <paramref name="source"/>
@@ -1809,7 +1732,6 @@ namespace Gu.Units
             return Speed.FromMetresPerSecond(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{AngularSpeed}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1834,7 +1756,6 @@ namespace Gu.Units
             }
             return AngularSpeed.FromRadiansPerSecond(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Frequency}"/> of the values in <paramref name="source"/>
@@ -1861,7 +1782,6 @@ namespace Gu.Units
             return Frequency.FromHertz(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Acceleration}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1886,7 +1806,6 @@ namespace Gu.Units
             }
             return Acceleration.FromMetresPerSecondSquared(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Torque}"/> of the values in <paramref name="source"/>
@@ -1913,7 +1832,6 @@ namespace Gu.Units
             return Torque.FromNewtonMetres(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Stiffness}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1938,7 +1856,6 @@ namespace Gu.Units
             }
             return Stiffness.FromNewtonsPerMetre(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{VolumetricFlow}"/> of the values in <paramref name="source"/>
@@ -1965,7 +1882,6 @@ namespace Gu.Units
             return VolumetricFlow.FromCubicMetresPerSecond(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Voltage}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -1990,7 +1906,6 @@ namespace Gu.Units
             }
             return Voltage.FromVolts(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Resistance}"/> of the values in <paramref name="source"/>
@@ -2017,7 +1932,6 @@ namespace Gu.Units
             return Resistance.FromOhms(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{SpecificEnergy}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2042,7 +1956,6 @@ namespace Gu.Units
             }
             return SpecificEnergy.FromJoulesPerKilogram(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{ElectricCharge}"/> of the values in <paramref name="source"/>
@@ -2069,7 +1982,6 @@ namespace Gu.Units
             return ElectricCharge.FromCoulombs(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Inductance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2094,7 +2006,6 @@ namespace Gu.Units
             }
             return Inductance.FromHenrys(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Capacitance}"/> of the values in <paramref name="source"/>
@@ -2121,7 +2032,6 @@ namespace Gu.Units
             return Capacitance.FromFarads(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Flexibility}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2146,7 +2056,6 @@ namespace Gu.Units
             }
             return Flexibility.FromMetresPerNewton(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{AngularAcceleration}"/> of the values in <paramref name="source"/>
@@ -2173,7 +2082,6 @@ namespace Gu.Units
             return AngularAcceleration.FromRadiansPerSecondSquared(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{AngularJerk}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2198,7 +2106,6 @@ namespace Gu.Units
             }
             return AngularJerk.FromRadiansPerSecondCubed(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Jerk}"/> of the values in <paramref name="source"/>
@@ -2225,7 +2132,6 @@ namespace Gu.Units
             return Jerk.FromMetresPerSecondCubed(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{LengthPerUnitless}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2250,7 +2156,6 @@ namespace Gu.Units
             }
             return LengthPerUnitless.FromMetresPerUnitless(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{AnglePerUnitless}"/> of the values in <paramref name="source"/>
@@ -2277,7 +2182,6 @@ namespace Gu.Units
             return AnglePerUnitless.FromRadiansPerUnitless(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{ForcePerUnitless}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2302,7 +2206,6 @@ namespace Gu.Units
             }
             return ForcePerUnitless.FromNewtonsPerUnitless(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{LuminousFlux}"/> of the values in <paramref name="source"/>
@@ -2329,7 +2232,6 @@ namespace Gu.Units
             return LuminousFlux.FromLumens(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Illuminance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2354,7 +2256,6 @@ namespace Gu.Units
             }
             return Illuminance.FromLux(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{MagneticFlux}"/> of the values in <paramref name="source"/>
@@ -2381,7 +2282,6 @@ namespace Gu.Units
             return MagneticFlux.FromWebers(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{ElectricalConductance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2406,7 +2306,6 @@ namespace Gu.Units
             }
             return ElectricalConductance.FromSiemens(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{MagneticFieldStrength}"/> of the values in <paramref name="source"/>
@@ -2433,7 +2332,6 @@ namespace Gu.Units
             return MagneticFieldStrength.FromTeslas(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{CatalyticActivity}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2458,7 +2356,6 @@ namespace Gu.Units
             }
             return CatalyticActivity.FromKatals(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Momentum}"/> of the values in <paramref name="source"/>
@@ -2485,7 +2382,6 @@ namespace Gu.Units
             return Momentum.FromNewtonSecond(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{Wavenumber}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2510,7 +2406,6 @@ namespace Gu.Units
             }
             return Wavenumber.FromReciprocalMetres(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{AreaDensity}"/> of the values in <paramref name="source"/>
@@ -2537,7 +2432,6 @@ namespace Gu.Units
             return AreaDensity.FromKilogramsPerSquareMetre(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{SpecificVolume}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2562,7 +2456,6 @@ namespace Gu.Units
             }
             return SpecificVolume.FromCubicMetresPerKilogram(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{MassFlow}"/> of the values in <paramref name="source"/>
@@ -2589,7 +2482,6 @@ namespace Gu.Units
             return MassFlow.FromKilogramsPerSecond(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{KinematicViscosity}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2614,7 +2506,6 @@ namespace Gu.Units
             }
             return KinematicViscosity.FromSquareMetresPerSecond(sum);
         }
-
 
         /// <summary>
         /// Calculates the sum <see cref="Nullable{MolarMass}"/> of the values in <paramref name="source"/>
@@ -2641,7 +2532,6 @@ namespace Gu.Units
             return MolarMass.FromKilogramsPerMole(sum);
         }
 
-
         /// <summary>
         /// Calculates the sum <see cref="Nullable{MolarHeatCapacity}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2666,8 +2556,6 @@ namespace Gu.Units
             }
             return MolarHeatCapacity.FromJoulesPerKelvinMole(sum);
         }
-
-
 
         /// <summary>
         /// Calculates the min <see cref="Mass"/> of the values in <paramref name="source"/>
@@ -2705,7 +2593,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Length"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2741,7 +2628,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Time"/> of the values in <paramref name="source"/>
@@ -2779,7 +2665,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Temperature"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2815,7 +2700,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Angle"/> of the values in <paramref name="source"/>
@@ -2853,7 +2737,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Unitless"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2889,7 +2772,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Current"/> of the values in <paramref name="source"/>
@@ -2927,7 +2809,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="LuminousIntensity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -2963,7 +2844,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Data"/> of the values in <paramref name="source"/>
@@ -3001,7 +2881,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="AmountOfSubstance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3037,7 +2916,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="SolidAngle"/> of the values in <paramref name="source"/>
@@ -3075,7 +2953,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Area"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3111,7 +2988,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Volume"/> of the values in <paramref name="source"/>
@@ -3149,7 +3025,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Force"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3185,7 +3060,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Pressure"/> of the values in <paramref name="source"/>
@@ -3223,7 +3097,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Density"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3259,7 +3132,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Energy"/> of the values in <paramref name="source"/>
@@ -3297,7 +3169,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Power"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3333,7 +3204,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Speed"/> of the values in <paramref name="source"/>
@@ -3371,7 +3241,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="AngularSpeed"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3407,7 +3276,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Frequency"/> of the values in <paramref name="source"/>
@@ -3445,7 +3313,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Acceleration"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3481,7 +3348,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Torque"/> of the values in <paramref name="source"/>
@@ -3519,7 +3385,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Stiffness"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3555,7 +3420,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="VolumetricFlow"/> of the values in <paramref name="source"/>
@@ -3593,7 +3457,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Voltage"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3629,7 +3492,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Resistance"/> of the values in <paramref name="source"/>
@@ -3667,7 +3529,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="SpecificEnergy"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3703,7 +3564,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="ElectricCharge"/> of the values in <paramref name="source"/>
@@ -3741,7 +3601,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Inductance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3777,7 +3636,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Capacitance"/> of the values in <paramref name="source"/>
@@ -3815,7 +3673,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Flexibility"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3851,7 +3708,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="AngularAcceleration"/> of the values in <paramref name="source"/>
@@ -3889,7 +3745,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="AngularJerk"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3925,7 +3780,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Jerk"/> of the values in <paramref name="source"/>
@@ -3963,7 +3817,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="LengthPerUnitless"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -3999,7 +3852,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="AnglePerUnitless"/> of the values in <paramref name="source"/>
@@ -4037,7 +3889,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="ForcePerUnitless"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4073,7 +3924,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="LuminousFlux"/> of the values in <paramref name="source"/>
@@ -4111,7 +3961,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Illuminance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4147,7 +3996,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="MagneticFlux"/> of the values in <paramref name="source"/>
@@ -4185,7 +4033,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="ElectricalConductance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4221,7 +4068,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="MagneticFieldStrength"/> of the values in <paramref name="source"/>
@@ -4259,7 +4105,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="CatalyticActivity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4295,7 +4140,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Momentum"/> of the values in <paramref name="source"/>
@@ -4333,7 +4177,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Wavenumber"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4369,7 +4212,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="AreaDensity"/> of the values in <paramref name="source"/>
@@ -4407,7 +4249,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="SpecificVolume"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4443,7 +4284,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="MassFlow"/> of the values in <paramref name="source"/>
@@ -4481,7 +4321,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="KinematicViscosity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4517,7 +4356,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="MolarMass"/> of the values in <paramref name="source"/>
@@ -4555,7 +4393,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="MolarHeatCapacity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4592,8 +4429,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{Mass}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4623,7 +4458,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Length}"/> of the values in <paramref name="source"/>
@@ -4655,7 +4489,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{Time}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4685,7 +4518,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Temperature}"/> of the values in <paramref name="source"/>
@@ -4717,7 +4549,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{Angle}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4747,7 +4578,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Unitless}"/> of the values in <paramref name="source"/>
@@ -4779,7 +4609,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{Current}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4809,7 +4638,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{LuminousIntensity}"/> of the values in <paramref name="source"/>
@@ -4841,7 +4669,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{Data}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4871,7 +4698,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{AmountOfSubstance}"/> of the values in <paramref name="source"/>
@@ -4903,7 +4729,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{SolidAngle}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4933,7 +4758,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Area}"/> of the values in <paramref name="source"/>
@@ -4965,7 +4789,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{Volume}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -4995,7 +4818,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Force}"/> of the values in <paramref name="source"/>
@@ -5027,7 +4849,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{Pressure}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5057,7 +4878,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Density}"/> of the values in <paramref name="source"/>
@@ -5089,7 +4909,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{Energy}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5119,7 +4938,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Power}"/> of the values in <paramref name="source"/>
@@ -5151,7 +4969,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{Speed}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5181,7 +4998,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{AngularSpeed}"/> of the values in <paramref name="source"/>
@@ -5213,7 +5029,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{Frequency}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5243,7 +5058,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Acceleration}"/> of the values in <paramref name="source"/>
@@ -5275,7 +5089,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{Torque}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5305,7 +5118,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Stiffness}"/> of the values in <paramref name="source"/>
@@ -5337,7 +5149,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{VolumetricFlow}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5367,7 +5178,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Voltage}"/> of the values in <paramref name="source"/>
@@ -5399,7 +5209,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{Resistance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5429,7 +5238,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{SpecificEnergy}"/> of the values in <paramref name="source"/>
@@ -5461,7 +5269,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{ElectricCharge}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5491,7 +5298,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Inductance}"/> of the values in <paramref name="source"/>
@@ -5523,7 +5329,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{Capacitance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5553,7 +5358,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Flexibility}"/> of the values in <paramref name="source"/>
@@ -5585,7 +5389,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{AngularAcceleration}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5615,7 +5418,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{AngularJerk}"/> of the values in <paramref name="source"/>
@@ -5647,7 +5449,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{Jerk}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5677,7 +5478,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{LengthPerUnitless}"/> of the values in <paramref name="source"/>
@@ -5709,7 +5509,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{AnglePerUnitless}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5739,7 +5538,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{ForcePerUnitless}"/> of the values in <paramref name="source"/>
@@ -5771,7 +5569,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{LuminousFlux}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5801,7 +5598,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Illuminance}"/> of the values in <paramref name="source"/>
@@ -5833,7 +5629,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{MagneticFlux}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5863,7 +5658,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{ElectricalConductance}"/> of the values in <paramref name="source"/>
@@ -5895,7 +5689,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{MagneticFieldStrength}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5925,7 +5718,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{CatalyticActivity}"/> of the values in <paramref name="source"/>
@@ -5957,7 +5749,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{Momentum}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -5987,7 +5778,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{Wavenumber}"/> of the values in <paramref name="source"/>
@@ -6019,7 +5809,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{AreaDensity}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6049,7 +5838,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{SpecificVolume}"/> of the values in <paramref name="source"/>
@@ -6081,7 +5869,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{MassFlow}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6111,7 +5898,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the min <see cref="Nullable{KinematicViscosity}"/> of the values in <paramref name="source"/>
@@ -6143,7 +5929,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{MolarMass}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6174,7 +5959,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the min <see cref="Nullable{MolarHeatCapacity}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6204,8 +5988,6 @@ namespace Gu.Units
             }
             return value;
         }
-
-
 
         /// <summary>
         /// Calculates the max <see cref="Mass"/> of the values in <paramref name="source"/>
@@ -6243,7 +6025,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Length"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6279,7 +6060,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Time"/> of the values in <paramref name="source"/>
@@ -6317,7 +6097,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Temperature"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6353,7 +6132,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Angle"/> of the values in <paramref name="source"/>
@@ -6391,7 +6169,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Unitless"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6427,7 +6204,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Current"/> of the values in <paramref name="source"/>
@@ -6465,7 +6241,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="LuminousIntensity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6501,7 +6276,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Data"/> of the values in <paramref name="source"/>
@@ -6539,7 +6313,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="AmountOfSubstance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6575,7 +6348,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="SolidAngle"/> of the values in <paramref name="source"/>
@@ -6613,7 +6385,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Area"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6649,7 +6420,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Volume"/> of the values in <paramref name="source"/>
@@ -6687,7 +6457,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Force"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6723,7 +6492,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Pressure"/> of the values in <paramref name="source"/>
@@ -6761,7 +6529,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Density"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6797,7 +6564,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Energy"/> of the values in <paramref name="source"/>
@@ -6835,7 +6601,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Power"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6871,7 +6636,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Speed"/> of the values in <paramref name="source"/>
@@ -6909,7 +6673,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="AngularSpeed"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -6945,7 +6708,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Frequency"/> of the values in <paramref name="source"/>
@@ -6983,7 +6745,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Acceleration"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7019,7 +6780,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Torque"/> of the values in <paramref name="source"/>
@@ -7057,7 +6817,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Stiffness"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7093,7 +6852,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="VolumetricFlow"/> of the values in <paramref name="source"/>
@@ -7131,7 +6889,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Voltage"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7167,7 +6924,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Resistance"/> of the values in <paramref name="source"/>
@@ -7205,7 +6961,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="SpecificEnergy"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7241,7 +6996,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="ElectricCharge"/> of the values in <paramref name="source"/>
@@ -7279,7 +7033,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Inductance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7315,7 +7068,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Capacitance"/> of the values in <paramref name="source"/>
@@ -7353,7 +7105,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Flexibility"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7389,7 +7140,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="AngularAcceleration"/> of the values in <paramref name="source"/>
@@ -7427,7 +7177,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="AngularJerk"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7463,7 +7212,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Jerk"/> of the values in <paramref name="source"/>
@@ -7501,7 +7249,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="LengthPerUnitless"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7537,7 +7284,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="AnglePerUnitless"/> of the values in <paramref name="source"/>
@@ -7575,7 +7321,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="ForcePerUnitless"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7611,7 +7356,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="LuminousFlux"/> of the values in <paramref name="source"/>
@@ -7649,7 +7393,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Illuminance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7685,7 +7428,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="MagneticFlux"/> of the values in <paramref name="source"/>
@@ -7723,7 +7465,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="ElectricalConductance"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7759,7 +7500,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="MagneticFieldStrength"/> of the values in <paramref name="source"/>
@@ -7797,7 +7537,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="CatalyticActivity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7833,7 +7572,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Momentum"/> of the values in <paramref name="source"/>
@@ -7871,7 +7609,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Wavenumber"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7907,7 +7644,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="AreaDensity"/> of the values in <paramref name="source"/>
@@ -7945,7 +7681,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="SpecificVolume"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -7981,7 +7716,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="MassFlow"/> of the values in <paramref name="source"/>
@@ -8019,7 +7753,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="KinematicViscosity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8055,7 +7788,6 @@ namespace Gu.Units
             if (hasValue) return value;
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="MolarMass"/> of the values in <paramref name="source"/>
@@ -8093,7 +7825,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="MolarHeatCapacity"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8130,8 +7861,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{Mass}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8161,7 +7890,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Length}"/> of the values in <paramref name="source"/>
@@ -8193,7 +7921,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{Time}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8223,7 +7950,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Temperature}"/> of the values in <paramref name="source"/>
@@ -8255,7 +7981,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{Angle}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8285,7 +8010,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Unitless}"/> of the values in <paramref name="source"/>
@@ -8317,7 +8041,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{Current}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8347,7 +8070,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{LuminousIntensity}"/> of the values in <paramref name="source"/>
@@ -8379,7 +8101,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{Data}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8409,7 +8130,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{AmountOfSubstance}"/> of the values in <paramref name="source"/>
@@ -8441,7 +8161,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{SolidAngle}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8471,7 +8190,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Area}"/> of the values in <paramref name="source"/>
@@ -8503,7 +8221,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{Volume}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8533,7 +8250,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Force}"/> of the values in <paramref name="source"/>
@@ -8565,7 +8281,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{Pressure}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8595,7 +8310,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Density}"/> of the values in <paramref name="source"/>
@@ -8627,7 +8341,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{Energy}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8657,7 +8370,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Power}"/> of the values in <paramref name="source"/>
@@ -8689,7 +8401,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{Speed}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8719,7 +8430,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{AngularSpeed}"/> of the values in <paramref name="source"/>
@@ -8751,7 +8461,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{Frequency}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8781,7 +8490,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Acceleration}"/> of the values in <paramref name="source"/>
@@ -8813,7 +8521,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{Torque}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8843,7 +8550,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Stiffness}"/> of the values in <paramref name="source"/>
@@ -8875,7 +8581,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{VolumetricFlow}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8905,7 +8610,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Voltage}"/> of the values in <paramref name="source"/>
@@ -8937,7 +8641,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{Resistance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -8967,7 +8670,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{SpecificEnergy}"/> of the values in <paramref name="source"/>
@@ -8999,7 +8701,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{ElectricCharge}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -9029,7 +8730,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Inductance}"/> of the values in <paramref name="source"/>
@@ -9061,7 +8761,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{Capacitance}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -9091,7 +8790,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Flexibility}"/> of the values in <paramref name="source"/>
@@ -9123,7 +8821,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{AngularAcceleration}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -9153,7 +8850,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{AngularJerk}"/> of the values in <paramref name="source"/>
@@ -9185,7 +8881,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{Jerk}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -9215,7 +8910,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{LengthPerUnitless}"/> of the values in <paramref name="source"/>
@@ -9247,7 +8941,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{AnglePerUnitless}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -9277,7 +8970,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{ForcePerUnitless}"/> of the values in <paramref name="source"/>
@@ -9309,7 +9001,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{LuminousFlux}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -9339,7 +9030,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Illuminance}"/> of the values in <paramref name="source"/>
@@ -9371,7 +9061,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{MagneticFlux}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -9401,7 +9090,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{ElectricalConductance}"/> of the values in <paramref name="source"/>
@@ -9433,7 +9121,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{MagneticFieldStrength}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -9463,7 +9150,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{CatalyticActivity}"/> of the values in <paramref name="source"/>
@@ -9495,7 +9181,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{Momentum}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -9525,7 +9210,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{Wavenumber}"/> of the values in <paramref name="source"/>
@@ -9557,7 +9241,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{AreaDensity}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -9587,7 +9270,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{SpecificVolume}"/> of the values in <paramref name="source"/>
@@ -9619,7 +9301,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{MassFlow}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -9649,7 +9330,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{KinematicViscosity}"/> of the values in <paramref name="source"/>
@@ -9681,7 +9361,6 @@ namespace Gu.Units
             return value;
         }
 
-
         /// <summary>
         /// Calculates the max <see cref="Nullable{MolarMass}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -9711,7 +9390,6 @@ namespace Gu.Units
             }
             return value;
         }
-
 
         /// <summary>
         /// Calculates the max <see cref="Nullable{MolarHeatCapacity}"/> of the values in <paramref name="source"/>
@@ -9743,8 +9421,6 @@ namespace Gu.Units
             return value;
         }
 
-
-
         /// <summary>
         /// Calculates the average <see cref="Mass"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9772,7 +9448,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Length"/> for the values in <paramref name="source"/>
@@ -9802,7 +9477,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Time"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9830,7 +9504,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Temperature"/> for the values in <paramref name="source"/>
@@ -9860,7 +9533,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Angle"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9888,7 +9560,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Unitless"/> for the values in <paramref name="source"/>
@@ -9918,7 +9589,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Current"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -9946,7 +9616,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="LuminousIntensity"/> for the values in <paramref name="source"/>
@@ -9976,7 +9645,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Data"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10004,7 +9672,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="AmountOfSubstance"/> for the values in <paramref name="source"/>
@@ -10034,7 +9701,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="SolidAngle"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10062,7 +9728,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Area"/> for the values in <paramref name="source"/>
@@ -10092,7 +9757,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Volume"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10120,7 +9784,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Force"/> for the values in <paramref name="source"/>
@@ -10150,7 +9813,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Pressure"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10178,7 +9840,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Density"/> for the values in <paramref name="source"/>
@@ -10208,7 +9869,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Energy"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10236,7 +9896,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Power"/> for the values in <paramref name="source"/>
@@ -10266,7 +9925,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Speed"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10294,7 +9952,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="AngularSpeed"/> for the values in <paramref name="source"/>
@@ -10324,7 +9981,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Frequency"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10352,7 +10008,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Acceleration"/> for the values in <paramref name="source"/>
@@ -10382,7 +10037,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Torque"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10410,7 +10064,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Stiffness"/> for the values in <paramref name="source"/>
@@ -10440,7 +10093,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="VolumetricFlow"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10468,7 +10120,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Voltage"/> for the values in <paramref name="source"/>
@@ -10498,7 +10149,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Resistance"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10526,7 +10176,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="SpecificEnergy"/> for the values in <paramref name="source"/>
@@ -10556,7 +10205,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="ElectricCharge"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10584,7 +10232,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Inductance"/> for the values in <paramref name="source"/>
@@ -10614,7 +10261,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Capacitance"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10642,7 +10288,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Flexibility"/> for the values in <paramref name="source"/>
@@ -10672,7 +10317,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="AngularAcceleration"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10700,7 +10344,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="AngularJerk"/> for the values in <paramref name="source"/>
@@ -10730,7 +10373,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Jerk"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10758,7 +10400,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="LengthPerUnitless"/> for the values in <paramref name="source"/>
@@ -10788,7 +10429,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="AnglePerUnitless"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10816,7 +10456,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="ForcePerUnitless"/> for the values in <paramref name="source"/>
@@ -10846,7 +10485,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="LuminousFlux"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10874,7 +10512,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Illuminance"/> for the values in <paramref name="source"/>
@@ -10904,7 +10541,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="MagneticFlux"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10932,7 +10568,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="ElectricalConductance"/> for the values in <paramref name="source"/>
@@ -10962,7 +10597,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="MagneticFieldStrength"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -10990,7 +10624,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="CatalyticActivity"/> for the values in <paramref name="source"/>
@@ -11020,7 +10653,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Momentum"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11048,7 +10680,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Wavenumber"/> for the values in <paramref name="source"/>
@@ -11078,7 +10709,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="AreaDensity"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11106,7 +10736,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="SpecificVolume"/> for the values in <paramref name="source"/>
@@ -11136,7 +10765,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="MassFlow"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11164,7 +10792,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="KinematicViscosity"/> for the values in <paramref name="source"/>
@@ -11194,7 +10821,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="MolarMass"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11223,7 +10849,6 @@ namespace Gu.Units
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="MolarHeatCapacity"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11251,8 +10876,6 @@ namespace Gu.Units
             }
             throw new ArgumentException("No elements", "source");
         }
-
-
 
 
         /// <summary>
@@ -11286,7 +10909,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{Length}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11317,7 +10939,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Time}"/> for the values in <paramref name="source"/>
@@ -11350,7 +10971,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{Temperature}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11381,7 +11001,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Angle}"/> for the values in <paramref name="source"/>
@@ -11414,7 +11033,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{Unitless}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11445,7 +11063,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Current}"/> for the values in <paramref name="source"/>
@@ -11478,7 +11095,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{LuminousIntensity}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11509,7 +11125,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Data}"/> for the values in <paramref name="source"/>
@@ -11542,7 +11157,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{AmountOfSubstance}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11573,7 +11187,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{SolidAngle}"/> for the values in <paramref name="source"/>
@@ -11606,7 +11219,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{Area}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11637,7 +11249,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Volume}"/> for the values in <paramref name="source"/>
@@ -11670,7 +11281,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{Force}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11701,7 +11311,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Pressure}"/> for the values in <paramref name="source"/>
@@ -11734,7 +11343,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{Density}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11765,7 +11373,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Energy}"/> for the values in <paramref name="source"/>
@@ -11798,7 +11405,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{Power}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11829,7 +11435,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Speed}"/> for the values in <paramref name="source"/>
@@ -11862,7 +11467,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{AngularSpeed}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11893,7 +11497,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Frequency}"/> for the values in <paramref name="source"/>
@@ -11926,7 +11529,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{Acceleration}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -11957,7 +11559,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Torque}"/> for the values in <paramref name="source"/>
@@ -11990,7 +11591,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{Stiffness}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12021,7 +11621,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{VolumetricFlow}"/> for the values in <paramref name="source"/>
@@ -12054,7 +11653,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{Voltage}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12085,7 +11683,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Resistance}"/> for the values in <paramref name="source"/>
@@ -12118,7 +11715,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{SpecificEnergy}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12149,7 +11745,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{ElectricCharge}"/> for the values in <paramref name="source"/>
@@ -12182,7 +11777,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{Inductance}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12213,7 +11807,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Capacitance}"/> for the values in <paramref name="source"/>
@@ -12246,7 +11839,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{Flexibility}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12277,7 +11869,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{AngularAcceleration}"/> for the values in <paramref name="source"/>
@@ -12310,7 +11901,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{AngularJerk}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12341,7 +11931,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Jerk}"/> for the values in <paramref name="source"/>
@@ -12374,7 +11963,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{LengthPerUnitless}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12405,7 +11993,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{AnglePerUnitless}"/> for the values in <paramref name="source"/>
@@ -12438,7 +12025,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{ForcePerUnitless}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12469,7 +12055,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{LuminousFlux}"/> for the values in <paramref name="source"/>
@@ -12502,7 +12087,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{Illuminance}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12533,7 +12117,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{MagneticFlux}"/> for the values in <paramref name="source"/>
@@ -12566,7 +12149,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{ElectricalConductance}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12597,7 +12179,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{MagneticFieldStrength}"/> for the values in <paramref name="source"/>
@@ -12630,7 +12211,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{CatalyticActivity}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12661,7 +12241,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Momentum}"/> for the values in <paramref name="source"/>
@@ -12694,7 +12273,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{Wavenumber}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12725,7 +12303,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{AreaDensity}"/> for the values in <paramref name="source"/>
@@ -12758,7 +12335,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{SpecificVolume}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12789,7 +12365,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{MassFlow}"/> for the values in <paramref name="source"/>
@@ -12822,7 +12397,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{KinematicViscosity}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12853,7 +12427,6 @@ namespace Gu.Units
             }
             return null;
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{MolarMass}"/> for the values in <paramref name="source"/>
@@ -12886,7 +12459,6 @@ namespace Gu.Units
             return null;
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{MolarHeatCapacity}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -12917,6 +12489,5 @@ namespace Gu.Units
             }
             return null;
         }
-
     }
 }

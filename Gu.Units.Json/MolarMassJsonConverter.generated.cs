@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units.Json
+﻿namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -25,12 +19,10 @@ namespace Gu.Units.Json
         /// </summary>
         public static readonly MolarMassJsonConverter KilogramsPerMole = new MolarMassJsonConverter(MolarMassUnit.KilogramsPerMole);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="MolarMassUnit.GramsPerMole"/>
         /// </summary>
         public static readonly MolarMassJsonConverter GramsPerMole = new MolarMassJsonConverter(MolarMassUnit.GramsPerMole);
-
 
         private readonly MolarMassUnit unit;
 

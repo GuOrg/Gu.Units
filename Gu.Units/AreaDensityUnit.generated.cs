@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -22,7 +16,6 @@ namespace Gu.Units
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly AreaDensityUnit KilogramsPerSquareMetre = new AreaDensityUnit(kilogramsPerSquareMetre => kilogramsPerSquareMetre, kilogramsPerSquareMetre => kilogramsPerSquareMetre, "kg/m²");
-
 
         private readonly Func<double, double> toKilogramsPerSquareMetre;
         private readonly Func<double, double> fromKilogramsPerSquareMetre;

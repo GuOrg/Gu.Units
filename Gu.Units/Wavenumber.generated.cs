@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -63,7 +57,6 @@ namespace Gu.Units
         /// The quantity in reciprocalMetres".
         /// </summary>
         public double ReciprocalMetres => this.reciprocalMetres;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Wavenumber"/> from its string representation
@@ -188,8 +181,6 @@ namespace Gu.Units
             return new Wavenumber(reciprocalMetres);
         }
 
-
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -200,7 +191,6 @@ namespace Gu.Units
         {
             return Length.FromMetres(left.reciprocalMetres * right.squareMetres);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -213,7 +203,6 @@ namespace Gu.Units
             return Area.FromSquareMetres(left.reciprocalMetres * right.cubicMetres);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -224,7 +213,6 @@ namespace Gu.Units
         {
             return Stiffness.FromNewtonsPerMetre(left.reciprocalMetres * right.newtons);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -237,7 +225,6 @@ namespace Gu.Units
             return Flexibility.FromMetresPerNewton(left.reciprocalMetres / right.pascals);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -248,7 +235,6 @@ namespace Gu.Units
         {
             return Force.FromNewtons(left.reciprocalMetres * right.joules);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -261,7 +247,6 @@ namespace Gu.Units
             return Frequency.FromHertz(left.reciprocalMetres * right.metresPerSecond);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -272,7 +257,6 @@ namespace Gu.Units
         {
             return Pressure.FromPascals(left.reciprocalMetres * right.newtonsPerMetre);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -285,7 +269,6 @@ namespace Gu.Units
             return KinematicViscosity.FromSquareMetresPerSecond(left.reciprocalMetres * right.cubicMetresPerSecond);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -296,7 +279,6 @@ namespace Gu.Units
         {
             return Acceleration.FromMetresPerSecondSquared(left.reciprocalMetres * right.joulesPerKilogram);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -309,7 +291,6 @@ namespace Gu.Units
             return Pressure.FromPascals(left.reciprocalMetres / right.metresPerNewton);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -320,7 +301,6 @@ namespace Gu.Units
         {
             return MassFlow.FromKilogramsPerSecond(left.reciprocalMetres * right.newtonSecond);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -333,7 +313,6 @@ namespace Gu.Units
             return Density.FromKilogramsPerCubicMetre(left.reciprocalMetres * right.kilogramsPerSquareMetre);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -345,8 +324,6 @@ namespace Gu.Units
             return Speed.FromMetresPerSecond(left.reciprocalMetres * right.squareMetresPerSecond);
         }
 
-
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -357,7 +334,6 @@ namespace Gu.Units
         {
             return Length.FromMetres(left / right.reciprocalMetres);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

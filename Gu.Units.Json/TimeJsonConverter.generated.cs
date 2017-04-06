@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units.Json
+﻿namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -25,36 +19,35 @@ namespace Gu.Units.Json
         /// </summary>
         public static readonly TimeJsonConverter Seconds = new TimeJsonConverter(TimeUnit.Seconds);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="TimeUnit.Hours"/>
         /// </summary>
         public static readonly TimeJsonConverter Hours = new TimeJsonConverter(TimeUnit.Hours);
-
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="TimeUnit.Minutes"/>
         /// </summary>
         public static readonly TimeJsonConverter Minutes = new TimeJsonConverter(TimeUnit.Minutes);
 
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="TimeUnit.Days"/>
+        /// </summary>
+        public static readonly TimeJsonConverter Days = new TimeJsonConverter(TimeUnit.Days);
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="TimeUnit.Nanoseconds"/>
         /// </summary>
         public static readonly TimeJsonConverter Nanoseconds = new TimeJsonConverter(TimeUnit.Nanoseconds);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="TimeUnit.Microseconds"/>
         /// </summary>
         public static readonly TimeJsonConverter Microseconds = new TimeJsonConverter(TimeUnit.Microseconds);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="TimeUnit.Milliseconds"/>
         /// </summary>
         public static readonly TimeJsonConverter Milliseconds = new TimeJsonConverter(TimeUnit.Milliseconds);
-
 
         private readonly TimeUnit unit;
 

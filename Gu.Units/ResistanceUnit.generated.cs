@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly ResistanceUnit Ohms = new ResistanceUnit(ohms => ohms, ohms => ohms, "Ω");
 
-
         /// <summary>
         /// The Microohms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ResistanceUnit Microohms = new ResistanceUnit(microohms => microohms / 1000000, ohms => 1000000 * ohms, "µΩ");
-
 
         /// <summary>
         /// The Milliohms unit
@@ -37,20 +29,17 @@ namespace Gu.Units
         /// </summary>
         public static readonly ResistanceUnit Milliohms = new ResistanceUnit(milliohms => milliohms / 1000, ohms => 1000 * ohms, "mΩ");
 
-
         /// <summary>
         /// The Kiloohms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ResistanceUnit Kiloohms = new ResistanceUnit(kiloohms => 1000 * kiloohms, ohms => ohms / 1000, "kΩ");
 
-
         /// <summary>
         /// The Megaohms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly ResistanceUnit Megaohms = new ResistanceUnit(megaohms => 1000000 * megaohms, ohms => ohms / 1000000, "MΩ");
-
 
         private readonly Func<double, double> toOhms;
         private readonly Func<double, double> fromOhms;

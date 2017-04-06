@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly MassUnit Kilograms = new MassUnit(kilograms => kilograms, kilograms => kilograms, "kg");
 
-
         /// <summary>
         /// The Grams unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly MassUnit Grams = new MassUnit(grams => grams / 1000, kilograms => 1000 * kilograms, "g");
-
 
         /// <summary>
         /// The Milligrams unit
@@ -37,13 +29,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly MassUnit Milligrams = new MassUnit(milligrams => milligrams / 1000000, kilograms => 1000000 * kilograms, "mg");
 
-
         /// <summary>
         /// The Micrograms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly MassUnit Micrograms = new MassUnit(micrograms => micrograms / 1000000000, kilograms => 1000000000 * kilograms, "µg");
-
 
         /// <summary>
         /// The AvoirdupoisPounds unit
@@ -51,13 +41,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly MassUnit AvoirdupoisPounds = new MassUnit(avoirdupoisPounds => 0.45359237 * avoirdupoisPounds, kilograms => kilograms / 0.45359237, "lb");
 
-
         /// <summary>
         /// The AvoirdupoisOunces unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly MassUnit AvoirdupoisOunces = new MassUnit(avoirdupoisOunces => 0.028349523125 * avoirdupoisOunces, kilograms => kilograms / 0.028349523125, "oz");
-
 
         /// <summary>
         /// The TroyOunces unit
@@ -65,13 +53,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly MassUnit TroyOunces = new MassUnit(troyOunces => 0.0311034768 * troyOunces, kilograms => kilograms / 0.0311034768, "troy");
 
-
         /// <summary>
         /// The TroyGrains unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly MassUnit TroyGrains = new MassUnit(troyGrains => 6.479891E-05 * troyGrains, kilograms => kilograms / 6.479891E-05, "gr");
-
 
         private readonly Func<double, double> toKilograms;
         private readonly Func<double, double> fromKilograms;

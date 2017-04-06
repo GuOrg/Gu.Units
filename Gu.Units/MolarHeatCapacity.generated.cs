@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -63,7 +57,6 @@ namespace Gu.Units
         /// The quantity in joulesPerKelvinMole".
         /// </summary>
         public double JoulesPerKelvinMole => this.joulesPerKelvinMole;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.MolarHeatCapacity"/> from its string representation
@@ -187,9 +180,6 @@ namespace Gu.Units
         {
             return new MolarHeatCapacity(joulesPerKelvinMole);
         }
-
-
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

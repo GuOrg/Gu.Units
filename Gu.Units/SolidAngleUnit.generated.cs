@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -22,7 +16,6 @@ namespace Gu.Units
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly SolidAngleUnit Steradians = new SolidAngleUnit(steradians => steradians, steradians => steradians, "sr");
-
 
         private readonly Func<double, double> toSteradians;
         private readonly Func<double, double> fromSteradians;
