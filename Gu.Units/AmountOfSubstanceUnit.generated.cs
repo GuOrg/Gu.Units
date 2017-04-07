@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -22,7 +16,6 @@ namespace Gu.Units
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly AmountOfSubstanceUnit Moles = new AmountOfSubstanceUnit(moles => moles, moles => moles, "mol");
-
 
         private readonly Func<double, double> toMoles;
         private readonly Func<double, double> fromMoles;

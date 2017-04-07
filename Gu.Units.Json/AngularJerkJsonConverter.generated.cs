@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units.Json
+﻿namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -25,36 +19,30 @@ namespace Gu.Units.Json
         /// </summary>
         public static readonly AngularJerkJsonConverter RadiansPerSecondCubed = new AngularJerkJsonConverter(AngularJerkUnit.RadiansPerSecondCubed);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularJerkUnit.DegreesPerSecondCubed"/>
         /// </summary>
         public static readonly AngularJerkJsonConverter DegreesPerSecondCubed = new AngularJerkJsonConverter(AngularJerkUnit.DegreesPerSecondCubed);
-
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularJerkUnit.RadiansPerHourCubed"/>
         /// </summary>
         public static readonly AngularJerkJsonConverter RadiansPerHourCubed = new AngularJerkJsonConverter(AngularJerkUnit.RadiansPerHourCubed);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularJerkUnit.DegreesPerHourCubed"/>
         /// </summary>
         public static readonly AngularJerkJsonConverter DegreesPerHourCubed = new AngularJerkJsonConverter(AngularJerkUnit.DegreesPerHourCubed);
-
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularJerkUnit.RadiansPerMinuteCubed"/>
         /// </summary>
         public static readonly AngularJerkJsonConverter RadiansPerMinuteCubed = new AngularJerkJsonConverter(AngularJerkUnit.RadiansPerMinuteCubed);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularJerkUnit.DegreesPerMinuteCubed"/>
         /// </summary>
         public static readonly AngularJerkJsonConverter DegreesPerMinuteCubed = new AngularJerkJsonConverter(AngularJerkUnit.DegreesPerMinuteCubed);
-
 
         private readonly AngularJerkUnit unit;
 

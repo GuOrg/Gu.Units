@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -63,7 +57,6 @@ namespace Gu.Units
         /// The quantity in squareMetresPerSecond".
         /// </summary>
         public double SquareMetresPerSecond => this.squareMetresPerSecond;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
@@ -188,8 +181,6 @@ namespace Gu.Units
             return new KinematicViscosity(squareMetresPerSecond);
         }
 
-
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -200,7 +191,6 @@ namespace Gu.Units
         {
             return VolumetricFlow.FromCubicMetresPerSecond(left.squareMetresPerSecond * right.metres);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -213,7 +203,6 @@ namespace Gu.Units
             return Speed.FromMetresPerSecond(left.squareMetresPerSecond / right.metres);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -224,7 +213,6 @@ namespace Gu.Units
         {
             return Area.FromSquareMetres(left.squareMetresPerSecond * right.seconds);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -237,7 +225,6 @@ namespace Gu.Units
             return SpecificEnergy.FromJoulesPerKilogram(left.squareMetresPerSecond / right.seconds);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -248,7 +235,6 @@ namespace Gu.Units
         {
             return Frequency.FromHertz(left.squareMetresPerSecond / right.squareMetres);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -261,7 +247,6 @@ namespace Gu.Units
             return Flexibility.FromMetresPerNewton(left.squareMetresPerSecond / right.watts);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -272,7 +257,6 @@ namespace Gu.Units
         {
             return Length.FromMetres(left.squareMetresPerSecond / right.metresPerSecond);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -285,7 +269,6 @@ namespace Gu.Units
             return SpecificEnergy.FromJoulesPerKilogram(left.squareMetresPerSecond * right.hertz);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -296,7 +279,6 @@ namespace Gu.Units
         {
             return Area.FromSquareMetres(left.squareMetresPerSecond / right.hertz);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -309,7 +291,6 @@ namespace Gu.Units
             return Power.FromWatts(left.squareMetresPerSecond * right.newtonsPerMetre);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -320,7 +301,6 @@ namespace Gu.Units
         {
             return Wavenumber.FromReciprocalMetres(left.squareMetresPerSecond / right.cubicMetresPerSecond);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -333,7 +313,6 @@ namespace Gu.Units
             return Time.FromSeconds(left.squareMetresPerSecond / right.joulesPerKilogram);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -344,7 +323,6 @@ namespace Gu.Units
         {
             return Power.FromWatts(left.squareMetresPerSecond / right.metresPerNewton);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -357,7 +335,6 @@ namespace Gu.Units
             return Voltage.FromVolts(left.squareMetresPerSecond * right.teslas);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -368,7 +345,6 @@ namespace Gu.Units
         {
             return Speed.FromMetresPerSecond(left.squareMetresPerSecond * right.reciprocalMetres);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -381,7 +357,6 @@ namespace Gu.Units
             return VolumetricFlow.FromCubicMetresPerSecond(left.squareMetresPerSecond / right.reciprocalMetres);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -393,7 +368,6 @@ namespace Gu.Units
             return MassFlow.FromKilogramsPerSecond(left.squareMetresPerSecond * right.kilogramsPerSquareMetre);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -404,8 +378,6 @@ namespace Gu.Units
         {
             return Energy.FromJoules(left.squareMetresPerSecond * right.kilogramsPerSecond);
         }
-
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

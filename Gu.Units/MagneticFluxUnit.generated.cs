@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -22,7 +16,6 @@ namespace Gu.Units
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly MagneticFluxUnit Webers = new MagneticFluxUnit(webers => webers, webers => webers, "Wb");
-
 
         private readonly Func<double, double> toWebers;
         private readonly Func<double, double> fromWebers;

@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -64,42 +58,35 @@ namespace Gu.Units
         /// </summary>
         public double Newtons => this.newtons;
 
-
         /// <summary>
         /// The quantity in Nanonewtons
         /// </summary>
         public double Nanonewtons => 1000000000 * this.newtons;
-
 
         /// <summary>
         /// The quantity in Micronewtons
         /// </summary>
         public double Micronewtons => 1000000 * this.newtons;
 
-
         /// <summary>
         /// The quantity in Millinewtons
         /// </summary>
         public double Millinewtons => 1000 * this.newtons;
-
 
         /// <summary>
         /// The quantity in Kilonewtons
         /// </summary>
         public double Kilonewtons => this.newtons / 1000;
 
-
         /// <summary>
         /// The quantity in Meganewtons
         /// </summary>
         public double Meganewtons => this.newtons / 1000000;
 
-
         /// <summary>
         /// The quantity in Giganewtons
         /// </summary>
         public double Giganewtons => this.newtons / 1000000000;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
@@ -224,7 +211,6 @@ namespace Gu.Units
             return new Force(newtons);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
@@ -233,7 +219,6 @@ namespace Gu.Units
         {
             return new Force(nanonewtons / 1000000000);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
@@ -244,7 +229,6 @@ namespace Gu.Units
             return new Force(micronewtons / 1000000);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
@@ -253,7 +237,6 @@ namespace Gu.Units
         {
             return new Force(millinewtons / 1000);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
@@ -264,7 +247,6 @@ namespace Gu.Units
             return new Force(1000 * kilonewtons);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
@@ -274,7 +256,6 @@ namespace Gu.Units
             return new Force(1000000 * meganewtons);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
@@ -283,8 +264,6 @@ namespace Gu.Units
         {
             return new Force(1000000000 * giganewtons);
         }
-
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -297,7 +276,6 @@ namespace Gu.Units
             return Acceleration.FromMetresPerSecondSquared(left.newtons / right.kilograms);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -308,7 +286,6 @@ namespace Gu.Units
         {
             return Energy.FromJoules(left.newtons * right.metres);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -321,7 +298,6 @@ namespace Gu.Units
             return Stiffness.FromNewtonsPerMetre(left.newtons / right.metres);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -332,7 +308,6 @@ namespace Gu.Units
         {
             return Momentum.FromNewtonSecond(left.newtons * right.seconds);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -345,7 +320,6 @@ namespace Gu.Units
             return ForcePerUnitless.FromNewtonsPerUnitless(left.newtons / right.scalar);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -356,7 +330,6 @@ namespace Gu.Units
         {
             return Pressure.FromPascals(left.newtons / right.squareMetres);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -369,7 +342,6 @@ namespace Gu.Units
             return Area.FromSquareMetres(left.newtons / right.pascals);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -380,7 +352,6 @@ namespace Gu.Units
         {
             return Wavenumber.FromReciprocalMetres(left.newtons / right.joules);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -393,7 +364,6 @@ namespace Gu.Units
             return Power.FromWatts(left.newtons * right.metresPerSecond);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -404,7 +374,6 @@ namespace Gu.Units
         {
             return MassFlow.FromKilogramsPerSecond(left.newtons / right.metresPerSecond);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -417,7 +386,6 @@ namespace Gu.Units
             return Momentum.FromNewtonSecond(left.newtons / right.hertz);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -428,7 +396,6 @@ namespace Gu.Units
         {
             return Mass.FromKilograms(left.newtons / right.metresPerSecondSquared);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -441,7 +408,6 @@ namespace Gu.Units
             return Length.FromMetres(left.newtons / right.newtonsPerMetre);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -452,7 +418,6 @@ namespace Gu.Units
         {
             return Length.FromMetres(left.newtons * right.metresPerNewton);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -465,7 +430,6 @@ namespace Gu.Units
             return Unitless.FromScalar(left.newtons / right.newtonsPerUnitless);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -476,7 +440,6 @@ namespace Gu.Units
         {
             return Frequency.FromHertz(left.newtons / right.newtonSecond);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -489,7 +452,6 @@ namespace Gu.Units
             return Stiffness.FromNewtonsPerMetre(left.newtons * right.reciprocalMetres);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -501,7 +463,6 @@ namespace Gu.Units
             return Energy.FromJoules(left.newtons / right.reciprocalMetres);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -512,8 +473,6 @@ namespace Gu.Units
         {
             return Speed.FromMetresPerSecond(left.newtons / right.kilogramsPerSecond);
         }
-
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

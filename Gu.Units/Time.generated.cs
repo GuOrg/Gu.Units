@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -64,36 +58,35 @@ namespace Gu.Units
         /// </summary>
         public double Seconds => this.seconds;
 
-
         /// <summary>
         /// The quantity in Hours
         /// </summary>
         public double Hours => this.seconds / 3600;
-
 
         /// <summary>
         /// The quantity in Minutes
         /// </summary>
         public double Minutes => this.seconds / 60;
 
+        /// <summary>
+        /// The quantity in Days
+        /// </summary>
+        public double Days => this.seconds / 86400;
 
         /// <summary>
         /// The quantity in Nanoseconds
         /// </summary>
         public double Nanoseconds => 1000000000 * this.seconds;
 
-
         /// <summary>
         /// The quantity in Microseconds
         /// </summary>
         public double Microseconds => 1000000 * this.seconds;
 
-
         /// <summary>
         /// The quantity in Milliseconds
         /// </summary>
         public double Milliseconds => 1000 * this.seconds;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
@@ -218,7 +211,6 @@ namespace Gu.Units
             return new Time(seconds);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
@@ -227,7 +219,6 @@ namespace Gu.Units
         {
             return new Time(3600 * hours);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
@@ -238,6 +229,14 @@ namespace Gu.Units
             return new Time(60 * minutes);
         }
 
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="days">The value in d</param>
+        public static Time FromDays(double days)
+        {
+            return new Time(86400 * days);
+        }
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
@@ -248,7 +247,6 @@ namespace Gu.Units
             return new Time(nanoseconds / 1000000000);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
@@ -258,7 +256,6 @@ namespace Gu.Units
             return new Time(microseconds / 1000000);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
@@ -267,8 +264,6 @@ namespace Gu.Units
         {
             return new Time(milliseconds / 1000);
         }
-
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -281,7 +276,6 @@ namespace Gu.Units
             return ElectricCharge.FromCoulombs(left.seconds * right.amperes);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -292,7 +286,6 @@ namespace Gu.Units
         {
             return Momentum.FromNewtonSecond(left.seconds * right.newtons);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -305,7 +298,6 @@ namespace Gu.Units
             return Energy.FromJoules(left.seconds * right.watts);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -316,7 +308,6 @@ namespace Gu.Units
         {
             return Length.FromMetres(left.seconds * right.metresPerSecond);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -329,7 +320,6 @@ namespace Gu.Units
             return Angle.FromRadians(left.seconds * right.radiansPerSecond);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -340,7 +330,6 @@ namespace Gu.Units
         {
             return Speed.FromMetresPerSecond(left.seconds * right.metresPerSecondSquared);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -353,7 +342,6 @@ namespace Gu.Units
             return MassFlow.FromKilogramsPerSecond(left.seconds * right.newtonsPerMetre);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -364,7 +352,6 @@ namespace Gu.Units
         {
             return Volume.FromCubicMetres(left.seconds * right.cubicMetresPerSecond);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -377,7 +364,6 @@ namespace Gu.Units
             return MagneticFlux.FromWebers(left.seconds * right.volts);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -388,7 +374,6 @@ namespace Gu.Units
         {
             return Inductance.FromHenrys(left.seconds * right.ohms);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -401,7 +386,6 @@ namespace Gu.Units
             return Capacitance.FromFarads(left.seconds / right.ohms);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -412,7 +396,6 @@ namespace Gu.Units
         {
             return KinematicViscosity.FromSquareMetresPerSecond(left.seconds * right.joulesPerKilogram);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -425,7 +408,6 @@ namespace Gu.Units
             return ElectricalConductance.FromSiemens(left.seconds / right.henrys);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -436,7 +418,6 @@ namespace Gu.Units
         {
             return Resistance.FromOhms(left.seconds / right.farads);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -449,7 +430,6 @@ namespace Gu.Units
             return MassFlow.FromKilogramsPerSecond(left.seconds / right.metresPerNewton);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -460,7 +440,6 @@ namespace Gu.Units
         {
             return AngularSpeed.FromRadiansPerSecond(left.seconds * right.radiansPerSecondSquared);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -473,7 +452,6 @@ namespace Gu.Units
             return AngularAcceleration.FromRadiansPerSecondSquared(left.seconds * right.radiansPerSecondCubed);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -484,7 +462,6 @@ namespace Gu.Units
         {
             return Acceleration.FromMetresPerSecondSquared(left.seconds * right.metresPerSecondCubed);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -497,7 +474,6 @@ namespace Gu.Units
             return Capacitance.FromFarads(left.seconds * right.siemens);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -508,7 +484,6 @@ namespace Gu.Units
         {
             return Inductance.FromHenrys(left.seconds / right.siemens);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -521,7 +496,6 @@ namespace Gu.Units
             return AmountOfSubstance.FromMoles(left.seconds * right.katals);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -532,7 +506,6 @@ namespace Gu.Units
         {
             return Mass.FromKilograms(left.seconds * right.kilogramsPerSecond);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -545,7 +518,6 @@ namespace Gu.Units
             return Flexibility.FromMetresPerNewton(left.seconds / right.kilogramsPerSecond);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -557,8 +529,6 @@ namespace Gu.Units
             return Area.FromSquareMetres(left.seconds * right.squareMetresPerSecond);
         }
 
-
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -569,7 +539,6 @@ namespace Gu.Units
         {
             return Frequency.FromHertz(left / right.seconds);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

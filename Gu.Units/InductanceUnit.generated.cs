@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly InductanceUnit Henrys = new InductanceUnit(henrys => henrys, henrys => henrys, "H");
 
-
         /// <summary>
         /// The Nanohenrys unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly InductanceUnit Nanohenrys = new InductanceUnit(nanohenrys => nanohenrys / 1000000000, henrys => 1000000000 * henrys, "nH");
-
 
         /// <summary>
         /// The Microhenrys unit
@@ -37,13 +29,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly InductanceUnit Microhenrys = new InductanceUnit(microhenrys => microhenrys / 1000000, henrys => 1000000 * henrys, "µH");
 
-
         /// <summary>
         /// The Millihenrys unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly InductanceUnit Millihenrys = new InductanceUnit(millihenrys => millihenrys / 1000, henrys => 1000 * henrys, "mH");
-
 
         /// <summary>
         /// The Kilohenrys unit
@@ -51,20 +41,17 @@ namespace Gu.Units
         /// </summary>
         public static readonly InductanceUnit Kilohenrys = new InductanceUnit(kilohenrys => 1000 * kilohenrys, henrys => henrys / 1000, "kH");
 
-
         /// <summary>
         /// The Megahenrys unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly InductanceUnit Megahenrys = new InductanceUnit(megahenrys => 1000000 * megahenrys, henrys => henrys / 1000000, "MH");
 
-
         /// <summary>
         /// The Gigahenrys unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly InductanceUnit Gigahenrys = new InductanceUnit(gigahenrys => 1000000000 * gigahenrys, henrys => henrys / 1000000000, "GH");
-
 
         private readonly Func<double, double> toHenrys;
         private readonly Func<double, double> fromHenrys;

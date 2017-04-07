@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly PressureUnit Pascals = new PressureUnit(pascals => pascals, pascals => pascals, "Pa");
 
-
         /// <summary>
         /// The Bars unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit Bars = new PressureUnit(bars => 100000 * bars, pascals => pascals / 100000, "bar");
-
 
         /// <summary>
         /// The Millibars unit
@@ -37,13 +29,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly PressureUnit Millibars = new PressureUnit(millibars => 100 * millibars, pascals => pascals / 100, "mbar");
 
-
         /// <summary>
         /// The Nanopascals unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit Nanopascals = new PressureUnit(nanopascals => nanopascals / 1000000000, pascals => 1000000000 * pascals, "nPa");
-
 
         /// <summary>
         /// The Micropascals unit
@@ -51,13 +41,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly PressureUnit Micropascals = new PressureUnit(micropascals => micropascals / 1000000, pascals => 1000000 * pascals, "µPa");
 
-
         /// <summary>
         /// The Millipascals unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit Millipascals = new PressureUnit(millipascals => millipascals / 1000, pascals => 1000 * pascals, "mPa");
-
 
         /// <summary>
         /// The Kilopascals unit
@@ -65,13 +53,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly PressureUnit Kilopascals = new PressureUnit(kilopascals => 1000 * kilopascals, pascals => pascals / 1000, "kPa");
 
-
         /// <summary>
         /// The Megapascals unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit Megapascals = new PressureUnit(megapascals => 1000000 * megapascals, pascals => pascals / 1000000, "MPa");
-
 
         /// <summary>
         /// The Gigapascals unit
@@ -79,13 +65,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly PressureUnit Gigapascals = new PressureUnit(gigapascals => 1000000000 * gigapascals, pascals => pascals / 1000000000, "GPa");
 
-
         /// <summary>
         /// The NewtonsPerSquareMillimetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit NewtonsPerSquareMillimetre = new PressureUnit(newtonsPerSquareMillimetre => 1000000 * newtonsPerSquareMillimetre, pascals => pascals / 1000000, "N⋅mm⁻²");
-
 
         /// <summary>
         /// The KilonewtonsPerSquareMillimetre unit
@@ -93,13 +77,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly PressureUnit KilonewtonsPerSquareMillimetre = new PressureUnit(kilonewtonsPerSquareMillimetre => 1000000000 * kilonewtonsPerSquareMillimetre, pascals => pascals / 1000000000, "kN⋅mm⁻²");
 
-
         /// <summary>
         /// The NewtonsPerSquareMetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly PressureUnit NewtonsPerSquareMetre = new PressureUnit(newtonsPerSquareMetre => newtonsPerSquareMetre, pascals => pascals, "N/m²");
-
 
         private readonly Func<double, double> toPascals;
         private readonly Func<double, double> fromPascals;

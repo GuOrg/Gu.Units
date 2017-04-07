@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units.Json
+﻿namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -25,30 +19,25 @@ namespace Gu.Units.Json
         /// </summary>
         public static readonly ForcePerUnitlessJsonConverter NewtonsPerUnitless = new ForcePerUnitlessJsonConverter(ForcePerUnitlessUnit.NewtonsPerUnitless);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ForcePerUnitlessUnit.NewtonsPerPercent"/>
         /// </summary>
         public static readonly ForcePerUnitlessJsonConverter NewtonsPerPercent = new ForcePerUnitlessJsonConverter(ForcePerUnitlessUnit.NewtonsPerPercent);
-
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ForcePerUnitlessUnit.KilonewtonsPerPercent"/>
         /// </summary>
         public static readonly ForcePerUnitlessJsonConverter KilonewtonsPerPercent = new ForcePerUnitlessJsonConverter(ForcePerUnitlessUnit.KilonewtonsPerPercent);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ForcePerUnitlessUnit.MeganewtonsPerPercent"/>
         /// </summary>
         public static readonly ForcePerUnitlessJsonConverter MeganewtonsPerPercent = new ForcePerUnitlessJsonConverter(ForcePerUnitlessUnit.MeganewtonsPerPercent);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ForcePerUnitlessUnit.GiganewtonsPerPercent"/>
         /// </summary>
         public static readonly ForcePerUnitlessJsonConverter GiganewtonsPerPercent = new ForcePerUnitlessJsonConverter(ForcePerUnitlessUnit.GiganewtonsPerPercent);
-
 
         private readonly ForcePerUnitlessUnit unit;
 

@@ -36,7 +36,7 @@ namespace Gu.Units.Tests
             Assert.AreEqual(false, LengthUnit.TryParse(text, out temp));
         }
 
-        private IReadOnlyList<string> HappyPathSource = new[] { "m", "mm", " cm", " m " };
+        private IReadOnlyList<string> HappyPathSource = new[] { "m", "mm", " cm", " m ", "ft", "yd" };
         private IReadOnlyList<string> ErrorSource = new[] { "ssg", "mms" };
     }
 }

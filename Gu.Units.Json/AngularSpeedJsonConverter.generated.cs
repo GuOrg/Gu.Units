@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units.Json
+﻿namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -25,42 +19,35 @@ namespace Gu.Units.Json
         /// </summary>
         public static readonly AngularSpeedJsonConverter RadiansPerSecond = new AngularSpeedJsonConverter(AngularSpeedUnit.RadiansPerSecond);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularSpeedUnit.RevolutionsPerMinute"/>
         /// </summary>
         public static readonly AngularSpeedJsonConverter RevolutionsPerMinute = new AngularSpeedJsonConverter(AngularSpeedUnit.RevolutionsPerMinute);
-
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularSpeedUnit.DegreesPerSecond"/>
         /// </summary>
         public static readonly AngularSpeedJsonConverter DegreesPerSecond = new AngularSpeedJsonConverter(AngularSpeedUnit.DegreesPerSecond);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularSpeedUnit.DegreesPerMinute"/>
         /// </summary>
         public static readonly AngularSpeedJsonConverter DegreesPerMinute = new AngularSpeedJsonConverter(AngularSpeedUnit.DegreesPerMinute);
-
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularSpeedUnit.RadiansPerMinute"/>
         /// </summary>
         public static readonly AngularSpeedJsonConverter RadiansPerMinute = new AngularSpeedJsonConverter(AngularSpeedUnit.RadiansPerMinute);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularSpeedUnit.DegreesPerHour"/>
         /// </summary>
         public static readonly AngularSpeedJsonConverter DegreesPerHour = new AngularSpeedJsonConverter(AngularSpeedUnit.DegreesPerHour);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AngularSpeedUnit.RadiansPerHour"/>
         /// </summary>
         public static readonly AngularSpeedJsonConverter RadiansPerHour = new AngularSpeedJsonConverter(AngularSpeedUnit.RadiansPerHour);
-
 
         private readonly AngularSpeedUnit unit;
 

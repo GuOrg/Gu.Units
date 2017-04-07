@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -64,66 +58,60 @@ namespace Gu.Units
         /// </summary>
         public double Metres => this.metres;
 
-
         /// <summary>
         /// The quantity in Inches
         /// </summary>
         public double Inches => this.metres / 0.0254;
-
 
         /// <summary>
         /// The quantity in Miles
         /// </summary>
         public double Miles => this.metres / 1609.344;
 
-
         /// <summary>
         /// The quantity in Yards
         /// </summary>
         public double Yards => this.metres / 0.9144;
-
 
         /// <summary>
         /// The quantity in NauticalMiles
         /// </summary>
         public double NauticalMiles => this.metres / 1852;
 
+        /// <summary>
+        /// The quantity in Feet
+        /// </summary>
+        public double Feet => this.metres / 0.3048;
 
         /// <summary>
         /// The quantity in Nanometres
         /// </summary>
         public double Nanometres => 1000000000 * this.metres;
 
-
         /// <summary>
         /// The quantity in Micrometres
         /// </summary>
         public double Micrometres => 1000000 * this.metres;
-
 
         /// <summary>
         /// The quantity in Millimetres
         /// </summary>
         public double Millimetres => 1000 * this.metres;
 
-
         /// <summary>
         /// The quantity in Centimetres
         /// </summary>
         public double Centimetres => 100 * this.metres;
-
 
         /// <summary>
         /// The quantity in Decimetres
         /// </summary>
         public double Decimetres => 10 * this.metres;
 
-
         /// <summary>
         /// The quantity in Kilometres
         /// </summary>
         public double Kilometres => this.metres / 1000;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
@@ -248,7 +236,6 @@ namespace Gu.Units
             return new Length(metres);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
@@ -257,7 +244,6 @@ namespace Gu.Units
         {
             return new Length(0.0254 * inches);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
@@ -268,7 +254,6 @@ namespace Gu.Units
             return new Length(1609.344 * miles);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
@@ -277,7 +262,6 @@ namespace Gu.Units
         {
             return new Length(0.9144 * yards);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
@@ -288,6 +272,14 @@ namespace Gu.Units
             return new Length(1852 * nauticalMiles);
         }
 
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="feet">The value in ft</param>
+        public static Length FromFeet(double feet)
+        {
+            return new Length(0.3048 * feet);
+        }
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
@@ -298,7 +290,6 @@ namespace Gu.Units
             return new Length(nanometres / 1000000000);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
@@ -307,7 +298,6 @@ namespace Gu.Units
         {
             return new Length(micrometres / 1000000);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
@@ -318,7 +308,6 @@ namespace Gu.Units
             return new Length(millimetres / 1000);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
@@ -327,7 +316,6 @@ namespace Gu.Units
         {
             return new Length(centimetres / 100);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
@@ -338,7 +326,6 @@ namespace Gu.Units
             return new Length(decimetres / 10);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
@@ -347,8 +334,6 @@ namespace Gu.Units
         {
             return new Length(1000 * kilometres);
         }
-
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -361,7 +346,6 @@ namespace Gu.Units
             return Area.FromSquareMetres(left.metres * right.metres);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -372,7 +356,6 @@ namespace Gu.Units
         {
             return Speed.FromMetresPerSecond(left.metres / right.seconds);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -385,7 +368,6 @@ namespace Gu.Units
             return LengthPerUnitless.FromMetresPerUnitless(left.metres / right.scalar);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -396,7 +378,6 @@ namespace Gu.Units
         {
             return Volume.FromCubicMetres(left.metres * right.squareMetres);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -409,7 +390,6 @@ namespace Gu.Units
             return Wavenumber.FromReciprocalMetres(left.metres / right.squareMetres);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -420,7 +400,6 @@ namespace Gu.Units
         {
             return Energy.FromJoules(left.metres * right.newtons);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -433,7 +412,6 @@ namespace Gu.Units
             return Flexibility.FromMetresPerNewton(left.metres / right.newtons);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -444,7 +422,6 @@ namespace Gu.Units
         {
             return Stiffness.FromNewtonsPerMetre(left.metres * right.pascals);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -457,7 +434,6 @@ namespace Gu.Units
             return AreaDensity.FromKilogramsPerSquareMetre(left.metres * right.kilogramsPerCubicMetre);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -468,7 +444,6 @@ namespace Gu.Units
         {
             return KinematicViscosity.FromSquareMetresPerSecond(left.metres * right.metresPerSecond);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -481,7 +456,6 @@ namespace Gu.Units
             return Time.FromSeconds(left.metres / right.metresPerSecond);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -492,7 +466,6 @@ namespace Gu.Units
         {
             return Speed.FromMetresPerSecond(left.metres * right.hertz);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -505,7 +478,6 @@ namespace Gu.Units
             return SpecificEnergy.FromJoulesPerKilogram(left.metres * right.metresPerSecondSquared);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -516,7 +488,6 @@ namespace Gu.Units
         {
             return Force.FromNewtons(left.metres * right.newtonsPerMetre);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -529,7 +500,6 @@ namespace Gu.Units
             return Force.FromNewtons(left.metres / right.metresPerNewton);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -540,7 +510,6 @@ namespace Gu.Units
         {
             return Unitless.FromScalar(left.metres / right.metresPerUnitless);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -553,7 +522,6 @@ namespace Gu.Units
             return SpecificVolume.FromCubicMetresPerKilogram(left.metres / right.kilogramsPerSquareMetre);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -564,7 +532,6 @@ namespace Gu.Units
         {
             return AreaDensity.FromKilogramsPerSquareMetre(left.metres / right.cubicMetresPerKilogram);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -577,7 +544,6 @@ namespace Gu.Units
             return Momentum.FromNewtonSecond(left.metres * right.kilogramsPerSecond);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -589,8 +555,6 @@ namespace Gu.Units
             return VolumetricFlow.FromCubicMetresPerSecond(left.metres * right.squareMetresPerSecond);
         }
 
-
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -601,7 +565,6 @@ namespace Gu.Units
         {
             return Wavenumber.FromReciprocalMetres(left / right.metres);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

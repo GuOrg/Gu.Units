@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -63,7 +57,6 @@ namespace Gu.Units
         /// The quantity in siemens".
         /// </summary>
         public double Siemens => this.siemens;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
@@ -188,8 +181,6 @@ namespace Gu.Units
             return new ElectricalConductance(siemens);
         }
 
-
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -200,7 +191,6 @@ namespace Gu.Units
         {
             return Capacitance.FromFarads(left.siemens * right.seconds);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -213,7 +203,6 @@ namespace Gu.Units
             return Capacitance.FromFarads(left.siemens / right.hertz);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -224,7 +213,6 @@ namespace Gu.Units
         {
             return Current.FromAmperes(left.siemens * right.volts);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -237,7 +225,6 @@ namespace Gu.Units
             return Time.FromSeconds(left.siemens * right.henrys);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -248,7 +235,6 @@ namespace Gu.Units
         {
             return Frequency.FromHertz(left.siemens / right.farads);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -261,8 +247,6 @@ namespace Gu.Units
             return ElectricCharge.FromCoulombs(left.siemens * right.webers);
         }
 
-
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -273,7 +257,6 @@ namespace Gu.Units
         {
             return Resistance.FromOhms(left / right.siemens);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

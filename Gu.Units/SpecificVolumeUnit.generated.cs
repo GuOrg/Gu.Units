@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,20 +17,17 @@ namespace Gu.Units
         /// </summary>
         public static readonly SpecificVolumeUnit CubicMetresPerKilogram = new SpecificVolumeUnit(cubicMetresPerKilogram => cubicMetresPerKilogram, cubicMetresPerKilogram => cubicMetresPerKilogram, "m³/kg");
 
-
         /// <summary>
         /// The CubicMetresPerGram unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly SpecificVolumeUnit CubicMetresPerGram = new SpecificVolumeUnit(cubicMetresPerGram => 1000 * cubicMetresPerGram, cubicMetresPerKilogram => cubicMetresPerKilogram / 1000, "m³/g");
 
-
         /// <summary>
         /// The CubicCentimetresPerGram unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly SpecificVolumeUnit CubicCentimetresPerGram = new SpecificVolumeUnit(cubicCentimetresPerGram => cubicCentimetresPerGram / 1000, cubicMetresPerKilogram => 1000 * cubicMetresPerKilogram, "cm³/g");
-
 
         private readonly Func<double, double> toCubicMetresPerKilogram;
         private readonly Func<double, double> fromCubicMetresPerKilogram;

@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units.Json
+﻿namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -24,7 +18,6 @@ namespace Gu.Units.Json
         /// A <see cref="JsonConverter"/> that writes values in <see cref="ElectricalConductanceUnit.Siemens"/>
         /// </summary>
         public static readonly ElectricalConductanceJsonConverter Siemens = new ElectricalConductanceJsonConverter(ElectricalConductanceUnit.Siemens);
-
 
         private readonly ElectricalConductanceUnit unit;
 

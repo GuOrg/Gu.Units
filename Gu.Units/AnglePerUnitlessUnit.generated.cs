@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,20 +17,17 @@ namespace Gu.Units
         /// </summary>
         public static readonly AnglePerUnitlessUnit RadiansPerUnitless = new AnglePerUnitlessUnit(radiansPerUnitless => radiansPerUnitless, radiansPerUnitless => radiansPerUnitless, "rad/ul");
 
-
         /// <summary>
         /// The DegreesPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AnglePerUnitlessUnit DegreesPerPercent = new AnglePerUnitlessUnit(degreesPerPercent => 1.74532925199433 * degreesPerPercent, radiansPerUnitless => radiansPerUnitless / 1.74532925199433, "°/%");
 
-
         /// <summary>
         /// The RadiansPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AnglePerUnitlessUnit RadiansPerPercent = new AnglePerUnitlessUnit(radiansPerPercent => 100 * radiansPerPercent, radiansPerUnitless => radiansPerUnitless / 100, "rad/%");
-
 
         private readonly Func<double, double> toRadiansPerUnitless;
         private readonly Func<double, double> fromRadiansPerUnitless;

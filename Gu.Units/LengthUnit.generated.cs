@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly LengthUnit Metres = new LengthUnit(metres => metres, metres => metres, "m");
 
-
         /// <summary>
         /// The Inches unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Inches = new LengthUnit(inches => 0.0254 * inches, metres => metres / 0.0254, "in");
-
 
         /// <summary>
         /// The Miles unit
@@ -37,13 +29,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly LengthUnit Miles = new LengthUnit(miles => 1609.344 * miles, metres => metres / 1609.344, "mi");
 
-
         /// <summary>
         /// The Yards unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Yards = new LengthUnit(yards => 0.9144 * yards, metres => metres / 0.9144, "yd");
-
 
         /// <summary>
         /// The NauticalMiles unit
@@ -51,6 +41,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly LengthUnit NauticalMiles = new LengthUnit(nauticalMiles => 1852 * nauticalMiles, metres => metres / 1852, "nmi");
 
+        /// <summary>
+        /// The Feet unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly LengthUnit Feet = new LengthUnit(feet => 0.3048 * feet, metres => metres / 0.3048, "ft");
 
         /// <summary>
         /// The Nanometres unit
@@ -58,13 +53,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly LengthUnit Nanometres = new LengthUnit(nanometres => nanometres / 1000000000, metres => 1000000000 * metres, "nm");
 
-
         /// <summary>
         /// The Micrometres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Micrometres = new LengthUnit(micrometres => micrometres / 1000000, metres => 1000000 * metres, "µm");
-
 
         /// <summary>
         /// The Millimetres unit
@@ -72,13 +65,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly LengthUnit Millimetres = new LengthUnit(millimetres => millimetres / 1000, metres => 1000 * metres, "mm");
 
-
         /// <summary>
         /// The Centimetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Centimetres = new LengthUnit(centimetres => centimetres / 100, metres => 100 * metres, "cm");
-
 
         /// <summary>
         /// The Decimetres unit
@@ -86,13 +77,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly LengthUnit Decimetres = new LengthUnit(decimetres => decimetres / 10, metres => 10 * metres, "dm");
 
-
         /// <summary>
         /// The Kilometres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthUnit Kilometres = new LengthUnit(kilometres => 1000 * kilometres, metres => metres / 1000, "km");
-
 
         private readonly Func<double, double> toMetres;
         private readonly Func<double, double> fromMetres;

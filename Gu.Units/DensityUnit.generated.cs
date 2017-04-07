@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly DensityUnit KilogramsPerCubicMetre = new DensityUnit(kilogramsPerCubicMetre => kilogramsPerCubicMetre, kilogramsPerCubicMetre => kilogramsPerCubicMetre, "kg/m³");
 
-
         /// <summary>
         /// The GramsPerCubicMillimetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly DensityUnit GramsPerCubicMillimetre = new DensityUnit(gramsPerCubicMillimetre => 1000000 * gramsPerCubicMillimetre, kilogramsPerCubicMetre => kilogramsPerCubicMetre / 1000000, "g/mm³");
-
 
         /// <summary>
         /// The GramsPerCubicCentimetre unit
@@ -37,13 +29,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly DensityUnit GramsPerCubicCentimetre = new DensityUnit(gramsPerCubicCentimetre => 1000 * gramsPerCubicCentimetre, kilogramsPerCubicMetre => kilogramsPerCubicMetre / 1000, "g/cm³");
 
-
         /// <summary>
         /// The MilligramsPerCubicMillimetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly DensityUnit MilligramsPerCubicMillimetre = new DensityUnit(milligramsPerCubicMillimetre => 1000 * milligramsPerCubicMillimetre, kilogramsPerCubicMetre => kilogramsPerCubicMetre / 1000, "mg/mm³");
-
 
         /// <summary>
         /// The GramsPerCubicMetre unit
@@ -51,13 +41,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly DensityUnit GramsPerCubicMetre = new DensityUnit(gramsPerCubicMetre => gramsPerCubicMetre / 1000, kilogramsPerCubicMetre => 1000 * kilogramsPerCubicMetre, "g/m³");
 
-
         /// <summary>
         /// The MilligramsPerCubicMetre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly DensityUnit MilligramsPerCubicMetre = new DensityUnit(milligramsPerCubicMetre => milligramsPerCubicMetre / 1000000, kilogramsPerCubicMetre => 1000000 * kilogramsPerCubicMetre, "mg/m³");
-
 
         private readonly Func<double, double> toKilogramsPerCubicMetre;
         private readonly Func<double, double> fromKilogramsPerCubicMetre;

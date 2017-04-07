@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units.Json
+﻿namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -24,7 +18,6 @@ namespace Gu.Units.Json
         /// A <see cref="JsonConverter"/> that writes values in <see cref="MolarHeatCapacityUnit.JoulesPerKelvinMole"/>
         /// </summary>
         public static readonly MolarHeatCapacityJsonConverter JoulesPerKelvinMole = new MolarHeatCapacityJsonConverter(MolarHeatCapacityUnit.JoulesPerKelvinMole);
-
 
         private readonly MolarHeatCapacityUnit unit;
 

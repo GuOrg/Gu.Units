@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly VolumetricFlowUnit CubicMetresPerSecond = new VolumetricFlowUnit(cubicMetresPerSecond => cubicMetresPerSecond, cubicMetresPerSecond => cubicMetresPerSecond, "m³/s");
 
-
         /// <summary>
         /// The CubicMetresPerMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumetricFlowUnit CubicMetresPerMinute = new VolumetricFlowUnit(cubicMetresPerMinute => cubicMetresPerMinute / 60, cubicMetresPerSecond => 60 * cubicMetresPerSecond, "m³/min");
-
 
         /// <summary>
         /// The CubicMetresPerHour unit
@@ -37,13 +29,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly VolumetricFlowUnit CubicMetresPerHour = new VolumetricFlowUnit(cubicMetresPerHour => cubicMetresPerHour / 3600, cubicMetresPerSecond => 3600 * cubicMetresPerSecond, "m³/h");
 
-
         /// <summary>
         /// The LitresPerSecond unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumetricFlowUnit LitresPerSecond = new VolumetricFlowUnit(litresPerSecond => litresPerSecond / 1000, cubicMetresPerSecond => 1000 * cubicMetresPerSecond, "L/s");
-
 
         /// <summary>
         /// The LitresPerHour unit
@@ -51,13 +41,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly VolumetricFlowUnit LitresPerHour = new VolumetricFlowUnit(litresPerHour => litresPerHour / 3600000, cubicMetresPerSecond => 3600000 * cubicMetresPerSecond, "L/h");
 
-
         /// <summary>
         /// The LitresPerMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumetricFlowUnit LitresPerMinute = new VolumetricFlowUnit(litresPerMinute => litresPerMinute / 60000, cubicMetresPerSecond => 60000 * cubicMetresPerSecond, "L/min");
-
 
         /// <summary>
         /// The MillilitresPerSecond unit
@@ -65,13 +53,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly VolumetricFlowUnit MillilitresPerSecond = new VolumetricFlowUnit(millilitresPerSecond => millilitresPerSecond / 1000000, cubicMetresPerSecond => 1000000 * cubicMetresPerSecond, "ml/s");
 
-
         /// <summary>
         /// The MillilitresPerHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumetricFlowUnit MillilitresPerHour = new VolumetricFlowUnit(millilitresPerHour => millilitresPerHour / 3600000000, cubicMetresPerSecond => 3600000000 * cubicMetresPerSecond, "ml/h");
-
 
         /// <summary>
         /// The MillilitresPerMinute unit
@@ -79,13 +65,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly VolumetricFlowUnit MillilitresPerMinute = new VolumetricFlowUnit(millilitresPerMinute => millilitresPerMinute / 60000000, cubicMetresPerSecond => 60000000 * cubicMetresPerSecond, "ml/min");
 
-
         /// <summary>
         /// The CentilitresPerSecond unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumetricFlowUnit CentilitresPerSecond = new VolumetricFlowUnit(centilitresPerSecond => centilitresPerSecond / 100000, cubicMetresPerSecond => 100000 * cubicMetresPerSecond, "cl/s");
-
 
         /// <summary>
         /// The CentilitresPerHour unit
@@ -93,13 +77,35 @@ namespace Gu.Units
         /// </summary>
         public static readonly VolumetricFlowUnit CentilitresPerHour = new VolumetricFlowUnit(centilitresPerHour => centilitresPerHour / 360000000, cubicMetresPerSecond => 360000000 * cubicMetresPerSecond, "cl/h");
 
-
         /// <summary>
         /// The CentilitresPerMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly VolumetricFlowUnit CentilitresPerMinute = new VolumetricFlowUnit(centilitresPerMinute => centilitresPerMinute / 6000000, cubicMetresPerSecond => 6000000 * cubicMetresPerSecond, "cl/min");
 
+        /// <summary>
+        /// The CubicFeetPerHour unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumetricFlowUnit CubicFeetPerHour = new VolumetricFlowUnit(cubicFeetPerHour => 7.86579072E-06 * cubicFeetPerHour, cubicMetresPerSecond => cubicMetresPerSecond / 7.86579072E-06, "ft³/h");
+
+        /// <summary>
+        /// The CubicFeetPerSecond unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumetricFlowUnit CubicFeetPerSecond = new VolumetricFlowUnit(cubicFeetPerSecond => 0.028316846592 * cubicFeetPerSecond, cubicMetresPerSecond => cubicMetresPerSecond / 0.028316846592, "ft³/s");
+
+        /// <summary>
+        /// The CubicFeetPerMinute unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumetricFlowUnit CubicFeetPerMinute = new VolumetricFlowUnit(cubicFeetPerMinute => 0.0004719474432 * cubicFeetPerMinute, cubicMetresPerSecond => cubicMetresPerSecond / 0.0004719474432, "ft³/min");
+
+        /// <summary>
+        /// The CubicFeetPerDay unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly VolumetricFlowUnit CubicFeetPerDay = new VolumetricFlowUnit(cubicFeetPerDay => 3.2774128E-07 * cubicFeetPerDay, cubicMetresPerSecond => cubicMetresPerSecond / 3.2774128E-07, "ft³/d");
 
         private readonly Func<double, double> toCubicMetresPerSecond;
         private readonly Func<double, double> fromCubicMetresPerSecond;

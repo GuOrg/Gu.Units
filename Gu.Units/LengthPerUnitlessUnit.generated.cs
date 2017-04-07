@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly LengthPerUnitlessUnit MetresPerUnitless = new LengthPerUnitlessUnit(metresPerUnitless => metresPerUnitless, metresPerUnitless => metresPerUnitless, "m/ul");
 
-
         /// <summary>
         /// The MillimetresPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthPerUnitlessUnit MillimetresPerPercent = new LengthPerUnitlessUnit(millimetresPerPercent => millimetresPerPercent / 10, metresPerUnitless => 10 * metresPerUnitless, "mm/%");
-
 
         /// <summary>
         /// The MicrometresPerPercent unit
@@ -37,13 +29,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly LengthPerUnitlessUnit MicrometresPerPercent = new LengthPerUnitlessUnit(micrometresPerPercent => micrometresPerPercent / 10000, metresPerUnitless => 10000 * metresPerUnitless, "µm/%");
 
-
         /// <summary>
         /// The MetresPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly LengthPerUnitlessUnit MetresPerPercent = new LengthPerUnitlessUnit(metresPerPercent => 100 * metresPerPercent, metresPerUnitless => metresPerUnitless / 100, "m/%");
-
 
         private readonly Func<double, double> toMetresPerUnitless;
         private readonly Func<double, double> fromMetresPerUnitless;
