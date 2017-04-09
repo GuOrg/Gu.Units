@@ -13,6 +13,13 @@ namespace Gu.Units.Generator.Tests
 
         public int Compare(FactorConversion x, FactorConversion y)
         {
+            if (x == null ||
+                y == null)
+            {
+                return -1;
+            }
+
+            // ReSharper disable once CompareOfFloatsByEqualityOperator
             if (x.Factor != y.Factor)
             {
                 return -1;

@@ -4,8 +4,10 @@
 
     public class UnitPartsExtTests
     {
+        // ReSharper disable UnusedMember.Local
         private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
         private const char MultiplyDot = '⋅';
+        // ReSharper restore UnusedMember.Local
 
         [TestCase(1, "m")]
         [TestCase(2, "m²")]

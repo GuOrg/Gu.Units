@@ -14,6 +14,11 @@ namespace Gu.Units.Generator.Tests
 
         public int Compare(BaseUnit x, BaseUnit y)
         {
+            if (x == null || y == null)
+            {
+                return -1;
+            }
+
             if (x.GetType() != y.GetType())
             {
                 return -1;

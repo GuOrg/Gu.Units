@@ -6,6 +6,7 @@
     public class QuantityTests
     {
         private MockSettings settings;
+
         [SetUp]
         public void SetUp()
         {

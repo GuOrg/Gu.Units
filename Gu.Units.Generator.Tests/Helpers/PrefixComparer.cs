@@ -13,6 +13,11 @@
 
         public int Compare(Prefix x, Prefix y)
         {
+            if (x == null || y == null)
+            {
+                return -1;
+            }
+
             if (x.Name != y.Name)
             {
                 return -1;

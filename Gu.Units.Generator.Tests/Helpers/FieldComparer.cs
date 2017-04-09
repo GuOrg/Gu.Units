@@ -18,7 +18,7 @@ namespace Gu.Units.Generator.Tests
             return this.Compare(x, y, new List<ComparedPair>());
         }
 
-        private int Compare(object x, object y, List<ComparedPair> compared)
+        private int Compare(object x, object y, ICollection<ComparedPair> compared)
         {
             if (x == null && y == null)
             {
@@ -67,8 +67,9 @@ namespace Gu.Units.Generator.Tests
 
         private class ComparedPair
         {
-            internal readonly object X;
-            internal readonly object Y;
+            private readonly object X;
+
+            private readonly object Y;
 
             public ComparedPair(object x, object y)
             {
