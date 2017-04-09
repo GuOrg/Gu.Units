@@ -1,70 +1,61 @@
 ﻿namespace Gu.Units.Generator.Tests.Descriptors
 {
-    using System.Collections;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using NUnit.Framework;
     using WpfStuff;
 
     public class UnitPartsConverterTests
     {
-        [TestCaseSource(typeof(UnitPartsConverterSource))]
-        public void ConvertFrom(UnitPartsConverterSource.Data data)
+        // ReSharper disable UnusedMember.Local
+        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
+        private const char MultiplyDot = '⋅';
+        // ReSharper restore UnusedMember.Local
+
+        public static TestCase[] TestCases { get; } = CreateTestCases();
+
+        [TestCaseSource(nameof(TestCases))]
+        [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]
+        public void ConvertFrom(TestCase testCase)
         {
             var converter = new UnitPartsConverter();
             Assert.IsTrue(converter.CanConvertFrom(null, typeof(string)));
-            var parts = (UnitParts)converter.ConvertFrom(null, null, data.Value);
-            CollectionAssert.AreEqual(data.Parts, parts);
+            var parts = (UnitParts)converter.ConvertFrom(null, null, testCase.Value);
+            CollectionAssert.AreEqual(testCase.Parts, parts);
             var convertTo = converter.ConvertTo(null, null, parts, typeof(string));
-            Assert.AreEqual(data.Formatted, convertTo);
-            Assert.AreEqual(data.Formatted, parts.BaseUnitSymbol);
+            Assert.AreEqual(testCase.Formatted, convertTo);
+            Assert.AreEqual(testCase.Formatted, parts?.BaseUnitSymbol);
         }
-    }
 
-    public class UnitPartsConverterSource : IEnumerable
-    {
-        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
-        private const char MultiplyDot = '⋅';
-
-        public readonly BaseUnit Metres;
-        public readonly BaseUnit Kilograms;
-        public readonly BaseUnit Seconds;
-
-        private readonly List<Data> _datas;
-
-        public UnitPartsConverterSource()
+        private static TestCase[] CreateTestCases()
         {
             var settings = MockSettings.Create();
-            this.Metres = settings.Metres;
-            this.Kilograms = settings.Kilograms;
-            this.Seconds = settings.Seconds;
-            this._datas = new List<Data>
-                                        {
-                                            new Data("m^2","m²", UnitAndPower.Create(this.Metres, 2)),
-                                            new Data("m²","m²", UnitAndPower.Create(this.Metres, 2)),
-                                            new Data("m³","m³", UnitAndPower.Create(this.Metres, 3)),
-                                            new Data("kg⋅m/s²","kg⋅m/s²",UnitAndPower.Create(this.Kilograms, 1),UnitAndPower.Create(this.Metres, 1),UnitAndPower.Create(this.Seconds, -2)),
-                                            new Data("kg⋅m⋅s⁻²","kg⋅m/s²",UnitAndPower.Create(this.Kilograms, 1),UnitAndPower.Create(this.Metres, 1),UnitAndPower.Create(this.Seconds, -2)),
-                                            new Data("kg*m/s²","kg⋅m/s²",UnitAndPower.Create(this.Kilograms, 1),UnitAndPower.Create(this.Metres, 1),UnitAndPower.Create(this.Seconds, -2)),
-                                            new Data("m/s¹","m/s", UnitAndPower.Create(this.Metres,1), UnitAndPower.Create(this.Seconds,-1)),
-                                            new Data("m⋅s⁻¹","m/s", UnitAndPower.Create(this.Metres,1), UnitAndPower.Create(this.Seconds,-1)),
-                                            new Data("m¹⋅s^-1","m/s", UnitAndPower.Create(this.Metres,1), UnitAndPower.Create(this.Seconds,-1)),
-                                            new Data("m^1⋅s^-1","m/s", UnitAndPower.Create(this.Metres,1), UnitAndPower.Create(this.Seconds,-1)),
-                                            new Data("m¹⋅s⁻¹","m/s", UnitAndPower.Create(this.Metres,1), UnitAndPower.Create(this.Seconds,-1)),
-                                            new Data("1/s","s⁻¹", UnitAndPower.Create(this.Seconds,-1)),
-                                            new Data("s^-1","s⁻¹", UnitAndPower.Create(this.Seconds,-1))
-                                            //new Data("J/s",UnitAndPower.Create(Joules, 1),UnitAndPower.Create(Seconds, -1)),
-                                        };
-
-        }
-        public IEnumerator GetEnumerator()
-        {
-            return this._datas.GetEnumerator();
+            var metres = settings.Metres;
+            var kilograms = settings.Kilograms;
+            var seconds = settings.Seconds;
+            return new[]
+                       {
+                           new TestCase("m^2", "m²", UnitAndPower.Create(metres, 2)),
+                           new TestCase("m²", "m²", UnitAndPower.Create(metres, 2)),
+                           new TestCase("m³", "m³", UnitAndPower.Create(metres, 3)),
+                           new TestCase("kg⋅m/s²", "kg⋅m/s²", UnitAndPower.Create(kilograms, 1), UnitAndPower.Create(metres, 1), UnitAndPower.Create(seconds, -2)),
+                           new TestCase("kg⋅m⋅s⁻²", "kg⋅m/s²", UnitAndPower.Create(kilograms, 1), UnitAndPower.Create(metres, 1), UnitAndPower.Create(seconds, -2)),
+                           new TestCase("kg*m/s²", "kg⋅m/s²", UnitAndPower.Create(kilograms, 1), UnitAndPower.Create(metres, 1), UnitAndPower.Create(seconds, -2)),
+                           new TestCase("m/s¹", "m/s", UnitAndPower.Create(metres, 1), UnitAndPower.Create(seconds, -1)),
+                           new TestCase("m⋅s⁻¹", "m/s", UnitAndPower.Create(metres, 1), UnitAndPower.Create(seconds, -1)),
+                           new TestCase("m¹⋅s^-1", "m/s", UnitAndPower.Create(metres, 1), UnitAndPower.Create(seconds, -1)),
+                           new TestCase("m^1⋅s^-1", "m/s", UnitAndPower.Create(metres, 1), UnitAndPower.Create(seconds, -1)),
+                           new TestCase("m¹⋅s⁻¹", "m/s", UnitAndPower.Create(metres, 1), UnitAndPower.Create(seconds, -1)),
+                           new TestCase("1/s", "s⁻¹", UnitAndPower.Create(seconds, -1)),
+                           new TestCase("s^-1", "s⁻¹", UnitAndPower.Create(seconds, -1))
+                           //new Data("J/s",UnitAndPower.Create(Joules, 1),UnitAndPower.Create(Seconds, -1)),
+                       };
         }
 
-        public class Data
+        public class TestCase
         {
-            public Data(string value, string formatted, params UnitAndPower[] parts)
+            public TestCase(string value, string formatted, params UnitAndPower[] parts)
             {
                 this.Value = value;
                 this.Formatted = formatted;

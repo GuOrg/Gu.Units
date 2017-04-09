@@ -8,6 +8,7 @@
 
     public class UnitPartsConverter : TypeConverter
     {
+        // ReSharper disable once UnusedMember.Local
         private static readonly string[] Superscripts = { "¹", "²", "³", "⁴" };
 
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
