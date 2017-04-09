@@ -2,7 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Globalization;
+
     using NUnit.Framework;
     using Sources;
 
@@ -82,7 +82,7 @@
             double[] values = { 0, 1.2 };
             foreach (var value in values)
             {
-                dynamic u = (dynamic)unit;
+                dynamic u = unit;
                 var qty = u.CreateQuantity(value); // Hacking it with dynamic here
                 Assert.IsInstanceOf<IQuantity>(qty);
 

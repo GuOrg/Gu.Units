@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Gu.Units.Tests.Samples
+﻿namespace Gu.Units.Tests.Samples
 {
     using System.Globalization;
     using NUnit.Framework;
