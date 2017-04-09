@@ -326,7 +326,6 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <Import Project="..\.paket\paket.targets" />
   <ItemGroup>
     <EmbeddedResource Include="Templates\Enumerable.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -1172,4 +1171,5 @@
       </ItemGroup>
     </When>
   </Choose>
+  <Import Project="..\.paket\paket.targets" />
 </Project>
