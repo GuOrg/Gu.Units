@@ -5,9 +5,7 @@
     using TestStack.White;
     using TestStack.White.Factory;
     using TestStack.White.UIItems;
-    using TestStack.White.UIItems.Finders;
     using TestStack.White.UIItems.TabItems;
-    using TestStack.White.UIItems.WPFUIItems;
 
     public class UnitsOnlyViewTests
     {
