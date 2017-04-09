@@ -38,9 +38,6 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System">
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.XML">
       <Private>True</Private>
     </Reference>
@@ -83,6 +80,12 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Import Project="..\.paket\paket.targets" />
+  <ItemGroup>
+    <Reference Include="System">
+      <Paket>True</Paket>
+    </Reference>
+  </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll">
       <Paket>True</Paket>
@@ -285,5 +288,4 @@
       </ItemGroup>
     </When>
   </Choose>
-  <Import Project="..\.paket\paket.targets" />
 </Project>

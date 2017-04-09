@@ -15,3 +15,10 @@ nuget TestStack.White
 nuget Gu.Wpf.NumericInput
 nuget Gu.Wpf.Reactive
 nuget Gu.State
+
+group Benchmarks
+  source http://www.nuget.org/api/v2/
+  framework: net461
+  nuget BenchmarkDotNet
+  nuget BenchmarkDotNet.Diagnostics.Windows
+  nuget System.Reflection.Metadata = 1.2.0

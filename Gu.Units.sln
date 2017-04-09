@@ -50,6 +50,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analyzer", "Analyzer", "{F9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeGen", "CodeGen", "{82224982-852F-42A6-9683-6669F8D6C535}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Benchmarks", "Gu.Units.Benchmarks\Gu.Units.Benchmarks.csproj", "{1764A31F-0EF1-4F1C-8D6B-310C493D8CE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -127,6 +129,12 @@ Global
 		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.GeneratorOnly|Any CPU.Build.0 = Release|Any CPU
 		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9785A89E-8B39-48BA-8C0A-BEB7D761D402}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1764A31F-0EF1-4F1C-8D6B-310C493D8CE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1764A31F-0EF1-4F1C-8D6B-310C493D8CE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1764A31F-0EF1-4F1C-8D6B-310C493D8CE2}.GeneratorOnly|Any CPU.ActiveCfg = Release|Any CPU
+		{1764A31F-0EF1-4F1C-8D6B-310C493D8CE2}.GeneratorOnly|Any CPU.Build.0 = Release|Any CPU
+		{1764A31F-0EF1-4F1C-8D6B-310C493D8CE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1764A31F-0EF1-4F1C-8D6B-310C493D8CE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
