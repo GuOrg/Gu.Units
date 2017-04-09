@@ -37,7 +37,7 @@ namespace Gu.Units
             {
                 // searching linearly for longest match after finding one
                 var temp = tempCache[i];
-                if (Compare(temp.Key, text, pos) == 0)
+                if (Compare(temp.Key, text, pos) <= 0)
                 {
                     match = temp;
                 }
@@ -77,7 +77,6 @@ namespace Gu.Units
         internal CachedItem Add(string key, TItem item)
         {
             Ensure.NotNull(key, $"{nameof(item)}.{key}");
-
             lock (this.gate) // this was five times faster than ReaderWriterLockSlim in benchmarks.
             {
                 var i = BinaryFind(this.cache, key);

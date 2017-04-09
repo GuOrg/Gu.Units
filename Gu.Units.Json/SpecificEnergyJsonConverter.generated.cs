@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units.Json
+﻿namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -25,6 +19,10 @@ namespace Gu.Units.Json
         /// </summary>
         public static readonly SpecificEnergyJsonConverter JoulesPerKilogram = new SpecificEnergyJsonConverter(SpecificEnergyUnit.JoulesPerKilogram);
 
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="SpecificEnergyUnit.KilojoulesPerKilogram"/>
+        /// </summary>
+        public static readonly SpecificEnergyJsonConverter KilojoulesPerKilogram = new SpecificEnergyJsonConverter(SpecificEnergyUnit.KilojoulesPerKilogram);
 
         private readonly SpecificEnergyUnit unit;
 

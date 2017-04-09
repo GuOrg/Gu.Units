@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly CapacitanceUnit Farads = new CapacitanceUnit(farads => farads, farads => farads, "F");
 
-
         /// <summary>
         /// The Nanofarads unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CapacitanceUnit Nanofarads = new CapacitanceUnit(nanofarads => nanofarads / 1000000000, farads => 1000000000 * farads, "nF");
-
 
         /// <summary>
         /// The Microfarads unit
@@ -37,13 +29,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly CapacitanceUnit Microfarads = new CapacitanceUnit(microfarads => microfarads / 1000000, farads => 1000000 * farads, "µF");
 
-
         /// <summary>
         /// The Millifarads unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CapacitanceUnit Millifarads = new CapacitanceUnit(millifarads => millifarads / 1000, farads => 1000 * farads, "mF");
-
 
         /// <summary>
         /// The Kilofarads unit
@@ -51,20 +41,17 @@ namespace Gu.Units
         /// </summary>
         public static readonly CapacitanceUnit Kilofarads = new CapacitanceUnit(kilofarads => 1000 * kilofarads, farads => farads / 1000, "kF");
 
-
         /// <summary>
         /// The Megafarads unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CapacitanceUnit Megafarads = new CapacitanceUnit(megafarads => 1000000 * megafarads, farads => farads / 1000000, "MF");
 
-
         /// <summary>
         /// The Gigafarads unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CapacitanceUnit Gigafarads = new CapacitanceUnit(gigafarads => 1000000000 * gigafarads, farads => farads / 1000000000, "GF");
-
 
         private readonly Func<double, double> toFarads;
         private readonly Func<double, double> fromFarads;

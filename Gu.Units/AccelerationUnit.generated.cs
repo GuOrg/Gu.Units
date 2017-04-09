@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly AccelerationUnit MetresPerSecondSquared = new AccelerationUnit(metresPerSecondSquared => metresPerSecondSquared, metresPerSecondSquared => metresPerSecondSquared, "m/s²");
 
-
         /// <summary>
         /// The CentimetresPerSecondSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AccelerationUnit CentimetresPerSecondSquared = new AccelerationUnit(centimetresPerSecondSquared => centimetresPerSecondSquared / 100, metresPerSecondSquared => 100 * metresPerSecondSquared, "cm/s²");
-
 
         /// <summary>
         /// The MillimetresPerSecondSquared unit
@@ -37,13 +29,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly AccelerationUnit MillimetresPerSecondSquared = new AccelerationUnit(millimetresPerSecondSquared => millimetresPerSecondSquared / 1000, metresPerSecondSquared => 1000 * metresPerSecondSquared, "mm/s²");
 
-
         /// <summary>
         /// The MillimetresPerHourSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AccelerationUnit MillimetresPerHourSquared = new AccelerationUnit(millimetresPerHourSquared => millimetresPerHourSquared / 12960000000, metresPerSecondSquared => 12960000000 * metresPerSecondSquared, "mm/h²");
-
 
         /// <summary>
         /// The CentimetresPerHourSquared unit
@@ -51,13 +41,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly AccelerationUnit CentimetresPerHourSquared = new AccelerationUnit(centimetresPerHourSquared => centimetresPerHourSquared / 1296000000, metresPerSecondSquared => 1296000000 * metresPerSecondSquared, "cm/h²");
 
-
         /// <summary>
         /// The MetresPerHourSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AccelerationUnit MetresPerHourSquared = new AccelerationUnit(metresPerHourSquared => metresPerHourSquared / 12960000, metresPerSecondSquared => 12960000 * metresPerSecondSquared, "m/h²");
-
 
         /// <summary>
         /// The MetresPerMinuteSquared unit
@@ -65,13 +53,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly AccelerationUnit MetresPerMinuteSquared = new AccelerationUnit(metresPerMinuteSquared => metresPerMinuteSquared / 3600, metresPerSecondSquared => 3600 * metresPerSecondSquared, "m/min²");
 
-
         /// <summary>
         /// The MillimetresPerMinuteSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AccelerationUnit MillimetresPerMinuteSquared = new AccelerationUnit(millimetresPerMinuteSquared => millimetresPerMinuteSquared / 3600000, metresPerSecondSquared => 3600000 * metresPerSecondSquared, "mm/min²");
-
 
         private readonly Func<double, double> toMetresPerSecondSquared;
         private readonly Func<double, double> fromMetresPerSecondSquared;

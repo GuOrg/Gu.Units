@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units.Json
+﻿namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -24,7 +18,6 @@ namespace Gu.Units.Json
         /// A <see cref="JsonConverter"/> that writes values in <see cref="AmountOfSubstanceUnit.Moles"/>
         /// </summary>
         public static readonly AmountOfSubstanceJsonConverter Moles = new AmountOfSubstanceJsonConverter(AmountOfSubstanceUnit.Moles);
-
 
         private readonly AmountOfSubstanceUnit unit;
 

@@ -41,6 +41,8 @@
         [TestCase("abcdef", 0, "abcde", "1")]
         [TestCase(" abc", 1, "abc", "2")]
         [TestCase(" abcd", 1, "abcd", "3")]
+        [TestCase("mi", 0, "mi", "5")]
+        [TestCase("mm", 0, "mm", "6")]
         public void TryFindSubStringSuccess(string key, int pos, string expectedKey, string expectedValue)
         {
             var cache = new StringMap<string>();
@@ -48,6 +50,8 @@
             cache.Add("abc", "2");
             cache.Add("abcd", "3");
             cache.Add("bar", "4");
+            cache.Add("mi", "5");
+            cache.Add("mm", "6");
             string actual;
             string actualKey;
             var success = cache.TryGetBySubString(key, pos, out actualKey, out actual);

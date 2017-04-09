@@ -37,9 +37,8 @@
             Add("1.2 ml", "0.0000012 m^3", Volume.Parse);
         }
 
-        public void Add<TQuantity>(string @from,
-            string to,
-            Func<string, TQuantity> parser) where TQuantity : IQuantity
+        public void Add<TQuantity>(string @from, string to, Func<string, TQuantity> parser) 
+            where TQuantity : IQuantity
         {
             Add(new Conversion<TQuantity>(@from, to, parser));
         }

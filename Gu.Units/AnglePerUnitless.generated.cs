@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -64,18 +58,15 @@ namespace Gu.Units
         /// </summary>
         public double RadiansPerUnitless => this.radiansPerUnitless;
 
-
         /// <summary>
         /// The quantity in DegreesPerPercent
         /// </summary>
         public double DegreesPerPercent => this.radiansPerUnitless / 1.74532925199433;
 
-
         /// <summary>
         /// The quantity in RadiansPerPercent
         /// </summary>
         public double RadiansPerPercent => this.radiansPerUnitless / 100;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.AnglePerUnitless"/> from its string representation
@@ -200,7 +191,6 @@ namespace Gu.Units
             return new AnglePerUnitless(radiansPerUnitless);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AnglePerUnitless"/>.
         /// </summary>
@@ -210,7 +200,6 @@ namespace Gu.Units
             return new AnglePerUnitless(1.74532925199433 * degreesPerPercent);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AnglePerUnitless"/>.
         /// </summary>
@@ -219,8 +208,6 @@ namespace Gu.Units
         {
             return new AnglePerUnitless(100 * radiansPerPercent);
         }
-
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -232,8 +219,6 @@ namespace Gu.Units
         {
             return Angle.FromRadians(left.radiansPerUnitless * right.scalar);
         }
-
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

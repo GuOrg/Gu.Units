@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -64,18 +58,15 @@ namespace Gu.Units
         /// </summary>
         public double CubicMetresPerKilogram => this.cubicMetresPerKilogram;
 
-
         /// <summary>
         /// The quantity in CubicMetresPerGram
         /// </summary>
         public double CubicMetresPerGram => this.cubicMetresPerKilogram / 1000;
 
-
         /// <summary>
         /// The quantity in CubicCentimetresPerGram
         /// </summary>
         public double CubicCentimetresPerGram => 1000 * this.cubicMetresPerKilogram;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.SpecificVolume"/> from its string representation
@@ -200,7 +191,6 @@ namespace Gu.Units
             return new SpecificVolume(cubicMetresPerKilogram);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.SpecificVolume"/>.
         /// </summary>
@@ -210,7 +200,6 @@ namespace Gu.Units
             return new SpecificVolume(1000 * cubicMetresPerGram);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.SpecificVolume"/>.
         /// </summary>
@@ -219,8 +208,6 @@ namespace Gu.Units
         {
             return new SpecificVolume(cubicCentimetresPerGram / 1000);
         }
-
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -233,7 +220,6 @@ namespace Gu.Units
             return Volume.FromCubicMetres(left.cubicMetresPerKilogram * right.kilograms);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -244,7 +230,6 @@ namespace Gu.Units
         {
             return SpecificEnergy.FromJoulesPerKilogram(left.cubicMetresPerKilogram * right.pascals);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -257,7 +242,6 @@ namespace Gu.Units
             return Length.FromMetres(left.cubicMetresPerKilogram * right.kilogramsPerSquareMetre);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -269,8 +253,6 @@ namespace Gu.Units
             return VolumetricFlow.FromCubicMetresPerSecond(left.cubicMetresPerKilogram * right.kilogramsPerSecond);
         }
 
-
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -281,7 +263,6 @@ namespace Gu.Units
         {
             return Density.FromKilogramsPerCubicMetre(left / right.cubicMetresPerKilogram);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

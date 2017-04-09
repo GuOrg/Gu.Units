@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units.Json
+﻿namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -25,48 +19,40 @@ namespace Gu.Units.Json
         /// </summary>
         public static readonly EnergyJsonConverter Joules = new EnergyJsonConverter(EnergyUnit.Joules);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="EnergyUnit.Nanojoules"/>
         /// </summary>
         public static readonly EnergyJsonConverter Nanojoules = new EnergyJsonConverter(EnergyUnit.Nanojoules);
-
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="EnergyUnit.Microjoules"/>
         /// </summary>
         public static readonly EnergyJsonConverter Microjoules = new EnergyJsonConverter(EnergyUnit.Microjoules);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="EnergyUnit.Millijoules"/>
         /// </summary>
         public static readonly EnergyJsonConverter Millijoules = new EnergyJsonConverter(EnergyUnit.Millijoules);
-
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="EnergyUnit.Kilojoules"/>
         /// </summary>
         public static readonly EnergyJsonConverter Kilojoules = new EnergyJsonConverter(EnergyUnit.Kilojoules);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="EnergyUnit.Megajoules"/>
         /// </summary>
         public static readonly EnergyJsonConverter Megajoules = new EnergyJsonConverter(EnergyUnit.Megajoules);
-
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="EnergyUnit.Gigajoules"/>
         /// </summary>
         public static readonly EnergyJsonConverter Gigajoules = new EnergyJsonConverter(EnergyUnit.Gigajoules);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="EnergyUnit.KilowattHours"/>
         /// </summary>
         public static readonly EnergyJsonConverter KilowattHours = new EnergyJsonConverter(EnergyUnit.KilowattHours);
-
 
         private readonly EnergyUnit unit;
 

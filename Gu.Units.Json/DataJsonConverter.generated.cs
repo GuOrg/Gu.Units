@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units.Json
+﻿namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -25,54 +19,45 @@ namespace Gu.Units.Json
         /// </summary>
         public static readonly DataJsonConverter Bits = new DataJsonConverter(DataUnit.Bits);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="DataUnit.Byte"/>
         /// </summary>
         public static readonly DataJsonConverter Byte = new DataJsonConverter(DataUnit.Byte);
-
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="DataUnit.Kilobyte"/>
         /// </summary>
         public static readonly DataJsonConverter Kilobyte = new DataJsonConverter(DataUnit.Kilobyte);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="DataUnit.Megabyte"/>
         /// </summary>
         public static readonly DataJsonConverter Megabyte = new DataJsonConverter(DataUnit.Megabyte);
-
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="DataUnit.Gigabyte"/>
         /// </summary>
         public static readonly DataJsonConverter Gigabyte = new DataJsonConverter(DataUnit.Gigabyte);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="DataUnit.Terabyte"/>
         /// </summary>
         public static readonly DataJsonConverter Terabyte = new DataJsonConverter(DataUnit.Terabyte);
-
 
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="DataUnit.Megabits"/>
         /// </summary>
         public static readonly DataJsonConverter Megabits = new DataJsonConverter(DataUnit.Megabits);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="DataUnit.Gigabits"/>
         /// </summary>
         public static readonly DataJsonConverter Gigabits = new DataJsonConverter(DataUnit.Gigabits);
 
-
         /// <summary>
         /// A <see cref="JsonConverter"/> that writes values in <see cref="DataUnit.Kilobits"/>
         /// </summary>
         public static readonly DataJsonConverter Kilobits = new DataJsonConverter(DataUnit.Kilobits);
-
 
         private readonly DataUnit unit;
 

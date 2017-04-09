@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -64,54 +58,50 @@ namespace Gu.Units
         /// </summary>
         public double SquareMetres => this.squareMetres;
 
-
         /// <summary>
         /// The quantity in Hectares
         /// </summary>
         public double Hectares => this.squareMetres / 10000;
-
 
         /// <summary>
         /// The quantity in SquareMillimetres
         /// </summary>
         public double SquareMillimetres => 1000000 * this.squareMetres;
 
-
         /// <summary>
         /// The quantity in SquareCentimetres
         /// </summary>
         public double SquareCentimetres => 10000 * this.squareMetres;
-
 
         /// <summary>
         /// The quantity in SquareDecimetres
         /// </summary>
         public double SquareDecimetres => 100 * this.squareMetres;
 
-
         /// <summary>
         /// The quantity in SquareKilometres
         /// </summary>
         public double SquareKilometres => this.squareMetres / 1000000;
-
 
         /// <summary>
         /// The quantity in SquareMile
         /// </summary>
         public double SquareMile => this.squareMetres / 2589988.110336;
 
-
         /// <summary>
         /// The quantity in SquareYards
         /// </summary>
         public double SquareYards => this.squareMetres / 0.83612736;
-
 
         /// <summary>
         /// The quantity in SquareInches
         /// </summary>
         public double SquareInches => this.squareMetres / 0.00064516;
 
+        /// <summary>
+        /// The quantity in SquareFeet
+        /// </summary>
+        public double SquareFeet => this.squareMetres / 0.09290304;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
@@ -236,7 +226,6 @@ namespace Gu.Units
             return new Area(squareMetres);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
@@ -245,7 +234,6 @@ namespace Gu.Units
         {
             return new Area(10000 * hectares);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
@@ -256,7 +244,6 @@ namespace Gu.Units
             return new Area(squareMillimetres / 1000000);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
@@ -265,7 +252,6 @@ namespace Gu.Units
         {
             return new Area(squareCentimetres / 10000);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
@@ -276,7 +262,6 @@ namespace Gu.Units
             return new Area(squareDecimetres / 100);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
@@ -285,7 +270,6 @@ namespace Gu.Units
         {
             return new Area(1000000 * squareKilometres);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
@@ -296,7 +280,6 @@ namespace Gu.Units
             return new Area(2589988.110336 * squareMile);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
@@ -305,7 +288,6 @@ namespace Gu.Units
         {
             return new Area(0.83612736 * squareYards);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
@@ -316,7 +298,14 @@ namespace Gu.Units
             return new Area(0.00064516 * squareInches);
         }
 
-
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="squareFeet">The value in ft²</param>
+        public static Area FromSquareFeet(double squareFeet)
+        {
+            return new Area(0.09290304 * squareFeet);
+        }
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -329,7 +318,6 @@ namespace Gu.Units
             return Volume.FromCubicMetres(left.squareMetres * right.metres);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -340,7 +328,6 @@ namespace Gu.Units
         {
             return Length.FromMetres(left.squareMetres / right.metres);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -353,7 +340,6 @@ namespace Gu.Units
             return KinematicViscosity.FromSquareMetresPerSecond(left.squareMetres / right.seconds);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -364,7 +350,6 @@ namespace Gu.Units
         {
             return Wavenumber.FromReciprocalMetres(left.squareMetres / right.cubicMetres);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -377,7 +362,6 @@ namespace Gu.Units
             return Force.FromNewtons(left.squareMetres * right.pascals);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -388,7 +372,6 @@ namespace Gu.Units
         {
             return Flexibility.FromMetresPerNewton(left.squareMetres / right.joules);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -401,7 +384,6 @@ namespace Gu.Units
             return VolumetricFlow.FromCubicMetresPerSecond(left.squareMetres * right.metresPerSecond);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -412,7 +394,6 @@ namespace Gu.Units
         {
             return KinematicViscosity.FromSquareMetresPerSecond(left.squareMetres * right.hertz);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -425,7 +406,6 @@ namespace Gu.Units
             return Energy.FromJoules(left.squareMetres * right.newtonsPerMetre);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -436,7 +416,6 @@ namespace Gu.Units
         {
             return Energy.FromJoules(left.squareMetres / right.metresPerNewton);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -449,7 +428,6 @@ namespace Gu.Units
             return LuminousFlux.FromLumens(left.squareMetres * right.lux);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -460,7 +438,6 @@ namespace Gu.Units
         {
             return MagneticFlux.FromWebers(left.squareMetres * right.teslas);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -473,7 +450,6 @@ namespace Gu.Units
             return Length.FromMetres(left.squareMetres * right.reciprocalMetres);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -484,7 +460,6 @@ namespace Gu.Units
         {
             return Volume.FromCubicMetres(left.squareMetres / right.reciprocalMetres);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -497,7 +472,6 @@ namespace Gu.Units
             return Mass.FromKilograms(left.squareMetres * right.kilogramsPerSquareMetre);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -508,8 +482,6 @@ namespace Gu.Units
         {
             return Time.FromSeconds(left.squareMetres / right.squareMetresPerSecond);
         }
-
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

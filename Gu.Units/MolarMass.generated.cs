@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -64,12 +58,10 @@ namespace Gu.Units
         /// </summary>
         public double KilogramsPerMole => this.kilogramsPerMole;
 
-
         /// <summary>
         /// The quantity in GramsPerMole
         /// </summary>
         public double GramsPerMole => 1000 * this.kilogramsPerMole;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
@@ -194,7 +186,6 @@ namespace Gu.Units
             return new MolarMass(kilogramsPerMole);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.MolarMass"/>.
         /// </summary>
@@ -203,8 +194,6 @@ namespace Gu.Units
         {
             return new MolarMass(gramsPerMole / 1000);
         }
-
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -217,7 +206,6 @@ namespace Gu.Units
             return Mass.FromKilograms(left.kilogramsPerMole * right.moles);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -228,8 +216,6 @@ namespace Gu.Units
         {
             return MassFlow.FromKilogramsPerSecond(left.kilogramsPerMole * right.katals);
         }
-
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly AreaUnit SquareMetres = new AreaUnit(squareMetres => squareMetres, squareMetres => squareMetres, "m²");
 
-
         /// <summary>
         /// The Hectares unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AreaUnit Hectares = new AreaUnit(hectares => 10000 * hectares, squareMetres => squareMetres / 10000, "ha");
-
 
         /// <summary>
         /// The SquareMillimetres unit
@@ -37,13 +29,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly AreaUnit SquareMillimetres = new AreaUnit(squareMillimetres => squareMillimetres / 1000000, squareMetres => 1000000 * squareMetres, "mm²");
 
-
         /// <summary>
         /// The SquareCentimetres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AreaUnit SquareCentimetres = new AreaUnit(squareCentimetres => squareCentimetres / 10000, squareMetres => 10000 * squareMetres, "cm²");
-
 
         /// <summary>
         /// The SquareDecimetres unit
@@ -51,13 +41,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly AreaUnit SquareDecimetres = new AreaUnit(squareDecimetres => squareDecimetres / 100, squareMetres => 100 * squareMetres, "dm²");
 
-
         /// <summary>
         /// The SquareKilometres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AreaUnit SquareKilometres = new AreaUnit(squareKilometres => 1000000 * squareKilometres, squareMetres => squareMetres / 1000000, "km²");
-
 
         /// <summary>
         /// The SquareMile unit
@@ -65,13 +53,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly AreaUnit SquareMile = new AreaUnit(squareMile => 2589988.110336 * squareMile, squareMetres => squareMetres / 2589988.110336, "mi²");
 
-
         /// <summary>
         /// The SquareYards unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AreaUnit SquareYards = new AreaUnit(squareYards => 0.83612736 * squareYards, squareMetres => squareMetres / 0.83612736, "yd²");
-
 
         /// <summary>
         /// The SquareInches unit
@@ -79,6 +65,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly AreaUnit SquareInches = new AreaUnit(squareInches => 0.00064516 * squareInches, squareMetres => squareMetres / 0.00064516, "in²");
 
+        /// <summary>
+        /// The SquareFeet unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly AreaUnit SquareFeet = new AreaUnit(squareFeet => 0.09290304 * squareFeet, squareMetres => squareMetres / 0.09290304, "ft²");
 
         private readonly Func<double, double> toSquareMetres;
         private readonly Func<double, double> fromSquareMetres;

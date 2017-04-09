@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly EnergyUnit Joules = new EnergyUnit(joules => joules, joules => joules, "J");
 
-
         /// <summary>
         /// The Nanojoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit Nanojoules = new EnergyUnit(nanojoules => nanojoules / 1000000000, joules => 1000000000 * joules, "nJ");
-
 
         /// <summary>
         /// The Microjoules unit
@@ -37,13 +29,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly EnergyUnit Microjoules = new EnergyUnit(microjoules => microjoules / 1000000, joules => 1000000 * joules, "µJ");
 
-
         /// <summary>
         /// The Millijoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit Millijoules = new EnergyUnit(millijoules => millijoules / 1000, joules => 1000 * joules, "mJ");
-
 
         /// <summary>
         /// The Kilojoules unit
@@ -51,13 +41,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly EnergyUnit Kilojoules = new EnergyUnit(kilojoules => 1000 * kilojoules, joules => joules / 1000, "kJ");
 
-
         /// <summary>
         /// The Megajoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit Megajoules = new EnergyUnit(megajoules => 1000000 * megajoules, joules => joules / 1000000, "MJ");
-
 
         /// <summary>
         /// The Gigajoules unit
@@ -65,13 +53,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly EnergyUnit Gigajoules = new EnergyUnit(gigajoules => 1000000000 * gigajoules, joules => joules / 1000000000, "GJ");
 
-
         /// <summary>
         /// The KilowattHours unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly EnergyUnit KilowattHours = new EnergyUnit(kilowattHours => 3600000 * kilowattHours, joules => joules / 3600000, "kWh");
-
 
         private readonly Func<double, double> toJoules;
         private readonly Func<double, double> fromJoules;

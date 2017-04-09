@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units.Json
+﻿namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
@@ -24,7 +18,6 @@ namespace Gu.Units.Json
         /// A <see cref="JsonConverter"/> that writes values in <see cref="IlluminanceUnit.Lux"/>
         /// </summary>
         public static readonly IlluminanceJsonConverter Lux = new IlluminanceJsonConverter(IlluminanceUnit.Lux);
-
 
         private readonly IlluminanceUnit unit;
 

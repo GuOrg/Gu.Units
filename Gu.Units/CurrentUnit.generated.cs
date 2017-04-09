@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly CurrentUnit Amperes = new CurrentUnit(amperes => amperes, amperes => amperes, "A");
 
-
         /// <summary>
         /// The Milliamperes unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CurrentUnit Milliamperes = new CurrentUnit(milliamperes => milliamperes / 1000, amperes => 1000 * amperes, "mA");
-
 
         /// <summary>
         /// The Kiloamperes unit
@@ -37,13 +29,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly CurrentUnit Kiloamperes = new CurrentUnit(kiloamperes => 1000 * kiloamperes, amperes => amperes / 1000, "kA");
 
-
         /// <summary>
         /// The Megaamperes unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CurrentUnit Megaamperes = new CurrentUnit(megaamperes => 1000000 * megaamperes, amperes => amperes / 1000000, "MA");
-
 
         /// <summary>
         /// The Microamperes unit
@@ -51,20 +41,17 @@ namespace Gu.Units
         /// </summary>
         public static readonly CurrentUnit Microamperes = new CurrentUnit(microamperes => microamperes / 1000000, amperes => 1000000 * amperes, "µA");
 
-
         /// <summary>
         /// The Nanoamperes unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CurrentUnit Nanoamperes = new CurrentUnit(nanoamperes => nanoamperes / 1000000000, amperes => 1000000000 * amperes, "nA");
 
-
         /// <summary>
         /// The Gigaamperes unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly CurrentUnit Gigaamperes = new CurrentUnit(gigaamperes => 1000000000 * gigaamperes, amperes => amperes / 1000000000, "GA");
-
 
         private readonly Func<double, double> toAmperes;
         private readonly Func<double, double> fromAmperes;

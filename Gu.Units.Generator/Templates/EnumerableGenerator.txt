@@ -1,28 +1,4 @@
 ﻿
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Read Settings found 52 quantities
 //-> Enumerable.generated.cs
 // Generated helper templates

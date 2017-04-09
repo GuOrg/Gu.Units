@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly MolarMassUnit KilogramsPerMole = new MolarMassUnit(kilogramsPerMole => kilogramsPerMole, kilogramsPerMole => kilogramsPerMole, "kg/mol");
 
-
         /// <summary>
         /// The GramsPerMole unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly MolarMassUnit GramsPerMole = new MolarMassUnit(gramsPerMole => gramsPerMole / 1000, kilogramsPerMole => 1000 * kilogramsPerMole, "g/mol");
-
 
         private readonly Func<double, double> toKilogramsPerMole;
         private readonly Func<double, double> fromKilogramsPerMole;

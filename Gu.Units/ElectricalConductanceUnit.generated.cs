@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -22,7 +16,6 @@ namespace Gu.Units
         /// Contains logic for conversion and formatting.
         /// </summary>
         public static readonly ElectricalConductanceUnit Siemens = new ElectricalConductanceUnit(siemens => siemens, siemens => siemens, "S");
-
 
         private readonly Func<double, double> toSiemens;
         private readonly Func<double, double> fromSiemens;

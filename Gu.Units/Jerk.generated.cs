@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -64,54 +58,45 @@ namespace Gu.Units
         /// </summary>
         public double MetresPerSecondCubed => this.metresPerSecondCubed;
 
-
         /// <summary>
         /// The quantity in MillimetresPerSecondCubed
         /// </summary>
         public double MillimetresPerSecondCubed => 1000 * this.metresPerSecondCubed;
-
 
         /// <summary>
         /// The quantity in CentimetresPerSecondCubed
         /// </summary>
         public double CentimetresPerSecondCubed => 100 * this.metresPerSecondCubed;
 
-
         /// <summary>
         /// The quantity in MillimetresPerHourCubed
         /// </summary>
         public double MillimetresPerHourCubed => 46656000000000 * this.metresPerSecondCubed;
-
 
         /// <summary>
         /// The quantity in MillimetresPerMinuteCubed
         /// </summary>
         public double MillimetresPerMinuteCubed => 216000000 * this.metresPerSecondCubed;
 
-
         /// <summary>
         /// The quantity in MetresPerHourCubed
         /// </summary>
         public double MetresPerHourCubed => 46656000000 * this.metresPerSecondCubed;
-
 
         /// <summary>
         /// The quantity in MetresPerMinuteCubed
         /// </summary>
         public double MetresPerMinuteCubed => 216000 * this.metresPerSecondCubed;
 
-
         /// <summary>
         /// The quantity in CentimetresPerHourCubed
         /// </summary>
         public double CentimetresPerHourCubed => 4665600000000 * this.metresPerSecondCubed;
 
-
         /// <summary>
         /// The quantity in CentimetresPerMinuteCubed
         /// </summary>
         public double CentimetresPerMinuteCubed => 21600000 * this.metresPerSecondCubed;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
@@ -236,7 +221,6 @@ namespace Gu.Units
             return new Jerk(metresPerSecondCubed);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
         /// </summary>
@@ -245,7 +229,6 @@ namespace Gu.Units
         {
             return new Jerk(millimetresPerSecondCubed / 1000);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
@@ -256,7 +239,6 @@ namespace Gu.Units
             return new Jerk(centimetresPerSecondCubed / 100);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
         /// </summary>
@@ -265,7 +247,6 @@ namespace Gu.Units
         {
             return new Jerk(millimetresPerHourCubed / 46656000000000);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
@@ -276,7 +257,6 @@ namespace Gu.Units
             return new Jerk(millimetresPerMinuteCubed / 216000000);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
         /// </summary>
@@ -285,7 +265,6 @@ namespace Gu.Units
         {
             return new Jerk(metresPerHourCubed / 46656000000);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
@@ -296,7 +275,6 @@ namespace Gu.Units
             return new Jerk(metresPerMinuteCubed / 216000);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
         /// </summary>
@@ -306,7 +284,6 @@ namespace Gu.Units
             return new Jerk(centimetresPerHourCubed / 4665600000000);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
         /// </summary>
@@ -315,8 +292,6 @@ namespace Gu.Units
         {
             return new Jerk(centimetresPerMinuteCubed / 21600000);
         }
-
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -329,7 +304,6 @@ namespace Gu.Units
             return Acceleration.FromMetresPerSecondSquared(left.metresPerSecondCubed * right.seconds);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -341,7 +315,6 @@ namespace Gu.Units
             return Acceleration.FromMetresPerSecondSquared(left.metresPerSecondCubed / right.hertz);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -352,8 +325,6 @@ namespace Gu.Units
         {
             return Frequency.FromHertz(left.metresPerSecondCubed / right.metresPerSecondSquared);
         }
-
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

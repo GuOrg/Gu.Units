@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -64,42 +58,35 @@ namespace Gu.Units
         /// </summary>
         public double RadiansPerSecond => this.radiansPerSecond;
 
-
         /// <summary>
         /// The quantity in RevolutionsPerMinute
         /// </summary>
         public double RevolutionsPerMinute => this.radiansPerSecond / 0.10471975511966;
-
 
         /// <summary>
         /// The quantity in DegreesPerSecond
         /// </summary>
         public double DegreesPerSecond => this.radiansPerSecond / 0.0174532925199433;
 
-
         /// <summary>
         /// The quantity in DegreesPerMinute
         /// </summary>
         public double DegreesPerMinute => this.radiansPerSecond / 0.000290888208665722;
-
 
         /// <summary>
         /// The quantity in RadiansPerMinute
         /// </summary>
         public double RadiansPerMinute => 60 * this.radiansPerSecond;
 
-
         /// <summary>
         /// The quantity in DegreesPerHour
         /// </summary>
         public double DegreesPerHour => this.radiansPerSecond / 4.84813681109536E-06;
 
-
         /// <summary>
         /// The quantity in RadiansPerHour
         /// </summary>
         public double RadiansPerHour => 3600 * this.radiansPerSecond;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
@@ -224,7 +211,6 @@ namespace Gu.Units
             return new AngularSpeed(radiansPerSecond);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
         /// </summary>
@@ -233,7 +219,6 @@ namespace Gu.Units
         {
             return new AngularSpeed(0.10471975511966 * revolutionsPerMinute);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
@@ -244,7 +229,6 @@ namespace Gu.Units
             return new AngularSpeed(0.0174532925199433 * degreesPerSecond);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
         /// </summary>
@@ -253,7 +237,6 @@ namespace Gu.Units
         {
             return new AngularSpeed(0.000290888208665722 * degreesPerMinute);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
@@ -264,7 +247,6 @@ namespace Gu.Units
             return new AngularSpeed(radiansPerMinute / 60);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
         /// </summary>
@@ -274,7 +256,6 @@ namespace Gu.Units
             return new AngularSpeed(4.84813681109536E-06 * degreesPerHour);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
         /// </summary>
@@ -283,8 +264,6 @@ namespace Gu.Units
         {
             return new AngularSpeed(radiansPerHour / 3600);
         }
-
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -297,7 +276,6 @@ namespace Gu.Units
             return Angle.FromRadians(left.radiansPerSecond * right.seconds);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -308,7 +286,6 @@ namespace Gu.Units
         {
             return AngularAcceleration.FromRadiansPerSecondSquared(left.radiansPerSecond / right.seconds);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -321,7 +298,6 @@ namespace Gu.Units
             return Frequency.FromHertz(left.radiansPerSecond / right.radians);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -332,7 +308,6 @@ namespace Gu.Units
         {
             return AngularAcceleration.FromRadiansPerSecondSquared(left.radiansPerSecond * right.hertz);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -345,7 +320,6 @@ namespace Gu.Units
             return Angle.FromRadians(left.radiansPerSecond / right.hertz);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -357,7 +331,6 @@ namespace Gu.Units
             return Power.FromWatts(left.radiansPerSecond * right.newtonMetres);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -368,8 +341,6 @@ namespace Gu.Units
         {
             return Time.FromSeconds(left.radiansPerSecond / right.radiansPerSecondSquared);
         }
-
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

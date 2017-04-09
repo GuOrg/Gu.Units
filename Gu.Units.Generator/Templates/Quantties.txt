@@ -1,28 +1,4 @@
 ﻿
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Read Settings and found 52 units
 
 //-> Acceleration.generated.cs

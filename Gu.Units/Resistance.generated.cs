@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -64,30 +58,25 @@ namespace Gu.Units
         /// </summary>
         public double Ohms => this.ohms;
 
-
         /// <summary>
         /// The quantity in Microohms
         /// </summary>
         public double Microohms => 1000000 * this.ohms;
-
 
         /// <summary>
         /// The quantity in Milliohms
         /// </summary>
         public double Milliohms => 1000 * this.ohms;
 
-
         /// <summary>
         /// The quantity in Kiloohms
         /// </summary>
         public double Kiloohms => this.ohms / 1000;
 
-
         /// <summary>
         /// The quantity in Megaohms
         /// </summary>
         public double Megaohms => this.ohms / 1000000;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
@@ -212,7 +201,6 @@ namespace Gu.Units
             return new Resistance(ohms);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
@@ -221,7 +209,6 @@ namespace Gu.Units
         {
             return new Resistance(microohms / 1000000);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
@@ -232,7 +219,6 @@ namespace Gu.Units
             return new Resistance(milliohms / 1000);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
@@ -242,7 +228,6 @@ namespace Gu.Units
             return new Resistance(1000 * kiloohms);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
@@ -251,8 +236,6 @@ namespace Gu.Units
         {
             return new Resistance(1000000 * megaohms);
         }
-
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -265,7 +248,6 @@ namespace Gu.Units
             return Inductance.FromHenrys(left.ohms * right.seconds);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -276,7 +258,6 @@ namespace Gu.Units
         {
             return Voltage.FromVolts(left.ohms * right.amperes);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -289,7 +270,6 @@ namespace Gu.Units
             return Inductance.FromHenrys(left.ohms / right.hertz);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -300,7 +280,6 @@ namespace Gu.Units
         {
             return MagneticFlux.FromWebers(left.ohms * right.coulombs);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -313,7 +292,6 @@ namespace Gu.Units
             return Frequency.FromHertz(left.ohms / right.henrys);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -325,8 +303,6 @@ namespace Gu.Units
             return Time.FromSeconds(left.ohms * right.farads);
         }
 
-
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -337,7 +313,6 @@ namespace Gu.Units
         {
             return ElectricalConductance.FromSiemens(left / right.ohms);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

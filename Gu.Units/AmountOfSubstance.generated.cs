@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -63,7 +57,6 @@ namespace Gu.Units
         /// The quantity in moles".
         /// </summary>
         public double Moles => this.moles;
-
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
@@ -188,8 +181,6 @@ namespace Gu.Units
             return new AmountOfSubstance(moles);
         }
 
-
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -200,7 +191,6 @@ namespace Gu.Units
         {
             return CatalyticActivity.FromKatals(left.moles / right.seconds);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -213,7 +203,6 @@ namespace Gu.Units
             return CatalyticActivity.FromKatals(left.moles * right.hertz);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -225,7 +214,6 @@ namespace Gu.Units
             return Time.FromSeconds(left.moles / right.katals);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -236,8 +224,6 @@ namespace Gu.Units
         {
             return Mass.FromKilograms(left.moles * right.kilogramsPerMole);
         }
-
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

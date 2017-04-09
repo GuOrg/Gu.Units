@@ -1,28 +1,4 @@
 ﻿
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Read Settings found 52 units
 
 //-> AccelerationConverter.generated.cs

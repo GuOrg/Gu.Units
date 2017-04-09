@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -64,54 +58,50 @@ namespace Gu.Units
         /// </summary>
         public double CubicMetres => this.cubicMetres;
 
-
         /// <summary>
         /// The quantity in Litres
         /// </summary>
         public double Litres => 1000 * this.cubicMetres;
-
 
         /// <summary>
         /// The quantity in Millilitres
         /// </summary>
         public double Millilitres => 1000000 * this.cubicMetres;
 
-
         /// <summary>
         /// The quantity in Centilitres
         /// </summary>
         public double Centilitres => 100000 * this.cubicMetres;
-
 
         /// <summary>
         /// The quantity in Decilitres
         /// </summary>
         public double Decilitres => 10000 * this.cubicMetres;
 
-
         /// <summary>
         /// The quantity in CubicCentimetres
         /// </summary>
         public double CubicCentimetres => 1000000 * this.cubicMetres;
-
 
         /// <summary>
         /// The quantity in CubicMillimetres
         /// </summary>
         public double CubicMillimetres => 1000000000 * this.cubicMetres;
 
-
         /// <summary>
         /// The quantity in CubicInches
         /// </summary>
         public double CubicInches => this.cubicMetres / 1.6387064E-05;
-
 
         /// <summary>
         /// The quantity in CubicDecimetres
         /// </summary>
         public double CubicDecimetres => 1000 * this.cubicMetres;
 
+        /// <summary>
+        /// The quantity in CubicFeet
+        /// </summary>
+        public double CubicFeet => this.cubicMetres / 0.028316846592;
 
         /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
@@ -236,7 +226,6 @@ namespace Gu.Units
             return new Volume(cubicMetres);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
@@ -245,7 +234,6 @@ namespace Gu.Units
         {
             return new Volume(litres / 1000);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
@@ -256,7 +244,6 @@ namespace Gu.Units
             return new Volume(millilitres / 1000000);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
@@ -265,7 +252,6 @@ namespace Gu.Units
         {
             return new Volume(centilitres / 100000);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
@@ -276,7 +262,6 @@ namespace Gu.Units
             return new Volume(decilitres / 10000);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
@@ -285,7 +270,6 @@ namespace Gu.Units
         {
             return new Volume(cubicCentimetres / 1000000);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
@@ -296,7 +280,6 @@ namespace Gu.Units
             return new Volume(cubicMillimetres / 1000000000);
         }
 
-
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
@@ -305,7 +288,6 @@ namespace Gu.Units
         {
             return new Volume(1.6387064E-05 * cubicInches);
         }
-
 
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
@@ -316,7 +298,14 @@ namespace Gu.Units
             return new Volume(cubicDecimetres / 1000);
         }
 
-
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
+        /// </summary>
+        /// <param name="cubicFeet">The value in ft³</param>
+        public static Volume FromCubicFeet(double cubicFeet)
+        {
+            return new Volume(0.028316846592 * cubicFeet);
+        }
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -329,7 +318,6 @@ namespace Gu.Units
             return SpecificVolume.FromCubicMetresPerKilogram(left.cubicMetres / right.kilograms);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -340,7 +328,6 @@ namespace Gu.Units
         {
             return Area.FromSquareMetres(left.cubicMetres / right.metres);
         }
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
@@ -353,7 +340,6 @@ namespace Gu.Units
             return VolumetricFlow.FromCubicMetresPerSecond(left.cubicMetres / right.seconds);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -364,7 +350,6 @@ namespace Gu.Units
         {
             return Length.FromMetres(left.cubicMetres / right.squareMetres);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -377,7 +362,6 @@ namespace Gu.Units
             return Energy.FromJoules(left.cubicMetres * right.pascals);
         }
 
-
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
@@ -388,7 +372,6 @@ namespace Gu.Units
         {
             return Mass.FromKilograms(left.cubicMetres * right.kilogramsPerCubicMetre);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -401,7 +384,6 @@ namespace Gu.Units
             return VolumetricFlow.FromCubicMetresPerSecond(left.cubicMetres * right.hertz);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -412,7 +394,6 @@ namespace Gu.Units
         {
             return Time.FromSeconds(left.cubicMetres / right.cubicMetresPerSecond);
         }
-
 
         /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
@@ -425,7 +406,6 @@ namespace Gu.Units
             return Area.FromSquareMetres(left.cubicMetres * right.reciprocalMetres);
         }
 
-
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
@@ -436,8 +416,6 @@ namespace Gu.Units
         {
             return Mass.FromKilograms(left.cubicMetres / right.cubicMetresPerKilogram);
         }
-
-
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

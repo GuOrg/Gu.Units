@@ -1,10 +1,4 @@
-﻿
-
-
-
-
-
-namespace Gu.Units
+﻿namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
@@ -23,13 +17,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly AngularJerkUnit RadiansPerSecondCubed = new AngularJerkUnit(radiansPerSecondCubed => radiansPerSecondCubed, radiansPerSecondCubed => radiansPerSecondCubed, "rad/s³");
 
-
         /// <summary>
         /// The DegreesPerSecondCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngularJerkUnit DegreesPerSecondCubed = new AngularJerkUnit(degreesPerSecondCubed => 0.0174532925199433 * degreesPerSecondCubed, radiansPerSecondCubed => radiansPerSecondCubed / 0.0174532925199433, "°⋅s⁻³");
-
 
         /// <summary>
         /// The RadiansPerHourCubed unit
@@ -37,13 +29,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly AngularJerkUnit RadiansPerHourCubed = new AngularJerkUnit(radiansPerHourCubed => radiansPerHourCubed / 46656000000, radiansPerSecondCubed => 46656000000 * radiansPerSecondCubed, "rad⋅h⁻³");
 
-
         /// <summary>
         /// The DegreesPerHourCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngularJerkUnit DegreesPerHourCubed = new AngularJerkUnit(degreesPerHourCubed => 3.74084630485753E-13 * degreesPerHourCubed, radiansPerSecondCubed => radiansPerSecondCubed / 3.74084630485753E-13, "°⋅h⁻³");
-
 
         /// <summary>
         /// The RadiansPerMinuteCubed unit
@@ -51,13 +41,11 @@ namespace Gu.Units
         /// </summary>
         public static readonly AngularJerkUnit RadiansPerMinuteCubed = new AngularJerkUnit(radiansPerMinuteCubed => radiansPerMinuteCubed / 216000, radiansPerSecondCubed => 216000 * radiansPerSecondCubed, "rad⋅min⁻³");
 
-
         /// <summary>
         /// The DegreesPerMinuteCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
         public static readonly AngularJerkUnit DegreesPerMinuteCubed = new AngularJerkUnit(degreesPerMinuteCubed => 8.08022801849227E-08 * degreesPerMinuteCubed, radiansPerSecondCubed => radiansPerSecondCubed / 8.08022801849227E-08, "°⋅min⁻³");
-
 
         private readonly Func<double, double> toRadiansPerSecondCubed;
         private readonly Func<double, double> fromRadiansPerSecondCubed;
