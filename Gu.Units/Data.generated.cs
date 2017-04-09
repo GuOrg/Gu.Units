@@ -224,7 +224,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
-        /// <param name="@byte">The value in B</param>
+        /// <param name="byte">The value in B</param>
         public static Data FromByte(double @byte)
         {
             return new Data(8 * @byte);
