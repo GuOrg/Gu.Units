@@ -9,6 +9,11 @@
     {
         const string UnknownFormat = "unknown format";
 
+        // ReSharper disable UnusedMember.Local
+        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
+        private const char MultiplyDot = '⋅';
+        // ReSharper restore UnusedMember.Local
+
         [Test]
         public void FormatAngle()
         {
@@ -103,9 +108,6 @@
             Assert.AreEqual("1,2\u00A0m⋅s⁻¹", speed.ToString("F1", SpeedUnit.MetresPerSecond, SymbolFormat.SignedSuperScript, sv));
             Assert.AreEqual("1\u00A0200,00 mm⋅s⁻¹", speed.ToString("N mm⋅s⁻¹", sv));
         }
-
-        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
-        private const char MultiplyDot = '⋅';
 
         [Test]
         public void FormatPressure()

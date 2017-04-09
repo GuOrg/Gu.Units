@@ -7,6 +7,7 @@
 
     public class UnitFormatCacheTests
     {
+        // ReSharper disable once UnusedMember.Local
         private const string Unicodes = "⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
 
         [TestCaseSource(nameof(SymbolFormatsSource))]

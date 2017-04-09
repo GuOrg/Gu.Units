@@ -5,6 +5,27 @@
 
     public class PowerReaderTests
     {
+        // ReSharper disable once UnusedMember.Local
+        private const string Superscripts = "⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹"; // keeping this here for copy pasting
+        private static readonly IReadOnlyList<SuccessData<int>> HappyPaths = new[]
+                                                                                 {
+                                                                                     SuccessData.Create("mm", 2, 1, 2),
+                                                                                     SuccessData.Create("mm^2", 2, 2, 4),
+                                                                                     SuccessData.Create("mm^-2", 2, -2, 5),
+                                                                                     SuccessData.Create("mm⁰", 2, 0, 3),
+                                                                                     SuccessData.Create("mm²", 2, 2, 3),
+                                                                                     SuccessData.Create("mm⁺²", 2, 2, 4),
+                                                                                     SuccessData.Create("mm⁺¹²", 2, 12, 5),
+                                                                                     SuccessData.Create("mm¹²", 2, 12, 4),
+                                                                                     SuccessData.Create("mm⁻¹²", 2, -12, 5),
+                                                                                     SuccessData.Create("mm", 2, 1, 2),
+                                                                                 };
+
+        private static readonly IReadOnlyList<ErrorData<int>> ErrorSource = new[]
+                                                                                {
+                                                                                    ErrorData.Create<int>("mm^--2", 0),
+                                                                                };
+
         [TestCaseSource(nameof(HappyPaths))]
         public void ReadSuccess(SuccessData<int> data)
         {
@@ -24,25 +45,5 @@
             Assert.AreEqual(data.Expected, actual);
             Assert.AreEqual(data.ExpectedEnd, end);
         }
-
-        private const string Superscripts = "⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹"; // keeping this here for copy pasting
-        private static readonly IReadOnlyList<SuccessData<int>> HappyPaths = new[]
-        {
-            SuccessData.Create("mm", 2, 1, 2),
-            SuccessData.Create("mm^2", 2, 2, 4),
-            SuccessData.Create("mm^-2", 2, -2, 5),
-            SuccessData.Create("mm⁰", 2, 0, 3),
-            SuccessData.Create("mm²", 2, 2, 3),
-            SuccessData.Create("mm⁺²", 2, 2, 4),
-            SuccessData.Create("mm⁺¹²", 2, 12, 5),
-            SuccessData.Create("mm¹²", 2, 12, 4),
-            SuccessData.Create("mm⁻¹²", 2, -12, 5),
-            SuccessData.Create("mm", 2, 1, 2),
-        };
-
-        private static readonly IReadOnlyList<ErrorData<int>> ErrorSource = new[]
-        {
-            ErrorData.Create<int>("mm^--2", 0),
-        };
     }
 }

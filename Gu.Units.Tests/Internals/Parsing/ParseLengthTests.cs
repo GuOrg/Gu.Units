@@ -8,6 +8,43 @@
 
     public class ParseLengthTests
     {
+        // ReSharper disable once UnusedMember.Local
+        private const string Superscripts = "⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹"; // keeping this here for copy pasting
+        private static readonly CultureInfo En = CultureInfo.GetCultureInfo("en-US");
+        private static readonly CultureInfo Sv = CultureInfo.GetCultureInfo("sv-SE");
+
+        private static readonly IReadOnlyList<SuccessData<Length>> HappyPaths = new[]
+                                                                                    {
+                                                                                        SuccessData.Create("1m", En, Length.FromMetres(1)),
+                                                                                        SuccessData.Create("1m", Sv, Length.FromMetres(1)),
+                                                                                        SuccessData.Create("-1m", En, Length.FromMetres(-1)),
+                                                                                        SuccessData.Create("-1m", Sv, Length.FromMetres(-1)),
+                                                                                        SuccessData.Create("1.2m", En,Length.FromMetres( 1.2)),
+                                                                                        SuccessData.Create(" 1.2m", En,Length.FromMetres( 1.2)),
+                                                                                        SuccessData.Create("1.2 m", En,Length.FromMetres( 1.2)),
+                                                                                        SuccessData.Create("1.2m ", En,Length.FromMetres( 1.2)),
+                                                                                        SuccessData.Create(" 1.2 m ", En,Length.FromMetres( 1.2)),
+                                                                                        SuccessData.Create("1,2m", Sv,Length.FromMetres( 1.2)),
+                                                                                        SuccessData.Create("1e3m", En,Length.FromMetres( 1e3)),
+                                                                                        SuccessData.Create("1E3m",En,Length.FromMetres( 1e3)),
+                                                                                        SuccessData.Create("1e+3m",En,Length.FromMetres( 1e+3)),
+                                                                                        SuccessData.Create("1E+3m",En,Length.FromMetres( 1E+3)),
+                                                                                        SuccessData.Create("1.2e-3m", En,Length.FromMetres( 1.2e-3)),
+                                                                                        SuccessData.Create("1.2E-3m", En, Length.FromMetres(1.2e-3)),
+                                                                                        SuccessData.Create(" 1m",En, Length.FromMetres(1)),
+                                                                                        SuccessData.Create("1 m",En,Length.FromMetres( 1)),
+                                                                                        SuccessData.Create("1m ",En,Length.FromMetres( 1)),
+                                                                                        SuccessData.Create("1.2mm",En, Length.FromMillimetres(1.2)),
+                                                                                        SuccessData.Create("1.2cm",En,Length.FromCentimetres(1.2)),
+                                                                                    };
+
+        private static readonly IReadOnlyList<ErrorData<Length>> Errors = new[]
+                                                                              {
+                                                                                  ErrorData.Create<Length>("1.2m", Sv, "Could not parse the unit value from: 1.2m"),
+                                                                                  ErrorData.Create<Length>("1.2", En, "Could not parse the unit value from: 1.2"),
+                                                                                  ErrorData.Create<Length>("1,2m", En, "Could not parse the unit value from: 1,2m"),
+                                                                              };
+
         [TestCaseSource(nameof(HappyPaths))]
         public void ParseLengthSuccess(SuccessData<Length> data)
         {
@@ -106,41 +143,5 @@
                 Assert.AreEqual(data.Expected, length);
             }
         }
-
-        private const string Superscripts = "⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹"; // keeping this here for copy pasting
-        private static readonly CultureInfo en = CultureInfo.GetCultureInfo("en-US");
-        private static readonly CultureInfo sv = CultureInfo.GetCultureInfo("sv-SE");
-
-        private static readonly IReadOnlyList<SuccessData<Length>> HappyPaths = new SuccessData<Length>[]
-        {
-            SuccessData.Create("1m", en, Length.FromMetres(1)),
-            SuccessData.Create("1m", sv, Length.FromMetres(1)),
-            SuccessData.Create("-1m", en, Length.FromMetres(-1)),
-            SuccessData.Create("-1m", sv, Length.FromMetres(-1)),
-            SuccessData.Create("1.2m", en,Length.FromMetres( 1.2)),
-            SuccessData.Create(" 1.2m", en,Length.FromMetres( 1.2)),
-            SuccessData.Create("1.2 m", en,Length.FromMetres( 1.2)),
-            SuccessData.Create("1.2m ", en,Length.FromMetres( 1.2)),
-            SuccessData.Create(" 1.2 m ", en,Length.FromMetres( 1.2)),
-            SuccessData.Create("1,2m", sv,Length.FromMetres( 1.2)),
-            SuccessData.Create("1e3m", en,Length.FromMetres( 1e3)),
-            SuccessData.Create("1E3m",en,Length.FromMetres( 1e3)),
-            SuccessData.Create("1e+3m",en,Length.FromMetres( 1e+3)),
-            SuccessData.Create("1E+3m",en,Length.FromMetres( 1E+3)),
-            SuccessData.Create("1.2e-3m", en,Length.FromMetres( 1.2e-3)),
-            SuccessData.Create("1.2E-3m", en, Length.FromMetres(1.2e-3)),
-            SuccessData.Create(" 1m",en, Length.FromMetres(1)),
-            SuccessData.Create("1 m",en,Length.FromMetres( 1)),
-            SuccessData.Create("1m ",en,Length.FromMetres( 1)),
-            SuccessData.Create("1.2mm",en, Length.FromMillimetres(1.2)),
-            SuccessData.Create("1.2cm",en,Length.FromCentimetres(1.2)),
-        };
-
-        private static readonly IReadOnlyList<ErrorData<Length>> Errors = new ErrorData<Length>[]
-        {
-            ErrorData.Create<Length>("1.2m", sv, "Could not parse the unit value from: 1.2m"),
-            ErrorData.Create<Length>("1.2", en, "Could not parse the unit value from: 1.2"),
-            ErrorData.Create<Length>("1,2m", en, "Could not parse the unit value from: 1,2m"),
-        };
     }
 }

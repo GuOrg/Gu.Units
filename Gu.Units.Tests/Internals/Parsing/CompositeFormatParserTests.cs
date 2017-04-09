@@ -5,8 +5,10 @@
 
     public class CompositeFormatParserTests
     {
+        // ReSharper disable UnusedMember.Local
         private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
         private const char MultiplyDot = '⋅';
+        // ReSharper restore UnusedMember.Local
 
         [TestCase("", "{0}\u00A0m", "1.2\u00A0m")]
         [TestCase(null, "{0}\u00A0m", "1.2\u00A0m")]

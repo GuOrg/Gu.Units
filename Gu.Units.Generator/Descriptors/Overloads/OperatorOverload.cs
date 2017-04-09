@@ -118,32 +118,5 @@
         {
             return $"{this.Left.Name} {this.Operator} {this.Right.Name} = {this.Result.Name}";
         }
-
-        /// <summary>
-        /// Solves left * right^x = result
-        /// Where x =±1
-        /// </summary>
-        /// <param name="left"></param>
-        /// <param name="right"></param>
-        /// <param name="result"></param>
-        /// <returns></returns>
-        private Power FindPower(Quantity left, Quantity right, Quantity result)
-        {
-            var leftParts = left.Unit.Parts;
-            var rightParts = right.Unit.Parts;
-            var resultParts = result.Unit.Parts;
-
-            if (leftParts * rightParts == resultParts)
-            {
-                return Power.PlusOne;
-            }
-
-            if (leftParts / rightParts == resultParts)
-            {
-                return Power.NegOne;
-            }
-
-            return Power.None;
-        }
     }
 }

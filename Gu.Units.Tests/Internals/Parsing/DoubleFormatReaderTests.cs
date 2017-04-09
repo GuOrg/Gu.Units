@@ -1,6 +1,5 @@
 namespace Gu.Units.Tests.Internals.Parsing
 {
-    using System.Collections.Generic;
     using NUnit.Framework;
 
     public class DoubleFormatReaderTests
@@ -62,10 +61,5 @@ namespace Gu.Units.Tests.Internals.Parsing
 
             Assert.AreEqual(expectedFormatted, formatted);
         }
-
-        private static readonly IReadOnlyList<SuccessData<PaddedFormat>> HappyPaths = new[]
-        {
-            SuccessData.Create("e", 0, new PaddedFormat(null, "e", null), 1),
-        };
     }
 }
