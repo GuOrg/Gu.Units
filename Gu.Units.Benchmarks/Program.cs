@@ -14,7 +14,7 @@ namespace Gu.Units.Benchmarks
 
         public static void Main()
         {
-            foreach (var summary in RunSingle<Format>())
+            foreach (var summary in RunAll())
             {
                 CopyResult(summary.Title);
             }
@@ -49,7 +49,7 @@ namespace Gu.Units.Benchmarks
         {
             if (Directory.Exists(DesinationDirectory))
             {
-                foreach (var resultFile in Directory.EnumerateFiles(DesinationDirectory, "*.md"))
+                foreach (var resultFile in Directory.EnumerateFiles(DesinationDirectory, "*.md", SearchOption.TopDirectoryOnly))
                 {
                     File.Delete(resultFile);
                 }

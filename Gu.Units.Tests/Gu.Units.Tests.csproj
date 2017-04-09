@@ -44,9 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArithmeticsTests.cs" />
-    <Compile Include="Benchmarks\FormattingBenchmarks.cs" />
-    <Compile Include="Benchmarks\ParsingBenchmarks.cs" />
-    <Compile Include="Benchmarks\SubstringCacheBenchmarks.cs" />
     <Compile Include="LengthTests.Conversions.cs" />
     <Compile Include="TemperatureTests.cs" />
     <Compile Include="TestHelpers\ConversionData.cs" />
@@ -91,7 +88,6 @@
     <Compile Include="Sources\QuantityTypesProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sources\UnitsProvider.cs" />
-    <Compile Include="Benchmarks\QuantityBenchmark.cs" />
     <Compile Include="Internals\Parsing\SymbolAndPowerParserTests.cs" />
     <Compile Include="SerializationTests.cs" />
     <Compile Include="UnitlessTests.cs" />
@@ -180,4 +176,5 @@
       <Paket>True</Paket>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
 </Project>

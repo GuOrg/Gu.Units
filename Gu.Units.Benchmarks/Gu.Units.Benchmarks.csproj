@@ -47,13 +47,17 @@
     <Content Include="_TraceEventProgrammersGuide.docx">
       <Paket>True</Paket>
     </Content>
-    <Compile Include="Format.cs" />
+    <Compile Include="Benchmarks\Format.cs" />
+    <Compile Include="Benchmarks\Parse.cs" />
+    <Compile Include="Benchmarks\Quantity.cs" />
     <Compile Include="MemoryDiagnoserConfig.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Benchmarks\Format.md" />
+    <None Include="Benchmarks\Parse.md" />
     <None Include="paket.references" />
   </ItemGroup>
   <ItemGroup>
@@ -62,9 +66,7 @@
       <Name>Gu.Units</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Benchmarks\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
