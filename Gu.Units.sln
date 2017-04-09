@@ -5,6 +5,7 @@ VisualStudioVersion = 15.0.26403.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{4596217D-657C-443F-83BD-4D850760E094}"
 	ProjectSection(SolutionItems) = preProject
+		appveyor.yml = appveyor.yml
 		.paket\paket.bootstrapper.exe = .paket\paket.bootstrapper.exe
 		paket.dependencies = paket.dependencies
 		paket.lock = paket.lock
