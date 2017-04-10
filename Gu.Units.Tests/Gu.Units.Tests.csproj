@@ -82,7 +82,7 @@
     <Compile Include="Samples\Samples.cs" />
     <Compile Include="Sandbox\DumpMarkdown.cs" />
     <Compile Include="Sources\ConversionProvider.cs" />
-    <Compile Include="Sources\ParseProvider.cs" />
+    <Compile Include="ParseProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Internals\Parsing\SymbolAndPowerParserTests.cs" />
     <Compile Include="SerializationTests.cs" />
