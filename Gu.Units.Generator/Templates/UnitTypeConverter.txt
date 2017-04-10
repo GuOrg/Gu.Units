@@ -6,15 +6,15 @@
     using System.Globalization;
 
     /// <devdoc>
-    /// <para>Provides a type converter to convert <see cref='Gu.Units.MolarHeatCapacityUnit'/>
+    /// <para>Provides a type converter to convert <see cref='Gu.Units.MassUnit'/>
     /// objects to and from various
     /// other representations.</para>
     /// </devdoc>
-    public class MolarHeatCapacityUnitTypeConverter : TypeConverter
+    public class MassUnitTypeConverter : TypeConverter
     {
         /// <devdoc>
         ///    <para>Gets a value indicating whether this converter can
-        ///       convert an object in the given source type to a <see cref='Gu.Units.MolarHeatCapacityUnit'/> object using the
+        ///       convert an object in the given source type to a <see cref='Gu.Units.MassUnit'/> object using the
         ///       specified context.</para>
         /// </devdoc>
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
@@ -42,7 +42,7 @@
         }
 
         /// <devdoc>
-        /// <para>Converts the given object to a <see cref='Gu.Units.MolarHeatCapacityUnit'/>
+        /// <para>Converts the given object to a <see cref='Gu.Units.MassUnit'/>
         /// object.</para>
         /// </devdoc>
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
@@ -50,13 +50,13 @@
             var text = value as string;
             if (text != null)
             {
-                MolarHeatCapacityUnit result;
-                if (MolarHeatCapacityUnit.TryParse(text, out result))
+                MassUnit result;
+                if (MassUnit.TryParse(text, out result))
                 {
                     return result;
                 }
 
-                var message = $"Could not convert the string '{text}' to an instance of MolarHeatCapacityUnit)";
+                var message = $"Could not convert the string '{text}' to an instance of MassUnit)";
                 throw new NotSupportedException(message);
             }
 
@@ -72,16 +72,16 @@
         /// </devdoc>
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            if (value is MolarHeatCapacityUnit && destinationType != null)
+            if (value is MassUnit && destinationType != null)
             {
-                var unit = (MolarHeatCapacityUnit) value;
+                var unit = (MassUnit) value;
                 if (destinationType == typeof (string))
                 {
                     return unit.ToString();
                 }
                 else if(destinationType == typeof(InstanceDescriptor))
                 {
-                    var parseMethod = typeof(MolarHeatCapacityUnit).GetMethod(nameof(MolarHeatCapacityUnit.Parse), new Type[] { typeof(string) });
+                    var parseMethod = typeof(MassUnit).GetMethod(nameof(MassUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)
                     {
                         var args = new object[] { unit.Symbol };

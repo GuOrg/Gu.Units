@@ -1,13 +1,12 @@
 ﻿<#@ template debug="false" hostspecific="false" language="C#" #>
 <#@ assembly name="$(TargetPath)" #>
-<#@ import namespace="Gu.Units" #>
 <#@ import namespace="Gu.Units.Generator" #>
 <#@ parameter name="UnitName" type="System.String" #>
 <#@ output extension=".txt" #>
 <#
 var settings = Settings.Instance;
 // Template used by UnitTypeConverterGenerator.tt
-var unit = settings.GetUnitByName(UnitName ?? settings.AllUnits[0].Name);
+var unit = settings.GetUnitByName(this.UnitName ?? settings.AllUnits[0].Name);
 #>
 namespace <#= Settings.Namespace #>
 {
