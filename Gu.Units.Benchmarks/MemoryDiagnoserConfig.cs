@@ -1,7 +1,7 @@
 ﻿namespace Gu.Units.Benchmarks
 {
     using BenchmarkDotNet.Configs;
-    using BenchmarkDotNet.Diagnostics.Windows;
+    using BenchmarkDotNet.Diagnosers;
 
     public class MemoryDiagnoserConfig : ManualConfig
     {
