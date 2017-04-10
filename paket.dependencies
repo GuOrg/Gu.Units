@@ -22,7 +22,7 @@ group Roslyn
 group Test
   source http://www.nuget.org/api/v2/
   framework: net452
-  nuget NUnit = 2.6.4
+  nuget NUnit
   nuget Moq = 4.5.9
   nuget TestStack.White = 0.13.3
   nuget Castle.Core = 3.3.3
