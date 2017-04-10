@@ -1,11 +1,13 @@
 namespace Gu.Units.Tests
 {
     using System;
-    using System.Collections.Generic;
     using NUnit.Framework;
 
     public class LengthUnitTests
     {
+        public static string[] HappyPathSource { get; } = { "m", "mm", " cm", " m ", "ft", "yd" };
+        public static string[] ErrorSource { get; } = { "ssg", "mms" };
+
         [TestCaseSource(nameof(HappyPathSource))]
         public void ParseSuccess(string text)
         {
@@ -35,8 +37,5 @@ namespace Gu.Units.Tests
             LengthUnit temp;
             Assert.AreEqual(false, LengthUnit.TryParse(text, out temp));
         }
-
-        private IReadOnlyList<string> HappyPathSource = new[] { "m", "mm", " cm", " m ", "ft", "yd" };
-        private IReadOnlyList<string> ErrorSource = new[] { "ssg", "mms" };
     }
 }
