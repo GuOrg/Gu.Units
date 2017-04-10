@@ -14,7 +14,7 @@ namespace Gu.Units.Benchmarks
 
         public static void Main()
         {
-            foreach (var summary in RunAll())
+            foreach (var summary in RunSingle<Format>())
             {
                 CopyResult(summary.Title);
             }
@@ -22,7 +22,7 @@ namespace Gu.Units.Benchmarks
 
         private static IEnumerable<Summary> RunAll()
         {
-            ClearAllResults();
+            // ClearAllResults();
             var switcher = new BenchmarkSwitcher(typeof(Program).Assembly);
             var summaries = switcher.Run(new[] { "*" });
             return summaries;
@@ -41,7 +41,7 @@ namespace Gu.Units.Benchmarks
             var sourceFileName = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "BenchmarkDotNet.Artifacts", "results", name + "-report-github.md");
             System.IO.Directory.CreateDirectory(DesinationDirectory);
             var destinationFileName = System.IO.Path.Combine(DesinationDirectory, name + ".md");
-            File.Copy(sourceFileName, destinationFileName, true);
+            File.Copy(sourceFileName, destinationFileName, overwrite: true);
 #endif
         }
 
