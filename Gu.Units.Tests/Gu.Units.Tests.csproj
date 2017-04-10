@@ -47,7 +47,6 @@
     <Compile Include="ArithmeticsTests.cs" />
     <Compile Include="LengthTests.Conversions.cs" />
     <Compile Include="TemperatureTests.cs" />
-    <Compile Include="TestHelpers\ConversionData.cs" />
     <Compile Include="ConversionTests.cs" />
     <Compile Include="FormatTests.cs" />
     <Compile Include="Constants\Benchmarks.cs" />
@@ -83,7 +82,6 @@
     <Compile Include="Samples\Samples.cs" />
     <Compile Include="Sandbox\DumpMarkdown.cs" />
     <Compile Include="Sources\ConversionProvider.cs" />
-    <Compile Include="TestHelpers\DummyUnit.cs" />
     <Compile Include="Sources\ParseProvider.cs" />
     <Compile Include="Sources\QuantitiesProvider.cs" />
     <Compile Include="Sources\QuantityTypesProvider.cs" />

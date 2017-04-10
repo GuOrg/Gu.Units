@@ -1,36 +1,27 @@
 ﻿namespace Gu.Units.Tests
 {
-    using System.Collections.Generic;
     using System.Globalization;
 
     using NUnit.Framework;
 
     public class TemperatureTests
     {
-        public static IReadOnlyList<ConversionData> ConversionSource { get; } = new[]
-                                                                                    {
-                                                                                        new ConversionData("0.01°C", "273.16K", false),
-                                                                                        new ConversionData("32.018°F", "273.16K", false),
-                                                                                        new ConversionData("-40°F", "-40°C", false),
-                                                                                    };
-
-        [TestCaseSource(nameof(ConversionSource))]
-        public void Conversion(ConversionData data)
+        [TestCase("0.01°C", "273.16K", false)]
+        [TestCase("32.018°F", "273.16K", false)]
+        [TestCase("-40°F", "-40°C", false)]
+        public void Conversion(string x, string y, bool exact)
         {
-            if (data.Status == ConversionData.GenerationStatus.NotGenerated)
-            {
-                Assert.Inconclusive(data.ToString());
-            }
-
-            var t1 = Temperature.Parse(data.From, CultureInfo.InvariantCulture);
-            var t2 = Temperature.Parse(data.To, CultureInfo.InvariantCulture);
-            if (data.Exactly)
+            var t1 = Temperature.Parse(x, CultureInfo.InvariantCulture);
+            var t2 = Temperature.Parse(y, CultureInfo.InvariantCulture);
+            if (exact)
             {
                 Assert.AreEqual(t1, t2);
+                Assert.AreEqual(t2, t1);
             }
             else
             {
                 Assert.AreEqual(t1.ToString(), t2.ToString());
+                Assert.AreEqual(t2.ToString(), t1.ToString());
             }
         }
     }
