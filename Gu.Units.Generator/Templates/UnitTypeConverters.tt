@@ -3,7 +3,6 @@
 <#@ output extension=".txt" #>
 <#@ assembly name="System.Core" #>
 <#@ assembly name="$(TargetPath)" #>
-<#@ import namespace="Gu.Units" #>
 <#@ import namespace="Gu.Units.Generator" #>
 <# 
 var fileManager = TemplateFileManager.Create(this);

@@ -84,8 +84,8 @@ namespace <#= Settings.Namespace #>
         {
             if (value is <#= unit.ClassName #> && destinationType != null)
             {
-                var unit = (<#= unit.ClassName #>) value;
-                if (destinationType == typeof (string))
+                var unit = (<#= unit.ClassName #>)value;
+                if (destinationType == typeof(string))
                 {
                     return unit.ToString();
                 }
