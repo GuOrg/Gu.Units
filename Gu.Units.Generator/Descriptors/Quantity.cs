@@ -32,7 +32,7 @@
 
         public InverseOverload Inverse
         {
-            get { return this.inverse; }
+            get => this.inverse;
             internal set
             {
                 if (Equals(value, this.inverse))

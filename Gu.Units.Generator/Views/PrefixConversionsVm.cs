@@ -25,7 +25,7 @@
 
         public Unit Unit
         {
-            get { return this.unit; }
+            get => this.unit;
             set
             {
                 if (Equals(value, this.unit))

@@ -26,10 +26,7 @@
 
         public string Name
         {
-            get
-            {
-                return this.name;
-            }
+            get => this.name;
             set
             {
                 if (value == this.name)

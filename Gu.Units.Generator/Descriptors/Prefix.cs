@@ -32,7 +32,7 @@
 
         public string Name
         {
-            get { return this.name; }
+            get => this.name;
             set
             {
                 if (value == this.name)
@@ -46,7 +46,7 @@
 
         public string Symbol
         {
-            get { return this.symbol; }
+            get => this.symbol;
             set
             {
                 if (value == this.symbol)
@@ -60,7 +60,7 @@
 
         public int Power
         {
-            get { return this.power; }
+            get => this.power;
             set
             {
                 if (value == this.power)

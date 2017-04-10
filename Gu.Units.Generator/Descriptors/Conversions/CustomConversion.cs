@@ -29,7 +29,7 @@
 
         public string Name
         {
-            get { return this.name; }
+            get => this.name;
             set
             {
                 if (value == this.name)
@@ -49,7 +49,7 @@
 
         public string Symbol
         {
-            get { return this.symbol; }
+            get => this.symbol;
             set
             {
                 if (value == this.symbol)
@@ -65,7 +65,7 @@
 
         public string ToSi
         {
-            get { return this.toSi; }
+            get => this.toSi;
             set
             {
                 if (value == this.toSi)
@@ -87,7 +87,7 @@
 
         public string FromSi
         {
-            get { return this.fromSi; }
+            get => this.fromSi;
             set
             {
                 if (value == this.fromSi)

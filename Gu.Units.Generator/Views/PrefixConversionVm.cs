@@ -31,10 +31,7 @@
 
         public bool IsUsed
         {
-            get
-            {
-                return this.conversions.Any(this.IsMatch);
-            }
+            get => this.conversions.Any(this.IsMatch);
             set
             {
                 if (value.Equals(this.IsUsed))

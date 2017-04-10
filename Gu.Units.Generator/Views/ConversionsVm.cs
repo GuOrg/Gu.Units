@@ -36,7 +36,7 @@
 
         public Unit Unit
         {
-            get { return this.unit; }
+            get => this.unit;
             set
             {
                 if (Equals(value, this.unit))
@@ -65,7 +65,7 @@
 
         public IConversion SelectedConversion
         {
-            get { return this.selectedConversion; }
+            get => this.selectedConversion;
             set
             {
                 if (Equals(value, this.selectedConversion))
@@ -81,7 +81,7 @@
 
         public object SelectedBaseUnit
         {
-            get { return this.selectedBaseUnit; }
+            get => this.selectedBaseUnit;
             set
             {
                 var selected = value as BaseUnitViewModel;
@@ -100,7 +100,7 @@
 
         public object SelectedDerivedUnit
         {
-            get { return this.selectedDerivedUnit; }
+            get => this.selectedDerivedUnit;
             set
             {
                 var selected = value as DerivedUnitViewModel;

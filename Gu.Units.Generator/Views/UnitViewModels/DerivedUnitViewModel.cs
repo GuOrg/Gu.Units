@@ -25,7 +25,7 @@
 
         public UnitParts UnitParts
         {
-            get { return this.Unit.Parts; }
+            get => this.Unit.Parts;
             set
             {
                 if (Equals(value, this.UnitParts))

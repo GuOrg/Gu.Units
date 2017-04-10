@@ -29,7 +29,7 @@ namespace Gu.Units.Generator
 
         public string Name
         {
-            get { return this.name; }
+            get => this.name;
             set
             {
                 if (value == this.name)
@@ -45,7 +45,7 @@ namespace Gu.Units.Generator
 
         public string Symbol
         {
-            get { return this.symbol; }
+            get => this.symbol;
             set
             {
                 if (value == this.symbol)
@@ -59,7 +59,7 @@ namespace Gu.Units.Generator
 
         public string QuantityName
         {
-            get { return this.quantityName; }
+            get => this.quantityName;
             set
             {
                 if (value == this.quantityName)

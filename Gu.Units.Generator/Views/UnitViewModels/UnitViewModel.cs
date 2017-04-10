@@ -37,7 +37,7 @@
 
         public TUnit Unit
         {
-            get { return this.unit; }
+            get => this.unit;
             protected set
             {
                 if (Equals(value, this.unit))

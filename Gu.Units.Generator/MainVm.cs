@@ -42,10 +42,7 @@
 
         public string NameSpace
         {
-            get
-            {
-                return this.nameSpace;
-            }
+            get => this.nameSpace;
             set
             {
                 if (value == this.nameSpace)
