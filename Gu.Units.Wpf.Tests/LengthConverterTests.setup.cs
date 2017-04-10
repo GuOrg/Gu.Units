@@ -2,11 +2,12 @@
 {
     using System;
     using System.Globalization;
+    using System.Threading;
     using NUnit.Framework;
 
     public partial class ConverterTests
     {
-        [RequiresSTA]
+        [Apartment(ApartmentState.STA)]
         public class Setup
         {
             [TestCase("F1 mm")]
