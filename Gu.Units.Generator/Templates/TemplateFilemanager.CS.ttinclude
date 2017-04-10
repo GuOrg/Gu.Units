@@ -75,7 +75,6 @@ public class TemplateFileManager
     public static TemplateFileManager Create(object textTransformation)
     {
         var transformation = DynamicTextTransformation2.Create(textTransformation);
-        var host = transformation.Host;
         return new TemplateFileManager(transformation);
     }
 
@@ -960,10 +959,9 @@ public class VsHelper
 
 	private static ProjectItem FindProjectItem(ProjectItems items, string fullName, bool canCreateIfNotExists)
 	{
-		ProjectItem item = (from i in items.Cast<ProjectItem>()
-								  where i.Name == Path.GetFileName(fullName)
-								  select i).FirstOrDefault();
-		if (item == null)
+	    var item = items.Cast<ProjectItem>()
+						.FirstOrDefault(i => i.Name == Path.GetFileName(fullName));
+		if (item == null && canCreateIfNotExists)
 		{
 			File.CreateText(fullName);
 			item = items.AddFromFile(fullName);
