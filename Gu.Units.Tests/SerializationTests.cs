@@ -1,7 +1,9 @@
 ﻿namespace Gu.Units.Tests
 {
     using System;
+    using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
     using System.Reflection;
     using System.Runtime.Serialization;
     using System.Runtime.Serialization.Formatters.Binary;
@@ -9,13 +11,15 @@
     using System.Xml;
     using System.Xml.Serialization;
 
-    using Gu.Units.Tests.Sources;
-
     using NUnit.Framework;
 
     public class SerializationTests
     {
-        [TestCaseSource(typeof(QuantityTypesProvider))]
+        public static readonly List<Type> QuantityTypes = typeof(Length).Assembly.GetTypes()
+            .Where(x => x.IsValueType && typeof(IQuantity).IsAssignableFrom(x))
+            .ToList();
+
+        [TestCaseSource(nameof(QuantityTypes))]
         public void XmlSerializer(Type quantityType)
         {
             var ctor = quantityType.GetConstructor(
@@ -44,7 +48,7 @@
             }
         }
 
-        [TestCaseSource(typeof(QuantityTypesProvider))]
+        [TestCaseSource(nameof(QuantityTypes))]
         public void DataContractSerializer(Type quantityType)
         {
             var ctor = quantityType.GetConstructor(
@@ -74,7 +78,7 @@
             }
         }
 
-        [TestCaseSource(typeof(QuantityTypesProvider))]
+        [TestCaseSource(nameof(QuantityTypes))]
         public void BinaryFormatter(Type quantityType)
         {
             var ctor = quantityType.GetConstructor(
