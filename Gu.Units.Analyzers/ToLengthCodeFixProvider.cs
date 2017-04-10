@@ -4,7 +4,8 @@
     using Microsoft.CodeAnalysis;
     using Microsoft.CodeAnalysis.CodeFixes;
 
-    [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(ToLengthCodeFixProvider)), Shared]
+    [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(ToLengthCodeFixProvider))]
+    [Shared]
     public class ToLengthCodeFixProvider : ToUnitCodeFixProvider
     {
         public ToLengthCodeFixProvider()
