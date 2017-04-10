@@ -47,7 +47,7 @@
     <Compile Include="ArithmeticsTests.cs" />
     <Compile Include="LengthTests.Conversions.cs" />
     <Compile Include="TemperatureTests.cs" />
-    <Compile Include="ConversionTests.cs" />
+    <Compile Include="QuantityConversionTests.cs" />
     <Compile Include="FormatTests.cs" />
     <Compile Include="Constants\Benchmarks.cs" />
     <Compile Include="Internals\Helpers\MapTests.cs" />
@@ -81,8 +81,7 @@
     <Compile Include="MassTests.cs" />
     <Compile Include="Samples\Samples.cs" />
     <Compile Include="Sandbox\DumpMarkdown.cs" />
-    <Compile Include="Sources\ConversionProvider.cs" />
-    <Compile Include="ParseProvider.cs" />
+    <Compile Include="QuantityParseTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Internals\Parsing\SymbolAndPowerParserTests.cs" />
     <Compile Include="SerializationTests.cs" />
@@ -98,6 +97,9 @@
       <Project>{F1F8B138-BECC-4475-A7AB-B3019338BC7B}</Project>
       <Name>Gu.Units</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
