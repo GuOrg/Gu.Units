@@ -86,10 +86,10 @@
     <Compile Include="Sources\QuantitiesProvider.cs" />
     <Compile Include="Sources\QuantityTypesProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sources\UnitsProvider.cs" />
     <Compile Include="Internals\Parsing\SymbolAndPowerParserTests.cs" />
     <Compile Include="SerializationTests.cs" />
     <Compile Include="UnitlessTests.cs" />
+    <Compile Include="UnitRoundtripTests.cs" />
     <Compile Include="UnitTests.cs" />
   </ItemGroup>
   <ItemGroup>

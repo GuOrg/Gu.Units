@@ -64,36 +64,6 @@
             Assert.Inconclusive("Does not roundtrip cleanly");
         }
 
-        [TestCaseSource(typeof(UnitsProvider))]
-        public void Roundtrip(IUnit unit)
-        {
-            double[] values = { 0, 100 };
-            foreach (var value in values)
-            {
-                var si = unit.ToSiUnit(value);
-                var d = unit.FromSiUnit(si);
-                Assert.AreEqual(value, d, 1E-9);
-            }
-        }
-
-        [TestCaseSource(typeof(UnitsProvider))]
-        public void Roundtrip2(IUnit unit)
-        {
-            double[] values = { 0, 1.2 };
-            foreach (var value in values)
-            {
-                dynamic u = unit;
-                var qty = u.CreateQuantity(value); // Hacking it with dynamic here
-                Assert.IsInstanceOf<IQuantity>(qty);
-
-                var d = qty.GetValue(u);
-                Assert.AreEqual(value, d, 1E-9);
-
-                d = u.GetScalarValue(qty);
-                Assert.AreEqual(value, d, 1E-9);
-            }
-        }
-
         private readonly IReadOnlyList<ConversionProvider.IConversion<IQuantity>> QuantityConversions = new[]
         {
             new ConversionProvider.Conversion<IQuantity>(Length.FromMillimetres(1.2), Length.FromMetres(0.0012)),
