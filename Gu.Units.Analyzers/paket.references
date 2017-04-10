@@ -1,2 +1,3 @@
-Microsoft.CodeAnalysis.CSharp.Workspaces
-Microsoft.CodeAnalysis.VisualBasic.Workspaces
+group Roslyn
+  Microsoft.CodeAnalysis.CSharp.Workspaces
+  Microsoft.CodeAnalysis.VisualBasic.Workspaces

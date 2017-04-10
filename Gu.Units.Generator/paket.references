@@ -1,6 +1,9 @@
-T4.TemplateFileManager
-JetBrains.Annotations
 Newtonsoft.Json
-Microsoft.CodeAnalysis.CSharp.Scripting
 Gu.Wpf.Reactive
 Gu.State
+
+T4.TemplateFileManager
+JetBrains.Annotations
+
+group Roslyn
+  Microsoft.CodeAnalysis.CSharp.Scripting

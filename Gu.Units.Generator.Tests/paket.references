@@ -1,7 +1,9 @@
 Newtonsoft.Json
-Microsoft.CodeAnalysis.CSharp.Scripting
 Gu.Wpf.Reactive
 Gu.State
+
+group Roslyn
+  Microsoft.CodeAnalysis.CSharp.Scripting
 
 group Test
   NUnit

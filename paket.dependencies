@@ -1,16 +1,23 @@
 source http://www.nuget.org/api/v2/
+framework: >= net45
 nuget Newtonsoft.Json
 
-nuget T4.TemplateFileManager
-nuget Microsoft.CodeAnalysis.CSharp.Scripting
-
-nuget Microsoft.CodeAnalysis.CSharp.Workspaces
-nuget Microsoft.CodeAnalysis.VisualBasic.Workspaces
-
-nuget JetBrains.Annotations
 nuget Gu.Wpf.NumericInput
 nuget Gu.Wpf.Reactive
 nuget Gu.State
+
+nuget T4.TemplateFileManager
+nuget JetBrains.Annotations
+
+group Roslyn
+  source http://www.nuget.org/api/v2/
+  framework: net452
+  nuget Microsoft.CodeAnalysis.CSharp.Scripting 1.2.2
+  nuget Microsoft.CodeAnalysis.CSharp.Workspaces 1.2.2
+  nuget Microsoft.CodeAnalysis.VisualBasic.Workspaces 1.2.2
+  nuget System.Collections.Immutable 1.1.37
+  nuget System.Reflection.Metadata 1.2.0
+  nuget Microsoft.Composition 1.0.30
 
 group Test
   source http://www.nuget.org/api/v2/
