@@ -5,6 +5,7 @@
              xmlns:local="clr-namespace:Gu.Units.Generator"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:reactive="http://Gu.com/Reactive"
+             xmlns:converters="clr-namespace:Gu.Units.Generator.Converters"
              DataContext="{Binding Conversions,
                                    Source={x:Static local:MainVm.Instance}}"
              mc:Ignorable="d">
@@ -38,7 +39,7 @@
                               MinHeight="100"
                               Header="Prefixes"
                               Visibility="{Binding PrefixConversions.HasItems,
-                                                   Converter={reactive:BooleanToVisibilityConverter WhenFalse=Collapsed,
+                                                   Converter={converters:BooleanToVisibilityConverter WhenFalse=Collapsed,
                                                                                                     WhenTrue=Visible}}">
                         <local:PrefixConversionsView />
                     </GroupBox>
@@ -47,7 +48,7 @@
                               MinHeight="100"
                               Header="Subparts"
                               Visibility="{Binding PartConversions.HasItems,
-                                                   Converter={reactive:BooleanToVisibilityConverter WhenFalse=Collapsed,
+                                                   Converter={converters:BooleanToVisibilityConverter WhenFalse=Collapsed,
                                                                                                     WhenTrue=Visible}}">
                         <local:PartConversionsView />
                     </GroupBox>
@@ -76,7 +77,7 @@
                                                  Height="10"
                                                  Fill="{Binding CanRoundtrip,
                                                                 Mode=OneWay,
-                                                                Converter={reactive:BooleanToBrushConverter WhenFalse=Red,
+                                                                Converter={converters:BooleanToBrushConverter WhenFalse=Red,
                                                                                                             WhenNull=Gray,
                                                                                                             WhenTrue=GreenYellow}}" />
                                     </DataTemplate>

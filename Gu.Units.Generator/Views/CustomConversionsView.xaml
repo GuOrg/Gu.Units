@@ -4,7 +4,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Gu.Units.Generator"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:reactive="http://Gu.com/Reactive"
+             xmlns:converters="clr-namespace:Gu.Units.Generator.Converters"
              DataContext="{Binding Conversions.CustomConversions,
                                    Source={x:Static local:MainVm.Instance}}"
              mc:Ignorable="d">
@@ -20,7 +20,7 @@
                         <Ellipse Width="10"
                                  Height="10"
                                  Fill="{Binding Conversion. CanRoundtrip,
-                                                Converter={reactive:BooleanToBrushConverter WhenFalse=Red,
+                                                Converter={converters:BooleanToBrushConverter WhenFalse=Red,
                                                                                             WhenNull=Gray,
                                                                                             WhenTrue=GreenYellow}}" />
                     </DataTemplate>

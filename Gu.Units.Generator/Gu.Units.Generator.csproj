@@ -141,6 +141,8 @@
     <Compile Include="..\Gu.Units\SuperScript.cs">
       <Link>Imports\SuperScript.cs</Link>
     </Compile>
+    <Compile Include="Converters\BooleanToBrushConverterExtension.cs" />
+    <Compile Include="Converters\BooleanToVisibilityConverterExtension.cs" />
     <Compile Include="Descriptors\Overloads\MissingOverload.cs" />
     <Compile Include="Descriptors\Overloads\MissingOverloads.cs" />
     <Compile Include="Views\CustomConversionsView.xaml.cs">
