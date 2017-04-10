@@ -24,7 +24,6 @@ NUGET
       System.Reactive.Linq (>= 3.1.1)
     System.Reactive.Windows.Threading (3.1.1)
       System.Reactive.Core (>= 3.1.1)
-    T4.TemplateFileManager (2.2.1)
 
 GROUP Benchmarks
 FRAMEWORK: NET45

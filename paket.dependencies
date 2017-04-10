@@ -6,7 +6,6 @@ nuget Gu.Wpf.NumericInput
 nuget Gu.Wpf.Reactive
 nuget Gu.State
 
-nuget T4.TemplateFileManager
 nuget JetBrains.Annotations
 
 group Roslyn

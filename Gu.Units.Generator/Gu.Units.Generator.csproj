@@ -282,7 +282,6 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
-    <None Include="Templates\MultipleOutputHelper.ttinclude" />
     <None Include="Templates\Readme.md" />
     <EmbeddedResource Include="Templates\TemplateFilemanager.CS.ttinclude" />
   </ItemGroup>

@@ -8,7 +8,6 @@
 <#@ assembly name="EnvDTE80" #>
 <#@ assembly name="Microsoft.VisualStudio.Shell.10.0"#>
 <#@ assembly name="Microsoft.VisualStudio.Shell.Interop "#>
-<#@ import namespace="Microsoft.VisualStudio.Shell.Interop"#>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.IO" #>
 <#@ import namespace="System.Collections.Generic" #>
@@ -56,28 +55,6 @@ Version 1:
 - Property CanOverrideExistingFile, to define whether existing files are can overwritten
 - Property Encoding Encode type for output files.
 */
-
-/// <summary>
-/// Writes a line to the build pane in visual studio and activates it
-/// </summary>
-/// <param name="message">Text to output - a \n is appended</param>
-void WriteLineToBuildPane (string message){
-       WriteLineToBuildPane(String.Format("{0}\n", message));
-}
-
-/// <summary>
-/// Writes a string to the build pane in visual studio and activates it
-/// </summary>
-/// <param name="message">Text to output</param>
-void WriteToBuildPane (string message){
-       var outWindow = (IVsOutputWindow) ((IServiceProvider) this.Host).GetService(typeof( SVsOutputWindow ) );
-       var generalPaneGuid = Microsoft.VisualStudio.VSConstants.OutputWindowPaneGuid.BuildOutputPane_guid;
-		// P.S. There's also the GUID_OutWindowDebugPane available.
-       IVsOutputWindowPane generalPane;
-       outWindow.GetPane( ref generalPaneGuid , out generalPane );
-       generalPane.OutputString( message  );
-       generalPane.Activate(); // Brings this pane into view
-}
 
 /// <summary>
 /// Responsible for marking the various sections of the generation,
@@ -140,11 +117,11 @@ public class TemplateFileManager
         }
 
 		this.templateProjectItem = this.dte.Solution.FindProjectItem(this.textTransformation.Host.TemplateFile);
-		CanOverrideExistingFile = true;
-		IsAutoIndentEnabled = false;
-		Encoding = Encoding.UTF8;
+        this.CanOverrideExistingFile = true;
+        this.IsAutoIndentEnabled = false;
+        this.Encoding = Encoding.UTF8;
         this.checkOutAction = fileName => this.dte.SourceControl.CheckOutItem(fileName);
-        this.projectSyncAction = keepFileNames => ProjectSync(this.templateProjectItem, keepFileNames);
+        this.projectSyncAction = keepFileNames => this.ProjectSync(this.templateProjectItem, keepFileNames);
     }
 
 	/// <summary>
@@ -152,7 +129,7 @@ public class TemplateFileManager
 	/// </summary>
 	/// <returns></returns>
 	public bool CanOverrideExistingFile { get; set; }
-	public bool CanOverwriteExistingFile { get { return CanOverrideExistingFile; } set { CanOverrideExistingFile = value;} }
+	public bool CanOverwriteExistingFile { get { return this.CanOverrideExistingFile; } set { this.CanOverrideExistingFile = value;} }
 
 	/// <summary>
 	/// If set to true, output files (c#, vb) are formatted based on the vs settings.
@@ -182,7 +159,7 @@ public class TemplateFileManager
             throw new ArgumentException("name");
         }
 
-        CurrentBlock = new Block
+        this.CurrentBlock = new Block
 					  {
 						Name = name,
 						ProjectName = projectName,
@@ -191,28 +168,19 @@ public class TemplateFileManager
 					  };
     }
 
-    public void StartFooter()
-    {
-        CurrentBlock = this.footer;
-    }
-
-    public void StartHeader()
-    {
-        CurrentBlock = this.header;
-    }
-
     public void EndBlock()
     {
-        if (CurrentBlock == null)
+        if (this.CurrentBlock == null)
         {
             return;
         }
 
-        CurrentBlock.Length = this.generationEnvironment.Length - CurrentBlock.Start;
+        this.CurrentBlock.Length = this.generationEnvironment.Length - this.CurrentBlock.Start;
 
-        if (CurrentBlock != this.header && CurrentBlock != this.footer)
+        if (this.CurrentBlock != this.header &&
+            this.CurrentBlock != this.footer)
         {
-            this.files.Add(CurrentBlock);
+            this.files.Add(this.CurrentBlock);
         }
 
         this.currentBlock = null;
@@ -227,7 +195,7 @@ public class TemplateFileManager
 
         if (split)
         {
-            EndBlock();
+            this.EndBlock();
 
             var headerText = this.generationEnvironment.ToString(this.header.Start, this.header.Length);
             var footerText = this.generationEnvironment.ToString(this.footer.Start, this.footer.Length);
@@ -237,7 +205,7 @@ public class TemplateFileManager
             {
 				var outputPath = VsHelper.GetOutputPath(this.dte, block, Path.GetDirectoryName(this.textTransformation.Host.TemplateFile));
                 var fileName = Path.Combine(outputPath, block.Name);
-                var content = ReplaceParameter(headerText, block) +
+                var content = this.ReplaceParameter(headerText, block) +
 				this.generationEnvironment.ToString(block.Start, block.Length) +
 				footerText;
 
@@ -250,7 +218,7 @@ public class TemplateFileManager
 						Content = content
 					};
 
-                CreateFile(file);
+                this.CreateFile(file);
                 this.generationEnvironment.Remove(block.Start, block.Length);
 
 				list.Add(file);
@@ -258,16 +226,16 @@ public class TemplateFileManager
         }
 
         this.projectSyncAction.EndInvoke(this.projectSyncAction.BeginInvoke(list, null, null));
-		CleanUpTemplatePlaceholders();
+        this.CleanUpTemplatePlaceholders();
 		var items = VsHelper.GetOutputFilesAsProjectItems(this.dte, list);
-		WriteVsProperties(items, list);
+        this.WriteVsProperties(items, list);
 
-		if (IsAutoIndentEnabled == true && split == true)
+		if (this.IsAutoIndentEnabled == true && split == true)
 		{
-			FormatProjectItems(items);
+		    this.FormatProjectItems(items);
 		}
 
-		WriteLog(list);
+        this.WriteLog(list);
 
 		return list;
     }
@@ -325,13 +293,13 @@ public class TemplateFileManager
 		this.textTransformation.WriteLine("// Generated helper templates");
 		foreach (var item in this.templatePlaceholderList)
 		{
-			this.textTransformation.WriteLine("// " + GetDirectorySolutionRelative(item));
+			this.textTransformation.WriteLine("// " + this.GetDirectorySolutionRelative(item));
 		}
 
 		this.textTransformation.WriteLine("// Generated items");
 		foreach (var item in list)
 		{
-			this.textTransformation.WriteLine("// " + GetDirectorySolutionRelative(item.FileName));
+			this.textTransformation.WriteLine("// " + this.GetDirectorySolutionRelative(item.FileName));
 		}
 	}
 
@@ -398,15 +366,15 @@ public class TemplateFileManager
 
     protected virtual void CreateFile(OutputFile file)
     {
-		if (CanOverrideExistingFile == false && File.Exists(file.FileName) == true)
+		if (this.CanOverrideExistingFile == false && File.Exists(file.FileName) == true)
 		{
 			return;
 		}
 
-        if (IsFileContentDifferent(file))
+        if (this.IsFileContentDifferent(file))
         {
-			CheckoutFileIfRequired(file.FileName);
-            File.WriteAllText(file.FileName, file.Content, Encoding);
+            this.CheckoutFileIfRequired(file.FileName);
+            File.WriteAllText(file.FileName, file.Content, this.Encoding);
         }
     }
 
@@ -420,9 +388,9 @@ public class TemplateFileManager
         get { return this.currentBlock; }
         set
         {
-            if (CurrentBlock != null)
+            if (this.CurrentBlock != null)
             {
-                EndBlock();
+                this.EndBlock();
             }
 
             if (value != null)
@@ -768,8 +736,8 @@ public class ParamTextTemplate
 
     private ParamTextTemplate(ITextTemplatingEngineHost host, string templateName)
     {
-        Host = host;
-        var fullName = Host.ResolvePath(templateName);
+        this.Host = host;
+        var fullName = this.Host.ResolvePath(templateName);
         this.template = File.ReadAllText(fullName);
     }
 
@@ -787,11 +755,11 @@ public class ParamTextTemplate
 
 	public string TransformText(TextTemplatingSession session)
 	{
-		var sessionHost = (ITextTemplatingSessionHost) Host;
+		var sessionHost = (ITextTemplatingSessionHost) this.Host;
 		sessionHost.Session = session;
 
 		var engine = new Engine();
-		return engine.ProcessTemplate(this.template, Host);
+		return engine.ProcessTemplate(this.template, this.Host);
 	}
 }
 
@@ -1091,7 +1059,7 @@ public sealed class OutputFile
 {
 	public OutputFile()
 	{
-		FileProperties = new FileProperties
+	    this.FileProperties = new FileProperties
 		{
 			CustomTool = String.Empty,
 			BuildAction = BuildAction.None
@@ -1118,7 +1086,7 @@ public sealed class FileProperties
 {
 	public FileProperties ()
 	{
-		TemplateParameter = new Dictionary<string,string>();
+	    this.TemplateParameter = new Dictionary<string,string>();
 	}
 
 	public string CustomTool { get; set; }
@@ -1129,7 +1097,7 @@ public sealed class FileProperties
 	{
 		get
 		{
-			return BuildAction;
+			return this.BuildAction;
 		}
 	}
 }
