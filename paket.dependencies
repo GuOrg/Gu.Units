@@ -22,5 +22,5 @@ group Test
 
 group Benchmarks
   source http://www.nuget.org/api/v2/
-  framework: net461
+  framework: net452
   nuget BenchmarkDotNet.Diagnostics.Windows

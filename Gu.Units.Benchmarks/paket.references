@@ -1,4 +1,3 @@
 group Benchmarks
   BenchmarkDotNet
   BenchmarkDotNet.Diagnostics.Windows
-  System.Reflection.Metadata
