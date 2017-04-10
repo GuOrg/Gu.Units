@@ -8,13 +8,17 @@ nuget Microsoft.CodeAnalysis.CSharp.Scripting
 nuget Microsoft.CodeAnalysis.CSharp.Workspaces
 nuget Microsoft.CodeAnalysis.VisualBasic.Workspaces
 
-nuget NUnit
-nuget Moq
-nuget TestStack.White
-
 nuget Gu.Wpf.NumericInput
 nuget Gu.Wpf.Reactive
 nuget Gu.State
+
+group Test
+  source http://www.nuget.org/api/v2/
+  framework: net461
+  nuget NUnit = 2.6.4
+  nuget Moq = 4.5.9
+  nuget TestStack.White = 0.13.3
+  nuget Castle.Core = 3.3.3
 
 group Benchmarks
   source http://www.nuget.org/api/v2/

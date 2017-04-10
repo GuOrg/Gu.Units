@@ -1,3 +1,5 @@
 Microsoft.CodeAnalysis.CSharp.Workspaces
 Microsoft.CodeAnalysis.VisualBasic.Workspaces
-NUnit
+
+group Test
+  NUnit

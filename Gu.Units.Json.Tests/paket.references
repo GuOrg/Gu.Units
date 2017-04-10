@@ -1,2 +1,4 @@
 Newtonsoft.Json
-NUnit
+
+group Test
+  NUnit

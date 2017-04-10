@@ -1,6 +1,8 @@
-Moq
-NUnit
 Newtonsoft.Json
 Microsoft.CodeAnalysis.CSharp.Scripting
 Gu.Wpf.Reactive
 Gu.State
+
+group Test
+  NUnit
+  Moq

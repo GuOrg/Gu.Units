@@ -1,6 +1,5 @@
 NUGET
   remote: http://www.nuget.org/api/v2
-    Castle.Core (3.3.3)
     Gu.Reactive (1.11)
       Rx-Main (>= 2.2.5)
     Gu.State (0.2)
@@ -55,10 +54,7 @@ NUGET
       Microsoft.CodeAnalysis.Common (1.2.2)
       Microsoft.Composition (>= 1.0.27)
     Microsoft.Composition (1.0.30)
-    Moq (4.5.9)
-      Castle.Core (>= 3.3.3) - framework: >= net45
     Newtonsoft.Json (8.0.3)
-    NUnit (2.6.4)
     Rx-Core (2.2.5)
       Rx-Interfaces (>= 2.2.5)
     Rx-Interfaces (2.2.5)
@@ -197,7 +193,7 @@ NUGET
       System.Runtime.Extensions (>= 4.0.10) - framework: dnxcore50
     System.Reflection.Metadata (1.2)
       System.Collections (>= 4.0) - framework: >= netstandard11
-      System.Collections.Immutable (>= 1.1.37)
+      System.Collections.Immutable (>= 1.1.37) - framework: >= net45, >= netstandard11, monoandroid, monotouch, portable-net45+win8, xamarinios, xamarinmac, winv4.5, wpav8.1
       System.Diagnostics.Debug (>= 4.0) - framework: >= netstandard11
       System.IO (>= 4.0) - framework: >= netstandard11
       System.Linq (>= 4.0) - framework: >= netstandard11
@@ -275,8 +271,6 @@ NUGET
     System.Threading.Tasks (4.0.10)
       System.Runtime (>= 4.0) - framework: dnxcore50
     T4.TemplateFileManager (2.2.1)
-    TestStack.White (0.13.3)
-      Castle.Core (>= 3.3)
 
 GROUP Benchmarks
 FRAMEWORK: NET461
@@ -385,3 +379,14 @@ NUGET
     System.Xml.XPath (4.3)
     System.Xml.XPath.XDocument (4.3)
       System.Xml.XPath (>= 4.3)
+
+GROUP Test
+FRAMEWORK: NET461
+NUGET
+  remote: http://www.nuget.org/api/v2
+    Castle.Core (3.3.3)
+    Moq (4.5.9)
+      Castle.Core (>= 3.3.3)
+    NUnit (2.6.4)
+    TestStack.White (0.13.3)
+      Castle.Core (>= 3.3)
