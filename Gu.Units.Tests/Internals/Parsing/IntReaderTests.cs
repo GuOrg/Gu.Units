@@ -6,6 +6,36 @@
 
     public class IntReaderTests
     {
+        private static readonly IReadOnlyList<SuccessCase<int>> HappyPaths = new[]
+                                                                                 {
+                                                                                     SuccessCase.Create("1", 0, 1, 1),
+                                                                                     SuccessCase.Create("01", 0, 1, 2),
+                                                                                     SuccessCase.Create("12", 0, 12, 2),
+                                                                                     SuccessCase.Create(" 12", 1, 12, 3),
+                                                                                     SuccessCase.Create(" 12 ", 1, 12, 3),
+                                                                                     SuccessCase.Create("-1", 0, -1, 2),
+                                                                                     SuccessCase.Create("-12", 0, -12, 3),
+                                                                                     SuccessCase.Create("12345", 0, 12345, 5),
+                                                                                     SuccessCase.Create("67890", 0, 67890, 5),
+                                                                                     SuccessCase.Create(int.MaxValue.ToString(), 0, int.MaxValue, int.MaxValue.ToString().Length),
+                                                                                     SuccessCase.Create(" " + int.MaxValue, 1, int.MaxValue, int.MaxValue.ToString().Length + 1),
+                                                                                     SuccessCase.Create(" " + int.MaxValue + " ", 1, int.MaxValue, int.MaxValue.ToString().Length + 1),
+                                                                                     SuccessCase.Create(" " + int.MaxValue + "9", 1, int.MaxValue, int.MaxValue.ToString().Length + 1),
+                                                                                     SuccessCase.Create(int.MinValue.ToString(), 0, int.MinValue, int.MinValue.ToString().Length),
+                                                                                     SuccessCase.Create(" " + int.MinValue, 1, int.MinValue, int.MinValue.ToString().Length + 1),
+                                                                                     SuccessCase.Create(" " + int.MinValue + " ", 1, int.MinValue, int.MinValue.ToString().Length + 1),
+                                                                                     SuccessCase.Create(" " + int.MinValue + "9", 1, int.MinValue, int.MinValue.ToString().Length + 1),
+                                                                                 };
+
+        private static readonly IReadOnlyList<SuccessCase<int>> Errors = new[]
+                                                                             {
+                                                                                 ErrorCase.Create<int>("abc",  0),
+                                                                                 ErrorCase.Create<int>("abc",  1),
+                                                                                 ErrorCase.Create<int>("abc",  2),
+                                                                                 ErrorCase.Create<int>(((long)int.MinValue - 1).ToString(),  0), // less than int.min
+                                                                                 ErrorCase.Create<int>(((long)int.MaxValue + 1).ToString(),  0), // greater than int.max
+                                                                             };
+
         [TestCaseSource(nameof(HappyPaths))]
         public void ParseSuccess(SuccessCase<int> data)
         {
@@ -44,35 +74,5 @@
             Assert.AreEqual(@case.Expected, actual);
             Assert.AreEqual(@case.ExpectedEnd, pos);
         }
-
-        private static readonly IReadOnlyList<SuccessCase<int>> HappyPaths = new[]
-        {
-            SuccessCase.Create("1", 0, 1, 1),
-            SuccessCase.Create("01", 0, 1, 2),
-            SuccessCase.Create("12", 0, 12, 2),
-            SuccessCase.Create(" 12", 1, 12, 3),
-            SuccessCase.Create(" 12 ", 1, 12, 3),
-            SuccessCase.Create("-1", 0, -1, 2),
-            SuccessCase.Create("-12", 0, -12, 3),
-            SuccessCase.Create("12345", 0, 12345, 5),
-            SuccessCase.Create("67890", 0, 67890, 5),
-            SuccessCase.Create(int.MaxValue.ToString(), 0, int.MaxValue, int.MaxValue.ToString().Length),
-            SuccessCase.Create(" " + int.MaxValue, 1, int.MaxValue, int.MaxValue.ToString().Length + 1),
-            SuccessCase.Create(" " + int.MaxValue + " ", 1, int.MaxValue, int.MaxValue.ToString().Length + 1),
-            SuccessCase.Create(" " + int.MaxValue + "9", 1, int.MaxValue, int.MaxValue.ToString().Length + 1),
-            SuccessCase.Create(int.MinValue.ToString(), 0, int.MinValue, int.MinValue.ToString().Length),
-            SuccessCase.Create(" " + int.MinValue, 1, int.MinValue, int.MinValue.ToString().Length + 1),
-            SuccessCase.Create(" " + int.MinValue + " ", 1, int.MinValue, int.MinValue.ToString().Length + 1),
-            SuccessCase.Create(" " + int.MinValue + "9", 1, int.MinValue, int.MinValue.ToString().Length + 1),
-        };
-
-        private static readonly IReadOnlyList<SuccessCase<int>> Errors = new[]
-        {
-            ErrorCase.Create<int>("abc",  0), 
-            ErrorCase.Create<int>("abc",  1), 
-            ErrorCase.Create<int>("abc",  2), 
-            ErrorCase.Create<int>(((long)int.MinValue - 1).ToString(),  0), // less than int.min
-            ErrorCase.Create<int>(((long)int.MaxValue + 1).ToString(),  0), // greater than int.max
-        };
     }
 }

@@ -4,6 +4,7 @@ Gu.State
 group Analyzers
   StyleCop.Analyzers
   Gu.Analyzers
+  WpfAnalyzers
   JetBrains.Annotations
 
 group Roslyn

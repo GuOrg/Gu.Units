@@ -10,7 +10,9 @@
         // ReSharper disable once UnusedMember.Local
         private const string Unicodes = "⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
 
-        [TestCaseSource(nameof(SymbolFormatsSource))]
+        private static IReadOnlyList<SymbolFormat> TestCases = Enum.GetValues(typeof(SymbolFormat)).Cast<SymbolFormat>().ToList();
+
+        [TestCaseSource(nameof(TestCases))]
         public void GetOrCreateSymbolFormatLength(SymbolFormat symbolFormat)
         {
             var format = UnitFormatCache<LengthUnit>.GetOrCreate(LengthUnit.Millimetres, symbolFormat);
@@ -44,7 +46,5 @@
             Assert.AreEqual(expected, format.Format);
             Assert.AreEqual(null, format.PostPadding);
         }
-
-        private static IReadOnlyList<SymbolFormat> SymbolFormatsSource = Enum.GetValues(typeof(SymbolFormat)).Cast<SymbolFormat>().ToList();
     }
 }

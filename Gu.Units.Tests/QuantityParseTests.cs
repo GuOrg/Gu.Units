@@ -1,13 +1,15 @@
 ﻿namespace Gu.Units.Tests
 {
     using System;
+    using System.Collections.Generic;
     using System.Globalization;
     using NUnit.Framework;
 
     public class QuantityParseTests
     {
-        public static CultureInfo Sv => CultureInfo.GetCultureInfo("sv-SE");
-        public static readonly TestCase[] TestCases =
+        private static readonly CultureInfo Sv = CultureInfo.GetCultureInfo("sv-SE");
+
+        private static readonly IReadOnlyList<TestCase> TestCases = new[]
         {
             new TestCase("1.2 m^2", s => Area.Parse(s, CultureInfo.InvariantCulture), Area.FromSquareMetres(1.2)),
             new TestCase("1,2 m^2", s => Area.Parse(s, Sv), Area.FromSquareMetres(1.2)),

@@ -97,6 +97,11 @@
             return new PowerPart(power, new IdentityConversion(unit));
         }
 
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
         public class PowerPart
         {
             public PowerPart(int power, IFactorConversion conversion)
@@ -195,7 +200,6 @@
 
         public class IdentityConversion : IFactorConversion
         {
-
             public IdentityConversion(Unit unit)
             {
                 this.Unit = unit;
@@ -218,13 +222,6 @@
             public string SymbolConversion => this.GetSymbolConversion();
 
             public bool CanRoundtrip => true;
-        }
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged(
-            [CallerMemberName] string propertyName = null)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

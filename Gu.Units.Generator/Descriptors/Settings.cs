@@ -19,19 +19,6 @@
 
         public static Settings Instance => InnerInstance ?? FromResource;
 
-        public static Settings FromResource
-        {
-            get
-            {
-                InnerInstance = JsonConvert.DeserializeObject<Settings>(Properties.Resources.Units, Persister.SerializerSettings);
-                return InnerInstance;
-            }
-        }
-
-        private Settings()
-        {
-        }
-
         public Settings(ObservableCollection<Prefix> prefixes, ObservableCollection<BaseUnit> baseUnits, ObservableCollection<DerivedUnit> derivedUnits)
         {
             if (InnerInstance != null)
@@ -54,7 +41,21 @@
                 });
         }
 
+        private Settings()
+        {
+        }
+
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public static Settings FromResource
+        {
+            get
+            {
+                InnerInstance = JsonConvert.DeserializeObject<Settings>(Properties.Resources.Units, Persister.SerializerSettings);
+                return InnerInstance;
+            }
+        }
 
         public static string Namespace => "Gu.Units";
 
