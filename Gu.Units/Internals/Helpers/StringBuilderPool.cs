@@ -141,7 +141,6 @@
                 SymbolFormat symbolFormat)
             {
                 Append(symbolAndPower.Symbol);
-
                 if (symbolAndPower.Power == 1)
                 {
                     return;

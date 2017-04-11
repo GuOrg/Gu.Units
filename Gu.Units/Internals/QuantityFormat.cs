@@ -120,13 +120,9 @@
             }
         }
 
-        internal static QuantityFormat<TUnit> Create(
-            PaddedFormat valueFormat,
-            PaddedFormat symbolFormat,
-            TUnit unit)
+        internal static QuantityFormat<TUnit> Create(PaddedFormat valueFormat, PaddedFormat symbolFormat, TUnit unit)
         {
             var errorFormat = CreateErrorFormat(valueFormat, symbolFormat);
-
             string padding = null;
             if (valueFormat.PostPadding == null &&
                 symbolFormat.PrePadding == null)
@@ -158,11 +154,6 @@
 
         private static bool ShouldSpace(string symbol)
         {
-            if (symbol.Length > 1)
-            {
-                return true;
-            }
-
             return char.IsLetter(symbol[0]);
         }
 

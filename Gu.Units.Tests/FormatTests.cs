@@ -136,7 +136,6 @@
         }
 
         [Test]
-        [Explicit("Fix")]
         public void FormatAngularAcceleration()
         {
             var value = AngularAcceleration.FromDegreesPerSecondSquared(1.2);
