@@ -118,7 +118,7 @@
         {
             var start = pos;
             var format = NumberFormatInfo.GetInstance(provider);
-            if (TryReadSign(text, ref pos, format, out Sign sign))
+            if (TryReadSign(text, ref pos, format, out Sign _))
             {
                 if ((style & NumberStyles.AllowLeadingSign) == 0)
                 {

@@ -46,14 +46,12 @@ namespace Gu.Units
             if (SymbolAndPowerReader.TryRead(text, ref pos, out IReadOnlyList<SymbolAndPower> symbolsAndPowers))
             {
                 var symbol = text.Substring(start, pos - start);
-
-                WhiteSpaceReader.TryRead(text, ref pos, out string postPadding);
+                WhiteSpaceReader.TryRead(text, ref pos, out string _);
                 if (!IsEndOfSymbol(text, pos))
                 {
                     result = Unit<TUnit>.Default;
                     return false;
                 }
-
 
                 if (UnitFormatCache<TUnit>.Cache.TryGetUnitForParts(symbolsAndPowers, out result))
                 {
