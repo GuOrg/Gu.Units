@@ -69,7 +69,10 @@
             set
             {
                 if (value == this.toSi)
+                {
                     return;
+                }
+
                 this.toSi = value;
                 this.OnPropertyChanged();
                 this.OnPropertyChanged(this.SymbolConversion);

@@ -33,7 +33,10 @@ namespace Gu.Units.Generator
             set
             {
                 if (value == this.name)
+                {
                     return;
+                }
+
                 this.name = value;
                 this.OnPropertyChanged();
             }
@@ -49,7 +52,10 @@ namespace Gu.Units.Generator
             set
             {
                 if (value == this.symbol)
+                {
                     return;
+                }
+
                 this.symbol = value;
                 this.OnPropertyChanged();
             }
@@ -63,7 +69,10 @@ namespace Gu.Units.Generator
             set
             {
                 if (value == this.quantityName)
+                {
                     return;
+                }
+
                 this.quantityName = value;
                 this.OnPropertyChanged();
             }

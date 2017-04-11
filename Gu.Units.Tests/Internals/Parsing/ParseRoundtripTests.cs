@@ -86,8 +86,12 @@
             var success = data.TryParse(data.Text, data.CultureInfo, out actual);
             Assert.AreEqual(true, success);
             Assert.AreEqual(data.Expected, actual);
-            var toString = ((IFormattable)actual).ToString(null, data.CultureInfo);
             success = data.TryParse(data.Text, data.CultureInfo, out actual);
+            Assert.AreEqual(data.Expected, actual);
+            Assert.AreEqual(true, success);
+
+            var toString = ((IFormattable)actual).ToString(null, data.CultureInfo);
+            success = data.TryParse(toString, data.CultureInfo, out actual);
             Assert.AreEqual(data.Expected, actual);
             Assert.AreEqual(true, success);
         }

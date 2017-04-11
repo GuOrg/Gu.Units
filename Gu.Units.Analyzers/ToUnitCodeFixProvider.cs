@@ -65,7 +65,7 @@ namespace Gu.Units.Analyzers
                 diagnostic);
         }
 
-        private  async Task<Document> ApplyFix(CodeFixContext context, CancellationToken cancellationToken)
+        private async Task<Document> ApplyFix(CodeFixContext context, CancellationToken cancellationToken)
         {
             var document = context.Document;
             var root = await document.GetSyntaxRootAsync(cancellationToken).ConfigureAwait(false);
@@ -82,11 +82,11 @@ namespace Gu.Units.Analyzers
             return document.WithSyntaxRoot(root);
         }
 
-        private  InvocationExpressionSyntax WrapWithCallToMillimetres(ExpressionSyntax expressionToWrap)
+        private InvocationExpressionSyntax WrapWithCallToMillimetres(ExpressionSyntax expressionToWrap)
         {
-            return SyntaxFactory.InvocationExpression(this.wrapSyntax,
-                SyntaxFactory.ArgumentList(SyntaxFactory.SeparatedList(new[] { SyntaxFactory.Argument(expressionToWrap) }))
-                );
+            return SyntaxFactory.InvocationExpression(
+                this.wrapSyntax,
+                SyntaxFactory.ArgumentList(SyntaxFactory.SeparatedList(new[] { SyntaxFactory.Argument(expressionToWrap) })));
         }
     }
 }

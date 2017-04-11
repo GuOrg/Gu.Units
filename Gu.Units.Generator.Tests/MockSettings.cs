@@ -88,8 +88,7 @@
                 "MetresPerSecond",
                 "m/s",
                 "Speed",
-              new[]{ UnitAndPower.Create(this.Metres, 1),
-               UnitAndPower.Create(this.Seconds, -1)});
+                new[] { UnitAndPower.Create(this.Metres, 1), UnitAndPower.Create(this.Seconds, -1) });
             this.DerivedUnits.Add(this.MetresPerSecond);
             this.Speed = this.MetresPerSecond.Quantity;
 
@@ -97,11 +96,7 @@
                 "MetresPerSecondSquared",
                 "m/s^2",
                 "Acceleration",
-                new[]
-                {
-                    UnitAndPower.Create(this.Metres, 1),
-                    UnitAndPower.Create(this.Seconds, -2)
-                });
+                new[] { UnitAndPower.Create(this.Metres, 1), UnitAndPower.Create(this.Seconds, -2) });
             this.DerivedUnits.Add(this.MetresPerSecondSquared);
             this.Acceleration = this.MetresPerSecondSquared.Quantity;
 
@@ -109,9 +104,12 @@
                 "Newtons",
                 "N",
                 "Force",
-              new[]{   UnitAndPower.Create(this.Kilograms, 1),
-               UnitAndPower.Create(this.Metres, 1),
-               UnitAndPower.Create(this.Seconds, -2)});
+                new[]
+                    {
+                        UnitAndPower.Create(this.Kilograms, 1),
+                        UnitAndPower.Create(this.Metres, 1),
+                        UnitAndPower.Create(this.Seconds, -2)
+                    });
             this.DerivedUnits.Add(this.Newtons);
             this.Force = this.Newtons.Quantity;
 
@@ -119,8 +117,7 @@
                 "Joules",
                 "J",
                 "Energy",
-              new[]{   UnitAndPower.Create(this.Newtons, 1),
-               UnitAndPower.Create(this.Metres, 1)});
+                new[] { UnitAndPower.Create(this.Newtons, 1), UnitAndPower.Create(this.Metres, 1) });
             this.DerivedUnits.Add(this.Joules);
             this.Energy = this.Joules.Quantity;
 
@@ -128,8 +125,7 @@
                 "Watts",
                 "W",
                 "Power",
-             new[]{    UnitAndPower.Create(this.Joules, 1),
-               UnitAndPower.Create(this.Seconds, -1)});
+                new[] { UnitAndPower.Create(this.Joules, 1), UnitAndPower.Create(this.Seconds, -1) });
             this.DerivedUnits.Add(this.Watts);
             this.Power = this.Watts.Quantity;
 
@@ -137,8 +133,7 @@
                 "Volts",
                 "V",
                 "Voltage",
-             new[]{    UnitAndPower.Create(this.Watts, 1),
-               UnitAndPower.Create(this.Amperes, -1)});
+                new[] { UnitAndPower.Create(this.Watts, 1), UnitAndPower.Create(this.Amperes, -1) });
             this.DerivedUnits.Add(this.Volts);
             this.Voltage = this.Volts.Quantity;
 
@@ -146,8 +141,7 @@
                 "Coloumbs",
                 "C",
                 "ElectricCharge",
-              new[]{   UnitAndPower.Create(this.Seconds, 1),
-               UnitAndPower.Create(this.Amperes, 1)});
+                new[] { UnitAndPower.Create(this.Seconds, 1), UnitAndPower.Create(this.Amperes, 1) });
             this.DerivedUnits.Add(this.Coloumbs);
             this.ElectricCharge = this.Coloumbs.Quantity;
 
@@ -159,7 +153,7 @@
             this.DerivedUnits.Add(this.CubicMetres);
             this.Volume = this.CubicMetres.Quantity;
 
-            this.KilogramsPerCubicMetre = new DerivedUnit("KilogramsPerCubicMetre", "kg/m^3", "Density", new[] {UnitAndPower.Create(this.Kilograms,1), UnitAndPower.Create(this.Metres, -3) });
+            this.KilogramsPerCubicMetre = new DerivedUnit("KilogramsPerCubicMetre", "kg/m^3", "Density", new[] {UnitAndPower.Create(this.Kilograms, 1), UnitAndPower.Create(this.Metres, -3) });
             this.DerivedUnits.Add(this.KilogramsPerCubicMetre);
             this.Density = this.CubicMetres.Quantity;
 

@@ -10,6 +10,11 @@
         [Apartment(ApartmentState.STA)]
         public class Convert
         {
+            //// ReSharper disable UnusedMember.Local
+            private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
+            private const char MultiplyDot = '⋅';
+            //// ReSharper restore UnusedMember.Local
+
             [TestCase(typeof(string), 1.2)]
             [TestCase(typeof(object), 1.2)]
             [TestCase(typeof(double), 1.2)]
@@ -45,9 +50,6 @@
                 var actual = converter.Convert(length, targetType, null, null);
                 Assert.AreEqual(expected, actual);
             }
-
-            private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
-            private const char MultiplyDot = '⋅';
 
             [TestCase(typeof(string), SymbolFormat.SignedHatPowers, "1.2\u00A0m*s^-1")]
             [TestCase(typeof(object), SymbolFormat.FractionHatPowers, "1.2\u00A0m/s")]

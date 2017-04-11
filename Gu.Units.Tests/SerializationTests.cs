@@ -85,8 +85,7 @@
                         BindingFlags.NonPublic | BindingFlags.Instance,
                         null,
                         new[] { typeof(double) },
-                        null
-                    );
+                        null);
             var quantity = ctor.Invoke(new object[] { 1.2 });
             var binaryFormatter = new BinaryFormatter();
             using (var stream = new MemoryStream())

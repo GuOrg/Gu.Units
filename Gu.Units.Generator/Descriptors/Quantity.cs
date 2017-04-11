@@ -36,7 +36,10 @@
             internal set
             {
                 if (Equals(value, this.inverse))
+                {
                     return;
+                }
+
                 this.inverse = value;
                 this.OnPropertyChanged();
             }

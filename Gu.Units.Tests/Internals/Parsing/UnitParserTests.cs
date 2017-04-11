@@ -4,6 +4,7 @@
 
     public class UnitParserTests
     {
+        // ReSharper disable once UnusedMember.Local
         private const string Superscripts = "⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹"; // keeping this here for copy pasting
 
         [TestCase("m")]

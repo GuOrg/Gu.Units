@@ -38,7 +38,7 @@
 
         int IComparer.Compare(object x, object y)
         {
-            return this.Compare((Prefix) x, (Prefix) y);
+            return this.Compare((Prefix)x, (Prefix)y);
         }
     }
 }

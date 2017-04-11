@@ -20,6 +20,7 @@
             Assert.AreEqual(true, converter.CanConvertFrom(typeof(string)));
             Assert.AreEqual(true, converter.CanConvertFrom(null, typeof(string)));
 
+            // ReSharper disable once AssignNullToNotNullAttribute
             var convertFrom = converter.ConvertFrom(null, CultureInfo.InvariantCulture, convertTo);
             Assert.AreEqual(length, convertFrom);
         }

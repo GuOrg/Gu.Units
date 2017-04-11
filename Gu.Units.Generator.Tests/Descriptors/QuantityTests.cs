@@ -20,11 +20,11 @@
             var expected = new[]
                                {
                                    new OperatorOverload(this.settings.Length, Operator.Multiply, this.settings.Length, this.settings.Area),
-                                   new OperatorOverload(this.settings.Length,Operator.Divide, this.settings.Time,this.settings.Speed),
-                                   new OperatorOverload(this.settings.Length,Operator.Divide, this.settings.Speed, this.settings.Time),
-                                   new OperatorOverload(this.settings.Length,Operator.Multiply, this.settings.Force, this.settings.Energy),
+                                   new OperatorOverload(this.settings.Length, Operator.Divide, this.settings.Time, this.settings.Speed),
+                                   new OperatorOverload(this.settings.Length, Operator.Divide, this.settings.Speed, this.settings.Time),
+                                   new OperatorOverload(this.settings.Length, Operator.Multiply, this.settings.Force, this.settings.Energy),
                                    new OperatorOverload(this.settings.Length, Operator.Multiply, this.settings.Area, this.settings.Volume),
-                                   new OperatorOverload(this.settings.Length,Operator.Multiply, this.settings.Frequency, this.settings.Speed),
+                                   new OperatorOverload(this.settings.Length, Operator.Multiply, this.settings.Frequency, this.settings.Speed),
                                };
             CollectionAssert.AreEqual(expected, actual);
         }

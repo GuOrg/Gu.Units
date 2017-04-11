@@ -21,6 +21,7 @@
                                                                                      SuccessCase.Create("mm", 2, 1, 2),
                                                                                  };
 
+        // ReSharper disable once UnusedMember.Local
         private static readonly IReadOnlyList<ErrorCase<int>> ErrorSource = new[]
                                                                                 {
                                                                                     ErrorCase.Create<int>("mm^--2", 0),

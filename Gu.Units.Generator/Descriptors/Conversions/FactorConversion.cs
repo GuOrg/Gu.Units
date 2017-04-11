@@ -64,7 +64,10 @@
             set
             {
                 if (value.Equals(this.factor))
+                {
                     return;
+                }
+
                 this.factor = value;
                 this.OnPropertyChanged();
                 this.OnPropertyChanged(nameof(this.ToSi));

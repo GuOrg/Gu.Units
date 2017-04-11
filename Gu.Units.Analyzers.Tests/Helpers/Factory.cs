@@ -45,6 +45,7 @@ namespace Gu.Units.Analyzers.Tests
                 solution = solution.AddDocument(documentId, newFileName, SourceText.From(source));
                 count++;
             }
+
             return solution.GetProject(projectId);
         }
 
@@ -58,7 +59,6 @@ namespace Gu.Units.Analyzers.Tests
         {
             return CreateProject(new[] { source }, language).Documents.First();
         }
-
 
         /// <summary>
         /// Given an array of strings as sources and a language, turn them into a project and return the documents and spans of it.

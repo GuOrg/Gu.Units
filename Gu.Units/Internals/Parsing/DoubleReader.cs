@@ -15,11 +15,6 @@
                                                            NumberStyles.AllowExponent |
                                                            NumberStyles.AllowCurrencySymbol |
                                                            NumberStyles.AllowHexSpecifier);
-
-        private const string LeadingSignNotAllowed = "Leading sign not allowed";
-        private const string ExponentNotAllowed = "Exponent not allowed";
-        private const string DecimalPointNotAllowed = "Decimal point not allowed";
-
         internal static double Read(
             string text,
             ref int pos,
@@ -284,6 +279,7 @@
             return pos - start < 310;
         }
 
+        // ReSharper disable once UnusedMethodReturnValue.Local
         private static bool TrySkipFractionDigits(string text, ref int pos)
         {
             return IntReader.TrySkipDigits(text, ref pos);

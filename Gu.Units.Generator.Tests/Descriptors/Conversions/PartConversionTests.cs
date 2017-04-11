@@ -65,7 +65,7 @@
         public void MilliMetresPerSecondCubed()
         {
             var settings = MockSettings.Create();
-            var millimetres = PrefixConversion.Create(settings.Metres,settings.Milli);
+            var millimetres = PrefixConversion.Create(settings.Metres, settings.Milli);
             settings.Metres.PrefixConversions.Add(millimetres);
             var metrePart = PartConversion.CreatePart(1, millimetres);
             var secondPart = PartConversion.CreatePart(-2, settings.Seconds);

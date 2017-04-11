@@ -11,13 +11,13 @@
             var f = 1609.344;
             var d = f * 1;
             var rt = d / f;
+            // ReSharper disable once CompareOfFloatsByEqualityOperator
             Console.WriteLine(rt == 1);
         }
 
         [Test]
         public void TestName()
         {
-
             Console.WriteLine($"1E3 {RoundtripsMultiplication(1E3, 1E-3)} {RoundtripsMultiplicationDivision(1000)} {RoundtripsDivision(1E3)} {Pow(3)}");
             Console.WriteLine($"1E6 {RoundtripsMultiplication(1E6, 1E-6)} {RoundtripsMultiplicationDivision(1000000)} {RoundtripsDivision(1E6)} {Pow(6)}");
             Console.WriteLine($"1E-3 {RoundtripsMultiplication(1E-3, 1E3)} {RoundtripsDivisionMultiplication(1000)} {RoundtripsDivision(1E-3)} {Pow(-3)}");

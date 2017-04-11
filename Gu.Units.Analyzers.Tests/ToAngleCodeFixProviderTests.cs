@@ -184,7 +184,6 @@
             this.VerifyCSharpFix(before, expected);
         }
 
-
         [Test, Explicit("Dunno if there is a need to support this")]
         public void ExpressionToDegrees()
         {

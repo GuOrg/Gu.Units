@@ -6,7 +6,10 @@
 
     public class SymbolAndPowerParserSetTests
     {
-        internal static readonly IReadOnlyList<SuccessCase<IReadOnlyList<SymbolAndPower>>> HappyPaths = new[]
+        // ReSharper disable once UnusedMember.Local
+        private const string Superscripts = "⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
+
+        private static readonly IReadOnlyList<SuccessCase<IReadOnlyList<SymbolAndPower>>> HappyPaths = new[]
                                                                                                             {
                                                                                                                 SuccessCase.Create("m", new SymbolAndPower("m", 1)),
                                                                                                                 SuccessCase.Create(" m ", new SymbolAndPower("m", 1)),
@@ -21,7 +24,7 @@
                                                                                                                 SuccessCase.Create("m⁻¹⋅s⁻²", new SymbolAndPower("m", -1), new SymbolAndPower("s", -2)),
                                                                                                             };
 
-        internal static readonly IReadOnlyList<SuccessCase<IReadOnlyList<SymbolAndPower>>> Errors = new[]
+        private static readonly IReadOnlyList<SuccessCase<IReadOnlyList<SymbolAndPower>>> Errors = new[]
                                                                                                         {
                                                                                                             ErrorCase.CreateForSymbol("m⁻¹/s⁻²"),
                                                                                                             ErrorCase.CreateForSymbol("m⁻⁻¹"),
@@ -30,7 +33,6 @@
                                                                                                             ErrorCase.CreateForSymbol("m^¹/s⁻²"),
                                                                                                         };
 
-        private const string Superscripts = "⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
 
         [TestCaseSource(nameof(HappyPaths))]
         public void TryReadSuccess(ISuccessData data)

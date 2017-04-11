@@ -25,7 +25,9 @@
         public RelayCommand(Action<T> execute, Predicate<T> canExecute)
         {
             if (execute == null)
+            {
                 throw new ArgumentNullException(nameof(execute));
+            }
 
             this.execute = execute;
             this.canExecute = canExecute ?? (x => true);
@@ -41,12 +43,16 @@
             add
             {
                 if (this.canExecute != null)
+                {
                     CommandManager.RequerySuggested += value;
+                }
             }
             remove
             {
                 if (this.canExecute != null)
+                {
                     CommandManager.RequerySuggested -= value;
+                }
             }
         }
 

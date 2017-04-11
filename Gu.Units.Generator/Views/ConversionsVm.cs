@@ -70,7 +70,10 @@
             set
             {
                 if (Equals(value, this.selectedConversion))
+                {
                     return;
+                }
+
                 this.selectedConversion = value;
                 this.OnPropertyChanged();
             }

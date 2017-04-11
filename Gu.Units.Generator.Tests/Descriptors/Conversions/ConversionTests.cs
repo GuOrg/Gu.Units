@@ -19,7 +19,7 @@
         public void PrefixMilliConversion()
         {
             var settings = MockSettings.Create();
-            var conversion = PrefixConversion.Create(settings.Metres,settings.Milli);
+            var conversion = PrefixConversion.Create(settings.Metres, settings.Milli);
             settings.Metres.PrefixConversions.Add(conversion);
             Assert.AreEqual("millimetres/1000", conversion.ToSi);
             Assert.AreEqual("1000*metres", conversion.FromSi);

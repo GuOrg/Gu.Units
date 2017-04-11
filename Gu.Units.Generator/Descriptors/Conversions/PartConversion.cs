@@ -6,8 +6,6 @@
     using System.Linq;
     using System.Runtime.CompilerServices;
 
-    using JetBrains.Annotations;
-
     [Serializable]
     public class PartConversion : IFactorConversion, INotifyPropertyChanged
     {
@@ -22,6 +20,7 @@
             this.Factor = factor;
         }
 
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Name
@@ -30,7 +29,10 @@
             set
             {
                 if (value == this.name)
+                {
                     return;
+                }
+
                 this.name = value;
                 this.OnPropertyChanged();
                 this.OnPropertyChanged(nameof(this.ToSi));

@@ -75,7 +75,7 @@
         }
 
         /// <summary>
-        /// General method that gets a collection of actual diagnostics found in the source after the analyzer is run, 
+        /// General method that gets a collection of actual diagnostics found in the source after the analyzer is run,
         /// then verifies each of them.
         /// </summary>
         /// <param name="sources">An array of strings to create source documents from to run the analyzers on</param>
@@ -105,8 +105,8 @@
                 string diagnosticsOutput = actualResults.Any() ? FormatDiagnostics(analyzer, actualResults.ToArray()) : "    NONE.";
 
                 var message = $"Mismatch between number of diagnostics returned, expected \"{expectedCount}\" actual \"{actualCount}\"\r\n" +
-                              $"\r\n" + 
-                              $"Diagnostics:\r\n" + 
+                              $"\r\n" +
+                              $"Diagnostics:\r\n" +
                               $"{diagnosticsOutput}\r\n";
                 Assert.Fail(
                     message);
@@ -146,8 +146,8 @@
                 if (actual.Id != expected.Id)
                 {
                     var message = $"Expected diagnostic id to be \"{expected.Id}\" was \"{actual.Id}\"\r\n" +
-                                  $"\r\n" + 
-                                  $"Diagnostic:\r\n" + 
+                                  $"\r\n" +
+                                  $"Diagnostic:\r\n" +
                                   $"    {FormatDiagnostics(analyzer, actual)}\r\n";
                     Assert.Fail(message);
                 }
@@ -155,8 +155,8 @@
                 if (actual.Severity != expected.Severity)
                 {
                     var message = $"Expected diagnostic severity to be \"{expected.Severity}\" was \"{actual.Severity}\"\r\n" +
-                                  $"\r\n" + 
-                                  $"Diagnostic:\r\n" + 
+                                  $"\r\n" +
+                                  $"Diagnostic:\r\n" +
                                   $"    {FormatDiagnostics(analyzer, actual)}\r\n";
                     Assert.Fail(message);
                 }
@@ -164,8 +164,8 @@
                 if (actual.GetMessage() != expected.Message)
                 {
                     var message = $"Expected diagnostic message to be \"{expected.Message}\" was \"{actual.GetMessage()}\"\r\n" +
-                                  $"\r\n" + 
-                                  $"Diagnostic:\r\n" + 
+                                  $"\r\n" +
+                                  $"Diagnostic:\r\n" +
                                   $"    {FormatDiagnostics(analyzer, actual)}\r\n";
                     Assert.Fail(
                         message);
@@ -186,8 +186,8 @@
 
             Assert.IsTrue(actualSpan.Path == expected.Path || (actualSpan.Path != null && actualSpan.Path.Contains("Test0.") && expected.Path.Contains("Test.")),
                 $"Expected diagnostic to be in file \"{expected.Path}\" was actually in file \"{actualSpan.Path}\"\r\n" +
-                $"\r\n" + 
-                $"Diagnostic:\r\n" + 
+                $"\r\n" +
+                $"Diagnostic:\r\n" +
                 $"    {FormatDiagnostics(analyzer, diagnostic)}\r\n");
 
             var actualLinePosition = actualSpan.StartLinePosition;
@@ -198,8 +198,8 @@
                 if (actualLinePosition.Line + 1 != expected.Line)
                 {
                     var message = $"Expected diagnostic to be on line \"{expected.Line}\" was actually on line \"{actualLinePosition.Line + 1}\"\r\n" +
-                                  $"\r\n" + 
-                                  $"Diagnostic:\r\n" + 
+                                  $"\r\n" +
+                                  $"Diagnostic:\r\n" +
                                   $"    {FormatDiagnostics(analyzer, diagnostic)}\r\n";
                     Assert.Fail(message);
                 }
@@ -211,8 +211,8 @@
                 if (actualLinePosition.Character + 1 != expected.Column)
                 {
                     var message = $"Expected diagnostic to start at column \"{expected.Column}\" was actually at column \"{actualLinePosition.Character + 1}\"\r\n" +
-                                  $"\r\n" + 
-                                  $"Diagnostic:\r\n" + 
+                                  $"\r\n" +
+                                  $"Diagnostic:\r\n" +
                                   $"    {FormatDiagnostics(analyzer, diagnostic)}\r\n";
                     Assert.Fail(message);
                 }
@@ -270,6 +270,7 @@
                     }
                 }
             }
+
             return builder.ToString();
         }
     }

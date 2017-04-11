@@ -28,7 +28,6 @@
             Assert.AreEqual("1 mA = 0.001 A", conversionVm.Conversion.SymbolConversion);
             Assert.AreEqual(true, conversionVm.Conversion.CanRoundtrip);
 
-
             CollectionAssert.DoesNotContain(settings.Amperes.PrefixConversions, conversionVm.Conversion);
 
             conversionVm.IsUsed = true;
