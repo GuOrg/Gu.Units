@@ -11,15 +11,18 @@
     using Reactive;
     using State;
 
-    public abstract class UnitViewModel<TUnit> : INotifyPropertyChanged
+    public abstract class UnitViewModel<TUnit> : INotifyPropertyChanged, IDisposable 
         where TUnit : Unit
     {
-        private static readonly PropertiesSettings ChangeTrackerSettings = CreateChangeTrackerSettings();
-        private readonly SerialDisposable subscription = new SerialDisposable();
-        private TUnit unit;
-
         protected const string UnknownName = "Unknown";
         protected const string UnknownSymbol = "??";
+
+        private static readonly PropertiesSettings ChangeTrackerSettings = CreateChangeTrackerSettings();
+
+        private readonly SerialDisposable subscription = new SerialDisposable();
+
+        private TUnit unit;
+        private bool disposed;
 
         protected UnitViewModel(TUnit unit)
         {
@@ -44,6 +47,7 @@
                 {
                     return;
                 }
+
                 this.unit = value;
                 this.subscription.Disposable = Track.Changes(this.unit, ChangeTrackerSettings)
                     .ObservePropertyChangedSlim()
@@ -63,6 +67,26 @@
 
         public ObservableCollection<string> Errors { get; } = new ObservableCollection<string>();
 
+        public void Dispose()
+        {
+            this.Dispose(true);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (this.disposed)
+            {
+                return;
+            }
+
+            this.disposed = true;
+            if (disposing)
+            {
+            }
+
+            this.subscription.Dispose();
+        }
+
         protected bool IsEverythingOk()
         {
             this.Errors.Clear();
@@ -72,6 +96,7 @@
                 {
                     this.Errors.Add($"{conversion.Name} cannot roundtrip");
                 }
+
                 return false;
             }
 
@@ -88,6 +113,14 @@
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected void ThrowIfDisposed()
+        {
+            if (this.disposed)
+            {
+                throw new ObjectDisposedException(this.GetType().FullName);
+            }
         }
 
         private static PropertiesSettings CreateChangeTrackerSettings()

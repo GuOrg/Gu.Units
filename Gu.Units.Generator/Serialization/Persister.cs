@@ -43,6 +43,7 @@
                 var json = File.ReadAllText(SettingsFileName);
                 Settings.InnerInstance = JsonConvert.DeserializeObject<Settings>(json, SerializerSettings);
             }
+
             return Settings.Instance;
         }
 

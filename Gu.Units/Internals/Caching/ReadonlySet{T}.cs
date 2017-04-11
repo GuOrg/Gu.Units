@@ -93,6 +93,7 @@
             {
                 return 0;
             }
+
             unchecked
             {
                 int hash = 0;

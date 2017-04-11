@@ -27,6 +27,7 @@
             {
                 return;
             }
+
             try
             {
                 this.isUpdating = true;
@@ -47,6 +48,7 @@
             {
                 return;
             }
+
             var args = e.As<CustomConversionVm>();
             switch (args.Action)
             {

@@ -39,6 +39,7 @@
                 {
                     return;
                 }
+
                 this.name = value;
                 this.OnPropertyChanged();
             }
@@ -53,6 +54,7 @@
                 {
                     return;
                 }
+
                 this.symbol = value;
                 this.OnPropertyChanged();
             }

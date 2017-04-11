@@ -81,6 +81,7 @@
                         break;
                 }
             }
+
             return sb.ToString();
         }
 
@@ -91,6 +92,7 @@
             {
                 return symbolAndPowers.AsSymbol();
             }
+
             return $"Failed normalizing {symbol}";
         }
 

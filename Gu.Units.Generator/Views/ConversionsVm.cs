@@ -43,6 +43,7 @@
                 {
                     return;
                 }
+
                 this.SelectedConversion = null;
                 this.unit = value;
                 this.UpdateAllConversionsSubscription();
@@ -89,11 +90,13 @@
                 {
                     return;
                 }
+
                 this.selectedBaseUnit = selected;
                 if (selected != null && !selected.IsUnknown)
                 {
                     this.Unit = selected.Unit;
                 }
+
                 this.OnPropertyChanged();
             }
         }
@@ -108,6 +111,7 @@
                 {
                     return;
                 }
+
                 this.selectedDerivedUnit = selected;
                 if (selected != null && !selected.IsUnknown)
                 {

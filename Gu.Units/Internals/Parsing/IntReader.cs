@@ -92,6 +92,7 @@
                         result = 0;
                         return false;
                     }
+
                 case Sign.None:
                 case Sign.Positive:
                     {
@@ -101,12 +102,14 @@
                             pos++;
                             return true;
                         }
+
                         pos = start - sign == Sign.Positive
                             ? 1
                             : 0;
                         result = 0;
                         return false;
                     }
+
                 default:
                     throw new ArgumentOutOfRangeException();
             }

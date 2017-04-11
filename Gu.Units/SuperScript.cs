@@ -7,10 +7,10 @@
     /// </summary>
     public static class SuperScript
     {
-        // ReSharper disable UnusedMember.Local
-        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
+        //// ReSharper disable UnusedMember.Local
         internal const string SuperscriptDigits = "⁰¹²³⁴⁵⁶⁷⁸⁹";
-        // ReSharper restore UnusedMember.Local
+        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
+        //// ReSharper restore UnusedMember.Local
 
         /// <summary>
         /// The superscript plus

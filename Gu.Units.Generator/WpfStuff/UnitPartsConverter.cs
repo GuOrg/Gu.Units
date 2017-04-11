@@ -38,6 +38,7 @@
             {
                 pos = indexOf + 2;
             }
+
             if (SymbolAndPowerReader.TryRead(text, ref pos, out result))
             {
                 if (WhiteSpaceReader.IsRestWhiteSpace(text, pos))

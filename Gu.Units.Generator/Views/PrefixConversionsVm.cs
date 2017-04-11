@@ -6,7 +6,6 @@
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
-    using JetBrains.Annotations;
 
     public class PrefixConversionsVm : INotifyPropertyChanged
     {
@@ -37,6 +36,7 @@
                 this.OnPropertyChanged();
             }
         }
+
         public bool HasItems => this.Prefixes.Any();
 
         public void SetBaseUnit(Unit value)
@@ -60,6 +60,11 @@
             }
 
             this.OnPropertyChanged(nameof(this.HasItems));
+        }
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         private bool IsValidPrefixUnit(INameAndSymbol item)
@@ -94,12 +99,6 @@
             }
 
             return false;
-        }
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

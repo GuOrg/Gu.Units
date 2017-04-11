@@ -68,6 +68,7 @@
             {
                 return true;
             }
+
             if (Equals(left, null) || Equals(right, null))
             {
                 return false;
@@ -139,11 +140,13 @@
             {
                 Debugger.Break(); // Looks like SO will happen
             }
+
             if (up.Unit.GetType() == typeof(BaseUnit))
             {
                 list.Add(UnitAndPower.Create(up.Unit, power));
                 return;
             }
+
             var derivedUnit = (DerivedUnit)up.Unit;
             foreach (var unitPart in derivedUnit.Parts)
             {

@@ -21,7 +21,7 @@
             return property;
         }
 
-        internal static bool ShouldSerialize(MemberInfo memberInfo)
+        private static bool ShouldSerialize(MemberInfo memberInfo)
         {
             var propertyInfo = memberInfo as PropertyInfo;
             if (propertyInfo == null)

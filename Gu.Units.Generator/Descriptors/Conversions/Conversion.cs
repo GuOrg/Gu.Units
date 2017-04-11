@@ -148,6 +148,7 @@
                 {
                     return 0;
                 }
+
                 if (Math.Floor(factor) == factor)
                 {
                     return (long)factor;

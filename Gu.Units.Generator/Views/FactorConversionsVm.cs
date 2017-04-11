@@ -26,6 +26,7 @@
             {
                 return;
             }
+
             try
             {
                 this.isUpdating = true;
@@ -46,6 +47,7 @@
             {
                 return;
             }
+
             var args = e.As<FactorConversionVm>();
             switch (args.Action)
             {

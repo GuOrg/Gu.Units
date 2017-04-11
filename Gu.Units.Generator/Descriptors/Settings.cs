@@ -92,6 +92,7 @@
                 {
                     throw new ArgumentOutOfRangeException($"Did not find a unit with name {name}");
                 }
+
                 return match;
             }
             catch (Exception e)
@@ -109,6 +110,7 @@
                 {
                     throw new ArgumentOutOfRangeException($"Did not find a unit with name {name}");
                 }
+
                 return match;
             }
             catch (Exception e)

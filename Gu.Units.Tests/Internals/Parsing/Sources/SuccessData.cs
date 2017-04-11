@@ -5,10 +5,7 @@ namespace Gu.Units.Tests.Internals.Parsing
 
     public static class SuccessData
     {
-        public static SuccessData<T> Create<T>(string text,
-            int start,
-            T expected,
-            int expectedEnd)
+        public static SuccessData<T> Create<T>(string text, int start, T expected, int expectedEnd)
         {
             return new SuccessData<T>(text, start, expected, expectedEnd);
         }
@@ -23,11 +20,7 @@ namespace Gu.Units.Tests.Internals.Parsing
             return new SuccessData<T>(text, cultureInfo, 0, expected, text.Length);
         }
 
-        public static SuccessData<T> Create<T>(string text,
-            CultureInfo cultureInfo,
-            int start,
-            T expected,
-            int expectedEnd)
+        public static SuccessData<T> Create<T>(string text, CultureInfo cultureInfo, int start, T expected, int expectedEnd)
         {
             return new SuccessData<T>(text, cultureInfo, start, expected, expectedEnd);
         }

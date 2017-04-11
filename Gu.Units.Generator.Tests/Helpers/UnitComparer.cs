@@ -36,7 +36,7 @@ namespace Gu.Units.Generator.Tests
 
             if (x.AllConversions.Count() != 0 || y.AllConversions.Count() != 0)
             {
-
+                return -1;
             }
 
             return 0;

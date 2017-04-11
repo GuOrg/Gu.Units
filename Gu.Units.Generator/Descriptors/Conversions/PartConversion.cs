@@ -146,6 +146,7 @@
                             throw new ArgumentOutOfRangeException(nameof(power));
                     }
                 }
+
                 switch (power)
                 {
                     case 1:

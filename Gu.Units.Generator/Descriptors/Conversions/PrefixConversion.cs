@@ -21,6 +21,7 @@
             this.PrefixName = prefixName;
         }
 
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Name

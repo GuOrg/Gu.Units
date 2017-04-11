@@ -38,6 +38,7 @@
                 {
                     return;
                 }
+
                 if (value)
                 {
                     this.conversions.Add(this.Conversion);
@@ -50,6 +51,7 @@
                         this.conversions.Remove(match);
                     }
                 }
+
                 this.OnPropertyChanged();
             }
         }
