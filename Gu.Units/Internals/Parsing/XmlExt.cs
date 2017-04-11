@@ -9,7 +9,13 @@ namespace Gu.Units
             where T : IQuantity
         {
             reader.MoveToContent();
-            var d = XmlConvert.ToDouble(reader.GetAttribute(attributeName));
+            var attribute = reader.GetAttribute(attributeName);
+            if (attribute == null)
+            {
+                throw new XmlException($"Could not find attribute named: {attributeName}");
+            }
+
+            var d = XmlConvert.ToDouble(attribute);
             reader.ReadStartElement();
             SetReadonlyField(ref self, fieldName, d);
         }
@@ -19,6 +25,11 @@ namespace Gu.Units
         {
             var fieldInfo = self.GetType()
                                 .GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
+            if (fieldInfo == null)
+            {
+                throw new XmlException($"Could not find field named: {fieldName}");
+            }
+
             object boxed = self;
             fieldInfo.SetValue(boxed, value);
             self = (T)boxed;
