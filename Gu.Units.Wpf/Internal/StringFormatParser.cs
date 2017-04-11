@@ -44,7 +44,7 @@
 
             if (Is.DesignMode)
             {
-                var message = CreateFormatErrorString(format, typeof (TUnit));
+                var message = CreateFormatErrorString(format, typeof(TUnit));
                 throw new FormatException(message);
             }
         }

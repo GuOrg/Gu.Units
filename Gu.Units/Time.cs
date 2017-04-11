@@ -5,7 +5,7 @@ namespace Gu.Units
 
     public partial struct Time
     {
-        public static explicit operator TimeSpan (Time time)
+        public static explicit operator TimeSpan(Time time)
         {
             return TimeSpan.FromSeconds(time.seconds);
         }

@@ -19,7 +19,7 @@
                 case 'G':
                 case 'n':
                 case 'N':
-                    return TryReadPrefixNumberFormat(format, ref pos, out  result);
+                    return TryReadPrefixNumberFormat(format, ref pos, out result);
                 case 'r':
                     pos++;
                     result = "r";
@@ -30,14 +30,14 @@
                     return true;
                 case '0':
                 case '#':
-                    return TryReadPoundAndZeroFormat(format, ref pos, out  result);
+                    return TryReadPoundAndZeroFormat(format, ref pos, out result);
                 default:
                     result = format.Substring(pos);
                     return false;
             }
         }
 
-        private static bool TryReadPoundAndZeroFormat(string format, ref int pos, out  string result)
+        private static bool TryReadPoundAndZeroFormat(string format, ref int pos, out string result)
         {
             var start = pos;
             pos++;

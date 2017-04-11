@@ -3,3 +3,10 @@ title Gu.Units
 tags unit units quantity quantities unitsofmeasure
 projectUrl https://github.com/JohanLarsson/Gu.Units
 licenseUrl http://opensource.org/licenses/MIT
+
+excludeddependencies
+  JetBrains.Annotations
+  StyleCop.Analyzers
+  WpfAnalyzers
+  Gu.Analyzers
+
