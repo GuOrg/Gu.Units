@@ -24,13 +24,13 @@
 
         public int Count => this.Parts.Count;
 
-        public UnitAndPower this[int index] => this.Parts[index];
-
-        internal ReadonlySet<UnitAndPower> BaseParts => this.baseParts ?? (this.baseParts = this.CreateBaseParts());
-
         public string Symbol => this.Parts.AsSymbol();
 
         public string BaseUnitSymbol => this.BaseParts.AsSymbol();
+
+        internal ReadonlySet<UnitAndPower> BaseParts => this.baseParts ?? (this.baseParts = this.CreateBaseParts());
+
+        public UnitAndPower this[int index] => this.Parts[index];
 
         public static UnitParts operator *(UnitParts left, UnitParts right)
         {
@@ -82,14 +82,16 @@
             return !(left == right);
         }
 
+        public UnitParts Inverse()
+        {
+            var unitAndPowers = this.Parts.Select(x => UnitAndPower.Create(x.Unit, -1 * x.Power))
+                                    .ToList();
+            return new UnitParts(unitAndPowers);
+        }
+
         public IEnumerator<UnitAndPower> GetEnumerator() => this.Parts.GetEnumerator();
 
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
-
-        protected bool Equals(UnitParts other)
-        {
-            return this.BaseParts.Equals(other.BaseParts);
-        }
 
         public override bool Equals(object obj)
         {
@@ -110,6 +112,11 @@
         public override string ToString()
         {
             return this.Symbol;
+        }
+
+        protected bool Equals(UnitParts other)
+        {
+            return this.BaseParts.Equals(other.BaseParts);
         }
 
         private ReadonlySet<UnitAndPower> CreateBaseParts()
@@ -152,13 +159,6 @@
             {
                 this.GetBaseParts(unitPart, unitPart.Power * power, list);
             }
-        }
-
-        public UnitParts Inverse()
-        {
-            var unitAndPowers = this.Parts.Select(x => UnitAndPower.Create(x.Unit, -1 * x.Power))
-                                     .ToList();
-            return new UnitParts(unitAndPowers);
         }
     }
 }

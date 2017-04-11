@@ -4,18 +4,14 @@
     using System.Collections.Generic;
     using System.Globalization;
 
-    public class SuccessData<T> : ISuccessData
+    public class TestCase<T>
     {
-        public SuccessData(string text, int start, T expected, int expectedEnd)
+        protected TestCase(string text, int start, T expected, int expectedEnd)
             : this(text, CultureInfo.InvariantCulture, start, expected, expectedEnd)
         {
         }
 
-        public SuccessData(string text,
-            CultureInfo cultureInfo,
-            int start,
-            T expected,
-            int expectedEnd)
+        protected TestCase(string text, CultureInfo cultureInfo, int start, T expected, int expectedEnd)
         {
             this.Text = text;
             this.CultureInfo = cultureInfo;
@@ -33,8 +29,6 @@
         public T Expected { get; }
 
         public Type Type => typeof(T);
-
-        object ISuccessData.Expected => this.Expected;
 
         public int ExpectedEnd { get; }
 

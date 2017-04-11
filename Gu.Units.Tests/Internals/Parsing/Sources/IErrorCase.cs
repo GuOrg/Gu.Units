@@ -2,7 +2,7 @@
 {
     using System;
 
-    public interface IErrorData
+    public interface IErrorCase
     {
         Type Type { get; }
 

@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArithmeticsTests.cs" />
+    <Compile Include="Internals\Parsing\Sources\TestCase{T}.cs" />
     <Compile Include="LengthTests.Conversions.cs" />
     <Compile Include="TemperatureTests.cs" />
     <Compile Include="QuantityConversionTests.cs" />
@@ -58,15 +59,15 @@
     <Compile Include="Internals\Parsing\ParseRoundtripTests.cs" />
     <Compile Include="Constants\Reminder.cs" />
     <Compile Include="Internals\Parsing\SkipperTests.cs" />
-    <Compile Include="Internals\Parsing\Sources\ErrorData.cs" />
-    <Compile Include="Internals\Parsing\Sources\ErrorData{T}.cs" />
+    <Compile Include="Internals\Parsing\Sources\ErrorCase.cs" />
+    <Compile Include="Internals\Parsing\Sources\ErrorCase{T}.cs" />
     <Compile Include="Internals\Parsing\IntReaderTests.cs" />
     <Compile Include="Internals\Parsing\PowerReaderTests.cs" />
-    <Compile Include="Internals\Parsing\Sources\IErrorData.cs" />
+    <Compile Include="Internals\Parsing\Sources\IErrorCase.cs" />
     <Compile Include="Internals\Parsing\Sources\ISuccessData.cs" />
     <Compile Include="Internals\Parsing\Extensions\ParseExt.cs" />
-    <Compile Include="Internals\Parsing\Sources\SuccessData.cs" />
-    <Compile Include="Internals\Parsing\Sources\SuccessData{T}.cs" />
+    <Compile Include="Internals\Parsing\Sources\SuccessCase.cs" />
+    <Compile Include="Internals\Parsing\Sources\SuccessCase{T}.cs" />
     <Compile Include="Internals\Parsing\SymbolAndPowerParserSetTests.cs" />
     <Compile Include="Internals\Parsing\UnitParserTests.cs" />
     <Compile Include="Internals\Helpers\StringBuilderPoolTests.cs" />
