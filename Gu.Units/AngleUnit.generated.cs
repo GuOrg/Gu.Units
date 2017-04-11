@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Angle"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(AngleUnitTypeConverter))]
@@ -23,12 +23,16 @@
         /// </summary>
         public static readonly AngleUnit Degrees = new AngleUnit(degrees => degrees / 57.295779513082323, radians => 57.295779513082323 * radians, "°");
 
-        private readonly Func<double, double> toRadians;
-        private readonly Func<double, double> fromRadians;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.AngleUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toRadians;
+        private readonly Func<double, double> fromRadians;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="AngleUnit"/>.
+        /// Initializes a new instance of the <see cref="AngleUnit"/> struct.
         /// </summary>
         /// <param name="toRadians">The conversion to <see cref="Radians"/></param>
         /// <param name="fromRadians">The conversion to <paramref name="symbol"/></param>
@@ -41,18 +45,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.AngleUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.AngleUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.AngleUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.AngleUnit"/>
         /// </summary>
         public AngleUnit SiUnit => Radians;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.AngleUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Radians;
 
         /// <summary>
@@ -72,9 +74,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AngleUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AngleUnit"/>.</param>
-	    public static bool operator ==(AngleUnit left, AngleUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.AngleUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AngleUnit"/>.</param>
+        public static bool operator ==(AngleUnit left, AngleUnit right)
         {
             return left.Equals(right);
         }
@@ -85,8 +87,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AngleUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AngleUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.AngleUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AngleUnit"/>.</param>
         public static bool operator !=(AngleUnit left, AngleUnit right)
         {
             return !left.Equals(right);
@@ -96,7 +98,7 @@
         /// Constructs a <see cref="AngleUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="AngleUnit"/></returns>
         public static AngleUnit Parse(string text)
         {
@@ -108,7 +110,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.AngleUnit"/></param>
         /// <param name="result">The parsed <see cref="AngleUnit"/></param>
-        /// <returns>True if an instance of <see cref="AngleUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="AngleUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out AngleUnit result)
         {
             return UnitParser<AngleUnit>.TryParse(text, out result);
@@ -117,7 +119,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Radians.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -147,11 +149,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Radians
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Angle quantity)
         {
-            return FromSiUnit(quantity.radians);
+            return this.FromSiUnit(quantity.radians);
         }
 
         /// <inheritdoc />
@@ -207,7 +209,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same AngleUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(AngleUnit other)
+        public bool Equals(AngleUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -220,7 +222,7 @@
                 return false;
             }
 
-            return obj is AngleUnit && Equals((AngleUnit)obj);
+            return obj is AngleUnit && this.Equals((AngleUnit)obj);
         }
 
         /// <inheritdoc />

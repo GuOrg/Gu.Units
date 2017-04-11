@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Flexibility"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(FlexibilityUnitTypeConverter))]
@@ -35,12 +35,16 @@
         /// </summary>
         public static readonly FlexibilityUnit MicrometresPerKilonewton = new FlexibilityUnit(micrometresPerKilonewton => micrometresPerKilonewton / 1000000000, metresPerNewton => 1000000000 * metresPerNewton, "µm/kN");
 
-        private readonly Func<double, double> toMetresPerNewton;
-        private readonly Func<double, double> fromMetresPerNewton;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.FlexibilityUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toMetresPerNewton;
+        private readonly Func<double, double> fromMetresPerNewton;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="FlexibilityUnit"/>.
+        /// Initializes a new instance of the <see cref="FlexibilityUnit"/> struct.
         /// </summary>
         /// <param name="toMetresPerNewton">The conversion to <see cref="MetresPerNewton"/></param>
         /// <param name="fromMetresPerNewton">The conversion to <paramref name="symbol"/></param>
@@ -53,18 +57,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.FlexibilityUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.FlexibilityUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.FlexibilityUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.FlexibilityUnit"/>
         /// </summary>
         public FlexibilityUnit SiUnit => MetresPerNewton;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.FlexibilityUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => MetresPerNewton;
 
         /// <summary>
@@ -84,9 +86,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.FlexibilityUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.FlexibilityUnit"/>.</param>
-	    public static bool operator ==(FlexibilityUnit left, FlexibilityUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.FlexibilityUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.FlexibilityUnit"/>.</param>
+        public static bool operator ==(FlexibilityUnit left, FlexibilityUnit right)
         {
             return left.Equals(right);
         }
@@ -97,8 +99,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.FlexibilityUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.FlexibilityUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.FlexibilityUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.FlexibilityUnit"/>.</param>
         public static bool operator !=(FlexibilityUnit left, FlexibilityUnit right)
         {
             return !left.Equals(right);
@@ -108,7 +110,7 @@
         /// Constructs a <see cref="FlexibilityUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="FlexibilityUnit"/></returns>
         public static FlexibilityUnit Parse(string text)
         {
@@ -120,7 +122,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.FlexibilityUnit"/></param>
         /// <param name="result">The parsed <see cref="FlexibilityUnit"/></param>
-        /// <returns>True if an instance of <see cref="FlexibilityUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="FlexibilityUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out FlexibilityUnit result)
         {
             return UnitParser<FlexibilityUnit>.TryParse(text, out result);
@@ -129,7 +131,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to MetresPerNewton.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -159,11 +161,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in MetresPerNewton
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Flexibility quantity)
         {
-            return FromSiUnit(quantity.metresPerNewton);
+            return this.FromSiUnit(quantity.metresPerNewton);
         }
 
         /// <inheritdoc />
@@ -219,7 +221,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same FlexibilityUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(FlexibilityUnit other)
+        public bool Equals(FlexibilityUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -232,7 +234,7 @@
                 return false;
             }
 
-            return obj is FlexibilityUnit && Equals((FlexibilityUnit)obj);
+            return obj is FlexibilityUnit && this.Equals((FlexibilityUnit)obj);
         }
 
         /// <inheritdoc />

@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Mass"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(MassUnitTypeConverter))]
@@ -59,12 +59,16 @@
         /// </summary>
         public static readonly MassUnit TroyGrains = new MassUnit(troyGrains => 6.479891E-05 * troyGrains, kilograms => kilograms / 6.479891E-05, "gr");
 
-        private readonly Func<double, double> toKilograms;
-        private readonly Func<double, double> fromKilograms;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.MassUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toKilograms;
+        private readonly Func<double, double> fromKilograms;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="MassUnit"/>.
+        /// Initializes a new instance of the <see cref="MassUnit"/> struct.
         /// </summary>
         /// <param name="toKilograms">The conversion to <see cref="Kilograms"/></param>
         /// <param name="fromKilograms">The conversion to <paramref name="symbol"/></param>
@@ -77,18 +81,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.MassUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.MassUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.MassUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.MassUnit"/>
         /// </summary>
         public MassUnit SiUnit => Kilograms;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.MassUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Kilograms;
 
         /// <summary>
@@ -108,9 +110,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.MassUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.MassUnit"/>.</param>
-	    public static bool operator ==(MassUnit left, MassUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.MassUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.MassUnit"/>.</param>
+        public static bool operator ==(MassUnit left, MassUnit right)
         {
             return left.Equals(right);
         }
@@ -121,8 +123,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.MassUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.MassUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.MassUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.MassUnit"/>.</param>
         public static bool operator !=(MassUnit left, MassUnit right)
         {
             return !left.Equals(right);
@@ -132,7 +134,7 @@
         /// Constructs a <see cref="MassUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="MassUnit"/></returns>
         public static MassUnit Parse(string text)
         {
@@ -144,7 +146,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MassUnit"/></param>
         /// <param name="result">The parsed <see cref="MassUnit"/></param>
-        /// <returns>True if an instance of <see cref="MassUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="MassUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out MassUnit result)
         {
             return UnitParser<MassUnit>.TryParse(text, out result);
@@ -153,7 +155,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Kilograms.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -183,11 +185,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Kilograms
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Mass quantity)
         {
-            return FromSiUnit(quantity.kilograms);
+            return this.FromSiUnit(quantity.kilograms);
         }
 
         /// <inheritdoc />
@@ -243,7 +245,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same MassUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(MassUnit other)
+        public bool Equals(MassUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -256,7 +258,7 @@
                 return false;
             }
 
-            return obj is MassUnit && Equals((MassUnit)obj);
+            return obj is MassUnit && this.Equals((MassUnit)obj);
         }
 
         /// <inheritdoc />

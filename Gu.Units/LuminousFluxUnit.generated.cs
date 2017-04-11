@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.LuminousFlux"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(LuminousFluxUnitTypeConverter))]
@@ -17,12 +17,16 @@
         /// </summary>
         public static readonly LuminousFluxUnit Lumens = new LuminousFluxUnit(lumens => lumens, lumens => lumens, "lm");
 
-        private readonly Func<double, double> toLumens;
-        private readonly Func<double, double> fromLumens;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.LuminousFluxUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toLumens;
+        private readonly Func<double, double> fromLumens;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="LuminousFluxUnit"/>.
+        /// Initializes a new instance of the <see cref="LuminousFluxUnit"/> struct.
         /// </summary>
         /// <param name="toLumens">The conversion to <see cref="Lumens"/></param>
         /// <param name="fromLumens">The conversion to <paramref name="symbol"/></param>
@@ -35,18 +39,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.LuminousFluxUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.LuminousFluxUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.LuminousFluxUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.LuminousFluxUnit"/>
         /// </summary>
         public LuminousFluxUnit SiUnit => Lumens;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.LuminousFluxUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Lumens;
 
         /// <summary>
@@ -66,9 +68,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.LuminousFluxUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.LuminousFluxUnit"/>.</param>
-	    public static bool operator ==(LuminousFluxUnit left, LuminousFluxUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.LuminousFluxUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.LuminousFluxUnit"/>.</param>
+        public static bool operator ==(LuminousFluxUnit left, LuminousFluxUnit right)
         {
             return left.Equals(right);
         }
@@ -79,8 +81,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.LuminousFluxUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.LuminousFluxUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.LuminousFluxUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.LuminousFluxUnit"/>.</param>
         public static bool operator !=(LuminousFluxUnit left, LuminousFluxUnit right)
         {
             return !left.Equals(right);
@@ -90,7 +92,7 @@
         /// Constructs a <see cref="LuminousFluxUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="LuminousFluxUnit"/></returns>
         public static LuminousFluxUnit Parse(string text)
         {
@@ -102,7 +104,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.LuminousFluxUnit"/></param>
         /// <param name="result">The parsed <see cref="LuminousFluxUnit"/></param>
-        /// <returns>True if an instance of <see cref="LuminousFluxUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="LuminousFluxUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out LuminousFluxUnit result)
         {
             return UnitParser<LuminousFluxUnit>.TryParse(text, out result);
@@ -111,7 +113,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Lumens.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -141,11 +143,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Lumens
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(LuminousFlux quantity)
         {
-            return FromSiUnit(quantity.lumens);
+            return this.FromSiUnit(quantity.lumens);
         }
 
         /// <inheritdoc />
@@ -201,7 +203,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same LuminousFluxUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(LuminousFluxUnit other)
+        public bool Equals(LuminousFluxUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -214,7 +216,7 @@
                 return false;
             }
 
-            return obj is LuminousFluxUnit && Equals((LuminousFluxUnit)obj);
+            return obj is LuminousFluxUnit && this.Equals((LuminousFluxUnit)obj);
         }
 
         /// <inheritdoc />

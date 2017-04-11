@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.AreaDensity"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(AreaDensityUnitTypeConverter))]
@@ -17,12 +17,16 @@
         /// </summary>
         public static readonly AreaDensityUnit KilogramsPerSquareMetre = new AreaDensityUnit(kilogramsPerSquareMetre => kilogramsPerSquareMetre, kilogramsPerSquareMetre => kilogramsPerSquareMetre, "kg/m²");
 
-        private readonly Func<double, double> toKilogramsPerSquareMetre;
-        private readonly Func<double, double> fromKilogramsPerSquareMetre;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.AreaDensityUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toKilogramsPerSquareMetre;
+        private readonly Func<double, double> fromKilogramsPerSquareMetre;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="AreaDensityUnit"/>.
+        /// Initializes a new instance of the <see cref="AreaDensityUnit"/> struct.
         /// </summary>
         /// <param name="toKilogramsPerSquareMetre">The conversion to <see cref="KilogramsPerSquareMetre"/></param>
         /// <param name="fromKilogramsPerSquareMetre">The conversion to <paramref name="symbol"/></param>
@@ -35,18 +39,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.AreaDensityUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.AreaDensityUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.AreaDensityUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.AreaDensityUnit"/>
         /// </summary>
         public AreaDensityUnit SiUnit => KilogramsPerSquareMetre;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.AreaDensityUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => KilogramsPerSquareMetre;
 
         /// <summary>
@@ -66,9 +68,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AreaDensityUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AreaDensityUnit"/>.</param>
-	    public static bool operator ==(AreaDensityUnit left, AreaDensityUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.AreaDensityUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AreaDensityUnit"/>.</param>
+        public static bool operator ==(AreaDensityUnit left, AreaDensityUnit right)
         {
             return left.Equals(right);
         }
@@ -79,8 +81,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AreaDensityUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AreaDensityUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.AreaDensityUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AreaDensityUnit"/>.</param>
         public static bool operator !=(AreaDensityUnit left, AreaDensityUnit right)
         {
             return !left.Equals(right);
@@ -90,7 +92,7 @@
         /// Constructs a <see cref="AreaDensityUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="AreaDensityUnit"/></returns>
         public static AreaDensityUnit Parse(string text)
         {
@@ -102,7 +104,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensityUnit"/></param>
         /// <param name="result">The parsed <see cref="AreaDensityUnit"/></param>
-        /// <returns>True if an instance of <see cref="AreaDensityUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="AreaDensityUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out AreaDensityUnit result)
         {
             return UnitParser<AreaDensityUnit>.TryParse(text, out result);
@@ -111,7 +113,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to KilogramsPerSquareMetre.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -141,11 +143,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in KilogramsPerSquareMetre
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(AreaDensity quantity)
         {
-            return FromSiUnit(quantity.kilogramsPerSquareMetre);
+            return this.FromSiUnit(quantity.kilogramsPerSquareMetre);
         }
 
         /// <inheritdoc />
@@ -201,7 +203,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same AreaDensityUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(AreaDensityUnit other)
+        public bool Equals(AreaDensityUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -214,7 +216,7 @@
                 return false;
             }
 
-            return obj is AreaDensityUnit && Equals((AreaDensityUnit)obj);
+            return obj is AreaDensityUnit && this.Equals((AreaDensityUnit)obj);
         }
 
         /// <inheritdoc />

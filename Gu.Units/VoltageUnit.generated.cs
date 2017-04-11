@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Voltage"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(VoltageUnitTypeConverter))]
@@ -53,12 +53,16 @@
         /// </summary>
         public static readonly VoltageUnit Gigavolts = new VoltageUnit(gigavolts => 1000000000 * gigavolts, volts => volts / 1000000000, "GV");
 
-        private readonly Func<double, double> toVolts;
-        private readonly Func<double, double> fromVolts;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.VoltageUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toVolts;
+        private readonly Func<double, double> fromVolts;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="VoltageUnit"/>.
+        /// Initializes a new instance of the <see cref="VoltageUnit"/> struct.
         /// </summary>
         /// <param name="toVolts">The conversion to <see cref="Volts"/></param>
         /// <param name="fromVolts">The conversion to <paramref name="symbol"/></param>
@@ -71,18 +75,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.VoltageUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.VoltageUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.VoltageUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.VoltageUnit"/>
         /// </summary>
         public VoltageUnit SiUnit => Volts;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.VoltageUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Volts;
 
         /// <summary>
@@ -102,9 +104,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.VoltageUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.VoltageUnit"/>.</param>
-	    public static bool operator ==(VoltageUnit left, VoltageUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.VoltageUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.VoltageUnit"/>.</param>
+        public static bool operator ==(VoltageUnit left, VoltageUnit right)
         {
             return left.Equals(right);
         }
@@ -115,8 +117,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.VoltageUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.VoltageUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.VoltageUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.VoltageUnit"/>.</param>
         public static bool operator !=(VoltageUnit left, VoltageUnit right)
         {
             return !left.Equals(right);
@@ -126,7 +128,7 @@
         /// Constructs a <see cref="VoltageUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="VoltageUnit"/></returns>
         public static VoltageUnit Parse(string text)
         {
@@ -138,7 +140,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.VoltageUnit"/></param>
         /// <param name="result">The parsed <see cref="VoltageUnit"/></param>
-        /// <returns>True if an instance of <see cref="VoltageUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="VoltageUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out VoltageUnit result)
         {
             return UnitParser<VoltageUnit>.TryParse(text, out result);
@@ -147,7 +149,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Volts.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -177,11 +179,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Volts
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Voltage quantity)
         {
-            return FromSiUnit(quantity.volts);
+            return this.FromSiUnit(quantity.volts);
         }
 
         /// <inheritdoc />
@@ -237,7 +239,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same VoltageUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(VoltageUnit other)
+        public bool Equals(VoltageUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -250,7 +252,7 @@
                 return false;
             }
 
-            return obj is VoltageUnit && Equals((VoltageUnit)obj);
+            return obj is VoltageUnit && this.Equals((VoltageUnit)obj);
         }
 
         /// <inheritdoc />

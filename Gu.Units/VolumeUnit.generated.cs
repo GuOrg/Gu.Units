@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Volume"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(VolumeUnitTypeConverter))]
@@ -71,12 +71,16 @@
         /// </summary>
         public static readonly VolumeUnit CubicFeet = new VolumeUnit(cubicFeet => 0.028316846592 * cubicFeet, cubicMetres => cubicMetres / 0.028316846592, "ft³");
 
-        private readonly Func<double, double> toCubicMetres;
-        private readonly Func<double, double> fromCubicMetres;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.VolumeUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toCubicMetres;
+        private readonly Func<double, double> fromCubicMetres;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="VolumeUnit"/>.
+        /// Initializes a new instance of the <see cref="VolumeUnit"/> struct.
         /// </summary>
         /// <param name="toCubicMetres">The conversion to <see cref="CubicMetres"/></param>
         /// <param name="fromCubicMetres">The conversion to <paramref name="symbol"/></param>
@@ -89,18 +93,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.VolumeUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.VolumeUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.VolumeUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.VolumeUnit"/>
         /// </summary>
         public VolumeUnit SiUnit => CubicMetres;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.VolumeUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => CubicMetres;
 
         /// <summary>
@@ -120,9 +122,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.VolumeUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.VolumeUnit"/>.</param>
-	    public static bool operator ==(VolumeUnit left, VolumeUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.VolumeUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.VolumeUnit"/>.</param>
+        public static bool operator ==(VolumeUnit left, VolumeUnit right)
         {
             return left.Equals(right);
         }
@@ -133,8 +135,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.VolumeUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.VolumeUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.VolumeUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.VolumeUnit"/>.</param>
         public static bool operator !=(VolumeUnit left, VolumeUnit right)
         {
             return !left.Equals(right);
@@ -144,7 +146,7 @@
         /// Constructs a <see cref="VolumeUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="VolumeUnit"/></returns>
         public static VolumeUnit Parse(string text)
         {
@@ -156,7 +158,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.VolumeUnit"/></param>
         /// <param name="result">The parsed <see cref="VolumeUnit"/></param>
-        /// <returns>True if an instance of <see cref="VolumeUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="VolumeUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out VolumeUnit result)
         {
             return UnitParser<VolumeUnit>.TryParse(text, out result);
@@ -165,7 +167,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to CubicMetres.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -195,11 +197,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in CubicMetres
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Volume quantity)
         {
-            return FromSiUnit(quantity.cubicMetres);
+            return this.FromSiUnit(quantity.cubicMetres);
         }
 
         /// <inheritdoc />
@@ -255,7 +257,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same VolumeUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(VolumeUnit other)
+        public bool Equals(VolumeUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -268,7 +270,7 @@
                 return false;
             }
 
-            return obj is VolumeUnit && Equals((VolumeUnit)obj);
+            return obj is VolumeUnit && this.Equals((VolumeUnit)obj);
         }
 
         /// <inheritdoc />

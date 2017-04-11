@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.SolidAngle"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(SolidAngleUnitTypeConverter))]
@@ -17,12 +17,16 @@
         /// </summary>
         public static readonly SolidAngleUnit Steradians = new SolidAngleUnit(steradians => steradians, steradians => steradians, "sr");
 
-        private readonly Func<double, double> toSteradians;
-        private readonly Func<double, double> fromSteradians;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.SolidAngleUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toSteradians;
+        private readonly Func<double, double> fromSteradians;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="SolidAngleUnit"/>.
+        /// Initializes a new instance of the <see cref="SolidAngleUnit"/> struct.
         /// </summary>
         /// <param name="toSteradians">The conversion to <see cref="Steradians"/></param>
         /// <param name="fromSteradians">The conversion to <paramref name="symbol"/></param>
@@ -35,18 +39,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.SolidAngleUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.SolidAngleUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.SolidAngleUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.SolidAngleUnit"/>
         /// </summary>
         public SolidAngleUnit SiUnit => Steradians;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.SolidAngleUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Steradians;
 
         /// <summary>
@@ -66,9 +68,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.SolidAngleUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.SolidAngleUnit"/>.</param>
-	    public static bool operator ==(SolidAngleUnit left, SolidAngleUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.SolidAngleUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.SolidAngleUnit"/>.</param>
+        public static bool operator ==(SolidAngleUnit left, SolidAngleUnit right)
         {
             return left.Equals(right);
         }
@@ -79,8 +81,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.SolidAngleUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.SolidAngleUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.SolidAngleUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.SolidAngleUnit"/>.</param>
         public static bool operator !=(SolidAngleUnit left, SolidAngleUnit right)
         {
             return !left.Equals(right);
@@ -90,7 +92,7 @@
         /// Constructs a <see cref="SolidAngleUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="SolidAngleUnit"/></returns>
         public static SolidAngleUnit Parse(string text)
         {
@@ -102,7 +104,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngleUnit"/></param>
         /// <param name="result">The parsed <see cref="SolidAngleUnit"/></param>
-        /// <returns>True if an instance of <see cref="SolidAngleUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="SolidAngleUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out SolidAngleUnit result)
         {
             return UnitParser<SolidAngleUnit>.TryParse(text, out result);
@@ -111,7 +113,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Steradians.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -141,11 +143,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Steradians
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(SolidAngle quantity)
         {
-            return FromSiUnit(quantity.steradians);
+            return this.FromSiUnit(quantity.steradians);
         }
 
         /// <inheritdoc />
@@ -201,7 +203,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same SolidAngleUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(SolidAngleUnit other)
+        public bool Equals(SolidAngleUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -214,7 +216,7 @@
                 return false;
             }
 
-            return obj is SolidAngleUnit && Equals((SolidAngleUnit)obj);
+            return obj is SolidAngleUnit && this.Equals((SolidAngleUnit)obj);
         }
 
         /// <inheritdoc />

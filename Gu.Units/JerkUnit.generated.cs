@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Jerk"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(JerkUnitTypeConverter))]
@@ -65,12 +65,16 @@
         /// </summary>
         public static readonly JerkUnit CentimetresPerMinuteCubed = new JerkUnit(centimetresPerMinuteCubed => centimetresPerMinuteCubed / 21600000, metresPerSecondCubed => 21600000 * metresPerSecondCubed, "cm⋅min⁻³");
 
-        private readonly Func<double, double> toMetresPerSecondCubed;
-        private readonly Func<double, double> fromMetresPerSecondCubed;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.JerkUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toMetresPerSecondCubed;
+        private readonly Func<double, double> fromMetresPerSecondCubed;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="JerkUnit"/>.
+        /// Initializes a new instance of the <see cref="JerkUnit"/> struct.
         /// </summary>
         /// <param name="toMetresPerSecondCubed">The conversion to <see cref="MetresPerSecondCubed"/></param>
         /// <param name="fromMetresPerSecondCubed">The conversion to <paramref name="symbol"/></param>
@@ -83,18 +87,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.JerkUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.JerkUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.JerkUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.JerkUnit"/>
         /// </summary>
         public JerkUnit SiUnit => MetresPerSecondCubed;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.JerkUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => MetresPerSecondCubed;
 
         /// <summary>
@@ -114,9 +116,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.JerkUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.JerkUnit"/>.</param>
-	    public static bool operator ==(JerkUnit left, JerkUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.JerkUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.JerkUnit"/>.</param>
+        public static bool operator ==(JerkUnit left, JerkUnit right)
         {
             return left.Equals(right);
         }
@@ -127,8 +129,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.JerkUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.JerkUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.JerkUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.JerkUnit"/>.</param>
         public static bool operator !=(JerkUnit left, JerkUnit right)
         {
             return !left.Equals(right);
@@ -138,7 +140,7 @@
         /// Constructs a <see cref="JerkUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="JerkUnit"/></returns>
         public static JerkUnit Parse(string text)
         {
@@ -150,7 +152,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.JerkUnit"/></param>
         /// <param name="result">The parsed <see cref="JerkUnit"/></param>
-        /// <returns>True if an instance of <see cref="JerkUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="JerkUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out JerkUnit result)
         {
             return UnitParser<JerkUnit>.TryParse(text, out result);
@@ -159,7 +161,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to MetresPerSecondCubed.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -189,11 +191,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in MetresPerSecondCubed
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Jerk quantity)
         {
-            return FromSiUnit(quantity.metresPerSecondCubed);
+            return this.FromSiUnit(quantity.metresPerSecondCubed);
         }
 
         /// <inheritdoc />
@@ -249,7 +251,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same JerkUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(JerkUnit other)
+        public bool Equals(JerkUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -262,7 +264,7 @@
                 return false;
             }
 
-            return obj is JerkUnit && Equals((JerkUnit)obj);
+            return obj is JerkUnit && this.Equals((JerkUnit)obj);
         }
 
         /// <inheritdoc />

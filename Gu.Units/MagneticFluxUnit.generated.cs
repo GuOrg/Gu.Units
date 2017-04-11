@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.MagneticFlux"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(MagneticFluxUnitTypeConverter))]
@@ -17,12 +17,16 @@
         /// </summary>
         public static readonly MagneticFluxUnit Webers = new MagneticFluxUnit(webers => webers, webers => webers, "Wb");
 
-        private readonly Func<double, double> toWebers;
-        private readonly Func<double, double> fromWebers;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.MagneticFluxUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toWebers;
+        private readonly Func<double, double> fromWebers;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="MagneticFluxUnit"/>.
+        /// Initializes a new instance of the <see cref="MagneticFluxUnit"/> struct.
         /// </summary>
         /// <param name="toWebers">The conversion to <see cref="Webers"/></param>
         /// <param name="fromWebers">The conversion to <paramref name="symbol"/></param>
@@ -35,18 +39,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.MagneticFluxUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.MagneticFluxUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.MagneticFluxUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.MagneticFluxUnit"/>
         /// </summary>
         public MagneticFluxUnit SiUnit => Webers;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.MagneticFluxUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Webers;
 
         /// <summary>
@@ -66,9 +68,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.MagneticFluxUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.MagneticFluxUnit"/>.</param>
-	    public static bool operator ==(MagneticFluxUnit left, MagneticFluxUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.MagneticFluxUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.MagneticFluxUnit"/>.</param>
+        public static bool operator ==(MagneticFluxUnit left, MagneticFluxUnit right)
         {
             return left.Equals(right);
         }
@@ -79,8 +81,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.MagneticFluxUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.MagneticFluxUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.MagneticFluxUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.MagneticFluxUnit"/>.</param>
         public static bool operator !=(MagneticFluxUnit left, MagneticFluxUnit right)
         {
             return !left.Equals(right);
@@ -90,7 +92,7 @@
         /// Constructs a <see cref="MagneticFluxUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="MagneticFluxUnit"/></returns>
         public static MagneticFluxUnit Parse(string text)
         {
@@ -102,7 +104,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFluxUnit"/></param>
         /// <param name="result">The parsed <see cref="MagneticFluxUnit"/></param>
-        /// <returns>True if an instance of <see cref="MagneticFluxUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="MagneticFluxUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out MagneticFluxUnit result)
         {
             return UnitParser<MagneticFluxUnit>.TryParse(text, out result);
@@ -111,7 +113,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Webers.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -141,11 +143,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Webers
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(MagneticFlux quantity)
         {
-            return FromSiUnit(quantity.webers);
+            return this.FromSiUnit(quantity.webers);
         }
 
         /// <inheritdoc />
@@ -201,7 +203,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same MagneticFluxUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(MagneticFluxUnit other)
+        public bool Equals(MagneticFluxUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -214,7 +216,7 @@
                 return false;
             }
 
-            return obj is MagneticFluxUnit && Equals((MagneticFluxUnit)obj);
+            return obj is MagneticFluxUnit && this.Equals((MagneticFluxUnit)obj);
         }
 
         /// <inheritdoc />

@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Temperature"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(TemperatureUnitTypeConverter))]
@@ -29,12 +29,16 @@
         /// </summary>
         public static readonly TemperatureUnit Fahrenheit = new TemperatureUnit(fahrenheit => (fahrenheit + 459.67) / 1.8, kelvin => 1.8 * kelvin - 459.67, "°F");
 
-        private readonly Func<double, double> toKelvin;
-        private readonly Func<double, double> fromKelvin;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.TemperatureUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toKelvin;
+        private readonly Func<double, double> fromKelvin;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="TemperatureUnit"/>.
+        /// Initializes a new instance of the <see cref="TemperatureUnit"/> struct.
         /// </summary>
         /// <param name="toKelvin">The conversion to <see cref="Kelvin"/></param>
         /// <param name="fromKelvin">The conversion to <paramref name="symbol"/></param>
@@ -47,18 +51,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.TemperatureUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.TemperatureUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.TemperatureUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.TemperatureUnit"/>
         /// </summary>
         public TemperatureUnit SiUnit => Kelvin;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.TemperatureUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Kelvin;
 
         /// <summary>
@@ -78,9 +80,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.TemperatureUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.TemperatureUnit"/>.</param>
-	    public static bool operator ==(TemperatureUnit left, TemperatureUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.TemperatureUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.TemperatureUnit"/>.</param>
+        public static bool operator ==(TemperatureUnit left, TemperatureUnit right)
         {
             return left.Equals(right);
         }
@@ -91,8 +93,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.TemperatureUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.TemperatureUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.TemperatureUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.TemperatureUnit"/>.</param>
         public static bool operator !=(TemperatureUnit left, TemperatureUnit right)
         {
             return !left.Equals(right);
@@ -102,7 +104,7 @@
         /// Constructs a <see cref="TemperatureUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="TemperatureUnit"/></returns>
         public static TemperatureUnit Parse(string text)
         {
@@ -114,7 +116,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.TemperatureUnit"/></param>
         /// <param name="result">The parsed <see cref="TemperatureUnit"/></param>
-        /// <returns>True if an instance of <see cref="TemperatureUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="TemperatureUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out TemperatureUnit result)
         {
             return UnitParser<TemperatureUnit>.TryParse(text, out result);
@@ -123,7 +125,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Kelvin.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -153,11 +155,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Kelvin
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Temperature quantity)
         {
-            return FromSiUnit(quantity.kelvin);
+            return this.FromSiUnit(quantity.kelvin);
         }
 
         /// <inheritdoc />
@@ -213,7 +215,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same TemperatureUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(TemperatureUnit other)
+        public bool Equals(TemperatureUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -226,7 +228,7 @@
                 return false;
             }
 
-            return obj is TemperatureUnit && Equals((TemperatureUnit)obj);
+            return obj is TemperatureUnit && this.Equals((TemperatureUnit)obj);
         }
 
         /// <inheritdoc />

@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Illuminance"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(IlluminanceUnitTypeConverter))]
@@ -17,12 +17,16 @@
         /// </summary>
         public static readonly IlluminanceUnit Lux = new IlluminanceUnit(lux => lux, lux => lux, "lx");
 
-        private readonly Func<double, double> toLux;
-        private readonly Func<double, double> fromLux;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.IlluminanceUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toLux;
+        private readonly Func<double, double> fromLux;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="IlluminanceUnit"/>.
+        /// Initializes a new instance of the <see cref="IlluminanceUnit"/> struct.
         /// </summary>
         /// <param name="toLux">The conversion to <see cref="Lux"/></param>
         /// <param name="fromLux">The conversion to <paramref name="symbol"/></param>
@@ -35,18 +39,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.IlluminanceUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.IlluminanceUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.IlluminanceUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.IlluminanceUnit"/>
         /// </summary>
         public IlluminanceUnit SiUnit => Lux;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.IlluminanceUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Lux;
 
         /// <summary>
@@ -66,9 +68,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.IlluminanceUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.IlluminanceUnit"/>.</param>
-	    public static bool operator ==(IlluminanceUnit left, IlluminanceUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.IlluminanceUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.IlluminanceUnit"/>.</param>
+        public static bool operator ==(IlluminanceUnit left, IlluminanceUnit right)
         {
             return left.Equals(right);
         }
@@ -79,8 +81,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.IlluminanceUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.IlluminanceUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.IlluminanceUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.IlluminanceUnit"/>.</param>
         public static bool operator !=(IlluminanceUnit left, IlluminanceUnit right)
         {
             return !left.Equals(right);
@@ -90,7 +92,7 @@
         /// Constructs a <see cref="IlluminanceUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="IlluminanceUnit"/></returns>
         public static IlluminanceUnit Parse(string text)
         {
@@ -102,7 +104,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.IlluminanceUnit"/></param>
         /// <param name="result">The parsed <see cref="IlluminanceUnit"/></param>
-        /// <returns>True if an instance of <see cref="IlluminanceUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="IlluminanceUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out IlluminanceUnit result)
         {
             return UnitParser<IlluminanceUnit>.TryParse(text, out result);
@@ -111,7 +113,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Lux.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -141,11 +143,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Lux
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Illuminance quantity)
         {
-            return FromSiUnit(quantity.lux);
+            return this.FromSiUnit(quantity.lux);
         }
 
         /// <inheritdoc />
@@ -201,7 +203,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same IlluminanceUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(IlluminanceUnit other)
+        public bool Equals(IlluminanceUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -214,7 +216,7 @@
                 return false;
             }
 
-            return obj is IlluminanceUnit && Equals((IlluminanceUnit)obj);
+            return obj is IlluminanceUnit && this.Equals((IlluminanceUnit)obj);
         }
 
         /// <inheritdoc />

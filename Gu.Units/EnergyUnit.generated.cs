@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Energy"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(EnergyUnitTypeConverter))]
@@ -59,12 +59,16 @@
         /// </summary>
         public static readonly EnergyUnit KilowattHours = new EnergyUnit(kilowattHours => 3600000 * kilowattHours, joules => joules / 3600000, "kWh");
 
-        private readonly Func<double, double> toJoules;
-        private readonly Func<double, double> fromJoules;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.EnergyUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toJoules;
+        private readonly Func<double, double> fromJoules;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="EnergyUnit"/>.
+        /// Initializes a new instance of the <see cref="EnergyUnit"/> struct.
         /// </summary>
         /// <param name="toJoules">The conversion to <see cref="Joules"/></param>
         /// <param name="fromJoules">The conversion to <paramref name="symbol"/></param>
@@ -77,18 +81,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.EnergyUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.EnergyUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.EnergyUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.EnergyUnit"/>
         /// </summary>
         public EnergyUnit SiUnit => Joules;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.EnergyUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Joules;
 
         /// <summary>
@@ -108,9 +110,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.EnergyUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.EnergyUnit"/>.</param>
-	    public static bool operator ==(EnergyUnit left, EnergyUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.EnergyUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.EnergyUnit"/>.</param>
+        public static bool operator ==(EnergyUnit left, EnergyUnit right)
         {
             return left.Equals(right);
         }
@@ -121,8 +123,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.EnergyUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.EnergyUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.EnergyUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.EnergyUnit"/>.</param>
         public static bool operator !=(EnergyUnit left, EnergyUnit right)
         {
             return !left.Equals(right);
@@ -132,7 +134,7 @@
         /// Constructs a <see cref="EnergyUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="EnergyUnit"/></returns>
         public static EnergyUnit Parse(string text)
         {
@@ -144,7 +146,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.EnergyUnit"/></param>
         /// <param name="result">The parsed <see cref="EnergyUnit"/></param>
-        /// <returns>True if an instance of <see cref="EnergyUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="EnergyUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out EnergyUnit result)
         {
             return UnitParser<EnergyUnit>.TryParse(text, out result);
@@ -153,7 +155,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Joules.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -183,11 +185,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Joules
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Energy quantity)
         {
-            return FromSiUnit(quantity.joules);
+            return this.FromSiUnit(quantity.joules);
         }
 
         /// <inheritdoc />
@@ -243,7 +245,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same EnergyUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(EnergyUnit other)
+        public bool Equals(EnergyUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -256,7 +258,7 @@
                 return false;
             }
 
-            return obj is EnergyUnit && Equals((EnergyUnit)obj);
+            return obj is EnergyUnit && this.Equals((EnergyUnit)obj);
         }
 
         /// <inheritdoc />

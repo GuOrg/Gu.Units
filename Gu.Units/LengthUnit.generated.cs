@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Length"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(LengthUnitTypeConverter))]
@@ -83,12 +83,16 @@
         /// </summary>
         public static readonly LengthUnit Kilometres = new LengthUnit(kilometres => 1000 * kilometres, metres => metres / 1000, "km");
 
-        private readonly Func<double, double> toMetres;
-        private readonly Func<double, double> fromMetres;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.LengthUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toMetres;
+        private readonly Func<double, double> fromMetres;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="LengthUnit"/>.
+        /// Initializes a new instance of the <see cref="LengthUnit"/> struct.
         /// </summary>
         /// <param name="toMetres">The conversion to <see cref="Metres"/></param>
         /// <param name="fromMetres">The conversion to <paramref name="symbol"/></param>
@@ -101,18 +105,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.LengthUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.LengthUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.LengthUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.LengthUnit"/>
         /// </summary>
         public LengthUnit SiUnit => Metres;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.LengthUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Metres;
 
         /// <summary>
@@ -132,9 +134,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.LengthUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.LengthUnit"/>.</param>
-	    public static bool operator ==(LengthUnit left, LengthUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.LengthUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.LengthUnit"/>.</param>
+        public static bool operator ==(LengthUnit left, LengthUnit right)
         {
             return left.Equals(right);
         }
@@ -145,8 +147,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.LengthUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.LengthUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.LengthUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.LengthUnit"/>.</param>
         public static bool operator !=(LengthUnit left, LengthUnit right)
         {
             return !left.Equals(right);
@@ -156,7 +158,7 @@
         /// Constructs a <see cref="LengthUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="LengthUnit"/></returns>
         public static LengthUnit Parse(string text)
         {
@@ -168,7 +170,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.LengthUnit"/></param>
         /// <param name="result">The parsed <see cref="LengthUnit"/></param>
-        /// <returns>True if an instance of <see cref="LengthUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="LengthUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out LengthUnit result)
         {
             return UnitParser<LengthUnit>.TryParse(text, out result);
@@ -177,7 +179,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Metres.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -207,11 +209,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Metres
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Length quantity)
         {
-            return FromSiUnit(quantity.metres);
+            return this.FromSiUnit(quantity.metres);
         }
 
         /// <inheritdoc />
@@ -267,7 +269,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same LengthUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(LengthUnit other)
+        public bool Equals(LengthUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -280,7 +282,7 @@
                 return false;
             }
 
-            return obj is LengthUnit && Equals((LengthUnit)obj);
+            return obj is LengthUnit && this.Equals((LengthUnit)obj);
         }
 
         /// <inheritdoc />

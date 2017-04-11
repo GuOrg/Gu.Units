@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Pressure"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(PressureUnitTypeConverter))]
@@ -83,12 +83,16 @@
         /// </summary>
         public static readonly PressureUnit NewtonsPerSquareMetre = new PressureUnit(newtonsPerSquareMetre => newtonsPerSquareMetre, pascals => pascals, "N/m²");
 
-        private readonly Func<double, double> toPascals;
-        private readonly Func<double, double> fromPascals;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.PressureUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toPascals;
+        private readonly Func<double, double> fromPascals;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="PressureUnit"/>.
+        /// Initializes a new instance of the <see cref="PressureUnit"/> struct.
         /// </summary>
         /// <param name="toPascals">The conversion to <see cref="Pascals"/></param>
         /// <param name="fromPascals">The conversion to <paramref name="symbol"/></param>
@@ -101,18 +105,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.PressureUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.PressureUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.PressureUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.PressureUnit"/>
         /// </summary>
         public PressureUnit SiUnit => Pascals;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.PressureUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Pascals;
 
         /// <summary>
@@ -132,9 +134,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.PressureUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.PressureUnit"/>.</param>
-	    public static bool operator ==(PressureUnit left, PressureUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.PressureUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.PressureUnit"/>.</param>
+        public static bool operator ==(PressureUnit left, PressureUnit right)
         {
             return left.Equals(right);
         }
@@ -145,8 +147,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.PressureUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.PressureUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.PressureUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.PressureUnit"/>.</param>
         public static bool operator !=(PressureUnit left, PressureUnit right)
         {
             return !left.Equals(right);
@@ -156,7 +158,7 @@
         /// Constructs a <see cref="PressureUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="PressureUnit"/></returns>
         public static PressureUnit Parse(string text)
         {
@@ -168,7 +170,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.PressureUnit"/></param>
         /// <param name="result">The parsed <see cref="PressureUnit"/></param>
-        /// <returns>True if an instance of <see cref="PressureUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="PressureUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out PressureUnit result)
         {
             return UnitParser<PressureUnit>.TryParse(text, out result);
@@ -177,7 +179,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Pascals.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -207,11 +209,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Pascals
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Pressure quantity)
         {
-            return FromSiUnit(quantity.pascals);
+            return this.FromSiUnit(quantity.pascals);
         }
 
         /// <inheritdoc />
@@ -267,7 +269,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same PressureUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(PressureUnit other)
+        public bool Equals(PressureUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -280,7 +282,7 @@
                 return false;
             }
 
-            return obj is PressureUnit && Equals((PressureUnit)obj);
+            return obj is PressureUnit && this.Equals((PressureUnit)obj);
         }
 
         /// <inheritdoc />

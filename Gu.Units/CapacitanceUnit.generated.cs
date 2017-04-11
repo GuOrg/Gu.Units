@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Capacitance"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(CapacitanceUnitTypeConverter))]
@@ -53,12 +53,16 @@
         /// </summary>
         public static readonly CapacitanceUnit Gigafarads = new CapacitanceUnit(gigafarads => 1000000000 * gigafarads, farads => farads / 1000000000, "GF");
 
-        private readonly Func<double, double> toFarads;
-        private readonly Func<double, double> fromFarads;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.CapacitanceUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toFarads;
+        private readonly Func<double, double> fromFarads;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="CapacitanceUnit"/>.
+        /// Initializes a new instance of the <see cref="CapacitanceUnit"/> struct.
         /// </summary>
         /// <param name="toFarads">The conversion to <see cref="Farads"/></param>
         /// <param name="fromFarads">The conversion to <paramref name="symbol"/></param>
@@ -71,18 +75,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.CapacitanceUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.CapacitanceUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.CapacitanceUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.CapacitanceUnit"/>
         /// </summary>
         public CapacitanceUnit SiUnit => Farads;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.CapacitanceUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Farads;
 
         /// <summary>
@@ -102,9 +104,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.CapacitanceUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.CapacitanceUnit"/>.</param>
-	    public static bool operator ==(CapacitanceUnit left, CapacitanceUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.CapacitanceUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.CapacitanceUnit"/>.</param>
+        public static bool operator ==(CapacitanceUnit left, CapacitanceUnit right)
         {
             return left.Equals(right);
         }
@@ -115,8 +117,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.CapacitanceUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.CapacitanceUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.CapacitanceUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.CapacitanceUnit"/>.</param>
         public static bool operator !=(CapacitanceUnit left, CapacitanceUnit right)
         {
             return !left.Equals(right);
@@ -126,7 +128,7 @@
         /// Constructs a <see cref="CapacitanceUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="CapacitanceUnit"/></returns>
         public static CapacitanceUnit Parse(string text)
         {
@@ -138,7 +140,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.CapacitanceUnit"/></param>
         /// <param name="result">The parsed <see cref="CapacitanceUnit"/></param>
-        /// <returns>True if an instance of <see cref="CapacitanceUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="CapacitanceUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out CapacitanceUnit result)
         {
             return UnitParser<CapacitanceUnit>.TryParse(text, out result);
@@ -147,7 +149,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Farads.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -177,11 +179,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Farads
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Capacitance quantity)
         {
-            return FromSiUnit(quantity.farads);
+            return this.FromSiUnit(quantity.farads);
         }
 
         /// <inheritdoc />
@@ -237,7 +239,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same CapacitanceUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(CapacitanceUnit other)
+        public bool Equals(CapacitanceUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -250,7 +252,7 @@
                 return false;
             }
 
-            return obj is CapacitanceUnit && Equals((CapacitanceUnit)obj);
+            return obj is CapacitanceUnit && this.Equals((CapacitanceUnit)obj);
         }
 
         /// <inheritdoc />

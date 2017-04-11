@@ -15,10 +15,10 @@ namespace <#= Settings.Namespace #>
 
     /// <summary>
     /// A type for the unit <see cref="<#= Settings.Namespace #>.<#= unit.QuantityName #>"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
-	[TypeConverter(typeof(<#= unit.ClassName #>TypeConverter))]
+    [TypeConverter(typeof(<#= unit.ClassName #>TypeConverter))]
     public struct <#= unit.ClassName #> : IUnit, IUnit<<#= unit.QuantityName #>>, IEquatable<<#= unit.ClassName #>>
     {
         /// <summary>
@@ -27,9 +27,9 @@ namespace <#= Settings.Namespace #>
         /// </summary>
         public static readonly <#= unit.ClassName #> <#= unit.Name #> = new <#= unit.ClassName #>(<#= unit.ParameterName #> => <#= unit.ParameterName #>, <#= unit.ParameterName #> => <#= unit.ParameterName #>, "<#= unit.Symbol #>");
 <#
-		foreach(var su in unit.AllConversions)
+        foreach(var su in unit.AllConversions)
         {
-		#>
+        #>
 
         /// <summary>
         /// The <#= su.Name #> unit
@@ -40,36 +40,38 @@ namespace <#= Settings.Namespace #>
         }
         #>
 
-		private readonly Func<double, double> to<#= unit.Name #>;
-		private readonly Func<double, double> from<#= unit.Name #>;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.<#= unit.ClassName #>"/>.
+        /// </summary>
         internal readonly string symbol;
 
-		/// <summary>
-        /// Initializes a new instance of <see cref="<#= unit.ClassName #>"/>.
+        private readonly Func<double, double> to<#= unit.Name #>;
+        private readonly Func<double, double> from<#= unit.Name #>;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="<#= unit.ClassName #>"/> struct.
         /// </summary>
         /// <param name="to<#= unit.Name #>">The conversion to <see cref="<#= unit.Name #>"/></param>
         /// <param name="from<#= unit.Name #>">The conversion to <paramref name="symbol"/></param>
         /// <param name="symbol">The symbol for the <see cref="<#= unit.Name #>"/></param>
         public <#= unit.ClassName #>(Func<double, double> to<#= unit.Name #>, Func<double, double> from<#= unit.Name #>, string symbol)
         {
-			this.to<#= unit.Name #> = to<#= unit.Name #>;
+            this.to<#= unit.Name #> = to<#= unit.Name #>;
             this.from<#= unit.Name #> = from<#= unit.Name #>;
             this.symbol = symbol;
         }
 
-		/// <summary>
-        /// The symbol for the <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.
+        /// <summary>
+        /// Gets the symbol for the <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
-		/// <summary>
-        /// The default unit for <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>
+        /// <summary>
+        /// Gets the default unit for <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>
         /// </summary>
         public <#= unit.ClassName #> SiUnit => <#= unit.Name #>;
 
-		/// <summary>
-        /// The default <see cref="<#= Settings.Namespace #>.IUnit"/> for <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => <#= unit.Name #>;
 
         /// <summary>
@@ -89,9 +91,9 @@ namespace <#= Settings.Namespace #>
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.</param>
-        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.</param>
-	    public static bool operator ==(<#= unit.ClassName #> left, <#= unit.ClassName #> right)
+        /// <param name="left">The left instance of <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.</param>
+        /// <param name="right">The right instance of <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.</param>
+        public static bool operator ==(<#= unit.ClassName #> left, <#= unit.ClassName #> right)
         {
             return left.Equals(right);
         }
@@ -102,30 +104,30 @@ namespace <#= Settings.Namespace #>
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.</param>
-        /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.</param>
+        /// <param name="left">The left instance of <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.</param>
+        /// <param name="right">The right instance of <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/>.</param>
         public static bool operator !=(<#= unit.ClassName #> left, <#= unit.ClassName #> right)
         {
             return !left.Equals(right);
         }
 
-		/// <summary>
+        /// <summary>
         /// Constructs a <see cref="<#= unit.ClassName #>"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="<#= unit.ClassName #>"/></returns>
         public static <#= unit.ClassName #> Parse(string text)
         {
             return UnitParser<<#= unit.ClassName #>>.Parse(text);
         }
 
-		/// <summary>
+        /// <summary>
         /// Creates an instance of <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="<#= Settings.Namespace #>.<#= unit.ClassName #>"/></param>
         /// <param name="result">The parsed <see cref="<#= unit.ClassName #>"/></param>
-        /// <returns>True if an instance of <see cref="<#= unit.ClassName #>"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="<#= unit.ClassName #>"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out <#= unit.ClassName #> result)
         {
             return UnitParser<<#= unit.ClassName #>>.TryParse(text, out result);
@@ -134,11 +136,11 @@ namespace <#= Settings.Namespace #>
         /// <summary>
         /// Converts <paramref name="value"/> to <#= unit.Name #>.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double <#= Gu.Units.Generator.Names.ToSiUnit #>(double value)
         {
-			return this.to<#= unit.Name #>(value);
+            return this.to<#= unit.Name #>(value);
         }
 
         /// <summary>
@@ -148,7 +150,7 @@ namespace <#= Settings.Namespace #>
         /// <returns>The converted value</returns>
         public double <#= Gu.Units.Generator.Names.FromSiUnit #>(double <#= unit.ParameterName #>)
         {
-			return this.from<#= unit.Name #>(<#= unit.ParameterName #>);
+            return this.from<#= unit.Name #>(<#= unit.ParameterName #>);
         }
 
         /// <summary>
@@ -161,23 +163,23 @@ namespace <#= Settings.Namespace #>
             return new <#= unit.QuantityName #>(value, this);
         }
 
-		/// <summary>
+        /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in <#= unit.Name #>
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(<#= unit.QuantityName #> quantity)
         {
-            return FromSiUnit(quantity.<#= unit.ParameterName #>);
+            return this.FromSiUnit(quantity.<#= unit.ParameterName #>);
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override string ToString()
         {
             return this.symbol;
         }
-		
-		/// <summary>
+
+        /// <summary>
         /// Converts the unit value of this instance to its equivalent string representation.
         /// </summary>
         /// <param name="format">The format to use when convereting</param>
@@ -200,7 +202,7 @@ namespace <#= Settings.Namespace #>
             }
         }
 
-		/// <summary>
+        /// <summary>
         /// Converts the unit value of this instance to its equivalent string representation.
         /// </summary>
         /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
@@ -224,12 +226,12 @@ namespace <#= Settings.Namespace #>
         /// <returns>
         /// true if <paramref name="other"/> represents the same <#= unit.ClassName #> as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(<#= unit.ClassName #> other)
+        public bool Equals(<#= unit.ClassName #> other)
         {
             return this.symbol == other.symbol;
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -237,10 +239,10 @@ namespace <#= Settings.Namespace #>
                 return false;
             }
 
-            return obj is <#= unit.ClassName #> && Equals((<#= unit.ClassName #>) obj);
+            return obj is <#= unit.ClassName #> && this.Equals((<#= unit.ClassName #>) obj);
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override int GetHashCode()
         {
             if (this.symbol == null)

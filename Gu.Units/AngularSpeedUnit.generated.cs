@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.AngularSpeed"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(AngularSpeedUnitTypeConverter))]
@@ -53,12 +53,16 @@
         /// </summary>
         public static readonly AngularSpeedUnit RadiansPerHour = new AngularSpeedUnit(radiansPerHour => radiansPerHour / 3600, radiansPerSecond => 3600 * radiansPerSecond, "h⁻¹⋅rad");
 
-        private readonly Func<double, double> toRadiansPerSecond;
-        private readonly Func<double, double> fromRadiansPerSecond;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.AngularSpeedUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toRadiansPerSecond;
+        private readonly Func<double, double> fromRadiansPerSecond;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="AngularSpeedUnit"/>.
+        /// Initializes a new instance of the <see cref="AngularSpeedUnit"/> struct.
         /// </summary>
         /// <param name="toRadiansPerSecond">The conversion to <see cref="RadiansPerSecond"/></param>
         /// <param name="fromRadiansPerSecond">The conversion to <paramref name="symbol"/></param>
@@ -71,18 +75,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.AngularSpeedUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.AngularSpeedUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.AngularSpeedUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.AngularSpeedUnit"/>
         /// </summary>
         public AngularSpeedUnit SiUnit => RadiansPerSecond;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.AngularSpeedUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => RadiansPerSecond;
 
         /// <summary>
@@ -102,9 +104,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AngularSpeedUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AngularSpeedUnit"/>.</param>
-	    public static bool operator ==(AngularSpeedUnit left, AngularSpeedUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.AngularSpeedUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AngularSpeedUnit"/>.</param>
+        public static bool operator ==(AngularSpeedUnit left, AngularSpeedUnit right)
         {
             return left.Equals(right);
         }
@@ -115,8 +117,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AngularSpeedUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AngularSpeedUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.AngularSpeedUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AngularSpeedUnit"/>.</param>
         public static bool operator !=(AngularSpeedUnit left, AngularSpeedUnit right)
         {
             return !left.Equals(right);
@@ -126,7 +128,7 @@
         /// Constructs a <see cref="AngularSpeedUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="AngularSpeedUnit"/></returns>
         public static AngularSpeedUnit Parse(string text)
         {
@@ -138,7 +140,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeedUnit"/></param>
         /// <param name="result">The parsed <see cref="AngularSpeedUnit"/></param>
-        /// <returns>True if an instance of <see cref="AngularSpeedUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="AngularSpeedUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out AngularSpeedUnit result)
         {
             return UnitParser<AngularSpeedUnit>.TryParse(text, out result);
@@ -147,7 +149,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to RadiansPerSecond.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -177,11 +179,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in RadiansPerSecond
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(AngularSpeed quantity)
         {
-            return FromSiUnit(quantity.radiansPerSecond);
+            return this.FromSiUnit(quantity.radiansPerSecond);
         }
 
         /// <inheritdoc />
@@ -237,7 +239,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same AngularSpeedUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(AngularSpeedUnit other)
+        public bool Equals(AngularSpeedUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -250,7 +252,7 @@
                 return false;
             }
 
-            return obj is AngularSpeedUnit && Equals((AngularSpeedUnit)obj);
+            return obj is AngularSpeedUnit && this.Equals((AngularSpeedUnit)obj);
         }
 
         /// <inheritdoc />

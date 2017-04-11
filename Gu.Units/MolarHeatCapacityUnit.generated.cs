@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.MolarHeatCapacity"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(MolarHeatCapacityUnitTypeConverter))]
@@ -17,12 +17,16 @@
         /// </summary>
         public static readonly MolarHeatCapacityUnit JoulesPerKelvinMole = new MolarHeatCapacityUnit(joulesPerKelvinMole => joulesPerKelvinMole, joulesPerKelvinMole => joulesPerKelvinMole, "J/K⋅mol");
 
-        private readonly Func<double, double> toJoulesPerKelvinMole;
-        private readonly Func<double, double> fromJoulesPerKelvinMole;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.MolarHeatCapacityUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toJoulesPerKelvinMole;
+        private readonly Func<double, double> fromJoulesPerKelvinMole;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="MolarHeatCapacityUnit"/>.
+        /// Initializes a new instance of the <see cref="MolarHeatCapacityUnit"/> struct.
         /// </summary>
         /// <param name="toJoulesPerKelvinMole">The conversion to <see cref="JoulesPerKelvinMole"/></param>
         /// <param name="fromJoulesPerKelvinMole">The conversion to <paramref name="symbol"/></param>
@@ -35,18 +39,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.MolarHeatCapacityUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.MolarHeatCapacityUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.MolarHeatCapacityUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.MolarHeatCapacityUnit"/>
         /// </summary>
         public MolarHeatCapacityUnit SiUnit => JoulesPerKelvinMole;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.MolarHeatCapacityUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => JoulesPerKelvinMole;
 
         /// <summary>
@@ -66,9 +68,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.MolarHeatCapacityUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.MolarHeatCapacityUnit"/>.</param>
-	    public static bool operator ==(MolarHeatCapacityUnit left, MolarHeatCapacityUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.MolarHeatCapacityUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.MolarHeatCapacityUnit"/>.</param>
+        public static bool operator ==(MolarHeatCapacityUnit left, MolarHeatCapacityUnit right)
         {
             return left.Equals(right);
         }
@@ -79,8 +81,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.MolarHeatCapacityUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.MolarHeatCapacityUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.MolarHeatCapacityUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.MolarHeatCapacityUnit"/>.</param>
         public static bool operator !=(MolarHeatCapacityUnit left, MolarHeatCapacityUnit right)
         {
             return !left.Equals(right);
@@ -90,7 +92,7 @@
         /// Constructs a <see cref="MolarHeatCapacityUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="MolarHeatCapacityUnit"/></returns>
         public static MolarHeatCapacityUnit Parse(string text)
         {
@@ -102,7 +104,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MolarHeatCapacityUnit"/></param>
         /// <param name="result">The parsed <see cref="MolarHeatCapacityUnit"/></param>
-        /// <returns>True if an instance of <see cref="MolarHeatCapacityUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="MolarHeatCapacityUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out MolarHeatCapacityUnit result)
         {
             return UnitParser<MolarHeatCapacityUnit>.TryParse(text, out result);
@@ -111,7 +113,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to JoulesPerKelvinMole.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -141,11 +143,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in JoulesPerKelvinMole
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(MolarHeatCapacity quantity)
         {
-            return FromSiUnit(quantity.joulesPerKelvinMole);
+            return this.FromSiUnit(quantity.joulesPerKelvinMole);
         }
 
         /// <inheritdoc />
@@ -201,7 +203,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same MolarHeatCapacityUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(MolarHeatCapacityUnit other)
+        public bool Equals(MolarHeatCapacityUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -214,7 +216,7 @@
                 return false;
             }
 
-            return obj is MolarHeatCapacityUnit && Equals((MolarHeatCapacityUnit)obj);
+            return obj is MolarHeatCapacityUnit && this.Equals((MolarHeatCapacityUnit)obj);
         }
 
         /// <inheritdoc />

@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Data"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(DataUnitTypeConverter))]
@@ -65,12 +65,16 @@
         /// </summary>
         public static readonly DataUnit Kilobits = new DataUnit(kilobits => 1000 * kilobits, bits => bits / 1000, "kbit");
 
-        private readonly Func<double, double> toBits;
-        private readonly Func<double, double> fromBits;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.DataUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toBits;
+        private readonly Func<double, double> fromBits;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="DataUnit"/>.
+        /// Initializes a new instance of the <see cref="DataUnit"/> struct.
         /// </summary>
         /// <param name="toBits">The conversion to <see cref="Bits"/></param>
         /// <param name="fromBits">The conversion to <paramref name="symbol"/></param>
@@ -83,18 +87,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.DataUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.DataUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.DataUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.DataUnit"/>
         /// </summary>
         public DataUnit SiUnit => Bits;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.DataUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Bits;
 
         /// <summary>
@@ -114,9 +116,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.DataUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.DataUnit"/>.</param>
-	    public static bool operator ==(DataUnit left, DataUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.DataUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.DataUnit"/>.</param>
+        public static bool operator ==(DataUnit left, DataUnit right)
         {
             return left.Equals(right);
         }
@@ -127,8 +129,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.DataUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.DataUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.DataUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.DataUnit"/>.</param>
         public static bool operator !=(DataUnit left, DataUnit right)
         {
             return !left.Equals(right);
@@ -138,7 +140,7 @@
         /// Constructs a <see cref="DataUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="DataUnit"/></returns>
         public static DataUnit Parse(string text)
         {
@@ -150,7 +152,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.DataUnit"/></param>
         /// <param name="result">The parsed <see cref="DataUnit"/></param>
-        /// <returns>True if an instance of <see cref="DataUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="DataUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out DataUnit result)
         {
             return UnitParser<DataUnit>.TryParse(text, out result);
@@ -159,7 +161,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Bits.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -189,11 +191,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Bits
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Data quantity)
         {
-            return FromSiUnit(quantity.bits);
+            return this.FromSiUnit(quantity.bits);
         }
 
         /// <inheritdoc />
@@ -249,7 +251,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same DataUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(DataUnit other)
+        public bool Equals(DataUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -262,7 +264,7 @@
                 return false;
             }
 
-            return obj is DataUnit && Equals((DataUnit)obj);
+            return obj is DataUnit && this.Equals((DataUnit)obj);
         }
 
         /// <inheritdoc />

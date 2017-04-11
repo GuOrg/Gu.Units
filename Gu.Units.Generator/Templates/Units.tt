@@ -9,7 +9,7 @@ var fileManager = TemplateFileManager.Create(this);
 fileManager.IsAutoIndentEnabled = true;
 fileManager.CanOverwriteExistingFile = true;
 // init handling for parameter templates
-var paramTmpl = ParamTextTemplate.Create(this.Host, "Unit.tt");
+var template = ParamTextTemplate.Create(this.Host, "Unit.tt");
 var session = ParamTextTemplate.GetSessionObject();
 var settings = Settings.Instance;
 this.WriteLine("Read Settings and found {0} si units and {1} derived units", settings.BaseUnits.Count, settings.DerivedUnits.Count);
@@ -18,15 +18,15 @@ foreach (var unit in settings.AllUnits)
 {
     var fileName = unit.ClassName + ".generated." + Settings.Extension;
     fileManager.StartNewFile(fileName, Settings.ProjectName, null, null);
-	session["UnitName"] = unit.Name;
-	var output = paramTmpl.TransformText(session);
-	if (output == "ErrorGeneratingOutput")
+    session["UnitName"] = unit.Name;
+    var output = template.TransformText(session);
+    if (output == "ErrorGeneratingOutput")
     {
-		this.WriteLine("Error transforming {0}", unit.ClassName);
+        this.WriteLine("Error transforming {0}", unit.ClassName);
         throw new InvalidOperationException("output");
     }
 
-	this.Write(output);
+    this.Write(output);
 }
 
 fileManager.Process();

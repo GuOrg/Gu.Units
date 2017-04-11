@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Current"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(CurrentUnitTypeConverter))]
@@ -53,12 +53,16 @@
         /// </summary>
         public static readonly CurrentUnit Gigaamperes = new CurrentUnit(gigaamperes => 1000000000 * gigaamperes, amperes => amperes / 1000000000, "GA");
 
-        private readonly Func<double, double> toAmperes;
-        private readonly Func<double, double> fromAmperes;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.CurrentUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toAmperes;
+        private readonly Func<double, double> fromAmperes;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="CurrentUnit"/>.
+        /// Initializes a new instance of the <see cref="CurrentUnit"/> struct.
         /// </summary>
         /// <param name="toAmperes">The conversion to <see cref="Amperes"/></param>
         /// <param name="fromAmperes">The conversion to <paramref name="symbol"/></param>
@@ -71,18 +75,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.CurrentUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.CurrentUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.CurrentUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.CurrentUnit"/>
         /// </summary>
         public CurrentUnit SiUnit => Amperes;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.CurrentUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Amperes;
 
         /// <summary>
@@ -102,9 +104,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.CurrentUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.CurrentUnit"/>.</param>
-	    public static bool operator ==(CurrentUnit left, CurrentUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.CurrentUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.CurrentUnit"/>.</param>
+        public static bool operator ==(CurrentUnit left, CurrentUnit right)
         {
             return left.Equals(right);
         }
@@ -115,8 +117,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.CurrentUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.CurrentUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.CurrentUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.CurrentUnit"/>.</param>
         public static bool operator !=(CurrentUnit left, CurrentUnit right)
         {
             return !left.Equals(right);
@@ -126,7 +128,7 @@
         /// Constructs a <see cref="CurrentUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="CurrentUnit"/></returns>
         public static CurrentUnit Parse(string text)
         {
@@ -138,7 +140,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.CurrentUnit"/></param>
         /// <param name="result">The parsed <see cref="CurrentUnit"/></param>
-        /// <returns>True if an instance of <see cref="CurrentUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="CurrentUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out CurrentUnit result)
         {
             return UnitParser<CurrentUnit>.TryParse(text, out result);
@@ -147,7 +149,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Amperes.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -177,11 +179,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Amperes
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Current quantity)
         {
-            return FromSiUnit(quantity.amperes);
+            return this.FromSiUnit(quantity.amperes);
         }
 
         /// <inheritdoc />
@@ -237,7 +239,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same CurrentUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(CurrentUnit other)
+        public bool Equals(CurrentUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -250,7 +252,7 @@
                 return false;
             }
 
-            return obj is CurrentUnit && Equals((CurrentUnit)obj);
+            return obj is CurrentUnit && this.Equals((CurrentUnit)obj);
         }
 
         /// <inheritdoc />

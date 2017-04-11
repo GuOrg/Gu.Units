@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.KinematicViscosity"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(KinematicViscosityUnitTypeConverter))]
@@ -17,12 +17,16 @@
         /// </summary>
         public static readonly KinematicViscosityUnit SquareMetresPerSecond = new KinematicViscosityUnit(squareMetresPerSecond => squareMetresPerSecond, squareMetresPerSecond => squareMetresPerSecond, "m²/s");
 
-        private readonly Func<double, double> toSquareMetresPerSecond;
-        private readonly Func<double, double> fromSquareMetresPerSecond;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.KinematicViscosityUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toSquareMetresPerSecond;
+        private readonly Func<double, double> fromSquareMetresPerSecond;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="KinematicViscosityUnit"/>.
+        /// Initializes a new instance of the <see cref="KinematicViscosityUnit"/> struct.
         /// </summary>
         /// <param name="toSquareMetresPerSecond">The conversion to <see cref="SquareMetresPerSecond"/></param>
         /// <param name="fromSquareMetresPerSecond">The conversion to <paramref name="symbol"/></param>
@@ -35,18 +39,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.KinematicViscosityUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.KinematicViscosityUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.KinematicViscosityUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.KinematicViscosityUnit"/>
         /// </summary>
         public KinematicViscosityUnit SiUnit => SquareMetresPerSecond;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.KinematicViscosityUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => SquareMetresPerSecond;
 
         /// <summary>
@@ -66,9 +68,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.KinematicViscosityUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.KinematicViscosityUnit"/>.</param>
-	    public static bool operator ==(KinematicViscosityUnit left, KinematicViscosityUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.KinematicViscosityUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.KinematicViscosityUnit"/>.</param>
+        public static bool operator ==(KinematicViscosityUnit left, KinematicViscosityUnit right)
         {
             return left.Equals(right);
         }
@@ -79,8 +81,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.KinematicViscosityUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.KinematicViscosityUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.KinematicViscosityUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.KinematicViscosityUnit"/>.</param>
         public static bool operator !=(KinematicViscosityUnit left, KinematicViscosityUnit right)
         {
             return !left.Equals(right);
@@ -90,7 +92,7 @@
         /// Constructs a <see cref="KinematicViscosityUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="KinematicViscosityUnit"/></returns>
         public static KinematicViscosityUnit Parse(string text)
         {
@@ -102,7 +104,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosityUnit"/></param>
         /// <param name="result">The parsed <see cref="KinematicViscosityUnit"/></param>
-        /// <returns>True if an instance of <see cref="KinematicViscosityUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="KinematicViscosityUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out KinematicViscosityUnit result)
         {
             return UnitParser<KinematicViscosityUnit>.TryParse(text, out result);
@@ -111,7 +113,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to SquareMetresPerSecond.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -141,11 +143,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in SquareMetresPerSecond
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(KinematicViscosity quantity)
         {
-            return FromSiUnit(quantity.squareMetresPerSecond);
+            return this.FromSiUnit(quantity.squareMetresPerSecond);
         }
 
         /// <inheritdoc />
@@ -201,7 +203,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same KinematicViscosityUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(KinematicViscosityUnit other)
+        public bool Equals(KinematicViscosityUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -214,7 +216,7 @@
                 return false;
             }
 
-            return obj is KinematicViscosityUnit && Equals((KinematicViscosityUnit)obj);
+            return obj is KinematicViscosityUnit && this.Equals((KinematicViscosityUnit)obj);
         }
 
         /// <inheritdoc />

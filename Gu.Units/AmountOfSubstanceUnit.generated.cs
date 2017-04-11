@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.AmountOfSubstance"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(AmountOfSubstanceUnitTypeConverter))]
@@ -17,12 +17,16 @@
         /// </summary>
         public static readonly AmountOfSubstanceUnit Moles = new AmountOfSubstanceUnit(moles => moles, moles => moles, "mol");
 
-        private readonly Func<double, double> toMoles;
-        private readonly Func<double, double> fromMoles;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.AmountOfSubstanceUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toMoles;
+        private readonly Func<double, double> fromMoles;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="AmountOfSubstanceUnit"/>.
+        /// Initializes a new instance of the <see cref="AmountOfSubstanceUnit"/> struct.
         /// </summary>
         /// <param name="toMoles">The conversion to <see cref="Moles"/></param>
         /// <param name="fromMoles">The conversion to <paramref name="symbol"/></param>
@@ -35,18 +39,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.AmountOfSubstanceUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.AmountOfSubstanceUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.AmountOfSubstanceUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.AmountOfSubstanceUnit"/>
         /// </summary>
         public AmountOfSubstanceUnit SiUnit => Moles;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.AmountOfSubstanceUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Moles;
 
         /// <summary>
@@ -66,9 +68,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AmountOfSubstanceUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AmountOfSubstanceUnit"/>.</param>
-	    public static bool operator ==(AmountOfSubstanceUnit left, AmountOfSubstanceUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.AmountOfSubstanceUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AmountOfSubstanceUnit"/>.</param>
+        public static bool operator ==(AmountOfSubstanceUnit left, AmountOfSubstanceUnit right)
         {
             return left.Equals(right);
         }
@@ -79,8 +81,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AmountOfSubstanceUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AmountOfSubstanceUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.AmountOfSubstanceUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AmountOfSubstanceUnit"/>.</param>
         public static bool operator !=(AmountOfSubstanceUnit left, AmountOfSubstanceUnit right)
         {
             return !left.Equals(right);
@@ -90,7 +92,7 @@
         /// Constructs a <see cref="AmountOfSubstanceUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="AmountOfSubstanceUnit"/></returns>
         public static AmountOfSubstanceUnit Parse(string text)
         {
@@ -102,7 +104,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstanceUnit"/></param>
         /// <param name="result">The parsed <see cref="AmountOfSubstanceUnit"/></param>
-        /// <returns>True if an instance of <see cref="AmountOfSubstanceUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="AmountOfSubstanceUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out AmountOfSubstanceUnit result)
         {
             return UnitParser<AmountOfSubstanceUnit>.TryParse(text, out result);
@@ -111,7 +113,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Moles.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -141,11 +143,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Moles
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(AmountOfSubstance quantity)
         {
-            return FromSiUnit(quantity.moles);
+            return this.FromSiUnit(quantity.moles);
         }
 
         /// <inheritdoc />
@@ -201,7 +203,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same AmountOfSubstanceUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(AmountOfSubstanceUnit other)
+        public bool Equals(AmountOfSubstanceUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -214,7 +216,7 @@
                 return false;
             }
 
-            return obj is AmountOfSubstanceUnit && Equals((AmountOfSubstanceUnit)obj);
+            return obj is AmountOfSubstanceUnit && this.Equals((AmountOfSubstanceUnit)obj);
         }
 
         /// <inheritdoc />

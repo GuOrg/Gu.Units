@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Area"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(AreaUnitTypeConverter))]
@@ -71,12 +71,16 @@
         /// </summary>
         public static readonly AreaUnit SquareFeet = new AreaUnit(squareFeet => 0.09290304 * squareFeet, squareMetres => squareMetres / 0.09290304, "ft²");
 
-        private readonly Func<double, double> toSquareMetres;
-        private readonly Func<double, double> fromSquareMetres;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.AreaUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toSquareMetres;
+        private readonly Func<double, double> fromSquareMetres;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="AreaUnit"/>.
+        /// Initializes a new instance of the <see cref="AreaUnit"/> struct.
         /// </summary>
         /// <param name="toSquareMetres">The conversion to <see cref="SquareMetres"/></param>
         /// <param name="fromSquareMetres">The conversion to <paramref name="symbol"/></param>
@@ -89,18 +93,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.AreaUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.AreaUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.AreaUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.AreaUnit"/>
         /// </summary>
         public AreaUnit SiUnit => SquareMetres;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.AreaUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => SquareMetres;
 
         /// <summary>
@@ -120,9 +122,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AreaUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AreaUnit"/>.</param>
-	    public static bool operator ==(AreaUnit left, AreaUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.AreaUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AreaUnit"/>.</param>
+        public static bool operator ==(AreaUnit left, AreaUnit right)
         {
             return left.Equals(right);
         }
@@ -133,8 +135,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AreaUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AreaUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.AreaUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AreaUnit"/>.</param>
         public static bool operator !=(AreaUnit left, AreaUnit right)
         {
             return !left.Equals(right);
@@ -144,7 +146,7 @@
         /// Constructs a <see cref="AreaUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="AreaUnit"/></returns>
         public static AreaUnit Parse(string text)
         {
@@ -156,7 +158,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.AreaUnit"/></param>
         /// <param name="result">The parsed <see cref="AreaUnit"/></param>
-        /// <returns>True if an instance of <see cref="AreaUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="AreaUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out AreaUnit result)
         {
             return UnitParser<AreaUnit>.TryParse(text, out result);
@@ -165,7 +167,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to SquareMetres.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -195,11 +197,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in SquareMetres
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Area quantity)
         {
-            return FromSiUnit(quantity.squareMetres);
+            return this.FromSiUnit(quantity.squareMetres);
         }
 
         /// <inheritdoc />
@@ -255,7 +257,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same AreaUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(AreaUnit other)
+        public bool Equals(AreaUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -268,7 +270,7 @@
                 return false;
             }
 
-            return obj is AreaUnit && Equals((AreaUnit)obj);
+            return obj is AreaUnit && this.Equals((AreaUnit)obj);
         }
 
         /// <inheritdoc />

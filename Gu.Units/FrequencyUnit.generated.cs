@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Frequency"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(FrequencyUnitTypeConverter))]
@@ -41,12 +41,16 @@
         /// </summary>
         public static readonly FrequencyUnit Gigahertz = new FrequencyUnit(gigahertz => 1000000000 * gigahertz, hertz => hertz / 1000000000, "GHz");
 
-        private readonly Func<double, double> toHertz;
-        private readonly Func<double, double> fromHertz;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.FrequencyUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toHertz;
+        private readonly Func<double, double> fromHertz;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="FrequencyUnit"/>.
+        /// Initializes a new instance of the <see cref="FrequencyUnit"/> struct.
         /// </summary>
         /// <param name="toHertz">The conversion to <see cref="Hertz"/></param>
         /// <param name="fromHertz">The conversion to <paramref name="symbol"/></param>
@@ -59,18 +63,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.FrequencyUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.FrequencyUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.FrequencyUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.FrequencyUnit"/>
         /// </summary>
         public FrequencyUnit SiUnit => Hertz;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.FrequencyUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Hertz;
 
         /// <summary>
@@ -90,9 +92,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.FrequencyUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.FrequencyUnit"/>.</param>
-	    public static bool operator ==(FrequencyUnit left, FrequencyUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.FrequencyUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.FrequencyUnit"/>.</param>
+        public static bool operator ==(FrequencyUnit left, FrequencyUnit right)
         {
             return left.Equals(right);
         }
@@ -103,8 +105,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.FrequencyUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.FrequencyUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.FrequencyUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.FrequencyUnit"/>.</param>
         public static bool operator !=(FrequencyUnit left, FrequencyUnit right)
         {
             return !left.Equals(right);
@@ -114,7 +116,7 @@
         /// Constructs a <see cref="FrequencyUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="FrequencyUnit"/></returns>
         public static FrequencyUnit Parse(string text)
         {
@@ -126,7 +128,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.FrequencyUnit"/></param>
         /// <param name="result">The parsed <see cref="FrequencyUnit"/></param>
-        /// <returns>True if an instance of <see cref="FrequencyUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="FrequencyUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out FrequencyUnit result)
         {
             return UnitParser<FrequencyUnit>.TryParse(text, out result);
@@ -135,7 +137,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Hertz.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -165,11 +167,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Hertz
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Frequency quantity)
         {
-            return FromSiUnit(quantity.hertz);
+            return this.FromSiUnit(quantity.hertz);
         }
 
         /// <inheritdoc />
@@ -225,7 +227,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same FrequencyUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(FrequencyUnit other)
+        public bool Equals(FrequencyUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -238,7 +240,7 @@
                 return false;
             }
 
-            return obj is FrequencyUnit && Equals((FrequencyUnit)obj);
+            return obj is FrequencyUnit && this.Equals((FrequencyUnit)obj);
         }
 
         /// <inheritdoc />

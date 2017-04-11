@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.MagneticFieldStrength"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(MagneticFieldStrengthUnitTypeConverter))]
@@ -17,12 +17,16 @@
         /// </summary>
         public static readonly MagneticFieldStrengthUnit Teslas = new MagneticFieldStrengthUnit(teslas => teslas, teslas => teslas, "T");
 
-        private readonly Func<double, double> toTeslas;
-        private readonly Func<double, double> fromTeslas;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.MagneticFieldStrengthUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toTeslas;
+        private readonly Func<double, double> fromTeslas;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="MagneticFieldStrengthUnit"/>.
+        /// Initializes a new instance of the <see cref="MagneticFieldStrengthUnit"/> struct.
         /// </summary>
         /// <param name="toTeslas">The conversion to <see cref="Teslas"/></param>
         /// <param name="fromTeslas">The conversion to <paramref name="symbol"/></param>
@@ -35,18 +39,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.MagneticFieldStrengthUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.MagneticFieldStrengthUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.MagneticFieldStrengthUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.MagneticFieldStrengthUnit"/>
         /// </summary>
         public MagneticFieldStrengthUnit SiUnit => Teslas;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.MagneticFieldStrengthUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Teslas;
 
         /// <summary>
@@ -66,9 +68,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.MagneticFieldStrengthUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.MagneticFieldStrengthUnit"/>.</param>
-	    public static bool operator ==(MagneticFieldStrengthUnit left, MagneticFieldStrengthUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.MagneticFieldStrengthUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.MagneticFieldStrengthUnit"/>.</param>
+        public static bool operator ==(MagneticFieldStrengthUnit left, MagneticFieldStrengthUnit right)
         {
             return left.Equals(right);
         }
@@ -79,8 +81,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.MagneticFieldStrengthUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.MagneticFieldStrengthUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.MagneticFieldStrengthUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.MagneticFieldStrengthUnit"/>.</param>
         public static bool operator !=(MagneticFieldStrengthUnit left, MagneticFieldStrengthUnit right)
         {
             return !left.Equals(right);
@@ -90,7 +92,7 @@
         /// Constructs a <see cref="MagneticFieldStrengthUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="MagneticFieldStrengthUnit"/></returns>
         public static MagneticFieldStrengthUnit Parse(string text)
         {
@@ -102,7 +104,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFieldStrengthUnit"/></param>
         /// <param name="result">The parsed <see cref="MagneticFieldStrengthUnit"/></param>
-        /// <returns>True if an instance of <see cref="MagneticFieldStrengthUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="MagneticFieldStrengthUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out MagneticFieldStrengthUnit result)
         {
             return UnitParser<MagneticFieldStrengthUnit>.TryParse(text, out result);
@@ -111,7 +113,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Teslas.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -141,11 +143,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Teslas
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(MagneticFieldStrength quantity)
         {
-            return FromSiUnit(quantity.teslas);
+            return this.FromSiUnit(quantity.teslas);
         }
 
         /// <inheritdoc />
@@ -201,7 +203,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same MagneticFieldStrengthUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(MagneticFieldStrengthUnit other)
+        public bool Equals(MagneticFieldStrengthUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -214,7 +216,7 @@
                 return false;
             }
 
-            return obj is MagneticFieldStrengthUnit && Equals((MagneticFieldStrengthUnit)obj);
+            return obj is MagneticFieldStrengthUnit && this.Equals((MagneticFieldStrengthUnit)obj);
         }
 
         /// <inheritdoc />

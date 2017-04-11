@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.ForcePerUnitless"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(ForcePerUnitlessUnitTypeConverter))]
@@ -41,12 +41,16 @@
         /// </summary>
         public static readonly ForcePerUnitlessUnit GiganewtonsPerPercent = new ForcePerUnitlessUnit(giganewtonsPerPercent => 100000000000 * giganewtonsPerPercent, newtonsPerUnitless => newtonsPerUnitless / 100000000000, "GN/%");
 
-        private readonly Func<double, double> toNewtonsPerUnitless;
-        private readonly Func<double, double> fromNewtonsPerUnitless;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.ForcePerUnitlessUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toNewtonsPerUnitless;
+        private readonly Func<double, double> fromNewtonsPerUnitless;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="ForcePerUnitlessUnit"/>.
+        /// Initializes a new instance of the <see cref="ForcePerUnitlessUnit"/> struct.
         /// </summary>
         /// <param name="toNewtonsPerUnitless">The conversion to <see cref="NewtonsPerUnitless"/></param>
         /// <param name="fromNewtonsPerUnitless">The conversion to <paramref name="symbol"/></param>
@@ -59,18 +63,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.ForcePerUnitlessUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.ForcePerUnitlessUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.ForcePerUnitlessUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.ForcePerUnitlessUnit"/>
         /// </summary>
         public ForcePerUnitlessUnit SiUnit => NewtonsPerUnitless;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.ForcePerUnitlessUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => NewtonsPerUnitless;
 
         /// <summary>
@@ -90,9 +92,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.ForcePerUnitlessUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.ForcePerUnitlessUnit"/>.</param>
-	    public static bool operator ==(ForcePerUnitlessUnit left, ForcePerUnitlessUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.ForcePerUnitlessUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.ForcePerUnitlessUnit"/>.</param>
+        public static bool operator ==(ForcePerUnitlessUnit left, ForcePerUnitlessUnit right)
         {
             return left.Equals(right);
         }
@@ -103,8 +105,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.ForcePerUnitlessUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.ForcePerUnitlessUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.ForcePerUnitlessUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.ForcePerUnitlessUnit"/>.</param>
         public static bool operator !=(ForcePerUnitlessUnit left, ForcePerUnitlessUnit right)
         {
             return !left.Equals(right);
@@ -114,7 +116,7 @@
         /// Constructs a <see cref="ForcePerUnitlessUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="ForcePerUnitlessUnit"/></returns>
         public static ForcePerUnitlessUnit Parse(string text)
         {
@@ -126,7 +128,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.ForcePerUnitlessUnit"/></param>
         /// <param name="result">The parsed <see cref="ForcePerUnitlessUnit"/></param>
-        /// <returns>True if an instance of <see cref="ForcePerUnitlessUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="ForcePerUnitlessUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out ForcePerUnitlessUnit result)
         {
             return UnitParser<ForcePerUnitlessUnit>.TryParse(text, out result);
@@ -135,7 +137,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to NewtonsPerUnitless.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -165,11 +167,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in NewtonsPerUnitless
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(ForcePerUnitless quantity)
         {
-            return FromSiUnit(quantity.newtonsPerUnitless);
+            return this.FromSiUnit(quantity.newtonsPerUnitless);
         }
 
         /// <inheritdoc />
@@ -225,7 +227,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same ForcePerUnitlessUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(ForcePerUnitlessUnit other)
+        public bool Equals(ForcePerUnitlessUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -238,7 +240,7 @@
                 return false;
             }
 
-            return obj is ForcePerUnitlessUnit && Equals((ForcePerUnitlessUnit)obj);
+            return obj is ForcePerUnitlessUnit && this.Equals((ForcePerUnitlessUnit)obj);
         }
 
         /// <inheritdoc />

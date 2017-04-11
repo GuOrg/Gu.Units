@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.LengthPerUnitless"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(LengthPerUnitlessUnitTypeConverter))]
@@ -35,12 +35,16 @@
         /// </summary>
         public static readonly LengthPerUnitlessUnit MetresPerPercent = new LengthPerUnitlessUnit(metresPerPercent => 100 * metresPerPercent, metresPerUnitless => metresPerUnitless / 100, "m/%");
 
-        private readonly Func<double, double> toMetresPerUnitless;
-        private readonly Func<double, double> fromMetresPerUnitless;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.LengthPerUnitlessUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toMetresPerUnitless;
+        private readonly Func<double, double> fromMetresPerUnitless;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="LengthPerUnitlessUnit"/>.
+        /// Initializes a new instance of the <see cref="LengthPerUnitlessUnit"/> struct.
         /// </summary>
         /// <param name="toMetresPerUnitless">The conversion to <see cref="MetresPerUnitless"/></param>
         /// <param name="fromMetresPerUnitless">The conversion to <paramref name="symbol"/></param>
@@ -53,18 +57,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.LengthPerUnitlessUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.LengthPerUnitlessUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.LengthPerUnitlessUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.LengthPerUnitlessUnit"/>
         /// </summary>
         public LengthPerUnitlessUnit SiUnit => MetresPerUnitless;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.LengthPerUnitlessUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => MetresPerUnitless;
 
         /// <summary>
@@ -84,9 +86,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.LengthPerUnitlessUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.LengthPerUnitlessUnit"/>.</param>
-	    public static bool operator ==(LengthPerUnitlessUnit left, LengthPerUnitlessUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.LengthPerUnitlessUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.LengthPerUnitlessUnit"/>.</param>
+        public static bool operator ==(LengthPerUnitlessUnit left, LengthPerUnitlessUnit right)
         {
             return left.Equals(right);
         }
@@ -97,8 +99,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.LengthPerUnitlessUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.LengthPerUnitlessUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.LengthPerUnitlessUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.LengthPerUnitlessUnit"/>.</param>
         public static bool operator !=(LengthPerUnitlessUnit left, LengthPerUnitlessUnit right)
         {
             return !left.Equals(right);
@@ -108,7 +110,7 @@
         /// Constructs a <see cref="LengthPerUnitlessUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="LengthPerUnitlessUnit"/></returns>
         public static LengthPerUnitlessUnit Parse(string text)
         {
@@ -120,7 +122,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitlessUnit"/></param>
         /// <param name="result">The parsed <see cref="LengthPerUnitlessUnit"/></param>
-        /// <returns>True if an instance of <see cref="LengthPerUnitlessUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="LengthPerUnitlessUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out LengthPerUnitlessUnit result)
         {
             return UnitParser<LengthPerUnitlessUnit>.TryParse(text, out result);
@@ -129,7 +131,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to MetresPerUnitless.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -159,11 +161,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in MetresPerUnitless
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(LengthPerUnitless quantity)
         {
-            return FromSiUnit(quantity.metresPerUnitless);
+            return this.FromSiUnit(quantity.metresPerUnitless);
         }
 
         /// <inheritdoc />
@@ -219,7 +221,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same LengthPerUnitlessUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(LengthPerUnitlessUnit other)
+        public bool Equals(LengthPerUnitlessUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -232,7 +234,7 @@
                 return false;
             }
 
-            return obj is LengthPerUnitlessUnit && Equals((LengthPerUnitlessUnit)obj);
+            return obj is LengthPerUnitlessUnit && this.Equals((LengthPerUnitlessUnit)obj);
         }
 
         /// <inheritdoc />

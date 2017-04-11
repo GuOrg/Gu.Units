@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Inductance"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(InductanceUnitTypeConverter))]
@@ -53,12 +53,16 @@
         /// </summary>
         public static readonly InductanceUnit Gigahenrys = new InductanceUnit(gigahenrys => 1000000000 * gigahenrys, henrys => henrys / 1000000000, "GH");
 
-        private readonly Func<double, double> toHenrys;
-        private readonly Func<double, double> fromHenrys;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.InductanceUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toHenrys;
+        private readonly Func<double, double> fromHenrys;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="InductanceUnit"/>.
+        /// Initializes a new instance of the <see cref="InductanceUnit"/> struct.
         /// </summary>
         /// <param name="toHenrys">The conversion to <see cref="Henrys"/></param>
         /// <param name="fromHenrys">The conversion to <paramref name="symbol"/></param>
@@ -71,18 +75,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.InductanceUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.InductanceUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.InductanceUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.InductanceUnit"/>
         /// </summary>
         public InductanceUnit SiUnit => Henrys;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.InductanceUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Henrys;
 
         /// <summary>
@@ -102,9 +104,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.InductanceUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.InductanceUnit"/>.</param>
-	    public static bool operator ==(InductanceUnit left, InductanceUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.InductanceUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.InductanceUnit"/>.</param>
+        public static bool operator ==(InductanceUnit left, InductanceUnit right)
         {
             return left.Equals(right);
         }
@@ -115,8 +117,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.InductanceUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.InductanceUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.InductanceUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.InductanceUnit"/>.</param>
         public static bool operator !=(InductanceUnit left, InductanceUnit right)
         {
             return !left.Equals(right);
@@ -126,7 +128,7 @@
         /// Constructs a <see cref="InductanceUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="InductanceUnit"/></returns>
         public static InductanceUnit Parse(string text)
         {
@@ -138,7 +140,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.InductanceUnit"/></param>
         /// <param name="result">The parsed <see cref="InductanceUnit"/></param>
-        /// <returns>True if an instance of <see cref="InductanceUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="InductanceUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out InductanceUnit result)
         {
             return UnitParser<InductanceUnit>.TryParse(text, out result);
@@ -147,7 +149,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Henrys.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -177,11 +179,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Henrys
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Inductance quantity)
         {
-            return FromSiUnit(quantity.henrys);
+            return this.FromSiUnit(quantity.henrys);
         }
 
         /// <inheritdoc />
@@ -237,7 +239,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same InductanceUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(InductanceUnit other)
+        public bool Equals(InductanceUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -250,7 +252,7 @@
                 return false;
             }
 
-            return obj is InductanceUnit && Equals((InductanceUnit)obj);
+            return obj is InductanceUnit && this.Equals((InductanceUnit)obj);
         }
 
         /// <inheritdoc />

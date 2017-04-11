@@ -5,7 +5,7 @@
 
     /// <summary>
     /// A type for the unit <see cref="Gu.Units.Resistance"/>.
-	/// Contains logic for conversion and formatting.
+    /// Contains logic for conversion and formatting.
     /// </summary>
     [Serializable]
     [TypeConverter(typeof(ResistanceUnitTypeConverter))]
@@ -41,12 +41,16 @@
         /// </summary>
         public static readonly ResistanceUnit Megaohms = new ResistanceUnit(megaohms => 1000000 * megaohms, ohms => ohms / 1000000, "MΩ");
 
-        private readonly Func<double, double> toOhms;
-        private readonly Func<double, double> fromOhms;
+        /// <summary>
+        /// Gets the symbol for the <see cref="Gu.Units.ResistanceUnit"/>.
+        /// </summary>
         internal readonly string symbol;
 
+        private readonly Func<double, double> toOhms;
+        private readonly Func<double, double> fromOhms;
+
         /// <summary>
-        /// Initializes a new instance of <see cref="ResistanceUnit"/>.
+        /// Initializes a new instance of the <see cref="ResistanceUnit"/> struct.
         /// </summary>
         /// <param name="toOhms">The conversion to <see cref="Ohms"/></param>
         /// <param name="fromOhms">The conversion to <paramref name="symbol"/></param>
@@ -59,18 +63,16 @@
         }
 
         /// <summary>
-        /// The symbol for the <see cref="Gu.Units.ResistanceUnit"/>.
+        /// Gets the symbol for the <see cref="Gu.Units.ResistanceUnit"/>.
         /// </summary>
         public string Symbol => this.symbol;
 
         /// <summary>
-        /// The default unit for <see cref="Gu.Units.ResistanceUnit"/>
+        /// Gets the default unit for <see cref="Gu.Units.ResistanceUnit"/>
         /// </summary>
         public ResistanceUnit SiUnit => Ohms;
 
-        /// <summary>
-        /// The default <see cref="Gu.Units.IUnit"/> for <see cref="Gu.Units.ResistanceUnit"/>
-        /// </summary>
+        /// <inheritdoc />
         IUnit IUnit.SiUnit => Ohms;
 
         /// <summary>
@@ -90,9 +92,9 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.ResistanceUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.ResistanceUnit"/>.</param>
-	    public static bool operator ==(ResistanceUnit left, ResistanceUnit right)
+        /// <param name="left">The left instance of <see cref="Gu.Units.ResistanceUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.ResistanceUnit"/>.</param>
+        public static bool operator ==(ResistanceUnit left, ResistanceUnit right)
         {
             return left.Equals(right);
         }
@@ -103,8 +105,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.ResistanceUnit"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.ResistanceUnit"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.ResistanceUnit"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.ResistanceUnit"/>.</param>
         public static bool operator !=(ResistanceUnit left, ResistanceUnit right)
         {
             return !left.Equals(right);
@@ -114,7 +116,7 @@
         /// Constructs a <see cref="ResistanceUnit"/> from a string.
         /// Leading and trailing whitespace characters are allowed.
         /// </summary>
-        /// <param name="text"></param>
+        /// <param name="text">The text representation of this unit.</param>
         /// <returns>An instance of <see cref="ResistanceUnit"/></returns>
         public static ResistanceUnit Parse(string text)
         {
@@ -126,7 +128,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.ResistanceUnit"/></param>
         /// <param name="result">The parsed <see cref="ResistanceUnit"/></param>
-        /// <returns>True if an instance of <see cref="ResistanceUnit"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="ResistanceUnit"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, out ResistanceUnit result)
         {
             return UnitParser<ResistanceUnit>.TryParse(text, out result);
@@ -135,7 +137,7 @@
         /// <summary>
         /// Converts <paramref name="value"/> to Ohms.
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The value in the unit of this instance.</param>
         /// <returns>The converted value</returns>
         public double ToSiUnit(double value)
         {
@@ -165,11 +167,11 @@
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in Ohms
         /// </summary>
-        /// <param name="quantity"></param>
-        /// <returns></returns>
+        /// <param name="quantity">The quanity.</param>
+        /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(Resistance quantity)
         {
-            return FromSiUnit(quantity.ohms);
+            return this.FromSiUnit(quantity.ohms);
         }
 
         /// <inheritdoc />
@@ -225,7 +227,7 @@
         /// <returns>
         /// true if <paramref name="other"/> represents the same ResistanceUnit as this instance; otherwise, false.
         /// </returns>
-		public bool Equals(ResistanceUnit other)
+        public bool Equals(ResistanceUnit other)
         {
             return this.symbol == other.symbol;
         }
@@ -238,7 +240,7 @@
                 return false;
             }
 
-            return obj is ResistanceUnit && Equals((ResistanceUnit)obj);
+            return obj is ResistanceUnit && this.Equals((ResistanceUnit)obj);
         }
 
         /// <inheritdoc />
