@@ -6,8 +6,7 @@
     {
         internal static QuantityFormat<TUnit> Create<TUnit>(string format) where TUnit : struct, IUnit, IEquatable<TUnit>
         {
-            QuantityFormat<TUnit> result;
-            TryParse(format, out result);
+            TryParse(format, out QuantityFormat<TUnit> result);
             return result;
         }
 
@@ -35,8 +34,7 @@
 
             var valueFormat = DoubleFormatCache.GetOrCreate(format, ref pos);
 
-            TUnit unit;
-            var symbolFormat = UnitFormatCache<TUnit>.GetOrCreate(format, ref pos, out unit);
+            var symbolFormat = UnitFormatCache<TUnit>.GetOrCreate(format, ref pos, out TUnit unit);
             if (valueFormat.PostPadding == null &&
                 symbolFormat.PrePadding == null)
             {

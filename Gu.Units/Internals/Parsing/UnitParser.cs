@@ -7,8 +7,7 @@ namespace Gu.Units
     {
         internal static TUnit Parse(string text)
         {
-            TUnit result;
-            if (TryParse(text, out result))
+            if (TryParse(text, out TUnit result))
             {
                 return result;
             }
@@ -19,8 +18,7 @@ namespace Gu.Units
 
         internal static TUnit Parse(string text, ref int pos)
         {
-            TUnit result;
-            if (TryParse(text, ref pos, out result))
+            if (TryParse(text, ref pos, out TUnit result))
             {
                 return result;
             }
@@ -45,13 +43,11 @@ namespace Gu.Units
                 return true;
             }
 
-            IReadOnlyList<SymbolAndPower> symbolsAndPowers;
-            if (SymbolAndPowerReader.TryRead(text, ref pos, out symbolsAndPowers))
+            if (SymbolAndPowerReader.TryRead(text, ref pos, out IReadOnlyList<SymbolAndPower> symbolsAndPowers))
             {
                 var symbol = text.Substring(start, pos - start);
 
-                string postPadding;
-                WhiteSpaceReader.TryRead(text, ref pos, out postPadding);
+                WhiteSpaceReader.TryRead(text, ref pos, out string postPadding);
                 if (!IsEndOfSymbol(text, pos))
                 {
                     result = Unit<TUnit>.Default;

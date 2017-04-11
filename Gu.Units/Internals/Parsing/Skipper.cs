@@ -21,8 +21,8 @@
                 return false;
             }
 
-            int start = pos;
-            int end = pos + skipText.Length;
+            var start = pos;
+            var end = pos + skipText.Length;
             while (pos < end)
             {
                 if (text[pos] != skipText[pos - start])

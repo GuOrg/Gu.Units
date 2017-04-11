@@ -6,8 +6,7 @@
     {
         internal static int Read(string text, ref int pos)
         {
-            int result;
-            if (TryRead(text, ref pos, out result))
+            if (TryRead(text, ref pos, out int result))
             {
                 return result;
             }

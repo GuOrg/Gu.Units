@@ -13,8 +13,7 @@ namespace Gu.Units
                 return PaddedFormat.NullFormat;
             }
 
-            PaddedFormat match;
-            if (Cache.TryGet(format, out match))
+            if (Cache.TryGet(format, out PaddedFormat match))
             {
                 return match;
             }
@@ -32,13 +31,10 @@ namespace Gu.Units
 
         internal static PaddedFormat GetOrCreate(string format, ref int pos)
         {
-            string prePadding;
-            WhiteSpaceReader.TryRead(format, ref pos, out prePadding);
-            string valueFormat;
-            if (DoubleFormatReader.TryRead(format, ref pos, out valueFormat))
+            WhiteSpaceReader.TryRead(format, ref pos, out string prePadding);
+            if (DoubleFormatReader.TryRead(format, ref pos, out string valueFormat))
             {
-                string postPadding;
-                WhiteSpaceReader.TryRead(format, ref pos, out postPadding);
+                WhiteSpaceReader.TryRead(format, ref pos, out string postPadding);
                 return new PaddedFormat(prePadding, valueFormat, postPadding);
             }
 

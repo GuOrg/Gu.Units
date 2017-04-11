@@ -54,14 +54,12 @@
 
         internal TUnit Unit { get; }
 
-        public static bool operator ==(QuantityFormat<TUnit> left,
-            QuantityFormat<TUnit> right)
+        public static bool operator ==(QuantityFormat<TUnit> left, QuantityFormat<TUnit> right)
         {
             return Equals(left, right);
         }
 
-        public static bool operator !=(QuantityFormat<TUnit> left,
-            QuantityFormat<TUnit> right)
+        public static bool operator !=(QuantityFormat<TUnit> left, QuantityFormat<TUnit> right)
         {
             return !Equals(left, right);
         }

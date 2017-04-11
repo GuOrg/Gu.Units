@@ -9,8 +9,7 @@
 
         internal static int ReadInt32(string text, ref int pos)
         {
-            int result;
-            if (TryReadInt32(text, ref pos, out result))
+            if (TryReadInt32(text, ref pos, out int result))
             {
                 return result;
             }

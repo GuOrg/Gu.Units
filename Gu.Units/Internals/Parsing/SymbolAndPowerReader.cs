@@ -30,7 +30,7 @@
 
         internal static bool TryRead(string text, ref int pos, out IReadOnlyList<SymbolAndPower> result)
         {
-            int start = pos;
+            var start = pos;
             var sign = Sign.Positive;
             List<SymbolAndPower> saps = null;
             while (pos < text.Length)

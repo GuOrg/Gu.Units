@@ -26,9 +26,7 @@ namespace Gu.Units
 
         internal static PaddedFormat GetOrCreate(TUnit unit, SymbolFormat symbolFormat)
         {
-            IReadOnlyList<SymbolAndPower> symbolAndPowers;
-
-            if (!Cache.TryGetParts(unit, out symbolAndPowers))
+            if (!Cache.TryGetParts(unit, out IReadOnlyList<SymbolAndPower> symbolAndPowers))
             {
                 throw new ArgumentOutOfRangeException($"Did not find parts for {unit.Symbol}");
             }
@@ -43,10 +41,8 @@ namespace Gu.Units
 
         internal static PaddedFormat GetOrCreate(string format, ref int pos, out TUnit unit)
         {
-            string prePadding;
             var start = pos;
-            WhiteSpaceReader.TryRead(format, ref pos, out prePadding);
-
+            WhiteSpaceReader.TryRead(format, ref pos, out string prePadding);
             if (format == null ||
                 pos == format.Length)
             {
@@ -55,26 +51,22 @@ namespace Gu.Units
                 return PaddedFormat.CreateUnknown(prePadding, null);
             }
 
-            string symbol;
-            if (Cache.TryGetUnitForSymbol(format, ref pos, out symbol, out unit))
+            if (Cache.TryGetUnitForSymbol(format, ref pos, out string symbol, out unit))
             {
                 if (WhiteSpaceReader.IsRestWhiteSpace(format, pos))
                 {
-                    string postPadding;
-                    WhiteSpaceReader.TryRead(format, ref pos, out postPadding);
+                    WhiteSpaceReader.TryRead(format, ref pos, out string postPadding);
                     return new PaddedFormat(prePadding, symbol, postPadding);
                 }
 
                 pos -= symbol.Length;
             }
 
-            IReadOnlyList<SymbolAndPower> symbolsAndPowers;
-            if (SymbolAndPowerReader.TryRead(format, ref pos, out symbolsAndPowers))
+            if (SymbolAndPowerReader.TryRead(format, ref pos, out IReadOnlyList<SymbolAndPower> symbolsAndPowers))
             {
                 symbol = format.Substring(start, pos - start);
 
-                string postPadding;
-                WhiteSpaceReader.TryRead(format, ref pos, out postPadding);
+                WhiteSpaceReader.TryRead(format, ref pos, out string postPadding);
                 if (!WhiteSpaceReader.IsRestWhiteSpace(format, pos))
                 {
                     pos = start;
@@ -114,8 +106,7 @@ namespace Gu.Units
                     this.symbolUnitMap.Add(unit.Symbol, unit);
 
                     int pos = 0;
-                    IReadOnlyList<SymbolAndPower> result;
-                    if (SymbolAndPowerReader.TryRead(unit.Symbol, ref pos, out result))
+                    if (SymbolAndPowerReader.TryRead(unit.Symbol, ref pos, out IReadOnlyList<SymbolAndPower> result))
                     {
                         if (!WhiteSpaceReader.IsRestWhiteSpace(unit.Symbol, pos))
                         {
@@ -151,8 +142,7 @@ namespace Gu.Units
 
             internal bool TryGetUnitForSymbol(string text, ref int pos, out string symbol, out TUnit result)
             {
-                TUnit temp;
-                var success = this.symbolUnitMap.TryGetBySubString(text, pos, out symbol, out temp);
+                var success = this.symbolUnitMap.TryGetBySubString(text, pos, out symbol, out TUnit temp);
                 if (success)
                 {
                     pos += symbol.Length;
@@ -166,9 +156,7 @@ namespace Gu.Units
 
             internal bool TryGetUnitForSymbol(string text, ref int pos, out TUnit result)
             {
-                TUnit temp;
-                string key;
-                var success = this.symbolUnitMap.TryGetBySubString(text, pos, out key, out temp);
+                var success = this.symbolUnitMap.TryGetBySubString(text, pos, out string key, out TUnit temp);
                 if (success)
                 {
                     pos += key.Length;

@@ -9,18 +9,14 @@
         internal readonly bool IsUnknown;
         internal readonly string PostPadding;
 
-        private PaddedFormat(string prePadding,
-            string format,
-            string postPadding,
-            bool isUnknown)
+        private PaddedFormat(string prePadding, string format, string postPadding, bool isUnknown)
         {
             this.PrePadding = prePadding;
             this.Format = format;
             this.IsUnknown = isUnknown;
             this.PostPadding = postPadding;
         }
-        private PaddedFormat(string prePadding,
-            string format)
+        private PaddedFormat(string prePadding, string format)
         {
             this.PrePadding = prePadding;
             this.Format = format;
@@ -28,9 +24,7 @@
             this.IsUnknown = true;
         }
 
-        public PaddedFormat(string prePadding,
-            string format,
-            string postPadding)
+        public PaddedFormat(string prePadding, string format, string postPadding)
         {
             this.PrePadding = prePadding;
             this.Format = format;

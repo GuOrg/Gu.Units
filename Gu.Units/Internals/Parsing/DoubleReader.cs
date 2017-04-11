@@ -31,8 +31,7 @@
                 throw new ArgumentException("Hex not supported", nameof(style));
             }
 
-            double result;
-            if (TryRead(text, ref pos, style, provider, out result))
+            if (TryRead(text, ref pos, style, provider, out double result))
             {
                 return result;
             }
@@ -119,8 +118,7 @@
         {
             var start = pos;
             var format = NumberFormatInfo.GetInstance(provider);
-            Sign sign;
-            if (TryReadSign(text, ref pos, format, out sign))
+            if (TryReadSign(text, ref pos, format, out Sign sign))
             {
                 if ((style & NumberStyles.AllowLeadingSign) == 0)
                 {
@@ -153,8 +151,7 @@
                     pos = start;
                     return false;
                 }
-                Sign exponentSign;
-                TryReadSign(text, ref pos, format, out exponentSign);
+                TryReadSign(text, ref pos, format, out Sign exponentSign);
                 if (TrySkipExponentDigits(text, ref pos))
                 {
                     return true;

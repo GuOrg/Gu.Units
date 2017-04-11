@@ -46,8 +46,7 @@
         {
             var valueFormat = DoubleFormatCache.GetOrCreate(key.ValueFormat);
 
-            TUnit unit;
-            var symbolFormat = UnitFormatCache<TUnit>.GetOrCreate(key.SymbolFormat, out unit);
+            var symbolFormat = UnitFormatCache<TUnit>.GetOrCreate(key.SymbolFormat, out TUnit unit);
 
             return QuantityFormat<TUnit>.Create(valueFormat, symbolFormat, unit);
         }

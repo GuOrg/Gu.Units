@@ -136,14 +136,13 @@
         }
 
         [Test]
-        [Explicit("Bikeshedding this for now")]
+        [Explicit("Fix")]
         public void FormatAngularAcceleration()
         {
             var value = AngularAcceleration.FromDegreesPerSecondSquared(1.2);
             using (Thread.CurrentThread.UsingTempCulture(CultureInfo.InvariantCulture))
             {
                 Assert.AreEqual("1.2°/s²", value.ToString(AngularAccelerationUnit.DegreesPerSecondSquared));
-                Assert.AreEqual("1.2 °/s²", value.ToString(AngularAccelerationUnit.DegreesPerSecondSquared));
             }
         }
     }
