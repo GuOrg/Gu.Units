@@ -50,8 +50,8 @@
 
         private static void Clear()
         {
-            var buildersField = typeof (StringBuilderPool).GetField("Builders", BindingFlags.Static | BindingFlags.NonPublic);
-            var builders =(ConcurrentQueue<StringBuilder>) buildersField.GetValue(null);
+            var buildersField = typeof(StringBuilderPool).GetField("Builders", BindingFlags.Static | BindingFlags.NonPublic);
+            var builders = (ConcurrentQueue<StringBuilder>)buildersField.GetValue(null);
             StringBuilder temp;
             while (builders.TryDequeue(out temp))
             {

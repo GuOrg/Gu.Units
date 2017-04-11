@@ -14,7 +14,7 @@
             : base(MockBehavior.Strict)
         {
             this.binding = new Binding();
-            Setup(x => x.GetService(typeof(IProvideValueTarget)))
+            this.Setup(x => x.GetService(typeof(IProvideValueTarget)))
                         .Returns(this.ProvideValueTargetMock.Object);
 
             this.ProvideValueTargetMock.SetupGet(x => x.TargetObject).Returns(this.binding);
@@ -22,7 +22,7 @@
 
         public string BindingStringFormat
         {
-            set { this.binding.StringFormat = value; }
+            set => this.binding.StringFormat = value;
         }
     }
 }

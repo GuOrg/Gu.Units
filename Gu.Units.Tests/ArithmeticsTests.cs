@@ -38,7 +38,7 @@
             var v = Volume.FromCubicCentimetres(2);
             var m = rho * v;
             Assert.IsInstanceOf<Mass>(m);
-            Assert.AreEqual(1.2*2, m.Grams, 1E-6);
+            Assert.AreEqual(1.2 * 2, m.Grams, 1E-6);
 
             var density = m / v;
             Assert.AreEqual(rho, density);

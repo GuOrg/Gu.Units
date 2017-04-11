@@ -17,11 +17,11 @@
             T expected,
             int expectedEnd)
         {
-            Text = text;
-            CultureInfo = cultureInfo;
-            Start = start;
-            Expected = expected;
-            ExpectedEnd = expectedEnd;
+            this.Text = text;
+            this.CultureInfo = cultureInfo;
+            this.Start = start;
+            this.Expected = expected;
+            this.ExpectedEnd = expectedEnd;
         }
 
         public string Text { get; }
@@ -32,20 +32,20 @@
 
         public T Expected { get; }
 
-        public Type Type => typeof (T);
+        public Type Type => typeof(T);
 
-        object ISuccessData.Expected => Expected;
+        object ISuccessData.Expected => this.Expected;
 
         public int ExpectedEnd { get; }
 
         public override string ToString()
         {
-            if (CultureInfo == null)
+            if (this.CultureInfo == null)
             {
-                return $"Text: {Text}, Start: {Start}, Expected {ToString(typeof(T))}: {ToString(Expected)}, ExpectedEnd: {ExpectedEnd}";
+                return $"Text: {this.Text}, Start: {this.Start}, Expected {ToString(typeof(T))}: {ToString(this.Expected)}, ExpectedEnd: {this.ExpectedEnd}";
             }
 
-            return $"Text: {Text}, Culture: {CultureInfo.Name} Start: {Start}, Expected {ToString(typeof(T))}: {ToString(Expected)}, ExpectedEnd: {ExpectedEnd}";
+            return $"Text: {this.Text}, Culture: {this.CultureInfo.Name} Start: {this.Start}, Expected {ToString(typeof(T))}: {ToString(this.Expected)}, ExpectedEnd: {this.ExpectedEnd}";
         }
 
         private static string ToString(Type type)

@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="LengthConverterTests.convertback.cs" />
     <Compile Include="LengthConverterTests.convert.cs" />
-    <Compile Include="ConverterTests.cs" />
     <Compile Include="LengthConverterTests.setup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reminder.cs" />
@@ -71,6 +70,7 @@
     <Folder Include="Internals\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Gu.Units.Wpf.Tests.ruleset" />
     <None Include="paket.references" />
   </ItemGroup>
   <Import Project="..\.paket\paket.targets" />

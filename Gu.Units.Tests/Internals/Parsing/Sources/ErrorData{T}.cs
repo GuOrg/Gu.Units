@@ -11,7 +11,7 @@
             string expectedMessage)
             : base(text, start, expected, expectedEnd)
         {
-            ExpectedMessage = expectedMessage;
+            this.ExpectedMessage = expectedMessage;
         }
 
         public ErrorData(string text,
@@ -22,10 +22,10 @@
             string expectedMessage)
             : base(text, cultureInfo, start, expected, expectedEnd)
         {
-            ExpectedMessage = expectedMessage;
+            this.ExpectedMessage = expectedMessage;
         }
 
-        object IErrorData.Expected => Expected;
+        object IErrorData.Expected => this.Expected;
 
         public string ExpectedMessage { get; }
     }

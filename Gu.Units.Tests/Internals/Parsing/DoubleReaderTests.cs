@@ -46,7 +46,8 @@
                 readSuccess = DoubleReader.TryRead(text, ref pos, NumberStyles.Float, CultureInfo.InvariantCulture, out read);
                 success = parseSuccess && readSuccess && parsed == read;
                 count++;
-            } while (success);
+            }
+            while (success);
 
             Console.WriteLine($"Count: {count}");
             Console.WriteLine(text);
@@ -223,17 +224,17 @@
             CreateParseData("+1.2e-3", NumberStyles.Float, en),
             CreateParseData("+1.2E-3", NumberStyles.Float, en),
             CreateParseData("-1.2e+3", NumberStyles.Float, en),//1,,2,3,4,5,,,.00
-            CreateParseData("1,,2,3,4,5,,,.00", NumberStyles.Float|NumberStyles.AllowThousands, en),
-            CreateParseData("12345678910123456789", NumberStyles.Float|NumberStyles.AllowThousands, en),
-            CreateParseData("1.2345678910123456789", NumberStyles.Float|NumberStyles.AllowThousands, en),
-            CreateParseData("1234567891012345678.9", NumberStyles.Float|NumberStyles.AllowThousands, en),
-            CreateParseData(new string('1', 307), NumberStyles.Float|NumberStyles.AllowThousands, en),
-            CreateParseData(new string('1', 308), NumberStyles.Float|NumberStyles.AllowThousands, en),
-            CreateParseData(new string('1', 309), NumberStyles.Float|NumberStyles.AllowThousands, en),
-            CreateParseData("0." + new string('0', 15)+"1", NumberStyles.Float|NumberStyles.AllowThousands, en),
-            CreateParseData("0." + new string('0', 16)+"1", NumberStyles.Float|NumberStyles.AllowThousands, en),
-            CreateParseData("0." + new string('0', 299)+"1", NumberStyles.Float|NumberStyles.AllowThousands, en),
-            CreateParseData("0." + new string('0', 300)+"1", NumberStyles.Float|NumberStyles.AllowThousands, en),
+            CreateParseData("1,,2,3,4,5,,,.00", NumberStyles.Float | NumberStyles.AllowThousands, en),
+            CreateParseData("12345678910123456789", NumberStyles.Float | NumberStyles.AllowThousands, en),
+            CreateParseData("1.2345678910123456789", NumberStyles.Float | NumberStyles.AllowThousands, en),
+            CreateParseData("1234567891012345678.9", NumberStyles.Float | NumberStyles.AllowThousands, en),
+            CreateParseData(new string('1', 307), NumberStyles.Float | NumberStyles.AllowThousands, en),
+            CreateParseData(new string('1', 308), NumberStyles.Float | NumberStyles.AllowThousands, en),
+            CreateParseData(new string('1', 309), NumberStyles.Float | NumberStyles.AllowThousands, en),
+            CreateParseData("0." + new string('0', 15) + "1", NumberStyles.Float | NumberStyles.AllowThousands, en),
+            CreateParseData("0." + new string('0', 16) + "1", NumberStyles.Float | NumberStyles.AllowThousands, en),
+            CreateParseData("0." + new string('0', 299) + "1", NumberStyles.Float | NumberStyles.AllowThousands, en),
+            CreateParseData("0." + new string('0', 300) + "1", NumberStyles.Float | NumberStyles.AllowThousands, en),
             CreateParseData(-12345.678910, NumberStyles.Float, en, "e"),
             CreateParseData(12345.678910, NumberStyles.Float, en, "E"),
             CreateParseData(12345.678910, NumberStyles.Float, en, "E5"),
@@ -243,9 +244,9 @@
             CreateParseData(12345.678910, NumberStyles.Float, en, "G"),
             CreateParseData(-12345.678910, NumberStyles.Float, en, "g"),
             CreateParseData(12345.678910, NumberStyles.Float, en, "g5"),
-            CreateParseData(12345.678910, NumberStyles.Float |NumberStyles.AllowThousands, en, "n"),
-            CreateParseData(12345.678910, NumberStyles.Float |NumberStyles.AllowThousands, en, "N"),
-            CreateParseData(12345.678910, NumberStyles.Float |NumberStyles.AllowThousands, en, "N5"),
+            CreateParseData(12345.678910, NumberStyles.Float | NumberStyles.AllowThousands, en, "n"),
+            CreateParseData(12345.678910, NumberStyles.Float | NumberStyles.AllowThousands, en, "N"),
+            CreateParseData(12345.678910, NumberStyles.Float | NumberStyles.AllowThousands, en, "N5"),
             CreateParseData(12345.678910, NumberStyles.Float, en, "R"),
             CreateParseData(-12345.678910, NumberStyles.Float, en, "r"),
             CreateParseData(-Math.PI, NumberStyles.Float, en, "f15"),

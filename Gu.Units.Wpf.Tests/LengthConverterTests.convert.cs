@@ -67,7 +67,6 @@
                 Assert.AreEqual(expected, actual);
             }
 
-
             [TestCase(typeof(string), UnitInput.ScalarOnly, 1.2)]
             [TestCase(typeof(string), UnitInput.SymbolAllowed, 1.2)]
             [TestCase(typeof(string), UnitInput.SymbolRequired, "1.2\u00A0m/s")]

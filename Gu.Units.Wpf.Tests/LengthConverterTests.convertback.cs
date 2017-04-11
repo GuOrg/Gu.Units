@@ -23,7 +23,7 @@
                 Assert.AreEqual(expected, actual);
             }
 
-            [TestCase("1.2", UnitInput.ScalarOnly, true,"1.2 cm")]
+            [TestCase("1.2", UnitInput.ScalarOnly, true, "1.2 cm")]
             [TestCase("1.2 mm", UnitInput.ScalarOnly, false, "#1.2 mm#")]
             [TestCase("1.2", UnitInput.SymbolAllowed, true, "1.2 cm")]
             [TestCase("12 mm", UnitInput.SymbolAllowed, true, "1.2 cm")]

@@ -71,8 +71,8 @@
             ErrorData.Create<int>("abc",  0), 
             ErrorData.Create<int>("abc",  1), 
             ErrorData.Create<int>("abc",  2), 
-            ErrorData.Create<int>(((long)int.MinValue-1).ToString(),  0), // less than int.min
-            ErrorData.Create<int>(((long)int.MaxValue+1).ToString(),  0), // greater than int.max
+            ErrorData.Create<int>(((long)int.MinValue - 1).ToString(),  0), // less than int.min
+            ErrorData.Create<int>(((long)int.MaxValue + 1).ToString(),  0), // greater than int.max
         };
     }
 }

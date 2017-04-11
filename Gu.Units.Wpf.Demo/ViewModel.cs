@@ -22,7 +22,7 @@ namespace Gu.Units.Wpf.Demo
 
         public Length Length
         {
-            get { return this.length; }
+            get => this.length;
             set
             {
                 if (value.Equals(this.length))
@@ -37,11 +37,14 @@ namespace Gu.Units.Wpf.Demo
 
         public Length? NullableLength
         {
-            get { return this.nullableLength; }
+            get => this.nullableLength;
             set
             {
                 if (value.Equals(this.nullableLength))
+                {
                     return;
+                }
+
                 this.nullableLength = value;
                 this.OnPropertyChanged();
             }
@@ -49,11 +52,14 @@ namespace Gu.Units.Wpf.Demo
 
         public object ObjectLength
         {
-            get { return this.objectLength; }
+            get => this.objectLength;
             set
             {
                 if (Equals(value, this.objectLength))
+                {
                     return;
+                }
+
                 this.objectLength = value;
                 this.OnPropertyChanged();
             }
@@ -61,11 +67,14 @@ namespace Gu.Units.Wpf.Demo
 
         public Speed Speed
         {
-            get { return this.speed; }
+            get => this.speed;
             set
             {
                 if (value.Equals(this.speed))
+                {
                     return;
+                }
+
                 this.speed = value;
                 this.OnPropertyChanged();
             }
@@ -73,11 +82,14 @@ namespace Gu.Units.Wpf.Demo
 
         public Pressure Pressure
         {
-            get { return this.pressure; }
+            get => this.pressure;
             set
             {
                 if (value.Equals(this.pressure))
+                {
                     return;
+                }
+
                 this.pressure = value;
                 this.OnPropertyChanged();
             }

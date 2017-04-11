@@ -69,8 +69,8 @@
             var l = Length.FromMetres(1);
             var prods = new[]
                            {
-                               l*2,
-                               2*l
+                               l * 2,
+                               2 * l
                            };
             var expected = Length.FromMetres(2);
             foreach (var prod in prods)
