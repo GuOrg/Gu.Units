@@ -6,7 +6,12 @@ nuget Gu.Wpf.NumericInput
 nuget Gu.Wpf.Reactive
 nuget Gu.State
 
-nuget JetBrains.Annotations
+group Analyzers
+  source http://www.nuget.org/api/v2/
+  nuget StyleCop.Analyzers
+  nuget Gu.Analyzers
+  nuget WpfAnalyzers
+  nuget JetBrains.Annotations
 
 group Roslyn
   source http://www.nuget.org/api/v2/

@@ -4,3 +4,9 @@ group Test
   NUnit
   Moq
   TestStack.White
+
+group Analyzers
+  StyleCop.Analyzers
+  Gu.Analyzers
+  WpfAnalyzers
+  JetBrains.Annotations

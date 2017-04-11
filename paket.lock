@@ -10,7 +10,6 @@ NUGET
       Gu.Wpf.ToolTips
       System.Reactive
     Gu.Wpf.ToolTips (0.2.0.1)
-    JetBrains.Annotations (10.4)
     Newtonsoft.Json (10.0.2)
     System.Reactive (3.1.1)
       System.Reactive.PlatformServices (>= 3.1.1)
@@ -24,6 +23,20 @@ NUGET
       System.Reactive.Linq (>= 3.1.1)
     System.Reactive.Windows.Threading (3.1.1)
       System.Reactive.Core (>= 3.1.1)
+
+GROUP Analyzers
+NUGET
+  remote: http://www.nuget.org/api/v2
+    Gu.Analyzers (0.1.11.17-dev)
+    JetBrains.Annotations (10.4)
+      System.Runtime (>= 4.1) - framework: >= netstandard10
+    Microsoft.NETCore.Platforms (1.1) - framework: netstandard10, netstandard12, netstandard13, >= netstandard15
+    Microsoft.NETCore.Targets (1.1) - framework: netstandard10, netstandard12, netstandard13, >= netstandard15
+    StyleCop.Analyzers (1.0)
+    System.Runtime (4.3) - framework: >= netstandard10
+      Microsoft.NETCore.Platforms (>= 1.1) - framework: dnxcore50, netstandard10, netstandard12, netstandard13, >= netstandard15
+      Microsoft.NETCore.Targets (>= 1.1) - framework: dnxcore50, netstandard10, netstandard12, netstandard13, >= netstandard15
+    WpfAnalyzers (0.2.7.8)
 
 GROUP Benchmarks
 FRAMEWORK: NET45

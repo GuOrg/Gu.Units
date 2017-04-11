@@ -11,3 +11,9 @@ licenseUrl http://opensource.org/licenses/MIT
 files
     bin/release/Gu.Units.Analyzers.dll ==> analyzers/dotnet/
 	tools ==> tools
+
+excludeddependencies
+  JetBrains.Annotations
+  StyleCop.Analyzers
+  WpfAnalyzers
+  Gu.Analyzers

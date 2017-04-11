@@ -2,6 +2,11 @@ Newtonsoft.Json
 Gu.Wpf.Reactive
 Gu.State
 
+group Analyzers
+  StyleCop.Analyzers
+  Gu.Analyzers
+  JetBrains.Annotations
+
 group Roslyn
   Microsoft.CodeAnalysis.CSharp.Scripting
 
