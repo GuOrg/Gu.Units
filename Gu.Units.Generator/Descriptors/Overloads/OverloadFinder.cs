@@ -24,8 +24,7 @@
 
                 foreach (var right in quantities)
                 {
-                    OperatorOverload overload;
-                    if (OperatorOverload.TryCreateMultiplication(left, right, units, out overload))
+                    if (OperatorOverload.TryCreateMultiplication(left, right, units, out OperatorOverload overload))
                     {
                         left.OperatorOverloads.Add(overload);
                     }
@@ -37,8 +36,7 @@
                             continue;
                         }
 
-                        List<MissingOverload> list;
-                        if (!missing.TryGetValue(result, out list))
+                        if (!missing.TryGetValue(result, out List<MissingOverload> list))
                         {
                             list = new List<MissingOverload>();
                             missing[result] = list;
@@ -59,8 +57,7 @@
                             continue;
                         }
 
-                        List<MissingOverload> list;
-                        if (!missing.TryGetValue(result, out list))
+                        if (!missing.TryGetValue(result, out List<MissingOverload> list))
                         {
                             list = new List<MissingOverload>();
                             missing[result] = list;

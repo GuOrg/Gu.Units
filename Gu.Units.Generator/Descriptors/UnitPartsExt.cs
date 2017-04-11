@@ -87,8 +87,7 @@
 
         internal static string NormalizeSymbol(this string symbol)
         {
-            IReadOnlyList<SymbolAndPower> symbolAndPowers;
-            if (SymbolAndPowerReader.TryRead(symbol, out symbolAndPowers))
+            if (SymbolAndPowerReader.TryRead(symbol, out IReadOnlyList<SymbolAndPower> symbolAndPowers))
             {
                 return symbolAndPowers.AsSymbol();
             }

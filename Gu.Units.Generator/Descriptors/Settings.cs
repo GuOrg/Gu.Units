@@ -31,6 +31,8 @@
             this.DerivedUnits = derivedUnits;
             InnerInstance = this;
 
+            // redundant call here. T4 has trouble finding rx
+            this.missing = OverloadFinder.Find(this.AllUnits);
             Observable.Merge(
                           this.BaseUnits.ObserveCollectionChangedSlim(signalInitial: true),
                           this.DerivedUnits.ObserveCollectionChangedSlim(signalInitial: true))
