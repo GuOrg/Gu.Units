@@ -11,8 +11,7 @@
 
         public static Unit GetUnit(this IConversion conversion)
         {
-            var identityConversion = conversion as PartConversion.IdentityConversion;
-            if (identityConversion != null)
+            if (conversion is PartConversion.IdentityConversion identityConversion)
             {
                 var unit = Settings.Instance.AllUnits.Single(x => x.Symbol == identityConversion.Symbol);
                 return unit;

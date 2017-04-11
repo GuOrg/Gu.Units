@@ -38,9 +38,7 @@
         [TestCase("#0.00# m", "{0:#0.00#} m", "1.20 m")]
         public void TryParseSuccess(string format, string expectedFormat, string expectedFormatted)
         {
-            QuantityFormat<LengthUnit> actual;
-            var success = CompositeFormatParser.TryParse(format, out actual);
-
+            var success = CompositeFormatParser.TryParse(format, out QuantityFormat<LengthUnit> actual);
             Assert.AreEqual(true, success);
             Assert.AreEqual(expectedFormat, actual.CompositeFormat);
 
@@ -56,8 +54,7 @@
         [TestCase("E Pa", "{0:E} Pa", "Pa")]
         public void TryParsePressure(string format, string expectedFormat, string expectedSymbol)
         {
-            QuantityFormat<PressureUnit> actual;
-            var success = CompositeFormatParser.TryParse(format, out actual);
+            var success = CompositeFormatParser.TryParse(format, out QuantityFormat<PressureUnit> actual);
             Assert.AreEqual(true, success);
             Assert.AreEqual(expectedFormat, actual.CompositeFormat);
             Assert.AreEqual(expectedSymbol, actual.Unit.Symbol);
@@ -67,8 +64,7 @@
         [TestCase("mm", "{value: null}\u00A0mm")]
         public void TryParseError(string text, string expectedError)
         {
-            QuantityFormat<LengthUnit> actual;
-            var success = CompositeFormatParser.TryParse(text, out actual);
+            var success = CompositeFormatParser.TryParse(text, out QuantityFormat<LengthUnit> actual);
             Assert.AreEqual(false, success);
             Assert.AreEqual(expectedError, actual.ErrorText);
         }
