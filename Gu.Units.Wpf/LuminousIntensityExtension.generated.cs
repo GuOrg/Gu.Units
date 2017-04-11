@@ -10,7 +10,7 @@
     public class LuminousIntensityExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.LuminousIntensityExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.LuminousIntensityExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.LuminousIntensity"/>.</param>
         public LuminousIntensityExtension(LuminousIntensity value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="LuminousIntensity"/> value
-        /// </summary>		
+        /// </summary>
         public LuminousIntensity Value { get; private set; }
 
         /// <inheritdoc />

@@ -10,7 +10,7 @@
     public class SpecificVolumeExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.SpecificVolumeExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.SpecificVolumeExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.SpecificVolume"/>.</param>
         public SpecificVolumeExtension(SpecificVolume value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="SpecificVolume"/> value
-        /// </summary>		
+        /// </summary>
         public SpecificVolume Value { get; private set; }
 
         /// <inheritdoc />

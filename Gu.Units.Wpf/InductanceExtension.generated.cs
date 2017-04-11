@@ -10,7 +10,7 @@
     public class InductanceExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.InductanceExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.InductanceExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Inductance"/>.</param>
         public InductanceExtension(Inductance value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Inductance"/> value
-        /// </summary>		
+        /// </summary>
         public Inductance Value { get; private set; }
 
         /// <inheritdoc />

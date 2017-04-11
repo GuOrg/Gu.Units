@@ -10,7 +10,7 @@
     public class CapacitanceExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.CapacitanceExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.CapacitanceExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Capacitance"/>.</param>
         public CapacitanceExtension(Capacitance value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Capacitance"/> value
-        /// </summary>		
+        /// </summary>
         public Capacitance Value { get; private set; }
 
         /// <inheritdoc />

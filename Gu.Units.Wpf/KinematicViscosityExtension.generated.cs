@@ -10,7 +10,7 @@
     public class KinematicViscosityExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.KinematicViscosityExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.KinematicViscosityExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.KinematicViscosity"/>.</param>
         public KinematicViscosityExtension(KinematicViscosity value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="KinematicViscosity"/> value
-        /// </summary>		
+        /// </summary>
         public KinematicViscosity Value { get; private set; }
 
         /// <inheritdoc />

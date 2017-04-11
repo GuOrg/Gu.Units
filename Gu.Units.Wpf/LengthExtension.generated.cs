@@ -10,7 +10,7 @@
     public class LengthExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.LengthExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.LengthExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Length"/>.</param>
         public LengthExtension(Length value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Length"/> value
-        /// </summary>		
+        /// </summary>
         public Length Value { get; private set; }
 
         /// <inheritdoc />

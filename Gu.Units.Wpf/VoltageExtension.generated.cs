@@ -10,7 +10,7 @@
     public class VoltageExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.VoltageExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.VoltageExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Voltage"/>.</param>
         public VoltageExtension(Voltage value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Voltage"/> value
-        /// </summary>		
+        /// </summary>
         public Voltage Value { get; private set; }
 
         /// <inheritdoc />

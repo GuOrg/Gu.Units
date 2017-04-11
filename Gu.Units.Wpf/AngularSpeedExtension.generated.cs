@@ -10,7 +10,7 @@
     public class AngularSpeedExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.AngularSpeedExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.AngularSpeedExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.AngularSpeed"/>.</param>
         public AngularSpeedExtension(AngularSpeed value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="AngularSpeed"/> value
-        /// </summary>		
+        /// </summary>
         public AngularSpeed Value { get; private set; }
 
         /// <inheritdoc />

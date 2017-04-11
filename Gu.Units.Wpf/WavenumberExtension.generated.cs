@@ -10,7 +10,7 @@
     public class WavenumberExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.WavenumberExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.WavenumberExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Wavenumber"/>.</param>
         public WavenumberExtension(Wavenumber value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Wavenumber"/> value
-        /// </summary>		
+        /// </summary>
         public Wavenumber Value { get; private set; }
 
         /// <inheritdoc />

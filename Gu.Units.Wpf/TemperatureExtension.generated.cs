@@ -10,7 +10,7 @@
     public class TemperatureExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.TemperatureExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.TemperatureExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Temperature"/>.</param>
         public TemperatureExtension(Temperature value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Temperature"/> value
-        /// </summary>		
+        /// </summary>
         public Temperature Value { get; private set; }
 
         /// <inheritdoc />

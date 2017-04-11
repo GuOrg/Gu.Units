@@ -10,7 +10,7 @@
     public class JerkExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.JerkExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.JerkExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Jerk"/>.</param>
         public JerkExtension(Jerk value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Jerk"/> value
-        /// </summary>		
+        /// </summary>
         public Jerk Value { get; private set; }
 
         /// <inheritdoc />

@@ -10,7 +10,7 @@
     public class AngleExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.AngleExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.AngleExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Angle"/>.</param>
         public AngleExtension(Angle value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Angle"/> value
-        /// </summary>		
+        /// </summary>
         public Angle Value { get; private set; }
 
         /// <inheritdoc />

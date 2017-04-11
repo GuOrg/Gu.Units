@@ -10,7 +10,7 @@
     public class AccelerationExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.AccelerationExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.AccelerationExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Acceleration"/>.</param>
         public AccelerationExtension(Acceleration value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Acceleration"/> value
-        /// </summary>		
+        /// </summary>
         public Acceleration Value { get; private set; }
 
         /// <inheritdoc />

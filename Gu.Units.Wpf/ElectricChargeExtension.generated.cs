@@ -10,7 +10,7 @@
     public class ElectricChargeExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.ElectricChargeExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.ElectricChargeExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.ElectricCharge"/>.</param>
         public ElectricChargeExtension(ElectricCharge value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="ElectricCharge"/> value
-        /// </summary>		
+        /// </summary>
         public ElectricCharge Value { get; private set; }
 
         /// <inheritdoc />

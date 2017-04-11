@@ -10,7 +10,7 @@
     public class MomentumExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.MomentumExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.MomentumExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Momentum"/>.</param>
         public MomentumExtension(Momentum value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Momentum"/> value
-        /// </summary>		
+        /// </summary>
         public Momentum Value { get; private set; }
 
         /// <inheritdoc />

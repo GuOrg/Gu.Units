@@ -10,7 +10,7 @@
     public class AnglePerUnitlessExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.AnglePerUnitlessExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.AnglePerUnitlessExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.AnglePerUnitless"/>.</param>
         public AnglePerUnitlessExtension(AnglePerUnitless value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="AnglePerUnitless"/> value
-        /// </summary>		
+        /// </summary>
         public AnglePerUnitless Value { get; private set; }
 
         /// <inheritdoc />

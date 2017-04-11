@@ -10,7 +10,7 @@
     public class AmountOfSubstanceExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.AmountOfSubstanceExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.AmountOfSubstanceExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.AmountOfSubstance"/>.</param>
         public AmountOfSubstanceExtension(AmountOfSubstance value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="AmountOfSubstance"/> value
-        /// </summary>		
+        /// </summary>
         public AmountOfSubstance Value { get; private set; }
 
         /// <inheritdoc />

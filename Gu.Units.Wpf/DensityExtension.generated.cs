@@ -10,7 +10,7 @@
     public class DensityExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.DensityExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.DensityExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Density"/>.</param>
         public DensityExtension(Density value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Density"/> value
-        /// </summary>		
+        /// </summary>
         public Density Value { get; private set; }
 
         /// <inheritdoc />

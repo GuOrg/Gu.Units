@@ -10,7 +10,7 @@
     public class IlluminanceExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.IlluminanceExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.IlluminanceExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Illuminance"/>.</param>
         public IlluminanceExtension(Illuminance value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Illuminance"/> value
-        /// </summary>		
+        /// </summary>
         public Illuminance Value { get; private set; }
 
         /// <inheritdoc />

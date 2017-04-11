@@ -10,7 +10,7 @@
     public class MassFlowExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.MassFlowExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.MassFlowExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.MassFlow"/>.</param>
         public MassFlowExtension(MassFlow value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="MassFlow"/> value
-        /// </summary>		
+        /// </summary>
         public MassFlow Value { get; private set; }
 
         /// <inheritdoc />

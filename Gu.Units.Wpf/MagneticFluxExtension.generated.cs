@@ -10,7 +10,7 @@
     public class MagneticFluxExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.MagneticFluxExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.MagneticFluxExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.MagneticFlux"/>.</param>
         public MagneticFluxExtension(MagneticFlux value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="MagneticFlux"/> value
-        /// </summary>		
+        /// </summary>
         public MagneticFlux Value { get; private set; }
 
         /// <inheritdoc />

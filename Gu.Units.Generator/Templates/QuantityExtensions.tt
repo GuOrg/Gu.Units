@@ -19,16 +19,17 @@ foreach (var quantity in settings.Quantities)
 {
     var fileName = quantity.Name + "Extension.generated." + Settings.Extension;
     fileManager.StartNewFile(fileName , "Gu.Units.Wpf", null, null);
-	session["QuantityName"] = quantity.Name;
-	string output = paramTmpl.TransformText(session);
-	if (output == "ErrorGeneratingOutput")
+    session["QuantityName"] = quantity.Name;
+    var output = paramTmpl.TransformText(session);
+    if (output == "ErrorGeneratingOutput")
     {
-		this.WriteLine("Error transforming {0}", quantity.Name);
+        this.WriteLine("Error transforming {0}", quantity.Name);
         throw new InvalidOperationException("output");
     }
 
-	this.Write(output);
+    this.Write(output);
 }
 
 fileManager.Process();
+this.Dispose();
 #>

@@ -10,7 +10,7 @@
     public class SpeedExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.SpeedExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.SpeedExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Speed"/>.</param>
         public SpeedExtension(Speed value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Speed"/> value
-        /// </summary>		
+        /// </summary>
         public Speed Value { get; private set; }
 
         /// <inheritdoc />

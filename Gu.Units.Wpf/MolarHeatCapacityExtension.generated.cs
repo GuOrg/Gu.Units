@@ -10,7 +10,7 @@
     public class MolarHeatCapacityExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.MolarHeatCapacityExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.MolarHeatCapacityExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.MolarHeatCapacity"/>.</param>
         public MolarHeatCapacityExtension(MolarHeatCapacity value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="MolarHeatCapacity"/> value
-        /// </summary>		
+        /// </summary>
         public MolarHeatCapacity Value { get; private set; }
 
         /// <inheritdoc />

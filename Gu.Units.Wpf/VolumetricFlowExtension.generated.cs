@@ -10,7 +10,7 @@
     public class VolumetricFlowExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.VolumetricFlowExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.VolumetricFlowExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.VolumetricFlow"/>.</param>
         public VolumetricFlowExtension(VolumetricFlow value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="VolumetricFlow"/> value
-        /// </summary>		
+        /// </summary>
         public VolumetricFlow Value { get; private set; }
 
         /// <inheritdoc />

@@ -10,7 +10,7 @@
     public class ForcePerUnitlessExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.ForcePerUnitlessExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.ForcePerUnitlessExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.ForcePerUnitless"/>.</param>
         public ForcePerUnitlessExtension(ForcePerUnitless value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="ForcePerUnitless"/> value
-        /// </summary>		
+        /// </summary>
         public ForcePerUnitless Value { get; private set; }
 
         /// <inheritdoc />

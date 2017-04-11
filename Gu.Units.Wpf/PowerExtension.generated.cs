@@ -10,7 +10,7 @@
     public class PowerExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.PowerExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.PowerExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Power"/>.</param>
         public PowerExtension(Power value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Power"/> value
-        /// </summary>		
+        /// </summary>
         public Power Value { get; private set; }
 
         /// <inheritdoc />

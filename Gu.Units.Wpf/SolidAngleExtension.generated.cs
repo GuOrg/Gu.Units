@@ -10,7 +10,7 @@
     public class SolidAngleExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.SolidAngleExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.SolidAngleExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.SolidAngle"/>.</param>
         public SolidAngleExtension(SolidAngle value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="SolidAngle"/> value
-        /// </summary>		
+        /// </summary>
         public SolidAngle Value { get; private set; }
 
         /// <inheritdoc />

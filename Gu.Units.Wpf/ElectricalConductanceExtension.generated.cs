@@ -10,7 +10,7 @@
     public class ElectricalConductanceExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.ElectricalConductanceExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.ElectricalConductanceExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.ElectricalConductance"/>.</param>
         public ElectricalConductanceExtension(ElectricalConductance value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="ElectricalConductance"/> value
-        /// </summary>		
+        /// </summary>
         public ElectricalConductance Value { get; private set; }
 
         /// <inheritdoc />

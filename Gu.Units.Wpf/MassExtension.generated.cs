@@ -10,7 +10,7 @@
     public class MassExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.MassExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.MassExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Mass"/>.</param>
         public MassExtension(Mass value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Mass"/> value
-        /// </summary>		
+        /// </summary>
         public Mass Value { get; private set; }
 
         /// <inheritdoc />

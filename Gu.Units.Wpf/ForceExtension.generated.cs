@@ -10,7 +10,7 @@
     public class ForceExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.ForceExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.ForceExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Force"/>.</param>
         public ForceExtension(Force value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Force"/> value
-        /// </summary>		
+        /// </summary>
         public Force Value { get; private set; }
 
         /// <inheritdoc />

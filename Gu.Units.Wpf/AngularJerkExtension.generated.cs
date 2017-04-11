@@ -10,7 +10,7 @@
     public class AngularJerkExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.AngularJerkExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.AngularJerkExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.AngularJerk"/>.</param>
         public AngularJerkExtension(AngularJerk value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="AngularJerk"/> value
-        /// </summary>		
+        /// </summary>
         public AngularJerk Value { get; private set; }
 
         /// <inheritdoc />

@@ -10,7 +10,7 @@
     public class ResistanceExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.ResistanceExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.ResistanceExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Resistance"/>.</param>
         public ResistanceExtension(Resistance value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Resistance"/> value
-        /// </summary>		
+        /// </summary>
         public Resistance Value { get; private set; }
 
         /// <inheritdoc />

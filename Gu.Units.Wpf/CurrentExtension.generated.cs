@@ -10,7 +10,7 @@
     public class CurrentExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.CurrentExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.CurrentExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Current"/>.</param>
         public CurrentExtension(Current value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Current"/> value
-        /// </summary>		
+        /// </summary>
         public Current Value { get; private set; }
 
         /// <inheritdoc />

@@ -10,7 +10,7 @@
     public class SpecificEnergyExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.SpecificEnergyExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.SpecificEnergyExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.SpecificEnergy"/>.</param>
         public SpecificEnergyExtension(SpecificEnergy value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="SpecificEnergy"/> value
-        /// </summary>		
+        /// </summary>
         public SpecificEnergy Value { get; private set; }
 
         /// <inheritdoc />

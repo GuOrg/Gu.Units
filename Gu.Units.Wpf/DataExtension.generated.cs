@@ -10,7 +10,7 @@
     public class DataExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.DataExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.DataExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Data"/>.</param>
         public DataExtension(Data value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Data"/> value
-        /// </summary>		
+        /// </summary>
         public Data Value { get; private set; }
 
         /// <inheritdoc />

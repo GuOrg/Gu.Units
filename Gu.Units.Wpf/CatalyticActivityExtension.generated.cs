@@ -10,7 +10,7 @@
     public class CatalyticActivityExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.CatalyticActivityExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.CatalyticActivityExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.CatalyticActivity"/>.</param>
         public CatalyticActivityExtension(CatalyticActivity value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="CatalyticActivity"/> value
-        /// </summary>		
+        /// </summary>
         public CatalyticActivity Value { get; private set; }
 
         /// <inheritdoc />

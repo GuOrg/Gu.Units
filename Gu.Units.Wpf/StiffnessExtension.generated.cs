@@ -10,7 +10,7 @@
     public class StiffnessExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.StiffnessExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.StiffnessExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Stiffness"/>.</param>
         public StiffnessExtension(Stiffness value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Stiffness"/> value
-        /// </summary>		
+        /// </summary>
         public Stiffness Value { get; private set; }
 
         /// <inheritdoc />

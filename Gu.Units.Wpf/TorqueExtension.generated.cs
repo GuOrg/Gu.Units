@@ -10,7 +10,7 @@
     public class TorqueExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.TorqueExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.TorqueExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Torque"/>.</param>
         public TorqueExtension(Torque value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Torque"/> value
-        /// </summary>		
+        /// </summary>
         public Torque Value { get; private set; }
 
         /// <inheritdoc />

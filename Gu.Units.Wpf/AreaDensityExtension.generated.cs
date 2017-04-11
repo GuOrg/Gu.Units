@@ -10,7 +10,7 @@
     public class AreaDensityExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.AreaDensityExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.AreaDensityExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.AreaDensity"/>.</param>
         public AreaDensityExtension(AreaDensity value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="AreaDensity"/> value
-        /// </summary>		
+        /// </summary>
         public AreaDensity Value { get; private set; }
 
         /// <inheritdoc />

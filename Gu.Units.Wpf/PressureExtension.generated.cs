@@ -10,7 +10,7 @@
     public class PressureExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.PressureExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.PressureExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Pressure"/>.</param>
         public PressureExtension(Pressure value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Pressure"/> value
-        /// </summary>		
+        /// </summary>
         public Pressure Value { get; private set; }
 
         /// <inheritdoc />

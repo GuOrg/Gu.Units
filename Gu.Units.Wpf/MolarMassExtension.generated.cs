@@ -10,7 +10,7 @@
     public class MolarMassExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.MolarMassExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.MolarMassExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.MolarMass"/>.</param>
         public MolarMassExtension(MolarMass value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="MolarMass"/> value
-        /// </summary>		
+        /// </summary>
         public MolarMass Value { get; private set; }
 
         /// <inheritdoc />

@@ -10,7 +10,7 @@
     public class LengthPerUnitlessExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.LengthPerUnitlessExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.LengthPerUnitlessExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.LengthPerUnitless"/>.</param>
         public LengthPerUnitlessExtension(LengthPerUnitless value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="LengthPerUnitless"/> value
-        /// </summary>		
+        /// </summary>
         public LengthPerUnitless Value { get; private set; }
 
         /// <inheritdoc />

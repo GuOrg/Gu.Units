@@ -10,7 +10,7 @@
     public class UnitlessExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.UnitlessExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.UnitlessExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Unitless"/>.</param>
         public UnitlessExtension(Unitless value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Unitless"/> value
-        /// </summary>		
+        /// </summary>
         public Unitless Value { get; private set; }
 
         /// <inheritdoc />

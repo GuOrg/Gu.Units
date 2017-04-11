@@ -10,7 +10,7 @@
     public class MagneticFieldStrengthExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.MagneticFieldStrengthExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.MagneticFieldStrengthExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.MagneticFieldStrength"/>.</param>
         public MagneticFieldStrengthExtension(MagneticFieldStrength value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="MagneticFieldStrength"/> value
-        /// </summary>		
+        /// </summary>
         public MagneticFieldStrength Value { get; private set; }
 
         /// <inheritdoc />

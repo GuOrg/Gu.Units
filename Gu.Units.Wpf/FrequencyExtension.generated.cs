@@ -10,7 +10,7 @@
     public class FrequencyExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.FrequencyExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.FrequencyExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Frequency"/>.</param>
         public FrequencyExtension(Frequency value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Frequency"/> value
-        /// </summary>		
+        /// </summary>
         public Frequency Value { get; private set; }
 
         /// <inheritdoc />

@@ -10,7 +10,7 @@
     public class TimeExtension : MarkupExtension
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.TimeExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.TimeExtension"/> class.
         /// </summary>
         /// <param name="value"><see cref="Gu.Units.Time"/>.</param>
         public TimeExtension(Time value)
@@ -20,7 +20,7 @@
 
         /// <summary>
         /// Gets the <see cref="Time"/> value
-        /// </summary>		
+        /// </summary>
         public Time Value { get; private set; }
 
         /// <inheritdoc />
