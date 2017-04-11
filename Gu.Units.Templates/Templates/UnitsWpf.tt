@@ -1,0 +1,34 @@
+﻿<#@ template debug="true" hostspecific="true" language="C#" #>
+<#@ include file="TemplateFilemanager.CS.ttinclude" #>
+<#@ output extension=".txt" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="$(TargetPath)" #>
+<#@ import namespace="Gu.Units.Generator" #>
+<# 
+var fileManager = TemplateFileManager.Create(this);
+fileManager.IsAutoIndentEnabled = true;
+fileManager.CanOverwriteExistingFile = true;
+// init handling for parameter templates
+var paramTmpl = ParamTextTemplate.Create(this.Host, "UnitWpf.tt");
+var session = ParamTextTemplate.GetSessionObject();
+var settings = Settings.Instance;
+this.WriteLine("Read Settings and found {0} si units and {1} derived units", settings.BaseUnits.Count, settings.DerivedUnits.Count);
+
+foreach (var unit in settings.AllUnits)
+{
+    var fileName = unit.ClassName + ".generated." + Settings.Extension;
+    fileManager.StartNewFile(fileName, "Gu.Units.Wpf", null, null);
+	session["UnitName"] = unit.Name;
+	var output = paramTmpl.TransformText(session);
+	if (output == "ErrorGeneratingOutput")
+    {
+		this.WriteLine("Error transforming {0}", unit.ClassName);
+        throw new InvalidOperationException("output");
+    }
+
+	this.Write(output);
+}
+
+fileManager.Process();
+this.Dispose();
+#>
