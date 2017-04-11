@@ -93,7 +93,7 @@
         public void AreEqual(TestCase conversion)
         {
             Assert.AreEqual(conversion.X, conversion.Y);
-            // random asserts below.
+            //// random asserts below.
             Assert.AreEqual(conversion.Y, conversion.X);
             Assert.AreEqual(conversion.X, conversion.X);
             Assert.AreEqual(conversion.Y, conversion.Y);

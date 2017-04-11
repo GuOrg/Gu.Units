@@ -17,15 +17,15 @@
         private string symbol;
         private int power;
 
-        private Prefix()
-        {
-        }
-
         public Prefix(string name, string symbol, int power)
         {
             this.Name = name;
             this.Symbol = symbol;
             this.Power = power;
+        }
+
+        private Prefix()
+        {
         }
 
         [field: NonSerialized]

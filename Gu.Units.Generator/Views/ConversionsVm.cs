@@ -15,7 +15,6 @@
 
     public sealed class ConversionsVm : INotifyPropertyChanged, IDisposable
     {
-        private readonly Settings settings;
         private readonly SerialDisposable subscription = new SerialDisposable();
         private readonly ReadOnlySerialView<IConversion> allConversions = new ReadOnlySerialView<IConversion>();
 
@@ -27,7 +26,6 @@
 
         public ConversionsVm(Settings settings)
         {
-            this.settings = settings;
             this.PrefixConversions = new PrefixConversionsVm(settings);
             this.PartConversions = new PartConversionsVm(settings);
             this.Unit = settings.AllUnits.FirstOrDefault(x => x.QuantityName == "Angle"); // for designtime
@@ -173,12 +171,13 @@
             }
             else
             {
-                var observable = Observable.Merge(this.unit.FactorConversions.ObservePropertyChangedSlim(),
-                                                  this.unit.FactorConversions.Select(x => x.PrefixConversions.ObservePropertyChangedSlim()).Merge(),
-                                                  this.unit.CustomConversions.ObservePropertyChangedSlim(),
-                                                  this.unit.PrefixConversions.ObservePropertyChangedSlim(),
-                                                  this.unit.PartConversions.ObservePropertyChangedSlim());
-                this.subscription.Disposable = observable.Subscribe(_ => this.UpdateAllConversionsSubscription());
+                this.subscription.Disposable = Observable.Merge(
+                                                             this.unit.FactorConversions.ObservePropertyChangedSlim(),
+                                                             this.unit.FactorConversions.Select(x => x.PrefixConversions.ObservePropertyChangedSlim()).Merge(),
+                                                             this.unit.CustomConversions.ObservePropertyChangedSlim(),
+                                                             this.unit.PrefixConversions.ObservePropertyChangedSlim(),
+                                                             this.unit.PartConversions.ObservePropertyChangedSlim())
+                                                         .Subscribe(_ => this.UpdateAllConversionsSubscription());
             }
         }
 

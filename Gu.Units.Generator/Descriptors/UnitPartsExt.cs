@@ -31,12 +31,12 @@
         {
             if (!symbolAndPowers.Any())
             {
-                return "";
+                return string.Empty;
             }
 
             var sb = new StringBuilder();
             var sorted = symbolAndPowers.OrderBy(x => x, BaseUnitOrderComparer.Default).ToArray();
-            for (int i = 0; i < sorted.Length; i++)
+            for (var i = 0; i < sorted.Length; i++)
             {
                 var unitAndPower = sorted[i];
                 if (i > 0)
@@ -116,7 +116,7 @@
                 var indexOfY = Array.IndexOf(Order, y.Symbol);
                 if (indexOfX < 0 && indexOfY < 0)
                 {
-                    return String.Compare(x.Symbol, y.Symbol, StringComparison.Ordinal);
+                    return string.Compare(x.Symbol, y.Symbol, StringComparison.Ordinal);
                 }
 
                 return indexOfX.CompareTo(indexOfY);

@@ -14,9 +14,7 @@ namespace Gu.Units.Generator
         private string symbol;
         private string quantityName;
 
-        protected Unit(string name,
-            string symbol,
-            string quantityName)
+        protected Unit(string name, string symbol, string quantityName)
         {
             this.name = name;
             this.symbol = symbol;

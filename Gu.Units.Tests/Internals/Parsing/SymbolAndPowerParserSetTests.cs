@@ -56,6 +56,5 @@
             Assert.AreEqual(@case.Start, pos);
             CollectionAssert.AreEqual(null, actual);
         }
-
     }
 }

@@ -22,11 +22,11 @@
             this.settings = Settings.FromResource;
             this.NameSpace = Settings.ProjectName;
             this.BaseUnits = new ObservableCollection<BaseUnitViewModel>(this.settings.BaseUnits.Select(x => new BaseUnitViewModel(x)));
-            this.BaseUnits.ObserveCollectionChangedSlim(false)
+            this.BaseUnits.ObserveCollectionChangedSlim(signalInitial: false)
                 .Subscribe(this.OnBaseUnitsChanged);
             this.DerivedUnits = new ObservableCollection<DerivedUnitViewModel>(this.settings.DerivedUnits.Select(x => new DerivedUnitViewModel(x)));
 
-            this.DerivedUnits.ObserveCollectionChangedSlim(false)
+            this.DerivedUnits.ObserveCollectionChangedSlim(signalInitial: false)
                 .Subscribe(this.OnDerivedUnitsChanged);
             this.Conversions = new ConversionsVm(this.settings);
         }

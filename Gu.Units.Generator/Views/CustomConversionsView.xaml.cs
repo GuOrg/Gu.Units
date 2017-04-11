@@ -1,10 +1,7 @@
-﻿using System.Windows.Controls;
-
-namespace Gu.Units.Generator
+﻿namespace Gu.Units.Generator
 {
-    /// <summary>
-    /// Interaction logic for CustomConversionsView.xaml
-    /// </summary>
+    using System.Windows.Controls;
+
     public partial class CustomConversionsView : UserControl
     {
         public CustomConversionsView()

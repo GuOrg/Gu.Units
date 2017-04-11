@@ -1,8 +1,9 @@
-﻿namespace Gu.Units.Tests.Internals
+﻿namespace Gu.Units.Tests.Internals.Caching
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
+
     using NUnit.Framework;
 
     public class UnitFormatCacheTests
@@ -10,7 +11,7 @@
         // ReSharper disable once UnusedMember.Local
         private const string Unicodes = "⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
 
-        private static IReadOnlyList<SymbolFormat> TestCases = Enum.GetValues(typeof(SymbolFormat)).Cast<SymbolFormat>().ToList();
+        private static readonly IReadOnlyList<SymbolFormat> TestCases = Enum.GetValues(typeof(SymbolFormat)).Cast<SymbolFormat>().ToList();
 
         [TestCaseSource(nameof(TestCases))]
         public void GetOrCreateSymbolFormatLength(SymbolFormat symbolFormat)

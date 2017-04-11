@@ -7,7 +7,7 @@
     public class DerivedUnitViewModel : UnitViewModel<DerivedUnit>
     {
         private static readonly BaseUnit UnknownUnit = new BaseUnit("???", "??", "????");
-        private static readonly UnitAndPower[] UnknownUnitAndPowers = { UnitAndPower.Create(UnknownUnit, 1)};
+        private static readonly UnitAndPower[] UnknownUnitAndPowers = { UnitAndPower.Create(UnknownUnit, 1) };
         private readonly SerialDisposable subscription = new SerialDisposable();
 
         public DerivedUnitViewModel()
@@ -37,23 +37,6 @@
             }
         }
 
-        private void Subscribe()
-        {
-            this.subscription.Disposable = this.Unit.ObservePropertyChangedSlim().Subscribe(_ =>
-            {
-                if (Settings.Instance.DerivedUnits.Contains(this.Unit))
-                {
-                    this.subscription.Disposable.Dispose();
-                    return;
-                }
-
-                if (!this.IsUnknown)
-                {
-                    Settings.Instance.DerivedUnits.Add(this.Unit);
-                }
-            });
-        }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -62,6 +45,23 @@
             }
 
             base.Dispose(disposing);
+        }
+
+        private void Subscribe()
+        {
+            this.subscription.Disposable = this.Unit.ObservePropertyChangedSlim().Subscribe(_ =>
+                {
+                    if (Settings.Instance.DerivedUnits.Contains(this.Unit))
+                    {
+                        this.subscription.Disposable.Dispose();
+                        return;
+                    }
+
+                    if (!this.IsUnknown)
+                    {
+                        Settings.Instance.DerivedUnits.Add(this.Unit);
+                    }
+                });
         }
     }
 }

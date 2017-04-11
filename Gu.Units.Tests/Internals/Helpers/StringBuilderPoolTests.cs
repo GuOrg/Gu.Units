@@ -44,16 +44,18 @@
 
         private static StringBuilder GetInner(StringBuilderPool.Builder outer)
         {
-            var fieldInfo = typeof(StringBuilderPool.Builder).GetField("builder", BindingFlags.Instance | BindingFlags.NonPublic);
-            return (StringBuilder)fieldInfo.GetValue(outer);
+            var field = typeof(StringBuilderPool.Builder).GetField("builder", BindingFlags.Instance | BindingFlags.NonPublic);
+            Assert.NotNull(field);
+            return (StringBuilder)field.GetValue(outer);
         }
 
         private static void Clear()
         {
-            var buildersField = typeof(StringBuilderPool).GetField("Builders", BindingFlags.Static | BindingFlags.NonPublic);
-            var builders = (ConcurrentQueue<StringBuilder>)buildersField.GetValue(null);
-            StringBuilder temp;
-            while (builders.TryDequeue(out temp))
+            var field = typeof(StringBuilderPool).GetField("Builders", BindingFlags.Static | BindingFlags.NonPublic);
+            Assert.NotNull(field);
+            var builders = (ConcurrentQueue<StringBuilder>)field.GetValue(null);
+            //// ReSharper disable once UnusedVariable
+            while (builders.TryDequeue(out StringBuilder temp))
             {
             }
         }

@@ -75,6 +75,7 @@
 
         private bool IsMatch(PartConversion x)
         {
+            //// ReSharper disable once CompareOfFloatsByEqualityOperator
             if (this.Conversion.Factor != x.Factor)
             {
                 return false;

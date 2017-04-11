@@ -32,6 +32,7 @@
         public static string GetToSi(this IFactorConversion conversion)
         {
             var parameter = conversion.ParameterName;
+            //// ReSharper disable once CompareOfFloatsByEqualityOperator
             if (conversion.Factor == 1)
             {
                 return parameter;
@@ -54,7 +55,7 @@
         public static string GetFromSi(this IFactorConversion conversion)
         {
             var parameter = conversion.Unit.ParameterName;
-
+            //// ReSharper disable once CompareOfFloatsByEqualityOperator
             if (conversion.Factor == 1)
             {
                 return parameter;
@@ -112,6 +113,7 @@
                 {
                     var si = ConvertToSi(value, conversion.ParameterName, toSi);
                     var roundtrip = ConvertFromSi(si, conversion.Unit.ParameterName, fromSi);
+                    //// ReSharper disable once CompareOfFloatsByEqualityOperator
                     if (roundtrip != value)
                     {
                         return false;
@@ -149,6 +151,7 @@
                     return 0;
                 }
 
+                // ReSharper disable once CompareOfFloatsByEqualityOperator
                 if (Math.Floor(factor) == factor)
                 {
                     return (long)factor;
@@ -158,6 +161,7 @@
                 var digits = 14 - (int)Math.Log10(factor);
                 var round = Math.Round(factor, digits > 0 ? digits : 0);
                 var integer = (long)round;
+                //// ReSharper disable once CompareOfFloatsByEqualityOperator
                 if (round == integer)
                 {
                     return integer;

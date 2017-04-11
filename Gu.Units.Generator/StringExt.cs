@@ -1,6 +1,5 @@
 ﻿namespace Gu.Units.Generator
 {
-    using System;
     using System.CodeDom.Compiler;
 
     public static class StringExt
@@ -9,7 +8,7 @@
 
         public static string ToParameterName(this string text)
         {
-            var parameter = Char.ToLower(text[0]) + text.Substring(1);
+            var parameter = char.ToLower(text[0]) + text.Substring(1);
             if (CodeDomProvider.IsValidIdentifier(parameter))
             {
                 return parameter;

@@ -7,7 +7,6 @@
     using System.Diagnostics;
     using System.Linq;
     using System.Runtime.CompilerServices;
-    using JetBrains.Annotations;
     using Reactive;
 
     [DebuggerDisplay("{Conversion.Symbol}")]
@@ -56,7 +55,19 @@
             }
         }
 
-        [NotifyPropertyChangedInvocator]
+        public static PrefixConversionVm Create(Unit unit, Prefix prefix)
+        {
+            var identityConversion = new PartConversion.IdentityConversion(unit);
+            var prefixConversion = PrefixConversion.Create(unit, prefix);
+            return new PrefixConversionVm(unit.PrefixConversions, identityConversion, prefixConversion);
+        }
+
+        public static PrefixConversionVm Create(FactorConversion factorConversion, Prefix prefix)
+        {
+            var prefixConversion = PrefixConversion.Create(factorConversion, prefix);
+            return new PrefixConversionVm(factorConversion.PrefixConversions, factorConversion, prefixConversion);
+        }
+
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -70,19 +81,6 @@
             }
 
             return true;
-        }
-
-        public static PrefixConversionVm Create(Unit unit, Prefix prefix)
-        {
-            var identityConversion = new PartConversion.IdentityConversion(unit);
-            var prefixConversion = PrefixConversion.Create(unit, prefix);
-            return new PrefixConversionVm(unit.PrefixConversions, identityConversion, prefixConversion);
-        }
-
-        public static PrefixConversionVm Create(FactorConversion factorConversion, Prefix prefix)
-        {
-            var prefixConversion = PrefixConversion.Create(factorConversion, prefix);
-            return new PrefixConversionVm(factorConversion.PrefixConversions, factorConversion, prefixConversion);
         }
     }
 }

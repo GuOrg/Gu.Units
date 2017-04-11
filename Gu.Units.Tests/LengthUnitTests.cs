@@ -6,6 +6,7 @@ namespace Gu.Units.Tests
     public class LengthUnitTests
     {
         public static string[] HappyPathSource { get; } = { "m", "mm", " cm", " m ", "ft", "yd" };
+
         public static string[] ErrorSource { get; } = { "ssg", "mms" };
 
         [TestCaseSource(nameof(HappyPathSource))]

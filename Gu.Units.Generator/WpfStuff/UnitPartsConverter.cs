@@ -30,8 +30,7 @@
             }
 
             var settings = Settings.Instance;
-            IReadOnlyList<SymbolAndPower> result;
-            int pos = 0;
+            var pos = 0;
             WhiteSpaceReader.TryRead(text, ref pos);
             var indexOf = text.IndexOf("1/", pos);
             if (indexOf >= 0)
@@ -39,7 +38,7 @@
                 pos = indexOf + 2;
             }
 
-            if (SymbolAndPowerReader.TryRead(text, ref pos, out result))
+            if (SymbolAndPowerReader.TryRead(text, ref pos, out IReadOnlyList<SymbolAndPower> result))
             {
                 if (WhiteSpaceReader.IsRestWhiteSpace(text, pos))
                 {

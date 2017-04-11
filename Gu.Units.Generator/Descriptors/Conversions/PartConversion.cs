@@ -10,7 +10,6 @@
     public class PartConversion : IFactorConversion, INotifyPropertyChanged
     {
         private Unit unit;
-
         private string name;
 
         public PartConversion(string name, string symbol, double factor)
@@ -135,6 +134,31 @@
                 }
             }
 
+            public string Symbol
+            {
+                get
+                {
+                    if (SymbolAndPowerReader.TryRead(this.Conversion.Symbol, out IReadOnlyList<SymbolAndPower> symbolAndPowers))
+                    {
+                        return symbolAndPowers.Select(x => new SymbolAndPower(x.Symbol, x.Power * this.Power)).AsSymbol();
+                    }
+
+                    return "Error";
+                }
+            }
+
+            public double Factor => Math.Pow(this.Conversion.Factor, this.Power);
+
+            internal IReadOnlyList<SymbolAndPower> AsSymbolAndPowers()
+            {
+                if (SymbolAndPowerReader.TryRead(this.Conversion.Symbol, out IReadOnlyList<SymbolAndPower> symbolAndPowers))
+                {
+                    return symbolAndPowers.Select(x => new SymbolAndPower(x.Symbol, x.Power * this.Power)).ToList();
+                }
+
+                throw new InvalidOperationException();
+            }
+
             private static string CreateName(int power, string name, bool isLength)
             {
                 name = name.TrimStart('@');
@@ -165,33 +189,6 @@
                     default:
                         throw new ArgumentOutOfRangeException(nameof(power));
                 }
-            }
-
-            public string Symbol
-            {
-                get
-                {
-                    IReadOnlyList<SymbolAndPower> symbolAndPowers;
-                    if (SymbolAndPowerReader.TryRead(this.Conversion.Symbol, out symbolAndPowers))
-                    {
-                        return symbolAndPowers.Select(x => new SymbolAndPower(x.Symbol, x.Power *this.Power)).AsSymbol();
-                    }
-
-                    return "Error";
-                }
-            }
-
-            public double Factor => Math.Pow(this.Conversion.Factor, this.Power);
-
-            internal IReadOnlyList<SymbolAndPower> AsSymbolAndPowers()
-            {
-                IReadOnlyList<SymbolAndPower> symbolAndPowers;
-                if (SymbolAndPowerReader.TryRead(this.Conversion.Symbol, out symbolAndPowers))
-                {
-                    return symbolAndPowers.Select(x => new SymbolAndPower(x.Symbol, x.Power *this.Power)).ToList();
-                }
-
-                throw new InvalidOperationException();
             }
 
             private static bool IsLength(IConversion conversion)

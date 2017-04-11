@@ -13,17 +13,17 @@
 
         public CustomConversionsVm()
         {
-            this.Conversions.ObserveCollectionChangedSlim(false)
+            this.Conversions.ObserveCollectionChangedSlim(signalInitial: false)
                        .Subscribe(this.Synchronize);
         }
 
         public ObservableCollection<CustomConversionVm> Conversions { get; } = new ObservableCollection<CustomConversionVm>();
 
-        public void SetUnit(Unit unit)
+        public void SetUnit(Unit newUnit)
         {
-            this.unit = unit;
+            this.unit = newUnit;
             this.Conversions.Clear();
-            if (unit == null)
+            if (newUnit == null)
             {
                 return;
             }
@@ -31,7 +31,7 @@
             try
             {
                 this.isUpdating = true;
-                foreach (var conversion in unit.CustomConversions)
+                foreach (var conversion in newUnit.CustomConversions)
                 {
                     this.Conversions.Add(new CustomConversionVm(conversion));
                 }

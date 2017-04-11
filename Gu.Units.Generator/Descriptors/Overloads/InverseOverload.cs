@@ -15,16 +15,16 @@
 
         public Quantity Inverted { get; }
 
-        public override string ToString()
-        {
-            return $"1 / {this.Original.Name} = {this.Inverted.Name}";
-        }
-
         public static bool IsInverse(Quantity left, Quantity right)
         {
             var leftParts = left.Unit.Parts;
             var rightParts = right.Unit.Parts.Inverse();
             return leftParts == rightParts;
+        }
+
+        public override string ToString()
+        {
+            return $"1 / {this.Original.Name} = {this.Inverted.Name}";
         }
     }
 }

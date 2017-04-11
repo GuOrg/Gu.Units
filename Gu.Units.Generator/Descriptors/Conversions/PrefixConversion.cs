@@ -4,7 +4,6 @@
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
-    using JetBrains.Annotations;
 
     [Serializable]
     public class PrefixConversion : IFactorConversion, INotifyPropertyChanged
@@ -108,15 +107,14 @@
             return prefixConversion;
         }
 
-        private static PrefixConversion Create(INameAndSymbol nas, Prefix prefix)
-        {
-            return new PrefixConversion(prefix.Name + nas.ParameterName.TrimStart('@'), prefix.Symbol + nas.Symbol, prefix.Name);
-        }
-
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private static PrefixConversion Create(INameAndSymbol nas, Prefix prefix)
+        {
+            return new PrefixConversion(prefix.Name + nas.ParameterName.TrimStart('@'), prefix.Symbol + nas.Symbol, prefix.Name);
         }
     }
 }

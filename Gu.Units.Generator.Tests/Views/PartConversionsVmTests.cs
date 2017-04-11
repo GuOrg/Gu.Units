@@ -34,7 +34,7 @@
         public void SetUnitToMetresPerSecond()
         {
             Assert.Inconclusive();
-            // ReSharper disable once HeuristicUnreachableCode
+            //// ReSharper disable once HeuristicUnreachableCode
             var settings = MockSettings.Create();
             var vm = new PartConversionsVm(settings);
             vm.SetUnit(settings.MetresPerSecond);

@@ -53,11 +53,6 @@
             return $"{this.Unit.Symbol}{SuperScript.GetString(this.Power)}";
         }
 
-        protected bool Equals(UnitAndPower other)
-        {
-            return string.Equals(this.UnitName, other.UnitName) && this.Power == other.Power;
-        }
-
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -84,6 +79,11 @@
             {
                 return (this.UnitName.GetHashCode() * 397) ^ this.Power;
             }
+        }
+
+        protected bool Equals(UnitAndPower other)
+        {
+            return string.Equals(this.UnitName, other.UnitName) && this.Power == other.Power;
         }
     }
 }

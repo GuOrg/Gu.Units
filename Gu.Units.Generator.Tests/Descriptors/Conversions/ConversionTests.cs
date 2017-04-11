@@ -61,7 +61,7 @@
             Assert.AreEqual("1.8*kelvin - 459.67", conversion.FromSi);
             Assert.AreEqual("1 °F = 255.927777777778 K", conversion.SymbolConversion);
             Assert.Inconclusive("Does not roundtrip cleanly");
-            //Assert.AreEqual(true, conversion.CanRoundtrip);
+            ////Assert.AreEqual(true, conversion.CanRoundtrip);
         }
 
         [Test]

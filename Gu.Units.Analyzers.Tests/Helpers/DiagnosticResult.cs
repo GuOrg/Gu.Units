@@ -21,7 +21,7 @@
 
         public string Message { get; set; }
 
-        public string Path => this.Locations.Length > 0 ? this.Locations[0].Path : "";
+        public string Path => this.Locations.Length > 0 ? this.Locations[0].Path : string.Empty;
 
         public int Line => this.Locations.Length > 0 ? this.Locations[0].Line : -1;
 

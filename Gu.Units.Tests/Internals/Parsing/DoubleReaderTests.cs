@@ -37,7 +37,7 @@
             CreateTestCase("-1.2E3", NumberStyles.Float, En),
             CreateTestCase("+1.2e-3", NumberStyles.Float, En),
             CreateTestCase("+1.2E-3", NumberStyles.Float, En),
-            CreateTestCase("-1.2e+3", NumberStyles.Float, En), //1,,2,3,4,5,,,.00
+            CreateTestCase("-1.2e+3", NumberStyles.Float, En), //// 1,,2,3,4,5,,,.00
             CreateTestCase("1,,2,3,4,5,,,.00", NumberStyles.Float | NumberStyles.AllowThousands, En),
             CreateTestCase("12345678910123456789", NumberStyles.Float | NumberStyles.AllowThousands, En),
             CreateTestCase("1.2345678910123456789", NumberStyles.Float | NumberStyles.AllowThousands, En),

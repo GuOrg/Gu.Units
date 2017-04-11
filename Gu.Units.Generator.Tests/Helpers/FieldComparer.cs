@@ -67,19 +67,18 @@ namespace Gu.Units.Generator.Tests
 
         private class ComparedPair
         {
-            private readonly object X;
-
-            private readonly object Y;
+            private readonly object x;
+            private readonly object y;
 
             public ComparedPair(object x, object y)
             {
-                this.X = x;
-                this.Y = y;
+                this.x = x;
+                this.y = y;
             }
 
-            public bool HasCompared(object x, object y)
+            public bool HasCompared(object xo, object yo)
             {
-                return ReferenceEquals(this.X, x) && ReferenceEquals(this.Y, y);
+                return ReferenceEquals(this.x, xo) && ReferenceEquals(this.y, yo);
             }
         }
     }

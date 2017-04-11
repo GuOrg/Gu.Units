@@ -5,17 +5,12 @@ namespace Gu.Units.Tests.Internals.Parsing
 
     public static class ErrorCase
     {
-        public static ErrorCase<T> Create<T>(string text,
-            int start,
-            T expected,
-            string expectedMessage)
+        public static ErrorCase<T> Create<T>(string text, int start, T expected, string expectedMessage)
         {
             return new ErrorCase<T>(text, start, expected, start, expectedMessage);
         }
 
-        public static ErrorCase<T> Create<T>(string text,
-            int start,
-            string expectedMessage)
+        public static ErrorCase<T> Create<T>(string text, int start, string expectedMessage)
         {
             return new ErrorCase<T>(text, start, default(T), start, expectedMessage);
         }

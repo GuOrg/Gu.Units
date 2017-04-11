@@ -6,8 +6,7 @@
     [DebuggerDisplay("{Parts.Symbol} Missing: {Missing.Count}")]
     public class MissingOverloads
     {
-        public MissingOverloads(UnitParts parts,
-            IReadOnlyList<MissingOverload> missing)
+        public MissingOverloads(UnitParts parts, IReadOnlyList<MissingOverload> missing)
         {
             this.Parts = parts;
             this.Missing = missing;

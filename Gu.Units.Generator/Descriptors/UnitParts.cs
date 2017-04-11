@@ -110,7 +110,7 @@
                 return false;
             }
 
-            return this.Equals((UnitParts) obj);
+            return this.Equals((UnitParts)obj);
         }
 
         public override int GetHashCode()

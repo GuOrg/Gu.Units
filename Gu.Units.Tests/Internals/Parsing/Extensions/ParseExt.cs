@@ -34,8 +34,7 @@
             return success;
         }
 
-        public static bool TryParse(this ISuccessData data, string text, CultureInfo cultureInfo,
-            out object actual)
+        public static bool TryParse(this ISuccessData data, string text, CultureInfo cultureInfo, out object actual)
         {
             var parseMethod = data.Type.GetMethod(
                 nameof(Length.TryParse),

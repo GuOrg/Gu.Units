@@ -14,18 +14,6 @@
     public abstract partial class DiagnosticVerifier
     {
         /// <summary>
-        /// Given classes in the form of strings, their language, and an IDiagnosticAnalyzer to apply to it, return the diagnostics found in the string after converting it to a document.
-        /// </summary>
-        /// <param name="sources">Classes in the form of strings</param>
-        /// <param name="language">The language the source classes are in</param>
-        /// <param name="analyzer">The analyzer to be run on the sources</param>
-        /// <returns>An IEnumerable of Diagnostics that surfaced in the source code, sorted by Location</returns>
-        private static Diagnostic[] GetSortedDiagnostics(string[] sources, string language, DiagnosticAnalyzer analyzer)
-        {
-            return GetSortedDiagnosticsFromDocuments(analyzer, Factory.CreateDocuments(sources, language));
-        }
-
-        /// <summary>
         /// Given an analyzer and a document to apply it to, run the analyzer and gather an array of diagnostics found in it.
         /// The returned diagnostics are then ordered by location in the source document.
         /// </summary>
@@ -72,6 +60,18 @@
         }
 
         /// <summary>
+        /// Given classes in the form of strings, their language, and an IDiagnosticAnalyzer to apply to it, return the diagnostics found in the string after converting it to a document.
+        /// </summary>
+        /// <param name="sources">Classes in the form of strings</param>
+        /// <param name="language">The language the source classes are in</param>
+        /// <param name="analyzer">The analyzer to be run on the sources</param>
+        /// <returns>An IEnumerable of Diagnostics that surfaced in the source code, sorted by Location</returns>
+        private static Diagnostic[] GetSortedDiagnostics(string[] sources, string language, DiagnosticAnalyzer analyzer)
+        {
+            return GetSortedDiagnosticsFromDocuments(analyzer, Factory.CreateDocuments(sources, language));
+        }
+
+        /// <summary>
         /// Sort diagnostics by location in source document
         /// </summary>
         /// <param name="diagnostics">The list of Diagnostics to be sorted</param>
@@ -82,4 +82,3 @@
         }
     }
 }
-

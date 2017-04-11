@@ -70,7 +70,7 @@
         public void LengthTimesLengthEqualsArea()
         {
             OperatorOverload overload;
-            Assert.AreEqual(true, OperatorOverload.TryCreateMultiplication(this.length, this.length, this.settings.AllUnits, out  overload));
+            Assert.AreEqual(true, OperatorOverload.TryCreateMultiplication(this.length, this.length, this.settings.AllUnits, out overload));
             Assert.AreEqual(OperatorOverload.Multiply, overload.Operator);
             Assert.AreEqual(this.length, overload.Left);
             Assert.AreEqual(this.length, overload.Right);

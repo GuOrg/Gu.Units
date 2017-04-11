@@ -52,9 +52,7 @@
             cache.Add("bar", "4");
             cache.Add("mi", "5");
             cache.Add("mm", "6");
-            string actual;
-            string actualKey;
-            var success = cache.TryGetBySubString(key, pos, out actualKey, out actual);
+            var success = cache.TryGetBySubString(key, pos, out string actualKey, out string actual);
             Assert.AreEqual(true, success);
             Assert.AreEqual(expectedKey, actualKey);
             Assert.AreEqual(expectedValue, actual);
@@ -74,8 +72,7 @@
             cache.Add("abc", "2");
             cache.Add("abcd", "3");
             cache.Add("bar", "4");
-            string actual;
-            var success = cache.TryGet(key, out actual);
+            var success = cache.TryGet(key, out string actual);
             Assert.AreEqual(true, success);
             Assert.AreEqual(expected, actual);
         }
@@ -91,8 +88,7 @@
             cache.Add("abc", "d");
             cache.Add("foo", "e");
             cache.Add("bar", "f");
-            string actual;
-            var success = cache.TryGetBySubString(key, pos, out actual);
+            var success = cache.TryGetBySubString(key, pos, out string actual);
             Assert.AreEqual(false, success);
             Assert.AreEqual(null, actual);
             Assert.AreEqual(null, actual);
@@ -100,8 +96,9 @@
 
         private static StringMap<string>.CachedItem[] GetInnerCache(StringMap<string> cache)
         {
-            var fieldInfo = typeof(StringMap<string>).GetField("cache", BindingFlags.NonPublic | BindingFlags.Instance);
-            return (StringMap<string>.CachedItem[])fieldInfo.GetValue(cache);
+            var field = typeof(StringMap<string>).GetField("cache", BindingFlags.NonPublic | BindingFlags.Instance);
+            Assert.NotNull(field);
+            return (StringMap<string>.CachedItem[])field.GetValue(cache);
         }
     }
 }

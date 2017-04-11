@@ -5,10 +5,7 @@
     [DebuggerDisplay("{Left.Name}{Operator}{Right.Name} = {Result.Symbol}")]
     public class MissingOverload
     {
-        public MissingOverload(Quantity left,
-            string @operator,
-            Quantity right,
-            UnitParts result)
+        public MissingOverload(Quantity left, string @operator, Quantity right, UnitParts result)
         {
             this.Left = left;
             this.Operator = @operator;

@@ -11,12 +11,10 @@
             map.TryAdd(1, "1");
             map.TryAdd(2, "2");
 
-            string actualString;
-            Assert.True(map.TryGet(1, out actualString));
+            Assert.True(map.TryGet(1, out string actualString));
             Assert.AreEqual("1", actualString);
 
-            int actualInt;
-            Assert.True(map.TryGet("1", out actualInt));
+            Assert.True(map.TryGet("1", out int actualInt));
             Assert.AreEqual(1, actualInt);
         }
 
@@ -27,12 +25,10 @@
             map.TryAdd(1, "1");
             map.TryAdd(2, "2");
 
-            string actualString;
-            Assert.False(map.TryGet(3, out actualString));
+            Assert.False(map.TryGet(3, out string actualString));
             Assert.AreEqual(null, actualString);
 
-            int actualInt;
-            Assert.False(map.TryGet("3", out actualInt));
+            Assert.False(map.TryGet("3", out int actualInt));
             Assert.AreEqual(0, actualInt);
         }
     }

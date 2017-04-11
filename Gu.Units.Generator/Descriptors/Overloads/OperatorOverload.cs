@@ -85,12 +85,6 @@
             return false;
         }
 
-        protected bool Equals(OperatorOverload other)
-        {
-            return this.Left.Name.Equals(other.Left.Name) && this.Right.Name.Equals(other.Right.Name) && this.Result.Name.Equals(other.Result.Name) &&
-                   string.Equals(this.Operator, other.Operator);
-        }
-
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -126,6 +120,12 @@
         public override string ToString()
         {
             return $"{this.Left.Name} {this.Operator} {this.Right.Name} = {this.Result.Name}";
+        }
+
+        protected bool Equals(OperatorOverload other)
+        {
+            return this.Left.Name.Equals(other.Left.Name) && this.Right.Name.Equals(other.Right.Name) && this.Result.Name.Equals(other.Result.Name) &&
+                   string.Equals(this.Operator, other.Operator);
         }
     }
 }

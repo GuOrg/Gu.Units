@@ -27,9 +27,10 @@ namespace Gu.Units.Analyzers
             this.titleFormat = $"{typename}.{memberName}({0})";
             this.key = $"{typename}.{memberName}()";
             this.pattern = $@"Cannot implicitly convert type '(int|double)' to '(Gu.Units.{typename}|System.Nullable<Gu.Units.{typename}>|Gu.Units.{typename}\?)'";
-            this.wrapSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression,
-                                                                   SyntaxFactory.IdentifierName(typename),
-                                                                   SyntaxFactory.IdentifierName(memberName))
+            this.wrapSyntax = SyntaxFactory.MemberAccessExpression(
+                                               SyntaxKind.SimpleMemberAccessExpression,
+                                               SyntaxFactory.IdentifierName(typename),
+                                               SyntaxFactory.IdentifierName(memberName))
                                            .WithAdditionalAnnotations(Simplifier.Annotation);
         }
 
@@ -69,7 +70,8 @@ namespace Gu.Units.Analyzers
         private async Task<Document> ApplyFix(CodeFixContext context, CancellationToken cancellationToken)
         {
             var document = context.Document;
-            var root = await document.GetSyntaxRootAsync(cancellationToken).ConfigureAwait(false);
+            var root = await document.GetSyntaxRootAsync(cancellationToken)
+                                     .ConfigureAwait(continueOnCapturedContext: false);
 
             var diagnostic = context.Diagnostics.First();
             var position = diagnostic.Location.SourceSpan.Start;

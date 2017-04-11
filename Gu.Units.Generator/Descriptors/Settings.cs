@@ -14,10 +14,10 @@
     [Serializable]
     public class Settings : INotifyPropertyChanged
     {
+#pragma warning disable SA1401 // Fields must be private
         internal static Settings InnerInstance; // huge hairy hack here for T4
+#pragma warning restore SA1401 // Fields must be private
         private IReadOnlyList<MissingOverloads> missing;
-
-        public static Settings Instance => InnerInstance ?? FromResource;
 
         public Settings(ObservableCollection<Prefix> prefixes, ObservableCollection<BaseUnit> baseUnits, ObservableCollection<DerivedUnit> derivedUnits)
         {
@@ -31,14 +31,17 @@
             this.DerivedUnits = derivedUnits;
             InnerInstance = this;
 
-            Observable.Merge(this.BaseUnits.ObserveCollectionChangedSlim(true), this.DerivedUnits.ObserveCollectionChangedSlim(true))
-                .Subscribe(_ =>
-                {
-                    this.missing = OverloadFinder.Find(this.AllUnits);
-                    this.OnPropertyChanged(nameof(this.Missing));
-                    this.OnPropertyChanged(nameof(this.AllUnits));
-                    this.OnPropertyChanged(nameof(this.Quantities));
-                });
+            Observable.Merge(
+                          this.BaseUnits.ObserveCollectionChangedSlim(signalInitial: true),
+                          this.DerivedUnits.ObserveCollectionChangedSlim(signalInitial: true))
+                      .Subscribe(
+                          _ =>
+                              {
+                                  this.missing = OverloadFinder.Find(this.AllUnits);
+                                  this.OnPropertyChanged(nameof(this.Missing));
+                                  this.OnPropertyChanged(nameof(this.AllUnits));
+                                  this.OnPropertyChanged(nameof(this.Quantities));
+                              });
         }
 
         private Settings()
@@ -48,11 +51,15 @@
         [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public static Settings Instance => InnerInstance ?? FromResource;
+
         public static Settings FromResource
         {
             get
             {
+#pragma warning disable WPF1012 // Notify when property changes.
                 InnerInstance = JsonConvert.DeserializeObject<Settings>(Properties.Resources.Units, Persister.SerializerSettings);
+#pragma warning restore WPF1012 // Notify when property changes.
                 return InnerInstance;
             }
         }

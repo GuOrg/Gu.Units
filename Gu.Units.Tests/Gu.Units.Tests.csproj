@@ -48,7 +48,6 @@
     <Compile Include="TemperatureTests.cs" />
     <Compile Include="QuantityConversionTests.cs" />
     <Compile Include="FormatTests.cs" />
-    <Compile Include="Constants\Benchmarks.cs" />
     <Compile Include="Internals\Helpers\MapTests.cs" />
     <Compile Include="Internals\Parsing\DoubleFormatReaderTests.cs" />
     <Compile Include="Internals\Parsing\DoubleReaderTests.cs" />

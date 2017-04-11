@@ -27,6 +27,7 @@
             {
                 return -1;
             }
+
             if (PrefixComparer.Default.Compare(x.Prefix, y.Prefix) != 0)
             {
                 return -1;

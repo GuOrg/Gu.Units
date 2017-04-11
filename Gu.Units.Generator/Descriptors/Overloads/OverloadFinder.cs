@@ -7,7 +7,6 @@
     {
         public static IReadOnlyList<MissingOverloads> Find(IReadOnlyList<Unit> units)
         {
-
             var quantities = units.Select(u => u.Quantity).ToList();
             FindInverseOverloads(quantities);
             return FindOperatorOverloads(units.ToList(), quantities)

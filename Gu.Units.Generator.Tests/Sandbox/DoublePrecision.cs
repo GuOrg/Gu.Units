@@ -30,6 +30,7 @@
             {
                 var temp = f1 * i;
                 var rt = f2 * temp;
+                //// ReSharper disable once CompareOfFloatsByEqualityOperator
                 if (i != rt)
                 {
                     return false;
@@ -45,6 +46,7 @@
             {
                 var temp = f1 * i;
                 var rt = temp / f1;
+                //// ReSharper disable once CompareOfFloatsByEqualityOperator
                 if (i != rt)
                 {
                     return false;
@@ -60,6 +62,7 @@
             {
                 var temp = f * i;
                 var rt = temp / f;
+                //// ReSharper disable once CompareOfFloatsByEqualityOperator
                 if (i != rt)
                 {
                     return false;
@@ -75,6 +78,7 @@
             {
                 var temp = i / f;
                 var rt = f * temp;
+                //// ReSharper disable once CompareOfFloatsByEqualityOperator
                 if (i != rt)
                 {
                     return false;
@@ -90,6 +94,7 @@
             {
                 var temp = Math.Pow(i, pow);
                 var rt = Math.Pow(temp, -pow);
+                //// ReSharper disable once CompareOfFloatsByEqualityOperator
                 if (i != rt)
                 {
                     return false;
