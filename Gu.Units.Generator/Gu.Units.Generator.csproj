@@ -477,6 +477,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QuantityExtensions.tt</DependentUpon>
     </Content>
+    <Content Include="Templates\UnitsWpf.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UnitsWpf.txt</LastGenOutput>
+    </Content>
+    <Resource Include="Templates\UnitWpf.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitWpf.tt</DependentUpon>
+    </Resource>
+    <Resource Include="Templates\UnitsWpf.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UnitsWpf.tt</DependentUpon>
+    </Resource>
+    <Content Include="Templates\UnitWpf.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UnitWpf.txt</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="..\.paket\paket.targets" />
   <ItemGroup>

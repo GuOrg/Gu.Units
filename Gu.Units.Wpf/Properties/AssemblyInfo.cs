@@ -40,5 +40,6 @@ using System.Windows.Markup;
 
 [assembly: XmlnsDefinition("http://Gu.com/Units", clrNamespace: "Gu.Units", AssemblyName = "Gu.Units")]
 [assembly: XmlnsDefinition("http://Gu.com/Units", clrNamespace: "Gu.Units.Wpf", AssemblyName = "Gu.Units.Wpf")]
+[assembly: XmlnsDefinition("http://Gu.com/Units", clrNamespace: "Gu.Units.Wpf.Proxies", AssemblyName = "Gu.Units.Wpf")]
 [assembly: XmlnsPrefix("http://Gu.com/Units", "units")]
 [assembly: NeutralResourcesLanguage("en")]

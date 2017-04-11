@@ -45,11 +45,17 @@
     <Compile Include="AccelerationExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="AccelerationUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="AmountOfSubstanceConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="AmountOfSubstanceExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="AmountOfSubstanceUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="AngleConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
@@ -63,11 +69,20 @@
     <Compile Include="AnglePerUnitlessExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="AnglePerUnitlessUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="AngleUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="AngularAccelerationConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="AngularAccelerationExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="AngularAccelerationUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="AngularJerkConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
@@ -75,11 +90,17 @@
     <Compile Include="AngularJerkExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="AngularJerkUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="AngularSpeedConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="AngularSpeedExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="AngularSpeedUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="AreaConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
@@ -90,8 +111,14 @@
     <Compile Include="AreaDensityExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="AreaDensityUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="AreaExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="AreaUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="CapacitanceConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
@@ -99,32 +126,59 @@
     <Compile Include="CapacitanceExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="CapacitanceUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="CatalyticActivityConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="CatalyticActivityExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="CatalyticActivityUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="CurrentExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="CurrentUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="DataExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="DataUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="DensityExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="DensityUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="ElectricalConductanceExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="ElectricalConductanceUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="ElectricChargeExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="ElectricChargeUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="EnergyExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="EnergyUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="FlexibilityExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="FlexibilityUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="ForceExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
@@ -132,20 +186,41 @@
     <Compile Include="ForcePerUnitlessExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="ForcePerUnitlessUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="ForceUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="FrequencyExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="FrequencyUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="IlluminanceExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="IlluminanceUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="InductanceExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="InductanceUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="JerkExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="JerkUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="KinematicViscosityExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="KinematicViscosityUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="LengthExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
@@ -153,17 +228,35 @@
     <Compile Include="LengthPerUnitlessExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="LengthPerUnitlessUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="LengthUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="LuminousFluxExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="LuminousFluxUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="LuminousIntensityExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="LuminousIntensityUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="MagneticFieldStrengthExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="MagneticFieldStrengthUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="MagneticFluxExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MagneticFluxUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="MassExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
@@ -171,11 +264,20 @@
     <Compile Include="MassFlowExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="MassFlowUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MassUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="MolarHeatCapacityConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="MolarHeatCapacityExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MolarHeatCapacityUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="MolarMassConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
@@ -183,41 +285,80 @@
     <Compile Include="MolarMassExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="MolarMassUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="MomentumExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="MomentumUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="PowerExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="PowerUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="PressureExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="PressureUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="ResistanceExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="ResistanceUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="SolidAngleExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="SolidAngleUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="SpecificEnergyExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="SpecificEnergyUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="SpecificVolumeExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="SpecificVolumeUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="SpeedExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="SpeedUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="StiffnessExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="StiffnessUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="TemperatureExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="TemperatureUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="TimeExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="TimeUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="TorqueExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="TorqueUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="UnitFormatConverterExtension.cs" />
     <Compile Include="CurrentConverter.generated.cs">
@@ -334,11 +475,17 @@
     <Compile Include="UnitlessExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="UnitlessUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="VoltageConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="VoltageExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="VoltageUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
     <Compile Include="VolumeConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
@@ -352,11 +499,20 @@
     <Compile Include="VolumetricFlowExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
+    <Compile Include="VolumetricFlowUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="VolumeUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="WavenumberConverter.generated.cs">
       <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
     </Compile>
     <Compile Include="WavenumberExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="WavenumberUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -369,6 +525,7 @@
     <None Include="paket.template" />
     <None Include="QuantityExtensions.txt4" />
     <None Include="QuantityValueConverters.txt4" />
+    <None Include="UnitsWpf.txt4" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -6,7 +6,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:numeric="http://gu.se/NumericInput"
              xmlns:units="http://Gu.com/Units"
-             xmlns:units1="clr-namespace:Gu.Units;assembly=Gu.Units"
              DataContext="{x:Static local:ViewModel.Instance}"
              mc:Ignorable="d">
     <UserControl.Resources>
@@ -65,7 +64,7 @@
                  Grid.Column="1"
                  AutomationProperties.AutomationId="{x:Static local:AutomationIds.MetresCtor}"
                  Text="{Binding Length,
-                                Converter={units:LengthConverter {x:Static units1:LengthUnit.Metres}}}" />
+                                Converter={units:LengthConverter {x:Static units:LengthUnit.Metres}}}" />
         <!--  Resharper nags about ^ even if it is valid  -->
 
         <TextBlock Grid.Row="3"
@@ -75,7 +74,7 @@
                  Grid.Column="1"
                  AutomationProperties.AutomationId="{x:Static local:AutomationIds.MillimetresProp}"
                  Text="{Binding Length,
-                                Converter={units:LengthConverter Unit={x:Static units1:LengthUnit.Millimetres}}}" />
+                                Converter={units:LengthConverter Unit={x:Static units:LengthUnit.Millimetres}}}" />
 
         <TextBlock Grid.Row="4"
                    Grid.Column="0"
