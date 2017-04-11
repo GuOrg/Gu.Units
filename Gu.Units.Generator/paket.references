@@ -1,6 +1,7 @@
 Newtonsoft.Json
 Gu.Wpf.Reactive
 Gu.State
+
 group Analyzers
   StyleCop.Analyzers
   Gu.Analyzers

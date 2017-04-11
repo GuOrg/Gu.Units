@@ -1,15 +1,14 @@
-﻿<Window x:Class="Gu.Units.Generator.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:generator="clr-namespace:Gu.Units.Generator"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:converters="clr-namespace:Gu.Units.Generator.Converters"
-        Title="MainWindow"
-        Width="1200"
-        Height="800"
-        DataContext="{x:Static generator:MainVm.Instance}"
-        mc:Ignorable="d">
+﻿<Window
+    x:Class="Gu.Units.Generator.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="clr-namespace:Gu.Units.Generator.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:generator="clr-namespace:Gu.Units.Generator"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    DataContext="{x:Static generator:MainVm.Instance}"
+    mc:Ignorable="d">
     <DockPanel>
         <Menu DockPanel.Dock="Top" IsMainMenu="True">
             <MenuItem Header="_File">
@@ -41,18 +40,18 @@
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <GroupBox Grid.Column="0" Header="Base Units:">
-                            <DataGrid AutoGenerateColumns="False"
-                                      ItemsSource="{Binding BaseUnits}"
-                                      SelectedItem="{Binding Conversions.SelectedBaseUnit}">
+                            <DataGrid
+                                AutoGenerateColumns="False"
+                                ItemsSource="{Binding BaseUnits}"
+                                SelectedItem="{Binding Conversions.SelectedBaseUnit}">
                                 <DataGrid.Columns>
                                     <DataGridTemplateColumn Header="Status">
                                         <DataGridTemplateColumn.CellTemplate>
                                             <DataTemplate DataType="{x:Type generator:BaseUnitViewModel}">
-                                                <Ellipse Width="10"
-                                                         Height="10"
-                                                         Fill="{Binding IsOk,
-                                                                        Converter={converters:BooleanToBrushConverter WhenFalse=Red,
-                                                                                                                    WhenTrue=GreenYellow}}" />
+                                                <Ellipse
+                                                    Width="10"
+                                                    Height="10"
+                                                    Fill="{Binding IsOk, Converter={converters:BooleanToBrushConverter WhenFalse=Red, WhenTrue=GreenYellow}}" />
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
@@ -75,18 +74,18 @@
                     </Grid>
 
                     <GroupBox Grid.Row="1" Header="Derived Units:">
-                        <DataGrid AutoGenerateColumns="False"
-                                  ItemsSource="{Binding DerivedUnits}"
-                                  SelectedItem="{Binding Conversions.SelectedDerivedUnit}">
+                        <DataGrid
+                            AutoGenerateColumns="False"
+                            ItemsSource="{Binding DerivedUnits}"
+                            SelectedItem="{Binding Conversions.SelectedDerivedUnit}">
                             <DataGrid.Columns>
                                 <DataGridTemplateColumn Header="Status">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate DataType="{x:Type generator:BaseUnitViewModel}">
-                                            <Ellipse Width="10"
-                                                     Height="10"
-                                                     Fill="{Binding IsOk,
-                                                                    Converter={converters:BooleanToBrushConverter WhenFalse=Red,
-                                                                                                                WhenTrue=GreenYellow}}" />
+                                            <Ellipse
+                                                Width="10"
+                                                Height="10"
+                                                Fill="{Binding IsOk, Converter={converters:BooleanToBrushConverter WhenFalse=Red, WhenTrue=GreenYellow}}" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -94,19 +93,21 @@
                                 <DataGridTextColumn Binding="{Binding Unit.Name}" Header="Unit" />
                                 <DataGridTextColumn Binding="{Binding Unit.Symbol}" Header="Symbol" />
                                 <DataGridTextColumn Binding="{Binding UnitParts}" Header="Parts" />
-                                <DataGridTextColumn Binding="{Binding Unit.Parts.BaseUnitSymbol}"
-                                                    Header="In base Units"
-                                                    IsReadOnly="True" />
+                                <DataGridTextColumn
+                                    Binding="{Binding Unit.Parts.BaseUnitSymbol}"
+                                    Header="In base Units"
+                                    IsReadOnly="True" />
                             </DataGrid.Columns>
                         </DataGrid>
                     </GroupBox>
                 </Grid>
             </GroupBox>
 
-            <GridSplitter Grid.Column="1"
-                          HorizontalAlignment="Stretch"
-                          VerticalAlignment="Stretch"
-                          ResizeDirection="Columns" />
+            <GridSplitter
+                Grid.Column="1"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                ResizeDirection="Columns" />
 
             <GroupBox Grid.Column="2" Header="Conversions">
                 <generator:ConversionsView />
