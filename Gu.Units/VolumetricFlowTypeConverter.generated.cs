@@ -6,6 +6,9 @@
     using System.Globalization;
     using System.Reflection;
 
+    /// <summary>
+    /// Provides a unified way of converting types of values to other types, as well as for accessing standard values and subproperties.
+    /// </summary>
     /// <devdoc>
     /// <para>Provides a type converter to convert <see cref='Gu.Units.VolumetricFlow'/>
     /// objects to and from various
@@ -13,11 +16,7 @@
     /// </devdoc>
     public class VolumetricFlowTypeConverter : TypeConverter
     {
-        /// <devdoc>
-        ///    <para>Gets a value indicating whether this converter can
-        ///       convert an object in the given source type to a <see cref='Gu.Units.VolumetricFlow'/> object using the
-        ///       specified context.</para>
-        /// </devdoc>
+        /// <inheritdoc />
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
         {
             if (sourceType == typeof(string))
@@ -28,10 +27,7 @@
             return base.CanConvertFrom(context, sourceType);
         }
 
-        /// <devdoc>
-        ///    <para>Gets a value indicating whether this converter can
-        ///       convert an object to the given destination type using the context.</para>
-        /// </devdoc>
+        /// <inheritdoc />
         public override bool CanConvertTo(ITypeDescriptorContext context, Type destinationType)
         {
             if (destinationType == typeof(InstanceDescriptor) || destinationType == typeof(string))
@@ -42,10 +38,7 @@
             return base.CanConvertTo(context, destinationType);
         }
 
-        /// <devdoc>
-        /// <para>Converts the given object to a <see cref='Gu.Units.VolumetricFlow'/>
-        /// object.</para>
-        /// </devdoc>
+        /// <inheritdoc />
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
         {
             var text = value as string;
@@ -57,13 +50,7 @@
             return base.ConvertFrom(context, culture, value);
         }
 
-        /// <devdoc>
-        ///      Converts the given object to another type.  The most common types to convert
-        ///      are to and from a string object.  The default implementation will make a call
-        ///      to ToString on the object if the object is valid and if the destination
-        ///      type is string.  If this cannot convert to the <paramref name="destinationType"/> type, this will
-        ///      throw a NotSupportedException.
-        /// </devdoc>
+        /// <inheritdoc />
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
             if (value is VolumetricFlow && destinationType != null)
