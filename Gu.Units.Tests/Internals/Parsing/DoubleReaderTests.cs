@@ -123,6 +123,7 @@
                 Exception parseException = null;
                 try
                 {
+                    // ReSharper disable once ReturnValueOfPureMethodIsNotUsed
                     double.Parse(text, style, culture);
                 }
                 catch (Exception e)
@@ -165,10 +166,8 @@
             var culture = data.Culture;
             var style = data.Styles;
             var pos = 0;
-            double expected;
-            Assert.IsTrue(double.TryParse(data.Text, style, culture, out expected));
-            double actual;
-            Assert.IsTrue(DoubleReader.TryRead(data.Text, ref pos, style, culture, out actual));
+            Assert.IsTrue(double.TryParse(data.Text, style, culture, out double expected));
+            Assert.IsTrue(DoubleReader.TryRead(data.Text, ref pos, style, culture, out double actual));
             Assert.AreEqual(expected, actual);
             var expectedEnd = data.Text.Length;
             Assert.AreEqual(expectedEnd, pos);
@@ -184,10 +183,8 @@
                 var text = string.Format(format, data.Text);
                 var pos = format.IndexOf('{');
                 var start = pos;
-                double expected;
-                Assert.IsTrue(double.TryParse(data.Text, style, culture, out expected));
-                double actual;
-                Assert.IsTrue(DoubleReader.TryRead(text, ref pos, style, culture, out actual));
+                Assert.IsTrue(double.TryParse(data.Text, style, culture, out double expected));
+                Assert.IsTrue(DoubleReader.TryRead(text, ref pos, style, culture, out double actual));
                 Assert.AreEqual(expected, actual);
                 var expectedEnd = start + data.Text.Length;
                 Assert.AreEqual(expectedEnd, pos);
@@ -205,10 +202,8 @@
                 var ns = string.Format(format, s);
                 var pos = format.IndexOf('{');
                 var start = pos;
-                double expected;
-                Assert.IsFalse(double.TryParse(s, style, culture, out expected));
-                double actual;
-                Assert.IsFalse(DoubleReader.TryRead(ns, ref pos, style, culture, out actual));
+                Assert.IsFalse(double.TryParse(s, style, culture, out double expected));
+                Assert.IsFalse(DoubleReader.TryRead(ns, ref pos, style, culture, out double actual));
                 Assert.AreEqual(expected, actual);
                 Assert.AreEqual(start, pos);
             }
@@ -220,10 +215,8 @@
             var culture = data.Culture;
             var style = data.Styles;
             var pos = 0;
-            double expected;
-            Assert.IsFalse(double.TryParse(data.Text, style, culture, out expected));
-            double actual;
-            Assert.IsFalse(DoubleReader.TryRead(data.Text, ref pos, style, culture, out actual));
+            Assert.IsFalse(double.TryParse(data.Text, style, culture, out double expected));
+            Assert.IsFalse(DoubleReader.TryRead(data.Text, ref pos, style, culture, out double actual));
             Assert.AreEqual(expected, actual);
             Assert.AreEqual(0, pos);
         }

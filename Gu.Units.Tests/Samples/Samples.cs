@@ -31,12 +31,12 @@
         [TestCase("1.2m⋅s⁻¹")]
         [TestCase("1.2m¹/s¹")]
         [TestCase("1.2m^1/s¹")]
-        public void ParsingSample(string s)
+        public void ParsingSample(string text)
         {
-            var speed = Speed.Parse(s, CultureInfo.InvariantCulture);
+            var speed = Speed.Parse(text, CultureInfo.InvariantCulture);
             Assert.AreEqual(Speed.FromMetresPerSecond(1.2), speed);
 
-            Assert.IsTrue(Speed.TryParse(s, CultureInfo.InvariantCulture, out speed));
+            Assert.IsTrue(Speed.TryParse(text, CultureInfo.InvariantCulture, out speed));
             Assert.AreEqual(Speed.FromMetresPerSecond(1.2), speed);
         }
     }

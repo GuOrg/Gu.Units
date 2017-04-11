@@ -30,7 +30,7 @@
             var quantity = ctor.Invoke(new object[] { 1.2 });
             var serializer = new XmlSerializer(quantityType);
             var stringBuilder = new StringBuilder();
-            var xml = string.Empty;
+            string xml;
             using (var writer = new StringWriter(stringBuilder))
             {
                 serializer.Serialize(writer, quantity);
@@ -59,7 +59,7 @@
             var quantity = ctor.Invoke(new object[] { 1.2 });
             var serializer = new DataContractSerializer(quantityType);
             var stringBuilder = new StringBuilder();
-            var xml = string.Empty;
+            string xml;
             using (var writer = XmlWriter.Create(stringBuilder))
             {
                 serializer.WriteObject(writer, quantity);

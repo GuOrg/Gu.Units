@@ -5,7 +5,6 @@
     using System.Globalization;
     using System.Threading;
     using NUnit.Framework;
-    using Sources;
 
     public class ParseRoundtripTests
     {
@@ -68,8 +67,7 @@
         {
             using (Thread.CurrentThread.UsingTempCulture(data.CultureInfo))
             {
-                object actual;
-                var success = data.TryParse(data.Text, out actual);
+                var success = data.TryParse(data.Text, out object actual);
                 Assert.AreEqual(true, success);
                 Assert.AreEqual(data.Expected, actual);
                 var toString = actual.ToString();
@@ -82,8 +80,7 @@
         [TestCaseSource(nameof(HappyPaths))]
         public void TryParseRoundtripWithCulture(ISuccessData data)
         {
-            object actual;
-            var success = data.TryParse(data.Text, data.CultureInfo, out actual);
+            var success = data.TryParse(data.Text, data.CultureInfo, out object actual);
             Assert.AreEqual(true, success);
             Assert.AreEqual(data.Expected, actual);
             success = data.TryParse(data.Text, data.CultureInfo, out actual);

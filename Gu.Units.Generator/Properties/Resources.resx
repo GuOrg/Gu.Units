@@ -117,7 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <!-- ReSharper disable once ResxNotResolved -->
+  <!-- ReSharper disable once ResxNotResolved -->
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <!-- ReSharper disable once ResxNotResolved -->
+  <!-- ReSharper disable once ResxNotResolved -->
   <data name="Units" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\units.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

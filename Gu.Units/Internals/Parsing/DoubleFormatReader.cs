@@ -19,7 +19,7 @@
                 case 'G':
                 case 'n':
                 case 'N':
-                    return TryReadPrefixNumberFormat(format, ref pos, out  result); ;
+                    return TryReadPrefixNumberFormat(format, ref pos, out  result);
                 case 'r':
                     pos++;
                     result = "r";
@@ -67,10 +67,6 @@
                                         continue;
                                     }
                             }
-                            break;
-                        }
-                    default:
-                        {
                             break;
                         }
                 }

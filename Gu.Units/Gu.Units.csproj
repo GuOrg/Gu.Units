@@ -300,7 +300,6 @@
     <Compile Include="Internals\Ensure\Ensure.cs" />
     <Compile Include="Internals\Ensure\Ensure.string.cs" />
     <Compile Include="Internals\Helpers\CollectionDebugView.cs" />
-    <Compile Include="Internals\Helpers\EnumerableExt.cs" />
     <Compile Include="Internals\Caching\Map.cs" />
     <Compile Include="Internals\PaddedFormat.cs" />
     <Compile Include="Internals\Caching\DoubleFormatCache.cs" />

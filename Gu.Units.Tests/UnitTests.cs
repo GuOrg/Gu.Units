@@ -1,4 +1,5 @@
-﻿namespace Gu.Units.Tests
+﻿// ReSharper disable ImpureMethodCallOnReadonlyValueField
+namespace Gu.Units.Tests
 {
     using NUnit.Framework;
 

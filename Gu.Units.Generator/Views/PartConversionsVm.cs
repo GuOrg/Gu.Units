@@ -10,13 +10,7 @@
     public class PartConversionsVm : INotifyPropertyChanged
     {
         private readonly ObservableCollection<PartConversionVm[]> conversions = new ObservableCollection<PartConversionVm[]>();
-        private readonly Settings settings;
         private Unit unit;
-
-        public PartConversionsVm(Settings settings)
-        {
-            this.settings = settings;
-        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

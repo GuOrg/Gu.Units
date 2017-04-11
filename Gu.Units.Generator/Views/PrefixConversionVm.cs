@@ -13,12 +13,10 @@
     public class PrefixConversionVm : INotifyPropertyChanged
     {
         private readonly IList<PrefixConversion> conversions;
-        private readonly IConversion baseConversion;
 
-        private PrefixConversionVm(ObservableCollection<PrefixConversion> conversions, IConversion baseConversion, PrefixConversion prefixConversion)
+        private PrefixConversionVm(ObservableCollection<PrefixConversion> conversions, PrefixConversion prefixConversion)
         {
             this.conversions = conversions;
-            this.baseConversion = baseConversion;
             this.Conversion = prefixConversion;
             conversions.ObservePropertyChangedSlim()
                        .Subscribe(_ => this.OnPropertyChanged(nameof(this.IsUsed))); // no need for IDisposable
@@ -57,15 +55,14 @@
 
         public static PrefixConversionVm Create(Unit unit, Prefix prefix)
         {
-            var identityConversion = new PartConversion.IdentityConversion(unit);
             var prefixConversion = PrefixConversion.Create(unit, prefix);
-            return new PrefixConversionVm(unit.PrefixConversions, identityConversion, prefixConversion);
+            return new PrefixConversionVm(unit.PrefixConversions, prefixConversion);
         }
 
         public static PrefixConversionVm Create(FactorConversion factorConversion, Prefix prefix)
         {
             var prefixConversion = PrefixConversion.Create(factorConversion, prefix);
-            return new PrefixConversionVm(factorConversion.PrefixConversions, factorConversion, prefixConversion);
+            return new PrefixConversionVm(factorConversion.PrefixConversions, prefixConversion);
         }
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

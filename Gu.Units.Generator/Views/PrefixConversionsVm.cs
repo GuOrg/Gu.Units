@@ -74,17 +74,14 @@
                 return false;
             }
 
-            var baseUnit = item as BaseUnit;
-            if (baseUnit != null)
+            if (item is BaseUnit)
             {
                 return true;
             }
 
-            var derivedUnit = item as DerivedUnit;
-            if (derivedUnit != null)
+            if (item is DerivedUnit derivedUnit)
             {
-                IReadOnlyList<SymbolAndPower> symbolAndPowers;
-                if (SymbolAndPowerReader.TryRead(derivedUnit.Symbol, out symbolAndPowers))
+                if (SymbolAndPowerReader.TryRead(derivedUnit.Symbol, out IReadOnlyList<SymbolAndPower> symbolAndPowers))
                 {
                     return symbolAndPowers.Count == 1 && symbolAndPowers[0].Power == 1;
                 }
@@ -92,13 +89,7 @@
                 return false;
             }
 
-            var factorConversion = item as FactorConversion;
-            if (factorConversion != null)
-            {
-                return true;
-            }
-
-            return false;
+            return item is FactorConversion;
         }
     }
 }

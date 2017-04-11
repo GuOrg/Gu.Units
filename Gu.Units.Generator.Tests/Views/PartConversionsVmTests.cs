@@ -9,7 +9,7 @@
         public void SetUnitToKilograms()
         {
             var settings = MockSettings.Create();
-            var vm = new PartConversionsVm(settings);
+            var vm = new PartConversionsVm();
             vm.SetUnit(settings.Kilograms);
             CollectionAssert.IsEmpty(vm.Conversions);
         }
@@ -18,7 +18,7 @@
         public void SetUnitToCubicMetres()
         {
             var settings = MockSettings.Create();
-            var vm = new PartConversionsVm(settings);
+            var vm = new PartConversionsVm();
             vm.SetUnit(settings.CubicMetres);
             var metresPart = new PartConversion.PowerPart(3, new PartConversion.IdentityConversion(settings.Metres));
             var metresConversion = PartConversion.Create(settings.CubicMetres, metresPart);
@@ -36,7 +36,7 @@
             Assert.Inconclusive();
             //// ReSharper disable once HeuristicUnreachableCode
             var settings = MockSettings.Create();
-            var vm = new PartConversionsVm(settings);
+            var vm = new PartConversionsVm();
             vm.SetUnit(settings.MetresPerSecond);
             CollectionAssert.AreEqual(new PartConversionsVm[0], vm.Conversions);
         }

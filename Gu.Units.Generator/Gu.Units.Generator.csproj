@@ -218,6 +218,7 @@
       <DependentUpon>PrefixConversionsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UnitViewModels\UnitViewModel.cs" />
+    <Compile Include="Views\UnitViewModels\UnitViewModel{T}.cs" />
     <Compile Include="WpfStuff\ObservableCollectionExt.cs" />
     <Compile Include="WpfStuff\RelayCommand.cs" />
     <Compile Include="WpfStuff\UnitPartsConverter.cs" />

@@ -1,4 +1,4 @@
-﻿namespace Gu.Units.Tests.Internals.Parsing.Sources
+﻿namespace Gu.Units.Tests.Internals.Parsing
 {
     using System;
     using System.Globalization;
@@ -28,6 +28,7 @@
                 nameof(Length.TryParse),
                 new[] { typeof(string), data.Type.MakeByRefType() });
             actual = null;
+            //// ReSharper disable once ExpressionIsAlwaysNull
             var parameters = new[] { text, actual };
             var success = (bool)tryParseMethod.Invoke(null, parameters);
             actual = parameters[1];
@@ -40,7 +41,8 @@
                 nameof(Length.TryParse),
                 new[] { typeof(string), typeof(IFormatProvider), data.Type.MakeByRefType() });
             actual = null;
-            var parameters = new object[] { text, cultureInfo, actual };
+            //// ReSharper disable once ExpressionIsAlwaysNull
+            var parameters = new[] { text, cultureInfo, actual };
             var success = (bool)parseMethod.Invoke(null, parameters);
             actual = parameters[2];
             return success;

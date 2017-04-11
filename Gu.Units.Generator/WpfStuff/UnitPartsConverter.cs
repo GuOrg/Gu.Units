@@ -32,7 +32,7 @@
             var settings = Settings.Instance;
             var pos = 0;
             WhiteSpaceReader.TryRead(text, ref pos);
-            var indexOf = text.IndexOf("1/", pos);
+            var indexOf = text.IndexOf("1/", pos, StringComparison.Ordinal);
             if (indexOf >= 0)
             {
                 pos = indexOf + 2;

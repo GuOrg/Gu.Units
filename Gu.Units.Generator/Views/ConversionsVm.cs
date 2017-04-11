@@ -27,7 +27,7 @@
         public ConversionsVm(Settings settings)
         {
             this.PrefixConversions = new PrefixConversionsVm(settings);
-            this.PartConversions = new PartConversionsVm(settings);
+            this.PartConversions = new PartConversionsVm();
             this.Unit = settings.AllUnits.FirstOrDefault(x => x.QuantityName == "Angle"); // for designtime
             this.DeleteSelectedCommand = new RelayCommand(this.DeleteSelected);
         }

@@ -55,6 +55,8 @@ namespace Gu.Units.Tests.Internals.Parsing
             {
                 formatted = 1.2.ToString(text);
             }
+
+            //// ReSharper disable once EmptyGeneralCatchClause dunno what this does.
             catch
             {
             }
