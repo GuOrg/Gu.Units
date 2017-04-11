@@ -31,14 +31,6 @@
 
         public int Count => this.source?.Count ?? 0;
 
-        public IEnumerator<T> GetEnumerator()
-        {
-            return this.source?.GetEnumerator() ??
-                    Enumerable.Empty<T>().GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
-
         internal bool IsEmpty => this.Count == 0;
 
         public static bool operator ==(ReadonlySet<T> left, ReadonlySet<T> right)
@@ -50,6 +42,14 @@
         {
             return !Equals(left, right);
         }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return this.source?.GetEnumerator() ??
+                   Enumerable.Empty<T>().GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
         public bool Contains(T item)
         {

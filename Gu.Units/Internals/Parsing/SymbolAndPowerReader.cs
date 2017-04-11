@@ -13,8 +13,7 @@
                 throw new FormatException($"Expected symbol or operator. {text} position: end");
             }
 
-            SymbolAndPower result;
-            if (TryRead(text, ref pos, out result))
+            if (TryRead(text, ref pos, out SymbolAndPower result))
             {
                 return result;
             }
@@ -37,9 +36,7 @@
             while (pos < text.Length)
             {
                 WhiteSpaceReader.TryRead(text, ref pos);
-
-                SymbolAndPower sap;
-                if (!TryRead(text, ref pos, out sap))
+                if (!TryRead(text, ref pos, out SymbolAndPower sap))
                 {
                     pos = start;
                     result = null;
@@ -123,15 +120,15 @@
 
             var symbol = text.Substring(start, pos - start);
             WhiteSpaceReader.TryRead(text, ref pos);
-            int power;
-            if (!PowerReader.TryRead(text, ref pos, out power))
+            if (!PowerReader.TryRead(text, ref pos, out int power))
             {
                 pos = start;
                 result = default(SymbolAndPower);
                 return false;
             }
 
-            if (power == 0 || Math.Abs(power) > 5) // 5 > is most likely a typo right?
+            // 5 > is most likely a typo right?
+            if (power == 0 || Math.Abs(power) > 5)
             {
                 pos = start;
                 result = default(SymbolAndPower);
@@ -152,10 +149,10 @@
             return char.IsLetter(c);
         }
 
-        private static bool IsUnique(IEnumerable<SymbolAndPower> saps)
+        private static bool IsUnique(IReadOnlyCollection<SymbolAndPower> saps)
         {
             var unique = saps.Select(x => x.Symbol).Distinct().Count();
-            return unique == saps.Count();
+            return unique == saps.Count;
         }
     }
 }

@@ -8,8 +8,10 @@
         where TUnit : struct, IUnit, IEquatable<TUnit>
     {
         public static QuantityFormat<TUnit> Default => FormatCache<TUnit>.DefaultQuantityFormat;
-        internal static readonly char NoBreakingSpace = '\u00A0';
-        internal static readonly string NoBreakingSpaceString = "\u00A0";
+
+        internal const char NoBreakingSpace = '\u00A0';
+        internal const string NoBreakingSpaceString = "\u00A0";
+
         private string compositeFormat;
 
         private QuantityFormat(
@@ -226,8 +228,8 @@
                 builder.Append(Padding);
                 builder.Append(SymbolFormat ?? Unit.Symbol);
                 builder.Append(PostPadding);
-                var compositeFormat = builder.ToString();
-                return compositeFormat;
+                var format = builder.ToString();
+                return format;
             }
         }
     }

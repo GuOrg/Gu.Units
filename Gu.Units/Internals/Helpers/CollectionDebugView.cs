@@ -12,9 +12,9 @@
     [Serializable]
     internal class CollectionDebugView<T>
     {
-        private readonly IEnumerable<T> collection;
-
         private static readonly T[] Empty = new T[0];
+
+        private readonly IEnumerable<T> collection;
 
         public CollectionDebugView(IEnumerable<T> collection)
         {

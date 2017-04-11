@@ -72,7 +72,6 @@
             }
 
             // getting here means we must handle the last digit and potential overflows.
-
             long temp = result;
             temp *= 10;
             temp += text[pos] - '0';

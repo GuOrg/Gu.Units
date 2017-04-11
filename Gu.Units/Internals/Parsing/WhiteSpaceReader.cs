@@ -18,9 +18,7 @@ namespace Gu.Units
             return pos != start;
         }
 
-        internal static bool TryRead(string text,
-            ref int pos,
-            out string padding)
+        internal static bool TryRead(string text, ref int pos, out string padding)
         {
             if (text == null)
             {
@@ -40,16 +38,16 @@ namespace Gu.Units
                 switch (text[start])
                 {
                     case ' ':
-                    {
-                        padding = " ";
-                        return true;
-                    }
+                        {
+                            padding = " ";
+                            return true;
+                        }
 
                     case '\u00A0':
-                    {
-                        padding = "\u00A0";
-                        return true;
-                    }
+                        {
+                            padding = "\u00A0";
+                            return true;
+                        }
                 }
             }
 

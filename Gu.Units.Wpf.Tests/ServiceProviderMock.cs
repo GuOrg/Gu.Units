@@ -14,16 +14,16 @@
         {
             this.binding = new Binding();
             this.Setup(x => x.GetService(typeof(IProvideValueTarget)))
-                        .Returns(this.ProvideValueTargetMock.Object);
+                .Returns(this.ProvideValueTargetMock.Object);
 
             this.ProvideValueTargetMock.SetupGet(x => x.TargetObject).Returns(this.binding);
         }
-
-        internal Mock<IProvideValueTarget> ProvideValueTargetMock { get; } = new Mock<IProvideValueTarget>(MockBehavior.Strict);
 
         public string BindingStringFormat
         {
             set => this.binding.StringFormat = value;
         }
+
+        internal Mock<IProvideValueTarget> ProvideValueTargetMock { get; } = new Mock<IProvideValueTarget>(MockBehavior.Strict);
     }
 }

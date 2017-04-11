@@ -7,11 +7,6 @@
     /// </summary>
     public static class SuperScript
     {
-        //// ReSharper disable UnusedMember.Local
-        internal const string SuperscriptDigits = "⁰¹²³⁴⁵⁶⁷⁸⁹";
-        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
-        //// ReSharper restore UnusedMember.Local
-
         /// <summary>
         /// The superscript plus
         /// </summary>
@@ -21,6 +16,11 @@
         /// The superscript minus
         /// </summary>
         public static readonly char Minus = '⁻';
+
+        //// ReSharper disable UnusedMember.Local
+        internal const string SuperscriptDigits = "⁰¹²³⁴⁵⁶⁷⁸⁹";
+        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
+        //// ReSharper restore UnusedMember.Local
 
         /// <summary>
         /// Gest the superscript for a number

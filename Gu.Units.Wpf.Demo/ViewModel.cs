@@ -6,13 +6,13 @@ namespace Gu.Units.Wpf.Demo
 
     public class ViewModel : INotifyPropertyChanged
     {
+        public static readonly ViewModel Instance = new ViewModel();
+
         private Length length = Length.FromMillimetres(1234.567);
         private Speed speed = Speed.FromMetresPerSecond(1.2);
         private Pressure pressure = Pressure.FromMegapascals(1.23);
         private Length? nullableLength = Length.FromMillimetres(1234.567);
         private object objectLength = Length.FromMillimetres(1234.567);
-
-        public static readonly ViewModel Instance = new ViewModel();
 
         private ViewModel()
         {

@@ -1,4 +1,5 @@
-﻿namespace Gu.Units
+﻿// ReSharper disable PossibleMultipleEnumeration
+namespace Gu.Units
 {
     using System;
     using System.Collections;
