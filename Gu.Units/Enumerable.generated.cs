@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
 
     /// <summary>
     /// Provides common linq operations for quantity types
@@ -1268,6 +1267,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1279,6 +1279,7 @@
                     }
                 }
             }
+
             return Mass.FromKilograms(sum);
         }
 
@@ -1293,6 +1294,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1304,6 +1306,7 @@
                     }
                 }
             }
+
             return Length.FromMetres(sum);
         }
 
@@ -1318,6 +1321,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1329,6 +1333,7 @@
                     }
                 }
             }
+
             return Time.FromSeconds(sum);
         }
 
@@ -1343,6 +1348,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1354,6 +1360,7 @@
                     }
                 }
             }
+
             return Temperature.FromKelvin(sum);
         }
 
@@ -1368,6 +1375,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1379,6 +1387,7 @@
                     }
                 }
             }
+
             return Angle.FromRadians(sum);
         }
 
@@ -1393,6 +1402,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1404,6 +1414,7 @@
                     }
                 }
             }
+
             return Unitless.FromScalar(sum);
         }
 
@@ -1418,6 +1429,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1429,6 +1441,7 @@
                     }
                 }
             }
+
             return Current.FromAmperes(sum);
         }
 
@@ -1443,6 +1456,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1454,6 +1468,7 @@
                     }
                 }
             }
+
             return LuminousIntensity.FromCandelas(sum);
         }
 
@@ -1468,6 +1483,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1479,6 +1495,7 @@
                     }
                 }
             }
+
             return Data.FromBits(sum);
         }
 
@@ -1493,6 +1510,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1504,6 +1522,7 @@
                     }
                 }
             }
+
             return AmountOfSubstance.FromMoles(sum);
         }
 
@@ -1518,6 +1537,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1529,6 +1549,7 @@
                     }
                 }
             }
+
             return SolidAngle.FromSteradians(sum);
         }
 
@@ -1543,6 +1564,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1554,6 +1576,7 @@
                     }
                 }
             }
+
             return Area.FromSquareMetres(sum);
         }
 
@@ -1568,6 +1591,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1579,6 +1603,7 @@
                     }
                 }
             }
+
             return Volume.FromCubicMetres(sum);
         }
 
@@ -1593,6 +1618,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1604,6 +1630,7 @@
                     }
                 }
             }
+
             return Force.FromNewtons(sum);
         }
 
@@ -1618,6 +1645,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1629,6 +1657,7 @@
                     }
                 }
             }
+
             return Pressure.FromPascals(sum);
         }
 
@@ -1643,6 +1672,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1654,6 +1684,7 @@
                     }
                 }
             }
+
             return Density.FromKilogramsPerCubicMetre(sum);
         }
 
@@ -1668,6 +1699,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1679,6 +1711,7 @@
                     }
                 }
             }
+
             return Energy.FromJoules(sum);
         }
 
@@ -1693,6 +1726,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1704,6 +1738,7 @@
                     }
                 }
             }
+
             return Power.FromWatts(sum);
         }
 
@@ -1718,6 +1753,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1729,6 +1765,7 @@
                     }
                 }
             }
+
             return Speed.FromMetresPerSecond(sum);
         }
 
@@ -1743,6 +1780,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1754,6 +1792,7 @@
                     }
                 }
             }
+
             return AngularSpeed.FromRadiansPerSecond(sum);
         }
 
@@ -1768,6 +1807,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1779,6 +1819,7 @@
                     }
                 }
             }
+
             return Frequency.FromHertz(sum);
         }
 
@@ -1793,6 +1834,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1804,6 +1846,7 @@
                     }
                 }
             }
+
             return Acceleration.FromMetresPerSecondSquared(sum);
         }
 
@@ -1818,6 +1861,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1829,6 +1873,7 @@
                     }
                 }
             }
+
             return Torque.FromNewtonMetres(sum);
         }
 
@@ -1843,6 +1888,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1854,6 +1900,7 @@
                     }
                 }
             }
+
             return Stiffness.FromNewtonsPerMetre(sum);
         }
 
@@ -1868,6 +1915,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1879,6 +1927,7 @@
                     }
                 }
             }
+
             return VolumetricFlow.FromCubicMetresPerSecond(sum);
         }
 
@@ -1893,6 +1942,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1904,6 +1954,7 @@
                     }
                 }
             }
+
             return Voltage.FromVolts(sum);
         }
 
@@ -1918,6 +1969,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1929,6 +1981,7 @@
                     }
                 }
             }
+
             return Resistance.FromOhms(sum);
         }
 
@@ -1943,6 +1996,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1954,6 +2008,7 @@
                     }
                 }
             }
+
             return SpecificEnergy.FromJoulesPerKilogram(sum);
         }
 
@@ -1968,6 +2023,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -1979,6 +2035,7 @@
                     }
                 }
             }
+
             return ElectricCharge.FromCoulombs(sum);
         }
 
@@ -1993,6 +2050,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2004,6 +2062,7 @@
                     }
                 }
             }
+
             return Inductance.FromHenrys(sum);
         }
 
@@ -2018,6 +2077,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2029,6 +2089,7 @@
                     }
                 }
             }
+
             return Capacitance.FromFarads(sum);
         }
 
@@ -2043,6 +2104,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2054,6 +2116,7 @@
                     }
                 }
             }
+
             return Flexibility.FromMetresPerNewton(sum);
         }
 
@@ -2068,6 +2131,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2079,6 +2143,7 @@
                     }
                 }
             }
+
             return AngularAcceleration.FromRadiansPerSecondSquared(sum);
         }
 
@@ -2093,6 +2158,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2104,6 +2170,7 @@
                     }
                 }
             }
+
             return AngularJerk.FromRadiansPerSecondCubed(sum);
         }
 
@@ -2118,6 +2185,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2129,6 +2197,7 @@
                     }
                 }
             }
+
             return Jerk.FromMetresPerSecondCubed(sum);
         }
 
@@ -2143,6 +2212,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2154,6 +2224,7 @@
                     }
                 }
             }
+
             return LengthPerUnitless.FromMetresPerUnitless(sum);
         }
 
@@ -2168,6 +2239,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2179,6 +2251,7 @@
                     }
                 }
             }
+
             return AnglePerUnitless.FromRadiansPerUnitless(sum);
         }
 
@@ -2193,6 +2266,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2204,6 +2278,7 @@
                     }
                 }
             }
+
             return ForcePerUnitless.FromNewtonsPerUnitless(sum);
         }
 
@@ -2218,6 +2293,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2229,6 +2305,7 @@
                     }
                 }
             }
+
             return LuminousFlux.FromLumens(sum);
         }
 
@@ -2243,6 +2320,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2254,6 +2332,7 @@
                     }
                 }
             }
+
             return Illuminance.FromLux(sum);
         }
 
@@ -2268,6 +2347,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2279,6 +2359,7 @@
                     }
                 }
             }
+
             return MagneticFlux.FromWebers(sum);
         }
 
@@ -2293,6 +2374,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2304,6 +2386,7 @@
                     }
                 }
             }
+
             return ElectricalConductance.FromSiemens(sum);
         }
 
@@ -2318,6 +2401,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2329,6 +2413,7 @@
                     }
                 }
             }
+
             return MagneticFieldStrength.FromTeslas(sum);
         }
 
@@ -2343,6 +2428,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2354,6 +2440,7 @@
                     }
                 }
             }
+
             return CatalyticActivity.FromKatals(sum);
         }
 
@@ -2368,6 +2455,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2379,6 +2467,7 @@
                     }
                 }
             }
+
             return Momentum.FromNewtonSecond(sum);
         }
 
@@ -2393,6 +2482,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2404,6 +2494,7 @@
                     }
                 }
             }
+
             return Wavenumber.FromReciprocalMetres(sum);
         }
 
@@ -2418,6 +2509,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2429,6 +2521,7 @@
                     }
                 }
             }
+
             return AreaDensity.FromKilogramsPerSquareMetre(sum);
         }
 
@@ -2443,6 +2536,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2454,6 +2548,7 @@
                     }
                 }
             }
+
             return SpecificVolume.FromCubicMetresPerKilogram(sum);
         }
 
@@ -2468,6 +2563,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2479,6 +2575,7 @@
                     }
                 }
             }
+
             return MassFlow.FromKilogramsPerSecond(sum);
         }
 
@@ -2493,6 +2590,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2504,6 +2602,7 @@
                     }
                 }
             }
+
             return KinematicViscosity.FromSquareMetresPerSecond(sum);
         }
 
@@ -2518,6 +2617,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2529,6 +2629,7 @@
                     }
                 }
             }
+
             return MolarMass.FromKilogramsPerMole(sum);
         }
 
@@ -2543,6 +2644,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -2554,6 +2656,7 @@
                     }
                 }
             }
+
             return MolarHeatCapacity.FromJoulesPerKelvinMole(sum);
         }
 
@@ -2568,14 +2671,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Mass);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.kilograms))
+                if (double.IsNaN(x.kilograms))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kilograms < value.kilograms)
@@ -2589,7 +2694,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -2604,14 +2714,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Length);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.metres))
+                if (double.IsNaN(x.metres))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metres < value.metres)
@@ -2625,7 +2737,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -2640,14 +2757,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Time);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.seconds))
+                if (double.IsNaN(x.seconds))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.seconds < value.seconds)
@@ -2661,7 +2780,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -2676,14 +2800,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Temperature);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.kelvin))
+                if (double.IsNaN(x.kelvin))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kelvin < value.kelvin)
@@ -2697,7 +2823,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -2712,14 +2843,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Angle);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.radians))
+                if (double.IsNaN(x.radians))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.radians < value.radians)
@@ -2733,7 +2866,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -2748,14 +2886,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Unitless);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.scalar))
+                if (double.IsNaN(x.scalar))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.scalar < value.scalar)
@@ -2769,7 +2909,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -2784,14 +2929,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Current);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.amperes))
+                if (double.IsNaN(x.amperes))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.amperes < value.amperes)
@@ -2805,7 +2952,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -2820,14 +2972,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(LuminousIntensity);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.candelas))
+                if (double.IsNaN(x.candelas))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.candelas < value.candelas)
@@ -2841,7 +2995,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -2856,14 +3015,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Data);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.bits))
+                if (double.IsNaN(x.bits))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.bits < value.bits)
@@ -2877,7 +3038,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -2892,14 +3058,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(AmountOfSubstance);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.moles))
+                if (double.IsNaN(x.moles))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.moles < value.moles)
@@ -2913,7 +3081,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -2928,14 +3101,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(SolidAngle);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.steradians))
+                if (double.IsNaN(x.steradians))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.steradians < value.steradians)
@@ -2949,7 +3124,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -2964,14 +3144,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Area);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.squareMetres))
+                if (double.IsNaN(x.squareMetres))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.squareMetres < value.squareMetres)
@@ -2985,7 +3167,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3000,14 +3187,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Volume);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.cubicMetres))
+                if (double.IsNaN(x.cubicMetres))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.cubicMetres < value.cubicMetres)
@@ -3021,7 +3210,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3036,14 +3230,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Force);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.newtons))
+                if (double.IsNaN(x.newtons))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.newtons < value.newtons)
@@ -3057,7 +3253,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3072,14 +3273,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Pressure);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.pascals))
+                if (double.IsNaN(x.pascals))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.pascals < value.pascals)
@@ -3093,7 +3296,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3108,14 +3316,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Density);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.kilogramsPerCubicMetre))
+                if (double.IsNaN(x.kilogramsPerCubicMetre))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kilogramsPerCubicMetre < value.kilogramsPerCubicMetre)
@@ -3129,7 +3339,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3144,14 +3359,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Energy);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.joules))
+                if (double.IsNaN(x.joules))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.joules < value.joules)
@@ -3165,7 +3382,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3180,14 +3402,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Power);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.watts))
+                if (double.IsNaN(x.watts))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.watts < value.watts)
@@ -3201,7 +3425,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3216,14 +3445,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Speed);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.metresPerSecond))
+                if (double.IsNaN(x.metresPerSecond))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metresPerSecond < value.metresPerSecond)
@@ -3237,7 +3468,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3252,14 +3488,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(AngularSpeed);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.radiansPerSecond))
+                if (double.IsNaN(x.radiansPerSecond))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.radiansPerSecond < value.radiansPerSecond)
@@ -3273,7 +3511,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3288,14 +3531,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Frequency);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.hertz))
+                if (double.IsNaN(x.hertz))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.hertz < value.hertz)
@@ -3309,7 +3554,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3324,14 +3574,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Acceleration);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.metresPerSecondSquared))
+                if (double.IsNaN(x.metresPerSecondSquared))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metresPerSecondSquared < value.metresPerSecondSquared)
@@ -3345,7 +3597,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3360,14 +3617,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Torque);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.newtonMetres))
+                if (double.IsNaN(x.newtonMetres))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.newtonMetres < value.newtonMetres)
@@ -3381,7 +3640,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3396,14 +3660,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Stiffness);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.newtonsPerMetre))
+                if (double.IsNaN(x.newtonsPerMetre))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.newtonsPerMetre < value.newtonsPerMetre)
@@ -3417,7 +3683,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3432,14 +3703,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(VolumetricFlow);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.cubicMetresPerSecond))
+                if (double.IsNaN(x.cubicMetresPerSecond))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.cubicMetresPerSecond < value.cubicMetresPerSecond)
@@ -3453,7 +3726,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3468,14 +3746,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Voltage);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.volts))
+                if (double.IsNaN(x.volts))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.volts < value.volts)
@@ -3489,7 +3769,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3504,14 +3789,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Resistance);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.ohms))
+                if (double.IsNaN(x.ohms))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.ohms < value.ohms)
@@ -3525,7 +3812,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3540,14 +3832,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(SpecificEnergy);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.joulesPerKilogram))
+                if (double.IsNaN(x.joulesPerKilogram))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.joulesPerKilogram < value.joulesPerKilogram)
@@ -3561,7 +3855,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3576,14 +3875,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(ElectricCharge);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.coulombs))
+                if (double.IsNaN(x.coulombs))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.coulombs < value.coulombs)
@@ -3597,7 +3898,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3612,14 +3918,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Inductance);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.henrys))
+                if (double.IsNaN(x.henrys))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.henrys < value.henrys)
@@ -3633,7 +3941,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3648,14 +3961,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Capacitance);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.farads))
+                if (double.IsNaN(x.farads))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.farads < value.farads)
@@ -3669,7 +3984,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3684,14 +4004,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Flexibility);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.metresPerNewton))
+                if (double.IsNaN(x.metresPerNewton))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metresPerNewton < value.metresPerNewton)
@@ -3705,7 +4027,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3720,14 +4047,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(AngularAcceleration);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.radiansPerSecondSquared))
+                if (double.IsNaN(x.radiansPerSecondSquared))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.radiansPerSecondSquared < value.radiansPerSecondSquared)
@@ -3741,7 +4070,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3756,14 +4090,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(AngularJerk);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.radiansPerSecondCubed))
+                if (double.IsNaN(x.radiansPerSecondCubed))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.radiansPerSecondCubed < value.radiansPerSecondCubed)
@@ -3777,7 +4113,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3792,14 +4133,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Jerk);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.metresPerSecondCubed))
+                if (double.IsNaN(x.metresPerSecondCubed))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metresPerSecondCubed < value.metresPerSecondCubed)
@@ -3813,7 +4156,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3828,14 +4176,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(LengthPerUnitless);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.metresPerUnitless))
+                if (double.IsNaN(x.metresPerUnitless))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metresPerUnitless < value.metresPerUnitless)
@@ -3849,7 +4199,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3864,14 +4219,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(AnglePerUnitless);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.radiansPerUnitless))
+                if (double.IsNaN(x.radiansPerUnitless))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.radiansPerUnitless < value.radiansPerUnitless)
@@ -3885,7 +4242,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3900,14 +4262,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(ForcePerUnitless);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.newtonsPerUnitless))
+                if (double.IsNaN(x.newtonsPerUnitless))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.newtonsPerUnitless < value.newtonsPerUnitless)
@@ -3921,7 +4285,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3936,14 +4305,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(LuminousFlux);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.lumens))
+                if (double.IsNaN(x.lumens))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.lumens < value.lumens)
@@ -3957,7 +4328,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -3972,14 +4348,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Illuminance);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.lux))
+                if (double.IsNaN(x.lux))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.lux < value.lux)
@@ -3993,7 +4371,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -4008,14 +4391,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(MagneticFlux);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.webers))
+                if (double.IsNaN(x.webers))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.webers < value.webers)
@@ -4029,7 +4414,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -4044,14 +4434,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(ElectricalConductance);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.siemens))
+                if (double.IsNaN(x.siemens))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.siemens < value.siemens)
@@ -4065,7 +4457,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -4080,14 +4477,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(MagneticFieldStrength);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.teslas))
+                if (double.IsNaN(x.teslas))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.teslas < value.teslas)
@@ -4101,7 +4500,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -4116,14 +4520,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(CatalyticActivity);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.katals))
+                if (double.IsNaN(x.katals))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.katals < value.katals)
@@ -4137,7 +4543,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -4152,14 +4563,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Momentum);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.newtonSecond))
+                if (double.IsNaN(x.newtonSecond))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.newtonSecond < value.newtonSecond)
@@ -4173,7 +4586,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -4188,14 +4606,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(Wavenumber);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.reciprocalMetres))
+                if (double.IsNaN(x.reciprocalMetres))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.reciprocalMetres < value.reciprocalMetres)
@@ -4209,7 +4629,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -4224,14 +4649,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(AreaDensity);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.kilogramsPerSquareMetre))
+                if (double.IsNaN(x.kilogramsPerSquareMetre))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kilogramsPerSquareMetre < value.kilogramsPerSquareMetre)
@@ -4245,7 +4672,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -4260,14 +4692,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(SpecificVolume);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.cubicMetresPerKilogram))
+                if (double.IsNaN(x.cubicMetresPerKilogram))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.cubicMetresPerKilogram < value.cubicMetresPerKilogram)
@@ -4281,7 +4715,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -4296,14 +4735,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(MassFlow);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.kilogramsPerSecond))
+                if (double.IsNaN(x.kilogramsPerSecond))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kilogramsPerSecond < value.kilogramsPerSecond)
@@ -4317,7 +4758,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -4332,14 +4778,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(KinematicViscosity);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.squareMetresPerSecond))
+                if (double.IsNaN(x.squareMetresPerSecond))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.squareMetresPerSecond < value.squareMetresPerSecond)
@@ -4353,7 +4801,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -4368,14 +4821,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(MolarMass);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.kilogramsPerMole))
+                if (double.IsNaN(x.kilogramsPerMole))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kilogramsPerMole < value.kilogramsPerMole)
@@ -4389,7 +4844,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -4404,14 +4864,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(MolarHeatCapacity);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.joulesPerKelvinMole))
+                if (double.IsNaN(x.joulesPerKelvinMole))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.joulesPerKelvinMole < value.joulesPerKelvinMole)
@@ -4425,7 +4887,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -4440,6 +4907,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Mass? value = null;
             foreach (var x in source)
             {
@@ -4447,15 +4915,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.kilograms))
+
+                if (double.IsNaN(x.Value.kilograms))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.kilograms < value.Value.kilograms)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4470,6 +4941,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Length? value = null;
             foreach (var x in source)
             {
@@ -4477,15 +4949,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.metres))
+
+                if (double.IsNaN(x.Value.metres))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.metres < value.Value.metres)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4500,6 +4975,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Time? value = null;
             foreach (var x in source)
             {
@@ -4507,15 +4983,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.seconds))
+
+                if (double.IsNaN(x.Value.seconds))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.seconds < value.Value.seconds)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4530,6 +5009,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Temperature? value = null;
             foreach (var x in source)
             {
@@ -4537,15 +5017,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.kelvin))
+
+                if (double.IsNaN(x.Value.kelvin))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.kelvin < value.Value.kelvin)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4560,6 +5043,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Angle? value = null;
             foreach (var x in source)
             {
@@ -4567,15 +5051,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.radians))
+
+                if (double.IsNaN(x.Value.radians))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.radians < value.Value.radians)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4590,6 +5077,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Unitless? value = null;
             foreach (var x in source)
             {
@@ -4597,15 +5085,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.scalar))
+
+                if (double.IsNaN(x.Value.scalar))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.scalar < value.Value.scalar)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4620,6 +5111,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Current? value = null;
             foreach (var x in source)
             {
@@ -4627,15 +5119,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.amperes))
+
+                if (double.IsNaN(x.Value.amperes))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.amperes < value.Value.amperes)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4650,6 +5145,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             LuminousIntensity? value = null;
             foreach (var x in source)
             {
@@ -4657,15 +5153,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.candelas))
+
+                if (double.IsNaN(x.Value.candelas))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.candelas < value.Value.candelas)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4680,6 +5179,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Data? value = null;
             foreach (var x in source)
             {
@@ -4687,15 +5187,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.bits))
+
+                if (double.IsNaN(x.Value.bits))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.bits < value.Value.bits)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4710,6 +5213,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AmountOfSubstance? value = null;
             foreach (var x in source)
             {
@@ -4717,15 +5221,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.moles))
+
+                if (double.IsNaN(x.Value.moles))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.moles < value.Value.moles)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4740,6 +5247,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             SolidAngle? value = null;
             foreach (var x in source)
             {
@@ -4747,15 +5255,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.steradians))
+
+                if (double.IsNaN(x.Value.steradians))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.steradians < value.Value.steradians)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4770,6 +5281,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Area? value = null;
             foreach (var x in source)
             {
@@ -4777,15 +5289,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.squareMetres))
+
+                if (double.IsNaN(x.Value.squareMetres))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.squareMetres < value.Value.squareMetres)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4800,6 +5315,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Volume? value = null;
             foreach (var x in source)
             {
@@ -4807,15 +5323,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.cubicMetres))
+
+                if (double.IsNaN(x.Value.cubicMetres))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.cubicMetres < value.Value.cubicMetres)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4830,6 +5349,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Force? value = null;
             foreach (var x in source)
             {
@@ -4837,15 +5357,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.newtons))
+
+                if (double.IsNaN(x.Value.newtons))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.newtons < value.Value.newtons)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4860,6 +5383,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Pressure? value = null;
             foreach (var x in source)
             {
@@ -4867,15 +5391,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.pascals))
+
+                if (double.IsNaN(x.Value.pascals))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.pascals < value.Value.pascals)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4890,6 +5417,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Density? value = null;
             foreach (var x in source)
             {
@@ -4897,15 +5425,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.kilogramsPerCubicMetre))
+
+                if (double.IsNaN(x.Value.kilogramsPerCubicMetre))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.kilogramsPerCubicMetre < value.Value.kilogramsPerCubicMetre)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4920,6 +5451,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Energy? value = null;
             foreach (var x in source)
             {
@@ -4927,15 +5459,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.joules))
+
+                if (double.IsNaN(x.Value.joules))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.joules < value.Value.joules)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4950,6 +5485,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Power? value = null;
             foreach (var x in source)
             {
@@ -4957,15 +5493,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.watts))
+
+                if (double.IsNaN(x.Value.watts))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.watts < value.Value.watts)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4980,6 +5519,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Speed? value = null;
             foreach (var x in source)
             {
@@ -4987,15 +5527,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.metresPerSecond))
+
+                if (double.IsNaN(x.Value.metresPerSecond))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.metresPerSecond < value.Value.metresPerSecond)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5010,6 +5553,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AngularSpeed? value = null;
             foreach (var x in source)
             {
@@ -5017,15 +5561,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.radiansPerSecond))
+
+                if (double.IsNaN(x.Value.radiansPerSecond))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.radiansPerSecond < value.Value.radiansPerSecond)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5040,6 +5587,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Frequency? value = null;
             foreach (var x in source)
             {
@@ -5047,15 +5595,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.hertz))
+
+                if (double.IsNaN(x.Value.hertz))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.hertz < value.Value.hertz)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5070,6 +5621,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Acceleration? value = null;
             foreach (var x in source)
             {
@@ -5077,15 +5629,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.metresPerSecondSquared))
+
+                if (double.IsNaN(x.Value.metresPerSecondSquared))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.metresPerSecondSquared < value.Value.metresPerSecondSquared)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5100,6 +5655,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Torque? value = null;
             foreach (var x in source)
             {
@@ -5107,15 +5663,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.newtonMetres))
+
+                if (double.IsNaN(x.Value.newtonMetres))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.newtonMetres < value.Value.newtonMetres)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5130,6 +5689,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Stiffness? value = null;
             foreach (var x in source)
             {
@@ -5137,15 +5697,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.newtonsPerMetre))
+
+                if (double.IsNaN(x.Value.newtonsPerMetre))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.newtonsPerMetre < value.Value.newtonsPerMetre)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5160,6 +5723,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             VolumetricFlow? value = null;
             foreach (var x in source)
             {
@@ -5167,15 +5731,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.cubicMetresPerSecond))
+
+                if (double.IsNaN(x.Value.cubicMetresPerSecond))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.cubicMetresPerSecond < value.Value.cubicMetresPerSecond)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5190,6 +5757,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Voltage? value = null;
             foreach (var x in source)
             {
@@ -5197,15 +5765,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.volts))
+
+                if (double.IsNaN(x.Value.volts))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.volts < value.Value.volts)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5220,6 +5791,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Resistance? value = null;
             foreach (var x in source)
             {
@@ -5227,15 +5799,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.ohms))
+
+                if (double.IsNaN(x.Value.ohms))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.ohms < value.Value.ohms)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5250,6 +5825,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             SpecificEnergy? value = null;
             foreach (var x in source)
             {
@@ -5257,15 +5833,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.joulesPerKilogram))
+
+                if (double.IsNaN(x.Value.joulesPerKilogram))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.joulesPerKilogram < value.Value.joulesPerKilogram)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5280,6 +5859,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             ElectricCharge? value = null;
             foreach (var x in source)
             {
@@ -5287,15 +5867,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.coulombs))
+
+                if (double.IsNaN(x.Value.coulombs))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.coulombs < value.Value.coulombs)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5310,6 +5893,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Inductance? value = null;
             foreach (var x in source)
             {
@@ -5317,15 +5901,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.henrys))
+
+                if (double.IsNaN(x.Value.henrys))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.henrys < value.Value.henrys)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5340,6 +5927,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Capacitance? value = null;
             foreach (var x in source)
             {
@@ -5347,15 +5935,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.farads))
+
+                if (double.IsNaN(x.Value.farads))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.farads < value.Value.farads)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5370,6 +5961,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Flexibility? value = null;
             foreach (var x in source)
             {
@@ -5377,15 +5969,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.metresPerNewton))
+
+                if (double.IsNaN(x.Value.metresPerNewton))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.metresPerNewton < value.Value.metresPerNewton)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5400,6 +5995,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AngularAcceleration? value = null;
             foreach (var x in source)
             {
@@ -5407,15 +6003,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.radiansPerSecondSquared))
+
+                if (double.IsNaN(x.Value.radiansPerSecondSquared))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.radiansPerSecondSquared < value.Value.radiansPerSecondSquared)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5430,6 +6029,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AngularJerk? value = null;
             foreach (var x in source)
             {
@@ -5437,15 +6037,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.radiansPerSecondCubed))
+
+                if (double.IsNaN(x.Value.radiansPerSecondCubed))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.radiansPerSecondCubed < value.Value.radiansPerSecondCubed)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5460,6 +6063,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Jerk? value = null;
             foreach (var x in source)
             {
@@ -5467,15 +6071,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.metresPerSecondCubed))
+
+                if (double.IsNaN(x.Value.metresPerSecondCubed))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.metresPerSecondCubed < value.Value.metresPerSecondCubed)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5490,6 +6097,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             LengthPerUnitless? value = null;
             foreach (var x in source)
             {
@@ -5497,15 +6105,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.metresPerUnitless))
+
+                if (double.IsNaN(x.Value.metresPerUnitless))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.metresPerUnitless < value.Value.metresPerUnitless)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5520,6 +6131,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AnglePerUnitless? value = null;
             foreach (var x in source)
             {
@@ -5527,15 +6139,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.radiansPerUnitless))
+
+                if (double.IsNaN(x.Value.radiansPerUnitless))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.radiansPerUnitless < value.Value.radiansPerUnitless)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5550,6 +6165,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             ForcePerUnitless? value = null;
             foreach (var x in source)
             {
@@ -5557,15 +6173,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.newtonsPerUnitless))
+
+                if (double.IsNaN(x.Value.newtonsPerUnitless))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.newtonsPerUnitless < value.Value.newtonsPerUnitless)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5580,6 +6199,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             LuminousFlux? value = null;
             foreach (var x in source)
             {
@@ -5587,15 +6207,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.lumens))
+
+                if (double.IsNaN(x.Value.lumens))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.lumens < value.Value.lumens)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5610,6 +6233,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Illuminance? value = null;
             foreach (var x in source)
             {
@@ -5617,15 +6241,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.lux))
+
+                if (double.IsNaN(x.Value.lux))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.lux < value.Value.lux)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5640,6 +6267,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MagneticFlux? value = null;
             foreach (var x in source)
             {
@@ -5647,15 +6275,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.webers))
+
+                if (double.IsNaN(x.Value.webers))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.webers < value.Value.webers)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5670,6 +6301,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             ElectricalConductance? value = null;
             foreach (var x in source)
             {
@@ -5677,15 +6309,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.siemens))
+
+                if (double.IsNaN(x.Value.siemens))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.siemens < value.Value.siemens)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5700,6 +6335,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MagneticFieldStrength? value = null;
             foreach (var x in source)
             {
@@ -5707,15 +6343,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.teslas))
+
+                if (double.IsNaN(x.Value.teslas))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.teslas < value.Value.teslas)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5730,6 +6369,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             CatalyticActivity? value = null;
             foreach (var x in source)
             {
@@ -5737,15 +6377,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.katals))
+
+                if (double.IsNaN(x.Value.katals))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.katals < value.Value.katals)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5760,6 +6403,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Momentum? value = null;
             foreach (var x in source)
             {
@@ -5767,15 +6411,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.newtonSecond))
+
+                if (double.IsNaN(x.Value.newtonSecond))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.newtonSecond < value.Value.newtonSecond)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5790,6 +6437,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Wavenumber? value = null;
             foreach (var x in source)
             {
@@ -5797,15 +6445,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.reciprocalMetres))
+
+                if (double.IsNaN(x.Value.reciprocalMetres))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.reciprocalMetres < value.Value.reciprocalMetres)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5820,6 +6471,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AreaDensity? value = null;
             foreach (var x in source)
             {
@@ -5827,15 +6479,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.kilogramsPerSquareMetre))
+
+                if (double.IsNaN(x.Value.kilogramsPerSquareMetre))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.kilogramsPerSquareMetre < value.Value.kilogramsPerSquareMetre)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5850,6 +6505,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             SpecificVolume? value = null;
             foreach (var x in source)
             {
@@ -5857,15 +6513,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.cubicMetresPerKilogram))
+
+                if (double.IsNaN(x.Value.cubicMetresPerKilogram))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.cubicMetresPerKilogram < value.Value.cubicMetresPerKilogram)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5880,6 +6539,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MassFlow? value = null;
             foreach (var x in source)
             {
@@ -5887,15 +6547,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.kilogramsPerSecond))
+
+                if (double.IsNaN(x.Value.kilogramsPerSecond))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.kilogramsPerSecond < value.Value.kilogramsPerSecond)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5910,6 +6573,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             KinematicViscosity? value = null;
             foreach (var x in source)
             {
@@ -5917,15 +6581,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.squareMetresPerSecond))
+
+                if (double.IsNaN(x.Value.squareMetresPerSecond))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.squareMetresPerSecond < value.Value.squareMetresPerSecond)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5940,6 +6607,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MolarMass? value = null;
             foreach (var x in source)
             {
@@ -5947,15 +6615,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.kilogramsPerMole))
+
+                if (double.IsNaN(x.Value.kilogramsPerMole))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.kilogramsPerMole < value.Value.kilogramsPerMole)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5970,6 +6641,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MolarHeatCapacity? value = null;
             foreach (var x in source)
             {
@@ -5977,15 +6649,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.joulesPerKelvinMole))
+
+                if (double.IsNaN(x.Value.joulesPerKelvinMole))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.joulesPerKelvinMole < value.Value.joulesPerKelvinMole)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6000,14 +6675,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Mass value = default(Mass);
             bool hasValue = false;
             foreach (Mass x in source)
             {
-                if (System.Double.IsNaN(x.kilograms))
+                if (double.IsNaN(x.kilograms))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kilograms > value.kilograms)
@@ -6021,7 +6698,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6036,14 +6718,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Length value = default(Length);
             bool hasValue = false;
             foreach (Length x in source)
             {
-                if (System.Double.IsNaN(x.metres))
+                if (double.IsNaN(x.metres))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metres > value.metres)
@@ -6057,7 +6741,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6072,14 +6761,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Time value = default(Time);
             bool hasValue = false;
             foreach (Time x in source)
             {
-                if (System.Double.IsNaN(x.seconds))
+                if (double.IsNaN(x.seconds))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.seconds > value.seconds)
@@ -6093,7 +6784,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6108,14 +6804,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Temperature value = default(Temperature);
             bool hasValue = false;
             foreach (Temperature x in source)
             {
-                if (System.Double.IsNaN(x.kelvin))
+                if (double.IsNaN(x.kelvin))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kelvin > value.kelvin)
@@ -6129,7 +6827,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6144,14 +6847,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Angle value = default(Angle);
             bool hasValue = false;
             foreach (Angle x in source)
             {
-                if (System.Double.IsNaN(x.radians))
+                if (double.IsNaN(x.radians))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.radians > value.radians)
@@ -6165,7 +6870,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6180,14 +6890,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Unitless value = default(Unitless);
             bool hasValue = false;
             foreach (Unitless x in source)
             {
-                if (System.Double.IsNaN(x.scalar))
+                if (double.IsNaN(x.scalar))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.scalar > value.scalar)
@@ -6201,7 +6913,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6216,14 +6933,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Current value = default(Current);
             bool hasValue = false;
             foreach (Current x in source)
             {
-                if (System.Double.IsNaN(x.amperes))
+                if (double.IsNaN(x.amperes))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.amperes > value.amperes)
@@ -6237,7 +6956,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6252,14 +6976,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             LuminousIntensity value = default(LuminousIntensity);
             bool hasValue = false;
             foreach (LuminousIntensity x in source)
             {
-                if (System.Double.IsNaN(x.candelas))
+                if (double.IsNaN(x.candelas))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.candelas > value.candelas)
@@ -6273,7 +6999,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6288,14 +7019,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Data value = default(Data);
             bool hasValue = false;
             foreach (Data x in source)
             {
-                if (System.Double.IsNaN(x.bits))
+                if (double.IsNaN(x.bits))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.bits > value.bits)
@@ -6309,7 +7042,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6324,14 +7062,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AmountOfSubstance value = default(AmountOfSubstance);
             bool hasValue = false;
             foreach (AmountOfSubstance x in source)
             {
-                if (System.Double.IsNaN(x.moles))
+                if (double.IsNaN(x.moles))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.moles > value.moles)
@@ -6345,7 +7085,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6360,14 +7105,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             SolidAngle value = default(SolidAngle);
             bool hasValue = false;
             foreach (SolidAngle x in source)
             {
-                if (System.Double.IsNaN(x.steradians))
+                if (double.IsNaN(x.steradians))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.steradians > value.steradians)
@@ -6381,7 +7128,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6396,14 +7148,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Area value = default(Area);
             bool hasValue = false;
             foreach (Area x in source)
             {
-                if (System.Double.IsNaN(x.squareMetres))
+                if (double.IsNaN(x.squareMetres))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.squareMetres > value.squareMetres)
@@ -6417,7 +7171,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6432,14 +7191,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Volume value = default(Volume);
             bool hasValue = false;
             foreach (Volume x in source)
             {
-                if (System.Double.IsNaN(x.cubicMetres))
+                if (double.IsNaN(x.cubicMetres))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.cubicMetres > value.cubicMetres)
@@ -6453,7 +7214,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6468,14 +7234,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Force value = default(Force);
             bool hasValue = false;
             foreach (Force x in source)
             {
-                if (System.Double.IsNaN(x.newtons))
+                if (double.IsNaN(x.newtons))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.newtons > value.newtons)
@@ -6489,7 +7257,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6504,14 +7277,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Pressure value = default(Pressure);
             bool hasValue = false;
             foreach (Pressure x in source)
             {
-                if (System.Double.IsNaN(x.pascals))
+                if (double.IsNaN(x.pascals))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.pascals > value.pascals)
@@ -6525,7 +7300,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6540,14 +7320,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Density value = default(Density);
             bool hasValue = false;
             foreach (Density x in source)
             {
-                if (System.Double.IsNaN(x.kilogramsPerCubicMetre))
+                if (double.IsNaN(x.kilogramsPerCubicMetre))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kilogramsPerCubicMetre > value.kilogramsPerCubicMetre)
@@ -6561,7 +7343,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6576,14 +7363,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Energy value = default(Energy);
             bool hasValue = false;
             foreach (Energy x in source)
             {
-                if (System.Double.IsNaN(x.joules))
+                if (double.IsNaN(x.joules))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.joules > value.joules)
@@ -6597,7 +7386,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6612,14 +7406,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Power value = default(Power);
             bool hasValue = false;
             foreach (Power x in source)
             {
-                if (System.Double.IsNaN(x.watts))
+                if (double.IsNaN(x.watts))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.watts > value.watts)
@@ -6633,7 +7429,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6648,14 +7449,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Speed value = default(Speed);
             bool hasValue = false;
             foreach (Speed x in source)
             {
-                if (System.Double.IsNaN(x.metresPerSecond))
+                if (double.IsNaN(x.metresPerSecond))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metresPerSecond > value.metresPerSecond)
@@ -6669,7 +7472,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6684,14 +7492,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AngularSpeed value = default(AngularSpeed);
             bool hasValue = false;
             foreach (AngularSpeed x in source)
             {
-                if (System.Double.IsNaN(x.radiansPerSecond))
+                if (double.IsNaN(x.radiansPerSecond))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.radiansPerSecond > value.radiansPerSecond)
@@ -6705,7 +7515,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6720,14 +7535,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Frequency value = default(Frequency);
             bool hasValue = false;
             foreach (Frequency x in source)
             {
-                if (System.Double.IsNaN(x.hertz))
+                if (double.IsNaN(x.hertz))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.hertz > value.hertz)
@@ -6741,7 +7558,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6756,14 +7578,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Acceleration value = default(Acceleration);
             bool hasValue = false;
             foreach (Acceleration x in source)
             {
-                if (System.Double.IsNaN(x.metresPerSecondSquared))
+                if (double.IsNaN(x.metresPerSecondSquared))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metresPerSecondSquared > value.metresPerSecondSquared)
@@ -6777,7 +7601,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6792,14 +7621,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Torque value = default(Torque);
             bool hasValue = false;
             foreach (Torque x in source)
             {
-                if (System.Double.IsNaN(x.newtonMetres))
+                if (double.IsNaN(x.newtonMetres))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.newtonMetres > value.newtonMetres)
@@ -6813,7 +7644,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6828,14 +7664,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Stiffness value = default(Stiffness);
             bool hasValue = false;
             foreach (Stiffness x in source)
             {
-                if (System.Double.IsNaN(x.newtonsPerMetre))
+                if (double.IsNaN(x.newtonsPerMetre))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.newtonsPerMetre > value.newtonsPerMetre)
@@ -6849,7 +7687,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6864,14 +7707,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             VolumetricFlow value = default(VolumetricFlow);
             bool hasValue = false;
             foreach (VolumetricFlow x in source)
             {
-                if (System.Double.IsNaN(x.cubicMetresPerSecond))
+                if (double.IsNaN(x.cubicMetresPerSecond))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.cubicMetresPerSecond > value.cubicMetresPerSecond)
@@ -6885,7 +7730,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6900,14 +7750,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Voltage value = default(Voltage);
             bool hasValue = false;
             foreach (Voltage x in source)
             {
-                if (System.Double.IsNaN(x.volts))
+                if (double.IsNaN(x.volts))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.volts > value.volts)
@@ -6921,7 +7773,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6936,14 +7793,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Resistance value = default(Resistance);
             bool hasValue = false;
             foreach (Resistance x in source)
             {
-                if (System.Double.IsNaN(x.ohms))
+                if (double.IsNaN(x.ohms))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.ohms > value.ohms)
@@ -6957,7 +7816,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6972,14 +7836,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             SpecificEnergy value = default(SpecificEnergy);
             bool hasValue = false;
             foreach (SpecificEnergy x in source)
             {
-                if (System.Double.IsNaN(x.joulesPerKilogram))
+                if (double.IsNaN(x.joulesPerKilogram))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.joulesPerKilogram > value.joulesPerKilogram)
@@ -6993,7 +7859,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7008,14 +7879,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             ElectricCharge value = default(ElectricCharge);
             bool hasValue = false;
             foreach (ElectricCharge x in source)
             {
-                if (System.Double.IsNaN(x.coulombs))
+                if (double.IsNaN(x.coulombs))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.coulombs > value.coulombs)
@@ -7029,7 +7902,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7044,14 +7922,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Inductance value = default(Inductance);
             bool hasValue = false;
             foreach (Inductance x in source)
             {
-                if (System.Double.IsNaN(x.henrys))
+                if (double.IsNaN(x.henrys))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.henrys > value.henrys)
@@ -7065,7 +7945,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7080,14 +7965,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Capacitance value = default(Capacitance);
             bool hasValue = false;
             foreach (Capacitance x in source)
             {
-                if (System.Double.IsNaN(x.farads))
+                if (double.IsNaN(x.farads))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.farads > value.farads)
@@ -7101,7 +7988,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7116,14 +8008,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Flexibility value = default(Flexibility);
             bool hasValue = false;
             foreach (Flexibility x in source)
             {
-                if (System.Double.IsNaN(x.metresPerNewton))
+                if (double.IsNaN(x.metresPerNewton))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metresPerNewton > value.metresPerNewton)
@@ -7137,7 +8031,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7152,14 +8051,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AngularAcceleration value = default(AngularAcceleration);
             bool hasValue = false;
             foreach (AngularAcceleration x in source)
             {
-                if (System.Double.IsNaN(x.radiansPerSecondSquared))
+                if (double.IsNaN(x.radiansPerSecondSquared))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.radiansPerSecondSquared > value.radiansPerSecondSquared)
@@ -7173,7 +8074,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7188,14 +8094,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AngularJerk value = default(AngularJerk);
             bool hasValue = false;
             foreach (AngularJerk x in source)
             {
-                if (System.Double.IsNaN(x.radiansPerSecondCubed))
+                if (double.IsNaN(x.radiansPerSecondCubed))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.radiansPerSecondCubed > value.radiansPerSecondCubed)
@@ -7209,7 +8117,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7224,14 +8137,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Jerk value = default(Jerk);
             bool hasValue = false;
             foreach (Jerk x in source)
             {
-                if (System.Double.IsNaN(x.metresPerSecondCubed))
+                if (double.IsNaN(x.metresPerSecondCubed))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metresPerSecondCubed > value.metresPerSecondCubed)
@@ -7245,7 +8160,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7260,14 +8180,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             LengthPerUnitless value = default(LengthPerUnitless);
             bool hasValue = false;
             foreach (LengthPerUnitless x in source)
             {
-                if (System.Double.IsNaN(x.metresPerUnitless))
+                if (double.IsNaN(x.metresPerUnitless))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metresPerUnitless > value.metresPerUnitless)
@@ -7281,7 +8203,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7296,14 +8223,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AnglePerUnitless value = default(AnglePerUnitless);
             bool hasValue = false;
             foreach (AnglePerUnitless x in source)
             {
-                if (System.Double.IsNaN(x.radiansPerUnitless))
+                if (double.IsNaN(x.radiansPerUnitless))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.radiansPerUnitless > value.radiansPerUnitless)
@@ -7317,7 +8246,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7332,14 +8266,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             ForcePerUnitless value = default(ForcePerUnitless);
             bool hasValue = false;
             foreach (ForcePerUnitless x in source)
             {
-                if (System.Double.IsNaN(x.newtonsPerUnitless))
+                if (double.IsNaN(x.newtonsPerUnitless))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.newtonsPerUnitless > value.newtonsPerUnitless)
@@ -7353,7 +8289,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7368,14 +8309,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             LuminousFlux value = default(LuminousFlux);
             bool hasValue = false;
             foreach (LuminousFlux x in source)
             {
-                if (System.Double.IsNaN(x.lumens))
+                if (double.IsNaN(x.lumens))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.lumens > value.lumens)
@@ -7389,7 +8332,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7404,14 +8352,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Illuminance value = default(Illuminance);
             bool hasValue = false;
             foreach (Illuminance x in source)
             {
-                if (System.Double.IsNaN(x.lux))
+                if (double.IsNaN(x.lux))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.lux > value.lux)
@@ -7425,7 +8375,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7440,14 +8395,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MagneticFlux value = default(MagneticFlux);
             bool hasValue = false;
             foreach (MagneticFlux x in source)
             {
-                if (System.Double.IsNaN(x.webers))
+                if (double.IsNaN(x.webers))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.webers > value.webers)
@@ -7461,7 +8418,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7476,14 +8438,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             ElectricalConductance value = default(ElectricalConductance);
             bool hasValue = false;
             foreach (ElectricalConductance x in source)
             {
-                if (System.Double.IsNaN(x.siemens))
+                if (double.IsNaN(x.siemens))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.siemens > value.siemens)
@@ -7497,7 +8461,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7512,14 +8481,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MagneticFieldStrength value = default(MagneticFieldStrength);
             bool hasValue = false;
             foreach (MagneticFieldStrength x in source)
             {
-                if (System.Double.IsNaN(x.teslas))
+                if (double.IsNaN(x.teslas))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.teslas > value.teslas)
@@ -7533,7 +8504,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7548,14 +8524,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             CatalyticActivity value = default(CatalyticActivity);
             bool hasValue = false;
             foreach (CatalyticActivity x in source)
             {
-                if (System.Double.IsNaN(x.katals))
+                if (double.IsNaN(x.katals))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.katals > value.katals)
@@ -7569,7 +8547,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7584,14 +8567,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Momentum value = default(Momentum);
             bool hasValue = false;
             foreach (Momentum x in source)
             {
-                if (System.Double.IsNaN(x.newtonSecond))
+                if (double.IsNaN(x.newtonSecond))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.newtonSecond > value.newtonSecond)
@@ -7605,7 +8590,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7620,14 +8610,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Wavenumber value = default(Wavenumber);
             bool hasValue = false;
             foreach (Wavenumber x in source)
             {
-                if (System.Double.IsNaN(x.reciprocalMetres))
+                if (double.IsNaN(x.reciprocalMetres))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.reciprocalMetres > value.reciprocalMetres)
@@ -7641,7 +8633,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7656,14 +8653,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AreaDensity value = default(AreaDensity);
             bool hasValue = false;
             foreach (AreaDensity x in source)
             {
-                if (System.Double.IsNaN(x.kilogramsPerSquareMetre))
+                if (double.IsNaN(x.kilogramsPerSquareMetre))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kilogramsPerSquareMetre > value.kilogramsPerSquareMetre)
@@ -7677,7 +8676,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7692,14 +8696,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             SpecificVolume value = default(SpecificVolume);
             bool hasValue = false;
             foreach (SpecificVolume x in source)
             {
-                if (System.Double.IsNaN(x.cubicMetresPerKilogram))
+                if (double.IsNaN(x.cubicMetresPerKilogram))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.cubicMetresPerKilogram > value.cubicMetresPerKilogram)
@@ -7713,7 +8719,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7728,14 +8739,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MassFlow value = default(MassFlow);
             bool hasValue = false;
             foreach (MassFlow x in source)
             {
-                if (System.Double.IsNaN(x.kilogramsPerSecond))
+                if (double.IsNaN(x.kilogramsPerSecond))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kilogramsPerSecond > value.kilogramsPerSecond)
@@ -7749,7 +8762,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7764,14 +8782,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             KinematicViscosity value = default(KinematicViscosity);
             bool hasValue = false;
             foreach (KinematicViscosity x in source)
             {
-                if (System.Double.IsNaN(x.squareMetresPerSecond))
+                if (double.IsNaN(x.squareMetresPerSecond))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.squareMetresPerSecond > value.squareMetresPerSecond)
@@ -7785,7 +8805,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7800,14 +8825,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MolarMass value = default(MolarMass);
             bool hasValue = false;
             foreach (MolarMass x in source)
             {
-                if (System.Double.IsNaN(x.kilogramsPerMole))
+                if (double.IsNaN(x.kilogramsPerMole))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kilogramsPerMole > value.kilogramsPerMole)
@@ -7821,7 +8848,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7836,14 +8868,16 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MolarHeatCapacity value = default(MolarHeatCapacity);
             bool hasValue = false;
             foreach (MolarHeatCapacity x in source)
             {
-                if (System.Double.IsNaN(x.joulesPerKelvinMole))
+                if (double.IsNaN(x.joulesPerKelvinMole))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.joulesPerKelvinMole > value.joulesPerKelvinMole)
@@ -7857,7 +8891,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7872,6 +8911,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Mass? value = null;
             foreach (var x in source)
             {
@@ -7879,15 +8919,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.kilograms))
+
+                if (double.IsNaN(x.Value.kilograms))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.kilograms > value.Value.kilograms)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -7902,6 +8945,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Length? value = null;
             foreach (var x in source)
             {
@@ -7909,15 +8953,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.metres))
+
+                if (double.IsNaN(x.Value.metres))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.metres > value.Value.metres)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -7932,6 +8979,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Time? value = null;
             foreach (var x in source)
             {
@@ -7939,15 +8987,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.seconds))
+
+                if (double.IsNaN(x.Value.seconds))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.seconds > value.Value.seconds)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -7962,6 +9013,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Temperature? value = null;
             foreach (var x in source)
             {
@@ -7969,15 +9021,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.kelvin))
+
+                if (double.IsNaN(x.Value.kelvin))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.kelvin > value.Value.kelvin)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -7992,6 +9047,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Angle? value = null;
             foreach (var x in source)
             {
@@ -7999,15 +9055,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.radians))
+
+                if (double.IsNaN(x.Value.radians))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.radians > value.Value.radians)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8022,6 +9081,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Unitless? value = null;
             foreach (var x in source)
             {
@@ -8029,15 +9089,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.scalar))
+
+                if (double.IsNaN(x.Value.scalar))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.scalar > value.Value.scalar)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8052,6 +9115,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Current? value = null;
             foreach (var x in source)
             {
@@ -8059,15 +9123,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.amperes))
+
+                if (double.IsNaN(x.Value.amperes))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.amperes > value.Value.amperes)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8082,6 +9149,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             LuminousIntensity? value = null;
             foreach (var x in source)
             {
@@ -8089,15 +9157,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.candelas))
+
+                if (double.IsNaN(x.Value.candelas))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.candelas > value.Value.candelas)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8112,6 +9183,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Data? value = null;
             foreach (var x in source)
             {
@@ -8119,15 +9191,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.bits))
+
+                if (double.IsNaN(x.Value.bits))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.bits > value.Value.bits)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8142,6 +9217,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AmountOfSubstance? value = null;
             foreach (var x in source)
             {
@@ -8149,15 +9225,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.moles))
+
+                if (double.IsNaN(x.Value.moles))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.moles > value.Value.moles)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8172,6 +9251,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             SolidAngle? value = null;
             foreach (var x in source)
             {
@@ -8179,15 +9259,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.steradians))
+
+                if (double.IsNaN(x.Value.steradians))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.steradians > value.Value.steradians)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8202,6 +9285,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Area? value = null;
             foreach (var x in source)
             {
@@ -8209,15 +9293,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.squareMetres))
+
+                if (double.IsNaN(x.Value.squareMetres))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.squareMetres > value.Value.squareMetres)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8232,6 +9319,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Volume? value = null;
             foreach (var x in source)
             {
@@ -8239,15 +9327,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.cubicMetres))
+
+                if (double.IsNaN(x.Value.cubicMetres))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.cubicMetres > value.Value.cubicMetres)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8262,6 +9353,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Force? value = null;
             foreach (var x in source)
             {
@@ -8269,15 +9361,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.newtons))
+
+                if (double.IsNaN(x.Value.newtons))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.newtons > value.Value.newtons)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8292,6 +9387,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Pressure? value = null;
             foreach (var x in source)
             {
@@ -8299,15 +9395,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.pascals))
+
+                if (double.IsNaN(x.Value.pascals))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.pascals > value.Value.pascals)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8322,6 +9421,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Density? value = null;
             foreach (var x in source)
             {
@@ -8329,15 +9429,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.kilogramsPerCubicMetre))
+
+                if (double.IsNaN(x.Value.kilogramsPerCubicMetre))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.kilogramsPerCubicMetre > value.Value.kilogramsPerCubicMetre)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8352,6 +9455,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Energy? value = null;
             foreach (var x in source)
             {
@@ -8359,15 +9463,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.joules))
+
+                if (double.IsNaN(x.Value.joules))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.joules > value.Value.joules)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8382,6 +9489,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Power? value = null;
             foreach (var x in source)
             {
@@ -8389,15 +9497,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.watts))
+
+                if (double.IsNaN(x.Value.watts))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.watts > value.Value.watts)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8412,6 +9523,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Speed? value = null;
             foreach (var x in source)
             {
@@ -8419,15 +9531,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.metresPerSecond))
+
+                if (double.IsNaN(x.Value.metresPerSecond))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.metresPerSecond > value.Value.metresPerSecond)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8442,6 +9557,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AngularSpeed? value = null;
             foreach (var x in source)
             {
@@ -8449,15 +9565,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.radiansPerSecond))
+
+                if (double.IsNaN(x.Value.radiansPerSecond))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.radiansPerSecond > value.Value.radiansPerSecond)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8472,6 +9591,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Frequency? value = null;
             foreach (var x in source)
             {
@@ -8479,15 +9599,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.hertz))
+
+                if (double.IsNaN(x.Value.hertz))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.hertz > value.Value.hertz)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8502,6 +9625,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Acceleration? value = null;
             foreach (var x in source)
             {
@@ -8509,15 +9633,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.metresPerSecondSquared))
+
+                if (double.IsNaN(x.Value.metresPerSecondSquared))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.metresPerSecondSquared > value.Value.metresPerSecondSquared)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8532,6 +9659,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Torque? value = null;
             foreach (var x in source)
             {
@@ -8539,15 +9667,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.newtonMetres))
+
+                if (double.IsNaN(x.Value.newtonMetres))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.newtonMetres > value.Value.newtonMetres)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8562,6 +9693,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Stiffness? value = null;
             foreach (var x in source)
             {
@@ -8569,15 +9701,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.newtonsPerMetre))
+
+                if (double.IsNaN(x.Value.newtonsPerMetre))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.newtonsPerMetre > value.Value.newtonsPerMetre)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8592,6 +9727,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             VolumetricFlow? value = null;
             foreach (var x in source)
             {
@@ -8599,15 +9735,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.cubicMetresPerSecond))
+
+                if (double.IsNaN(x.Value.cubicMetresPerSecond))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.cubicMetresPerSecond > value.Value.cubicMetresPerSecond)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8622,6 +9761,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Voltage? value = null;
             foreach (var x in source)
             {
@@ -8629,15 +9769,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.volts))
+
+                if (double.IsNaN(x.Value.volts))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.volts > value.Value.volts)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8652,6 +9795,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Resistance? value = null;
             foreach (var x in source)
             {
@@ -8659,15 +9803,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.ohms))
+
+                if (double.IsNaN(x.Value.ohms))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.ohms > value.Value.ohms)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8682,6 +9829,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             SpecificEnergy? value = null;
             foreach (var x in source)
             {
@@ -8689,15 +9837,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.joulesPerKilogram))
+
+                if (double.IsNaN(x.Value.joulesPerKilogram))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.joulesPerKilogram > value.Value.joulesPerKilogram)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8712,6 +9863,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             ElectricCharge? value = null;
             foreach (var x in source)
             {
@@ -8719,15 +9871,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.coulombs))
+
+                if (double.IsNaN(x.Value.coulombs))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.coulombs > value.Value.coulombs)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8742,6 +9897,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Inductance? value = null;
             foreach (var x in source)
             {
@@ -8749,15 +9905,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.henrys))
+
+                if (double.IsNaN(x.Value.henrys))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.henrys > value.Value.henrys)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8772,6 +9931,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Capacitance? value = null;
             foreach (var x in source)
             {
@@ -8779,15 +9939,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.farads))
+
+                if (double.IsNaN(x.Value.farads))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.farads > value.Value.farads)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8802,6 +9965,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Flexibility? value = null;
             foreach (var x in source)
             {
@@ -8809,15 +9973,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.metresPerNewton))
+
+                if (double.IsNaN(x.Value.metresPerNewton))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.metresPerNewton > value.Value.metresPerNewton)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8832,6 +9999,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AngularAcceleration? value = null;
             foreach (var x in source)
             {
@@ -8839,15 +10007,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.radiansPerSecondSquared))
+
+                if (double.IsNaN(x.Value.radiansPerSecondSquared))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.radiansPerSecondSquared > value.Value.radiansPerSecondSquared)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8862,6 +10033,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AngularJerk? value = null;
             foreach (var x in source)
             {
@@ -8869,15 +10041,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.radiansPerSecondCubed))
+
+                if (double.IsNaN(x.Value.radiansPerSecondCubed))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.radiansPerSecondCubed > value.Value.radiansPerSecondCubed)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8892,6 +10067,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Jerk? value = null;
             foreach (var x in source)
             {
@@ -8899,15 +10075,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.metresPerSecondCubed))
+
+                if (double.IsNaN(x.Value.metresPerSecondCubed))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.metresPerSecondCubed > value.Value.metresPerSecondCubed)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8922,6 +10101,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             LengthPerUnitless? value = null;
             foreach (var x in source)
             {
@@ -8929,15 +10109,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.metresPerUnitless))
+
+                if (double.IsNaN(x.Value.metresPerUnitless))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.metresPerUnitless > value.Value.metresPerUnitless)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8952,6 +10135,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AnglePerUnitless? value = null;
             foreach (var x in source)
             {
@@ -8959,15 +10143,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.radiansPerUnitless))
+
+                if (double.IsNaN(x.Value.radiansPerUnitless))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.radiansPerUnitless > value.Value.radiansPerUnitless)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -8982,6 +10169,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             ForcePerUnitless? value = null;
             foreach (var x in source)
             {
@@ -8989,15 +10177,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.newtonsPerUnitless))
+
+                if (double.IsNaN(x.Value.newtonsPerUnitless))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.newtonsPerUnitless > value.Value.newtonsPerUnitless)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -9012,6 +10203,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             LuminousFlux? value = null;
             foreach (var x in source)
             {
@@ -9019,15 +10211,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.lumens))
+
+                if (double.IsNaN(x.Value.lumens))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.lumens > value.Value.lumens)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -9042,6 +10237,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Illuminance? value = null;
             foreach (var x in source)
             {
@@ -9049,15 +10245,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.lux))
+
+                if (double.IsNaN(x.Value.lux))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.lux > value.Value.lux)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -9072,6 +10271,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MagneticFlux? value = null;
             foreach (var x in source)
             {
@@ -9079,15 +10279,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.webers))
+
+                if (double.IsNaN(x.Value.webers))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.webers > value.Value.webers)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -9102,6 +10305,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             ElectricalConductance? value = null;
             foreach (var x in source)
             {
@@ -9109,15 +10313,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.siemens))
+
+                if (double.IsNaN(x.Value.siemens))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.siemens > value.Value.siemens)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -9132,6 +10339,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MagneticFieldStrength? value = null;
             foreach (var x in source)
             {
@@ -9139,15 +10347,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.teslas))
+
+                if (double.IsNaN(x.Value.teslas))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.teslas > value.Value.teslas)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -9162,6 +10373,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             CatalyticActivity? value = null;
             foreach (var x in source)
             {
@@ -9169,15 +10381,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.katals))
+
+                if (double.IsNaN(x.Value.katals))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.katals > value.Value.katals)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -9192,6 +10407,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Momentum? value = null;
             foreach (var x in source)
             {
@@ -9199,15 +10415,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.newtonSecond))
+
+                if (double.IsNaN(x.Value.newtonSecond))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.newtonSecond > value.Value.newtonSecond)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -9222,6 +10441,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Wavenumber? value = null;
             foreach (var x in source)
             {
@@ -9229,15 +10449,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.reciprocalMetres))
+
+                if (double.IsNaN(x.Value.reciprocalMetres))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.reciprocalMetres > value.Value.reciprocalMetres)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -9252,6 +10475,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AreaDensity? value = null;
             foreach (var x in source)
             {
@@ -9259,15 +10483,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.kilogramsPerSquareMetre))
+
+                if (double.IsNaN(x.Value.kilogramsPerSquareMetre))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.kilogramsPerSquareMetre > value.Value.kilogramsPerSquareMetre)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -9282,6 +10509,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             SpecificVolume? value = null;
             foreach (var x in source)
             {
@@ -9289,15 +10517,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.cubicMetresPerKilogram))
+
+                if (double.IsNaN(x.Value.cubicMetresPerKilogram))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.cubicMetresPerKilogram > value.Value.cubicMetresPerKilogram)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -9312,6 +10543,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MassFlow? value = null;
             foreach (var x in source)
             {
@@ -9319,15 +10551,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.kilogramsPerSecond))
+
+                if (double.IsNaN(x.Value.kilogramsPerSecond))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.kilogramsPerSecond > value.Value.kilogramsPerSecond)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -9342,6 +10577,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             KinematicViscosity? value = null;
             foreach (var x in source)
             {
@@ -9349,15 +10585,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.squareMetresPerSecond))
+
+                if (double.IsNaN(x.Value.squareMetresPerSecond))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.squareMetresPerSecond > value.Value.squareMetresPerSecond)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -9372,6 +10611,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MolarMass? value = null;
             foreach (var x in source)
             {
@@ -9379,15 +10619,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.kilogramsPerMole))
+
+                if (double.IsNaN(x.Value.kilogramsPerMole))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.kilogramsPerMole > value.Value.kilogramsPerMole)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -9402,6 +10645,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MolarHeatCapacity? value = null;
             foreach (var x in source)
             {
@@ -9409,15 +10653,18 @@
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.joulesPerKelvinMole))
+
+                if (double.IsNaN(x.Value.joulesPerKelvinMole))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.joulesPerKelvinMole > value.Value.joulesPerKelvinMole)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -9432,6 +10679,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9442,10 +10690,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Mass.FromKilograms(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9460,6 +10710,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9470,10 +10721,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Length.FromMetres(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9488,6 +10741,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9498,10 +10752,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Time.FromSeconds(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9516,6 +10772,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9526,10 +10783,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Temperature.FromKelvin(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9544,6 +10803,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9554,10 +10814,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Angle.FromRadians(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9572,6 +10834,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9582,10 +10845,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Unitless.FromScalar(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9600,6 +10865,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9610,10 +10876,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Current.FromAmperes(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9628,6 +10896,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9638,10 +10907,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return LuminousIntensity.FromCandelas(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9656,6 +10927,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9666,10 +10938,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Data.FromBits(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9684,6 +10958,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9694,10 +10969,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return AmountOfSubstance.FromMoles(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9712,6 +10989,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9722,10 +11000,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return SolidAngle.FromSteradians(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9740,6 +11020,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9750,10 +11031,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Area.FromSquareMetres(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9768,6 +11051,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9778,10 +11062,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Volume.FromCubicMetres(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9796,6 +11082,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9806,10 +11093,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Force.FromNewtons(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9824,6 +11113,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9834,10 +11124,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Pressure.FromPascals(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9852,6 +11144,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9862,10 +11155,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Density.FromKilogramsPerCubicMetre(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9880,6 +11175,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9890,10 +11186,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Energy.FromJoules(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9908,6 +11206,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9918,10 +11217,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Power.FromWatts(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9936,6 +11237,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9946,10 +11248,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Speed.FromMetresPerSecond(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9964,6 +11268,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -9974,10 +11279,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return AngularSpeed.FromRadiansPerSecond(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -9992,6 +11299,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10002,10 +11310,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Frequency.FromHertz(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10020,6 +11330,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10030,10 +11341,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Acceleration.FromMetresPerSecondSquared(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10048,6 +11361,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10058,10 +11372,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Torque.FromNewtonMetres(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10076,6 +11392,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10086,10 +11403,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Stiffness.FromNewtonsPerMetre(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10104,6 +11423,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10114,10 +11434,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return VolumetricFlow.FromCubicMetresPerSecond(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10132,6 +11454,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10142,10 +11465,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Voltage.FromVolts(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10160,6 +11485,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10170,10 +11496,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Resistance.FromOhms(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10188,6 +11516,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10198,10 +11527,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return SpecificEnergy.FromJoulesPerKilogram(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10216,6 +11547,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10226,10 +11558,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return ElectricCharge.FromCoulombs(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10244,6 +11578,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10254,10 +11589,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Inductance.FromHenrys(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10272,6 +11609,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10282,10 +11620,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Capacitance.FromFarads(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10300,6 +11640,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10310,10 +11651,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Flexibility.FromMetresPerNewton(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10328,6 +11671,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10338,10 +11682,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return AngularAcceleration.FromRadiansPerSecondSquared(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10356,6 +11702,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10366,10 +11713,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return AngularJerk.FromRadiansPerSecondCubed(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10384,6 +11733,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10394,10 +11744,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Jerk.FromMetresPerSecondCubed(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10412,6 +11764,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10422,10 +11775,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return LengthPerUnitless.FromMetresPerUnitless(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10440,6 +11795,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10450,10 +11806,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return AnglePerUnitless.FromRadiansPerUnitless(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10468,6 +11826,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10478,10 +11837,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return ForcePerUnitless.FromNewtonsPerUnitless(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10496,6 +11857,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10506,10 +11868,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return LuminousFlux.FromLumens(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10524,6 +11888,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10534,10 +11899,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Illuminance.FromLux(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10552,6 +11919,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10562,10 +11930,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return MagneticFlux.FromWebers(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10580,6 +11950,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10590,10 +11961,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return ElectricalConductance.FromSiemens(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10608,6 +11981,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10618,10 +11992,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return MagneticFieldStrength.FromTeslas(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10636,6 +12012,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10646,10 +12023,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return CatalyticActivity.FromKatals(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10664,6 +12043,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10674,10 +12054,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Momentum.FromNewtonSecond(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10692,6 +12074,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10702,10 +12085,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return Wavenumber.FromReciprocalMetres(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10720,6 +12105,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10730,10 +12116,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return AreaDensity.FromKilogramsPerSquareMetre(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10748,6 +12136,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10758,10 +12147,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return SpecificVolume.FromCubicMetresPerKilogram(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10776,6 +12167,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10786,10 +12178,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return MassFlow.FromKilogramsPerSecond(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10804,6 +12198,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10814,10 +12209,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return KinematicViscosity.FromSquareMetresPerSecond(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10832,6 +12229,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10842,10 +12240,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return MolarMass.FromKilogramsPerMole(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10860,6 +12260,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10870,10 +12271,12 @@
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return MolarHeatCapacity.FromJoulesPerKelvinMole(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -10889,6 +12292,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10902,10 +12306,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Mass.FromKilograms(sum / count);
             }
+
             return null;
         }
 
@@ -10920,6 +12326,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10933,10 +12340,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Length.FromMetres(sum / count);
             }
+
             return null;
         }
 
@@ -10951,6 +12360,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10964,10 +12374,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Time.FromSeconds(sum / count);
             }
+
             return null;
         }
 
@@ -10982,6 +12394,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -10995,10 +12408,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Temperature.FromKelvin(sum / count);
             }
+
             return null;
         }
 
@@ -11013,6 +12428,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11026,10 +12442,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Angle.FromRadians(sum / count);
             }
+
             return null;
         }
 
@@ -11044,6 +12462,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11057,10 +12476,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Unitless.FromScalar(sum / count);
             }
+
             return null;
         }
 
@@ -11075,6 +12496,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11088,10 +12510,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Current.FromAmperes(sum / count);
             }
+
             return null;
         }
 
@@ -11106,6 +12530,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11119,10 +12544,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return LuminousIntensity.FromCandelas(sum / count);
             }
+
             return null;
         }
 
@@ -11137,6 +12564,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11150,10 +12578,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Data.FromBits(sum / count);
             }
+
             return null;
         }
 
@@ -11168,6 +12598,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11181,10 +12612,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return AmountOfSubstance.FromMoles(sum / count);
             }
+
             return null;
         }
 
@@ -11199,6 +12632,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11212,10 +12646,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return SolidAngle.FromSteradians(sum / count);
             }
+
             return null;
         }
 
@@ -11230,6 +12666,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11243,10 +12680,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Area.FromSquareMetres(sum / count);
             }
+
             return null;
         }
 
@@ -11261,6 +12700,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11274,10 +12714,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Volume.FromCubicMetres(sum / count);
             }
+
             return null;
         }
 
@@ -11292,6 +12734,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11305,10 +12748,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Force.FromNewtons(sum / count);
             }
+
             return null;
         }
 
@@ -11323,6 +12768,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11336,10 +12782,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Pressure.FromPascals(sum / count);
             }
+
             return null;
         }
 
@@ -11354,6 +12802,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11367,10 +12816,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Density.FromKilogramsPerCubicMetre(sum / count);
             }
+
             return null;
         }
 
@@ -11385,6 +12836,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11398,10 +12850,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Energy.FromJoules(sum / count);
             }
+
             return null;
         }
 
@@ -11416,6 +12870,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11429,10 +12884,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Power.FromWatts(sum / count);
             }
+
             return null;
         }
 
@@ -11447,6 +12904,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11460,10 +12918,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Speed.FromMetresPerSecond(sum / count);
             }
+
             return null;
         }
 
@@ -11478,6 +12938,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11491,10 +12952,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return AngularSpeed.FromRadiansPerSecond(sum / count);
             }
+
             return null;
         }
 
@@ -11509,6 +12972,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11522,10 +12986,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Frequency.FromHertz(sum / count);
             }
+
             return null;
         }
 
@@ -11540,6 +13006,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11553,10 +13020,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Acceleration.FromMetresPerSecondSquared(sum / count);
             }
+
             return null;
         }
 
@@ -11571,6 +13040,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11584,10 +13054,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Torque.FromNewtonMetres(sum / count);
             }
+
             return null;
         }
 
@@ -11602,6 +13074,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11615,10 +13088,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Stiffness.FromNewtonsPerMetre(sum / count);
             }
+
             return null;
         }
 
@@ -11633,6 +13108,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11646,10 +13122,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return VolumetricFlow.FromCubicMetresPerSecond(sum / count);
             }
+
             return null;
         }
 
@@ -11664,6 +13142,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11677,10 +13156,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Voltage.FromVolts(sum / count);
             }
+
             return null;
         }
 
@@ -11695,6 +13176,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11708,10 +13190,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Resistance.FromOhms(sum / count);
             }
+
             return null;
         }
 
@@ -11726,6 +13210,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11739,10 +13224,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return SpecificEnergy.FromJoulesPerKilogram(sum / count);
             }
+
             return null;
         }
 
@@ -11757,6 +13244,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11770,10 +13258,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return ElectricCharge.FromCoulombs(sum / count);
             }
+
             return null;
         }
 
@@ -11788,6 +13278,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11801,10 +13292,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Inductance.FromHenrys(sum / count);
             }
+
             return null;
         }
 
@@ -11819,6 +13312,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11832,10 +13326,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Capacitance.FromFarads(sum / count);
             }
+
             return null;
         }
 
@@ -11850,6 +13346,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11863,10 +13360,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Flexibility.FromMetresPerNewton(sum / count);
             }
+
             return null;
         }
 
@@ -11881,6 +13380,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11894,10 +13394,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return AngularAcceleration.FromRadiansPerSecondSquared(sum / count);
             }
+
             return null;
         }
 
@@ -11912,6 +13414,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11925,10 +13428,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return AngularJerk.FromRadiansPerSecondCubed(sum / count);
             }
+
             return null;
         }
 
@@ -11943,6 +13448,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11956,10 +13462,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Jerk.FromMetresPerSecondCubed(sum / count);
             }
+
             return null;
         }
 
@@ -11974,6 +13482,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -11987,10 +13496,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return LengthPerUnitless.FromMetresPerUnitless(sum / count);
             }
+
             return null;
         }
 
@@ -12005,6 +13516,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12018,10 +13530,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return AnglePerUnitless.FromRadiansPerUnitless(sum / count);
             }
+
             return null;
         }
 
@@ -12036,6 +13550,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12049,10 +13564,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return ForcePerUnitless.FromNewtonsPerUnitless(sum / count);
             }
+
             return null;
         }
 
@@ -12067,6 +13584,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12080,10 +13598,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return LuminousFlux.FromLumens(sum / count);
             }
+
             return null;
         }
 
@@ -12098,6 +13618,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12111,10 +13632,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Illuminance.FromLux(sum / count);
             }
+
             return null;
         }
 
@@ -12129,6 +13652,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12142,10 +13666,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return MagneticFlux.FromWebers(sum / count);
             }
+
             return null;
         }
 
@@ -12160,6 +13686,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12173,10 +13700,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return ElectricalConductance.FromSiemens(sum / count);
             }
+
             return null;
         }
 
@@ -12191,6 +13720,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12204,10 +13734,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return MagneticFieldStrength.FromTeslas(sum / count);
             }
+
             return null;
         }
 
@@ -12222,6 +13754,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12235,10 +13768,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return CatalyticActivity.FromKatals(sum / count);
             }
+
             return null;
         }
 
@@ -12253,6 +13788,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12266,10 +13802,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Momentum.FromNewtonSecond(sum / count);
             }
+
             return null;
         }
 
@@ -12284,6 +13822,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12297,10 +13836,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return Wavenumber.FromReciprocalMetres(sum / count);
             }
+
             return null;
         }
 
@@ -12315,6 +13856,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12328,10 +13870,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return AreaDensity.FromKilogramsPerSquareMetre(sum / count);
             }
+
             return null;
         }
 
@@ -12346,6 +13890,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12359,10 +13904,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return SpecificVolume.FromCubicMetresPerKilogram(sum / count);
             }
+
             return null;
         }
 
@@ -12377,6 +13924,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12390,10 +13938,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return MassFlow.FromKilogramsPerSecond(sum / count);
             }
+
             return null;
         }
 
@@ -12408,6 +13958,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12421,10 +13972,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return KinematicViscosity.FromSquareMetresPerSecond(sum / count);
             }
+
             return null;
         }
 
@@ -12439,6 +13992,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12452,10 +14006,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return MolarMass.FromKilogramsPerMole(sum / count);
             }
+
             return null;
         }
 
@@ -12470,6 +14026,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -12483,10 +14040,12 @@
                     }
                 }
             }
+
             if (count > 0)
             {
                 return MolarHeatCapacity.FromJoulesPerKelvinMole(sum / count);
             }
+
             return null;
         }
     }
