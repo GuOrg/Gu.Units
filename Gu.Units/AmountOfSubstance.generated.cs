@@ -16,7 +16,7 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.AmountOfSubstanceUnit.Moles"/>
         /// </summary>
-		public static readonly AmountOfSubstance Zero = new AmountOfSubstance();
+        public static readonly AmountOfSubstance Zero = new AmountOfSubstance();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.AmountOfSubstanceUnit.Moles"/>.
@@ -63,7 +63,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
         /// <returns>The <see cref="Gu.Units.AmountOfSubstance"/> parsed from <paramref name="text"/></returns>
-		public static AmountOfSubstance Parse(string text)
+        public static AmountOfSubstance Parse(string text)
         {
             return QuantityParser.Parse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -119,7 +119,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="AmountOfSubstance"/></param>
-        /// <returns>True if an instance of <see cref="AmountOfSubstance"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="AmountOfSubstance"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, IFormatProvider provider, out AmountOfSubstance result)
         {
             return QuantityParser.TryParse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, NumberStyles.Float, provider, out result);
@@ -131,7 +131,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="result">The parsed <see cref="AmountOfSubstance"/></param>
-        /// <returns>True if an instance of <see cref="AmountOfSubstance"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="AmountOfSubstance"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, out AmountOfSubstance result)
         {
             return QuantityParser.TryParse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -144,7 +144,7 @@
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="AmountOfSubstance"/></param>
-        /// <returns>True if an instance of <see cref="AmountOfSubstance"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="AmountOfSubstance"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out AmountOfSubstance result)
         {
             return QuantityParser.TryParse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, styles, provider, out result);
@@ -443,7 +443,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 mol\"</param>
-		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
+        /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="AmountOfSubstance"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -495,7 +495,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(AmountOfSubstanceUnit unit, SymbolFormat symbolFormat)
+        public string ToString(AmountOfSubstanceUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<AmountOfSubstanceUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
@@ -507,7 +507,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(AmountOfSubstanceUnit unit, IFormatProvider formatProvider)
+        public string ToString(AmountOfSubstanceUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AmountOfSubstanceUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
@@ -520,7 +520,7 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(AmountOfSubstanceUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(AmountOfSubstanceUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AmountOfSubstanceUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
@@ -545,7 +545,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(string valueFormat, AmountOfSubstanceUnit unit, SymbolFormat symbolFormat)
+        public string ToString(string valueFormat, AmountOfSubstanceUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<AmountOfSubstanceUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);

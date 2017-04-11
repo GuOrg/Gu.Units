@@ -16,7 +16,7 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.CapacitanceUnit.Farads"/>
         /// </summary>
-		public static readonly Capacitance Zero = new Capacitance();
+        public static readonly Capacitance Zero = new Capacitance();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.CapacitanceUnit.Farads"/>.
@@ -93,7 +93,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
         /// <returns>The <see cref="Gu.Units.Capacitance"/> parsed from <paramref name="text"/></returns>
-		public static Capacitance Parse(string text)
+        public static Capacitance Parse(string text)
         {
             return QuantityParser.Parse<CapacitanceUnit, Capacitance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -149,7 +149,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="Capacitance"/></param>
-        /// <returns>True if an instance of <see cref="Capacitance"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Capacitance"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, IFormatProvider provider, out Capacitance result)
         {
             return QuantityParser.TryParse<CapacitanceUnit, Capacitance>(text, From, NumberStyles.Float, provider, out result);
@@ -161,7 +161,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="result">The parsed <see cref="Capacitance"/></param>
-        /// <returns>True if an instance of <see cref="Capacitance"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Capacitance"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, out Capacitance result)
         {
             return QuantityParser.TryParse<CapacitanceUnit, Capacitance>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -174,7 +174,7 @@
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="Capacitance"/></param>
-        /// <returns>True if an instance of <see cref="Capacitance"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Capacitance"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Capacitance result)
         {
             return QuantityParser.TryParse<CapacitanceUnit, Capacitance>(text, From, styles, provider, out result);
@@ -538,7 +538,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 F\"</param>
-		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
+        /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Capacitance"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -590,7 +590,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(CapacitanceUnit unit, SymbolFormat symbolFormat)
+        public string ToString(CapacitanceUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<CapacitanceUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
@@ -602,7 +602,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(CapacitanceUnit unit, IFormatProvider formatProvider)
+        public string ToString(CapacitanceUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<CapacitanceUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
@@ -615,7 +615,7 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(CapacitanceUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(CapacitanceUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<CapacitanceUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
@@ -640,7 +640,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(string valueFormat, CapacitanceUnit unit, SymbolFormat symbolFormat)
+        public string ToString(string valueFormat, CapacitanceUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<CapacitanceUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);

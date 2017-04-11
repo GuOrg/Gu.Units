@@ -16,7 +16,7 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.MassUnit.Kilograms"/>
         /// </summary>
-		public static readonly Mass Zero = new Mass();
+        public static readonly Mass Zero = new Mass();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.MassUnit.Kilograms"/>.
@@ -98,7 +98,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
         /// <returns>The <see cref="Gu.Units.Mass"/> parsed from <paramref name="text"/></returns>
-		public static Mass Parse(string text)
+        public static Mass Parse(string text)
         {
             return QuantityParser.Parse<MassUnit, Mass>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -154,7 +154,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="Mass"/></param>
-        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, IFormatProvider provider, out Mass result)
         {
             return QuantityParser.TryParse<MassUnit, Mass>(text, From, NumberStyles.Float, provider, out result);
@@ -166,7 +166,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="result">The parsed <see cref="Mass"/></param>
-        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, out Mass result)
         {
             return QuantityParser.TryParse<MassUnit, Mass>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -179,7 +179,7 @@
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="Mass"/></param>
-        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Mass result)
         {
             return QuantityParser.TryParse<MassUnit, Mass>(text, From, styles, provider, out result);
@@ -640,7 +640,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 kg\"</param>
-		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
+        /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Mass"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -692,7 +692,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(MassUnit unit, SymbolFormat symbolFormat)
+        public string ToString(MassUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
@@ -704,7 +704,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(MassUnit unit, IFormatProvider formatProvider)
+        public string ToString(MassUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
@@ -717,7 +717,7 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(MassUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(MassUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
@@ -742,7 +742,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(string valueFormat, MassUnit unit, SymbolFormat symbolFormat)
+        public string ToString(string valueFormat, MassUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);

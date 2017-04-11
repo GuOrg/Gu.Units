@@ -16,7 +16,7 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.SpecificVolumeUnit.CubicMetresPerKilogram"/>
         /// </summary>
-		public static readonly SpecificVolume Zero = new SpecificVolume();
+        public static readonly SpecificVolume Zero = new SpecificVolume();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.SpecificVolumeUnit.CubicMetresPerKilogram"/>.
@@ -73,7 +73,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificVolume"/></param>
         /// <returns>The <see cref="Gu.Units.SpecificVolume"/> parsed from <paramref name="text"/></returns>
-		public static SpecificVolume Parse(string text)
+        public static SpecificVolume Parse(string text)
         {
             return QuantityParser.Parse<SpecificVolumeUnit, SpecificVolume>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -129,7 +129,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificVolume"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="SpecificVolume"/></param>
-        /// <returns>True if an instance of <see cref="SpecificVolume"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="SpecificVolume"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, IFormatProvider provider, out SpecificVolume result)
         {
             return QuantityParser.TryParse<SpecificVolumeUnit, SpecificVolume>(text, From, NumberStyles.Float, provider, out result);
@@ -141,7 +141,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificVolume"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="result">The parsed <see cref="SpecificVolume"/></param>
-        /// <returns>True if an instance of <see cref="SpecificVolume"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="SpecificVolume"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, out SpecificVolume result)
         {
             return QuantityParser.TryParse<SpecificVolumeUnit, SpecificVolume>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -154,7 +154,7 @@
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="SpecificVolume"/></param>
-        /// <returns>True if an instance of <see cref="SpecificVolume"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="SpecificVolume"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out SpecificVolume result)
         {
             return QuantityParser.TryParse<SpecificVolumeUnit, SpecificVolume>(text, From, styles, provider, out result);
@@ -482,7 +482,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 m³/kg\"</param>
-		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
+        /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="SpecificVolume"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -534,7 +534,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(SpecificVolumeUnit unit, SymbolFormat symbolFormat)
+        public string ToString(SpecificVolumeUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
@@ -546,7 +546,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(SpecificVolumeUnit unit, IFormatProvider formatProvider)
+        public string ToString(SpecificVolumeUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
@@ -559,7 +559,7 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(SpecificVolumeUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(SpecificVolumeUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
@@ -584,7 +584,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(string valueFormat, SpecificVolumeUnit unit, SymbolFormat symbolFormat)
+        public string ToString(string valueFormat, SpecificVolumeUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);

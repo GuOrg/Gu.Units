@@ -16,7 +16,7 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.SpeedUnit.MetresPerSecond"/>
         /// </summary>
-		public static readonly Speed Zero = new Speed();
+        public static readonly Speed Zero = new Speed();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.SpeedUnit.MetresPerSecond"/>.
@@ -108,7 +108,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
         /// <returns>The <see cref="Gu.Units.Speed"/> parsed from <paramref name="text"/></returns>
-		public static Speed Parse(string text)
+        public static Speed Parse(string text)
         {
             return QuantityParser.Parse<SpeedUnit, Speed>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -164,7 +164,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="Speed"/></param>
-        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, IFormatProvider provider, out Speed result)
         {
             return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, NumberStyles.Float, provider, out result);
@@ -176,7 +176,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="result">The parsed <see cref="Speed"/></param>
-        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, out Speed result)
         {
             return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -189,7 +189,7 @@
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="Speed"/></param>
-        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Speed result)
         {
             return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, styles, provider, out result);
@@ -701,7 +701,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 m/s\"</param>
-		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
+        /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Speed"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -753,7 +753,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(SpeedUnit unit, SymbolFormat symbolFormat)
+        public string ToString(SpeedUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<SpeedUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
@@ -765,7 +765,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(SpeedUnit unit, IFormatProvider formatProvider)
+        public string ToString(SpeedUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<SpeedUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
@@ -778,7 +778,7 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(SpeedUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(SpeedUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<SpeedUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
@@ -803,7 +803,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(string valueFormat, SpeedUnit unit, SymbolFormat symbolFormat)
+        public string ToString(string valueFormat, SpeedUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<SpeedUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);

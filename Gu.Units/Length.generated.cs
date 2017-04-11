@@ -16,7 +16,7 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.LengthUnit.Metres"/>
         /// </summary>
-		public static readonly Length Zero = new Length();
+        public static readonly Length Zero = new Length();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.LengthUnit.Metres"/>.
@@ -118,7 +118,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
         /// <returns>The <see cref="Gu.Units.Length"/> parsed from <paramref name="text"/></returns>
-		public static Length Parse(string text)
+        public static Length Parse(string text)
         {
             return QuantityParser.Parse<LengthUnit, Length>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -174,7 +174,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="Length"/></param>
-        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, IFormatProvider provider, out Length result)
         {
             return QuantityParser.TryParse<LengthUnit, Length>(text, From, NumberStyles.Float, provider, out result);
@@ -186,7 +186,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="result">The parsed <see cref="Length"/></param>
-        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, out Length result)
         {
             return QuantityParser.TryParse<LengthUnit, Length>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -199,7 +199,7 @@
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="Length"/></param>
-        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Length result)
         {
             return QuantityParser.TryParse<LengthUnit, Length>(text, From, styles, provider, out result);
@@ -784,7 +784,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 m\"</param>
-		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
+        /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Length"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -836,7 +836,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(LengthUnit unit, SymbolFormat symbolFormat)
+        public string ToString(LengthUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<LengthUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
@@ -848,7 +848,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(LengthUnit unit, IFormatProvider formatProvider)
+        public string ToString(LengthUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<LengthUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
@@ -861,7 +861,7 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(LengthUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(LengthUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<LengthUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
@@ -886,7 +886,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(string valueFormat, LengthUnit unit, SymbolFormat symbolFormat)
+        public string ToString(string valueFormat, LengthUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<LengthUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);

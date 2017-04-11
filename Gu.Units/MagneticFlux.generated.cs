@@ -16,7 +16,7 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.MagneticFluxUnit.Webers"/>
         /// </summary>
-		public static readonly MagneticFlux Zero = new MagneticFlux();
+        public static readonly MagneticFlux Zero = new MagneticFlux();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.MagneticFluxUnit.Webers"/>.
@@ -63,7 +63,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
         /// <returns>The <see cref="Gu.Units.MagneticFlux"/> parsed from <paramref name="text"/></returns>
-		public static MagneticFlux Parse(string text)
+        public static MagneticFlux Parse(string text)
         {
             return QuantityParser.Parse<MagneticFluxUnit, MagneticFlux>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -119,7 +119,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="MagneticFlux"/></param>
-        /// <returns>True if an instance of <see cref="MagneticFlux"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="MagneticFlux"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, IFormatProvider provider, out MagneticFlux result)
         {
             return QuantityParser.TryParse<MagneticFluxUnit, MagneticFlux>(text, From, NumberStyles.Float, provider, out result);
@@ -131,7 +131,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="result">The parsed <see cref="MagneticFlux"/></param>
-        /// <returns>True if an instance of <see cref="MagneticFlux"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="MagneticFlux"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, out MagneticFlux result)
         {
             return QuantityParser.TryParse<MagneticFluxUnit, MagneticFlux>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -144,7 +144,7 @@
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="MagneticFlux"/></param>
-        /// <returns>True if an instance of <see cref="MagneticFlux"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="MagneticFlux"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out MagneticFlux result)
         {
             return QuantityParser.TryParse<MagneticFluxUnit, MagneticFlux>(text, From, styles, provider, out result);
@@ -520,7 +520,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 Wb\"</param>
-		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
+        /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="MagneticFlux"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -572,7 +572,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(MagneticFluxUnit unit, SymbolFormat symbolFormat)
+        public string ToString(MagneticFluxUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<MagneticFluxUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
@@ -584,7 +584,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(MagneticFluxUnit unit, IFormatProvider formatProvider)
+        public string ToString(MagneticFluxUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MagneticFluxUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
@@ -597,7 +597,7 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(MagneticFluxUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(MagneticFluxUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MagneticFluxUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
@@ -622,7 +622,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(string valueFormat, MagneticFluxUnit unit, SymbolFormat symbolFormat)
+        public string ToString(string valueFormat, MagneticFluxUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<MagneticFluxUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);

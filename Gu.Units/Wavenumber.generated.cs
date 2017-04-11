@@ -16,7 +16,7 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.WavenumberUnit.ReciprocalMetres"/>
         /// </summary>
-		public static readonly Wavenumber Zero = new Wavenumber();
+        public static readonly Wavenumber Zero = new Wavenumber();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.WavenumberUnit.ReciprocalMetres"/>.
@@ -63,7 +63,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Wavenumber"/></param>
         /// <returns>The <see cref="Gu.Units.Wavenumber"/> parsed from <paramref name="text"/></returns>
-		public static Wavenumber Parse(string text)
+        public static Wavenumber Parse(string text)
         {
             return QuantityParser.Parse<WavenumberUnit, Wavenumber>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -119,7 +119,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.Wavenumber"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="Wavenumber"/></param>
-        /// <returns>True if an instance of <see cref="Wavenumber"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Wavenumber"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, IFormatProvider provider, out Wavenumber result)
         {
             return QuantityParser.TryParse<WavenumberUnit, Wavenumber>(text, From, NumberStyles.Float, provider, out result);
@@ -131,7 +131,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.Wavenumber"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="result">The parsed <see cref="Wavenumber"/></param>
-        /// <returns>True if an instance of <see cref="Wavenumber"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Wavenumber"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, out Wavenumber result)
         {
             return QuantityParser.TryParse<WavenumberUnit, Wavenumber>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -144,7 +144,7 @@
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="Wavenumber"/></param>
-        /// <returns>True if an instance of <see cref="Wavenumber"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Wavenumber"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Wavenumber result)
         {
             return QuantityParser.TryParse<WavenumberUnit, Wavenumber>(text, From, styles, provider, out result);
@@ -553,7 +553,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 m⁻¹\"</param>
-		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
+        /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Wavenumber"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -605,7 +605,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(WavenumberUnit unit, SymbolFormat symbolFormat)
+        public string ToString(WavenumberUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<WavenumberUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
@@ -617,7 +617,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(WavenumberUnit unit, IFormatProvider formatProvider)
+        public string ToString(WavenumberUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<WavenumberUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
@@ -630,7 +630,7 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(WavenumberUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(WavenumberUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<WavenumberUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
@@ -655,7 +655,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(string valueFormat, WavenumberUnit unit, SymbolFormat symbolFormat)
+        public string ToString(string valueFormat, WavenumberUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<WavenumberUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);

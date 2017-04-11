@@ -16,7 +16,7 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.MagneticFieldStrengthUnit.Teslas"/>
         /// </summary>
-		public static readonly MagneticFieldStrength Zero = new MagneticFieldStrength();
+        public static readonly MagneticFieldStrength Zero = new MagneticFieldStrength();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.MagneticFieldStrengthUnit.Teslas"/>.
@@ -63,7 +63,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFieldStrength"/></param>
         /// <returns>The <see cref="Gu.Units.MagneticFieldStrength"/> parsed from <paramref name="text"/></returns>
-		public static MagneticFieldStrength Parse(string text)
+        public static MagneticFieldStrength Parse(string text)
         {
             return QuantityParser.Parse<MagneticFieldStrengthUnit, MagneticFieldStrength>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -119,7 +119,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFieldStrength"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="MagneticFieldStrength"/></param>
-        /// <returns>True if an instance of <see cref="MagneticFieldStrength"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="MagneticFieldStrength"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, IFormatProvider provider, out MagneticFieldStrength result)
         {
             return QuantityParser.TryParse<MagneticFieldStrengthUnit, MagneticFieldStrength>(text, From, NumberStyles.Float, provider, out result);
@@ -131,7 +131,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFieldStrength"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="result">The parsed <see cref="MagneticFieldStrength"/></param>
-        /// <returns>True if an instance of <see cref="MagneticFieldStrength"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="MagneticFieldStrength"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, out MagneticFieldStrength result)
         {
             return QuantityParser.TryParse<MagneticFieldStrengthUnit, MagneticFieldStrength>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -144,7 +144,7 @@
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="MagneticFieldStrength"/></param>
-        /// <returns>True if an instance of <see cref="MagneticFieldStrength"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="MagneticFieldStrength"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out MagneticFieldStrength result)
         {
             return QuantityParser.TryParse<MagneticFieldStrengthUnit, MagneticFieldStrength>(text, From, styles, provider, out result);
@@ -443,7 +443,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 T\"</param>
-		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
+        /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="MagneticFieldStrength"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -495,7 +495,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(MagneticFieldStrengthUnit unit, SymbolFormat symbolFormat)
+        public string ToString(MagneticFieldStrengthUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<MagneticFieldStrengthUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
@@ -507,7 +507,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(MagneticFieldStrengthUnit unit, IFormatProvider formatProvider)
+        public string ToString(MagneticFieldStrengthUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MagneticFieldStrengthUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
@@ -520,7 +520,7 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(MagneticFieldStrengthUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(MagneticFieldStrengthUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MagneticFieldStrengthUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
@@ -545,7 +545,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(string valueFormat, MagneticFieldStrengthUnit unit, SymbolFormat symbolFormat)
+        public string ToString(string valueFormat, MagneticFieldStrengthUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<MagneticFieldStrengthUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);

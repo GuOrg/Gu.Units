@@ -16,7 +16,7 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.CurrentUnit.Amperes"/>
         /// </summary>
-		public static readonly Current Zero = new Current();
+        public static readonly Current Zero = new Current();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.CurrentUnit.Amperes"/>.
@@ -93,7 +93,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
         /// <returns>The <see cref="Gu.Units.Current"/> parsed from <paramref name="text"/></returns>
-		public static Current Parse(string text)
+        public static Current Parse(string text)
         {
             return QuantityParser.Parse<CurrentUnit, Current>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -149,7 +149,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="Current"/></param>
-        /// <returns>True if an instance of <see cref="Current"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Current"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, IFormatProvider provider, out Current result)
         {
             return QuantityParser.TryParse<CurrentUnit, Current>(text, From, NumberStyles.Float, provider, out result);
@@ -161,7 +161,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="result">The parsed <see cref="Current"/></param>
-        /// <returns>True if an instance of <see cref="Current"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Current"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, out Current result)
         {
             return QuantityParser.TryParse<CurrentUnit, Current>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -174,7 +174,7 @@
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="Current"/></param>
-        /// <returns>True if an instance of <see cref="Current"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Current"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Current result)
         {
             return QuantityParser.TryParse<CurrentUnit, Current>(text, From, styles, provider, out result);
@@ -593,7 +593,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 A\"</param>
-		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
+        /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Current"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -645,7 +645,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(CurrentUnit unit, SymbolFormat symbolFormat)
+        public string ToString(CurrentUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<CurrentUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
@@ -657,7 +657,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(CurrentUnit unit, IFormatProvider formatProvider)
+        public string ToString(CurrentUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<CurrentUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
@@ -670,7 +670,7 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(CurrentUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(CurrentUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<CurrentUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
@@ -695,7 +695,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(string valueFormat, CurrentUnit unit, SymbolFormat symbolFormat)
+        public string ToString(string valueFormat, CurrentUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<CurrentUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);

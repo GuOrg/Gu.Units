@@ -16,7 +16,7 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.VoltageUnit.Volts"/>
         /// </summary>
-		public static readonly Voltage Zero = new Voltage();
+        public static readonly Voltage Zero = new Voltage();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.VoltageUnit.Volts"/>.
@@ -93,7 +93,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Voltage"/></param>
         /// <returns>The <see cref="Gu.Units.Voltage"/> parsed from <paramref name="text"/></returns>
-		public static Voltage Parse(string text)
+        public static Voltage Parse(string text)
         {
             return QuantityParser.Parse<VoltageUnit, Voltage>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -149,7 +149,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.Voltage"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="Voltage"/></param>
-        /// <returns>True if an instance of <see cref="Voltage"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Voltage"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, IFormatProvider provider, out Voltage result)
         {
             return QuantityParser.TryParse<VoltageUnit, Voltage>(text, From, NumberStyles.Float, provider, out result);
@@ -161,7 +161,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.Voltage"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="result">The parsed <see cref="Voltage"/></param>
-        /// <returns>True if an instance of <see cref="Voltage"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Voltage"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, out Voltage result)
         {
             return QuantityParser.TryParse<VoltageUnit, Voltage>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -174,7 +174,7 @@
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="Voltage"/></param>
-        /// <returns>True if an instance of <see cref="Voltage"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="Voltage"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Voltage result)
         {
             return QuantityParser.TryParse<VoltageUnit, Voltage>(text, From, styles, provider, out result);
@@ -604,7 +604,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 V\"</param>
-		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
+        /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Voltage"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -656,7 +656,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(VoltageUnit unit, SymbolFormat symbolFormat)
+        public string ToString(VoltageUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<VoltageUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
@@ -668,7 +668,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(VoltageUnit unit, IFormatProvider formatProvider)
+        public string ToString(VoltageUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<VoltageUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
@@ -681,7 +681,7 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(VoltageUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(VoltageUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<VoltageUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
@@ -706,7 +706,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(string valueFormat, VoltageUnit unit, SymbolFormat symbolFormat)
+        public string ToString(string valueFormat, VoltageUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<VoltageUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);

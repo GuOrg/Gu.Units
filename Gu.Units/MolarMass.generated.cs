@@ -16,7 +16,7 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.MolarMassUnit.KilogramsPerMole"/>
         /// </summary>
-		public static readonly MolarMass Zero = new MolarMass();
+        public static readonly MolarMass Zero = new MolarMass();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.MolarMassUnit.KilogramsPerMole"/>.
@@ -68,7 +68,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
         /// <returns>The <see cref="Gu.Units.MolarMass"/> parsed from <paramref name="text"/></returns>
-		public static MolarMass Parse(string text)
+        public static MolarMass Parse(string text)
         {
             return QuantityParser.Parse<MolarMassUnit, MolarMass>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -124,7 +124,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="MolarMass"/></param>
-        /// <returns>True if an instance of <see cref="MolarMass"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="MolarMass"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, IFormatProvider provider, out MolarMass result)
         {
             return QuantityParser.TryParse<MolarMassUnit, MolarMass>(text, From, NumberStyles.Float, provider, out result);
@@ -136,7 +136,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="result">The parsed <see cref="MolarMass"/></param>
-        /// <returns>True if an instance of <see cref="MolarMass"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="MolarMass"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, out MolarMass result)
         {
             return QuantityParser.TryParse<MolarMassUnit, MolarMass>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -149,7 +149,7 @@
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="MolarMass"/></param>
-        /// <returns>True if an instance of <see cref="MolarMass"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="MolarMass"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out MolarMass result)
         {
             return QuantityParser.TryParse<MolarMassUnit, MolarMass>(text, From, styles, provider, out result);
@@ -435,7 +435,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 kg/mol\"</param>
-		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
+        /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="MolarMass"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -487,7 +487,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(MolarMassUnit unit, SymbolFormat symbolFormat)
+        public string ToString(MolarMassUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<MolarMassUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
@@ -499,7 +499,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(MolarMassUnit unit, IFormatProvider formatProvider)
+        public string ToString(MolarMassUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MolarMassUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
@@ -512,7 +512,7 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(MolarMassUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(MolarMassUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MolarMassUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
@@ -537,7 +537,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(string valueFormat, MolarMassUnit unit, SymbolFormat symbolFormat)
+        public string ToString(string valueFormat, MolarMassUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<MolarMassUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);

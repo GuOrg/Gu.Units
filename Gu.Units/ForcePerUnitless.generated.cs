@@ -16,7 +16,7 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.ForcePerUnitlessUnit.NewtonsPerUnitless"/>
         /// </summary>
-		public static readonly ForcePerUnitless Zero = new ForcePerUnitless();
+        public static readonly ForcePerUnitless Zero = new ForcePerUnitless();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.ForcePerUnitlessUnit.NewtonsPerUnitless"/>.
@@ -83,7 +83,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.ForcePerUnitless"/></param>
         /// <returns>The <see cref="Gu.Units.ForcePerUnitless"/> parsed from <paramref name="text"/></returns>
-		public static ForcePerUnitless Parse(string text)
+        public static ForcePerUnitless Parse(string text)
         {
             return QuantityParser.Parse<ForcePerUnitlessUnit, ForcePerUnitless>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -139,7 +139,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.ForcePerUnitless"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="ForcePerUnitless"/></param>
-        /// <returns>True if an instance of <see cref="ForcePerUnitless"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="ForcePerUnitless"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, IFormatProvider provider, out ForcePerUnitless result)
         {
             return QuantityParser.TryParse<ForcePerUnitlessUnit, ForcePerUnitless>(text, From, NumberStyles.Float, provider, out result);
@@ -151,7 +151,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.ForcePerUnitless"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="result">The parsed <see cref="ForcePerUnitless"/></param>
-        /// <returns>True if an instance of <see cref="ForcePerUnitless"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="ForcePerUnitless"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, out ForcePerUnitless result)
         {
             return QuantityParser.TryParse<ForcePerUnitlessUnit, ForcePerUnitless>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -164,7 +164,7 @@
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="ForcePerUnitless"/></param>
-        /// <returns>True if an instance of <see cref="ForcePerUnitless"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="ForcePerUnitless"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out ForcePerUnitless result)
         {
             return QuantityParser.TryParse<ForcePerUnitlessUnit, ForcePerUnitless>(text, From, styles, provider, out result);
@@ -499,7 +499,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 N/ul\"</param>
-		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
+        /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="ForcePerUnitless"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -551,7 +551,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(ForcePerUnitlessUnit unit, SymbolFormat symbolFormat)
+        public string ToString(ForcePerUnitlessUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<ForcePerUnitlessUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
@@ -563,7 +563,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(ForcePerUnitlessUnit unit, IFormatProvider formatProvider)
+        public string ToString(ForcePerUnitlessUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<ForcePerUnitlessUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
@@ -576,7 +576,7 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(ForcePerUnitlessUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(ForcePerUnitlessUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<ForcePerUnitlessUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
@@ -601,7 +601,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(string valueFormat, ForcePerUnitlessUnit unit, SymbolFormat symbolFormat)
+        public string ToString(string valueFormat, ForcePerUnitlessUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<ForcePerUnitlessUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);

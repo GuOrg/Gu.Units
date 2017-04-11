@@ -16,7 +16,7 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.AnglePerUnitlessUnit.RadiansPerUnitless"/>
         /// </summary>
-		public static readonly AnglePerUnitless Zero = new AnglePerUnitless();
+        public static readonly AnglePerUnitless Zero = new AnglePerUnitless();
 
         /// <summary>
         /// The quantity in <see cref="Gu.Units.AnglePerUnitlessUnit.RadiansPerUnitless"/>.
@@ -73,7 +73,7 @@
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.AnglePerUnitless"/></param>
         /// <returns>The <see cref="Gu.Units.AnglePerUnitless"/> parsed from <paramref name="text"/></returns>
-		public static AnglePerUnitless Parse(string text)
+        public static AnglePerUnitless Parse(string text)
         {
             return QuantityParser.Parse<AnglePerUnitlessUnit, AnglePerUnitless>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
         }
@@ -129,7 +129,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.AnglePerUnitless"/></param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="AnglePerUnitless"/></param>
-        /// <returns>True if an instance of <see cref="AnglePerUnitless"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="AnglePerUnitless"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, IFormatProvider provider, out AnglePerUnitless result)
         {
             return QuantityParser.TryParse<AnglePerUnitlessUnit, AnglePerUnitless>(text, From, NumberStyles.Float, provider, out result);
@@ -141,7 +141,7 @@
         /// <param name="text">The string representation of the <see cref="Gu.Units.AnglePerUnitless"/></param>
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="result">The parsed <see cref="AnglePerUnitless"/></param>
-        /// <returns>True if an instance of <see cref="AnglePerUnitless"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="AnglePerUnitless"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, out AnglePerUnitless result)
         {
             return QuantityParser.TryParse<AnglePerUnitlessUnit, AnglePerUnitless>(text, From, styles, CultureInfo.CurrentCulture, out result);
@@ -154,7 +154,7 @@
         /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
         /// <param name="provider">Specifies the formatProvider to be used.</param>
         /// <param name="result">The parsed <see cref="AnglePerUnitless"/></param>
-        /// <returns>True if an instance of <see cref="AnglePerUnitless"/> could be parsed from <paramref name="text"/></returns>	
+        /// <returns>True if an instance of <see cref="AnglePerUnitless"/> could be parsed from <paramref name="text"/></returns>
         public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out AnglePerUnitless result)
         {
             return QuantityParser.TryParse<AnglePerUnitlessUnit, AnglePerUnitless>(text, From, styles, provider, out result);
@@ -438,7 +438,7 @@
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 rad/ul\"</param>
-		/// <param name="formatProvider">Specifies the formatProvider to be used.</param>
+        /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="AnglePerUnitless"/></returns> 
         public string ToString(string format, IFormatProvider formatProvider)
         {
@@ -490,7 +490,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(AnglePerUnitlessUnit unit, SymbolFormat symbolFormat)
+        public string ToString(AnglePerUnitlessUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, null);
@@ -502,7 +502,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(AnglePerUnitlessUnit unit, IFormatProvider formatProvider)
+        public string ToString(AnglePerUnitlessUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(null, unit);
             return ToString(quantityFormat, formatProvider);
@@ -515,7 +515,7 @@
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(AnglePerUnitlessUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
+        public string ToString(AnglePerUnitlessUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(null, unit, symbolFormat);
             return ToString(quantityFormat, formatProvider);
@@ -540,7 +540,7 @@
         /// <param name="unit">The unit to use in the conversion</param>
         /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
-		public string ToString(string valueFormat, AnglePerUnitlessUnit unit, SymbolFormat symbolFormat)
+        public string ToString(string valueFormat, AnglePerUnitlessUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
             return ToString(quantityFormat, null);
