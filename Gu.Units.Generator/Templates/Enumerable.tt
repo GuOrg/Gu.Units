@@ -10,7 +10,6 @@ namespace <#= Settings.Namespace #>
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
 
     /// <summary>
     /// Provides common linq operations for quantity types
@@ -20,7 +19,7 @@ namespace <#= Settings.Namespace #>
 <#
     foreach(var quantity in quantities)
     {
-		#>
+        #>
         /// <summary>
         /// Calculates the sum <see cref="<#= quantity.Name #>"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -49,7 +48,7 @@ namespace <#= Settings.Namespace #>
 <#
     foreach(var quantity in quantities)
     {
-		#>
+        #>
         /// <summary>
         /// Calculates the sum <see cref="Nullable{<#= quantity.Name #>}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -61,6 +60,7 @@ namespace <#= Settings.Namespace #>
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             checked
             {
@@ -72,6 +72,7 @@ namespace <#= Settings.Namespace #>
                     }
                 }
             }
+
             return <#= quantity.Name #>.From<#= quantity.Unit.Name #>(sum);
         }
 
@@ -79,7 +80,7 @@ namespace <#= Settings.Namespace #>
 <#
     foreach(var quantity in quantities)
     {
-		#>
+        #>
         /// <summary>
         /// Calculates the min <see cref="<#= quantity.Name #>"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -91,14 +92,16 @@ namespace <#= Settings.Namespace #>
             {
                 throw new ArgumentNullException("source");
             }
+
             var value = default(<#= quantity.Name #>);
             bool hasValue = false;
             foreach (var x in source)
             {
-                if (System.Double.IsNaN(x.<#= quantity.Unit.ParameterName #>))
+                if (double.IsNaN(x.<#= quantity.Unit.ParameterName #>))
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.<#= quantity.Unit.ParameterName #> < value.<#= quantity.Unit.ParameterName #>)
@@ -112,7 +115,11 @@ namespace <#= Settings.Namespace #>
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -120,7 +127,7 @@ namespace <#= Settings.Namespace #>
 <#
     foreach(var quantity in quantities)
     {
-		#>
+        #>
         /// <summary>
         /// Calculates the min <see cref="Nullable{<#= quantity.Name #>}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -132,6 +139,7 @@ namespace <#= Settings.Namespace #>
             {
                 throw new ArgumentNullException("source");
             }
+
             <#= quantity.Name #>? value = null;
             foreach (var x in source)
             {
@@ -139,10 +147,12 @@ namespace <#= Settings.Namespace #>
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.<#= quantity.Unit.ParameterName #>))
+
+                if (double.IsNaN(x.Value.<#= quantity.Unit.ParameterName #>))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.<#= quantity.Unit.ParameterName #> < value.Value.<#= quantity.Unit.ParameterName #>)
                 {
                     value = x;
@@ -155,7 +165,7 @@ namespace <#= Settings.Namespace #>
 <#
     foreach(var quantity in quantities)
     {
-		#>
+        #>
         /// <summary>
         /// Calculates the max <see cref="<#= quantity.Name #>"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -171,7 +181,7 @@ namespace <#= Settings.Namespace #>
             bool hasValue = false;
             foreach (<#= quantity.Name #> x in source)
             {
-                if (System.Double.IsNaN(x.<#= quantity.Unit.ParameterName #>))
+                if (double.IsNaN(x.<#= quantity.Unit.ParameterName #>))
                 {
                     return x;
                 }
@@ -196,7 +206,7 @@ namespace <#= Settings.Namespace #>
 <#
     foreach(var quantity in quantities)
     {
-		#>
+        #>
         /// <summary>
         /// Calculates the max <see cref="Nullable{<#= quantity.Name #>}"/> of the values in <paramref name="source"/>
         /// </summary>
@@ -208,6 +218,7 @@ namespace <#= Settings.Namespace #>
             {
                 throw new ArgumentNullException("source");
             }
+
             <#= quantity.Name #>? value = null;
             foreach (var x in source)
             {
@@ -215,15 +226,18 @@ namespace <#= Settings.Namespace #>
                 {
                     continue;
                 }
-                if (System.Double.IsNaN(x.Value.<#= quantity.Unit.ParameterName #>))
+
+                if (double.IsNaN(x.Value.<#= quantity.Unit.ParameterName #>))
                 {
                     return x;
                 }
+
                 if (value == null || x.Value.<#= quantity.Unit.ParameterName #> > value.Value.<#= quantity.Unit.ParameterName #>)
                 {
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -231,7 +245,7 @@ namespace <#= Settings.Namespace #>
 <#
     foreach(var quantity in quantities)
     {
-		#>
+        #>
         /// <summary>
         /// Calculates the average <see cref="<#= quantity.Name #>"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -243,6 +257,7 @@ namespace <#= Settings.Namespace #>
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -253,10 +268,12 @@ namespace <#= Settings.Namespace #>
                     count++;
                 }
             }
+
             if (count > 0)
             {
                 return <#= quantity.Name #>.From<#= quantity.Unit.Name #>(sum / count);
             }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -264,7 +281,7 @@ namespace <#= Settings.Namespace #>
 <#
     foreach(var quantity in quantities)
     {
-		#>
+        #>
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{<#= quantity.Name #>}"/> for the values in <paramref name="source"/>
@@ -277,6 +294,7 @@ namespace <#= Settings.Namespace #>
             {
                 throw new ArgumentNullException("source");
             }
+
             double sum = 0;
             long count = 0;
             checked
@@ -290,10 +308,12 @@ namespace <#= Settings.Namespace #>
                     }
                 }
             }
+
             if (count > 0)
             {
                 return <#= quantity.Name #>.From<#= quantity.Unit.Name #>(sum / count);
             }
+
             return null;
         }
 <# } #>
