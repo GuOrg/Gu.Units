@@ -46,7 +46,8 @@
             this.VerifyCSharpFix(before, expected);
         }
 
-        [Test, Explicit("ToDo")]
+        [Test]
+        [Explicit("ToDo")]
         public void NullableIntToMillimetres()
         {
             var before = @"
@@ -176,7 +177,8 @@
             this.VerifyCSharpFix(before, expected);
         }
 
-        [Test, Explicit("Dunno if there is a need to support this")]
+        [Test]
+        [Explicit("Dunno if there is a need to support this")]
         public void ExpressionToMillimetres()
         {
             var before = @"
@@ -211,7 +213,7 @@
         protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
         {
             throw new Exception();
-            //return new TestAnalyzerAnalyzer();
+            //// return new TestAnalyzerAnalyzer();
         }
     }
 }

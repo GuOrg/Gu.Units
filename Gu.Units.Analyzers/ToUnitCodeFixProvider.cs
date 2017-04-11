@@ -21,6 +21,7 @@ namespace Gu.Units.Analyzers
         private readonly string pattern;
 
         private readonly MemberAccessExpressionSyntax wrapSyntax;
+
         protected ToUnitCodeFixProvider(string typename, string memberName)
         {
             this.titleFormat = $"{typename}.{memberName}({0})";

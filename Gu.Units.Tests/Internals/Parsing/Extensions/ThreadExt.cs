@@ -13,19 +13,19 @@
 
         private class TempCulture : IDisposable
         {
-            private readonly Thread _thread;
-            private readonly CultureInfo _current;
+            private readonly Thread thread;
+            private readonly CultureInfo current;
 
             public TempCulture(Thread thread, CultureInfo culture)
             {
-                this._thread = thread;
-                this._current = thread.CurrentCulture;
-                this._thread.CurrentCulture = culture;
+                this.thread = thread;
+                this.current = thread.CurrentCulture;
+                this.thread.CurrentCulture = culture;
             }
 
             public void Dispose()
             {
-                this._thread.CurrentCulture = this._current;
+                this.thread.CurrentCulture = this.current;
             }
         }
     }

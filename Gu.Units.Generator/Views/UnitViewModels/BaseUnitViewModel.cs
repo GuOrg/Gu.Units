@@ -22,7 +22,7 @@
             });
         }
 
-        public BaseUnitViewModel(BaseUnit unit) 
+        public BaseUnitViewModel(BaseUnit unit)
             : base(unit)
         {
         }

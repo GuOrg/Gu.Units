@@ -8,7 +8,7 @@
         public readonly Quantity Length;
 
         public readonly BaseUnit Kilograms;
-        public FactorConversion Grams;
+        public readonly FactorConversion Grams;
         public readonly Quantity Mass;
 
         public readonly BaseUnit Kelvins;
@@ -52,9 +52,9 @@
 
         public readonly DerivedUnit Hertz;
         public readonly Quantity Frequency;
-        public Prefix Micro = new Prefix("Micro", "µ", -6);
-        public Prefix Milli = new Prefix("Milli", "m", -3);
-        public Prefix Kilo = new Prefix("Kilo", "k", 3);
+        public readonly Prefix Micro = new Prefix("Micro", "µ", -6);
+        public readonly Prefix Milli = new Prefix("Milli", "m", -3);
+        public readonly Prefix Kilo = new Prefix("Kilo", "k", 3);
 
         private MockSettings()
             : base(new ObservableCollection<Prefix>(), new ObservableCollection<BaseUnit>(), new ObservableCollection<DerivedUnit>())
@@ -153,7 +153,7 @@
             this.DerivedUnits.Add(this.CubicMetres);
             this.Volume = this.CubicMetres.Quantity;
 
-            this.KilogramsPerCubicMetre = new DerivedUnit("KilogramsPerCubicMetre", "kg/m^3", "Density", new[] {UnitAndPower.Create(this.Kilograms, 1), UnitAndPower.Create(this.Metres, -3) });
+            this.KilogramsPerCubicMetre = new DerivedUnit("KilogramsPerCubicMetre", "kg/m^3", "Density", new[] { UnitAndPower.Create(this.Kilograms, 1), UnitAndPower.Create(this.Metres, -3) });
             this.DerivedUnits.Add(this.KilogramsPerCubicMetre);
             this.Density = this.CubicMetres.Quantity;
 

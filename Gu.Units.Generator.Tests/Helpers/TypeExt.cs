@@ -40,7 +40,6 @@
         public static bool IsGenericType(this Type type, Type genericTypeDefinition, Type genericArgument)
         {
             //Ensure.IsTrue(genericTypeDefinition.IsGenericType, nameof(genericTypeDefinition), $"{nameof(genericTypeDefinition)}.{nameof(genericTypeDefinition.IsGenericType)} must be true");
-
             if (!type.IsGenericType)
             {
                 return false;

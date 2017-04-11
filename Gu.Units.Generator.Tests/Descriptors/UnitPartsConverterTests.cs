@@ -8,10 +8,10 @@
 
     public class UnitPartsConverterTests
     {
-        // ReSharper disable UnusedMember.Local
+        //// ReSharper disable UnusedMember.Local
         private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
         private const char MultiplyDot = '⋅';
-        // ReSharper restore UnusedMember.Local
+        //// ReSharper restore UnusedMember.Local
 
         public static TestCase[] TestCases { get; } = CreateTestCases();
 
@@ -49,7 +49,7 @@
                            new TestCase("m¹⋅s⁻¹", "m/s", UnitAndPower.Create(metres, 1), UnitAndPower.Create(seconds, -1)),
                            new TestCase("1/s", "s⁻¹", UnitAndPower.Create(seconds, -1)),
                            new TestCase("s^-1", "s⁻¹", UnitAndPower.Create(seconds, -1))
-                           //new Data("J/s",UnitAndPower.Create(Joules, 1),UnitAndPower.Create(Seconds, -1)),
+                           ////new Data("J/s",UnitAndPower.Create(Joules, 1),UnitAndPower.Create(Seconds, -1)),
                        };
         }
 

@@ -14,10 +14,7 @@
         private string toSi;
         private string fromSi;
 
-        public CustomConversion(string name,
-            string symbol,
-            string toSi,
-            string fromSi)
+        public CustomConversion(string name, string symbol, string toSi, string fromSi)
         {
             this.name = name;
             this.symbol = symbol;
@@ -25,6 +22,7 @@
             this.fromSi = fromSi;
         }
 
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Name

@@ -28,6 +28,7 @@
             this.Power = power;
         }
 
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Name

@@ -18,6 +18,7 @@
             this.Unit = unit;
         }
 
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public Unit Unit { get; }

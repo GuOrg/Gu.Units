@@ -85,7 +85,7 @@
             var symbolAndPowers = c1.AsSymbolAndPowers().Concat(c2.AsSymbolAndPowers());
             var symbol = symbolAndPowers.AsSymbol();
             var factor = c1.Factor * c2.Factor;
-            // hacking unit like this for simpler serialization
+            //// hacking unit like this for simpler serialization
             return new PartConversion(name, symbol, factor) { unit = unit };
         }
 

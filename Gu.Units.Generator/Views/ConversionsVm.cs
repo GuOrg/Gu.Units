@@ -13,15 +13,17 @@
     using Reactive;
     using Wpf.Reactive;
 
-    public class ConversionsVm : INotifyPropertyChanged
+    public sealed class ConversionsVm : INotifyPropertyChanged, IDisposable
     {
-        private readonly SerialDisposable subscription = new SerialDisposable();
         private readonly Settings settings;
+        private readonly SerialDisposable subscription = new SerialDisposable();
         private readonly ReadOnlySerialView<IConversion> allConversions = new ReadOnlySerialView<IConversion>();
+
         private Unit unit;
         private IConversion selectedConversion;
         private BaseUnitViewModel selectedBaseUnit;
         private DerivedUnitViewModel selectedDerivedUnit;
+        private bool disposed;
 
         public ConversionsVm(Settings settings)
         {
@@ -69,6 +71,7 @@
             get => this.selectedConversion;
             set
             {
+                this.ThrowIfDisposed();
                 if (Equals(value, this.selectedConversion))
                 {
                     return;
@@ -88,6 +91,7 @@
             get => this.selectedBaseUnit;
             set
             {
+                this.ThrowIfDisposed();
                 var selected = value as BaseUnitViewModel;
                 if (Equals(selected, this.selectedBaseUnit))
                 {
@@ -109,6 +113,7 @@
             get => this.selectedDerivedUnit;
             set
             {
+                this.ThrowIfDisposed();
                 var selected = value as DerivedUnitViewModel;
                 if (Equals(selected, this.selectedDerivedUnit))
                 {
@@ -125,10 +130,36 @@
             }
         }
 
+        public void Dispose()
+        {
+            if (this.disposed)
+            {
+                return;
+            }
+
+            this.disposed = true;
+            this.allConversions.Dispose();
+            this.subscription.Dispose();
+        }
+
+        private static void TryRemove<T>(ObservableCollection<T> collection, IConversion item)
+            where T : IConversion
+        {
+            ((IList)collection).Remove(item);
+        }
+
         [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void ThrowIfDisposed()
+        {
+            if (this.disposed)
+            {
+                throw new ObjectDisposedException(this.GetType().FullName);
+            }
         }
 
         private void UpdateAllConversionsSubscription()
@@ -167,12 +198,6 @@
             TryRemove(this.unit.CustomConversions, this.selectedConversion);
             TryRemove(this.unit.PrefixConversions, this.selectedConversion);
             TryRemove(this.unit.PartConversions, this.selectedConversion);
-        }
-
-        private static void TryRemove<T>(ObservableCollection<T> collection, IConversion item)
-            where T : IConversion
-        {
-            ((IList)collection).Remove(item);
         }
     }
 }

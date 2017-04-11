@@ -25,7 +25,9 @@
         }
 
         public string Path { get; }
+
         public int Line { get; }
+
         public int Column { get; }
     }
 }

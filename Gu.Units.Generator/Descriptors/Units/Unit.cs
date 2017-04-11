@@ -5,7 +5,6 @@ namespace Gu.Units.Generator
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
-    using JetBrains.Annotations;
 
     [Serializable]
     public abstract class Unit : INameAndSymbol, INotifyPropertyChanged
@@ -25,60 +24,10 @@ namespace Gu.Units.Generator
             this.quantity = new Quantity(this);
         }
 
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public string Name
-        {
-            get => this.name;
-            set
-            {
-                if (value == this.name)
-                {
-                    return;
-                }
-
-                this.name = value;
-                this.OnPropertyChanged();
-            }
-        }
-
-        public string ClassName => this.QuantityName + "Unit";
-
-        public string ParameterName => this.Name.ToParameterName();
-
-        public string Symbol
-        {
-            get => this.symbol;
-            set
-            {
-                if (value == this.symbol)
-                {
-                    return;
-                }
-
-                this.symbol = value;
-                this.OnPropertyChanged();
-            }
-        }
-
         public abstract UnitParts Parts { get; }
-
-        public string QuantityName
-        {
-            get => this.quantityName;
-            set
-            {
-                if (value == this.quantityName)
-                {
-                    return;
-                }
-
-                this.quantityName = value;
-                this.OnPropertyChanged();
-            }
-        }
-
-        public Quantity Quantity => this.quantity;
 
         public ObservableCollection<FactorConversion> FactorConversions { get; } = new ObservableCollection<FactorConversion>();
 
@@ -87,6 +36,12 @@ namespace Gu.Units.Generator
         public ObservableCollection<PrefixConversion> PrefixConversions { get; } = new ObservableCollection<PrefixConversion>();
 
         public ObservableCollection<PartConversion> PartConversions { get; } = new ObservableCollection<PartConversion>();
+
+        public string ClassName => this.QuantityName + "Unit";
+
+        public string ParameterName => this.Name.ToParameterName();
+
+        public Quantity Quantity => this.quantity;
 
         public IEnumerable<IConversion> AllConversions
         {
@@ -118,7 +73,53 @@ namespace Gu.Units.Generator
             }
         }
 
-        [NotifyPropertyChangedInvocator]
+        public string Name
+        {
+            get => this.name;
+            set
+            {
+                if (value == this.name)
+                {
+                    return;
+                }
+
+                this.name = value;
+                this.OnPropertyChanged();
+                this.OnPropertyChanged(nameof(this.ParameterName));
+            }
+        }
+
+        public string Symbol
+        {
+            get => this.symbol;
+            set
+            {
+                if (value == this.symbol)
+                {
+                    return;
+                }
+
+                this.symbol = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public string QuantityName
+        {
+            get => this.quantityName;
+            set
+            {
+                if (value == this.quantityName)
+                {
+                    return;
+                }
+
+                this.quantityName = value;
+                this.OnPropertyChanged();
+                this.OnPropertyChanged(nameof(this.ClassName));
+            }
+        }
+
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

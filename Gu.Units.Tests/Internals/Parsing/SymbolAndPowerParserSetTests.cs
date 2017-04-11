@@ -33,15 +33,14 @@
                                                                                                             ErrorCase.CreateForSymbol("m^¹/s⁻²"),
                                                                                                         };
 
-
         [TestCaseSource(nameof(HappyPaths))]
         public void TryReadSuccess(ISuccessData data)
         {
             var pos = data.Start;
             IReadOnlyList<SymbolAndPower> actual;
             var success = SymbolAndPowerReader.TryRead(data.Text, ref pos, out actual);
-            //Console.WriteLine("expected: {0}", data.ToString(data.Tokens));
-            //Console.WriteLine("actual:   {0}", data.ToString(actual));
+            ////Console.WriteLine("expected: {0}", data.ToString(data.Tokens));
+            ////Console.WriteLine("actual:   {0}", data.ToString(actual));
             Assert.AreEqual(true, success);
             Assert.AreEqual(data.ExpectedEnd, pos);
             CollectionAssert.AreEqual((IEnumerable)data.Expected, actual);

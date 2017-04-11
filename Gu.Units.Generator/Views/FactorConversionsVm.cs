@@ -10,6 +10,7 @@
     {
         private Unit unit;
         private bool isUpdating;
+
         public FactorConversionsVm()
         {
             this.Conversions.ObserveCollectionChangedSlim(false)

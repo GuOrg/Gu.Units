@@ -9,12 +9,13 @@
     using JetBrains.Annotations;
     using Reactive;
 
-    public class MainVm : INotifyPropertyChanged
+    public sealed class MainVm : INotifyPropertyChanged, IDisposable
     {
         public static readonly MainVm Instance = new MainVm();
         private readonly Settings settings;
-        private readonly ConversionsVm conversions;
+
         private string nameSpace;
+        private bool disposed;
 
         private MainVm()
         {
@@ -27,7 +28,7 @@
 
             this.DerivedUnits.ObserveCollectionChangedSlim(false)
                 .Subscribe(this.OnDerivedUnitsChanged);
-            this.conversions = new ConversionsVm(this.settings);
+            this.Conversions = new ConversionsVm(this.settings);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -38,13 +39,14 @@
 
         public ObservableCollection<DerivedUnitViewModel> DerivedUnits { get; }
 
-        public ConversionsVm Conversions => this.conversions;
+        public ConversionsVm Conversions { get; }
 
         public string NameSpace
         {
             get => this.nameSpace;
             set
             {
+                this.ThrowIfDisposed();
                 if (value == this.nameSpace)
                 {
                     return;
@@ -57,13 +59,33 @@
 
         public void Save()
         {
+            this.ThrowIfDisposed();
             Persister.Save(Persister.SettingsFileName);
         }
 
+        public void Dispose()
+        {
+            if (this.disposed)
+            {
+                return;
+            }
+
+            this.disposed = true;
+            this.Conversions.Dispose();
+        }
+
         [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void ThrowIfDisposed()
+        {
+            if (this.disposed)
+            {
+                throw new ObjectDisposedException(this.GetType().FullName);
+            }
         }
 
         private void OnBaseUnitsChanged(NotifyCollectionChangedEventArgs args)

@@ -39,6 +39,7 @@
                 this.OnPropertyChanged(nameof(this.ToSi));
                 this.OnPropertyChanged(nameof(this.FromSi));
                 this.OnPropertyChanged(nameof(this.ParameterName));
+                this.OnPropertyChanged(nameof(this.Factor));
             }
         }
 

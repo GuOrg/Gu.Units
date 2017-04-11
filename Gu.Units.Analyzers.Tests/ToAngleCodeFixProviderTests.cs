@@ -184,7 +184,8 @@
             this.VerifyCSharpFix(before, expected);
         }
 
-        [Test, Explicit("Dunno if there is a need to support this")]
+        [Test]
+        [Explicit("Dunno if there is a need to support this")]
         public void ExpressionToDegrees()
         {
             var before = @"
@@ -219,7 +220,7 @@
         protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
         {
             throw new Exception();
-            //return new TestAnalyzerAnalyzer();
+            //// return new TestAnalyzerAnalyzer();
         }
     }
 }

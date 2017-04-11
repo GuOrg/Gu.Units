@@ -6,6 +6,7 @@
     public class UnitPartsTests
     {
         private MockSettings settings;
+
         [SetUp]
         public void SetUp()
         {

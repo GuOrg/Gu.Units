@@ -77,7 +77,7 @@
 
         public IReadOnlyList<Quantity> Quantities => this.AllUnits.Select(x => x.Quantity).ToList();
 
-        public IReadOnlyList<MissingOverloads> Missing => this.missing; 
+        public IReadOnlyList<MissingOverloads> Missing => this.missing;
 
         public static Settings CreateEmpty()
         {

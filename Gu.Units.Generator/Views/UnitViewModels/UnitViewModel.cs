@@ -11,7 +11,7 @@
     using Reactive;
     using State;
 
-    public abstract class UnitViewModel<TUnit> : INotifyPropertyChanged, IDisposable 
+    public abstract class UnitViewModel<TUnit> : INotifyPropertyChanged, IDisposable
         where TUnit : Unit
     {
         protected const string UnknownName = "Unknown";

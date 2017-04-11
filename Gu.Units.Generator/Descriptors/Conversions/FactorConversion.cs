@@ -21,6 +21,7 @@
             this.factor = factor;
         }
 
+        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Name

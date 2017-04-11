@@ -13,7 +13,7 @@
             Ensure.NotNullOrEmpty(symbol, nameof(symbol));
             Ensure.LessThan(power, 5, nameof(power));
             Ensure.GreaterThan(power, -5, nameof(power));
-            // not sure about throwing here but I think it means something is wrong more often.
+            //// not sure about throwing here but I think it means something is wrong more often.
             this.Symbol = symbol;
             this.Power = power;
         }
@@ -41,7 +41,7 @@
             }
             else
             {
-                p = new string(new[] { '⁻', SuperScript.GetChar(-1 *this.Power) });
+                p = new string(new[] { '⁻', SuperScript.GetChar(-1 * this.Power) });
             }
 
             return $"{this.Symbol}{p}";

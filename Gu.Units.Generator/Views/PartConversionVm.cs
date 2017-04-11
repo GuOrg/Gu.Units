@@ -24,6 +24,8 @@
 
         public PartConversion Conversion { get; }
 
+        public bool IsEditable { get; }
+
         public bool IsUsed
         {
             get
@@ -35,6 +37,7 @@
 
                 return this.unit.PartConversions.Any(this.IsMatch);
             }
+
             set
             {
                 if (value.Equals(this.IsUsed) || !this.IsEditable)
@@ -58,8 +61,6 @@
                 this.OnPropertyChanged();
             }
         }
-
-        public bool IsEditable { get; }
 
         public override string ToString()
         {

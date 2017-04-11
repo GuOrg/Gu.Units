@@ -6,6 +6,7 @@
     internal static class IntReader
     {
         private static readonly int MaxDigits = int.MaxValue.ToString().Length;
+
         internal static int ReadInt32(string text, ref int pos)
         {
             int result;
@@ -34,7 +35,7 @@
             while (pos < end)
             {
                 var c = text[pos] - '0';
-                if (c < 0 || 9 < c)
+                if (c < 0 || c > 9)
                 {
                     break;
                 }

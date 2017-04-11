@@ -10,13 +10,11 @@
         private static readonly UnitAndPower[] UnknownUnitAndPowers = { UnitAndPower.Create(UnknownUnit, 1)};
         private readonly SerialDisposable subscription = new SerialDisposable();
 
-
         public DerivedUnitViewModel()
             : this(new DerivedUnit(UnknownName, UnknownSymbol, UnknownName, UnknownUnitAndPowers))
         {
             this.Subscribe();
         }
-
 
         public DerivedUnitViewModel(DerivedUnit unit)
             : base(unit)
@@ -54,6 +52,16 @@
                     Settings.Instance.DerivedUnits.Add(this.Unit);
                 }
             });
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                this.subscription.Dispose();
+            }
+
+            base.Dispose(disposing);
         }
     }
 }

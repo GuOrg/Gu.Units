@@ -1,6 +1,6 @@
 namespace Gu.Units.Generator
 {
-    public interface INameAndSymbol 
+    public interface INameAndSymbol
     {
         string Name { get; }
 

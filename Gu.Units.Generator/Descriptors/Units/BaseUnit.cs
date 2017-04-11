@@ -12,9 +12,8 @@
     {
         private UnitParts parts;
 
-        public BaseUnit(string name,
-            string symbol,
-            string quantityName) : base(name, symbol, quantityName)
+        public BaseUnit(string name, string symbol, string quantityName)
+            : base(name, symbol, quantityName)
         {
         }
 

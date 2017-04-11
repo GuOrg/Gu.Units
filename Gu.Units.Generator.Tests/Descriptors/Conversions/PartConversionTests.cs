@@ -4,10 +4,10 @@
 
     public class PartConversionTests
     {
-        // ReSharper disable UnusedMember.Local
+        //// ReSharper disable UnusedMember.Local
         private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
         private const char MultiplyDot = '⋅';
-        // ReSharper restore UnusedMember.Local
+        //// ReSharper restore UnusedMember.Local
 
         [Test]
         public void SquareMillimetres()

@@ -1,11 +1,13 @@
-﻿namespace Gu.Units
+﻿// ReSharper disable UnusedParameter.Global
+namespace Gu.Units
 {
     using System;
     using System.Diagnostics;
 
     internal static partial class Ensure
     {
-        internal static void NotNull<T>(T value, string parameterName) where T : class
+        internal static void NotNull<T>(T value, string parameterName)
+            where T : class
         {
             Debug.Assert(!string.IsNullOrEmpty(parameterName), $"{nameof(parameterName)} cannot be null");
             if (value == null)
@@ -14,7 +16,8 @@
             }
         }
 
-        internal static void NotEqualTo<T>(T value, T expected, string parameterName) where T : class
+        internal static void NotEqualTo<T>(T value, T expected, string parameterName)
+            where T : class
         {
             Debug.Assert(!string.IsNullOrEmpty(parameterName), $"{nameof(parameterName)} cannot be null");
             if (value == expected)

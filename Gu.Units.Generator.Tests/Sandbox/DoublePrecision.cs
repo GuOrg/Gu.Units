@@ -11,7 +11,7 @@
             var f = 1609.344;
             var d = f * 1;
             var rt = d / f;
-            // ReSharper disable once CompareOfFloatsByEqualityOperator
+            //// ReSharper disable once CompareOfFloatsByEqualityOperator
             Console.WriteLine(rt == 1);
         }
 

@@ -35,7 +35,7 @@
                                                                                             ErrorCase.Create<SymbolAndPower>("m^12", 0),
                                                                                             ErrorCase.Create<SymbolAndPower>("m^-12", 0),
                                                                                             ErrorCase.Create<SymbolAndPower>("m^--2", 0),
-                                                                                            //ErrorData.Create<SymbolAndPower>("m-", 0),
+                                                                                            ////ErrorData.Create<SymbolAndPower>("m-", 0),
                                                                                         };
 
         [TestCaseSource(nameof(HappyPaths))]

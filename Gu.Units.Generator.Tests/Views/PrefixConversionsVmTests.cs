@@ -17,7 +17,7 @@
             {
                 PrefixConversionVm.Create(settings.Metres, settings.Micro),
                 PrefixConversionVm.Create(settings.Metres, settings.Milli),
-                PrefixConversionVm.Create( settings.Metres, settings.Kilo),
+                PrefixConversionVm.Create(settings.Metres, settings.Kilo),
             };
 
             CollectionAssert.AreEqual(expected, vm.Prefixes.Single(), PrefixConversionVmComparer.Default);
