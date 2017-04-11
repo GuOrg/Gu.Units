@@ -18,19 +18,21 @@ namespace Gu.Units.Wpf.UITests
         {
             using (var app = Application.AttachOrLaunch(Info.ProcessStartInfo))
             {
-                var window = app.GetWindow(AutomationIds.MainWindow, InitializeOption.NoCache);
-                var page = window.Get<TabPage>(TabId);
-                page.Select();
-                var scalarBox = page.Get<TextBox>(AutomationIds.ScalarOnly);
-                var symbolAllowedBox = page.Get<TextBox>(AutomationIds.SymbolAllowed);
+                using (var window = app.GetWindow(AutomationIds.MainWindow, InitializeOption.NoCache))
+                {
+                    var page = window.Get<TabPage>(TabId);
+                    page.Select();
+                    var scalarBox = page.Get<TextBox>(AutomationIds.ScalarOnly);
+                    var symbolAllowedBox = page.Get<TextBox>(AutomationIds.SymbolAllowed);
 
-                var before = symbolAllowedBox.Text;
-                Assert.AreEqual("HasValidationError: False", scalarBox.ItemStatus());
+                    var before = symbolAllowedBox.Text;
+                    Assert.AreEqual("HasValidationError: False", scalarBox.ItemStatus());
 
-                scalarBox.Enter(text);
-                symbolAllowedBox.Click();
-                Assert.AreEqual("HasValidationError: True", scalarBox.ItemStatus());
-                Assert.AreEqual(before, symbolAllowedBox.Text);
+                    scalarBox.Enter(text);
+                    symbolAllowedBox.Click();
+                    Assert.AreEqual("HasValidationError: True", scalarBox.ItemStatus());
+                    Assert.AreEqual(before, symbolAllowedBox.Text);
+                }
             }
         }
 
@@ -41,18 +43,20 @@ namespace Gu.Units.Wpf.UITests
         {
             using (var app = Application.AttachOrLaunch(Info.ProcessStartInfo))
             {
-                var window = app.GetWindow(AutomationIds.MainWindow, InitializeOption.NoCache);
-                var page = window.Get<TabPage>(TabId);
-                page.Select();
-                var scalarBox = page.Get<TextBox>(AutomationIds.ScalarOnly);
-                var symbolAllowedBox = page.Get<TextBox>(AutomationIds.SymbolAllowed);
-                var symbolRequiredBox = page.Get<TextBox>(AutomationIds.SymbolRequired);
+                using (var window = app.GetWindow(AutomationIds.MainWindow, InitializeOption.NoCache))
+                {
+                    var page = window.Get<TabPage>(TabId);
+                    page.Select();
+                    var scalarBox = page.Get<TextBox>(AutomationIds.ScalarOnly);
+                    var symbolAllowedBox = page.Get<TextBox>(AutomationIds.SymbolAllowed);
+                    var symbolRequiredBox = page.Get<TextBox>(AutomationIds.SymbolRequired);
 
-                scalarBox.Enter(text);
-                symbolAllowedBox.Click();
-                Assert.AreEqual("6.789", scalarBox.Text);
-                Assert.AreEqual("6789", symbolAllowedBox.Text);
-                Assert.AreEqual("678.9\u00A0cm", symbolRequiredBox.Text);
+                    scalarBox.Enter(text);
+                    symbolAllowedBox.Click();
+                    Assert.AreEqual("6.789", scalarBox.Text);
+                    Assert.AreEqual("6789", symbolAllowedBox.Text);
+                    Assert.AreEqual("678.9\u00A0cm", symbolRequiredBox.Text);
+                }
             }
         }
 
@@ -67,18 +71,20 @@ namespace Gu.Units.Wpf.UITests
         {
             using (var app = Application.AttachOrLaunch(Info.ProcessStartInfo))
             {
-                var window = app.GetWindow(AutomationIds.MainWindow, InitializeOption.NoCache);
-                var page = window.Get<TabPage>(TabId);
-                page.Select();
-                var scalarBox = page.Get<TextBox>(AutomationIds.ScalarOnly);
-                var symbolAllowedBox = page.Get<TextBox>(AutomationIds.SymbolAllowed);
-                var symbolRequiredBox = page.Get<TextBox>(AutomationIds.SymbolRequired);
+                using (var window = app.GetWindow(AutomationIds.MainWindow, InitializeOption.NoCache))
+                {
+                    var page = window.Get<TabPage>(TabId);
+                    page.Select();
+                    var scalarBox = page.Get<TextBox>(AutomationIds.ScalarOnly);
+                    var symbolAllowedBox = page.Get<TextBox>(AutomationIds.SymbolAllowed);
+                    var symbolRequiredBox = page.Get<TextBox>(AutomationIds.SymbolRequired);
 
-                symbolAllowedBox.Enter(text);
-                scalarBox.Click();
-                Assert.AreEqual("6.789", scalarBox.Text);
-                Assert.AreEqual("6789", symbolAllowedBox.Text);
-                Assert.AreEqual("678.9\u00A0cm", symbolRequiredBox.Text);
+                    symbolAllowedBox.Enter(text);
+                    scalarBox.Click();
+                    Assert.AreEqual("6.789", scalarBox.Text);
+                    Assert.AreEqual("6789", symbolAllowedBox.Text);
+                    Assert.AreEqual("678.9\u00A0cm", symbolRequiredBox.Text);
+                }
             }
         }
 
@@ -89,20 +95,21 @@ namespace Gu.Units.Wpf.UITests
         {
             using (var app = Application.AttachOrLaunch(Info.ProcessStartInfo))
             {
-                var window = app.GetWindow(AutomationIds.MainWindow, InitializeOption.NoCache);
-                var page = window.Get<TabPage>(TabId);
-                page.Select();
-                var scalarBox = page.Get<TextBox>(AutomationIds.ScalarOnly);
-                var symbolAllowedBox = page.Get<TextBox>(AutomationIds.SymbolAllowed);
-                var symbolRequiredBox = page.Get<TextBox>(AutomationIds.SymbolRequired);
+                using (var window = app.GetWindow(AutomationIds.MainWindow, InitializeOption.NoCache))
+                {
+                    var page = window.Get<TabPage>(TabId);
+                    page.Select();
+                    var scalarBox = page.Get<TextBox>(AutomationIds.ScalarOnly);
+                    var symbolAllowedBox = page.Get<TextBox>(AutomationIds.SymbolAllowed);
 
-                var before = scalarBox.Text;
-                Assert.AreEqual("HasValidationError: False", symbolAllowedBox.ItemStatus());
+                    var before = scalarBox.Text;
+                    Assert.AreEqual("HasValidationError: False", symbolAllowedBox.ItemStatus());
 
-                symbolAllowedBox.Enter(text);
-                scalarBox.Click();
-                Assert.AreEqual("HasValidationError: True", symbolAllowedBox.ItemStatus());
-                Assert.AreEqual(before, scalarBox.Text);
+                    symbolAllowedBox.Enter(text);
+                    scalarBox.Click();
+                    Assert.AreEqual("HasValidationError: True", symbolAllowedBox.ItemStatus());
+                    Assert.AreEqual(before, scalarBox.Text);
+                }
             }
         }
 
@@ -115,18 +122,20 @@ namespace Gu.Units.Wpf.UITests
         {
             using (var app = Application.AttachOrLaunch(Info.ProcessStartInfo))
             {
-                var window = app.GetWindow(AutomationIds.MainWindow, InitializeOption.NoCache);
-                var page = window.Get<TabPage>(TabId);
-                page.Select();
-                var scalarBox = page.Get<TextBox>(AutomationIds.ScalarOnly);
-                var symbolAllowedBox = page.Get<TextBox>(AutomationIds.SymbolAllowed);
-                var symbolRequiredBox = page.Get<TextBox>(AutomationIds.SymbolRequired);
+                using (var window = app.GetWindow(AutomationIds.MainWindow, InitializeOption.NoCache))
+                {
+                    var page = window.Get<TabPage>(TabId);
+                    page.Select();
+                    var scalarBox = page.Get<TextBox>(AutomationIds.ScalarOnly);
+                    var symbolAllowedBox = page.Get<TextBox>(AutomationIds.SymbolAllowed);
+                    var symbolRequiredBox = page.Get<TextBox>(AutomationIds.SymbolRequired);
 
-                symbolRequiredBox.Enter(text);
-                scalarBox.Click();
-                Assert.AreEqual("6.789", scalarBox.Text);
-                Assert.AreEqual("6789", symbolAllowedBox.Text);
-                Assert.AreEqual("678.9\u00A0cm", symbolRequiredBox.Text);
+                    symbolRequiredBox.Enter(text);
+                    scalarBox.Click();
+                    Assert.AreEqual("6.789", scalarBox.Text);
+                    Assert.AreEqual("6789", symbolAllowedBox.Text);
+                    Assert.AreEqual("678.9\u00A0cm", symbolRequiredBox.Text);
+                }
             }
         }
 
@@ -137,19 +146,20 @@ namespace Gu.Units.Wpf.UITests
         {
             using (var app = Application.AttachOrLaunch(Info.ProcessStartInfo))
             {
-                var window = app.GetWindow(AutomationIds.MainWindow, InitializeOption.NoCache);
-                var page = window.Get<TabPage>(TabId);
-                page.Select();
-                var scalarBox = page.Get<TextBox>(AutomationIds.ScalarOnly);
-                var symbolAllowedBox = page.Get<TextBox>(AutomationIds.SymbolAllowed);
-                var symbolRequiredBox = page.Get<TextBox>(AutomationIds.SymbolRequired);
+                using (var window = app.GetWindow(AutomationIds.MainWindow, InitializeOption.NoCache))
+                {
+                    var page = window.Get<TabPage>(TabId);
+                    page.Select();
+                    var scalarBox = page.Get<TextBox>(AutomationIds.ScalarOnly);
+                    var symbolRequiredBox = page.Get<TextBox>(AutomationIds.SymbolRequired);
 
-                var before = scalarBox.Text;
-                Assert.AreEqual("HasValidationError: False", symbolRequiredBox.ItemStatus());
-                symbolRequiredBox.Enter(text);
-                scalarBox.Click();
-                Assert.AreEqual("HasValidationError: True", symbolRequiredBox.ItemStatus());
-                Assert.AreEqual(before, scalarBox.Text);
+                    var before = scalarBox.Text;
+                    Assert.AreEqual("HasValidationError: False", symbolRequiredBox.ItemStatus());
+                    symbolRequiredBox.Enter(text);
+                    scalarBox.Click();
+                    Assert.AreEqual("HasValidationError: True", symbolRequiredBox.ItemStatus());
+                    Assert.AreEqual(before, scalarBox.Text);
+                }
             }
         }
     }

@@ -7,7 +7,6 @@
 
     public class ServiceProviderMock : Mock<IServiceProvider>
     {
-        internal readonly Mock<IProvideValueTarget> ProvideValueTargetMock = new Mock<IProvideValueTarget>(MockBehavior.Strict);
         private readonly Binding binding;
 
         public ServiceProviderMock()
@@ -19,6 +18,8 @@
 
             this.ProvideValueTargetMock.SetupGet(x => x.TargetObject).Returns(this.binding);
         }
+
+        internal Mock<IProvideValueTarget> ProvideValueTargetMock { get; } = new Mock<IProvideValueTarget>(MockBehavior.Strict);
 
         public string BindingStringFormat
         {

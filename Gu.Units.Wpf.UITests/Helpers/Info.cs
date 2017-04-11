@@ -12,12 +12,11 @@
             {
                 var assembly = typeof(MainWindow).Assembly;
                 var uri = new Uri(assembly.CodeBase, UriKind.Absolute);
-                var fileName =uri.AbsolutePath;
+                var fileName = uri.AbsolutePath;
                 var processStartInfo = new ProcessStartInfo
                 {
                     FileName = fileName,
                     UseShellExecute = false,
-                    //CreateNoWindow = true,
                     RedirectStandardOutput = true,
                     RedirectStandardError = true
                 };

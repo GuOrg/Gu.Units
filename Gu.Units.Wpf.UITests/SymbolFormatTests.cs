@@ -9,9 +9,12 @@
 
     public class SymbolFormatTests
     {
-        private static readonly string TabId = AutomationIds.SymbolFormatTab;
+        //// ReSharper disable UnusedMember.Local
         private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
         private const char MultiplyDot = '⋅';
+        //// ReSharper restore UnusedMember.Local
+
+        private static readonly string TabId = AutomationIds.SymbolFormatTab;
 
         [TestCase("6.789E6Pa")]
         [TestCase("6.789MPa")]
@@ -20,20 +23,22 @@
         {
             using (var app = Application.AttachOrLaunch(Info.ProcessStartInfo))
             {
-                var window = app.GetWindow(AutomationIds.MainWindow, InitializeOption.NoCache);
-                var page = window.Get<TabPage>(TabId);
-                page.Select();
-                var fractionHatBox = page.Get<TextBox>(AutomationIds.FractionHatPowers);
-                var fractionSuperScriptBox = page.Get<TextBox>(AutomationIds.FractionSuperScript);
-                var signedHatBox = page.Get<TextBox>(AutomationIds.SignedHatPowers);
-                var signedSuperscriptBox = page.Get<TextBox>(AutomationIds.SignedSuperScript);
+                using (var window = app.GetWindow(AutomationIds.MainWindow, InitializeOption.NoCache))
+                {
+                    var page = window.Get<TabPage>(TabId);
+                    page.Select();
+                    var fractionHatBox = page.Get<TextBox>(AutomationIds.FractionHatPowers);
+                    var fractionSuperScriptBox = page.Get<TextBox>(AutomationIds.FractionSuperScript);
+                    var signedHatBox = page.Get<TextBox>(AutomationIds.SignedHatPowers);
+                    var signedSuperscriptBox = page.Get<TextBox>(AutomationIds.SignedSuperScript);
 
-                fractionHatBox.Enter(text);
-                fractionSuperScriptBox.Click();
-                Assert.AreEqual("6.789\u00A0N/mm^2", fractionHatBox.Text);
-                Assert.AreEqual("6.789\u00A0N/mm²", fractionSuperScriptBox.Text);
-                Assert.AreEqual("6.789\u00A0N*mm^-2", signedHatBox.Text);
-                Assert.AreEqual("6.789\u00A0N⋅mm⁻²", signedSuperscriptBox.Text);
+                    fractionHatBox.Enter(text);
+                    fractionSuperScriptBox.Click();
+                    Assert.AreEqual("6.789\u00A0N/mm^2", fractionHatBox.Text);
+                    Assert.AreEqual("6.789\u00A0N/mm²", fractionSuperScriptBox.Text);
+                    Assert.AreEqual("6.789\u00A0N*mm^-2", signedHatBox.Text);
+                    Assert.AreEqual("6.789\u00A0N⋅mm⁻²", signedSuperscriptBox.Text);
+                }
             }
         }
     }
