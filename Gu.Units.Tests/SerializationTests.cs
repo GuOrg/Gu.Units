@@ -26,12 +26,11 @@
                         BindingFlags.NonPublic | BindingFlags.Instance,
                         null,
                         new[] { typeof(double) },
-                        null
-                    );
+                        null);
             var quantity = ctor.Invoke(new object[] { 1.2 });
             var serializer = new XmlSerializer(quantityType);
             var stringBuilder = new StringBuilder();
-            var xml = "";
+            var xml = string.Empty;
             using (var writer = new StringWriter(stringBuilder))
             {
                 serializer.Serialize(writer, quantity);
@@ -41,6 +40,7 @@
                                $"<{quantity.GetType().Name} Value=\"1.2\" />";
                 Assert.AreEqual(expected, xml);
             }
+
             using (var reader = new StringReader(xml))
             {
                 var deserialized = serializer.Deserialize(reader);
@@ -55,12 +55,11 @@
                         BindingFlags.NonPublic | BindingFlags.Instance,
                         null,
                         new[] { typeof(double) },
-                        null
-                    );
+                        null);
             var quantity = ctor.Invoke(new object[] { 1.2 });
             var serializer = new DataContractSerializer(quantityType);
             var stringBuilder = new StringBuilder();
-            var xml = "";
+            var xml = string.Empty;
             using (var writer = XmlWriter.Create(stringBuilder))
             {
                 serializer.WriteObject(writer, quantity);
@@ -71,6 +70,7 @@
                                $"<{quantity.GetType().Name} Value=\"1.2\" xmlns=\"http://schemas.datacontract.org/2004/07/Gu.Units\" />";
                 Assert.AreEqual(expected, xml);
             }
+
             using (var reader = XmlReader.Create(new StringReader(xml)))
             {
                 var deserialized = serializer.ReadObject(reader);
@@ -89,11 +89,13 @@
                     );
             var quantity = ctor.Invoke(new object[] { 1.2 });
             var binaryFormatter = new BinaryFormatter();
-            var memoryStream = new MemoryStream();
-            binaryFormatter.Serialize(memoryStream, quantity);
-            memoryStream.Position = 0;
-            var deserialized = binaryFormatter.Deserialize(memoryStream);
-            Assert.AreEqual(deserialized, quantity);
+            using (var stream = new MemoryStream())
+            {
+                binaryFormatter.Serialize(stream, quantity);
+                stream.Position = 0;
+                var deserialized = binaryFormatter.Deserialize(stream);
+                Assert.AreEqual(deserialized, quantity);
+            }
         }
     }
 }

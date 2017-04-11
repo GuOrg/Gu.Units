@@ -15,7 +15,7 @@
 
         public double Value
         {
-            get => (double) this.GetValue(ValueProperty);
+            get => (double)this.GetValue(ValueProperty);
             set => this.SetValue(ValueProperty, value);
         }
     }

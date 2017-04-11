@@ -19,7 +19,9 @@
         {
             var unitless = (Unitless)0.5;
             Assert.AreEqual(50, unitless.Percents);
+#pragma warning disable SA1131 // Use readable conditions
             Assert.IsTrue(0.5 == unitless);
+#pragma warning restore SA1131 // Use readable conditions
         }
     }
 }

@@ -38,6 +38,7 @@
                         builder.Append('.');
                         continue;
                     }
+
                     builder.Append((char)rnd.Next('0', '9'));
                 }
 
