@@ -16,6 +16,7 @@
             this.IsUnknown = isUnknown;
             this.PostPadding = postPadding;
         }
+
         private PaddedFormat(string prePadding, string format)
         {
             this.PrePadding = prePadding;

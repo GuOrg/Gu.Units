@@ -15,6 +15,7 @@
                                                            NumberStyles.AllowExponent |
                                                            NumberStyles.AllowCurrencySymbol |
                                                            NumberStyles.AllowHexSpecifier);
+
         internal static double Read(
             string text,
             ref int pos,

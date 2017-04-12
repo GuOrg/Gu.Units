@@ -23,19 +23,19 @@
             string errorText,
             TUnit unit)
         {
-            PrePadding = prePadding;
-            ValueFormat = valueFormat;
-            Padding = padding;
-            SymbolFormat = symbolFormat;
-            PostPadding = postPadding;
-            ErrorText = errorText;
-            Unit = unit;
+            this.PrePadding = prePadding;
+            this.ValueFormat = valueFormat;
+            this.Padding = padding;
+            this.SymbolFormat = symbolFormat;
+            this.PostPadding = postPadding;
+            this.ErrorText = errorText;
+            this.Unit = unit;
         }
 
         private QuantityFormat(string errorText, TUnit unit)
         {
-            ErrorText = errorText;
-            Unit = unit;
+            this.ErrorText = errorText;
+            this.Unit = unit;
         }
 
         internal string PrePadding { get; }
@@ -50,7 +50,7 @@
 
         internal string ErrorText { get; }
 
-        internal string CompositeFormat => this.compositeFormat ?? (this.compositeFormat = CreateCompositeFormat());
+        internal string CompositeFormat => this.compositeFormat ?? (this.compositeFormat = this.CreateCompositeFormat());
 
         internal TUnit Unit { get; }
 
@@ -76,13 +76,13 @@
                 return true;
             }
 
-            return string.Equals(PrePadding, other.PrePadding) &&
-                   string.Equals(ValueFormat, other.ValueFormat) &&
-                   string.Equals(Padding, other.Padding) &&
-                   string.Equals(SymbolFormat, other.SymbolFormat) &&
-                   string.Equals(PostPadding, other.PostPadding) &&
-                   string.Equals(ErrorText, other.ErrorText) &&
-                   Unit.Equals(other.Unit);
+            return string.Equals(this.PrePadding, other.PrePadding) &&
+                   string.Equals(this.ValueFormat, other.ValueFormat) &&
+                   string.Equals(this.Padding, other.Padding) &&
+                   string.Equals(this.SymbolFormat, other.SymbolFormat) &&
+                   string.Equals(this.PostPadding, other.PostPadding) &&
+                   string.Equals(this.ErrorText, other.ErrorText) &&
+                   this.Unit.Equals(other.Unit);
         }
 
         public override bool Equals(object obj)
@@ -102,20 +102,20 @@
                 return false;
             }
 
-            return Equals((QuantityFormat<TUnit>)obj);
+            return this.Equals((QuantityFormat<TUnit>)obj);
         }
 
         public override int GetHashCode()
         {
             unchecked
             {
-                var hashCode = PrePadding?.GetHashCode() ?? 0;
-                hashCode = (hashCode * 397) ^ (ValueFormat?.GetHashCode() ?? 0);
-                hashCode = (hashCode * 397) ^ (Padding?.GetHashCode() ?? 0);
-                hashCode = (hashCode * 397) ^ (SymbolFormat?.GetHashCode() ?? 0);
-                hashCode = (hashCode * 397) ^ (PostPadding?.GetHashCode() ?? 0);
-                hashCode = (hashCode * 397) ^ (ErrorText?.GetHashCode() ?? 0);
-                hashCode = (hashCode * 397) ^ Unit.GetHashCode();
+                var hashCode = this.PrePadding?.GetHashCode() ?? 0;
+                hashCode = (hashCode * 397) ^ (this.ValueFormat?.GetHashCode() ?? 0);
+                hashCode = (hashCode * 397) ^ (this.Padding?.GetHashCode() ?? 0);
+                hashCode = (hashCode * 397) ^ (this.SymbolFormat?.GetHashCode() ?? 0);
+                hashCode = (hashCode * 397) ^ (this.PostPadding?.GetHashCode() ?? 0);
+                hashCode = (hashCode * 397) ^ (this.ErrorText?.GetHashCode() ?? 0);
+                hashCode = (hashCode * 397) ^ this.Unit.GetHashCode();
                 return hashCode;
             }
         }
@@ -195,28 +195,28 @@
         {
             using (var builder = StringBuilderPool.Borrow())
             {
-                if (ErrorText != null)
+                if (this.ErrorText != null)
                 {
-                    builder.Append(ErrorText);
+                    builder.Append(this.ErrorText);
                     return builder.ToString();
                 }
 
-                builder.Append(PrePadding);
+                builder.Append(this.PrePadding);
 
-                if (string.IsNullOrEmpty(ValueFormat))
+                if (string.IsNullOrEmpty(this.ValueFormat))
                 {
                     builder.Append("{0}");
                 }
                 else
                 {
                     builder.Append("{0:");
-                    builder.Append(ValueFormat);
+                    builder.Append(this.ValueFormat);
                     builder.Append("}");
                 }
 
-                builder.Append(Padding);
-                builder.Append(SymbolFormat ?? Unit.Symbol);
-                builder.Append(PostPadding);
+                builder.Append(this.Padding);
+                builder.Append(this.SymbolFormat ?? this.Unit.Symbol);
+                builder.Append(this.PostPadding);
                 var format = builder.ToString();
                 return format;
             }

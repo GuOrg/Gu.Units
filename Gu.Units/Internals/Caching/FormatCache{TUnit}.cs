@@ -4,12 +4,14 @@
     using System.Collections.Concurrent;
     using System.Diagnostics;
 
-    internal class FormatCache<TUnit> where TUnit : struct, IUnit, IEquatable<TUnit>
+    internal static class FormatCache<TUnit>
+        where TUnit : struct, IUnit, IEquatable<TUnit>
     {
         internal static QuantityFormat<TUnit> DefaultQuantityFormat = CreateFromValueFormatAndUnit(new ValueAndUnitFormatKey(null, Unit<TUnit>.Default, DefaultSymbolFormat));
 
-        private static SymbolFormat DefaultSymbolFormat => SymbolFormat.FractionSuperScript;
         private static readonly ConcurrentDictionary<IFormatKey, QuantityFormat<TUnit>> Cache = new ConcurrentDictionary<IFormatKey, QuantityFormat<TUnit>>();
+
+        private static SymbolFormat DefaultSymbolFormat => SymbolFormat.FractionSuperScript;
 
         internal static QuantityFormat<TUnit> GetOrCreate(string compositeFormat)
         {
@@ -51,8 +53,6 @@
             return QuantityFormat<TUnit>.Create(valueFormat, symbolFormat, unit);
         }
 
-        #region Keys
-
         internal interface IFormatKey : IEquatable<IFormatKey>
         {
         }
@@ -89,14 +89,17 @@
                     return false;
                 }
 
-                return other is CompositeFormatKey && Equals((CompositeFormatKey)other);
+                return other is CompositeFormatKey && this.Equals((CompositeFormatKey)other);
             }
 
             public override bool Equals(object obj)
             {
                 if (ReferenceEquals(null, obj))
+                {
                     return false;
-                return obj is CompositeFormatKey && Equals((CompositeFormatKey)obj);
+                }
+
+                return obj is CompositeFormatKey && this.Equals((CompositeFormatKey)obj);
             }
 
             public override int GetHashCode()
@@ -143,14 +146,17 @@
                     return false;
                 }
 
-                return other is ValueAndUnitFormatKey && Equals((ValueAndUnitFormatKey)other);
+                return other is ValueAndUnitFormatKey && this.Equals((ValueAndUnitFormatKey)other);
             }
 
             public override bool Equals(object obj)
             {
                 if (ReferenceEquals(null, obj))
+                {
                     return false;
-                return obj is ValueAndUnitFormatKey && Equals((ValueAndUnitFormatKey)obj);
+                }
+
+                return obj is ValueAndUnitFormatKey && this.Equals((ValueAndUnitFormatKey)obj);
             }
 
             public override int GetHashCode()
@@ -200,7 +206,7 @@
                     return false;
                 }
 
-                return other is ValueAndSymbolFormatKey && Equals((ValueAndSymbolFormatKey)other);
+                return other is ValueAndSymbolFormatKey && this.Equals((ValueAndSymbolFormatKey)other);
             }
 
             public override bool Equals(object obj)
@@ -210,7 +216,7 @@
                     return false;
                 }
 
-                return obj is ValueAndSymbolFormatKey && Equals((ValueAndSymbolFormatKey)obj);
+                return obj is ValueAndSymbolFormatKey && this.Equals((ValueAndSymbolFormatKey)obj);
             }
 
             public override int GetHashCode()
@@ -223,7 +229,5 @@
                 }
             }
         }
-
-        #endregion Keys
     }
 }
