@@ -524,6 +524,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
     <None Include="Gu.Units.Wpf.ruleset" />
     <None Include="paket.references" />
     <None Include="paket.template" />

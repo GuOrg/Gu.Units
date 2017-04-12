@@ -200,6 +200,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
     <None Include="paket.references" />
     <None Include="paket.template" />
     <None Include="QuantityJsonConverters.txt4" />

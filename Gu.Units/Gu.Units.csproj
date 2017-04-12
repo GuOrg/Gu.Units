@@ -712,6 +712,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <AdditionalFiles Include="..\stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
     <None Include="EnumerableGenerator.txt4" />
     <None Include="Gu.Units.ruleset" />
     <None Include="paket.references" />
