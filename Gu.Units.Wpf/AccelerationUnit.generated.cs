@@ -6,42 +6,42 @@
     public static class AccelerationUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.AccelerationUnit.MetresPerSecondSquared"/>
+        /// Gets the <see cref="Gu.Units.AccelerationUnit.MetresPerSecondSquared"/> unit.
         /// </summary>
         public static Gu.Units.AccelerationUnit MetresPerSecondSquared => Gu.Units.AccelerationUnit.MetresPerSecondSquared;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AccelerationUnit.CentimetresPerSecondSquared"/>
+        /// Gets the <see cref="Gu.Units.AccelerationUnit.CentimetresPerSecondSquared"/> unit.
         /// </summary>
         public static Gu.Units.AccelerationUnit CentimetresPerSecondSquared => Gu.Units.AccelerationUnit.CentimetresPerSecondSquared;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AccelerationUnit.MillimetresPerSecondSquared"/>
+        /// Gets the <see cref="Gu.Units.AccelerationUnit.MillimetresPerSecondSquared"/> unit.
         /// </summary>
         public static Gu.Units.AccelerationUnit MillimetresPerSecondSquared => Gu.Units.AccelerationUnit.MillimetresPerSecondSquared;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AccelerationUnit.MillimetresPerHourSquared"/>
+        /// Gets the <see cref="Gu.Units.AccelerationUnit.MillimetresPerHourSquared"/> unit.
         /// </summary>
         public static Gu.Units.AccelerationUnit MillimetresPerHourSquared => Gu.Units.AccelerationUnit.MillimetresPerHourSquared;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AccelerationUnit.CentimetresPerHourSquared"/>
+        /// Gets the <see cref="Gu.Units.AccelerationUnit.CentimetresPerHourSquared"/> unit.
         /// </summary>
         public static Gu.Units.AccelerationUnit CentimetresPerHourSquared => Gu.Units.AccelerationUnit.CentimetresPerHourSquared;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AccelerationUnit.MetresPerHourSquared"/>
+        /// Gets the <see cref="Gu.Units.AccelerationUnit.MetresPerHourSquared"/> unit.
         /// </summary>
         public static Gu.Units.AccelerationUnit MetresPerHourSquared => Gu.Units.AccelerationUnit.MetresPerHourSquared;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AccelerationUnit.MetresPerMinuteSquared"/>
+        /// Gets the <see cref="Gu.Units.AccelerationUnit.MetresPerMinuteSquared"/> unit.
         /// </summary>
         public static Gu.Units.AccelerationUnit MetresPerMinuteSquared => Gu.Units.AccelerationUnit.MetresPerMinuteSquared;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AccelerationUnit.MillimetresPerMinuteSquared"/>
+        /// Gets the <see cref="Gu.Units.AccelerationUnit.MillimetresPerMinuteSquared"/> unit.
         /// </summary>
         public static Gu.Units.AccelerationUnit MillimetresPerMinuteSquared => Gu.Units.AccelerationUnit.MillimetresPerMinuteSquared;
     }
