@@ -7,11 +7,11 @@
 <# 
 
 var fileManager = TemplateFileManager.Create(this);
-fileManager.IsAutoIndentEnabled = true;
+fileManager.IsAutoIndentEnabled = false;
 fileManager.CanOverwriteExistingFile = true;
 
 // init handling for parameter templates
-var paramTmpl = ParamTextTemplate.Create(this.Host, "QuantityJsonConverter.tt");
+var template = ParamTextTemplate.Create(this.Host, "QuantityJsonConverter.tt");
 var session = ParamTextTemplate.GetSessionObject();
 var settings = Settings.Instance;
 this.WriteLine("Read Settings found {0} units", settings.Quantities.Count);
@@ -19,15 +19,15 @@ foreach (var quantity in settings.Quantities)
 {
     var fileName = quantity.Name + "JsonConverter.generated." + Settings.Extension;
     fileManager.StartNewFile(fileName , "Gu.Units.Json", null, null);
-	session["QuantityName"] = quantity.Name;
-	string output = paramTmpl.TransformText(session);
-	if (output == "ErrorGeneratingOutput")
+    session["QuantityName"] = quantity.Name;
+    string output = template.TransformText(session);
+    if (output == "ErrorGeneratingOutput")
     {
-		this.WriteLine("Error transforming {0}", quantity.Name);
+        this.WriteLine("Error transforming {0}", quantity.Name);
         throw new InvalidOperationException("output");
     }
 
-	this.Write(output);
+    this.Write(output);
 }
 
 fileManager.Process();
