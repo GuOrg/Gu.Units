@@ -20,7 +20,7 @@ namespace Gu.Units
                 return PaddedFormat.NullFormat;
             }
 
-            int pos = 0;
+            var pos = 0;
             return GetOrCreate(format, ref pos, out unit);
         }
 
@@ -88,6 +88,7 @@ namespace Gu.Units
 
                 return new PaddedFormat(prePadding, symbol, postPadding);
             }
+
             pos = start;
             return PaddedFormat.CreateUnknown(prePadding, format);
         }
@@ -105,7 +106,7 @@ namespace Gu.Units
                 {
                     this.symbolUnitMap.Add(unit.Symbol, unit);
 
-                    int pos = 0;
+                    var pos = 0;
                     if (SymbolAndPowerReader.TryRead(unit.Symbol, ref pos, out IReadOnlyList<SymbolAndPower> result))
                     {
                         if (!WhiteSpaceReader.IsRestWhiteSpace(unit.Symbol, pos))
@@ -168,6 +169,12 @@ namespace Gu.Units
                 return false;
             }
 
+            internal bool TryGetUnitForParts(IReadOnlyList<SymbolAndPower> symbolsAndPowers, out TUnit unit)
+            {
+                var set = new ReadonlySet<SymbolAndPower>(symbolsAndPowers);
+                return this.unitPartsMap.TryGet(set, out unit);
+            }
+
             private static IReadOnlyList<TUnit> GetUnits()
             {
                 var units = typeof(TUnit).GetFields(BindingFlags.GetField | BindingFlags.Public | BindingFlags.Static)
@@ -176,12 +183,6 @@ namespace Gu.Units
                     .Distinct()
                     .ToList();
                 return units;
-            }
-
-            public bool TryGetUnitForParts(IReadOnlyList<SymbolAndPower> symbolsAndPowers, out TUnit unit)
-            {
-                var set = new ReadonlySet<SymbolAndPower>(symbolsAndPowers);
-                return this.unitPartsMap.TryGet(set, out unit);
             }
         }
     }

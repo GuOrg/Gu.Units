@@ -4,7 +4,8 @@
 
     internal static class CompositeFormatParser
     {
-        internal static QuantityFormat<TUnit> Create<TUnit>(string format) where TUnit : struct, IUnit, IEquatable<TUnit>
+        internal static QuantityFormat<TUnit> Create<TUnit>(string format)
+            where TUnit : struct, IUnit, IEquatable<TUnit>
         {
             TryParse(format, out QuantityFormat<TUnit> result);
             return result;
@@ -23,7 +24,7 @@
             return TryParse(format, ref pos, out result);
         }
 
-        internal static bool TryParse<TUnit>(string format, ref int pos,  out QuantityFormat<TUnit> result)
+        internal static bool TryParse<TUnit>(string format, ref int pos, out QuantityFormat<TUnit> result)
                 where TUnit : struct, IUnit, IEquatable<TUnit>
         {
             if (string.IsNullOrWhiteSpace(format))
@@ -38,10 +39,11 @@
             if (valueFormat.PostPadding == null &&
                 symbolFormat.PrePadding == null)
             {
-                valueFormat = valueFormat.WithPostPadding(string.Empty);
                 // we want to keep the padding specified in the format
                 // if both are null QuantityFormat infers padding.
+                valueFormat = valueFormat.WithPostPadding(string.Empty);
             }
+
             if (valueFormat.IsUnknown)
             {
                 if (symbolFormat.IsUnknown)
@@ -55,6 +57,7 @@
                     valueFormat = valueFormat.WithFormat(null);
                 }
             }
+
             result = QuantityFormat<TUnit>.Create(valueFormat, symbolFormat, unit);
 
             return !(valueFormat.IsUnknown || symbolFormat.IsUnknown);

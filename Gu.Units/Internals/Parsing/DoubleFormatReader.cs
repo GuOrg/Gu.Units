@@ -9,6 +9,7 @@
                 result = null;
                 return true;
             }
+
             switch (format[pos])
             {
                 case 'e':
@@ -58,6 +59,7 @@
                             {
                                 break;
                             }
+
                             switch (format[pos + 1])
                             {
                                 case '#':
@@ -67,6 +69,7 @@
                                         continue;
                                     }
                             }
+
                             break;
                         }
                 }

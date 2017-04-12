@@ -30,6 +30,7 @@
                     pos = start;
                     return false;
                 }
+
                 pos++;
             }
 

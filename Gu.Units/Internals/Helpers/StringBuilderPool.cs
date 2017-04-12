@@ -67,16 +67,16 @@
             {
                 if (format.ErrorText != null)
                 {
-                    Append(format.ErrorText);
+                    this.Append(format.ErrorText);
                     return;
                 }
 
-                Append(format.PrePadding);
+                this.Append(format.PrePadding);
                 var scalarValue = quantity.GetValue(format.Unit);
-                Append(scalarValue.ToString(format.ValueFormat, formatProvider));
-                Append(format.Padding);
-                Append(format.SymbolFormat ?? format.Unit.Symbol);
-                Append(format.PostPadding);
+                this.Append(scalarValue.ToString(format.ValueFormat, formatProvider));
+                this.Append(format.Padding);
+                this.Append(format.SymbolFormat ?? format.Unit.Symbol);
+                this.Append(format.PostPadding);
             }
 
             // not the nicest to have this here perhaps but internal
@@ -86,17 +86,16 @@
                 {
                     if (this.builder.Length != 0)
                     {
-                        AppendMultiplication(symbolFormat);
+                        this.AppendMultiplication(symbolFormat);
                     }
 
-                    Append(symbolAndPower, symbolFormat);
+                    this.Append(symbolAndPower, symbolFormat);
                 }
 
                 if ((symbolFormat == SymbolFormat.Default ||
                      symbolFormat == SymbolFormat.FractionHatPowers ||
                      symbolFormat == SymbolFormat.FractionSuperScript) &&
                     symbolAndPowers.Any(x => x.Power < 0))
-
                 {
                     if (this.builder.Length == 0)
                     {
@@ -104,7 +103,7 @@
                     }
                     else
                     {
-                        Append('/');
+                        this.Append('/');
                     }
                 }
 
@@ -112,10 +111,10 @@
                 {
                     if (this.builder.Length != 0 && this.builder[this.builder.Length - 1] != '/')
                     {
-                        AppendMultiplication(symbolFormat);
+                        this.AppendMultiplication(symbolFormat);
                     }
 
-                    Append(symbolAndPower, symbolFormat);
+                    this.Append(symbolAndPower, symbolFormat);
                 }
             }
 
@@ -125,22 +124,21 @@
                 {
                     case SymbolFormat.SignedHatPowers:
                     case SymbolFormat.FractionHatPowers:
-                        Append('*');
+                        this.Append('*');
                         break;
                     case SymbolFormat.Default:
                     case SymbolFormat.SignedSuperScript:
                     case SymbolFormat.FractionSuperScript:
-                        Append('⋅');
+                        this.Append('⋅');
                         break;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(symbolFormat), symbolFormat, null);
                 }
             }
 
-            internal void Append(SymbolAndPower symbolAndPower,
-                SymbolFormat symbolFormat)
+            internal void Append(SymbolAndPower symbolAndPower, SymbolFormat symbolFormat)
             {
-                Append(symbolAndPower.Symbol);
+                this.Append(symbolAndPower.Symbol);
                 if (symbolAndPower.Power == 1)
                 {
                     return;
@@ -149,8 +147,8 @@
                 switch (symbolFormat)
                 {
                     case SymbolFormat.SignedHatPowers:
-                        Append('^');
-                        Append(symbolAndPower.Power.ToString());
+                        this.Append('^');
+                        this.Append(symbolAndPower.Power.ToString());
                         break;
                     case SymbolFormat.FractionHatPowers:
                         {
@@ -159,10 +157,12 @@
                             {
                                 return;
                             }
-                            Append('^');
-                            Append(power.ToString());
+
+                            this.Append('^');
+                            this.Append(power.ToString());
                             break;
                         }
+
                     case SymbolFormat.SignedSuperScript:
                         {
                             if (symbolAndPower.Power == 1)
@@ -172,11 +172,13 @@
 
                             if (symbolAndPower.Power < 0)
                             {
-                                Append(SuperScript.Minus);
+                                this.Append(SuperScript.Minus);
                             }
-                            Append(SuperScript.GetChar(Math.Abs(symbolAndPower.Power)));
+
+                            this.Append(SuperScript.GetChar(Math.Abs(symbolAndPower.Power)));
                             break;
                         }
+
                     case SymbolFormat.Default:
                     case SymbolFormat.FractionSuperScript:
                         {
@@ -185,9 +187,11 @@
                             {
                                 return;
                             }
-                            Append(SuperScript.GetChar(Math.Abs(symbolAndPower.Power)));
+
+                            this.Append(SuperScript.GetChar(Math.Abs(symbolAndPower.Power)));
                             break;
                         }
+
                     default:
                         throw new ArgumentOutOfRangeException(nameof(symbolFormat), symbolFormat, null);
                 }

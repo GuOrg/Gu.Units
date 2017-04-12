@@ -9,6 +9,14 @@
         internal readonly bool IsUnknown;
         internal readonly string PostPadding;
 
+        public PaddedFormat(string prePadding, string format, string postPadding)
+        {
+            this.PrePadding = prePadding;
+            this.Format = format;
+            this.PostPadding = postPadding;
+            this.IsUnknown = false;
+        }
+
         private PaddedFormat(string prePadding, string format, string postPadding, bool isUnknown)
         {
             this.PrePadding = prePadding;
@@ -23,14 +31,6 @@
             this.Format = format;
             this.PostPadding = null;
             this.IsUnknown = true;
-        }
-
-        public PaddedFormat(string prePadding, string format, string postPadding)
-        {
-            this.PrePadding = prePadding;
-            this.Format = format;
-            this.PostPadding = postPadding;
-            this.IsUnknown = false;
         }
 
         public override string ToString()

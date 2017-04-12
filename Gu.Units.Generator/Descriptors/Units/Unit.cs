@@ -86,6 +86,7 @@ namespace Gu.Units.Generator
                 this.name = value;
                 this.OnPropertyChanged();
                 this.OnPropertyChanged(nameof(this.ParameterName));
+                this.OnPropertyChanged(nameof(this.XDocParameterName));
             }
         }
 

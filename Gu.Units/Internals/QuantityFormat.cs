@@ -7,8 +7,6 @@
     internal class QuantityFormat<TUnit> : IEquatable<QuantityFormat<TUnit>>
         where TUnit : struct, IUnit, IEquatable<TUnit>
     {
-        public static QuantityFormat<TUnit> Default => FormatCache<TUnit>.DefaultQuantityFormat;
-
         internal const char NoBreakingSpace = '\u00A0';
         internal const string NoBreakingSpaceString = "\u00A0";
 
@@ -37,6 +35,8 @@
             this.ErrorText = errorText;
             this.Unit = unit;
         }
+
+        public static QuantityFormat<TUnit> Default => FormatCache<TUnit>.DefaultQuantityFormat;
 
         internal string PrePadding { get; }
 
@@ -184,6 +184,7 @@
                         writer.Append(symbolFormat.Format);
                         writer.Append(symbolFormat.PostPadding);
                     }
+
                     return writer.ToString();
                 }
             }

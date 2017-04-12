@@ -1,14 +1,12 @@
 namespace Gu.Units
 {
-    using System;
-
     internal static class DoubleFormatCache
     {
         private static readonly StringMap<PaddedFormat> Cache = new StringMap<PaddedFormat>();
 
         internal static PaddedFormat GetOrCreate(string format)
         {
-            if (String.IsNullOrEmpty(format))
+            if (string.IsNullOrEmpty(format))
             {
                 return PaddedFormat.NullFormat;
             }
@@ -18,7 +16,7 @@ namespace Gu.Units
                 return match;
             }
 
-            int pos = 0;
+            var pos = 0;
             var paddedFormat = GetOrCreate(format, ref pos);
             if (!WhiteSpaceReader.IsRestWhiteSpace(format, pos))
             {

@@ -152,13 +152,14 @@
                     pos = start;
                     return false;
                 }
+
                 TryReadSign(text, ref pos, format, out Sign exponentSign);
                 if (TrySkipExponentDigits(text, ref pos))
                 {
                     return true;
                 }
 
-                // This is a tricky spot we read digits followed by (sign) exponent 
+                // This is a tricky spot we read digits followed by (sign) exponent
                 // then no digits were thrown. I choose to return the double here.
                 // Both alternatives will be wrong in some situations.
                 // returning false here would make it impossible to parse 1.2eV
@@ -186,13 +187,11 @@
             {
                 end = start;
             }
+
             return success;
         }
 
-        private static bool TryReadSign(string text,
-            ref int pos,
-            NumberFormatInfo format,
-            out Sign sign)
+        private static bool TryReadSign(string text, ref int pos, NumberFormatInfo format, out Sign sign)
         {
             if (Skipper.TrySkip(text, ref pos, format.PositiveSign))
             {
@@ -210,9 +209,7 @@
             return false;
         }
 
-        private static bool TrySkipExponent(
-            string text,
-            ref int pos)
+        private static bool TrySkipExponent(string text, ref int pos)
         {
             if (Skipper.TrySkip(text, ref pos, 'E'))
             {

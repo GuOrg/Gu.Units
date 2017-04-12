@@ -3,7 +3,8 @@
     using System;
     using System.Collections.Generic;
 
-    internal static class StringFormatParser<TUnit> where TUnit : struct, IUnit, IEquatable<TUnit>
+    internal static class StringFormatParser<TUnit>
+        where TUnit : struct, IUnit, IEquatable<TUnit>
     {
         private static readonly Dictionary<string, QuantityFormat<TUnit>> Cache = new Dictionary<string, QuantityFormat<TUnit>>();
 
@@ -12,8 +13,7 @@
             try
             {
                 var text = 1.2.ToString(format);
-                double temp;
-                return double.TryParse(text, out temp);
+                return double.TryParse(text, out double _);
             }
             catch (Exception)
             {
@@ -51,8 +51,7 @@
 
         internal static bool CanParseQuantityFormat(string format)
         {
-            QuantityFormat<TUnit> result;
-            return TryParse(format, out result);
+            return TryParse(format, out QuantityFormat<TUnit> _);
         }
 
         internal static string CreateFormatErrorString(string format, Type type)
@@ -133,6 +132,7 @@
                 pos = start;
                 return false;
             }
+
             pos++;
             return true;
         }

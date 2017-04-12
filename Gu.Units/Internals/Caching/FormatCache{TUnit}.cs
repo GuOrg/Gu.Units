@@ -30,7 +30,7 @@
             return Cache.GetOrAdd(key, _ => CreateFromValueFormatAndUnit(key));
         }
 
-        public static QuantityFormat<TUnit> GetOrCreate(string valueFormat, string symbolFormat)
+        internal static QuantityFormat<TUnit> GetOrCreate(string valueFormat, string symbolFormat)
         {
             var key = new ValueAndSymbolFormatKey(valueFormat, symbolFormat);
             return Cache.GetOrAdd(key, _ => CreateFromValueAndSymbolFormats(key));
@@ -164,7 +164,7 @@
                 unchecked
                 {
                     var hashCode = this.ValueFormat?.GetHashCode() ?? 0;
-                    hashCode = (hashCode * 397) ^ (this.SymbolFormat.GetHashCode());
+                    hashCode = (hashCode * 397) ^ this.SymbolFormat.GetHashCode();
                     hashCode = (hashCode * 397) ^ this.Unit.GetHashCode();
                     return hashCode;
                 }

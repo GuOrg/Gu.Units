@@ -10,7 +10,7 @@ namespace Gu.Units
 
         internal bool TryGetBySubString(string text, int pos, out TItem result)
         {
-            return TryGetBySubString(text, pos, out string _, out result);
+            return this.TryGetBySubString(text, pos, out string _, out result);
         }
 
         internal bool TryGetBySubString(string text, int pos, out string key, out TItem result)
@@ -76,7 +76,8 @@ namespace Gu.Units
         internal CachedItem Add(string key, TItem item)
         {
             Ensure.NotNull(key, $"{nameof(item)}.{key}");
-            lock (this.gate) // this was five times faster than ReaderWriterLockSlim in benchmarks.
+            //// this was five times faster than ReaderWriterLockSlim in benchmarks.
+            lock (this.gate)
             {
                 var i = BinaryFind(this.cache, key);
                 if (i >= 0)

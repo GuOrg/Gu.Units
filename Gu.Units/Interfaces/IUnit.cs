@@ -33,7 +33,7 @@
         /// Converts the unit to its string representation
         /// </summary>
         /// <param name="format">How to format the return value</param>
-        /// <returns></returns>
+        /// <returns>The string representation of this instance.</returns>
         string ToString(SymbolFormat format);
     }
 }

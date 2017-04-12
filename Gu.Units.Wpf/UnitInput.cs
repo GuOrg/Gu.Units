@@ -4,12 +4,12 @@
     /// Specifies the requirements for unit input
     /// </summary>
     public enum UnitInput
-    {       
+    {
         /// <summary>
         /// Valid input cannot contain a unit symbol
         /// </summary>
         ScalarOnly,
-       
+
         /// <summary>
         /// Input is valid with or without symbol.
         /// When no symbol the unit in the converter is used.

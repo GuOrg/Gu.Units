@@ -3,7 +3,8 @@ namespace Gu.Units
     using System;
     using System.Collections.Generic;
 
-    internal static class UnitParser<TUnit> where TUnit : struct, IUnit, IEquatable<TUnit>
+    internal static class UnitParser<TUnit>
+        where TUnit : struct, IUnit, IEquatable<TUnit>
     {
         internal static TUnit Parse(string text)
         {

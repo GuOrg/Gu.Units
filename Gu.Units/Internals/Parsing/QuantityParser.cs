@@ -5,10 +5,7 @@
 
     internal static class QuantityParser
     {
-        internal static TQuantity Parse<TUnit, TQuantity>(string text,
-            Func<double, TUnit, TQuantity> creator,
-            NumberStyles style,
-            IFormatProvider provider)
+        internal static TQuantity Parse<TUnit, TQuantity>(string text, Func<double, TUnit, TQuantity> creator, NumberStyles style, IFormatProvider provider)
             where TQuantity : IQuantity<TUnit>
             where TUnit : struct, IUnit, IEquatable<TUnit>
         {
@@ -35,11 +32,7 @@
             return creator(d, unit);
         }
 
-        internal static bool TryParse<TUnit, TQuantity>(string text,
-            Func<double, TUnit, TQuantity> creator,
-            NumberStyles style,
-            IFormatProvider provider,
-            out TQuantity value)
+        internal static bool TryParse<TUnit, TQuantity>(string text, Func<double, TUnit, TQuantity> creator, NumberStyles style, IFormatProvider provider, out TQuantity value)
             where TQuantity : IQuantity<TUnit>
             where TUnit : struct, IUnit, IEquatable<TUnit>
         {
