@@ -35,7 +35,7 @@
             {
                 serializer.Serialize(writer, quantity);
                 xml = stringBuilder.ToString();
-                Console.Write(xml);
+                ////Console.Write(xml);
                 var expected = $"<?xml version=\"1.0\" encoding=\"utf-16\"?>" + Environment.NewLine +
                                $"<{quantity.GetType().Name} Value=\"1.2\" />";
                 Assert.AreEqual(expected, xml);
@@ -65,7 +65,7 @@
                 serializer.WriteObject(writer, quantity);
                 writer.Flush();
                 xml = stringBuilder.ToString();
-                Console.Write(xml);
+                ////Console.Write(xml);
                 var expected = $"<?xml version=\"1.0\" encoding=\"utf-16\"?>" +
                                $"<{quantity.GetType().Name} Value=\"1.2\" xmlns=\"http://schemas.datacontract.org/2004/07/Gu.Units\" />";
                 Assert.AreEqual(expected, xml);

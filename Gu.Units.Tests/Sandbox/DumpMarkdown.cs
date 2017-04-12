@@ -8,6 +8,7 @@
     public class DumpMarkdown
     {
         [Test]
+        [Explicit("Script")]
         public void DumpQuantityTypes()
         {
             var quantityTypes = typeof(Length).Assembly.GetTypes()
