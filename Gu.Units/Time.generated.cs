@@ -187,11 +187,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Time"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Time"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time ReadFrom(XmlReader reader)
         {
-            var v = new Time();
+            var v = default(Time);
             v.ReadXml(reader);
             return v;
         }
@@ -199,8 +199,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time From(double value, TimeUnit unit)
         {
             return new Time(unit.ToSiUnit(value));
@@ -210,6 +211,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
         /// <param name="seconds">The value in <see cref="Gu.Units.TimeUnit.Seconds"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time FromSeconds(double seconds)
         {
             return new Time(seconds);
@@ -219,6 +221,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
         /// <param name="hours">The value in h</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time FromHours(double hours)
         {
             return new Time(3600 * hours);
@@ -228,6 +231,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
         /// <param name="minutes">The value in min</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time FromMinutes(double minutes)
         {
             return new Time(60 * minutes);
@@ -237,6 +241,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
         /// <param name="days">The value in d</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time FromDays(double days)
         {
             return new Time(86400 * days);
@@ -246,6 +251,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
         /// <param name="nanoseconds">The value in ns</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time FromNanoseconds(double nanoseconds)
         {
             return new Time(nanoseconds / 1000000000);
@@ -255,6 +261,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
         /// <param name="microseconds">The value in µs</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time FromMicroseconds(double microseconds)
         {
             return new Time(microseconds / 1000000);
@@ -264,6 +271,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
         /// <param name="milliseconds">The value in ms</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time FromMilliseconds(double milliseconds)
         {
             return new Time(milliseconds / 1000);

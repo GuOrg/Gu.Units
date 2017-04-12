@@ -182,11 +182,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Density"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Density"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Density"/></returns>
         public static Density ReadFrom(XmlReader reader)
         {
-            var v = new Density();
+            var v = default(Density);
             v.ReadXml(reader);
             return v;
         }
@@ -194,8 +194,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Density"/></returns>
         public static Density From(double value, DensityUnit unit)
         {
             return new Density(unit.ToSiUnit(value));
@@ -205,6 +206,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
         /// </summary>
         /// <param name="kilogramsPerCubicMetre">The value in <see cref="Gu.Units.DensityUnit.KilogramsPerCubicMetre"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Density"/></returns>
         public static Density FromKilogramsPerCubicMetre(double kilogramsPerCubicMetre)
         {
             return new Density(kilogramsPerCubicMetre);
@@ -214,6 +216,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
         /// </summary>
         /// <param name="gramsPerCubicMillimetre">The value in g/mm³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Density"/></returns>
         public static Density FromGramsPerCubicMillimetre(double gramsPerCubicMillimetre)
         {
             return new Density(1000000 * gramsPerCubicMillimetre);
@@ -223,6 +226,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
         /// </summary>
         /// <param name="gramsPerCubicCentimetre">The value in g/cm³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Density"/></returns>
         public static Density FromGramsPerCubicCentimetre(double gramsPerCubicCentimetre)
         {
             return new Density(1000 * gramsPerCubicCentimetre);
@@ -232,6 +236,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
         /// </summary>
         /// <param name="milligramsPerCubicMillimetre">The value in mg/mm³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Density"/></returns>
         public static Density FromMilligramsPerCubicMillimetre(double milligramsPerCubicMillimetre)
         {
             return new Density(1000 * milligramsPerCubicMillimetre);
@@ -241,6 +246,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
         /// </summary>
         /// <param name="gramsPerCubicMetre">The value in g/m³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Density"/></returns>
         public static Density FromGramsPerCubicMetre(double gramsPerCubicMetre)
         {
             return new Density(gramsPerCubicMetre / 1000);
@@ -250,6 +256,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
         /// </summary>
         /// <param name="milligramsPerCubicMetre">The value in mg/m³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Density"/></returns>
         public static Density FromMilligramsPerCubicMetre(double milligramsPerCubicMetre)
         {
             return new Density(milligramsPerCubicMetre / 1000000);

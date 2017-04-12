@@ -157,11 +157,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.AmountOfSubstance"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.AmountOfSubstance"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AmountOfSubstance"/></returns>
         public static AmountOfSubstance ReadFrom(XmlReader reader)
         {
-            var v = new AmountOfSubstance();
+            var v = default(AmountOfSubstance);
             v.ReadXml(reader);
             return v;
         }
@@ -169,8 +169,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AmountOfSubstance"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AmountOfSubstance"/></returns>
         public static AmountOfSubstance From(double value, AmountOfSubstanceUnit unit)
         {
             return new AmountOfSubstance(unit.ToSiUnit(value));
@@ -180,6 +181,7 @@
         /// Creates a new instance of <see cref="Gu.Units.AmountOfSubstance"/>.
         /// </summary>
         /// <param name="moles">The value in <see cref="Gu.Units.AmountOfSubstanceUnit.Moles"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.AmountOfSubstance"/></returns>
         public static AmountOfSubstance FromMoles(double moles)
         {
             return new AmountOfSubstance(moles);

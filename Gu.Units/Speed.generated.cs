@@ -202,11 +202,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Speed"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Speed"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
         public static Speed ReadFrom(XmlReader reader)
         {
-            var v = new Speed();
+            var v = default(Speed);
             v.ReadXml(reader);
             return v;
         }
@@ -214,8 +214,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
         public static Speed From(double value, SpeedUnit unit)
         {
             return new Speed(unit.ToSiUnit(value));
@@ -225,6 +226,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
         /// </summary>
         /// <param name="metresPerSecond">The value in <see cref="Gu.Units.SpeedUnit.MetresPerSecond"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
         public static Speed FromMetresPerSecond(double metresPerSecond)
         {
             return new Speed(metresPerSecond);
@@ -234,6 +236,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
         /// </summary>
         /// <param name="kilometresPerHour">The value in km/h</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
         public static Speed FromKilometresPerHour(double kilometresPerHour)
         {
             return new Speed(0.277777777777778 * kilometresPerHour);
@@ -243,6 +246,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
         /// </summary>
         /// <param name="centimetresPerMinute">The value in cm/min</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
         public static Speed FromCentimetresPerMinute(double centimetresPerMinute)
         {
             return new Speed(centimetresPerMinute / 6000);
@@ -252,6 +256,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
         /// </summary>
         /// <param name="metresPerMinute">The value in m/min</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
         public static Speed FromMetresPerMinute(double metresPerMinute)
         {
             return new Speed(metresPerMinute / 60);
@@ -261,6 +266,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
         /// </summary>
         /// <param name="metresPerHour">The value in m/h</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
         public static Speed FromMetresPerHour(double metresPerHour)
         {
             return new Speed(metresPerHour / 3600);
@@ -270,6 +276,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
         /// </summary>
         /// <param name="millimetresPerHour">The value in mm/h</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
         public static Speed FromMillimetresPerHour(double millimetresPerHour)
         {
             return new Speed(millimetresPerHour / 3600000);
@@ -279,6 +286,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
         /// </summary>
         /// <param name="centimetresPerHour">The value in cm/h</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
         public static Speed FromCentimetresPerHour(double centimetresPerHour)
         {
             return new Speed(centimetresPerHour / 360000);
@@ -288,6 +296,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
         /// </summary>
         /// <param name="millimetresPerMinute">The value in mm/min</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
         public static Speed FromMillimetresPerMinute(double millimetresPerMinute)
         {
             return new Speed(millimetresPerMinute / 60000);
@@ -297,6 +306,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
         /// </summary>
         /// <param name="millimetresPerSecond">The value in mm/s</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
         public static Speed FromMillimetresPerSecond(double millimetresPerSecond)
         {
             return new Speed(millimetresPerSecond / 1000);
@@ -306,6 +316,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
         /// </summary>
         /// <param name="centimetresPerSecond">The value in cm/s</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
         public static Speed FromCentimetresPerSecond(double centimetresPerSecond)
         {
             return new Speed(centimetresPerSecond / 100);

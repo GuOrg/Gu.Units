@@ -187,11 +187,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Current"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Current"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current ReadFrom(XmlReader reader)
         {
-            var v = new Current();
+            var v = default(Current);
             v.ReadXml(reader);
             return v;
         }
@@ -199,8 +199,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current From(double value, CurrentUnit unit)
         {
             return new Current(unit.ToSiUnit(value));
@@ -210,6 +211,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
         /// <param name="amperes">The value in <see cref="Gu.Units.CurrentUnit.Amperes"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current FromAmperes(double amperes)
         {
             return new Current(amperes);
@@ -219,6 +221,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
         /// <param name="milliamperes">The value in mA</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current FromMilliamperes(double milliamperes)
         {
             return new Current(milliamperes / 1000);
@@ -228,6 +231,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
         /// <param name="kiloamperes">The value in kA</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current FromKiloamperes(double kiloamperes)
         {
             return new Current(1000 * kiloamperes);
@@ -237,6 +241,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
         /// <param name="megaamperes">The value in MA</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current FromMegaamperes(double megaamperes)
         {
             return new Current(1000000 * megaamperes);
@@ -246,6 +251,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
         /// <param name="microamperes">The value in µA</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current FromMicroamperes(double microamperes)
         {
             return new Current(microamperes / 1000000);
@@ -255,6 +261,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
         /// <param name="nanoamperes">The value in nA</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current FromNanoamperes(double nanoamperes)
         {
             return new Current(nanoamperes / 1000000000);
@@ -264,6 +271,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
         /// <param name="gigaamperes">The value in GA</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current FromGigaamperes(double gigaamperes)
         {
             return new Current(1000000000 * gigaamperes);

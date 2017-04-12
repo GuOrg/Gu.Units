@@ -172,11 +172,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.LengthPerUnitless"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.LengthPerUnitless"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
         public static LengthPerUnitless ReadFrom(XmlReader reader)
         {
-            var v = new LengthPerUnitless();
+            var v = default(LengthPerUnitless);
             v.ReadXml(reader);
             return v;
         }
@@ -184,8 +184,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
         public static LengthPerUnitless From(double value, LengthPerUnitlessUnit unit)
         {
             return new LengthPerUnitless(unit.ToSiUnit(value));
@@ -195,6 +196,7 @@
         /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
         /// </summary>
         /// <param name="metresPerUnitless">The value in <see cref="Gu.Units.LengthPerUnitlessUnit.MetresPerUnitless"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
         public static LengthPerUnitless FromMetresPerUnitless(double metresPerUnitless)
         {
             return new LengthPerUnitless(metresPerUnitless);
@@ -204,6 +206,7 @@
         /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
         /// </summary>
         /// <param name="millimetresPerPercent">The value in mm/%</param>
+        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
         public static LengthPerUnitless FromMillimetresPerPercent(double millimetresPerPercent)
         {
             return new LengthPerUnitless(millimetresPerPercent / 10);
@@ -213,6 +216,7 @@
         /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
         /// </summary>
         /// <param name="micrometresPerPercent">The value in µm/%</param>
+        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
         public static LengthPerUnitless FromMicrometresPerPercent(double micrometresPerPercent)
         {
             return new LengthPerUnitless(micrometresPerPercent / 10000);
@@ -222,6 +226,7 @@
         /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
         /// </summary>
         /// <param name="metresPerPercent">The value in m/%</param>
+        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
         public static LengthPerUnitless FromMetresPerPercent(double metresPerPercent)
         {
             return new LengthPerUnitless(100 * metresPerPercent);

@@ -182,11 +182,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.AngularJerk"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.AngularJerk"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
         public static AngularJerk ReadFrom(XmlReader reader)
         {
-            var v = new AngularJerk();
+            var v = default(AngularJerk);
             v.ReadXml(reader);
             return v;
         }
@@ -194,8 +194,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
         public static AngularJerk From(double value, AngularJerkUnit unit)
         {
             return new AngularJerk(unit.ToSiUnit(value));
@@ -205,6 +206,7 @@
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
         /// </summary>
         /// <param name="radiansPerSecondCubed">The value in <see cref="Gu.Units.AngularJerkUnit.RadiansPerSecondCubed"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
         public static AngularJerk FromRadiansPerSecondCubed(double radiansPerSecondCubed)
         {
             return new AngularJerk(radiansPerSecondCubed);
@@ -214,6 +216,7 @@
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
         /// </summary>
         /// <param name="degreesPerSecondCubed">The value in °⋅s⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
         public static AngularJerk FromDegreesPerSecondCubed(double degreesPerSecondCubed)
         {
             return new AngularJerk(0.0174532925199433 * degreesPerSecondCubed);
@@ -223,6 +226,7 @@
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
         /// </summary>
         /// <param name="radiansPerHourCubed">The value in rad⋅h⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
         public static AngularJerk FromRadiansPerHourCubed(double radiansPerHourCubed)
         {
             return new AngularJerk(radiansPerHourCubed / 46656000000);
@@ -232,6 +236,7 @@
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
         /// </summary>
         /// <param name="degreesPerHourCubed">The value in °⋅h⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
         public static AngularJerk FromDegreesPerHourCubed(double degreesPerHourCubed)
         {
             return new AngularJerk(3.74084630485753E-13 * degreesPerHourCubed);
@@ -241,6 +246,7 @@
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
         /// </summary>
         /// <param name="radiansPerMinuteCubed">The value in rad⋅min⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
         public static AngularJerk FromRadiansPerMinuteCubed(double radiansPerMinuteCubed)
         {
             return new AngularJerk(radiansPerMinuteCubed / 216000);
@@ -250,6 +256,7 @@
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
         /// </summary>
         /// <param name="degreesPerMinuteCubed">The value in °⋅min⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
         public static AngularJerk FromDegreesPerMinuteCubed(double degreesPerMinuteCubed)
         {
             return new AngularJerk(8.08022801849227E-08 * degreesPerMinuteCubed);

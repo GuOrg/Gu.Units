@@ -187,11 +187,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Power"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Power"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power ReadFrom(XmlReader reader)
         {
-            var v = new Power();
+            var v = default(Power);
             v.ReadXml(reader);
             return v;
         }
@@ -199,8 +199,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power From(double value, PowerUnit unit)
         {
             return new Power(unit.ToSiUnit(value));
@@ -210,6 +211,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
         /// <param name="watts">The value in <see cref="Gu.Units.PowerUnit.Watts"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power FromWatts(double watts)
         {
             return new Power(watts);
@@ -219,6 +221,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
         /// <param name="nanowatts">The value in nW</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power FromNanowatts(double nanowatts)
         {
             return new Power(nanowatts / 1000000000);
@@ -228,6 +231,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
         /// <param name="microwatts">The value in µW</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power FromMicrowatts(double microwatts)
         {
             return new Power(microwatts / 1000000);
@@ -237,6 +241,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
         /// <param name="milliwatts">The value in mW</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power FromMilliwatts(double milliwatts)
         {
             return new Power(milliwatts / 1000);
@@ -246,6 +251,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
         /// <param name="kilowatts">The value in kW</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power FromKilowatts(double kilowatts)
         {
             return new Power(1000 * kilowatts);
@@ -255,6 +261,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
         /// <param name="megawatts">The value in MW</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power FromMegawatts(double megawatts)
         {
             return new Power(1000000 * megawatts);
@@ -264,6 +271,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
         /// <param name="gigawatts">The value in GW</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power FromGigawatts(double gigawatts)
         {
             return new Power(1000000000 * gigawatts);

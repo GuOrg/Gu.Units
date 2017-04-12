@@ -157,11 +157,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Momentum"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Momentum"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Momentum"/></returns>
         public static Momentum ReadFrom(XmlReader reader)
         {
-            var v = new Momentum();
+            var v = default(Momentum);
             v.ReadXml(reader);
             return v;
         }
@@ -169,8 +169,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Momentum"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Momentum"/></returns>
         public static Momentum From(double value, MomentumUnit unit)
         {
             return new Momentum(unit.ToSiUnit(value));
@@ -180,6 +181,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Momentum"/>.
         /// </summary>
         /// <param name="newtonSecond">The value in <see cref="Gu.Units.MomentumUnit.NewtonSecond"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Momentum"/></returns>
         public static Momentum FromNewtonSecond(double newtonSecond)
         {
             return new Momentum(newtonSecond);

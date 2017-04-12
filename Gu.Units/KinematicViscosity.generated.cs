@@ -157,11 +157,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.KinematicViscosity"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.KinematicViscosity"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.KinematicViscosity"/></returns>
         public static KinematicViscosity ReadFrom(XmlReader reader)
         {
-            var v = new KinematicViscosity();
+            var v = default(KinematicViscosity);
             v.ReadXml(reader);
             return v;
         }
@@ -169,8 +169,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.KinematicViscosity"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.KinematicViscosity"/></returns>
         public static KinematicViscosity From(double value, KinematicViscosityUnit unit)
         {
             return new KinematicViscosity(unit.ToSiUnit(value));
@@ -180,6 +181,7 @@
         /// Creates a new instance of <see cref="Gu.Units.KinematicViscosity"/>.
         /// </summary>
         /// <param name="squareMetresPerSecond">The value in <see cref="Gu.Units.KinematicViscosityUnit.SquareMetresPerSecond"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.KinematicViscosity"/></returns>
         public static KinematicViscosity FromSquareMetresPerSecond(double squareMetresPerSecond)
         {
             return new KinematicViscosity(squareMetresPerSecond);

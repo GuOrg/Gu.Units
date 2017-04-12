@@ -162,11 +162,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.MolarMass"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.MolarMass"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.MolarMass"/></returns>
         public static MolarMass ReadFrom(XmlReader reader)
         {
-            var v = new MolarMass();
+            var v = default(MolarMass);
             v.ReadXml(reader);
             return v;
         }
@@ -174,8 +174,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.MolarMass"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.MolarMass"/></returns>
         public static MolarMass From(double value, MolarMassUnit unit)
         {
             return new MolarMass(unit.ToSiUnit(value));
@@ -185,6 +186,7 @@
         /// Creates a new instance of <see cref="Gu.Units.MolarMass"/>.
         /// </summary>
         /// <param name="kilogramsPerMole">The value in <see cref="Gu.Units.MolarMassUnit.KilogramsPerMole"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.MolarMass"/></returns>
         public static MolarMass FromKilogramsPerMole(double kilogramsPerMole)
         {
             return new MolarMass(kilogramsPerMole);
@@ -194,6 +196,7 @@
         /// Creates a new instance of <see cref="Gu.Units.MolarMass"/>.
         /// </summary>
         /// <param name="gramsPerMole">The value in g/mol</param>
+        /// <returns>An instance of <see cref="Gu.Units.MolarMass"/></returns>
         public static MolarMass FromGramsPerMole(double gramsPerMole)
         {
             return new MolarMass(gramsPerMole / 1000);

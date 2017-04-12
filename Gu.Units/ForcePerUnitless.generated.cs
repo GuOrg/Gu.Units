@@ -177,11 +177,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.ForcePerUnitless"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.ForcePerUnitless"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.ForcePerUnitless"/></returns>
         public static ForcePerUnitless ReadFrom(XmlReader reader)
         {
-            var v = new ForcePerUnitless();
+            var v = default(ForcePerUnitless);
             v.ReadXml(reader);
             return v;
         }
@@ -189,8 +189,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.ForcePerUnitless"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.ForcePerUnitless"/></returns>
         public static ForcePerUnitless From(double value, ForcePerUnitlessUnit unit)
         {
             return new ForcePerUnitless(unit.ToSiUnit(value));
@@ -200,6 +201,7 @@
         /// Creates a new instance of <see cref="Gu.Units.ForcePerUnitless"/>.
         /// </summary>
         /// <param name="newtonsPerUnitless">The value in <see cref="Gu.Units.ForcePerUnitlessUnit.NewtonsPerUnitless"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.ForcePerUnitless"/></returns>
         public static ForcePerUnitless FromNewtonsPerUnitless(double newtonsPerUnitless)
         {
             return new ForcePerUnitless(newtonsPerUnitless);
@@ -209,6 +211,7 @@
         /// Creates a new instance of <see cref="Gu.Units.ForcePerUnitless"/>.
         /// </summary>
         /// <param name="newtonsPerPercent">The value in N/%</param>
+        /// <returns>An instance of <see cref="Gu.Units.ForcePerUnitless"/></returns>
         public static ForcePerUnitless FromNewtonsPerPercent(double newtonsPerPercent)
         {
             return new ForcePerUnitless(100 * newtonsPerPercent);
@@ -218,6 +221,7 @@
         /// Creates a new instance of <see cref="Gu.Units.ForcePerUnitless"/>.
         /// </summary>
         /// <param name="kilonewtonsPerPercent">The value in kN/%</param>
+        /// <returns>An instance of <see cref="Gu.Units.ForcePerUnitless"/></returns>
         public static ForcePerUnitless FromKilonewtonsPerPercent(double kilonewtonsPerPercent)
         {
             return new ForcePerUnitless(100000 * kilonewtonsPerPercent);
@@ -227,6 +231,7 @@
         /// Creates a new instance of <see cref="Gu.Units.ForcePerUnitless"/>.
         /// </summary>
         /// <param name="meganewtonsPerPercent">The value in MN/%</param>
+        /// <returns>An instance of <see cref="Gu.Units.ForcePerUnitless"/></returns>
         public static ForcePerUnitless FromMeganewtonsPerPercent(double meganewtonsPerPercent)
         {
             return new ForcePerUnitless(100000000 * meganewtonsPerPercent);
@@ -236,6 +241,7 @@
         /// Creates a new instance of <see cref="Gu.Units.ForcePerUnitless"/>.
         /// </summary>
         /// <param name="giganewtonsPerPercent">The value in GN/%</param>
+        /// <returns>An instance of <see cref="Gu.Units.ForcePerUnitless"/></returns>
         public static ForcePerUnitless FromGiganewtonsPerPercent(double giganewtonsPerPercent)
         {
             return new ForcePerUnitless(100000000000 * giganewtonsPerPercent);

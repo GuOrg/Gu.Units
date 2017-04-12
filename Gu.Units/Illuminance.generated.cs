@@ -157,11 +157,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Illuminance"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Illuminance"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Illuminance"/></returns>
         public static Illuminance ReadFrom(XmlReader reader)
         {
-            var v = new Illuminance();
+            var v = default(Illuminance);
             v.ReadXml(reader);
             return v;
         }
@@ -169,8 +169,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Illuminance"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Illuminance"/></returns>
         public static Illuminance From(double value, IlluminanceUnit unit)
         {
             return new Illuminance(unit.ToSiUnit(value));
@@ -180,6 +181,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Illuminance"/>.
         /// </summary>
         /// <param name="lux">The value in <see cref="Gu.Units.IlluminanceUnit.Lux"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Illuminance"/></returns>
         public static Illuminance FromLux(double lux)
         {
             return new Illuminance(lux);

@@ -212,11 +212,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Length"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Length"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
         public static Length ReadFrom(XmlReader reader)
         {
-            var v = new Length();
+            var v = default(Length);
             v.ReadXml(reader);
             return v;
         }
@@ -224,8 +224,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
         public static Length From(double value, LengthUnit unit)
         {
             return new Length(unit.ToSiUnit(value));
@@ -235,6 +236,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
         /// <param name="metres">The value in <see cref="Gu.Units.LengthUnit.Metres"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
         public static Length FromMetres(double metres)
         {
             return new Length(metres);
@@ -244,6 +246,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
         /// <param name="inches">The value in in</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
         public static Length FromInches(double inches)
         {
             return new Length(0.0254 * inches);
@@ -253,6 +256,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
         /// <param name="miles">The value in mi</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
         public static Length FromMiles(double miles)
         {
             return new Length(1609.344 * miles);
@@ -262,6 +266,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
         /// <param name="yards">The value in yd</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
         public static Length FromYards(double yards)
         {
             return new Length(0.9144 * yards);
@@ -271,6 +276,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
         /// <param name="nauticalMiles">The value in nmi</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
         public static Length FromNauticalMiles(double nauticalMiles)
         {
             return new Length(1852 * nauticalMiles);
@@ -280,6 +286,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
         /// <param name="feet">The value in ft</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
         public static Length FromFeet(double feet)
         {
             return new Length(0.3048 * feet);
@@ -289,6 +296,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
         /// <param name="nanometres">The value in nm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
         public static Length FromNanometres(double nanometres)
         {
             return new Length(nanometres / 1000000000);
@@ -298,6 +306,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
         /// <param name="micrometres">The value in µm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
         public static Length FromMicrometres(double micrometres)
         {
             return new Length(micrometres / 1000000);
@@ -307,6 +316,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
         /// <param name="millimetres">The value in mm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
         public static Length FromMillimetres(double millimetres)
         {
             return new Length(millimetres / 1000);
@@ -316,6 +326,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
         /// <param name="centimetres">The value in cm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
         public static Length FromCentimetres(double centimetres)
         {
             return new Length(centimetres / 100);
@@ -325,6 +336,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
         /// <param name="decimetres">The value in dm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
         public static Length FromDecimetres(double decimetres)
         {
             return new Length(decimetres / 10);
@@ -334,6 +346,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
         /// <param name="kilometres">The value in km</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
         public static Length FromKilometres(double kilometres)
         {
             return new Length(1000 * kilometres);

@@ -192,11 +192,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Energy"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Energy"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy ReadFrom(XmlReader reader)
         {
-            var v = new Energy();
+            var v = default(Energy);
             v.ReadXml(reader);
             return v;
         }
@@ -204,8 +204,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy From(double value, EnergyUnit unit)
         {
             return new Energy(unit.ToSiUnit(value));
@@ -215,6 +216,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
         /// <param name="joules">The value in <see cref="Gu.Units.EnergyUnit.Joules"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromJoules(double joules)
         {
             return new Energy(joules);
@@ -224,6 +226,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
         /// <param name="nanojoules">The value in nJ</param>
+        /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromNanojoules(double nanojoules)
         {
             return new Energy(nanojoules / 1000000000);
@@ -233,6 +236,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
         /// <param name="microjoules">The value in µJ</param>
+        /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromMicrojoules(double microjoules)
         {
             return new Energy(microjoules / 1000000);
@@ -242,6 +246,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
         /// <param name="millijoules">The value in mJ</param>
+        /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromMillijoules(double millijoules)
         {
             return new Energy(millijoules / 1000);
@@ -251,6 +256,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
         /// <param name="kilojoules">The value in kJ</param>
+        /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromKilojoules(double kilojoules)
         {
             return new Energy(1000 * kilojoules);
@@ -260,6 +266,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
         /// <param name="megajoules">The value in MJ</param>
+        /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromMegajoules(double megajoules)
         {
             return new Energy(1000000 * megajoules);
@@ -269,6 +276,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
         /// <param name="gigajoules">The value in GJ</param>
+        /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromGigajoules(double gigajoules)
         {
             return new Energy(1000000000 * gigajoules);
@@ -278,6 +286,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
         /// <param name="kilowattHours">The value in kWh</param>
+        /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromKilowattHours(double kilowattHours)
         {
             return new Energy(3600000 * kilowattHours);

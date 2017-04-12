@@ -157,11 +157,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.SolidAngle"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.SolidAngle"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.SolidAngle"/></returns>
         public static SolidAngle ReadFrom(XmlReader reader)
         {
-            var v = new SolidAngle();
+            var v = default(SolidAngle);
             v.ReadXml(reader);
             return v;
         }
@@ -169,8 +169,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.SolidAngle"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.SolidAngle"/></returns>
         public static SolidAngle From(double value, SolidAngleUnit unit)
         {
             return new SolidAngle(unit.ToSiUnit(value));
@@ -180,6 +181,7 @@
         /// Creates a new instance of <see cref="Gu.Units.SolidAngle"/>.
         /// </summary>
         /// <param name="steradians">The value in <see cref="Gu.Units.SolidAngleUnit.Steradians"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.SolidAngle"/></returns>
         public static SolidAngle FromSteradians(double steradians)
         {
             return new SolidAngle(steradians);

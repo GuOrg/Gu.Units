@@ -157,11 +157,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.MassFlow"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.MassFlow"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.MassFlow"/></returns>
         public static MassFlow ReadFrom(XmlReader reader)
         {
-            var v = new MassFlow();
+            var v = default(MassFlow);
             v.ReadXml(reader);
             return v;
         }
@@ -169,8 +169,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.MassFlow"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.MassFlow"/></returns>
         public static MassFlow From(double value, MassFlowUnit unit)
         {
             return new MassFlow(unit.ToSiUnit(value));
@@ -180,6 +181,7 @@
         /// Creates a new instance of <see cref="Gu.Units.MassFlow"/>.
         /// </summary>
         /// <param name="kilogramsPerSecond">The value in <see cref="Gu.Units.MassFlowUnit.KilogramsPerSecond"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.MassFlow"/></returns>
         public static MassFlow FromKilogramsPerSecond(double kilogramsPerSecond)
         {
             return new MassFlow(kilogramsPerSecond);

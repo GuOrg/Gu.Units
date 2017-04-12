@@ -197,11 +197,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Data"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Data"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Data"/></returns>
         public static Data ReadFrom(XmlReader reader)
         {
-            var v = new Data();
+            var v = default(Data);
             v.ReadXml(reader);
             return v;
         }
@@ -209,8 +209,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Data"/></returns>
         public static Data From(double value, DataUnit unit)
         {
             return new Data(unit.ToSiUnit(value));
@@ -220,6 +221,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
         /// <param name="bits">The value in <see cref="Gu.Units.DataUnit.Bits"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Data"/></returns>
         public static Data FromBits(double bits)
         {
             return new Data(bits);
@@ -229,6 +231,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
         /// <param name="@byte">The value in B</param>
+        /// <returns>An instance of <see cref="Gu.Units.Data"/></returns>
         public static Data FromByte(double @byte)
         {
             return new Data(8 * @byte);
@@ -238,6 +241,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
         /// <param name="kilobyte">The value in kB</param>
+        /// <returns>An instance of <see cref="Gu.Units.Data"/></returns>
         public static Data FromKilobyte(double kilobyte)
         {
             return new Data(8000 * kilobyte);
@@ -247,6 +251,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
         /// <param name="megabyte">The value in MB</param>
+        /// <returns>An instance of <see cref="Gu.Units.Data"/></returns>
         public static Data FromMegabyte(double megabyte)
         {
             return new Data(8000000 * megabyte);
@@ -256,6 +261,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
         /// <param name="gigabyte">The value in GB</param>
+        /// <returns>An instance of <see cref="Gu.Units.Data"/></returns>
         public static Data FromGigabyte(double gigabyte)
         {
             return new Data(8000000000 * gigabyte);
@@ -265,6 +271,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
         /// <param name="terabyte">The value in TB</param>
+        /// <returns>An instance of <see cref="Gu.Units.Data"/></returns>
         public static Data FromTerabyte(double terabyte)
         {
             return new Data(8000000000000 * terabyte);
@@ -274,6 +281,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
         /// <param name="megabits">The value in Mbit</param>
+        /// <returns>An instance of <see cref="Gu.Units.Data"/></returns>
         public static Data FromMegabits(double megabits)
         {
             return new Data(1000000 * megabits);
@@ -283,6 +291,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
         /// <param name="gigabits">The value in Gbit</param>
+        /// <returns>An instance of <see cref="Gu.Units.Data"/></returns>
         public static Data FromGigabits(double gigabits)
         {
             return new Data(1000000000 * gigabits);
@@ -292,6 +301,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Data"/>.
         /// </summary>
         /// <param name="kilobits">The value in kbit</param>
+        /// <returns>An instance of <see cref="Gu.Units.Data"/></returns>
         public static Data FromKilobits(double kilobits)
         {
             return new Data(1000 * kilobits);

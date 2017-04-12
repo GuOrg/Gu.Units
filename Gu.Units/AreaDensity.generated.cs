@@ -157,11 +157,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.AreaDensity"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.AreaDensity"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AreaDensity"/></returns>
         public static AreaDensity ReadFrom(XmlReader reader)
         {
-            var v = new AreaDensity();
+            var v = default(AreaDensity);
             v.ReadXml(reader);
             return v;
         }
@@ -169,8 +169,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AreaDensity"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AreaDensity"/></returns>
         public static AreaDensity From(double value, AreaDensityUnit unit)
         {
             return new AreaDensity(unit.ToSiUnit(value));
@@ -180,6 +181,7 @@
         /// Creates a new instance of <see cref="Gu.Units.AreaDensity"/>.
         /// </summary>
         /// <param name="kilogramsPerSquareMetre">The value in <see cref="Gu.Units.AreaDensityUnit.KilogramsPerSquareMetre"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.AreaDensity"/></returns>
         public static AreaDensity FromKilogramsPerSquareMetre(double kilogramsPerSquareMetre)
         {
             return new AreaDensity(kilogramsPerSquareMetre);

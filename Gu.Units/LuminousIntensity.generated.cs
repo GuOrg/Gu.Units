@@ -157,11 +157,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.LuminousIntensity"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.LuminousIntensity"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.LuminousIntensity"/></returns>
         public static LuminousIntensity ReadFrom(XmlReader reader)
         {
-            var v = new LuminousIntensity();
+            var v = default(LuminousIntensity);
             v.ReadXml(reader);
             return v;
         }
@@ -169,8 +169,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.LuminousIntensity"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.LuminousIntensity"/></returns>
         public static LuminousIntensity From(double value, LuminousIntensityUnit unit)
         {
             return new LuminousIntensity(unit.ToSiUnit(value));
@@ -180,6 +181,7 @@
         /// Creates a new instance of <see cref="Gu.Units.LuminousIntensity"/>.
         /// </summary>
         /// <param name="candelas">The value in <see cref="Gu.Units.LuminousIntensityUnit.Candelas"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.LuminousIntensity"/></returns>
         public static LuminousIntensity FromCandelas(double candelas)
         {
             return new LuminousIntensity(candelas);

@@ -192,11 +192,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Acceleration"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Acceleration"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
         public static Acceleration ReadFrom(XmlReader reader)
         {
-            var v = new Acceleration();
+            var v = default(Acceleration);
             v.ReadXml(reader);
             return v;
         }
@@ -204,8 +204,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
         public static Acceleration From(double value, AccelerationUnit unit)
         {
             return new Acceleration(unit.ToSiUnit(value));
@@ -215,6 +216,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
         /// </summary>
         /// <param name="metresPerSecondSquared">The value in <see cref="Gu.Units.AccelerationUnit.MetresPerSecondSquared"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
         public static Acceleration FromMetresPerSecondSquared(double metresPerSecondSquared)
         {
             return new Acceleration(metresPerSecondSquared);
@@ -224,6 +226,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
         /// </summary>
         /// <param name="centimetresPerSecondSquared">The value in cm/s²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
         public static Acceleration FromCentimetresPerSecondSquared(double centimetresPerSecondSquared)
         {
             return new Acceleration(centimetresPerSecondSquared / 100);
@@ -233,6 +236,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
         /// </summary>
         /// <param name="millimetresPerSecondSquared">The value in mm/s²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
         public static Acceleration FromMillimetresPerSecondSquared(double millimetresPerSecondSquared)
         {
             return new Acceleration(millimetresPerSecondSquared / 1000);
@@ -242,6 +246,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
         /// </summary>
         /// <param name="millimetresPerHourSquared">The value in mm/h²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
         public static Acceleration FromMillimetresPerHourSquared(double millimetresPerHourSquared)
         {
             return new Acceleration(millimetresPerHourSquared / 12960000000);
@@ -251,6 +256,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
         /// </summary>
         /// <param name="centimetresPerHourSquared">The value in cm/h²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
         public static Acceleration FromCentimetresPerHourSquared(double centimetresPerHourSquared)
         {
             return new Acceleration(centimetresPerHourSquared / 1296000000);
@@ -260,6 +266,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
         /// </summary>
         /// <param name="metresPerHourSquared">The value in m/h²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
         public static Acceleration FromMetresPerHourSquared(double metresPerHourSquared)
         {
             return new Acceleration(metresPerHourSquared / 12960000);
@@ -269,6 +276,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
         /// </summary>
         /// <param name="metresPerMinuteSquared">The value in m/min²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
         public static Acceleration FromMetresPerMinuteSquared(double metresPerMinuteSquared)
         {
             return new Acceleration(metresPerMinuteSquared / 3600);
@@ -278,6 +286,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
         /// </summary>
         /// <param name="millimetresPerMinuteSquared">The value in mm/min²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
         public static Acceleration FromMillimetresPerMinuteSquared(double millimetresPerMinuteSquared)
         {
             return new Acceleration(millimetresPerMinuteSquared / 3600000);

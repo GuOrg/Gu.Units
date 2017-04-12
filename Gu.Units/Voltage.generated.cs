@@ -187,11 +187,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Voltage"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Voltage"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage ReadFrom(XmlReader reader)
         {
-            var v = new Voltage();
+            var v = default(Voltage);
             v.ReadXml(reader);
             return v;
         }
@@ -199,8 +199,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage From(double value, VoltageUnit unit)
         {
             return new Voltage(unit.ToSiUnit(value));
@@ -210,6 +211,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
         /// <param name="volts">The value in <see cref="Gu.Units.VoltageUnit.Volts"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage FromVolts(double volts)
         {
             return new Voltage(volts);
@@ -219,6 +221,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
         /// <param name="millivolts">The value in mV</param>
+        /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage FromMillivolts(double millivolts)
         {
             return new Voltage(millivolts / 1000);
@@ -228,6 +231,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
         /// <param name="kilovolts">The value in kV</param>
+        /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage FromKilovolts(double kilovolts)
         {
             return new Voltage(1000 * kilovolts);
@@ -237,6 +241,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
         /// <param name="megavolts">The value in MV</param>
+        /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage FromMegavolts(double megavolts)
         {
             return new Voltage(1000000 * megavolts);
@@ -246,6 +251,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
         /// <param name="microvolts">The value in µV</param>
+        /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage FromMicrovolts(double microvolts)
         {
             return new Voltage(microvolts / 1000000);
@@ -255,6 +261,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
         /// <param name="nanovolts">The value in nV</param>
+        /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage FromNanovolts(double nanovolts)
         {
             return new Voltage(nanovolts / 1000000000);
@@ -264,6 +271,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
         /// <param name="gigavolts">The value in GV</param>
+        /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage FromGigavolts(double gigavolts)
         {
             return new Voltage(1000000000 * gigavolts);

@@ -228,8 +228,8 @@
         {
           "Name": "Fahrenheit",
           "Symbol": "°F",
-          "ToSi": "(fahrenheit + 459.67)/1.8",
-          "FromSi": "1.8*kelvin - 459.67"
+          "ToSi": "(fahrenheit + 459.67) / 1.8",
+          "FromSi": "1.8 * kelvin - 459.67"
         }
       ],
       "PrefixConversions": [],
@@ -244,8 +244,8 @@
         {
           "Name": "Degrees",
           "Symbol": "°",
-          "ToSi": "degrees/57.295779513082323",
-          "FromSi": "57.295779513082323*radians"
+          "ToSi": "degrees / 57.295779513082323",
+          "FromSi": "57.295779513082323 * radians"
         }
       ],
       "PrefixConversions": [],

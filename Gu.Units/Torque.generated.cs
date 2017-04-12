@@ -157,11 +157,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Torque"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Torque"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Torque"/></returns>
         public static Torque ReadFrom(XmlReader reader)
         {
-            var v = new Torque();
+            var v = default(Torque);
             v.ReadXml(reader);
             return v;
         }
@@ -169,8 +169,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Torque"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Torque"/></returns>
         public static Torque From(double value, TorqueUnit unit)
         {
             return new Torque(unit.ToSiUnit(value));
@@ -180,6 +181,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Torque"/>.
         /// </summary>
         /// <param name="newtonMetres">The value in <see cref="Gu.Units.TorqueUnit.NewtonMetres"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Torque"/></returns>
         public static Torque FromNewtonMetres(double newtonMetres)
         {
             return new Torque(newtonMetres);

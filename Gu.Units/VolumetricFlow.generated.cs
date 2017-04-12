@@ -232,11 +232,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.VolumetricFlow"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.VolumetricFlow"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow ReadFrom(XmlReader reader)
         {
-            var v = new VolumetricFlow();
+            var v = default(VolumetricFlow);
             v.ReadXml(reader);
             return v;
         }
@@ -244,8 +244,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow From(double value, VolumetricFlowUnit unit)
         {
             return new VolumetricFlow(unit.ToSiUnit(value));
@@ -255,6 +256,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="cubicMetresPerSecond">The value in <see cref="Gu.Units.VolumetricFlowUnit.CubicMetresPerSecond"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromCubicMetresPerSecond(double cubicMetresPerSecond)
         {
             return new VolumetricFlow(cubicMetresPerSecond);
@@ -264,6 +266,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="cubicMetresPerMinute">The value in m³/min</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromCubicMetresPerMinute(double cubicMetresPerMinute)
         {
             return new VolumetricFlow(cubicMetresPerMinute / 60);
@@ -273,6 +276,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="cubicMetresPerHour">The value in m³/h</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromCubicMetresPerHour(double cubicMetresPerHour)
         {
             return new VolumetricFlow(cubicMetresPerHour / 3600);
@@ -282,6 +286,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="litresPerSecond">The value in L/s</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromLitresPerSecond(double litresPerSecond)
         {
             return new VolumetricFlow(litresPerSecond / 1000);
@@ -291,6 +296,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="litresPerHour">The value in L/h</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromLitresPerHour(double litresPerHour)
         {
             return new VolumetricFlow(litresPerHour / 3600000);
@@ -300,6 +306,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="litresPerMinute">The value in L/min</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromLitresPerMinute(double litresPerMinute)
         {
             return new VolumetricFlow(litresPerMinute / 60000);
@@ -309,6 +316,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="millilitresPerSecond">The value in ml/s</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromMillilitresPerSecond(double millilitresPerSecond)
         {
             return new VolumetricFlow(millilitresPerSecond / 1000000);
@@ -318,6 +326,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="millilitresPerHour">The value in ml/h</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromMillilitresPerHour(double millilitresPerHour)
         {
             return new VolumetricFlow(millilitresPerHour / 3600000000);
@@ -327,6 +336,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="millilitresPerMinute">The value in ml/min</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromMillilitresPerMinute(double millilitresPerMinute)
         {
             return new VolumetricFlow(millilitresPerMinute / 60000000);
@@ -336,6 +346,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="centilitresPerSecond">The value in cl/s</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromCentilitresPerSecond(double centilitresPerSecond)
         {
             return new VolumetricFlow(centilitresPerSecond / 100000);
@@ -345,6 +356,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="centilitresPerHour">The value in cl/h</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromCentilitresPerHour(double centilitresPerHour)
         {
             return new VolumetricFlow(centilitresPerHour / 360000000);
@@ -354,6 +366,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="centilitresPerMinute">The value in cl/min</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromCentilitresPerMinute(double centilitresPerMinute)
         {
             return new VolumetricFlow(centilitresPerMinute / 6000000);
@@ -363,6 +376,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="cubicFeetPerHour">The value in ft³/h</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromCubicFeetPerHour(double cubicFeetPerHour)
         {
             return new VolumetricFlow(7.86579072E-06 * cubicFeetPerHour);
@@ -372,6 +386,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="cubicFeetPerSecond">The value in ft³/s</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromCubicFeetPerSecond(double cubicFeetPerSecond)
         {
             return new VolumetricFlow(0.028316846592 * cubicFeetPerSecond);
@@ -381,6 +396,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="cubicFeetPerMinute">The value in ft³/min</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromCubicFeetPerMinute(double cubicFeetPerMinute)
         {
             return new VolumetricFlow(0.0004719474432 * cubicFeetPerMinute);
@@ -390,6 +406,7 @@
         /// Creates a new instance of <see cref="Gu.Units.VolumetricFlow"/>.
         /// </summary>
         /// <param name="cubicFeetPerDay">The value in ft³/d</param>
+        /// <returns>An instance of <see cref="Gu.Units.VolumetricFlow"/></returns>
         public static VolumetricFlow FromCubicFeetPerDay(double cubicFeetPerDay)
         {
             return new VolumetricFlow(3.2774128E-07 * cubicFeetPerDay);

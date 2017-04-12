@@ -172,11 +172,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Flexibility"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Flexibility"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
         public static Flexibility ReadFrom(XmlReader reader)
         {
-            var v = new Flexibility();
+            var v = default(Flexibility);
             v.ReadXml(reader);
             return v;
         }
@@ -184,8 +184,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
         public static Flexibility From(double value, FlexibilityUnit unit)
         {
             return new Flexibility(unit.ToSiUnit(value));
@@ -195,6 +196,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
         /// </summary>
         /// <param name="metresPerNewton">The value in <see cref="Gu.Units.FlexibilityUnit.MetresPerNewton"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
         public static Flexibility FromMetresPerNewton(double metresPerNewton)
         {
             return new Flexibility(metresPerNewton);
@@ -204,6 +206,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
         /// </summary>
         /// <param name="millimetresPerNewton">The value in mm/N</param>
+        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
         public static Flexibility FromMillimetresPerNewton(double millimetresPerNewton)
         {
             return new Flexibility(millimetresPerNewton / 1000);
@@ -213,6 +216,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
         /// </summary>
         /// <param name="millimetresPerKilonewton">The value in mm/kN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
         public static Flexibility FromMillimetresPerKilonewton(double millimetresPerKilonewton)
         {
             return new Flexibility(millimetresPerKilonewton / 1000000);
@@ -222,6 +226,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
         /// </summary>
         /// <param name="micrometresPerKilonewton">The value in µm/kN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
         public static Flexibility FromMicrometresPerKilonewton(double micrometresPerKilonewton)
         {
             return new Flexibility(micrometresPerKilonewton / 1000000000);

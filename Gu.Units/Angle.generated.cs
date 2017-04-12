@@ -162,11 +162,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Angle"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Angle"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Angle"/></returns>
         public static Angle ReadFrom(XmlReader reader)
         {
-            var v = new Angle();
+            var v = default(Angle);
             v.ReadXml(reader);
             return v;
         }
@@ -174,8 +174,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Angle"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Angle"/></returns>
         public static Angle From(double value, AngleUnit unit)
         {
             return new Angle(unit.ToSiUnit(value));
@@ -185,6 +186,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Angle"/>.
         /// </summary>
         /// <param name="radians">The value in <see cref="Gu.Units.AngleUnit.Radians"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Angle"/></returns>
         public static Angle FromRadians(double radians)
         {
             return new Angle(radians);
@@ -194,6 +196,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Angle"/>.
         /// </summary>
         /// <param name="degrees">The value in °</param>
+        /// <returns>An instance of <see cref="Gu.Units.Angle"/></returns>
         public static Angle FromDegrees(double degrees)
         {
             return new Angle(degrees / 57.295779513082323);

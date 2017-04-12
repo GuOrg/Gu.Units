@@ -172,11 +172,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Unitless"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Unitless"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Unitless"/></returns>
         public static Unitless ReadFrom(XmlReader reader)
         {
-            var v = new Unitless();
+            var v = default(Unitless);
             v.ReadXml(reader);
             return v;
         }
@@ -184,8 +184,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Unitless"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Unitless"/></returns>
         public static Unitless From(double value, UnitlessUnit unit)
         {
             return new Unitless(unit.ToSiUnit(value));
@@ -195,6 +196,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Unitless"/>.
         /// </summary>
         /// <param name="scalar">The value in <see cref="Gu.Units.UnitlessUnit.Scalar"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Unitless"/></returns>
         public static Unitless FromScalar(double scalar)
         {
             return new Unitless(scalar);
@@ -204,6 +206,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Unitless"/>.
         /// </summary>
         /// <param name="promilles">The value in ‰</param>
+        /// <returns>An instance of <see cref="Gu.Units.Unitless"/></returns>
         public static Unitless FromPromilles(double promilles)
         {
             return new Unitless(promilles / 1000);
@@ -213,6 +216,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Unitless"/>.
         /// </summary>
         /// <param name="partsPerMillion">The value in ppm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Unitless"/></returns>
         public static Unitless FromPartsPerMillion(double partsPerMillion)
         {
             return new Unitless(partsPerMillion / 1000000);
@@ -222,6 +226,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Unitless"/>.
         /// </summary>
         /// <param name="percents">The value in %</param>
+        /// <returns>An instance of <see cref="Gu.Units.Unitless"/></returns>
         public static Unitless FromPercents(double percents)
         {
             return new Unitless(percents / 100);

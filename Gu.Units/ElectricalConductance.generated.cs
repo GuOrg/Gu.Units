@@ -157,11 +157,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.ElectricalConductance"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.ElectricalConductance"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricalConductance"/></returns>
         public static ElectricalConductance ReadFrom(XmlReader reader)
         {
-            var v = new ElectricalConductance();
+            var v = default(ElectricalConductance);
             v.ReadXml(reader);
             return v;
         }
@@ -169,8 +169,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.ElectricalConductance"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricalConductance"/></returns>
         public static ElectricalConductance From(double value, ElectricalConductanceUnit unit)
         {
             return new ElectricalConductance(unit.ToSiUnit(value));
@@ -180,6 +181,7 @@
         /// Creates a new instance of <see cref="Gu.Units.ElectricalConductance"/>.
         /// </summary>
         /// <param name="siemens">The value in <see cref="Gu.Units.ElectricalConductanceUnit.Siemens"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricalConductance"/></returns>
         public static ElectricalConductance FromSiemens(double siemens)
         {
             return new ElectricalConductance(siemens);

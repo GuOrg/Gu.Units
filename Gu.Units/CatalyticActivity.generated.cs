@@ -157,11 +157,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.CatalyticActivity"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.CatalyticActivity"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.CatalyticActivity"/></returns>
         public static CatalyticActivity ReadFrom(XmlReader reader)
         {
-            var v = new CatalyticActivity();
+            var v = default(CatalyticActivity);
             v.ReadXml(reader);
             return v;
         }
@@ -169,8 +169,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.CatalyticActivity"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.CatalyticActivity"/></returns>
         public static CatalyticActivity From(double value, CatalyticActivityUnit unit)
         {
             return new CatalyticActivity(unit.ToSiUnit(value));
@@ -180,6 +181,7 @@
         /// Creates a new instance of <see cref="Gu.Units.CatalyticActivity"/>.
         /// </summary>
         /// <param name="katals">The value in <see cref="Gu.Units.CatalyticActivityUnit.Katals"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.CatalyticActivity"/></returns>
         public static CatalyticActivity FromKatals(double katals)
         {
             return new CatalyticActivity(katals);

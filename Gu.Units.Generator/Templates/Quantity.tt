@@ -181,11 +181,11 @@ namespace <#= Settings.Namespace #>
         /// <summary>
         /// Reads an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></returns>
         public static <#= quantity.Name #> ReadFrom(XmlReader reader)
         {
-            var v = new <#= quantity.Name #>();
+            var v = default(<#= quantity.Name #>);
             v.ReadXml(reader);
             return v;
         }
@@ -193,8 +193,9 @@ namespace <#= Settings.Namespace #>
         /// <summary>
         /// Creates a new instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></returns>
         public static <#= quantity.Name #> From(double value, <#= quantity.UnitName #> unit)
         {
             return new <#= quantity.Name #>(unit.<#= Names.ToSiUnit #>(value));
@@ -204,6 +205,7 @@ namespace <#= Settings.Namespace #>
         /// Creates a new instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
         /// <param name="<#= quantity.Unit.ParameterName #>">The value in <see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>.<#= quantity.Unit.Name #>"/></param>
+        /// <returns>An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></returns>
         public static <#= quantity.Name #> From<#= quantity.Unit.Name #>(double <#= quantity.Unit.ParameterName #>)
         {
             return new <#= quantity.Name #>(<#= quantity.Unit.ParameterName #>);
@@ -218,6 +220,7 @@ namespace <#= Settings.Namespace #>
         /// Creates a new instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
         /// <param name="<#= su.ParameterName #>">The value in <#= su.Symbol #></param>
+        /// <returns>An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></returns>
         public static <#= quantity.Name #> From<#= su.Name #>(double <#= su.ParameterName #>)
         {
             return new <#= quantity.Name #>(<#= toSi #>);
@@ -236,7 +239,7 @@ namespace <#= Settings.Namespace #>
         /// <param name="left">The left value</param>
         /// <param name="right">The right value</param>
         /// <returns>The <see cref="<#= op.Result.Name #>"/> that is the result from the <#= op.Operator == "*" ? "multiplication" : "division" #>.</returns>
-        public static <#= op.Result.Name #> operator<#= op.Operator #>(<#= op.Left.Name #> left, <#= op.Right.Name #> right)
+        public static <#= op.Result.Name #> operator <#= op.Operator #>(<#= op.Left.Name #> left, <#= op.Right.Name #> right)
         {
             return <#= op.Result.Name #>.From<#= op.Result.Unit.Name #>(left.<#= op.Left.Unit.ParameterName #> <#= op.Operator #> right.<#= op.Right.Unit.ParameterName #>);
         }
@@ -254,7 +257,7 @@ namespace <#= Settings.Namespace #>
         /// <param name="left">The left value</param>
         /// <param name="right">The right value</param>
         /// <returns>The <#= quantity.Inverse.Inverted.Name #> that is the result from the division.</returns>
-        public static <#= quantity.Inverse.Inverted.Name #> operator/(double left, <#= quantity.Name #> right)
+        public static <#= quantity.Inverse.Inverted.Name #> operator /(double left, <#= quantity.Name #> right)
         {
             return <#= quantity.Inverse.Inverted.Name #>.From<#= quantity.Inverse.Inverted.Unit.Name #>(left / right.<#= quantity.Unit.ParameterName #>);
         }
@@ -359,7 +362,7 @@ namespace <#= Settings.Namespace #>
         /// <returns>Multiplies an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> with <paramref name="left"/> and returns the result.</returns>
         public static <#= quantity.Name #> operator *(double left, <#= quantity.Name #> right)
         {
-            return new <#= quantity.Name #>(left*right.<#= quantity.Unit.ParameterName #>);
+            return new <#= quantity.Name #>(left * right.<#= quantity.Unit.ParameterName #>);
         }
 
         /// <summary>
@@ -370,7 +373,7 @@ namespace <#= Settings.Namespace #>
         /// <returns>Multiplies an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> with <paramref name="right"/> and returns the result.</returns>
         public static <#= quantity.Name #> operator *(<#= quantity.Name #> left, double right)
         {
-            return new <#= quantity.Name #>(left.<#= quantity.Unit.ParameterName #>*right);
+            return new <#= quantity.Name #>(left.<#= quantity.Unit.ParameterName #> * right);
         }
 
         /// <summary>
@@ -419,7 +422,7 @@ namespace <#= Settings.Namespace #>
         /// <param name="<#= quantity.ParameterName #>">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></param>
         public static <#= quantity.Name #> operator -(<#= quantity.Name #> <#= quantity.ParameterName #>)
         {
-            return new <#= quantity.Name #>(-1*<#= quantity.ParameterName #>.<#= quantity.Unit.ParameterName #>);
+            return new <#= quantity.Name #>(-1 * <#= quantity.ParameterName #>.<#= quantity.Unit.ParameterName #>);
         }
 
         /// <summary>
@@ -443,7 +446,7 @@ namespace <#= Settings.Namespace #>
         {
             return unit.FromSiUnit(this.<#= quantity.Unit.ParameterName #>);
         }
- 
+
         /// <summary>
         /// Returns a string with the <see cref="SiValue"/> and <see cref="SiUnit"/>
         /// </summary>
@@ -670,7 +673,7 @@ namespace <#= Settings.Namespace #>
             return Math.Abs(this.<#= quantity.Unit.ParameterName #> - other.<#= quantity.Unit.ParameterName #>) < tolerance.<#= quantity.Unit.ParameterName #>;
         }
 
-         /// <summary>
+        /// <summary>
         /// Returns a quantity indicating whether this instance is equal to a specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> object.
         /// </summary>
         /// <param name="obj">An object to compare with this instance.</param>
@@ -720,7 +723,7 @@ namespace <#= Settings.Namespace #>
             // Hacking set readonly fields here, can't think of a cleaner workaround
             XmlExt.SetReadonlyField(ref this, "<#= quantity.Unit.ParameterName #>", reader, "Value");
         }
- 
+
         /// <summary>
         /// Converts an object into its XML representation.
         /// </summary>

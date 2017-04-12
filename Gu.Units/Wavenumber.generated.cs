@@ -157,11 +157,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Wavenumber"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Wavenumber"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Wavenumber"/></returns>
         public static Wavenumber ReadFrom(XmlReader reader)
         {
-            var v = new Wavenumber();
+            var v = default(Wavenumber);
             v.ReadXml(reader);
             return v;
         }
@@ -169,8 +169,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Wavenumber"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Wavenumber"/></returns>
         public static Wavenumber From(double value, WavenumberUnit unit)
         {
             return new Wavenumber(unit.ToSiUnit(value));
@@ -180,6 +181,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Wavenumber"/>.
         /// </summary>
         /// <param name="reciprocalMetres">The value in <see cref="Gu.Units.WavenumberUnit.ReciprocalMetres"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Wavenumber"/></returns>
         public static Wavenumber FromReciprocalMetres(double reciprocalMetres)
         {
             return new Wavenumber(reciprocalMetres);

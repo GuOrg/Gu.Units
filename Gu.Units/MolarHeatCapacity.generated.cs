@@ -157,11 +157,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.MolarHeatCapacity"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.MolarHeatCapacity"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.MolarHeatCapacity"/></returns>
         public static MolarHeatCapacity ReadFrom(XmlReader reader)
         {
-            var v = new MolarHeatCapacity();
+            var v = default(MolarHeatCapacity);
             v.ReadXml(reader);
             return v;
         }
@@ -169,8 +169,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.MolarHeatCapacity"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.MolarHeatCapacity"/></returns>
         public static MolarHeatCapacity From(double value, MolarHeatCapacityUnit unit)
         {
             return new MolarHeatCapacity(unit.ToSiUnit(value));
@@ -180,6 +181,7 @@
         /// Creates a new instance of <see cref="Gu.Units.MolarHeatCapacity"/>.
         /// </summary>
         /// <param name="joulesPerKelvinMole">The value in <see cref="Gu.Units.MolarHeatCapacityUnit.JoulesPerKelvinMole"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.MolarHeatCapacity"/></returns>
         public static MolarHeatCapacity FromJoulesPerKelvinMole(double joulesPerKelvinMole)
         {
             return new MolarHeatCapacity(joulesPerKelvinMole);

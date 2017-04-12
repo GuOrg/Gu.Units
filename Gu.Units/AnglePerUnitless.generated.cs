@@ -167,11 +167,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.AnglePerUnitless"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.AnglePerUnitless"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AnglePerUnitless"/></returns>
         public static AnglePerUnitless ReadFrom(XmlReader reader)
         {
-            var v = new AnglePerUnitless();
+            var v = default(AnglePerUnitless);
             v.ReadXml(reader);
             return v;
         }
@@ -179,8 +179,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AnglePerUnitless"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AnglePerUnitless"/></returns>
         public static AnglePerUnitless From(double value, AnglePerUnitlessUnit unit)
         {
             return new AnglePerUnitless(unit.ToSiUnit(value));
@@ -190,6 +191,7 @@
         /// Creates a new instance of <see cref="Gu.Units.AnglePerUnitless"/>.
         /// </summary>
         /// <param name="radiansPerUnitless">The value in <see cref="Gu.Units.AnglePerUnitlessUnit.RadiansPerUnitless"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.AnglePerUnitless"/></returns>
         public static AnglePerUnitless FromRadiansPerUnitless(double radiansPerUnitless)
         {
             return new AnglePerUnitless(radiansPerUnitless);
@@ -199,6 +201,7 @@
         /// Creates a new instance of <see cref="Gu.Units.AnglePerUnitless"/>.
         /// </summary>
         /// <param name="degreesPerPercent">The value in °/%</param>
+        /// <returns>An instance of <see cref="Gu.Units.AnglePerUnitless"/></returns>
         public static AnglePerUnitless FromDegreesPerPercent(double degreesPerPercent)
         {
             return new AnglePerUnitless(1.74532925199433 * degreesPerPercent);
@@ -208,6 +211,7 @@
         /// Creates a new instance of <see cref="Gu.Units.AnglePerUnitless"/>.
         /// </summary>
         /// <param name="radiansPerPercent">The value in rad/%</param>
+        /// <returns>An instance of <see cref="Gu.Units.AnglePerUnitless"/></returns>
         public static AnglePerUnitless FromRadiansPerPercent(double radiansPerPercent)
         {
             return new AnglePerUnitless(100 * radiansPerPercent);

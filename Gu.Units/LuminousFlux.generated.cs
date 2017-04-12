@@ -157,11 +157,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.LuminousFlux"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.LuminousFlux"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.LuminousFlux"/></returns>
         public static LuminousFlux ReadFrom(XmlReader reader)
         {
-            var v = new LuminousFlux();
+            var v = default(LuminousFlux);
             v.ReadXml(reader);
             return v;
         }
@@ -169,8 +169,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.LuminousFlux"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.LuminousFlux"/></returns>
         public static LuminousFlux From(double value, LuminousFluxUnit unit)
         {
             return new LuminousFlux(unit.ToSiUnit(value));
@@ -180,6 +181,7 @@
         /// Creates a new instance of <see cref="Gu.Units.LuminousFlux"/>.
         /// </summary>
         /// <param name="lumens">The value in <see cref="Gu.Units.LuminousFluxUnit.Lumens"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.LuminousFlux"/></returns>
         public static LuminousFlux FromLumens(double lumens)
         {
             return new LuminousFlux(lumens);

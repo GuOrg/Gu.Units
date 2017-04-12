@@ -167,11 +167,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Temperature"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Temperature"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Temperature"/></returns>
         public static Temperature ReadFrom(XmlReader reader)
         {
-            var v = new Temperature();
+            var v = default(Temperature);
             v.ReadXml(reader);
             return v;
         }
@@ -179,8 +179,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Temperature"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Temperature"/></returns>
         public static Temperature From(double value, TemperatureUnit unit)
         {
             return new Temperature(unit.ToSiUnit(value));
@@ -190,6 +191,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Temperature"/>.
         /// </summary>
         /// <param name="kelvin">The value in <see cref="Gu.Units.TemperatureUnit.Kelvin"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Temperature"/></returns>
         public static Temperature FromKelvin(double kelvin)
         {
             return new Temperature(kelvin);
@@ -199,6 +201,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Temperature"/>.
         /// </summary>
         /// <param name="celsius">The value in °C</param>
+        /// <returns>An instance of <see cref="Gu.Units.Temperature"/></returns>
         public static Temperature FromCelsius(double celsius)
         {
             return new Temperature(celsius + 273.15);
@@ -208,6 +211,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Temperature"/>.
         /// </summary>
         /// <param name="fahrenheit">The value in °F</param>
+        /// <returns>An instance of <see cref="Gu.Units.Temperature"/></returns>
         public static Temperature FromFahrenheit(double fahrenheit)
         {
             return new Temperature((fahrenheit + 459.67) / 1.8);

@@ -202,11 +202,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Volume"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Volume"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
         public static Volume ReadFrom(XmlReader reader)
         {
-            var v = new Volume();
+            var v = default(Volume);
             v.ReadXml(reader);
             return v;
         }
@@ -214,8 +214,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
         public static Volume From(double value, VolumeUnit unit)
         {
             return new Volume(unit.ToSiUnit(value));
@@ -225,6 +226,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="cubicMetres">The value in <see cref="Gu.Units.VolumeUnit.CubicMetres"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
         public static Volume FromCubicMetres(double cubicMetres)
         {
             return new Volume(cubicMetres);
@@ -234,6 +236,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="litres">The value in L</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
         public static Volume FromLitres(double litres)
         {
             return new Volume(litres / 1000);
@@ -243,6 +246,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="millilitres">The value in ml</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
         public static Volume FromMillilitres(double millilitres)
         {
             return new Volume(millilitres / 1000000);
@@ -252,6 +256,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="centilitres">The value in cl</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
         public static Volume FromCentilitres(double centilitres)
         {
             return new Volume(centilitres / 100000);
@@ -261,6 +266,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="decilitres">The value in dl</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
         public static Volume FromDecilitres(double decilitres)
         {
             return new Volume(decilitres / 10000);
@@ -270,6 +276,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="cubicCentimetres">The value in cm³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
         public static Volume FromCubicCentimetres(double cubicCentimetres)
         {
             return new Volume(cubicCentimetres / 1000000);
@@ -279,6 +286,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="cubicMillimetres">The value in mm³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
         public static Volume FromCubicMillimetres(double cubicMillimetres)
         {
             return new Volume(cubicMillimetres / 1000000000);
@@ -288,6 +296,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="cubicInches">The value in in³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
         public static Volume FromCubicInches(double cubicInches)
         {
             return new Volume(1.6387064E-05 * cubicInches);
@@ -297,6 +306,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="cubicDecimetres">The value in dm³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
         public static Volume FromCubicDecimetres(double cubicDecimetres)
         {
             return new Volume(cubicDecimetres / 1000);
@@ -306,6 +316,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
         /// </summary>
         /// <param name="cubicFeet">The value in ft³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
         public static Volume FromCubicFeet(double cubicFeet)
         {
             return new Volume(0.028316846592 * cubicFeet);

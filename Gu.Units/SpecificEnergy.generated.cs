@@ -162,11 +162,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.SpecificEnergy"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.SpecificEnergy"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.SpecificEnergy"/></returns>
         public static SpecificEnergy ReadFrom(XmlReader reader)
         {
-            var v = new SpecificEnergy();
+            var v = default(SpecificEnergy);
             v.ReadXml(reader);
             return v;
         }
@@ -174,8 +174,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.SpecificEnergy"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.SpecificEnergy"/></returns>
         public static SpecificEnergy From(double value, SpecificEnergyUnit unit)
         {
             return new SpecificEnergy(unit.ToSiUnit(value));
@@ -185,6 +186,7 @@
         /// Creates a new instance of <see cref="Gu.Units.SpecificEnergy"/>.
         /// </summary>
         /// <param name="joulesPerKilogram">The value in <see cref="Gu.Units.SpecificEnergyUnit.JoulesPerKilogram"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.SpecificEnergy"/></returns>
         public static SpecificEnergy FromJoulesPerKilogram(double joulesPerKilogram)
         {
             return new SpecificEnergy(joulesPerKilogram);
@@ -194,6 +196,7 @@
         /// Creates a new instance of <see cref="Gu.Units.SpecificEnergy"/>.
         /// </summary>
         /// <param name="kilojoulesPerKilogram">The value in kJ/kg</param>
+        /// <returns>An instance of <see cref="Gu.Units.SpecificEnergy"/></returns>
         public static SpecificEnergy FromKilojoulesPerKilogram(double kilojoulesPerKilogram)
         {
             return new SpecificEnergy(1000 * kilojoulesPerKilogram);

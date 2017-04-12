@@ -187,11 +187,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Force"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Force"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force ReadFrom(XmlReader reader)
         {
-            var v = new Force();
+            var v = default(Force);
             v.ReadXml(reader);
             return v;
         }
@@ -199,8 +199,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force From(double value, ForceUnit unit)
         {
             return new Force(unit.ToSiUnit(value));
@@ -210,6 +211,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
         /// <param name="newtons">The value in <see cref="Gu.Units.ForceUnit.Newtons"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force FromNewtons(double newtons)
         {
             return new Force(newtons);
@@ -219,6 +221,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
         /// <param name="nanonewtons">The value in nN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force FromNanonewtons(double nanonewtons)
         {
             return new Force(nanonewtons / 1000000000);
@@ -228,6 +231,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
         /// <param name="micronewtons">The value in µN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force FromMicronewtons(double micronewtons)
         {
             return new Force(micronewtons / 1000000);
@@ -237,6 +241,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
         /// <param name="millinewtons">The value in mN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force FromMillinewtons(double millinewtons)
         {
             return new Force(millinewtons / 1000);
@@ -246,6 +251,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
         /// <param name="kilonewtons">The value in kN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force FromKilonewtons(double kilonewtons)
         {
             return new Force(1000 * kilonewtons);
@@ -255,6 +261,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
         /// <param name="meganewtons">The value in MN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force FromMeganewtons(double meganewtons)
         {
             return new Force(1000000 * meganewtons);
@@ -264,6 +271,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
         /// <param name="giganewtons">The value in GN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force FromGiganewtons(double giganewtons)
         {
             return new Force(1000000000 * giganewtons);

@@ -157,11 +157,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.MagneticFieldStrength"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.MagneticFieldStrength"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.MagneticFieldStrength"/></returns>
         public static MagneticFieldStrength ReadFrom(XmlReader reader)
         {
-            var v = new MagneticFieldStrength();
+            var v = default(MagneticFieldStrength);
             v.ReadXml(reader);
             return v;
         }
@@ -169,8 +169,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.MagneticFieldStrength"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.MagneticFieldStrength"/></returns>
         public static MagneticFieldStrength From(double value, MagneticFieldStrengthUnit unit)
         {
             return new MagneticFieldStrength(unit.ToSiUnit(value));
@@ -180,6 +181,7 @@
         /// Creates a new instance of <see cref="Gu.Units.MagneticFieldStrength"/>.
         /// </summary>
         /// <param name="teslas">The value in <see cref="Gu.Units.MagneticFieldStrengthUnit.Teslas"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.MagneticFieldStrength"/></returns>
         public static MagneticFieldStrength FromTeslas(double teslas)
         {
             return new MagneticFieldStrength(teslas);

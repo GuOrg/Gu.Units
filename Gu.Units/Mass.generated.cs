@@ -192,11 +192,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Mass"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Mass"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass ReadFrom(XmlReader reader)
         {
-            var v = new Mass();
+            var v = default(Mass);
             v.ReadXml(reader);
             return v;
         }
@@ -204,8 +204,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass From(double value, MassUnit unit)
         {
             return new Mass(unit.ToSiUnit(value));
@@ -215,6 +216,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <param name="kilograms">The value in <see cref="Gu.Units.MassUnit.Kilograms"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromKilograms(double kilograms)
         {
             return new Mass(kilograms);
@@ -224,6 +226,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <param name="grams">The value in g</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromGrams(double grams)
         {
             return new Mass(grams / 1000);
@@ -233,6 +236,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <param name="milligrams">The value in mg</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromMilligrams(double milligrams)
         {
             return new Mass(milligrams / 1000000);
@@ -242,6 +246,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <param name="micrograms">The value in µg</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromMicrograms(double micrograms)
         {
             return new Mass(micrograms / 1000000000);
@@ -251,6 +256,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <param name="avoirdupoisPounds">The value in lb</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromAvoirdupoisPounds(double avoirdupoisPounds)
         {
             return new Mass(0.45359237 * avoirdupoisPounds);
@@ -260,6 +266,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <param name="avoirdupoisOunces">The value in oz</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromAvoirdupoisOunces(double avoirdupoisOunces)
         {
             return new Mass(0.028349523125 * avoirdupoisOunces);
@@ -269,6 +276,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <param name="troyOunces">The value in troy</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromTroyOunces(double troyOunces)
         {
             return new Mass(0.0311034768 * troyOunces);
@@ -278,6 +286,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <param name="troyGrains">The value in gr</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromTroyGrains(double troyGrains)
         {
             return new Mass(6.479891E-05 * troyGrains);

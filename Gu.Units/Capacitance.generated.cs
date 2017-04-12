@@ -187,11 +187,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Capacitance"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Capacitance"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance ReadFrom(XmlReader reader)
         {
-            var v = new Capacitance();
+            var v = default(Capacitance);
             v.ReadXml(reader);
             return v;
         }
@@ -199,8 +199,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance From(double value, CapacitanceUnit unit)
         {
             return new Capacitance(unit.ToSiUnit(value));
@@ -210,6 +211,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
         /// <param name="farads">The value in <see cref="Gu.Units.CapacitanceUnit.Farads"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance FromFarads(double farads)
         {
             return new Capacitance(farads);
@@ -219,6 +221,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
         /// <param name="nanofarads">The value in nF</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance FromNanofarads(double nanofarads)
         {
             return new Capacitance(nanofarads / 1000000000);
@@ -228,6 +231,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
         /// <param name="microfarads">The value in µF</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance FromMicrofarads(double microfarads)
         {
             return new Capacitance(microfarads / 1000000);
@@ -237,6 +241,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
         /// <param name="millifarads">The value in mF</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance FromMillifarads(double millifarads)
         {
             return new Capacitance(millifarads / 1000);
@@ -246,6 +251,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
         /// <param name="kilofarads">The value in kF</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance FromKilofarads(double kilofarads)
         {
             return new Capacitance(1000 * kilofarads);
@@ -255,6 +261,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
         /// <param name="megafarads">The value in MF</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance FromMegafarads(double megafarads)
         {
             return new Capacitance(1000000 * megafarads);
@@ -264,6 +271,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
         /// <param name="gigafarads">The value in GF</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance FromGigafarads(double gigafarads)
         {
             return new Capacitance(1000000000 * gigafarads);

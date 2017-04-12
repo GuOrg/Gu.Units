@@ -212,11 +212,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Stiffness"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Stiffness"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Stiffness"/></returns>
         public static Stiffness ReadFrom(XmlReader reader)
         {
-            var v = new Stiffness();
+            var v = default(Stiffness);
             v.ReadXml(reader);
             return v;
         }
@@ -224,8 +224,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Stiffness"/></returns>
         public static Stiffness From(double value, StiffnessUnit unit)
         {
             return new Stiffness(unit.ToSiUnit(value));
@@ -235,6 +236,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
         /// </summary>
         /// <param name="newtonsPerMetre">The value in <see cref="Gu.Units.StiffnessUnit.NewtonsPerMetre"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Stiffness"/></returns>
         public static Stiffness FromNewtonsPerMetre(double newtonsPerMetre)
         {
             return new Stiffness(newtonsPerMetre);
@@ -244,6 +246,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
         /// </summary>
         /// <param name="newtonsPerNanometre">The value in N/nm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Stiffness"/></returns>
         public static Stiffness FromNewtonsPerNanometre(double newtonsPerNanometre)
         {
             return new Stiffness(1000000000 * newtonsPerNanometre);
@@ -253,6 +256,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
         /// </summary>
         /// <param name="newtonsPerMicrometre">The value in N/µm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Stiffness"/></returns>
         public static Stiffness FromNewtonsPerMicrometre(double newtonsPerMicrometre)
         {
             return new Stiffness(1000000 * newtonsPerMicrometre);
@@ -262,6 +266,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
         /// </summary>
         /// <param name="newtonsPerMillimetre">The value in N/mm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Stiffness"/></returns>
         public static Stiffness FromNewtonsPerMillimetre(double newtonsPerMillimetre)
         {
             return new Stiffness(1000 * newtonsPerMillimetre);
@@ -271,6 +276,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
         /// </summary>
         /// <param name="kilonewtonsPerNanometre">The value in kN/nm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Stiffness"/></returns>
         public static Stiffness FromKilonewtonsPerNanometre(double kilonewtonsPerNanometre)
         {
             return new Stiffness(1000000000000 * kilonewtonsPerNanometre);
@@ -280,6 +286,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
         /// </summary>
         /// <param name="kilonewtonsPerMicrometre">The value in kN/µm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Stiffness"/></returns>
         public static Stiffness FromKilonewtonsPerMicrometre(double kilonewtonsPerMicrometre)
         {
             return new Stiffness(1000000000 * kilonewtonsPerMicrometre);
@@ -289,6 +296,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
         /// </summary>
         /// <param name="kilonewtonsPerMillimetre">The value in kN/mm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Stiffness"/></returns>
         public static Stiffness FromKilonewtonsPerMillimetre(double kilonewtonsPerMillimetre)
         {
             return new Stiffness(1000000 * kilonewtonsPerMillimetre);
@@ -298,6 +306,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
         /// </summary>
         /// <param name="meganewtonsPerNanometre">The value in MN/nm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Stiffness"/></returns>
         public static Stiffness FromMeganewtonsPerNanometre(double meganewtonsPerNanometre)
         {
             return new Stiffness(1000000000000000 * meganewtonsPerNanometre);
@@ -307,6 +316,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
         /// </summary>
         /// <param name="meganewtonsPerMicrometre">The value in MN/µm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Stiffness"/></returns>
         public static Stiffness FromMeganewtonsPerMicrometre(double meganewtonsPerMicrometre)
         {
             return new Stiffness(1000000000000 * meganewtonsPerMicrometre);
@@ -316,6 +326,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
         /// </summary>
         /// <param name="meganewtonsPerMillimetre">The value in MN/mm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Stiffness"/></returns>
         public static Stiffness FromMeganewtonsPerMillimetre(double meganewtonsPerMillimetre)
         {
             return new Stiffness(1000000000 * meganewtonsPerMillimetre);
@@ -325,6 +336,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
         /// </summary>
         /// <param name="giganewtonsPerMicrometre">The value in GN/µm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Stiffness"/></returns>
         public static Stiffness FromGiganewtonsPerMicrometre(double giganewtonsPerMicrometre)
         {
             return new Stiffness(1000000000000000 * giganewtonsPerMicrometre);
@@ -334,6 +346,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Stiffness"/>.
         /// </summary>
         /// <param name="giganewtonsPerMillimetre">The value in GN/mm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Stiffness"/></returns>
         public static Stiffness FromGiganewtonsPerMillimetre(double giganewtonsPerMillimetre)
         {
             return new Stiffness(1000000000000 * giganewtonsPerMillimetre);

@@ -177,11 +177,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Resistance"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Resistance"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance ReadFrom(XmlReader reader)
         {
-            var v = new Resistance();
+            var v = default(Resistance);
             v.ReadXml(reader);
             return v;
         }
@@ -189,8 +189,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance From(double value, ResistanceUnit unit)
         {
             return new Resistance(unit.ToSiUnit(value));
@@ -200,6 +201,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
         /// <param name="ohms">The value in <see cref="Gu.Units.ResistanceUnit.Ohms"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance FromOhms(double ohms)
         {
             return new Resistance(ohms);
@@ -209,6 +211,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
         /// <param name="microohms">The value in µΩ</param>
+        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance FromMicroohms(double microohms)
         {
             return new Resistance(microohms / 1000000);
@@ -218,6 +221,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
         /// <param name="milliohms">The value in mΩ</param>
+        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance FromMilliohms(double milliohms)
         {
             return new Resistance(milliohms / 1000);
@@ -227,6 +231,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
         /// <param name="kiloohms">The value in kΩ</param>
+        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance FromKiloohms(double kiloohms)
         {
             return new Resistance(1000 * kiloohms);
@@ -236,6 +241,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
         /// <param name="megaohms">The value in MΩ</param>
+        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance FromMegaohms(double megaohms)
         {
             return new Resistance(1000000 * megaohms);

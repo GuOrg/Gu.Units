@@ -40,15 +40,15 @@
             var intFactor = conversion.Factor.IntFactor();
             if (intFactor == 0)
             {
-                return $"{conversion.Factor.ToString(CultureInfo.InvariantCulture)}*{parameter}";
+                return $"{conversion.Factor.ToString(CultureInfo.InvariantCulture)} * {parameter}";
             }
 
             if (intFactor < 0)
             {
-                return $"{parameter}/{Math.Abs(intFactor)}";
+                return $"{parameter} / {Math.Abs(intFactor)}";
             }
 
-            return $"{intFactor}*{parameter}";
+            return $"{intFactor} * {parameter}";
         }
 
         public static string GetFromSi(this IFactorConversion conversion)
@@ -63,15 +63,15 @@
             var intFactor = conversion.Factor.IntFactor();
             if (intFactor == 0)
             {
-                return $"{parameter}/{conversion.Factor.ToString(CultureInfo.InvariantCulture)}";
+                return $"{parameter} / {conversion.Factor.ToString(CultureInfo.InvariantCulture)}";
             }
 
             if (intFactor < 0)
             {
-                return $"{Math.Abs(intFactor)}*{parameter}";
+                return $"{Math.Abs(intFactor)} * {parameter}";
             }
 
-            return $"{parameter}/{intFactor}";
+            return $"{parameter} / {intFactor}";
         }
 
         public static string GetSymbolConversion(this IConversion conversion)

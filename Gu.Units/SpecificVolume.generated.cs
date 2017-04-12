@@ -167,11 +167,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.SpecificVolume"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.SpecificVolume"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.SpecificVolume"/></returns>
         public static SpecificVolume ReadFrom(XmlReader reader)
         {
-            var v = new SpecificVolume();
+            var v = default(SpecificVolume);
             v.ReadXml(reader);
             return v;
         }
@@ -179,8 +179,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.SpecificVolume"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.SpecificVolume"/></returns>
         public static SpecificVolume From(double value, SpecificVolumeUnit unit)
         {
             return new SpecificVolume(unit.ToSiUnit(value));
@@ -190,6 +191,7 @@
         /// Creates a new instance of <see cref="Gu.Units.SpecificVolume"/>.
         /// </summary>
         /// <param name="cubicMetresPerKilogram">The value in <see cref="Gu.Units.SpecificVolumeUnit.CubicMetresPerKilogram"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.SpecificVolume"/></returns>
         public static SpecificVolume FromCubicMetresPerKilogram(double cubicMetresPerKilogram)
         {
             return new SpecificVolume(cubicMetresPerKilogram);
@@ -199,6 +201,7 @@
         /// Creates a new instance of <see cref="Gu.Units.SpecificVolume"/>.
         /// </summary>
         /// <param name="cubicMetresPerGram">The value in m³/g</param>
+        /// <returns>An instance of <see cref="Gu.Units.SpecificVolume"/></returns>
         public static SpecificVolume FromCubicMetresPerGram(double cubicMetresPerGram)
         {
             return new SpecificVolume(1000 * cubicMetresPerGram);
@@ -208,6 +211,7 @@
         /// Creates a new instance of <see cref="Gu.Units.SpecificVolume"/>.
         /// </summary>
         /// <param name="cubicCentimetresPerGram">The value in cm³/g</param>
+        /// <returns>An instance of <see cref="Gu.Units.SpecificVolume"/></returns>
         public static SpecificVolume FromCubicCentimetresPerGram(double cubicCentimetresPerGram)
         {
             return new SpecificVolume(cubicCentimetresPerGram / 1000);

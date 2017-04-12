@@ -187,11 +187,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.ElectricCharge"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.ElectricCharge"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
         public static ElectricCharge ReadFrom(XmlReader reader)
         {
-            var v = new ElectricCharge();
+            var v = default(ElectricCharge);
             v.ReadXml(reader);
             return v;
         }
@@ -199,8 +199,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
         public static ElectricCharge From(double value, ElectricChargeUnit unit)
         {
             return new ElectricCharge(unit.ToSiUnit(value));
@@ -210,6 +211,7 @@
         /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
         /// </summary>
         /// <param name="coulombs">The value in <see cref="Gu.Units.ElectricChargeUnit.Coulombs"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
         public static ElectricCharge FromCoulombs(double coulombs)
         {
             return new ElectricCharge(coulombs);
@@ -219,6 +221,7 @@
         /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
         /// </summary>
         /// <param name="nanocoulombs">The value in nC</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
         public static ElectricCharge FromNanocoulombs(double nanocoulombs)
         {
             return new ElectricCharge(nanocoulombs / 1000000000);
@@ -228,6 +231,7 @@
         /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
         /// </summary>
         /// <param name="microcoulombs">The value in µC</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
         public static ElectricCharge FromMicrocoulombs(double microcoulombs)
         {
             return new ElectricCharge(microcoulombs / 1000000);
@@ -237,6 +241,7 @@
         /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
         /// </summary>
         /// <param name="millicoulombs">The value in mC</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
         public static ElectricCharge FromMillicoulombs(double millicoulombs)
         {
             return new ElectricCharge(millicoulombs / 1000);
@@ -246,6 +251,7 @@
         /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
         /// </summary>
         /// <param name="kilocoulombs">The value in kC</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
         public static ElectricCharge FromKilocoulombs(double kilocoulombs)
         {
             return new ElectricCharge(1000 * kilocoulombs);
@@ -255,6 +261,7 @@
         /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
         /// </summary>
         /// <param name="megacoulombs">The value in MC</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
         public static ElectricCharge FromMegacoulombs(double megacoulombs)
         {
             return new ElectricCharge(1000000 * megacoulombs);
@@ -264,6 +271,7 @@
         /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
         /// </summary>
         /// <param name="gigacoulombs">The value in GC</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
         public static ElectricCharge FromGigacoulombs(double gigacoulombs)
         {
             return new ElectricCharge(1000000000 * gigacoulombs);

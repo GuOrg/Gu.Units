@@ -187,11 +187,11 @@
         /// <summary>
         /// Reads an instance of <see cref="Gu.Units.Inductance"/> from the <paramref name="reader"/>
         /// </summary>
-        /// <param name="reader"></param>
-        /// <returns>An instance of  <see cref="Gu.Units.Inductance"/></returns>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance ReadFrom(XmlReader reader)
         {
-            var v = new Inductance();
+            var v = default(Inductance);
             v.ReadXml(reader);
             return v;
         }
@@ -199,8 +199,9 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"></param>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance From(double value, InductanceUnit unit)
         {
             return new Inductance(unit.ToSiUnit(value));
@@ -210,6 +211,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
         /// <param name="henrys">The value in <see cref="Gu.Units.InductanceUnit.Henrys"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance FromHenrys(double henrys)
         {
             return new Inductance(henrys);
@@ -219,6 +221,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
         /// <param name="nanohenrys">The value in nH</param>
+        /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance FromNanohenrys(double nanohenrys)
         {
             return new Inductance(nanohenrys / 1000000000);
@@ -228,6 +231,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
         /// <param name="microhenrys">The value in µH</param>
+        /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance FromMicrohenrys(double microhenrys)
         {
             return new Inductance(microhenrys / 1000000);
@@ -237,6 +241,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
         /// <param name="millihenrys">The value in mH</param>
+        /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance FromMillihenrys(double millihenrys)
         {
             return new Inductance(millihenrys / 1000);
@@ -246,6 +251,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
         /// <param name="kilohenrys">The value in kH</param>
+        /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance FromKilohenrys(double kilohenrys)
         {
             return new Inductance(1000 * kilohenrys);
@@ -255,6 +261,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
         /// <param name="megahenrys">The value in MH</param>
+        /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance FromMegahenrys(double megahenrys)
         {
             return new Inductance(1000000 * megahenrys);
@@ -264,6 +271,7 @@
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
         /// <param name="gigahenrys">The value in GH</param>
+        /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance FromGigahenrys(double gigahenrys)
         {
             return new Inductance(1000000000 * gigahenrys);
