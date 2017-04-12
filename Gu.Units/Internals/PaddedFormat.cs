@@ -53,7 +53,7 @@
             return new PaddedFormat(this.PrePadding, this.Format, padding, this.IsUnknown);
         }
 
-        public PaddedFormat WithFormat(string format)
+        internal PaddedFormat WithFormat(string format)
         {
             return new PaddedFormat(this.PrePadding, format, this.PostPadding, this.IsUnknown);
         }

@@ -7,9 +7,14 @@
     internal static class FormatCache<TUnit>
         where TUnit : struct, IUnit, IEquatable<TUnit>
     {
-        internal static QuantityFormat<TUnit> DefaultQuantityFormat = CreateFromValueFormatAndUnit(new ValueAndUnitFormatKey(null, Unit<TUnit>.Default, DefaultSymbolFormat));
+        internal static readonly QuantityFormat<TUnit> DefaultQuantityFormat = CreateFromValueFormatAndUnit(new ValueAndUnitFormatKey(null, Unit<TUnit>.Default, DefaultSymbolFormat));
 
         private static readonly ConcurrentDictionary<IFormatKey, QuantityFormat<TUnit>> Cache = new ConcurrentDictionary<IFormatKey, QuantityFormat<TUnit>>();
+
+        /// <summary> For use as key in the cache </summary>
+        internal interface IFormatKey : IEquatable<IFormatKey>
+        {
+        }
 
         private static SymbolFormat DefaultSymbolFormat => SymbolFormat.FractionSuperScript;
 
@@ -51,10 +56,6 @@
             var symbolFormat = UnitFormatCache<TUnit>.GetOrCreate(key.SymbolFormat, out TUnit unit);
 
             return QuantityFormat<TUnit>.Create(valueFormat, symbolFormat, unit);
-        }
-
-        internal interface IFormatKey : IEquatable<IFormatKey>
-        {
         }
 
         [DebuggerDisplay("CompositeFormat: {CompositeFormat}")]

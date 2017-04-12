@@ -253,7 +253,7 @@
             while (pos < text.Length)
             {
                 var i = text[pos] - '0';
-                if (0 <= i && i <= 9)
+                if (i >= 0 && i <= 9)
                 {
                     pos++;
                     continue;

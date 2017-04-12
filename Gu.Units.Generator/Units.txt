@@ -229,7 +229,7 @@
           "Name": "Fahrenheit",
           "Symbol": "°F",
           "ToSi": "(fahrenheit + 459.67) / 1.8",
-          "FromSi": "1.8 * kelvin - 459.67"
+          "FromSi": "(1.8 * kelvin) - 459.67"
         }
       ],
       "PrefixConversions": [],

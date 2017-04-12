@@ -70,7 +70,7 @@
         /// <summary>
         /// Gets the quantity in Fahrenheit
         /// </summary>
-        public double Fahrenheit => 1.8 * this.kelvin - 459.67;
+        public double Fahrenheit => (1.8 * this.kelvin) - 459.67;
 
         /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>

@@ -12,7 +12,7 @@
     public class UnitFormatConverterExtension : MarkupExtension, IValueConverter
     {
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.UnitFormatConverterExtension"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.UnitFormatConverterExtension"/> class.
         /// </summary>
         /// <param name="format"><see cref="Gu.Units.SymbolFormat"/>.</param>
         public UnitFormatConverterExtension(SymbolFormat format)
@@ -21,7 +21,7 @@
         }
 
         /// <summary>
-        /// Gets and sets the format
+        /// Gets or sets the format
         /// </summary>
         [ConstructorArgument("format")]
         public SymbolFormat Format { get; set; }

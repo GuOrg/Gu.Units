@@ -5,6 +5,13 @@ namespace Gu.Units
 
     internal static class XmlExt
     {
+        internal static void WriteAttribute(XmlWriter writer, string name, double value)
+        {
+            writer.WriteStartAttribute(name);
+            writer.WriteValue(value);
+            writer.WriteEndAttribute();
+        }
+
         internal static void SetReadonlyField<T>(ref T self, string fieldName, XmlReader reader, string attributeName)
             where T : IQuantity
         {
@@ -33,13 +40,6 @@ namespace Gu.Units
             object boxed = self;
             fieldInfo.SetValue(boxed, value);
             self = (T)boxed;
-        }
-
-        internal static void WriteAttribute(XmlWriter writer, string name, double value)
-        {
-            writer.WriteStartAttribute(name);
-            writer.WriteValue(value);
-            writer.WriteEndAttribute();
         }
     }
 }

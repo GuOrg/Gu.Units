@@ -118,24 +118,6 @@
                 }
             }
 
-            private void AppendMultiplication(SymbolFormat symbolFormat)
-            {
-                switch (symbolFormat)
-                {
-                    case SymbolFormat.SignedHatPowers:
-                    case SymbolFormat.FractionHatPowers:
-                        this.Append('*');
-                        break;
-                    case SymbolFormat.Default:
-                    case SymbolFormat.SignedSuperScript:
-                    case SymbolFormat.FractionSuperScript:
-                        this.Append('⋅');
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException(nameof(symbolFormat), symbolFormat, null);
-                }
-            }
-
             internal void Append(SymbolAndPower symbolAndPower, SymbolFormat symbolFormat)
             {
                 this.Append(symbolAndPower.Symbol);
@@ -192,6 +174,24 @@
                             break;
                         }
 
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(symbolFormat), symbolFormat, null);
+                }
+            }
+
+            private void AppendMultiplication(SymbolFormat symbolFormat)
+            {
+                switch (symbolFormat)
+                {
+                    case SymbolFormat.SignedHatPowers:
+                    case SymbolFormat.FractionHatPowers:
+                        this.Append('*');
+                        break;
+                    case SymbolFormat.Default:
+                    case SymbolFormat.SignedSuperScript:
+                    case SymbolFormat.FractionSuperScript:
+                        this.Append('⋅');
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException(nameof(symbolFormat), symbolFormat, null);
                 }

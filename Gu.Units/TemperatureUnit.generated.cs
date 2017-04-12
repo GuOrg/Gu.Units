@@ -27,7 +27,7 @@
         /// The Fahrenheit unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly TemperatureUnit Fahrenheit = new TemperatureUnit(fahrenheit => (fahrenheit + 459.67) / 1.8, kelvin => 1.8 * kelvin - 459.67, "°F");
+        public static readonly TemperatureUnit Fahrenheit = new TemperatureUnit(fahrenheit => (fahrenheit + 459.67) / 1.8, kelvin => (1.8 * kelvin) - 459.67, "°F");
 
 #pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
 #pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter

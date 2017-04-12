@@ -10,7 +10,7 @@
         /// <summary>
         /// Creates a quantity with this unit
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">The scalar value.</param>
         /// <returns>new TTQuantity(value, this)</returns>
         TQuantity CreateQuantity(double value);
 
