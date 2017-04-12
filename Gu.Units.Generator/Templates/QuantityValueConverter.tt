@@ -433,7 +433,7 @@ namespace Gu.Units.Wpf
                             {
                                 this.UnitInput = Wpf.UnitInput.SymbolRequired;
                             }
-                            else if(this.UnitInput == Wpf.UnitInput.ScalarOnly)
+                            else if (this.UnitInput == Wpf.UnitInput.ScalarOnly)
                             {
                                 this.errorText.AppendLine("Cannot have ScalarOnly and SymbolFormat specified");
                             }
