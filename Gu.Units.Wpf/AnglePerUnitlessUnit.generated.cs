@@ -6,17 +6,17 @@
     public static class AnglePerUnitlessUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.AnglePerUnitlessUnit.RadiansPerUnitless"/>
+        /// Gets the <see cref="Gu.Units.AnglePerUnitlessUnit.RadiansPerUnitless"/> unit.
         /// </summary>
         public static Gu.Units.AnglePerUnitlessUnit RadiansPerUnitless => Gu.Units.AnglePerUnitlessUnit.RadiansPerUnitless;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AnglePerUnitlessUnit.DegreesPerPercent"/>
+        /// Gets the <see cref="Gu.Units.AnglePerUnitlessUnit.DegreesPerPercent"/> unit.
         /// </summary>
         public static Gu.Units.AnglePerUnitlessUnit DegreesPerPercent => Gu.Units.AnglePerUnitlessUnit.DegreesPerPercent;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AnglePerUnitlessUnit.RadiansPerPercent"/>
+        /// Gets the <see cref="Gu.Units.AnglePerUnitlessUnit.RadiansPerPercent"/> unit.
         /// </summary>
         public static Gu.Units.AnglePerUnitlessUnit RadiansPerPercent => Gu.Units.AnglePerUnitlessUnit.RadiansPerPercent;
     }

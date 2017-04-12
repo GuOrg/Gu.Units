@@ -6,42 +6,42 @@
     public static class MassUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.MassUnit.Kilograms"/>
+        /// Gets the <see cref="Gu.Units.MassUnit.Kilograms"/> unit.
         /// </summary>
         public static Gu.Units.MassUnit Kilograms => Gu.Units.MassUnit.Kilograms;
 
         /// <summary>
-        /// See <see cref="Gu.Units.MassUnit.Grams"/>
+        /// Gets the <see cref="Gu.Units.MassUnit.Grams"/> unit.
         /// </summary>
         public static Gu.Units.MassUnit Grams => Gu.Units.MassUnit.Grams;
 
         /// <summary>
-        /// See <see cref="Gu.Units.MassUnit.Milligrams"/>
+        /// Gets the <see cref="Gu.Units.MassUnit.Milligrams"/> unit.
         /// </summary>
         public static Gu.Units.MassUnit Milligrams => Gu.Units.MassUnit.Milligrams;
 
         /// <summary>
-        /// See <see cref="Gu.Units.MassUnit.Micrograms"/>
+        /// Gets the <see cref="Gu.Units.MassUnit.Micrograms"/> unit.
         /// </summary>
         public static Gu.Units.MassUnit Micrograms => Gu.Units.MassUnit.Micrograms;
 
         /// <summary>
-        /// See <see cref="Gu.Units.MassUnit.AvoirdupoisPounds"/>
+        /// Gets the <see cref="Gu.Units.MassUnit.AvoirdupoisPounds"/> unit.
         /// </summary>
         public static Gu.Units.MassUnit AvoirdupoisPounds => Gu.Units.MassUnit.AvoirdupoisPounds;
 
         /// <summary>
-        /// See <see cref="Gu.Units.MassUnit.AvoirdupoisOunces"/>
+        /// Gets the <see cref="Gu.Units.MassUnit.AvoirdupoisOunces"/> unit.
         /// </summary>
         public static Gu.Units.MassUnit AvoirdupoisOunces => Gu.Units.MassUnit.AvoirdupoisOunces;
 
         /// <summary>
-        /// See <see cref="Gu.Units.MassUnit.TroyOunces"/>
+        /// Gets the <see cref="Gu.Units.MassUnit.TroyOunces"/> unit.
         /// </summary>
         public static Gu.Units.MassUnit TroyOunces => Gu.Units.MassUnit.TroyOunces;
 
         /// <summary>
-        /// See <see cref="Gu.Units.MassUnit.TroyGrains"/>
+        /// Gets the <see cref="Gu.Units.MassUnit.TroyGrains"/> unit.
         /// </summary>
         public static Gu.Units.MassUnit TroyGrains => Gu.Units.MassUnit.TroyGrains;
     }

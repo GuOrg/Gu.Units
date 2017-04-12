@@ -6,7 +6,7 @@
     public static class MolarHeatCapacityUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.MolarHeatCapacityUnit.JoulesPerKelvinMole"/>
+        /// Gets the <see cref="Gu.Units.MolarHeatCapacityUnit.JoulesPerKelvinMole"/> unit.
         /// </summary>
         public static Gu.Units.MolarHeatCapacityUnit JoulesPerKelvinMole => Gu.Units.MolarHeatCapacityUnit.JoulesPerKelvinMole;
     }

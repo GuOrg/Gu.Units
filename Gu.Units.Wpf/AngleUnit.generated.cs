@@ -6,12 +6,12 @@
     public static class AngleUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.AngleUnit.Radians"/>
+        /// Gets the <see cref="Gu.Units.AngleUnit.Radians"/> unit.
         /// </summary>
         public static Gu.Units.AngleUnit Radians => Gu.Units.AngleUnit.Radians;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AngleUnit.Degrees"/>
+        /// Gets the <see cref="Gu.Units.AngleUnit.Degrees"/> unit.
         /// </summary>
         public static Gu.Units.AngleUnit Degrees => Gu.Units.AngleUnit.Degrees;
     }

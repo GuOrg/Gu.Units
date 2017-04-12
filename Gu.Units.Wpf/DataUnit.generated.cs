@@ -6,47 +6,47 @@
     public static class DataUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.DataUnit.Bits"/>
+        /// Gets the <see cref="Gu.Units.DataUnit.Bits"/> unit.
         /// </summary>
         public static Gu.Units.DataUnit Bits => Gu.Units.DataUnit.Bits;
 
         /// <summary>
-        /// See <see cref="Gu.Units.DataUnit.Byte"/>
+        /// Gets the <see cref="Gu.Units.DataUnit.Byte"/> unit.
         /// </summary>
         public static Gu.Units.DataUnit Byte => Gu.Units.DataUnit.Byte;
 
         /// <summary>
-        /// See <see cref="Gu.Units.DataUnit.Kilobyte"/>
+        /// Gets the <see cref="Gu.Units.DataUnit.Kilobyte"/> unit.
         /// </summary>
         public static Gu.Units.DataUnit Kilobyte => Gu.Units.DataUnit.Kilobyte;
 
         /// <summary>
-        /// See <see cref="Gu.Units.DataUnit.Megabyte"/>
+        /// Gets the <see cref="Gu.Units.DataUnit.Megabyte"/> unit.
         /// </summary>
         public static Gu.Units.DataUnit Megabyte => Gu.Units.DataUnit.Megabyte;
 
         /// <summary>
-        /// See <see cref="Gu.Units.DataUnit.Gigabyte"/>
+        /// Gets the <see cref="Gu.Units.DataUnit.Gigabyte"/> unit.
         /// </summary>
         public static Gu.Units.DataUnit Gigabyte => Gu.Units.DataUnit.Gigabyte;
 
         /// <summary>
-        /// See <see cref="Gu.Units.DataUnit.Terabyte"/>
+        /// Gets the <see cref="Gu.Units.DataUnit.Terabyte"/> unit.
         /// </summary>
         public static Gu.Units.DataUnit Terabyte => Gu.Units.DataUnit.Terabyte;
 
         /// <summary>
-        /// See <see cref="Gu.Units.DataUnit.Megabits"/>
+        /// Gets the <see cref="Gu.Units.DataUnit.Megabits"/> unit.
         /// </summary>
         public static Gu.Units.DataUnit Megabits => Gu.Units.DataUnit.Megabits;
 
         /// <summary>
-        /// See <see cref="Gu.Units.DataUnit.Gigabits"/>
+        /// Gets the <see cref="Gu.Units.DataUnit.Gigabits"/> unit.
         /// </summary>
         public static Gu.Units.DataUnit Gigabits => Gu.Units.DataUnit.Gigabits;
 
         /// <summary>
-        /// See <see cref="Gu.Units.DataUnit.Kilobits"/>
+        /// Gets the <see cref="Gu.Units.DataUnit.Kilobits"/> unit.
         /// </summary>
         public static Gu.Units.DataUnit Kilobits => Gu.Units.DataUnit.Kilobits;
     }

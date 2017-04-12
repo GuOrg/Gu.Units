@@ -6,7 +6,7 @@
     public static class TorqueUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.TorqueUnit.NewtonMetres"/>
+        /// Gets the <see cref="Gu.Units.TorqueUnit.NewtonMetres"/> unit.
         /// </summary>
         public static Gu.Units.TorqueUnit NewtonMetres => Gu.Units.TorqueUnit.NewtonMetres;
     }

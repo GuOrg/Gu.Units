@@ -6,7 +6,7 @@
     public static class KinematicViscosityUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.KinematicViscosityUnit.SquareMetresPerSecond"/>
+        /// Gets the <see cref="Gu.Units.KinematicViscosityUnit.SquareMetresPerSecond"/> unit.
         /// </summary>
         public static Gu.Units.KinematicViscosityUnit SquareMetresPerSecond => Gu.Units.KinematicViscosityUnit.SquareMetresPerSecond;
     }

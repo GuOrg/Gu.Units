@@ -6,32 +6,32 @@
     public static class AngularJerkUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.AngularJerkUnit.RadiansPerSecondCubed"/>
+        /// Gets the <see cref="Gu.Units.AngularJerkUnit.RadiansPerSecondCubed"/> unit.
         /// </summary>
         public static Gu.Units.AngularJerkUnit RadiansPerSecondCubed => Gu.Units.AngularJerkUnit.RadiansPerSecondCubed;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AngularJerkUnit.DegreesPerSecondCubed"/>
+        /// Gets the <see cref="Gu.Units.AngularJerkUnit.DegreesPerSecondCubed"/> unit.
         /// </summary>
         public static Gu.Units.AngularJerkUnit DegreesPerSecondCubed => Gu.Units.AngularJerkUnit.DegreesPerSecondCubed;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AngularJerkUnit.RadiansPerHourCubed"/>
+        /// Gets the <see cref="Gu.Units.AngularJerkUnit.RadiansPerHourCubed"/> unit.
         /// </summary>
         public static Gu.Units.AngularJerkUnit RadiansPerHourCubed => Gu.Units.AngularJerkUnit.RadiansPerHourCubed;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AngularJerkUnit.DegreesPerHourCubed"/>
+        /// Gets the <see cref="Gu.Units.AngularJerkUnit.DegreesPerHourCubed"/> unit.
         /// </summary>
         public static Gu.Units.AngularJerkUnit DegreesPerHourCubed => Gu.Units.AngularJerkUnit.DegreesPerHourCubed;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AngularJerkUnit.RadiansPerMinuteCubed"/>
+        /// Gets the <see cref="Gu.Units.AngularJerkUnit.RadiansPerMinuteCubed"/> unit.
         /// </summary>
         public static Gu.Units.AngularJerkUnit RadiansPerMinuteCubed => Gu.Units.AngularJerkUnit.RadiansPerMinuteCubed;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AngularJerkUnit.DegreesPerMinuteCubed"/>
+        /// Gets the <see cref="Gu.Units.AngularJerkUnit.DegreesPerMinuteCubed"/> unit.
         /// </summary>
         public static Gu.Units.AngularJerkUnit DegreesPerMinuteCubed => Gu.Units.AngularJerkUnit.DegreesPerMinuteCubed;
     }

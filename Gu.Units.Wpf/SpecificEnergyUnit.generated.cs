@@ -6,12 +6,12 @@
     public static class SpecificEnergyUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.SpecificEnergyUnit.JoulesPerKilogram"/>
+        /// Gets the <see cref="Gu.Units.SpecificEnergyUnit.JoulesPerKilogram"/> unit.
         /// </summary>
         public static Gu.Units.SpecificEnergyUnit JoulesPerKilogram => Gu.Units.SpecificEnergyUnit.JoulesPerKilogram;
 
         /// <summary>
-        /// See <see cref="Gu.Units.SpecificEnergyUnit.KilojoulesPerKilogram"/>
+        /// Gets the <see cref="Gu.Units.SpecificEnergyUnit.KilojoulesPerKilogram"/> unit.
         /// </summary>
         public static Gu.Units.SpecificEnergyUnit KilojoulesPerKilogram => Gu.Units.SpecificEnergyUnit.KilojoulesPerKilogram;
     }

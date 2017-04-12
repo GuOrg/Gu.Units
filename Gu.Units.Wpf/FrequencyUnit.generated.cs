@@ -6,27 +6,27 @@
     public static class FrequencyUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.FrequencyUnit.Hertz"/>
+        /// Gets the <see cref="Gu.Units.FrequencyUnit.Hertz"/> unit.
         /// </summary>
         public static Gu.Units.FrequencyUnit Hertz => Gu.Units.FrequencyUnit.Hertz;
 
         /// <summary>
-        /// See <see cref="Gu.Units.FrequencyUnit.Millihertz"/>
+        /// Gets the <see cref="Gu.Units.FrequencyUnit.Millihertz"/> unit.
         /// </summary>
         public static Gu.Units.FrequencyUnit Millihertz => Gu.Units.FrequencyUnit.Millihertz;
 
         /// <summary>
-        /// See <see cref="Gu.Units.FrequencyUnit.Kilohertz"/>
+        /// Gets the <see cref="Gu.Units.FrequencyUnit.Kilohertz"/> unit.
         /// </summary>
         public static Gu.Units.FrequencyUnit Kilohertz => Gu.Units.FrequencyUnit.Kilohertz;
 
         /// <summary>
-        /// See <see cref="Gu.Units.FrequencyUnit.Megahertz"/>
+        /// Gets the <see cref="Gu.Units.FrequencyUnit.Megahertz"/> unit.
         /// </summary>
         public static Gu.Units.FrequencyUnit Megahertz => Gu.Units.FrequencyUnit.Megahertz;
 
         /// <summary>
-        /// See <see cref="Gu.Units.FrequencyUnit.Gigahertz"/>
+        /// Gets the <see cref="Gu.Units.FrequencyUnit.Gigahertz"/> unit.
         /// </summary>
         public static Gu.Units.FrequencyUnit Gigahertz => Gu.Units.FrequencyUnit.Gigahertz;
     }

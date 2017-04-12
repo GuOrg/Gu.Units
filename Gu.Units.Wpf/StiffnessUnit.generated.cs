@@ -6,62 +6,62 @@
     public static class StiffnessUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.StiffnessUnit.NewtonsPerMetre"/>
+        /// Gets the <see cref="Gu.Units.StiffnessUnit.NewtonsPerMetre"/> unit.
         /// </summary>
         public static Gu.Units.StiffnessUnit NewtonsPerMetre => Gu.Units.StiffnessUnit.NewtonsPerMetre;
 
         /// <summary>
-        /// See <see cref="Gu.Units.StiffnessUnit.NewtonsPerNanometre"/>
+        /// Gets the <see cref="Gu.Units.StiffnessUnit.NewtonsPerNanometre"/> unit.
         /// </summary>
         public static Gu.Units.StiffnessUnit NewtonsPerNanometre => Gu.Units.StiffnessUnit.NewtonsPerNanometre;
 
         /// <summary>
-        /// See <see cref="Gu.Units.StiffnessUnit.NewtonsPerMicrometre"/>
+        /// Gets the <see cref="Gu.Units.StiffnessUnit.NewtonsPerMicrometre"/> unit.
         /// </summary>
         public static Gu.Units.StiffnessUnit NewtonsPerMicrometre => Gu.Units.StiffnessUnit.NewtonsPerMicrometre;
 
         /// <summary>
-        /// See <see cref="Gu.Units.StiffnessUnit.NewtonsPerMillimetre"/>
+        /// Gets the <see cref="Gu.Units.StiffnessUnit.NewtonsPerMillimetre"/> unit.
         /// </summary>
         public static Gu.Units.StiffnessUnit NewtonsPerMillimetre => Gu.Units.StiffnessUnit.NewtonsPerMillimetre;
 
         /// <summary>
-        /// See <see cref="Gu.Units.StiffnessUnit.KilonewtonsPerNanometre"/>
+        /// Gets the <see cref="Gu.Units.StiffnessUnit.KilonewtonsPerNanometre"/> unit.
         /// </summary>
         public static Gu.Units.StiffnessUnit KilonewtonsPerNanometre => Gu.Units.StiffnessUnit.KilonewtonsPerNanometre;
 
         /// <summary>
-        /// See <see cref="Gu.Units.StiffnessUnit.KilonewtonsPerMicrometre"/>
+        /// Gets the <see cref="Gu.Units.StiffnessUnit.KilonewtonsPerMicrometre"/> unit.
         /// </summary>
         public static Gu.Units.StiffnessUnit KilonewtonsPerMicrometre => Gu.Units.StiffnessUnit.KilonewtonsPerMicrometre;
 
         /// <summary>
-        /// See <see cref="Gu.Units.StiffnessUnit.KilonewtonsPerMillimetre"/>
+        /// Gets the <see cref="Gu.Units.StiffnessUnit.KilonewtonsPerMillimetre"/> unit.
         /// </summary>
         public static Gu.Units.StiffnessUnit KilonewtonsPerMillimetre => Gu.Units.StiffnessUnit.KilonewtonsPerMillimetre;
 
         /// <summary>
-        /// See <see cref="Gu.Units.StiffnessUnit.MeganewtonsPerNanometre"/>
+        /// Gets the <see cref="Gu.Units.StiffnessUnit.MeganewtonsPerNanometre"/> unit.
         /// </summary>
         public static Gu.Units.StiffnessUnit MeganewtonsPerNanometre => Gu.Units.StiffnessUnit.MeganewtonsPerNanometre;
 
         /// <summary>
-        /// See <see cref="Gu.Units.StiffnessUnit.MeganewtonsPerMicrometre"/>
+        /// Gets the <see cref="Gu.Units.StiffnessUnit.MeganewtonsPerMicrometre"/> unit.
         /// </summary>
         public static Gu.Units.StiffnessUnit MeganewtonsPerMicrometre => Gu.Units.StiffnessUnit.MeganewtonsPerMicrometre;
 
         /// <summary>
-        /// See <see cref="Gu.Units.StiffnessUnit.MeganewtonsPerMillimetre"/>
+        /// Gets the <see cref="Gu.Units.StiffnessUnit.MeganewtonsPerMillimetre"/> unit.
         /// </summary>
         public static Gu.Units.StiffnessUnit MeganewtonsPerMillimetre => Gu.Units.StiffnessUnit.MeganewtonsPerMillimetre;
 
         /// <summary>
-        /// See <see cref="Gu.Units.StiffnessUnit.GiganewtonsPerMicrometre"/>
+        /// Gets the <see cref="Gu.Units.StiffnessUnit.GiganewtonsPerMicrometre"/> unit.
         /// </summary>
         public static Gu.Units.StiffnessUnit GiganewtonsPerMicrometre => Gu.Units.StiffnessUnit.GiganewtonsPerMicrometre;
 
         /// <summary>
-        /// See <see cref="Gu.Units.StiffnessUnit.GiganewtonsPerMillimetre"/>
+        /// Gets the <see cref="Gu.Units.StiffnessUnit.GiganewtonsPerMillimetre"/> unit.
         /// </summary>
         public static Gu.Units.StiffnessUnit GiganewtonsPerMillimetre => Gu.Units.StiffnessUnit.GiganewtonsPerMillimetre;
     }

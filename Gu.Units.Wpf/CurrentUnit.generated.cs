@@ -6,37 +6,37 @@
     public static class CurrentUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.CurrentUnit.Amperes"/>
+        /// Gets the <see cref="Gu.Units.CurrentUnit.Amperes"/> unit.
         /// </summary>
         public static Gu.Units.CurrentUnit Amperes => Gu.Units.CurrentUnit.Amperes;
 
         /// <summary>
-        /// See <see cref="Gu.Units.CurrentUnit.Milliamperes"/>
+        /// Gets the <see cref="Gu.Units.CurrentUnit.Milliamperes"/> unit.
         /// </summary>
         public static Gu.Units.CurrentUnit Milliamperes => Gu.Units.CurrentUnit.Milliamperes;
 
         /// <summary>
-        /// See <see cref="Gu.Units.CurrentUnit.Kiloamperes"/>
+        /// Gets the <see cref="Gu.Units.CurrentUnit.Kiloamperes"/> unit.
         /// </summary>
         public static Gu.Units.CurrentUnit Kiloamperes => Gu.Units.CurrentUnit.Kiloamperes;
 
         /// <summary>
-        /// See <see cref="Gu.Units.CurrentUnit.Megaamperes"/>
+        /// Gets the <see cref="Gu.Units.CurrentUnit.Megaamperes"/> unit.
         /// </summary>
         public static Gu.Units.CurrentUnit Megaamperes => Gu.Units.CurrentUnit.Megaamperes;
 
         /// <summary>
-        /// See <see cref="Gu.Units.CurrentUnit.Microamperes"/>
+        /// Gets the <see cref="Gu.Units.CurrentUnit.Microamperes"/> unit.
         /// </summary>
         public static Gu.Units.CurrentUnit Microamperes => Gu.Units.CurrentUnit.Microamperes;
 
         /// <summary>
-        /// See <see cref="Gu.Units.CurrentUnit.Nanoamperes"/>
+        /// Gets the <see cref="Gu.Units.CurrentUnit.Nanoamperes"/> unit.
         /// </summary>
         public static Gu.Units.CurrentUnit Nanoamperes => Gu.Units.CurrentUnit.Nanoamperes;
 
         /// <summary>
-        /// See <see cref="Gu.Units.CurrentUnit.Gigaamperes"/>
+        /// Gets the <see cref="Gu.Units.CurrentUnit.Gigaamperes"/> unit.
         /// </summary>
         public static Gu.Units.CurrentUnit Gigaamperes => Gu.Units.CurrentUnit.Gigaamperes;
     }

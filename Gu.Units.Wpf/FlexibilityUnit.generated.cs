@@ -6,22 +6,22 @@
     public static class FlexibilityUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.FlexibilityUnit.MetresPerNewton"/>
+        /// Gets the <see cref="Gu.Units.FlexibilityUnit.MetresPerNewton"/> unit.
         /// </summary>
         public static Gu.Units.FlexibilityUnit MetresPerNewton => Gu.Units.FlexibilityUnit.MetresPerNewton;
 
         /// <summary>
-        /// See <see cref="Gu.Units.FlexibilityUnit.MillimetresPerNewton"/>
+        /// Gets the <see cref="Gu.Units.FlexibilityUnit.MillimetresPerNewton"/> unit.
         /// </summary>
         public static Gu.Units.FlexibilityUnit MillimetresPerNewton => Gu.Units.FlexibilityUnit.MillimetresPerNewton;
 
         /// <summary>
-        /// See <see cref="Gu.Units.FlexibilityUnit.MillimetresPerKilonewton"/>
+        /// Gets the <see cref="Gu.Units.FlexibilityUnit.MillimetresPerKilonewton"/> unit.
         /// </summary>
         public static Gu.Units.FlexibilityUnit MillimetresPerKilonewton => Gu.Units.FlexibilityUnit.MillimetresPerKilonewton;
 
         /// <summary>
-        /// See <see cref="Gu.Units.FlexibilityUnit.MicrometresPerKilonewton"/>
+        /// Gets the <see cref="Gu.Units.FlexibilityUnit.MicrometresPerKilonewton"/> unit.
         /// </summary>
         public static Gu.Units.FlexibilityUnit MicrometresPerKilonewton => Gu.Units.FlexibilityUnit.MicrometresPerKilonewton;
     }

@@ -6,37 +6,37 @@
     public static class VoltageUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.VoltageUnit.Volts"/>
+        /// Gets the <see cref="Gu.Units.VoltageUnit.Volts"/> unit.
         /// </summary>
         public static Gu.Units.VoltageUnit Volts => Gu.Units.VoltageUnit.Volts;
 
         /// <summary>
-        /// See <see cref="Gu.Units.VoltageUnit.Millivolts"/>
+        /// Gets the <see cref="Gu.Units.VoltageUnit.Millivolts"/> unit.
         /// </summary>
         public static Gu.Units.VoltageUnit Millivolts => Gu.Units.VoltageUnit.Millivolts;
 
         /// <summary>
-        /// See <see cref="Gu.Units.VoltageUnit.Kilovolts"/>
+        /// Gets the <see cref="Gu.Units.VoltageUnit.Kilovolts"/> unit.
         /// </summary>
         public static Gu.Units.VoltageUnit Kilovolts => Gu.Units.VoltageUnit.Kilovolts;
 
         /// <summary>
-        /// See <see cref="Gu.Units.VoltageUnit.Megavolts"/>
+        /// Gets the <see cref="Gu.Units.VoltageUnit.Megavolts"/> unit.
         /// </summary>
         public static Gu.Units.VoltageUnit Megavolts => Gu.Units.VoltageUnit.Megavolts;
 
         /// <summary>
-        /// See <see cref="Gu.Units.VoltageUnit.Microvolts"/>
+        /// Gets the <see cref="Gu.Units.VoltageUnit.Microvolts"/> unit.
         /// </summary>
         public static Gu.Units.VoltageUnit Microvolts => Gu.Units.VoltageUnit.Microvolts;
 
         /// <summary>
-        /// See <see cref="Gu.Units.VoltageUnit.Nanovolts"/>
+        /// Gets the <see cref="Gu.Units.VoltageUnit.Nanovolts"/> unit.
         /// </summary>
         public static Gu.Units.VoltageUnit Nanovolts => Gu.Units.VoltageUnit.Nanovolts;
 
         /// <summary>
-        /// See <see cref="Gu.Units.VoltageUnit.Gigavolts"/>
+        /// Gets the <see cref="Gu.Units.VoltageUnit.Gigavolts"/> unit.
         /// </summary>
         public static Gu.Units.VoltageUnit Gigavolts => Gu.Units.VoltageUnit.Gigavolts;
     }

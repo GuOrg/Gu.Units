@@ -6,52 +6,52 @@
     public static class VolumeUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.VolumeUnit.CubicMetres"/>
+        /// Gets the <see cref="Gu.Units.VolumeUnit.CubicMetres"/> unit.
         /// </summary>
         public static Gu.Units.VolumeUnit CubicMetres => Gu.Units.VolumeUnit.CubicMetres;
 
         /// <summary>
-        /// See <see cref="Gu.Units.VolumeUnit.Litres"/>
+        /// Gets the <see cref="Gu.Units.VolumeUnit.Litres"/> unit.
         /// </summary>
         public static Gu.Units.VolumeUnit Litres => Gu.Units.VolumeUnit.Litres;
 
         /// <summary>
-        /// See <see cref="Gu.Units.VolumeUnit.Millilitres"/>
+        /// Gets the <see cref="Gu.Units.VolumeUnit.Millilitres"/> unit.
         /// </summary>
         public static Gu.Units.VolumeUnit Millilitres => Gu.Units.VolumeUnit.Millilitres;
 
         /// <summary>
-        /// See <see cref="Gu.Units.VolumeUnit.Centilitres"/>
+        /// Gets the <see cref="Gu.Units.VolumeUnit.Centilitres"/> unit.
         /// </summary>
         public static Gu.Units.VolumeUnit Centilitres => Gu.Units.VolumeUnit.Centilitres;
 
         /// <summary>
-        /// See <see cref="Gu.Units.VolumeUnit.Decilitres"/>
+        /// Gets the <see cref="Gu.Units.VolumeUnit.Decilitres"/> unit.
         /// </summary>
         public static Gu.Units.VolumeUnit Decilitres => Gu.Units.VolumeUnit.Decilitres;
 
         /// <summary>
-        /// See <see cref="Gu.Units.VolumeUnit.CubicCentimetres"/>
+        /// Gets the <see cref="Gu.Units.VolumeUnit.CubicCentimetres"/> unit.
         /// </summary>
         public static Gu.Units.VolumeUnit CubicCentimetres => Gu.Units.VolumeUnit.CubicCentimetres;
 
         /// <summary>
-        /// See <see cref="Gu.Units.VolumeUnit.CubicMillimetres"/>
+        /// Gets the <see cref="Gu.Units.VolumeUnit.CubicMillimetres"/> unit.
         /// </summary>
         public static Gu.Units.VolumeUnit CubicMillimetres => Gu.Units.VolumeUnit.CubicMillimetres;
 
         /// <summary>
-        /// See <see cref="Gu.Units.VolumeUnit.CubicInches"/>
+        /// Gets the <see cref="Gu.Units.VolumeUnit.CubicInches"/> unit.
         /// </summary>
         public static Gu.Units.VolumeUnit CubicInches => Gu.Units.VolumeUnit.CubicInches;
 
         /// <summary>
-        /// See <see cref="Gu.Units.VolumeUnit.CubicDecimetres"/>
+        /// Gets the <see cref="Gu.Units.VolumeUnit.CubicDecimetres"/> unit.
         /// </summary>
         public static Gu.Units.VolumeUnit CubicDecimetres => Gu.Units.VolumeUnit.CubicDecimetres;
 
         /// <summary>
-        /// See <see cref="Gu.Units.VolumeUnit.CubicFeet"/>
+        /// Gets the <see cref="Gu.Units.VolumeUnit.CubicFeet"/> unit.
         /// </summary>
         public static Gu.Units.VolumeUnit CubicFeet => Gu.Units.VolumeUnit.CubicFeet;
     }

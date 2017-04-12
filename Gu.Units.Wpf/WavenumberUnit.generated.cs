@@ -6,7 +6,7 @@
     public static class WavenumberUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.WavenumberUnit.ReciprocalMetres"/>
+        /// Gets the <see cref="Gu.Units.WavenumberUnit.ReciprocalMetres"/> unit.
         /// </summary>
         public static Gu.Units.WavenumberUnit ReciprocalMetres => Gu.Units.WavenumberUnit.ReciprocalMetres;
     }

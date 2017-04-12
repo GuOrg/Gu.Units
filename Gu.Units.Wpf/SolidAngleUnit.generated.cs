@@ -6,7 +6,7 @@
     public static class SolidAngleUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.SolidAngleUnit.Steradians"/>
+        /// Gets the <see cref="Gu.Units.SolidAngleUnit.Steradians"/> unit.
         /// </summary>
         public static Gu.Units.SolidAngleUnit Steradians => Gu.Units.SolidAngleUnit.Steradians;
     }

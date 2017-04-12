@@ -6,7 +6,7 @@
     public static class ElectricalConductanceUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.ElectricalConductanceUnit.Siemens"/>
+        /// Gets the <see cref="Gu.Units.ElectricalConductanceUnit.Siemens"/> unit.
         /// </summary>
         public static Gu.Units.ElectricalConductanceUnit Siemens => Gu.Units.ElectricalConductanceUnit.Siemens;
     }

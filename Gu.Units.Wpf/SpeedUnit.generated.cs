@@ -6,52 +6,52 @@
     public static class SpeedUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.SpeedUnit.MetresPerSecond"/>
+        /// Gets the <see cref="Gu.Units.SpeedUnit.MetresPerSecond"/> unit.
         /// </summary>
         public static Gu.Units.SpeedUnit MetresPerSecond => Gu.Units.SpeedUnit.MetresPerSecond;
 
         /// <summary>
-        /// See <see cref="Gu.Units.SpeedUnit.KilometresPerHour"/>
+        /// Gets the <see cref="Gu.Units.SpeedUnit.KilometresPerHour"/> unit.
         /// </summary>
         public static Gu.Units.SpeedUnit KilometresPerHour => Gu.Units.SpeedUnit.KilometresPerHour;
 
         /// <summary>
-        /// See <see cref="Gu.Units.SpeedUnit.CentimetresPerMinute"/>
+        /// Gets the <see cref="Gu.Units.SpeedUnit.CentimetresPerMinute"/> unit.
         /// </summary>
         public static Gu.Units.SpeedUnit CentimetresPerMinute => Gu.Units.SpeedUnit.CentimetresPerMinute;
 
         /// <summary>
-        /// See <see cref="Gu.Units.SpeedUnit.MetresPerMinute"/>
+        /// Gets the <see cref="Gu.Units.SpeedUnit.MetresPerMinute"/> unit.
         /// </summary>
         public static Gu.Units.SpeedUnit MetresPerMinute => Gu.Units.SpeedUnit.MetresPerMinute;
 
         /// <summary>
-        /// See <see cref="Gu.Units.SpeedUnit.MetresPerHour"/>
+        /// Gets the <see cref="Gu.Units.SpeedUnit.MetresPerHour"/> unit.
         /// </summary>
         public static Gu.Units.SpeedUnit MetresPerHour => Gu.Units.SpeedUnit.MetresPerHour;
 
         /// <summary>
-        /// See <see cref="Gu.Units.SpeedUnit.MillimetresPerHour"/>
+        /// Gets the <see cref="Gu.Units.SpeedUnit.MillimetresPerHour"/> unit.
         /// </summary>
         public static Gu.Units.SpeedUnit MillimetresPerHour => Gu.Units.SpeedUnit.MillimetresPerHour;
 
         /// <summary>
-        /// See <see cref="Gu.Units.SpeedUnit.CentimetresPerHour"/>
+        /// Gets the <see cref="Gu.Units.SpeedUnit.CentimetresPerHour"/> unit.
         /// </summary>
         public static Gu.Units.SpeedUnit CentimetresPerHour => Gu.Units.SpeedUnit.CentimetresPerHour;
 
         /// <summary>
-        /// See <see cref="Gu.Units.SpeedUnit.MillimetresPerMinute"/>
+        /// Gets the <see cref="Gu.Units.SpeedUnit.MillimetresPerMinute"/> unit.
         /// </summary>
         public static Gu.Units.SpeedUnit MillimetresPerMinute => Gu.Units.SpeedUnit.MillimetresPerMinute;
 
         /// <summary>
-        /// See <see cref="Gu.Units.SpeedUnit.MillimetresPerSecond"/>
+        /// Gets the <see cref="Gu.Units.SpeedUnit.MillimetresPerSecond"/> unit.
         /// </summary>
         public static Gu.Units.SpeedUnit MillimetresPerSecond => Gu.Units.SpeedUnit.MillimetresPerSecond;
 
         /// <summary>
-        /// See <see cref="Gu.Units.SpeedUnit.CentimetresPerSecond"/>
+        /// Gets the <see cref="Gu.Units.SpeedUnit.CentimetresPerSecond"/> unit.
         /// </summary>
         public static Gu.Units.SpeedUnit CentimetresPerSecond => Gu.Units.SpeedUnit.CentimetresPerSecond;
     }

@@ -6,17 +6,17 @@
     public static class TemperatureUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.TemperatureUnit.Kelvin"/>
+        /// Gets the <see cref="Gu.Units.TemperatureUnit.Kelvin"/> unit.
         /// </summary>
         public static Gu.Units.TemperatureUnit Kelvin => Gu.Units.TemperatureUnit.Kelvin;
 
         /// <summary>
-        /// See <see cref="Gu.Units.TemperatureUnit.Celsius"/>
+        /// Gets the <see cref="Gu.Units.TemperatureUnit.Celsius"/> unit.
         /// </summary>
         public static Gu.Units.TemperatureUnit Celsius => Gu.Units.TemperatureUnit.Celsius;
 
         /// <summary>
-        /// See <see cref="Gu.Units.TemperatureUnit.Fahrenheit"/>
+        /// Gets the <see cref="Gu.Units.TemperatureUnit.Fahrenheit"/> unit.
         /// </summary>
         public static Gu.Units.TemperatureUnit Fahrenheit => Gu.Units.TemperatureUnit.Fahrenheit;
     }

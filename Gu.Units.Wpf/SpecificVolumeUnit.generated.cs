@@ -6,17 +6,17 @@
     public static class SpecificVolumeUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.SpecificVolumeUnit.CubicMetresPerKilogram"/>
+        /// Gets the <see cref="Gu.Units.SpecificVolumeUnit.CubicMetresPerKilogram"/> unit.
         /// </summary>
         public static Gu.Units.SpecificVolumeUnit CubicMetresPerKilogram => Gu.Units.SpecificVolumeUnit.CubicMetresPerKilogram;
 
         /// <summary>
-        /// See <see cref="Gu.Units.SpecificVolumeUnit.CubicMetresPerGram"/>
+        /// Gets the <see cref="Gu.Units.SpecificVolumeUnit.CubicMetresPerGram"/> unit.
         /// </summary>
         public static Gu.Units.SpecificVolumeUnit CubicMetresPerGram => Gu.Units.SpecificVolumeUnit.CubicMetresPerGram;
 
         /// <summary>
-        /// See <see cref="Gu.Units.SpecificVolumeUnit.CubicCentimetresPerGram"/>
+        /// Gets the <see cref="Gu.Units.SpecificVolumeUnit.CubicCentimetresPerGram"/> unit.
         /// </summary>
         public static Gu.Units.SpecificVolumeUnit CubicCentimetresPerGram => Gu.Units.SpecificVolumeUnit.CubicCentimetresPerGram;
     }

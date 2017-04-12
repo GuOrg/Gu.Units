@@ -6,7 +6,7 @@
     public static class MomentumUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.MomentumUnit.NewtonSecond"/>
+        /// Gets the <see cref="Gu.Units.MomentumUnit.NewtonSecond"/> unit.
         /// </summary>
         public static Gu.Units.MomentumUnit NewtonSecond => Gu.Units.MomentumUnit.NewtonSecond;
     }

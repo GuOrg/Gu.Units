@@ -6,32 +6,32 @@
     public static class AngularAccelerationUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.AngularAccelerationUnit.RadiansPerSecondSquared"/>
+        /// Gets the <see cref="Gu.Units.AngularAccelerationUnit.RadiansPerSecondSquared"/> unit.
         /// </summary>
         public static Gu.Units.AngularAccelerationUnit RadiansPerSecondSquared => Gu.Units.AngularAccelerationUnit.RadiansPerSecondSquared;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AngularAccelerationUnit.DegreesPerSecondSquared"/>
+        /// Gets the <see cref="Gu.Units.AngularAccelerationUnit.DegreesPerSecondSquared"/> unit.
         /// </summary>
         public static Gu.Units.AngularAccelerationUnit DegreesPerSecondSquared => Gu.Units.AngularAccelerationUnit.DegreesPerSecondSquared;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AngularAccelerationUnit.RadiansPerHourSquared"/>
+        /// Gets the <see cref="Gu.Units.AngularAccelerationUnit.RadiansPerHourSquared"/> unit.
         /// </summary>
         public static Gu.Units.AngularAccelerationUnit RadiansPerHourSquared => Gu.Units.AngularAccelerationUnit.RadiansPerHourSquared;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AngularAccelerationUnit.DegreesPerHourSquared"/>
+        /// Gets the <see cref="Gu.Units.AngularAccelerationUnit.DegreesPerHourSquared"/> unit.
         /// </summary>
         public static Gu.Units.AngularAccelerationUnit DegreesPerHourSquared => Gu.Units.AngularAccelerationUnit.DegreesPerHourSquared;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AngularAccelerationUnit.DegreesPerMinuteSquared"/>
+        /// Gets the <see cref="Gu.Units.AngularAccelerationUnit.DegreesPerMinuteSquared"/> unit.
         /// </summary>
         public static Gu.Units.AngularAccelerationUnit DegreesPerMinuteSquared => Gu.Units.AngularAccelerationUnit.DegreesPerMinuteSquared;
 
         /// <summary>
-        /// See <see cref="Gu.Units.AngularAccelerationUnit.RadiansPerMinuteSquared"/>
+        /// Gets the <see cref="Gu.Units.AngularAccelerationUnit.RadiansPerMinuteSquared"/> unit.
         /// </summary>
         public static Gu.Units.AngularAccelerationUnit RadiansPerMinuteSquared => Gu.Units.AngularAccelerationUnit.RadiansPerMinuteSquared;
     }

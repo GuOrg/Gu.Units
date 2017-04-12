@@ -6,7 +6,7 @@
     public static class AmountOfSubstanceUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.AmountOfSubstanceUnit.Moles"/>
+        /// Gets the <see cref="Gu.Units.AmountOfSubstanceUnit.Moles"/> unit.
         /// </summary>
         public static Gu.Units.AmountOfSubstanceUnit Moles => Gu.Units.AmountOfSubstanceUnit.Moles;
     }

@@ -6,7 +6,7 @@
     public static class MagneticFluxUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.MagneticFluxUnit.Webers"/>
+        /// Gets the <see cref="Gu.Units.MagneticFluxUnit.Webers"/> unit.
         /// </summary>
         public static Gu.Units.MagneticFluxUnit Webers => Gu.Units.MagneticFluxUnit.Webers;
     }

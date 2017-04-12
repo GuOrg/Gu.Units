@@ -6,7 +6,7 @@
     public static class MassFlowUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.MassFlowUnit.KilogramsPerSecond"/>
+        /// Gets the <see cref="Gu.Units.MassFlowUnit.KilogramsPerSecond"/> unit.
         /// </summary>
         public static Gu.Units.MassFlowUnit KilogramsPerSecond => Gu.Units.MassFlowUnit.KilogramsPerSecond;
     }

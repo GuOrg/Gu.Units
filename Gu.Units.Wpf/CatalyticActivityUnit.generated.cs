@@ -6,7 +6,7 @@
     public static class CatalyticActivityUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.CatalyticActivityUnit.Katals"/>
+        /// Gets the <see cref="Gu.Units.CatalyticActivityUnit.Katals"/> unit.
         /// </summary>
         public static Gu.Units.CatalyticActivityUnit Katals => Gu.Units.CatalyticActivityUnit.Katals;
     }

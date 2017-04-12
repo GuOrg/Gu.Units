@@ -6,62 +6,62 @@
     public static class LengthUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.LengthUnit.Metres"/>
+        /// Gets the <see cref="Gu.Units.LengthUnit.Metres"/> unit.
         /// </summary>
         public static Gu.Units.LengthUnit Metres => Gu.Units.LengthUnit.Metres;
 
         /// <summary>
-        /// See <see cref="Gu.Units.LengthUnit.Inches"/>
+        /// Gets the <see cref="Gu.Units.LengthUnit.Inches"/> unit.
         /// </summary>
         public static Gu.Units.LengthUnit Inches => Gu.Units.LengthUnit.Inches;
 
         /// <summary>
-        /// See <see cref="Gu.Units.LengthUnit.Miles"/>
+        /// Gets the <see cref="Gu.Units.LengthUnit.Miles"/> unit.
         /// </summary>
         public static Gu.Units.LengthUnit Miles => Gu.Units.LengthUnit.Miles;
 
         /// <summary>
-        /// See <see cref="Gu.Units.LengthUnit.Yards"/>
+        /// Gets the <see cref="Gu.Units.LengthUnit.Yards"/> unit.
         /// </summary>
         public static Gu.Units.LengthUnit Yards => Gu.Units.LengthUnit.Yards;
 
         /// <summary>
-        /// See <see cref="Gu.Units.LengthUnit.NauticalMiles"/>
+        /// Gets the <see cref="Gu.Units.LengthUnit.NauticalMiles"/> unit.
         /// </summary>
         public static Gu.Units.LengthUnit NauticalMiles => Gu.Units.LengthUnit.NauticalMiles;
 
         /// <summary>
-        /// See <see cref="Gu.Units.LengthUnit.Feet"/>
+        /// Gets the <see cref="Gu.Units.LengthUnit.Feet"/> unit.
         /// </summary>
         public static Gu.Units.LengthUnit Feet => Gu.Units.LengthUnit.Feet;
 
         /// <summary>
-        /// See <see cref="Gu.Units.LengthUnit.Nanometres"/>
+        /// Gets the <see cref="Gu.Units.LengthUnit.Nanometres"/> unit.
         /// </summary>
         public static Gu.Units.LengthUnit Nanometres => Gu.Units.LengthUnit.Nanometres;
 
         /// <summary>
-        /// See <see cref="Gu.Units.LengthUnit.Micrometres"/>
+        /// Gets the <see cref="Gu.Units.LengthUnit.Micrometres"/> unit.
         /// </summary>
         public static Gu.Units.LengthUnit Micrometres => Gu.Units.LengthUnit.Micrometres;
 
         /// <summary>
-        /// See <see cref="Gu.Units.LengthUnit.Millimetres"/>
+        /// Gets the <see cref="Gu.Units.LengthUnit.Millimetres"/> unit.
         /// </summary>
         public static Gu.Units.LengthUnit Millimetres => Gu.Units.LengthUnit.Millimetres;
 
         /// <summary>
-        /// See <see cref="Gu.Units.LengthUnit.Centimetres"/>
+        /// Gets the <see cref="Gu.Units.LengthUnit.Centimetres"/> unit.
         /// </summary>
         public static Gu.Units.LengthUnit Centimetres => Gu.Units.LengthUnit.Centimetres;
 
         /// <summary>
-        /// See <see cref="Gu.Units.LengthUnit.Decimetres"/>
+        /// Gets the <see cref="Gu.Units.LengthUnit.Decimetres"/> unit.
         /// </summary>
         public static Gu.Units.LengthUnit Decimetres => Gu.Units.LengthUnit.Decimetres;
 
         /// <summary>
-        /// See <see cref="Gu.Units.LengthUnit.Kilometres"/>
+        /// Gets the <see cref="Gu.Units.LengthUnit.Kilometres"/> unit.
         /// </summary>
         public static Gu.Units.LengthUnit Kilometres => Gu.Units.LengthUnit.Kilometres;
     }

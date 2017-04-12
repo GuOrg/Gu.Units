@@ -6,7 +6,7 @@
     public static class LuminousFluxUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.LuminousFluxUnit.Lumens"/>
+        /// Gets the <see cref="Gu.Units.LuminousFluxUnit.Lumens"/> unit.
         /// </summary>
         public static Gu.Units.LuminousFluxUnit Lumens => Gu.Units.LuminousFluxUnit.Lumens;
     }

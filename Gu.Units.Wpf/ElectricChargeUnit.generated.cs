@@ -6,37 +6,37 @@
     public static class ElectricChargeUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.ElectricChargeUnit.Coulombs"/>
+        /// Gets the <see cref="Gu.Units.ElectricChargeUnit.Coulombs"/> unit.
         /// </summary>
         public static Gu.Units.ElectricChargeUnit Coulombs => Gu.Units.ElectricChargeUnit.Coulombs;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ElectricChargeUnit.Nanocoulombs"/>
+        /// Gets the <see cref="Gu.Units.ElectricChargeUnit.Nanocoulombs"/> unit.
         /// </summary>
         public static Gu.Units.ElectricChargeUnit Nanocoulombs => Gu.Units.ElectricChargeUnit.Nanocoulombs;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ElectricChargeUnit.Microcoulombs"/>
+        /// Gets the <see cref="Gu.Units.ElectricChargeUnit.Microcoulombs"/> unit.
         /// </summary>
         public static Gu.Units.ElectricChargeUnit Microcoulombs => Gu.Units.ElectricChargeUnit.Microcoulombs;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ElectricChargeUnit.Millicoulombs"/>
+        /// Gets the <see cref="Gu.Units.ElectricChargeUnit.Millicoulombs"/> unit.
         /// </summary>
         public static Gu.Units.ElectricChargeUnit Millicoulombs => Gu.Units.ElectricChargeUnit.Millicoulombs;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ElectricChargeUnit.Kilocoulombs"/>
+        /// Gets the <see cref="Gu.Units.ElectricChargeUnit.Kilocoulombs"/> unit.
         /// </summary>
         public static Gu.Units.ElectricChargeUnit Kilocoulombs => Gu.Units.ElectricChargeUnit.Kilocoulombs;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ElectricChargeUnit.Megacoulombs"/>
+        /// Gets the <see cref="Gu.Units.ElectricChargeUnit.Megacoulombs"/> unit.
         /// </summary>
         public static Gu.Units.ElectricChargeUnit Megacoulombs => Gu.Units.ElectricChargeUnit.Megacoulombs;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ElectricChargeUnit.Gigacoulombs"/>
+        /// Gets the <see cref="Gu.Units.ElectricChargeUnit.Gigacoulombs"/> unit.
         /// </summary>
         public static Gu.Units.ElectricChargeUnit Gigacoulombs => Gu.Units.ElectricChargeUnit.Gigacoulombs;
     }

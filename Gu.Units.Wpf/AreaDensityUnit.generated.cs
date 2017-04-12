@@ -6,7 +6,7 @@
     public static class AreaDensityUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.AreaDensityUnit.KilogramsPerSquareMetre"/>
+        /// Gets the <see cref="Gu.Units.AreaDensityUnit.KilogramsPerSquareMetre"/> unit.
         /// </summary>
         public static Gu.Units.AreaDensityUnit KilogramsPerSquareMetre => Gu.Units.AreaDensityUnit.KilogramsPerSquareMetre;
     }

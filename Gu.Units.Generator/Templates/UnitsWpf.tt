@@ -18,15 +18,15 @@ foreach (var unit in settings.AllUnits)
 {
     var fileName = unit.ClassName + ".generated." + Settings.Extension;
     fileManager.StartNewFile(fileName, "Gu.Units.Wpf", null, null);
-	session["UnitName"] = unit.Name;
-	var output = paramTmpl.TransformText(session);
-	if (output == "ErrorGeneratingOutput")
+    session["UnitName"] = unit.Name;
+    var output = paramTmpl.TransformText(session);
+    if (output == "ErrorGeneratingOutput")
     {
-		this.WriteLine("Error transforming {0}", unit.ClassName);
+        this.WriteLine("Error transforming {0}", unit.ClassName);
         throw new InvalidOperationException("output");
     }
 
-	this.Write(output);
+    this.Write(output);
 }
 
 fileManager.Process();

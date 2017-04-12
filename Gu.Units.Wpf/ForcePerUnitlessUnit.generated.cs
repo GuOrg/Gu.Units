@@ -6,27 +6,27 @@
     public static class ForcePerUnitlessUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.ForcePerUnitlessUnit.NewtonsPerUnitless"/>
+        /// Gets the <see cref="Gu.Units.ForcePerUnitlessUnit.NewtonsPerUnitless"/> unit.
         /// </summary>
         public static Gu.Units.ForcePerUnitlessUnit NewtonsPerUnitless => Gu.Units.ForcePerUnitlessUnit.NewtonsPerUnitless;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ForcePerUnitlessUnit.NewtonsPerPercent"/>
+        /// Gets the <see cref="Gu.Units.ForcePerUnitlessUnit.NewtonsPerPercent"/> unit.
         /// </summary>
         public static Gu.Units.ForcePerUnitlessUnit NewtonsPerPercent => Gu.Units.ForcePerUnitlessUnit.NewtonsPerPercent;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ForcePerUnitlessUnit.KilonewtonsPerPercent"/>
+        /// Gets the <see cref="Gu.Units.ForcePerUnitlessUnit.KilonewtonsPerPercent"/> unit.
         /// </summary>
         public static Gu.Units.ForcePerUnitlessUnit KilonewtonsPerPercent => Gu.Units.ForcePerUnitlessUnit.KilonewtonsPerPercent;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ForcePerUnitlessUnit.MeganewtonsPerPercent"/>
+        /// Gets the <see cref="Gu.Units.ForcePerUnitlessUnit.MeganewtonsPerPercent"/> unit.
         /// </summary>
         public static Gu.Units.ForcePerUnitlessUnit MeganewtonsPerPercent => Gu.Units.ForcePerUnitlessUnit.MeganewtonsPerPercent;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ForcePerUnitlessUnit.GiganewtonsPerPercent"/>
+        /// Gets the <see cref="Gu.Units.ForcePerUnitlessUnit.GiganewtonsPerPercent"/> unit.
         /// </summary>
         public static Gu.Units.ForcePerUnitlessUnit GiganewtonsPerPercent => Gu.Units.ForcePerUnitlessUnit.GiganewtonsPerPercent;
     }

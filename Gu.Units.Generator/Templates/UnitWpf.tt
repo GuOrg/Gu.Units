@@ -30,7 +30,7 @@ namespace Gu.Units.Wpf.Proxies
 <#		}
 		#>
         /// <summary>
-        /// See <see cref="Gu.Units.<#= unit.ClassName #>.<#= current #>"/>
+        /// Gets the <see cref="Gu.Units.<#= unit.ClassName #>.<#= current #>"/> unit.
         /// </summary>
         public static Gu.Units.<#= unit.ClassName #> <#= current #> => Gu.Units.<#= unit.ClassName #>.<#= current #>;
 <#

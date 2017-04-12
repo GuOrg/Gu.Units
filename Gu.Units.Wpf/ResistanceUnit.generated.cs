@@ -6,27 +6,27 @@
     public static class ResistanceUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.ResistanceUnit.Ohms"/>
+        /// Gets the <see cref="Gu.Units.ResistanceUnit.Ohms"/> unit.
         /// </summary>
         public static Gu.Units.ResistanceUnit Ohms => Gu.Units.ResistanceUnit.Ohms;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ResistanceUnit.Microohms"/>
+        /// Gets the <see cref="Gu.Units.ResistanceUnit.Microohms"/> unit.
         /// </summary>
         public static Gu.Units.ResistanceUnit Microohms => Gu.Units.ResistanceUnit.Microohms;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ResistanceUnit.Milliohms"/>
+        /// Gets the <see cref="Gu.Units.ResistanceUnit.Milliohms"/> unit.
         /// </summary>
         public static Gu.Units.ResistanceUnit Milliohms => Gu.Units.ResistanceUnit.Milliohms;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ResistanceUnit.Kiloohms"/>
+        /// Gets the <see cref="Gu.Units.ResistanceUnit.Kiloohms"/> unit.
         /// </summary>
         public static Gu.Units.ResistanceUnit Kiloohms => Gu.Units.ResistanceUnit.Kiloohms;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ResistanceUnit.Megaohms"/>
+        /// Gets the <see cref="Gu.Units.ResistanceUnit.Megaohms"/> unit.
         /// </summary>
         public static Gu.Units.ResistanceUnit Megaohms => Gu.Units.ResistanceUnit.Megaohms;
     }

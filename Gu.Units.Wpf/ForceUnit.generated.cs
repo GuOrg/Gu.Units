@@ -6,37 +6,37 @@
     public static class ForceUnit
     {
         /// <summary>
-        /// See <see cref="Gu.Units.ForceUnit.Newtons"/>
+        /// Gets the <see cref="Gu.Units.ForceUnit.Newtons"/> unit.
         /// </summary>
         public static Gu.Units.ForceUnit Newtons => Gu.Units.ForceUnit.Newtons;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ForceUnit.Nanonewtons"/>
+        /// Gets the <see cref="Gu.Units.ForceUnit.Nanonewtons"/> unit.
         /// </summary>
         public static Gu.Units.ForceUnit Nanonewtons => Gu.Units.ForceUnit.Nanonewtons;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ForceUnit.Micronewtons"/>
+        /// Gets the <see cref="Gu.Units.ForceUnit.Micronewtons"/> unit.
         /// </summary>
         public static Gu.Units.ForceUnit Micronewtons => Gu.Units.ForceUnit.Micronewtons;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ForceUnit.Millinewtons"/>
+        /// Gets the <see cref="Gu.Units.ForceUnit.Millinewtons"/> unit.
         /// </summary>
         public static Gu.Units.ForceUnit Millinewtons => Gu.Units.ForceUnit.Millinewtons;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ForceUnit.Kilonewtons"/>
+        /// Gets the <see cref="Gu.Units.ForceUnit.Kilonewtons"/> unit.
         /// </summary>
         public static Gu.Units.ForceUnit Kilonewtons => Gu.Units.ForceUnit.Kilonewtons;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ForceUnit.Meganewtons"/>
+        /// Gets the <see cref="Gu.Units.ForceUnit.Meganewtons"/> unit.
         /// </summary>
         public static Gu.Units.ForceUnit Meganewtons => Gu.Units.ForceUnit.Meganewtons;
 
         /// <summary>
-        /// See <see cref="Gu.Units.ForceUnit.Giganewtons"/>
+        /// Gets the <see cref="Gu.Units.ForceUnit.Giganewtons"/> unit.
         /// </summary>
         public static Gu.Units.ForceUnit Giganewtons => Gu.Units.ForceUnit.Giganewtons;
     }
