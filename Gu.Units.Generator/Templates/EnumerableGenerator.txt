@@ -1,1 +1,5 @@
 ﻿
+Read Settings found 52 quantities// Generated helper templates
+// Gu.Units\Gu.Units\EnumerableGenerator.txt4
+// Generated items
+// Gu.Units\Gu.Units\Enumerable.generated.cs

@@ -115,6 +115,7 @@ namespace <#= Settings.Namespace #>
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -158,6 +159,7 @@ namespace <#= Settings.Namespace #>
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -177,6 +179,7 @@ namespace <#= Settings.Namespace #>
             {
                 throw new ArgumentNullException("source");
             }
+
             <#= quantity.Name #> value = default(<#= quantity.Name #>);
             bool hasValue = false;
             foreach (<#= quantity.Name #> x in source)
@@ -185,6 +188,7 @@ namespace <#= Settings.Namespace #>
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.<#= quantity.Unit.ParameterName #> > value.<#= quantity.Unit.ParameterName #>)
@@ -198,7 +202,12 @@ namespace <#= Settings.Namespace #>
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -282,7 +291,6 @@ namespace <#= Settings.Namespace #>
     foreach(var quantity in quantities)
     {
         #>
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{<#= quantity.Name #>}"/> for the values in <paramref name="source"/>
         /// </summary>
@@ -316,6 +324,10 @@ namespace <#= Settings.Namespace #>
 
             return null;
         }
-<# } #>
+<#      if (quantity != quantities[quantities.Count -1])
+        {#>
+
+<#      }
+    } #>
     }
 }

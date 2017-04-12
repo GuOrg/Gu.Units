@@ -7,7 +7,7 @@
 <#
 
 var fileManager = TemplateFileManager.Create(this);
-fileManager.IsAutoIndentEnabled = true;
+fileManager.IsAutoIndentEnabled = false;
 fileManager.CanOverwriteExistingFile = true;
 
 // init handling for parameter templates

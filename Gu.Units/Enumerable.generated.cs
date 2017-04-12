@@ -12280,7 +12280,6 @@
             throw new ArgumentException("No elements", "source");
         }
 
-
         /// <summary>
         /// Calculates the average <see cref="Nullable{Mass}"/> for the values in <paramref name="source"/>
         /// </summary>

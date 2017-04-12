@@ -2694,6 +2694,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -2736,6 +2737,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -2778,6 +2780,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -2820,6 +2823,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -2862,6 +2866,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -2904,6 +2909,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -2946,6 +2952,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -2988,6 +2995,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3030,6 +3038,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3072,6 +3081,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3114,6 +3124,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3156,6 +3167,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3198,6 +3210,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3240,6 +3253,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3282,6 +3296,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3324,6 +3339,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3366,6 +3382,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3408,6 +3425,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3450,6 +3468,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3492,6 +3511,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3534,6 +3554,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3576,6 +3597,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3618,6 +3640,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3660,6 +3683,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3702,6 +3726,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3744,6 +3769,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3786,6 +3812,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3828,6 +3855,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3870,6 +3898,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3912,6 +3941,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3954,6 +3984,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -3996,6 +4027,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4038,6 +4070,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4080,6 +4113,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4122,6 +4156,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4164,6 +4199,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4206,6 +4242,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4248,6 +4285,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4290,6 +4328,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4332,6 +4371,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4374,6 +4414,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4416,6 +4457,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4458,6 +4500,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4500,6 +4543,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4542,6 +4586,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4584,6 +4629,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4626,6 +4672,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4668,6 +4715,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4710,6 +4758,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4752,6 +4801,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4794,6 +4844,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4836,6 +4887,7 @@
                     hasValue = true;
                 }
             }
+
             if (hasValue)
             {
                 return value;
@@ -4874,6 +4926,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4907,6 +4960,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4940,6 +4994,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -4973,6 +5028,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5006,6 +5062,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5039,6 +5096,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5072,6 +5130,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5105,6 +5164,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5138,6 +5198,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5171,6 +5232,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5204,6 +5266,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5237,6 +5300,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5270,6 +5334,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5303,6 +5368,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5336,6 +5402,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5369,6 +5436,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5402,6 +5470,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5435,6 +5504,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5468,6 +5538,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5501,6 +5572,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5534,6 +5606,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5567,6 +5640,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5600,6 +5674,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5633,6 +5708,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5666,6 +5742,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5699,6 +5776,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5732,6 +5810,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5765,6 +5844,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5798,6 +5878,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5831,6 +5912,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5864,6 +5946,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5897,6 +5980,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5930,6 +6014,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5963,6 +6048,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -5996,6 +6082,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6029,6 +6116,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6062,6 +6150,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6095,6 +6184,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6128,6 +6218,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6161,6 +6252,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6194,6 +6286,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6227,6 +6320,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6260,6 +6354,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6293,6 +6388,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6326,6 +6422,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6359,6 +6456,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6392,6 +6490,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6425,6 +6524,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6458,6 +6558,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6491,6 +6592,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6524,6 +6626,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6557,6 +6660,7 @@
                     value = x;
                 }
             }
+
             return value;
         }
 
@@ -6571,6 +6675,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Mass value = default(Mass);
             bool hasValue = false;
             foreach (Mass x in source)
@@ -6579,6 +6684,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kilograms > value.kilograms)
@@ -6592,7 +6698,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6607,6 +6718,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Length value = default(Length);
             bool hasValue = false;
             foreach (Length x in source)
@@ -6615,6 +6727,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metres > value.metres)
@@ -6628,7 +6741,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6643,6 +6761,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Time value = default(Time);
             bool hasValue = false;
             foreach (Time x in source)
@@ -6651,6 +6770,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.seconds > value.seconds)
@@ -6664,7 +6784,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6679,6 +6804,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Temperature value = default(Temperature);
             bool hasValue = false;
             foreach (Temperature x in source)
@@ -6687,6 +6813,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kelvin > value.kelvin)
@@ -6700,7 +6827,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6715,6 +6847,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Angle value = default(Angle);
             bool hasValue = false;
             foreach (Angle x in source)
@@ -6723,6 +6856,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.radians > value.radians)
@@ -6736,7 +6870,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6751,6 +6890,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Unitless value = default(Unitless);
             bool hasValue = false;
             foreach (Unitless x in source)
@@ -6759,6 +6899,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.scalar > value.scalar)
@@ -6772,7 +6913,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6787,6 +6933,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Current value = default(Current);
             bool hasValue = false;
             foreach (Current x in source)
@@ -6795,6 +6942,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.amperes > value.amperes)
@@ -6808,7 +6956,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6823,6 +6976,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             LuminousIntensity value = default(LuminousIntensity);
             bool hasValue = false;
             foreach (LuminousIntensity x in source)
@@ -6831,6 +6985,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.candelas > value.candelas)
@@ -6844,7 +6999,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6859,6 +7019,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Data value = default(Data);
             bool hasValue = false;
             foreach (Data x in source)
@@ -6867,6 +7028,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.bits > value.bits)
@@ -6880,7 +7042,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6895,6 +7062,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AmountOfSubstance value = default(AmountOfSubstance);
             bool hasValue = false;
             foreach (AmountOfSubstance x in source)
@@ -6903,6 +7071,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.moles > value.moles)
@@ -6916,7 +7085,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6931,6 +7105,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             SolidAngle value = default(SolidAngle);
             bool hasValue = false;
             foreach (SolidAngle x in source)
@@ -6939,6 +7114,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.steradians > value.steradians)
@@ -6952,7 +7128,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -6967,6 +7148,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Area value = default(Area);
             bool hasValue = false;
             foreach (Area x in source)
@@ -6975,6 +7157,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.squareMetres > value.squareMetres)
@@ -6988,7 +7171,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7003,6 +7191,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Volume value = default(Volume);
             bool hasValue = false;
             foreach (Volume x in source)
@@ -7011,6 +7200,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.cubicMetres > value.cubicMetres)
@@ -7024,7 +7214,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7039,6 +7234,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Force value = default(Force);
             bool hasValue = false;
             foreach (Force x in source)
@@ -7047,6 +7243,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.newtons > value.newtons)
@@ -7060,7 +7257,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7075,6 +7277,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Pressure value = default(Pressure);
             bool hasValue = false;
             foreach (Pressure x in source)
@@ -7083,6 +7286,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.pascals > value.pascals)
@@ -7096,7 +7300,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7111,6 +7320,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Density value = default(Density);
             bool hasValue = false;
             foreach (Density x in source)
@@ -7119,6 +7329,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kilogramsPerCubicMetre > value.kilogramsPerCubicMetre)
@@ -7132,7 +7343,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7147,6 +7363,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Energy value = default(Energy);
             bool hasValue = false;
             foreach (Energy x in source)
@@ -7155,6 +7372,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.joules > value.joules)
@@ -7168,7 +7386,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7183,6 +7406,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Power value = default(Power);
             bool hasValue = false;
             foreach (Power x in source)
@@ -7191,6 +7415,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.watts > value.watts)
@@ -7204,7 +7429,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7219,6 +7449,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Speed value = default(Speed);
             bool hasValue = false;
             foreach (Speed x in source)
@@ -7227,6 +7458,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metresPerSecond > value.metresPerSecond)
@@ -7240,7 +7472,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7255,6 +7492,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AngularSpeed value = default(AngularSpeed);
             bool hasValue = false;
             foreach (AngularSpeed x in source)
@@ -7263,6 +7501,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.radiansPerSecond > value.radiansPerSecond)
@@ -7276,7 +7515,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7291,6 +7535,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Frequency value = default(Frequency);
             bool hasValue = false;
             foreach (Frequency x in source)
@@ -7299,6 +7544,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.hertz > value.hertz)
@@ -7312,7 +7558,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7327,6 +7578,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Acceleration value = default(Acceleration);
             bool hasValue = false;
             foreach (Acceleration x in source)
@@ -7335,6 +7587,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metresPerSecondSquared > value.metresPerSecondSquared)
@@ -7348,7 +7601,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7363,6 +7621,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Torque value = default(Torque);
             bool hasValue = false;
             foreach (Torque x in source)
@@ -7371,6 +7630,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.newtonMetres > value.newtonMetres)
@@ -7384,7 +7644,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7399,6 +7664,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Stiffness value = default(Stiffness);
             bool hasValue = false;
             foreach (Stiffness x in source)
@@ -7407,6 +7673,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.newtonsPerMetre > value.newtonsPerMetre)
@@ -7420,7 +7687,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7435,6 +7707,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             VolumetricFlow value = default(VolumetricFlow);
             bool hasValue = false;
             foreach (VolumetricFlow x in source)
@@ -7443,6 +7716,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.cubicMetresPerSecond > value.cubicMetresPerSecond)
@@ -7456,7 +7730,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7471,6 +7750,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Voltage value = default(Voltage);
             bool hasValue = false;
             foreach (Voltage x in source)
@@ -7479,6 +7759,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.volts > value.volts)
@@ -7492,7 +7773,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7507,6 +7793,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Resistance value = default(Resistance);
             bool hasValue = false;
             foreach (Resistance x in source)
@@ -7515,6 +7802,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.ohms > value.ohms)
@@ -7528,7 +7816,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7543,6 +7836,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             SpecificEnergy value = default(SpecificEnergy);
             bool hasValue = false;
             foreach (SpecificEnergy x in source)
@@ -7551,6 +7845,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.joulesPerKilogram > value.joulesPerKilogram)
@@ -7564,7 +7859,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7579,6 +7879,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             ElectricCharge value = default(ElectricCharge);
             bool hasValue = false;
             foreach (ElectricCharge x in source)
@@ -7587,6 +7888,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.coulombs > value.coulombs)
@@ -7600,7 +7902,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7615,6 +7922,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Inductance value = default(Inductance);
             bool hasValue = false;
             foreach (Inductance x in source)
@@ -7623,6 +7931,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.henrys > value.henrys)
@@ -7636,7 +7945,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7651,6 +7965,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Capacitance value = default(Capacitance);
             bool hasValue = false;
             foreach (Capacitance x in source)
@@ -7659,6 +7974,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.farads > value.farads)
@@ -7672,7 +7988,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7687,6 +8008,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Flexibility value = default(Flexibility);
             bool hasValue = false;
             foreach (Flexibility x in source)
@@ -7695,6 +8017,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metresPerNewton > value.metresPerNewton)
@@ -7708,7 +8031,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7723,6 +8051,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AngularAcceleration value = default(AngularAcceleration);
             bool hasValue = false;
             foreach (AngularAcceleration x in source)
@@ -7731,6 +8060,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.radiansPerSecondSquared > value.radiansPerSecondSquared)
@@ -7744,7 +8074,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7759,6 +8094,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AngularJerk value = default(AngularJerk);
             bool hasValue = false;
             foreach (AngularJerk x in source)
@@ -7767,6 +8103,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.radiansPerSecondCubed > value.radiansPerSecondCubed)
@@ -7780,7 +8117,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7795,6 +8137,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Jerk value = default(Jerk);
             bool hasValue = false;
             foreach (Jerk x in source)
@@ -7803,6 +8146,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metresPerSecondCubed > value.metresPerSecondCubed)
@@ -7816,7 +8160,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7831,6 +8180,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             LengthPerUnitless value = default(LengthPerUnitless);
             bool hasValue = false;
             foreach (LengthPerUnitless x in source)
@@ -7839,6 +8189,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.metresPerUnitless > value.metresPerUnitless)
@@ -7852,7 +8203,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7867,6 +8223,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AnglePerUnitless value = default(AnglePerUnitless);
             bool hasValue = false;
             foreach (AnglePerUnitless x in source)
@@ -7875,6 +8232,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.radiansPerUnitless > value.radiansPerUnitless)
@@ -7888,7 +8246,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7903,6 +8266,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             ForcePerUnitless value = default(ForcePerUnitless);
             bool hasValue = false;
             foreach (ForcePerUnitless x in source)
@@ -7911,6 +8275,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.newtonsPerUnitless > value.newtonsPerUnitless)
@@ -7924,7 +8289,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7939,6 +8309,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             LuminousFlux value = default(LuminousFlux);
             bool hasValue = false;
             foreach (LuminousFlux x in source)
@@ -7947,6 +8318,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.lumens > value.lumens)
@@ -7960,7 +8332,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -7975,6 +8352,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Illuminance value = default(Illuminance);
             bool hasValue = false;
             foreach (Illuminance x in source)
@@ -7983,6 +8361,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.lux > value.lux)
@@ -7996,7 +8375,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -8011,6 +8395,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MagneticFlux value = default(MagneticFlux);
             bool hasValue = false;
             foreach (MagneticFlux x in source)
@@ -8019,6 +8404,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.webers > value.webers)
@@ -8032,7 +8418,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -8047,6 +8438,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             ElectricalConductance value = default(ElectricalConductance);
             bool hasValue = false;
             foreach (ElectricalConductance x in source)
@@ -8055,6 +8447,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.siemens > value.siemens)
@@ -8068,7 +8461,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -8083,6 +8481,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MagneticFieldStrength value = default(MagneticFieldStrength);
             bool hasValue = false;
             foreach (MagneticFieldStrength x in source)
@@ -8091,6 +8490,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.teslas > value.teslas)
@@ -8104,7 +8504,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -8119,6 +8524,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             CatalyticActivity value = default(CatalyticActivity);
             bool hasValue = false;
             foreach (CatalyticActivity x in source)
@@ -8127,6 +8533,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.katals > value.katals)
@@ -8140,7 +8547,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -8155,6 +8567,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Momentum value = default(Momentum);
             bool hasValue = false;
             foreach (Momentum x in source)
@@ -8163,6 +8576,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.newtonSecond > value.newtonSecond)
@@ -8176,7 +8590,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -8191,6 +8610,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             Wavenumber value = default(Wavenumber);
             bool hasValue = false;
             foreach (Wavenumber x in source)
@@ -8199,6 +8619,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.reciprocalMetres > value.reciprocalMetres)
@@ -8212,7 +8633,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -8227,6 +8653,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             AreaDensity value = default(AreaDensity);
             bool hasValue = false;
             foreach (AreaDensity x in source)
@@ -8235,6 +8662,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kilogramsPerSquareMetre > value.kilogramsPerSquareMetre)
@@ -8248,7 +8676,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -8263,6 +8696,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             SpecificVolume value = default(SpecificVolume);
             bool hasValue = false;
             foreach (SpecificVolume x in source)
@@ -8271,6 +8705,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.cubicMetresPerKilogram > value.cubicMetresPerKilogram)
@@ -8284,7 +8719,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -8299,6 +8739,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MassFlow value = default(MassFlow);
             bool hasValue = false;
             foreach (MassFlow x in source)
@@ -8307,6 +8748,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kilogramsPerSecond > value.kilogramsPerSecond)
@@ -8320,7 +8762,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -8335,6 +8782,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             KinematicViscosity value = default(KinematicViscosity);
             bool hasValue = false;
             foreach (KinematicViscosity x in source)
@@ -8343,6 +8791,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.squareMetresPerSecond > value.squareMetresPerSecond)
@@ -8356,7 +8805,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -8371,6 +8825,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MolarMass value = default(MolarMass);
             bool hasValue = false;
             foreach (MolarMass x in source)
@@ -8379,6 +8834,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.kilogramsPerMole > value.kilogramsPerMole)
@@ -8392,7 +8848,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -8407,6 +8868,7 @@
             {
                 throw new ArgumentNullException("source");
             }
+
             MolarHeatCapacity value = default(MolarHeatCapacity);
             bool hasValue = false;
             foreach (MolarHeatCapacity x in source)
@@ -8415,6 +8877,7 @@
                 {
                     return x;
                 }
+
                 if (hasValue)
                 {
                     if (x.joulesPerKelvinMole > value.joulesPerKelvinMole)
@@ -8428,7 +8891,12 @@
                     hasValue = true;
                 }
             }
-            if (hasValue) return value;
+
+            if (hasValue)
+            {
+                return value;
+            }
+
             throw new ArgumentException("No elements", "source");
         }
 
@@ -11811,7 +12279,6 @@
 
             throw new ArgumentException("No elements", "source");
         }
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Mass}"/> for the values in <paramref name="source"/>
