@@ -16,12 +16,26 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.SpecificVolumeUnit.CubicMetresPerKilogram"/>
         /// </summary>
-        public static readonly SpecificVolume Zero = new SpecificVolume();
+        public static readonly SpecificVolume Zero = default(SpecificVolume);
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// The quantity in <see cref="Gu.Units.SpecificVolumeUnit.CubicMetresPerKilogram"/>.
         /// </summary>
         internal readonly double cubicMetresPerKilogram;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Gu.Units.SpecificVolume"/> struct.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit"><see cref="Gu.Units.SpecificVolumeUnit"/>.</param>
+        public SpecificVolume(double value, SpecificVolumeUnit unit)
+        {
+            this.cubicMetresPerKilogram = unit.ToSiUnit(value);
+        }
 
         private SpecificVolume(double cubicMetresPerKilogram)
         {
@@ -29,42 +43,32 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.SpecificVolume"/>.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"><see cref="Gu.Units.SpecificVolumeUnit"/>.</param>
-        public SpecificVolume(double value, SpecificVolumeUnit unit)
-        {
-            this.cubicMetresPerKilogram = unit.ToSiUnit(value);
-        }
-
-        /// <summary>
-        /// The quantity in <see cref="Gu.Units.SpecificVolumeUnit.CubicMetresPerKilogram"/>
+        /// Gets the quantity in <see cref="Gu.Units.SpecificVolumeUnit.CubicMetresPerKilogram"/>
         /// </summary>
         public double SiValue => this.cubicMetresPerKilogram;
 
         /// <summary>
-        /// The <see cref="Gu.Units.SpecificVolumeUnit"/> for the <see cref="SiValue"/>
+        /// Gets the <see cref="Gu.Units.SpecificVolumeUnit"/> for the <see cref="SiValue"/>
         /// </summary>
         public SpecificVolumeUnit SiUnit => SpecificVolumeUnit.CubicMetresPerKilogram;
 
         /// <summary>
-        /// The <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
+        /// Gets the <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
         /// </summary>
         IUnit IQuantity.SiUnit => SpecificVolumeUnit.CubicMetresPerKilogram;
 
         /// <summary>
-        /// The quantity in cubicMetresPerKilogram".
+        /// Gets the quantity in cubicMetresPerKilogram".
         /// </summary>
         public double CubicMetresPerKilogram => this.cubicMetresPerKilogram;
 
         /// <summary>
-        /// The quantity in CubicMetresPerGram
+        /// Gets the quantity in CubicMetresPerGram
         /// </summary>
         public double CubicMetresPerGram => this.cubicMetresPerKilogram / 1000;
 
         /// <summary>
-        /// The quantity in CubicCentimetresPerGram
+        /// Gets the quantity in CubicCentimetresPerGram
         /// </summary>
         public double CubicCentimetresPerGram => 1000 * this.cubicMetresPerKilogram;
 
@@ -305,7 +309,7 @@
         /// Indicates whether a specified <see cref="Gu.Units.SpecificVolume"/> is less than another specified <see cref="Gu.Units.SpecificVolume"/>.
         /// </summary>
         /// <returns>
-        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
+        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
         /// <param name="left">An instance of <see cref="Gu.Units.SpecificVolume"/>.</param>
         /// <param name="right">An instance of <see cref="Gu.Units.SpecificVolume"/>.</param>
@@ -318,7 +322,7 @@
         /// Indicates whether a specified <see cref="Gu.Units.SpecificVolume"/> is greater than another specified <see cref="Gu.Units.SpecificVolume"/>.
         /// </summary>
         /// <returns>
-        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
+        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
         /// <param name="left">An instance of <see cref="Gu.Units.SpecificVolume"/>.</param>
         /// <param name="right">An instance of <see cref="Gu.Units.SpecificVolume"/>.</param>
@@ -357,7 +361,7 @@
         /// Multiplies an instance of <see cref="Gu.Units.SpecificVolume"/> with <paramref name="left"/> and returns the result.
         /// </summary>
         /// <param name="right">An instance of <see cref="Gu.Units.SpecificVolume"/></param>
-        /// <param name="left">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="left">An instance of <seealso cref="double"/></param>
         /// <returns>Multiplies an instance of <see cref="Gu.Units.SpecificVolume"/> with <paramref name="left"/> and returns the result.</returns>
         public static SpecificVolume operator *(double left, SpecificVolume right)
         {
@@ -368,7 +372,7 @@
         /// Multiplies an instance of <see cref="Gu.Units.SpecificVolume"/> with <paramref name="right"/> and returns the result.
         /// </summary>
         /// <param name="left">An instance of <see cref="Gu.Units.SpecificVolume"/></param>
-        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
         /// <returns>Multiplies an instance of <see cref="Gu.Units.SpecificVolume"/> with <paramref name="right"/> and returns the result.</returns>
         public static SpecificVolume operator *(SpecificVolume left, double right)
         {
@@ -379,7 +383,7 @@
         /// Divides an instance of <see cref="Gu.Units.SpecificVolume"/> with <paramref name="right"/> and returns the result.
         /// </summary>
         /// <param name="left">An instance of <see cref="Gu.Units.SpecificVolume"/></param>
-        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
         /// <returns>Divides an instance of <see cref="Gu.Units.SpecificVolume"/> with <paramref name="right"/> and returns the result.</returns>
         public static SpecificVolume operator /(SpecificVolume left, double right)
         {
@@ -463,8 +467,8 @@
         /// <returns>The string representation of the <see cref="SpecificVolume"/></returns>
         public string ToString(IFormatProvider provider)
         {
-            var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(string.Empty, SiUnit);
-            return ToString(quantityFormat, provider);
+            var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(string.Empty, this.SiUnit);
+            return this.ToString(quantityFormat, provider);
         }
 
         /// <summary>
@@ -475,7 +479,7 @@
         public string ToString(string format)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(format);
-            return ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
         /// <summary>
@@ -483,30 +487,30 @@
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 m³/kg\"</param>
         /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
-        /// <returns>The string representation of the <see cref="SpecificVolume"/></returns> 
+        /// <returns>The string representation of the <see cref="SpecificVolume"/></returns>
         public string ToString(string format, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(format);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
         ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting of the unit ex m³/kg</param>
         /// <returns>The string representation of the <see cref="SpecificVolume"/></returns>
         public string ToString(string valueFormat, string symbolFormat)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(valueFormat, symbolFormat);
-            return ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
         /// <summary>
         ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting the unit ex m³/kg</param>
         /// <param name="formatProvider"></param>
@@ -514,7 +518,7 @@
         public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(valueFormat, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -525,7 +529,7 @@
         public string ToString(SpecificVolumeUnit unit)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(null, unit);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -537,7 +541,7 @@
         public string ToString(SpecificVolumeUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(null, unit, symbolFormat);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -549,7 +553,7 @@
         public string ToString(SpecificVolumeUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(null, unit);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -562,7 +566,7 @@
         public string ToString(SpecificVolumeUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(null, unit, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -574,7 +578,7 @@
         public string ToString(string valueFormat, SpecificVolumeUnit unit)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(valueFormat, unit);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -587,7 +591,7 @@
         public string ToString(string valueFormat, SpecificVolumeUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -600,7 +604,7 @@
         public string ToString(string valueFormat, SpecificVolumeUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(valueFormat, unit);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -608,13 +612,13 @@
         /// </summary>
         /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
         /// <param name="unit">The unit to use in the conversion</param>
-        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, SpecificVolumeUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<SpecificVolumeUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         internal string ToString(QuantityFormat<SpecificVolumeUnit> format, IFormatProvider formatProvider)
@@ -631,23 +635,14 @@
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
-        /// 
-        ///                     Value
-        /// 
-        ///                     Description
-        /// 
-        ///                     A negative integer
-        /// 
-        ///                     This instance is smaller than <paramref name="quantity"/>.
-        /// 
-        ///                     Zero
-        /// 
-        ///                     This instance is equal to <paramref name="quantity"/>.
-        /// 
-        ///                     A positive integer
-        /// 
-        ///                     This instance is larger than <paramref name="quantity"/>.
-        /// 
+        /// Value
+        /// Description
+        /// A negative integer
+        /// This instance is smaller than <paramref name="quantity"/>.
+        /// Zero
+        /// This instance is equal to <paramref name="quantity"/>.
+        /// A positive integer
+        /// This instance is larger than <paramref name="quantity"/>.
         /// </returns>
         /// <param name="quantity">An instance of <see cref="Gu.Units.SpecificVolume"/> object to compare to this instance.</param>
         public int CompareTo(SpecificVolume quantity)
@@ -708,13 +703,13 @@
         }
 
         /// <summary>
-        /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
-        /// you should return null (Nothing in Visual Basic) from this method, and instead, 
+        /// This method is reserved and should not be used. When implementing the IXmlSerializable interface,
+        /// you should return null (Nothing in Visual Basic) from this method, and instead,
         /// if specifying a custom schema is required, apply the <see cref="System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
         /// </summary>
         /// <returns>
         /// An <see cref="System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the
-        ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/> 
+        ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/>
         /// method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
         /// </returns>
         public XmlSchema GetSchema()

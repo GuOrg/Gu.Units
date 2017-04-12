@@ -16,12 +16,26 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.AnglePerUnitlessUnit.RadiansPerUnitless"/>
         /// </summary>
-        public static readonly AnglePerUnitless Zero = new AnglePerUnitless();
+        public static readonly AnglePerUnitless Zero = default(AnglePerUnitless);
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// The quantity in <see cref="Gu.Units.AnglePerUnitlessUnit.RadiansPerUnitless"/>.
         /// </summary>
         internal readonly double radiansPerUnitless;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Gu.Units.AnglePerUnitless"/> struct.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit"><see cref="Gu.Units.AnglePerUnitlessUnit"/>.</param>
+        public AnglePerUnitless(double value, AnglePerUnitlessUnit unit)
+        {
+            this.radiansPerUnitless = unit.ToSiUnit(value);
+        }
 
         private AnglePerUnitless(double radiansPerUnitless)
         {
@@ -29,42 +43,32 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.AnglePerUnitless"/>.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"><see cref="Gu.Units.AnglePerUnitlessUnit"/>.</param>
-        public AnglePerUnitless(double value, AnglePerUnitlessUnit unit)
-        {
-            this.radiansPerUnitless = unit.ToSiUnit(value);
-        }
-
-        /// <summary>
-        /// The quantity in <see cref="Gu.Units.AnglePerUnitlessUnit.RadiansPerUnitless"/>
+        /// Gets the quantity in <see cref="Gu.Units.AnglePerUnitlessUnit.RadiansPerUnitless"/>
         /// </summary>
         public double SiValue => this.radiansPerUnitless;
 
         /// <summary>
-        /// The <see cref="Gu.Units.AnglePerUnitlessUnit"/> for the <see cref="SiValue"/>
+        /// Gets the <see cref="Gu.Units.AnglePerUnitlessUnit"/> for the <see cref="SiValue"/>
         /// </summary>
         public AnglePerUnitlessUnit SiUnit => AnglePerUnitlessUnit.RadiansPerUnitless;
 
         /// <summary>
-        /// The <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
+        /// Gets the <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
         /// </summary>
         IUnit IQuantity.SiUnit => AnglePerUnitlessUnit.RadiansPerUnitless;
 
         /// <summary>
-        /// The quantity in radiansPerUnitless".
+        /// Gets the quantity in radiansPerUnitless".
         /// </summary>
         public double RadiansPerUnitless => this.radiansPerUnitless;
 
         /// <summary>
-        /// The quantity in DegreesPerPercent
+        /// Gets the quantity in DegreesPerPercent
         /// </summary>
         public double DegreesPerPercent => this.radiansPerUnitless / 1.74532925199433;
 
         /// <summary>
-        /// The quantity in RadiansPerPercent
+        /// Gets the quantity in RadiansPerPercent
         /// </summary>
         public double RadiansPerPercent => this.radiansPerUnitless / 100;
 
@@ -261,7 +265,7 @@
         /// Indicates whether a specified <see cref="Gu.Units.AnglePerUnitless"/> is less than another specified <see cref="Gu.Units.AnglePerUnitless"/>.
         /// </summary>
         /// <returns>
-        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
+        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
         /// <param name="left">An instance of <see cref="Gu.Units.AnglePerUnitless"/>.</param>
         /// <param name="right">An instance of <see cref="Gu.Units.AnglePerUnitless"/>.</param>
@@ -274,7 +278,7 @@
         /// Indicates whether a specified <see cref="Gu.Units.AnglePerUnitless"/> is greater than another specified <see cref="Gu.Units.AnglePerUnitless"/>.
         /// </summary>
         /// <returns>
-        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
+        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
         /// <param name="left">An instance of <see cref="Gu.Units.AnglePerUnitless"/>.</param>
         /// <param name="right">An instance of <see cref="Gu.Units.AnglePerUnitless"/>.</param>
@@ -313,7 +317,7 @@
         /// Multiplies an instance of <see cref="Gu.Units.AnglePerUnitless"/> with <paramref name="left"/> and returns the result.
         /// </summary>
         /// <param name="right">An instance of <see cref="Gu.Units.AnglePerUnitless"/></param>
-        /// <param name="left">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="left">An instance of <seealso cref="double"/></param>
         /// <returns>Multiplies an instance of <see cref="Gu.Units.AnglePerUnitless"/> with <paramref name="left"/> and returns the result.</returns>
         public static AnglePerUnitless operator *(double left, AnglePerUnitless right)
         {
@@ -324,7 +328,7 @@
         /// Multiplies an instance of <see cref="Gu.Units.AnglePerUnitless"/> with <paramref name="right"/> and returns the result.
         /// </summary>
         /// <param name="left">An instance of <see cref="Gu.Units.AnglePerUnitless"/></param>
-        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
         /// <returns>Multiplies an instance of <see cref="Gu.Units.AnglePerUnitless"/> with <paramref name="right"/> and returns the result.</returns>
         public static AnglePerUnitless operator *(AnglePerUnitless left, double right)
         {
@@ -335,7 +339,7 @@
         /// Divides an instance of <see cref="Gu.Units.AnglePerUnitless"/> with <paramref name="right"/> and returns the result.
         /// </summary>
         /// <param name="left">An instance of <see cref="Gu.Units.AnglePerUnitless"/></param>
-        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
         /// <returns>Divides an instance of <see cref="Gu.Units.AnglePerUnitless"/> with <paramref name="right"/> and returns the result.</returns>
         public static AnglePerUnitless operator /(AnglePerUnitless left, double right)
         {
@@ -419,8 +423,8 @@
         /// <returns>The string representation of the <see cref="AnglePerUnitless"/></returns>
         public string ToString(IFormatProvider provider)
         {
-            var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(string.Empty, SiUnit);
-            return ToString(quantityFormat, provider);
+            var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(string.Empty, this.SiUnit);
+            return this.ToString(quantityFormat, provider);
         }
 
         /// <summary>
@@ -431,7 +435,7 @@
         public string ToString(string format)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(format);
-            return ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
         /// <summary>
@@ -439,30 +443,30 @@
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 rad/ul\"</param>
         /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
-        /// <returns>The string representation of the <see cref="AnglePerUnitless"/></returns> 
+        /// <returns>The string representation of the <see cref="AnglePerUnitless"/></returns>
         public string ToString(string format, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(format);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
         ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting of the unit ex rad/ul</param>
         /// <returns>The string representation of the <see cref="AnglePerUnitless"/></returns>
         public string ToString(string valueFormat, string symbolFormat)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(valueFormat, symbolFormat);
-            return ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
         /// <summary>
         ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting the unit ex rad/ul</param>
         /// <param name="formatProvider"></param>
@@ -470,7 +474,7 @@
         public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(valueFormat, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -481,7 +485,7 @@
         public string ToString(AnglePerUnitlessUnit unit)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(null, unit);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -493,7 +497,7 @@
         public string ToString(AnglePerUnitlessUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(null, unit, symbolFormat);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -505,7 +509,7 @@
         public string ToString(AnglePerUnitlessUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(null, unit);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -518,7 +522,7 @@
         public string ToString(AnglePerUnitlessUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(null, unit, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -530,7 +534,7 @@
         public string ToString(string valueFormat, AnglePerUnitlessUnit unit)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(valueFormat, unit);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -543,7 +547,7 @@
         public string ToString(string valueFormat, AnglePerUnitlessUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -556,7 +560,7 @@
         public string ToString(string valueFormat, AnglePerUnitlessUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(valueFormat, unit);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -564,13 +568,13 @@
         /// </summary>
         /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
         /// <param name="unit">The unit to use in the conversion</param>
-        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, AnglePerUnitlessUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AnglePerUnitlessUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         internal string ToString(QuantityFormat<AnglePerUnitlessUnit> format, IFormatProvider formatProvider)
@@ -587,23 +591,14 @@
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
-        /// 
-        ///                     Value
-        /// 
-        ///                     Description
-        /// 
-        ///                     A negative integer
-        /// 
-        ///                     This instance is smaller than <paramref name="quantity"/>.
-        /// 
-        ///                     Zero
-        /// 
-        ///                     This instance is equal to <paramref name="quantity"/>.
-        /// 
-        ///                     A positive integer
-        /// 
-        ///                     This instance is larger than <paramref name="quantity"/>.
-        /// 
+        /// Value
+        /// Description
+        /// A negative integer
+        /// This instance is smaller than <paramref name="quantity"/>.
+        /// Zero
+        /// This instance is equal to <paramref name="quantity"/>.
+        /// A positive integer
+        /// This instance is larger than <paramref name="quantity"/>.
         /// </returns>
         /// <param name="quantity">An instance of <see cref="Gu.Units.AnglePerUnitless"/> object to compare to this instance.</param>
         public int CompareTo(AnglePerUnitless quantity)
@@ -664,13 +659,13 @@
         }
 
         /// <summary>
-        /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
-        /// you should return null (Nothing in Visual Basic) from this method, and instead, 
+        /// This method is reserved and should not be used. When implementing the IXmlSerializable interface,
+        /// you should return null (Nothing in Visual Basic) from this method, and instead,
         /// if specifying a custom schema is required, apply the <see cref="System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
         /// </summary>
         /// <returns>
         /// An <see cref="System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the
-        ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/> 
+        ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/>
         /// method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
         /// </returns>
         public XmlSchema GetSchema()

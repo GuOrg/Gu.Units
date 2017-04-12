@@ -47,10 +47,14 @@
         /// </summary>
         public static readonly DensityUnit MilligramsPerCubicMetre = new DensityUnit(milligramsPerCubicMetre => milligramsPerCubicMetre / 1000000, kilogramsPerCubicMetre => 1000000 * kilogramsPerCubicMetre, "mg/m³");
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// Gets the symbol for the <see cref="Gu.Units.DensityUnit"/>.
         /// </summary>
         internal readonly string symbol;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
 
         private readonly Func<double, double> toKilogramsPerCubicMetre;
         private readonly Func<double, double> fromKilogramsPerCubicMetre;

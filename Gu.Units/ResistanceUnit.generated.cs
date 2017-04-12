@@ -41,10 +41,14 @@
         /// </summary>
         public static readonly ResistanceUnit Megaohms = new ResistanceUnit(megaohms => 1000000 * megaohms, ohms => ohms / 1000000, "MΩ");
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// Gets the symbol for the <see cref="Gu.Units.ResistanceUnit"/>.
         /// </summary>
         internal readonly string symbol;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
 
         private readonly Func<double, double> toOhms;
         private readonly Func<double, double> fromOhms;

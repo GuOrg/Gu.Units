@@ -47,10 +47,14 @@
         /// </summary>
         public static readonly AngularJerkUnit DegreesPerMinuteCubed = new AngularJerkUnit(degreesPerMinuteCubed => 8.08022801849227E-08 * degreesPerMinuteCubed, radiansPerSecondCubed => radiansPerSecondCubed / 8.08022801849227E-08, "°⋅min⁻³");
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// Gets the symbol for the <see cref="Gu.Units.AngularJerkUnit"/>.
         /// </summary>
         internal readonly string symbol;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
 
         private readonly Func<double, double> toRadiansPerSecondCubed;
         private readonly Func<double, double> fromRadiansPerSecondCubed;

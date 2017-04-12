@@ -53,10 +53,14 @@
         /// </summary>
         public static readonly PowerUnit Gigawatts = new PowerUnit(gigawatts => 1000000000 * gigawatts, watts => watts / 1000000000, "GW");
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// Gets the symbol for the <see cref="Gu.Units.PowerUnit"/>.
         /// </summary>
         internal readonly string symbol;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
 
         private readonly Func<double, double> toWatts;
         private readonly Func<double, double> fromWatts;

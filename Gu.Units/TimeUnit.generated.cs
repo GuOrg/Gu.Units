@@ -53,10 +53,14 @@
         /// </summary>
         public static readonly TimeUnit Milliseconds = new TimeUnit(milliseconds => milliseconds / 1000, seconds => 1000 * seconds, "ms");
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// Gets the symbol for the <see cref="Gu.Units.TimeUnit"/>.
         /// </summary>
         internal readonly string symbol;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
 
         private readonly Func<double, double> toSeconds;
         private readonly Func<double, double> fromSeconds;

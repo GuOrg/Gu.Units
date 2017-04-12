@@ -27,12 +27,26 @@ namespace <#= Settings.Namespace #>
         /// <summary>
         /// Gets a value that is zero <see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>.<#= quantity.Unit.Name #>"/>
         /// </summary>
-        public static readonly <#= quantity.Name #> Zero = new <#= quantity.Name #>();
+        public static readonly <#= quantity.Name #> Zero = default(<#= quantity.Name #>);
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// The quantity in <see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>.<#= quantity.Unit.Name #>"/>.
         /// </summary>
         internal readonly double <#= quantity.Unit.ParameterName #>;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> struct.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit"><see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>"/>.</param>
+        public <#= quantity.Name #>(double value, <#= quantity.UnitName #> unit)
+        {
+            this.<#= quantity.Unit.ParameterName #> = unit.<#= Names.ToSiUnit #>(value);
+        }
 
         private <#= quantity.Name #>(double <#= quantity.Unit.ParameterName #>)
         {
@@ -40,32 +54,22 @@ namespace <#= Settings.Namespace #>
         }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"><see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>"/>.</param>
-        public <#= quantity.Name #>(double value, <#= quantity.UnitName #> unit)
-        {
-            this.<#= quantity.Unit.ParameterName #> = unit.<#= Names.ToSiUnit #>(value);
-        }
-
-        /// <summary>
-        /// The quantity in <see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>.<#= quantity.Unit.Name #>"/>
+        /// Gets the quantity in <see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>.<#= quantity.Unit.Name #>"/>
         /// </summary>
         public double <#= Names.SiValue #> => this.<#= quantity.Unit.ParameterName #>;
 
         /// <summary>
-        /// The <see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>"/> for the <see cref="SiValue"/>
+        /// Gets the <see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>"/> for the <see cref="SiValue"/>
         /// </summary>
         public <#= quantity.UnitName #> SiUnit => <#= quantity.UnitName #>.<#= quantity.Unit.Name #>;
 
         /// <summary>
-        /// The <see cref="<#= Settings.Namespace #>.IUnit"/> for the <see cref="SiValue"/>
+        /// Gets the <see cref="<#= Settings.Namespace #>.IUnit"/> for the <see cref="SiValue"/>
         /// </summary>
         IUnit IQuantity.SiUnit => <#= quantity.UnitName #>.<#= quantity.Unit.Name #>;
 
         /// <summary>
-        /// The quantity in <#= quantity.Unit.ParameterName #>".
+        /// Gets the quantity in <#= quantity.Unit.ParameterName #>".
         /// </summary>
         public double <#= quantity.Unit.Name #> => this.<#= quantity.Unit.ParameterName #>;
 
@@ -75,7 +79,7 @@ namespace <#= Settings.Namespace #>
         var fromSi = unit.FromSi.Replace(quantity.Unit.ParameterName, "this." + quantity.Unit.ParameterName);
         #>
         /// <summary>
-        /// The quantity in <#= unit.Name #>
+        /// Gets the quantity in <#= unit.Name #>
         /// </summary>
         public double <#= unit.Name #> => <#= fromSi #>;
 
@@ -299,7 +303,7 @@ namespace <#= Settings.Namespace #>
         /// Indicates whether a specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> is less than another specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
         /// <returns>
-        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
+        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
         /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
         /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
@@ -312,7 +316,7 @@ namespace <#= Settings.Namespace #>
         /// Indicates whether a specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> is greater than another specified <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
         /// <returns>
-        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
+        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
         /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
         /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.</param>
@@ -351,7 +355,7 @@ namespace <#= Settings.Namespace #>
         /// Multiplies an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> with <paramref name="left"/> and returns the result.
         /// </summary>
         /// <param name="right">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></param>
-        /// <param name="left">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="left">An instance of <seealso cref="double"/></param>
         /// <returns>Multiplies an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> with <paramref name="left"/> and returns the result.</returns>
         public static <#= quantity.Name #> operator *(double left, <#= quantity.Name #> right)
         {
@@ -362,7 +366,7 @@ namespace <#= Settings.Namespace #>
         /// Multiplies an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> with <paramref name="right"/> and returns the result.
         /// </summary>
         /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></param>
-        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
         /// <returns>Multiplies an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> with <paramref name="right"/> and returns the result.</returns>
         public static <#= quantity.Name #> operator *(<#= quantity.Name #> left, double right)
         {
@@ -373,7 +377,7 @@ namespace <#= Settings.Namespace #>
         /// Divides an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> with <paramref name="right"/> and returns the result.
         /// </summary>
         /// <param name="left">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></param>
-        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
         /// <returns>Divides an instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> with <paramref name="right"/> and returns the result.</returns>
         public static <#= quantity.Name #> operator /(<#= quantity.Name #> left, double right)
         {
@@ -457,8 +461,8 @@ namespace <#= Settings.Namespace #>
         /// <returns>The string representation of the <see cref="<#= quantity.Name #>"/></returns>
         public string ToString(IFormatProvider provider)
         {
-            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(string.Empty, SiUnit);
-            return ToString(quantityFormat, provider);
+            var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(string.Empty, this.SiUnit);
+            return this.ToString(quantityFormat, provider);
         }
 
         /// <summary>
@@ -469,7 +473,7 @@ namespace <#= Settings.Namespace #>
         public string ToString(string format)
         {
             var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(format);
-            return ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
         /// <summary>
@@ -477,30 +481,30 @@ namespace <#= Settings.Namespace #>
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 <#= quantity.Unit.Symbol #>\"</param>
         /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
-        /// <returns>The string representation of the <see cref="<#= quantity.Name #>"/></returns> 
+        /// <returns>The string representation of the <see cref="<#= quantity.Name #>"/></returns>
         public string ToString(string format, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(format);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
         ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting of the unit ex <#= quantity.Unit.Symbol #></param>
         /// <returns>The string representation of the <see cref="<#= quantity.Name #>"/></returns>
         public string ToString(string valueFormat, string symbolFormat)
         {
             var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(valueFormat, symbolFormat);
-            return ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
         /// <summary>
         ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting the unit ex <#= quantity.Unit.Symbol #></param>
         /// <param name="formatProvider"></param>
@@ -508,7 +512,7 @@ namespace <#= Settings.Namespace #>
         public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(valueFormat, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -519,7 +523,7 @@ namespace <#= Settings.Namespace #>
         public string ToString(<#= quantity.UnitName #> unit)
         {
             var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(null, unit);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -531,7 +535,7 @@ namespace <#= Settings.Namespace #>
         public string ToString(<#= quantity.UnitName #> unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(null, unit, symbolFormat);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -543,7 +547,7 @@ namespace <#= Settings.Namespace #>
         public string ToString(<#= quantity.UnitName #> unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(null, unit);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -556,7 +560,7 @@ namespace <#= Settings.Namespace #>
         public string ToString(<#= quantity.UnitName #> unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(null, unit, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -568,7 +572,7 @@ namespace <#= Settings.Namespace #>
         public string ToString(string valueFormat, <#= quantity.UnitName #> unit)
         {
             var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(valueFormat, unit);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -581,7 +585,7 @@ namespace <#= Settings.Namespace #>
         public string ToString(string valueFormat, <#= quantity.UnitName #> unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(valueFormat, unit, symbolFormat);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -594,7 +598,7 @@ namespace <#= Settings.Namespace #>
         public string ToString(string valueFormat, <#= quantity.UnitName #> unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(valueFormat, unit);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -602,13 +606,13 @@ namespace <#= Settings.Namespace #>
         /// </summary>
         /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
         /// <param name="unit">The unit to use in the conversion</param>
-        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, <#= quantity.UnitName #> unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(valueFormat, unit, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         internal string ToString(QuantityFormat<<#= quantity.UnitName #>> format, IFormatProvider formatProvider)
@@ -625,23 +629,14 @@ namespace <#= Settings.Namespace #>
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
-        /// 
-        ///                     Value
-        /// 
-        ///                     Description
-        /// 
-        ///                     A negative integer
-        /// 
-        ///                     This instance is smaller than <paramref name="quantity"/>.
-        /// 
-        ///                     Zero
-        /// 
-        ///                     This instance is equal to <paramref name="quantity"/>.
-        /// 
-        ///                     A positive integer
-        /// 
-        ///                     This instance is larger than <paramref name="quantity"/>.
-        /// 
+        /// Value
+        /// Description
+        /// A negative integer
+        /// This instance is smaller than <paramref name="quantity"/>.
+        /// Zero
+        /// This instance is equal to <paramref name="quantity"/>.
+        /// A positive integer
+        /// This instance is larger than <paramref name="quantity"/>.
         /// </returns>
         /// <param name="quantity">An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/> object to compare to this instance.</param>
         public int CompareTo(<#= quantity.Name #> quantity)
@@ -702,13 +697,13 @@ namespace <#= Settings.Namespace #>
         }
 
         /// <summary>
-        /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
-        /// you should return null (Nothing in Visual Basic) from this method, and instead, 
+        /// This method is reserved and should not be used. When implementing the IXmlSerializable interface,
+        /// you should return null (Nothing in Visual Basic) from this method, and instead,
         /// if specifying a custom schema is required, apply the <see cref="System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
         /// </summary>
         /// <returns>
         /// An <see cref="System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the
-        ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/> 
+        ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/>
         /// method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
         /// </returns>
         public XmlSchema GetSchema()

@@ -59,10 +59,14 @@
         /// </summary>
         public static readonly AccelerationUnit MillimetresPerMinuteSquared = new AccelerationUnit(millimetresPerMinuteSquared => millimetresPerMinuteSquared / 3600000, metresPerSecondSquared => 3600000 * metresPerSecondSquared, "mm/min²");
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// Gets the symbol for the <see cref="Gu.Units.AccelerationUnit"/>.
         /// </summary>
         internal readonly string symbol;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
 
         private readonly Func<double, double> toMetresPerSecondSquared;
         private readonly Func<double, double> fromMetresPerSecondSquared;

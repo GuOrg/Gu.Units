@@ -35,10 +35,14 @@
         /// </summary>
         public static readonly UnitlessUnit Percents = new UnitlessUnit(percents => percents / 100, scalar => 100 * scalar, "%");
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// Gets the symbol for the <see cref="Gu.Units.UnitlessUnit"/>.
         /// </summary>
         internal readonly string symbol;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
 
         private readonly Func<double, double> toScalar;
         private readonly Func<double, double> fromScalar;

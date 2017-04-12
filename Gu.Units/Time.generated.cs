@@ -16,12 +16,26 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.TimeUnit.Seconds"/>
         /// </summary>
-        public static readonly Time Zero = new Time();
+        public static readonly Time Zero = default(Time);
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// The quantity in <see cref="Gu.Units.TimeUnit.Seconds"/>.
         /// </summary>
         internal readonly double seconds;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Gu.Units.Time"/> struct.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit"><see cref="Gu.Units.TimeUnit"/>.</param>
+        public Time(double value, TimeUnit unit)
+        {
+            this.seconds = unit.ToSiUnit(value);
+        }
 
         private Time(double seconds)
         {
@@ -29,62 +43,52 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Time"/>.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"><see cref="Gu.Units.TimeUnit"/>.</param>
-        public Time(double value, TimeUnit unit)
-        {
-            this.seconds = unit.ToSiUnit(value);
-        }
-
-        /// <summary>
-        /// The quantity in <see cref="Gu.Units.TimeUnit.Seconds"/>
+        /// Gets the quantity in <see cref="Gu.Units.TimeUnit.Seconds"/>
         /// </summary>
         public double SiValue => this.seconds;
 
         /// <summary>
-        /// The <see cref="Gu.Units.TimeUnit"/> for the <see cref="SiValue"/>
+        /// Gets the <see cref="Gu.Units.TimeUnit"/> for the <see cref="SiValue"/>
         /// </summary>
         public TimeUnit SiUnit => TimeUnit.Seconds;
 
         /// <summary>
-        /// The <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
+        /// Gets the <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
         /// </summary>
         IUnit IQuantity.SiUnit => TimeUnit.Seconds;
 
         /// <summary>
-        /// The quantity in seconds".
+        /// Gets the quantity in seconds".
         /// </summary>
         public double Seconds => this.seconds;
 
         /// <summary>
-        /// The quantity in Hours
+        /// Gets the quantity in Hours
         /// </summary>
         public double Hours => this.seconds / 3600;
 
         /// <summary>
-        /// The quantity in Minutes
+        /// Gets the quantity in Minutes
         /// </summary>
         public double Minutes => this.seconds / 60;
 
         /// <summary>
-        /// The quantity in Days
+        /// Gets the quantity in Days
         /// </summary>
         public double Days => this.seconds / 86400;
 
         /// <summary>
-        /// The quantity in Nanoseconds
+        /// Gets the quantity in Nanoseconds
         /// </summary>
         public double Nanoseconds => 1000000000 * this.seconds;
 
         /// <summary>
-        /// The quantity in Microseconds
+        /// Gets the quantity in Microseconds
         /// </summary>
         public double Microseconds => 1000000 * this.seconds;
 
         /// <summary>
-        /// The quantity in Milliseconds
+        /// Gets the quantity in Milliseconds
         /// </summary>
         public double Milliseconds => 1000 * this.seconds;
 
@@ -581,7 +585,7 @@
         /// Indicates whether a specified <see cref="Gu.Units.Time"/> is less than another specified <see cref="Gu.Units.Time"/>.
         /// </summary>
         /// <returns>
-        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
+        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
         /// <param name="left">An instance of <see cref="Gu.Units.Time"/>.</param>
         /// <param name="right">An instance of <see cref="Gu.Units.Time"/>.</param>
@@ -594,7 +598,7 @@
         /// Indicates whether a specified <see cref="Gu.Units.Time"/> is greater than another specified <see cref="Gu.Units.Time"/>.
         /// </summary>
         /// <returns>
-        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
+        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
         /// <param name="left">An instance of <see cref="Gu.Units.Time"/>.</param>
         /// <param name="right">An instance of <see cref="Gu.Units.Time"/>.</param>
@@ -633,7 +637,7 @@
         /// Multiplies an instance of <see cref="Gu.Units.Time"/> with <paramref name="left"/> and returns the result.
         /// </summary>
         /// <param name="right">An instance of <see cref="Gu.Units.Time"/></param>
-        /// <param name="left">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="left">An instance of <seealso cref="double"/></param>
         /// <returns>Multiplies an instance of <see cref="Gu.Units.Time"/> with <paramref name="left"/> and returns the result.</returns>
         public static Time operator *(double left, Time right)
         {
@@ -644,7 +648,7 @@
         /// Multiplies an instance of <see cref="Gu.Units.Time"/> with <paramref name="right"/> and returns the result.
         /// </summary>
         /// <param name="left">An instance of <see cref="Gu.Units.Time"/></param>
-        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
         /// <returns>Multiplies an instance of <see cref="Gu.Units.Time"/> with <paramref name="right"/> and returns the result.</returns>
         public static Time operator *(Time left, double right)
         {
@@ -655,7 +659,7 @@
         /// Divides an instance of <see cref="Gu.Units.Time"/> with <paramref name="right"/> and returns the result.
         /// </summary>
         /// <param name="left">An instance of <see cref="Gu.Units.Time"/></param>
-        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
         /// <returns>Divides an instance of <see cref="Gu.Units.Time"/> with <paramref name="right"/> and returns the result.</returns>
         public static Time operator /(Time left, double right)
         {
@@ -739,8 +743,8 @@
         /// <returns>The string representation of the <see cref="Time"/></returns>
         public string ToString(IFormatProvider provider)
         {
-            var quantityFormat = FormatCache<TimeUnit>.GetOrCreate(string.Empty, SiUnit);
-            return ToString(quantityFormat, provider);
+            var quantityFormat = FormatCache<TimeUnit>.GetOrCreate(string.Empty, this.SiUnit);
+            return this.ToString(quantityFormat, provider);
         }
 
         /// <summary>
@@ -751,7 +755,7 @@
         public string ToString(string format)
         {
             var quantityFormat = FormatCache<TimeUnit>.GetOrCreate(format);
-            return ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
         /// <summary>
@@ -759,30 +763,30 @@
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 s\"</param>
         /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
-        /// <returns>The string representation of the <see cref="Time"/></returns> 
+        /// <returns>The string representation of the <see cref="Time"/></returns>
         public string ToString(string format, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<TimeUnit>.GetOrCreate(format);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
         ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting of the unit ex s</param>
         /// <returns>The string representation of the <see cref="Time"/></returns>
         public string ToString(string valueFormat, string symbolFormat)
         {
             var quantityFormat = FormatCache<TimeUnit>.GetOrCreate(valueFormat, symbolFormat);
-            return ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
         /// <summary>
         ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting the unit ex s</param>
         /// <param name="formatProvider"></param>
@@ -790,7 +794,7 @@
         public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<TimeUnit>.GetOrCreate(valueFormat, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -801,7 +805,7 @@
         public string ToString(TimeUnit unit)
         {
             var quantityFormat = FormatCache<TimeUnit>.GetOrCreate(null, unit);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -813,7 +817,7 @@
         public string ToString(TimeUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<TimeUnit>.GetOrCreate(null, unit, symbolFormat);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -825,7 +829,7 @@
         public string ToString(TimeUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<TimeUnit>.GetOrCreate(null, unit);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -838,7 +842,7 @@
         public string ToString(TimeUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<TimeUnit>.GetOrCreate(null, unit, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -850,7 +854,7 @@
         public string ToString(string valueFormat, TimeUnit unit)
         {
             var quantityFormat = FormatCache<TimeUnit>.GetOrCreate(valueFormat, unit);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -863,7 +867,7 @@
         public string ToString(string valueFormat, TimeUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<TimeUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -876,7 +880,7 @@
         public string ToString(string valueFormat, TimeUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<TimeUnit>.GetOrCreate(valueFormat, unit);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -884,13 +888,13 @@
         /// </summary>
         /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
         /// <param name="unit">The unit to use in the conversion</param>
-        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, TimeUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<TimeUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         internal string ToString(QuantityFormat<TimeUnit> format, IFormatProvider formatProvider)
@@ -907,23 +911,14 @@
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
-        /// 
-        ///                     Value
-        /// 
-        ///                     Description
-        /// 
-        ///                     A negative integer
-        /// 
-        ///                     This instance is smaller than <paramref name="quantity"/>.
-        /// 
-        ///                     Zero
-        /// 
-        ///                     This instance is equal to <paramref name="quantity"/>.
-        /// 
-        ///                     A positive integer
-        /// 
-        ///                     This instance is larger than <paramref name="quantity"/>.
-        /// 
+        /// Value
+        /// Description
+        /// A negative integer
+        /// This instance is smaller than <paramref name="quantity"/>.
+        /// Zero
+        /// This instance is equal to <paramref name="quantity"/>.
+        /// A positive integer
+        /// This instance is larger than <paramref name="quantity"/>.
         /// </returns>
         /// <param name="quantity">An instance of <see cref="Gu.Units.Time"/> object to compare to this instance.</param>
         public int CompareTo(Time quantity)
@@ -984,13 +979,13 @@
         }
 
         /// <summary>
-        /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
-        /// you should return null (Nothing in Visual Basic) from this method, and instead, 
+        /// This method is reserved and should not be used. When implementing the IXmlSerializable interface,
+        /// you should return null (Nothing in Visual Basic) from this method, and instead,
         /// if specifying a custom schema is required, apply the <see cref="System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
         /// </summary>
         /// <returns>
         /// An <see cref="System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the
-        ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/> 
+        ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/>
         /// method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
         /// </returns>
         public XmlSchema GetSchema()

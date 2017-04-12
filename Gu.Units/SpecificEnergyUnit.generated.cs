@@ -23,10 +23,14 @@
         /// </summary>
         public static readonly SpecificEnergyUnit KilojoulesPerKilogram = new SpecificEnergyUnit(kilojoulesPerKilogram => 1000 * kilojoulesPerKilogram, joulesPerKilogram => joulesPerKilogram / 1000, "kJ/kg");
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// Gets the symbol for the <see cref="Gu.Units.SpecificEnergyUnit"/>.
         /// </summary>
         internal readonly string symbol;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
 
         private readonly Func<double, double> toJoulesPerKilogram;
         private readonly Func<double, double> fromJoulesPerKilogram;

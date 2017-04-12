@@ -16,12 +16,26 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.MassUnit.Kilograms"/>
         /// </summary>
-        public static readonly Mass Zero = new Mass();
+        public static readonly Mass Zero = default(Mass);
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// The quantity in <see cref="Gu.Units.MassUnit.Kilograms"/>.
         /// </summary>
         internal readonly double kilograms;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Gu.Units.Mass"/> struct.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit"><see cref="Gu.Units.MassUnit"/>.</param>
+        public Mass(double value, MassUnit unit)
+        {
+            this.kilograms = unit.ToSiUnit(value);
+        }
 
         private Mass(double kilograms)
         {
@@ -29,67 +43,57 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Mass"/>.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"><see cref="Gu.Units.MassUnit"/>.</param>
-        public Mass(double value, MassUnit unit)
-        {
-            this.kilograms = unit.ToSiUnit(value);
-        }
-
-        /// <summary>
-        /// The quantity in <see cref="Gu.Units.MassUnit.Kilograms"/>
+        /// Gets the quantity in <see cref="Gu.Units.MassUnit.Kilograms"/>
         /// </summary>
         public double SiValue => this.kilograms;
 
         /// <summary>
-        /// The <see cref="Gu.Units.MassUnit"/> for the <see cref="SiValue"/>
+        /// Gets the <see cref="Gu.Units.MassUnit"/> for the <see cref="SiValue"/>
         /// </summary>
         public MassUnit SiUnit => MassUnit.Kilograms;
 
         /// <summary>
-        /// The <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
+        /// Gets the <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
         /// </summary>
         IUnit IQuantity.SiUnit => MassUnit.Kilograms;
 
         /// <summary>
-        /// The quantity in kilograms".
+        /// Gets the quantity in kilograms".
         /// </summary>
         public double Kilograms => this.kilograms;
 
         /// <summary>
-        /// The quantity in Grams
+        /// Gets the quantity in Grams
         /// </summary>
         public double Grams => 1000 * this.kilograms;
 
         /// <summary>
-        /// The quantity in Milligrams
+        /// Gets the quantity in Milligrams
         /// </summary>
         public double Milligrams => 1000000 * this.kilograms;
 
         /// <summary>
-        /// The quantity in Micrograms
+        /// Gets the quantity in Micrograms
         /// </summary>
         public double Micrograms => 1000000000 * this.kilograms;
 
         /// <summary>
-        /// The quantity in AvoirdupoisPounds
+        /// Gets the quantity in AvoirdupoisPounds
         /// </summary>
         public double AvoirdupoisPounds => this.kilograms / 0.45359237;
 
         /// <summary>
-        /// The quantity in AvoirdupoisOunces
+        /// Gets the quantity in AvoirdupoisOunces
         /// </summary>
         public double AvoirdupoisOunces => this.kilograms / 0.028349523125;
 
         /// <summary>
-        /// The quantity in TroyOunces
+        /// Gets the quantity in TroyOunces
         /// </summary>
         public double TroyOunces => this.kilograms / 0.0311034768;
 
         /// <summary>
-        /// The quantity in TroyGrains
+        /// Gets the quantity in TroyGrains
         /// </summary>
         public double TroyGrains => this.kilograms / 6.479891E-05;
 
@@ -463,7 +467,7 @@
         /// Indicates whether a specified <see cref="Gu.Units.Mass"/> is less than another specified <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <returns>
-        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
+        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
         /// <param name="left">An instance of <see cref="Gu.Units.Mass"/>.</param>
         /// <param name="right">An instance of <see cref="Gu.Units.Mass"/>.</param>
@@ -476,7 +480,7 @@
         /// Indicates whether a specified <see cref="Gu.Units.Mass"/> is greater than another specified <see cref="Gu.Units.Mass"/>.
         /// </summary>
         /// <returns>
-        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
+        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
         /// <param name="left">An instance of <see cref="Gu.Units.Mass"/>.</param>
         /// <param name="right">An instance of <see cref="Gu.Units.Mass"/>.</param>
@@ -515,7 +519,7 @@
         /// Multiplies an instance of <see cref="Gu.Units.Mass"/> with <paramref name="left"/> and returns the result.
         /// </summary>
         /// <param name="right">An instance of <see cref="Gu.Units.Mass"/></param>
-        /// <param name="left">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="left">An instance of <seealso cref="double"/></param>
         /// <returns>Multiplies an instance of <see cref="Gu.Units.Mass"/> with <paramref name="left"/> and returns the result.</returns>
         public static Mass operator *(double left, Mass right)
         {
@@ -526,7 +530,7 @@
         /// Multiplies an instance of <see cref="Gu.Units.Mass"/> with <paramref name="right"/> and returns the result.
         /// </summary>
         /// <param name="left">An instance of <see cref="Gu.Units.Mass"/></param>
-        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
         /// <returns>Multiplies an instance of <see cref="Gu.Units.Mass"/> with <paramref name="right"/> and returns the result.</returns>
         public static Mass operator *(Mass left, double right)
         {
@@ -537,7 +541,7 @@
         /// Divides an instance of <see cref="Gu.Units.Mass"/> with <paramref name="right"/> and returns the result.
         /// </summary>
         /// <param name="left">An instance of <see cref="Gu.Units.Mass"/></param>
-        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
         /// <returns>Divides an instance of <see cref="Gu.Units.Mass"/> with <paramref name="right"/> and returns the result.</returns>
         public static Mass operator /(Mass left, double right)
         {
@@ -621,8 +625,8 @@
         /// <returns>The string representation of the <see cref="Mass"/></returns>
         public string ToString(IFormatProvider provider)
         {
-            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(string.Empty, SiUnit);
-            return ToString(quantityFormat, provider);
+            var quantityFormat = FormatCache<MassUnit>.GetOrCreate(string.Empty, this.SiUnit);
+            return this.ToString(quantityFormat, provider);
         }
 
         /// <summary>
@@ -633,7 +637,7 @@
         public string ToString(string format)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(format);
-            return ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
         /// <summary>
@@ -641,30 +645,30 @@
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 kg\"</param>
         /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
-        /// <returns>The string representation of the <see cref="Mass"/></returns> 
+        /// <returns>The string representation of the <see cref="Mass"/></returns>
         public string ToString(string format, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(format);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
         ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting of the unit ex kg</param>
         /// <returns>The string representation of the <see cref="Mass"/></returns>
         public string ToString(string valueFormat, string symbolFormat)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(valueFormat, symbolFormat);
-            return ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
         /// <summary>
         ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting the unit ex kg</param>
         /// <param name="formatProvider"></param>
@@ -672,7 +676,7 @@
         public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(valueFormat, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -683,7 +687,7 @@
         public string ToString(MassUnit unit)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(null, unit);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -695,7 +699,7 @@
         public string ToString(MassUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(null, unit, symbolFormat);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -707,7 +711,7 @@
         public string ToString(MassUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(null, unit);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -720,7 +724,7 @@
         public string ToString(MassUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(null, unit, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -732,7 +736,7 @@
         public string ToString(string valueFormat, MassUnit unit)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(valueFormat, unit);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -745,7 +749,7 @@
         public string ToString(string valueFormat, MassUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -758,7 +762,7 @@
         public string ToString(string valueFormat, MassUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(valueFormat, unit);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -766,13 +770,13 @@
         /// </summary>
         /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
         /// <param name="unit">The unit to use in the conversion</param>
-        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, MassUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<MassUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         internal string ToString(QuantityFormat<MassUnit> format, IFormatProvider formatProvider)
@@ -789,23 +793,14 @@
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
-        /// 
-        ///                     Value
-        /// 
-        ///                     Description
-        /// 
-        ///                     A negative integer
-        /// 
-        ///                     This instance is smaller than <paramref name="quantity"/>.
-        /// 
-        ///                     Zero
-        /// 
-        ///                     This instance is equal to <paramref name="quantity"/>.
-        /// 
-        ///                     A positive integer
-        /// 
-        ///                     This instance is larger than <paramref name="quantity"/>.
-        /// 
+        /// Value
+        /// Description
+        /// A negative integer
+        /// This instance is smaller than <paramref name="quantity"/>.
+        /// Zero
+        /// This instance is equal to <paramref name="quantity"/>.
+        /// A positive integer
+        /// This instance is larger than <paramref name="quantity"/>.
         /// </returns>
         /// <param name="quantity">An instance of <see cref="Gu.Units.Mass"/> object to compare to this instance.</param>
         public int CompareTo(Mass quantity)
@@ -866,13 +861,13 @@
         }
 
         /// <summary>
-        /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
-        /// you should return null (Nothing in Visual Basic) from this method, and instead, 
+        /// This method is reserved and should not be used. When implementing the IXmlSerializable interface,
+        /// you should return null (Nothing in Visual Basic) from this method, and instead,
         /// if specifying a custom schema is required, apply the <see cref="System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
         /// </summary>
         /// <returns>
         /// An <see cref="System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the
-        ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/> 
+        ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/>
         /// method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
         /// </returns>
         public XmlSchema GetSchema()

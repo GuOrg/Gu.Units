@@ -29,10 +29,14 @@
         /// </summary>
         public static readonly SpecificVolumeUnit CubicCentimetresPerGram = new SpecificVolumeUnit(cubicCentimetresPerGram => cubicCentimetresPerGram / 1000, cubicMetresPerKilogram => 1000 * cubicMetresPerKilogram, "cm³/g");
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// Gets the symbol for the <see cref="Gu.Units.SpecificVolumeUnit"/>.
         /// </summary>
         internal readonly string symbol;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
 
         private readonly Func<double, double> toCubicMetresPerKilogram;
         private readonly Func<double, double> fromCubicMetresPerKilogram;

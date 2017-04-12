@@ -53,10 +53,14 @@
         /// </summary>
         public static readonly InductanceUnit Gigahenrys = new InductanceUnit(gigahenrys => 1000000000 * gigahenrys, henrys => henrys / 1000000000, "GH");
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// Gets the symbol for the <see cref="Gu.Units.InductanceUnit"/>.
         /// </summary>
         internal readonly string symbol;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
 
         private readonly Func<double, double> toHenrys;
         private readonly Func<double, double> fromHenrys;

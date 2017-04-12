@@ -53,10 +53,14 @@
         /// </summary>
         public static readonly CapacitanceUnit Gigafarads = new CapacitanceUnit(gigafarads => 1000000000 * gigafarads, farads => farads / 1000000000, "GF");
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// Gets the symbol for the <see cref="Gu.Units.CapacitanceUnit"/>.
         /// </summary>
         internal readonly string symbol;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
 
         private readonly Func<double, double> toFarads;
         private readonly Func<double, double> fromFarads;

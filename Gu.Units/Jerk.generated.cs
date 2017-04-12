@@ -16,12 +16,26 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.JerkUnit.MetresPerSecondCubed"/>
         /// </summary>
-        public static readonly Jerk Zero = new Jerk();
+        public static readonly Jerk Zero = default(Jerk);
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// The quantity in <see cref="Gu.Units.JerkUnit.MetresPerSecondCubed"/>.
         /// </summary>
         internal readonly double metresPerSecondCubed;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Gu.Units.Jerk"/> struct.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit"><see cref="Gu.Units.JerkUnit"/>.</param>
+        public Jerk(double value, JerkUnit unit)
+        {
+            this.metresPerSecondCubed = unit.ToSiUnit(value);
+        }
 
         private Jerk(double metresPerSecondCubed)
         {
@@ -29,72 +43,62 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Jerk"/>.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"><see cref="Gu.Units.JerkUnit"/>.</param>
-        public Jerk(double value, JerkUnit unit)
-        {
-            this.metresPerSecondCubed = unit.ToSiUnit(value);
-        }
-
-        /// <summary>
-        /// The quantity in <see cref="Gu.Units.JerkUnit.MetresPerSecondCubed"/>
+        /// Gets the quantity in <see cref="Gu.Units.JerkUnit.MetresPerSecondCubed"/>
         /// </summary>
         public double SiValue => this.metresPerSecondCubed;
 
         /// <summary>
-        /// The <see cref="Gu.Units.JerkUnit"/> for the <see cref="SiValue"/>
+        /// Gets the <see cref="Gu.Units.JerkUnit"/> for the <see cref="SiValue"/>
         /// </summary>
         public JerkUnit SiUnit => JerkUnit.MetresPerSecondCubed;
 
         /// <summary>
-        /// The <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
+        /// Gets the <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
         /// </summary>
         IUnit IQuantity.SiUnit => JerkUnit.MetresPerSecondCubed;
 
         /// <summary>
-        /// The quantity in metresPerSecondCubed".
+        /// Gets the quantity in metresPerSecondCubed".
         /// </summary>
         public double MetresPerSecondCubed => this.metresPerSecondCubed;
 
         /// <summary>
-        /// The quantity in MillimetresPerSecondCubed
+        /// Gets the quantity in MillimetresPerSecondCubed
         /// </summary>
         public double MillimetresPerSecondCubed => 1000 * this.metresPerSecondCubed;
 
         /// <summary>
-        /// The quantity in CentimetresPerSecondCubed
+        /// Gets the quantity in CentimetresPerSecondCubed
         /// </summary>
         public double CentimetresPerSecondCubed => 100 * this.metresPerSecondCubed;
 
         /// <summary>
-        /// The quantity in MillimetresPerHourCubed
+        /// Gets the quantity in MillimetresPerHourCubed
         /// </summary>
         public double MillimetresPerHourCubed => 46656000000000 * this.metresPerSecondCubed;
 
         /// <summary>
-        /// The quantity in MillimetresPerMinuteCubed
+        /// Gets the quantity in MillimetresPerMinuteCubed
         /// </summary>
         public double MillimetresPerMinuteCubed => 216000000 * this.metresPerSecondCubed;
 
         /// <summary>
-        /// The quantity in MetresPerHourCubed
+        /// Gets the quantity in MetresPerHourCubed
         /// </summary>
         public double MetresPerHourCubed => 46656000000 * this.metresPerSecondCubed;
 
         /// <summary>
-        /// The quantity in MetresPerMinuteCubed
+        /// Gets the quantity in MetresPerMinuteCubed
         /// </summary>
         public double MetresPerMinuteCubed => 216000 * this.metresPerSecondCubed;
 
         /// <summary>
-        /// The quantity in CentimetresPerHourCubed
+        /// Gets the quantity in CentimetresPerHourCubed
         /// </summary>
         public double CentimetresPerHourCubed => 4665600000000 * this.metresPerSecondCubed;
 
         /// <summary>
-        /// The quantity in CentimetresPerMinuteCubed
+        /// Gets the quantity in CentimetresPerMinuteCubed
         /// </summary>
         public double CentimetresPerMinuteCubed => 21600000 * this.metresPerSecondCubed;
 
@@ -367,7 +371,7 @@
         /// Indicates whether a specified <see cref="Gu.Units.Jerk"/> is less than another specified <see cref="Gu.Units.Jerk"/>.
         /// </summary>
         /// <returns>
-        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
+        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
         /// <param name="left">An instance of <see cref="Gu.Units.Jerk"/>.</param>
         /// <param name="right">An instance of <see cref="Gu.Units.Jerk"/>.</param>
@@ -380,7 +384,7 @@
         /// Indicates whether a specified <see cref="Gu.Units.Jerk"/> is greater than another specified <see cref="Gu.Units.Jerk"/>.
         /// </summary>
         /// <returns>
-        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
+        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
         /// <param name="left">An instance of <see cref="Gu.Units.Jerk"/>.</param>
         /// <param name="right">An instance of <see cref="Gu.Units.Jerk"/>.</param>
@@ -419,7 +423,7 @@
         /// Multiplies an instance of <see cref="Gu.Units.Jerk"/> with <paramref name="left"/> and returns the result.
         /// </summary>
         /// <param name="right">An instance of <see cref="Gu.Units.Jerk"/></param>
-        /// <param name="left">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="left">An instance of <seealso cref="double"/></param>
         /// <returns>Multiplies an instance of <see cref="Gu.Units.Jerk"/> with <paramref name="left"/> and returns the result.</returns>
         public static Jerk operator *(double left, Jerk right)
         {
@@ -430,7 +434,7 @@
         /// Multiplies an instance of <see cref="Gu.Units.Jerk"/> with <paramref name="right"/> and returns the result.
         /// </summary>
         /// <param name="left">An instance of <see cref="Gu.Units.Jerk"/></param>
-        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
         /// <returns>Multiplies an instance of <see cref="Gu.Units.Jerk"/> with <paramref name="right"/> and returns the result.</returns>
         public static Jerk operator *(Jerk left, double right)
         {
@@ -441,7 +445,7 @@
         /// Divides an instance of <see cref="Gu.Units.Jerk"/> with <paramref name="right"/> and returns the result.
         /// </summary>
         /// <param name="left">An instance of <see cref="Gu.Units.Jerk"/></param>
-        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
         /// <returns>Divides an instance of <see cref="Gu.Units.Jerk"/> with <paramref name="right"/> and returns the result.</returns>
         public static Jerk operator /(Jerk left, double right)
         {
@@ -525,8 +529,8 @@
         /// <returns>The string representation of the <see cref="Jerk"/></returns>
         public string ToString(IFormatProvider provider)
         {
-            var quantityFormat = FormatCache<JerkUnit>.GetOrCreate(string.Empty, SiUnit);
-            return ToString(quantityFormat, provider);
+            var quantityFormat = FormatCache<JerkUnit>.GetOrCreate(string.Empty, this.SiUnit);
+            return this.ToString(quantityFormat, provider);
         }
 
         /// <summary>
@@ -537,7 +541,7 @@
         public string ToString(string format)
         {
             var quantityFormat = FormatCache<JerkUnit>.GetOrCreate(format);
-            return ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
         /// <summary>
@@ -545,30 +549,30 @@
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 m/s³\"</param>
         /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
-        /// <returns>The string representation of the <see cref="Jerk"/></returns> 
+        /// <returns>The string representation of the <see cref="Jerk"/></returns>
         public string ToString(string format, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<JerkUnit>.GetOrCreate(format);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
         ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting of the unit ex m/s³</param>
         /// <returns>The string representation of the <see cref="Jerk"/></returns>
         public string ToString(string valueFormat, string symbolFormat)
         {
             var quantityFormat = FormatCache<JerkUnit>.GetOrCreate(valueFormat, symbolFormat);
-            return ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
         /// <summary>
         ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting the unit ex m/s³</param>
         /// <param name="formatProvider"></param>
@@ -576,7 +580,7 @@
         public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<JerkUnit>.GetOrCreate(valueFormat, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -587,7 +591,7 @@
         public string ToString(JerkUnit unit)
         {
             var quantityFormat = FormatCache<JerkUnit>.GetOrCreate(null, unit);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -599,7 +603,7 @@
         public string ToString(JerkUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<JerkUnit>.GetOrCreate(null, unit, symbolFormat);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -611,7 +615,7 @@
         public string ToString(JerkUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<JerkUnit>.GetOrCreate(null, unit);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -624,7 +628,7 @@
         public string ToString(JerkUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<JerkUnit>.GetOrCreate(null, unit, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -636,7 +640,7 @@
         public string ToString(string valueFormat, JerkUnit unit)
         {
             var quantityFormat = FormatCache<JerkUnit>.GetOrCreate(valueFormat, unit);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -649,7 +653,7 @@
         public string ToString(string valueFormat, JerkUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<JerkUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -662,7 +666,7 @@
         public string ToString(string valueFormat, JerkUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<JerkUnit>.GetOrCreate(valueFormat, unit);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -670,13 +674,13 @@
         /// </summary>
         /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
         /// <param name="unit">The unit to use in the conversion</param>
-        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, JerkUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<JerkUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         internal string ToString(QuantityFormat<JerkUnit> format, IFormatProvider formatProvider)
@@ -693,23 +697,14 @@
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
-        /// 
-        ///                     Value
-        /// 
-        ///                     Description
-        /// 
-        ///                     A negative integer
-        /// 
-        ///                     This instance is smaller than <paramref name="quantity"/>.
-        /// 
-        ///                     Zero
-        /// 
-        ///                     This instance is equal to <paramref name="quantity"/>.
-        /// 
-        ///                     A positive integer
-        /// 
-        ///                     This instance is larger than <paramref name="quantity"/>.
-        /// 
+        /// Value
+        /// Description
+        /// A negative integer
+        /// This instance is smaller than <paramref name="quantity"/>.
+        /// Zero
+        /// This instance is equal to <paramref name="quantity"/>.
+        /// A positive integer
+        /// This instance is larger than <paramref name="quantity"/>.
         /// </returns>
         /// <param name="quantity">An instance of <see cref="Gu.Units.Jerk"/> object to compare to this instance.</param>
         public int CompareTo(Jerk quantity)
@@ -770,13 +765,13 @@
         }
 
         /// <summary>
-        /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
-        /// you should return null (Nothing in Visual Basic) from this method, and instead, 
+        /// This method is reserved and should not be used. When implementing the IXmlSerializable interface,
+        /// you should return null (Nothing in Visual Basic) from this method, and instead,
         /// if specifying a custom schema is required, apply the <see cref="System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
         /// </summary>
         /// <returns>
         /// An <see cref="System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the
-        ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/> 
+        ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/>
         /// method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
         /// </returns>
         public XmlSchema GetSchema()

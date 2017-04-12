@@ -107,10 +107,14 @@
         /// </summary>
         public static readonly VolumetricFlowUnit CubicFeetPerDay = new VolumetricFlowUnit(cubicFeetPerDay => 3.2774128E-07 * cubicFeetPerDay, cubicMetresPerSecond => cubicMetresPerSecond / 3.2774128E-07, "ft³/d");
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// Gets the symbol for the <see cref="Gu.Units.VolumetricFlowUnit"/>.
         /// </summary>
         internal readonly string symbol;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
 
         private readonly Func<double, double> toCubicMetresPerSecond;
         private readonly Func<double, double> fromCubicMetresPerSecond;

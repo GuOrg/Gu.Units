@@ -41,10 +41,14 @@
         /// </summary>
         public static readonly FrequencyUnit Gigahertz = new FrequencyUnit(gigahertz => 1000000000 * gigahertz, hertz => hertz / 1000000000, "GHz");
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// Gets the symbol for the <see cref="Gu.Units.FrequencyUnit"/>.
         /// </summary>
         internal readonly string symbol;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
 
         private readonly Func<double, double> toHertz;
         private readonly Func<double, double> fromHertz;

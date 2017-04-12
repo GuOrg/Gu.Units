@@ -16,12 +16,26 @@
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.AngularAccelerationUnit.RadiansPerSecondSquared"/>
         /// </summary>
-        public static readonly AngularAcceleration Zero = new AngularAcceleration();
+        public static readonly AngularAcceleration Zero = default(AngularAcceleration);
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// The quantity in <see cref="Gu.Units.AngularAccelerationUnit.RadiansPerSecondSquared"/>.
         /// </summary>
         internal readonly double radiansPerSecondSquared;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Gu.Units.AngularAcceleration"/> struct.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit"><see cref="Gu.Units.AngularAccelerationUnit"/>.</param>
+        public AngularAcceleration(double value, AngularAccelerationUnit unit)
+        {
+            this.radiansPerSecondSquared = unit.ToSiUnit(value);
+        }
 
         private AngularAcceleration(double radiansPerSecondSquared)
         {
@@ -29,57 +43,47 @@
         }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.AngularAcceleration"/>.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="unit"><see cref="Gu.Units.AngularAccelerationUnit"/>.</param>
-        public AngularAcceleration(double value, AngularAccelerationUnit unit)
-        {
-            this.radiansPerSecondSquared = unit.ToSiUnit(value);
-        }
-
-        /// <summary>
-        /// The quantity in <see cref="Gu.Units.AngularAccelerationUnit.RadiansPerSecondSquared"/>
+        /// Gets the quantity in <see cref="Gu.Units.AngularAccelerationUnit.RadiansPerSecondSquared"/>
         /// </summary>
         public double SiValue => this.radiansPerSecondSquared;
 
         /// <summary>
-        /// The <see cref="Gu.Units.AngularAccelerationUnit"/> for the <see cref="SiValue"/>
+        /// Gets the <see cref="Gu.Units.AngularAccelerationUnit"/> for the <see cref="SiValue"/>
         /// </summary>
         public AngularAccelerationUnit SiUnit => AngularAccelerationUnit.RadiansPerSecondSquared;
 
         /// <summary>
-        /// The <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
+        /// Gets the <see cref="Gu.Units.IUnit"/> for the <see cref="SiValue"/>
         /// </summary>
         IUnit IQuantity.SiUnit => AngularAccelerationUnit.RadiansPerSecondSquared;
 
         /// <summary>
-        /// The quantity in radiansPerSecondSquared".
+        /// Gets the quantity in radiansPerSecondSquared".
         /// </summary>
         public double RadiansPerSecondSquared => this.radiansPerSecondSquared;
 
         /// <summary>
-        /// The quantity in DegreesPerSecondSquared
+        /// Gets the quantity in DegreesPerSecondSquared
         /// </summary>
         public double DegreesPerSecondSquared => this.radiansPerSecondSquared / 0.0174532925199433;
 
         /// <summary>
-        /// The quantity in RadiansPerHourSquared
+        /// Gets the quantity in RadiansPerHourSquared
         /// </summary>
         public double RadiansPerHourSquared => 12960000 * this.radiansPerSecondSquared;
 
         /// <summary>
-        /// The quantity in DegreesPerHourSquared
+        /// Gets the quantity in DegreesPerHourSquared
         /// </summary>
         public double DegreesPerHourSquared => this.radiansPerSecondSquared / 1.34670466974871E-09;
 
         /// <summary>
-        /// The quantity in DegreesPerMinuteSquared
+        /// Gets the quantity in DegreesPerMinuteSquared
         /// </summary>
         public double DegreesPerMinuteSquared => this.radiansPerSecondSquared / 4.84813681109536E-06;
 
         /// <summary>
-        /// The quantity in RadiansPerMinuteSquared
+        /// Gets the quantity in RadiansPerMinuteSquared
         /// </summary>
         public double RadiansPerMinuteSquared => 3600 * this.radiansPerSecondSquared;
 
@@ -358,7 +362,7 @@
         /// Indicates whether a specified <see cref="Gu.Units.AngularAcceleration"/> is less than another specified <see cref="Gu.Units.AngularAcceleration"/>.
         /// </summary>
         /// <returns>
-        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false. 
+        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
         /// <param name="left">An instance of <see cref="Gu.Units.AngularAcceleration"/>.</param>
         /// <param name="right">An instance of <see cref="Gu.Units.AngularAcceleration"/>.</param>
@@ -371,7 +375,7 @@
         /// Indicates whether a specified <see cref="Gu.Units.AngularAcceleration"/> is greater than another specified <see cref="Gu.Units.AngularAcceleration"/>.
         /// </summary>
         /// <returns>
-        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false. 
+        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
         /// <param name="left">An instance of <see cref="Gu.Units.AngularAcceleration"/>.</param>
         /// <param name="right">An instance of <see cref="Gu.Units.AngularAcceleration"/>.</param>
@@ -410,7 +414,7 @@
         /// Multiplies an instance of <see cref="Gu.Units.AngularAcceleration"/> with <paramref name="left"/> and returns the result.
         /// </summary>
         /// <param name="right">An instance of <see cref="Gu.Units.AngularAcceleration"/></param>
-        /// <param name="left">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="left">An instance of <seealso cref="double"/></param>
         /// <returns>Multiplies an instance of <see cref="Gu.Units.AngularAcceleration"/> with <paramref name="left"/> and returns the result.</returns>
         public static AngularAcceleration operator *(double left, AngularAcceleration right)
         {
@@ -421,7 +425,7 @@
         /// Multiplies an instance of <see cref="Gu.Units.AngularAcceleration"/> with <paramref name="right"/> and returns the result.
         /// </summary>
         /// <param name="left">An instance of <see cref="Gu.Units.AngularAcceleration"/></param>
-        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
         /// <returns>Multiplies an instance of <see cref="Gu.Units.AngularAcceleration"/> with <paramref name="right"/> and returns the result.</returns>
         public static AngularAcceleration operator *(AngularAcceleration left, double right)
         {
@@ -432,7 +436,7 @@
         /// Divides an instance of <see cref="Gu.Units.AngularAcceleration"/> with <paramref name="right"/> and returns the result.
         /// </summary>
         /// <param name="left">An instance of <see cref="Gu.Units.AngularAcceleration"/></param>
-        /// <param name="right">An instance of <seealso cref="System.Double"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
         /// <returns>Divides an instance of <see cref="Gu.Units.AngularAcceleration"/> with <paramref name="right"/> and returns the result.</returns>
         public static AngularAcceleration operator /(AngularAcceleration left, double right)
         {
@@ -516,8 +520,8 @@
         /// <returns>The string representation of the <see cref="AngularAcceleration"/></returns>
         public string ToString(IFormatProvider provider)
         {
-            var quantityFormat = FormatCache<AngularAccelerationUnit>.GetOrCreate(string.Empty, SiUnit);
-            return ToString(quantityFormat, provider);
+            var quantityFormat = FormatCache<AngularAccelerationUnit>.GetOrCreate(string.Empty, this.SiUnit);
+            return this.ToString(quantityFormat, provider);
         }
 
         /// <summary>
@@ -528,7 +532,7 @@
         public string ToString(string format)
         {
             var quantityFormat = FormatCache<AngularAccelerationUnit>.GetOrCreate(format);
-            return ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
         /// <summary>
@@ -536,30 +540,30 @@
         /// </summary>
         /// <param name="format">Must be a composite format ex: \"F2 rad/s²\"</param>
         /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
-        /// <returns>The string representation of the <see cref="AngularAcceleration"/></returns> 
+        /// <returns>The string representation of the <see cref="AngularAcceleration"/></returns>
         public string ToString(string format, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AngularAccelerationUnit>.GetOrCreate(format);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
         ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting of the unit ex rad/s²</param>
         /// <returns>The string representation of the <see cref="AngularAcceleration"/></returns>
         public string ToString(string valueFormat, string symbolFormat)
         {
             var quantityFormat = FormatCache<AngularAccelerationUnit>.GetOrCreate(valueFormat, symbolFormat);
-            return ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider)null);
         }
 
         /// <summary>
         ///  If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="System.Double"/> are valid
+        /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting the unit ex rad/s²</param>
         /// <param name="formatProvider"></param>
@@ -567,7 +571,7 @@
         public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AngularAccelerationUnit>.GetOrCreate(valueFormat, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -578,7 +582,7 @@
         public string ToString(AngularAccelerationUnit unit)
         {
             var quantityFormat = FormatCache<AngularAccelerationUnit>.GetOrCreate(null, unit);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -590,7 +594,7 @@
         public string ToString(AngularAccelerationUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<AngularAccelerationUnit>.GetOrCreate(null, unit, symbolFormat);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -602,7 +606,7 @@
         public string ToString(AngularAccelerationUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AngularAccelerationUnit>.GetOrCreate(null, unit);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -615,7 +619,7 @@
         public string ToString(AngularAccelerationUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AngularAccelerationUnit>.GetOrCreate(null, unit, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -627,7 +631,7 @@
         public string ToString(string valueFormat, AngularAccelerationUnit unit)
         {
             var quantityFormat = FormatCache<AngularAccelerationUnit>.GetOrCreate(valueFormat, unit);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -640,7 +644,7 @@
         public string ToString(string valueFormat, AngularAccelerationUnit unit, SymbolFormat symbolFormat)
         {
             var quantityFormat = FormatCache<AngularAccelerationUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
-            return ToString(quantityFormat, null);
+            return this.ToString(quantityFormat, null);
         }
 
         /// <summary>
@@ -653,7 +657,7 @@
         public string ToString(string valueFormat, AngularAccelerationUnit unit, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AngularAccelerationUnit>.GetOrCreate(valueFormat, unit);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         /// <summary>
@@ -661,13 +665,13 @@
         /// </summary>
         /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
         /// <param name="unit">The unit to use in the conversion</param>
-        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>/// 
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, AngularAccelerationUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
             var quantityFormat = FormatCache<AngularAccelerationUnit>.GetOrCreate(valueFormat, unit, symbolFormat);
-            return ToString(quantityFormat, formatProvider);
+            return this.ToString(quantityFormat, formatProvider);
         }
 
         internal string ToString(QuantityFormat<AngularAccelerationUnit> format, IFormatProvider formatProvider)
@@ -684,23 +688,14 @@
         /// </summary>
         /// <returns>
         /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
-        /// 
-        ///                     Value
-        /// 
-        ///                     Description
-        /// 
-        ///                     A negative integer
-        /// 
-        ///                     This instance is smaller than <paramref name="quantity"/>.
-        /// 
-        ///                     Zero
-        /// 
-        ///                     This instance is equal to <paramref name="quantity"/>.
-        /// 
-        ///                     A positive integer
-        /// 
-        ///                     This instance is larger than <paramref name="quantity"/>.
-        /// 
+        /// Value
+        /// Description
+        /// A negative integer
+        /// This instance is smaller than <paramref name="quantity"/>.
+        /// Zero
+        /// This instance is equal to <paramref name="quantity"/>.
+        /// A positive integer
+        /// This instance is larger than <paramref name="quantity"/>.
         /// </returns>
         /// <param name="quantity">An instance of <see cref="Gu.Units.AngularAcceleration"/> object to compare to this instance.</param>
         public int CompareTo(AngularAcceleration quantity)
@@ -761,13 +756,13 @@
         }
 
         /// <summary>
-        /// This method is reserved and should not be used. When implementing the IXmlSerializable interface, 
-        /// you should return null (Nothing in Visual Basic) from this method, and instead, 
+        /// This method is reserved and should not be used. When implementing the IXmlSerializable interface,
+        /// you should return null (Nothing in Visual Basic) from this method, and instead,
         /// if specifying a custom schema is required, apply the <see cref="System.Xml.Serialization.XmlSchemaProviderAttribute"/> to the class.
         /// </summary>
         /// <returns>
         /// An <see cref="System.Xml.Schema.XmlSchema"/> that describes the XML representation of the object that is produced by the
-        ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/> 
+        ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/>
         /// method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
         /// </returns>
         public XmlSchema GetSchema()

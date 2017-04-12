@@ -71,10 +71,14 @@
         /// </summary>
         public static readonly AreaUnit SquareFeet = new AreaUnit(squareFeet => 0.09290304 * squareFeet, squareMetres => squareMetres / 0.09290304, "ft²");
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// Gets the symbol for the <see cref="Gu.Units.AreaUnit"/>.
         /// </summary>
         internal readonly string symbol;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
 
         private readonly Func<double, double> toSquareMetres;
         private readonly Func<double, double> fromSquareMetres;

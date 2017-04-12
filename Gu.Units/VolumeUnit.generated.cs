@@ -71,10 +71,14 @@
         /// </summary>
         public static readonly VolumeUnit CubicFeet = new VolumeUnit(cubicFeet => 0.028316846592 * cubicFeet, cubicMetres => cubicMetres / 0.028316846592, "ft³");
 
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
+#pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>
         /// Gets the symbol for the <see cref="Gu.Units.VolumeUnit"/>.
         /// </summary>
         internal readonly string symbol;
+#pragma warning restore SA1304 // Non-private readonly fields must begin with upper-case letter
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
 
         private readonly Func<double, double> toCubicMetres;
         private readonly Func<double, double> fromCubicMetres;
