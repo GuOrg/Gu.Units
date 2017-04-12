@@ -372,7 +372,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Temperature"/>.
         /// </summary>
-        /// <param name="celsius">The value in °C</param>
+        /// <param name="celsius">The value in °C.</param>
         /// <returns>An instance of <see cref="Gu.Units.Temperature"/></returns>
         public static Temperature FromCelsius(double celsius)
         {
@@ -382,7 +382,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Temperature"/>.
         /// </summary>
-        /// <param name="fahrenheit">The value in °F</param>
+        /// <param name="fahrenheit">The value in °F.</param>
         /// <returns>An instance of <see cref="Gu.Units.Temperature"/></returns>
         public static Temperature FromFahrenheit(double fahrenheit)
         {

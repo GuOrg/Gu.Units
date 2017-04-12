@@ -454,7 +454,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
         /// </summary>
-        /// <param name="millimetresPerNewton">The value in mm/N</param>
+        /// <param name="millimetresPerNewton">The value in mm/N.</param>
         /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
         public static Flexibility FromMillimetresPerNewton(double millimetresPerNewton)
         {
@@ -464,7 +464,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
         /// </summary>
-        /// <param name="millimetresPerKilonewton">The value in mm/kN</param>
+        /// <param name="millimetresPerKilonewton">The value in mm/kN.</param>
         /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
         public static Flexibility FromMillimetresPerKilonewton(double millimetresPerKilonewton)
         {
@@ -474,7 +474,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
         /// </summary>
-        /// <param name="micrometresPerKilonewton">The value in µm/kN</param>
+        /// <param name="micrometresPerKilonewton">The value in µm/kN.</param>
         /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
         public static Flexibility FromMicrometresPerKilonewton(double micrometresPerKilonewton)
         {

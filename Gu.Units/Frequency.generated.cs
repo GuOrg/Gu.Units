@@ -613,7 +613,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
         /// </summary>
-        /// <param name="millihertz">The value in mHz</param>
+        /// <param name="millihertz">The value in mHz.</param>
         /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
         public static Frequency FromMillihertz(double millihertz)
         {
@@ -623,7 +623,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
         /// </summary>
-        /// <param name="kilohertz">The value in kHz</param>
+        /// <param name="kilohertz">The value in kHz.</param>
         /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
         public static Frequency FromKilohertz(double kilohertz)
         {
@@ -633,7 +633,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
         /// </summary>
-        /// <param name="megahertz">The value in MHz</param>
+        /// <param name="megahertz">The value in MHz.</param>
         /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
         public static Frequency FromMegahertz(double megahertz)
         {
@@ -643,7 +643,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
         /// </summary>
-        /// <param name="gigahertz">The value in GHz</param>
+        /// <param name="gigahertz">The value in GHz.</param>
         /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
         public static Frequency FromGigahertz(double gigahertz)
         {

@@ -469,7 +469,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
         /// </summary>
-        /// <param name="revolutionsPerMinute">The value in rpm</param>
+        /// <param name="revolutionsPerMinute">The value in rpm.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
         public static AngularSpeed FromRevolutionsPerMinute(double revolutionsPerMinute)
         {
@@ -479,7 +479,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
         /// </summary>
-        /// <param name="degreesPerSecond">The value in °⋅s⁻¹</param>
+        /// <param name="degreesPerSecond">The value in °⋅s⁻¹.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
         public static AngularSpeed FromDegreesPerSecond(double degreesPerSecond)
         {
@@ -489,7 +489,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
         /// </summary>
-        /// <param name="degreesPerMinute">The value in min⁻¹⋅°</param>
+        /// <param name="degreesPerMinute">The value in min⁻¹⋅°.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
         public static AngularSpeed FromDegreesPerMinute(double degreesPerMinute)
         {
@@ -499,7 +499,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
         /// </summary>
-        /// <param name="radiansPerMinute">The value in min⁻¹⋅rad</param>
+        /// <param name="radiansPerMinute">The value in min⁻¹⋅rad.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
         public static AngularSpeed FromRadiansPerMinute(double radiansPerMinute)
         {
@@ -509,7 +509,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
         /// </summary>
-        /// <param name="degreesPerHour">The value in h⁻¹⋅°</param>
+        /// <param name="degreesPerHour">The value in h⁻¹⋅°.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
         public static AngularSpeed FromDegreesPerHour(double degreesPerHour)
         {
@@ -519,7 +519,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
         /// </summary>
-        /// <param name="radiansPerHour">The value in h⁻¹⋅rad</param>
+        /// <param name="radiansPerHour">The value in h⁻¹⋅rad.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
         public static AngularSpeed FromRadiansPerHour(double radiansPerHour)
         {

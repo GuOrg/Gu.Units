@@ -502,7 +502,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
-        /// <param name="milliamperes">The value in mA</param>
+        /// <param name="milliamperes">The value in mA.</param>
         /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current FromMilliamperes(double milliamperes)
         {
@@ -512,7 +512,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
-        /// <param name="kiloamperes">The value in kA</param>
+        /// <param name="kiloamperes">The value in kA.</param>
         /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current FromKiloamperes(double kiloamperes)
         {
@@ -522,7 +522,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
-        /// <param name="megaamperes">The value in MA</param>
+        /// <param name="megaamperes">The value in MA.</param>
         /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current FromMegaamperes(double megaamperes)
         {
@@ -532,7 +532,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
-        /// <param name="microamperes">The value in µA</param>
+        /// <param name="microamperes">The value in µA.</param>
         /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current FromMicroamperes(double microamperes)
         {
@@ -542,7 +542,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
-        /// <param name="nanoamperes">The value in nA</param>
+        /// <param name="nanoamperes">The value in nA.</param>
         /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current FromNanoamperes(double nanoamperes)
         {
@@ -552,7 +552,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
-        /// <param name="gigaamperes">The value in GA</param>
+        /// <param name="gigaamperes">The value in GA.</param>
         /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current FromGigaamperes(double gigaamperes)
         {

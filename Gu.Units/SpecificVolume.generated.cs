@@ -427,7 +427,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.SpecificVolume"/>.
         /// </summary>
-        /// <param name="cubicMetresPerGram">The value in m³/g</param>
+        /// <param name="cubicMetresPerGram">The value in m³/g.</param>
         /// <returns>An instance of <see cref="Gu.Units.SpecificVolume"/></returns>
         public static SpecificVolume FromCubicMetresPerGram(double cubicMetresPerGram)
         {
@@ -437,7 +437,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.SpecificVolume"/>.
         /// </summary>
-        /// <param name="cubicCentimetresPerGram">The value in cm³/g</param>
+        /// <param name="cubicCentimetresPerGram">The value in cm³/g.</param>
         /// <returns>An instance of <see cref="Gu.Units.SpecificVolume"/></returns>
         public static SpecificVolume FromCubicCentimetresPerGram(double cubicCentimetresPerGram)
         {

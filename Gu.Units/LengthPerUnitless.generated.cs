@@ -421,7 +421,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
         /// </summary>
-        /// <param name="millimetresPerPercent">The value in mm/%</param>
+        /// <param name="millimetresPerPercent">The value in mm/%.</param>
         /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
         public static LengthPerUnitless FromMillimetresPerPercent(double millimetresPerPercent)
         {
@@ -431,7 +431,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
         /// </summary>
-        /// <param name="micrometresPerPercent">The value in µm/%</param>
+        /// <param name="micrometresPerPercent">The value in µm/%.</param>
         /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
         public static LengthPerUnitless FromMicrometresPerPercent(double micrometresPerPercent)
         {
@@ -441,7 +441,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
         /// </summary>
-        /// <param name="metresPerPercent">The value in m/%</param>
+        /// <param name="metresPerPercent">The value in m/%.</param>
         /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
         public static LengthPerUnitless FromMetresPerPercent(double metresPerPercent)
         {

@@ -39,10 +39,13 @@
                 this.OnPropertyChanged(nameof(this.FromSi));
                 this.OnPropertyChanged(nameof(this.ParameterName));
                 this.OnPropertyChanged(nameof(this.Factor));
+                this.OnPropertyChanged(nameof(this.XDocParameterName));
             }
         }
 
         public string ParameterName => this.Name.ToParameterName();
+
+        public string XDocParameterName => this.Name.FirstCharLower();
 
         public string Symbol
         {

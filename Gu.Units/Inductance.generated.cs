@@ -447,7 +447,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
-        /// <param name="nanohenrys">The value in nH</param>
+        /// <param name="nanohenrys">The value in nH.</param>
         /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance FromNanohenrys(double nanohenrys)
         {
@@ -457,7 +457,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
-        /// <param name="microhenrys">The value in µH</param>
+        /// <param name="microhenrys">The value in µH.</param>
         /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance FromMicrohenrys(double microhenrys)
         {
@@ -467,7 +467,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
-        /// <param name="millihenrys">The value in mH</param>
+        /// <param name="millihenrys">The value in mH.</param>
         /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance FromMillihenrys(double millihenrys)
         {
@@ -477,7 +477,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
-        /// <param name="kilohenrys">The value in kH</param>
+        /// <param name="kilohenrys">The value in kH.</param>
         /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance FromKilohenrys(double kilohenrys)
         {
@@ -487,7 +487,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
-        /// <param name="megahenrys">The value in MH</param>
+        /// <param name="megahenrys">The value in MH.</param>
         /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance FromMegahenrys(double megahenrys)
         {
@@ -497,7 +497,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
-        /// <param name="gigahenrys">The value in GH</param>
+        /// <param name="gigahenrys">The value in GH.</param>
         /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance FromGigahenrys(double gigahenrys)
         {

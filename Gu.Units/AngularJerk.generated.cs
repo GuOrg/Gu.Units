@@ -420,7 +420,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
         /// </summary>
-        /// <param name="degreesPerSecondCubed">The value in °⋅s⁻³</param>
+        /// <param name="degreesPerSecondCubed">The value in °⋅s⁻³.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
         public static AngularJerk FromDegreesPerSecondCubed(double degreesPerSecondCubed)
         {
@@ -430,7 +430,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
         /// </summary>
-        /// <param name="radiansPerHourCubed">The value in rad⋅h⁻³</param>
+        /// <param name="radiansPerHourCubed">The value in rad⋅h⁻³.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
         public static AngularJerk FromRadiansPerHourCubed(double radiansPerHourCubed)
         {
@@ -440,7 +440,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
         /// </summary>
-        /// <param name="degreesPerHourCubed">The value in °⋅h⁻³</param>
+        /// <param name="degreesPerHourCubed">The value in °⋅h⁻³.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
         public static AngularJerk FromDegreesPerHourCubed(double degreesPerHourCubed)
         {
@@ -450,7 +450,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
         /// </summary>
-        /// <param name="radiansPerMinuteCubed">The value in rad⋅min⁻³</param>
+        /// <param name="radiansPerMinuteCubed">The value in rad⋅min⁻³.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
         public static AngularJerk FromRadiansPerMinuteCubed(double radiansPerMinuteCubed)
         {
@@ -460,7 +460,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
         /// </summary>
-        /// <param name="degreesPerMinuteCubed">The value in °⋅min⁻³</param>
+        /// <param name="degreesPerMinuteCubed">The value in °⋅min⁻³.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
         public static AngularJerk FromDegreesPerMinuteCubed(double degreesPerMinuteCubed)
         {

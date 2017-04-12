@@ -453,7 +453,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularAcceleration"/>.
         /// </summary>
-        /// <param name="degreesPerSecondSquared">The value in °⋅s⁻²</param>
+        /// <param name="degreesPerSecondSquared">The value in °⋅s⁻².</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularAcceleration"/></returns>
         public static AngularAcceleration FromDegreesPerSecondSquared(double degreesPerSecondSquared)
         {
@@ -463,7 +463,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularAcceleration"/>.
         /// </summary>
-        /// <param name="radiansPerHourSquared">The value in h⁻²⋅rad</param>
+        /// <param name="radiansPerHourSquared">The value in h⁻²⋅rad.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularAcceleration"/></returns>
         public static AngularAcceleration FromRadiansPerHourSquared(double radiansPerHourSquared)
         {
@@ -473,7 +473,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularAcceleration"/>.
         /// </summary>
-        /// <param name="degreesPerHourSquared">The value in h⁻²⋅°</param>
+        /// <param name="degreesPerHourSquared">The value in h⁻²⋅°.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularAcceleration"/></returns>
         public static AngularAcceleration FromDegreesPerHourSquared(double degreesPerHourSquared)
         {
@@ -483,7 +483,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularAcceleration"/>.
         /// </summary>
-        /// <param name="degreesPerMinuteSquared">The value in min⁻²⋅°</param>
+        /// <param name="degreesPerMinuteSquared">The value in min⁻²⋅°.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularAcceleration"/></returns>
         public static AngularAcceleration FromDegreesPerMinuteSquared(double degreesPerMinuteSquared)
         {
@@ -493,7 +493,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularAcceleration"/>.
         /// </summary>
-        /// <param name="radiansPerMinuteSquared">The value in min⁻²⋅rad</param>
+        /// <param name="radiansPerMinuteSquared">The value in min⁻²⋅rad.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularAcceleration"/></returns>
         public static AngularAcceleration FromRadiansPerMinuteSquared(double radiansPerMinuteSquared)
         {

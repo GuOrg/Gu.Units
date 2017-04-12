@@ -433,7 +433,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Angle"/>.
         /// </summary>
-        /// <param name="degrees">The value in °</param>
+        /// <param name="degrees">The value in °.</param>
         /// <returns>An instance of <see cref="Gu.Units.Angle"/></returns>
         public static Angle FromDegrees(double degrees)
         {

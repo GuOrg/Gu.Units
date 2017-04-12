@@ -601,7 +601,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
-        /// <param name="nanonewtons">The value in nN</param>
+        /// <param name="nanonewtons">The value in nN.</param>
         /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force FromNanonewtons(double nanonewtons)
         {
@@ -611,7 +611,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
-        /// <param name="micronewtons">The value in µN</param>
+        /// <param name="micronewtons">The value in µN.</param>
         /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force FromMicronewtons(double micronewtons)
         {
@@ -621,7 +621,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
-        /// <param name="millinewtons">The value in mN</param>
+        /// <param name="millinewtons">The value in mN.</param>
         /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force FromMillinewtons(double millinewtons)
         {
@@ -631,7 +631,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
-        /// <param name="kilonewtons">The value in kN</param>
+        /// <param name="kilonewtons">The value in kN.</param>
         /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force FromKilonewtons(double kilonewtons)
         {
@@ -641,7 +641,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
-        /// <param name="meganewtons">The value in MN</param>
+        /// <param name="meganewtons">The value in MN.</param>
         /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force FromMeganewtons(double meganewtons)
         {
@@ -651,7 +651,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
-        /// <param name="giganewtons">The value in GN</param>
+        /// <param name="giganewtons">The value in GN.</param>
         /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force FromGiganewtons(double giganewtons)
         {

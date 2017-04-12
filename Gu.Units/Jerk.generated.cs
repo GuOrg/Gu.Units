@@ -435,7 +435,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
         /// </summary>
-        /// <param name="millimetresPerSecondCubed">The value in mm⋅s⁻³</param>
+        /// <param name="millimetresPerSecondCubed">The value in mm⋅s⁻³.</param>
         /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
         public static Jerk FromMillimetresPerSecondCubed(double millimetresPerSecondCubed)
         {
@@ -445,7 +445,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
         /// </summary>
-        /// <param name="centimetresPerSecondCubed">The value in cm⋅s⁻³</param>
+        /// <param name="centimetresPerSecondCubed">The value in cm⋅s⁻³.</param>
         /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
         public static Jerk FromCentimetresPerSecondCubed(double centimetresPerSecondCubed)
         {
@@ -455,7 +455,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
         /// </summary>
-        /// <param name="millimetresPerHourCubed">The value in mm⋅h⁻³</param>
+        /// <param name="millimetresPerHourCubed">The value in mm⋅h⁻³.</param>
         /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
         public static Jerk FromMillimetresPerHourCubed(double millimetresPerHourCubed)
         {
@@ -465,7 +465,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
         /// </summary>
-        /// <param name="millimetresPerMinuteCubed">The value in mm⋅min⁻³</param>
+        /// <param name="millimetresPerMinuteCubed">The value in mm⋅min⁻³.</param>
         /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
         public static Jerk FromMillimetresPerMinuteCubed(double millimetresPerMinuteCubed)
         {
@@ -475,7 +475,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
         /// </summary>
-        /// <param name="metresPerHourCubed">The value in m⋅h⁻³</param>
+        /// <param name="metresPerHourCubed">The value in m⋅h⁻³.</param>
         /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
         public static Jerk FromMetresPerHourCubed(double metresPerHourCubed)
         {
@@ -485,7 +485,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
         /// </summary>
-        /// <param name="metresPerMinuteCubed">The value in m⋅min⁻³</param>
+        /// <param name="metresPerMinuteCubed">The value in m⋅min⁻³.</param>
         /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
         public static Jerk FromMetresPerMinuteCubed(double metresPerMinuteCubed)
         {
@@ -495,7 +495,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
         /// </summary>
-        /// <param name="centimetresPerHourCubed">The value in cm⋅h⁻³</param>
+        /// <param name="centimetresPerHourCubed">The value in cm⋅h⁻³.</param>
         /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
         public static Jerk FromCentimetresPerHourCubed(double centimetresPerHourCubed)
         {
@@ -505,7 +505,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
         /// </summary>
-        /// <param name="centimetresPerMinuteCubed">The value in cm⋅min⁻³</param>
+        /// <param name="centimetresPerMinuteCubed">The value in cm⋅min⁻³.</param>
         /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
         public static Jerk FromCentimetresPerMinuteCubed(double centimetresPerMinuteCubed)
         {

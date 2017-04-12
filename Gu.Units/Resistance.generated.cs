@@ -459,7 +459,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
-        /// <param name="microohms">The value in µΩ</param>
+        /// <param name="microohms">The value in µΩ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance FromMicroohms(double microohms)
         {
@@ -469,7 +469,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
-        /// <param name="milliohms">The value in mΩ</param>
+        /// <param name="milliohms">The value in mΩ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance FromMilliohms(double milliohms)
         {
@@ -479,7 +479,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
-        /// <param name="kiloohms">The value in kΩ</param>
+        /// <param name="kiloohms">The value in kΩ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance FromKiloohms(double kiloohms)
         {
@@ -489,7 +489,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
-        /// <param name="megaohms">The value in MΩ</param>
+        /// <param name="megaohms">The value in MΩ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance FromMegaohms(double megaohms)
         {

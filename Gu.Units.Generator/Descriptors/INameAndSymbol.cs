@@ -6,6 +6,8 @@ namespace Gu.Units.Generator
 
         string ParameterName { get; }
 
+        string XDocParameterName { get; }
+
         string Symbol { get; }
     }
 }

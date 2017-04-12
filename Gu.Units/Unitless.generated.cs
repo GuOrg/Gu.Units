@@ -410,7 +410,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Unitless"/>.
         /// </summary>
-        /// <param name="promilles">The value in ‰</param>
+        /// <param name="promilles">The value in ‰.</param>
         /// <returns>An instance of <see cref="Gu.Units.Unitless"/></returns>
         public static Unitless FromPromilles(double promilles)
         {
@@ -420,7 +420,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Unitless"/>.
         /// </summary>
-        /// <param name="partsPerMillion">The value in ppm</param>
+        /// <param name="partsPerMillion">The value in ppm.</param>
         /// <returns>An instance of <see cref="Gu.Units.Unitless"/></returns>
         public static Unitless FromPartsPerMillion(double partsPerMillion)
         {
@@ -430,7 +430,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Unitless"/>.
         /// </summary>
-        /// <param name="percents">The value in %</param>
+        /// <param name="percents">The value in %.</param>
         /// <returns>An instance of <see cref="Gu.Units.Unitless"/></returns>
         public static Unitless FromPercents(double percents)
         {

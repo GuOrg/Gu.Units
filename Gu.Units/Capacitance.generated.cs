@@ -447,7 +447,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
-        /// <param name="nanofarads">The value in nF</param>
+        /// <param name="nanofarads">The value in nF.</param>
         /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance FromNanofarads(double nanofarads)
         {
@@ -457,7 +457,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
-        /// <param name="microfarads">The value in µF</param>
+        /// <param name="microfarads">The value in µF.</param>
         /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance FromMicrofarads(double microfarads)
         {
@@ -467,7 +467,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
-        /// <param name="millifarads">The value in mF</param>
+        /// <param name="millifarads">The value in mF.</param>
         /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance FromMillifarads(double millifarads)
         {
@@ -477,7 +477,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
-        /// <param name="kilofarads">The value in kF</param>
+        /// <param name="kilofarads">The value in kF.</param>
         /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance FromKilofarads(double kilofarads)
         {
@@ -487,7 +487,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
-        /// <param name="megafarads">The value in MF</param>
+        /// <param name="megafarads">The value in MF.</param>
         /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance FromMegafarads(double megafarads)
         {
@@ -497,7 +497,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
-        /// <param name="gigafarads">The value in GF</param>
+        /// <param name="gigafarads">The value in GF.</param>
         /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance FromGigafarads(double gigafarads)
         {

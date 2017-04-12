@@ -464,7 +464,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
         /// </summary>
-        /// <param name="gramsPerCubicMillimetre">The value in g/mm³</param>
+        /// <param name="gramsPerCubicMillimetre">The value in g/mm³.</param>
         /// <returns>An instance of <see cref="Gu.Units.Density"/></returns>
         public static Density FromGramsPerCubicMillimetre(double gramsPerCubicMillimetre)
         {
@@ -474,7 +474,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
         /// </summary>
-        /// <param name="gramsPerCubicCentimetre">The value in g/cm³</param>
+        /// <param name="gramsPerCubicCentimetre">The value in g/cm³.</param>
         /// <returns>An instance of <see cref="Gu.Units.Density"/></returns>
         public static Density FromGramsPerCubicCentimetre(double gramsPerCubicCentimetre)
         {
@@ -484,7 +484,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
         /// </summary>
-        /// <param name="milligramsPerCubicMillimetre">The value in mg/mm³</param>
+        /// <param name="milligramsPerCubicMillimetre">The value in mg/mm³.</param>
         /// <returns>An instance of <see cref="Gu.Units.Density"/></returns>
         public static Density FromMilligramsPerCubicMillimetre(double milligramsPerCubicMillimetre)
         {
@@ -494,7 +494,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
         /// </summary>
-        /// <param name="gramsPerCubicMetre">The value in g/m³</param>
+        /// <param name="gramsPerCubicMetre">The value in g/m³.</param>
         /// <returns>An instance of <see cref="Gu.Units.Density"/></returns>
         public static Density FromGramsPerCubicMetre(double gramsPerCubicMetre)
         {
@@ -504,7 +504,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Density"/>.
         /// </summary>
-        /// <param name="milligramsPerCubicMetre">The value in mg/m³</param>
+        /// <param name="milligramsPerCubicMetre">The value in mg/m³.</param>
         /// <returns>An instance of <see cref="Gu.Units.Density"/></returns>
         public static Density FromMilligramsPerCubicMetre(double milligramsPerCubicMetre)
         {

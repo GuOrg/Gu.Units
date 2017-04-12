@@ -650,7 +650,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="nanojoules">The value in nJ</param>
+        /// <param name="nanojoules">The value in nJ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromNanojoules(double nanojoules)
         {
@@ -660,7 +660,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="microjoules">The value in µJ</param>
+        /// <param name="microjoules">The value in µJ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromMicrojoules(double microjoules)
         {
@@ -670,7 +670,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="millijoules">The value in mJ</param>
+        /// <param name="millijoules">The value in mJ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromMillijoules(double millijoules)
         {
@@ -680,7 +680,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="kilojoules">The value in kJ</param>
+        /// <param name="kilojoules">The value in kJ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromKilojoules(double kilojoules)
         {
@@ -690,7 +690,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="megajoules">The value in MJ</param>
+        /// <param name="megajoules">The value in MJ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromMegajoules(double megajoules)
         {
@@ -700,7 +700,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="gigajoules">The value in GJ</param>
+        /// <param name="gigajoules">The value in GJ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromGigajoules(double gigajoules)
         {
@@ -710,7 +710,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="kilowattHours">The value in kWh</param>
+        /// <param name="kilowattHours">The value in kWh.</param>
         /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromKilowattHours(double kilowattHours)
         {

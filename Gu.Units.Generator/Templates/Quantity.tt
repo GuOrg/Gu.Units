@@ -412,7 +412,7 @@ namespace <#= Settings.Namespace #>
         /// <summary>
         /// Creates a new instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
-        /// <param name="<#= quantity.Unit.ParameterName #>">The value in <see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>.<#= quantity.Unit.Name #>"/></param>
+        /// <param name="<#= quantity.Unit.XDocParameterName #>">The value in <see cref="<#= Settings.Namespace #>.<#= quantity.UnitName #>.<#= quantity.Unit.Name #>"/></param>
         /// <returns>An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></returns>
         public static <#= quantity.Name #> From<#= quantity.Unit.Name #>(double <#= quantity.Unit.ParameterName #>)
         {
@@ -427,7 +427,7 @@ namespace <#= Settings.Namespace #>
         /// <summary>
         /// Creates a new instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/>.
         /// </summary>
-        /// <param name="<#= su.ParameterName #>">The value in <#= su.Symbol #></param>
+        /// <param name="<#= su.XDocParameterName #>">The value in <#= su.Symbol #>.</param>
         /// <returns>An instance of <see cref="<#= Settings.Namespace #>.<#= quantity.Name #>"/></returns>
         public static <#= quantity.Name #> From<#= su.Name #>(double <#= su.ParameterName #>)
         {

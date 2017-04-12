@@ -583,7 +583,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="hectares">The value in ha</param>
+        /// <param name="hectares">The value in ha.</param>
         /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
         public static Area FromHectares(double hectares)
         {
@@ -593,7 +593,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="squareMillimetres">The value in mm²</param>
+        /// <param name="squareMillimetres">The value in mm².</param>
         /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
         public static Area FromSquareMillimetres(double squareMillimetres)
         {
@@ -603,7 +603,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="squareCentimetres">The value in cm²</param>
+        /// <param name="squareCentimetres">The value in cm².</param>
         /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
         public static Area FromSquareCentimetres(double squareCentimetres)
         {
@@ -613,7 +613,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="squareDecimetres">The value in dm²</param>
+        /// <param name="squareDecimetres">The value in dm².</param>
         /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
         public static Area FromSquareDecimetres(double squareDecimetres)
         {
@@ -623,7 +623,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="squareKilometres">The value in km²</param>
+        /// <param name="squareKilometres">The value in km².</param>
         /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
         public static Area FromSquareKilometres(double squareKilometres)
         {
@@ -633,7 +633,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="squareMile">The value in mi²</param>
+        /// <param name="squareMile">The value in mi².</param>
         /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
         public static Area FromSquareMile(double squareMile)
         {
@@ -643,7 +643,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="squareYards">The value in yd²</param>
+        /// <param name="squareYards">The value in yd².</param>
         /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
         public static Area FromSquareYards(double squareYards)
         {
@@ -653,7 +653,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="squareInches">The value in in²</param>
+        /// <param name="squareInches">The value in in².</param>
         /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
         public static Area FromSquareInches(double squareInches)
         {
@@ -663,7 +663,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Area"/>.
         /// </summary>
-        /// <param name="squareFeet">The value in ft²</param>
+        /// <param name="squareFeet">The value in ft².</param>
         /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
         public static Area FromSquareFeet(double squareFeet)
         {

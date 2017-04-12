@@ -667,7 +667,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="hours">The value in h</param>
+        /// <param name="hours">The value in h.</param>
         /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time FromHours(double hours)
         {
@@ -677,7 +677,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="minutes">The value in min</param>
+        /// <param name="minutes">The value in min.</param>
         /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time FromMinutes(double minutes)
         {
@@ -687,7 +687,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="days">The value in d</param>
+        /// <param name="days">The value in d.</param>
         /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time FromDays(double days)
         {
@@ -697,7 +697,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="nanoseconds">The value in ns</param>
+        /// <param name="nanoseconds">The value in ns.</param>
         /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time FromNanoseconds(double nanoseconds)
         {
@@ -707,7 +707,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="microseconds">The value in µs</param>
+        /// <param name="microseconds">The value in µs.</param>
         /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time FromMicroseconds(double microseconds)
         {
@@ -717,7 +717,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="milliseconds">The value in ms</param>
+        /// <param name="milliseconds">The value in ms.</param>
         /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time FromMilliseconds(double milliseconds)
         {

@@ -513,7 +513,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
-        /// <param name="millivolts">The value in mV</param>
+        /// <param name="millivolts">The value in mV.</param>
         /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage FromMillivolts(double millivolts)
         {
@@ -523,7 +523,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
-        /// <param name="kilovolts">The value in kV</param>
+        /// <param name="kilovolts">The value in kV.</param>
         /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage FromKilovolts(double kilovolts)
         {
@@ -533,7 +533,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
-        /// <param name="megavolts">The value in MV</param>
+        /// <param name="megavolts">The value in MV.</param>
         /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage FromMegavolts(double megavolts)
         {
@@ -543,7 +543,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
-        /// <param name="microvolts">The value in µV</param>
+        /// <param name="microvolts">The value in µV.</param>
         /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage FromMicrovolts(double microvolts)
         {
@@ -553,7 +553,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
-        /// <param name="nanovolts">The value in nV</param>
+        /// <param name="nanovolts">The value in nV.</param>
         /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage FromNanovolts(double nanovolts)
         {
@@ -563,7 +563,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
-        /// <param name="gigavolts">The value in GV</param>
+        /// <param name="gigavolts">The value in GV.</param>
         /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage FromGigavolts(double gigavolts)
         {

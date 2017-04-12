@@ -540,7 +540,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
-        /// <param name="grams">The value in g</param>
+        /// <param name="grams">The value in g.</param>
         /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromGrams(double grams)
         {
@@ -550,7 +550,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
-        /// <param name="milligrams">The value in mg</param>
+        /// <param name="milligrams">The value in mg.</param>
         /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromMilligrams(double milligrams)
         {
@@ -560,7 +560,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
-        /// <param name="micrograms">The value in µg</param>
+        /// <param name="micrograms">The value in µg.</param>
         /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromMicrograms(double micrograms)
         {
@@ -570,7 +570,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
-        /// <param name="avoirdupoisPounds">The value in lb</param>
+        /// <param name="avoirdupoisPounds">The value in lb.</param>
         /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromAvoirdupoisPounds(double avoirdupoisPounds)
         {
@@ -580,7 +580,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
-        /// <param name="avoirdupoisOunces">The value in oz</param>
+        /// <param name="avoirdupoisOunces">The value in oz.</param>
         /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromAvoirdupoisOunces(double avoirdupoisOunces)
         {
@@ -590,7 +590,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
-        /// <param name="troyOunces">The value in troy</param>
+        /// <param name="troyOunces">The value in troy.</param>
         /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromTroyOunces(double troyOunces)
         {
@@ -600,7 +600,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
-        /// <param name="troyGrains">The value in gr</param>
+        /// <param name="troyGrains">The value in gr.</param>
         /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromTroyGrains(double troyGrains)
         {

@@ -590,7 +590,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="nanowatts">The value in nW</param>
+        /// <param name="nanowatts">The value in nW.</param>
         /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power FromNanowatts(double nanowatts)
         {
@@ -600,7 +600,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="microwatts">The value in µW</param>
+        /// <param name="microwatts">The value in µW.</param>
         /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power FromMicrowatts(double microwatts)
         {
@@ -610,7 +610,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="milliwatts">The value in mW</param>
+        /// <param name="milliwatts">The value in mW.</param>
         /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power FromMilliwatts(double milliwatts)
         {
@@ -620,7 +620,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="kilowatts">The value in kW</param>
+        /// <param name="kilowatts">The value in kW.</param>
         /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power FromKilowatts(double kilowatts)
         {
@@ -630,7 +630,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="megawatts">The value in MW</param>
+        /// <param name="megawatts">The value in MW.</param>
         /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power FromMegawatts(double megawatts)
         {
@@ -640,7 +640,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="gigawatts">The value in GW</param>
+        /// <param name="gigawatts">The value in GW.</param>
         /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power FromGigawatts(double gigawatts)
         {

@@ -549,7 +549,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="bars">The value in bar</param>
+        /// <param name="bars">The value in bar.</param>
         /// <returns>An instance of <see cref="Gu.Units.Pressure"/></returns>
         public static Pressure FromBars(double bars)
         {
@@ -559,7 +559,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="millibars">The value in mbar</param>
+        /// <param name="millibars">The value in mbar.</param>
         /// <returns>An instance of <see cref="Gu.Units.Pressure"/></returns>
         public static Pressure FromMillibars(double millibars)
         {
@@ -569,7 +569,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="nanopascals">The value in nPa</param>
+        /// <param name="nanopascals">The value in nPa.</param>
         /// <returns>An instance of <see cref="Gu.Units.Pressure"/></returns>
         public static Pressure FromNanopascals(double nanopascals)
         {
@@ -579,7 +579,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="micropascals">The value in µPa</param>
+        /// <param name="micropascals">The value in µPa.</param>
         /// <returns>An instance of <see cref="Gu.Units.Pressure"/></returns>
         public static Pressure FromMicropascals(double micropascals)
         {
@@ -589,7 +589,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="millipascals">The value in mPa</param>
+        /// <param name="millipascals">The value in mPa.</param>
         /// <returns>An instance of <see cref="Gu.Units.Pressure"/></returns>
         public static Pressure FromMillipascals(double millipascals)
         {
@@ -599,7 +599,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="kilopascals">The value in kPa</param>
+        /// <param name="kilopascals">The value in kPa.</param>
         /// <returns>An instance of <see cref="Gu.Units.Pressure"/></returns>
         public static Pressure FromKilopascals(double kilopascals)
         {
@@ -609,7 +609,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="megapascals">The value in MPa</param>
+        /// <param name="megapascals">The value in MPa.</param>
         /// <returns>An instance of <see cref="Gu.Units.Pressure"/></returns>
         public static Pressure FromMegapascals(double megapascals)
         {
@@ -619,7 +619,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="gigapascals">The value in GPa</param>
+        /// <param name="gigapascals">The value in GPa.</param>
         /// <returns>An instance of <see cref="Gu.Units.Pressure"/></returns>
         public static Pressure FromGigapascals(double gigapascals)
         {
@@ -629,7 +629,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="newtonsPerSquareMillimetre">The value in N⋅mm⁻²</param>
+        /// <param name="newtonsPerSquareMillimetre">The value in N⋅mm⁻².</param>
         /// <returns>An instance of <see cref="Gu.Units.Pressure"/></returns>
         public static Pressure FromNewtonsPerSquareMillimetre(double newtonsPerSquareMillimetre)
         {
@@ -639,7 +639,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="kilonewtonsPerSquareMillimetre">The value in kN⋅mm⁻²</param>
+        /// <param name="kilonewtonsPerSquareMillimetre">The value in kN⋅mm⁻².</param>
         /// <returns>An instance of <see cref="Gu.Units.Pressure"/></returns>
         public static Pressure FromKilonewtonsPerSquareMillimetre(double kilonewtonsPerSquareMillimetre)
         {
@@ -649,7 +649,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="newtonsPerSquareMetre">The value in N/m²</param>
+        /// <param name="newtonsPerSquareMetre">The value in N/m².</param>
         /// <returns>An instance of <see cref="Gu.Units.Pressure"/></returns>
         public static Pressure FromNewtonsPerSquareMetre(double newtonsPerSquareMetre)
         {

@@ -389,7 +389,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.MolarMass"/>.
         /// </summary>
-        /// <param name="gramsPerMole">The value in g/mol</param>
+        /// <param name="gramsPerMole">The value in g/mol.</param>
         /// <returns>An instance of <see cref="Gu.Units.MolarMass"/></returns>
         public static MolarMass FromGramsPerMole(double gramsPerMole)
         {

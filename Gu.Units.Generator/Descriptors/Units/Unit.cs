@@ -39,6 +39,8 @@ namespace Gu.Units.Generator
 
         public string ParameterName => this.Name.ToParameterName();
 
+        public string XDocParameterName => this.Name.FirstCharLower();
+
         public Quantity Quantity => this.quantity;
 
         public IEnumerable<IConversion> AllConversions

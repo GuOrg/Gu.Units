@@ -510,7 +510,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.SpecificEnergy"/>.
         /// </summary>
-        /// <param name="kilojoulesPerKilogram">The value in kJ/kg</param>
+        /// <param name="kilojoulesPerKilogram">The value in kJ/kg.</param>
         /// <returns>An instance of <see cref="Gu.Units.SpecificEnergy"/></returns>
         public static SpecificEnergy FromKilojoulesPerKilogram(double kilojoulesPerKilogram)
         {
