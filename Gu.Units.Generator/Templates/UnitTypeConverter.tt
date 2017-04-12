@@ -76,7 +76,7 @@ namespace <#= Settings.Namespace #>
                 {
                     return unit.ToString();
                 }
-                else if(destinationType == typeof(InstanceDescriptor))
+                else if (destinationType == typeof(InstanceDescriptor))
                 {
                     var parseMethod = typeof(<#= unit.ClassName #>).GetMethod(nameof(<#= unit.ClassName #>.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)

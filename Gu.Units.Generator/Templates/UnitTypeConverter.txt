@@ -9,11 +9,11 @@
     /// Provides a unified way of converting types of values to other types, as well as for accessing standard values and subproperties.
     /// </summary>
     /// <devdoc>
-    /// <para>Provides a type converter to convert <see cref='Gu.Units.MassUnit'/>
+    /// <para>Provides a type converter to convert <see cref='Gu.Units.MolarHeatCapacityUnit'/>
     /// objects to and from various
     /// other representations.</para>
     /// </devdoc>
-    public class MassUnitTypeConverter : TypeConverter
+    public class MolarHeatCapacityUnitTypeConverter : TypeConverter
     {
         /// <inheritdoc />
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
@@ -43,13 +43,13 @@
             var text = value as string;
             if (text != null)
             {
-                MassUnit result;
-                if (MassUnit.TryParse(text, out result))
+                MolarHeatCapacityUnit result;
+                if (MolarHeatCapacityUnit.TryParse(text, out result))
                 {
                     return result;
                 }
 
-                var message = $"Could not convert the string '{text}' to an instance of MassUnit)";
+                var message = $"Could not convert the string '{text}' to an instance of MolarHeatCapacityUnit)";
                 throw new NotSupportedException(message);
             }
 
@@ -59,16 +59,16 @@
         /// <inheritdoc />
         public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
         {
-            if (value is MassUnit && destinationType != null)
+            if (value is MolarHeatCapacityUnit && destinationType != null)
             {
-                var unit = (MassUnit)value;
+                var unit = (MolarHeatCapacityUnit)value;
                 if (destinationType == typeof(string))
                 {
                     return unit.ToString();
                 }
-                else if(destinationType == typeof(InstanceDescriptor))
+                else if (destinationType == typeof(InstanceDescriptor))
                 {
-                    var parseMethod = typeof(MassUnit).GetMethod(nameof(MassUnit.Parse), new Type[] { typeof(string) });
+                    var parseMethod = typeof(MolarHeatCapacityUnit).GetMethod(nameof(MolarHeatCapacityUnit.Parse), new Type[] { typeof(string) });
                     if (parseMethod != null)
                     {
                         var args = new object[] { unit.Symbol };
