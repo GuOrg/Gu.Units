@@ -172,18 +172,18 @@
         {
             if (!this.initialized)
             {
-                Initialize();
+                this.Initialize();
             }
 
             var message = this.errorText.ToString();
             if (!IsValidConvertTargetType(targetType))
             {
-                message += $"{GetType().Name} does not support converting to {targetType.Name}";
+                message += $"{this.GetType().Name} does not support converting to {targetType.Name}";
             }
 
             if (value != null && !(value is Power))
             {
-                message += $"{GetType().Name} only supports converting from {typeof(Power)}";
+                message += $"{this.GetType().Name} only supports converting from {typeof(Power)}";
             }
 
             if (message != string.Empty)
@@ -217,7 +217,7 @@
 
             if (targetType == typeof(string) || targetType == typeof(object))
             {
-                if (UnitInput == Wpf.UnitInput.SymbolRequired)
+                if (this.UnitInput == Wpf.UnitInput.SymbolRequired)
                 {
                     return power.ToString(this.quantityFormat, culture);
                 }
@@ -238,13 +238,13 @@
         {
             if (!this.initialized)
             {
-                Initialize();
+                this.Initialize();
             }
 
             var message = this.errorText.ToString();
             if (!(targetType == typeof(Power) || targetType == typeof(Power?)))
             {
-                message += $"{GetType().Name} does not support converting to {targetType.Name}";
+                message += $"{this.GetType().Name} does not support converting to {targetType.Name}";
             }
 
             if (message != string.Empty)
@@ -263,7 +263,6 @@
                 return null;
             }
 
-
             if (value is double)
             {
                 return new Power((double)value, this.unit.Value);
@@ -275,7 +274,7 @@
                 return null;
             }
 
-            var unitInput = UnitInput ?? Wpf.UnitInput.ScalarOnly;
+            var unitInput = this.UnitInput ?? Wpf.UnitInput.ScalarOnly;
             switch (unitInput)
             {
                 case Wpf.UnitInput.ScalarOnly:
@@ -285,6 +284,7 @@
                         {
                             return new Power(d, this.unit.Value);
                         }
+
                         Power result;
                         if (Power.TryParse(text, NumberStyles.Float, culture, out result))
                         {
@@ -293,6 +293,7 @@
 
                         return text; // returning raw to trigger error
                     }
+
                 case Wpf.UnitInput.SymbolAllowed:
                     {
                         double d;
@@ -309,6 +310,7 @@
 
                         goto case Wpf.UnitInput.SymbolRequired;
                     }
+
                 case Wpf.UnitInput.SymbolRequired:
                     {
                         Power result;
@@ -319,9 +321,18 @@
 
                         return text;
                     }
+
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        private static bool IsValidConvertTargetType(Type targetType)
+        {
+            return targetType == typeof(string) ||
+                   targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
+                   targetType == typeof(object);
         }
 
         private void Initialize()
@@ -334,6 +345,7 @@
                 {
                     this.errorText.AppendLine($"ValueFormat cannot be set when Binding.StringFormat is a unit format.");
                 }
+
                 if (this.StringFormat != null)
                 {
                     this.errorText.AppendLine($"ValueFormat cannot be set when Binding.StringFormat is a unit format.");
@@ -349,9 +361,9 @@
             }
             else
             {
-                if (this.unit != null && SymbolFormat != null)
+                if (this.unit != null && this.SymbolFormat != null)
                 {
-                    this.quantityFormat = FormatCache<PowerUnit>.GetOrCreate(ValueFormat, this.unit.Value, SymbolFormat.Value);
+                    this.quantityFormat = FormatCache<PowerUnit>.GetOrCreate(this.ValueFormat, this.unit.Value, this.SymbolFormat.Value);
                 }
             }
 
@@ -376,7 +388,7 @@
                 {
                     if (this.quantityFormat.Unit != this.bindingQuantityFormat.Unit)
                     {
-                        this.errorText.AppendLine($"Ambiguous units StringFormat: {quantityFormat.CompositeFormat} Binding.StringFormat: {this.bindingQuantityFormat.CompositeFormat}");
+                        this.errorText.AppendLine($"Ambiguous units StringFormat: {this.quantityFormat.CompositeFormat} Binding.StringFormat: {this.bindingQuantityFormat.CompositeFormat}");
                     }
 
                     this.unit = this.quantityFormat.Unit;
@@ -387,7 +399,7 @@
                 if (!string.IsNullOrEmpty(this.quantityFormat?.SymbolFormat) &&
                     this.unit != this.quantityFormat.Unit)
                 {
-                    this.errorText.AppendLine($"Unit is set to '{this.unit}' but StringFormat is '{StringFormat.Replace("{0:", string.Empty).Replace("}", string.Empty)}'");
+                    this.errorText.AppendLine($"Unit is set to '{this.unit}' but StringFormat is '{this.StringFormat.Replace("{0:", string.Empty).Replace("}", string.Empty)}'");
                 }
 
                 var hasBindingUnit = !string.IsNullOrEmpty(this.bindingQuantityFormat?.SymbolFormat);
@@ -435,22 +447,14 @@
                 }
             }
 
-            if (UnitInput == null)
+            if (this.UnitInput == null)
             {
                 if (!string.IsNullOrEmpty(this.quantityFormat?.SymbolFormat) ||
                     !string.IsNullOrEmpty(this.bindingQuantityFormat?.SymbolFormat))
                 {
-                    UnitInput = Wpf.UnitInput.SymbolRequired;
+                    this.UnitInput = Wpf.UnitInput.SymbolRequired;
                 }
             }
-        }
-
-        private static bool IsValidConvertTargetType(Type targetType)
-        {
-            return targetType == typeof(string) ||
-                   targetType == typeof(double) ||
-                   targetType == typeof(double?) ||
-                   targetType == typeof(object);
         }
     }
 }

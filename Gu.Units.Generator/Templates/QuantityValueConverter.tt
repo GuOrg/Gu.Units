@@ -183,18 +183,18 @@ namespace Gu.Units.Wpf
         {
             if (!this.initialized)
             {
-                Initialize();
+                this.Initialize();
             }
 
             var message = this.errorText.ToString();
             if (!IsValidConvertTargetType(targetType))
             {
-                message += $"{GetType().Name} does not support converting to {targetType.Name}";
+                message += $"{this.GetType().Name} does not support converting to {targetType.Name}";
             }
 
             if (value != null && !(value is <#= quantity.Name #>))
             {
-                message += $"{GetType().Name} only supports converting from {typeof(<#= quantity.Name #>)}";
+                message += $"{this.GetType().Name} only supports converting from {typeof(<#= quantity.Name #>)}";
             }
 
             if (message != string.Empty)
@@ -228,7 +228,7 @@ namespace Gu.Units.Wpf
 
             if (targetType == typeof(string) || targetType == typeof(object))
             {
-                if (UnitInput == Wpf.UnitInput.SymbolRequired)
+                if (this.UnitInput == Wpf.UnitInput.SymbolRequired)
                 {
                     return <#= quantity.ParameterName #>.ToString(this.quantityFormat, culture);
                 }
@@ -249,13 +249,13 @@ namespace Gu.Units.Wpf
         {
             if (!this.initialized)
             {
-                Initialize();
+                this.Initialize();
             }
 
             var message = this.errorText.ToString();
             if (!(targetType == typeof(<#= quantity.Name #>) || targetType == typeof(<#= quantity.Name #>?)))
             {
-                message += $"{GetType().Name} does not support converting to {targetType.Name}";
+                message += $"{this.GetType().Name} does not support converting to {targetType.Name}";
             }
 
             if (message != string.Empty)
@@ -274,7 +274,6 @@ namespace Gu.Units.Wpf
                 return null;
             }
 
-
             if (value is double)
             {
                 return new <#= quantity.Name #>((double)value, this.unit.Value);
@@ -286,7 +285,7 @@ namespace Gu.Units.Wpf
                 return null;
             }
 
-            var unitInput = UnitInput ?? Wpf.UnitInput.ScalarOnly;
+            var unitInput = this.UnitInput ?? Wpf.UnitInput.ScalarOnly;
             switch (unitInput)
             {
                 case Wpf.UnitInput.ScalarOnly:
@@ -296,6 +295,7 @@ namespace Gu.Units.Wpf
                         {
                             return new <#= quantity.Name #>(d, this.unit.Value);
                         }
+
                         <#= quantity.Name #> result;
                         if (<#= quantity.Name #>.TryParse(text, NumberStyles.Float, culture, out result))
                         {
@@ -304,6 +304,7 @@ namespace Gu.Units.Wpf
 
                         return text; // returning raw to trigger error
                     }
+
                 case Wpf.UnitInput.SymbolAllowed:
                     {
                         double d;
@@ -320,6 +321,7 @@ namespace Gu.Units.Wpf
 
                         goto case Wpf.UnitInput.SymbolRequired;
                     }
+
                 case Wpf.UnitInput.SymbolRequired:
                     {
                         <#= quantity.Name #> result;
@@ -330,9 +332,18 @@ namespace Gu.Units.Wpf
 
                         return text;
                     }
+
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        private static bool IsValidConvertTargetType(Type targetType)
+        {
+            return targetType == typeof(string) ||
+                   targetType == typeof(double) ||
+                   targetType == typeof(double?) ||
+                   targetType == typeof(object);
         }
 
         private void Initialize()
@@ -345,6 +356,7 @@ namespace Gu.Units.Wpf
                 {
                     this.errorText.AppendLine($"ValueFormat cannot be set when Binding.StringFormat is a unit format.");
                 }
+
                 if (this.StringFormat != null)
                 {
                     this.errorText.AppendLine($"ValueFormat cannot be set when Binding.StringFormat is a unit format.");
@@ -360,9 +372,9 @@ namespace Gu.Units.Wpf
             }
             else
             {
-                if (this.unit != null && SymbolFormat != null)
+                if (this.unit != null && this.SymbolFormat != null)
                 {
-                    this.quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(ValueFormat, this.unit.Value, SymbolFormat.Value);
+                    this.quantityFormat = FormatCache<<#= quantity.UnitName #>>.GetOrCreate(this.ValueFormat, this.unit.Value, this.SymbolFormat.Value);
                 }
             }
 
@@ -387,7 +399,7 @@ namespace Gu.Units.Wpf
                 {
                     if (this.quantityFormat.Unit != this.bindingQuantityFormat.Unit)
                     {
-                        this.errorText.AppendLine($"Ambiguous units StringFormat: {quantityFormat.CompositeFormat} Binding.StringFormat: {this.bindingQuantityFormat.CompositeFormat}");
+                        this.errorText.AppendLine($"Ambiguous units StringFormat: {this.quantityFormat.CompositeFormat} Binding.StringFormat: {this.bindingQuantityFormat.CompositeFormat}");
                     }
 
                     this.unit = this.quantityFormat.Unit;
@@ -398,7 +410,7 @@ namespace Gu.Units.Wpf
                 if (!string.IsNullOrEmpty(this.quantityFormat?.SymbolFormat) &&
                     this.unit != this.quantityFormat.Unit)
                 {
-                    this.errorText.AppendLine($"Unit is set to '{this.unit}' but StringFormat is '{StringFormat.Replace("{0:", string.Empty).Replace("}", string.Empty)}'");
+                    this.errorText.AppendLine($"Unit is set to '{this.unit}' but StringFormat is '{this.StringFormat.Replace("{0:", string.Empty).Replace("}", string.Empty)}'");
                 }
 
                 var hasBindingUnit = !string.IsNullOrEmpty(this.bindingQuantityFormat?.SymbolFormat);
@@ -446,22 +458,14 @@ namespace Gu.Units.Wpf
                 }
             }
 
-            if (UnitInput == null)
+            if (this.UnitInput == null)
             {
                 if (!string.IsNullOrEmpty(this.quantityFormat?.SymbolFormat) ||
                     !string.IsNullOrEmpty(this.bindingQuantityFormat?.SymbolFormat))
                 {
-                    UnitInput = Wpf.UnitInput.SymbolRequired;
+                    this.UnitInput = Wpf.UnitInput.SymbolRequired;
                 }
             }
-        }
-
-        private static bool IsValidConvertTargetType(Type targetType)
-        {
-            return targetType == typeof(string) ||
-                   targetType == typeof(double) ||
-                   targetType == typeof(double?) ||
-                   targetType == typeof(object);
         }
     }
 }
