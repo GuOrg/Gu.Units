@@ -68,141 +68,6 @@
         public double Degrees => 57.295779513082323 * this.radians;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
-        /// <returns>The <see cref="Gu.Units.Angle"/> parsed from <paramref name="text"/></returns>
-        public static Angle Parse(string text)
-        {
-            return QuantityParser.Parse<AngleUnit, Angle>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Angle"/> parsed from <paramref name="text"/></returns>
-        public static Angle Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<AngleUnit, Angle>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Angle"/> parsed from <paramref name="text"/></returns>
-        public static Angle Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<AngleUnit, Angle>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Angle"/> parsed from <paramref name="text"/></returns>
-        public static Angle Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<AngleUnit, Angle>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
-        /// <param name="result">The parsed <see cref="Angle"/></param>
-        /// <returns>True if an instance of <see cref="Angle"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Angle result)
-        {
-            return QuantityParser.TryParse<AngleUnit, Angle>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Angle"/></param>
-        /// <returns>True if an instance of <see cref="Angle"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Angle result)
-        {
-            return QuantityParser.TryParse<AngleUnit, Angle>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Angle"/></param>
-        /// <returns>True if an instance of <see cref="Angle"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Angle result)
-        {
-            return QuantityParser.TryParse<AngleUnit, Angle>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Angle"/></param>
-        /// <returns>True if an instance of <see cref="Angle"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Angle result)
-        {
-            return QuantityParser.TryParse<AngleUnit, Angle>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Angle"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Angle"/></returns>
-        public static Angle ReadFrom(XmlReader reader)
-        {
-            var v = default(Angle);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Angle"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Angle"/></returns>
-        public static Angle From(double value, AngleUnit unit)
-        {
-            return new Angle(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Angle"/>.
-        /// </summary>
-        /// <param name="radians">The value in <see cref="Gu.Units.AngleUnit.Radians"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Angle"/></returns>
-        public static Angle FromRadians(double radians)
-        {
-            return new Angle(radians);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Angle"/>.
-        /// </summary>
-        /// <param name="degrees">The value in °</param>
-        /// <returns>An instance of <see cref="Gu.Units.Angle"/></returns>
-        public static Angle FromDegrees(double degrees)
-        {
-            return new Angle(degrees / 57.295779513082323);
-        }
-
-        /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -438,6 +303,141 @@
         public static Angle operator +(Angle angle)
         {
             return angle;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
+        /// <returns>The <see cref="Gu.Units.Angle"/> parsed from <paramref name="text"/></returns>
+        public static Angle Parse(string text)
+        {
+            return QuantityParser.Parse<AngleUnit, Angle>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Angle"/> parsed from <paramref name="text"/></returns>
+        public static Angle Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<AngleUnit, Angle>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Angle"/> parsed from <paramref name="text"/></returns>
+        public static Angle Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<AngleUnit, Angle>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Angle"/> parsed from <paramref name="text"/></returns>
+        public static Angle Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<AngleUnit, Angle>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
+        /// <param name="result">The parsed <see cref="Angle"/></param>
+        /// <returns>True if an instance of <see cref="Angle"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Angle result)
+        {
+            return QuantityParser.TryParse<AngleUnit, Angle>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Angle"/></param>
+        /// <returns>True if an instance of <see cref="Angle"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Angle result)
+        {
+            return QuantityParser.TryParse<AngleUnit, Angle>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Angle"/></param>
+        /// <returns>True if an instance of <see cref="Angle"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Angle result)
+        {
+            return QuantityParser.TryParse<AngleUnit, Angle>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Angle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Angle"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Angle"/></param>
+        /// <returns>True if an instance of <see cref="Angle"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Angle result)
+        {
+            return QuantityParser.TryParse<AngleUnit, Angle>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Angle"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Angle"/></returns>
+        public static Angle ReadFrom(XmlReader reader)
+        {
+            var v = default(Angle);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Angle"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Angle"/></returns>
+        public static Angle From(double value, AngleUnit unit)
+        {
+            return new Angle(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Angle"/>.
+        /// </summary>
+        /// <param name="radians">The value in <see cref="Gu.Units.AngleUnit.Radians"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Angle"/></returns>
+        public static Angle FromRadians(double radians)
+        {
+            return new Angle(radians);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Angle"/>.
+        /// </summary>
+        /// <param name="degrees">The value in °</param>
+        /// <returns>An instance of <see cref="Gu.Units.Angle"/></returns>
+        public static Angle FromDegrees(double degrees)
+        {
+            return new Angle(degrees / 57.295779513082323);
         }
 
         /// <summary>

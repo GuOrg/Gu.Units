@@ -93,191 +93,6 @@
         public double Gigawatts => this.watts / 1000000000;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
-        /// <returns>The <see cref="Gu.Units.Power"/> parsed from <paramref name="text"/></returns>
-        public static Power Parse(string text)
-        {
-            return QuantityParser.Parse<PowerUnit, Power>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Power"/> parsed from <paramref name="text"/></returns>
-        public static Power Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<PowerUnit, Power>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Power"/> parsed from <paramref name="text"/></returns>
-        public static Power Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<PowerUnit, Power>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Power"/> parsed from <paramref name="text"/></returns>
-        public static Power Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<PowerUnit, Power>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
-        /// <param name="result">The parsed <see cref="Power"/></param>
-        /// <returns>True if an instance of <see cref="Power"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Power result)
-        {
-            return QuantityParser.TryParse<PowerUnit, Power>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Power"/></param>
-        /// <returns>True if an instance of <see cref="Power"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Power result)
-        {
-            return QuantityParser.TryParse<PowerUnit, Power>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Power"/></param>
-        /// <returns>True if an instance of <see cref="Power"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Power result)
-        {
-            return QuantityParser.TryParse<PowerUnit, Power>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Power"/></param>
-        /// <returns>True if an instance of <see cref="Power"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Power result)
-        {
-            return QuantityParser.TryParse<PowerUnit, Power>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Power"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
-        public static Power ReadFrom(XmlReader reader)
-        {
-            var v = default(Power);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
-        public static Power From(double value, PowerUnit unit)
-        {
-            return new Power(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
-        /// </summary>
-        /// <param name="watts">The value in <see cref="Gu.Units.PowerUnit.Watts"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
-        public static Power FromWatts(double watts)
-        {
-            return new Power(watts);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
-        /// </summary>
-        /// <param name="nanowatts">The value in nW</param>
-        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
-        public static Power FromNanowatts(double nanowatts)
-        {
-            return new Power(nanowatts / 1000000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
-        /// </summary>
-        /// <param name="microwatts">The value in µW</param>
-        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
-        public static Power FromMicrowatts(double microwatts)
-        {
-            return new Power(microwatts / 1000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
-        /// </summary>
-        /// <param name="milliwatts">The value in mW</param>
-        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
-        public static Power FromMilliwatts(double milliwatts)
-        {
-            return new Power(milliwatts / 1000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
-        /// </summary>
-        /// <param name="kilowatts">The value in kW</param>
-        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
-        public static Power FromKilowatts(double kilowatts)
-        {
-            return new Power(1000 * kilowatts);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
-        /// </summary>
-        /// <param name="megawatts">The value in MW</param>
-        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
-        public static Power FromMegawatts(double megawatts)
-        {
-            return new Power(1000000 * megawatts);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
-        /// </summary>
-        /// <param name="gigawatts">The value in GW</param>
-        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
-        public static Power FromGigawatts(double gigawatts)
-        {
-            return new Power(1000000000 * gigawatts);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -645,6 +460,191 @@
         public static Power operator +(Power power)
         {
             return power;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
+        /// <returns>The <see cref="Gu.Units.Power"/> parsed from <paramref name="text"/></returns>
+        public static Power Parse(string text)
+        {
+            return QuantityParser.Parse<PowerUnit, Power>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Power"/> parsed from <paramref name="text"/></returns>
+        public static Power Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<PowerUnit, Power>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Power"/> parsed from <paramref name="text"/></returns>
+        public static Power Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<PowerUnit, Power>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Power"/> parsed from <paramref name="text"/></returns>
+        public static Power Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<PowerUnit, Power>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
+        /// <param name="result">The parsed <see cref="Power"/></param>
+        /// <returns>True if an instance of <see cref="Power"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Power result)
+        {
+            return QuantityParser.TryParse<PowerUnit, Power>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Power"/></param>
+        /// <returns>True if an instance of <see cref="Power"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Power result)
+        {
+            return QuantityParser.TryParse<PowerUnit, Power>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Power"/></param>
+        /// <returns>True if an instance of <see cref="Power"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Power result)
+        {
+            return QuantityParser.TryParse<PowerUnit, Power>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Power"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Power"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Power"/></param>
+        /// <returns>True if an instance of <see cref="Power"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Power result)
+        {
+            return QuantityParser.TryParse<PowerUnit, Power>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Power"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
+        public static Power ReadFrom(XmlReader reader)
+        {
+            var v = default(Power);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
+        public static Power From(double value, PowerUnit unit)
+        {
+            return new Power(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
+        /// </summary>
+        /// <param name="watts">The value in <see cref="Gu.Units.PowerUnit.Watts"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
+        public static Power FromWatts(double watts)
+        {
+            return new Power(watts);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
+        /// </summary>
+        /// <param name="nanowatts">The value in nW</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
+        public static Power FromNanowatts(double nanowatts)
+        {
+            return new Power(nanowatts / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
+        /// </summary>
+        /// <param name="microwatts">The value in µW</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
+        public static Power FromMicrowatts(double microwatts)
+        {
+            return new Power(microwatts / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
+        /// </summary>
+        /// <param name="milliwatts">The value in mW</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
+        public static Power FromMilliwatts(double milliwatts)
+        {
+            return new Power(milliwatts / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
+        /// </summary>
+        /// <param name="kilowatts">The value in kW</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
+        public static Power FromKilowatts(double kilowatts)
+        {
+            return new Power(1000 * kilowatts);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
+        /// </summary>
+        /// <param name="megawatts">The value in MW</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
+        public static Power FromMegawatts(double megawatts)
+        {
+            return new Power(1000000 * megawatts);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Power"/>.
+        /// </summary>
+        /// <param name="gigawatts">The value in GW</param>
+        /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
+        public static Power FromGigawatts(double gigawatts)
+        {
+            return new Power(1000000000 * gigawatts);
         }
 
         /// <summary>

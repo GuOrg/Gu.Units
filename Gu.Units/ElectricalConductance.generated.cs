@@ -63,131 +63,6 @@
         public double Siemens => this.siemens;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
-        /// <returns>The <see cref="Gu.Units.ElectricalConductance"/> parsed from <paramref name="text"/></returns>
-        public static ElectricalConductance Parse(string text)
-        {
-            return QuantityParser.Parse<ElectricalConductanceUnit, ElectricalConductance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.ElectricalConductance"/> parsed from <paramref name="text"/></returns>
-        public static ElectricalConductance Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<ElectricalConductanceUnit, ElectricalConductance>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.ElectricalConductance"/> parsed from <paramref name="text"/></returns>
-        public static ElectricalConductance Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<ElectricalConductanceUnit, ElectricalConductance>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.ElectricalConductance"/> parsed from <paramref name="text"/></returns>
-        public static ElectricalConductance Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<ElectricalConductanceUnit, ElectricalConductance>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
-        /// <param name="result">The parsed <see cref="ElectricalConductance"/></param>
-        /// <returns>True if an instance of <see cref="ElectricalConductance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out ElectricalConductance result)
-        {
-            return QuantityParser.TryParse<ElectricalConductanceUnit, ElectricalConductance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="ElectricalConductance"/></param>
-        /// <returns>True if an instance of <see cref="ElectricalConductance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out ElectricalConductance result)
-        {
-            return QuantityParser.TryParse<ElectricalConductanceUnit, ElectricalConductance>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="ElectricalConductance"/></param>
-        /// <returns>True if an instance of <see cref="ElectricalConductance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out ElectricalConductance result)
-        {
-            return QuantityParser.TryParse<ElectricalConductanceUnit, ElectricalConductance>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="ElectricalConductance"/></param>
-        /// <returns>True if an instance of <see cref="ElectricalConductance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out ElectricalConductance result)
-        {
-            return QuantityParser.TryParse<ElectricalConductanceUnit, ElectricalConductance>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.ElectricalConductance"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.ElectricalConductance"/></returns>
-        public static ElectricalConductance ReadFrom(XmlReader reader)
-        {
-            var v = default(ElectricalConductance);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.ElectricalConductance"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.ElectricalConductance"/></returns>
-        public static ElectricalConductance From(double value, ElectricalConductanceUnit unit)
-        {
-            return new ElectricalConductance(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.ElectricalConductance"/>.
-        /// </summary>
-        /// <param name="siemens">The value in <see cref="Gu.Units.ElectricalConductanceUnit.Siemens"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.ElectricalConductance"/></returns>
-        public static ElectricalConductance FromSiemens(double siemens)
-        {
-            return new ElectricalConductance(siemens);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -434,6 +309,131 @@
         public static ElectricalConductance operator +(ElectricalConductance electricalConductance)
         {
             return electricalConductance;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
+        /// <returns>The <see cref="Gu.Units.ElectricalConductance"/> parsed from <paramref name="text"/></returns>
+        public static ElectricalConductance Parse(string text)
+        {
+            return QuantityParser.Parse<ElectricalConductanceUnit, ElectricalConductance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.ElectricalConductance"/> parsed from <paramref name="text"/></returns>
+        public static ElectricalConductance Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<ElectricalConductanceUnit, ElectricalConductance>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.ElectricalConductance"/> parsed from <paramref name="text"/></returns>
+        public static ElectricalConductance Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<ElectricalConductanceUnit, ElectricalConductance>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.ElectricalConductance"/> parsed from <paramref name="text"/></returns>
+        public static ElectricalConductance Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<ElectricalConductanceUnit, ElectricalConductance>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
+        /// <param name="result">The parsed <see cref="ElectricalConductance"/></param>
+        /// <returns>True if an instance of <see cref="ElectricalConductance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out ElectricalConductance result)
+        {
+            return QuantityParser.TryParse<ElectricalConductanceUnit, ElectricalConductance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="ElectricalConductance"/></param>
+        /// <returns>True if an instance of <see cref="ElectricalConductance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out ElectricalConductance result)
+        {
+            return QuantityParser.TryParse<ElectricalConductanceUnit, ElectricalConductance>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="ElectricalConductance"/></param>
+        /// <returns>True if an instance of <see cref="ElectricalConductance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out ElectricalConductance result)
+        {
+            return QuantityParser.TryParse<ElectricalConductanceUnit, ElectricalConductance>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricalConductance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricalConductance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="ElectricalConductance"/></param>
+        /// <returns>True if an instance of <see cref="ElectricalConductance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out ElectricalConductance result)
+        {
+            return QuantityParser.TryParse<ElectricalConductanceUnit, ElectricalConductance>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.ElectricalConductance"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricalConductance"/></returns>
+        public static ElectricalConductance ReadFrom(XmlReader reader)
+        {
+            var v = default(ElectricalConductance);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricalConductance"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricalConductance"/></returns>
+        public static ElectricalConductance From(double value, ElectricalConductanceUnit unit)
+        {
+            return new ElectricalConductance(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricalConductance"/>.
+        /// </summary>
+        /// <param name="siemens">The value in <see cref="Gu.Units.ElectricalConductanceUnit.Siemens"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricalConductance"/></returns>
+        public static ElectricalConductance FromSiemens(double siemens)
+        {
+            return new ElectricalConductance(siemens);
         }
 
         /// <summary>

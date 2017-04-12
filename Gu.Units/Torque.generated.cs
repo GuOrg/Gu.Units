@@ -63,131 +63,6 @@
         public double NewtonMetres => this.newtonMetres;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
-        /// <returns>The <see cref="Gu.Units.Torque"/> parsed from <paramref name="text"/></returns>
-        public static Torque Parse(string text)
-        {
-            return QuantityParser.Parse<TorqueUnit, Torque>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Torque"/> parsed from <paramref name="text"/></returns>
-        public static Torque Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<TorqueUnit, Torque>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Torque"/> parsed from <paramref name="text"/></returns>
-        public static Torque Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<TorqueUnit, Torque>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Torque"/> parsed from <paramref name="text"/></returns>
-        public static Torque Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<TorqueUnit, Torque>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
-        /// <param name="result">The parsed <see cref="Torque"/></param>
-        /// <returns>True if an instance of <see cref="Torque"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Torque result)
-        {
-            return QuantityParser.TryParse<TorqueUnit, Torque>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Torque"/></param>
-        /// <returns>True if an instance of <see cref="Torque"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Torque result)
-        {
-            return QuantityParser.TryParse<TorqueUnit, Torque>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Torque"/></param>
-        /// <returns>True if an instance of <see cref="Torque"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Torque result)
-        {
-            return QuantityParser.TryParse<TorqueUnit, Torque>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Torque"/></param>
-        /// <returns>True if an instance of <see cref="Torque"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Torque result)
-        {
-            return QuantityParser.TryParse<TorqueUnit, Torque>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Torque"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Torque"/></returns>
-        public static Torque ReadFrom(XmlReader reader)
-        {
-            var v = default(Torque);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Torque"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Torque"/></returns>
-        public static Torque From(double value, TorqueUnit unit)
-        {
-            return new Torque(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Torque"/>.
-        /// </summary>
-        /// <param name="newtonMetres">The value in <see cref="Gu.Units.TorqueUnit.NewtonMetres"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Torque"/></returns>
-        public static Torque FromNewtonMetres(double newtonMetres)
-        {
-            return new Torque(newtonMetres);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -379,6 +254,131 @@
         public static Torque operator +(Torque torque)
         {
             return torque;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
+        /// <returns>The <see cref="Gu.Units.Torque"/> parsed from <paramref name="text"/></returns>
+        public static Torque Parse(string text)
+        {
+            return QuantityParser.Parse<TorqueUnit, Torque>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Torque"/> parsed from <paramref name="text"/></returns>
+        public static Torque Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<TorqueUnit, Torque>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Torque"/> parsed from <paramref name="text"/></returns>
+        public static Torque Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<TorqueUnit, Torque>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Torque"/> parsed from <paramref name="text"/></returns>
+        public static Torque Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<TorqueUnit, Torque>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
+        /// <param name="result">The parsed <see cref="Torque"/></param>
+        /// <returns>True if an instance of <see cref="Torque"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Torque result)
+        {
+            return QuantityParser.TryParse<TorqueUnit, Torque>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Torque"/></param>
+        /// <returns>True if an instance of <see cref="Torque"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Torque result)
+        {
+            return QuantityParser.TryParse<TorqueUnit, Torque>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Torque"/></param>
+        /// <returns>True if an instance of <see cref="Torque"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Torque result)
+        {
+            return QuantityParser.TryParse<TorqueUnit, Torque>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Torque"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Torque"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Torque"/></param>
+        /// <returns>True if an instance of <see cref="Torque"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Torque result)
+        {
+            return QuantityParser.TryParse<TorqueUnit, Torque>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Torque"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Torque"/></returns>
+        public static Torque ReadFrom(XmlReader reader)
+        {
+            var v = default(Torque);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Torque"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Torque"/></returns>
+        public static Torque From(double value, TorqueUnit unit)
+        {
+            return new Torque(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Torque"/>.
+        /// </summary>
+        /// <param name="newtonMetres">The value in <see cref="Gu.Units.TorqueUnit.NewtonMetres"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Torque"/></returns>
+        public static Torque FromNewtonMetres(double newtonMetres)
+        {
+            return new Torque(newtonMetres);
         }
 
         /// <summary>

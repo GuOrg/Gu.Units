@@ -78,161 +78,6 @@
         public double MicrometresPerKilonewton => 1000000000 * this.metresPerNewton;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
-        /// <returns>The <see cref="Gu.Units.Flexibility"/> parsed from <paramref name="text"/></returns>
-        public static Flexibility Parse(string text)
-        {
-            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Flexibility"/> parsed from <paramref name="text"/></returns>
-        public static Flexibility Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Flexibility"/> parsed from <paramref name="text"/></returns>
-        public static Flexibility Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Flexibility"/> parsed from <paramref name="text"/></returns>
-        public static Flexibility Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
-        /// <param name="result">The parsed <see cref="Flexibility"/></param>
-        /// <returns>True if an instance of <see cref="Flexibility"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Flexibility result)
-        {
-            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Flexibility"/></param>
-        /// <returns>True if an instance of <see cref="Flexibility"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Flexibility result)
-        {
-            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Flexibility"/></param>
-        /// <returns>True if an instance of <see cref="Flexibility"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Flexibility result)
-        {
-            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Flexibility"/></param>
-        /// <returns>True if an instance of <see cref="Flexibility"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Flexibility result)
-        {
-            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Flexibility"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
-        public static Flexibility ReadFrom(XmlReader reader)
-        {
-            var v = default(Flexibility);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
-        public static Flexibility From(double value, FlexibilityUnit unit)
-        {
-            return new Flexibility(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
-        /// </summary>
-        /// <param name="metresPerNewton">The value in <see cref="Gu.Units.FlexibilityUnit.MetresPerNewton"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
-        public static Flexibility FromMetresPerNewton(double metresPerNewton)
-        {
-            return new Flexibility(metresPerNewton);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
-        /// </summary>
-        /// <param name="millimetresPerNewton">The value in mm/N</param>
-        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
-        public static Flexibility FromMillimetresPerNewton(double millimetresPerNewton)
-        {
-            return new Flexibility(millimetresPerNewton / 1000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
-        /// </summary>
-        /// <param name="millimetresPerKilonewton">The value in mm/kN</param>
-        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
-        public static Flexibility FromMillimetresPerKilonewton(double millimetresPerKilonewton)
-        {
-            return new Flexibility(millimetresPerKilonewton / 1000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
-        /// </summary>
-        /// <param name="micrometresPerKilonewton">The value in µm/kN</param>
-        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
-        public static Flexibility FromMicrometresPerKilonewton(double micrometresPerKilonewton)
-        {
-            return new Flexibility(micrometresPerKilonewton / 1000000000);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -479,6 +324,161 @@
         public static Flexibility operator +(Flexibility flexibility)
         {
             return flexibility;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <returns>The <see cref="Gu.Units.Flexibility"/> parsed from <paramref name="text"/></returns>
+        public static Flexibility Parse(string text)
+        {
+            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Flexibility"/> parsed from <paramref name="text"/></returns>
+        public static Flexibility Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Flexibility"/> parsed from <paramref name="text"/></returns>
+        public static Flexibility Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Flexibility"/> parsed from <paramref name="text"/></returns>
+        public static Flexibility Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<FlexibilityUnit, Flexibility>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <param name="result">The parsed <see cref="Flexibility"/></param>
+        /// <returns>True if an instance of <see cref="Flexibility"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Flexibility result)
+        {
+            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Flexibility"/></param>
+        /// <returns>True if an instance of <see cref="Flexibility"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Flexibility result)
+        {
+            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Flexibility"/></param>
+        /// <returns>True if an instance of <see cref="Flexibility"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Flexibility result)
+        {
+            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Flexibility"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Flexibility"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Flexibility"/></param>
+        /// <returns>True if an instance of <see cref="Flexibility"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Flexibility result)
+        {
+            return QuantityParser.TryParse<FlexibilityUnit, Flexibility>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Flexibility"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
+        public static Flexibility ReadFrom(XmlReader reader)
+        {
+            var v = default(Flexibility);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
+        public static Flexibility From(double value, FlexibilityUnit unit)
+        {
+            return new Flexibility(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
+        /// </summary>
+        /// <param name="metresPerNewton">The value in <see cref="Gu.Units.FlexibilityUnit.MetresPerNewton"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
+        public static Flexibility FromMetresPerNewton(double metresPerNewton)
+        {
+            return new Flexibility(metresPerNewton);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
+        /// </summary>
+        /// <param name="millimetresPerNewton">The value in mm/N</param>
+        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
+        public static Flexibility FromMillimetresPerNewton(double millimetresPerNewton)
+        {
+            return new Flexibility(millimetresPerNewton / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
+        /// </summary>
+        /// <param name="millimetresPerKilonewton">The value in mm/kN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
+        public static Flexibility FromMillimetresPerKilonewton(double millimetresPerKilonewton)
+        {
+            return new Flexibility(millimetresPerKilonewton / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
+        /// </summary>
+        /// <param name="micrometresPerKilonewton">The value in µm/kN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
+        public static Flexibility FromMicrometresPerKilonewton(double micrometresPerKilonewton)
+        {
+            return new Flexibility(micrometresPerKilonewton / 1000000000);
         }
 
         /// <summary>

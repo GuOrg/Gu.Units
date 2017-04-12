@@ -103,6 +103,178 @@
         public double Kilobits => this.bits / 1000;
 
         /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="double"/> that is the result from the division.</returns>
+        public static double operator /(Data left, Data right)
+        {
+            return left.bits / right.bits;
+        }
+
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.Data"/> instances are equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.Data"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Data"/>.</param>
+        public static bool operator ==(Data left, Data right)
+        {
+            return left.Equals(right);
+        }
+
+        /// <summary>
+        /// Indicates whether two <see cref="Gu.Units.Data"/> instances are not equal.
+        /// </summary>
+        /// <returns>
+        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.Data"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Data"/>.</param>
+        public static bool operator !=(Data left, Data right)
+        {
+            return !left.Equals(right);
+        }
+
+        /// <summary>
+        /// Indicates whether a specified <see cref="Gu.Units.Data"/> is less than another specified <see cref="Gu.Units.Data"/>.
+        /// </summary>
+        /// <returns>
+        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.Data"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Data"/>.</param>
+        public static bool operator <(Data left, Data right)
+        {
+            return left.bits < right.bits;
+        }
+
+        /// <summary>
+        /// Indicates whether a specified <see cref="Gu.Units.Data"/> is greater than another specified <see cref="Gu.Units.Data"/>.
+        /// </summary>
+        /// <returns>
+        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.Data"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Data"/>.</param>
+        public static bool operator >(Data left, Data right)
+        {
+            return left.bits > right.bits;
+        }
+
+        /// <summary>
+        /// Indicates whether a specified <see cref="Gu.Units.Data"/> is less than or equal to another specified <see cref="Gu.Units.Data"/>.
+        /// </summary>
+        /// <returns>
+        /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.Data"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Data"/>.</param>
+        public static bool operator <=(Data left, Data right)
+        {
+            return left.bits <= right.bits;
+        }
+
+        /// <summary>
+        /// Indicates whether a specified <see cref="Gu.Units.Data"/> is greater than or equal to another specified <see cref="Gu.Units.Data"/>.
+        /// </summary>
+        /// <returns>
+        /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.Data"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Data"/>.</param>
+        public static bool operator >=(Data left, Data right)
+        {
+            return left.bits >= right.bits;
+        }
+
+        /// <summary>
+        /// Multiplies an instance of <see cref="Gu.Units.Data"/> with <paramref name="left"/> and returns the result.
+        /// </summary>
+        /// <param name="right">An instance of <see cref="Gu.Units.Data"/></param>
+        /// <param name="left">An instance of <seealso cref="double"/></param>
+        /// <returns>Multiplies an instance of <see cref="Gu.Units.Data"/> with <paramref name="left"/> and returns the result.</returns>
+        public static Data operator *(double left, Data right)
+        {
+            return new Data(left * right.bits);
+        }
+
+        /// <summary>
+        /// Multiplies an instance of <see cref="Gu.Units.Data"/> with <paramref name="right"/> and returns the result.
+        /// </summary>
+        /// <param name="left">An instance of <see cref="Gu.Units.Data"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
+        /// <returns>Multiplies an instance of <see cref="Gu.Units.Data"/> with <paramref name="right"/> and returns the result.</returns>
+        public static Data operator *(Data left, double right)
+        {
+            return new Data(left.bits * right);
+        }
+
+        /// <summary>
+        /// Divides an instance of <see cref="Gu.Units.Data"/> with <paramref name="right"/> and returns the result.
+        /// </summary>
+        /// <param name="left">An instance of <see cref="Gu.Units.Data"/></param>
+        /// <param name="right">An instance of <seealso cref="double"/></param>
+        /// <returns>Divides an instance of <see cref="Gu.Units.Data"/> with <paramref name="right"/> and returns the result.</returns>
+        public static Data operator /(Data left, double right)
+        {
+            return new Data(left.bits / right);
+        }
+
+        /// <summary>
+        /// Adds two specified <see cref="Gu.Units.Data"/> instances.
+        /// </summary>
+        /// <returns>
+        /// An <see cref="Gu.Units.Data"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.Data"/>.</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Data"/>.</param>
+        public static Data operator +(Data left, Data right)
+        {
+            return new Data(left.bits + right.bits);
+        }
+
+        /// <summary>
+        /// Subtracts an Data from another Data and returns the difference.
+        /// </summary>
+        /// <returns>
+        /// An <see cref="Gu.Units.Data"/> that is the difference
+        /// </returns>
+        /// <param name="left">An instance of <see cref="Gu.Units.Data"/> (the minuend).</param>
+        /// <param name="right">An instance of <see cref="Gu.Units.Data"/> (the subtrahend).</param>
+        public static Data operator -(Data left, Data right)
+        {
+            return new Data(left.bits - right.bits);
+        }
+
+        /// <summary>
+        /// Returns an <see cref="Gu.Units.Data"/> whose quantity is the negated quantity of the specified instance.
+        /// </summary>
+        /// <returns>
+        /// An <see cref="Gu.Units.Data"/> with the same numeric quantity as this instance, but the opposite sign.
+        /// </returns>
+        /// <param name="data">An instance of <see cref="Gu.Units.Data"/></param>
+        public static Data operator -(Data data)
+        {
+            return new Data(-1 * data.bits);
+        }
+
+        /// <summary>
+        /// Returns the specified instance of <see cref="Gu.Units.Data"/>.
+        /// </summary>
+        /// <returns>
+        /// Returns <paramref name="data"/>.
+        /// </returns>
+        /// <param name="data">An instance of <see cref="Gu.Units.Data"/></param>
+        public static Data operator +(Data data)
+        {
+            return data;
+        }
+
+        /// <summary>
         /// Creates an instance of <see cref="Gu.Units.Data"/> from its string representation
         /// </summary>
         /// <param name="text">The string representation of the <see cref="Gu.Units.Data"/></param>
@@ -305,178 +477,6 @@
         public static Data FromKilobits(double kilobits)
         {
             return new Data(1000 * kilobits);
-        }
-
-        /// <summary>
-        /// Divides <paramref name="left"/> by <paramref name="right"/>
-        /// </summary>
-        /// <param name="left">The left value</param>
-        /// <param name="right">The right value</param>
-        /// <returns>The <see cref="double"/> that is the result from the division.</returns>
-        public static double operator /(Data left, Data right)
-        {
-            return left.bits / right.bits;
-        }
-
-        /// <summary>
-        /// Indicates whether two <see cref="Gu.Units.Data"/> instances are equal.
-        /// </summary>
-        /// <returns>
-        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
-        /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Data"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Data"/>.</param>
-        public static bool operator ==(Data left, Data right)
-        {
-            return left.Equals(right);
-        }
-
-        /// <summary>
-        /// Indicates whether two <see cref="Gu.Units.Data"/> instances are not equal.
-        /// </summary>
-        /// <returns>
-        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
-        /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Data"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Data"/>.</param>
-        public static bool operator !=(Data left, Data right)
-        {
-            return !left.Equals(right);
-        }
-
-        /// <summary>
-        /// Indicates whether a specified <see cref="Gu.Units.Data"/> is less than another specified <see cref="Gu.Units.Data"/>.
-        /// </summary>
-        /// <returns>
-        /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false.
-        /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Data"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Data"/>.</param>
-        public static bool operator <(Data left, Data right)
-        {
-            return left.bits < right.bits;
-        }
-
-        /// <summary>
-        /// Indicates whether a specified <see cref="Gu.Units.Data"/> is greater than another specified <see cref="Gu.Units.Data"/>.
-        /// </summary>
-        /// <returns>
-        /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false.
-        /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Data"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Data"/>.</param>
-        public static bool operator >(Data left, Data right)
-        {
-            return left.bits > right.bits;
-        }
-
-        /// <summary>
-        /// Indicates whether a specified <see cref="Gu.Units.Data"/> is less than or equal to another specified <see cref="Gu.Units.Data"/>.
-        /// </summary>
-        /// <returns>
-        /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
-        /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Data"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Data"/>.</param>
-        public static bool operator <=(Data left, Data right)
-        {
-            return left.bits <= right.bits;
-        }
-
-        /// <summary>
-        /// Indicates whether a specified <see cref="Gu.Units.Data"/> is greater than or equal to another specified <see cref="Gu.Units.Data"/>.
-        /// </summary>
-        /// <returns>
-        /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
-        /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Data"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Data"/>.</param>
-        public static bool operator >=(Data left, Data right)
-        {
-            return left.bits >= right.bits;
-        }
-
-        /// <summary>
-        /// Multiplies an instance of <see cref="Gu.Units.Data"/> with <paramref name="left"/> and returns the result.
-        /// </summary>
-        /// <param name="right">An instance of <see cref="Gu.Units.Data"/></param>
-        /// <param name="left">An instance of <seealso cref="double"/></param>
-        /// <returns>Multiplies an instance of <see cref="Gu.Units.Data"/> with <paramref name="left"/> and returns the result.</returns>
-        public static Data operator *(double left, Data right)
-        {
-            return new Data(left * right.bits);
-        }
-
-        /// <summary>
-        /// Multiplies an instance of <see cref="Gu.Units.Data"/> with <paramref name="right"/> and returns the result.
-        /// </summary>
-        /// <param name="left">An instance of <see cref="Gu.Units.Data"/></param>
-        /// <param name="right">An instance of <seealso cref="double"/></param>
-        /// <returns>Multiplies an instance of <see cref="Gu.Units.Data"/> with <paramref name="right"/> and returns the result.</returns>
-        public static Data operator *(Data left, double right)
-        {
-            return new Data(left.bits * right);
-        }
-
-        /// <summary>
-        /// Divides an instance of <see cref="Gu.Units.Data"/> with <paramref name="right"/> and returns the result.
-        /// </summary>
-        /// <param name="left">An instance of <see cref="Gu.Units.Data"/></param>
-        /// <param name="right">An instance of <seealso cref="double"/></param>
-        /// <returns>Divides an instance of <see cref="Gu.Units.Data"/> with <paramref name="right"/> and returns the result.</returns>
-        public static Data operator /(Data left, double right)
-        {
-            return new Data(left.bits / right);
-        }
-
-        /// <summary>
-        /// Adds two specified <see cref="Gu.Units.Data"/> instances.
-        /// </summary>
-        /// <returns>
-        /// An <see cref="Gu.Units.Data"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
-        /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Data"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Data"/>.</param>
-        public static Data operator +(Data left, Data right)
-        {
-            return new Data(left.bits + right.bits);
-        }
-
-        /// <summary>
-        /// Subtracts an Data from another Data and returns the difference.
-        /// </summary>
-        /// <returns>
-        /// An <see cref="Gu.Units.Data"/> that is the difference
-        /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Data"/> (the minuend).</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Data"/> (the subtrahend).</param>
-        public static Data operator -(Data left, Data right)
-        {
-            return new Data(left.bits - right.bits);
-        }
-
-        /// <summary>
-        /// Returns an <see cref="Gu.Units.Data"/> whose quantity is the negated quantity of the specified instance.
-        /// </summary>
-        /// <returns>
-        /// An <see cref="Gu.Units.Data"/> with the same numeric quantity as this instance, but the opposite sign.
-        /// </returns>
-        /// <param name="data">An instance of <see cref="Gu.Units.Data"/></param>
-        public static Data operator -(Data data)
-        {
-            return new Data(-1 * data.bits);
-        }
-
-        /// <summary>
-        /// Returns the specified instance of <see cref="Gu.Units.Data"/>.
-        /// </summary>
-        /// <returns>
-        /// Returns <paramref name="data"/>.
-        /// </returns>
-        /// <param name="data">An instance of <see cref="Gu.Units.Data"/></param>
-        public static Data operator +(Data data)
-        {
-            return data;
         }
 
         /// <summary>

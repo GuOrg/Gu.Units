@@ -108,221 +108,6 @@
         public double CentimetresPerSecond => 100 * this.metresPerSecond;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <returns>The <see cref="Gu.Units.Speed"/> parsed from <paramref name="text"/></returns>
-        public static Speed Parse(string text)
-        {
-            return QuantityParser.Parse<SpeedUnit, Speed>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Speed"/> parsed from <paramref name="text"/></returns>
-        public static Speed Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<SpeedUnit, Speed>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Speed"/> parsed from <paramref name="text"/></returns>
-        public static Speed Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<SpeedUnit, Speed>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Speed"/> parsed from <paramref name="text"/></returns>
-        public static Speed Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<SpeedUnit, Speed>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <param name="result">The parsed <see cref="Speed"/></param>
-        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Speed result)
-        {
-            return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Speed"/></param>
-        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Speed result)
-        {
-            return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Speed"/></param>
-        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Speed result)
-        {
-            return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Speed"/></param>
-        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Speed result)
-        {
-            return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Speed"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
-        public static Speed ReadFrom(XmlReader reader)
-        {
-            var v = default(Speed);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
-        public static Speed From(double value, SpeedUnit unit)
-        {
-            return new Speed(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
-        /// </summary>
-        /// <param name="metresPerSecond">The value in <see cref="Gu.Units.SpeedUnit.MetresPerSecond"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
-        public static Speed FromMetresPerSecond(double metresPerSecond)
-        {
-            return new Speed(metresPerSecond);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
-        /// </summary>
-        /// <param name="kilometresPerHour">The value in km/h</param>
-        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
-        public static Speed FromKilometresPerHour(double kilometresPerHour)
-        {
-            return new Speed(0.277777777777778 * kilometresPerHour);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
-        /// </summary>
-        /// <param name="centimetresPerMinute">The value in cm/min</param>
-        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
-        public static Speed FromCentimetresPerMinute(double centimetresPerMinute)
-        {
-            return new Speed(centimetresPerMinute / 6000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
-        /// </summary>
-        /// <param name="metresPerMinute">The value in m/min</param>
-        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
-        public static Speed FromMetresPerMinute(double metresPerMinute)
-        {
-            return new Speed(metresPerMinute / 60);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
-        /// </summary>
-        /// <param name="metresPerHour">The value in m/h</param>
-        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
-        public static Speed FromMetresPerHour(double metresPerHour)
-        {
-            return new Speed(metresPerHour / 3600);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
-        /// </summary>
-        /// <param name="millimetresPerHour">The value in mm/h</param>
-        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
-        public static Speed FromMillimetresPerHour(double millimetresPerHour)
-        {
-            return new Speed(millimetresPerHour / 3600000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
-        /// </summary>
-        /// <param name="centimetresPerHour">The value in cm/h</param>
-        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
-        public static Speed FromCentimetresPerHour(double centimetresPerHour)
-        {
-            return new Speed(centimetresPerHour / 360000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
-        /// </summary>
-        /// <param name="millimetresPerMinute">The value in mm/min</param>
-        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
-        public static Speed FromMillimetresPerMinute(double millimetresPerMinute)
-        {
-            return new Speed(millimetresPerMinute / 60000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
-        /// </summary>
-        /// <param name="millimetresPerSecond">The value in mm/s</param>
-        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
-        public static Speed FromMillimetresPerSecond(double millimetresPerSecond)
-        {
-            return new Speed(millimetresPerSecond / 1000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
-        /// </summary>
-        /// <param name="centimetresPerSecond">The value in cm/s</param>
-        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
-        public static Speed FromCentimetresPerSecond(double centimetresPerSecond)
-        {
-            return new Speed(centimetresPerSecond / 100);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -668,6 +453,221 @@
         public static Speed operator +(Speed speed)
         {
             return speed;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <returns>The <see cref="Gu.Units.Speed"/> parsed from <paramref name="text"/></returns>
+        public static Speed Parse(string text)
+        {
+            return QuantityParser.Parse<SpeedUnit, Speed>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Speed"/> parsed from <paramref name="text"/></returns>
+        public static Speed Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<SpeedUnit, Speed>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Speed"/> parsed from <paramref name="text"/></returns>
+        public static Speed Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<SpeedUnit, Speed>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Speed"/> parsed from <paramref name="text"/></returns>
+        public static Speed Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<SpeedUnit, Speed>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <param name="result">The parsed <see cref="Speed"/></param>
+        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Speed result)
+        {
+            return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Speed"/></param>
+        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Speed result)
+        {
+            return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Speed"/></param>
+        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Speed result)
+        {
+            return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Speed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Speed"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Speed"/></param>
+        /// <returns>True if an instance of <see cref="Speed"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Speed result)
+        {
+            return QuantityParser.TryParse<SpeedUnit, Speed>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Speed"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
+        public static Speed ReadFrom(XmlReader reader)
+        {
+            var v = default(Speed);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
+        public static Speed From(double value, SpeedUnit unit)
+        {
+            return new Speed(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
+        /// </summary>
+        /// <param name="metresPerSecond">The value in <see cref="Gu.Units.SpeedUnit.MetresPerSecond"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
+        public static Speed FromMetresPerSecond(double metresPerSecond)
+        {
+            return new Speed(metresPerSecond);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
+        /// </summary>
+        /// <param name="kilometresPerHour">The value in km/h</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
+        public static Speed FromKilometresPerHour(double kilometresPerHour)
+        {
+            return new Speed(0.277777777777778 * kilometresPerHour);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
+        /// </summary>
+        /// <param name="centimetresPerMinute">The value in cm/min</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
+        public static Speed FromCentimetresPerMinute(double centimetresPerMinute)
+        {
+            return new Speed(centimetresPerMinute / 6000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
+        /// </summary>
+        /// <param name="metresPerMinute">The value in m/min</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
+        public static Speed FromMetresPerMinute(double metresPerMinute)
+        {
+            return new Speed(metresPerMinute / 60);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
+        /// </summary>
+        /// <param name="metresPerHour">The value in m/h</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
+        public static Speed FromMetresPerHour(double metresPerHour)
+        {
+            return new Speed(metresPerHour / 3600);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
+        /// </summary>
+        /// <param name="millimetresPerHour">The value in mm/h</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
+        public static Speed FromMillimetresPerHour(double millimetresPerHour)
+        {
+            return new Speed(millimetresPerHour / 3600000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
+        /// </summary>
+        /// <param name="centimetresPerHour">The value in cm/h</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
+        public static Speed FromCentimetresPerHour(double centimetresPerHour)
+        {
+            return new Speed(centimetresPerHour / 360000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
+        /// </summary>
+        /// <param name="millimetresPerMinute">The value in mm/min</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
+        public static Speed FromMillimetresPerMinute(double millimetresPerMinute)
+        {
+            return new Speed(millimetresPerMinute / 60000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
+        /// </summary>
+        /// <param name="millimetresPerSecond">The value in mm/s</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
+        public static Speed FromMillimetresPerSecond(double millimetresPerSecond)
+        {
+            return new Speed(millimetresPerSecond / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Speed"/>.
+        /// </summary>
+        /// <param name="centimetresPerSecond">The value in cm/s</param>
+        /// <returns>An instance of <see cref="Gu.Units.Speed"/></returns>
+        public static Speed FromCentimetresPerSecond(double centimetresPerSecond)
+        {
+            return new Speed(centimetresPerSecond / 100);
         }
 
         /// <summary>

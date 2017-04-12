@@ -63,131 +63,6 @@
         public double KilogramsPerSquareMetre => this.kilogramsPerSquareMetre;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
-        /// <returns>The <see cref="Gu.Units.AreaDensity"/> parsed from <paramref name="text"/></returns>
-        public static AreaDensity Parse(string text)
-        {
-            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.AreaDensity"/> parsed from <paramref name="text"/></returns>
-        public static AreaDensity Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.AreaDensity"/> parsed from <paramref name="text"/></returns>
-        public static AreaDensity Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.AreaDensity"/> parsed from <paramref name="text"/></returns>
-        public static AreaDensity Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
-        /// <param name="result">The parsed <see cref="AreaDensity"/></param>
-        /// <returns>True if an instance of <see cref="AreaDensity"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out AreaDensity result)
-        {
-            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="AreaDensity"/></param>
-        /// <returns>True if an instance of <see cref="AreaDensity"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out AreaDensity result)
-        {
-            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="AreaDensity"/></param>
-        /// <returns>True if an instance of <see cref="AreaDensity"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out AreaDensity result)
-        {
-            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="AreaDensity"/></param>
-        /// <returns>True if an instance of <see cref="AreaDensity"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out AreaDensity result)
-        {
-            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.AreaDensity"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.AreaDensity"/></returns>
-        public static AreaDensity ReadFrom(XmlReader reader)
-        {
-            var v = default(AreaDensity);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AreaDensity"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.AreaDensity"/></returns>
-        public static AreaDensity From(double value, AreaDensityUnit unit)
-        {
-            return new AreaDensity(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AreaDensity"/>.
-        /// </summary>
-        /// <param name="kilogramsPerSquareMetre">The value in <see cref="Gu.Units.AreaDensityUnit.KilogramsPerSquareMetre"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.AreaDensity"/></returns>
-        public static AreaDensity FromKilogramsPerSquareMetre(double kilogramsPerSquareMetre)
-        {
-            return new AreaDensity(kilogramsPerSquareMetre);
-        }
-
-        /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -456,6 +331,131 @@
         public static AreaDensity operator +(AreaDensity areaDensity)
         {
             return areaDensity;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <returns>The <see cref="Gu.Units.AreaDensity"/> parsed from <paramref name="text"/></returns>
+        public static AreaDensity Parse(string text)
+        {
+            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.AreaDensity"/> parsed from <paramref name="text"/></returns>
+        public static AreaDensity Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.AreaDensity"/> parsed from <paramref name="text"/></returns>
+        public static AreaDensity Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.AreaDensity"/> parsed from <paramref name="text"/></returns>
+        public static AreaDensity Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<AreaDensityUnit, AreaDensity>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <param name="result">The parsed <see cref="AreaDensity"/></param>
+        /// <returns>True if an instance of <see cref="AreaDensity"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out AreaDensity result)
+        {
+            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="AreaDensity"/></param>
+        /// <returns>True if an instance of <see cref="AreaDensity"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out AreaDensity result)
+        {
+            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="AreaDensity"/></param>
+        /// <returns>True if an instance of <see cref="AreaDensity"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out AreaDensity result)
+        {
+            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AreaDensity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AreaDensity"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="AreaDensity"/></param>
+        /// <returns>True if an instance of <see cref="AreaDensity"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out AreaDensity result)
+        {
+            return QuantityParser.TryParse<AreaDensityUnit, AreaDensity>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.AreaDensity"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AreaDensity"/></returns>
+        public static AreaDensity ReadFrom(XmlReader reader)
+        {
+            var v = default(AreaDensity);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AreaDensity"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AreaDensity"/></returns>
+        public static AreaDensity From(double value, AreaDensityUnit unit)
+        {
+            return new AreaDensity(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AreaDensity"/>.
+        /// </summary>
+        /// <param name="kilogramsPerSquareMetre">The value in <see cref="Gu.Units.AreaDensityUnit.KilogramsPerSquareMetre"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.AreaDensity"/></returns>
+        public static AreaDensity FromKilogramsPerSquareMetre(double kilogramsPerSquareMetre)
+        {
+            return new AreaDensity(kilogramsPerSquareMetre);
         }
 
         /// <summary>

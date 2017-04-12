@@ -63,131 +63,6 @@
         public double Webers => this.webers;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
-        /// <returns>The <see cref="Gu.Units.MagneticFlux"/> parsed from <paramref name="text"/></returns>
-        public static MagneticFlux Parse(string text)
-        {
-            return QuantityParser.Parse<MagneticFluxUnit, MagneticFlux>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.MagneticFlux"/> parsed from <paramref name="text"/></returns>
-        public static MagneticFlux Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<MagneticFluxUnit, MagneticFlux>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.MagneticFlux"/> parsed from <paramref name="text"/></returns>
-        public static MagneticFlux Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<MagneticFluxUnit, MagneticFlux>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.MagneticFlux"/> parsed from <paramref name="text"/></returns>
-        public static MagneticFlux Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<MagneticFluxUnit, MagneticFlux>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
-        /// <param name="result">The parsed <see cref="MagneticFlux"/></param>
-        /// <returns>True if an instance of <see cref="MagneticFlux"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out MagneticFlux result)
-        {
-            return QuantityParser.TryParse<MagneticFluxUnit, MagneticFlux>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="MagneticFlux"/></param>
-        /// <returns>True if an instance of <see cref="MagneticFlux"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out MagneticFlux result)
-        {
-            return QuantityParser.TryParse<MagneticFluxUnit, MagneticFlux>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="MagneticFlux"/></param>
-        /// <returns>True if an instance of <see cref="MagneticFlux"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out MagneticFlux result)
-        {
-            return QuantityParser.TryParse<MagneticFluxUnit, MagneticFlux>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="MagneticFlux"/></param>
-        /// <returns>True if an instance of <see cref="MagneticFlux"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out MagneticFlux result)
-        {
-            return QuantityParser.TryParse<MagneticFluxUnit, MagneticFlux>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.MagneticFlux"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.MagneticFlux"/></returns>
-        public static MagneticFlux ReadFrom(XmlReader reader)
-        {
-            var v = default(MagneticFlux);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.MagneticFlux"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.MagneticFlux"/></returns>
-        public static MagneticFlux From(double value, MagneticFluxUnit unit)
-        {
-            return new MagneticFlux(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.MagneticFlux"/>.
-        /// </summary>
-        /// <param name="webers">The value in <see cref="Gu.Units.MagneticFluxUnit.Webers"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.MagneticFlux"/></returns>
-        public static MagneticFlux FromWebers(double webers)
-        {
-            return new MagneticFlux(webers);
-        }
-
-        /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -478,6 +353,131 @@
         public static MagneticFlux operator +(MagneticFlux magneticFlux)
         {
             return magneticFlux;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
+        /// <returns>The <see cref="Gu.Units.MagneticFlux"/> parsed from <paramref name="text"/></returns>
+        public static MagneticFlux Parse(string text)
+        {
+            return QuantityParser.Parse<MagneticFluxUnit, MagneticFlux>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.MagneticFlux"/> parsed from <paramref name="text"/></returns>
+        public static MagneticFlux Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<MagneticFluxUnit, MagneticFlux>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.MagneticFlux"/> parsed from <paramref name="text"/></returns>
+        public static MagneticFlux Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<MagneticFluxUnit, MagneticFlux>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.MagneticFlux"/> parsed from <paramref name="text"/></returns>
+        public static MagneticFlux Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<MagneticFluxUnit, MagneticFlux>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
+        /// <param name="result">The parsed <see cref="MagneticFlux"/></param>
+        /// <returns>True if an instance of <see cref="MagneticFlux"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out MagneticFlux result)
+        {
+            return QuantityParser.TryParse<MagneticFluxUnit, MagneticFlux>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="MagneticFlux"/></param>
+        /// <returns>True if an instance of <see cref="MagneticFlux"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out MagneticFlux result)
+        {
+            return QuantityParser.TryParse<MagneticFluxUnit, MagneticFlux>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="MagneticFlux"/></param>
+        /// <returns>True if an instance of <see cref="MagneticFlux"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out MagneticFlux result)
+        {
+            return QuantityParser.TryParse<MagneticFluxUnit, MagneticFlux>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MagneticFlux"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MagneticFlux"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="MagneticFlux"/></param>
+        /// <returns>True if an instance of <see cref="MagneticFlux"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out MagneticFlux result)
+        {
+            return QuantityParser.TryParse<MagneticFluxUnit, MagneticFlux>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.MagneticFlux"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.MagneticFlux"/></returns>
+        public static MagneticFlux ReadFrom(XmlReader reader)
+        {
+            var v = default(MagneticFlux);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.MagneticFlux"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.MagneticFlux"/></returns>
+        public static MagneticFlux From(double value, MagneticFluxUnit unit)
+        {
+            return new MagneticFlux(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.MagneticFlux"/>.
+        /// </summary>
+        /// <param name="webers">The value in <see cref="Gu.Units.MagneticFluxUnit.Webers"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.MagneticFlux"/></returns>
+        public static MagneticFlux FromWebers(double webers)
+        {
+            return new MagneticFlux(webers);
         }
 
         /// <summary>

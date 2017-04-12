@@ -108,221 +108,6 @@
         public double SquareFeet => this.squareMetres / 0.09290304;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
-        /// <returns>The <see cref="Gu.Units.Area"/> parsed from <paramref name="text"/></returns>
-        public static Area Parse(string text)
-        {
-            return QuantityParser.Parse<AreaUnit, Area>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Area"/> parsed from <paramref name="text"/></returns>
-        public static Area Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<AreaUnit, Area>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Area"/> parsed from <paramref name="text"/></returns>
-        public static Area Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<AreaUnit, Area>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Area"/> parsed from <paramref name="text"/></returns>
-        public static Area Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<AreaUnit, Area>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
-        /// <param name="result">The parsed <see cref="Area"/></param>
-        /// <returns>True if an instance of <see cref="Area"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Area result)
-        {
-            return QuantityParser.TryParse<AreaUnit, Area>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Area"/></param>
-        /// <returns>True if an instance of <see cref="Area"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Area result)
-        {
-            return QuantityParser.TryParse<AreaUnit, Area>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Area"/></param>
-        /// <returns>True if an instance of <see cref="Area"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Area result)
-        {
-            return QuantityParser.TryParse<AreaUnit, Area>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Area"/></param>
-        /// <returns>True if an instance of <see cref="Area"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Area result)
-        {
-            return QuantityParser.TryParse<AreaUnit, Area>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Area"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
-        public static Area ReadFrom(XmlReader reader)
-        {
-            var v = default(Area);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
-        public static Area From(double value, AreaUnit unit)
-        {
-            return new Area(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
-        /// </summary>
-        /// <param name="squareMetres">The value in <see cref="Gu.Units.AreaUnit.SquareMetres"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
-        public static Area FromSquareMetres(double squareMetres)
-        {
-            return new Area(squareMetres);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
-        /// </summary>
-        /// <param name="hectares">The value in ha</param>
-        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
-        public static Area FromHectares(double hectares)
-        {
-            return new Area(10000 * hectares);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
-        /// </summary>
-        /// <param name="squareMillimetres">The value in mm²</param>
-        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
-        public static Area FromSquareMillimetres(double squareMillimetres)
-        {
-            return new Area(squareMillimetres / 1000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
-        /// </summary>
-        /// <param name="squareCentimetres">The value in cm²</param>
-        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
-        public static Area FromSquareCentimetres(double squareCentimetres)
-        {
-            return new Area(squareCentimetres / 10000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
-        /// </summary>
-        /// <param name="squareDecimetres">The value in dm²</param>
-        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
-        public static Area FromSquareDecimetres(double squareDecimetres)
-        {
-            return new Area(squareDecimetres / 100);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
-        /// </summary>
-        /// <param name="squareKilometres">The value in km²</param>
-        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
-        public static Area FromSquareKilometres(double squareKilometres)
-        {
-            return new Area(1000000 * squareKilometres);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
-        /// </summary>
-        /// <param name="squareMile">The value in mi²</param>
-        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
-        public static Area FromSquareMile(double squareMile)
-        {
-            return new Area(2589988.110336 * squareMile);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
-        /// </summary>
-        /// <param name="squareYards">The value in yd²</param>
-        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
-        public static Area FromSquareYards(double squareYards)
-        {
-            return new Area(0.83612736 * squareYards);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
-        /// </summary>
-        /// <param name="squareInches">The value in in²</param>
-        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
-        public static Area FromSquareInches(double squareInches)
-        {
-            return new Area(0.00064516 * squareInches);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
-        /// </summary>
-        /// <param name="squareFeet">The value in ft²</param>
-        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
-        public static Area FromSquareFeet(double squareFeet)
-        {
-            return new Area(0.09290304 * squareFeet);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -668,6 +453,221 @@
         public static Area operator +(Area area)
         {
             return area;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
+        /// <returns>The <see cref="Gu.Units.Area"/> parsed from <paramref name="text"/></returns>
+        public static Area Parse(string text)
+        {
+            return QuantityParser.Parse<AreaUnit, Area>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Area"/> parsed from <paramref name="text"/></returns>
+        public static Area Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<AreaUnit, Area>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Area"/> parsed from <paramref name="text"/></returns>
+        public static Area Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<AreaUnit, Area>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Area"/> parsed from <paramref name="text"/></returns>
+        public static Area Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<AreaUnit, Area>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
+        /// <param name="result">The parsed <see cref="Area"/></param>
+        /// <returns>True if an instance of <see cref="Area"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Area result)
+        {
+            return QuantityParser.TryParse<AreaUnit, Area>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Area"/></param>
+        /// <returns>True if an instance of <see cref="Area"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Area result)
+        {
+            return QuantityParser.TryParse<AreaUnit, Area>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Area"/></param>
+        /// <returns>True if an instance of <see cref="Area"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Area result)
+        {
+            return QuantityParser.TryParse<AreaUnit, Area>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Area"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Area"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Area"/></param>
+        /// <returns>True if an instance of <see cref="Area"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Area result)
+        {
+            return QuantityParser.TryParse<AreaUnit, Area>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Area"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
+        public static Area ReadFrom(XmlReader reader)
+        {
+            var v = default(Area);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
+        public static Area From(double value, AreaUnit unit)
+        {
+            return new Area(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="squareMetres">The value in <see cref="Gu.Units.AreaUnit.SquareMetres"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
+        public static Area FromSquareMetres(double squareMetres)
+        {
+            return new Area(squareMetres);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="hectares">The value in ha</param>
+        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
+        public static Area FromHectares(double hectares)
+        {
+            return new Area(10000 * hectares);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="squareMillimetres">The value in mm²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
+        public static Area FromSquareMillimetres(double squareMillimetres)
+        {
+            return new Area(squareMillimetres / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="squareCentimetres">The value in cm²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
+        public static Area FromSquareCentimetres(double squareCentimetres)
+        {
+            return new Area(squareCentimetres / 10000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="squareDecimetres">The value in dm²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
+        public static Area FromSquareDecimetres(double squareDecimetres)
+        {
+            return new Area(squareDecimetres / 100);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="squareKilometres">The value in km²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
+        public static Area FromSquareKilometres(double squareKilometres)
+        {
+            return new Area(1000000 * squareKilometres);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="squareMile">The value in mi²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
+        public static Area FromSquareMile(double squareMile)
+        {
+            return new Area(2589988.110336 * squareMile);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="squareYards">The value in yd²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
+        public static Area FromSquareYards(double squareYards)
+        {
+            return new Area(0.83612736 * squareYards);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="squareInches">The value in in²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
+        public static Area FromSquareInches(double squareInches)
+        {
+            return new Area(0.00064516 * squareInches);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Area"/>.
+        /// </summary>
+        /// <param name="squareFeet">The value in ft²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Area"/></returns>
+        public static Area FromSquareFeet(double squareFeet)
+        {
+            return new Area(0.09290304 * squareFeet);
         }
 
         /// <summary>

@@ -108,221 +108,6 @@
         public double CubicFeet => this.cubicMetres / 0.028316846592;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
-        /// <returns>The <see cref="Gu.Units.Volume"/> parsed from <paramref name="text"/></returns>
-        public static Volume Parse(string text)
-        {
-            return QuantityParser.Parse<VolumeUnit, Volume>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Volume"/> parsed from <paramref name="text"/></returns>
-        public static Volume Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<VolumeUnit, Volume>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Volume"/> parsed from <paramref name="text"/></returns>
-        public static Volume Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<VolumeUnit, Volume>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Volume"/> parsed from <paramref name="text"/></returns>
-        public static Volume Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<VolumeUnit, Volume>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
-        /// <param name="result">The parsed <see cref="Volume"/></param>
-        /// <returns>True if an instance of <see cref="Volume"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Volume result)
-        {
-            return QuantityParser.TryParse<VolumeUnit, Volume>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Volume"/></param>
-        /// <returns>True if an instance of <see cref="Volume"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Volume result)
-        {
-            return QuantityParser.TryParse<VolumeUnit, Volume>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Volume"/></param>
-        /// <returns>True if an instance of <see cref="Volume"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Volume result)
-        {
-            return QuantityParser.TryParse<VolumeUnit, Volume>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Volume"/></param>
-        /// <returns>True if an instance of <see cref="Volume"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Volume result)
-        {
-            return QuantityParser.TryParse<VolumeUnit, Volume>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Volume"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
-        public static Volume ReadFrom(XmlReader reader)
-        {
-            var v = default(Volume);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
-        public static Volume From(double value, VolumeUnit unit)
-        {
-            return new Volume(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
-        /// </summary>
-        /// <param name="cubicMetres">The value in <see cref="Gu.Units.VolumeUnit.CubicMetres"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
-        public static Volume FromCubicMetres(double cubicMetres)
-        {
-            return new Volume(cubicMetres);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
-        /// </summary>
-        /// <param name="litres">The value in L</param>
-        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
-        public static Volume FromLitres(double litres)
-        {
-            return new Volume(litres / 1000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
-        /// </summary>
-        /// <param name="millilitres">The value in ml</param>
-        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
-        public static Volume FromMillilitres(double millilitres)
-        {
-            return new Volume(millilitres / 1000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
-        /// </summary>
-        /// <param name="centilitres">The value in cl</param>
-        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
-        public static Volume FromCentilitres(double centilitres)
-        {
-            return new Volume(centilitres / 100000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
-        /// </summary>
-        /// <param name="decilitres">The value in dl</param>
-        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
-        public static Volume FromDecilitres(double decilitres)
-        {
-            return new Volume(decilitres / 10000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
-        /// </summary>
-        /// <param name="cubicCentimetres">The value in cm³</param>
-        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
-        public static Volume FromCubicCentimetres(double cubicCentimetres)
-        {
-            return new Volume(cubicCentimetres / 1000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
-        /// </summary>
-        /// <param name="cubicMillimetres">The value in mm³</param>
-        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
-        public static Volume FromCubicMillimetres(double cubicMillimetres)
-        {
-            return new Volume(cubicMillimetres / 1000000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
-        /// </summary>
-        /// <param name="cubicInches">The value in in³</param>
-        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
-        public static Volume FromCubicInches(double cubicInches)
-        {
-            return new Volume(1.6387064E-05 * cubicInches);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
-        /// </summary>
-        /// <param name="cubicDecimetres">The value in dm³</param>
-        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
-        public static Volume FromCubicDecimetres(double cubicDecimetres)
-        {
-            return new Volume(cubicDecimetres / 1000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
-        /// </summary>
-        /// <param name="cubicFeet">The value in ft³</param>
-        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
-        public static Volume FromCubicFeet(double cubicFeet)
-        {
-            return new Volume(0.028316846592 * cubicFeet);
-        }
-
-        /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -602,6 +387,221 @@
         public static Volume operator +(Volume volume)
         {
             return volume;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <returns>The <see cref="Gu.Units.Volume"/> parsed from <paramref name="text"/></returns>
+        public static Volume Parse(string text)
+        {
+            return QuantityParser.Parse<VolumeUnit, Volume>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Volume"/> parsed from <paramref name="text"/></returns>
+        public static Volume Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<VolumeUnit, Volume>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Volume"/> parsed from <paramref name="text"/></returns>
+        public static Volume Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<VolumeUnit, Volume>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Volume"/> parsed from <paramref name="text"/></returns>
+        public static Volume Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<VolumeUnit, Volume>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <param name="result">The parsed <see cref="Volume"/></param>
+        /// <returns>True if an instance of <see cref="Volume"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Volume result)
+        {
+            return QuantityParser.TryParse<VolumeUnit, Volume>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Volume"/></param>
+        /// <returns>True if an instance of <see cref="Volume"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Volume result)
+        {
+            return QuantityParser.TryParse<VolumeUnit, Volume>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Volume"/></param>
+        /// <returns>True if an instance of <see cref="Volume"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Volume result)
+        {
+            return QuantityParser.TryParse<VolumeUnit, Volume>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Volume"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Volume"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Volume"/></param>
+        /// <returns>True if an instance of <see cref="Volume"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Volume result)
+        {
+            return QuantityParser.TryParse<VolumeUnit, Volume>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Volume"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
+        public static Volume ReadFrom(XmlReader reader)
+        {
+            var v = default(Volume);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
+        public static Volume From(double value, VolumeUnit unit)
+        {
+            return new Volume(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
+        /// </summary>
+        /// <param name="cubicMetres">The value in <see cref="Gu.Units.VolumeUnit.CubicMetres"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
+        public static Volume FromCubicMetres(double cubicMetres)
+        {
+            return new Volume(cubicMetres);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
+        /// </summary>
+        /// <param name="litres">The value in L</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
+        public static Volume FromLitres(double litres)
+        {
+            return new Volume(litres / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
+        /// </summary>
+        /// <param name="millilitres">The value in ml</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
+        public static Volume FromMillilitres(double millilitres)
+        {
+            return new Volume(millilitres / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
+        /// </summary>
+        /// <param name="centilitres">The value in cl</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
+        public static Volume FromCentilitres(double centilitres)
+        {
+            return new Volume(centilitres / 100000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
+        /// </summary>
+        /// <param name="decilitres">The value in dl</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
+        public static Volume FromDecilitres(double decilitres)
+        {
+            return new Volume(decilitres / 10000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
+        /// </summary>
+        /// <param name="cubicCentimetres">The value in cm³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
+        public static Volume FromCubicCentimetres(double cubicCentimetres)
+        {
+            return new Volume(cubicCentimetres / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
+        /// </summary>
+        /// <param name="cubicMillimetres">The value in mm³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
+        public static Volume FromCubicMillimetres(double cubicMillimetres)
+        {
+            return new Volume(cubicMillimetres / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
+        /// </summary>
+        /// <param name="cubicInches">The value in in³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
+        public static Volume FromCubicInches(double cubicInches)
+        {
+            return new Volume(1.6387064E-05 * cubicInches);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
+        /// </summary>
+        /// <param name="cubicDecimetres">The value in dm³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
+        public static Volume FromCubicDecimetres(double cubicDecimetres)
+        {
+            return new Volume(cubicDecimetres / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Volume"/>.
+        /// </summary>
+        /// <param name="cubicFeet">The value in ft³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Volume"/></returns>
+        public static Volume FromCubicFeet(double cubicFeet)
+        {
+            return new Volume(0.028316846592 * cubicFeet);
         }
 
         /// <summary>

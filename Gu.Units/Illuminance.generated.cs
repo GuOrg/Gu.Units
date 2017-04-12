@@ -63,131 +63,6 @@
         public double Lux => this.lux;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
-        /// <returns>The <see cref="Gu.Units.Illuminance"/> parsed from <paramref name="text"/></returns>
-        public static Illuminance Parse(string text)
-        {
-            return QuantityParser.Parse<IlluminanceUnit, Illuminance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Illuminance"/> parsed from <paramref name="text"/></returns>
-        public static Illuminance Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<IlluminanceUnit, Illuminance>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Illuminance"/> parsed from <paramref name="text"/></returns>
-        public static Illuminance Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<IlluminanceUnit, Illuminance>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Illuminance"/> parsed from <paramref name="text"/></returns>
-        public static Illuminance Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<IlluminanceUnit, Illuminance>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
-        /// <param name="result">The parsed <see cref="Illuminance"/></param>
-        /// <returns>True if an instance of <see cref="Illuminance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Illuminance result)
-        {
-            return QuantityParser.TryParse<IlluminanceUnit, Illuminance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Illuminance"/></param>
-        /// <returns>True if an instance of <see cref="Illuminance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Illuminance result)
-        {
-            return QuantityParser.TryParse<IlluminanceUnit, Illuminance>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Illuminance"/></param>
-        /// <returns>True if an instance of <see cref="Illuminance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Illuminance result)
-        {
-            return QuantityParser.TryParse<IlluminanceUnit, Illuminance>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Illuminance"/></param>
-        /// <returns>True if an instance of <see cref="Illuminance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Illuminance result)
-        {
-            return QuantityParser.TryParse<IlluminanceUnit, Illuminance>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Illuminance"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Illuminance"/></returns>
-        public static Illuminance ReadFrom(XmlReader reader)
-        {
-            var v = default(Illuminance);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Illuminance"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Illuminance"/></returns>
-        public static Illuminance From(double value, IlluminanceUnit unit)
-        {
-            return new Illuminance(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Illuminance"/>.
-        /// </summary>
-        /// <param name="lux">The value in <see cref="Gu.Units.IlluminanceUnit.Lux"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Illuminance"/></returns>
-        public static Illuminance FromLux(double lux)
-        {
-            return new Illuminance(lux);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -368,6 +243,131 @@
         public static Illuminance operator +(Illuminance illuminance)
         {
             return illuminance;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
+        /// <returns>The <see cref="Gu.Units.Illuminance"/> parsed from <paramref name="text"/></returns>
+        public static Illuminance Parse(string text)
+        {
+            return QuantityParser.Parse<IlluminanceUnit, Illuminance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Illuminance"/> parsed from <paramref name="text"/></returns>
+        public static Illuminance Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<IlluminanceUnit, Illuminance>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Illuminance"/> parsed from <paramref name="text"/></returns>
+        public static Illuminance Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<IlluminanceUnit, Illuminance>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Illuminance"/> parsed from <paramref name="text"/></returns>
+        public static Illuminance Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<IlluminanceUnit, Illuminance>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
+        /// <param name="result">The parsed <see cref="Illuminance"/></param>
+        /// <returns>True if an instance of <see cref="Illuminance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Illuminance result)
+        {
+            return QuantityParser.TryParse<IlluminanceUnit, Illuminance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Illuminance"/></param>
+        /// <returns>True if an instance of <see cref="Illuminance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Illuminance result)
+        {
+            return QuantityParser.TryParse<IlluminanceUnit, Illuminance>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Illuminance"/></param>
+        /// <returns>True if an instance of <see cref="Illuminance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Illuminance result)
+        {
+            return QuantityParser.TryParse<IlluminanceUnit, Illuminance>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Illuminance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Illuminance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Illuminance"/></param>
+        /// <returns>True if an instance of <see cref="Illuminance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Illuminance result)
+        {
+            return QuantityParser.TryParse<IlluminanceUnit, Illuminance>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Illuminance"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Illuminance"/></returns>
+        public static Illuminance ReadFrom(XmlReader reader)
+        {
+            var v = default(Illuminance);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Illuminance"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Illuminance"/></returns>
+        public static Illuminance From(double value, IlluminanceUnit unit)
+        {
+            return new Illuminance(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Illuminance"/>.
+        /// </summary>
+        /// <param name="lux">The value in <see cref="Gu.Units.IlluminanceUnit.Lux"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Illuminance"/></returns>
+        public static Illuminance FromLux(double lux)
+        {
+            return new Illuminance(lux);
         }
 
         /// <summary>

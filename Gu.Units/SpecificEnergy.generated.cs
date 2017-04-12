@@ -68,141 +68,6 @@
         public double KilojoulesPerKilogram => this.joulesPerKilogram / 1000;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
-        /// <returns>The <see cref="Gu.Units.SpecificEnergy"/> parsed from <paramref name="text"/></returns>
-        public static SpecificEnergy Parse(string text)
-        {
-            return QuantityParser.Parse<SpecificEnergyUnit, SpecificEnergy>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.SpecificEnergy"/> parsed from <paramref name="text"/></returns>
-        public static SpecificEnergy Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<SpecificEnergyUnit, SpecificEnergy>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.SpecificEnergy"/> parsed from <paramref name="text"/></returns>
-        public static SpecificEnergy Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<SpecificEnergyUnit, SpecificEnergy>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.SpecificEnergy"/> parsed from <paramref name="text"/></returns>
-        public static SpecificEnergy Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<SpecificEnergyUnit, SpecificEnergy>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
-        /// <param name="result">The parsed <see cref="SpecificEnergy"/></param>
-        /// <returns>True if an instance of <see cref="SpecificEnergy"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out SpecificEnergy result)
-        {
-            return QuantityParser.TryParse<SpecificEnergyUnit, SpecificEnergy>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="SpecificEnergy"/></param>
-        /// <returns>True if an instance of <see cref="SpecificEnergy"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out SpecificEnergy result)
-        {
-            return QuantityParser.TryParse<SpecificEnergyUnit, SpecificEnergy>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="SpecificEnergy"/></param>
-        /// <returns>True if an instance of <see cref="SpecificEnergy"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out SpecificEnergy result)
-        {
-            return QuantityParser.TryParse<SpecificEnergyUnit, SpecificEnergy>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="SpecificEnergy"/></param>
-        /// <returns>True if an instance of <see cref="SpecificEnergy"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out SpecificEnergy result)
-        {
-            return QuantityParser.TryParse<SpecificEnergyUnit, SpecificEnergy>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.SpecificEnergy"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.SpecificEnergy"/></returns>
-        public static SpecificEnergy ReadFrom(XmlReader reader)
-        {
-            var v = default(SpecificEnergy);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.SpecificEnergy"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.SpecificEnergy"/></returns>
-        public static SpecificEnergy From(double value, SpecificEnergyUnit unit)
-        {
-            return new SpecificEnergy(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.SpecificEnergy"/>.
-        /// </summary>
-        /// <param name="joulesPerKilogram">The value in <see cref="Gu.Units.SpecificEnergyUnit.JoulesPerKilogram"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.SpecificEnergy"/></returns>
-        public static SpecificEnergy FromJoulesPerKilogram(double joulesPerKilogram)
-        {
-            return new SpecificEnergy(joulesPerKilogram);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.SpecificEnergy"/>.
-        /// </summary>
-        /// <param name="kilojoulesPerKilogram">The value in kJ/kg</param>
-        /// <returns>An instance of <see cref="Gu.Units.SpecificEnergy"/></returns>
-        public static SpecificEnergy FromKilojoulesPerKilogram(double kilojoulesPerKilogram)
-        {
-            return new SpecificEnergy(1000 * kilojoulesPerKilogram);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -515,6 +380,141 @@
         public static SpecificEnergy operator +(SpecificEnergy specificEnergy)
         {
             return specificEnergy;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
+        /// <returns>The <see cref="Gu.Units.SpecificEnergy"/> parsed from <paramref name="text"/></returns>
+        public static SpecificEnergy Parse(string text)
+        {
+            return QuantityParser.Parse<SpecificEnergyUnit, SpecificEnergy>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.SpecificEnergy"/> parsed from <paramref name="text"/></returns>
+        public static SpecificEnergy Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<SpecificEnergyUnit, SpecificEnergy>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.SpecificEnergy"/> parsed from <paramref name="text"/></returns>
+        public static SpecificEnergy Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<SpecificEnergyUnit, SpecificEnergy>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.SpecificEnergy"/> parsed from <paramref name="text"/></returns>
+        public static SpecificEnergy Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<SpecificEnergyUnit, SpecificEnergy>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
+        /// <param name="result">The parsed <see cref="SpecificEnergy"/></param>
+        /// <returns>True if an instance of <see cref="SpecificEnergy"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out SpecificEnergy result)
+        {
+            return QuantityParser.TryParse<SpecificEnergyUnit, SpecificEnergy>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="SpecificEnergy"/></param>
+        /// <returns>True if an instance of <see cref="SpecificEnergy"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out SpecificEnergy result)
+        {
+            return QuantityParser.TryParse<SpecificEnergyUnit, SpecificEnergy>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="SpecificEnergy"/></param>
+        /// <returns>True if an instance of <see cref="SpecificEnergy"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out SpecificEnergy result)
+        {
+            return QuantityParser.TryParse<SpecificEnergyUnit, SpecificEnergy>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SpecificEnergy"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SpecificEnergy"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="SpecificEnergy"/></param>
+        /// <returns>True if an instance of <see cref="SpecificEnergy"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out SpecificEnergy result)
+        {
+            return QuantityParser.TryParse<SpecificEnergyUnit, SpecificEnergy>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.SpecificEnergy"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.SpecificEnergy"/></returns>
+        public static SpecificEnergy ReadFrom(XmlReader reader)
+        {
+            var v = default(SpecificEnergy);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.SpecificEnergy"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.SpecificEnergy"/></returns>
+        public static SpecificEnergy From(double value, SpecificEnergyUnit unit)
+        {
+            return new SpecificEnergy(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.SpecificEnergy"/>.
+        /// </summary>
+        /// <param name="joulesPerKilogram">The value in <see cref="Gu.Units.SpecificEnergyUnit.JoulesPerKilogram"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.SpecificEnergy"/></returns>
+        public static SpecificEnergy FromJoulesPerKilogram(double joulesPerKilogram)
+        {
+            return new SpecificEnergy(joulesPerKilogram);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.SpecificEnergy"/>.
+        /// </summary>
+        /// <param name="kilojoulesPerKilogram">The value in kJ/kg</param>
+        /// <returns>An instance of <see cref="Gu.Units.SpecificEnergy"/></returns>
+        public static SpecificEnergy FromKilojoulesPerKilogram(double kilojoulesPerKilogram)
+        {
+            return new SpecificEnergy(1000 * kilojoulesPerKilogram);
         }
 
         /// <summary>

@@ -63,131 +63,6 @@
         public double Steradians => this.steradians;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
-        /// <returns>The <see cref="Gu.Units.SolidAngle"/> parsed from <paramref name="text"/></returns>
-        public static SolidAngle Parse(string text)
-        {
-            return QuantityParser.Parse<SolidAngleUnit, SolidAngle>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.SolidAngle"/> parsed from <paramref name="text"/></returns>
-        public static SolidAngle Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<SolidAngleUnit, SolidAngle>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.SolidAngle"/> parsed from <paramref name="text"/></returns>
-        public static SolidAngle Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<SolidAngleUnit, SolidAngle>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.SolidAngle"/> parsed from <paramref name="text"/></returns>
-        public static SolidAngle Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<SolidAngleUnit, SolidAngle>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
-        /// <param name="result">The parsed <see cref="SolidAngle"/></param>
-        /// <returns>True if an instance of <see cref="SolidAngle"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out SolidAngle result)
-        {
-            return QuantityParser.TryParse<SolidAngleUnit, SolidAngle>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="SolidAngle"/></param>
-        /// <returns>True if an instance of <see cref="SolidAngle"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out SolidAngle result)
-        {
-            return QuantityParser.TryParse<SolidAngleUnit, SolidAngle>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="SolidAngle"/></param>
-        /// <returns>True if an instance of <see cref="SolidAngle"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out SolidAngle result)
-        {
-            return QuantityParser.TryParse<SolidAngleUnit, SolidAngle>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="SolidAngle"/></param>
-        /// <returns>True if an instance of <see cref="SolidAngle"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out SolidAngle result)
-        {
-            return QuantityParser.TryParse<SolidAngleUnit, SolidAngle>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.SolidAngle"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.SolidAngle"/></returns>
-        public static SolidAngle ReadFrom(XmlReader reader)
-        {
-            var v = default(SolidAngle);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.SolidAngle"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.SolidAngle"/></returns>
-        public static SolidAngle From(double value, SolidAngleUnit unit)
-        {
-            return new SolidAngle(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.SolidAngle"/>.
-        /// </summary>
-        /// <param name="steradians">The value in <see cref="Gu.Units.SolidAngleUnit.Steradians"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.SolidAngle"/></returns>
-        public static SolidAngle FromSteradians(double steradians)
-        {
-            return new SolidAngle(steradians);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -368,6 +243,131 @@
         public static SolidAngle operator +(SolidAngle solidAngle)
         {
             return solidAngle;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
+        /// <returns>The <see cref="Gu.Units.SolidAngle"/> parsed from <paramref name="text"/></returns>
+        public static SolidAngle Parse(string text)
+        {
+            return QuantityParser.Parse<SolidAngleUnit, SolidAngle>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.SolidAngle"/> parsed from <paramref name="text"/></returns>
+        public static SolidAngle Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<SolidAngleUnit, SolidAngle>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.SolidAngle"/> parsed from <paramref name="text"/></returns>
+        public static SolidAngle Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<SolidAngleUnit, SolidAngle>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.SolidAngle"/> parsed from <paramref name="text"/></returns>
+        public static SolidAngle Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<SolidAngleUnit, SolidAngle>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
+        /// <param name="result">The parsed <see cref="SolidAngle"/></param>
+        /// <returns>True if an instance of <see cref="SolidAngle"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out SolidAngle result)
+        {
+            return QuantityParser.TryParse<SolidAngleUnit, SolidAngle>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="SolidAngle"/></param>
+        /// <returns>True if an instance of <see cref="SolidAngle"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out SolidAngle result)
+        {
+            return QuantityParser.TryParse<SolidAngleUnit, SolidAngle>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="SolidAngle"/></param>
+        /// <returns>True if an instance of <see cref="SolidAngle"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out SolidAngle result)
+        {
+            return QuantityParser.TryParse<SolidAngleUnit, SolidAngle>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.SolidAngle"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.SolidAngle"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="SolidAngle"/></param>
+        /// <returns>True if an instance of <see cref="SolidAngle"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out SolidAngle result)
+        {
+            return QuantityParser.TryParse<SolidAngleUnit, SolidAngle>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.SolidAngle"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.SolidAngle"/></returns>
+        public static SolidAngle ReadFrom(XmlReader reader)
+        {
+            var v = default(SolidAngle);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.SolidAngle"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.SolidAngle"/></returns>
+        public static SolidAngle From(double value, SolidAngleUnit unit)
+        {
+            return new SolidAngle(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.SolidAngle"/>.
+        /// </summary>
+        /// <param name="steradians">The value in <see cref="Gu.Units.SolidAngleUnit.Steradians"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.SolidAngle"/></returns>
+        public static SolidAngle FromSteradians(double steradians)
+        {
+            return new SolidAngle(steradians);
         }
 
         /// <summary>

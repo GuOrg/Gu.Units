@@ -88,181 +88,6 @@
         public double DegreesPerMinuteCubed => this.radiansPerSecondCubed / 8.08022801849227E-08;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
-        /// <returns>The <see cref="Gu.Units.AngularJerk"/> parsed from <paramref name="text"/></returns>
-        public static AngularJerk Parse(string text)
-        {
-            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.AngularJerk"/> parsed from <paramref name="text"/></returns>
-        public static AngularJerk Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.AngularJerk"/> parsed from <paramref name="text"/></returns>
-        public static AngularJerk Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.AngularJerk"/> parsed from <paramref name="text"/></returns>
-        public static AngularJerk Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
-        /// <param name="result">The parsed <see cref="AngularJerk"/></param>
-        /// <returns>True if an instance of <see cref="AngularJerk"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out AngularJerk result)
-        {
-            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="AngularJerk"/></param>
-        /// <returns>True if an instance of <see cref="AngularJerk"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out AngularJerk result)
-        {
-            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="AngularJerk"/></param>
-        /// <returns>True if an instance of <see cref="AngularJerk"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out AngularJerk result)
-        {
-            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="AngularJerk"/></param>
-        /// <returns>True if an instance of <see cref="AngularJerk"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out AngularJerk result)
-        {
-            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.AngularJerk"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
-        public static AngularJerk ReadFrom(XmlReader reader)
-        {
-            var v = default(AngularJerk);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
-        public static AngularJerk From(double value, AngularJerkUnit unit)
-        {
-            return new AngularJerk(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
-        /// </summary>
-        /// <param name="radiansPerSecondCubed">The value in <see cref="Gu.Units.AngularJerkUnit.RadiansPerSecondCubed"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
-        public static AngularJerk FromRadiansPerSecondCubed(double radiansPerSecondCubed)
-        {
-            return new AngularJerk(radiansPerSecondCubed);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
-        /// </summary>
-        /// <param name="degreesPerSecondCubed">The value in °⋅s⁻³</param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
-        public static AngularJerk FromDegreesPerSecondCubed(double degreesPerSecondCubed)
-        {
-            return new AngularJerk(0.0174532925199433 * degreesPerSecondCubed);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
-        /// </summary>
-        /// <param name="radiansPerHourCubed">The value in rad⋅h⁻³</param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
-        public static AngularJerk FromRadiansPerHourCubed(double radiansPerHourCubed)
-        {
-            return new AngularJerk(radiansPerHourCubed / 46656000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
-        /// </summary>
-        /// <param name="degreesPerHourCubed">The value in °⋅h⁻³</param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
-        public static AngularJerk FromDegreesPerHourCubed(double degreesPerHourCubed)
-        {
-            return new AngularJerk(3.74084630485753E-13 * degreesPerHourCubed);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
-        /// </summary>
-        /// <param name="radiansPerMinuteCubed">The value in rad⋅min⁻³</param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
-        public static AngularJerk FromRadiansPerMinuteCubed(double radiansPerMinuteCubed)
-        {
-            return new AngularJerk(radiansPerMinuteCubed / 216000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
-        /// </summary>
-        /// <param name="degreesPerMinuteCubed">The value in °⋅min⁻³</param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
-        public static AngularJerk FromDegreesPerMinuteCubed(double degreesPerMinuteCubed)
-        {
-            return new AngularJerk(8.08022801849227E-08 * degreesPerMinuteCubed);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -465,6 +290,181 @@
         public static AngularJerk operator +(AngularJerk angularJerk)
         {
             return angularJerk;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <returns>The <see cref="Gu.Units.AngularJerk"/> parsed from <paramref name="text"/></returns>
+        public static AngularJerk Parse(string text)
+        {
+            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.AngularJerk"/> parsed from <paramref name="text"/></returns>
+        public static AngularJerk Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.AngularJerk"/> parsed from <paramref name="text"/></returns>
+        public static AngularJerk Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.AngularJerk"/> parsed from <paramref name="text"/></returns>
+        public static AngularJerk Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<AngularJerkUnit, AngularJerk>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <param name="result">The parsed <see cref="AngularJerk"/></param>
+        /// <returns>True if an instance of <see cref="AngularJerk"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out AngularJerk result)
+        {
+            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="AngularJerk"/></param>
+        /// <returns>True if an instance of <see cref="AngularJerk"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out AngularJerk result)
+        {
+            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="AngularJerk"/></param>
+        /// <returns>True if an instance of <see cref="AngularJerk"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out AngularJerk result)
+        {
+            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularJerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularJerk"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="AngularJerk"/></param>
+        /// <returns>True if an instance of <see cref="AngularJerk"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out AngularJerk result)
+        {
+            return QuantityParser.TryParse<AngularJerkUnit, AngularJerk>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.AngularJerk"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
+        public static AngularJerk ReadFrom(XmlReader reader)
+        {
+            var v = default(AngularJerk);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
+        public static AngularJerk From(double value, AngularJerkUnit unit)
+        {
+            return new AngularJerk(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
+        /// </summary>
+        /// <param name="radiansPerSecondCubed">The value in <see cref="Gu.Units.AngularJerkUnit.RadiansPerSecondCubed"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
+        public static AngularJerk FromRadiansPerSecondCubed(double radiansPerSecondCubed)
+        {
+            return new AngularJerk(radiansPerSecondCubed);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
+        /// </summary>
+        /// <param name="degreesPerSecondCubed">The value in °⋅s⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
+        public static AngularJerk FromDegreesPerSecondCubed(double degreesPerSecondCubed)
+        {
+            return new AngularJerk(0.0174532925199433 * degreesPerSecondCubed);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
+        /// </summary>
+        /// <param name="radiansPerHourCubed">The value in rad⋅h⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
+        public static AngularJerk FromRadiansPerHourCubed(double radiansPerHourCubed)
+        {
+            return new AngularJerk(radiansPerHourCubed / 46656000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
+        /// </summary>
+        /// <param name="degreesPerHourCubed">The value in °⋅h⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
+        public static AngularJerk FromDegreesPerHourCubed(double degreesPerHourCubed)
+        {
+            return new AngularJerk(3.74084630485753E-13 * degreesPerHourCubed);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
+        /// </summary>
+        /// <param name="radiansPerMinuteCubed">The value in rad⋅min⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
+        public static AngularJerk FromRadiansPerMinuteCubed(double radiansPerMinuteCubed)
+        {
+            return new AngularJerk(radiansPerMinuteCubed / 216000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AngularJerk"/>.
+        /// </summary>
+        /// <param name="degreesPerMinuteCubed">The value in °⋅min⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularJerk"/></returns>
+        public static AngularJerk FromDegreesPerMinuteCubed(double degreesPerMinuteCubed)
+        {
+            return new AngularJerk(8.08022801849227E-08 * degreesPerMinuteCubed);
         }
 
         /// <summary>

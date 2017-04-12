@@ -63,131 +63,6 @@
         public double SquareMetresPerSecond => this.squareMetresPerSecond;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
-        /// <returns>The <see cref="Gu.Units.KinematicViscosity"/> parsed from <paramref name="text"/></returns>
-        public static KinematicViscosity Parse(string text)
-        {
-            return QuantityParser.Parse<KinematicViscosityUnit, KinematicViscosity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.KinematicViscosity"/> parsed from <paramref name="text"/></returns>
-        public static KinematicViscosity Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<KinematicViscosityUnit, KinematicViscosity>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.KinematicViscosity"/> parsed from <paramref name="text"/></returns>
-        public static KinematicViscosity Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<KinematicViscosityUnit, KinematicViscosity>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.KinematicViscosity"/> parsed from <paramref name="text"/></returns>
-        public static KinematicViscosity Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<KinematicViscosityUnit, KinematicViscosity>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
-        /// <param name="result">The parsed <see cref="KinematicViscosity"/></param>
-        /// <returns>True if an instance of <see cref="KinematicViscosity"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out KinematicViscosity result)
-        {
-            return QuantityParser.TryParse<KinematicViscosityUnit, KinematicViscosity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="KinematicViscosity"/></param>
-        /// <returns>True if an instance of <see cref="KinematicViscosity"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out KinematicViscosity result)
-        {
-            return QuantityParser.TryParse<KinematicViscosityUnit, KinematicViscosity>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="KinematicViscosity"/></param>
-        /// <returns>True if an instance of <see cref="KinematicViscosity"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out KinematicViscosity result)
-        {
-            return QuantityParser.TryParse<KinematicViscosityUnit, KinematicViscosity>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="KinematicViscosity"/></param>
-        /// <returns>True if an instance of <see cref="KinematicViscosity"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out KinematicViscosity result)
-        {
-            return QuantityParser.TryParse<KinematicViscosityUnit, KinematicViscosity>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.KinematicViscosity"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.KinematicViscosity"/></returns>
-        public static KinematicViscosity ReadFrom(XmlReader reader)
-        {
-            var v = default(KinematicViscosity);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.KinematicViscosity"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.KinematicViscosity"/></returns>
-        public static KinematicViscosity From(double value, KinematicViscosityUnit unit)
-        {
-            return new KinematicViscosity(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.KinematicViscosity"/>.
-        /// </summary>
-        /// <param name="squareMetresPerSecond">The value in <see cref="Gu.Units.KinematicViscosityUnit.SquareMetresPerSecond"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.KinematicViscosity"/></returns>
-        public static KinematicViscosity FromSquareMetresPerSecond(double squareMetresPerSecond)
-        {
-            return new KinematicViscosity(squareMetresPerSecond);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -555,6 +430,131 @@
         public static KinematicViscosity operator +(KinematicViscosity kinematicViscosity)
         {
             return kinematicViscosity;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <returns>The <see cref="Gu.Units.KinematicViscosity"/> parsed from <paramref name="text"/></returns>
+        public static KinematicViscosity Parse(string text)
+        {
+            return QuantityParser.Parse<KinematicViscosityUnit, KinematicViscosity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.KinematicViscosity"/> parsed from <paramref name="text"/></returns>
+        public static KinematicViscosity Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<KinematicViscosityUnit, KinematicViscosity>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.KinematicViscosity"/> parsed from <paramref name="text"/></returns>
+        public static KinematicViscosity Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<KinematicViscosityUnit, KinematicViscosity>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.KinematicViscosity"/> parsed from <paramref name="text"/></returns>
+        public static KinematicViscosity Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<KinematicViscosityUnit, KinematicViscosity>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="result">The parsed <see cref="KinematicViscosity"/></param>
+        /// <returns>True if an instance of <see cref="KinematicViscosity"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out KinematicViscosity result)
+        {
+            return QuantityParser.TryParse<KinematicViscosityUnit, KinematicViscosity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="KinematicViscosity"/></param>
+        /// <returns>True if an instance of <see cref="KinematicViscosity"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out KinematicViscosity result)
+        {
+            return QuantityParser.TryParse<KinematicViscosityUnit, KinematicViscosity>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="KinematicViscosity"/></param>
+        /// <returns>True if an instance of <see cref="KinematicViscosity"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out KinematicViscosity result)
+        {
+            return QuantityParser.TryParse<KinematicViscosityUnit, KinematicViscosity>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.KinematicViscosity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.KinematicViscosity"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="KinematicViscosity"/></param>
+        /// <returns>True if an instance of <see cref="KinematicViscosity"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out KinematicViscosity result)
+        {
+            return QuantityParser.TryParse<KinematicViscosityUnit, KinematicViscosity>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.KinematicViscosity"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.KinematicViscosity"/></returns>
+        public static KinematicViscosity ReadFrom(XmlReader reader)
+        {
+            var v = default(KinematicViscosity);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.KinematicViscosity"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.KinematicViscosity"/></returns>
+        public static KinematicViscosity From(double value, KinematicViscosityUnit unit)
+        {
+            return new KinematicViscosity(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.KinematicViscosity"/>.
+        /// </summary>
+        /// <param name="squareMetresPerSecond">The value in <see cref="Gu.Units.KinematicViscosityUnit.SquareMetresPerSecond"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.KinematicViscosity"/></returns>
+        public static KinematicViscosity FromSquareMetresPerSecond(double squareMetresPerSecond)
+        {
+            return new KinematicViscosity(squareMetresPerSecond);
         }
 
         /// <summary>

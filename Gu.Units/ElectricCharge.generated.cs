@@ -93,191 +93,6 @@
         public double Gigacoulombs => this.coulombs / 1000000000;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
-        /// <returns>The <see cref="Gu.Units.ElectricCharge"/> parsed from <paramref name="text"/></returns>
-        public static ElectricCharge Parse(string text)
-        {
-            return QuantityParser.Parse<ElectricChargeUnit, ElectricCharge>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.ElectricCharge"/> parsed from <paramref name="text"/></returns>
-        public static ElectricCharge Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<ElectricChargeUnit, ElectricCharge>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.ElectricCharge"/> parsed from <paramref name="text"/></returns>
-        public static ElectricCharge Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<ElectricChargeUnit, ElectricCharge>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.ElectricCharge"/> parsed from <paramref name="text"/></returns>
-        public static ElectricCharge Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<ElectricChargeUnit, ElectricCharge>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
-        /// <param name="result">The parsed <see cref="ElectricCharge"/></param>
-        /// <returns>True if an instance of <see cref="ElectricCharge"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out ElectricCharge result)
-        {
-            return QuantityParser.TryParse<ElectricChargeUnit, ElectricCharge>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="ElectricCharge"/></param>
-        /// <returns>True if an instance of <see cref="ElectricCharge"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out ElectricCharge result)
-        {
-            return QuantityParser.TryParse<ElectricChargeUnit, ElectricCharge>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="ElectricCharge"/></param>
-        /// <returns>True if an instance of <see cref="ElectricCharge"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out ElectricCharge result)
-        {
-            return QuantityParser.TryParse<ElectricChargeUnit, ElectricCharge>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="ElectricCharge"/></param>
-        /// <returns>True if an instance of <see cref="ElectricCharge"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out ElectricCharge result)
-        {
-            return QuantityParser.TryParse<ElectricChargeUnit, ElectricCharge>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.ElectricCharge"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
-        public static ElectricCharge ReadFrom(XmlReader reader)
-        {
-            var v = default(ElectricCharge);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
-        public static ElectricCharge From(double value, ElectricChargeUnit unit)
-        {
-            return new ElectricCharge(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
-        /// </summary>
-        /// <param name="coulombs">The value in <see cref="Gu.Units.ElectricChargeUnit.Coulombs"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
-        public static ElectricCharge FromCoulombs(double coulombs)
-        {
-            return new ElectricCharge(coulombs);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
-        /// </summary>
-        /// <param name="nanocoulombs">The value in nC</param>
-        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
-        public static ElectricCharge FromNanocoulombs(double nanocoulombs)
-        {
-            return new ElectricCharge(nanocoulombs / 1000000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
-        /// </summary>
-        /// <param name="microcoulombs">The value in µC</param>
-        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
-        public static ElectricCharge FromMicrocoulombs(double microcoulombs)
-        {
-            return new ElectricCharge(microcoulombs / 1000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
-        /// </summary>
-        /// <param name="millicoulombs">The value in mC</param>
-        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
-        public static ElectricCharge FromMillicoulombs(double millicoulombs)
-        {
-            return new ElectricCharge(millicoulombs / 1000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
-        /// </summary>
-        /// <param name="kilocoulombs">The value in kC</param>
-        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
-        public static ElectricCharge FromKilocoulombs(double kilocoulombs)
-        {
-            return new ElectricCharge(1000 * kilocoulombs);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
-        /// </summary>
-        /// <param name="megacoulombs">The value in MC</param>
-        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
-        public static ElectricCharge FromMegacoulombs(double megacoulombs)
-        {
-            return new ElectricCharge(1000000 * megacoulombs);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
-        /// </summary>
-        /// <param name="gigacoulombs">The value in GC</param>
-        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
-        public static ElectricCharge FromGigacoulombs(double gigacoulombs)
-        {
-            return new ElectricCharge(1000000000 * gigacoulombs);
-        }
-
-        /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -557,6 +372,191 @@
         public static ElectricCharge operator +(ElectricCharge electricCharge)
         {
             return electricCharge;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
+        /// <returns>The <see cref="Gu.Units.ElectricCharge"/> parsed from <paramref name="text"/></returns>
+        public static ElectricCharge Parse(string text)
+        {
+            return QuantityParser.Parse<ElectricChargeUnit, ElectricCharge>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.ElectricCharge"/> parsed from <paramref name="text"/></returns>
+        public static ElectricCharge Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<ElectricChargeUnit, ElectricCharge>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.ElectricCharge"/> parsed from <paramref name="text"/></returns>
+        public static ElectricCharge Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<ElectricChargeUnit, ElectricCharge>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.ElectricCharge"/> parsed from <paramref name="text"/></returns>
+        public static ElectricCharge Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<ElectricChargeUnit, ElectricCharge>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
+        /// <param name="result">The parsed <see cref="ElectricCharge"/></param>
+        /// <returns>True if an instance of <see cref="ElectricCharge"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out ElectricCharge result)
+        {
+            return QuantityParser.TryParse<ElectricChargeUnit, ElectricCharge>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="ElectricCharge"/></param>
+        /// <returns>True if an instance of <see cref="ElectricCharge"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out ElectricCharge result)
+        {
+            return QuantityParser.TryParse<ElectricChargeUnit, ElectricCharge>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="ElectricCharge"/></param>
+        /// <returns>True if an instance of <see cref="ElectricCharge"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out ElectricCharge result)
+        {
+            return QuantityParser.TryParse<ElectricChargeUnit, ElectricCharge>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.ElectricCharge"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.ElectricCharge"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="ElectricCharge"/></param>
+        /// <returns>True if an instance of <see cref="ElectricCharge"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out ElectricCharge result)
+        {
+            return QuantityParser.TryParse<ElectricChargeUnit, ElectricCharge>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.ElectricCharge"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
+        public static ElectricCharge ReadFrom(XmlReader reader)
+        {
+            var v = default(ElectricCharge);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
+        public static ElectricCharge From(double value, ElectricChargeUnit unit)
+        {
+            return new ElectricCharge(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
+        /// </summary>
+        /// <param name="coulombs">The value in <see cref="Gu.Units.ElectricChargeUnit.Coulombs"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
+        public static ElectricCharge FromCoulombs(double coulombs)
+        {
+            return new ElectricCharge(coulombs);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
+        /// </summary>
+        /// <param name="nanocoulombs">The value in nC</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
+        public static ElectricCharge FromNanocoulombs(double nanocoulombs)
+        {
+            return new ElectricCharge(nanocoulombs / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
+        /// </summary>
+        /// <param name="microcoulombs">The value in µC</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
+        public static ElectricCharge FromMicrocoulombs(double microcoulombs)
+        {
+            return new ElectricCharge(microcoulombs / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
+        /// </summary>
+        /// <param name="millicoulombs">The value in mC</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
+        public static ElectricCharge FromMillicoulombs(double millicoulombs)
+        {
+            return new ElectricCharge(millicoulombs / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
+        /// </summary>
+        /// <param name="kilocoulombs">The value in kC</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
+        public static ElectricCharge FromKilocoulombs(double kilocoulombs)
+        {
+            return new ElectricCharge(1000 * kilocoulombs);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
+        /// </summary>
+        /// <param name="megacoulombs">The value in MC</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
+        public static ElectricCharge FromMegacoulombs(double megacoulombs)
+        {
+            return new ElectricCharge(1000000 * megacoulombs);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
+        /// </summary>
+        /// <param name="gigacoulombs">The value in GC</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
+        public static ElectricCharge FromGigacoulombs(double gigacoulombs)
+        {
+            return new ElectricCharge(1000000000 * gigacoulombs);
         }
 
         /// <summary>

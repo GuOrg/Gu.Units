@@ -98,201 +98,6 @@
         public double TroyGrains => this.kilograms / 6.479891E-05;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
-        /// <returns>The <see cref="Gu.Units.Mass"/> parsed from <paramref name="text"/></returns>
-        public static Mass Parse(string text)
-        {
-            return QuantityParser.Parse<MassUnit, Mass>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Mass"/> parsed from <paramref name="text"/></returns>
-        public static Mass Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<MassUnit, Mass>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Mass"/> parsed from <paramref name="text"/></returns>
-        public static Mass Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<MassUnit, Mass>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Mass"/> parsed from <paramref name="text"/></returns>
-        public static Mass Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<MassUnit, Mass>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
-        /// <param name="result">The parsed <see cref="Mass"/></param>
-        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Mass result)
-        {
-            return QuantityParser.TryParse<MassUnit, Mass>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Mass"/></param>
-        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Mass result)
-        {
-            return QuantityParser.TryParse<MassUnit, Mass>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Mass"/></param>
-        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Mass result)
-        {
-            return QuantityParser.TryParse<MassUnit, Mass>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Mass"/></param>
-        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Mass result)
-        {
-            return QuantityParser.TryParse<MassUnit, Mass>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Mass"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
-        public static Mass ReadFrom(XmlReader reader)
-        {
-            var v = default(Mass);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
-        public static Mass From(double value, MassUnit unit)
-        {
-            return new Mass(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
-        /// </summary>
-        /// <param name="kilograms">The value in <see cref="Gu.Units.MassUnit.Kilograms"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
-        public static Mass FromKilograms(double kilograms)
-        {
-            return new Mass(kilograms);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
-        /// </summary>
-        /// <param name="grams">The value in g</param>
-        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
-        public static Mass FromGrams(double grams)
-        {
-            return new Mass(grams / 1000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
-        /// </summary>
-        /// <param name="milligrams">The value in mg</param>
-        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
-        public static Mass FromMilligrams(double milligrams)
-        {
-            return new Mass(milligrams / 1000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
-        /// </summary>
-        /// <param name="micrograms">The value in µg</param>
-        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
-        public static Mass FromMicrograms(double micrograms)
-        {
-            return new Mass(micrograms / 1000000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
-        /// </summary>
-        /// <param name="avoirdupoisPounds">The value in lb</param>
-        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
-        public static Mass FromAvoirdupoisPounds(double avoirdupoisPounds)
-        {
-            return new Mass(0.45359237 * avoirdupoisPounds);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
-        /// </summary>
-        /// <param name="avoirdupoisOunces">The value in oz</param>
-        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
-        public static Mass FromAvoirdupoisOunces(double avoirdupoisOunces)
-        {
-            return new Mass(0.028349523125 * avoirdupoisOunces);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
-        /// </summary>
-        /// <param name="troyOunces">The value in troy</param>
-        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
-        public static Mass FromTroyOunces(double troyOunces)
-        {
-            return new Mass(0.0311034768 * troyOunces);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
-        /// </summary>
-        /// <param name="troyGrains">The value in gr</param>
-        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
-        public static Mass FromTroyGrains(double troyGrains)
-        {
-            return new Mass(6.479891E-05 * troyGrains);
-        }
-
-        /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -605,6 +410,201 @@
         public static Mass operator +(Mass mass)
         {
             return mass;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
+        /// <returns>The <see cref="Gu.Units.Mass"/> parsed from <paramref name="text"/></returns>
+        public static Mass Parse(string text)
+        {
+            return QuantityParser.Parse<MassUnit, Mass>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Mass"/> parsed from <paramref name="text"/></returns>
+        public static Mass Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<MassUnit, Mass>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Mass"/> parsed from <paramref name="text"/></returns>
+        public static Mass Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<MassUnit, Mass>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Mass"/> parsed from <paramref name="text"/></returns>
+        public static Mass Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<MassUnit, Mass>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
+        /// <param name="result">The parsed <see cref="Mass"/></param>
+        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Mass result)
+        {
+            return QuantityParser.TryParse<MassUnit, Mass>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Mass"/></param>
+        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Mass result)
+        {
+            return QuantityParser.TryParse<MassUnit, Mass>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Mass"/></param>
+        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Mass result)
+        {
+            return QuantityParser.TryParse<MassUnit, Mass>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Mass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Mass"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Mass"/></param>
+        /// <returns>True if an instance of <see cref="Mass"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Mass result)
+        {
+            return QuantityParser.TryParse<MassUnit, Mass>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Mass"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
+        public static Mass ReadFrom(XmlReader reader)
+        {
+            var v = default(Mass);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
+        public static Mass From(double value, MassUnit unit)
+        {
+            return new Mass(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="kilograms">The value in <see cref="Gu.Units.MassUnit.Kilograms"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
+        public static Mass FromKilograms(double kilograms)
+        {
+            return new Mass(kilograms);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="grams">The value in g</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
+        public static Mass FromGrams(double grams)
+        {
+            return new Mass(grams / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="milligrams">The value in mg</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
+        public static Mass FromMilligrams(double milligrams)
+        {
+            return new Mass(milligrams / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="micrograms">The value in µg</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
+        public static Mass FromMicrograms(double micrograms)
+        {
+            return new Mass(micrograms / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="avoirdupoisPounds">The value in lb</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
+        public static Mass FromAvoirdupoisPounds(double avoirdupoisPounds)
+        {
+            return new Mass(0.45359237 * avoirdupoisPounds);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="avoirdupoisOunces">The value in oz</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
+        public static Mass FromAvoirdupoisOunces(double avoirdupoisOunces)
+        {
+            return new Mass(0.028349523125 * avoirdupoisOunces);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="troyOunces">The value in troy</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
+        public static Mass FromTroyOunces(double troyOunces)
+        {
+            return new Mass(0.0311034768 * troyOunces);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
+        /// </summary>
+        /// <param name="troyGrains">The value in gr</param>
+        /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
+        public static Mass FromTroyGrains(double troyGrains)
+        {
+            return new Mass(6.479891E-05 * troyGrains);
         }
 
         /// <summary>

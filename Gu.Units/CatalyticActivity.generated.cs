@@ -63,131 +63,6 @@
         public double Katals => this.katals;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
-        /// <returns>The <see cref="Gu.Units.CatalyticActivity"/> parsed from <paramref name="text"/></returns>
-        public static CatalyticActivity Parse(string text)
-        {
-            return QuantityParser.Parse<CatalyticActivityUnit, CatalyticActivity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.CatalyticActivity"/> parsed from <paramref name="text"/></returns>
-        public static CatalyticActivity Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<CatalyticActivityUnit, CatalyticActivity>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.CatalyticActivity"/> parsed from <paramref name="text"/></returns>
-        public static CatalyticActivity Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<CatalyticActivityUnit, CatalyticActivity>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.CatalyticActivity"/> parsed from <paramref name="text"/></returns>
-        public static CatalyticActivity Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<CatalyticActivityUnit, CatalyticActivity>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
-        /// <param name="result">The parsed <see cref="CatalyticActivity"/></param>
-        /// <returns>True if an instance of <see cref="CatalyticActivity"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out CatalyticActivity result)
-        {
-            return QuantityParser.TryParse<CatalyticActivityUnit, CatalyticActivity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="CatalyticActivity"/></param>
-        /// <returns>True if an instance of <see cref="CatalyticActivity"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out CatalyticActivity result)
-        {
-            return QuantityParser.TryParse<CatalyticActivityUnit, CatalyticActivity>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="CatalyticActivity"/></param>
-        /// <returns>True if an instance of <see cref="CatalyticActivity"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out CatalyticActivity result)
-        {
-            return QuantityParser.TryParse<CatalyticActivityUnit, CatalyticActivity>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="CatalyticActivity"/></param>
-        /// <returns>True if an instance of <see cref="CatalyticActivity"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out CatalyticActivity result)
-        {
-            return QuantityParser.TryParse<CatalyticActivityUnit, CatalyticActivity>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.CatalyticActivity"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.CatalyticActivity"/></returns>
-        public static CatalyticActivity ReadFrom(XmlReader reader)
-        {
-            var v = default(CatalyticActivity);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.CatalyticActivity"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.CatalyticActivity"/></returns>
-        public static CatalyticActivity From(double value, CatalyticActivityUnit unit)
-        {
-            return new CatalyticActivity(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.CatalyticActivity"/>.
-        /// </summary>
-        /// <param name="katals">The value in <see cref="Gu.Units.CatalyticActivityUnit.Katals"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.CatalyticActivity"/></returns>
-        public static CatalyticActivity FromKatals(double katals)
-        {
-            return new CatalyticActivity(katals);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -401,6 +276,131 @@
         public static CatalyticActivity operator +(CatalyticActivity catalyticActivity)
         {
             return catalyticActivity;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
+        /// <returns>The <see cref="Gu.Units.CatalyticActivity"/> parsed from <paramref name="text"/></returns>
+        public static CatalyticActivity Parse(string text)
+        {
+            return QuantityParser.Parse<CatalyticActivityUnit, CatalyticActivity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.CatalyticActivity"/> parsed from <paramref name="text"/></returns>
+        public static CatalyticActivity Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<CatalyticActivityUnit, CatalyticActivity>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.CatalyticActivity"/> parsed from <paramref name="text"/></returns>
+        public static CatalyticActivity Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<CatalyticActivityUnit, CatalyticActivity>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.CatalyticActivity"/> parsed from <paramref name="text"/></returns>
+        public static CatalyticActivity Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<CatalyticActivityUnit, CatalyticActivity>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
+        /// <param name="result">The parsed <see cref="CatalyticActivity"/></param>
+        /// <returns>True if an instance of <see cref="CatalyticActivity"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out CatalyticActivity result)
+        {
+            return QuantityParser.TryParse<CatalyticActivityUnit, CatalyticActivity>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="CatalyticActivity"/></param>
+        /// <returns>True if an instance of <see cref="CatalyticActivity"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out CatalyticActivity result)
+        {
+            return QuantityParser.TryParse<CatalyticActivityUnit, CatalyticActivity>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="CatalyticActivity"/></param>
+        /// <returns>True if an instance of <see cref="CatalyticActivity"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out CatalyticActivity result)
+        {
+            return QuantityParser.TryParse<CatalyticActivityUnit, CatalyticActivity>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.CatalyticActivity"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.CatalyticActivity"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="CatalyticActivity"/></param>
+        /// <returns>True if an instance of <see cref="CatalyticActivity"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out CatalyticActivity result)
+        {
+            return QuantityParser.TryParse<CatalyticActivityUnit, CatalyticActivity>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.CatalyticActivity"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.CatalyticActivity"/></returns>
+        public static CatalyticActivity ReadFrom(XmlReader reader)
+        {
+            var v = default(CatalyticActivity);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.CatalyticActivity"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.CatalyticActivity"/></returns>
+        public static CatalyticActivity From(double value, CatalyticActivityUnit unit)
+        {
+            return new CatalyticActivity(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.CatalyticActivity"/>.
+        /// </summary>
+        /// <param name="katals">The value in <see cref="Gu.Units.CatalyticActivityUnit.Katals"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.CatalyticActivity"/></returns>
+        public static CatalyticActivity FromKatals(double katals)
+        {
+            return new CatalyticActivity(katals);
         }
 
         /// <summary>

@@ -93,191 +93,6 @@
         public double Gigafarads => this.farads / 1000000000;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
-        /// <returns>The <see cref="Gu.Units.Capacitance"/> parsed from <paramref name="text"/></returns>
-        public static Capacitance Parse(string text)
-        {
-            return QuantityParser.Parse<CapacitanceUnit, Capacitance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Capacitance"/> parsed from <paramref name="text"/></returns>
-        public static Capacitance Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<CapacitanceUnit, Capacitance>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Capacitance"/> parsed from <paramref name="text"/></returns>
-        public static Capacitance Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<CapacitanceUnit, Capacitance>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Capacitance"/> parsed from <paramref name="text"/></returns>
-        public static Capacitance Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<CapacitanceUnit, Capacitance>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
-        /// <param name="result">The parsed <see cref="Capacitance"/></param>
-        /// <returns>True if an instance of <see cref="Capacitance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Capacitance result)
-        {
-            return QuantityParser.TryParse<CapacitanceUnit, Capacitance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Capacitance"/></param>
-        /// <returns>True if an instance of <see cref="Capacitance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Capacitance result)
-        {
-            return QuantityParser.TryParse<CapacitanceUnit, Capacitance>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Capacitance"/></param>
-        /// <returns>True if an instance of <see cref="Capacitance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Capacitance result)
-        {
-            return QuantityParser.TryParse<CapacitanceUnit, Capacitance>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Capacitance"/></param>
-        /// <returns>True if an instance of <see cref="Capacitance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Capacitance result)
-        {
-            return QuantityParser.TryParse<CapacitanceUnit, Capacitance>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Capacitance"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
-        public static Capacitance ReadFrom(XmlReader reader)
-        {
-            var v = default(Capacitance);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
-        public static Capacitance From(double value, CapacitanceUnit unit)
-        {
-            return new Capacitance(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
-        /// </summary>
-        /// <param name="farads">The value in <see cref="Gu.Units.CapacitanceUnit.Farads"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
-        public static Capacitance FromFarads(double farads)
-        {
-            return new Capacitance(farads);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
-        /// </summary>
-        /// <param name="nanofarads">The value in nF</param>
-        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
-        public static Capacitance FromNanofarads(double nanofarads)
-        {
-            return new Capacitance(nanofarads / 1000000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
-        /// </summary>
-        /// <param name="microfarads">The value in µF</param>
-        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
-        public static Capacitance FromMicrofarads(double microfarads)
-        {
-            return new Capacitance(microfarads / 1000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
-        /// </summary>
-        /// <param name="millifarads">The value in mF</param>
-        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
-        public static Capacitance FromMillifarads(double millifarads)
-        {
-            return new Capacitance(millifarads / 1000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
-        /// </summary>
-        /// <param name="kilofarads">The value in kF</param>
-        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
-        public static Capacitance FromKilofarads(double kilofarads)
-        {
-            return new Capacitance(1000 * kilofarads);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
-        /// </summary>
-        /// <param name="megafarads">The value in MF</param>
-        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
-        public static Capacitance FromMegafarads(double megafarads)
-        {
-            return new Capacitance(1000000 * megafarads);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
-        /// </summary>
-        /// <param name="gigafarads">The value in GF</param>
-        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
-        public static Capacitance FromGigafarads(double gigafarads)
-        {
-            return new Capacitance(1000000000 * gigafarads);
-        }
-
-        /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -502,6 +317,191 @@
         public static Capacitance operator +(Capacitance capacitance)
         {
             return capacitance;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
+        /// <returns>The <see cref="Gu.Units.Capacitance"/> parsed from <paramref name="text"/></returns>
+        public static Capacitance Parse(string text)
+        {
+            return QuantityParser.Parse<CapacitanceUnit, Capacitance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Capacitance"/> parsed from <paramref name="text"/></returns>
+        public static Capacitance Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<CapacitanceUnit, Capacitance>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Capacitance"/> parsed from <paramref name="text"/></returns>
+        public static Capacitance Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<CapacitanceUnit, Capacitance>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Capacitance"/> parsed from <paramref name="text"/></returns>
+        public static Capacitance Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<CapacitanceUnit, Capacitance>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
+        /// <param name="result">The parsed <see cref="Capacitance"/></param>
+        /// <returns>True if an instance of <see cref="Capacitance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Capacitance result)
+        {
+            return QuantityParser.TryParse<CapacitanceUnit, Capacitance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Capacitance"/></param>
+        /// <returns>True if an instance of <see cref="Capacitance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Capacitance result)
+        {
+            return QuantityParser.TryParse<CapacitanceUnit, Capacitance>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Capacitance"/></param>
+        /// <returns>True if an instance of <see cref="Capacitance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Capacitance result)
+        {
+            return QuantityParser.TryParse<CapacitanceUnit, Capacitance>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Capacitance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Capacitance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Capacitance"/></param>
+        /// <returns>True if an instance of <see cref="Capacitance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Capacitance result)
+        {
+            return QuantityParser.TryParse<CapacitanceUnit, Capacitance>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Capacitance"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
+        public static Capacitance ReadFrom(XmlReader reader)
+        {
+            var v = default(Capacitance);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
+        public static Capacitance From(double value, CapacitanceUnit unit)
+        {
+            return new Capacitance(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
+        /// </summary>
+        /// <param name="farads">The value in <see cref="Gu.Units.CapacitanceUnit.Farads"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
+        public static Capacitance FromFarads(double farads)
+        {
+            return new Capacitance(farads);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
+        /// </summary>
+        /// <param name="nanofarads">The value in nF</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
+        public static Capacitance FromNanofarads(double nanofarads)
+        {
+            return new Capacitance(nanofarads / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
+        /// </summary>
+        /// <param name="microfarads">The value in µF</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
+        public static Capacitance FromMicrofarads(double microfarads)
+        {
+            return new Capacitance(microfarads / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
+        /// </summary>
+        /// <param name="millifarads">The value in mF</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
+        public static Capacitance FromMillifarads(double millifarads)
+        {
+            return new Capacitance(millifarads / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
+        /// </summary>
+        /// <param name="kilofarads">The value in kF</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
+        public static Capacitance FromKilofarads(double kilofarads)
+        {
+            return new Capacitance(1000 * kilofarads);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
+        /// </summary>
+        /// <param name="megafarads">The value in MF</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
+        public static Capacitance FromMegafarads(double megafarads)
+        {
+            return new Capacitance(1000000 * megafarads);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
+        /// </summary>
+        /// <param name="gigafarads">The value in GF</param>
+        /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
+        public static Capacitance FromGigafarads(double gigafarads)
+        {
+            return new Capacitance(1000000000 * gigafarads);
         }
 
         /// <summary>

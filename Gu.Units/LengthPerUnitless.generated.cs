@@ -78,161 +78,6 @@
         public double MetresPerPercent => this.metresPerUnitless / 100;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
-        /// <returns>The <see cref="Gu.Units.LengthPerUnitless"/> parsed from <paramref name="text"/></returns>
-        public static LengthPerUnitless Parse(string text)
-        {
-            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.LengthPerUnitless"/> parsed from <paramref name="text"/></returns>
-        public static LengthPerUnitless Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.LengthPerUnitless"/> parsed from <paramref name="text"/></returns>
-        public static LengthPerUnitless Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.LengthPerUnitless"/> parsed from <paramref name="text"/></returns>
-        public static LengthPerUnitless Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
-        /// <param name="result">The parsed <see cref="LengthPerUnitless"/></param>
-        /// <returns>True if an instance of <see cref="LengthPerUnitless"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out LengthPerUnitless result)
-        {
-            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="LengthPerUnitless"/></param>
-        /// <returns>True if an instance of <see cref="LengthPerUnitless"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out LengthPerUnitless result)
-        {
-            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="LengthPerUnitless"/></param>
-        /// <returns>True if an instance of <see cref="LengthPerUnitless"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out LengthPerUnitless result)
-        {
-            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="LengthPerUnitless"/></param>
-        /// <returns>True if an instance of <see cref="LengthPerUnitless"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out LengthPerUnitless result)
-        {
-            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.LengthPerUnitless"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
-        public static LengthPerUnitless ReadFrom(XmlReader reader)
-        {
-            var v = default(LengthPerUnitless);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
-        public static LengthPerUnitless From(double value, LengthPerUnitlessUnit unit)
-        {
-            return new LengthPerUnitless(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
-        /// </summary>
-        /// <param name="metresPerUnitless">The value in <see cref="Gu.Units.LengthPerUnitlessUnit.MetresPerUnitless"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
-        public static LengthPerUnitless FromMetresPerUnitless(double metresPerUnitless)
-        {
-            return new LengthPerUnitless(metresPerUnitless);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
-        /// </summary>
-        /// <param name="millimetresPerPercent">The value in mm/%</param>
-        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
-        public static LengthPerUnitless FromMillimetresPerPercent(double millimetresPerPercent)
-        {
-            return new LengthPerUnitless(millimetresPerPercent / 10);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
-        /// </summary>
-        /// <param name="micrometresPerPercent">The value in µm/%</param>
-        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
-        public static LengthPerUnitless FromMicrometresPerPercent(double micrometresPerPercent)
-        {
-            return new LengthPerUnitless(micrometresPerPercent / 10000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
-        /// </summary>
-        /// <param name="metresPerPercent">The value in m/%</param>
-        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
-        public static LengthPerUnitless FromMetresPerPercent(double metresPerPercent)
-        {
-            return new LengthPerUnitless(100 * metresPerPercent);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -446,6 +291,161 @@
         public static LengthPerUnitless operator +(LengthPerUnitless lengthPerUnitless)
         {
             return lengthPerUnitless;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <returns>The <see cref="Gu.Units.LengthPerUnitless"/> parsed from <paramref name="text"/></returns>
+        public static LengthPerUnitless Parse(string text)
+        {
+            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.LengthPerUnitless"/> parsed from <paramref name="text"/></returns>
+        public static LengthPerUnitless Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.LengthPerUnitless"/> parsed from <paramref name="text"/></returns>
+        public static LengthPerUnitless Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.LengthPerUnitless"/> parsed from <paramref name="text"/></returns>
+        public static LengthPerUnitless Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <param name="result">The parsed <see cref="LengthPerUnitless"/></param>
+        /// <returns>True if an instance of <see cref="LengthPerUnitless"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out LengthPerUnitless result)
+        {
+            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="LengthPerUnitless"/></param>
+        /// <returns>True if an instance of <see cref="LengthPerUnitless"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out LengthPerUnitless result)
+        {
+            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="LengthPerUnitless"/></param>
+        /// <returns>True if an instance of <see cref="LengthPerUnitless"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out LengthPerUnitless result)
+        {
+            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.LengthPerUnitless"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.LengthPerUnitless"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="LengthPerUnitless"/></param>
+        /// <returns>True if an instance of <see cref="LengthPerUnitless"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out LengthPerUnitless result)
+        {
+            return QuantityParser.TryParse<LengthPerUnitlessUnit, LengthPerUnitless>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.LengthPerUnitless"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
+        public static LengthPerUnitless ReadFrom(XmlReader reader)
+        {
+            var v = default(LengthPerUnitless);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
+        public static LengthPerUnitless From(double value, LengthPerUnitlessUnit unit)
+        {
+            return new LengthPerUnitless(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
+        /// </summary>
+        /// <param name="metresPerUnitless">The value in <see cref="Gu.Units.LengthPerUnitlessUnit.MetresPerUnitless"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
+        public static LengthPerUnitless FromMetresPerUnitless(double metresPerUnitless)
+        {
+            return new LengthPerUnitless(metresPerUnitless);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
+        /// </summary>
+        /// <param name="millimetresPerPercent">The value in mm/%</param>
+        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
+        public static LengthPerUnitless FromMillimetresPerPercent(double millimetresPerPercent)
+        {
+            return new LengthPerUnitless(millimetresPerPercent / 10);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
+        /// </summary>
+        /// <param name="micrometresPerPercent">The value in µm/%</param>
+        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
+        public static LengthPerUnitless FromMicrometresPerPercent(double micrometresPerPercent)
+        {
+            return new LengthPerUnitless(micrometresPerPercent / 10000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
+        /// </summary>
+        /// <param name="metresPerPercent">The value in m/%</param>
+        /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
+        public static LengthPerUnitless FromMetresPerPercent(double metresPerPercent)
+        {
+            return new LengthPerUnitless(100 * metresPerPercent);
         }
 
         /// <summary>

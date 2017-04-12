@@ -93,191 +93,6 @@
         public double RadiansPerHour => 3600 * this.radiansPerSecond;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
-        /// <returns>The <see cref="Gu.Units.AngularSpeed"/> parsed from <paramref name="text"/></returns>
-        public static AngularSpeed Parse(string text)
-        {
-            return QuantityParser.Parse<AngularSpeedUnit, AngularSpeed>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.AngularSpeed"/> parsed from <paramref name="text"/></returns>
-        public static AngularSpeed Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<AngularSpeedUnit, AngularSpeed>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.AngularSpeed"/> parsed from <paramref name="text"/></returns>
-        public static AngularSpeed Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<AngularSpeedUnit, AngularSpeed>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.AngularSpeed"/> parsed from <paramref name="text"/></returns>
-        public static AngularSpeed Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<AngularSpeedUnit, AngularSpeed>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
-        /// <param name="result">The parsed <see cref="AngularSpeed"/></param>
-        /// <returns>True if an instance of <see cref="AngularSpeed"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out AngularSpeed result)
-        {
-            return QuantityParser.TryParse<AngularSpeedUnit, AngularSpeed>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="AngularSpeed"/></param>
-        /// <returns>True if an instance of <see cref="AngularSpeed"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out AngularSpeed result)
-        {
-            return QuantityParser.TryParse<AngularSpeedUnit, AngularSpeed>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="AngularSpeed"/></param>
-        /// <returns>True if an instance of <see cref="AngularSpeed"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out AngularSpeed result)
-        {
-            return QuantityParser.TryParse<AngularSpeedUnit, AngularSpeed>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="AngularSpeed"/></param>
-        /// <returns>True if an instance of <see cref="AngularSpeed"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out AngularSpeed result)
-        {
-            return QuantityParser.TryParse<AngularSpeedUnit, AngularSpeed>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.AngularSpeed"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
-        public static AngularSpeed ReadFrom(XmlReader reader)
-        {
-            var v = default(AngularSpeed);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
-        public static AngularSpeed From(double value, AngularSpeedUnit unit)
-        {
-            return new AngularSpeed(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
-        /// </summary>
-        /// <param name="radiansPerSecond">The value in <see cref="Gu.Units.AngularSpeedUnit.RadiansPerSecond"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
-        public static AngularSpeed FromRadiansPerSecond(double radiansPerSecond)
-        {
-            return new AngularSpeed(radiansPerSecond);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
-        /// </summary>
-        /// <param name="revolutionsPerMinute">The value in rpm</param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
-        public static AngularSpeed FromRevolutionsPerMinute(double revolutionsPerMinute)
-        {
-            return new AngularSpeed(0.10471975511966 * revolutionsPerMinute);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
-        /// </summary>
-        /// <param name="degreesPerSecond">The value in °⋅s⁻¹</param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
-        public static AngularSpeed FromDegreesPerSecond(double degreesPerSecond)
-        {
-            return new AngularSpeed(0.0174532925199433 * degreesPerSecond);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
-        /// </summary>
-        /// <param name="degreesPerMinute">The value in min⁻¹⋅°</param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
-        public static AngularSpeed FromDegreesPerMinute(double degreesPerMinute)
-        {
-            return new AngularSpeed(0.000290888208665722 * degreesPerMinute);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
-        /// </summary>
-        /// <param name="radiansPerMinute">The value in min⁻¹⋅rad</param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
-        public static AngularSpeed FromRadiansPerMinute(double radiansPerMinute)
-        {
-            return new AngularSpeed(radiansPerMinute / 60);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
-        /// </summary>
-        /// <param name="degreesPerHour">The value in h⁻¹⋅°</param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
-        public static AngularSpeed FromDegreesPerHour(double degreesPerHour)
-        {
-            return new AngularSpeed(4.84813681109536E-06 * degreesPerHour);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
-        /// </summary>
-        /// <param name="radiansPerHour">The value in h⁻¹⋅rad</param>
-        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
-        public static AngularSpeed FromRadiansPerHour(double radiansPerHour)
-        {
-            return new AngularSpeed(radiansPerHour / 3600);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -524,6 +339,191 @@
         public static AngularSpeed operator +(AngularSpeed angularSpeed)
         {
             return angularSpeed;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
+        /// <returns>The <see cref="Gu.Units.AngularSpeed"/> parsed from <paramref name="text"/></returns>
+        public static AngularSpeed Parse(string text)
+        {
+            return QuantityParser.Parse<AngularSpeedUnit, AngularSpeed>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.AngularSpeed"/> parsed from <paramref name="text"/></returns>
+        public static AngularSpeed Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<AngularSpeedUnit, AngularSpeed>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.AngularSpeed"/> parsed from <paramref name="text"/></returns>
+        public static AngularSpeed Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<AngularSpeedUnit, AngularSpeed>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.AngularSpeed"/> parsed from <paramref name="text"/></returns>
+        public static AngularSpeed Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<AngularSpeedUnit, AngularSpeed>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
+        /// <param name="result">The parsed <see cref="AngularSpeed"/></param>
+        /// <returns>True if an instance of <see cref="AngularSpeed"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out AngularSpeed result)
+        {
+            return QuantityParser.TryParse<AngularSpeedUnit, AngularSpeed>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="AngularSpeed"/></param>
+        /// <returns>True if an instance of <see cref="AngularSpeed"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out AngularSpeed result)
+        {
+            return QuantityParser.TryParse<AngularSpeedUnit, AngularSpeed>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="AngularSpeed"/></param>
+        /// <returns>True if an instance of <see cref="AngularSpeed"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out AngularSpeed result)
+        {
+            return QuantityParser.TryParse<AngularSpeedUnit, AngularSpeed>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AngularSpeed"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AngularSpeed"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="AngularSpeed"/></param>
+        /// <returns>True if an instance of <see cref="AngularSpeed"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out AngularSpeed result)
+        {
+            return QuantityParser.TryParse<AngularSpeedUnit, AngularSpeed>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.AngularSpeed"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
+        public static AngularSpeed ReadFrom(XmlReader reader)
+        {
+            var v = default(AngularSpeed);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
+        public static AngularSpeed From(double value, AngularSpeedUnit unit)
+        {
+            return new AngularSpeed(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
+        /// </summary>
+        /// <param name="radiansPerSecond">The value in <see cref="Gu.Units.AngularSpeedUnit.RadiansPerSecond"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
+        public static AngularSpeed FromRadiansPerSecond(double radiansPerSecond)
+        {
+            return new AngularSpeed(radiansPerSecond);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
+        /// </summary>
+        /// <param name="revolutionsPerMinute">The value in rpm</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
+        public static AngularSpeed FromRevolutionsPerMinute(double revolutionsPerMinute)
+        {
+            return new AngularSpeed(0.10471975511966 * revolutionsPerMinute);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
+        /// </summary>
+        /// <param name="degreesPerSecond">The value in °⋅s⁻¹</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
+        public static AngularSpeed FromDegreesPerSecond(double degreesPerSecond)
+        {
+            return new AngularSpeed(0.0174532925199433 * degreesPerSecond);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
+        /// </summary>
+        /// <param name="degreesPerMinute">The value in min⁻¹⋅°</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
+        public static AngularSpeed FromDegreesPerMinute(double degreesPerMinute)
+        {
+            return new AngularSpeed(0.000290888208665722 * degreesPerMinute);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
+        /// </summary>
+        /// <param name="radiansPerMinute">The value in min⁻¹⋅rad</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
+        public static AngularSpeed FromRadiansPerMinute(double radiansPerMinute)
+        {
+            return new AngularSpeed(radiansPerMinute / 60);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
+        /// </summary>
+        /// <param name="degreesPerHour">The value in h⁻¹⋅°</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
+        public static AngularSpeed FromDegreesPerHour(double degreesPerHour)
+        {
+            return new AngularSpeed(4.84813681109536E-06 * degreesPerHour);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
+        /// </summary>
+        /// <param name="radiansPerHour">The value in h⁻¹⋅rad</param>
+        /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
+        public static AngularSpeed FromRadiansPerHour(double radiansPerHour)
+        {
+            return new AngularSpeed(radiansPerHour / 3600);
         }
 
         /// <summary>

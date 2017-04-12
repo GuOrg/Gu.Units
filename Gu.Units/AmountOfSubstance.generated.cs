@@ -63,131 +63,6 @@
         public double Moles => this.moles;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
-        /// <returns>The <see cref="Gu.Units.AmountOfSubstance"/> parsed from <paramref name="text"/></returns>
-        public static AmountOfSubstance Parse(string text)
-        {
-            return QuantityParser.Parse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.AmountOfSubstance"/> parsed from <paramref name="text"/></returns>
-        public static AmountOfSubstance Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.AmountOfSubstance"/> parsed from <paramref name="text"/></returns>
-        public static AmountOfSubstance Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.AmountOfSubstance"/> parsed from <paramref name="text"/></returns>
-        public static AmountOfSubstance Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
-        /// <param name="result">The parsed <see cref="AmountOfSubstance"/></param>
-        /// <returns>True if an instance of <see cref="AmountOfSubstance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out AmountOfSubstance result)
-        {
-            return QuantityParser.TryParse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="AmountOfSubstance"/></param>
-        /// <returns>True if an instance of <see cref="AmountOfSubstance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out AmountOfSubstance result)
-        {
-            return QuantityParser.TryParse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="AmountOfSubstance"/></param>
-        /// <returns>True if an instance of <see cref="AmountOfSubstance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out AmountOfSubstance result)
-        {
-            return QuantityParser.TryParse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="AmountOfSubstance"/></param>
-        /// <returns>True if an instance of <see cref="AmountOfSubstance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out AmountOfSubstance result)
-        {
-            return QuantityParser.TryParse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.AmountOfSubstance"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.AmountOfSubstance"/></returns>
-        public static AmountOfSubstance ReadFrom(XmlReader reader)
-        {
-            var v = default(AmountOfSubstance);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AmountOfSubstance"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.AmountOfSubstance"/></returns>
-        public static AmountOfSubstance From(double value, AmountOfSubstanceUnit unit)
-        {
-            return new AmountOfSubstance(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.AmountOfSubstance"/>.
-        /// </summary>
-        /// <param name="moles">The value in <see cref="Gu.Units.AmountOfSubstanceUnit.Moles"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.AmountOfSubstance"/></returns>
-        public static AmountOfSubstance FromMoles(double moles)
-        {
-            return new AmountOfSubstance(moles);
-        }
-
-        /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -401,6 +276,131 @@
         public static AmountOfSubstance operator +(AmountOfSubstance amountOfSubstance)
         {
             return amountOfSubstance;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
+        /// <returns>The <see cref="Gu.Units.AmountOfSubstance"/> parsed from <paramref name="text"/></returns>
+        public static AmountOfSubstance Parse(string text)
+        {
+            return QuantityParser.Parse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.AmountOfSubstance"/> parsed from <paramref name="text"/></returns>
+        public static AmountOfSubstance Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.AmountOfSubstance"/> parsed from <paramref name="text"/></returns>
+        public static AmountOfSubstance Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.AmountOfSubstance"/> parsed from <paramref name="text"/></returns>
+        public static AmountOfSubstance Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
+        /// <param name="result">The parsed <see cref="AmountOfSubstance"/></param>
+        /// <returns>True if an instance of <see cref="AmountOfSubstance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out AmountOfSubstance result)
+        {
+            return QuantityParser.TryParse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="AmountOfSubstance"/></param>
+        /// <returns>True if an instance of <see cref="AmountOfSubstance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out AmountOfSubstance result)
+        {
+            return QuantityParser.TryParse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="AmountOfSubstance"/></param>
+        /// <returns>True if an instance of <see cref="AmountOfSubstance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out AmountOfSubstance result)
+        {
+            return QuantityParser.TryParse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.AmountOfSubstance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.AmountOfSubstance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="AmountOfSubstance"/></param>
+        /// <returns>True if an instance of <see cref="AmountOfSubstance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out AmountOfSubstance result)
+        {
+            return QuantityParser.TryParse<AmountOfSubstanceUnit, AmountOfSubstance>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.AmountOfSubstance"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AmountOfSubstance"/></returns>
+        public static AmountOfSubstance ReadFrom(XmlReader reader)
+        {
+            var v = default(AmountOfSubstance);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AmountOfSubstance"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.AmountOfSubstance"/></returns>
+        public static AmountOfSubstance From(double value, AmountOfSubstanceUnit unit)
+        {
+            return new AmountOfSubstance(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.AmountOfSubstance"/>.
+        /// </summary>
+        /// <param name="moles">The value in <see cref="Gu.Units.AmountOfSubstanceUnit.Moles"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.AmountOfSubstance"/></returns>
+        public static AmountOfSubstance FromMoles(double moles)
+        {
+            return new AmountOfSubstance(moles);
         }
 
         /// <summary>

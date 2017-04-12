@@ -103,211 +103,6 @@
         public double CentimetresPerMinuteCubed => 21600000 * this.metresPerSecondCubed;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
-        /// <returns>The <see cref="Gu.Units.Jerk"/> parsed from <paramref name="text"/></returns>
-        public static Jerk Parse(string text)
-        {
-            return QuantityParser.Parse<JerkUnit, Jerk>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Jerk"/> parsed from <paramref name="text"/></returns>
-        public static Jerk Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<JerkUnit, Jerk>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Jerk"/> parsed from <paramref name="text"/></returns>
-        public static Jerk Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<JerkUnit, Jerk>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Jerk"/> parsed from <paramref name="text"/></returns>
-        public static Jerk Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<JerkUnit, Jerk>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
-        /// <param name="result">The parsed <see cref="Jerk"/></param>
-        /// <returns>True if an instance of <see cref="Jerk"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Jerk result)
-        {
-            return QuantityParser.TryParse<JerkUnit, Jerk>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Jerk"/></param>
-        /// <returns>True if an instance of <see cref="Jerk"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Jerk result)
-        {
-            return QuantityParser.TryParse<JerkUnit, Jerk>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Jerk"/></param>
-        /// <returns>True if an instance of <see cref="Jerk"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Jerk result)
-        {
-            return QuantityParser.TryParse<JerkUnit, Jerk>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Jerk"/></param>
-        /// <returns>True if an instance of <see cref="Jerk"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Jerk result)
-        {
-            return QuantityParser.TryParse<JerkUnit, Jerk>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Jerk"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
-        public static Jerk ReadFrom(XmlReader reader)
-        {
-            var v = default(Jerk);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
-        public static Jerk From(double value, JerkUnit unit)
-        {
-            return new Jerk(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
-        /// </summary>
-        /// <param name="metresPerSecondCubed">The value in <see cref="Gu.Units.JerkUnit.MetresPerSecondCubed"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
-        public static Jerk FromMetresPerSecondCubed(double metresPerSecondCubed)
-        {
-            return new Jerk(metresPerSecondCubed);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
-        /// </summary>
-        /// <param name="millimetresPerSecondCubed">The value in mm⋅s⁻³</param>
-        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
-        public static Jerk FromMillimetresPerSecondCubed(double millimetresPerSecondCubed)
-        {
-            return new Jerk(millimetresPerSecondCubed / 1000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
-        /// </summary>
-        /// <param name="centimetresPerSecondCubed">The value in cm⋅s⁻³</param>
-        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
-        public static Jerk FromCentimetresPerSecondCubed(double centimetresPerSecondCubed)
-        {
-            return new Jerk(centimetresPerSecondCubed / 100);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
-        /// </summary>
-        /// <param name="millimetresPerHourCubed">The value in mm⋅h⁻³</param>
-        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
-        public static Jerk FromMillimetresPerHourCubed(double millimetresPerHourCubed)
-        {
-            return new Jerk(millimetresPerHourCubed / 46656000000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
-        /// </summary>
-        /// <param name="millimetresPerMinuteCubed">The value in mm⋅min⁻³</param>
-        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
-        public static Jerk FromMillimetresPerMinuteCubed(double millimetresPerMinuteCubed)
-        {
-            return new Jerk(millimetresPerMinuteCubed / 216000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
-        /// </summary>
-        /// <param name="metresPerHourCubed">The value in m⋅h⁻³</param>
-        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
-        public static Jerk FromMetresPerHourCubed(double metresPerHourCubed)
-        {
-            return new Jerk(metresPerHourCubed / 46656000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
-        /// </summary>
-        /// <param name="metresPerMinuteCubed">The value in m⋅min⁻³</param>
-        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
-        public static Jerk FromMetresPerMinuteCubed(double metresPerMinuteCubed)
-        {
-            return new Jerk(metresPerMinuteCubed / 216000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
-        /// </summary>
-        /// <param name="centimetresPerHourCubed">The value in cm⋅h⁻³</param>
-        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
-        public static Jerk FromCentimetresPerHourCubed(double centimetresPerHourCubed)
-        {
-            return new Jerk(centimetresPerHourCubed / 4665600000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
-        /// </summary>
-        /// <param name="centimetresPerMinuteCubed">The value in cm⋅min⁻³</param>
-        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
-        public static Jerk FromCentimetresPerMinuteCubed(double centimetresPerMinuteCubed)
-        {
-            return new Jerk(centimetresPerMinuteCubed / 21600000);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -510,6 +305,211 @@
         public static Jerk operator +(Jerk jerk)
         {
             return jerk;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
+        /// <returns>The <see cref="Gu.Units.Jerk"/> parsed from <paramref name="text"/></returns>
+        public static Jerk Parse(string text)
+        {
+            return QuantityParser.Parse<JerkUnit, Jerk>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Jerk"/> parsed from <paramref name="text"/></returns>
+        public static Jerk Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<JerkUnit, Jerk>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Jerk"/> parsed from <paramref name="text"/></returns>
+        public static Jerk Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<JerkUnit, Jerk>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Jerk"/> parsed from <paramref name="text"/></returns>
+        public static Jerk Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<JerkUnit, Jerk>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
+        /// <param name="result">The parsed <see cref="Jerk"/></param>
+        /// <returns>True if an instance of <see cref="Jerk"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Jerk result)
+        {
+            return QuantityParser.TryParse<JerkUnit, Jerk>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Jerk"/></param>
+        /// <returns>True if an instance of <see cref="Jerk"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Jerk result)
+        {
+            return QuantityParser.TryParse<JerkUnit, Jerk>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Jerk"/></param>
+        /// <returns>True if an instance of <see cref="Jerk"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Jerk result)
+        {
+            return QuantityParser.TryParse<JerkUnit, Jerk>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Jerk"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Jerk"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Jerk"/></param>
+        /// <returns>True if an instance of <see cref="Jerk"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Jerk result)
+        {
+            return QuantityParser.TryParse<JerkUnit, Jerk>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Jerk"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
+        public static Jerk ReadFrom(XmlReader reader)
+        {
+            var v = default(Jerk);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
+        public static Jerk From(double value, JerkUnit unit)
+        {
+            return new Jerk(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
+        /// </summary>
+        /// <param name="metresPerSecondCubed">The value in <see cref="Gu.Units.JerkUnit.MetresPerSecondCubed"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
+        public static Jerk FromMetresPerSecondCubed(double metresPerSecondCubed)
+        {
+            return new Jerk(metresPerSecondCubed);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
+        /// </summary>
+        /// <param name="millimetresPerSecondCubed">The value in mm⋅s⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
+        public static Jerk FromMillimetresPerSecondCubed(double millimetresPerSecondCubed)
+        {
+            return new Jerk(millimetresPerSecondCubed / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
+        /// </summary>
+        /// <param name="centimetresPerSecondCubed">The value in cm⋅s⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
+        public static Jerk FromCentimetresPerSecondCubed(double centimetresPerSecondCubed)
+        {
+            return new Jerk(centimetresPerSecondCubed / 100);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
+        /// </summary>
+        /// <param name="millimetresPerHourCubed">The value in mm⋅h⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
+        public static Jerk FromMillimetresPerHourCubed(double millimetresPerHourCubed)
+        {
+            return new Jerk(millimetresPerHourCubed / 46656000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
+        /// </summary>
+        /// <param name="millimetresPerMinuteCubed">The value in mm⋅min⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
+        public static Jerk FromMillimetresPerMinuteCubed(double millimetresPerMinuteCubed)
+        {
+            return new Jerk(millimetresPerMinuteCubed / 216000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
+        /// </summary>
+        /// <param name="metresPerHourCubed">The value in m⋅h⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
+        public static Jerk FromMetresPerHourCubed(double metresPerHourCubed)
+        {
+            return new Jerk(metresPerHourCubed / 46656000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
+        /// </summary>
+        /// <param name="metresPerMinuteCubed">The value in m⋅min⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
+        public static Jerk FromMetresPerMinuteCubed(double metresPerMinuteCubed)
+        {
+            return new Jerk(metresPerMinuteCubed / 216000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
+        /// </summary>
+        /// <param name="centimetresPerHourCubed">The value in cm⋅h⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
+        public static Jerk FromCentimetresPerHourCubed(double centimetresPerHourCubed)
+        {
+            return new Jerk(centimetresPerHourCubed / 4665600000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Jerk"/>.
+        /// </summary>
+        /// <param name="centimetresPerMinuteCubed">The value in cm⋅min⁻³</param>
+        /// <returns>An instance of <see cref="Gu.Units.Jerk"/></returns>
+        public static Jerk FromCentimetresPerMinuteCubed(double centimetresPerMinuteCubed)
+        {
+            return new Jerk(centimetresPerMinuteCubed / 21600000);
         }
 
         /// <summary>

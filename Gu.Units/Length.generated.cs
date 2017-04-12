@@ -118,241 +118,6 @@
         public double Kilometres => this.metres / 1000;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <returns>The <see cref="Gu.Units.Length"/> parsed from <paramref name="text"/></returns>
-        public static Length Parse(string text)
-        {
-            return QuantityParser.Parse<LengthUnit, Length>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Length"/> parsed from <paramref name="text"/></returns>
-        public static Length Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<LengthUnit, Length>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Length"/> parsed from <paramref name="text"/></returns>
-        public static Length Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<LengthUnit, Length>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Length"/> parsed from <paramref name="text"/></returns>
-        public static Length Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<LengthUnit, Length>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <param name="result">The parsed <see cref="Length"/></param>
-        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Length result)
-        {
-            return QuantityParser.TryParse<LengthUnit, Length>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Length"/></param>
-        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Length result)
-        {
-            return QuantityParser.TryParse<LengthUnit, Length>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Length"/></param>
-        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Length result)
-        {
-            return QuantityParser.TryParse<LengthUnit, Length>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Length"/></param>
-        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Length result)
-        {
-            return QuantityParser.TryParse<LengthUnit, Length>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Length"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
-        public static Length ReadFrom(XmlReader reader)
-        {
-            var v = default(Length);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
-        public static Length From(double value, LengthUnit unit)
-        {
-            return new Length(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="metres">The value in <see cref="Gu.Units.LengthUnit.Metres"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
-        public static Length FromMetres(double metres)
-        {
-            return new Length(metres);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="inches">The value in in</param>
-        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
-        public static Length FromInches(double inches)
-        {
-            return new Length(0.0254 * inches);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="miles">The value in mi</param>
-        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
-        public static Length FromMiles(double miles)
-        {
-            return new Length(1609.344 * miles);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="yards">The value in yd</param>
-        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
-        public static Length FromYards(double yards)
-        {
-            return new Length(0.9144 * yards);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="nauticalMiles">The value in nmi</param>
-        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
-        public static Length FromNauticalMiles(double nauticalMiles)
-        {
-            return new Length(1852 * nauticalMiles);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="feet">The value in ft</param>
-        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
-        public static Length FromFeet(double feet)
-        {
-            return new Length(0.3048 * feet);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="nanometres">The value in nm</param>
-        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
-        public static Length FromNanometres(double nanometres)
-        {
-            return new Length(nanometres / 1000000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="micrometres">The value in µm</param>
-        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
-        public static Length FromMicrometres(double micrometres)
-        {
-            return new Length(micrometres / 1000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="millimetres">The value in mm</param>
-        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
-        public static Length FromMillimetres(double millimetres)
-        {
-            return new Length(millimetres / 1000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="centimetres">The value in cm</param>
-        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
-        public static Length FromCentimetres(double centimetres)
-        {
-            return new Length(centimetres / 100);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="decimetres">The value in dm</param>
-        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
-        public static Length FromDecimetres(double decimetres)
-        {
-            return new Length(decimetres / 10);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
-        /// </summary>
-        /// <param name="kilometres">The value in km</param>
-        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
-        public static Length FromKilometres(double kilometres)
-        {
-            return new Length(1000 * kilometres);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -753,6 +518,241 @@
         public static Length operator +(Length length)
         {
             return length;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
+        /// <returns>The <see cref="Gu.Units.Length"/> parsed from <paramref name="text"/></returns>
+        public static Length Parse(string text)
+        {
+            return QuantityParser.Parse<LengthUnit, Length>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Length"/> parsed from <paramref name="text"/></returns>
+        public static Length Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<LengthUnit, Length>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Length"/> parsed from <paramref name="text"/></returns>
+        public static Length Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<LengthUnit, Length>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Length"/> parsed from <paramref name="text"/></returns>
+        public static Length Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<LengthUnit, Length>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
+        /// <param name="result">The parsed <see cref="Length"/></param>
+        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Length result)
+        {
+            return QuantityParser.TryParse<LengthUnit, Length>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Length"/></param>
+        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Length result)
+        {
+            return QuantityParser.TryParse<LengthUnit, Length>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Length"/></param>
+        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Length result)
+        {
+            return QuantityParser.TryParse<LengthUnit, Length>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Length"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Length"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Length"/></param>
+        /// <returns>True if an instance of <see cref="Length"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Length result)
+        {
+            return QuantityParser.TryParse<LengthUnit, Length>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Length"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
+        public static Length ReadFrom(XmlReader reader)
+        {
+            var v = default(Length);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
+        public static Length From(double value, LengthUnit unit)
+        {
+            return new Length(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="metres">The value in <see cref="Gu.Units.LengthUnit.Metres"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
+        public static Length FromMetres(double metres)
+        {
+            return new Length(metres);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="inches">The value in in</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
+        public static Length FromInches(double inches)
+        {
+            return new Length(0.0254 * inches);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="miles">The value in mi</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
+        public static Length FromMiles(double miles)
+        {
+            return new Length(1609.344 * miles);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="yards">The value in yd</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
+        public static Length FromYards(double yards)
+        {
+            return new Length(0.9144 * yards);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="nauticalMiles">The value in nmi</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
+        public static Length FromNauticalMiles(double nauticalMiles)
+        {
+            return new Length(1852 * nauticalMiles);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="feet">The value in ft</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
+        public static Length FromFeet(double feet)
+        {
+            return new Length(0.3048 * feet);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="nanometres">The value in nm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
+        public static Length FromNanometres(double nanometres)
+        {
+            return new Length(nanometres / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="micrometres">The value in µm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
+        public static Length FromMicrometres(double micrometres)
+        {
+            return new Length(micrometres / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="millimetres">The value in mm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
+        public static Length FromMillimetres(double millimetres)
+        {
+            return new Length(millimetres / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="centimetres">The value in cm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
+        public static Length FromCentimetres(double centimetres)
+        {
+            return new Length(centimetres / 100);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="decimetres">The value in dm</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
+        public static Length FromDecimetres(double decimetres)
+        {
+            return new Length(decimetres / 10);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Length"/>.
+        /// </summary>
+        /// <param name="kilometres">The value in km</param>
+        /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
+        public static Length FromKilometres(double kilometres)
+        {
+            return new Length(1000 * kilometres);
         }
 
         /// <summary>

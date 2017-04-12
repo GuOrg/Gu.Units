@@ -68,141 +68,6 @@
         public double GramsPerMole => 1000 * this.kilogramsPerMole;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
-        /// <returns>The <see cref="Gu.Units.MolarMass"/> parsed from <paramref name="text"/></returns>
-        public static MolarMass Parse(string text)
-        {
-            return QuantityParser.Parse<MolarMassUnit, MolarMass>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.MolarMass"/> parsed from <paramref name="text"/></returns>
-        public static MolarMass Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<MolarMassUnit, MolarMass>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.MolarMass"/> parsed from <paramref name="text"/></returns>
-        public static MolarMass Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<MolarMassUnit, MolarMass>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.MolarMass"/> parsed from <paramref name="text"/></returns>
-        public static MolarMass Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<MolarMassUnit, MolarMass>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
-        /// <param name="result">The parsed <see cref="MolarMass"/></param>
-        /// <returns>True if an instance of <see cref="MolarMass"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out MolarMass result)
-        {
-            return QuantityParser.TryParse<MolarMassUnit, MolarMass>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="MolarMass"/></param>
-        /// <returns>True if an instance of <see cref="MolarMass"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out MolarMass result)
-        {
-            return QuantityParser.TryParse<MolarMassUnit, MolarMass>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="MolarMass"/></param>
-        /// <returns>True if an instance of <see cref="MolarMass"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out MolarMass result)
-        {
-            return QuantityParser.TryParse<MolarMassUnit, MolarMass>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="MolarMass"/></param>
-        /// <returns>True if an instance of <see cref="MolarMass"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out MolarMass result)
-        {
-            return QuantityParser.TryParse<MolarMassUnit, MolarMass>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.MolarMass"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.MolarMass"/></returns>
-        public static MolarMass ReadFrom(XmlReader reader)
-        {
-            var v = default(MolarMass);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.MolarMass"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.MolarMass"/></returns>
-        public static MolarMass From(double value, MolarMassUnit unit)
-        {
-            return new MolarMass(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.MolarMass"/>.
-        /// </summary>
-        /// <param name="kilogramsPerMole">The value in <see cref="Gu.Units.MolarMassUnit.KilogramsPerMole"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.MolarMass"/></returns>
-        public static MolarMass FromKilogramsPerMole(double kilogramsPerMole)
-        {
-            return new MolarMass(kilogramsPerMole);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.MolarMass"/>.
-        /// </summary>
-        /// <param name="gramsPerMole">The value in g/mol</param>
-        /// <returns>An instance of <see cref="Gu.Units.MolarMass"/></returns>
-        public static MolarMass FromGramsPerMole(double gramsPerMole)
-        {
-            return new MolarMass(gramsPerMole / 1000);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -394,6 +259,141 @@
         public static MolarMass operator +(MolarMass molarMass)
         {
             return molarMass;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
+        /// <returns>The <see cref="Gu.Units.MolarMass"/> parsed from <paramref name="text"/></returns>
+        public static MolarMass Parse(string text)
+        {
+            return QuantityParser.Parse<MolarMassUnit, MolarMass>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.MolarMass"/> parsed from <paramref name="text"/></returns>
+        public static MolarMass Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<MolarMassUnit, MolarMass>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.MolarMass"/> parsed from <paramref name="text"/></returns>
+        public static MolarMass Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<MolarMassUnit, MolarMass>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.MolarMass"/> parsed from <paramref name="text"/></returns>
+        public static MolarMass Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<MolarMassUnit, MolarMass>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
+        /// <param name="result">The parsed <see cref="MolarMass"/></param>
+        /// <returns>True if an instance of <see cref="MolarMass"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out MolarMass result)
+        {
+            return QuantityParser.TryParse<MolarMassUnit, MolarMass>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="MolarMass"/></param>
+        /// <returns>True if an instance of <see cref="MolarMass"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out MolarMass result)
+        {
+            return QuantityParser.TryParse<MolarMassUnit, MolarMass>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="MolarMass"/></param>
+        /// <returns>True if an instance of <see cref="MolarMass"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out MolarMass result)
+        {
+            return QuantityParser.TryParse<MolarMassUnit, MolarMass>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.MolarMass"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.MolarMass"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="MolarMass"/></param>
+        /// <returns>True if an instance of <see cref="MolarMass"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out MolarMass result)
+        {
+            return QuantityParser.TryParse<MolarMassUnit, MolarMass>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.MolarMass"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.MolarMass"/></returns>
+        public static MolarMass ReadFrom(XmlReader reader)
+        {
+            var v = default(MolarMass);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.MolarMass"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.MolarMass"/></returns>
+        public static MolarMass From(double value, MolarMassUnit unit)
+        {
+            return new MolarMass(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.MolarMass"/>.
+        /// </summary>
+        /// <param name="kilogramsPerMole">The value in <see cref="Gu.Units.MolarMassUnit.KilogramsPerMole"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.MolarMass"/></returns>
+        public static MolarMass FromKilogramsPerMole(double kilogramsPerMole)
+        {
+            return new MolarMass(kilogramsPerMole);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.MolarMass"/>.
+        /// </summary>
+        /// <param name="gramsPerMole">The value in g/mol</param>
+        /// <returns>An instance of <see cref="Gu.Units.MolarMass"/></returns>
+        public static MolarMass FromGramsPerMole(double gramsPerMole)
+        {
+            return new MolarMass(gramsPerMole / 1000);
         }
 
         /// <summary>

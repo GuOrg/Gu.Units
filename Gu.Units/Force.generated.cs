@@ -93,191 +93,6 @@
         public double Giganewtons => this.newtons / 1000000000;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
-        /// <returns>The <see cref="Gu.Units.Force"/> parsed from <paramref name="text"/></returns>
-        public static Force Parse(string text)
-        {
-            return QuantityParser.Parse<ForceUnit, Force>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Force"/> parsed from <paramref name="text"/></returns>
-        public static Force Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<ForceUnit, Force>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Force"/> parsed from <paramref name="text"/></returns>
-        public static Force Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<ForceUnit, Force>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Force"/> parsed from <paramref name="text"/></returns>
-        public static Force Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<ForceUnit, Force>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
-        /// <param name="result">The parsed <see cref="Force"/></param>
-        /// <returns>True if an instance of <see cref="Force"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Force result)
-        {
-            return QuantityParser.TryParse<ForceUnit, Force>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Force"/></param>
-        /// <returns>True if an instance of <see cref="Force"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Force result)
-        {
-            return QuantityParser.TryParse<ForceUnit, Force>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Force"/></param>
-        /// <returns>True if an instance of <see cref="Force"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Force result)
-        {
-            return QuantityParser.TryParse<ForceUnit, Force>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Force"/></param>
-        /// <returns>True if an instance of <see cref="Force"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Force result)
-        {
-            return QuantityParser.TryParse<ForceUnit, Force>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Force"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
-        public static Force ReadFrom(XmlReader reader)
-        {
-            var v = default(Force);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
-        public static Force From(double value, ForceUnit unit)
-        {
-            return new Force(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
-        /// </summary>
-        /// <param name="newtons">The value in <see cref="Gu.Units.ForceUnit.Newtons"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
-        public static Force FromNewtons(double newtons)
-        {
-            return new Force(newtons);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
-        /// </summary>
-        /// <param name="nanonewtons">The value in nN</param>
-        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
-        public static Force FromNanonewtons(double nanonewtons)
-        {
-            return new Force(nanonewtons / 1000000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
-        /// </summary>
-        /// <param name="micronewtons">The value in µN</param>
-        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
-        public static Force FromMicronewtons(double micronewtons)
-        {
-            return new Force(micronewtons / 1000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
-        /// </summary>
-        /// <param name="millinewtons">The value in mN</param>
-        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
-        public static Force FromMillinewtons(double millinewtons)
-        {
-            return new Force(millinewtons / 1000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
-        /// </summary>
-        /// <param name="kilonewtons">The value in kN</param>
-        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
-        public static Force FromKilonewtons(double kilonewtons)
-        {
-            return new Force(1000 * kilonewtons);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
-        /// </summary>
-        /// <param name="meganewtons">The value in MN</param>
-        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
-        public static Force FromMeganewtons(double meganewtons)
-        {
-            return new Force(1000000 * meganewtons);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
-        /// </summary>
-        /// <param name="giganewtons">The value in GN</param>
-        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
-        public static Force FromGiganewtons(double giganewtons)
-        {
-            return new Force(1000000000 * giganewtons);
-        }
-
-        /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -656,6 +471,191 @@
         public static Force operator +(Force force)
         {
             return force;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <returns>The <see cref="Gu.Units.Force"/> parsed from <paramref name="text"/></returns>
+        public static Force Parse(string text)
+        {
+            return QuantityParser.Parse<ForceUnit, Force>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Force"/> parsed from <paramref name="text"/></returns>
+        public static Force Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<ForceUnit, Force>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Force"/> parsed from <paramref name="text"/></returns>
+        public static Force Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<ForceUnit, Force>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Force"/> parsed from <paramref name="text"/></returns>
+        public static Force Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<ForceUnit, Force>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <param name="result">The parsed <see cref="Force"/></param>
+        /// <returns>True if an instance of <see cref="Force"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Force result)
+        {
+            return QuantityParser.TryParse<ForceUnit, Force>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Force"/></param>
+        /// <returns>True if an instance of <see cref="Force"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Force result)
+        {
+            return QuantityParser.TryParse<ForceUnit, Force>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Force"/></param>
+        /// <returns>True if an instance of <see cref="Force"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Force result)
+        {
+            return QuantityParser.TryParse<ForceUnit, Force>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Force"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Force"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Force"/></param>
+        /// <returns>True if an instance of <see cref="Force"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Force result)
+        {
+            return QuantityParser.TryParse<ForceUnit, Force>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Force"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
+        public static Force ReadFrom(XmlReader reader)
+        {
+            var v = default(Force);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
+        public static Force From(double value, ForceUnit unit)
+        {
+            return new Force(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
+        /// </summary>
+        /// <param name="newtons">The value in <see cref="Gu.Units.ForceUnit.Newtons"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
+        public static Force FromNewtons(double newtons)
+        {
+            return new Force(newtons);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
+        /// </summary>
+        /// <param name="nanonewtons">The value in nN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
+        public static Force FromNanonewtons(double nanonewtons)
+        {
+            return new Force(nanonewtons / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
+        /// </summary>
+        /// <param name="micronewtons">The value in µN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
+        public static Force FromMicronewtons(double micronewtons)
+        {
+            return new Force(micronewtons / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
+        /// </summary>
+        /// <param name="millinewtons">The value in mN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
+        public static Force FromMillinewtons(double millinewtons)
+        {
+            return new Force(millinewtons / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
+        /// </summary>
+        /// <param name="kilonewtons">The value in kN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
+        public static Force FromKilonewtons(double kilonewtons)
+        {
+            return new Force(1000 * kilonewtons);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
+        /// </summary>
+        /// <param name="meganewtons">The value in MN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
+        public static Force FromMeganewtons(double meganewtons)
+        {
+            return new Force(1000000 * meganewtons);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Force"/>.
+        /// </summary>
+        /// <param name="giganewtons">The value in GN</param>
+        /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
+        public static Force FromGiganewtons(double giganewtons)
+        {
+            return new Force(1000000000 * giganewtons);
         }
 
         /// <summary>

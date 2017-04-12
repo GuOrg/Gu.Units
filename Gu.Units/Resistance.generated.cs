@@ -83,171 +83,6 @@
         public double Megaohms => this.ohms / 1000000;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <returns>The <see cref="Gu.Units.Resistance"/> parsed from <paramref name="text"/></returns>
-        public static Resistance Parse(string text)
-        {
-            return QuantityParser.Parse<ResistanceUnit, Resistance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Resistance"/> parsed from <paramref name="text"/></returns>
-        public static Resistance Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<ResistanceUnit, Resistance>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Resistance"/> parsed from <paramref name="text"/></returns>
-        public static Resistance Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<ResistanceUnit, Resistance>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Resistance"/> parsed from <paramref name="text"/></returns>
-        public static Resistance Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<ResistanceUnit, Resistance>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <param name="result">The parsed <see cref="Resistance"/></param>
-        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Resistance result)
-        {
-            return QuantityParser.TryParse<ResistanceUnit, Resistance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Resistance"/></param>
-        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Resistance result)
-        {
-            return QuantityParser.TryParse<ResistanceUnit, Resistance>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Resistance"/></param>
-        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Resistance result)
-        {
-            return QuantityParser.TryParse<ResistanceUnit, Resistance>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Resistance"/></param>
-        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Resistance result)
-        {
-            return QuantityParser.TryParse<ResistanceUnit, Resistance>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Resistance"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
-        public static Resistance ReadFrom(XmlReader reader)
-        {
-            var v = default(Resistance);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
-        public static Resistance From(double value, ResistanceUnit unit)
-        {
-            return new Resistance(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
-        /// </summary>
-        /// <param name="ohms">The value in <see cref="Gu.Units.ResistanceUnit.Ohms"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
-        public static Resistance FromOhms(double ohms)
-        {
-            return new Resistance(ohms);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
-        /// </summary>
-        /// <param name="microohms">The value in µΩ</param>
-        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
-        public static Resistance FromMicroohms(double microohms)
-        {
-            return new Resistance(microohms / 1000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
-        /// </summary>
-        /// <param name="milliohms">The value in mΩ</param>
-        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
-        public static Resistance FromMilliohms(double milliohms)
-        {
-            return new Resistance(milliohms / 1000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
-        /// </summary>
-        /// <param name="kiloohms">The value in kΩ</param>
-        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
-        public static Resistance FromKiloohms(double kiloohms)
-        {
-            return new Resistance(1000 * kiloohms);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
-        /// </summary>
-        /// <param name="megaohms">The value in MΩ</param>
-        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
-        public static Resistance FromMegaohms(double megaohms)
-        {
-            return new Resistance(1000000 * megaohms);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -494,6 +329,171 @@
         public static Resistance operator +(Resistance resistance)
         {
             return resistance;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
+        /// <returns>The <see cref="Gu.Units.Resistance"/> parsed from <paramref name="text"/></returns>
+        public static Resistance Parse(string text)
+        {
+            return QuantityParser.Parse<ResistanceUnit, Resistance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Resistance"/> parsed from <paramref name="text"/></returns>
+        public static Resistance Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<ResistanceUnit, Resistance>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Resistance"/> parsed from <paramref name="text"/></returns>
+        public static Resistance Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<ResistanceUnit, Resistance>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Resistance"/> parsed from <paramref name="text"/></returns>
+        public static Resistance Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<ResistanceUnit, Resistance>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
+        /// <param name="result">The parsed <see cref="Resistance"/></param>
+        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Resistance result)
+        {
+            return QuantityParser.TryParse<ResistanceUnit, Resistance>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Resistance"/></param>
+        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Resistance result)
+        {
+            return QuantityParser.TryParse<ResistanceUnit, Resistance>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Resistance"/></param>
+        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Resistance result)
+        {
+            return QuantityParser.TryParse<ResistanceUnit, Resistance>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Resistance"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Resistance"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Resistance"/></param>
+        /// <returns>True if an instance of <see cref="Resistance"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Resistance result)
+        {
+            return QuantityParser.TryParse<ResistanceUnit, Resistance>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Resistance"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
+        public static Resistance ReadFrom(XmlReader reader)
+        {
+            var v = default(Resistance);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
+        public static Resistance From(double value, ResistanceUnit unit)
+        {
+            return new Resistance(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
+        /// </summary>
+        /// <param name="ohms">The value in <see cref="Gu.Units.ResistanceUnit.Ohms"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
+        public static Resistance FromOhms(double ohms)
+        {
+            return new Resistance(ohms);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
+        /// </summary>
+        /// <param name="microohms">The value in µΩ</param>
+        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
+        public static Resistance FromMicroohms(double microohms)
+        {
+            return new Resistance(microohms / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
+        /// </summary>
+        /// <param name="milliohms">The value in mΩ</param>
+        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
+        public static Resistance FromMilliohms(double milliohms)
+        {
+            return new Resistance(milliohms / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
+        /// </summary>
+        /// <param name="kiloohms">The value in kΩ</param>
+        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
+        public static Resistance FromKiloohms(double kiloohms)
+        {
+            return new Resistance(1000 * kiloohms);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
+        /// </summary>
+        /// <param name="megaohms">The value in MΩ</param>
+        /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
+        public static Resistance FromMegaohms(double megaohms)
+        {
+            return new Resistance(1000000 * megaohms);
         }
 
         /// <summary>

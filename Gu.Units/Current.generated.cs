@@ -93,191 +93,6 @@
         public double Gigaamperes => this.amperes / 1000000000;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
-        /// <returns>The <see cref="Gu.Units.Current"/> parsed from <paramref name="text"/></returns>
-        public static Current Parse(string text)
-        {
-            return QuantityParser.Parse<CurrentUnit, Current>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Current"/> parsed from <paramref name="text"/></returns>
-        public static Current Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<CurrentUnit, Current>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Current"/> parsed from <paramref name="text"/></returns>
-        public static Current Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<CurrentUnit, Current>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Current"/> parsed from <paramref name="text"/></returns>
-        public static Current Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<CurrentUnit, Current>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
-        /// <param name="result">The parsed <see cref="Current"/></param>
-        /// <returns>True if an instance of <see cref="Current"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Current result)
-        {
-            return QuantityParser.TryParse<CurrentUnit, Current>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Current"/></param>
-        /// <returns>True if an instance of <see cref="Current"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Current result)
-        {
-            return QuantityParser.TryParse<CurrentUnit, Current>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Current"/></param>
-        /// <returns>True if an instance of <see cref="Current"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Current result)
-        {
-            return QuantityParser.TryParse<CurrentUnit, Current>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Current"/></param>
-        /// <returns>True if an instance of <see cref="Current"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Current result)
-        {
-            return QuantityParser.TryParse<CurrentUnit, Current>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Current"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
-        public static Current ReadFrom(XmlReader reader)
-        {
-            var v = default(Current);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
-        public static Current From(double value, CurrentUnit unit)
-        {
-            return new Current(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
-        /// </summary>
-        /// <param name="amperes">The value in <see cref="Gu.Units.CurrentUnit.Amperes"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
-        public static Current FromAmperes(double amperes)
-        {
-            return new Current(amperes);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
-        /// </summary>
-        /// <param name="milliamperes">The value in mA</param>
-        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
-        public static Current FromMilliamperes(double milliamperes)
-        {
-            return new Current(milliamperes / 1000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
-        /// </summary>
-        /// <param name="kiloamperes">The value in kA</param>
-        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
-        public static Current FromKiloamperes(double kiloamperes)
-        {
-            return new Current(1000 * kiloamperes);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
-        /// </summary>
-        /// <param name="megaamperes">The value in MA</param>
-        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
-        public static Current FromMegaamperes(double megaamperes)
-        {
-            return new Current(1000000 * megaamperes);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
-        /// </summary>
-        /// <param name="microamperes">The value in µA</param>
-        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
-        public static Current FromMicroamperes(double microamperes)
-        {
-            return new Current(microamperes / 1000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
-        /// </summary>
-        /// <param name="nanoamperes">The value in nA</param>
-        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
-        public static Current FromNanoamperes(double nanoamperes)
-        {
-            return new Current(nanoamperes / 1000000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
-        /// </summary>
-        /// <param name="gigaamperes">The value in GA</param>
-        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
-        public static Current FromGigaamperes(double gigaamperes)
-        {
-            return new Current(1000000000 * gigaamperes);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -557,6 +372,191 @@
         public static Current operator +(Current current)
         {
             return current;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
+        /// <returns>The <see cref="Gu.Units.Current"/> parsed from <paramref name="text"/></returns>
+        public static Current Parse(string text)
+        {
+            return QuantityParser.Parse<CurrentUnit, Current>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Current"/> parsed from <paramref name="text"/></returns>
+        public static Current Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<CurrentUnit, Current>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Current"/> parsed from <paramref name="text"/></returns>
+        public static Current Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<CurrentUnit, Current>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Current"/> parsed from <paramref name="text"/></returns>
+        public static Current Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<CurrentUnit, Current>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
+        /// <param name="result">The parsed <see cref="Current"/></param>
+        /// <returns>True if an instance of <see cref="Current"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Current result)
+        {
+            return QuantityParser.TryParse<CurrentUnit, Current>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Current"/></param>
+        /// <returns>True if an instance of <see cref="Current"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Current result)
+        {
+            return QuantityParser.TryParse<CurrentUnit, Current>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Current"/></param>
+        /// <returns>True if an instance of <see cref="Current"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Current result)
+        {
+            return QuantityParser.TryParse<CurrentUnit, Current>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Current"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Current"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Current"/></param>
+        /// <returns>True if an instance of <see cref="Current"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Current result)
+        {
+            return QuantityParser.TryParse<CurrentUnit, Current>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Current"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
+        public static Current ReadFrom(XmlReader reader)
+        {
+            var v = default(Current);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
+        public static Current From(double value, CurrentUnit unit)
+        {
+            return new Current(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
+        /// </summary>
+        /// <param name="amperes">The value in <see cref="Gu.Units.CurrentUnit.Amperes"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
+        public static Current FromAmperes(double amperes)
+        {
+            return new Current(amperes);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
+        /// </summary>
+        /// <param name="milliamperes">The value in mA</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
+        public static Current FromMilliamperes(double milliamperes)
+        {
+            return new Current(milliamperes / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
+        /// </summary>
+        /// <param name="kiloamperes">The value in kA</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
+        public static Current FromKiloamperes(double kiloamperes)
+        {
+            return new Current(1000 * kiloamperes);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
+        /// </summary>
+        /// <param name="megaamperes">The value in MA</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
+        public static Current FromMegaamperes(double megaamperes)
+        {
+            return new Current(1000000 * megaamperes);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
+        /// </summary>
+        /// <param name="microamperes">The value in µA</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
+        public static Current FromMicroamperes(double microamperes)
+        {
+            return new Current(microamperes / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
+        /// </summary>
+        /// <param name="nanoamperes">The value in nA</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
+        public static Current FromNanoamperes(double nanoamperes)
+        {
+            return new Current(nanoamperes / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Current"/>.
+        /// </summary>
+        /// <param name="gigaamperes">The value in GA</param>
+        /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
+        public static Current FromGigaamperes(double gigaamperes)
+        {
+            return new Current(1000000000 * gigaamperes);
         }
 
         /// <summary>

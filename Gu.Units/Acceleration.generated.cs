@@ -98,201 +98,6 @@
         public double MillimetresPerMinuteSquared => 3600000 * this.metresPerSecondSquared;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
-        /// <returns>The <see cref="Gu.Units.Acceleration"/> parsed from <paramref name="text"/></returns>
-        public static Acceleration Parse(string text)
-        {
-            return QuantityParser.Parse<AccelerationUnit, Acceleration>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Acceleration"/> parsed from <paramref name="text"/></returns>
-        public static Acceleration Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<AccelerationUnit, Acceleration>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Acceleration"/> parsed from <paramref name="text"/></returns>
-        public static Acceleration Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<AccelerationUnit, Acceleration>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Acceleration"/> parsed from <paramref name="text"/></returns>
-        public static Acceleration Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<AccelerationUnit, Acceleration>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
-        /// <param name="result">The parsed <see cref="Acceleration"/></param>
-        /// <returns>True if an instance of <see cref="Acceleration"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Acceleration result)
-        {
-            return QuantityParser.TryParse<AccelerationUnit, Acceleration>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Acceleration"/></param>
-        /// <returns>True if an instance of <see cref="Acceleration"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Acceleration result)
-        {
-            return QuantityParser.TryParse<AccelerationUnit, Acceleration>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Acceleration"/></param>
-        /// <returns>True if an instance of <see cref="Acceleration"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Acceleration result)
-        {
-            return QuantityParser.TryParse<AccelerationUnit, Acceleration>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Acceleration"/></param>
-        /// <returns>True if an instance of <see cref="Acceleration"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Acceleration result)
-        {
-            return QuantityParser.TryParse<AccelerationUnit, Acceleration>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Acceleration"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
-        public static Acceleration ReadFrom(XmlReader reader)
-        {
-            var v = default(Acceleration);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
-        public static Acceleration From(double value, AccelerationUnit unit)
-        {
-            return new Acceleration(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
-        /// </summary>
-        /// <param name="metresPerSecondSquared">The value in <see cref="Gu.Units.AccelerationUnit.MetresPerSecondSquared"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
-        public static Acceleration FromMetresPerSecondSquared(double metresPerSecondSquared)
-        {
-            return new Acceleration(metresPerSecondSquared);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
-        /// </summary>
-        /// <param name="centimetresPerSecondSquared">The value in cm/s²</param>
-        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
-        public static Acceleration FromCentimetresPerSecondSquared(double centimetresPerSecondSquared)
-        {
-            return new Acceleration(centimetresPerSecondSquared / 100);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
-        /// </summary>
-        /// <param name="millimetresPerSecondSquared">The value in mm/s²</param>
-        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
-        public static Acceleration FromMillimetresPerSecondSquared(double millimetresPerSecondSquared)
-        {
-            return new Acceleration(millimetresPerSecondSquared / 1000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
-        /// </summary>
-        /// <param name="millimetresPerHourSquared">The value in mm/h²</param>
-        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
-        public static Acceleration FromMillimetresPerHourSquared(double millimetresPerHourSquared)
-        {
-            return new Acceleration(millimetresPerHourSquared / 12960000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
-        /// </summary>
-        /// <param name="centimetresPerHourSquared">The value in cm/h²</param>
-        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
-        public static Acceleration FromCentimetresPerHourSquared(double centimetresPerHourSquared)
-        {
-            return new Acceleration(centimetresPerHourSquared / 1296000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
-        /// </summary>
-        /// <param name="metresPerHourSquared">The value in m/h²</param>
-        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
-        public static Acceleration FromMetresPerHourSquared(double metresPerHourSquared)
-        {
-            return new Acceleration(metresPerHourSquared / 12960000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
-        /// </summary>
-        /// <param name="metresPerMinuteSquared">The value in m/min²</param>
-        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
-        public static Acceleration FromMetresPerMinuteSquared(double metresPerMinuteSquared)
-        {
-            return new Acceleration(metresPerMinuteSquared / 3600);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
-        /// </summary>
-        /// <param name="millimetresPerMinuteSquared">The value in mm/min²</param>
-        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
-        public static Acceleration FromMillimetresPerMinuteSquared(double millimetresPerMinuteSquared)
-        {
-            return new Acceleration(millimetresPerMinuteSquared / 3600000);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -594,6 +399,201 @@
         public static Acceleration operator +(Acceleration acceleration)
         {
             return acceleration;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
+        /// <returns>The <see cref="Gu.Units.Acceleration"/> parsed from <paramref name="text"/></returns>
+        public static Acceleration Parse(string text)
+        {
+            return QuantityParser.Parse<AccelerationUnit, Acceleration>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Acceleration"/> parsed from <paramref name="text"/></returns>
+        public static Acceleration Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<AccelerationUnit, Acceleration>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Acceleration"/> parsed from <paramref name="text"/></returns>
+        public static Acceleration Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<AccelerationUnit, Acceleration>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Acceleration"/> parsed from <paramref name="text"/></returns>
+        public static Acceleration Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<AccelerationUnit, Acceleration>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
+        /// <param name="result">The parsed <see cref="Acceleration"/></param>
+        /// <returns>True if an instance of <see cref="Acceleration"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Acceleration result)
+        {
+            return QuantityParser.TryParse<AccelerationUnit, Acceleration>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Acceleration"/></param>
+        /// <returns>True if an instance of <see cref="Acceleration"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Acceleration result)
+        {
+            return QuantityParser.TryParse<AccelerationUnit, Acceleration>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Acceleration"/></param>
+        /// <returns>True if an instance of <see cref="Acceleration"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Acceleration result)
+        {
+            return QuantityParser.TryParse<AccelerationUnit, Acceleration>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Acceleration"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Acceleration"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Acceleration"/></param>
+        /// <returns>True if an instance of <see cref="Acceleration"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Acceleration result)
+        {
+            return QuantityParser.TryParse<AccelerationUnit, Acceleration>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Acceleration"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
+        public static Acceleration ReadFrom(XmlReader reader)
+        {
+            var v = default(Acceleration);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
+        public static Acceleration From(double value, AccelerationUnit unit)
+        {
+            return new Acceleration(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
+        /// </summary>
+        /// <param name="metresPerSecondSquared">The value in <see cref="Gu.Units.AccelerationUnit.MetresPerSecondSquared"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
+        public static Acceleration FromMetresPerSecondSquared(double metresPerSecondSquared)
+        {
+            return new Acceleration(metresPerSecondSquared);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
+        /// </summary>
+        /// <param name="centimetresPerSecondSquared">The value in cm/s²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
+        public static Acceleration FromCentimetresPerSecondSquared(double centimetresPerSecondSquared)
+        {
+            return new Acceleration(centimetresPerSecondSquared / 100);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
+        /// </summary>
+        /// <param name="millimetresPerSecondSquared">The value in mm/s²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
+        public static Acceleration FromMillimetresPerSecondSquared(double millimetresPerSecondSquared)
+        {
+            return new Acceleration(millimetresPerSecondSquared / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
+        /// </summary>
+        /// <param name="millimetresPerHourSquared">The value in mm/h²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
+        public static Acceleration FromMillimetresPerHourSquared(double millimetresPerHourSquared)
+        {
+            return new Acceleration(millimetresPerHourSquared / 12960000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
+        /// </summary>
+        /// <param name="centimetresPerHourSquared">The value in cm/h²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
+        public static Acceleration FromCentimetresPerHourSquared(double centimetresPerHourSquared)
+        {
+            return new Acceleration(centimetresPerHourSquared / 1296000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
+        /// </summary>
+        /// <param name="metresPerHourSquared">The value in m/h²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
+        public static Acceleration FromMetresPerHourSquared(double metresPerHourSquared)
+        {
+            return new Acceleration(metresPerHourSquared / 12960000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
+        /// </summary>
+        /// <param name="metresPerMinuteSquared">The value in m/min²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
+        public static Acceleration FromMetresPerMinuteSquared(double metresPerMinuteSquared)
+        {
+            return new Acceleration(metresPerMinuteSquared / 3600);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Acceleration"/>.
+        /// </summary>
+        /// <param name="millimetresPerMinuteSquared">The value in mm/min²</param>
+        /// <returns>An instance of <see cref="Gu.Units.Acceleration"/></returns>
+        public static Acceleration FromMillimetresPerMinuteSquared(double millimetresPerMinuteSquared)
+        {
+            return new Acceleration(millimetresPerMinuteSquared / 3600000);
         }
 
         /// <summary>

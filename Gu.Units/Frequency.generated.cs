@@ -83,171 +83,6 @@
         public double Gigahertz => this.hertz / 1000000000;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <returns>The <see cref="Gu.Units.Frequency"/> parsed from <paramref name="text"/></returns>
-        public static Frequency Parse(string text)
-        {
-            return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Frequency"/> parsed from <paramref name="text"/></returns>
-        public static Frequency Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Frequency"/> parsed from <paramref name="text"/></returns>
-        public static Frequency Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Frequency"/> parsed from <paramref name="text"/></returns>
-        public static Frequency Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <param name="result">The parsed <see cref="Frequency"/></param>
-        /// <returns>True if an instance of <see cref="Frequency"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Frequency result)
-        {
-            return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Frequency"/></param>
-        /// <returns>True if an instance of <see cref="Frequency"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Frequency result)
-        {
-            return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Frequency"/></param>
-        /// <returns>True if an instance of <see cref="Frequency"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Frequency result)
-        {
-            return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Frequency"/></param>
-        /// <returns>True if an instance of <see cref="Frequency"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Frequency result)
-        {
-            return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Frequency"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
-        public static Frequency ReadFrom(XmlReader reader)
-        {
-            var v = default(Frequency);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
-        public static Frequency From(double value, FrequencyUnit unit)
-        {
-            return new Frequency(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
-        /// </summary>
-        /// <param name="hertz">The value in <see cref="Gu.Units.FrequencyUnit.Hertz"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
-        public static Frequency FromHertz(double hertz)
-        {
-            return new Frequency(hertz);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
-        /// </summary>
-        /// <param name="millihertz">The value in mHz</param>
-        /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
-        public static Frequency FromMillihertz(double millihertz)
-        {
-            return new Frequency(millihertz / 1000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
-        /// </summary>
-        /// <param name="kilohertz">The value in kHz</param>
-        /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
-        public static Frequency FromKilohertz(double kilohertz)
-        {
-            return new Frequency(1000 * kilohertz);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
-        /// </summary>
-        /// <param name="megahertz">The value in MHz</param>
-        /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
-        public static Frequency FromMegahertz(double megahertz)
-        {
-            return new Frequency(1000000 * megahertz);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
-        /// </summary>
-        /// <param name="gigahertz">The value in GHz</param>
-        /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
-        public static Frequency FromGigahertz(double gigahertz)
-        {
-            return new Frequency(1000000000 * gigahertz);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -648,6 +483,171 @@
         public static Frequency operator +(Frequency frequency)
         {
             return frequency;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <returns>The <see cref="Gu.Units.Frequency"/> parsed from <paramref name="text"/></returns>
+        public static Frequency Parse(string text)
+        {
+            return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Frequency"/> parsed from <paramref name="text"/></returns>
+        public static Frequency Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Frequency"/> parsed from <paramref name="text"/></returns>
+        public static Frequency Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Frequency"/> parsed from <paramref name="text"/></returns>
+        public static Frequency Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<FrequencyUnit, Frequency>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <param name="result">The parsed <see cref="Frequency"/></param>
+        /// <returns>True if an instance of <see cref="Frequency"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Frequency result)
+        {
+            return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Frequency"/></param>
+        /// <returns>True if an instance of <see cref="Frequency"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Frequency result)
+        {
+            return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Frequency"/></param>
+        /// <returns>True if an instance of <see cref="Frequency"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Frequency result)
+        {
+            return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Frequency"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Frequency"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Frequency"/></param>
+        /// <returns>True if an instance of <see cref="Frequency"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Frequency result)
+        {
+            return QuantityParser.TryParse<FrequencyUnit, Frequency>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Frequency"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
+        public static Frequency ReadFrom(XmlReader reader)
+        {
+            var v = default(Frequency);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
+        public static Frequency From(double value, FrequencyUnit unit)
+        {
+            return new Frequency(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
+        /// </summary>
+        /// <param name="hertz">The value in <see cref="Gu.Units.FrequencyUnit.Hertz"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
+        public static Frequency FromHertz(double hertz)
+        {
+            return new Frequency(hertz);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
+        /// </summary>
+        /// <param name="millihertz">The value in mHz</param>
+        /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
+        public static Frequency FromMillihertz(double millihertz)
+        {
+            return new Frequency(millihertz / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
+        /// </summary>
+        /// <param name="kilohertz">The value in kHz</param>
+        /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
+        public static Frequency FromKilohertz(double kilohertz)
+        {
+            return new Frequency(1000 * kilohertz);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
+        /// </summary>
+        /// <param name="megahertz">The value in MHz</param>
+        /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
+        public static Frequency FromMegahertz(double megahertz)
+        {
+            return new Frequency(1000000 * megahertz);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Frequency"/>.
+        /// </summary>
+        /// <param name="gigahertz">The value in GHz</param>
+        /// <returns>An instance of <see cref="Gu.Units.Frequency"/></returns>
+        public static Frequency FromGigahertz(double gigahertz)
+        {
+            return new Frequency(1000000000 * gigahertz);
         }
 
         /// <summary>

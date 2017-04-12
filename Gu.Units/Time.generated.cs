@@ -93,191 +93,6 @@
         public double Milliseconds => 1000 * this.seconds;
 
         /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
-        /// <returns>The <see cref="Gu.Units.Time"/> parsed from <paramref name="text"/></returns>
-        public static Time Parse(string text)
-        {
-            return QuantityParser.Parse<TimeUnit, Time>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Time"/> parsed from <paramref name="text"/></returns>
-        public static Time Parse(string text, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<TimeUnit, Time>(text, From, NumberStyles.Float, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Time"/> parsed from <paramref name="text"/></returns>
-        public static Time Parse(string text, NumberStyles styles)
-        {
-            return QuantityParser.Parse<TimeUnit, Time>(text, From, styles, CultureInfo.CurrentCulture);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <returns>The <see cref="Gu.Units.Time"/> parsed from <paramref name="text"/></returns>
-        public static Time Parse(string text, NumberStyles styles, IFormatProvider provider)
-        {
-            return QuantityParser.Parse<TimeUnit, Time>(text, From, styles, provider);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
-        /// <param name="result">The parsed <see cref="Time"/></param>
-        /// <returns>True if an instance of <see cref="Time"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, out Time result)
-        {
-            return QuantityParser.TryParse<TimeUnit, Time>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Time"/></param>
-        /// <returns>True if an instance of <see cref="Time"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, IFormatProvider provider, out Time result)
-        {
-            return QuantityParser.TryParse<TimeUnit, Time>(text, From, NumberStyles.Float, provider, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="result">The parsed <see cref="Time"/></param>
-        /// <returns>True if an instance of <see cref="Time"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, out Time result)
-        {
-            return QuantityParser.TryParse<TimeUnit, Time>(text, From, styles, CultureInfo.CurrentCulture, out result);
-        }
-
-        /// <summary>
-        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
-        /// </summary>
-        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
-        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
-        /// <param name="provider">Specifies the formatProvider to be used.</param>
-        /// <param name="result">The parsed <see cref="Time"/></param>
-        /// <returns>True if an instance of <see cref="Time"/> could be parsed from <paramref name="text"/></returns>
-        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Time result)
-        {
-            return QuantityParser.TryParse<TimeUnit, Time>(text, From, styles, provider, out result);
-        }
-
-        /// <summary>
-        /// Reads an instance of <see cref="Gu.Units.Time"/> from the <paramref name="reader"/>
-        /// </summary>
-        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
-        public static Time ReadFrom(XmlReader reader)
-        {
-            var v = default(Time);
-            v.ReadXml(reader);
-            return v;
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
-        /// </summary>
-        /// <param name="value">The scalar value.</param>
-        /// <param name="unit">The unit.</param>
-        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
-        public static Time From(double value, TimeUnit unit)
-        {
-            return new Time(unit.ToSiUnit(value));
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
-        /// </summary>
-        /// <param name="seconds">The value in <see cref="Gu.Units.TimeUnit.Seconds"/></param>
-        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
-        public static Time FromSeconds(double seconds)
-        {
-            return new Time(seconds);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
-        /// </summary>
-        /// <param name="hours">The value in h</param>
-        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
-        public static Time FromHours(double hours)
-        {
-            return new Time(3600 * hours);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
-        /// </summary>
-        /// <param name="minutes">The value in min</param>
-        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
-        public static Time FromMinutes(double minutes)
-        {
-            return new Time(60 * minutes);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
-        /// </summary>
-        /// <param name="days">The value in d</param>
-        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
-        public static Time FromDays(double days)
-        {
-            return new Time(86400 * days);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
-        /// </summary>
-        /// <param name="nanoseconds">The value in ns</param>
-        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
-        public static Time FromNanoseconds(double nanoseconds)
-        {
-            return new Time(nanoseconds / 1000000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
-        /// </summary>
-        /// <param name="microseconds">The value in µs</param>
-        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
-        public static Time FromMicroseconds(double microseconds)
-        {
-            return new Time(microseconds / 1000000);
-        }
-
-        /// <summary>
-        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
-        /// </summary>
-        /// <param name="milliseconds">The value in ms</param>
-        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
-        public static Time FromMilliseconds(double milliseconds)
-        {
-            return new Time(milliseconds / 1000);
-        }
-
-        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -722,6 +537,191 @@
         public static Time operator +(Time time)
         {
             return time;
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
+        /// <returns>The <see cref="Gu.Units.Time"/> parsed from <paramref name="text"/></returns>
+        public static Time Parse(string text)
+        {
+            return QuantityParser.Parse<TimeUnit, Time>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Time"/> parsed from <paramref name="text"/></returns>
+        public static Time Parse(string text, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<TimeUnit, Time>(text, From, NumberStyles.Float, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Time"/> parsed from <paramref name="text"/></returns>
+        public static Time Parse(string text, NumberStyles styles)
+        {
+            return QuantityParser.Parse<TimeUnit, Time>(text, From, styles, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <returns>The <see cref="Gu.Units.Time"/> parsed from <paramref name="text"/></returns>
+        public static Time Parse(string text, NumberStyles styles, IFormatProvider provider)
+        {
+            return QuantityParser.Parse<TimeUnit, Time>(text, From, styles, provider);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
+        /// <param name="result">The parsed <see cref="Time"/></param>
+        /// <returns>True if an instance of <see cref="Time"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, out Time result)
+        {
+            return QuantityParser.TryParse<TimeUnit, Time>(text, From, NumberStyles.Float, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Time"/></param>
+        /// <returns>True if an instance of <see cref="Time"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, IFormatProvider provider, out Time result)
+        {
+            return QuantityParser.TryParse<TimeUnit, Time>(text, From, NumberStyles.Float, provider, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="result">The parsed <see cref="Time"/></param>
+        /// <returns>True if an instance of <see cref="Time"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, out Time result)
+        {
+            return QuantityParser.TryParse<TimeUnit, Time>(text, From, styles, CultureInfo.CurrentCulture, out result);
+        }
+
+        /// <summary>
+        /// Creates an instance of <see cref="Gu.Units.Time"/> from its string representation
+        /// </summary>
+        /// <param name="text">The string representation of the <see cref="Gu.Units.Time"/></param>
+        /// <param name="styles">Specifies the <see cref="NumberStyles"/> to be used.</param>
+        /// <param name="provider">Specifies the formatProvider to be used.</param>
+        /// <param name="result">The parsed <see cref="Time"/></param>
+        /// <returns>True if an instance of <see cref="Time"/> could be parsed from <paramref name="text"/></returns>
+        public static bool TryParse(string text, NumberStyles styles, IFormatProvider provider, out Time result)
+        {
+            return QuantityParser.TryParse<TimeUnit, Time>(text, From, styles, provider, out result);
+        }
+
+        /// <summary>
+        /// Reads an instance of <see cref="Gu.Units.Time"/> from the <paramref name="reader"/>
+        /// </summary>
+        /// <param name="reader">The xml reader positioned at the start of the unit value.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
+        public static Time ReadFrom(XmlReader reader)
+        {
+            var v = default(Time);
+            v.ReadXml(reader);
+            return v;
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="value">The scalar value.</param>
+        /// <param name="unit">The unit.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
+        public static Time From(double value, TimeUnit unit)
+        {
+            return new Time(unit.ToSiUnit(value));
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="seconds">The value in <see cref="Gu.Units.TimeUnit.Seconds"/></param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
+        public static Time FromSeconds(double seconds)
+        {
+            return new Time(seconds);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="hours">The value in h</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
+        public static Time FromHours(double hours)
+        {
+            return new Time(3600 * hours);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="minutes">The value in min</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
+        public static Time FromMinutes(double minutes)
+        {
+            return new Time(60 * minutes);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="days">The value in d</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
+        public static Time FromDays(double days)
+        {
+            return new Time(86400 * days);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="nanoseconds">The value in ns</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
+        public static Time FromNanoseconds(double nanoseconds)
+        {
+            return new Time(nanoseconds / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="microseconds">The value in µs</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
+        public static Time FromMicroseconds(double microseconds)
+        {
+            return new Time(microseconds / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Time"/>.
+        /// </summary>
+        /// <param name="milliseconds">The value in ms</param>
+        /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
+        public static Time FromMilliseconds(double milliseconds)
+        {
+            return new Time(milliseconds / 1000);
         }
 
         /// <summary>
