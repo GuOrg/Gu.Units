@@ -6,7 +6,7 @@
 <#@ import namespace="Gu.Units.Generator" #>
 <# 
 var fileManager = TemplateFileManager.Create(this);
-fileManager.IsAutoIndentEnabled = true;
+fileManager.IsAutoIndentEnabled = false;
 fileManager.CanOverwriteExistingFile = true;
 // init handling for parameter templates
 var template = ParamTextTemplate.Create(this.Host, "Unit.tt");
