@@ -23,8 +23,8 @@
         {
             var settings = MockSettings.Create();
             var conversionVm = PrefixConversionVm.Create(settings.Amperes, settings.Milli);
-            Assert.AreEqual("milliamperes/1000", conversionVm.Conversion.ToSi);
-            Assert.AreEqual("1000*amperes", conversionVm.Conversion.FromSi);
+            Assert.AreEqual("milliamperes / 1000", conversionVm.Conversion.ToSi);
+            Assert.AreEqual("1000 * amperes", conversionVm.Conversion.FromSi);
             Assert.AreEqual("1 mA = 0.001 A", conversionVm.Conversion.SymbolConversion);
             Assert.AreEqual(true, conversionVm.Conversion.CanRoundtrip);
 
@@ -43,8 +43,8 @@
             var settings = MockSettings.Create();
             var conversionVm = PrefixConversionVm.Create(settings.Grams, settings.Milli);
             Assert.AreEqual(1E-6, conversionVm.Conversion.Factor);
-            Assert.AreEqual("milligrams/1000000", conversionVm.Conversion.ToSi);
-            Assert.AreEqual("1000000*kilograms", conversionVm.Conversion.FromSi);
+            Assert.AreEqual("milligrams / 1000000", conversionVm.Conversion.ToSi);
+            Assert.AreEqual("1000000 * kilograms", conversionVm.Conversion.FromSi);
             Assert.AreEqual("1 mg = 1E-06 kg", conversionVm.Conversion.SymbolConversion);
             Assert.AreEqual(true, conversionVm.Conversion.CanRoundtrip);
 

@@ -21,8 +21,8 @@
             var settings = MockSettings.Create();
             var conversion = PrefixConversion.Create(settings.Metres, settings.Milli);
             settings.Metres.PrefixConversions.Add(conversion);
-            Assert.AreEqual("millimetres/1000", conversion.ToSi);
-            Assert.AreEqual("1000*metres", conversion.FromSi);
+            Assert.AreEqual("millimetres / 1000", conversion.ToSi);
+            Assert.AreEqual("1000 * metres", conversion.FromSi);
             Assert.AreEqual("1 mm = 0.001 m", conversion.SymbolConversion);
             Assert.AreEqual(true, conversion.CanRoundtrip);
         }
@@ -33,8 +33,8 @@
             var settings = MockSettings.Create();
             var conversion = PrefixConversion.Create(settings.Metres, settings.Micro);
             settings.Metres.PrefixConversions.Add(conversion);
-            Assert.AreEqual("micrometres/1000000", conversion.ToSi);
-            Assert.AreEqual("1000000*metres", conversion.FromSi);
+            Assert.AreEqual("micrometres / 1000000", conversion.ToSi);
+            Assert.AreEqual("1000000 * metres", conversion.FromSi);
             Assert.AreEqual("1 µm = 1E-06 m", conversion.SymbolConversion);
             Assert.AreEqual(true, conversion.CanRoundtrip);
         }
@@ -45,8 +45,8 @@
             var settings = MockSettings.Create();
             var conversion = new FactorConversion("Inches", "in", 0.0254);
             settings.Metres.FactorConversions.Add(conversion);
-            Assert.AreEqual("0.0254*inches", conversion.ToSi);
-            Assert.AreEqual("metres/0.0254", conversion.FromSi);
+            Assert.AreEqual("0.0254 * inches", conversion.ToSi);
+            Assert.AreEqual("metres / 0.0254", conversion.FromSi);
             Assert.AreEqual("1 in = 0.0254 m", conversion.SymbolConversion);
             Assert.AreEqual(true, conversion.CanRoundtrip);
         }
@@ -82,8 +82,8 @@
             var settings = MockSettings.Create();
             var conversion = PrefixConversion.Create(settings.Grams, settings.Milli);
             settings.Grams.PrefixConversions.Add(conversion);
-            Assert.AreEqual("milligrams/1000000", conversion.ToSi);
-            Assert.AreEqual("1000000*kilograms", conversion.FromSi);
+            Assert.AreEqual("milligrams / 1000000", conversion.ToSi);
+            Assert.AreEqual("1000000 * kilograms", conversion.FromSi);
             Assert.AreEqual("1 mg = 1E-06 kg", conversion.SymbolConversion);
             Assert.AreEqual(true, conversion.CanRoundtrip);
         }
@@ -112,8 +112,8 @@
             var secondsPart = PartConversion.CreatePart(-1, settings.Seconds);
             var conversion = PartConversion.Create(settings.MetresPerSecond, milliMetresPart, secondsPart);
             settings.MetresPerSecond.PartConversions.Add(conversion);
-            Assert.AreEqual("millimetresPerSecond/1000", conversion.ToSi);
-            Assert.AreEqual("1000*metresPerSecond", conversion.FromSi);
+            Assert.AreEqual("millimetresPerSecond / 1000", conversion.ToSi);
+            Assert.AreEqual("1000 * metresPerSecond", conversion.FromSi);
             Assert.AreEqual("1 mm/s = 0.001 m/s", conversion.SymbolConversion);
             Assert.AreEqual(true, conversion.CanRoundtrip);
         }
@@ -132,8 +132,8 @@
             var minutesPart = PartConversion.CreatePart(-1, minuteConversion);
             var conversion = PartConversion.Create(settings.MetresPerSecond, centiMetresPart, minutesPart);
             settings.MetresPerSecond.PartConversions.Add(conversion);
-            Assert.AreEqual("centimetresPerMinute/6000", conversion.ToSi);
-            Assert.AreEqual("6000*metresPerSecond", conversion.FromSi);
+            Assert.AreEqual("centimetresPerMinute / 6000", conversion.ToSi);
+            Assert.AreEqual("6000 * metresPerSecond", conversion.FromSi);
             Assert.AreEqual("1 cm/min = 0.000166666666666667 m/s", conversion.SymbolConversion);
             Assert.AreEqual(true, conversion.CanRoundtrip);
         }

@@ -330,8 +330,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Frequency"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Frequency"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Frequency"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Frequency"/>.</param>
         public static bool operator ==(Frequency left, Frequency right)
         {
             return left.Equals(right);
@@ -343,8 +343,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Frequency"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Frequency"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Frequency"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Frequency"/>.</param>
         public static bool operator !=(Frequency left, Frequency right)
         {
             return !left.Equals(right);
@@ -356,8 +356,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Frequency"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Frequency"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Frequency"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Frequency"/>.</param>
         public static bool operator <(Frequency left, Frequency right)
         {
             return left.hertz < right.hertz;
@@ -369,8 +369,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Frequency"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Frequency"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Frequency"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Frequency"/>.</param>
         public static bool operator >(Frequency left, Frequency right)
         {
             return left.hertz > right.hertz;
@@ -382,8 +382,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Frequency"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Frequency"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Frequency"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Frequency"/>.</param>
         public static bool operator <=(Frequency left, Frequency right)
         {
             return left.hertz <= right.hertz;
@@ -395,8 +395,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Frequency"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Frequency"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Frequency"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Frequency"/>.</param>
         public static bool operator >=(Frequency left, Frequency right)
         {
             return left.hertz >= right.hertz;
@@ -405,9 +405,9 @@
         /// <summary>
         /// Multiplies an instance of <see cref="Gu.Units.Frequency"/> with <paramref name="left"/> and returns the result.
         /// </summary>
-        /// <param name="right">An instance of <see cref="Gu.Units.Frequency"/></param>
-        /// <param name="left">An instance of <seealso cref="double"/></param>
-        /// <returns>Multiplies an instance of <see cref="Gu.Units.Frequency"/> with <paramref name="left"/> and returns the result.</returns>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Frequency"/></param>
+        /// <param name="left">The left instance of <seealso cref="double"/></param>
+        /// <returns>Multiplies <paramref name="left"/> with <see cref="Gu.Units.Frequency"/> and returns the result.</returns>
         public static Frequency operator *(double left, Frequency right)
         {
             return new Frequency(left * right.hertz);
@@ -416,9 +416,9 @@
         /// <summary>
         /// Multiplies an instance of <see cref="Gu.Units.Frequency"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="Gu.Units.Frequency"/></param>
-        /// <param name="right">An instance of <seealso cref="double"/></param>
-        /// <returns>Multiplies an instance of <see cref="Gu.Units.Frequency"/> with <paramref name="right"/> and returns the result.</returns>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Frequency"/></param>
+        /// <param name="right">The right instance of <seealso cref="double"/></param>
+        /// <returns>Multiplies an <see cref="Gu.Units.Frequency"/> with <paramref name="right"/> and returns the result.</returns>
         public static Frequency operator *(Frequency left, double right)
         {
             return new Frequency(left.hertz * right);
@@ -427,9 +427,9 @@
         /// <summary>
         /// Divides an instance of <see cref="Gu.Units.Frequency"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="Gu.Units.Frequency"/></param>
-        /// <param name="right">An instance of <seealso cref="double"/></param>
-        /// <returns>Divides an instance of <see cref="Gu.Units.Frequency"/> with <paramref name="right"/> and returns the result.</returns>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Frequency"/></param>
+        /// <param name="right">The right instance of <seealso cref="double"/></param>
+        /// <returns>Divides an instance of <see cref="Gu.Units.Frequency"/> by <paramref name="right"/> and returns the result.</returns>
         public static Frequency operator /(Frequency left, double right)
         {
             return new Frequency(left.hertz / right);
@@ -441,8 +441,8 @@
         /// <returns>
         /// An <see cref="Gu.Units.Frequency"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Frequency"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Frequency"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Frequency"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Frequency"/>.</param>
         public static Frequency operator +(Frequency left, Frequency right)
         {
             return new Frequency(left.hertz + right.hertz);
@@ -454,8 +454,8 @@
         /// <returns>
         /// An <see cref="Gu.Units.Frequency"/> that is the difference
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Frequency"/> (the minuend).</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Frequency"/> (the subtrahend).</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Frequency"/> (the minuend).</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Frequency"/> (the subtrahend).</param>
         public static Frequency operator -(Frequency left, Frequency right)
         {
             return new Frequency(left.hertz - right.hertz);
@@ -653,7 +653,7 @@
         /// <summary>
         /// Get the scalar value
         /// </summary>
-        /// <param name="unit"></param>
+        /// <param name="unit">The unit to get the value in.</param>
         /// <returns>The scalar value of this in the specified unit</returns>
         public double GetValue(FrequencyUnit unit)
         {
@@ -723,7 +723,7 @@
         /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting the unit ex Hz</param>
-        /// <param name="formatProvider"></param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the <see cref="Frequency"/></returns>
         public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
         {
@@ -831,15 +831,6 @@
             return this.ToString(quantityFormat, formatProvider);
         }
 
-        internal string ToString(QuantityFormat<FrequencyUnit> format, IFormatProvider formatProvider)
-        {
-            using (var builder = StringBuilderPool.Borrow())
-            {
-                builder.Append(this, format, formatProvider);
-                return builder.ToString();
-            }
-        }
-
         /// <summary>
         /// Compares this instance to a specified <see cref="Gu.Units.Frequency"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Frequency"/> object.
         /// </summary>
@@ -944,6 +935,15 @@
         public void WriteXml(XmlWriter writer)
         {
             XmlExt.WriteAttribute(writer, "Value", this.hertz);
+        }
+
+        internal string ToString(QuantityFormat<FrequencyUnit> format, IFormatProvider formatProvider)
+        {
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(this, format, formatProvider);
+                return builder.ToString();
+            }
         }
     }
 }

@@ -101,8 +101,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Torque"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Torque"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Torque"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Torque"/>.</param>
         public static bool operator ==(Torque left, Torque right)
         {
             return left.Equals(right);
@@ -114,8 +114,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Torque"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Torque"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Torque"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Torque"/>.</param>
         public static bool operator !=(Torque left, Torque right)
         {
             return !left.Equals(right);
@@ -127,8 +127,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Torque"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Torque"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Torque"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Torque"/>.</param>
         public static bool operator <(Torque left, Torque right)
         {
             return left.newtonMetres < right.newtonMetres;
@@ -140,8 +140,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Torque"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Torque"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Torque"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Torque"/>.</param>
         public static bool operator >(Torque left, Torque right)
         {
             return left.newtonMetres > right.newtonMetres;
@@ -153,8 +153,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Torque"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Torque"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Torque"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Torque"/>.</param>
         public static bool operator <=(Torque left, Torque right)
         {
             return left.newtonMetres <= right.newtonMetres;
@@ -166,8 +166,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Torque"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Torque"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Torque"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Torque"/>.</param>
         public static bool operator >=(Torque left, Torque right)
         {
             return left.newtonMetres >= right.newtonMetres;
@@ -176,9 +176,9 @@
         /// <summary>
         /// Multiplies an instance of <see cref="Gu.Units.Torque"/> with <paramref name="left"/> and returns the result.
         /// </summary>
-        /// <param name="right">An instance of <see cref="Gu.Units.Torque"/></param>
-        /// <param name="left">An instance of <seealso cref="double"/></param>
-        /// <returns>Multiplies an instance of <see cref="Gu.Units.Torque"/> with <paramref name="left"/> and returns the result.</returns>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Torque"/></param>
+        /// <param name="left">The left instance of <seealso cref="double"/></param>
+        /// <returns>Multiplies <paramref name="left"/> with <see cref="Gu.Units.Torque"/> and returns the result.</returns>
         public static Torque operator *(double left, Torque right)
         {
             return new Torque(left * right.newtonMetres);
@@ -187,9 +187,9 @@
         /// <summary>
         /// Multiplies an instance of <see cref="Gu.Units.Torque"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="Gu.Units.Torque"/></param>
-        /// <param name="right">An instance of <seealso cref="double"/></param>
-        /// <returns>Multiplies an instance of <see cref="Gu.Units.Torque"/> with <paramref name="right"/> and returns the result.</returns>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Torque"/></param>
+        /// <param name="right">The right instance of <seealso cref="double"/></param>
+        /// <returns>Multiplies an <see cref="Gu.Units.Torque"/> with <paramref name="right"/> and returns the result.</returns>
         public static Torque operator *(Torque left, double right)
         {
             return new Torque(left.newtonMetres * right);
@@ -198,9 +198,9 @@
         /// <summary>
         /// Divides an instance of <see cref="Gu.Units.Torque"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="Gu.Units.Torque"/></param>
-        /// <param name="right">An instance of <seealso cref="double"/></param>
-        /// <returns>Divides an instance of <see cref="Gu.Units.Torque"/> with <paramref name="right"/> and returns the result.</returns>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Torque"/></param>
+        /// <param name="right">The right instance of <seealso cref="double"/></param>
+        /// <returns>Divides an instance of <see cref="Gu.Units.Torque"/> by <paramref name="right"/> and returns the result.</returns>
         public static Torque operator /(Torque left, double right)
         {
             return new Torque(left.newtonMetres / right);
@@ -212,8 +212,8 @@
         /// <returns>
         /// An <see cref="Gu.Units.Torque"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Torque"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Torque"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Torque"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Torque"/>.</param>
         public static Torque operator +(Torque left, Torque right)
         {
             return new Torque(left.newtonMetres + right.newtonMetres);
@@ -225,8 +225,8 @@
         /// <returns>
         /// An <see cref="Gu.Units.Torque"/> that is the difference
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.Torque"/> (the minuend).</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.Torque"/> (the subtrahend).</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.Torque"/> (the minuend).</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.Torque"/> (the subtrahend).</param>
         public static Torque operator -(Torque left, Torque right)
         {
             return new Torque(left.newtonMetres - right.newtonMetres);
@@ -384,7 +384,7 @@
         /// <summary>
         /// Get the scalar value
         /// </summary>
-        /// <param name="unit"></param>
+        /// <param name="unit">The unit to get the value in.</param>
         /// <returns>The scalar value of this in the specified unit</returns>
         public double GetValue(TorqueUnit unit)
         {
@@ -454,7 +454,7 @@
         /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting the unit ex N⋅m</param>
-        /// <param name="formatProvider"></param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the <see cref="Torque"/></returns>
         public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
         {
@@ -562,15 +562,6 @@
             return this.ToString(quantityFormat, formatProvider);
         }
 
-        internal string ToString(QuantityFormat<TorqueUnit> format, IFormatProvider formatProvider)
-        {
-            using (var builder = StringBuilderPool.Borrow())
-            {
-                builder.Append(this, format, formatProvider);
-                return builder.ToString();
-            }
-        }
-
         /// <summary>
         /// Compares this instance to a specified <see cref="Gu.Units.Torque"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Torque"/> object.
         /// </summary>
@@ -675,6 +666,15 @@
         public void WriteXml(XmlWriter writer)
         {
             XmlExt.WriteAttribute(writer, "Value", this.newtonMetres);
+        }
+
+        internal string ToString(QuantityFormat<TorqueUnit> format, IFormatProvider formatProvider)
+        {
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(this, format, formatProvider);
+                return builder.ToString();
+            }
         }
     }
 }

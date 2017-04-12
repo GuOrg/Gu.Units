@@ -137,8 +137,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AngularJerk"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AngularJerk"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.AngularJerk"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AngularJerk"/>.</param>
         public static bool operator ==(AngularJerk left, AngularJerk right)
         {
             return left.Equals(right);
@@ -150,8 +150,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AngularJerk"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AngularJerk"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.AngularJerk"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AngularJerk"/>.</param>
         public static bool operator !=(AngularJerk left, AngularJerk right)
         {
             return !left.Equals(right);
@@ -163,8 +163,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AngularJerk"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AngularJerk"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.AngularJerk"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AngularJerk"/>.</param>
         public static bool operator <(AngularJerk left, AngularJerk right)
         {
             return left.radiansPerSecondCubed < right.radiansPerSecondCubed;
@@ -176,8 +176,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AngularJerk"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AngularJerk"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.AngularJerk"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AngularJerk"/>.</param>
         public static bool operator >(AngularJerk left, AngularJerk right)
         {
             return left.radiansPerSecondCubed > right.radiansPerSecondCubed;
@@ -189,8 +189,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AngularJerk"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AngularJerk"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.AngularJerk"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AngularJerk"/>.</param>
         public static bool operator <=(AngularJerk left, AngularJerk right)
         {
             return left.radiansPerSecondCubed <= right.radiansPerSecondCubed;
@@ -202,8 +202,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AngularJerk"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AngularJerk"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.AngularJerk"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AngularJerk"/>.</param>
         public static bool operator >=(AngularJerk left, AngularJerk right)
         {
             return left.radiansPerSecondCubed >= right.radiansPerSecondCubed;
@@ -212,9 +212,9 @@
         /// <summary>
         /// Multiplies an instance of <see cref="Gu.Units.AngularJerk"/> with <paramref name="left"/> and returns the result.
         /// </summary>
-        /// <param name="right">An instance of <see cref="Gu.Units.AngularJerk"/></param>
-        /// <param name="left">An instance of <seealso cref="double"/></param>
-        /// <returns>Multiplies an instance of <see cref="Gu.Units.AngularJerk"/> with <paramref name="left"/> and returns the result.</returns>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AngularJerk"/></param>
+        /// <param name="left">The left instance of <seealso cref="double"/></param>
+        /// <returns>Multiplies <paramref name="left"/> with <see cref="Gu.Units.AngularJerk"/> and returns the result.</returns>
         public static AngularJerk operator *(double left, AngularJerk right)
         {
             return new AngularJerk(left * right.radiansPerSecondCubed);
@@ -223,9 +223,9 @@
         /// <summary>
         /// Multiplies an instance of <see cref="Gu.Units.AngularJerk"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="Gu.Units.AngularJerk"/></param>
-        /// <param name="right">An instance of <seealso cref="double"/></param>
-        /// <returns>Multiplies an instance of <see cref="Gu.Units.AngularJerk"/> with <paramref name="right"/> and returns the result.</returns>
+        /// <param name="left">The left instance of <see cref="Gu.Units.AngularJerk"/></param>
+        /// <param name="right">The right instance of <seealso cref="double"/></param>
+        /// <returns>Multiplies an <see cref="Gu.Units.AngularJerk"/> with <paramref name="right"/> and returns the result.</returns>
         public static AngularJerk operator *(AngularJerk left, double right)
         {
             return new AngularJerk(left.radiansPerSecondCubed * right);
@@ -234,9 +234,9 @@
         /// <summary>
         /// Divides an instance of <see cref="Gu.Units.AngularJerk"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="Gu.Units.AngularJerk"/></param>
-        /// <param name="right">An instance of <seealso cref="double"/></param>
-        /// <returns>Divides an instance of <see cref="Gu.Units.AngularJerk"/> with <paramref name="right"/> and returns the result.</returns>
+        /// <param name="left">The left instance of <see cref="Gu.Units.AngularJerk"/></param>
+        /// <param name="right">The right instance of <seealso cref="double"/></param>
+        /// <returns>Divides an instance of <see cref="Gu.Units.AngularJerk"/> by <paramref name="right"/> and returns the result.</returns>
         public static AngularJerk operator /(AngularJerk left, double right)
         {
             return new AngularJerk(left.radiansPerSecondCubed / right);
@@ -248,8 +248,8 @@
         /// <returns>
         /// An <see cref="Gu.Units.AngularJerk"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AngularJerk"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AngularJerk"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.AngularJerk"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AngularJerk"/>.</param>
         public static AngularJerk operator +(AngularJerk left, AngularJerk right)
         {
             return new AngularJerk(left.radiansPerSecondCubed + right.radiansPerSecondCubed);
@@ -261,8 +261,8 @@
         /// <returns>
         /// An <see cref="Gu.Units.AngularJerk"/> that is the difference
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.AngularJerk"/> (the minuend).</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.AngularJerk"/> (the subtrahend).</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.AngularJerk"/> (the minuend).</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.AngularJerk"/> (the subtrahend).</param>
         public static AngularJerk operator -(AngularJerk left, AngularJerk right)
         {
             return new AngularJerk(left.radiansPerSecondCubed - right.radiansPerSecondCubed);
@@ -470,7 +470,7 @@
         /// <summary>
         /// Get the scalar value
         /// </summary>
-        /// <param name="unit"></param>
+        /// <param name="unit">The unit to get the value in.</param>
         /// <returns>The scalar value of this in the specified unit</returns>
         public double GetValue(AngularJerkUnit unit)
         {
@@ -540,7 +540,7 @@
         /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting the unit ex rad/s³</param>
-        /// <param name="formatProvider"></param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the <see cref="AngularJerk"/></returns>
         public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
         {
@@ -648,15 +648,6 @@
             return this.ToString(quantityFormat, formatProvider);
         }
 
-        internal string ToString(QuantityFormat<AngularJerkUnit> format, IFormatProvider formatProvider)
-        {
-            using (var builder = StringBuilderPool.Borrow())
-            {
-                builder.Append(this, format, formatProvider);
-                return builder.ToString();
-            }
-        }
-
         /// <summary>
         /// Compares this instance to a specified <see cref="Gu.Units.AngularJerk"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.AngularJerk"/> object.
         /// </summary>
@@ -761,6 +752,15 @@
         public void WriteXml(XmlWriter writer)
         {
             XmlExt.WriteAttribute(writer, "Value", this.radiansPerSecondCubed);
+        }
+
+        internal string ToString(QuantityFormat<AngularJerkUnit> format, IFormatProvider formatProvider)
+        {
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(this, format, formatProvider);
+                return builder.ToString();
+            }
         }
     }
 }

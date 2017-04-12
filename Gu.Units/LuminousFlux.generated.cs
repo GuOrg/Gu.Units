@@ -123,8 +123,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
         public static bool operator ==(LuminousFlux left, LuminousFlux right)
         {
             return left.Equals(right);
@@ -136,8 +136,8 @@
         /// <returns>
         /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
         public static bool operator !=(LuminousFlux left, LuminousFlux right)
         {
             return !left.Equals(right);
@@ -149,8 +149,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
         public static bool operator <(LuminousFlux left, LuminousFlux right)
         {
             return left.lumens < right.lumens;
@@ -162,8 +162,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
         public static bool operator >(LuminousFlux left, LuminousFlux right)
         {
             return left.lumens > right.lumens;
@@ -175,8 +175,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is less than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
         public static bool operator <=(LuminousFlux left, LuminousFlux right)
         {
             return left.lumens <= right.lumens;
@@ -188,8 +188,8 @@
         /// <returns>
         /// true if the quantity of <paramref name="left"/> is greater than or equal to the quantity of <paramref name="right"/>; otherwise, false.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
         public static bool operator >=(LuminousFlux left, LuminousFlux right)
         {
             return left.lumens >= right.lumens;
@@ -198,9 +198,9 @@
         /// <summary>
         /// Multiplies an instance of <see cref="Gu.Units.LuminousFlux"/> with <paramref name="left"/> and returns the result.
         /// </summary>
-        /// <param name="right">An instance of <see cref="Gu.Units.LuminousFlux"/></param>
-        /// <param name="left">An instance of <seealso cref="double"/></param>
-        /// <returns>Multiplies an instance of <see cref="Gu.Units.LuminousFlux"/> with <paramref name="left"/> and returns the result.</returns>
+        /// <param name="right">The right instance of <see cref="Gu.Units.LuminousFlux"/></param>
+        /// <param name="left">The left instance of <seealso cref="double"/></param>
+        /// <returns>Multiplies <paramref name="left"/> with <see cref="Gu.Units.LuminousFlux"/> and returns the result.</returns>
         public static LuminousFlux operator *(double left, LuminousFlux right)
         {
             return new LuminousFlux(left * right.lumens);
@@ -209,9 +209,9 @@
         /// <summary>
         /// Multiplies an instance of <see cref="Gu.Units.LuminousFlux"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="Gu.Units.LuminousFlux"/></param>
-        /// <param name="right">An instance of <seealso cref="double"/></param>
-        /// <returns>Multiplies an instance of <see cref="Gu.Units.LuminousFlux"/> with <paramref name="right"/> and returns the result.</returns>
+        /// <param name="left">The left instance of <see cref="Gu.Units.LuminousFlux"/></param>
+        /// <param name="right">The right instance of <seealso cref="double"/></param>
+        /// <returns>Multiplies an <see cref="Gu.Units.LuminousFlux"/> with <paramref name="right"/> and returns the result.</returns>
         public static LuminousFlux operator *(LuminousFlux left, double right)
         {
             return new LuminousFlux(left.lumens * right);
@@ -220,9 +220,9 @@
         /// <summary>
         /// Divides an instance of <see cref="Gu.Units.LuminousFlux"/> with <paramref name="right"/> and returns the result.
         /// </summary>
-        /// <param name="left">An instance of <see cref="Gu.Units.LuminousFlux"/></param>
-        /// <param name="right">An instance of <seealso cref="double"/></param>
-        /// <returns>Divides an instance of <see cref="Gu.Units.LuminousFlux"/> with <paramref name="right"/> and returns the result.</returns>
+        /// <param name="left">The left instance of <see cref="Gu.Units.LuminousFlux"/></param>
+        /// <param name="right">The right instance of <seealso cref="double"/></param>
+        /// <returns>Divides an instance of <see cref="Gu.Units.LuminousFlux"/> by <paramref name="right"/> and returns the result.</returns>
         public static LuminousFlux operator /(LuminousFlux left, double right)
         {
             return new LuminousFlux(left.lumens / right);
@@ -234,8 +234,8 @@
         /// <returns>
         /// An <see cref="Gu.Units.LuminousFlux"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.LuminousFlux"/>.</param>
         public static LuminousFlux operator +(LuminousFlux left, LuminousFlux right)
         {
             return new LuminousFlux(left.lumens + right.lumens);
@@ -247,8 +247,8 @@
         /// <returns>
         /// An <see cref="Gu.Units.LuminousFlux"/> that is the difference
         /// </returns>
-        /// <param name="left">An instance of <see cref="Gu.Units.LuminousFlux"/> (the minuend).</param>
-        /// <param name="right">An instance of <see cref="Gu.Units.LuminousFlux"/> (the subtrahend).</param>
+        /// <param name="left">The left instance of <see cref="Gu.Units.LuminousFlux"/> (the minuend).</param>
+        /// <param name="right">The right instance of <see cref="Gu.Units.LuminousFlux"/> (the subtrahend).</param>
         public static LuminousFlux operator -(LuminousFlux left, LuminousFlux right)
         {
             return new LuminousFlux(left.lumens - right.lumens);
@@ -406,7 +406,7 @@
         /// <summary>
         /// Get the scalar value
         /// </summary>
-        /// <param name="unit"></param>
+        /// <param name="unit">The unit to get the value in.</param>
         /// <returns>The scalar value of this in the specified unit</returns>
         public double GetValue(LuminousFluxUnit unit)
         {
@@ -476,7 +476,7 @@
         /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting the unit ex lm</param>
-        /// <param name="formatProvider"></param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the <see cref="LuminousFlux"/></returns>
         public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
         {
@@ -584,15 +584,6 @@
             return this.ToString(quantityFormat, formatProvider);
         }
 
-        internal string ToString(QuantityFormat<LuminousFluxUnit> format, IFormatProvider formatProvider)
-        {
-            using (var builder = StringBuilderPool.Borrow())
-            {
-                builder.Append(this, format, formatProvider);
-                return builder.ToString();
-            }
-        }
-
         /// <summary>
         /// Compares this instance to a specified <see cref="Gu.Units.LuminousFlux"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.LuminousFlux"/> object.
         /// </summary>
@@ -697,6 +688,15 @@
         public void WriteXml(XmlWriter writer)
         {
             XmlExt.WriteAttribute(writer, "Value", this.lumens);
+        }
+
+        internal string ToString(QuantityFormat<LuminousFluxUnit> format, IFormatProvider formatProvider)
+        {
+            using (var builder = StringBuilderPool.Borrow())
+            {
+                builder.Append(this, format, formatProvider);
+                return builder.ToString();
+            }
         }
     }
 }
