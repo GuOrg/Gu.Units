@@ -9,7 +9,7 @@ var fileManager = TemplateFileManager.Create(this);
 fileManager.IsAutoIndentEnabled = true;
 fileManager.CanOverwriteExistingFile = true;
 // init handling for parameter templates
-var paramTmpl = ParamTextTemplate.Create(this.Host, "UnitTypeConverter.tt");
+var template = ParamTextTemplate.Create(this.Host, "UnitTypeConverter.tt");
 var session = ParamTextTemplate.GetSessionObject();
 var settings = Settings.Instance;
 this.WriteLine("Read Settings found {0} units", settings.AllUnits.Count);
@@ -18,15 +18,15 @@ foreach (var unit in settings.AllUnits)
 {
     var fileName = unit.ClassName + "TypeConverter.generated." + Settings.Extension;
     fileManager.StartNewFile(fileName, Settings.ProjectName, null, null);
-	session["UnitName"] = unit.Name;
-	var output = paramTmpl.TransformText(session);
+    session["UnitName"] = unit.Name;
+    var output = template.TransformText(session);
     if (output == "ErrorGeneratingOutput")
     {
-		this.WriteLine("Error transforming {0}", unit.ClassName);
+        this.WriteLine("Error transforming {0}", unit.ClassName);
         throw new InvalidOperationException("output");
     }
 
-	this.Write(output);
+    this.Write(output);
 }
 
 //session["UnitMetaData"] = null;
