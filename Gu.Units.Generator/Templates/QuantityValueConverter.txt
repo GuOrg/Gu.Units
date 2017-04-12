@@ -8,47 +8,52 @@
     using System.Windows.Markup;
 
     /// <summary>
-    /// An <see cref="IValueConverter"/> for quantities of type <see cref="MolarHeatCapacity"/>
+    /// An <see cref="IValueConverter"/> for quantities of type <see cref="Mass"/>
     /// </summary>
     [MarkupExtensionReturnType(typeof(IValueConverter))]
-    public class MolarHeatCapacityConverter : MarkupExtension, IValueConverter
+    public class MassConverter : MarkupExtension, IValueConverter
     {
-        private MolarHeatCapacityUnit? unit;
+        private MassUnit? unit;
         private Binding binding;
-        private QuantityFormat<MolarHeatCapacityUnit> quantityFormat;
-        private QuantityFormat<MolarHeatCapacityUnit> bindingQuantityFormat;
+        private QuantityFormat<MassUnit> quantityFormat;
+        private QuantityFormat<MassUnit> bindingQuantityFormat;
         private string valueFormat;
         private bool initialized;
         private StringBuilder errorText = new StringBuilder();
 
-		/// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.MolarHeatCapacityConverter"/>.
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.MassConverter"/> class.
         /// </summary>
-        public MolarHeatCapacityConverter()
+        public MassConverter()
         {
         }
 
-		/// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.MolarHeatCapacityConverter"/>.
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.MassConverter"/> class.
         /// </summary>
-        /// <param name="unit"><see cref="Gu.Units.MolarHeatCapacityUnit"/>.</param>
-        public MolarHeatCapacityConverter(MolarHeatCapacityUnit unit)
+        /// <param name="unit"><see cref="Gu.Units.MassUnit"/>.</param>
+        public MassConverter(MassUnit unit)
         {
-            Unit = unit;
+            this.Unit = unit;
         }
 
-		/// <summary>
-        /// Gets and sets the <see cref="MolarHeatCapacityUnit"/>
+        /// <summary>
+        /// Gets or sets the <see cref="MassUnit"/>
         /// </summary>
-        [ConstructorArgument("unit"), TypeConverter(typeof(MolarHeatCapacityUnitTypeConverter))]
-        public MolarHeatCapacityUnit? Unit
+        [ConstructorArgument("unit")]
+        [TypeConverter(typeof(MassUnitTypeConverter))]
+        public MassUnit? Unit
         {
-            get { return this.unit; }
+            get
+            {
+                return this.unit;
+            }
+
             set
             {
                 if (value == null)
                 {
-                    this.errorText.AppendLine($"{nameof(Unit)} cannot be null");
+                    this.errorText.AppendLine($"{nameof(this.Unit)} cannot be null");
                     if (Is.DesignMode)
                     {
                         throw new ArgumentException(this.errorText.ToString(), nameof(value));
@@ -60,22 +65,26 @@
         }
 
         /// <summary>
-        /// Gets and sets the format to use when formatting the scalar part.
+        /// Gets or sets the format to use when formatting the scalar part.
         /// Formats valid for formatting <see cref="double"/> are valid
         /// </summary>
         public string ValueFormat
         {
-            get { return this.valueFormat; }
+            get
+            {
+                return this.valueFormat;
+            }
+
             set
             {
-                if (!StringFormatParser<MolarHeatCapacityUnit>.CanParseValueFormat(value))
+                if (!StringFormatParser<MassUnit>.CanParseValueFormat(value))
                 {
                     if (Is.DesignMode)
                     {
-                        StringFormatParser<MolarHeatCapacityUnit>.VerifyValueFormat(value);
+                        StringFormatParser<MassUnit>.VerifyValueFormat(value);
                     }
 
-                    this.errorText.AppendLine(StringFormatParser<MolarHeatCapacityUnit>.CreateFormatErrorString(value, typeof(double)));
+                    this.errorText.AppendLine(StringFormatParser<MassUnit>.CreateFormatErrorString(value, typeof(double)));
                 }
 
                 this.valueFormat = value;
@@ -83,24 +92,28 @@
         }
 
         /// <summary>
-        /// Gets and sets the <see cref="SymbolFormat"/> that is used when formatting the unit.
+        /// Gets or sets the <see cref="SymbolFormat"/> that is used when formatting the unit.
         /// </summary>
         public SymbolFormat? SymbolFormat { get; set; }
 
         /// <summary>
-        /// Gets and sets the <see cref="Gu.Units.Wpf.UnitInput"/> that specifies if unit is allowed or required for user input.
+        /// Gets or sets the <see cref="Gu.Units.Wpf.UnitInput"/> that specifies if unit is allowed or required for user input.
         /// </summary>
         public UnitInput? UnitInput { get; set; }
 
         /// <summary>
-        /// Gets and sets the composite string format to use when formatting the quantity value.
+        /// Gets or sets the composite string format to use when formatting the quantity value.
         /// </summary>
         public string StringFormat
         {
-            get { return this.quantityFormat?.CompositeFormat; }
+            get
+            {
+                return this.quantityFormat?.CompositeFormat;
+            }
+
             set
             {
-                if (StringFormatParser<MolarHeatCapacityUnit>.TryParse(value, out this.quantityFormat))
+                if (StringFormatParser<MassUnit>.TryParse(value, out this.quantityFormat))
                 {
                     if (this.unit != null && this.unit != this.quantityFormat.Unit)
                     {
@@ -115,15 +128,15 @@
                 {
                     if (Is.DesignMode)
                     {
-                        StringFormatParser<MolarHeatCapacityUnit>.VerifyQuantityFormat(value);
+                        StringFormatParser<MassUnit>.VerifyQuantityFormat(value);
                     }
 
-                    this.errorText.AppendLine(StringFormatParser<MolarHeatCapacityUnit>.CreateFormatErrorString(value, typeof(MolarHeatCapacityUnit)));
+                    this.errorText.AppendLine(StringFormatParser<MassUnit>.CreateFormatErrorString(value, typeof(MassUnit)));
                 }
             }
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             // the binding does not have stringformat set at this point
@@ -154,11 +167,8 @@
             return this;
         }
 
-		/// <inheritdoc />
-        public object Convert(object value,
-            Type targetType,
-            object parameter,
-            CultureInfo culture)
+        /// <inheritdoc />
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (!this.initialized)
             {
@@ -171,9 +181,9 @@
                 message += $"{GetType().Name} does not support converting to {targetType.Name}";
             }
 
-            if (value != null && !(value is MolarHeatCapacity))
+            if (value != null && !(value is Mass))
             {
-                message += $"{GetType().Name} only supports converting from {typeof(MolarHeatCapacity)}";
+                message += $"{GetType().Name} only supports converting from {typeof(Mass)}";
             }
 
             if (message != string.Empty)
@@ -194,40 +204,37 @@
                     : null;
             }
 
-            var molarHeatCapacity = (MolarHeatCapacity)value;
+            var mass = (Mass)value;
             if (this.bindingQuantityFormat != null)
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return molarHeatCapacity.GetValue(this.unit.Value);
+                    return mass.GetValue(this.unit.Value);
                 }
 
-                return molarHeatCapacity;
+                return mass;
             }
 
             if (targetType == typeof(string) || targetType == typeof(object))
             {
                 if (UnitInput == Wpf.UnitInput.SymbolRequired)
                 {
-                    return molarHeatCapacity.ToString(this.quantityFormat, culture);
+                    return mass.ToString(this.quantityFormat, culture);
                 }
-				
+
                 if (this.ValueFormat != null)
                 {
-                    return molarHeatCapacity.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                    return mass.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
                 }
 
-                return molarHeatCapacity.GetValue(this.unit.Value);
+                return mass.GetValue(this.unit.Value);
             }
 
-            return molarHeatCapacity.GetValue(this.unit.Value);
+            return mass.GetValue(this.unit.Value);
         }
 
-		/// <inheritdoc />
-        public object ConvertBack(object value,
-            Type targetType,
-            object parameter,
-            CultureInfo culture)
+        /// <inheritdoc />
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (!this.initialized)
             {
@@ -235,7 +242,7 @@
             }
 
             var message = this.errorText.ToString();
-            if (!(targetType == typeof(MolarHeatCapacity) || targetType == typeof(MolarHeatCapacity?)))
+            if (!(targetType == typeof(Mass) || targetType == typeof(Mass?)))
             {
                 message += $"{GetType().Name} does not support converting to {targetType.Name}";
             }
@@ -259,7 +266,7 @@
 
             if (value is double)
             {
-                return new MolarHeatCapacity((double)value, this.unit.Value);
+                return new Mass((double)value, this.unit.Value);
             }
 
             var text = value as string;
@@ -276,10 +283,10 @@
                         double d;
                         if (double.TryParse(text, NumberStyles.Float, culture, out d))
                         {
-                            return new MolarHeatCapacity(d, this.unit.Value);
+                            return new Mass(d, this.unit.Value);
                         }
-                        MolarHeatCapacity result;
-                        if (MolarHeatCapacity.TryParse(text, NumberStyles.Float, culture, out result))
+                        Mass result;
+                        if (Mass.TryParse(text, NumberStyles.Float, culture, out result))
                         {
                             return $"#{text}#"; // returning modified text so that TypeConverter fails and we get an error
                         }
@@ -296,7 +303,7 @@
                             WhiteSpaceReader.TryRead(text, ref pos);
                             if (pos == text.Length)
                             {
-                                return new MolarHeatCapacity(d, this.unit.Value);
+                                return new Mass(d, this.unit.Value);
                             }
                         }
 
@@ -304,8 +311,8 @@
                     }
                 case Wpf.UnitInput.SymbolRequired:
                     {
-                        MolarHeatCapacity result;
-                        if (MolarHeatCapacity.TryParse(text, NumberStyles.Float, culture, out result))
+                        Mass result;
+                        if (Mass.TryParse(text, NumberStyles.Float, culture, out result))
                         {
                             return result;
                         }
@@ -344,7 +351,7 @@
             {
                 if (this.unit != null && SymbolFormat != null)
                 {
-                    this.quantityFormat = FormatCache<MolarHeatCapacityUnit>.GetOrCreate(ValueFormat, this.unit.Value, SymbolFormat.Value);
+                    this.quantityFormat = FormatCache<MassUnit>.GetOrCreate(ValueFormat, this.unit.Value, SymbolFormat.Value);
                 }
             }
 
@@ -398,7 +405,7 @@
                         }
                         else if (this.SymbolFormat != null)
                         {
-                            this.quantityFormat = FormatCache<MolarHeatCapacityUnit>.GetOrCreate(this.ValueFormat, this.unit.Value, this.SymbolFormat.Value);
+                            this.quantityFormat = FormatCache<MassUnit>.GetOrCreate(this.ValueFormat, this.unit.Value, this.SymbolFormat.Value);
                             if (this.UnitInput == null)
                             {
                                 this.UnitInput = Wpf.UnitInput.SymbolRequired;
@@ -410,7 +417,7 @@
                         }
                         else
                         {
-                            this.quantityFormat = FormatCache<MolarHeatCapacityUnit>.GetOrCreate(this.ValueFormat, this.unit.Value);
+                            this.quantityFormat = FormatCache<MassUnit>.GetOrCreate(this.ValueFormat, this.unit.Value);
                             if (this.UnitInput == null)
                             {
                                 this.UnitInput = Wpf.UnitInput.ScalarOnly;

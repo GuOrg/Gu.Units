@@ -32,34 +32,39 @@ namespace Gu.Units.Wpf
         private bool initialized;
         private StringBuilder errorText = new StringBuilder();
 
-		/// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.<#= quantity.Name #>Converter"/>.
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.<#= quantity.Name #>Converter"/> class.
         /// </summary>
         public <#= quantity.Name #>Converter()
         {
         }
 
-		/// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.<#= quantity.Name #>Converter"/>.
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.<#= quantity.Name #>Converter"/> class.
         /// </summary>
         /// <param name="unit"><see cref="Gu.Units.<#= quantity.UnitName #>"/>.</param>
         public <#= quantity.Name #>Converter(<#= quantity.UnitName #> unit)
         {
-            Unit = unit;
+            this.Unit = unit;
         }
 
-		/// <summary>
-        /// Gets and sets the <see cref="<#= quantity.UnitName #>"/>
+        /// <summary>
+        /// Gets or sets the <see cref="<#= quantity.UnitName #>"/>
         /// </summary>
-        [ConstructorArgument("unit"), TypeConverter(typeof(<#= quantity.UnitName #>TypeConverter))]
+        [ConstructorArgument("unit")]
+        [TypeConverter(typeof(<#= quantity.UnitName #>TypeConverter))]
         public <#= quantity.UnitName #>? Unit
         {
-            get { return this.unit; }
+            get
+            {
+                return this.unit;
+            }
+
             set
             {
                 if (value == null)
                 {
-                    this.errorText.AppendLine($"{nameof(Unit)} cannot be null");
+                    this.errorText.AppendLine($"{nameof(this.Unit)} cannot be null");
                     if (Is.DesignMode)
                     {
                         throw new ArgumentException(this.errorText.ToString(), nameof(value));
@@ -71,12 +76,16 @@ namespace Gu.Units.Wpf
         }
 
         /// <summary>
-        /// Gets and sets the format to use when formatting the scalar part.
+        /// Gets or sets the format to use when formatting the scalar part.
         /// Formats valid for formatting <see cref="double"/> are valid
         /// </summary>
         public string ValueFormat
         {
-            get { return this.valueFormat; }
+            get
+            {
+                return this.valueFormat;
+            }
+
             set
             {
                 if (!StringFormatParser<<#= quantity.UnitName #>>.CanParseValueFormat(value))
@@ -94,21 +103,25 @@ namespace Gu.Units.Wpf
         }
 
         /// <summary>
-        /// Gets and sets the <see cref="SymbolFormat"/> that is used when formatting the unit.
+        /// Gets or sets the <see cref="SymbolFormat"/> that is used when formatting the unit.
         /// </summary>
         public SymbolFormat? SymbolFormat { get; set; }
 
         /// <summary>
-        /// Gets and sets the <see cref="Gu.Units.Wpf.UnitInput"/> that specifies if unit is allowed or required for user input.
+        /// Gets or sets the <see cref="Gu.Units.Wpf.UnitInput"/> that specifies if unit is allowed or required for user input.
         /// </summary>
         public UnitInput? UnitInput { get; set; }
 
         /// <summary>
-        /// Gets and sets the composite string format to use when formatting the quantity value.
+        /// Gets or sets the composite string format to use when formatting the quantity value.
         /// </summary>
         public string StringFormat
         {
-            get { return this.quantityFormat?.CompositeFormat; }
+            get
+            {
+                return this.quantityFormat?.CompositeFormat;
+            }
+
             set
             {
                 if (StringFormatParser<<#= quantity.UnitName #>>.TryParse(value, out this.quantityFormat))
@@ -134,7 +147,7 @@ namespace Gu.Units.Wpf
             }
         }
 
-		/// <inheritdoc />
+        /// <inheritdoc />
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             // the binding does not have stringformat set at this point
@@ -165,11 +178,8 @@ namespace Gu.Units.Wpf
             return this;
         }
 
-		/// <inheritdoc />
-        public object Convert(object value,
-            Type targetType,
-            object parameter,
-            CultureInfo culture)
+        /// <inheritdoc />
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (!this.initialized)
             {
@@ -222,7 +232,7 @@ namespace Gu.Units.Wpf
                 {
                     return <#= quantity.ParameterName #>.ToString(this.quantityFormat, culture);
                 }
-				
+
                 if (this.ValueFormat != null)
                 {
                     return <#= quantity.ParameterName #>.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
@@ -234,11 +244,8 @@ namespace Gu.Units.Wpf
             return <#= quantity.ParameterName #>.GetValue(this.unit.Value);
         }
 
-		/// <inheritdoc />
-        public object ConvertBack(object value,
-            Type targetType,
-            object parameter,
-            CultureInfo culture)
+        /// <inheritdoc />
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (!this.initialized)
             {

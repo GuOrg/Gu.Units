@@ -22,33 +22,38 @@
         private StringBuilder errorText = new StringBuilder();
 
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.WavenumberConverter"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.WavenumberConverter"/> class.
         /// </summary>
         public WavenumberConverter()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of <see cref="Gu.Units.Wpf.WavenumberConverter"/>.
+        /// Initializes a new instance of the <see cref="Gu.Units.Wpf.WavenumberConverter"/> class.
         /// </summary>
         /// <param name="unit"><see cref="Gu.Units.WavenumberUnit"/>.</param>
         public WavenumberConverter(WavenumberUnit unit)
         {
-            Unit = unit;
+            this.Unit = unit;
         }
 
         /// <summary>
-        /// Gets and sets the <see cref="WavenumberUnit"/>
+        /// Gets or sets the <see cref="WavenumberUnit"/>
         /// </summary>
-        [ConstructorArgument("unit"), TypeConverter(typeof(WavenumberUnitTypeConverter))]
+        [ConstructorArgument("unit")]
+        [TypeConverter(typeof(WavenumberUnitTypeConverter))]
         public WavenumberUnit? Unit
         {
-            get { return this.unit; }
+            get
+            {
+                return this.unit;
+            }
+
             set
             {
                 if (value == null)
                 {
-                    this.errorText.AppendLine($"{nameof(Unit)} cannot be null");
+                    this.errorText.AppendLine($"{nameof(this.Unit)} cannot be null");
                     if (Is.DesignMode)
                     {
                         throw new ArgumentException(this.errorText.ToString(), nameof(value));
@@ -60,12 +65,16 @@
         }
 
         /// <summary>
-        /// Gets and sets the format to use when formatting the scalar part.
+        /// Gets or sets the format to use when formatting the scalar part.
         /// Formats valid for formatting <see cref="double"/> are valid
         /// </summary>
         public string ValueFormat
         {
-            get { return this.valueFormat; }
+            get
+            {
+                return this.valueFormat;
+            }
+
             set
             {
                 if (!StringFormatParser<WavenumberUnit>.CanParseValueFormat(value))
@@ -83,21 +92,25 @@
         }
 
         /// <summary>
-        /// Gets and sets the <see cref="SymbolFormat"/> that is used when formatting the unit.
+        /// Gets or sets the <see cref="SymbolFormat"/> that is used when formatting the unit.
         /// </summary>
         public SymbolFormat? SymbolFormat { get; set; }
 
         /// <summary>
-        /// Gets and sets the <see cref="Gu.Units.Wpf.UnitInput"/> that specifies if unit is allowed or required for user input.
+        /// Gets or sets the <see cref="Gu.Units.Wpf.UnitInput"/> that specifies if unit is allowed or required for user input.
         /// </summary>
         public UnitInput? UnitInput { get; set; }
 
         /// <summary>
-        /// Gets and sets the composite string format to use when formatting the quantity value.
+        /// Gets or sets the composite string format to use when formatting the quantity value.
         /// </summary>
         public string StringFormat
         {
-            get { return this.quantityFormat?.CompositeFormat; }
+            get
+            {
+                return this.quantityFormat?.CompositeFormat;
+            }
+
             set
             {
                 if (StringFormatParser<WavenumberUnit>.TryParse(value, out this.quantityFormat))
@@ -155,10 +168,7 @@
         }
 
         /// <inheritdoc />
-        public object Convert(object value,
-            Type targetType,
-            object parameter,
-            CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (!this.initialized)
             {
@@ -224,10 +234,7 @@
         }
 
         /// <inheritdoc />
-        public object ConvertBack(object value,
-            Type targetType,
-            object parameter,
-            CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (!this.initialized)
             {
