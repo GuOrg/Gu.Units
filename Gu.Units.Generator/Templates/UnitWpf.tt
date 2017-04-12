@@ -19,16 +19,16 @@ namespace Gu.Units.Wpf.Proxies
     public static class <#= unit.ClassName #>
     {
 <#
-	var units = new List<string> { unit.Name };
-	units.AddRange(unit.AllConversions.Select(x => x.Name));
+    var units = new List<string> { unit.Name };
+    units.AddRange(unit.AllConversions.Select(x => x.Name));
     for (var i = 0; i < units.Count; i++)
     {
         var current = units[i];
-		if (i > 0)
-		{ #>
+        if (i > 0)
+        { #>
 
-<#		}
-		#>
+<#      }
+        #>
         /// <summary>
         /// Gets the <see cref="Gu.Units.<#= unit.ClassName #>.<#= current #>"/> unit.
         /// </summary>
