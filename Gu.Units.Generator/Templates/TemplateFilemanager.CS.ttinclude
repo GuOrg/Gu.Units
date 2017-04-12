@@ -150,8 +150,7 @@ public class TemplateFileManager
     /// <param name="projectName">Name of the target project for the new file.</param>
     /// <param name="folderName">Name of the target folder for the new file.</param>
     /// <param name="fileProperties">File property settings in vs for the new File</param>
-    public void StartNewFile(string name
-        , string projectName = "", string folderName = "", FileProperties fileProperties = null)
+    public void StartNewFile(string name, string projectName = "", string folderName = "", FileProperties fileProperties = null)
     {
         if (string.IsNullOrWhiteSpace(name) == true)
         {
@@ -308,7 +307,7 @@ public class TemplateFileManager
     private void CleanUpTemplatePlaceholders()
     {
         var activeTemplateFullNames = this.templatePlaceholderList.ToArray();
-        string[] allHelperTemplateFullNames = VsHelper.GetAllSolutionItems(this.dte)
+        var allHelperTemplateFullNames = VsHelper.GetAllSolutionItems(this.dte)
             .Where(p => p.Name == VsHelper.GetTemplatePlaceholderName(this.templateProjectItem))
             .Select(p => VsHelper.GetProjectItemFullPath(p))
             .ToArray();
@@ -318,7 +317,7 @@ public class TemplateFileManager
         var dirtyHelperTemplates = VsHelper.GetAllSolutionItems(this.dte)
             .Where(p => delta.Contains(VsHelper.GetProjectItemFullPath(p)));
 
-        foreach (ProjectItem item in dirtyHelperTemplates)
+        foreach (var item in dirtyHelperTemplates)
         {
             if (item.ProjectItems != null)
             {
@@ -881,7 +880,7 @@ public class VsHelper
             if (items.Count() == 1)
                 return items.First();
 
-            foreach (ProjectItem r in items)
+            foreach (var r in items)
             {
                 if (r.Collection.Parent is Project)
                     return r;
@@ -890,8 +889,10 @@ public class VsHelper
             return items.First();
         }
 
-        var startItemEnumerator = GetAllProjectItemsRecursive(inItems).Where(p => p.Name == folders[0])
-            .Cast<ProjectItem>().GetEnumerator();
+        var startItemEnumerator = GetAllProjectItemsRecursive(inItems)
+            .Where(p => p.Name == folders[0])
+            .Cast<ProjectItem>()
+            .GetEnumerator();
         ProjectItem item = null;
         var idx = 1;
         var joinedNames = string.Empty;
@@ -902,7 +903,7 @@ public class VsHelper
             {
                 var subItems = item.ProjectItems.Cast<ProjectItem>();
                 joinedNames = string.Join(", ", subItems.Select(i => i.Name));
-                item = subItems.Where(i => i.Name == folders[idx]).FirstOrDefault();
+                item = subItems.FirstOrDefault(i => i.Name == folders[idx]);
                 if (item == null)
                     break;
             }
@@ -942,7 +943,7 @@ public class VsHelper
         }
         else if (prj != null && String.IsNullOrEmpty(file.FolderName) == false)
         {
-            item = GetAllProjectItemsRecursive(prj.ProjectItems).Where(i=>i.Name == file.FolderName).First();
+            item = GetAllProjectItemsRecursive(prj.ProjectItems).First(i => i.Name == file.FolderName);
         }
         else if (String.IsNullOrEmpty(file.FolderName) == false)
         {
@@ -982,7 +983,7 @@ public class VsHelper
         var folders = dte.Solution.Projects.Cast<Project>()
                                            .Where(p=>p.Kind == EnvDTE80.ProjectKinds.vsProjectKindSolutionFolder);
 
-        foreach (Project folder in folders)
+        foreach (var folder in folders)
         {
             if (folder.ProjectItems == null)
             {
@@ -1009,7 +1010,7 @@ public class VsHelper
 
     public static ProjectItem GetProjectItemWithName(ProjectItems items, string itemName)
     {
-        return GetAllProjectItemsRecursive(items).Cast<ProjectItem>().Where(i=>i.Name == itemName).First();
+        return GetAllProjectItemsRecursive(items).First(i => i.Name == itemName);
     }
 
     public static string GetProjectItemFullPath(ProjectItem item)
@@ -1029,7 +1030,11 @@ public class VsHelper
 
         foreach (var item in GetAllProjects(dte))
         {
-            if (item == null || item.ProjectItems == null) continue;
+            if (item == null ||
+                item.ProjectItems == null)
+            {
+                continue;
+            }
 
             itemList.AddRange(GetAllProjectItemsRecursive(item.ProjectItems));
         }

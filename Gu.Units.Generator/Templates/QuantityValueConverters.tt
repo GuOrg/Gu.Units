@@ -20,7 +20,7 @@ foreach (var quantity in settings.Quantities)
     var fileName = quantity.Name + "Converter.generated." + Settings.Extension;
     fileManager.StartNewFile(fileName , "Gu.Units.Wpf", null, null);
     session["QuantityName"] = quantity.Name;
-    string output = template.TransformText(session);
+    var output = template.TransformText(session);
     if (output == "ErrorGeneratingOutput")
     {
         this.WriteLine("Error transforming {0}", quantity.Name);
