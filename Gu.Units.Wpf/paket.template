@@ -4,6 +4,10 @@ tags unit units quantity quantities unitsofmeasure converter xaml wpf
 projectUrl https://github.com/JohanLarsson/Gu.Units
 licenseUrl http://opensource.org/licenses/MIT
 
+releasenotes
+  FEATURE: Proxy units in WPF project. For access from XAML.
+  BUGFIX: Format AngularAcceleration
+
 excludeddependencies
   JetBrains.Annotations
   StyleCop.Analyzers

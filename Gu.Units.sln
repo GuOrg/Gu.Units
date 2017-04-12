@@ -36,6 +36,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{C00F5859-B
 		README.md = README.md
 		Gu.Units.Generator\Templates\Readme.md = Gu.Units.Generator\Templates\Readme.md
 		.paket\Readme.paket.md = .paket\Readme.paket.md
+		RELEASE_NOTES.md = RELEASE_NOTES.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Analyzers", "Gu.Units.Analyzers\Gu.Units.Analyzers.csproj", "{75E83201-16AF-4121-AD7B-C69E6C630C6B}"
