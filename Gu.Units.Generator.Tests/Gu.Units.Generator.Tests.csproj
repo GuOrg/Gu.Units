@@ -64,6 +64,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Scripts\DumpOperatorTestCases.cs" />
     <Compile Include="Views\PartConversionsVmTests.cs" />
     <Compile Include="Views\PartConversionVmTests.cs" />
     <Compile Include="Views\PrefixConversionsVmTests.cs" />
@@ -81,7 +82,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Imports\" />
-    <Folder Include="Sandbox\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
