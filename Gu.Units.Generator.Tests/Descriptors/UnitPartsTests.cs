@@ -57,7 +57,7 @@
         [Test]
         public void FlattenFarads()
         {
-            var farads = new UnitParts(new[] { UnitAndPower.Create(this.settings.Coloumbs, 1), UnitAndPower.Create(this.settings.Volts, -1) });
+            var farads = new UnitParts(new[] { UnitAndPower.Create(this.settings.Coulombs, 1), UnitAndPower.Create(this.settings.Volts, -1) });
             var ups = farads.BaseParts.ToArray();
             Assert.AreEqual(4, ups.Length);
             Assert.AreEqual(-1, ups.Single(x => x.Unit == this.settings.Kilograms).Power);

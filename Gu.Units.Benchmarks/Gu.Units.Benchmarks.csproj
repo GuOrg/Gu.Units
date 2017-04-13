@@ -68,13 +68,6 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Choose>
-    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
-      <PropertyGroup>
-        <__paket__Microsoft_Diagnostics_Tracing_TraceEvent_targets>Microsoft.Diagnostics.Tracing.TraceEvent</__paket__Microsoft_Diagnostics_Tracing_TraceEvent_targets>
-      </PropertyGroup>
-    </When>
-  </Choose>
   <Import Project="..\.paket\paket.targets" />
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.6.1'">
@@ -400,5 +393,5 @@
       </ItemGroup>
     </When>
   </Choose>
-  <Import Project="..\packages\benchmarks\Microsoft.Diagnostics.Tracing.TraceEvent\build\$(__paket__Microsoft_Diagnostics_Tracing_TraceEvent_targets).targets" Condition="Exists('..\packages\benchmarks\Microsoft.Diagnostics.Tracing.TraceEvent\build\$(__paket__Microsoft_Diagnostics_Tracing_TraceEvent_targets).targets')" Label="Paket" />
+  <Import Project="..\packages\benchmarks\Microsoft.Diagnostics.Tracing.TraceEvent\build\Microsoft.Diagnostics.Tracing.TraceEvent.targets" Condition="Exists('..\packages\benchmarks\Microsoft.Diagnostics.Tracing.TraceEvent\build\Microsoft.Diagnostics.Tracing.TraceEvent.targets')" Label="Paket" />
 </Project>

@@ -27,7 +27,7 @@ NUGET
 GROUP Analyzers
 NUGET
   remote: http://www.nuget.org/api/v2
-    Gu.Analyzers (0.1.11.18-dev)
+    Gu.Analyzers (0.1.11.19-dev)
     JetBrains.Annotations (10.4)
       System.Runtime (>= 4.1) - framework: >= netstandard10
     Microsoft.NETCore.Platforms (1.1) - framework: netstandard10, netstandard12, netstandard13, >= netstandard15
@@ -203,9 +203,7 @@ NUGET
     System.Diagnostics.Tools (4.3)
     System.Globalization (4.3)
     System.IO (4.3)
-    System.IO.FileSystem (4.3)
-      System.IO.FileSystem.Primitives (>= 4.3)
-    System.IO.FileSystem.Primitives (4.3)
+    System.IO.FileSystem (4.0)
     System.Linq (4.3)
     System.Linq.Expressions (4.3)
     System.Reflection (4.3)

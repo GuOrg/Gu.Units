@@ -3,6 +3,9 @@ group Analyzers
   Gu.Analyzers
   JetBrains.Annotations
 
+group Roslyn
+  Microsoft.CodeAnalysis.CSharp.Scripting
+
 group Test
   NUnit
   Moq

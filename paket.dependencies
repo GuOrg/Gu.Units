@@ -22,6 +22,7 @@ group Roslyn
   nuget System.Collections.Immutable 1.1.37
   nuget System.Reflection.Metadata 1.2.0
   nuget Microsoft.Composition 1.0.30
+  nuget System.IO.FileSystem 4.0.0.0
 
 group Test
   source http://www.nuget.org/api/v2/

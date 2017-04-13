@@ -47,7 +47,7 @@
         public readonly DerivedUnit Volts;
         public readonly Quantity Voltage;
 
-        public readonly DerivedUnit Coloumbs;
+        public readonly DerivedUnit Coulombs;
         public readonly Quantity ElectricCharge;
 
         public readonly DerivedUnit Hertz;
@@ -137,13 +137,13 @@
             this.DerivedUnits.Add(this.Volts);
             this.Voltage = this.Volts.Quantity;
 
-            this.Coloumbs = new DerivedUnit(
-                "Coloumbs",
+            this.Coulombs = new DerivedUnit(
+                "Coulombs",
                 "C",
                 "ElectricCharge",
                 new[] { UnitAndPower.Create(this.Seconds, 1), UnitAndPower.Create(this.Amperes, 1) });
-            this.DerivedUnits.Add(this.Coloumbs);
-            this.ElectricCharge = this.Coloumbs.Quantity;
+            this.DerivedUnits.Add(this.Coulombs);
+            this.ElectricCharge = this.Coulombs.Quantity;
 
             this.SquareMetres = new DerivedUnit("SquareMetres", "m^2", "Area", new[] { UnitAndPower.Create(this.Metres, 2) });
             this.DerivedUnits.Add(this.SquareMetres);
