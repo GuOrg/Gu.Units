@@ -36,7 +36,7 @@ NUGET
     System.Runtime (4.3) - framework: >= netstandard10
       Microsoft.NETCore.Platforms (>= 1.1) - framework: dnxcore50, netstandard10, netstandard12, netstandard13, >= netstandard15
       Microsoft.NETCore.Targets (>= 1.1) - framework: dnxcore50, netstandard10, netstandard12, netstandard13, >= netstandard15
-    WpfAnalyzers (0.2.7.8)
+    WpfAnalyzers (0.2.7.9)
 
 GROUP Benchmarks
 FRAMEWORK: NET461
