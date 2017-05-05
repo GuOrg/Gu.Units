@@ -12,6 +12,7 @@ group Analyzers
   nuget Gu.Analyzers
   nuget WpfAnalyzers
   nuget JetBrains.Annotations
+  nuget AsyncUsageAnalyzers
 
 group Roslyn
   source http://www.nuget.org/api/v2/
