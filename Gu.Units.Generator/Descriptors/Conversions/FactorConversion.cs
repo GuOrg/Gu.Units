@@ -4,6 +4,7 @@
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
+    using System.Threading.Tasks;
 
     [Serializable]
     public class FactorConversion : IFactorConversion, INotifyPropertyChanged
@@ -84,13 +85,15 @@
 
         public string FromSi => this.GetFromSi();
 
-        public string SymbolConversion => this.GetSymbolConversion();
+        public string SymbolConversion => this.GetSymbolConversionAsync().Result;
 
         public Unit Unit => this.unit ?? (this.unit = this.GetUnit());
 
-        public bool CanRoundtrip => this.CanRoundtrip();
+        public bool CanRoundtrip => this.CanRoundtripCoreAsync().Result;
 
         public ObservableCollection<PrefixConversion> PrefixConversions { get; } = new ObservableCollection<PrefixConversion>();
+
+        public Task<bool> CanRoundtripAsync() => this.CanRoundtripCoreAsync();
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

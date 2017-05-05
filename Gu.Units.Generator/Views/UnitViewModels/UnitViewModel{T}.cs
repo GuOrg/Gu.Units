@@ -2,9 +2,12 @@
 {
     using System;
     using System.Collections.ObjectModel;
+    using System.ComponentModel;
     using System.Linq;
+    using System.Reactive.Concurrency;
     using System.Reactive.Disposables;
-
+    using System.Reactive.Linq;
+    using System.Threading.Tasks;
     using Reactive;
     using State;
 
@@ -18,17 +21,31 @@
 
         private TUnit unit;
         private bool disposed;
+        private bool isOk;
 
         protected UnitViewModel(TUnit unit)
         {
             this.unit = unit;
-            this.subscription.Disposable = Track.Changes(unit, ChangeTrackerSettings)
-                .ObservePropertyChangedSlim()
-                .Subscribe(_ =>
+            this.OnUnitChanged();
+        }
+
+        public bool IsOk
+        {
+            get
+            {
+                return this.isOk;
+            }
+
+            private set
+            {
+                if (value == this.isOk)
                 {
-                    this.OnPropertyChanged(nameof(this.IsUnknown));
-                    this.OnPropertyChanged(nameof(this.IsOk));
-                });
+                    return;
+                }
+
+                this.isOk = value;
+                this.OnPropertyChanged();
+            }
         }
 
         public TUnit Unit
@@ -43,21 +60,13 @@
                 }
 
                 this.unit = value;
-                this.subscription.Disposable = Track.Changes(this.unit, ChangeTrackerSettings)
-                    .ObservePropertyChangedSlim()
-                    .Subscribe(_ =>
-                    {
-                        this.OnPropertyChanged(nameof(this.IsUnknown));
-                        this.OnPropertyChanged(nameof(this.IsOk));
-                    });
                 this.OnPropertyChanged();
+                this.OnUnitChanged();
                 this.OnPropertyChanged(nameof(this.IsUnknown));
             }
         }
 
         public bool IsUnknown => this.Unit.Name == UnknownName || this.Unit.QuantityName == UnknownName || this.Unit.Symbol == UnknownSymbol || this.Unit.Parts.Any(p => p.UnitName.Contains("?"));
-
-        public bool IsOk => this.IsEverythingOk();
 
         public ObservableCollection<string> Errors { get; } = new ObservableCollection<string>();
 
@@ -81,26 +90,24 @@
             this.subscription.Dispose();
         }
 
-        protected bool IsEverythingOk()
+        protected async Task<bool> IsEverythingOkAsync()
         {
             this.Errors.Clear();
-            if (!this.Unit.AllConversions.All(c => c.CanRoundtrip))
+            foreach (var conversion in this.unit.AllConversions)
             {
-                foreach (var conversion in this.Unit.AllConversions.Where(x => !x.CanRoundtrip))
+                var canRoundtrip = await conversion.CanRoundtripAsync().ConfigureAwait(false);
+                if (!canRoundtrip)
                 {
                     this.Errors.Add($"{conversion.Name} cannot roundtrip");
                 }
-
-                return false;
             }
 
             if (this.IsUnknown)
             {
                 this.Errors.Add("IsUnknown");
-                return false;
             }
 
-            return true;
+            return this.Errors.Count == 0;
         }
 
         protected void ThrowIfDisposed()
@@ -109,6 +116,20 @@
             {
                 throw new ObjectDisposedException(this.GetType().FullName);
             }
+        }
+
+        private void OnUnitChanged()
+        {
+            this.subscription.Disposable = Track.Changes(this.unit, ChangeTrackerSettings)
+                .ObservePropertyChangedSlim(x => x.Changes)
+                .StartWith(new PropertyChangedEventArgs(null))
+                .Throttle(TimeSpan.FromMilliseconds(10))
+                .ObserveOn(TaskPoolScheduler.Default)
+                .Subscribe(async _ =>
+                {
+                    this.OnPropertyChanged(nameof(this.IsUnknown));
+                    this.IsOk = await this.IsEverythingOkAsync().ConfigureAwait(false);
+                });
         }
     }
 }

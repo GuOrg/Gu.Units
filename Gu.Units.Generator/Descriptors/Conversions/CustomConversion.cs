@@ -3,6 +3,7 @@
     using System;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
+    using System.Threading.Tasks;
 
     [Serializable]
     public class CustomConversion : IConversion, INotifyPropertyChanged
@@ -79,7 +80,7 @@
                 this.OnPropertyChanged(nameof(this.CanRoundtrip));
                 try
                 {
-                    ExpressionParser.Evaluate(1, this.ParameterName, value);
+                    ExpressionParser.EvaluateAsync(1, this.ParameterName, value).Wait();
                 }
                 catch (Exception e)
                 {
@@ -105,7 +106,7 @@
 
                 try
                 {
-                    ExpressionParser.Evaluate(1, this.Unit.ParameterName, value);
+                    ExpressionParser.EvaluateAsync(1, this.Unit.ParameterName, value).Wait();
                 }
                 catch (Exception e)
                 {
@@ -114,11 +115,13 @@
             }
         }
 
-        public string SymbolConversion => this.GetSymbolConversion();
+        public string SymbolConversion => this.GetSymbolConversionAsync().Result;
 
         public Unit Unit => this.unit ?? (this.unit = this.GetUnit());
 
-        public bool CanRoundtrip => this.CanRoundtrip();
+        public bool CanRoundtrip => this.CanRoundtripCoreAsync().Result;
+
+        public Task<bool> CanRoundtripAsync() => this.CanRoundtripCoreAsync();
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

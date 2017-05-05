@@ -5,6 +5,7 @@
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
+    using System.Threading.Tasks;
 
     [Serializable]
     public class PartConversion : IFactorConversion, INotifyPropertyChanged
@@ -53,11 +54,11 @@
 
         public string FromSi => this.GetFromSi();
 
-        public string SymbolConversion => this.GetSymbolConversion();
+        public string SymbolConversion => this.GetSymbolConversionAsync().Result;
 
         public Unit Unit => this.unit ?? (this.unit = this.GetUnit());
 
-        public bool CanRoundtrip => this.CanRoundtrip();
+        public bool CanRoundtrip => this.CanRoundtripCoreAsync().Result;
 
         public static PartConversion Create(Unit unit, PowerPart c1)
         {
@@ -100,6 +101,8 @@
         {
             return new PowerPart(power, new IdentityConversion(unit));
         }
+
+        public Task<bool> CanRoundtripAsync() => this.CanRoundtripCoreAsync();
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
@@ -223,9 +226,11 @@
 
             public Unit Unit { get; }
 
-            public string SymbolConversion => this.GetSymbolConversion();
+            public string SymbolConversion => this.GetSymbolConversionAsync().Result;
 
             public bool CanRoundtrip => true;
+
+            public Task<bool> CanRoundtripAsync() => Task.FromResult(true);
         }
     }
 }

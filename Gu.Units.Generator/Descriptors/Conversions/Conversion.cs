@@ -4,6 +4,7 @@
     using System.CodeDom.Compiler;
     using System.Globalization;
     using System.Linq;
+    using System.Threading.Tasks;
 
     public static class Conversion
     {
@@ -74,7 +75,7 @@
             return $"{parameter} / {intFactor}";
         }
 
-        public static string GetSymbolConversion(this IConversion conversion)
+        public static async Task<string> GetSymbolConversionAsync(this IConversion conversion)
         {
             const string Invalid = "Invalid";
             if (conversion.ToSi == null || conversion.Symbol == null)
@@ -86,7 +87,7 @@
             {
                 var unit = conversion.Unit;
                 var toSi = conversion.ToSi;
-                var convert = ConvertToSi(1, conversion.ParameterName, toSi);
+                var convert = await ConvertToSiAsync(1, conversion.ParameterName, toSi).ConfigureAwait(false);
 
                 return $"1 {conversion.Symbol.NormalizeSymbol()} = {convert.ToString(CultureInfo.InvariantCulture)} {unit.Symbol.NormalizeSymbol()}";
             }
@@ -96,7 +97,7 @@
             }
         }
 
-        public static bool CanRoundtrip(this IConversion conversion)
+        public static async Task<bool> CanRoundtripCoreAsync(this IConversion conversion)
         {
             try
             {
@@ -110,8 +111,8 @@
 
                 foreach (var value in new[] { 0, 100 })
                 {
-                    var si = ConvertToSi(value, conversion.ParameterName, toSi);
-                    var roundtrip = ConvertFromSi(si, conversion.Unit.ParameterName, fromSi);
+                    var si = await ConvertToSiAsync(value, conversion.ParameterName, toSi).ConfigureAwait(false);
+                    var roundtrip = await ConvertFromSiAsync(si, conversion.Unit.ParameterName, fromSi).ConfigureAwait(false);
                     //// ReSharper disable once CompareOfFloatsByEqualityOperator
                     if (roundtrip != value)
                     {
@@ -129,16 +130,14 @@
 
         public static bool IsSymbolNameValid(this IConversion conversion) => CodeDomProvider.IsValidIdentifier(conversion.Symbol);
 
-        internal static double ConvertToSi(double value, string parameter, string toSi)
+        internal static Task<double> ConvertToSiAsync(double value, string parameter, string toSi)
         {
-            var result = ExpressionParser.Evaluate(value, parameter, toSi);
-            return result;
+            return ExpressionParser.EvaluateAsync(value, parameter, toSi);
         }
 
-        internal static double ConvertFromSi(double value, string parameter, string fromSi)
+        internal static Task<double> ConvertFromSiAsync(double value, string parameter, string fromSi)
         {
-            var result = ExpressionParser.Evaluate(value, parameter, fromSi);
-            return result;
+            return ExpressionParser.EvaluateAsync(value, parameter, fromSi);
         }
 
         private static long IntFactor(this double factor)
