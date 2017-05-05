@@ -1,7 +1,6 @@
 ﻿namespace Gu.Units.Generator.Tests.Scripts
 {
     using System;
-    using System.IO;
     using System.Linq;
     using System.Text;
     using NUnit.Framework;

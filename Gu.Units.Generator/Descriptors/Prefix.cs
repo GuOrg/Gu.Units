@@ -4,7 +4,6 @@
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Runtime.CompilerServices;
-    using JetBrains.Annotations;
 
     /// <summary>
     /// http://physics.nist.gov/cuu/Units/prefixes.html
@@ -76,7 +75,6 @@
             }
         }
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

@@ -5,7 +5,6 @@
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Runtime.CompilerServices;
-    using JetBrains.Annotations;
 
     [DebuggerDisplay("{Name}")]
     [Serializable]
@@ -46,7 +45,6 @@
             }
         }
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

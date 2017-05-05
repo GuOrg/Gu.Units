@@ -7,7 +7,6 @@
     using System.Linq;
     using System.Reactive.Linq;
     using System.Runtime.CompilerServices;
-    using JetBrains.Annotations;
     using Newtonsoft.Json;
     using Reactive;
 
@@ -129,7 +128,6 @@
             }
         }
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

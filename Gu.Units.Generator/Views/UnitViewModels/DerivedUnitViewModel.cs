@@ -49,7 +49,8 @@
 
         private void Subscribe()
         {
-            this.subscription.Disposable = this.Unit.ObservePropertyChangedSlim().Subscribe(_ =>
+            this.subscription.Disposable = this.Unit.ObservePropertyChangedSlim()
+                .Subscribe(_ =>
                 {
                     if (Settings.Instance.DerivedUnits.Contains(this.Unit))
                     {

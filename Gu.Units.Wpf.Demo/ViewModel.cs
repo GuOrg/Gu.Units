@@ -2,7 +2,6 @@ namespace Gu.Units.Wpf.Demo
 {
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
-    using JetBrains.Annotations;
 
     public class ViewModel : INotifyPropertyChanged
     {
@@ -95,7 +94,6 @@ namespace Gu.Units.Wpf.Demo
             }
         }
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

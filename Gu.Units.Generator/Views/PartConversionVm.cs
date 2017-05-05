@@ -4,7 +4,6 @@
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
-    using JetBrains.Annotations;
     using Reactive;
 
     public class PartConversionVm : INotifyPropertyChanged
@@ -67,7 +66,6 @@
             return this.Conversion.Symbol;
         }
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

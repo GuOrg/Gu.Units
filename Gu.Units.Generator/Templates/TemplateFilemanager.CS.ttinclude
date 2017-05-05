@@ -8,13 +8,11 @@
 <#@ assembly name="EnvDTE80" #>
 <#@ assembly name="Microsoft.VisualStudio.Shell.10.0"#>
 <#@ assembly name="Microsoft.VisualStudio.Shell.Interop "#>
-<#@ import namespace="System.Linq" #>
 <#@ import namespace="System.IO" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Text.RegularExpressions" #>
 <#@ import namespace="System.Reflection" #>
 <#@ import namespace="System.Text"#>
-<#@ import namespace="EnvDTE" #>
 <#@ import namespace="Microsoft.VisualStudio.TextTemplating" #>
 <#+ 
 /*

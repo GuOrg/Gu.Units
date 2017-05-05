@@ -9,7 +9,6 @@
     using System.Reactive.Linq;
     using System.Runtime.CompilerServices;
     using System.Windows.Input;
-    using JetBrains.Annotations;
     using Reactive;
     using Wpf.Reactive;
 
@@ -146,7 +145,6 @@
             ((IList)collection).Remove(item);
         }
 
-        [NotifyPropertyChangedInvocator]
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
