@@ -9,7 +9,7 @@
         [Test]
         public void Run()
         {
-            foreach (var overloads in Settings.Instance.Missing.Where(x => x.Parts.All(p => p.Power < 5))
+            foreach (var overloads in Settings.Instance.Missing.Where(x => x.Parts.All(p => p.Power < 5 && p.Power > -5))
                                                                .Where(x => x.Missing.Count > 1)
                                                                .OrderByDescending(x => x.Missing.Count))
             {
