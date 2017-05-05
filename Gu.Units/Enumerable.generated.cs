@@ -1257,6 +1257,30 @@
         }
 
         /// <summary>
+        /// Calculates the sum <see cref="Conductivity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Conductivity}"/></param>
+        /// <returns>The sum</returns>
+        public static Conductivity Sum(this IEnumerable<Conductivity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.siemensPerMetre;
+                }
+            }
+
+            return Conductivity.FromSiemensPerMetre(sum);
+        }
+
+        /// <summary>
         /// Calculates the sum <see cref="Nullable{Mass}"/> of the values in <paramref name="source"/>
         /// </summary>
         /// <param name="source"><see cref="IEnumerable{Mass}"/></param>
@@ -2658,6 +2682,33 @@
             }
 
             return MolarHeatCapacity.FromJoulesPerKelvinMole(sum);
+        }
+
+        /// <summary>
+        /// Calculates the sum <see cref="Nullable{Conductivity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Conductivity}"/></param>
+        /// <returns>The sum</returns>
+        public static Conductivity? Sum(this IEnumerable<Conductivity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.siemensPerMetre;
+                    }
+                }
+            }
+
+            return Conductivity.FromSiemensPerMetre(sum);
         }
 
         /// <summary>
@@ -4897,6 +4948,49 @@
         }
 
         /// <summary>
+        /// Calculates the min <see cref="Conductivity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Conductivity}"/></param>
+        /// <returns>The min</returns>
+        public static Conductivity Min(this IEnumerable<Conductivity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            var value = default(Conductivity);
+            bool hasValue = false;
+            foreach (var x in source)
+            {
+                if (double.IsNaN(x.siemensPerMetre))
+                {
+                    return x;
+                }
+
+                if (hasValue)
+                {
+                    if (x.siemensPerMetre < value.siemensPerMetre)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+
+            if (hasValue)
+            {
+                return value;
+            }
+
+            throw new ArgumentException("No elements", "source");
+        }
+
+        /// <summary>
         /// Calculates the min <see cref="Nullable{Mass}"/> of the values in <paramref name="source"/>
         /// </summary>
         /// <param name="source"><see cref="IEnumerable{Mass}"/></param>
@@ -6656,6 +6750,40 @@
                 }
 
                 if (value == null || x.Value.joulesPerKelvinMole < value.Value.joulesPerKelvinMole)
+                {
+                    value = x;
+                }
+            }
+
+            return value;
+        }
+
+        /// <summary>
+        /// Calculates the min <see cref="Nullable{Conductivity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Conductivity}"/></param>
+        /// <returns>The min</returns>
+        public static Conductivity? Min(this IEnumerable<Conductivity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            Conductivity? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+
+                if (double.IsNaN(x.Value.siemensPerMetre))
+                {
+                    return x;
+                }
+
+                if (value == null || x.Value.siemensPerMetre < value.Value.siemensPerMetre)
                 {
                     value = x;
                 }
@@ -8901,6 +9029,49 @@
         }
 
         /// <summary>
+        /// Calculates the max <see cref="Conductivity"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Conductivity}"/></param>
+        /// <returns>The max</returns>
+        public static Conductivity Max(this IEnumerable<Conductivity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            Conductivity value = default(Conductivity);
+            bool hasValue = false;
+            foreach (Conductivity x in source)
+            {
+                if (double.IsNaN(x.siemensPerMetre))
+                {
+                    return x;
+                }
+
+                if (hasValue)
+                {
+                    if (x.siemensPerMetre > value.siemensPerMetre)
+                    {
+                        value = x;
+                    }
+                }
+                else
+                {
+                    value = x;
+                    hasValue = true;
+                }
+            }
+
+            if (hasValue)
+            {
+                return value;
+            }
+
+            throw new ArgumentException("No elements", "source");
+        }
+
+        /// <summary>
         /// Calculates the max <see cref="Nullable{Mass}"/> of the values in <paramref name="source"/>
         /// </summary>
         /// <param name="source"><see cref="IEnumerable{Mass}"/></param>
@@ -10669,6 +10840,40 @@
         }
 
         /// <summary>
+        /// Calculates the max <see cref="Nullable{Conductivity}"/> of the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Conductivity}"/></param>
+        /// <returns>The max</returns>
+        public static Conductivity? Max(this IEnumerable<Conductivity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            Conductivity? value = null;
+            foreach (var x in source)
+            {
+                if (x == null)
+                {
+                    continue;
+                }
+
+                if (double.IsNaN(x.Value.siemensPerMetre))
+                {
+                    return x;
+                }
+
+                if (value == null || x.Value.siemensPerMetre > value.Value.siemensPerMetre)
+                {
+                    value = x;
+                }
+            }
+
+            return value;
+        }
+
+        /// <summary>
         /// Calculates the average <see cref="Mass"/> for the values in <paramref name="source"/>
         /// </summary>
         /// <param name="source"><see cref="IEnumerable{Mass}"/></param>
@@ -12275,6 +12480,37 @@
             if (count > 0)
             {
                 return MolarHeatCapacity.FromJoulesPerKelvinMole(sum / count);
+            }
+
+            throw new ArgumentException("No elements", "source");
+        }
+
+        /// <summary>
+        /// Calculates the average <see cref="Conductivity"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Conductivity}"/></param>
+        /// <returns>The average</returns>
+        public static Conductivity Average(this IEnumerable<Conductivity> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    sum += v.siemensPerMetre;
+                    count++;
+                }
+            }
+
+            if (count > 0)
+            {
+                return Conductivity.FromSiemensPerMetre(sum / count);
             }
 
             throw new ArgumentException("No elements", "source");
@@ -14043,6 +14279,40 @@
             if (count > 0)
             {
                 return MolarHeatCapacity.FromJoulesPerKelvinMole(sum / count);
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Calculates the average <see cref="Nullable{Conductivity}"/> for the values in <paramref name="source"/>
+        /// </summary>
+        /// <param name="source"><see cref="IEnumerable{Conductivity}"/></param>
+        /// <returns>The average</returns>
+        public static Conductivity? Average(this IEnumerable<Conductivity?> source)
+        {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source");
+            }
+
+            double sum = 0;
+            long count = 0;
+            checked
+            {
+                foreach (var v in source)
+                {
+                    if (v != null)
+                    {
+                        sum += v.Value.siemensPerMetre;
+                        count++;
+                    }
+                }
+            }
+
+            if (count > 0)
+            {
+                return Conductivity.FromSiemensPerMetre(sum / count);
             }
 
             return null;

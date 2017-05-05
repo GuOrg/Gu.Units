@@ -151,6 +151,17 @@
         }
 
         /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Conductivity"/> that is the result from the division.</returns>
+        public static Conductivity operator /(Wavenumber left, Resistance right)
+        {
+            return Conductivity.FromSiemensPerMetre(left.reciprocalMetres / right.ohms);
+        }
+
+        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -170,6 +181,17 @@
         public static Pressure operator /(Wavenumber left, Flexibility right)
         {
             return Pressure.FromPascals(left.reciprocalMetres / right.metresPerNewton);
+        }
+
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Conductivity"/> that is the result from the multiplication.</returns>
+        public static Conductivity operator *(Wavenumber left, ElectricalConductance right)
+        {
+            return Conductivity.FromSiemensPerMetre(left.reciprocalMetres * right.siemens);
         }
 
         /// <summary>
@@ -203,6 +225,17 @@
         public static Speed operator *(Wavenumber left, KinematicViscosity right)
         {
             return Speed.FromMetresPerSecond(left.reciprocalMetres * right.squareMetresPerSecond);
+        }
+
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Resistance"/> that is the result from the division.</returns>
+        public static Resistance operator /(Wavenumber left, Conductivity right)
+        {
+            return Resistance.FromOhms(left.reciprocalMetres / right.siemensPerMetre);
         }
 
         /// <summary>

@@ -16,6 +16,6 @@ The T4 is really buggy and I'm not even sure it is deterministic.
 
 Cleaning up here might be required:
 
-- %LOCALAPPDATA%\Microsoft\VisualStudio\14.0\ProjectAssemblies\
+- %LOCALAPPDATA%\Microsoft\VisualStudio\XX.0\ProjectAssemblies\
 - %LOCALAPPDATA%\assembly\dl3
 - %TEMP%

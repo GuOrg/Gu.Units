@@ -2062,6 +2062,36 @@
       "CustomConversions": [],
       "PrefixConversions": [],
       "PartConversions": []
+    },
+    {
+      "Parts": [
+        {
+          "UnitName": "Siemens",
+          "Power": 1
+        },
+        {
+          "UnitName": "Metres",
+          "Power": -1
+        }
+      ],
+      "Name": "SiemensPerMetre",
+      "Symbol": "S/m",
+      "QuantityName": "Conductivity",
+      "FactorConversions": [],
+      "CustomConversions": [],
+      "PrefixConversions": [],
+      "PartConversions": [
+        {
+          "Name": "SiemensPerCentimetre",
+          "Symbol": "S/cm",
+          "Factor": 100.0
+        },
+        {
+          "Name": "SiemensPerMillimetre",
+          "Symbol": "S/mm",
+          "Factor": 1000.0
+        }
+      ]
     }
   ]
 }

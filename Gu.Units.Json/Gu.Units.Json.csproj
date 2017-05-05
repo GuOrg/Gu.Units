@@ -71,6 +71,9 @@
     <Compile Include="CatalyticActivityJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="ConductivityJsonConverter.generated.cs">
+      <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="CurrentJsonConverter.generated.cs">
       <DependentUpon>QuantityJsonConverters.txt4</DependentUpon>
     </Compile>

@@ -338,6 +338,17 @@
         }
 
         /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="ElectricalConductance"/> that is the result from the multiplication.</returns>
+        public static ElectricalConductance operator *(Length left, Conductivity right)
+        {
+            return ElectricalConductance.FromSiemens(left.metres * right.siemensPerMetre);
+        }
+
+        /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>

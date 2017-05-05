@@ -1,4 +1,5 @@
 source http://www.nuget.org/api/v2/
+redirects: on
 framework: >= net45
 nuget Newtonsoft.Json
 

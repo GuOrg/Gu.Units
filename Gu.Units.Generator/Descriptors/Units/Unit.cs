@@ -5,6 +5,7 @@ namespace Gu.Units.Generator
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
+    using Newtonsoft.Json;
 
     [Serializable]
     public abstract class Unit : INameAndSymbol, INotifyPropertyChanged
@@ -27,12 +28,16 @@ namespace Gu.Units.Generator
 
         public abstract UnitParts Parts { get; }
 
+        [JsonProperty(Order = 3)]
         public ObservableCollection<FactorConversion> FactorConversions { get; } = new ObservableCollection<FactorConversion>();
 
+        [JsonProperty(Order = 4)]
         public ObservableCollection<CustomConversion> CustomConversions { get; } = new ObservableCollection<CustomConversion>();
 
+        [JsonProperty(Order = 5)]
         public ObservableCollection<PrefixConversion> PrefixConversions { get; } = new ObservableCollection<PrefixConversion>();
 
+        [JsonProperty(Order = 6)]
         public ObservableCollection<PartConversion> PartConversions { get; } = new ObservableCollection<PartConversion>();
 
         public string ClassName => this.QuantityName + "Unit";
@@ -73,6 +78,7 @@ namespace Gu.Units.Generator
             }
         }
 
+        [JsonProperty(Order = 0)]
         public string Name
         {
             get => this.name;
@@ -90,6 +96,7 @@ namespace Gu.Units.Generator
             }
         }
 
+        [JsonProperty(Order = 1)]
         public string Symbol
         {
             get => this.symbol;
@@ -105,6 +112,7 @@ namespace Gu.Units.Generator
             }
         }
 
+        [JsonProperty(Order = 2)]
         public string QuantityName
         {
             get => this.quantityName;

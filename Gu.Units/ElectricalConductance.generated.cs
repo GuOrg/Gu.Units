@@ -63,6 +63,17 @@
         public double Siemens => this.siemens;
 
         /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Conductivity"/> that is the result from the division.</returns>
+        public static Conductivity operator /(ElectricalConductance left, Length right)
+        {
+            return Conductivity.FromSiemensPerMetre(left.siemens / right.metres);
+        }
+
+        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -126,6 +137,28 @@
         public static ElectricCharge operator *(ElectricalConductance left, MagneticFlux right)
         {
             return ElectricCharge.FromCoulombs(left.siemens * right.webers);
+        }
+
+        /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Conductivity"/> that is the result from the multiplication.</returns>
+        public static Conductivity operator *(ElectricalConductance left, Wavenumber right)
+        {
+            return Conductivity.FromSiemensPerMetre(left.siemens * right.reciprocalMetres);
+        }
+
+        /// <summary>
+        /// Divides <paramref name="left"/> by <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Length"/> that is the result from the division.</returns>
+        public static Length operator /(ElectricalConductance left, Conductivity right)
+        {
+            return Length.FromMetres(left.siemens / right.siemensPerMetre);
         }
 
         /// <summary>

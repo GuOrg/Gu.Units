@@ -149,6 +149,17 @@
         }
 
         /// <summary>
+        /// Multiplies <paramref name="left"/> with <paramref name="right"/>
+        /// </summary>
+        /// <param name="left">The left value</param>
+        /// <param name="right">The right value</param>
+        /// <returns>The <see cref="Wavenumber"/> that is the result from the multiplication.</returns>
+        public static Wavenumber operator *(Resistance left, Conductivity right)
+        {
+            return Wavenumber.FromReciprocalMetres(left.ohms * right.siemensPerMetre);
+        }
+
+        /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>

@@ -173,6 +173,18 @@
     <Compile Include="CatalyticActivityUnitTypeConverter.generated.cs">
       <DependentUpon>UnitTypeConverters.txt4</DependentUpon>
     </Compile>
+    <Compile Include="Conductivity.generated.cs">
+      <DependentUpon>Quantties.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="ConductivityTypeConverter.generated.cs">
+      <DependentUpon>QuantityTypeConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="ConductivityUnit.generated.cs">
+      <DependentUpon>Units.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="ConductivityUnitTypeConverter.generated.cs">
+      <DependentUpon>UnitTypeConverters.txt4</DependentUpon>
+    </Compile>
     <Compile Include="Current.generated.cs">
       <DependentUpon>Quantties.txt4</DependentUpon>
     </Compile>

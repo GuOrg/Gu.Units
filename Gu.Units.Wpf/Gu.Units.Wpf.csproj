@@ -141,6 +141,15 @@
     <Compile Include="CatalyticActivityUnit.generated.cs">
       <DependentUpon>UnitsWpf.txt4</DependentUpon>
     </Compile>
+    <Compile Include="ConductivityConverter.generated.cs">
+      <DependentUpon>QuantityValueConverters.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="ConductivityExtension.generated.cs">
+      <DependentUpon>QuantityExtensions.txt4</DependentUpon>
+    </Compile>
+    <Compile Include="ConductivityUnit.generated.cs">
+      <DependentUpon>UnitsWpf.txt4</DependentUpon>
+    </Compile>
     <Compile Include="CurrentExtension.generated.cs">
       <DependentUpon>QuantityExtensions.txt4</DependentUpon>
     </Compile>
