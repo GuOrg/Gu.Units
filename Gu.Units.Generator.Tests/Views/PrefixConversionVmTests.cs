@@ -1,5 +1,6 @@
 ﻿namespace Gu.Units.Generator.Tests.Views
 {
+    using System.Threading.Tasks;
     using NUnit.Framework;
 
     public class PrefixConversionVmTests
@@ -19,14 +20,14 @@
         }
 
         [Test]
-        public void MilliAmperes()
+        public async Task MilliAmperesAsync()
         {
             var settings = MockSettings.Create();
             var conversionVm = PrefixConversionVm.Create(settings.Amperes, settings.Milli);
             Assert.AreEqual("milliamperes / 1000", conversionVm.Conversion.ToSi);
             Assert.AreEqual("1000 * amperes", conversionVm.Conversion.FromSi);
             Assert.AreEqual("1 mA = 0.001 A", conversionVm.Conversion.SymbolConversion);
-            Assert.AreEqual(true, conversionVm.Conversion.CanRoundtrip);
+            Assert.AreEqual(true, await conversionVm.Conversion.CanRoundtripAsync().ConfigureAwait(false));
 
             CollectionAssert.DoesNotContain(settings.Amperes.PrefixConversions, conversionVm.Conversion);
 
@@ -38,7 +39,7 @@
         }
 
         [Test]
-        public void MilliGrams()
+        public async Task MilliGramsAsync()
         {
             var settings = MockSettings.Create();
             var conversionVm = PrefixConversionVm.Create(settings.Grams, settings.Milli);
@@ -46,7 +47,7 @@
             Assert.AreEqual("milligrams / 1000000", conversionVm.Conversion.ToSi);
             Assert.AreEqual("1000000 * kilograms", conversionVm.Conversion.FromSi);
             Assert.AreEqual("1 mg = 1E-06 kg", conversionVm.Conversion.SymbolConversion);
-            Assert.AreEqual(true, conversionVm.Conversion.CanRoundtrip);
+            Assert.AreEqual(true, await conversionVm.Conversion.CanRoundtripAsync().ConfigureAwait(false));
 
             CollectionAssert.DoesNotContain(settings.Grams.PrefixConversions, conversionVm.Conversion);
 

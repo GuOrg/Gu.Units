@@ -1,11 +1,12 @@
 ﻿namespace Gu.Units.Generator.Tests.Views
 {
+    using System.Threading.Tasks;
     using NUnit.Framework;
 
     public class PartConversionVmTests
     {
         [Test]
-        public void CubicMillimetres()
+        public async Task CubicMillimetresAsync()
         {
             var settings = MockSettings.Create();
             var millimetres = PrefixConversion.Create(settings.Metres, settings.Milli);
@@ -16,7 +17,7 @@
             Assert.AreEqual("cubicMillimetres / 1000000000", conversionVm.Conversion.ToSi);
             Assert.AreEqual("1000000000 * cubicMetres", conversionVm.Conversion.FromSi);
             Assert.AreEqual("1 mm³ = 1E-09 m³", conversionVm.Conversion.SymbolConversion);
-            Assert.AreEqual(true, conversionVm.Conversion.CanRoundtrip);
+            Assert.AreEqual(true, await conversionVm.Conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
         [Test]
@@ -26,9 +27,7 @@
             var millimetres = PrefixConversion.Create(settings.Metres, settings.Milli);
             settings.Metres.PrefixConversions.Add(millimetres);
             var conversion = PartConversion.Create(settings.CubicMetres, new PartConversion.PowerPart(3, millimetres));
-            var conversionVm = new PartConversionVm(settings.CubicMetres, conversion);
-
-            conversionVm.IsUsed = true;
+            var conversionVm = new PartConversionVm(settings.CubicMetres, conversion) { IsUsed = true };
             CollectionAssert.Contains(settings.CubicMetres.PartConversions, conversion);
 
             conversionVm.IsUsed = false;

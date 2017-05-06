@@ -1,22 +1,23 @@
 ﻿namespace Gu.Units.Generator.Tests.Descriptors.Conversions
 {
+    using System.Threading.Tasks;
     using NUnit.Framework;
 
     public class ConversionTests
     {
         [Test]
-        public void IdentityConversion()
+        public async Task IdentityConversion()
         {
             var settings = MockSettings.Create();
             var conversion = new PartConversion.IdentityConversion(settings.Metres);
             Assert.AreEqual("metres", conversion.ToSi);
             Assert.AreEqual("metres", conversion.FromSi);
             Assert.AreEqual("1 m = 1 m", conversion.SymbolConversion);
-            Assert.AreEqual(true, conversion.CanRoundtrip);
+            Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
         [Test]
-        public void PrefixMilliConversion()
+        public async Task PrefixMilliConversion()
         {
             var settings = MockSettings.Create();
             var conversion = PrefixConversion.Create(settings.Metres, settings.Milli);
@@ -24,11 +25,11 @@
             Assert.AreEqual("millimetres / 1000", conversion.ToSi);
             Assert.AreEqual("1000 * metres", conversion.FromSi);
             Assert.AreEqual("1 mm = 0.001 m", conversion.SymbolConversion);
-            Assert.AreEqual(true, conversion.CanRoundtrip);
+            Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
         [Test]
-        public void PrefixMicroConversion()
+        public async Task PrefixMicroConversion()
         {
             var settings = MockSettings.Create();
             var conversion = PrefixConversion.Create(settings.Metres, settings.Micro);
@@ -36,11 +37,11 @@
             Assert.AreEqual("micrometres / 1000000", conversion.ToSi);
             Assert.AreEqual("1000000 * metres", conversion.FromSi);
             Assert.AreEqual("1 µm = 1E-06 m", conversion.SymbolConversion);
-            Assert.AreEqual(true, conversion.CanRoundtrip);
+            Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
         [Test]
-        public void FactorConversion()
+        public async Task FactorConversion()
         {
             var settings = MockSettings.Create();
             var conversion = new FactorConversion("Inches", "in", 0.0254);
@@ -48,11 +49,11 @@
             Assert.AreEqual("0.0254 * inches", conversion.ToSi);
             Assert.AreEqual("metres / 0.0254", conversion.FromSi);
             Assert.AreEqual("1 in = 0.0254 m", conversion.SymbolConversion);
-            Assert.AreEqual(true, conversion.CanRoundtrip);
+            Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
         [Test]
-        public void CustomConversion()
+        public async Task CustomConversion()
         {
             var settings = MockSettings.Create();
             var conversion = new CustomConversion("Fahrenheit", "°F", "(fahrenheit + 459.67)/1.8", "1.8*kelvin - 459.67");
@@ -65,7 +66,7 @@
         }
 
         [Test]
-        public void CustomConversionWithIllegal()
+        public async Task CustomConversionWithIllegal()
         {
             var settings = MockSettings.Create();
             var conversion = new CustomConversion("Fahrenheit", "°F", "??", null);
@@ -73,11 +74,11 @@
             Assert.AreEqual("??", conversion.ToSi);
             Assert.AreEqual(null, conversion.FromSi);
             Assert.AreEqual("Invalid", conversion.SymbolConversion);
-            Assert.AreEqual(false, conversion.CanRoundtrip);
+            Assert.AreEqual(false, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
         [Test]
-        public void NestedFactorConversion()
+        public async Task NestedFactorConversion()
         {
             var settings = MockSettings.Create();
             var conversion = PrefixConversion.Create(settings.Grams, settings.Milli);
@@ -85,11 +86,11 @@
             Assert.AreEqual("milligrams / 1000000", conversion.ToSi);
             Assert.AreEqual("1000000 * kilograms", conversion.FromSi);
             Assert.AreEqual("1 mg = 1E-06 kg", conversion.SymbolConversion);
-            Assert.AreEqual(true, conversion.CanRoundtrip);
+            Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
         [Test]
-        public void PartConversionIdentity()
+        public async Task PartConversionIdentity()
         {
             var settings = MockSettings.Create();
             var metresPart = PartConversion.CreatePart(1, settings.Metres);
@@ -99,11 +100,11 @@
             Assert.AreEqual("metresPerSecond", conversion.ToSi);
             Assert.AreEqual("metresPerSecond", conversion.FromSi);
             Assert.AreEqual("1 m/s = 1 m/s", conversion.SymbolConversion);
-            Assert.AreEqual(true, conversion.CanRoundtrip);
+            Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
         [Test]
-        public void PartConversionPrefix()
+        public async Task PartConversionPrefix()
         {
             var settings = MockSettings.Create();
             var millimetreConversion = PrefixConversion.Create(settings.Metres, settings.Milli);
@@ -115,11 +116,11 @@
             Assert.AreEqual("millimetresPerSecond / 1000", conversion.ToSi);
             Assert.AreEqual("1000 * metresPerSecond", conversion.FromSi);
             Assert.AreEqual("1 mm/s = 0.001 m/s", conversion.SymbolConversion);
-            Assert.AreEqual(true, conversion.CanRoundtrip);
+            Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
         [Test]
-        public void CentimetresPerMinute()
+        public async Task CentimetresPerMinute()
         {
             var settings = MockSettings.Create();
             var centi = new Prefix("Centi", "c", -2);
@@ -135,7 +136,7 @@
             Assert.AreEqual("centimetresPerMinute / 6000", conversion.ToSi);
             Assert.AreEqual("6000 * metresPerSecond", conversion.FromSi);
             Assert.AreEqual("1 cm/min = 0.000166666666666667 m/s", conversion.SymbolConversion);
-            Assert.AreEqual(true, conversion.CanRoundtrip);
+            Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
     }
 }

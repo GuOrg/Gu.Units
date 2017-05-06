@@ -14,7 +14,7 @@
         public FactorConversionsVm()
         {
             this.Conversions.ObserveCollectionChangedSlim(signalInitial: false)
-                       .Subscribe(this.Synchronize);
+                .Subscribe(this.Synchronize);
         }
 
         public ObservableCollection<FactorConversionVm> Conversions { get; } = new ObservableCollection<FactorConversionVm>();

@@ -1,5 +1,6 @@
 ﻿namespace Gu.Units.Generator.Tests.Descriptors.Conversions
 {
+    using System.Threading.Tasks;
     using NUnit.Framework;
 
     public class PartConversionTests
@@ -49,7 +50,7 @@
         }
 
         [Test]
-        public void MetresPerSecondCubed()
+        public async Task MetresPerSecondCubed()
         {
             var settings = MockSettings.Create();
             var metrePart = PartConversion.CreatePart(1, settings.Metres);
@@ -58,11 +59,11 @@
             Assert.AreEqual("m/s²", conversion.Symbol);
             Assert.AreEqual("MetresPerSecondSquared", conversion.Name);
             Assert.AreEqual(1, conversion.Factor);
-            Assert.AreEqual(true, conversion.CanRoundtrip);
+            Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
         [Test]
-        public void MilliMetresPerSecondCubed()
+        public async Task MilliMetresPerSecondCubed()
         {
             var settings = MockSettings.Create();
             var millimetres = PrefixConversion.Create(settings.Metres, settings.Milli);
@@ -73,7 +74,7 @@
             Assert.AreEqual("mm/s²", conversion.Symbol);
             Assert.AreEqual("MillimetresPerSecondSquared", conversion.Name);
             Assert.AreEqual(0.001, conversion.Factor);
-            Assert.AreEqual(true, conversion.CanRoundtrip);
+            Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
     }
 }

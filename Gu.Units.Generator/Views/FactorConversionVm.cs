@@ -2,14 +2,14 @@
 {
     public class FactorConversionVm
     {
+        public FactorConversionVm()
+            : this(new FactorConversion("Unknown", "??", 0))
+        {
+        }
+
         public FactorConversionVm(FactorConversion conversion)
         {
             this.Conversion = conversion;
-        }
-
-        public FactorConversionVm()
-        {
-            this.Conversion = new FactorConversion("Unknown", "??", 0);
         }
 
         public FactorConversion Conversion { get; }
