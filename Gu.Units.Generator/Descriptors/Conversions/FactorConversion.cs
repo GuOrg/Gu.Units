@@ -76,8 +76,6 @@
                 this.OnPropertyChanged();
                 this.OnPropertyChanged(nameof(this.ToSi));
                 this.OnPropertyChanged(nameof(this.FromSi));
-                this.OnPropertyChanged(nameof(this.SymbolConversion));
-                this.OnPropertyChanged(nameof(this.CanRoundtrip));
             }
         }
 
@@ -85,11 +83,7 @@
 
         public string FromSi => this.GetFromSi();
 
-        public string SymbolConversion => this.GetSymbolConversionAsync().Result;
-
         public Unit Unit => this.unit ?? (this.unit = this.GetUnit());
-
-        public bool CanRoundtrip => this.CanRoundtripCoreAsync().Result;
 
         public ObservableCollection<PrefixConversion> PrefixConversions { get; } = new ObservableCollection<PrefixConversion>();
 

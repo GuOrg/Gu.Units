@@ -143,6 +143,7 @@
     <Compile Include="Converters\BooleanToVisibilityConverterExtension.cs" />
     <Compile Include="Descriptors\Overloads\MissingOverload.cs" />
     <Compile Include="Descriptors\Overloads\MissingOverloads.cs" />
+    <Compile Include="Views\ConversionVm.cs" />
     <Compile Include="Views\CustomConversionsView.xaml.cs">
       <DependentUpon>CustomConversionsView.xaml</DependentUpon>
     </Compile>

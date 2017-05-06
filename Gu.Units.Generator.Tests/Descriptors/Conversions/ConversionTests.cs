@@ -24,7 +24,7 @@
             settings.Metres.PrefixConversions.Add(conversion);
             Assert.AreEqual("millimetres / 1000", conversion.ToSi);
             Assert.AreEqual("1000 * metres", conversion.FromSi);
-            Assert.AreEqual("1 mm = 0.001 m", conversion.SymbolConversion);
+            Assert.AreEqual("1 mm = 0.001 m", await conversion.GetSymbolConversionAsync().ConfigureAwait(false));
             Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
@@ -36,7 +36,7 @@
             settings.Metres.PrefixConversions.Add(conversion);
             Assert.AreEqual("micrometres / 1000000", conversion.ToSi);
             Assert.AreEqual("1000000 * metres", conversion.FromSi);
-            Assert.AreEqual("1 µm = 1E-06 m", conversion.SymbolConversion);
+            Assert.AreEqual("1 µm = 1E-06 m", await conversion.GetSymbolConversionAsync().ConfigureAwait(false));
             Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
@@ -48,7 +48,7 @@
             settings.Metres.FactorConversions.Add(conversion);
             Assert.AreEqual("0.0254 * inches", conversion.ToSi);
             Assert.AreEqual("metres / 0.0254", conversion.FromSi);
-            Assert.AreEqual("1 in = 0.0254 m", conversion.SymbolConversion);
+            Assert.AreEqual("1 in = 0.0254 m", await conversion.GetSymbolConversionAsync().ConfigureAwait(false));
             Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
@@ -60,7 +60,7 @@
             settings.Kelvins.CustomConversions.Add(conversion);
             Assert.AreEqual("(fahrenheit + 459.67)/1.8", conversion.ToSi);
             Assert.AreEqual("1.8*kelvin - 459.67", conversion.FromSi);
-            Assert.AreEqual("1 °F = 255.927777777778 K", conversion.SymbolConversion);
+            Assert.AreEqual("1 °F = 255.927777777778 K", await conversion.GetSymbolConversionAsync().ConfigureAwait(false));
             Assert.Inconclusive("Does not roundtrip cleanly");
             ////Assert.AreEqual(true, conversion.CanRoundtripCoreAsync);
         }
@@ -73,7 +73,7 @@
             settings.Kelvins.CustomConversions.Add(conversion);
             Assert.AreEqual("??", conversion.ToSi);
             Assert.AreEqual(null, conversion.FromSi);
-            Assert.AreEqual("Invalid", conversion.SymbolConversion);
+            Assert.AreEqual("Invalid", await conversion.GetSymbolConversionAsync().ConfigureAwait(false));
             Assert.AreEqual(false, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
@@ -85,7 +85,7 @@
             settings.Grams.PrefixConversions.Add(conversion);
             Assert.AreEqual("milligrams / 1000000", conversion.ToSi);
             Assert.AreEqual("1000000 * kilograms", conversion.FromSi);
-            Assert.AreEqual("1 mg = 1E-06 kg", conversion.SymbolConversion);
+            Assert.AreEqual("1 mg = 1E-06 kg", await conversion.GetSymbolConversionAsync().ConfigureAwait(false));
             Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
@@ -99,7 +99,7 @@
             settings.MetresPerSecond.PartConversions.Add(conversion);
             Assert.AreEqual("metresPerSecond", conversion.ToSi);
             Assert.AreEqual("metresPerSecond", conversion.FromSi);
-            Assert.AreEqual("1 m/s = 1 m/s", conversion.SymbolConversion);
+            Assert.AreEqual("1 m/s = 1 m/s", await conversion.GetSymbolConversionAsync().ConfigureAwait(false));
             Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
@@ -115,7 +115,7 @@
             settings.MetresPerSecond.PartConversions.Add(conversion);
             Assert.AreEqual("millimetresPerSecond / 1000", conversion.ToSi);
             Assert.AreEqual("1000 * metresPerSecond", conversion.FromSi);
-            Assert.AreEqual("1 mm/s = 0.001 m/s", conversion.SymbolConversion);
+            Assert.AreEqual("1 mm/s = 0.001 m/s", await conversion.GetSymbolConversionAsync().ConfigureAwait(false));
             Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 
@@ -135,7 +135,7 @@
             settings.MetresPerSecond.PartConversions.Add(conversion);
             Assert.AreEqual("centimetresPerMinute / 6000", conversion.ToSi);
             Assert.AreEqual("6000 * metresPerSecond", conversion.FromSi);
-            Assert.AreEqual("1 cm/min = 0.000166666666666667 m/s", conversion.SymbolConversion);
+            Assert.AreEqual("1 cm/min = 0.000166666666666667 m/s", await conversion.GetSymbolConversionAsync().ConfigureAwait(false));
             Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
     }

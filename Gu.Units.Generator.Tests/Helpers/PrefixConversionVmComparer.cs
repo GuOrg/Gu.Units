@@ -13,7 +13,7 @@
 
         public int Compare(PrefixConversionVm x, PrefixConversionVm y)
         {
-            return PrefixConversionComparer.Default.Compare(x?.Conversion, y?.Conversion);
+            return PrefixConversionComparer.Default.Compare((PrefixConversion)x?.Conversion, (PrefixConversion)y?.Conversion);
         }
 
         int IComparer.Compare(object x, object y)

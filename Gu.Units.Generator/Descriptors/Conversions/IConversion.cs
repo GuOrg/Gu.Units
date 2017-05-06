@@ -8,11 +8,7 @@
 
         string FromSi { get; }
 
-        string SymbolConversion { get; }
-
         Unit Unit { get; }
-
-        bool CanRoundtrip { get; }
 
         Task<bool> CanRoundtripAsync();
     }

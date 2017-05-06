@@ -60,7 +60,6 @@
 
                 this.symbol = value;
                 this.OnPropertyChanged();
-                this.OnPropertyChanged(nameof(this.SymbolConversion));
             }
         }
 
@@ -76,16 +75,6 @@
 
                 this.toSi = value;
                 this.OnPropertyChanged();
-                this.OnPropertyChanged(this.SymbolConversion);
-                this.OnPropertyChanged(nameof(this.CanRoundtrip));
-                try
-                {
-                    ExpressionParser.EvaluateAsync(1, this.ParameterName, value).Wait();
-                }
-                catch (Exception e)
-                {
-                    throw new ArgumentException("Failed roundtripping", e);
-                }
             }
         }
 
@@ -101,25 +90,10 @@
 
                 this.fromSi = value;
                 this.OnPropertyChanged();
-                this.OnPropertyChanged(this.SymbolConversion);
-                this.OnPropertyChanged(nameof(this.CanRoundtrip));
-
-                try
-                {
-                    ExpressionParser.EvaluateAsync(1, this.Unit.ParameterName, value).Wait();
-                }
-                catch (Exception e)
-                {
-                    throw new ArgumentException(e.Message, e);
-                }
             }
         }
 
-        public string SymbolConversion => this.GetSymbolConversionAsync().Result;
-
         public Unit Unit => this.unit ?? (this.unit = this.GetUnit());
-
-        public bool CanRoundtrip => this.CanRoundtripCoreAsync().Result;
 
         public Task<bool> CanRoundtripAsync() => this.CanRoundtripCoreAsync();
 

@@ -1,27 +1,21 @@
 ﻿namespace Gu.Units.Generator
 {
     using System;
-    using System.ComponentModel;
     using System.Linq;
-    using System.Runtime.CompilerServices;
     using Reactive;
 
-    public class PartConversionVm : INotifyPropertyChanged
+    public class PartConversionVm : ConversionVm
     {
         private readonly Unit unit;
 
         public PartConversionVm(Unit unit, PartConversion conversion)
+            : base(conversion)
         {
             this.unit = unit;
-            this.Conversion = conversion;
             this.IsEditable = this.Conversion.Name != unit.Name;
             unit.PartConversions.ObservePropertyChangedSlim()
                 .Subscribe(_ => this.OnPropertyChanged(nameof(this.IsUsed))); // no need for IDisposable
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public PartConversion Conversion { get; }
 
         public bool IsEditable { get; }
 
@@ -46,7 +40,7 @@
 
                 if (value)
                 {
-                    this.unit.PartConversions.Add(this.Conversion);
+                    this.unit.PartConversions.Add((PartConversion)this.Conversion);
                 }
                 else
                 {
@@ -66,15 +60,10 @@
             return this.Conversion.Symbol;
         }
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
         private bool IsMatch(PartConversion x)
         {
             //// ReSharper disable once CompareOfFloatsByEqualityOperator
-            if (this.Conversion.Factor != x.Factor)
+            if (((PartConversion)this.Conversion).Factor != x.Factor)
             {
                 return false;
             }

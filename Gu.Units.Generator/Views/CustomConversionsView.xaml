@@ -19,7 +19,7 @@
                     <DataTemplate DataType="{x:Type local:CustomConversionVm}">
                         <Ellipse Width="10"
                                  Height="10"
-                                 Fill="{Binding Conversion. CanRoundtrip,
+                                 Fill="{Binding CanRoundtrip,
                                                 Converter={converters:BooleanToBrushConverter WhenFalse=Red,
                                                                                             WhenNull=Gray,
                                                                                             WhenTrue=GreenYellow}}" />
@@ -28,7 +28,7 @@
             </DataGridTemplateColumn>
             <DataGridTextColumn Binding="{Binding Conversion.Name}" Header="Unit" />
             <DataGridTextColumn Binding="{Binding Conversion.Symbol}" Header="Symbol" />
-            <DataGridTextColumn Binding="{Binding Conversion.SymbolConversion}"
+            <DataGridTextColumn Binding="{Binding SymbolConversion}"
                                 Header="Conversion"
                                 IsReadOnly="True" />
             <DataGridTextColumn Binding="{Binding Conversion.ToSi}" Header="ToSi" />

@@ -1,6 +1,9 @@
 ﻿namespace Gu.Units.Generator
 {
-    public class FactorConversionVm
+    using System;
+    using Reactive;
+
+    public class FactorConversionVm : ConversionVm
     {
         public FactorConversionVm()
             : this(new FactorConversion("Unknown", "??", 0))
@@ -8,10 +11,10 @@
         }
 
         public FactorConversionVm(FactorConversion conversion)
+            : base(conversion)
         {
-            this.Conversion = conversion;
+            conversion.ObservePropertyChanged(x => x.Factor)
+                .Subscribe(_ => this.UpdateAsync());
         }
-
-        public FactorConversion Conversion { get; }
     }
 }

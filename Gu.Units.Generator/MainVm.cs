@@ -8,13 +8,12 @@
     using System.Runtime.CompilerServices;
     using Reactive;
 
-    public sealed class MainVm : INotifyPropertyChanged, IDisposable
+    public sealed class MainVm : INotifyPropertyChanged
     {
         public static readonly MainVm Instance = new MainVm();
         private readonly Settings settings;
 
         private string nameSpace;
-        private bool disposed;
 
         private MainVm()
         {
@@ -45,7 +44,6 @@
             get => this.nameSpace;
             set
             {
-                this.ThrowIfDisposed();
                 if (value == this.nameSpace)
                 {
                     return;
@@ -58,32 +56,12 @@
 
         public void Save()
         {
-            this.ThrowIfDisposed();
             Persister.Save(Persister.SettingsFileName);
-        }
-
-        public void Dispose()
-        {
-            if (this.disposed)
-            {
-                return;
-            }
-
-            this.disposed = true;
-            this.Conversions.Dispose();
         }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        private void ThrowIfDisposed()
-        {
-            if (this.disposed)
-            {
-                throw new ObjectDisposedException(this.GetType().FullName);
-            }
         }
 
         private void OnBaseUnitsChanged(NotifyCollectionChangedEventArgs args)

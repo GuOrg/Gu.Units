@@ -53,10 +53,10 @@
             switch (args.Action)
             {
                 case NotifyCollectionChangedAction.Add:
-                    this.unit.FactorConversions.Add(args.NewItems.Single().Conversion);
+                    this.unit.FactorConversions.Add((FactorConversion)args.NewItems.Single().Conversion);
                     break;
                 case NotifyCollectionChangedAction.Remove:
-                    this.unit.FactorConversions.Remove(args.OldItems.Single().Conversion);
+                    this.unit.FactorConversions.Remove((FactorConversion)args.OldItems.Single().Conversion);
                     break;
                 case NotifyCollectionChangedAction.Replace:
                 case NotifyCollectionChangedAction.Move:

@@ -1,27 +1,20 @@
 ﻿namespace Gu.Units.Generator
 {
-    using System;
     using System.Collections;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Linq;
-    using System.Reactive.Disposables;
-    using System.Reactive.Linq;
     using System.Runtime.CompilerServices;
+    using System.Windows.Data;
     using System.Windows.Input;
-    using Reactive;
     using Wpf.Reactive;
 
-    public sealed class ConversionsVm : INotifyPropertyChanged, IDisposable
+    public sealed class ConversionsVm : INotifyPropertyChanged
     {
-        private readonly SerialDisposable subscription = new SerialDisposable();
-        private readonly ReadOnlySerialView<IConversion> allConversions = new ReadOnlySerialView<IConversion>();
-
         private Unit unit;
         private IConversion selectedConversion;
         private BaseUnitViewModel selectedBaseUnit;
         private DerivedUnitViewModel selectedDerivedUnit;
-        private bool disposed;
 
         public ConversionsVm(Settings settings)
         {
@@ -29,6 +22,13 @@
             this.PartConversions = new PartConversionsVm();
             this.Unit = settings.AllUnits.FirstOrDefault(x => x.QuantityName == "Angle"); // for designtime
             this.DeleteSelectedCommand = new RelayCommand(this.DeleteSelected);
+            this.AllConversions = new CompositeCollection
+            {
+                new CollectionContainer { Collection = this.PrefixConversions.UsedConversions },
+                new CollectionContainer { Collection = this.PartConversions.Conversions },
+                new CollectionContainer { Collection = this.FactorConversions.Conversions },
+                new CollectionContainer { Collection = this.CustomConversions.Conversions },
+            };
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -45,8 +45,6 @@
 
                 this.SelectedConversion = null;
                 this.unit = value;
-                this.UpdateAllConversionsSubscription();
-
                 this.PrefixConversions.SetBaseUnit(value);
                 this.PartConversions.SetUnit(value);
                 this.FactorConversions.SetUnit(value);
@@ -68,7 +66,6 @@
             get => this.selectedConversion;
             set
             {
-                this.ThrowIfDisposed();
                 if (Equals(value, this.selectedConversion))
                 {
                     return;
@@ -79,7 +76,7 @@
             }
         }
 
-        public IReadOnlyObservableCollection<IConversion> AllConversions => this.allConversions;
+        public CompositeCollection AllConversions { get; }
 
         public ICommand DeleteSelectedCommand { get; }
 
@@ -88,7 +85,6 @@
             get => this.selectedBaseUnit;
             set
             {
-                this.ThrowIfDisposed();
                 var selected = value as BaseUnitViewModel;
                 if (Equals(selected, this.selectedBaseUnit))
                 {
@@ -110,7 +106,6 @@
             get => this.selectedDerivedUnit;
             set
             {
-                this.ThrowIfDisposed();
                 var selected = value as DerivedUnitViewModel;
                 if (Equals(selected, this.selectedDerivedUnit))
                 {
@@ -127,18 +122,6 @@
             }
         }
 
-        public void Dispose()
-        {
-            if (this.disposed)
-            {
-                return;
-            }
-
-            this.disposed = true;
-            this.allConversions.Dispose();
-            this.subscription.Dispose();
-        }
-
         private static void TryRemove<T>(ObservableCollection<T> collection, IConversion item)
             where T : IConversion
         {
@@ -148,35 +131,6 @@
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        private void ThrowIfDisposed()
-        {
-            if (this.disposed)
-            {
-                throw new ObjectDisposedException(this.GetType().FullName);
-            }
-        }
-
-        private void UpdateAllConversionsSubscription()
-        {
-            this.allConversions.SetSource(null);
-            this.allConversions.SetSource(this.unit.AllConversions);
-            if (this.unit == null)
-            {
-                this.subscription.Disposable.Dispose();
-                this.allConversions.SetSource(null);
-            }
-            else
-            {
-                this.subscription.Disposable = Observable.Merge(
-                                                             this.unit.FactorConversions.ObservePropertyChangedSlim(),
-                                                             this.unit.FactorConversions.Select(x => x.PrefixConversions.ObservePropertyChangedSlim()).Merge(),
-                                                             this.unit.CustomConversions.ObservePropertyChangedSlim(),
-                                                             this.unit.PrefixConversions.ObservePropertyChangedSlim(),
-                                                             this.unit.PartConversions.ObservePropertyChangedSlim())
-                                                         .Subscribe(_ => this.UpdateAllConversionsSubscription());
-            }
         }
 
         private void DeleteSelected()

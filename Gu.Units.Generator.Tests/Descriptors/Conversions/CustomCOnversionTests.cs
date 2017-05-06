@@ -1,23 +1,25 @@
 ﻿namespace Gu.Units.Generator.Tests.Descriptors.Conversions
 {
     using System;
+    using System.Threading.Tasks;
     using NUnit.Framework;
 
     public class CustomConversionTests
     {
         [Test]
-        public void CustomConversion()
+        public async Task CustomConversion()
         {
             var settings = MockSettings.Create();
             var conversion = new CustomConversion("Fahrenheit", "°F", "(fahrenheit + 459.67)/1.8", "1.8*kelvin - 459.67");
             settings.Kelvins.CustomConversions.Add(conversion);
             Assert.AreEqual("(fahrenheit + 459.67)/1.8", conversion.ToSi);
             Assert.AreEqual("1.8*kelvin - 459.67", conversion.FromSi);
-            Assert.AreEqual("1 °F = 255.927777777778 K", conversion.SymbolConversion);
+            Assert.AreEqual("1 °F = 255.927777777778 K", await conversion.GetSymbolConversionAsync().ConfigureAwait(false));
             Assert.Inconclusive("Does not roundtrip cleanly");
             ////Assert.AreEqual(true, conversion.CanRoundtripCoreAsync);
         }
 
+        [Explicit]
         [Test]
         public void ThrowsIfWrongParameter()
         {

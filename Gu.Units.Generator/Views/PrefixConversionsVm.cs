@@ -6,21 +6,28 @@
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
+    using Reactive;
 
     public class PrefixConversionsVm : INotifyPropertyChanged
     {
         private readonly Settings settings;
-        private readonly ObservableCollection<PrefixConversionVm[]> prefixes = new ObservableCollection<PrefixConversionVm[]>();
         private Unit unit;
 
         public PrefixConversionsVm(Settings settings)
         {
             this.settings = settings;
+            this.UsedConversions = this.AllConversions.AsReadOnlyFilteredView(
+                x => x.IsUsed,
+                this.AllConversions.ObserveItemPropertyChangedSlim(x => x.IsUsed));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ObservableCollection<PrefixConversionVm[]> Prefixes => this.prefixes;
+        public IReadOnlyObservableCollection<ConversionVm> UsedConversions { get; }
+
+        public ObservableBatchCollection<PrefixConversionVm> AllConversions { get; } = new ObservableBatchCollection<PrefixConversionVm>();
+
+        public ObservableCollection<IReadOnlyList<PrefixConversionVm>> Prefixes { get; } = new ObservableCollection<IReadOnlyList<PrefixConversionVm>>();
 
         public Unit Unit
         {
@@ -42,12 +49,13 @@
         public void SetBaseUnit(Unit value)
         {
             this.Unit = value;
-            this.prefixes.Clear();
+            this.Prefixes.Clear();
+            this.AllConversions.Clear();
             if (this.unit != null)
             {
                 if (this.IsValidPrefixUnit(this.unit))
                 {
-                    this.prefixes.Add(this.settings.Prefixes.Select(x => PrefixConversionVm.Create(this.unit, x)).ToArray());
+                    this.Prefixes.Add(this.settings.Prefixes.Select(x => PrefixConversionVm.Create(this.unit, x)).ToArray());
                 }
 
                 foreach (var conversion in this.unit.FactorConversions)
@@ -55,8 +63,13 @@
                     var prefixConversionVms = this.settings.Prefixes.Select(x => PrefixConversionVm.Create(conversion, x))
                                                                     .Where(x => !string.Equals(x.Conversion.Name, this.unit.Name, StringComparison.OrdinalIgnoreCase)) // filter out kilograms
                                                                     .ToArray();
-                    this.prefixes.Add(prefixConversionVms);
+                    this.Prefixes.Add(prefixConversionVms);
                 }
+            }
+
+            foreach (var prefix in this.Prefixes)
+            {
+                this.AllConversions.AddRange(prefix);
             }
 
             this.OnPropertyChanged(nameof(this.HasItems));

@@ -65,22 +65,22 @@
                         <DataGrid.Columns>
                             <DataGridTemplateColumn Header="Status">
                                 <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate DataType="{x:Type local:IConversion}">
+                                    <DataTemplate DataType="{x:Type local:ConversionVm}">
                                         <Ellipse Width="10"
                                                  Height="10"
                                                  Fill="{Binding CanRoundtrip, Mode=OneWay, Converter={converters:BooleanToBrushConverter WhenFalse=Red, WhenNull=Gray, WhenTrue=GreenYellow}}" />
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Binding="{Binding Name}" Header="Unit" />
-                            <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
+                            <DataGridTextColumn Binding="{Binding Conversion.Name}" Header="Unit" />
+                            <DataGridTextColumn Binding="{Binding Conversion.Symbol}" Header="Symbol" />
                             <DataGridTextColumn Binding="{Binding SymbolConversion}"
                                                 Header="Conversion"
                                                 IsReadOnly="True" />
-                            <DataGridTextColumn Binding="{Binding ToSi}"
+                            <DataGridTextColumn Binding="{Binding Conversion.ToSi}"
                                                 Header="ToSi"
                                                 IsReadOnly="True" />
-                            <DataGridTextColumn Binding="{Binding FromSi}"
+                            <DataGridTextColumn Binding="{Binding Conversion.FromSi}"
                                                 Header="FromSi"
                                                 IsReadOnly="True" />
                             <!--<DataGridTextColumn Binding="{Binding Formula}" Header="Formula" />-->

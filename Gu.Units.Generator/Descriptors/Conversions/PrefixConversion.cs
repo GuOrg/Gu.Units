@@ -60,7 +60,6 @@
 
                 this.symbol = value;
                 this.OnPropertyChanged();
-                this.OnPropertyChanged(nameof(this.SymbolConversion));
             }
         }
 
@@ -91,11 +90,7 @@
 
         public string FromSi => this.GetFromSi();
 
-        public string SymbolConversion => this.GetSymbolConversionAsync().Result;
-
         public Unit Unit => this.unit ?? (this.unit = this.GetUnit());
-
-        public bool CanRoundtrip => this.CanRoundtripCoreAsync().Result;
 
         public static PrefixConversion Create(Unit unit, Prefix prefix)
         {

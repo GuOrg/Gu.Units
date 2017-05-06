@@ -3,28 +3,25 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using System.ComponentModel;
     using System.Diagnostics;
     using System.Linq;
-    using System.Runtime.CompilerServices;
     using Reactive;
 
     [DebuggerDisplay("{Conversion.Symbol}")]
-    public class PrefixConversionVm : INotifyPropertyChanged
+    public class PrefixConversionVm : ConversionVm
     {
         private readonly IList<PrefixConversion> conversions;
 
         private PrefixConversionVm(ObservableCollection<PrefixConversion> conversions, PrefixConversion prefixConversion)
+            : base(prefixConversion)
         {
             this.conversions = conversions;
-            this.Conversion = prefixConversion;
             conversions.ObservePropertyChangedSlim()
                        .Subscribe(_ => this.OnPropertyChanged(nameof(this.IsUsed))); // no need for IDisposable
+
+            prefixConversion.ObservePropertyChanged(x => x.Symbol)
+                .Subscribe(_ => this.UpdateAsync());
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public PrefixConversion Conversion { get; }
 
         public bool IsUsed
         {
@@ -38,7 +35,7 @@
 
                 if (value)
                 {
-                    this.conversions.Add(this.Conversion);
+                    this.conversions.Add((PrefixConversion)this.Conversion);
                 }
                 else
                 {
@@ -65,14 +62,9 @@
             return new PrefixConversionVm(factorConversion.PrefixConversions, prefixConversion);
         }
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
         private bool IsMatch(PrefixConversion x)
         {
-            if (this.Conversion.Prefix.Power != x.Prefix.Power)
+            if (((PrefixConversion)this.Conversion).Prefix.Power != x.Prefix.Power)
             {
                 return false;
             }
