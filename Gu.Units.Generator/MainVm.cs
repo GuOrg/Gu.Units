@@ -8,12 +8,13 @@
     using System.Runtime.CompilerServices;
     using Reactive;
 
-    public sealed class MainVm : INotifyPropertyChanged
+    public sealed class MainVm : INotifyPropertyChanged, IDisposable
     {
         public static readonly MainVm Instance = new MainVm();
         private readonly Settings settings;
 
         private string nameSpace;
+        private bool disposed;
 
         private MainVm()
         {
@@ -57,6 +58,17 @@
         public void Save()
         {
             Persister.Save(Persister.SettingsFileName);
+        }
+
+        public void Dispose()
+        {
+            if (this.disposed)
+            {
+                return;
+            }
+
+            this.disposed = true;
+            this.Conversions.Dispose();
         }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -105,6 +117,14 @@
                     throw new NotImplementedException();
                 default:
                     throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        private void ThrowIfDisposed()
+        {
+            if (this.disposed)
+            {
+                throw new ObjectDisposedException(this.GetType().FullName);
             }
         }
     }

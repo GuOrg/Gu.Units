@@ -9,40 +9,44 @@
         public void SetBaseUnitToMetres()
         {
             var settings = MockSettings.Create();
-            var vm = new PrefixConversionsVm(settings);
-            CollectionAssert.IsEmpty(vm.Prefixes);
-
-            vm.SetBaseUnit(settings.Metres);
-            var expected = new[]
+            using (var vm = new PrefixConversionsVm(settings))
             {
-                PrefixConversionVm.Create(settings.Metres, settings.Micro),
-                PrefixConversionVm.Create(settings.Metres, settings.Milli),
-                PrefixConversionVm.Create(settings.Metres, settings.Kilo),
-            };
+                CollectionAssert.IsEmpty(vm.Prefixes);
 
-            CollectionAssert.AreEqual(expected, vm.Prefixes.Single(), PrefixConversionVmComparer.Default);
+                vm.SetBaseUnit(settings.Metres);
+                var expected = new[]
+                {
+                    PrefixConversionVm.Create(settings.Metres, settings.Micro),
+                    PrefixConversionVm.Create(settings.Metres, settings.Milli),
+                    PrefixConversionVm.Create(settings.Metres, settings.Kilo),
+                };
 
-            vm.SetBaseUnit(null);
-            CollectionAssert.IsEmpty(vm.Prefixes);
+                CollectionAssert.AreEqual(expected, vm.Prefixes.Single(), PrefixConversionVmComparer.Default);
+
+                vm.SetBaseUnit(null);
+                CollectionAssert.IsEmpty(vm.Prefixes);
+            }
         }
 
         [Test]
         public void SetBaseUnitToKilograms()
         {
             var settings = MockSettings.Create();
-            var vm = new PrefixConversionsVm(settings);
-            CollectionAssert.IsEmpty(vm.Prefixes);
-
-            vm.SetBaseUnit(settings.Kilograms);
-            var expected = new[]
+            using (var vm = new PrefixConversionsVm(settings))
             {
-                PrefixConversionVm.Create(settings.Grams, settings.Micro),
-                PrefixConversionVm.Create(settings.Grams, settings.Milli),
-            };
+                CollectionAssert.IsEmpty(vm.Prefixes);
 
-            CollectionAssert.AreEqual(expected, vm.Prefixes.Single(), PrefixConversionVmComparer.Default);
-            vm.SetBaseUnit(null);
-            CollectionAssert.IsEmpty(vm.Prefixes);
+                vm.SetBaseUnit(settings.Kilograms);
+                var expected = new[]
+                {
+                    PrefixConversionVm.Create(settings.Grams, settings.Micro),
+                    PrefixConversionVm.Create(settings.Grams, settings.Milli),
+                };
+
+                CollectionAssert.AreEqual(expected, vm.Prefixes.Single(), PrefixConversionVmComparer.Default);
+                vm.SetBaseUnit(null);
+                CollectionAssert.IsEmpty(vm.Prefixes);
+            }
         }
     }
 }

@@ -5,22 +5,33 @@
     using System.Collections.ObjectModel;
     using System.Diagnostics;
     using System.Linq;
+    using System.Reactive.Concurrency;
+    using System.Reactive.Disposables;
+    using System.Reactive.Linq;
     using Reactive;
 
     [DebuggerDisplay("{Conversion.Symbol}")]
-    public class PrefixConversionVm : ConversionVm
+    public sealed class PrefixConversionVm : ConversionVm, IDisposable
     {
         private readonly IList<PrefixConversion> conversions;
+        private readonly IDisposable disposable;
+        private bool disposed;
 
         private PrefixConversionVm(ObservableCollection<PrefixConversion> conversions, PrefixConversion prefixConversion)
             : base(prefixConversion)
         {
             this.conversions = conversions;
-            conversions.ObservePropertyChangedSlim()
-                       .Subscribe(_ => this.OnPropertyChanged(nameof(this.IsUsed))); // no need for IDisposable
+            this.disposable = new CompositeDisposable
+            {
+                conversions.ObservePropertyChangedSlim()
+                    .SubscribeOn(TaskPoolScheduler.Default)
+                    .Subscribe(_ => this.OnPropertyChanged(nameof(this.IsUsed))),
 
-            prefixConversion.ObservePropertyChanged(x => x.Symbol)
-                .Subscribe(_ => this.UpdateAsync());
+                prefixConversion.ObservePropertyChanged(x => x.Symbol)
+                    .SubscribeOn(TaskPoolScheduler.Default)
+                    .Where(_ => this.IsUsed)
+                    .Subscribe(_ => this.UpdateAsync())
+            };
         }
 
         public bool IsUsed
@@ -62,6 +73,17 @@
             return new PrefixConversionVm(factorConversion.PrefixConversions, prefixConversion);
         }
 
+        public void Dispose()
+        {
+            if (this.disposed)
+            {
+                return;
+            }
+
+            this.disposed = true;
+            this.disposable.Dispose();
+        }
+
         private bool IsMatch(PrefixConversion x)
         {
             if (((PrefixConversion)this.Conversion).Prefix.Power != x.Prefix.Power)
@@ -70,6 +92,14 @@
             }
 
             return true;
+        }
+
+        private void ThrowIfDisposed()
+        {
+            if (this.disposed)
+            {
+                throw new ObjectDisposedException(this.GetType().FullName);
+            }
         }
     }
 }

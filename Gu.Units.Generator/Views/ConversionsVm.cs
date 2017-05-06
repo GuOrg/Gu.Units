@@ -1,5 +1,6 @@
 ﻿namespace Gu.Units.Generator
 {
+    using System;
     using System.Collections;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
@@ -9,12 +10,13 @@
     using System.Windows.Input;
     using Wpf.Reactive;
 
-    public sealed class ConversionsVm : INotifyPropertyChanged
+    public sealed class ConversionsVm : INotifyPropertyChanged, IDisposable
     {
         private Unit unit;
         private IConversion selectedConversion;
         private BaseUnitViewModel selectedBaseUnit;
         private DerivedUnitViewModel selectedDerivedUnit;
+        private bool disposed;
 
         public ConversionsVm(Settings settings)
         {
@@ -25,7 +27,7 @@
             this.AllConversions = new CompositeCollection
             {
                 new CollectionContainer { Collection = this.PrefixConversions.UsedConversions },
-                new CollectionContainer { Collection = this.PartConversions.Conversions },
+                new CollectionContainer { Collection = this.PartConversions.UsedConversions },
                 new CollectionContainer { Collection = this.FactorConversions.Conversions },
                 new CollectionContainer { Collection = this.CustomConversions.Conversions },
             };
@@ -122,6 +124,20 @@
             }
         }
 
+        public void Dispose()
+        {
+            if (this.disposed)
+            {
+                return;
+            }
+
+            this.disposed = true;
+            this.PrefixConversions.Dispose();
+            this.PartConversions.Dispose();
+            this.FactorConversions.Dispose();
+            this.CustomConversions.Dispose();
+        }
+
         private static void TryRemove<T>(ObservableCollection<T> collection, IConversion item)
             where T : IConversion
         {
@@ -149,6 +165,14 @@
             TryRemove(this.unit.CustomConversions, this.selectedConversion);
             TryRemove(this.unit.PrefixConversions, this.selectedConversion);
             TryRemove(this.unit.PartConversions, this.selectedConversion);
+        }
+
+        private void ThrowIfDisposed()
+        {
+            if (this.disposed)
+            {
+                throw new ObjectDisposedException(this.GetType().FullName);
+            }
         }
     }
 }

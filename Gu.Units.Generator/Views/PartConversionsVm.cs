@@ -1,17 +1,31 @@
 ﻿namespace Gu.Units.Generator
 {
+    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
+    using Reactive;
 
-    public class PartConversionsVm : INotifyPropertyChanged
+    public sealed class PartConversionsVm : INotifyPropertyChanged, IDisposable
     {
         private readonly ObservableCollection<PartConversionVm[]> conversions = new ObservableCollection<PartConversionVm[]>();
         private Unit unit;
+        private bool disposed;
+
+        public PartConversionsVm()
+        {
+            this.UsedConversions = this.AllConversions.AsReadOnlyFilteredView(
+                x => x.IsUsed,
+                this.AllConversions.ObserveItemPropertyChangedSlim(x => x.IsUsed));
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public IReadOnlyObservableCollection<PartConversionVm> UsedConversions { get; }
+
+        public ObservableBatchCollection<PartConversionVm> AllConversions { get; } = new ObservableBatchCollection<PartConversionVm>();
 
         public ObservableCollection<PartConversionVm[]> Conversions => this.conversions;
 
@@ -20,6 +34,11 @@
         public void SetUnit(Unit value)
         {
             this.unit = value;
+            foreach (var conversion in this.AllConversions)
+            {
+                conversion.Dispose();
+            }
+
             this.conversions.Clear();
 
             if (this.unit == null)
@@ -68,12 +87,31 @@
                 }
             }
 
+            foreach (var items in this.conversions)
+            {
+                this.AllConversions.AddRange(items);
+            }
+
             this.OnPropertyChanged(nameof(this.HasItems));
         }
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public void Dispose()
         {
-            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            if (this.disposed)
+            {
+                return;
+            }
+
+            this.disposed = true;
+            (this.UsedConversions as IDisposable)?.Dispose();
+
+            foreach (var conversion in this.AllConversions)
+            {
+                conversion.Dispose();
+            }
+
+            this.AllConversions.Clear();
+            this.Conversions.Clear();
         }
 
         private static IReadOnlyList<PartConversion.PowerPart> CreatePowerParts(IReadOnlyList<UnitAndPower> parts, int index)
@@ -83,6 +121,19 @@
             powerParts.Add(new PartConversion.PowerPart(unitAndPower.Power, new PartConversion.IdentityConversion(unitAndPower.Unit)));
             powerParts.AddRange(unitAndPower.Unit.AllConversions.OfType<IFactorConversion>().Select(x => new PartConversion.PowerPart(unitAndPower.Power, x)));
             return powerParts;
+        }
+
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void ThrowIfDisposed()
+        {
+            if (this.disposed)
+            {
+                throw new ObjectDisposedException(this.GetType().FullName);
+            }
         }
     }
 }

@@ -6,10 +6,11 @@
     using System.Linq;
     using Reactive;
 
-    public class CustomConversionsVm
+    public sealed class CustomConversionsVm : IDisposable
     {
         private Unit unit;
         private bool isUpdating;
+        private bool disposed;
 
         public CustomConversionsVm()
         {
@@ -22,6 +23,11 @@
         public void SetUnit(Unit newUnit)
         {
             this.unit = newUnit;
+            foreach (var conversion in this.Conversions)
+            {
+                conversion.Dispose();
+            }
+
             this.Conversions.Clear();
             if (newUnit == null)
             {
@@ -40,6 +46,22 @@
             {
                 this.isUpdating = false;
             }
+        }
+
+        public void Dispose()
+        {
+            if (this.disposed)
+            {
+                return;
+            }
+
+            this.disposed = true;
+            foreach (var conversion in this.Conversions)
+            {
+                conversion.Dispose();
+            }
+
+            this.Conversions.Clear();
         }
 
         private void Synchronize(NotifyCollectionChangedEventArgs e)
@@ -66,6 +88,14 @@
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        private void ThrowIfDisposed()
+        {
+            if (this.disposed)
+            {
+                throw new ObjectDisposedException(this.GetType().FullName);
             }
         }
     }

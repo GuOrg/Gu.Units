@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.ObjectModel;
-    using System.ComponentModel;
     using System.Linq;
     using System.Reactive.Concurrency;
     using System.Reactive.Disposables;
@@ -19,6 +18,7 @@
 
         private readonly SerialDisposable subscription = new SerialDisposable();
 
+        private IChangeTracker tracker;
         private TUnit unit;
         private bool disposed;
         private bool? isOk;
@@ -85,9 +85,9 @@
             this.disposed = true;
             if (disposing)
             {
+                this.tracker?.Dispose();
+                this.subscription.Dispose();
             }
-
-            this.subscription.Dispose();
         }
 
         protected async Task<bool> IsEverythingOkAsync()
@@ -120,9 +120,10 @@
 
         private void OnUnitChanged()
         {
-            this.subscription.Disposable = Track.Changes(this.unit, ChangeTrackerSettings)
+            this.tracker?.Dispose();
+            this.tracker = Track.Changes(this.unit, ChangeTrackerSettings);
+            this.subscription.Disposable = this.tracker
                 .ObservePropertyChangedSlim(x => x.Changes)
-                .StartWith(new PropertyChangedEventArgs(null))
                 .Throttle(TimeSpan.FromMilliseconds(10))
                 .ObserveOn(TaskPoolScheduler.Default)
                 .Subscribe(async _ =>

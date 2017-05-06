@@ -80,7 +80,7 @@
                                         <DataTemplate DataType="{x:Type generator:BaseUnitViewModel}">
                                             <Ellipse Width="10"
                                                      Height="10"
-                                                     Fill="{Binding IsOk, Converter={converters:BooleanToBrushConverter WhenFalse=Red, WhenTrue=GreenYellow}}" />
+                                                     Fill="{Binding IsOk, Converter={converters:BooleanToBrushConverter WhenFalse=Red, WhenNull=Gainsboro, WhenTrue=GreenYellow}}" />
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>

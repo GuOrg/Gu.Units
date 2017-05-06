@@ -2,19 +2,33 @@
 {
     using System;
     using System.Linq;
+    using System.Reactive.Concurrency;
+    using System.Reactive.Disposables;
+    using System.Reactive.Linq;
     using Reactive;
 
-    public class PartConversionVm : ConversionVm
+    public sealed class PartConversionVm : ConversionVm, IDisposable
     {
         private readonly Unit unit;
+        private readonly IDisposable disposable;
+
+        private bool disposed;
 
         public PartConversionVm(Unit unit, PartConversion conversion)
             : base(conversion)
         {
             this.unit = unit;
             this.IsEditable = this.Conversion.Name != unit.Name;
-            unit.PartConversions.ObservePropertyChangedSlim()
-                .Subscribe(_ => this.OnPropertyChanged(nameof(this.IsUsed))); // no need for IDisposable
+            this.disposable = new CompositeDisposable
+            {
+                unit.PartConversions.ObservePropertyChangedSlim()
+                    .SubscribeOn(TaskPoolScheduler.Default)
+                    .Subscribe(_ => this.OnPropertyChanged(nameof(this.IsUsed))),
+                conversion.ObservePropertyChanged(x => x.Symbol)
+                    .SubscribeOn(TaskPoolScheduler.Default)
+                    .Where(_ => this.IsUsed)
+                    .Subscribe(_ => this.UpdateAsync())
+            };
         }
 
         public bool IsEditable { get; }
@@ -33,6 +47,7 @@
 
             set
             {
+                this.ThrowIfDisposed();
                 if (value.Equals(this.IsUsed) || !this.IsEditable)
                 {
                     return;
@@ -60,6 +75,17 @@
             return this.Conversion.Symbol;
         }
 
+        public void Dispose()
+        {
+            if (this.disposed)
+            {
+                return;
+            }
+
+            this.disposed = true;
+            this.disposable?.Dispose();
+        }
+
         private bool IsMatch(PartConversion x)
         {
             //// ReSharper disable once CompareOfFloatsByEqualityOperator
@@ -74,6 +100,14 @@
             }
 
             return true;
+        }
+
+        private void ThrowIfDisposed()
+        {
+            if (this.disposed)
+            {
+                throw new ObjectDisposedException(this.GetType().FullName);
+            }
         }
     }
 }

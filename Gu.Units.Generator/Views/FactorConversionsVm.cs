@@ -6,14 +6,17 @@
     using System.Linq;
     using Reactive;
 
-    public class FactorConversionsVm
+    public sealed class FactorConversionsVm : IDisposable
     {
+        private readonly IDisposable disposable;
+
         private Unit unit;
         private bool isUpdating;
+        private bool disposed;
 
         public FactorConversionsVm()
         {
-            this.Conversions.ObserveCollectionChangedSlim(signalInitial: false)
+            this.disposable = this.Conversions.ObserveCollectionChangedSlim(signalInitial: false)
                 .Subscribe(this.Synchronize);
         }
 
@@ -22,6 +25,11 @@
         public void SetUnit(Unit newUnit)
         {
             this.unit = newUnit;
+            foreach (var conversion in this.Conversions)
+            {
+                conversion.Dispose();
+            }
+
             this.Conversions.Clear();
             if (newUnit == null)
             {
@@ -40,6 +48,17 @@
             {
                 this.isUpdating = false;
             }
+        }
+
+        public void Dispose()
+        {
+            if (this.disposed)
+            {
+                return;
+            }
+
+            this.disposed = true;
+            this.disposable?.Dispose();
         }
 
         private void Synchronize(NotifyCollectionChangedEventArgs e)
@@ -66,6 +85,14 @@
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        private void ThrowIfDisposed()
+        {
+            if (this.disposed)
+            {
+                throw new ObjectDisposedException(this.GetType().FullName);
             }
         }
     }

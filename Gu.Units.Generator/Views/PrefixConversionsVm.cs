@@ -8,10 +8,11 @@
     using System.Runtime.CompilerServices;
     using Reactive;
 
-    public class PrefixConversionsVm : INotifyPropertyChanged
+    public sealed class PrefixConversionsVm : INotifyPropertyChanged, IDisposable
     {
         private readonly Settings settings;
         private Unit unit;
+        private bool disposed;
 
         public PrefixConversionsVm(Settings settings)
         {
@@ -50,6 +51,11 @@
         {
             this.Unit = value;
             this.Prefixes.Clear();
+            foreach (var conversion in this.AllConversions)
+            {
+                conversion.Dispose();
+            }
+
             this.AllConversions.Clear();
             if (this.unit != null)
             {
@@ -75,9 +81,35 @@
             this.OnPropertyChanged(nameof(this.HasItems));
         }
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public void Dispose()
+        {
+            if (this.disposed)
+            {
+                return;
+            }
+
+            this.disposed = true;
+            (this.UsedConversions as IDisposable)?.Dispose();
+            foreach (var conversion in this.AllConversions)
+            {
+                conversion.Dispose();
+            }
+
+            this.AllConversions.Clear();
+            this.Prefixes.Clear();
+        }
+
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void ThrowIfDisposed()
+        {
+            if (this.disposed)
+            {
+                throw new ObjectDisposedException(this.GetType().FullName);
+            }
         }
 
         private bool IsValidPrefixUnit(INameAndSymbol item)
