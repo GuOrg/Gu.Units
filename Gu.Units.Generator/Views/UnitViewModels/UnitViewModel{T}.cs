@@ -21,7 +21,7 @@
 
         private TUnit unit;
         private bool disposed;
-        private bool isOk;
+        private bool? isOk;
 
         protected UnitViewModel(TUnit unit)
         {
@@ -29,7 +29,7 @@
             this.OnUnitChanged();
         }
 
-        public bool IsOk
+        public bool? IsOk
         {
             get
             {

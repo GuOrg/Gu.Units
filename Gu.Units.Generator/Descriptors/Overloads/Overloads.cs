@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public static class OverloadFinder
+    public static class Overloads
     {
         public static IReadOnlyList<MissingOverloads> Find(IReadOnlyList<Unit> units)
         {
@@ -76,15 +76,9 @@
             foreach (var quantity in quantities)
             {
                 var match = quantities.FirstOrDefault(x => InverseOverload.IsInverse(quantity, x));
-
-                if (match == null)
-                {
-                    quantity.Inverse = null;
-                }
-                else
-                {
-                    quantity.Inverse = new InverseOverload(quantity, match);
-                }
+                quantity.Inverse = match == null
+                    ? null
+                    : new InverseOverload(quantity, match);
             }
         }
     }

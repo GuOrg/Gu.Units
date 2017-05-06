@@ -31,14 +31,14 @@
             InnerInstance = this;
 
             // redundant call here. T4 has trouble finding rx
-            this.missing = OverloadFinder.Find(this.AllUnits);
+            this.missing = Overloads.Find(this.AllUnits);
             Observable.Merge(
-                          this.BaseUnits.ObserveCollectionChangedSlim(signalInitial: true),
-                          this.DerivedUnits.ObserveCollectionChangedSlim(signalInitial: true))
+                          this.BaseUnits.ObserveCollectionChangedSlim(signalInitial: false),
+                          this.DerivedUnits.ObserveCollectionChangedSlim(signalInitial: false))
                       .Subscribe(
                           _ =>
                               {
-                                  this.missing = OverloadFinder.Find(this.AllUnits);
+                                  this.missing = Overloads.Find(this.AllUnits);
                                   this.OnPropertyChanged(nameof(this.Missing));
                                   this.OnPropertyChanged(nameof(this.AllUnits));
                                   this.OnPropertyChanged(nameof(this.Quantities));
@@ -70,7 +70,7 @@
         public static string ProjectName => "Gu.Units";
 
         /// <summary>
-        /// The extension for the generated files, set to txt if it does not build so you can´inspect the reult
+        /// The extension for the generated files, set to txt if it does not build so you can´inspect the result
         /// cs when everything works
         /// </summary>
         public static string Extension => "cs";
@@ -92,6 +92,7 @@
             return new Settings(new ObservableCollection<Prefix>(), new ObservableCollection<BaseUnit>(), new ObservableCollection<DerivedUnit>());
         }
 
+        // Used by T4
         public Unit GetUnitByName(string name)
         {
             try
@@ -110,6 +111,7 @@
             }
         }
 
+        // Used by T4
         public Quantity GetQuantityByName(string name)
         {
             try

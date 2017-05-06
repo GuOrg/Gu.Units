@@ -155,7 +155,7 @@
     <Compile Include="Descriptors\Conversions\CustomConversion.cs" />
     <Compile Include="Descriptors\Overloads\InverseOverload.cs" />
     <Compile Include="Descriptors\Overloads\Operator.cs" />
-    <Compile Include="Descriptors\Overloads\OverloadFinder.cs" />
+    <Compile Include="Descriptors\Overloads\Overloads.cs" />
     <Compile Include="Descriptors\Overloads\Power.cs" />
     <Compile Include="Descriptors\Names.cs" />
     <Compile Include="Descriptors\Overloads\OperatorOverload.cs" />
