@@ -31,7 +31,10 @@
                     return;
                 }
 
-                this.Unit = new DerivedUnit(this.Unit.Name, this.Unit.Symbol, this.Unit.QuantityName, value);
+                var symbol = this.Unit.Symbol == UnknownSymbol
+                    ? value?.ToString()
+                    : this.Unit.Symbol;
+                this.Unit = new DerivedUnit(this.Unit.Name, symbol, this.Unit.QuantityName, value);
                 this.Subscribe();
                 this.OnPropertyChanged();
             }
