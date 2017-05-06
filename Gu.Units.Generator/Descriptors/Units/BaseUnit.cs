@@ -10,13 +10,12 @@
     [Serializable]
     public class BaseUnit : Unit
     {
-        private UnitParts parts;
-
         public BaseUnit(string name, string symbol, string quantityName)
             : base(name, symbol, quantityName)
         {
+            this.Parts = new UnitParts(new[] { UnitAndPower.Create(this) });
         }
 
-        public override UnitParts Parts => this.parts ?? (this.parts = new UnitParts(new[] { UnitAndPower.Create(this) }));
+        public override UnitParts Parts { get; }
     }
 }

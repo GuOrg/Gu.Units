@@ -55,9 +55,9 @@
                                             </DataTemplate>
                                         </DataGridTemplateColumn.CellTemplate>
                                     </DataGridTemplateColumn>
-                                    <DataGridTextColumn Binding="{Binding Unit.QuantityName}" Header="Quantity" />
-                                    <DataGridTextColumn Binding="{Binding Unit.Name}" Header="Unit" />
-                                    <DataGridTextColumn Binding="{Binding Unit.Symbol}" Header="Symbol" />
+                                    <DataGridTextColumn Binding="{Binding Unit.QuantityName, UpdateSourceTrigger=LostFocus}" Header="Quantity" />
+                                    <DataGridTextColumn Binding="{Binding Unit.Name, UpdateSourceTrigger=LostFocus}" Header="Unit" />
+                                    <DataGridTextColumn Binding="{Binding Unit.Symbol, UpdateSourceTrigger=LostFocus}" Header="Symbol" />
                                 </DataGrid.Columns>
                             </DataGrid>
                         </GroupBox>
@@ -65,9 +65,9 @@
                         <GroupBox Grid.Column="1" Header="Prefixes">
                             <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Prefixes}">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Binding="{Binding Name}" Header="Name" />
-                                    <DataGridTextColumn Binding="{Binding Symbol}" Header="Symbol" />
-                                    <DataGridTextColumn Binding="{Binding Power}" Header="Power" />
+                                    <DataGridTextColumn Binding="{Binding Name, UpdateSourceTrigger=LostFocus}" Header="Name" />
+                                    <DataGridTextColumn Binding="{Binding Symbol, UpdateSourceTrigger=LostFocus}" Header="Symbol" />
+                                    <DataGridTextColumn Binding="{Binding Power, UpdateSourceTrigger=LostFocus}" Header="Power" />
                                 </DataGrid.Columns>
                             </DataGrid>
                         </GroupBox>
@@ -89,11 +89,11 @@
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
-                                <DataGridTextColumn Binding="{Binding Unit.QuantityName}" Header="Quantity" />
-                                <DataGridTextColumn Binding="{Binding Unit.Name}" Header="Unit" />
-                                <DataGridTextColumn Binding="{Binding Unit.Symbol}" Header="Symbol" />
-                                <DataGridTextColumn Binding="{Binding UnitParts}" Header="Parts" />
-                                <DataGridTextColumn Binding="{Binding Unit.Parts.BaseUnitSymbol}"
+                                <DataGridTextColumn Binding="{Binding Unit.QuantityName, UpdateSourceTrigger=LostFocus}" Header="Quantity" />
+                                <DataGridTextColumn Binding="{Binding Unit.Name, UpdateSourceTrigger=LostFocus}" Header="Unit" />
+                                <DataGridTextColumn Binding="{Binding Unit.Symbol, UpdateSourceTrigger=LostFocus}" Header="Symbol" />
+                                <DataGridTextColumn Binding="{Binding UnitParts, UpdateSourceTrigger=LostFocus}" Header="Parts" />
+                                <DataGridTextColumn Binding="{Binding Unit.Parts.BaseUnitSymbol, Mode=OneWay}"
                                                     Header="In base Units"
                                                     IsReadOnly="True" />
                             </DataGrid.Columns>
