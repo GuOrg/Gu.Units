@@ -14,8 +14,8 @@ using System.Windows.Markup;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("ea4bce51-a58d-4fa7-bba4-6f0056d753ca")]
-[assembly: AssemblyVersion("0.10.3.0")]
-[assembly: AssemblyFileVersion("0.10.3.0")]
+[assembly: AssemblyVersion("0.10.4.0")]
+[assembly: AssemblyFileVersion("0.10.4.0")]
 [assembly:InternalsVisibleTo("Gu.Units.Wpf.Tests", AllInternalsVisible = true)]
 
 [assembly: XmlnsDefinition("http://Gu.com/Units", clrNamespace: "Gu.Units", AssemblyName = "Gu.Units")]
