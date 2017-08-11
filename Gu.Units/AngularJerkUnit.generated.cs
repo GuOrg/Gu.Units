@@ -21,7 +21,7 @@
         /// The DegreesPerSecondCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularJerkUnit DegreesPerSecondCubed = new AngularJerkUnit(degreesPerSecondCubed => 0.0174532925199433 * degreesPerSecondCubed, radiansPerSecondCubed => radiansPerSecondCubed / 0.0174532925199433, "°⋅s⁻³");
+        public static readonly AngularJerkUnit DegreesPerSecondCubed = new AngularJerkUnit(degreesPerSecondCubed => 0.0174532925199433 * degreesPerSecondCubed, radiansPerSecondCubed => radiansPerSecondCubed / 0.0174532925199433, "\u00B0⋅s⁻³");
 
         /// <summary>
         /// The RadiansPerHourCubed unit
@@ -33,7 +33,7 @@
         /// The DegreesPerHourCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularJerkUnit DegreesPerHourCubed = new AngularJerkUnit(degreesPerHourCubed => 3.74084630485753E-13 * degreesPerHourCubed, radiansPerSecondCubed => radiansPerSecondCubed / 3.74084630485753E-13, "°⋅h⁻³");
+        public static readonly AngularJerkUnit DegreesPerHourCubed = new AngularJerkUnit(degreesPerHourCubed => 3.74084630485753E-13 * degreesPerHourCubed, radiansPerSecondCubed => radiansPerSecondCubed / 3.74084630485753E-13, "\u00B0⋅h⁻³");
 
         /// <summary>
         /// The RadiansPerMinuteCubed unit
@@ -45,7 +45,7 @@
         /// The DegreesPerMinuteCubed unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularJerkUnit DegreesPerMinuteCubed = new AngularJerkUnit(degreesPerMinuteCubed => 8.08022801849227E-08 * degreesPerMinuteCubed, radiansPerSecondCubed => radiansPerSecondCubed / 8.08022801849227E-08, "°⋅min⁻³");
+        public static readonly AngularJerkUnit DegreesPerMinuteCubed = new AngularJerkUnit(degreesPerMinuteCubed => 8.08022801849227E-08 * degreesPerMinuteCubed, radiansPerSecondCubed => radiansPerSecondCubed / 8.08022801849227E-08, "\u00B0⋅min⁻³");
 
 #pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
 #pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter

@@ -221,13 +221,13 @@
       "CustomConversions": [
         {
           "Name": "Celsius",
-          "Symbol": "°C",
+          "Symbol": "\u00B0C",
           "ToSi": "celsius + 273.15",
           "FromSi": "kelvin - 273.15"
         },
         {
           "Name": "Fahrenheit",
-          "Symbol": "°F",
+          "Symbol": "\u00B0F",
           "ToSi": "(fahrenheit + 459.67) / 1.8",
           "FromSi": "(1.8 * kelvin) - 459.67"
         }
@@ -243,7 +243,7 @@
       "CustomConversions": [
         {
           "Name": "Degrees",
-          "Symbol": "°",
+          "Symbol": "\u00B0",
           "ToSi": "degrees / 57.295779513082323",
           "FromSi": "57.295779513082323 * radians"
         }
@@ -906,12 +906,12 @@
         },
         {
           "Name": "DegreesPerSecond",
-          "Symbol": "°⋅s⁻¹",
+          "Symbol": "\u00B0⋅s⁻¹",
           "Factor": 0.017453292519943295
         },
         {
           "Name": "DegreesPerMinute",
-          "Symbol": "min⁻¹⋅°",
+          "Symbol": "min⁻¹⋅\u00B0",
           "Factor": 0.00029088820866572158
         },
         {
@@ -921,7 +921,7 @@
         },
         {
           "Name": "DegreesPerHour",
-          "Symbol": "h⁻¹⋅°",
+          "Symbol": "h⁻¹⋅\u00B0",
           "Factor": 4.84813681109536E-06
         },
         {
@@ -1540,7 +1540,7 @@
       "PartConversions": [
         {
           "Name": "DegreesPerSecondSquared",
-          "Symbol": "°⋅s⁻²",
+          "Symbol": "\u00B0⋅s⁻²",
           "Factor": 0.017453292519943295
         },
         {
@@ -1550,12 +1550,12 @@
         },
         {
           "Name": "DegreesPerHourSquared",
-          "Symbol": "h⁻²⋅°",
+          "Symbol": "h⁻²⋅\u00B0",
           "Factor": 1.346704669748711E-09
         },
         {
           "Name": "DegreesPerMinuteSquared",
-          "Symbol": "min⁻²⋅°",
+          "Symbol": "min⁻²⋅\u00B0",
           "Factor": 4.84813681109536E-06
         },
         {
@@ -1585,7 +1585,7 @@
       "PartConversions": [
         {
           "Name": "DegreesPerSecondCubed",
-          "Symbol": "°⋅s⁻³",
+          "Symbol": "\u00B0⋅s⁻³",
           "Factor": 0.017453292519943295
         },
         {
@@ -1595,7 +1595,7 @@
         },
         {
           "Name": "DegreesPerHourCubed",
-          "Symbol": "°⋅h⁻³",
+          "Symbol": "\u00B0⋅h⁻³",
           "Factor": 3.7408463048575307E-13
         },
         {
@@ -1605,7 +1605,7 @@
         },
         {
           "Name": "DegreesPerMinuteCubed",
-          "Symbol": "°⋅min⁻³",
+          "Symbol": "\u00B0⋅min⁻³",
           "Factor": 8.0802280184922666E-08
         }
       ]
@@ -1726,7 +1726,7 @@
       "PartConversions": [
         {
           "Name": "DegreesPerPercent",
-          "Symbol": "°/%",
+          "Symbol": "\u00B0/%",
           "Factor": 1.7453292519943295
         },
         {

@@ -21,7 +21,7 @@
         /// The DegreesPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AnglePerUnitlessUnit DegreesPerPercent = new AnglePerUnitlessUnit(degreesPerPercent => 1.74532925199433 * degreesPerPercent, radiansPerUnitless => radiansPerUnitless / 1.74532925199433, "°/%");
+        public static readonly AnglePerUnitlessUnit DegreesPerPercent = new AnglePerUnitlessUnit(degreesPerPercent => 1.74532925199433 * degreesPerPercent, radiansPerUnitless => radiansPerUnitless / 1.74532925199433, "\u00B0/%");
 
         /// <summary>
         /// The RadiansPerPercent unit

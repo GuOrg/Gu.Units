@@ -479,7 +479,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
         /// </summary>
-        /// <param name="degreesPerSecond">The value in °⋅s⁻¹.</param>
+        /// <param name="degreesPerSecond">The value in \u00B0⋅s⁻¹.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
         public static AngularSpeed FromDegreesPerSecond(double degreesPerSecond)
         {
@@ -489,7 +489,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
         /// </summary>
-        /// <param name="degreesPerMinute">The value in min⁻¹⋅°.</param>
+        /// <param name="degreesPerMinute">The value in min⁻¹⋅\u00B0.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
         public static AngularSpeed FromDegreesPerMinute(double degreesPerMinute)
         {
@@ -509,7 +509,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AngularSpeed"/>.
         /// </summary>
-        /// <param name="degreesPerHour">The value in h⁻¹⋅°.</param>
+        /// <param name="degreesPerHour">The value in h⁻¹⋅\u00B0.</param>
         /// <returns>An instance of <see cref="Gu.Units.AngularSpeed"/></returns>
         public static AngularSpeed FromDegreesPerHour(double degreesPerHour)
         {

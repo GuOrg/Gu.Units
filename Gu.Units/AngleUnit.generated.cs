@@ -21,7 +21,7 @@
         /// The Degrees unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngleUnit Degrees = new AngleUnit(degrees => degrees / 57.295779513082323, radians => 57.295779513082323 * radians, "°");
+        public static readonly AngleUnit Degrees = new AngleUnit(degrees => degrees / 57.295779513082323, radians => 57.295779513082323 * radians, "\u00B0");
 
 #pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
 #pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter

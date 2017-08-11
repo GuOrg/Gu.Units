@@ -141,7 +141,7 @@
 
         private static bool IsSymbol(char c)
         {
-            if (c == '°' || c == '‰' || c == '%')
+            if (c == '\u00B0' || c == '‰' || c == '%')
             {
                 return true;
             }

@@ -21,7 +21,7 @@
         /// The DegreesPerSecondSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularAccelerationUnit DegreesPerSecondSquared = new AngularAccelerationUnit(degreesPerSecondSquared => 0.0174532925199433 * degreesPerSecondSquared, radiansPerSecondSquared => radiansPerSecondSquared / 0.0174532925199433, "°⋅s⁻²");
+        public static readonly AngularAccelerationUnit DegreesPerSecondSquared = new AngularAccelerationUnit(degreesPerSecondSquared => 0.0174532925199433 * degreesPerSecondSquared, radiansPerSecondSquared => radiansPerSecondSquared / 0.0174532925199433, "\u00B0⋅s⁻²");
 
         /// <summary>
         /// The RadiansPerHourSquared unit
@@ -33,13 +33,13 @@
         /// The DegreesPerHourSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularAccelerationUnit DegreesPerHourSquared = new AngularAccelerationUnit(degreesPerHourSquared => 1.34670466974871E-09 * degreesPerHourSquared, radiansPerSecondSquared => radiansPerSecondSquared / 1.34670466974871E-09, "h⁻²⋅°");
+        public static readonly AngularAccelerationUnit DegreesPerHourSquared = new AngularAccelerationUnit(degreesPerHourSquared => 1.34670466974871E-09 * degreesPerHourSquared, radiansPerSecondSquared => radiansPerSecondSquared / 1.34670466974871E-09, "h⁻²⋅\u00B0");
 
         /// <summary>
         /// The DegreesPerMinuteSquared unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularAccelerationUnit DegreesPerMinuteSquared = new AngularAccelerationUnit(degreesPerMinuteSquared => 4.84813681109536E-06 * degreesPerMinuteSquared, radiansPerSecondSquared => radiansPerSecondSquared / 4.84813681109536E-06, "min⁻²⋅°");
+        public static readonly AngularAccelerationUnit DegreesPerMinuteSquared = new AngularAccelerationUnit(degreesPerMinuteSquared => 4.84813681109536E-06 * degreesPerMinuteSquared, radiansPerSecondSquared => radiansPerSecondSquared / 4.84813681109536E-06, "min⁻²⋅\u00B0");
 
         /// <summary>
         /// The RadiansPerMinuteSquared unit
