@@ -600,7 +600,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Power"/>.
         /// </summary>
-        /// <param name="microwatts">The value in µW.</param>
+        /// <param name="microwatts">The value in \u00B5W.</param>
         /// <returns>An instance of <see cref="Gu.Units.Power"/></returns>
         public static Power FromMicrowatts(double microwatts)
         {

@@ -39,7 +39,7 @@
         /// The Microamperes unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly CurrentUnit Microamperes = new CurrentUnit(microamperes => microamperes / 1000000, amperes => 1000000 * amperes, "µA");
+        public static readonly CurrentUnit Microamperes = new CurrentUnit(microamperes => microamperes / 1000000, amperes => 1000000 * amperes, "\u00B5A");
 
         /// <summary>
         /// The Nanoamperes unit

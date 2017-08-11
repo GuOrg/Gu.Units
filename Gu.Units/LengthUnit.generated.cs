@@ -57,7 +57,7 @@
         /// The Micrometres unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthUnit Micrometres = new LengthUnit(micrometres => micrometres / 1000000, metres => 1000000 * metres, "µm");
+        public static readonly LengthUnit Micrometres = new LengthUnit(micrometres => micrometres / 1000000, metres => 1000000 * metres, "\u00B5m");
 
         /// <summary>
         /// The Millimetres unit

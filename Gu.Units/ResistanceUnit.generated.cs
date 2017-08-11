@@ -21,7 +21,7 @@
         /// The Microohms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ResistanceUnit Microohms = new ResistanceUnit(microohms => microohms / 1000000, ohms => 1000000 * ohms, "µΩ");
+        public static readonly ResistanceUnit Microohms = new ResistanceUnit(microohms => microohms / 1000000, ohms => 1000000 * ohms, "\u00B5Ω");
 
         /// <summary>
         /// The Milliohms unit

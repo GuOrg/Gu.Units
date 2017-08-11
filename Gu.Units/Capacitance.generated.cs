@@ -457,7 +457,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Capacitance"/>.
         /// </summary>
-        /// <param name="microfarads">The value in µF.</param>
+        /// <param name="microfarads">The value in \u00B5F.</param>
         /// <returns>An instance of <see cref="Gu.Units.Capacitance"/></returns>
         public static Capacitance FromMicrofarads(double microfarads)
         {

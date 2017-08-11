@@ -39,7 +39,7 @@
         /// The Micropascals unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly PressureUnit Micropascals = new PressureUnit(micropascals => micropascals / 1000000, pascals => 1000000 * pascals, "µPa");
+        public static readonly PressureUnit Micropascals = new PressureUnit(micropascals => micropascals / 1000000, pascals => 1000000 * pascals, "\u00B5Pa");
 
         /// <summary>
         /// The Millipascals unit

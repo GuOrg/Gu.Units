@@ -13,6 +13,9 @@
         {
             new TestCase("1.2 m", s => Length.Parse(s, CultureInfo.InvariantCulture), Length.FromMetres(1.2)),
             new TestCase("1.2 μm", s => Length.Parse(s, CultureInfo.InvariantCulture), Length.FromMicrometres(1.2)),
+            new TestCase("1.2 \u00B5m", s => Length.Parse(s, CultureInfo.InvariantCulture), Length.FromMicrometres(1.2)),
+            new TestCase("1.2 \u03BCm", s => Length.Parse(s, CultureInfo.InvariantCulture), Length.FromMicrometres(1.2)),
+            new TestCase(Length.FromMicrometres(1.2).ToString(CultureInfo.InvariantCulture), s => Length.Parse(s, CultureInfo.InvariantCulture), Length.FromMicrometres(1.2)),
             new TestCase("1.2 m^2", s => Area.Parse(s, CultureInfo.InvariantCulture), Area.FromSquareMetres(1.2)),
             new TestCase("1,2 m^2", s => Area.Parse(s, Sv), Area.FromSquareMetres(1.2)),
             new TestCase("1.2m²", s => Area.Parse(s, CultureInfo.InvariantCulture), Area.FromSquareMetres(1.2)),

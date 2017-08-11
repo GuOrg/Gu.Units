@@ -719,7 +719,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Length"/>.
         /// </summary>
-        /// <param name="micrometres">The value in µm.</param>
+        /// <param name="micrometres">The value in \u00B5m.</param>
         /// <returns>An instance of <see cref="Gu.Units.Length"/></returns>
         public static Length FromMicrometres(double micrometres)
         {

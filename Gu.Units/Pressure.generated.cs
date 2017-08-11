@@ -579,7 +579,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Pressure"/>.
         /// </summary>
-        /// <param name="micropascals">The value in µPa.</param>
+        /// <param name="micropascals">The value in \u00B5Pa.</param>
         /// <returns>An instance of <see cref="Gu.Units.Pressure"/></returns>
         public static Pressure FromMicropascals(double micropascals)
         {

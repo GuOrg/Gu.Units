@@ -7,7 +7,7 @@
     },
     {
       "Name": "Micro",
-      "Symbol": "µ",
+      "Symbol": "\u00B5",
       "Power": -6
     },
     {
@@ -64,7 +64,7 @@
             },
             {
               "Name": "Micrograms",
-              "Symbol": "µg",
+              "Symbol": "\u00B5g",
               "PrefixName": "Micro"
             }
           ]
@@ -143,7 +143,7 @@
         },
         {
           "Name": "Micrometres",
-          "Symbol": "µm",
+          "Symbol": "\u00B5m",
           "PrefixName": "Micro"
         },
         {
@@ -202,7 +202,7 @@
         },
         {
           "Name": "Microseconds",
-          "Symbol": "µs",
+          "Symbol": "\u00B5s",
           "PrefixName": "Micro"
         },
         {
@@ -303,7 +303,7 @@
         },
         {
           "Name": "Microamperes",
-          "Symbol": "µA",
+          "Symbol": "\u00B5A",
           "PrefixName": "Micro"
         },
         {
@@ -556,7 +556,7 @@
         },
         {
           "Name": "Micronewtons",
-          "Symbol": "µN",
+          "Symbol": "\u00B5N",
           "PrefixName": "Micro"
         },
         {
@@ -619,7 +619,7 @@
         },
         {
           "Name": "Micropascals",
-          "Symbol": "µPa",
+          "Symbol": "\u00B5Pa",
           "PrefixName": "Micro"
         },
         {
@@ -734,7 +734,7 @@
         },
         {
           "Name": "Microjoules",
-          "Symbol": "µJ",
+          "Symbol": "\u00B5J",
           "PrefixName": "Micro"
         },
         {
@@ -790,7 +790,7 @@
         },
         {
           "Name": "Microwatts",
-          "Symbol": "µW",
+          "Symbol": "\u00B5W",
           "PrefixName": "Micro"
         },
         {
@@ -1070,7 +1070,7 @@
         },
         {
           "Name": "NewtonsPerMicrometre",
-          "Symbol": "N/µm",
+          "Symbol": "N/\u00B5m",
           "Factor": 1000000.0
         },
         {
@@ -1085,7 +1085,7 @@
         },
         {
           "Name": "KilonewtonsPerMicrometre",
-          "Symbol": "kN/µm",
+          "Symbol": "kN/\u00B5m",
           "Factor": 1000000000.0
         },
         {
@@ -1100,7 +1100,7 @@
         },
         {
           "Name": "MeganewtonsPerMicrometre",
-          "Symbol": "MN/µm",
+          "Symbol": "MN/\u00B5m",
           "Factor": 1000000000000.0
         },
         {
@@ -1110,7 +1110,7 @@
         },
         {
           "Name": "GiganewtonsPerMicrometre",
-          "Symbol": "GN/µm",
+          "Symbol": "GN/\u00B5m",
           "Factor": 1E+15
         },
         {
@@ -1249,7 +1249,7 @@
         },
         {
           "Name": "Microvolts",
-          "Symbol": "µV",
+          "Symbol": "\u00B5V",
           "PrefixName": "Micro"
         },
         {
@@ -1284,7 +1284,7 @@
       "PrefixConversions": [
         {
           "Name": "Microohms",
-          "Symbol": "µΩ",
+          "Symbol": "\u00B5Ω",
           "PrefixName": "Micro"
         },
         {
@@ -1354,7 +1354,7 @@
         },
         {
           "Name": "Microcoulombs",
-          "Symbol": "µC",
+          "Symbol": "\u00B5C",
           "PrefixName": "Micro"
         },
         {
@@ -1408,7 +1408,7 @@
         },
         {
           "Name": "Microhenrys",
-          "Symbol": "µH",
+          "Symbol": "\u00B5H",
           "PrefixName": "Micro"
         },
         {
@@ -1458,7 +1458,7 @@
         },
         {
           "Name": "Microfarads",
-          "Symbol": "µF",
+          "Symbol": "\u00B5F",
           "PrefixName": "Micro"
         },
         {
@@ -1515,7 +1515,7 @@
         },
         {
           "Name": "MicrometresPerKilonewton",
-          "Symbol": "µm/kN",
+          "Symbol": "\u00B5m/kN",
           "Factor": 1E-09
         }
       ]
@@ -1696,7 +1696,7 @@
         },
         {
           "Name": "MicrometresPerPercent",
-          "Symbol": "µm/%",
+          "Symbol": "\u00B5m/%",
           "Factor": 9.9999999999999991E-05
         },
         {

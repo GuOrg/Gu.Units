@@ -32,7 +32,7 @@ namespace Gu.Units
             }
 
             var match = tempCache[index];
-            for (int i = index + 1; i < tempCache.Length; i++)
+            for (var i = index + 1; i < tempCache.Length; i++)
             {
                 // searching linearly for longest match after finding one
                 var temp = tempCache[i];
@@ -107,8 +107,8 @@ namespace Gu.Units
 
         private static int BinaryFindSubstring(CachedItem[] cache, string key, int pos)
         {
-            int lo = 0;
-            int hi = cache.Length - 1;
+            var lo = 0;
+            var hi = cache.Length - 1;
             while (lo <= hi)
             {
                 var i = (lo + hi) / 2;
@@ -134,8 +134,8 @@ namespace Gu.Units
 
         private static int BinaryFind(CachedItem[] cache, string key)
         {
-            int lo = 0;
-            int hi = cache.Length - 1;
+            var lo = 0;
+            var hi = cache.Length - 1;
             while (lo <= hi)
             {
                 var i = (lo + hi) / 2;
@@ -161,7 +161,7 @@ namespace Gu.Units
 
         private static int Compare(string cached, string key, int pos)
         {
-            for (int i = 0; i < cached.Length; i++)
+            for (var i = 0; i < cached.Length; i++)
             {
                 var j = i + pos;
                 if (key.Length == j)
@@ -169,7 +169,7 @@ namespace Gu.Units
                     return 1;
                 }
 
-                var compare = cached[i] - key[j];
+                var compare = Invariant(cached[i]) - Invariant(key[j]);
                 if (compare != 0)
                 {
                     return compare;
@@ -179,9 +179,23 @@ namespace Gu.Units
             return 0;
         }
 
+        private static char Invariant(char c)
+        {
+            switch (c)
+            {
+                case '\u03BC':
+                    // use micro instead of lowercase greek.
+                    // http://www.fileformat.info/info/unicode/char/00b5/index.htm
+                    // http://www.fileformat.info/info/unicode/char/03BC/index.htm
+                    return '\u00B5';
+                default:
+                    return c;
+            }
+        }
+
         private static int Compare(string cached, string key)
         {
-            for (int i = 0; i < cached.Length; i++)
+            for (var i = 0; i < cached.Length; i++)
             {
                 if (key.Length == i)
                 {

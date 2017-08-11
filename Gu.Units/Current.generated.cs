@@ -532,7 +532,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Current"/>.
         /// </summary>
-        /// <param name="microamperes">The value in µA.</param>
+        /// <param name="microamperes">The value in \u00B5A.</param>
         /// <returns>An instance of <see cref="Gu.Units.Current"/></returns>
         public static Current FromMicroamperes(double microamperes)
         {
