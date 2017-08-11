@@ -45,7 +45,7 @@ namespace Gu.Units.Analyzers
         public sealed override Task RegisterCodeFixesAsync(CodeFixContext context)
         {
             var diagnostic = context.Diagnostics[0];
-            var message = diagnostic.GetMessage(null);
+            var message = diagnostic.GetMessage();
             if (!Regex.IsMatch(message, this.pattern))
             {
                 return FinishedTask;

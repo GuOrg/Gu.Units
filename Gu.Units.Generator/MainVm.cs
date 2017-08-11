@@ -57,6 +57,7 @@
 
         public void Save()
         {
+            this.ThrowIfDisposed();
             Persister.Save(Persister.SettingsFileName);
         }
 

@@ -33,7 +33,7 @@
         public void ParseError(string text)
         {
             Assert.Throws<FormatException>(() => LengthUnit.Parse(text));
-            Assert.AreEqual(false, LengthUnit.TryParse(text, out LengthUnit temp));
+            Assert.AreEqual(false, LengthUnit.TryParse(text, out LengthUnit _));
         }
 
         [TestCaseSource(nameof(HappyPathSource))]
@@ -46,7 +46,7 @@
         [TestCaseSource(nameof(ErrorSource))]
         public void TryParseError(string text)
         {
-            Assert.AreEqual(false, LengthUnit.TryParse(text, out LengthUnit temp));
+            Assert.AreEqual(false, LengthUnit.TryParse(text, out LengthUnit _));
         }
 
         public class TestCase

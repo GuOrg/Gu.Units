@@ -49,34 +49,32 @@
         [Test]
         public void CentimetresMetres()
         {
-            const double Centimetres = 1.2;
             var cms = new[]
                           {
-                              Length.FromCentimetres(Centimetres),
-                              new Length(Centimetres, LengthUnit.Centimetres),
+                              Length.FromCentimetres(1.2),
+                              new Length(1.2, LengthUnit.Centimetres),
                           };
             foreach (var cm in cms)
             {
                 Assert.AreEqual(0.012, cm.Metres);
                 var metres = Length.FromMetres(cm.Metres);
-                Assert.AreEqual(Centimetres, metres.Centimetres);
+                Assert.AreEqual(1.2, metres.Centimetres);
             }
         }
 
         [Test]
         public void CentimetresMillimetres()
         {
-            const double Centimetres = 1.2;
             var cms = new[]
                           {
-                              Length.FromCentimetres(Centimetres),
-                              new Length(Centimetres, LengthUnit.Centimetres),
+                              Length.FromCentimetres(1.2),
+                              new Length(1.2, LengthUnit.Centimetres),
                           };
             foreach (var cm in cms)
             {
                 Assert.AreEqual(12, cm.Millimetres);
                 var millimetres = Length.FromMillimetres(cm.Millimetres);
-                Assert.AreEqual(Centimetres, millimetres.Centimetres);
+                Assert.AreEqual(1.2, millimetres.Centimetres);
             }
         }
 

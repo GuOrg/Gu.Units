@@ -13,7 +13,7 @@ namespace Gu.Units.Analyzers.Tests
         private static readonly string TestProjectName = "TestProject";
 
         private static readonly MetadataReference CorlibReference = MetadataReference.CreateFromFile(typeof(object).Assembly.Location);
-        private static readonly MetadataReference GuUnitsReference = MetadataReference.CreateFromFile(typeof(Gu.Units.Length).Assembly.Location);
+        private static readonly MetadataReference GuUnitsReference = MetadataReference.CreateFromFile(typeof(Length).Assembly.Location);
         //// private static readonly MetadataReference SystemCoreReference = MetadataReference.CreateFromFile(typeof(Enumerable).Assembly.Location);
         //// private static readonly MetadataReference CSharpSymbolsReference = MetadataReference.CreateFromFile(typeof(CSharpCompilation).Assembly.Location);
         //// private static readonly MetadataReference CodeAnalysisReference = MetadataReference.CreateFromFile(typeof(Compilation).Assembly.Location);
@@ -73,7 +73,7 @@ namespace Gu.Units.Analyzers.Tests
                 throw new ArgumentException("Unsupported Language");
             }
 
-            var project = Factory.CreateProject(sources, language);
+            var project = CreateProject(sources, language);
             var documents = project.Documents.ToArray();
 
             if (sources.Length != documents.Length)

@@ -152,7 +152,7 @@ public class TemplateFileManager
     /// <param name="fileProperties">File property settings in vs for the new File</param>
     public void StartNewFile(string name, string projectName = "", string folderName = "", FileProperties fileProperties = null)
     {
-        if (string.IsNullOrWhiteSpace(name) == true)
+        if (string.IsNullOrWhiteSpace(name))
         {
             throw new ArgumentException("name");
         }
@@ -228,7 +228,7 @@ public class TemplateFileManager
         var items = VsHelper.GetOutputFilesAsProjectItems(this.dte, list);
         this.WriteVsProperties(items, list);
 
-        if (this.IsAutoIndentEnabled == true && split == true)
+        if (this.IsAutoIndentEnabled && split)
         {
             this.FormatProjectItems(items);
         }

@@ -4,7 +4,7 @@
 
     public class ResistanceUnitTests
     {
-        private static TestCase[] HappyPathSource { get; } =
+        private static readonly TestCase[] HappyPathSource =
         {
             new TestCase("Ω", "\u03A9"),
             new TestCase("\u2126", "\u03A9"),
