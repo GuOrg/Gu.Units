@@ -543,7 +543,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Voltage"/>.
         /// </summary>
-        /// <param name="microvolts">The value in \u00B5V.</param>
+        /// <param name="microvolts">The value in \u03BCV.</param>
         /// <returns>An instance of <see cref="Gu.Units.Voltage"/></returns>
         public static Voltage FromMicrovolts(double microvolts)
         {

@@ -27,7 +27,7 @@
         /// The Microcoulombs unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ElectricChargeUnit Microcoulombs = new ElectricChargeUnit(microcoulombs => microcoulombs / 1000000, coulombs => 1000000 * coulombs, "\u00B5C");
+        public static readonly ElectricChargeUnit Microcoulombs = new ElectricChargeUnit(microcoulombs => microcoulombs / 1000000, coulombs => 1000000 * coulombs, "\u03BCC");
 
         /// <summary>
         /// The Millicoulombs unit

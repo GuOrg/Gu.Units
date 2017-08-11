@@ -27,7 +27,7 @@
         /// The NewtonsPerMicrometre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly StiffnessUnit NewtonsPerMicrometre = new StiffnessUnit(newtonsPerMicrometre => 1000000 * newtonsPerMicrometre, newtonsPerMetre => newtonsPerMetre / 1000000, "N/\u00B5m");
+        public static readonly StiffnessUnit NewtonsPerMicrometre = new StiffnessUnit(newtonsPerMicrometre => 1000000 * newtonsPerMicrometre, newtonsPerMetre => newtonsPerMetre / 1000000, "N/\u03BCm");
 
         /// <summary>
         /// The NewtonsPerMillimetre unit
@@ -45,7 +45,7 @@
         /// The KilonewtonsPerMicrometre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly StiffnessUnit KilonewtonsPerMicrometre = new StiffnessUnit(kilonewtonsPerMicrometre => 1000000000 * kilonewtonsPerMicrometre, newtonsPerMetre => newtonsPerMetre / 1000000000, "kN/\u00B5m");
+        public static readonly StiffnessUnit KilonewtonsPerMicrometre = new StiffnessUnit(kilonewtonsPerMicrometre => 1000000000 * kilonewtonsPerMicrometre, newtonsPerMetre => newtonsPerMetre / 1000000000, "kN/\u03BCm");
 
         /// <summary>
         /// The KilonewtonsPerMillimetre unit
@@ -63,7 +63,7 @@
         /// The MeganewtonsPerMicrometre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly StiffnessUnit MeganewtonsPerMicrometre = new StiffnessUnit(meganewtonsPerMicrometre => 1000000000000 * meganewtonsPerMicrometre, newtonsPerMetre => newtonsPerMetre / 1000000000000, "MN/\u00B5m");
+        public static readonly StiffnessUnit MeganewtonsPerMicrometre = new StiffnessUnit(meganewtonsPerMicrometre => 1000000000000 * meganewtonsPerMicrometre, newtonsPerMetre => newtonsPerMetre / 1000000000000, "MN/\u03BCm");
 
         /// <summary>
         /// The MeganewtonsPerMillimetre unit
@@ -75,7 +75,7 @@
         /// The GiganewtonsPerMicrometre unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly StiffnessUnit GiganewtonsPerMicrometre = new StiffnessUnit(giganewtonsPerMicrometre => 1000000000000000 * giganewtonsPerMicrometre, newtonsPerMetre => newtonsPerMetre / 1000000000000000, "GN/\u00B5m");
+        public static readonly StiffnessUnit GiganewtonsPerMicrometre = new StiffnessUnit(giganewtonsPerMicrometre => 1000000000000000 * giganewtonsPerMicrometre, newtonsPerMetre => newtonsPerMetre / 1000000000000000, "GN/\u03BCm");
 
         /// <summary>
         /// The GiganewtonsPerMillimetre unit

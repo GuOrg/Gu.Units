@@ -512,7 +512,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.ElectricCharge"/>.
         /// </summary>
-        /// <param name="microcoulombs">The value in \u00B5C.</param>
+        /// <param name="microcoulombs">The value in \u03BCC.</param>
         /// <returns>An instance of <see cref="Gu.Units.ElectricCharge"/></returns>
         public static ElectricCharge FromMicrocoulombs(double microcoulombs)
         {

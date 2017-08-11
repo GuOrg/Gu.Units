@@ -183,11 +183,11 @@ namespace Gu.Units
         {
             switch (c)
             {
-                case '\u03BC':
-                    // use micro instead of lowercase greek.
+                case '\u00B5':
+                    // use lowercase greek mu instead of micro.
                     // http://www.fileformat.info/info/unicode/char/00b5/index.htm
                     // http://www.fileformat.info/info/unicode/char/03BC/index.htm
-                    return '\u00B5';
+                    return '\u03BC';
                 default:
                     return c;
             }

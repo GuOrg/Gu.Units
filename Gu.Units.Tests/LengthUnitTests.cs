@@ -13,9 +13,9 @@
             new TestCase(" m "),
             new TestCase(" cm"),
             new TestCase("mm"),
-            new TestCase("μm", "\u00B5m"),
-            new TestCase("\u00B5m", "\u00B5m"),
-            new TestCase("\u03BCm", "\u00B5m"),
+            new TestCase("μm", "\u03BCm"),
+            new TestCase("\u00B5m", "\u03BCm"),
+            new TestCase("\u03BCm", "\u03BCm"),
             new TestCase("ft"),
             new TestCase("yd"),
         };
@@ -33,23 +33,20 @@
         public void ParseError(string text)
         {
             Assert.Throws<FormatException>(() => LengthUnit.Parse(text));
-            LengthUnit temp;
-            Assert.AreEqual(false, LengthUnit.TryParse(text, out temp));
+            Assert.AreEqual(false, LengthUnit.TryParse(text, out LengthUnit temp));
         }
 
         [TestCaseSource(nameof(HappyPathSource))]
         public void TryParseSuccess(TestCase testCase)
         {
-            LengthUnit result;
-            Assert.AreEqual(true, LengthUnit.TryParse(testCase.Text, out result));
+            Assert.AreEqual(true, LengthUnit.TryParse(testCase.Text, out LengthUnit result));
             Assert.AreEqual(testCase.Expected, result.ToString());
         }
 
         [TestCaseSource(nameof(ErrorSource))]
         public void TryParseError(string text)
         {
-            LengthUnit temp;
-            Assert.AreEqual(false, LengthUnit.TryParse(text, out temp));
+            Assert.AreEqual(false, LengthUnit.TryParse(text, out LengthUnit temp));
         }
 
         public class TestCase

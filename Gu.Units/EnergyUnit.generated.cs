@@ -27,7 +27,7 @@
         /// The Microjoules unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly EnergyUnit Microjoules = new EnergyUnit(microjoules => microjoules / 1000000, joules => 1000000 * joules, "\u00B5J");
+        public static readonly EnergyUnit Microjoules = new EnergyUnit(microjoules => microjoules / 1000000, joules => 1000000 * joules, "\u03BCJ");
 
         /// <summary>
         /// The Millijoules unit

@@ -457,7 +457,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Inductance"/>.
         /// </summary>
-        /// <param name="microhenrys">The value in \u00B5H.</param>
+        /// <param name="microhenrys">The value in \u03BCH.</param>
         /// <returns>An instance of <see cref="Gu.Units.Inductance"/></returns>
         public static Inductance FromMicrohenrys(double microhenrys)
         {

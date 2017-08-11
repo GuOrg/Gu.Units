@@ -470,7 +470,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
-        /// <param name="microohms">The value in \u00B5Ω.</param>
+        /// <param name="microohms">The value in \u03BCΩ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance FromMicroohms(double microohms)
         {

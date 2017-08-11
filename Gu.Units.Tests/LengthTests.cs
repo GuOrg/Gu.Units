@@ -98,9 +98,9 @@
             {
                 Assert.AreEqual("1.2\u00A0m", length.ToString());
                 Assert.AreEqual("120\u00A0cm", length.ToString(LengthUnit.Centimetres));
-                Assert.AreEqual("1200000\u00A0\u00B5m", length.ToString(LengthUnit.Micrometres));
+                Assert.AreEqual("1200000\u00A0\u03BCm", length.ToString(LengthUnit.Micrometres));
                 Assert.AreEqual(" 1200.0 mm ", length.ToString(" F1 mm "));
-                Assert.AreEqual(" 1200000.0 \u00B5m ", length.ToString(" F1 μm "));
+                Assert.AreEqual(" 1200000.0 \u03BCm ", length.ToString(" F1 \u03BCm "));
                 Assert.AreEqual(" F1 {unit: null}", length.ToString(" F1 "));
                 Assert.AreEqual("12.0\u00A0dm", length.ToString("F1", LengthUnit.Decimetres));
             }
@@ -109,7 +109,7 @@
             Assert.AreEqual("1,2\u00A0m", length.ToString(sv));
             Assert.AreEqual(" 1200,0 mm ", length.ToString(" F1 mm ", sv));
             Assert.AreEqual("120\u00A0cm", length.ToString(LengthUnit.Centimetres, sv));
-            Assert.AreEqual("1200000\u00A0\u00B5m", length.ToString(LengthUnit.Micrometres, sv));
+            Assert.AreEqual("1200000\u00A0\u03BCm", length.ToString(LengthUnit.Micrometres, sv));
             Assert.AreEqual("1200,0\u00A0mm", length.ToString("F1", LengthUnit.Millimetres, sv));
         }
     }

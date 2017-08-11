@@ -27,7 +27,7 @@
         /// The Microhenrys unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly InductanceUnit Microhenrys = new InductanceUnit(microhenrys => microhenrys / 1000000, henrys => 1000000 * henrys, "\u00B5H");
+        public static readonly InductanceUnit Microhenrys = new InductanceUnit(microhenrys => microhenrys / 1000000, henrys => 1000000 * henrys, "\u03BCH");
 
         /// <summary>
         /// The Millihenrys unit
