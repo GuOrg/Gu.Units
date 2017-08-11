@@ -1,17 +1,15 @@
-```ini
+``` ini
 
-BenchmarkDotNet=v0.9.7.0
-OS=Microsoft Windows NT 6.2.9200.0
-Processor=Intel(R) Core(TM) i7-3667U CPU 2.00GHz, ProcessorCount=4
-Frequency=2435878 ticks, Resolution=410.5296 ns, Timer=TSC
-HostCLR=MS.NET 4.0.30319.42000, Arch=32-bit RELEASE
-JitModules=clrjit-v4.6.1637.0
+BenchmarkDotNet=v0.10.9, OS=Windows 7 SP1 (6.1.7601)
+Processor=Intel Xeon CPU E5-2637 v4 3.50GHz, ProcessorCount=8
+Frequency=3410107 Hz, Resolution=293.2459 ns, Timer=TSC
+  [Host]     : .NET Framework 4.6.2 (CLR 4.0.30319.42000), 32bit LegacyJIT-v4.6.1649.1
+  DefaultJob : .NET Framework 4.6.2 (CLR 4.0.30319.42000), 32bit LegacyJIT-v4.6.1649.1
 
-Type=Format  Mode=Throughput  
 
 ```
-                     Method |      Median |     StdDev | Scaled |  Gen 0 | Gen 1 | Gen 2 | Bytes Allocated/Op |
---------------------------- |------------ |----------- |------- |------- |------ |------ |------------------- |
-               StringConcat | 480.8956 ns | 13.7286 ns |   1.00 | 752,89 |     - |     - |              70,65 |
-    ToStringCompositeFormat | 542.9231 ns |  6.6969 ns |   1.13 | 409,11 | 18,72 |     - |              54,81 |
- ToStringFormatValueAndUnit | 558.2269 ns | 13.2628 ns |   1.16 | 457,00 | 20,00 |     - |              62,00 |
+ |                     Method |     Mean |     Error |   StdDev |   Median | Scaled | ScaledSD |  Gen 0 |  Gen 1 |  Gen 2 | Allocated |
+ |--------------------------- |---------:|----------:|---------:|---------:|-------:|---------:|-------:|-------:|-------:|----------:|
+ |               StringConcat | 425.8 ns | 27.944 ns | 82.39 ns | 386.1 ns |   1.00 |     0.00 | 0.0334 |      - |      - |     176 B |
+ |    ToStringCompositeFormat | 558.2 ns | 30.391 ns | 89.61 ns | 510.3 ns |   1.36 |     0.33 | 0.0253 | 0.0072 | 0.0005 |     135 B |
+ | ToStringFormatValueAndUnit | 426.3 ns |  8.539 ns | 17.63 ns | 418.7 ns |   1.04 |     0.19 | 0.0267 | 0.0076 | 0.0005 |     143 B |

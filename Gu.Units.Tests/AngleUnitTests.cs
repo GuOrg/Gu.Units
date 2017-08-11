@@ -1,27 +1,26 @@
-﻿namespace Gu.Units.Tests
+namespace Gu.Units.Tests
 {
     using NUnit.Framework;
 
-    public class ResistanceUnitTests
+    public class AngleUnitTests
     {
         private static readonly TestCase[] HappyPathSource =
         {
-            new TestCase("Ω", "\u03A9"),
-            new TestCase("\u2126", "\u03A9"),
-            new TestCase("\u03A9", "\u03A9"),
+            new TestCase("�", "\u00B0"),
+            new TestCase("\u00B0", "\u00B0"),
         };
 
         [TestCaseSource(nameof(HappyPathSource))]
         public void ParseSuccess(TestCase testCase)
         {
-            var unit = ResistanceUnit.Parse(testCase.Text);
+            var unit = AngleUnit.Parse(testCase.Text);
             Assert.AreEqual(testCase.Expected, unit.ToString());
         }
 
         [TestCaseSource(nameof(HappyPathSource))]
         public void TryParseSuccess(TestCase testCase)
         {
-            Assert.AreEqual(true, ResistanceUnit.TryParse(testCase.Text, out ResistanceUnit result));
+            Assert.AreEqual(true, AngleUnit.TryParse(testCase.Text, out AngleUnit result));
             Assert.AreEqual(testCase.Expected, result.ToString());
         }
 
