@@ -51,6 +51,7 @@
     <Compile Include="ArithmeticsTests.cs" />
     <Compile Include="Internals\Parsing\Sources\TestCase{T}.cs" />
     <Compile Include="LengthTests.Conversions.cs" />
+    <Compile Include="ResistanceUnitTests.cs" />
     <Compile Include="TemperatureTests.cs" />
     <Compile Include="QuantityConversionTests.cs" />
     <Compile Include="FormatTests.cs" />

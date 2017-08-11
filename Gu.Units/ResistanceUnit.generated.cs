@@ -15,31 +15,31 @@
         /// The Ohms unit
         /// Contains logic for conversion and formatting.
         /// </summary>
-        public static readonly ResistanceUnit Ohms = new ResistanceUnit(ohms => ohms, ohms => ohms, "Ω");
+        public static readonly ResistanceUnit Ohms = new ResistanceUnit(ohms => ohms, ohms => ohms, "\u03A9");
 
         /// <summary>
         /// The Microohms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ResistanceUnit Microohms = new ResistanceUnit(microohms => microohms / 1000000, ohms => 1000000 * ohms, "\u03BCΩ");
+        public static readonly ResistanceUnit Microohms = new ResistanceUnit(microohms => microohms / 1000000, ohms => 1000000 * ohms, "\u03BC\u03A9");
 
         /// <summary>
         /// The Milliohms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ResistanceUnit Milliohms = new ResistanceUnit(milliohms => milliohms / 1000, ohms => 1000 * ohms, "mΩ");
+        public static readonly ResistanceUnit Milliohms = new ResistanceUnit(milliohms => milliohms / 1000, ohms => 1000 * ohms, "m\u03A9");
 
         /// <summary>
         /// The Kiloohms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ResistanceUnit Kiloohms = new ResistanceUnit(kiloohms => 1000 * kiloohms, ohms => ohms / 1000, "kΩ");
+        public static readonly ResistanceUnit Kiloohms = new ResistanceUnit(kiloohms => 1000 * kiloohms, ohms => ohms / 1000, "k\u03A9");
 
         /// <summary>
         /// The Megaohms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ResistanceUnit Megaohms = new ResistanceUnit(megaohms => 1000000 * megaohms, ohms => ohms / 1000000, "MΩ");
+        public static readonly ResistanceUnit Megaohms = new ResistanceUnit(megaohms => 1000000 * megaohms, ohms => ohms / 1000000, "M\u03A9");
 
 #pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
 #pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter

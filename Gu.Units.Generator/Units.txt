@@ -1277,29 +1277,29 @@
         }
       ],
       "Name": "Ohms",
-      "Symbol": "Ω",
+      "Symbol": "\u03A9",
       "QuantityName": "Resistance",
       "FactorConversions": [],
       "CustomConversions": [],
       "PrefixConversions": [
         {
           "Name": "Microohms",
-          "Symbol": "\u03BCΩ",
+          "Symbol": "\u03BC\u03A9",
           "PrefixName": "Micro"
         },
         {
           "Name": "Milliohms",
-          "Symbol": "mΩ",
+          "Symbol": "m\u03A9",
           "PrefixName": "Milli"
         },
         {
           "Name": "Kiloohms",
-          "Symbol": "kΩ",
+          "Symbol": "k\u03A9",
           "PrefixName": "Kilo"
         },
         {
           "Name": "Megaohms",
-          "Symbol": "MΩ",
+          "Symbol": "M\u03A9",
           "PrefixName": "Mega"
         }
       ],

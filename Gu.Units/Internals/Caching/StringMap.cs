@@ -188,6 +188,11 @@ namespace Gu.Units
                     // http://www.fileformat.info/info/unicode/char/00b5/index.htm
                     // http://www.fileformat.info/info/unicode/char/03BC/index.htm
                     return '\u03BC';
+                case '\u2126':
+                    // use lowercase greek mu instead of micro.
+                    // http://www.fileformat.info/info/unicode/char/2126/index.htm
+                    // http://www.fileformat.info/info/unicode/char/03a9/index.htm
+                    return '\u03A9';
                 default:
                     return c;
             }
