@@ -1,4 +1,7 @@
-#### 0.10.3
+#### 0.10.5
+* BUGFIX: Handle parsing of unicode.
+
+#### 0.10.4
 * FEATURE: Conductivity.
 
 #### 0.10.3
