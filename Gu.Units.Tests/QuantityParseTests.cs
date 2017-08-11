@@ -11,6 +11,8 @@
 
         private static readonly IReadOnlyList<TestCase> TestCases = new[]
         {
+            new TestCase("1.2 m", s => Length.Parse(s, CultureInfo.InvariantCulture), Length.FromMetres(1.2)),
+            new TestCase("1.2 μm", s => Length.Parse(s, CultureInfo.InvariantCulture), Length.FromMicrometres(1.2)),
             new TestCase("1.2 m^2", s => Area.Parse(s, CultureInfo.InvariantCulture), Area.FromSquareMetres(1.2)),
             new TestCase("1,2 m^2", s => Area.Parse(s, Sv), Area.FromSquareMetres(1.2)),
             new TestCase("1.2m²", s => Area.Parse(s, CultureInfo.InvariantCulture), Area.FromSquareMetres(1.2)),

@@ -1,11 +1,11 @@
-namespace Gu.Units.Tests
+﻿namespace Gu.Units.Tests
 {
     using System;
     using NUnit.Framework;
 
     public class LengthUnitTests
     {
-        public static string[] HappyPathSource { get; } = { "m", "mm", " cm", " m ", "ft", "yd" };
+        public static string[] HappyPathSource { get; } = { "m", "m ", " m", " m ", " cm", "mm", "μm", "ft", "yd" };
 
         public static string[] ErrorSource { get; } = { "ssg", "mms" };
 
