@@ -30,9 +30,8 @@ group Test
   source http://www.nuget.org/api/v2/
   framework: net461
   nuget NUnit
-  nuget Moq = 4.5.9
-  nuget TestStack.White = 0.13.3
-  nuget Castle.Core = 3.3.3
+  nuget Moq
+  nuget Gu.Wpf.UiAutomation
 
 group Benchmarks
   source http://www.nuget.org/api/v2/
