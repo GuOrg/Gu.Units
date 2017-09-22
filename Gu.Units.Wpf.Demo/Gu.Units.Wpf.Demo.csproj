@@ -172,7 +172,6 @@
   </Target>
   -->
   <Import Project="..\.paket\paket.targets" />
-  <ItemGroup />
   <ItemGroup>
     <Analyzer Include="..\packages\analyzers\Gu.Analyzers\analyzers\dotnet\cs\Gu.Analyzers.Analyzers.dll">
       <Paket>True</Paket>
