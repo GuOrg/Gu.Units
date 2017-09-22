@@ -39,13 +39,5 @@
             this.disposed = true;
             this.disposable?.Dispose();
         }
-
-        private void ThrowIfDisposed()
-        {
-            if (this.disposed)
-            {
-                throw new ObjectDisposedException(this.GetType().FullName);
-            }
-        }
     }
 }

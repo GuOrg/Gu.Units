@@ -22,6 +22,7 @@
 
         public void SetUnit(Unit newUnit)
         {
+            this.ThrowIfDisposed();
             this.unit = newUnit;
             foreach (var conversion in this.Conversions)
             {

@@ -33,6 +33,7 @@
 
         public void SetUnit(Unit value)
         {
+            this.ThrowIfDisposed();
             this.unit = value;
             foreach (var conversion in this.AllConversions)
             {

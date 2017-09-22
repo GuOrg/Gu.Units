@@ -108,6 +108,7 @@
             get => this.selectedDerivedUnit;
             set
             {
+                this.ThrowIfDisposed();
                 var selected = value as DerivedUnitViewModel;
                 if (Equals(selected, this.selectedDerivedUnit))
                 {
@@ -151,6 +152,7 @@
 
         private void DeleteSelected()
         {
+            this.ThrowIfDisposed();
             if (this.selectedConversion == null || this.unit == null)
             {
                 return;

@@ -49,6 +49,7 @@
 
         public void SetBaseUnit(Unit value)
         {
+            this.ThrowIfDisposed();
             this.Unit = value;
             this.Prefixes.Clear();
             foreach (var conversion in this.AllConversions)

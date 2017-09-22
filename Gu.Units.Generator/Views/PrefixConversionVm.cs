@@ -39,6 +39,7 @@
             get => this.conversions.Any(this.IsMatch);
             set
             {
+                this.ThrowIfDisposed();
                 if (value.Equals(this.IsUsed))
                 {
                     return;
