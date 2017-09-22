@@ -34,6 +34,6 @@ group Test
   nuget Gu.Wpf.UiAutomation
 
 group Benchmarks
+  storage: none
   source http://www.nuget.org/api/v2/
-  framework: net461
   nuget BenchmarkDotNet.Diagnostics.Windows
