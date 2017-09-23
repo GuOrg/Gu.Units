@@ -4,6 +4,6 @@
 
     public static class Info
     {
-        public static string ExeFileName { get; } = Application.FindExe("Gu.Units.Wpf.Demo");
+        public static string ExeFileName { get; } = Application.FindExe("Gu.Units.Wpf.Demo.exe");
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{4596217D-657C-443F-83BD-4D850760E094}"
 	ProjectSection(SolutionItems) = preProject
@@ -12,19 +12,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{459621
 		.paket\Readme.paket.md = .paket\Readme.paket.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units", "Gu.Units\Gu.Units.csproj", "{F1F8B138-BECC-4475-A7AB-B3019338BC7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Units", "Gu.Units\Gu.Units.csproj", "{F1F8B138-BECC-4475-A7AB-B3019338BC7B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Tests", "Gu.Units.Tests\Gu.Units.Tests.csproj", "{E3A82C1C-4BA4-4C3D-9030-7B607EBD21E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Wpf", "Gu.Units.Wpf\Gu.Units.Wpf.csproj", "{EA4BCE51-A58D-4FA7-BBA4-6F0056D753CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Units.Wpf", "Gu.Units.Wpf\Gu.Units.Wpf.csproj", "{EA4BCE51-A58D-4FA7-BBA4-6F0056D753CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Wpf.Tests", "Gu.Units.Wpf.Tests\Gu.Units.Wpf.Tests.csproj", "{EE6BCD5F-AEF0-4929-95F6-3613E76E13CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Wpf.Demo", "Gu.Units.Wpf.Demo\Gu.Units.Wpf.Demo.csproj", "{8CB38BA2-254B-4B0F-9C9F-57D17DE5D8B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Json", "Gu.Units.Json\Gu.Units.Json.csproj", "{C794758C-AFE9-489E-9525-81DF7AC98193}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Units.Json", "Gu.Units.Json\Gu.Units.Json.csproj", "{C794758C-AFE9-489E-9525-81DF7AC98193}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Json.Tests", "Gu.Units.Json.Tests\Gu.Units.Json.Tests.csproj", "{DDD84BCA-0FF9-4854-BDB3-C69117B2978A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Units.Json.Tests", "Gu.Units.Json.Tests\Gu.Units.Json.Tests.csproj", "{DDD84BCA-0FF9-4854-BDB3-C69117B2978A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Wpf.UITests", "Gu.Units.Wpf.UITests\Gu.Units.Wpf.UITests.csproj", "{E166E55C-B836-4F38-B89A-B6EB72F2FE28}"
 EndProject
@@ -37,9 +37,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{C00F5859-B
 		RELEASE_NOTES.md = RELEASE_NOTES.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Analyzers", "Gu.Units.Analyzers\Gu.Units.Analyzers.csproj", "{75E83201-16AF-4121-AD7B-C69E6C630C6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Units.Analyzers", "Gu.Units.Analyzers\Gu.Units.Analyzers.csproj", "{75E83201-16AF-4121-AD7B-C69E6C630C6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Analyzers.Tests", "Gu.Units.Analyzers.Tests\Gu.Units.Analyzers.Tests.csproj", "{78EFFF03-3BBF-4E7E-A123-69AF9160E6BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Units.Analyzers.Tests", "Gu.Units.Analyzers.Tests\Gu.Units.Analyzers.Tests.csproj", "{78EFFF03-3BBF-4E7E-A123-69AF9160E6BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Generator", "Gu.Units.Generator\Gu.Units.Generator.csproj", "{E2703762-7D3C-49AE-B8A8-B3A792F018E3}"
 EndProject
@@ -49,7 +49,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Analyzer", "Analyzer", "{F9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeGen", "CodeGen", "{82224982-852F-42A6-9683-6669F8D6C535}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Benchmarks", "Gu.Units.Benchmarks\Gu.Units.Benchmarks.csproj", "{1764A31F-0EF1-4F1C-8D6B-310C493D8CE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Units.Benchmarks", "Gu.Units.Benchmarks\Gu.Units.Benchmarks.csproj", "{1764A31F-0EF1-4F1C-8D6B-310C493D8CE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -138,5 +138,8 @@ Global
 		{78EFFF03-3BBF-4E7E-A123-69AF9160E6BA} = {F951CEC1-4D5E-4D12-AC0B-BDEE2BBB233A}
 		{E2703762-7D3C-49AE-B8A8-B3A792F018E3} = {82224982-852F-42A6-9683-6669F8D6C535}
 		{9785A89E-8B39-48BA-8C0A-BEB7D761D402} = {82224982-852F-42A6-9683-6669F8D6C535}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C48BD841-BC12-49E5-B0E8-705C8544E5E8}
 	EndGlobalSection
 EndGlobal
