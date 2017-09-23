@@ -1,10 +1,9 @@
 ﻿namespace Gu.Units.Wpf.UITests
 {
-    using System;
-    using Demo;
+    using Gu.Wpf.UiAutomation;
 
     public static class Info
     {
-        public static string ExeFileName { get; } = new Uri(typeof(MainWindow).Assembly.CodeBase, UriKind.Absolute).LocalPath;
+        public static string ExeFileName { get; } = Application.FindExe("Gu.Units.Wpf.Demo");
     }
 }
