@@ -1,3 +1,6 @@
+#### 0.10.6
+* FEATURE: Sign.
+
 #### 0.10.5
 * BUGFIX: Handle parsing of unicode.
 
