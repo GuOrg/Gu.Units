@@ -5,7 +5,7 @@ projectUrl https://github.com/JohanLarsson/Gu.Units
 licenseUrl http://opensource.org/licenses/MIT
 
 releasenotes
-  BUGFIX: Handle parsing of unicode.
+  FEATURE: Sign.
 
 excludeddependencies
   JetBrains.Annotations
