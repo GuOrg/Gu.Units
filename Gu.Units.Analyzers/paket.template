@@ -9,8 +9,8 @@ projectUrl https://github.com/JohanLarsson/Gu.Units
 licenseUrl http://opensource.org/licenses/MIT
 
 files
-    bin/release/Gu.Units.Analyzers.dll ==> analyzers/dotnet/
-	tools ==> tools
+  bin/release/netstandard1.3/Gu.Units.Analyzers.dll ==> analyzers/dotnet/
+  tools ==> tools
 
 excludeddependencies
   JetBrains.Annotations
