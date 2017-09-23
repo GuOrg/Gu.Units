@@ -1,11 +1,12 @@
 ﻿namespace Gu.Units.Tests
 {
     using System;
+    using System.Collections.Generic;
     using NUnit.Framework;
 
     public class LengthUnitTests
     {
-        private static TestCase[] HappyPathSource { get; } =
+        private static readonly IReadOnlyList<TestCase> HappyPathSource = new []
         {
             new TestCase("m"),
             new TestCase("m "),

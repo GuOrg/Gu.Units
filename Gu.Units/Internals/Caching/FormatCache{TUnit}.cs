@@ -137,7 +137,7 @@
             {
                 return string.Equals(this.ValueFormat, other.ValueFormat) &&
                        this.Unit.Equals(other.Unit) &&
-                       string.Equals(this.SymbolFormat, other.SymbolFormat);
+                       Equals(this.SymbolFormat, other.SymbolFormat);
             }
 
             public bool Equals(IFormatKey other)

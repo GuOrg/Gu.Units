@@ -10,7 +10,7 @@ namespace Gu.Units
 
         public static explicit operator Unitless(double d)
         {
-            return Unitless.FromScalar(d);
+            return FromScalar(d);
         }
     }
 }

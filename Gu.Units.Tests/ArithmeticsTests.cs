@@ -240,7 +240,7 @@
         [TestCase("return MolarMass.FromKilogramsPerMole(1.2) * CatalyticActivity.FromKatals(3.4) == MassFlow.FromKilogramsPerSecond(4.08);")]
         public async Task Multiply(string expression)
         {
-            var scriptOptions = ScriptOptions.Default.WithReferences(typeof(Gu.Units.Length).Assembly)
+            var scriptOptions = ScriptOptions.Default.WithReferences(typeof(Length).Assembly)
                 .WithImports("Gu.Units");
             var result = await CSharpScript.EvaluateAsync<bool>(expression, scriptOptions);
             Assert.AreEqual(true, result);
@@ -478,7 +478,7 @@
         public async Task Divide(string expression)
         {
             Console.WriteLine(1.2 / 3.4);
-            var scriptOptions = ScriptOptions.Default.WithReferences(typeof(Gu.Units.Length).Assembly)
+            var scriptOptions = ScriptOptions.Default.WithReferences(typeof(Length).Assembly)
                 .WithImports("Gu.Units");
             var result = await CSharpScript.EvaluateAsync<bool>(expression, scriptOptions);
             Assert.AreEqual(true, result);

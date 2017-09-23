@@ -1,15 +1,12 @@
 ﻿namespace Gu.Units.Generator
 {
     using System;
-    using System.CodeDom.Compiler;
     using System.Globalization;
     using System.Linq;
     using System.Threading.Tasks;
 
     public static class Conversion
     {
-        private static readonly CodeDomProvider CodeDomProvider = CodeDomProvider.CreateProvider("C#");
-
         public static Unit GetUnit(this IConversion conversion)
         {
             if (conversion is PartConversion.IdentityConversion identityConversion)
@@ -77,10 +74,9 @@
 
         public static async Task<string> GetSymbolConversionAsync(this IConversion conversion)
         {
-            const string Invalid = "Invalid";
             if (conversion.ToSi == null || conversion.Symbol == null)
             {
-                return Invalid;
+                return "Invalid";
             }
 
             try
@@ -93,7 +89,7 @@
             }
             catch (Exception)
             {
-                return Invalid;
+                return "Invalid";
             }
         }
 
@@ -127,8 +123,6 @@
 
             return true;
         }
-
-        public static bool IsSymbolNameValid(this IConversion conversion) => CodeDomProvider.IsValidIdentifier(conversion.Symbol);
 
         internal static Task<double> ConvertToSiAsync(double value, string parameter, string toSi)
         {

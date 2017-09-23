@@ -138,10 +138,10 @@
                 var converter = new LengthConverter { Unit = LengthUnit.Metres };
                 var providerMock = new ServiceProviderMock();
                 providerMock.ProvideValueTargetMock.Setup(x => x.TargetObject).Throws<NullReferenceException>();
-                Gu.Units.Wpf.Is.DesignMode = true;
+                Wpf.Is.DesignMode = true;
                 Assert.Throws<InvalidOperationException>(() => converter.ProvideValue(providerMock.Object));
 
-                Gu.Units.Wpf.Is.DesignMode = false;
+                Wpf.Is.DesignMode = false;
                 var length = Length.FromMillimetres(1234);
                 var actual = converter.Convert(length, typeof(string), null, null);
                 Assert.AreEqual("Touching provideValueTarget?.TargetObject threw", actual);
@@ -162,13 +162,13 @@
 
                 converter.ProvideValue(providerMock.Object);
                 var length = Length.FromMillimetres(1234);
-                Gu.Units.Wpf.Is.DesignMode = true;
+                Wpf.Is.DesignMode = true;
                 var ex = Assert.Throws<InvalidOperationException>(() => converter.Convert(length, typeof(string), null, null));
                 var expected = "ValueFormat cannot be set when Binding.StringFormat is a unit format.\r\n" +
                                "Ambiguous units StringFormat: {0:F1} mm Binding.StringFormat: {0:F2} cm";
                 Assert.AreEqual(expected, ex.Message);
 
-                Gu.Units.Wpf.Is.DesignMode = false;
+                Wpf.Is.DesignMode = false;
                 var convert = converter.Convert(length, typeof(string), null, null);
                 Assert.AreEqual(expected, convert);
             }

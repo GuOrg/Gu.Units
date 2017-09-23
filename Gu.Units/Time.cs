@@ -12,7 +12,7 @@ namespace Gu.Units
 
         public static explicit operator Time(TimeSpan timeSpan)
         {
-            return Time.FromSeconds(timeSpan.TotalSeconds);
+            return FromSeconds(timeSpan.TotalSeconds);
         }
     }
 }

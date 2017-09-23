@@ -106,13 +106,13 @@
 
                 if (designMode)
                 {
-                    Gu.Units.Wpf.Is.DesignMode = true;
+                    Wpf.Is.DesignMode = true;
                     var ex = Assert.Throws<InvalidOperationException>(() => converter.StringFormat = "F1 mm");
                     Assert.AreEqual(expected, ex.Message);
                 }
                 else
                 {
-                    Gu.Units.Wpf.Is.DesignMode = false;
+                    Wpf.Is.DesignMode = false;
                     converter.StringFormat = "F1 mm";
                     var actual = converter.Convert(Length.FromMetres(1.2), typeof(string), null, CultureInfo.InvariantCulture);
                     Assert.AreEqual(expected, actual);
@@ -123,7 +123,7 @@
             [TestCase(false)]
             public void ThrowsInDesignModeIfMissingUnit(bool isDesignMode)
             {
-                Gu.Units.Wpf.Is.DesignMode = isDesignMode;
+                Wpf.Is.DesignMode = isDesignMode;
                 var converter = new LengthConverter
                 {
                     UnitInput = UnitInput.ScalarOnly
