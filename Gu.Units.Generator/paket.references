@@ -9,5 +9,5 @@ group Analyzers
   JetBrains.Annotations
   AsyncUsageAnalyzers
 
-group Roslyn
+group Scripting
   Microsoft.CodeAnalysis.CSharp.Scripting

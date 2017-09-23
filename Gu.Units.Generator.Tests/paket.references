@@ -7,7 +7,7 @@ group Analyzers
   Gu.Analyzers
   JetBrains.Annotations
 
-group Roslyn
+group Scripting
   Microsoft.CodeAnalysis.CSharp.Scripting
 
 group Test

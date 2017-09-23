@@ -1,11 +1,8 @@
 group Roslyn
   Microsoft.CodeAnalysis.CSharp.Workspaces
-  Microsoft.CodeAnalysis.VisualBasic.Workspaces
+  NUnit
+  Gu.Roslyn.Asserts
 
 group Analyzers
   StyleCop.Analyzers
   Gu.Analyzers
-  JetBrains.Annotations
-
-group Test
-  NUnit

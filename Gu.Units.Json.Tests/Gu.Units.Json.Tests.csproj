@@ -4,9 +4,9 @@
     <TargetFrameworks>net461</TargetFrameworks>
     <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
-  <Import Project="..\.paket\Paket.Restore.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Gu.Units.Json\Gu.Units.Json.csproj" />
     <ProjectReference Include="..\Gu.Units\Gu.Units.csproj" />
   </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

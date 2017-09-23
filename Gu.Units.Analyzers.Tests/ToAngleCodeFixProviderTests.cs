@@ -1,19 +1,15 @@
 ﻿namespace Gu.Units.Analyzers.Tests
 {
-    using System;
-
-    using Microsoft.CodeAnalysis.CodeFixes;
-    using Microsoft.CodeAnalysis.Diagnostics;
-
+    using Gu.Roslyn.Asserts;
     using NUnit.Framework;
 
     [Explicit("Fix later.")]
-    public class ToAngleCodeFixProviderTests : CodeFixVerifier
+    public class ToAngleCodeFixProviderTests
     {
         [Test]
         public void IntToDegrees()
         {
-            var before = @"
+            var testCode = @"
     namespace ConsoleApplication1
     {
         using Gu.Units;
@@ -29,7 +25,7 @@
         }
     }";
 
-            var expected = @"
+            var fixedCode = @"
     namespace ConsoleApplication1
     {
         using Gu.Units;
@@ -44,13 +40,13 @@
             public Angle Bar { get; }
         }
     }";
-            this.VerifyCSharpFix(before, expected);
+            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>("CS0266", testCode, fixedCode);
         }
 
         [Test]
         public void IntToNullableDegrees()
         {
-            var before = @"
+            var testCode = @"
     namespace ConsoleApplication1
     {
         using Gu.Units;
@@ -66,7 +62,7 @@
         }
     }";
 
-            var expected = @"
+            var fixedCode = @"
     namespace ConsoleApplication1
     {
         using Gu.Units;
@@ -81,13 +77,13 @@
             public Angle? Bar { get; }
         }
     }";
-            this.VerifyCSharpFix(before, expected);
+            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>("CS0266", testCode, fixedCode);
         }
 
         [Test]
         public void NegativeIntToDegrees()
         {
-            var before = @"
+            var testCode = @"
     namespace ConsoleApplication1
     {
         using Gu.Units;
@@ -103,7 +99,7 @@
         }
     }";
 
-            var expected = @"
+            var fixedCode = @"
     namespace ConsoleApplication1
     {
         using Gu.Units;
@@ -118,13 +114,13 @@
             public Angle Bar { get; }
         }
     }";
-            this.VerifyCSharpFix(before, expected);
+            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>("CS0266", testCode, fixedCode);
         }
 
         [Test]
         public void DoubleToDegrees()
         {
-            var before = @"
+            var testCode = @"
     namespace ConsoleApplication1
     {
         using Gu.Units;
@@ -140,7 +136,7 @@
         }
     }";
 
-            var expected = @"
+            var fixedCode = @"
     namespace ConsoleApplication1
     {
         using Gu.Units;
@@ -155,13 +151,13 @@
             public Angle Bar { get; }
         }
     }";
-            this.VerifyCSharpFix(before, expected);
+            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>("CS0266", testCode, fixedCode);
         }
 
         [Test]
         public void NegativeDoubleToDegrees()
         {
-            var before = @"
+            var testCode = @"
     namespace ConsoleApplication1
     {
         using Gu.Units;
@@ -172,7 +168,7 @@
         }
     }";
 
-            var expected = @"
+            var fixedCode = @"
     namespace ConsoleApplication1
     {
         using Gu.Units;
@@ -182,14 +178,14 @@
             public Angle Bar { get; } = Angle.FromDegrees(-1.2);
         }
     }";
-            this.VerifyCSharpFix(before, expected);
+            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>("CS0266", testCode, fixedCode);
         }
 
         [Test]
         [Explicit("Dunno if there is a need to support this")]
         public void ExpressionToDegrees()
         {
-            var before = @"
+            var testCode = @"
     namespace ConsoleApplication1
     {
         using Gu.Units;
@@ -200,7 +196,7 @@
         }
     }";
 
-            var expected = @"
+            var fixedCode = @"
     namespace ConsoleApplication1
     {
         using Gu.Units;
@@ -210,18 +206,7 @@
             public Angle Bar { get; } = Angle.FromDegrees(-1.2 + 2.3);
         }
     }";
-            this.VerifyCSharpFix(before, expected);
-        }
-
-        protected override CodeFixProvider GetCSharpCodeFixProvider()
-        {
-            return new ToAngleCodeFixProvider();
-        }
-
-        protected override DiagnosticAnalyzer GetCSharpDiagnosticAnalyzer()
-        {
-            throw new Exception();
-            //// return new TestAnalyzerAnalyzer();
+            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>("CS0266", testCode, fixedCode);
         }
     }
 }
