@@ -14,7 +14,6 @@ namespace Gu.Units.Analyzers
 
     public abstract class ToUnitCodeFixProvider : CodeFixProvider
     {
-        private static readonly Task FinishedTask = Task.FromResult(false);
         private readonly string titleFormat;
         private readonly string key;
 
