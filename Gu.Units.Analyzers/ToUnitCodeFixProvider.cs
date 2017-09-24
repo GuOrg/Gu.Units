@@ -42,20 +42,15 @@ namespace Gu.Units.Analyzers
             return WellKnownFixAllProviders.BatchFixer;
         }
 
-        public sealed override Task RegisterCodeFixesAsync(CodeFixContext context)
+        public sealed override async Task RegisterCodeFixesAsync(CodeFixContext context)
         {
             var diagnostic = context.Diagnostics[0];
             var message = diagnostic.GetMessage();
             if (!Regex.IsMatch(message, this.pattern))
             {
-                return FinishedTask;
+                return;
             }
 
-            return this.RegisterCodeFixesCoreAsync(context, diagnostic);
-        }
-
-        private async Task RegisterCodeFixesCoreAsync(CodeFixContext context, Diagnostic diagnostic)
-        {
             var sourceText = await diagnostic.Location.SourceTree.GetTextAsync(context.CancellationToken);
             var text = sourceText.GetSubText(context.Span);
             var action = CodeAction.Create(
@@ -70,19 +65,24 @@ namespace Gu.Units.Analyzers
         private async Task<Document> ApplyFix(CodeFixContext context, CancellationToken cancellationToken)
         {
             var document = context.Document;
+            var syntaxRoot = await context.Document.GetSyntaxRootAsync(context.CancellationToken)
+                                          .ConfigureAwait(false);
             var root = await document.GetSyntaxRootAsync(cancellationToken)
-                                     .ConfigureAwait(continueOnCapturedContext: false);
+                                     .ConfigureAwait(false);
 
-            var diagnostic = context.Diagnostics.First();
-            var position = diagnostic.Location.SourceSpan.Start;
-            var scalarExpression = root.FindToken(position)
-                .Parent
-                .AncestorsAndSelf()
-                .OfType<ExpressionSyntax>()
-                .First();
-            var replacement = this.WrapWithCallToMillimetres(scalarExpression);
-            root = root.ReplaceNode(scalarExpression, replacement);
-            return document.WithSyntaxRoot(root);
+            foreach (var diagnostic in context.Diagnostics)
+            {
+                var expression = syntaxRoot.FindNode(diagnostic.Location.SourceSpan)
+                                           .Parent
+                                           .AncestorsAndSelf()
+                                           .OfType<ExpressionSyntax>()
+                                           .First();
+                var replacement = this.WrapWithCallToMillimetres(expression);
+                root = root.ReplaceNode(expression, replacement);
+                return document.WithSyntaxRoot(root);
+            }
+
+            return document;
         }
 
         private InvocationExpressionSyntax WrapWithCallToMillimetres(ExpressionSyntax expressionToWrap)
