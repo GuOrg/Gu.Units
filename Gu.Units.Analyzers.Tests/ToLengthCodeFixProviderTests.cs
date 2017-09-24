@@ -174,7 +174,6 @@ namespace RoslynSandbox
         }
 
         [Test]
-        [Explicit("Dunno if there is a need to support this")]
         public void ExpressionToMillimetres()
         {
             var testCode = @"

@@ -23,7 +23,7 @@ namespace Gu.Units.Analyzers
 
         protected ToUnitCodeFixProvider(string typename, string memberName)
         {
-            this.titleFormat = $"{typename}.{memberName}({0})";
+            this.titleFormat = $"{typename}.{memberName}({{0}})";
             this.key = $"{typename}.{memberName}()";
             this.pattern = $@"Cannot implicitly convert type '(int|double)' to '(Gu.Units.{typename}|System.Nullable<Gu.Units.{typename}>|Gu.Units.{typename}\?)'";
             this.wrapSyntax = SyntaxFactory.MemberAccessExpression(
@@ -43,45 +43,39 @@ namespace Gu.Units.Analyzers
 
         public sealed override async Task RegisterCodeFixesAsync(CodeFixContext context)
         {
-            var diagnostic = context.Diagnostics[0];
-            var message = diagnostic.GetMessage();
-            if (!Regex.IsMatch(message, this.pattern))
-            {
-                return;
-            }
-
-            var sourceText = await diagnostic.Location.SourceTree.GetTextAsync(context.CancellationToken);
-            var text = sourceText.GetSubText(context.Span);
-            var action = CodeAction.Create(
-                string.Format(this.titleFormat, text),
-                c => this.ApplyFix(context, c),
-                this.key);
-            context.RegisterCodeFix(
-                action,
-                diagnostic);
-        }
-
-        private async Task<Document> ApplyFix(CodeFixContext context, CancellationToken cancellationToken)
-        {
-            var document = context.Document;
             var syntaxRoot = await context.Document.GetSyntaxRootAsync(context.CancellationToken)
                                           .ConfigureAwait(false);
-            var root = await document.GetSyntaxRootAsync(cancellationToken)
-                                     .ConfigureAwait(false);
 
             foreach (var diagnostic in context.Diagnostics)
             {
-                var expression = syntaxRoot.FindNode(diagnostic.Location.SourceSpan)
-                                           .Parent
-                                           .AncestorsAndSelf()
-                                           .OfType<ExpressionSyntax>()
-                                           .First();
-                var replacement = this.WrapWithCallToMillimetres(expression);
-                root = root.ReplaceNode(expression, replacement);
-                return document.WithSyntaxRoot(root);
-            }
+                var message = diagnostic.GetMessage();
+                if (!Regex.IsMatch(message, this.pattern))
+                {
+                    return;
+                }
 
-            return document;
+                var sourceText = await diagnostic.Location.SourceTree.GetTextAsync(context.CancellationToken);
+                var text = sourceText.GetSubText(context.Span);
+                var expression = syntaxRoot.FindNode(diagnostic.Location.SourceSpan)
+                                           .FirstAncestorOrSelf<ExpressionSyntax>();
+                if (expression != null)
+                {
+                    context.RegisterCodeFix(
+                        CodeAction.Create(
+                            string.Format(this.titleFormat, text),
+                            _ => this.ApplyFix(context, syntaxRoot, expression),
+                            this.key),
+                        diagnostic);
+                }
+            }
+        }
+
+        private async Task<Document> ApplyFix(CodeFixContext context, SyntaxNode root, ExpressionSyntax expression)
+        {
+            var document = context.Document;
+            var replacement = this.WrapWithCallToMillimetres(expression);
+            root = root.ReplaceNode(expression, replacement);
+            return document.WithSyntaxRoot(root);
         }
 
         private InvocationExpressionSyntax WrapWithCallToMillimetres(ExpressionSyntax expressionToWrap)
