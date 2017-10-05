@@ -3,3 +3,6 @@ Newtonsoft.Json
 group Analyzers
   StyleCop.Analyzers
   Gu.Analyzers
+
+group Build
+  SourceLink

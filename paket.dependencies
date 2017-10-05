@@ -35,3 +35,7 @@ group Benchmarks
   storage: none
   source http://www.nuget.org/api/v2/
   nuget BenchmarkDotNet.Diagnostics.Windows
+
+group Build
+  source http://www.nuget.org/api/v2/
+  nuget SourceLink
