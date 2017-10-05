@@ -1,6 +1,6 @@
 ﻿type file
 id Gu.Units.Analyzers
-version 0.1.0.6
+version 0.10.6-dev
 authors Johan Larsson
 description
     analyzers and code fixes for unit refactorings
@@ -9,7 +9,7 @@ projectUrl https://github.com/JohanLarsson/Gu.Units
 licenseUrl http://opensource.org/licenses/MIT
 
 files
-  bin/release/netstandard1.3/Gu.Units.Analyzers.dll ==> analyzers/dotnet/
+  bin/release/netstandard1.3/Gu.Units.Analyzers.dll ==> analyzers/dotnet/cs
   tools ==> tools
 
 excludeddependencies
