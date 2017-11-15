@@ -12,7 +12,7 @@ projectUrl https://github.com/JohanLarsson/Gu.Units
 licenseUrl http://opensource.org/licenses/MIT
 
 releasenotes
-  FEATURE: Sign.
+  FEATURE: More conductivity units.
 
 files
   bin/Release/netstandard2.0/Gu.Units.dll ==> lib/netstandard2.0

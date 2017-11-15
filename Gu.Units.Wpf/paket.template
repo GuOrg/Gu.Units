@@ -12,7 +12,7 @@ projectUrl https://github.com/JohanLarsson/Gu.Units
 licenseUrl http://opensource.org/licenses/MIT
 
 releasenotes
-  FEATURE: Sign.
+  FEATURE: More conductivity units.
 dependencies
   framework: net45
     Gu.Units = 0.10.6
