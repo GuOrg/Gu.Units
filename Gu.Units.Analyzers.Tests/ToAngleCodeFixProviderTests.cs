@@ -39,7 +39,8 @@ namespace RoslynSandbox
         public Angle Bar { get; }
     }
 }";
-            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>("CS0029", testCode, fixedCode);
+            var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
+            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
         }
 
         [Test]
@@ -76,7 +77,8 @@ namespace RoslynSandbox
         public Angle? Bar { get; }
     }
 }";
-            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>("CS0029", testCode, fixedCode);
+            var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
+            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
         }
 
         [Test]
@@ -113,7 +115,8 @@ namespace RoslynSandbox
         public Angle Bar { get; }
     }
 }";
-            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>("CS0029", testCode, fixedCode);
+            var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
+            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
         }
 
         [Test]
@@ -150,7 +153,8 @@ namespace RoslynSandbox
         public Angle Bar { get; }
     }
 }";
-            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>("CS0029", testCode, fixedCode);
+            var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
+            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
         }
 
         [Test]
@@ -177,7 +181,8 @@ namespace RoslynSandbox
         public Angle Bar { get; } = Angle.FromDegrees(-1.2);
     }
 }";
-            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>("CS0029", testCode, fixedCode);
+            var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
+            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
         }
 
         [Test]
@@ -204,7 +209,8 @@ namespace RoslynSandbox
         public Angle Bar { get; } = Angle.FromDegrees(-1.2 + 2.3);
     }
 }";
-            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>("CS0029", testCode, fixedCode);
+            var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
+            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
         }
     }
 }

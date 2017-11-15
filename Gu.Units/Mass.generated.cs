@@ -560,7 +560,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Mass"/>.
         /// </summary>
-        /// <param name="micrograms">The value in \u03BCg.</param>
+        /// <param name="micrograms">The value in μg.</param>
         /// <returns>An instance of <see cref="Gu.Units.Mass"/></returns>
         public static Mass FromMicrograms(double micrograms)
         {

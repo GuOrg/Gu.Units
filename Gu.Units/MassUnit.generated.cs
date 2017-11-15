@@ -33,7 +33,7 @@
         /// The Micrograms unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly MassUnit Micrograms = new MassUnit(micrograms => micrograms / 1000000000, kilograms => 1000000000 * kilograms, "\u03BCg");
+        public static readonly MassUnit Micrograms = new MassUnit(micrograms => micrograms / 1000000000, kilograms => 1000000000 * kilograms, "μg");
 
         /// <summary>
         /// The AvoirdupoisPounds unit

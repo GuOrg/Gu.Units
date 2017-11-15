@@ -19,7 +19,7 @@ namespace Gu.Units.Generator.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -70,7 +70,7 @@ namespace Gu.Units.Generator.Properties {
         ///    },
         ///    {
         ///      &quot;Name&quot;: &quot;Micro&quot;,
-        ///      &quot;Symbol&quot;: &quot;µ&quot;,
+        ///      &quot;Symbol&quot;: &quot;\u03bc&quot;,
         ///      &quot;Power&quot;: -6
         ///    },
         ///    {
@@ -94,7 +94,7 @@ namespace Gu.Units.Generator.Properties {
         ///      &quot;Power&quot;: 3
         ///    },
         ///    {
-        ///      &quot;Na [rest of string was truncated]&quot;;.
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Units {
             get {

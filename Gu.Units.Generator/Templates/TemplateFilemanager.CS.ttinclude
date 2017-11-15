@@ -11,7 +11,6 @@
 <#@ import namespace="System.IO" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="System.Text.RegularExpressions" #>
 <#@ import namespace="System.Reflection" #>
 <#@ import namespace="System.Text"#>
 <#@ import namespace="EnvDTE" #>
@@ -97,7 +96,7 @@ public class TemplateFileManager
     {
         if (textTransformation == null)
         {
-            throw new ArgumentNullException("textTransformation");
+            throw new ArgumentNullException(nameof(textTransformation));
         }
 
         this.textTransformation = DynamicTextTransformation2.Create(textTransformation);
@@ -106,13 +105,13 @@ public class TemplateFileManager
         var hostServiceProvider = this.textTransformation.Host.AsIServiceProvider();
         if (hostServiceProvider == null)
         {
-            throw new ArgumentNullException("Could not obtain hostServiceProvider");
+            throw new InvalidOperationException("Could not obtain hostServiceProvider");
         }
 
         this.dte = (DTE) hostServiceProvider.GetService(typeof(DTE));
         if (this.dte == null)
         {
-            throw new ArgumentNullException("Could not obtain DTE from host");
+            throw new InvalidOperationException("Could not obtain DTE from host");
         }
 
         this.templateProjectItem = this.dte.Solution.FindProjectItem(this.textTransformation.Host.TemplateFile);
@@ -255,12 +254,12 @@ public class TemplateFileManager
             var item = items.FirstOrDefault(p => p.Name == Path.GetFileName(file.FileName));
             if (item == null) continue;
 
-            if (String.IsNullOrEmpty(file.FileProperties.CustomTool) == false)
+            if (string.IsNullOrEmpty(file.FileProperties.CustomTool) == false)
             {
                 VsHelper.SetPropertyValue(item, "CustomTool", file.FileProperties.CustomTool);
             }
 
-            if (String.IsNullOrEmpty(file.FileProperties.BuildActionString) == false)
+            if (string.IsNullOrEmpty(file.FileProperties.BuildActionString) == false)
             {
                 VsHelper.SetPropertyValue(item, "ItemType", file.FileProperties.BuildActionString);
             }
@@ -269,7 +268,7 @@ public class TemplateFileManager
 
     private string ReplaceParameter(string text, Block block)
     {
-        if (String.IsNullOrEmpty(text) == false)
+        if (string.IsNullOrEmpty(text) == false)
         {
             text = text.Replace("$filename$", block.Name);
         }
@@ -329,26 +328,6 @@ public class TemplateFileManager
 
             item.Remove();
         }
-    }
-
-    /// <summary>
-    /// Gets a list of helper templates from the log.
-    /// </summary>
-    /// <returns>List of generated helper templates.</returns>
-    private string[] GetPreviousTemplatePlaceholdersFromLog()
-    {
-        var path = Path.GetDirectoryName(this.textTransformation.Host.ResolvePath(this.textTransformation.Host.TemplateFile));
-        var file1 = Path.GetFileNameWithoutExtension(this.textTransformation.Host.TemplateFile) + ".txt";
-        var contentPrevious = File.ReadAllText(Path.Combine(path, file1));
-
-        var result = contentPrevious
-              .Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)
-              .Select(x => x.Split(new[] { "=>" }, StringSplitOptions.RemoveEmptyEntries).First())
-              .Select(x => Regex.Replace(x, "//", String.Empty).Trim())
-              .Where(x => x.EndsWith(VsHelper.GetTemplatePlaceholderName(this.templateProjectItem)))
-              .ToArray();
-
-        return result;
     }
 
     private string GetDirectorySolutionRelative(string fullName)
@@ -424,7 +403,7 @@ public class TemplateFileManager
         }
 
         // clean up
-        var hasDefaultItems = groupedFileNames.Where(f => String.IsNullOrEmpty(f.ProjectName) && String.IsNullOrEmpty(f.FolderName)).Count() > 0;
+        var hasDefaultItems = groupedFileNames.Where(f => string.IsNullOrEmpty(f.ProjectName) && string.IsNullOrEmpty(f.FolderName)).Count() > 0;
         if (hasDefaultItems == false)
         {
             ProjectSyncPart(templateProjectItem, new List<OutputFile>());
@@ -721,7 +700,7 @@ public class NullHost2 : IDynamicHost2
 
 public sealed class Block
 {
-    public String Name;
+    public string Name;
     public int Start, Length;
     public string ProjectName { get; set; }
     public string FolderName { get; set; }
@@ -776,7 +755,7 @@ public class VsHelper
             throw new ArgumentNullException("item");
         }
 
-        var error = String.Empty;
+        var error = string.Empty;
 
         try
         {
@@ -785,13 +764,13 @@ public class VsHelper
 
             foreach (var cmd in command)
             {
-                if (String.IsNullOrWhiteSpace(cmd) == true)
+                if (string.IsNullOrWhiteSpace(cmd) == true)
                 {
                     continue;
                 }
 
                 var dte2 = dte as EnvDTE80.DTE2;
-                dte2.ExecuteCommand(cmd, String.Empty);
+                dte2.ExecuteCommand(cmd, string.Empty);
             }
 
             item.Save();
@@ -800,7 +779,7 @@ public class VsHelper
         }
         catch (Exception ex)
         {
-            error = String.Format("Error processing file {0} {1}", item.Name, ex.Message);
+            error = string.Format("Error processing file {0} {1}", item.Name, ex.Message);
         }
 
         return error;
@@ -814,7 +793,7 @@ public class VsHelper
         var property = item.Properties.Item(propertyName);
         if (property == null)
         {
-            throw new ArgumentException(String.Format("The property {0} was not found.", propertyName));
+            throw new ArgumentException(string.Format("The property {0} was not found.", propertyName));
         }
         else
         {
@@ -832,7 +811,8 @@ public class VsHelper
 
     public static string GetOutputPath(DTE dte, Block block, string defaultPath)
     {
-        if (String.IsNullOrEmpty(block.ProjectName) == true && String.IsNullOrEmpty(block.FolderName) == true)
+        if (string.IsNullOrEmpty(block.ProjectName) &&
+            string.IsNullOrEmpty(block.FolderName))
         {
             return defaultPath;
         }
@@ -840,20 +820,21 @@ public class VsHelper
         Project prj = null;
         ProjectItem item = null;
 
-        if (String.IsNullOrEmpty(block.ProjectName) == false)
+        if (string.IsNullOrEmpty(block.ProjectName) == false)
         {
             prj = GetProject(dte, block.ProjectName);
         }
 
-        if (String.IsNullOrEmpty(block.FolderName) == true && prj != null)
+        if (string.IsNullOrEmpty(block.FolderName) &&
+            prj != null)
         {
             return Path.GetDirectoryName(prj.FullName);
         }
-        else if (prj != null && String.IsNullOrEmpty(block.FolderName) == false)
+        else if (prj != null && string.IsNullOrEmpty(block.FolderName) == false)
         {
             item = FindFolderByName(prj.ProjectItems, block.FolderName);
         }
-        else if (String.IsNullOrEmpty(block.FolderName) == false)
+        else if (string.IsNullOrEmpty(block.FolderName) == false)
         {
             if (dte.ActiveDocument == null)
                 throw new Exception(
@@ -916,12 +897,12 @@ public class VsHelper
 
     public static string GetTemplatePlaceholderName(ProjectItem item)
     {
-        return String.Format("{0}.txt4", Path.GetFileNameWithoutExtension(item.Name));
+        return string.Format("{0}.txt4", Path.GetFileNameWithoutExtension(item.Name));
     }
 
     public static ProjectItem GetTemplateProjectItem(DTE dte, OutputFile file, ProjectItem defaultItem)
     {
-        if (String.IsNullOrEmpty(file.ProjectName) == true && String.IsNullOrEmpty(file.FolderName) == true)
+        if (string.IsNullOrEmpty(file.ProjectName) == true && string.IsNullOrEmpty(file.FolderName) == true)
         {
             return defaultItem;
         }
@@ -932,20 +913,20 @@ public class VsHelper
         Project prj = null;
         ProjectItem item = null;
 
-        if (String.IsNullOrEmpty(file.ProjectName) == false)
+        if (string.IsNullOrEmpty(file.ProjectName) == false)
         {
             prj = GetProject(dte, file.ProjectName);            
         }
 
-        if (String.IsNullOrEmpty(file.FolderName) == true && prj != null)
+        if (string.IsNullOrEmpty(file.FolderName) == true && prj != null)
         {
             return FindProjectItem(prj.ProjectItems, fullName, true);
         }
-        else if (prj != null && String.IsNullOrEmpty(file.FolderName) == false)
+        else if (prj != null && string.IsNullOrEmpty(file.FolderName) == false)
         {
             item = GetAllProjectItemsRecursive(prj.ProjectItems).First(i => i.Name == file.FolderName);
         }
-        else if (String.IsNullOrEmpty(file.FolderName) == false)
+        else if (string.IsNullOrEmpty(file.FolderName) == false)
         {
             item = FindFolderByName(dte.ActiveDocument.ProjectItem.ContainingProject.ProjectItems, file.FolderName);
         }
@@ -1064,7 +1045,7 @@ public sealed class OutputFile
     {
         this.FileProperties = new FileProperties
         {
-            CustomTool = String.Empty,
+            CustomTool = string.Empty,
             BuildAction = BuildAction.None
         };
     }

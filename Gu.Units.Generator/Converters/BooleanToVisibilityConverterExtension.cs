@@ -6,7 +6,8 @@ namespace Gu.Units.Generator.Converters
     using System.Windows.Data;
     using System.Windows.Markup;
 
-    [MarkupExtensionReturnType(typeof(IValueConverter))]
+    [MarkupExtensionReturnType(typeof(BooleanToVisibilityConverterExtension))]
+    [ValueConversion(typeof(bool?), typeof(Visibility))]
     public class BooleanToVisibilityConverterExtension : MarkupExtension, IValueConverter
     {
         public Visibility WhenTrue { get; set; }

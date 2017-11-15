@@ -29,6 +29,66 @@
         /// </summary>
         public static readonly ConductivityUnit SiemensPerMillimetre = new ConductivityUnit(siemensPerMillimetre => 1000 * siemensPerMillimetre, siemensPerMetre => siemensPerMetre / 1000, "S/mm");
 
+        /// <summary>
+        /// The NanosiemensPerMetre unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly ConductivityUnit NanosiemensPerMetre = new ConductivityUnit(nanosiemensPerMetre => nanosiemensPerMetre / 1000000000, siemensPerMetre => 1000000000 * siemensPerMetre, "nS/m");
+
+        /// <summary>
+        /// The NanosiemensPerMicrometre unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly ConductivityUnit NanosiemensPerMicrometre = new ConductivityUnit(nanosiemensPerMicrometre => nanosiemensPerMicrometre / 1000, siemensPerMetre => 1000 * siemensPerMetre, "nS/μm");
+
+        /// <summary>
+        /// The NanosiemensPerMillimetre unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly ConductivityUnit NanosiemensPerMillimetre = new ConductivityUnit(nanosiemensPerMillimetre => nanosiemensPerMillimetre / 1000000, siemensPerMetre => 1000000 * siemensPerMetre, "nS/mm");
+
+        /// <summary>
+        /// The NanosiemensPerCentimetre unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly ConductivityUnit NanosiemensPerCentimetre = new ConductivityUnit(nanosiemensPerCentimetre => nanosiemensPerCentimetre / 10000000, siemensPerMetre => 10000000 * siemensPerMetre, "nS/cm");
+
+        /// <summary>
+        /// The MicrosiemensPerMetre unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly ConductivityUnit MicrosiemensPerMetre = new ConductivityUnit(microsiemensPerMetre => microsiemensPerMetre / 1000000, siemensPerMetre => 1000000 * siemensPerMetre, "μS/m");
+
+        /// <summary>
+        /// The MicrosiemensPerMillimetre unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly ConductivityUnit MicrosiemensPerMillimetre = new ConductivityUnit(microsiemensPerMillimetre => microsiemensPerMillimetre / 1000, siemensPerMetre => 1000 * siemensPerMetre, "μS/mm");
+
+        /// <summary>
+        /// The MicrosiemensPerCentimetre unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly ConductivityUnit MicrosiemensPerCentimetre = new ConductivityUnit(microsiemensPerCentimetre => microsiemensPerCentimetre / 10000, siemensPerMetre => 10000 * siemensPerMetre, "μS/cm");
+
+        /// <summary>
+        /// The MillisiemensPerMetre unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly ConductivityUnit MillisiemensPerMetre = new ConductivityUnit(millisiemensPerMetre => millisiemensPerMetre / 1000, siemensPerMetre => 1000 * siemensPerMetre, "mS/m");
+
+        /// <summary>
+        /// The MillisiemensPerMillimetre unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly ConductivityUnit MillisiemensPerMillimetre = new ConductivityUnit(millisiemensPerMillimetre => millisiemensPerMillimetre, siemensPerMetre => siemensPerMetre, "mS/mm");
+
+        /// <summary>
+        /// The MillisiemensPerCentimetre unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly ConductivityUnit MillisiemensPerCentimetre = new ConductivityUnit(millisiemensPerCentimetre => millisiemensPerCentimetre / 10, siemensPerMetre => 10 * siemensPerMetre, "mS/cm");
+
 #pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
 #pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>

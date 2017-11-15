@@ -1,4 +1,5 @@
 source http://www.nuget.org/api/v2/
+redirects: on
 nuget Newtonsoft.Json
 
 nuget Gu.Wpf.NumericInput
@@ -22,11 +23,11 @@ group Roslyn
 
 group Scripting
   source http://www.nuget.org/api/v2/
+  redirects: on
   nuget Microsoft.CodeAnalysis.CSharp.Scripting
 
 group Test
   source http://www.nuget.org/api/v2/
-  framework: net461
   nuget NUnit
   nuget Moq
   nuget Gu.Wpf.UiAutomation

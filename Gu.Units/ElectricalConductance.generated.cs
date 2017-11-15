@@ -63,6 +63,21 @@
         public double Siemens => this.siemens;
 
         /// <summary>
+        /// Gets the quantity in Nanosiemens
+        /// </summary>
+        public double Nanosiemens => 1000000000 * this.siemens;
+
+        /// <summary>
+        /// Gets the quantity in Microsiemens
+        /// </summary>
+        public double Microsiemens => 1000000 * this.siemens;
+
+        /// <summary>
+        /// Gets the quantity in Millisiemens
+        /// </summary>
+        public double Millisiemens => 1000 * this.siemens;
+
+        /// <summary>
         /// Divides <paramref name="left"/> by <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -467,6 +482,36 @@
         public static ElectricalConductance FromSiemens(double siemens)
         {
             return new ElectricalConductance(siemens);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricalConductance"/>.
+        /// </summary>
+        /// <param name="nanosiemens">The value in nS.</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricalConductance"/></returns>
+        public static ElectricalConductance FromNanosiemens(double nanosiemens)
+        {
+            return new ElectricalConductance(nanosiemens / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricalConductance"/>.
+        /// </summary>
+        /// <param name="microsiemens">The value in μS.</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricalConductance"/></returns>
+        public static ElectricalConductance FromMicrosiemens(double microsiemens)
+        {
+            return new ElectricalConductance(microsiemens / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.ElectricalConductance"/>.
+        /// </summary>
+        /// <param name="millisiemens">The value in mS.</param>
+        /// <returns>An instance of <see cref="Gu.Units.ElectricalConductance"/></returns>
+        public static ElectricalConductance FromMillisiemens(double millisiemens)
+        {
+            return new ElectricalConductance(millisiemens / 1000);
         }
 
         /// <summary>

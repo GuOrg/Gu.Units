@@ -431,7 +431,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.LengthPerUnitless"/>.
         /// </summary>
-        /// <param name="micrometresPerPercent">The value in \u03BCm/%.</param>
+        /// <param name="micrometresPerPercent">The value in μm/%.</param>
         /// <returns>An instance of <see cref="Gu.Units.LengthPerUnitless"/></returns>
         public static LengthPerUnitless FromMicrometresPerPercent(double micrometresPerPercent)
         {

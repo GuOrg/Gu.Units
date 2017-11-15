@@ -17,6 +17,24 @@
         /// </summary>
         public static readonly ElectricalConductanceUnit Siemens = new ElectricalConductanceUnit(siemens => siemens, siemens => siemens, "S");
 
+        /// <summary>
+        /// The Nanosiemens unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly ElectricalConductanceUnit Nanosiemens = new ElectricalConductanceUnit(nanosiemens => nanosiemens / 1000000000, siemens => 1000000000 * siemens, "nS");
+
+        /// <summary>
+        /// The Microsiemens unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly ElectricalConductanceUnit Microsiemens = new ElectricalConductanceUnit(microsiemens => microsiemens / 1000000, siemens => 1000000 * siemens, "μS");
+
+        /// <summary>
+        /// The Millisiemens unit
+        /// Contains conversion logic to from and formatting.
+        /// </summary>
+        public static readonly ElectricalConductanceUnit Millisiemens = new ElectricalConductanceUnit(millisiemens => millisiemens / 1000, siemens => 1000 * siemens, "mS");
+
 #pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
 #pragma warning disable SA1304 // Non-private readonly fields must begin with upper-case letter
         /// <summary>

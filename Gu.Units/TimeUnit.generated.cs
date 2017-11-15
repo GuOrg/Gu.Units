@@ -45,7 +45,7 @@
         /// The Microseconds unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly TimeUnit Microseconds = new TimeUnit(microseconds => microseconds / 1000000, seconds => 1000000 * seconds, "\u03BCs");
+        public static readonly TimeUnit Microseconds = new TimeUnit(microseconds => microseconds / 1000000, seconds => 1000000 * seconds, "μs");
 
         /// <summary>
         /// The Milliseconds unit

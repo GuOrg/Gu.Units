@@ -383,7 +383,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.AnglePerUnitless"/>.
         /// </summary>
-        /// <param name="degreesPerPercent">The value in \u00B0/%.</param>
+        /// <param name="degreesPerPercent">The value in °/%.</param>
         /// <returns>An instance of <see cref="Gu.Units.AnglePerUnitless"/></returns>
         public static AnglePerUnitless FromDegreesPerPercent(double degreesPerPercent)
         {

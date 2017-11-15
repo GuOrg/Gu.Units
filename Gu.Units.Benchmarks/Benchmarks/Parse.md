@@ -10,5 +10,5 @@ Frequency=3410097 Hz, Resolution=293.2468 ns, Timer=TSC
 ```
  |      Method |      Mean |    Error |    StdDev | Scaled | ScaledSD |  Gen 0 | Allocated |
  |------------ |----------:|---------:|----------:|-------:|---------:|-------:|----------:|
- |  DobleParse |  85.57 ns | 1.749 ns |  5.128 ns |   1.00 |     0.00 |      - |       0 B |
+ |  DoubleParse |  85.57 ns | 1.749 ns |  5.128 ns |   1.00 |     0.00 |      - |       0 B |
  | LengthParse | 306.89 ns | 6.903 ns | 20.028 ns |   3.60 |     0.32 | 0.0148 |      96 B |

@@ -474,7 +474,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Flexibility"/>.
         /// </summary>
-        /// <param name="micrometresPerKilonewton">The value in \u03BCm/kN.</param>
+        /// <param name="micrometresPerKilonewton">The value in μm/kN.</param>
         /// <returns>An instance of <see cref="Gu.Units.Flexibility"/></returns>
         public static Flexibility FromMicrometresPerKilonewton(double micrometresPerKilonewton)
         {

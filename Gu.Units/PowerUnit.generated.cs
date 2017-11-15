@@ -27,7 +27,7 @@
         /// The Microwatts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly PowerUnit Microwatts = new PowerUnit(microwatts => microwatts / 1000000, watts => 1000000 * watts, "\u03BCW");
+        public static readonly PowerUnit Microwatts = new PowerUnit(microwatts => microwatts / 1000000, watts => 1000000 * watts, "μW");
 
         /// <summary>
         /// The Milliwatts unit

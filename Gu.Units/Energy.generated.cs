@@ -660,7 +660,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Energy"/>.
         /// </summary>
-        /// <param name="microjoules">The value in \u03BCJ.</param>
+        /// <param name="microjoules">The value in μJ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Energy"/></returns>
         public static Energy FromMicrojoules(double microjoules)
         {

@@ -1849,7 +1849,23 @@
       "QuantityName": "ElectricalConductance",
       "FactorConversions": [],
       "CustomConversions": [],
-      "PrefixConversions": [],
+      "PrefixConversions": [
+        {
+          "Name": "Nanosiemens",
+          "Symbol": "nS",
+          "PrefixName": "Nano"
+        },
+        {
+          "Name": "Microsiemens",
+          "Symbol": "\u03bcS",
+          "PrefixName": "Micro"
+        },
+        {
+          "Name": "Millisiemens",
+          "Symbol": "mS",
+          "PrefixName": "Milli"
+        }
+      ],
       "PartConversions": []
     },
     {
@@ -2090,6 +2106,56 @@
           "Name": "SiemensPerMillimetre",
           "Symbol": "S/mm",
           "Factor": 1000.0
+        },
+        {
+          "Name": "NanosiemensPerMetre",
+          "Symbol": "nS/m",
+          "Factor": 1E-09
+        },
+        {
+          "Name": "NanosiemensPerMicrometre",
+          "Symbol": "nS/\u03bcm",
+          "Factor": 0.001
+        },
+        {
+          "Name": "NanosiemensPerMillimetre",
+          "Symbol": "nS/mm",
+          "Factor": 1.0000000000000002E-06
+        },
+        {
+          "Name": "NanosiemensPerCentimetre",
+          "Symbol": "nS/cm",
+          "Factor": 1.0000000000000001E-07
+        },
+        {
+          "Name": "MicrosiemensPerMetre",
+          "Symbol": "\u03bcS/m",
+          "Factor": 1E-06
+        },
+        {
+          "Name": "MicrosiemensPerMillimetre",
+          "Symbol": "\u03bcS/mm",
+          "Factor": 0.001
+        },
+        {
+          "Name": "MicrosiemensPerCentimetre",
+          "Symbol": "\u03bcS/cm",
+          "Factor": 9.9999999999999991E-05
+        },
+        {
+          "Name": "MillisiemensPerMetre",
+          "Symbol": "mS/m",
+          "Factor": 0.001
+        },
+        {
+          "Name": "MillisiemensPerMillimetre",
+          "Symbol": "mS/mm",
+          "Factor": 1.0
+        },
+        {
+          "Name": "MillisiemensPerCentimetre",
+          "Symbol": "mS/cm",
+          "Factor": 0.1
         }
       ]
     }

@@ -6,7 +6,7 @@
 
     public class LengthUnitTests
     {
-        private static readonly IReadOnlyList<TestCase> HappyPathSource = new []
+        private static readonly IReadOnlyList<TestCase> HappyPathSource = new[]
         {
             new TestCase("m"),
             new TestCase("m "),

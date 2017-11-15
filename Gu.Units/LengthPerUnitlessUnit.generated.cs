@@ -27,7 +27,7 @@
         /// The MicrometresPerPercent unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly LengthPerUnitlessUnit MicrometresPerPercent = new LengthPerUnitlessUnit(micrometresPerPercent => micrometresPerPercent / 10000, metresPerUnitless => 10000 * metresPerUnitless, "\u03BCm/%");
+        public static readonly LengthPerUnitlessUnit MicrometresPerPercent = new LengthPerUnitlessUnit(micrometresPerPercent => micrometresPerPercent / 10000, metresPerUnitless => 10000 * metresPerUnitless, "μm/%");
 
         /// <summary>
         /// The MetresPerPercent unit

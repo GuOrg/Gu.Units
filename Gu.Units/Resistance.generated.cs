@@ -470,7 +470,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
-        /// <param name="microohms">The value in \u03BC\u03A9.</param>
+        /// <param name="microohms">The value in μΩ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance FromMicroohms(double microohms)
         {
@@ -480,7 +480,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
-        /// <param name="milliohms">The value in m\u03A9.</param>
+        /// <param name="milliohms">The value in mΩ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance FromMilliohms(double milliohms)
         {
@@ -490,7 +490,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
-        /// <param name="kiloohms">The value in k\u03A9.</param>
+        /// <param name="kiloohms">The value in kΩ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance FromKiloohms(double kiloohms)
         {
@@ -500,7 +500,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Resistance"/>.
         /// </summary>
-        /// <param name="megaohms">The value in M\u03A9.</param>
+        /// <param name="megaohms">The value in MΩ.</param>
         /// <returns>An instance of <see cref="Gu.Units.Resistance"/></returns>
         public static Resistance FromMegaohms(double megaohms)
         {
@@ -541,7 +541,7 @@
         /// <summary>
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="format">Must be a composite format ex: \"F2 \u03A9\"</param>
+        /// <param name="format">Must be a composite format ex: \"F2 Ω\"</param>
         /// <returns>The string representation of the <see cref="Resistance"/></returns>
         public string ToString(string format)
         {
@@ -552,7 +552,7 @@
         /// <summary>
         /// If an invalid format is provided the string will look like: {value: ??} {unit: ??}
         /// </summary>
-        /// <param name="format">Must be a composite format ex: \"F2 \u03A9\"</param>
+        /// <param name="format">Must be a composite format ex: \"F2 Ω\"</param>
         /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="Resistance"/></returns>
         public string ToString(string format, IFormatProvider formatProvider)
@@ -566,7 +566,7 @@
         /// </summary>
         /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
-        /// <param name="symbolFormat">For formatting of the unit ex \u03A9</param>
+        /// <param name="symbolFormat">For formatting of the unit ex Ω</param>
         /// <returns>The string representation of the <see cref="Resistance"/></returns>
         public string ToString(string valueFormat, string symbolFormat)
         {
@@ -579,7 +579,7 @@
         /// </summary>
         /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
-        /// <param name="symbolFormat">For formatting the unit ex \u03A9</param>
+        /// <param name="symbolFormat">For formatting the unit ex Ω</param>
         /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
         /// <returns>The string representation of the <see cref="Resistance"/></returns>
         public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)

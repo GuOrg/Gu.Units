@@ -27,7 +27,7 @@
         /// The Micronewtons unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly ForceUnit Micronewtons = new ForceUnit(micronewtons => micronewtons / 1000000, newtons => 1000000 * newtons, "\u03BCN");
+        public static readonly ForceUnit Micronewtons = new ForceUnit(micronewtons => micronewtons / 1000000, newtons => 1000000 * newtons, "μN");
 
         /// <summary>
         /// The Millinewtons unit
