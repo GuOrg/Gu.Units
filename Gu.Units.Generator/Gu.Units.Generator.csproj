@@ -40,10 +40,12 @@
     <CodeAnalysisRuleSet>Gu.Units.Generator.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Gu.Units.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'GeneratorOnly|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -250,7 +252,6 @@
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Gu.Units.Generator.ruleset" />
-    <None Include="Key.snk" />
     <None Include="paket.references" />
     <AppDesigner Include="Properties\" />
     <None Include="Templates\Readme.md" />
