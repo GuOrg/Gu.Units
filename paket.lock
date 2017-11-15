@@ -1,3 +1,4 @@
+REDIRECTS: ON
 NUGET
   remote: http://www.nuget.org/api/v2
     Gu.Reactive (3.5.1)
@@ -1453,6 +1454,7 @@ NUGET
       System.Xml.XPath (>= 4.3) - restriction: || (&& (< monotouch) (>= netstandard1.3) (< xamarinios) (< xamarinmac) (< xamarintvos) (< xamarinwatchos)) (>= net46)
 
 GROUP Scripting
+REDIRECTS: ON
 NUGET
   remote: http://www.nuget.org/api/v2
     Microsoft.CodeAnalysis.Analyzers (1.1) - restriction: >= netstandard1.3
