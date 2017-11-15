@@ -28,7 +28,6 @@ group Scripting
 
 group Test
   source http://www.nuget.org/api/v2/
-  framework: net461
   nuget NUnit
   nuget Moq
   nuget Gu.Wpf.UiAutomation
