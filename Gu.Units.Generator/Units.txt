@@ -7,7 +7,7 @@
     },
     {
       "Name": "Micro",
-      "Symbol": "\u03BC",
+      "Symbol": "\u03bc",
       "Power": -6
     },
     {
@@ -64,7 +64,7 @@
             },
             {
               "Name": "Micrograms",
-              "Symbol": "\u03BCg",
+              "Symbol": "\u03bcg",
               "PrefixName": "Micro"
             }
           ]
@@ -143,7 +143,7 @@
         },
         {
           "Name": "Micrometres",
-          "Symbol": "\u03BCm",
+          "Symbol": "\u03bcm",
           "PrefixName": "Micro"
         },
         {
@@ -202,7 +202,7 @@
         },
         {
           "Name": "Microseconds",
-          "Symbol": "\u03BCs",
+          "Symbol": "\u03bcs",
           "PrefixName": "Micro"
         },
         {
@@ -221,13 +221,13 @@
       "CustomConversions": [
         {
           "Name": "Celsius",
-          "Symbol": "\u00B0C",
+          "Symbol": "\u00b0C",
           "ToSi": "celsius + 273.15",
           "FromSi": "kelvin - 273.15"
         },
         {
           "Name": "Fahrenheit",
-          "Symbol": "\u00B0F",
+          "Symbol": "\u00b0F",
           "ToSi": "(fahrenheit + 459.67) / 1.8",
           "FromSi": "(1.8 * kelvin) - 459.67"
         }
@@ -243,7 +243,7 @@
       "CustomConversions": [
         {
           "Name": "Degrees",
-          "Symbol": "\u00B0",
+          "Symbol": "\u00b0",
           "ToSi": "degrees / 57.295779513082323",
           "FromSi": "57.295779513082323 * radians"
         }
@@ -258,7 +258,7 @@
       "FactorConversions": [
         {
           "Name": "Promilles",
-          "Symbol": "‰",
+          "Symbol": "\u2030",
           "Factor": 0.001,
           "PrefixConversions": []
         },
@@ -303,7 +303,7 @@
         },
         {
           "Name": "Microamperes",
-          "Symbol": "\u03BCA",
+          "Symbol": "\u03bcA",
           "PrefixName": "Micro"
         },
         {
@@ -409,7 +409,7 @@
         }
       ],
       "Name": "SquareMetres",
-      "Symbol": "m²",
+      "Symbol": "m\u00b2",
       "QuantityName": "Area",
       "FactorConversions": [
         {
@@ -424,42 +424,42 @@
       "PartConversions": [
         {
           "Name": "SquareMillimetres",
-          "Symbol": "mm²",
+          "Symbol": "mm\u00b2",
           "Factor": 1E-06
         },
         {
           "Name": "SquareCentimetres",
-          "Symbol": "cm²",
+          "Symbol": "cm\u00b2",
           "Factor": 0.0001
         },
         {
           "Name": "SquareDecimetres",
-          "Symbol": "dm²",
+          "Symbol": "dm\u00b2",
           "Factor": 0.010000000000000002
         },
         {
           "Name": "SquareKilometres",
-          "Symbol": "km²",
+          "Symbol": "km\u00b2",
           "Factor": 1000000.0
         },
         {
           "Name": "SquareMile",
-          "Symbol": "mi²",
+          "Symbol": "mi\u00b2",
           "Factor": 2589988.110336
         },
         {
           "Name": "SquareYards",
-          "Symbol": "yd²",
+          "Symbol": "yd\u00b2",
           "Factor": 0.83612736
         },
         {
           "Name": "SquareInches",
-          "Symbol": "in²",
+          "Symbol": "in\u00b2",
           "Factor": 0.00064516
         },
         {
           "Name": "SquareFeet",
-          "Symbol": "ft²",
+          "Symbol": "ft\u00b2",
           "Factor": 0.09290304
         }
       ]
@@ -472,7 +472,7 @@
         }
       ],
       "Name": "CubicMetres",
-      "Symbol": "m³",
+      "Symbol": "m\u00b3",
       "QuantityName": "Volume",
       "FactorConversions": [
         {
@@ -503,27 +503,27 @@
       "PartConversions": [
         {
           "Name": "CubicCentimetres",
-          "Symbol": "cm³",
+          "Symbol": "cm\u00b3",
           "Factor": 1.0000000000000002E-06
         },
         {
           "Name": "CubicMillimetres",
-          "Symbol": "mm³",
+          "Symbol": "mm\u00b3",
           "Factor": 1E-09
         },
         {
           "Name": "CubicInches",
-          "Symbol": "in³",
+          "Symbol": "in\u00b3",
           "Factor": 1.6387064E-05
         },
         {
           "Name": "CubicDecimetres",
-          "Symbol": "dm³",
+          "Symbol": "dm\u00b3",
           "Factor": 0.0010000000000000002
         },
         {
           "Name": "CubicFeet",
-          "Symbol": "ft³",
+          "Symbol": "ft\u00b3",
           "Factor": 0.028316846592000004
         }
       ]
@@ -556,7 +556,7 @@
         },
         {
           "Name": "Micronewtons",
-          "Symbol": "\u03BCN",
+          "Symbol": "\u03bcN",
           "PrefixName": "Micro"
         },
         {
@@ -619,7 +619,7 @@
         },
         {
           "Name": "Micropascals",
-          "Symbol": "\u03BCPa",
+          "Symbol": "\u03bcPa",
           "PrefixName": "Micro"
         },
         {
@@ -646,17 +646,17 @@
       "PartConversions": [
         {
           "Name": "NewtonsPerSquareMillimetre",
-          "Symbol": "N⋅mm⁻²",
+          "Symbol": "N\u22c5mm\u207b\u00b2",
           "Factor": 1000000.0
         },
         {
           "Name": "KilonewtonsPerSquareMillimetre",
-          "Symbol": "kN⋅mm⁻²",
+          "Symbol": "kN\u22c5mm\u207b\u00b2",
           "Factor": 1000000000.0
         },
         {
           "Name": "NewtonsPerSquareMetre",
-          "Symbol": "N/m²",
+          "Symbol": "N/m\u00b2",
           "Factor": 1.0
         }
       ]
@@ -673,7 +673,7 @@
         }
       ],
       "Name": "KilogramsPerCubicMetre",
-      "Symbol": "kg/m³",
+      "Symbol": "kg/m\u00b3",
       "QuantityName": "Density",
       "FactorConversions": [],
       "CustomConversions": [],
@@ -681,27 +681,27 @@
       "PartConversions": [
         {
           "Name": "GramsPerCubicMillimetre",
-          "Symbol": "g/mm³",
+          "Symbol": "g/mm\u00b3",
           "Factor": 999999.99999999988
         },
         {
           "Name": "GramsPerCubicCentimetre",
-          "Symbol": "g/cm³",
+          "Symbol": "g/cm\u00b3",
           "Factor": 999.99999999999989
         },
         {
           "Name": "MilligramsPerCubicMillimetre",
-          "Symbol": "mg/mm³",
+          "Symbol": "mg/mm\u00b3",
           "Factor": 999.99999999999989
         },
         {
           "Name": "GramsPerCubicMetre",
-          "Symbol": "g/m³",
+          "Symbol": "g/m\u00b3",
           "Factor": 0.001
         },
         {
           "Name": "MilligramsPerCubicMetre",
-          "Symbol": "mg/m³",
+          "Symbol": "mg/m\u00b3",
           "Factor": 1E-06
         }
       ]
@@ -734,7 +734,7 @@
         },
         {
           "Name": "Microjoules",
-          "Symbol": "\u03BCJ",
+          "Symbol": "\u03bcJ",
           "PrefixName": "Micro"
         },
         {
@@ -790,7 +790,7 @@
         },
         {
           "Name": "Microwatts",
-          "Symbol": "\u03BCW",
+          "Symbol": "\u03bcW",
           "PrefixName": "Micro"
         },
         {
@@ -906,27 +906,27 @@
         },
         {
           "Name": "DegreesPerSecond",
-          "Symbol": "\u00B0⋅s⁻¹",
+          "Symbol": "\u00b0\u22c5s\u207b\u00b9",
           "Factor": 0.017453292519943295
         },
         {
           "Name": "DegreesPerMinute",
-          "Symbol": "min⁻¹⋅\u00B0",
+          "Symbol": "min\u207b\u00b9\u22c5\u00b0",
           "Factor": 0.00029088820866572158
         },
         {
           "Name": "RadiansPerMinute",
-          "Symbol": "min⁻¹⋅rad",
+          "Symbol": "min\u207b\u00b9\u22c5rad",
           "Factor": 0.016666666666666666
         },
         {
           "Name": "DegreesPerHour",
-          "Symbol": "h⁻¹⋅\u00B0",
+          "Symbol": "h\u207b\u00b9\u22c5\u00b0",
           "Factor": 4.84813681109536E-06
         },
         {
           "Name": "RadiansPerHour",
-          "Symbol": "h⁻¹⋅rad",
+          "Symbol": "h\u207b\u00b9\u22c5rad",
           "Factor": 0.00027777777777777778
         }
       ]
@@ -979,7 +979,7 @@
         }
       ],
       "Name": "MetresPerSecondSquared",
-      "Symbol": "m/s²",
+      "Symbol": "m/s\u00b2",
       "QuantityName": "Acceleration",
       "FactorConversions": [],
       "CustomConversions": [],
@@ -987,37 +987,37 @@
       "PartConversions": [
         {
           "Name": "CentimetresPerSecondSquared",
-          "Symbol": "cm/s²",
+          "Symbol": "cm/s\u00b2",
           "Factor": 0.01
         },
         {
           "Name": "MillimetresPerSecondSquared",
-          "Symbol": "mm/s²",
+          "Symbol": "mm/s\u00b2",
           "Factor": 0.001
         },
         {
           "Name": "MillimetresPerHourSquared",
-          "Symbol": "mm/h²",
+          "Symbol": "mm/h\u00b2",
           "Factor": 7.7160493827160491E-11
         },
         {
           "Name": "CentimetresPerHourSquared",
-          "Symbol": "cm/h²",
+          "Symbol": "cm/h\u00b2",
           "Factor": 7.71604938271605E-10
         },
         {
           "Name": "MetresPerHourSquared",
-          "Symbol": "m/h²",
+          "Symbol": "m/h\u00b2",
           "Factor": 7.71604938271605E-08
         },
         {
           "Name": "MetresPerMinuteSquared",
-          "Symbol": "m/min²",
+          "Symbol": "m/min\u00b2",
           "Factor": 0.00027777777777777778
         },
         {
           "Name": "MillimetresPerMinuteSquared",
-          "Symbol": "mm/min²",
+          "Symbol": "mm/min\u00b2",
           "Factor": 2.7777777777777776E-07
         }
       ]
@@ -1038,7 +1038,7 @@
         }
       ],
       "Name": "NewtonMetres",
-      "Symbol": "N⋅m",
+      "Symbol": "N\u22c5m",
       "QuantityName": "Torque",
       "FactorConversions": [],
       "CustomConversions": [],
@@ -1070,7 +1070,7 @@
         },
         {
           "Name": "NewtonsPerMicrometre",
-          "Symbol": "N/\u03BCm",
+          "Symbol": "N/\u03bcm",
           "Factor": 1000000.0
         },
         {
@@ -1085,7 +1085,7 @@
         },
         {
           "Name": "KilonewtonsPerMicrometre",
-          "Symbol": "kN/\u03BCm",
+          "Symbol": "kN/\u03bcm",
           "Factor": 1000000000.0
         },
         {
@@ -1100,7 +1100,7 @@
         },
         {
           "Name": "MeganewtonsPerMicrometre",
-          "Symbol": "MN/\u03BCm",
+          "Symbol": "MN/\u03bcm",
           "Factor": 1000000000000.0
         },
         {
@@ -1110,7 +1110,7 @@
         },
         {
           "Name": "GiganewtonsPerMicrometre",
-          "Symbol": "GN/\u03BCm",
+          "Symbol": "GN/\u03bcm",
           "Factor": 1E+15
         },
         {
@@ -1132,7 +1132,7 @@
         }
       ],
       "Name": "CubicMetresPerSecond",
-      "Symbol": "m³/s",
+      "Symbol": "m\u00b3/s",
       "QuantityName": "VolumetricFlow",
       "FactorConversions": [],
       "CustomConversions": [],
@@ -1140,12 +1140,12 @@
       "PartConversions": [
         {
           "Name": "CubicMetresPerMinute",
-          "Symbol": "m³/min",
+          "Symbol": "m\u00b3/min",
           "Factor": 0.016666666666666666
         },
         {
           "Name": "CubicMetresPerHour",
-          "Symbol": "m³/h",
+          "Symbol": "m\u00b3/h",
           "Factor": 0.00027777777777777778
         },
         {
@@ -1195,22 +1195,22 @@
         },
         {
           "Name": "CubicFeetPerHour",
-          "Symbol": "ft³/h",
+          "Symbol": "ft\u00b3/h",
           "Factor": 7.86579072E-06
         },
         {
           "Name": "CubicFeetPerSecond",
-          "Symbol": "ft³/s",
+          "Symbol": "ft\u00b3/s",
           "Factor": 0.028316846592000004
         },
         {
           "Name": "CubicFeetPerMinute",
-          "Symbol": "ft³/min",
+          "Symbol": "ft\u00b3/min",
           "Factor": 0.00047194744320000004
         },
         {
           "Name": "CubicFeetPerDay",
-          "Symbol": "ft³/d",
+          "Symbol": "ft\u00b3/d",
           "Factor": 3.2774128000000003E-07
         }
       ]
@@ -1249,7 +1249,7 @@
         },
         {
           "Name": "Microvolts",
-          "Symbol": "\u03BCV",
+          "Symbol": "\u03bcV",
           "PrefixName": "Micro"
         },
         {
@@ -1277,29 +1277,29 @@
         }
       ],
       "Name": "Ohms",
-      "Symbol": "\u03A9",
+      "Symbol": "\u03a9",
       "QuantityName": "Resistance",
       "FactorConversions": [],
       "CustomConversions": [],
       "PrefixConversions": [
         {
           "Name": "Microohms",
-          "Symbol": "\u03BC\u03A9",
+          "Symbol": "\u03bc\u03a9",
           "PrefixName": "Micro"
         },
         {
           "Name": "Milliohms",
-          "Symbol": "m\u03A9",
+          "Symbol": "m\u03a9",
           "PrefixName": "Milli"
         },
         {
           "Name": "Kiloohms",
-          "Symbol": "k\u03A9",
+          "Symbol": "k\u03a9",
           "PrefixName": "Kilo"
         },
         {
           "Name": "Megaohms",
-          "Symbol": "M\u03A9",
+          "Symbol": "M\u03a9",
           "PrefixName": "Mega"
         }
       ],
@@ -1354,7 +1354,7 @@
         },
         {
           "Name": "Microcoulombs",
-          "Symbol": "\u03BCC",
+          "Symbol": "\u03bcC",
           "PrefixName": "Micro"
         },
         {
@@ -1408,7 +1408,7 @@
         },
         {
           "Name": "Microhenrys",
-          "Symbol": "\u03BCH",
+          "Symbol": "\u03bcH",
           "PrefixName": "Micro"
         },
         {
@@ -1458,7 +1458,7 @@
         },
         {
           "Name": "Microfarads",
-          "Symbol": "\u03BCF",
+          "Symbol": "\u03bcF",
           "PrefixName": "Micro"
         },
         {
@@ -1515,7 +1515,7 @@
         },
         {
           "Name": "MicrometresPerKilonewton",
-          "Symbol": "\u03BCm/kN",
+          "Symbol": "\u03bcm/kN",
           "Factor": 1E-09
         }
       ]
@@ -1532,7 +1532,7 @@
         }
       ],
       "Name": "RadiansPerSecondSquared",
-      "Symbol": "rad/s²",
+      "Symbol": "rad/s\u00b2",
       "QuantityName": "AngularAcceleration",
       "FactorConversions": [],
       "CustomConversions": [],
@@ -1540,27 +1540,27 @@
       "PartConversions": [
         {
           "Name": "DegreesPerSecondSquared",
-          "Symbol": "\u00B0⋅s⁻²",
+          "Symbol": "\u00b0\u22c5s\u207b\u00b2",
           "Factor": 0.017453292519943295
         },
         {
           "Name": "RadiansPerHourSquared",
-          "Symbol": "h⁻²⋅rad",
+          "Symbol": "h\u207b\u00b2\u22c5rad",
           "Factor": 7.71604938271605E-08
         },
         {
           "Name": "DegreesPerHourSquared",
-          "Symbol": "h⁻²⋅\u00B0",
+          "Symbol": "h\u207b\u00b2\u22c5\u00b0",
           "Factor": 1.346704669748711E-09
         },
         {
           "Name": "DegreesPerMinuteSquared",
-          "Symbol": "min⁻²⋅\u00B0",
+          "Symbol": "min\u207b\u00b2\u22c5\u00b0",
           "Factor": 4.84813681109536E-06
         },
         {
           "Name": "RadiansPerMinuteSquared",
-          "Symbol": "min⁻²⋅rad",
+          "Symbol": "min\u207b\u00b2\u22c5rad",
           "Factor": 0.00027777777777777778
         }
       ]
@@ -1577,7 +1577,7 @@
         }
       ],
       "Name": "RadiansPerSecondCubed",
-      "Symbol": "rad/s³",
+      "Symbol": "rad/s\u00b3",
       "QuantityName": "AngularJerk",
       "FactorConversions": [],
       "CustomConversions": [],
@@ -1585,27 +1585,27 @@
       "PartConversions": [
         {
           "Name": "DegreesPerSecondCubed",
-          "Symbol": "\u00B0⋅s⁻³",
+          "Symbol": "\u00b0\u22c5s\u207b\u00b3",
           "Factor": 0.017453292519943295
         },
         {
           "Name": "RadiansPerHourCubed",
-          "Symbol": "rad⋅h⁻³",
+          "Symbol": "rad\u22c5h\u207b\u00b3",
           "Factor": 2.1433470507544583E-11
         },
         {
           "Name": "DegreesPerHourCubed",
-          "Symbol": "\u00B0⋅h⁻³",
+          "Symbol": "\u00b0\u22c5h\u207b\u00b3",
           "Factor": 3.7408463048575307E-13
         },
         {
           "Name": "RadiansPerMinuteCubed",
-          "Symbol": "rad⋅min⁻³",
+          "Symbol": "rad\u22c5min\u207b\u00b3",
           "Factor": 4.6296296296296296E-06
         },
         {
           "Name": "DegreesPerMinuteCubed",
-          "Symbol": "\u00B0⋅min⁻³",
+          "Symbol": "\u00b0\u22c5min\u207b\u00b3",
           "Factor": 8.0802280184922666E-08
         }
       ]
@@ -1622,51 +1622,51 @@
         }
       ],
       "Name": "MetresPerSecondCubed",
-      "Symbol": "m/s³",
+      "Symbol": "m/s\u00b3",
       "QuantityName": "Jerk",
       "FactorConversions": [],
       "CustomConversions": [],
       "PrefixConversions": [
         {
           "Name": "MillimetresPerSecondCubed",
-          "Symbol": "mm⋅s⁻³",
+          "Symbol": "mm\u22c5s\u207b\u00b3",
           "PrefixName": "Milli"
         },
         {
           "Name": "CentimetresPerSecondCubed",
-          "Symbol": "cm⋅s⁻³",
+          "Symbol": "cm\u22c5s\u207b\u00b3",
           "PrefixName": "Centi"
         }
       ],
       "PartConversions": [
         {
           "Name": "MillimetresPerHourCubed",
-          "Symbol": "mm⋅h⁻³",
+          "Symbol": "mm\u22c5h\u207b\u00b3",
           "Factor": 2.1433470507544584E-14
         },
         {
           "Name": "MillimetresPerMinuteCubed",
-          "Symbol": "mm⋅min⁻³",
+          "Symbol": "mm\u22c5min\u207b\u00b3",
           "Factor": 4.6296296296296295E-09
         },
         {
           "Name": "MetresPerHourCubed",
-          "Symbol": "m⋅h⁻³",
+          "Symbol": "m\u22c5h\u207b\u00b3",
           "Factor": 2.1433470507544583E-11
         },
         {
           "Name": "MetresPerMinuteCubed",
-          "Symbol": "m⋅min⁻³",
+          "Symbol": "m\u22c5min\u207b\u00b3",
           "Factor": 4.6296296296296296E-06
         },
         {
           "Name": "CentimetresPerHourCubed",
-          "Symbol": "cm⋅h⁻³",
+          "Symbol": "cm\u22c5h\u207b\u00b3",
           "Factor": 2.1433470507544584E-13
         },
         {
           "Name": "CentimetresPerMinuteCubed",
-          "Symbol": "cm⋅min⁻³",
+          "Symbol": "cm\u22c5min\u207b\u00b3",
           "Factor": 4.6296296296296295E-08
         }
       ]
@@ -1696,7 +1696,7 @@
         },
         {
           "Name": "MicrometresPerPercent",
-          "Symbol": "\u03BCm/%",
+          "Symbol": "\u03bcm/%",
           "Factor": 9.9999999999999991E-05
         },
         {
@@ -1726,7 +1726,7 @@
       "PartConversions": [
         {
           "Name": "DegreesPerPercent",
-          "Symbol": "\u00B0/%",
+          "Symbol": "\u00b0/%",
           "Factor": 1.7453292519943295
         },
         {
@@ -1906,7 +1906,7 @@
         }
       ],
       "Name": "NewtonSecond",
-      "Symbol": "N⋅s",
+      "Symbol": "N\u22c5s",
       "QuantityName": "Momentum",
       "FactorConversions": [],
       "CustomConversions": [],
@@ -1921,7 +1921,7 @@
         }
       ],
       "Name": "ReciprocalMetres",
-      "Symbol": "m⁻¹",
+      "Symbol": "m\u207b\u00b9",
       "QuantityName": "Wavenumber",
       "FactorConversions": [],
       "CustomConversions": [],
@@ -1940,7 +1940,7 @@
         }
       ],
       "Name": "KilogramsPerSquareMetre",
-      "Symbol": "kg/m²",
+      "Symbol": "kg/m\u00b2",
       "QuantityName": "AreaDensity",
       "FactorConversions": [],
       "CustomConversions": [],
@@ -1959,7 +1959,7 @@
         }
       ],
       "Name": "CubicMetresPerKilogram",
-      "Symbol": "m³/kg",
+      "Symbol": "m\u00b3/kg",
       "QuantityName": "SpecificVolume",
       "FactorConversions": [],
       "CustomConversions": [],
@@ -1967,12 +1967,12 @@
       "PartConversions": [
         {
           "Name": "CubicMetresPerGram",
-          "Symbol": "m³/g",
+          "Symbol": "m\u00b3/g",
           "Factor": 1000.0
         },
         {
           "Name": "CubicCentimetresPerGram",
-          "Symbol": "cm³/g",
+          "Symbol": "cm\u00b3/g",
           "Factor": 0.0010000000000000002
         }
       ]
@@ -2008,7 +2008,7 @@
         }
       ],
       "Name": "SquareMetresPerSecond",
-      "Symbol": "m²/s",
+      "Symbol": "m\u00b2/s",
       "QuantityName": "KinematicViscosity",
       "FactorConversions": [],
       "CustomConversions": [],
@@ -2056,7 +2056,7 @@
         }
       ],
       "Name": "JoulesPerKelvinMole",
-      "Symbol": "J/K⋅mol",
+      "Symbol": "J/K\u22c5mol",
       "QuantityName": "MolarHeatCapacity",
       "FactorConversions": [],
       "CustomConversions": [],

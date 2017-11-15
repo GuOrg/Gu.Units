@@ -58,6 +58,7 @@
             return new JsonSerializerSettings
             {
                 Formatting = Formatting.Indented,
+                StringEscapeHandling = StringEscapeHandling.EscapeNonAscii,
                 PreserveReferencesHandling = PreserveReferencesHandling.None,
                 ReferenceLoopHandling = ReferenceLoopHandling.Error,
                 ContractResolver = ExcludeCalculatedResolver.Default,
