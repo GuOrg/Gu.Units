@@ -93,7 +93,7 @@
         protected async Task<bool> IsEverythingOkAsync()
         {
             this.Errors.Clear();
-            foreach (var conversion in this.unit.AllConversions)
+            foreach (var conversion in this.unit.AllConversions.ToList())
             {
                 var canRoundtrip = await conversion.CanRoundtripAsync().ConfigureAwait(false);
                 if (!canRoundtrip)
