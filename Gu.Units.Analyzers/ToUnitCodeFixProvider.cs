@@ -1,15 +1,14 @@
 namespace Gu.Units.Analyzers
 {
     using System.Collections.Immutable;
-    using System.Linq;
     using System.Text.RegularExpressions;
-    using System.Threading;
     using System.Threading.Tasks;
     using Microsoft.CodeAnalysis;
     using Microsoft.CodeAnalysis.CodeActions;
     using Microsoft.CodeAnalysis.CodeFixes;
     using Microsoft.CodeAnalysis.CSharp;
     using Microsoft.CodeAnalysis.CSharp.Syntax;
+    using Microsoft.CodeAnalysis.Editing;
     using Microsoft.CodeAnalysis.Simplification;
 
     public abstract class ToUnitCodeFixProvider : CodeFixProvider
@@ -63,25 +62,26 @@ namespace Gu.Units.Analyzers
                     context.RegisterCodeFix(
                         CodeAction.Create(
                             string.Format(this.titleFormat, text),
-                            _ => this.ApplyFix(context, syntaxRoot, expression),
+                            _ => ApplyFix(context.Document, expression, this.wrapSyntax),
                             this.key),
                         diagnostic);
                 }
             }
         }
 
-        private async Task<Document> ApplyFix(CodeFixContext context, SyntaxNode root, ExpressionSyntax expression)
+        private static async Task<Document> ApplyFix(Document context, ExpressionSyntax expression, MemberAccessExpressionSyntax wrapSyntax)
         {
-            var document = context.Document;
-            var replacement = this.WrapWithCallToMillimetres(expression);
-            root = root.ReplaceNode(expression, replacement);
-            return document.WithSyntaxRoot(root);
+            var editor = await DocumentEditor.CreateAsync(context).ConfigureAwait(false);
+            editor.ReplaceNode(
+                expression,
+                (x, _) => WrapWithCallToMillimetres((ExpressionSyntax)x, wrapSyntax));
+            return editor.GetChangedDocument();
         }
 
-        private InvocationExpressionSyntax WrapWithCallToMillimetres(ExpressionSyntax expressionToWrap)
+        private static InvocationExpressionSyntax WrapWithCallToMillimetres(ExpressionSyntax expressionToWrap, MemberAccessExpressionSyntax wrapSyntax)
         {
             return SyntaxFactory.InvocationExpression(
-                this.wrapSyntax,
+                wrapSyntax,
                 SyntaxFactory.ArgumentList(SyntaxFactory.SeparatedList(new[] { SyntaxFactory.Argument(expressionToWrap) })));
         }
     }
