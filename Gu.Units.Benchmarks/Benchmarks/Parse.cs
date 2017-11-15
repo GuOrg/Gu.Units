@@ -8,7 +8,7 @@
     public class Parse
     {
         [Benchmark(Baseline = true)]
-        public double DobleParse()
+        public double DoubleParse()
         {
             return double.Parse("1.2", CultureInfo.InvariantCulture);
         }
