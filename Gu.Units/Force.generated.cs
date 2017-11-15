@@ -611,7 +611,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Force"/>.
         /// </summary>
-        /// <param name="micronewtons">The value in \u03BCN.</param>
+        /// <param name="micronewtons">The value in μN.</param>
         /// <returns>An instance of <see cref="Gu.Units.Force"/></returns>
         public static Force FromMicronewtons(double micronewtons)
         {

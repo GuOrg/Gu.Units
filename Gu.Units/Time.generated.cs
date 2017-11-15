@@ -707,7 +707,7 @@
         /// <summary>
         /// Creates a new instance of <see cref="Gu.Units.Time"/>.
         /// </summary>
-        /// <param name="microseconds">The value in \u03BCs.</param>
+        /// <param name="microseconds">The value in μs.</param>
         /// <returns>An instance of <see cref="Gu.Units.Time"/></returns>
         public static Time FromMicroseconds(double microseconds)
         {

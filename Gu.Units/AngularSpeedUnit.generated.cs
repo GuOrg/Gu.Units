@@ -27,13 +27,13 @@
         /// The DegreesPerSecond unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularSpeedUnit DegreesPerSecond = new AngularSpeedUnit(degreesPerSecond => 0.0174532925199433 * degreesPerSecond, radiansPerSecond => radiansPerSecond / 0.0174532925199433, "\u00B0⋅s⁻¹");
+        public static readonly AngularSpeedUnit DegreesPerSecond = new AngularSpeedUnit(degreesPerSecond => 0.0174532925199433 * degreesPerSecond, radiansPerSecond => radiansPerSecond / 0.0174532925199433, "°⋅s⁻¹");
 
         /// <summary>
         /// The DegreesPerMinute unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularSpeedUnit DegreesPerMinute = new AngularSpeedUnit(degreesPerMinute => 0.000290888208665722 * degreesPerMinute, radiansPerSecond => radiansPerSecond / 0.000290888208665722, "min⁻¹⋅\u00B0");
+        public static readonly AngularSpeedUnit DegreesPerMinute = new AngularSpeedUnit(degreesPerMinute => 0.000290888208665722 * degreesPerMinute, radiansPerSecond => radiansPerSecond / 0.000290888208665722, "min⁻¹⋅°");
 
         /// <summary>
         /// The RadiansPerMinute unit
@@ -45,7 +45,7 @@
         /// The DegreesPerHour unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly AngularSpeedUnit DegreesPerHour = new AngularSpeedUnit(degreesPerHour => 4.84813681109536E-06 * degreesPerHour, radiansPerSecond => radiansPerSecond / 4.84813681109536E-06, "h⁻¹⋅\u00B0");
+        public static readonly AngularSpeedUnit DegreesPerHour = new AngularSpeedUnit(degreesPerHour => 4.84813681109536E-06 * degreesPerHour, radiansPerSecond => radiansPerSecond / 4.84813681109536E-06, "h⁻¹⋅°");
 
         /// <summary>
         /// The RadiansPerHour unit

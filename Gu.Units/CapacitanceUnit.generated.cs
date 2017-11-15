@@ -27,7 +27,7 @@
         /// The Microfarads unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly CapacitanceUnit Microfarads = new CapacitanceUnit(microfarads => microfarads / 1000000, farads => 1000000 * farads, "\u03BCF");
+        public static readonly CapacitanceUnit Microfarads = new CapacitanceUnit(microfarads => microfarads / 1000000, farads => 1000000 * farads, "μF");
 
         /// <summary>
         /// The Millifarads unit

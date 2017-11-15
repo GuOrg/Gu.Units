@@ -19,6 +19,21 @@
         /// </summary>
         public static readonly ElectricalConductanceJsonConverter Siemens = new ElectricalConductanceJsonConverter(ElectricalConductanceUnit.Siemens);
 
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="ElectricalConductanceUnit.Nanosiemens"/>
+        /// </summary>
+        public static readonly ElectricalConductanceJsonConverter Nanosiemens = new ElectricalConductanceJsonConverter(ElectricalConductanceUnit.Nanosiemens);
+
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="ElectricalConductanceUnit.Microsiemens"/>
+        /// </summary>
+        public static readonly ElectricalConductanceJsonConverter Microsiemens = new ElectricalConductanceJsonConverter(ElectricalConductanceUnit.Microsiemens);
+
+        /// <summary>
+        /// A <see cref="JsonConverter"/> that writes values in <see cref="ElectricalConductanceUnit.Millisiemens"/>
+        /// </summary>
+        public static readonly ElectricalConductanceJsonConverter Millisiemens = new ElectricalConductanceJsonConverter(ElectricalConductanceUnit.Millisiemens);
+
         private readonly ElectricalConductanceUnit unit;
 
         private ElectricalConductanceJsonConverter(ElectricalConductanceUnit unit)

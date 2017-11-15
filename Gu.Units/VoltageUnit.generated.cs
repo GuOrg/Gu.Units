@@ -39,7 +39,7 @@
         /// The Microvolts unit
         /// Contains conversion logic to from and formatting.
         /// </summary>
-        public static readonly VoltageUnit Microvolts = new VoltageUnit(microvolts => microvolts / 1000000, volts => 1000000 * volts, "\u03BCV");
+        public static readonly VoltageUnit Microvolts = new VoltageUnit(microvolts => microvolts / 1000000, volts => 1000000 * volts, "μV");
 
         /// <summary>
         /// The Nanovolts unit

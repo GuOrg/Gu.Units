@@ -73,6 +73,56 @@
         public double SiemensPerMillimetre => this.siemensPerMetre / 1000;
 
         /// <summary>
+        /// Gets the quantity in NanosiemensPerMetre
+        /// </summary>
+        public double NanosiemensPerMetre => 1000000000 * this.siemensPerMetre;
+
+        /// <summary>
+        /// Gets the quantity in NanosiemensPerMicrometre
+        /// </summary>
+        public double NanosiemensPerMicrometre => 1000 * this.siemensPerMetre;
+
+        /// <summary>
+        /// Gets the quantity in NanosiemensPerMillimetre
+        /// </summary>
+        public double NanosiemensPerMillimetre => 1000000 * this.siemensPerMetre;
+
+        /// <summary>
+        /// Gets the quantity in NanosiemensPerCentimetre
+        /// </summary>
+        public double NanosiemensPerCentimetre => 10000000 * this.siemensPerMetre;
+
+        /// <summary>
+        /// Gets the quantity in MicrosiemensPerMetre
+        /// </summary>
+        public double MicrosiemensPerMetre => 1000000 * this.siemensPerMetre;
+
+        /// <summary>
+        /// Gets the quantity in MicrosiemensPerMillimetre
+        /// </summary>
+        public double MicrosiemensPerMillimetre => 1000 * this.siemensPerMetre;
+
+        /// <summary>
+        /// Gets the quantity in MicrosiemensPerCentimetre
+        /// </summary>
+        public double MicrosiemensPerCentimetre => 10000 * this.siemensPerMetre;
+
+        /// <summary>
+        /// Gets the quantity in MillisiemensPerMetre
+        /// </summary>
+        public double MillisiemensPerMetre => 1000 * this.siemensPerMetre;
+
+        /// <summary>
+        /// Gets the quantity in MillisiemensPerMillimetre
+        /// </summary>
+        public double MillisiemensPerMillimetre => this.siemensPerMetre;
+
+        /// <summary>
+        /// Gets the quantity in MillisiemensPerCentimetre
+        /// </summary>
+        public double MillisiemensPerCentimetre => 10 * this.siemensPerMetre;
+
+        /// <summary>
         /// Multiplies <paramref name="left"/> with <paramref name="right"/>
         /// </summary>
         /// <param name="left">The left value</param>
@@ -431,6 +481,106 @@
         public static Conductivity FromSiemensPerMillimetre(double siemensPerMillimetre)
         {
             return new Conductivity(1000 * siemensPerMillimetre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Conductivity"/>.
+        /// </summary>
+        /// <param name="nanosiemensPerMetre">The value in nS/m.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Conductivity"/></returns>
+        public static Conductivity FromNanosiemensPerMetre(double nanosiemensPerMetre)
+        {
+            return new Conductivity(nanosiemensPerMetre / 1000000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Conductivity"/>.
+        /// </summary>
+        /// <param name="nanosiemensPerMicrometre">The value in nS/μm.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Conductivity"/></returns>
+        public static Conductivity FromNanosiemensPerMicrometre(double nanosiemensPerMicrometre)
+        {
+            return new Conductivity(nanosiemensPerMicrometre / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Conductivity"/>.
+        /// </summary>
+        /// <param name="nanosiemensPerMillimetre">The value in nS/mm.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Conductivity"/></returns>
+        public static Conductivity FromNanosiemensPerMillimetre(double nanosiemensPerMillimetre)
+        {
+            return new Conductivity(nanosiemensPerMillimetre / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Conductivity"/>.
+        /// </summary>
+        /// <param name="nanosiemensPerCentimetre">The value in nS/cm.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Conductivity"/></returns>
+        public static Conductivity FromNanosiemensPerCentimetre(double nanosiemensPerCentimetre)
+        {
+            return new Conductivity(nanosiemensPerCentimetre / 10000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Conductivity"/>.
+        /// </summary>
+        /// <param name="microsiemensPerMetre">The value in μS/m.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Conductivity"/></returns>
+        public static Conductivity FromMicrosiemensPerMetre(double microsiemensPerMetre)
+        {
+            return new Conductivity(microsiemensPerMetre / 1000000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Conductivity"/>.
+        /// </summary>
+        /// <param name="microsiemensPerMillimetre">The value in μS/mm.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Conductivity"/></returns>
+        public static Conductivity FromMicrosiemensPerMillimetre(double microsiemensPerMillimetre)
+        {
+            return new Conductivity(microsiemensPerMillimetre / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Conductivity"/>.
+        /// </summary>
+        /// <param name="microsiemensPerCentimetre">The value in μS/cm.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Conductivity"/></returns>
+        public static Conductivity FromMicrosiemensPerCentimetre(double microsiemensPerCentimetre)
+        {
+            return new Conductivity(microsiemensPerCentimetre / 10000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Conductivity"/>.
+        /// </summary>
+        /// <param name="millisiemensPerMetre">The value in mS/m.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Conductivity"/></returns>
+        public static Conductivity FromMillisiemensPerMetre(double millisiemensPerMetre)
+        {
+            return new Conductivity(millisiemensPerMetre / 1000);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Conductivity"/>.
+        /// </summary>
+        /// <param name="millisiemensPerMillimetre">The value in mS/mm.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Conductivity"/></returns>
+        public static Conductivity FromMillisiemensPerMillimetre(double millisiemensPerMillimetre)
+        {
+            return new Conductivity(millisiemensPerMillimetre);
+        }
+
+        /// <summary>
+        /// Creates a new instance of <see cref="Gu.Units.Conductivity"/>.
+        /// </summary>
+        /// <param name="millisiemensPerCentimetre">The value in mS/cm.</param>
+        /// <returns>An instance of <see cref="Gu.Units.Conductivity"/></returns>
+        public static Conductivity FromMillisiemensPerCentimetre(double millisiemensPerCentimetre)
+        {
+            return new Conductivity(millisiemensPerCentimetre / 10);
         }
 
         /// <summary>
