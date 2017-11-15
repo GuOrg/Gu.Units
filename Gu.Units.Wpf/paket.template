@@ -15,7 +15,7 @@ releasenotes
   FEATURE: More conductivity units.
 dependencies
   framework: net45
-    Gu.Units = 0.10.6
+    Gu.Units = 0.10.6.1
 
 files
   bin/Release/net45/Gu.Units.Wpf.dll ==> lib/net45

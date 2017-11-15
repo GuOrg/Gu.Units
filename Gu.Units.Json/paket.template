@@ -15,11 +15,11 @@ releasenotes
   FEATURE: More conductivity units.
 dependencies
   framework: netstandard2.0
-    Gu.Units = 0.10.6
+    Gu.Units = 0.10.6.1
     Newtonsoft.Json 10.0.3
 
   framework: net45
-    Gu.Units = 0.10.6
+    Gu.Units = 0.10.6.1
     Newtonsoft.Json 10.0.3
 
 files
