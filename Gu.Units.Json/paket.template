@@ -1,7 +1,7 @@
 ﻿type file
 id Gu.Units.Json
 title Gu.Units.Json
-version 0.10.6
+version 0.10.6.1
 authors Johan Larsson
 owners Johan Larsson
 copyright Copyright Johan Larsson 2017
@@ -12,14 +12,14 @@ projectUrl https://github.com/JohanLarsson/Gu.Units
 licenseUrl http://opensource.org/licenses/MIT
 
 releasenotes
-  FEATURE: Sign.
+  FEATURE: More conductivity units.
 dependencies
   framework: netstandard2.0
-    Gu.Units = 0.10.6
+    Gu.Units = 0.10.6.1
     Newtonsoft.Json 10.0.3
 
   framework: net45
-    Gu.Units = 0.10.6
+    Gu.Units = 0.10.6.1
     Newtonsoft.Json 10.0.3
 
 files

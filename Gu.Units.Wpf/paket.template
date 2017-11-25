@@ -1,7 +1,7 @@
 ﻿type file
 id Gu.Units.Wpf
 title Gu.Units.Wpf
-version 0.10.6
+version 0.10.6.1
 authors Johan Larsson
 owners Johan Larsson
 copyright Copyright Johan Larsson 2017
@@ -12,10 +12,10 @@ projectUrl https://github.com/JohanLarsson/Gu.Units
 licenseUrl http://opensource.org/licenses/MIT
 
 releasenotes
-  FEATURE: Sign.
+  FEATURE: More conductivity units.
 dependencies
   framework: net45
-    Gu.Units = 0.10.6
+    Gu.Units = 0.10.6.1
 
 files
   bin/Release/net45/Gu.Units.Wpf.dll ==> lib/net45

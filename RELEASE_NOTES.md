@@ -1,3 +1,6 @@
+#### 0.10.6.1
+* FEATURE: More conductivity units.
+
 #### 0.10.6
 * FEATURE: Sign.
 
