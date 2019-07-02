@@ -4,7 +4,7 @@
     using System.Collections.ObjectModel;
     using System.Collections.Specialized;
     using System.Linq;
-    using Reactive;
+    using Gu.Reactive;
 
     public sealed class CustomConversionsVm : IDisposable
     {
@@ -15,7 +15,7 @@
         public CustomConversionsVm()
         {
             this.Conversions.ObserveCollectionChangedSlim(signalInitial: false)
-                       .Subscribe(this.Synchronize);
+                            .Subscribe(this.Synchronize);
         }
 
         public ObservableCollection<CustomConversionVm> Conversions { get; } = new ObservableCollection<CustomConversionVm>();

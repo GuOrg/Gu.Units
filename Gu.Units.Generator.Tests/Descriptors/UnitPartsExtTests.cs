@@ -31,7 +31,7 @@
             var parts = new[]
             {
                 UnitAndPower.Create(settings.Metres, metresPower),
-                UnitAndPower.Create(settings.Seconds, secondsPower)
+                UnitAndPower.Create(settings.Seconds, secondsPower),
             };
 
             var actual = parts.AsSymbol();

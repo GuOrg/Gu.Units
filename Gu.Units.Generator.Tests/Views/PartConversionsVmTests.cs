@@ -27,7 +27,7 @@
                 var metresConversion = PartConversion.Create(settings.CubicMetres, metresPart);
                 var expected = new[]
                 {
-                    new PartConversionVm(settings.CubicMetres, metresConversion)
+                    new PartConversionVm(settings.CubicMetres, metresConversion),
                 };
 
                 Assert.AreEqual(expected[0].Conversion.Name, vm.Conversions.Single().Single().Conversion.Name);

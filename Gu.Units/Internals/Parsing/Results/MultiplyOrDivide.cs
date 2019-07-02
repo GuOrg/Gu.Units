@@ -7,6 +7,6 @@ namespace Gu.Units
     {
         None,
         Multiply,
-        Division
+        Division,
     }
 }

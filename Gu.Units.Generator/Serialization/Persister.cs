@@ -62,7 +62,7 @@
                 PreserveReferencesHandling = PreserveReferencesHandling.None,
                 ReferenceLoopHandling = ReferenceLoopHandling.Error,
                 ContractResolver = ExcludeCalculatedResolver.Default,
-                MissingMemberHandling = MissingMemberHandling.Error
+                MissingMemberHandling = MissingMemberHandling.Error,
             };
         }
     }

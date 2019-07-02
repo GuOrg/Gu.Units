@@ -30,7 +30,7 @@
                 prefixConversion.ObservePropertyChanged(x => x.Symbol)
                     .SubscribeOn(TaskPoolScheduler.Default)
                     .Where(_ => this.IsUsed)
-                    .Subscribe(_ => this.UpdateAsync())
+                    .Subscribe(_ => this.UpdateAsync()),
             };
         }
 

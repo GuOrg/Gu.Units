@@ -48,7 +48,7 @@
                            new TestCase("m^1⋅s^-1", "m/s", UnitAndPower.Create(metres, 1), UnitAndPower.Create(seconds, -1)),
                            new TestCase("m¹⋅s⁻¹", "m/s", UnitAndPower.Create(metres, 1), UnitAndPower.Create(seconds, -1)),
                            new TestCase("1/s", "s⁻¹", UnitAndPower.Create(seconds, -1)),
-                           new TestCase("s^-1", "s⁻¹", UnitAndPower.Create(seconds, -1))
+                           new TestCase("s^-1", "s⁻¹", UnitAndPower.Create(seconds, -1)),
                            ////new Data("J/s",UnitAndPower.Create(Joules, 1),UnitAndPower.Create(Seconds, -1)),
                        };
         }

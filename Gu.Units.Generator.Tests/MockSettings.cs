@@ -108,7 +108,7 @@
                     {
                         UnitAndPower.Create(this.Kilograms, 1),
                         UnitAndPower.Create(this.Metres, 1),
-                        UnitAndPower.Create(this.Seconds, -2)
+                        UnitAndPower.Create(this.Seconds, -2),
                     });
             this.DerivedUnits.Add(this.Newtons);
             this.Force = this.Newtons.Quantity;

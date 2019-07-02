@@ -7,6 +7,6 @@
     {
         None,
         Multiply,
-        Divide
+        Divide,
     }
 }

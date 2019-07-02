@@ -7,6 +7,6 @@
     {
         None,
         NegOne,
-        PlusOne
+        PlusOne,
     }
 }

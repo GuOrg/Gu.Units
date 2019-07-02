@@ -1,6 +1,6 @@
 ﻿namespace Gu.Units.Wpf.UITests
 {
-    using Demo;
+    using Gu.Units.Wpf.Demo;
     using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
 
