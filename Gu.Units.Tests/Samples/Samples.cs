@@ -27,7 +27,6 @@
         [TestCase("1.2m/s")]
         [TestCase("1.2m^1/s^1")]
         [TestCase("1.2m^1*s^-1")]
-        [TestCase("1.2m^1*s^-1")]
         [TestCase("1.2m⋅s⁻¹")]
         [TestCase("1.2m¹/s¹")]
         [TestCase("1.2m^1/s¹")]
