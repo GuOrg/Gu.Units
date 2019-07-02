@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net461</TargetFrameworks>
+    <TargetFrameworks>net472</TargetFrameworks>
     <NeutralLanguage>en-US</NeutralLanguage>
     <CodeAnalysisRuleSet>Gu.Units.Json.Tests.ruleset</CodeAnalysisRuleSet>    
   </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Gu.Units.Json\Gu.Units.Json.csproj" />
     <ProjectReference Include="..\Gu.Units\Gu.Units.csproj" />
   </ItemGroup>
+  
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>

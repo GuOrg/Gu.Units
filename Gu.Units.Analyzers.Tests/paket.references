@@ -1,7 +1,9 @@
 group Roslyn
-  Microsoft.CodeAnalysis.CSharp.Workspaces
+  Microsoft.NET.Test.Sdk
   NUnit
+  NUnit3TestAdapter
   Gu.Roslyn.Asserts
+  Microsoft.CodeAnalysis.CSharp.Workspaces
 
 group Analyzers
   StyleCop.Analyzers

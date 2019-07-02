@@ -4,7 +4,7 @@
 
     using BenchmarkDotNet.Attributes;
 
-    // run benchmarks in release build
+    [MemoryDiagnoser]
     public class Parse
     {
         [Benchmark(Baseline = true)]

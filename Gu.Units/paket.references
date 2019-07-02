@@ -1,6 +1,3 @@
 group Analyzers
-  StyleCop.Analyzers
-  Gu.Analyzers
-
-group Build
-  SourceLink
+StyleCop.Analyzers
+Gu.Analyzers

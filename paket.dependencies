@@ -17,8 +17,10 @@ group Analyzers
 group Roslyn
   storage: none
   source http://www.nuget.org/api/v2/
-  nuget Microsoft.CodeAnalysis.CSharp.Workspaces 1.3.1 lowest_matching: true
+  nuget Microsoft.NET.Test.Sdk
   nuget NUnit
+  nuget NUnit3TestAdapter
+  nuget Microsoft.CodeAnalysis.CSharp.Workspaces 1.3.1 lowest_matching: true
   nuget Gu.Roslyn.Asserts
 
 group Scripting
@@ -28,7 +30,9 @@ group Scripting
 
 group Test
   source http://www.nuget.org/api/v2/
+  nuget Microsoft.NET.Test.Sdk
   nuget NUnit
+  nuget NUnit3TestAdapter
   nuget Moq
   nuget Gu.Wpf.UiAutomation
 
@@ -36,7 +40,3 @@ group Benchmarks
   storage: none
   source http://www.nuget.org/api/v2/
   nuget BenchmarkDotNet.Diagnostics.Windows
-
-group Build
-  source http://www.nuget.org/api/v2/
-  nuget SourceLink

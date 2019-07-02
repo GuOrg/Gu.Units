@@ -2,6 +2,7 @@
 {
     using BenchmarkDotNet.Attributes;
 
+    [MemoryDiagnoser]
     public class Format
     {
         [Benchmark(Baseline = true)]

@@ -11,5 +11,7 @@ group Scripting
   Microsoft.CodeAnalysis.CSharp.Scripting
 
 group Test
+  Microsoft.NET.Test.Sdk
   NUnit
+  NUnit3TestAdapter
   Moq

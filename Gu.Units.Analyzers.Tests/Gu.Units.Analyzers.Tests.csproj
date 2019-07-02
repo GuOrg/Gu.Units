@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFramework>net472</TargetFramework>
     <CodeAnalysisRuleSet>Gu.Units.Analyzers.Tests.ruleset</CodeAnalysisRuleSet>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Gu.Units.Analyzers\Gu.Units.Analyzers.csproj" />
     <ProjectReference Include="..\Gu.Units\Gu.Units.csproj" />
   </ItemGroup>
+
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
