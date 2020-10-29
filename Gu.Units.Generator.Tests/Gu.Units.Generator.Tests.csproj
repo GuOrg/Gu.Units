@@ -2,6 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\packages\test\NUnit\build\NUnit.props" Condition="Exists('..\packages\test\NUnit\build\NUnit.props')" Label="Paket" />
   <Import Project="..\packages\scripting\Microsoft.CodeAnalysis.Analyzers\build\Microsoft.CodeAnalysis.Analyzers.props" Condition="Exists('..\packages\scripting\Microsoft.CodeAnalysis.Analyzers\build\Microsoft.CodeAnalysis.Analyzers.props')" Label="Paket" />
+ 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -9,19 +10,24 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <CodeAnalysisRuleSet>Gu.Units.Generator.Tests.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Imports\**" />
     <EmbeddedResource Remove="Imports\**" />
     <None Remove="Imports\**" />
   </ItemGroup>
+  
   <ItemGroup>
     <Reference Include="System.XML" />
   </ItemGroup>
+  
   <ItemGroup>
     <ProjectReference Include="..\Gu.Units.Generator\Gu.Units.Generator.csproj" />
   </ItemGroup>
+  
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
