@@ -5,6 +5,8 @@
 
     public class ToLengthCodeFixProviderTests
     {
+        private static readonly ToLengthCodeFixProvider Fix = new ToLengthCodeFixProvider();
+
         [Test]
         public void IntToMillimetres()
         {
@@ -40,7 +42,7 @@ namespace RoslynSandbox
     }
 }";
             var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
-            AnalyzerAssert.CodeFix<ToLengthCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
+            RoslynAssert.CodeFix(Fix, expectedDiagnostic, testCode, fixedCode);
         }
 
         [Test]
@@ -55,7 +57,7 @@ namespace RoslynSandbox
     public class Foo
     {   
         private static int? value = 0;
-        private static Length Foo => value.Value; 
+        private static Length Foo => ↓value.Value; 
     }
 }";
 
@@ -71,7 +73,7 @@ namespace RoslynSandbox
     }
 }";
             var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
-            AnalyzerAssert.CodeFix<ToLengthCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
+            RoslynAssert.CodeFix(Fix, expectedDiagnostic, testCode, fixedCode);
         }
 
         [Test]
@@ -109,7 +111,7 @@ namespace RoslynSandbox
     }
 }";
             var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
-            AnalyzerAssert.CodeFix<ToLengthCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
+            RoslynAssert.CodeFix(Fix, expectedDiagnostic, testCode, fixedCode);
         }
 
         [Test]
@@ -147,7 +149,7 @@ namespace RoslynSandbox
     }
 }";
             var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
-            AnalyzerAssert.CodeFix<ToLengthCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
+            RoslynAssert.CodeFix(Fix, expectedDiagnostic, testCode, fixedCode);
         }
 
         [Test]
@@ -175,7 +177,7 @@ namespace RoslynSandbox
     }
 }";
             var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
-            AnalyzerAssert.CodeFix<ToLengthCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
+            RoslynAssert.CodeFix(Fix, expectedDiagnostic, testCode, fixedCode);
         }
 
         [Test]
@@ -203,7 +205,7 @@ namespace RoslynSandbox
     }
 }";
             var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
-            AnalyzerAssert.CodeFix<ToLengthCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
+            RoslynAssert.CodeFix(Fix, expectedDiagnostic, testCode, fixedCode);
         }
     }
 }

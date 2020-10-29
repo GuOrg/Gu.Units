@@ -5,6 +5,8 @@
 
     public class ToAngleCodeFixProviderTests
     {
+        private static readonly ToAngleCodeFixProvider Fix = new ToAngleCodeFixProvider();
+
         [Test]
         public void IntToDegrees()
         {
@@ -40,7 +42,7 @@ namespace RoslynSandbox
     }
 }";
             var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
-            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
+            RoslynAssert.CodeFix(Fix, expectedDiagnostic, testCode, fixedCode);
         }
 
         [Test]
@@ -78,7 +80,7 @@ namespace RoslynSandbox
     }
 }";
             var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
-            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
+            RoslynAssert.CodeFix(Fix, expectedDiagnostic, testCode, fixedCode);
         }
 
         [Test]
@@ -116,7 +118,7 @@ namespace RoslynSandbox
     }
 }";
             var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
-            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
+            RoslynAssert.CodeFix(Fix, expectedDiagnostic, testCode, fixedCode);
         }
 
         [Test]
@@ -154,7 +156,7 @@ namespace RoslynSandbox
     }
 }";
             var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
-            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
+            RoslynAssert.CodeFix(Fix, expectedDiagnostic, testCode, fixedCode);
         }
 
         [Test]
@@ -182,7 +184,7 @@ namespace RoslynSandbox
     }
 }";
             var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
-            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
+            RoslynAssert.CodeFix(Fix, expectedDiagnostic, testCode, fixedCode);
         }
 
         [Test]
@@ -210,7 +212,7 @@ namespace RoslynSandbox
     }
 }";
             var expectedDiagnostic = ExpectedDiagnostic.CreateFromCodeWithErrorsIndicated("CS0029", testCode, out testCode);
-            AnalyzerAssert.CodeFix<ToAngleCodeFixProvider>(expectedDiagnostic, testCode, fixedCode);
+            RoslynAssert.CodeFix(Fix, expectedDiagnostic, testCode, fixedCode);
         }
     }
 }
