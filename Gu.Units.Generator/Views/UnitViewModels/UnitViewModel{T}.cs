@@ -7,8 +7,8 @@
     using System.Reactive.Disposables;
     using System.Reactive.Linq;
     using System.Threading.Tasks;
-    using Reactive;
-    using State;
+    using Gu.Reactive;
+    using Gu.State;
 
     public abstract class UnitViewModel<TUnit> : UnitViewModel, IDisposable
         where TUnit : Unit

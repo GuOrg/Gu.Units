@@ -4,7 +4,7 @@
     using System.ComponentModel;
     using System.Reactive.Concurrency;
     using System.Reactive.Linq;
-    using Reactive;
+    using Gu.Reactive;
 
     public sealed class CustomConversionVm : ConversionVm, IDisposable
     {

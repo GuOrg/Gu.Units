@@ -7,8 +7,8 @@
     using System.Linq;
     using System.Reactive.Linq;
     using System.Runtime.CompilerServices;
+    using Gu.Reactive;
     using Newtonsoft.Json;
-    using Reactive;
 
     [Serializable]
     public class Settings : INotifyPropertyChanged

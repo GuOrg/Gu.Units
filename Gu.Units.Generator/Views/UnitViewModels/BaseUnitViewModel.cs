@@ -2,7 +2,7 @@
 {
     using System;
     using System.Reactive.Disposables;
-    using Reactive;
+    using Gu.Reactive;
 
     public class BaseUnitViewModel : UnitViewModel<BaseUnit>
     {

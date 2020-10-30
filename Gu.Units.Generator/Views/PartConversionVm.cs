@@ -5,7 +5,7 @@
     using System.Reactive.Concurrency;
     using System.Reactive.Disposables;
     using System.Reactive.Linq;
-    using Reactive;
+    using Gu.Reactive;
 
     public sealed class PartConversionVm : ConversionVm, IDisposable
     {

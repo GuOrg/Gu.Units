@@ -4,7 +4,7 @@
     using System.Collections.ObjectModel;
     using System.Collections.Specialized;
     using System.Linq;
-    using Reactive;
+    using Gu.Reactive;
 
     public sealed class FactorConversionsVm : IDisposable
     {

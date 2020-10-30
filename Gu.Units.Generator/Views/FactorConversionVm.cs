@@ -3,7 +3,7 @@
     using System;
     using System.Reactive.Concurrency;
     using System.Reactive.Linq;
-    using Reactive;
+    using Gu.Reactive;
 
     public sealed class FactorConversionVm : ConversionVm, IDisposable
     {

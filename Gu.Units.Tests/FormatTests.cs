@@ -2,7 +2,7 @@
 {
     using System.Globalization;
     using System.Threading;
-    using Internals.Parsing;
+    using Gu.Units.Tests.Internals.Parsing;
     using NUnit.Framework;
 
     public class FormatTests

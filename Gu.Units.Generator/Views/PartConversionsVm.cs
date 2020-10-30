@@ -6,7 +6,7 @@
     using System.ComponentModel;
     using System.Linq;
     using System.Runtime.CompilerServices;
-    using Reactive;
+    using Gu.Reactive;
 
     public sealed class PartConversionsVm : INotifyPropertyChanged, IDisposable
     {

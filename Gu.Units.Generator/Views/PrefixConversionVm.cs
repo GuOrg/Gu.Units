@@ -8,7 +8,7 @@
     using System.Reactive.Concurrency;
     using System.Reactive.Disposables;
     using System.Reactive.Linq;
-    using Reactive;
+    using Gu.Reactive;
 
     [DebuggerDisplay("{Conversion.Symbol}")]
     public sealed class PrefixConversionVm : ConversionVm, IDisposable

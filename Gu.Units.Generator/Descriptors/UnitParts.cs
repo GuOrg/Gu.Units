@@ -6,7 +6,7 @@
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Linq;
-    using WpfStuff;
+    using Gu.Units.Generator.WpfStuff;
 
     [TypeConverter(typeof(UnitPartsConverter))]
     [Serializable]
