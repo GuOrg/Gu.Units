@@ -85,7 +85,7 @@
         {
             var start = pos;
             pos++;
-            IntReader.TrySkipDigits(format, ref pos);
+            _ = IntReader.TrySkipDigits(format, ref pos);
             result = format.Substring(start, pos - start);
             return true;
         }

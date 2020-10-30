@@ -42,7 +42,7 @@ namespace Gu.Units
         internal static PaddedFormat GetOrCreate(string format, ref int pos, out TUnit unit)
         {
             var start = pos;
-            WhiteSpaceReader.TryRead(format, ref pos, out string prePadding);
+            _ = WhiteSpaceReader.TryRead(format, ref pos, out string prePadding);
             if (format == null ||
                 pos == format.Length)
             {
@@ -55,7 +55,7 @@ namespace Gu.Units
             {
                 if (WhiteSpaceReader.IsRestWhiteSpace(format, pos))
                 {
-                    WhiteSpaceReader.TryRead(format, ref pos, out string postPadding);
+                    _ = WhiteSpaceReader.TryRead(format, ref pos, out string postPadding);
                     return new PaddedFormat(prePadding, symbol, postPadding);
                 }
 
@@ -66,7 +66,7 @@ namespace Gu.Units
             {
                 symbol = format.Substring(start, pos - start);
 
-                WhiteSpaceReader.TryRead(format, ref pos, out string postPadding);
+                _ = WhiteSpaceReader.TryRead(format, ref pos, out string postPadding);
                 if (!WhiteSpaceReader.IsRestWhiteSpace(format, pos))
                 {
                     pos = start;
@@ -104,7 +104,7 @@ namespace Gu.Units
                 var units = GetUnits();
                 foreach (var unit in units)
                 {
-                    this.symbolUnitMap.Add(unit.Symbol, unit);
+                    _ = this.symbolUnitMap.Add(unit.Symbol, unit);
 
                     var pos = 0;
                     if (SymbolAndPowerReader.TryRead(unit.Symbol, ref pos, out IReadOnlyList<SymbolAndPower> result))
@@ -119,7 +119,7 @@ namespace Gu.Units
                             throw new InvalidOperationException($"Did not find any parts in {unit.Symbol}");
                         }
 
-                        this.symbolPartsMap.Add(unit.Symbol, result);
+                        _ = this.symbolPartsMap.Add(unit.Symbol, result);
                         var sapSet = new ReadonlySet<SymbolAndPower>(result);
                         this.unitPartsMap.TryAdd(sapSet, unit);
                     }
@@ -128,12 +128,12 @@ namespace Gu.Units
 
             internal void Add(string symbol, IReadOnlyList<SymbolAndPower> parts)
             {
-                this.symbolPartsMap.Add(symbol, parts);
+                _ = this.symbolPartsMap.Add(symbol, parts);
             }
 
             internal void Add(string symbol, TUnit unit)
             {
-                this.symbolUnitMap.Add(symbol, unit);
+                _ = this.symbolUnitMap.Add(symbol, unit);
             }
 
             internal bool TryGetParts(TUnit unit, out IReadOnlyList<SymbolAndPower> result)

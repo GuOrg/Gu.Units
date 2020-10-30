@@ -31,7 +31,7 @@ namespace Gu.Units
         internal static bool TryParse(string text, out TUnit value)
         {
             var pos = 0;
-            WhiteSpaceReader.TryRead(text, ref pos);
+            _ = WhiteSpaceReader.TryRead(text, ref pos);
             return TryParse(text, ref pos, out value) &&
                    WhiteSpaceReader.IsRestWhiteSpace(text, pos);
         }
@@ -47,7 +47,7 @@ namespace Gu.Units
             if (SymbolAndPowerReader.TryRead(text, ref pos, out IReadOnlyList<SymbolAndPower> symbolsAndPowers))
             {
                 var symbol = text.Substring(start, pos - start);
-                WhiteSpaceReader.TryRead(text, ref pos, out string _);
+                _ = WhiteSpaceReader.TryRead(text, ref pos, out string _);
                 if (!IsEndOfSymbol(text, pos))
                 {
                     result = Unit<TUnit>.Default;

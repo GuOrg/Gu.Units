@@ -35,7 +35,7 @@
             List<SymbolAndPower> saps = null;
             while (pos < text.Length)
             {
-                WhiteSpaceReader.TryRead(text, ref pos);
+                _ = WhiteSpaceReader.TryRead(text, ref pos);
                 if (!TryRead(text, ref pos, out SymbolAndPower sap))
                 {
                     pos = start;
@@ -66,7 +66,7 @@
                 var op = OperatorReader.TryReadMultiplyOrDivide(text, ref pos);
                 if (op != MultiplyOrDivide.None)
                 {
-                    WhiteSpaceReader.TryRead(text, ref pos);
+                    _ = WhiteSpaceReader.TryRead(text, ref pos);
                     if (OperatorReader.TryReadMultiplyOrDivide(text, ref pos) != MultiplyOrDivide.None)
                     {
                         pos = start;
@@ -119,7 +119,7 @@
             }
 
             var symbol = text.Substring(start, pos - start);
-            WhiteSpaceReader.TryRead(text, ref pos);
+            _ = WhiteSpaceReader.TryRead(text, ref pos);
             if (!PowerReader.TryRead(text, ref pos, out int power))
             {
                 pos = start;

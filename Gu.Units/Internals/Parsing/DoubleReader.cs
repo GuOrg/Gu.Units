@@ -69,7 +69,7 @@
 
             if ((style & NumberStyles.AllowLeadingWhite) != 0)
             {
-                WhiteSpaceReader.TryRead(text, ref pos);
+                _ = WhiteSpaceReader.TryRead(text, ref pos);
             }
 
             if (char.IsWhiteSpace(text[pos]))
@@ -119,7 +119,7 @@
         {
             var start = pos;
             var format = NumberFormatInfo.GetInstance(provider);
-            if (TryReadSign(text, ref pos, format, out Sign _))
+            if (TryReadSign(text, ref pos, format, out _))
             {
                 if ((style & NumberStyles.AllowLeadingSign) == 0)
                 {
@@ -142,7 +142,7 @@
                     return false;
                 }
 
-                TrySkipFractionDigits(text, ref pos);
+                _ = TrySkipFractionDigits(text, ref pos);
             }
 
             if (TrySkipExponent(text, ref pos))
@@ -153,7 +153,7 @@
                     return false;
                 }
 
-                TryReadSign(text, ref pos, format, out Sign exponentSign);
+                _ = TryReadSign(text, ref pos, format, out Sign exponentSign);
                 if (TrySkipExponentDigits(text, ref pos))
                 {
                     return true;

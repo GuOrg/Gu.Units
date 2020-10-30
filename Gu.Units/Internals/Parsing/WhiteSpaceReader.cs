@@ -62,13 +62,13 @@ namespace Gu.Units
                 return true;
             }
 
-            TryRead(text, ref position);
+            _ = TryRead(text, ref position);
             return position == text.Length;
         }
 
         internal static bool IsRestWhiteSpace(string text, ref int position, int end)
         {
-            TryRead(text, ref position);
+            _ = TryRead(text, ref position);
             return position == text.Length || position >= end;
         }
     }

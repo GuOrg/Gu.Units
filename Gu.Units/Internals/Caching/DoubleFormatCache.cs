@@ -23,16 +23,16 @@ namespace Gu.Units
                 paddedFormat = paddedFormat.AsUnknownFormat();
             }
 
-            Cache.Add(format, paddedFormat);
+            _ = Cache.Add(format, paddedFormat);
             return paddedFormat;
         }
 
         internal static PaddedFormat GetOrCreate(string format, ref int pos)
         {
-            WhiteSpaceReader.TryRead(format, ref pos, out string prePadding);
+            _ = WhiteSpaceReader.TryRead(format, ref pos, out string prePadding);
             if (DoubleFormatReader.TryRead(format, ref pos, out string valueFormat))
             {
-                WhiteSpaceReader.TryRead(format, ref pos, out string postPadding);
+                _ = WhiteSpaceReader.TryRead(format, ref pos, out string postPadding);
                 return new PaddedFormat(prePadding, valueFormat, postPadding);
             }
 

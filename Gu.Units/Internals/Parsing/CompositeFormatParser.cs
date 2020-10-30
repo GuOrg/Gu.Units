@@ -7,7 +7,7 @@
         internal static QuantityFormat<TUnit> Create<TUnit>(string format)
             where TUnit : struct, IUnit, IEquatable<TUnit>
         {
-            TryParse(format, out QuantityFormat<TUnit> result);
+            _ = TryParse(format, out QuantityFormat<TUnit> result);
             return result;
         }
 
