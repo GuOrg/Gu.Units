@@ -77,7 +77,7 @@
                 return true;
             }
 
-            if (obj.GetType() != this.GetType())
+            if (obj.GetType() != typeof(UnitAndPower))
             {
                 return false;
             }

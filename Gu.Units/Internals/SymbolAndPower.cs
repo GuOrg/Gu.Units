@@ -10,10 +10,16 @@
 
         internal SymbolAndPower(string symbol, int power)
         {
-            Ensure.NotNullOrEmpty(symbol, nameof(symbol));
-            Ensure.LessThan(power, 5, nameof(power));
-            Ensure.GreaterThan(power, -5, nameof(power));
-            //// not sure about throwing here but I think it means something is wrong more often.
+            if (string.IsNullOrEmpty(symbol))
+            {
+                throw new ArgumentNullException(nameof(symbol));
+            }
+
+            if (power < -5 || power > 5)
+            {
+                throw new ArgumentOutOfRangeException(nameof(power), power, "Unhandled power.");
+            }
+
             this.Symbol = symbol;
             this.Power = power;
         }
