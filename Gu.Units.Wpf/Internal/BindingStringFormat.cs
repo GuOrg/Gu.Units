@@ -1,21 +1,21 @@
 ﻿namespace Gu.Units.Wpf
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
     using System.Windows.Data;
 
     internal static class BindingStringFormat
     {
-        internal static bool TryGet<TUnit>(this Binding binding, out QuantityFormat<TUnit> format)
+        internal static bool TryGet<TUnit>(this Binding binding, [NotNullWhen(true)] out QuantityFormat<TUnit>? format)
             where TUnit : struct, IUnit, IEquatable<TUnit>
         {
-            var stringFormat = binding?.StringFormat;
-            if (stringFormat == null)
+            if (binding?.StringFormat is { } stringFormat)
             {
-                format = null;
-                return false;
+                return StringFormatParser<TUnit>.TryParse(stringFormat, out format);
             }
 
-            return StringFormatParser<TUnit>.TryParse(stringFormat, out format);
+            format = null;
+            return false;
         }
     }
 }

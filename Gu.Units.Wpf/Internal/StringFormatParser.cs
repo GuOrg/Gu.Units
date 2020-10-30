@@ -62,7 +62,7 @@
             return $"Error parsing: '{format}' for {type}";
         }
 
-        internal static bool TryParse(string format, out QuantityFormat<TUnit> result)
+        internal static bool TryParse(string format, out QuantityFormat<TUnit>? result)
         {
             if (string.IsNullOrWhiteSpace(format))
             {
