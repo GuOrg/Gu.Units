@@ -1,24 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <TargetFrameworks>net45</TargetFrameworks>
-    <NeutralLanguage>en-US</NeutralLanguage>
+    <TargetFrameworks>net45;netcoreapp3.1</TargetFrameworks>
+    <UseWpf>true</UseWpf>
+    <LangVersion>latest</LangVersion>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <CodeAnalysisRuleSet>Gu.Units.Wpf.ruleset</CodeAnalysisRuleSet>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Gu.Units.Wpf.xml</DocumentationFile>
   </PropertyGroup>
+
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\Gu.Units.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Version>0.10.6.1</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Authors>Johan Larsson</Authors>
+    <Description>IValueConverters for Gu.Units as MarkupExtensions</Description>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <RepositoryUrl>https://github.com/GuOrg/Gu.Units</RepositoryUrl>
+    <PackageReleaseNotes>
+      FEATURE: More conductivity units.
+    </PackageReleaseNotes>
+    <PackageTags>unit units quantity quantities unitsofmeasure</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\Gu.Units\Gu.Units.csproj" />
+    <PackageReference Include="Gu.Analyzers" Version="1.8.1" PrivateAssets="all" />
+    <PackageReference Include="IDisposableAnalyzers" Version="3.4.3" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.1" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="16.8.51" PrivateAssets="all" />
+    <PackageReference Include="PropertyChangedAnalyzers" Version="3.2.1" PrivateAssets="all" />
+    <PackageReference Include="ReflectionAnalyzers" Version="0.1.22-dev" PrivateAssets="all" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.205" PrivateAssets="all" />
+    <PackageReference Include="WpfAnalyzers" Version="3.2.0" PrivateAssets="all" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
-  <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
