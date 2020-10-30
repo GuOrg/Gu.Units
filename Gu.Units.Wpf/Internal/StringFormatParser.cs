@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
 
     internal static class StringFormatParser<TUnit>
         where TUnit : struct, IUnit, IEquatable<TUnit>
@@ -12,8 +13,8 @@
         {
             try
             {
-                var text = 1.2.ToString(format);
-                return double.TryParse(text, out double _);
+                var text = 1.2.ToString(format, CultureInfo.InvariantCulture);
+                return double.TryParse(text, NumberStyles.Float, CultureInfo.InvariantCulture, out double _);
             }
             catch (Exception)
             {

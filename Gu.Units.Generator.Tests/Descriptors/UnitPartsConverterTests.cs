@@ -5,12 +5,12 @@
     using Gu.Units.Generator.WpfStuff;
     using NUnit.Framework;
 
-    public class UnitPartsConverterTests
+    public static class UnitPartsConverterTests
     {
-        public static TestCase[] TestCases { get; } = CreateTestCases();
+        private static readonly TestCase[] TestCases = CreateTestCases();
 
         [TestCaseSource(nameof(TestCases))]
-        public void ConvertFrom(TestCase testCase)
+        public static void ConvertFrom(TestCase testCase)
         {
             var converter = new UnitPartsConverter();
             Assert.IsTrue(converter.CanConvertFrom(null, typeof(string)));
@@ -46,7 +46,9 @@
             };
         }
 
+#pragma warning disable CA1034 // Nested types should not be visible
         public class TestCase
+#pragma warning restore CA1034 // Nested types should not be visible
         {
             public TestCase(string value, string formatted, params UnitAndPower[] parts)
             {

@@ -4,13 +4,9 @@
     using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
 
+    // ⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹
     public class StringFormatTests
     {
-        //// ReSharper disable UnusedMember.Local
-        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
-        private const char MultiplyDot = '⋅';
-        //// ReSharper restore UnusedMember.Local
-
         [TestCase("6.78cm")]
         [TestCase("67.8mm")]
         public void HappyPath(string text)

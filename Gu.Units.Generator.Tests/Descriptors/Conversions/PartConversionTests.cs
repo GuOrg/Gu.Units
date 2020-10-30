@@ -3,15 +3,11 @@
     using System.Threading.Tasks;
     using NUnit.Framework;
 
-    public class PartConversionTests
+    // ⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹
+    public static class PartConversionTests
     {
-        //// ReSharper disable UnusedMember.Local
-        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
-        private const char MultiplyDot = '⋅';
-        //// ReSharper restore UnusedMember.Local
-
         [Test]
-        public void SquareMillimetres()
+        public static void SquareMillimetres()
         {
             var settings = MockSettings.Create();
             var millimetres = PrefixConversion.Create(settings.Metres, settings.Milli);
@@ -24,7 +20,7 @@
         }
 
         [Test]
-        public void GramsPerCubicMetre()
+        public static void GramsPerCubicMetre()
         {
             var settings = MockSettings.Create();
             var gramPart = PartConversion.CreatePart(1, settings.Grams);
@@ -36,7 +32,7 @@
         }
 
         [Test]
-        public void MilliGramsPerCubicMetre()
+        public static void MilliGramsPerCubicMetre()
         {
             var settings = MockSettings.Create();
             var milligram = PrefixConversion.Create(settings.Grams, settings.Milli);
@@ -50,7 +46,7 @@
         }
 
         [Test]
-        public async Task MetresPerSecondCubed()
+        public static async Task MetresPerSecondCubed()
         {
             var settings = MockSettings.Create();
             var metrePart = PartConversion.CreatePart(1, settings.Metres);
@@ -63,7 +59,7 @@
         }
 
         [Test]
-        public async Task MilliMetresPerSecondCubed()
+        public static async Task MilliMetresPerSecondCubed()
         {
             var settings = MockSettings.Create();
             var millimetres = PrefixConversion.Create(settings.Metres, settings.Milli);

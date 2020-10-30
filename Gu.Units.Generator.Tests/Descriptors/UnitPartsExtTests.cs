@@ -2,17 +2,13 @@
 {
     using NUnit.Framework;
 
-    public class UnitPartsExtTests
+    // ⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹
+    public static class UnitPartsExtTests
     {
-        //// ReSharper disable UnusedMember.Local
-        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
-        private const char MultiplyDot = '⋅';
-        //// ReSharper restore UnusedMember.Local
-
         [TestCase(1, "m")]
         [TestCase(2, "m²")]
         [TestCase(-1, "m⁻¹")]
-        public void MetresToUnitString(int power, string expected)
+        public static void MetresToUnitString(int power, string expected)
         {
             var settings = MockSettings.Create();
             var parts = new[] { UnitAndPower.Create(settings.Metres, power) };
@@ -25,7 +21,7 @@
         [TestCase(1, -1, "m/s")]
         [TestCase(3, -1, "m³/s")]
         [TestCase(-1, -1, "m⁻¹⋅s⁻¹")]
-        public void MetresSecondsToUnitString(int metresPower, int secondsPower, string expected)
+        public static void MetresSecondsToUnitString(int metresPower, int secondsPower, string expected)
         {
             var settings = MockSettings.Create();
             var parts = new[]
@@ -39,7 +35,7 @@
         }
 
         [Test]
-        public void SecondsMetresToUnitString()
+        public static void SecondsMetresToUnitString()
         {
             var settings = MockSettings.Create();
             var parts = new[]

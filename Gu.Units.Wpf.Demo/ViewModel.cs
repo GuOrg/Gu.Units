@@ -39,7 +39,7 @@ namespace Gu.Units.Wpf.Demo
             get => this.nullableLength;
             set
             {
-                if (value.Equals(this.nullableLength))
+                if (value == this.nullableLength)
                 {
                     return;
                 }

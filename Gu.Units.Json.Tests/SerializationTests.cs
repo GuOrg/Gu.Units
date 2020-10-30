@@ -4,55 +4,55 @@ namespace Gu.Units.Json.Tests
     using Newtonsoft.Json;
     using NUnit.Framework;
 
-    public class SerializationTests
+    public static class SerializationTests
     {
         [Test]
-        public void ToJsonDegrees()
+        public static void ToJsonDegrees()
         {
             var dummyClass = new DummyClass { Angle = Angle.FromDegrees(1.23) };
-            var settings = this.CreateSettings(AngleJsonConverter.Degrees, "sv-SE");
+            var settings = CreateSettings(AngleJsonConverter.Degrees, "sv-SE");
             var actual = JsonConvert.SerializeObject(dummyClass, settings);
             Assert.AreEqual("{\"Angle\":\"1,23°\"}", actual);
         }
 
         [Test]
-        public void ToJsonRadians()
+        public static void ToJsonRadians()
         {
             var dummyClass = new DummyClass { Angle = Angle.FromRadians(1.23) };
-            var settings = this.CreateSettings(AngleJsonConverter.Radians, "en-US");
+            var settings = CreateSettings(AngleJsonConverter.Radians, "en-US");
             var actual = JsonConvert.SerializeObject(dummyClass, settings);
             Assert.AreEqual("{\"Angle\":\"1.23\u00A0rad\"}", actual);
         }
 
         [TestCase("{\"Angle\":\"1,23°\"}", "sv-SE")]
         [TestCase("{\"Angle\":\"1.23°\"}", "en-US")]
-        public void FromJsonDefault(string json, string culture)
+        public static void FromJsonDefault(string json, string culture)
         {
-            var settings = this.CreateSettings(AngleJsonConverter.Default, culture);
+            var settings = CreateSettings(AngleJsonConverter.Default, culture);
             var actual = JsonConvert.DeserializeObject<DummyClass>(json, settings);
             Assert.AreEqual(Angle.FromDegrees(1.23), actual.Angle);
         }
 
         [TestCase("{\"Angle\":\"1,23°\"}", "sv-SE")]
         [TestCase("{\"Angle\":\"1.23°\"}", "en-US")]
-        public void FromJsonDegrees(string json, string culture)
+        public static void FromJsonDegrees(string json, string culture)
         {
-            var settings = this.CreateSettings(AngleJsonConverter.Degrees, culture);
+            var settings = CreateSettings(AngleJsonConverter.Degrees, culture);
             var actual = JsonConvert.DeserializeObject<DummyClass>(json, settings);
             Assert.AreEqual(Angle.FromDegrees(1.23), actual.Angle);
         }
 
         [TestCase("{\"Angle\":\"1,23°\"}", "sv-SE")]
         [TestCase("{\"Angle\":\"1.23°\"}", "en-US")]
-        public void FromJsonRadians(string json, string culture)
+        public static void FromJsonRadians(string json, string culture)
         {
             // yes radians converter can read degrees it only outputs radians
-            var settings = this.CreateSettings(AngleJsonConverter.Default, culture);
+            var settings = CreateSettings(AngleJsonConverter.Default, culture);
             var actual = JsonConvert.DeserializeObject<DummyClass>(json, settings);
             Assert.AreEqual(Angle.FromDegrees(1.23), actual.Angle);
         }
 
-        private JsonSerializerSettings CreateSettings(AngleJsonConverter converter, string culture)
+        private static JsonSerializerSettings CreateSettings(AngleJsonConverter converter, string culture)
         {
             return new JsonSerializerSettings
             {

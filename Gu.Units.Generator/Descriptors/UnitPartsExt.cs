@@ -44,21 +44,21 @@
                     if (sorted[i - 1].Power > 0 &&
                         sorted[i].Power < 0)
                     {
-                        sb.Append("/");
+                        sb.Append('/');
                     }
                     else
                     {
-                        sb.Append("⋅");
+                        sb.Append('⋅');
                     }
                 }
 
                 sb.Append(unitAndPower.Symbol);
                 if (unitAndPower.Power < 0 && sorted[0].Power < 0)
                 {
-                    sb.Append("⁻");
+                    sb.Append('⁻');
                     if (unitAndPower.Power == -1)
                     {
-                        sb.Append("¹");
+                        sb.Append('¹');
                     }
                 }
 
@@ -67,16 +67,16 @@
                     case 1:
                         break;
                     case 2:
-                        sb.Append("²");
+                        sb.Append('²');
                         break;
                     case 3:
-                        sb.Append("³");
+                        sb.Append('³');
                         break;
                     case 4:
-                        sb.Append("⁴");
+                        sb.Append('⁴');
                         break;
                     default:
-                        sb.Append("^")
+                        sb.Append('^')
                             .Append(Math.Abs(unitAndPower.Power));
                         break;
                 }
@@ -95,7 +95,7 @@
             return $"Failed normalizing {symbol}";
         }
 
-        public class BaseUnitOrderComparer : IComparer<SymbolAndPower>
+        private sealed class BaseUnitOrderComparer : IComparer<SymbolAndPower>
         {
             public static readonly BaseUnitOrderComparer Default = new BaseUnitOrderComparer();
             private static readonly string[] Order = { "kg", "m", "s", "A", "cd", "mol" };

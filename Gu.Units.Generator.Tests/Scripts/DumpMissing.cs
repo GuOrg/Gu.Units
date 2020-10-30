@@ -6,15 +6,11 @@
     using System.Threading.Tasks;
     using NUnit.Framework;
 
-    public class DumpMissing
+    // ⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹
+    public static class DumpMissing
     {
-        //// ReSharper disable UnusedMember.Local
-        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
-        private const char MultiplyDot = '⋅';
-        //// ReSharper restore UnusedMember.Local
-
         [Test]
-        public void Run()
+        public static void Run()
         {
             Settings.InnerInstance = null;
             var settings = Settings.FromResource;
@@ -29,7 +25,7 @@
 
         [Explicit]
         [Test]
-        public async Task SiDerivedUnitsFromWikipedia()
+        public static async Task SiDerivedUnitsFromWikipedia()
         {
             using (var client = new WebClient())
             {
@@ -47,7 +43,7 @@
                     .Replace("<sup>&minus;2</sup>", "⁻²")
                     .Replace("<sup>&minus;3</sup>", "⁻³")
                     .Split(new[] { "-\\n" }, StringSplitOptions.None);
-                foreach (var line in lines.Where(l => l.StartsWith("| '''")))
+                foreach (var line in lines.Where(l => l.StartsWith("| '''", StringComparison.InvariantCulture)))
                 {
                     var clean = line.Replace("| '''[[", "| ")
                         .Replace("]]'''|", " |")

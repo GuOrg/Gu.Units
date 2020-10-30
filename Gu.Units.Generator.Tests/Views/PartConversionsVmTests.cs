@@ -43,7 +43,7 @@
             using (var vm = new PartConversionsVm())
             {
                 vm.SetUnit(settings.MetresPerSecond);
-                CollectionAssert.AreEqual(new PartConversionsVm[0], vm.Conversions);
+                CollectionAssert.IsEmpty(vm.Conversions);
             }
         }
     }

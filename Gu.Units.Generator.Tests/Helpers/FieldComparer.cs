@@ -70,13 +70,13 @@ namespace Gu.Units.Generator.Tests
             private readonly object x;
             private readonly object y;
 
-            public ComparedPair(object x, object y)
+            internal ComparedPair(object x, object y)
             {
                 this.x = x;
                 this.y = y;
             }
 
-            public bool HasCompared(object xo, object yo)
+            internal bool HasCompared(object xo, object yo)
             {
                 return ReferenceEquals(this.x, xo) && ReferenceEquals(this.y, yo);
             }

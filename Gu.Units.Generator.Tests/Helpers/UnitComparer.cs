@@ -34,7 +34,7 @@ namespace Gu.Units.Generator.Tests
                 return -1;
             }
 
-            if (x.AllConversions.Count() != 0 || y.AllConversions.Count() != 0)
+            if (x.AllConversions.Any() || y.AllConversions.Any())
             {
                 return -1;
             }

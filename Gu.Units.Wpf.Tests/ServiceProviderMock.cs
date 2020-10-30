@@ -19,7 +19,9 @@
             this.ProvideValueTargetMock.SetupGet(x => x.TargetObject).Returns(this.binding);
         }
 
+#pragma warning disable CA1044 // Properties should not be write only
         public string BindingStringFormat
+#pragma warning restore CA1044 // Properties should not be write only
         {
             set => this.binding.StringFormat = value;
         }

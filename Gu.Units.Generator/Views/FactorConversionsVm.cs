@@ -4,6 +4,7 @@
     using System.Collections.ObjectModel;
     using System.Collections.Specialized;
     using System.Linq;
+
     using Gu.Reactive;
 
     public sealed class FactorConversionsVm : IDisposable
@@ -80,12 +81,12 @@
                     break;
                 case NotifyCollectionChangedAction.Replace:
                 case NotifyCollectionChangedAction.Move:
-                    throw new NotImplementedException();
+                    throw new NotSupportedException();
                 case NotifyCollectionChangedAction.Reset:
                     // NOP
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new ArgumentOutOfRangeException(nameof(e), e.Action, "Not handling");
             }
         }
 

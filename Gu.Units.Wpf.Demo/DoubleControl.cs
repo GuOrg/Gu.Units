@@ -7,16 +7,16 @@
     // Dummy control for testing binding of doubles.
     public class DoubleControl : TextBox
     {
-        public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
-            "Value",
+        public static readonly DependencyProperty NumberProperty = DependencyProperty.Register(
+            nameof(Number),
             typeof(double),
             typeof(DoubleControl),
             new FrameworkPropertyMetadata(default(double), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault) { DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged });
 
-        public double Value
+        public double Number
         {
-            get => (double)this.GetValue(ValueProperty);
-            set => this.SetValue(ValueProperty, value);
+            get => (double)this.GetValue(NumberProperty);
+            set => this.SetValue(NumberProperty, value);
         }
     }
 }

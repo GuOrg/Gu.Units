@@ -6,7 +6,7 @@
     public enum UnitInput
     {
         /// <summary>
-        /// Valid input cannot contain a unit symbol
+        /// Valid input cannot contain a unit symbol.
         /// </summary>
         ScalarOnly,
 

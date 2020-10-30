@@ -4,17 +4,13 @@
     using Gu.Wpf.UiAutomation;
     using NUnit.Framework;
 
-    public class SymbolFormatTests
+    // ⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹
+    public static class SymbolFormatTests
     {
-        //// ReSharper disable UnusedMember.Local
-        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
-        private const char MultiplyDot = '⋅';
-        //// ReSharper restore UnusedMember.Local
-
         [TestCase("6.789E6Pa")]
         [TestCase("6.789MPa")]
         [TestCase("6.789N^1*mm^-2")]
-        public void HappyPath(string text)
+        public static void HappyPath(string text)
         {
             using (var app = Application.Launch(Info.ExeFileName, "SymbolFormatWindow"))
             {
