@@ -1,76 +1,54 @@
 ﻿namespace Gu.Units.Tests
 {
     using System;
-    using System.Collections.Generic;
     using NUnit.Framework;
 
-    public class LengthUnitTests
+    public static class LengthUnitTests
     {
-        private static readonly IReadOnlyList<TestCase> HappyPathSource = new[]
+        private static readonly TestCaseData[] HappyPathSource =
         {
-            new TestCase("m"),
-            new TestCase("m "),
-            new TestCase(" m"),
-            new TestCase(" m "),
-            new TestCase(" cm"),
-            new TestCase("mm"),
-            new TestCase("μm", "\u03BCm"),
-            new TestCase("\u00B5m", "\u03BCm"),
-            new TestCase("\u03BCm", "\u03BCm"),
-            new TestCase("ft"),
-            new TestCase("yd"),
+            Create("m"),
+            Create("m "),
+            Create(" m"),
+            Create(" m "),
+            Create(" cm"),
+            Create("mm"),
+            new TestCaseData("μm", "\u03BCm"),
+            new TestCaseData("\u00B5m", "\u03BCm"),
+            new TestCaseData("\u03BCm", "\u03BCm"),
+            Create("ft"),
+            Create("yd"),
         };
 
         private static string[] ErrorSource { get; } = { "ssg", "mms" };
 
         [TestCaseSource(nameof(HappyPathSource))]
-        public void ParseSuccess(TestCase testCase)
+        public static void ParseSuccess(string text, string expected)
         {
-            var lengthUnit = LengthUnit.Parse(testCase.Text);
-            Assert.AreEqual(testCase.Expected, lengthUnit.ToString());
+            var lengthUnit = LengthUnit.Parse(text);
+            Assert.AreEqual(expected, lengthUnit.ToString());
         }
 
         [TestCaseSource(nameof(ErrorSource))]
-        public void ParseError(string text)
+        public static void ParseError(string text)
         {
             Assert.Throws<FormatException>(() => LengthUnit.Parse(text));
             Assert.AreEqual(false, LengthUnit.TryParse(text, out LengthUnit _));
         }
 
         [TestCaseSource(nameof(HappyPathSource))]
-        public void TryParseSuccess(TestCase testCase)
+        public static void TryParseSuccess(string text, string expected)
         {
-            Assert.AreEqual(true, LengthUnit.TryParse(testCase.Text, out LengthUnit result));
-            Assert.AreEqual(testCase.Expected, result.ToString());
+            Assert.AreEqual(true, LengthUnit.TryParse(text, out LengthUnit result));
+            Assert.AreEqual(expected, result.ToString());
         }
 
         [TestCaseSource(nameof(ErrorSource))]
-        public void TryParseError(string text)
+        public static void TryParseError(string text)
         {
             Assert.AreEqual(false, LengthUnit.TryParse(text, out LengthUnit _));
         }
 
-        public class TestCase
-        {
-            public TestCase(string text)
-                : this(text, text.Trim())
-            {
-            }
-
-            public TestCase(string text, string expected)
-            {
-                this.Text = text;
-                this.Expected = expected;
-            }
-
-            public string Text { get; }
-
-            public string Expected { get; }
-
-            public override string ToString()
-            {
-                return $"{nameof(this.Text)}: {this.Text}, {nameof(this.Expected)}: {this.Expected}";
-            }
-        }
+        private static TestCaseData Create(string text) => new TestCaseData(text, text.Trim());
     }
 }
