@@ -29,6 +29,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Gu.Units\Gu.Units.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Gu.Analyzers" Version="1.8.1" PrivateAssets="all" />
     <PackageReference Include="IDisposableAnalyzers" Version="3.4.3" PrivateAssets="all" />
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.1" PrivateAssets="all" />
