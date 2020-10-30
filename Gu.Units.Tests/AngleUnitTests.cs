@@ -4,42 +4,24 @@ namespace Gu.Units.Tests
 
     public class AngleUnitTests
     {
-        private static readonly TestCase[] HappyPathSource =
+        private static readonly TestCaseData[] HappyPathSource =
         {
-            new TestCase("°", "\u00B0"),
-            new TestCase("\u00B0", "\u00B0"),
+            new TestCaseData("°", "\u00B0"),
+            new TestCaseData("\u00B0", "\u00B0"),
         };
 
         [TestCaseSource(nameof(HappyPathSource))]
-        public void ParseSuccess(TestCase testCase)
+        public void ParseSuccess(string text, string expected)
         {
-            var unit = AngleUnit.Parse(testCase.Text);
-            Assert.AreEqual(testCase.Expected, unit.ToString());
+            var unit = AngleUnit.Parse(text);
+            Assert.AreEqual(expected, unit.ToString());
         }
 
         [TestCaseSource(nameof(HappyPathSource))]
-        public void TryParseSuccess(TestCase testCase)
+        public void TryParseSuccess(string text, string expected)
         {
-            Assert.AreEqual(true, AngleUnit.TryParse(testCase.Text, out AngleUnit result));
-            Assert.AreEqual(testCase.Expected, result.ToString());
-        }
-
-        public class TestCase
-        {
-            public TestCase(string text, string expected)
-            {
-                this.Text = text;
-                this.Expected = expected;
-            }
-
-            public string Text { get; }
-
-            public string Expected { get; }
-
-            public override string ToString()
-            {
-                return $"{nameof(this.Text)}: {this.Text}, {nameof(this.Expected)}: {this.Expected}";
-            }
+            Assert.AreEqual(true, AngleUnit.TryParse(text, out AngleUnit result));
+            Assert.AreEqual(expected, result.ToString());
         }
     }
 }

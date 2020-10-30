@@ -5,7 +5,7 @@
     using System.Globalization;
     using NUnit.Framework;
 
-    public class DoubleReaderTests
+    public static class DoubleReaderTests
     {
         private static readonly string[] PadFormats = { "abc{0}def", "abcd{0}ef", "{0}" };
         private static readonly CultureInfo En = CultureInfo.GetCultureInfo("en-US");
@@ -92,7 +92,7 @@
         };
 
         [TestCaseSource(nameof(HappyPaths))]
-        public void ReadSuccess(TestCase data)
+        public static void ReadSuccess(TestCase data)
         {
             var culture = data.Culture;
             var style = data.Styles;
@@ -110,7 +110,7 @@
         }
 
         [TestCaseSource(nameof(Errors))]
-        public void ReadError(TestCase data)
+        public static void ReadError(TestCase data)
         {
             var culture = data.Culture;
             var style = data.Styles;
@@ -148,7 +148,7 @@
         }
 
         [Test]
-        public void ReadException()
+        public static void ReadException()
         {
             var text = "abcdef";
             var culture = CultureInfo.InvariantCulture;
@@ -161,7 +161,7 @@
         }
 
         [TestCaseSource(nameof(HappyPaths))]
-        public void TryReadSuccess(TestCase data)
+        public static void TryReadSuccess(TestCase data)
         {
             var culture = data.Culture;
             var style = data.Styles;
@@ -174,7 +174,7 @@
         }
 
         [TestCaseSource(nameof(HappyPaths))]
-        public void TryReadPaddedSuccess(TestCase data)
+        public static void TryReadPaddedSuccess(TestCase data)
         {
             var culture = data.Culture;
             var style = data.Styles;
@@ -192,7 +192,7 @@
         }
 
         [TestCaseSource(nameof(Errors))]
-        public void TryReadErrorPadded(TestCase data)
+        public static void TryReadErrorPadded(TestCase data)
         {
             var culture = data.Culture;
             var style = data.Styles;
@@ -210,7 +210,7 @@
         }
 
         [TestCaseSource(nameof(Errors))]
-        public void TryReadError(TestCase data)
+        public static void TryReadError(TestCase data)
         {
             var culture = data.Culture;
             var style = data.Styles;
