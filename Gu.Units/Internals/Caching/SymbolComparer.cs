@@ -3,9 +3,9 @@ namespace Gu.Units
     using System;
     using System.Collections.Generic;
 
-    internal class SymbolComparer : IComparer<SymbolAndPower>
+    internal sealed class SymbolComparer : IComparer<SymbolAndPower>
     {
-        public static readonly SymbolComparer Default = new SymbolComparer();
+        internal static readonly SymbolComparer Default = new SymbolComparer();
 
         private SymbolComparer()
         {

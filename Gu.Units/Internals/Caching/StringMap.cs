@@ -4,7 +4,9 @@ namespace Gu.Units
 
     internal class StringMap<TItem>
     {
+#pragma warning disable CA1825 // Avoid zero-length array allocations
         private static readonly CachedItem[] Empty = new CachedItem[0];
+#pragma warning restore CA1825 // Avoid zero-length array allocations
         private readonly object gate = new object();
         private CachedItem[] cache = Empty;
 
@@ -15,10 +17,10 @@ namespace Gu.Units
 
         internal bool TryGetBySubString(string text, int pos, out string key, out TItem result)
         {
-            if (text == null)
+            if (text is null)
             {
                 key = null;
-                result = default(TItem);
+                result = default;
                 return false;
             }
 
@@ -27,7 +29,7 @@ namespace Gu.Units
             if (index < 0)
             {
                 key = null;
-                result = default(TItem);
+                result = default;
                 return false;
             }
 
@@ -55,9 +57,9 @@ namespace Gu.Units
 
         internal bool TryGet(string key, out TItem match)
         {
-            if (key == null)
+            if (key is null)
             {
-                match = default(TItem);
+                match = default;
                 return false;
             }
 
@@ -65,7 +67,7 @@ namespace Gu.Units
             var index = BinaryFind(this.cache, key);
             if (index < 0)
             {
-                match = default(TItem);
+                match = default;
                 return false;
             }
 
@@ -181,21 +183,19 @@ namespace Gu.Units
 
         private static char Invariant(char c)
         {
-            switch (c)
+            return c switch
             {
-                case '\u00B5':
-                    // use lowercase greek mu instead of micro.
-                    // http://www.fileformat.info/info/unicode/char/00b5/index.htm
-                    // http://www.fileformat.info/info/unicode/char/03BC/index.htm
-                    return '\u03BC';
-                case '\u2126':
-                    // use lowercase greek mu instead of micro.
-                    // http://www.fileformat.info/info/unicode/char/2126/index.htm
-                    // http://www.fileformat.info/info/unicode/char/03a9/index.htm
-                    return '\u03A9';
-                default:
-                    return c;
-            }
+                // use lowercase greek mu instead of micro.
+                // http://www.fileformat.info/info/unicode/char/00b5/index.htm
+                // http://www.fileformat.info/info/unicode/char/03BC/index.htm
+                '\u00B5' => '\u03BC',
+
+                // use lowercase greek mu instead of micro.
+                // http://www.fileformat.info/info/unicode/char/2126/index.htm
+                // http://www.fileformat.info/info/unicode/char/03a9/index.htm
+                '\u2126' => '\u03A9',
+                _ => c,
+            };
         }
 
         private static int Compare(string cached, string key)
