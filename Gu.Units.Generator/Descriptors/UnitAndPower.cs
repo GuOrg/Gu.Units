@@ -4,7 +4,7 @@
     using System.Linq;
 
     [Serializable]
-    public class UnitAndPower
+    public sealed class UnitAndPower
     {
         private Unit unit;
 
@@ -16,7 +16,7 @@
 
         public string UnitName { get; }
 
-        public Unit Unit => this.unit ?? (this.unit = Settings.Instance.AllUnits.Single(x => x.Name == this.UnitName));
+        public Unit Unit => this.unit ??= Settings.Instance.AllUnits.Single(x => x.Name == this.UnitName);
 
         public int Power { get; }
 
@@ -32,14 +32,26 @@
 
         public static UnitAndPower Create(Unit unit)
         {
-            Ensure.NotNull(unit, nameof(unit));
+            if (unit is null)
+            {
+                throw new ArgumentNullException(nameof(unit));
+            }
+
             return new UnitAndPower(unit.Name, 1) { unit = unit };
         }
 
         public static UnitAndPower Create(Unit unit, int power)
         {
-            Ensure.NotNull(unit, nameof(unit));
-            Ensure.NotEqual(power, 0, nameof(power));
+            if (unit is null)
+            {
+                throw new ArgumentNullException(nameof(unit));
+            }
+
+            if (power == 0)
+            {
+                throw new ArgumentException("Power is zero.", nameof(power));
+            }
+
             return new UnitAndPower(unit.Name, power) { unit = unit };
         }
 
@@ -81,9 +93,9 @@
             }
         }
 
-        protected bool Equals(UnitAndPower other)
+        private bool Equals(UnitAndPower other)
         {
-            return string.Equals(this.UnitName, other.UnitName) && this.Power == other.Power;
+            return string.Equals(this.UnitName, other.UnitName, StringComparison.Ordinal) && this.Power == other.Power;
         }
     }
 }

@@ -78,8 +78,6 @@ namespace Gu.Units
 
         internal CachedItem Add(string key, TItem item)
         {
-            Ensure.NotNull(key, $"{nameof(item)}.{key}");
-            //// this was five times faster than ReaderWriterLockSlim in benchmarks.
             lock (this.gate)
             {
                 var i = BinaryFind(this.cache, key);
