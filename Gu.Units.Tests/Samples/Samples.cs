@@ -1,4 +1,4 @@
-﻿namespace Gu.Units.Tests.Samples
+﻿namespace Gu.Units.Tests
 {
     using System.Globalization;
     using NUnit.Framework;
