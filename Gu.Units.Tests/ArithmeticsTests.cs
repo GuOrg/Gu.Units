@@ -6,7 +6,7 @@
     using Microsoft.CodeAnalysis.Scripting;
     using NUnit.Framework;
 
-    public class ArithmeticsTests
+    public static class ArithmeticsTests
     {
         [TestCase("return Mass.FromKilograms(1.2) * Speed.FromMetresPerSecond(3.4) == Momentum.FromNewtonSecond(4.08);")]
         [TestCase("return Mass.FromKilograms(1.2) * Frequency.FromHertz(3.4) == MassFlow.FromKilogramsPerSecond(4.08);")]
@@ -238,7 +238,7 @@
         [TestCase("return KinematicViscosity.FromSquareMetresPerSecond(1.2) * MassFlow.FromKilogramsPerSecond(3.4) == Energy.FromJoules(4.08);")]
         [TestCase("return MolarMass.FromKilogramsPerMole(1.2) * AmountOfSubstance.FromMoles(3.4) == Mass.FromKilograms(4.08);")]
         [TestCase("return MolarMass.FromKilogramsPerMole(1.2) * CatalyticActivity.FromKatals(3.4) == MassFlow.FromKilogramsPerSecond(4.08);")]
-        public async Task Multiply(string expression)
+        public static async Task Multiply(string expression)
         {
             var scriptOptions = ScriptOptions.Default.WithReferences(typeof(Length).Assembly)
                 .WithImports("Gu.Units");
@@ -475,17 +475,17 @@
         [TestCase("return KinematicViscosity.FromSquareMetresPerSecond(1.2) / SpecificEnergy.FromJoulesPerKilogram(3.4) == Time.FromSeconds(0.35294117647058826);")]
         [TestCase("return KinematicViscosity.FromSquareMetresPerSecond(1.2) / Flexibility.FromMetresPerNewton(3.4) == Power.FromWatts(0.35294117647058826);")]
         [TestCase("return KinematicViscosity.FromSquareMetresPerSecond(1.2) / Wavenumber.FromReciprocalMetres(3.4) == VolumetricFlow.FromCubicMetresPerSecond(0.35294117647058826);")]
-        public async Task Divide(string expression)
+        public static async Task Divide(string expression)
         {
             Console.WriteLine(1.2 / 3.4);
             var scriptOptions = ScriptOptions.Default.WithReferences(typeof(Length).Assembly)
                 .WithImports("Gu.Units");
-            var result = await CSharpScript.EvaluateAsync<bool>(expression, scriptOptions);
+            var result = await CSharpScript.EvaluateAsync<bool>(expression, scriptOptions).ConfigureAwait(false);
             Assert.AreEqual(true, result);
         }
 
         [Test]
-        public void LengthPerTimeGivesSpeed()
+        public static void LengthPerTimeGivesSpeed()
         {
             var l = Length.FromMillimetres(1.2);
             var t = Time.FromMinutes(5);
@@ -499,7 +499,7 @@
         }
 
         [Test]
-        public void LengthTimesLengthGivesArea()
+        public static void LengthTimesLengthGivesArea()
         {
             var l1 = Length.FromMillimetres(1.2);
             var l2 = Length.FromMetres(5);
@@ -512,7 +512,7 @@
         }
 
         [Test]
-        public void DensityTimesVolumeGivesMass()
+        public static void DensityTimesVolumeGivesMass()
         {
             var rho = Density.FromGramsPerCubicCentimetre(1.2);
             var v = Volume.FromCubicCentimetres(2);

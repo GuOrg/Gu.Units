@@ -59,11 +59,11 @@
         }
 
         [DebuggerDisplay("CompositeFormat: {CompositeFormat}")]
-        internal struct CompositeFormatKey : IFormatKey, IEquatable<CompositeFormatKey>
+        internal readonly struct CompositeFormatKey : IFormatKey, IEquatable<CompositeFormatKey>
         {
             internal readonly string CompositeFormat;
 
-            public CompositeFormatKey(string compositeFormat)
+            internal CompositeFormatKey(string compositeFormat)
             {
                 this.CompositeFormat = compositeFormat;
             }
@@ -80,7 +80,7 @@
 
             public bool Equals(CompositeFormatKey other)
             {
-                return string.Equals(this.CompositeFormat, other.CompositeFormat);
+                return string.Equals(this.CompositeFormat, other.CompositeFormat, StringComparison.InvariantCulture);
             }
 
             public bool Equals(IFormatKey other)
@@ -90,7 +90,7 @@
                     return false;
                 }
 
-                return other is CompositeFormatKey && this.Equals((CompositeFormatKey)other);
+                return other is CompositeFormatKey key && this.Equals(key);
             }
 
             public override bool Equals(object obj)
@@ -100,7 +100,7 @@
                     return false;
                 }
 
-                return obj is CompositeFormatKey && this.Equals((CompositeFormatKey)obj);
+                return obj is CompositeFormatKey key && this.Equals(key);
             }
 
             public override int GetHashCode()
@@ -110,13 +110,13 @@
         }
 
         [DebuggerDisplay("ValueAndUnitFormatKey ValueFormat: {ValueFormat}, SymbolFormat: {SymbolFormat}, Unit: {Unit}")]
-        internal struct ValueAndUnitFormatKey : IFormatKey, IEquatable<ValueAndUnitFormatKey>
+        internal readonly struct ValueAndUnitFormatKey : IFormatKey, IEquatable<ValueAndUnitFormatKey>
         {
             internal readonly string ValueFormat;
             internal readonly TUnit Unit;
             internal readonly SymbolFormat SymbolFormat;
 
-            public ValueAndUnitFormatKey(string valueFormat, TUnit unit, SymbolFormat symbolFormat)
+            internal ValueAndUnitFormatKey(string valueFormat, TUnit unit, SymbolFormat symbolFormat)
             {
                 this.ValueFormat = valueFormat;
                 this.Unit = unit;
@@ -135,7 +135,7 @@
 
             public bool Equals(ValueAndUnitFormatKey other)
             {
-                return string.Equals(this.ValueFormat, other.ValueFormat) &&
+                return string.Equals(this.ValueFormat, other.ValueFormat, StringComparison.InvariantCulture) &&
                        this.Unit.Equals(other.Unit) &&
                        Equals(this.SymbolFormat, other.SymbolFormat);
             }
@@ -157,7 +157,7 @@
                     return false;
                 }
 
-                return obj is ValueAndUnitFormatKey && this.Equals((ValueAndUnitFormatKey)obj);
+                return obj is ValueAndUnitFormatKey key && this.Equals(key);
             }
 
             public override int GetHashCode()
@@ -173,12 +173,12 @@
         }
 
         [DebuggerDisplay("ValueAndSymbolFormatKey ValueFormat: {ValueFormat}, SymbolFormat: {SymbolFormat}")]
-        internal struct ValueAndSymbolFormatKey : IFormatKey, IEquatable<ValueAndSymbolFormatKey>
+        internal readonly struct ValueAndSymbolFormatKey : IFormatKey, IEquatable<ValueAndSymbolFormatKey>
         {
             internal readonly string ValueFormat;
             internal readonly string SymbolFormat;
 
-            public ValueAndSymbolFormatKey(string valueFormat, string symbolFormat)
+            internal ValueAndSymbolFormatKey(string valueFormat, string symbolFormat)
             {
                 this.ValueFormat = valueFormat;
                 this.SymbolFormat = symbolFormat;
@@ -196,8 +196,8 @@
 
             public bool Equals(ValueAndSymbolFormatKey other)
             {
-                return string.Equals(this.ValueFormat, other.ValueFormat) &&
-                       string.Equals(this.SymbolFormat, other.SymbolFormat);
+                return string.Equals(this.ValueFormat, other.ValueFormat, StringComparison.InvariantCulture) &&
+                       string.Equals(this.SymbolFormat, other.SymbolFormat, StringComparison.InvariantCulture);
             }
 
             public bool Equals(IFormatKey other)
@@ -207,7 +207,7 @@
                     return false;
                 }
 
-                return other is ValueAndSymbolFormatKey && this.Equals((ValueAndSymbolFormatKey)other);
+                return other is ValueAndSymbolFormatKey key && this.Equals(key);
             }
 
             public override bool Equals(object obj)
@@ -217,7 +217,7 @@
                     return false;
                 }
 
-                return obj is ValueAndSymbolFormatKey && this.Equals((ValueAndSymbolFormatKey)obj);
+                return obj is ValueAndSymbolFormatKey key && this.Equals(key);
             }
 
             public override int GetHashCode()

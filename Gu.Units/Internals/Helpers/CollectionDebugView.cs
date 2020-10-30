@@ -16,13 +16,13 @@
 
         private readonly IEnumerable<T> collection;
 
-        public CollectionDebugView(IEnumerable<T> collection)
+        internal CollectionDebugView(IEnumerable<T> collection)
         {
             this.collection = collection;
         }
 
         [DebuggerBrowsable(DebuggerBrowsableState.RootHidden)]
-        public T[] Items
+        internal T[] Items
         {
             get
             {

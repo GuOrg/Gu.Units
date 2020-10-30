@@ -7,3 +7,6 @@ dotnet_diagnostic.SA0001.severity = none
 
 # CA1062: Validate arguments of public methods
 dotnet_diagnostic.CA1062.severity = none
+
+# VSTHRD200: Use "Async" suffix for async methods
+dotnet_diagnostic.VSTHRD200.severity = none
