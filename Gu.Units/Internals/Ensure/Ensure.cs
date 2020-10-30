@@ -16,16 +16,6 @@ namespace Gu.Units
             }
         }
 
-        internal static void NotEqualTo<T>(T value, T expected, string parameterName)
-            where T : class
-        {
-            Debug.Assert(!string.IsNullOrEmpty(parameterName), $"{nameof(parameterName)} cannot be null");
-            if (value == expected)
-            {
-                throw new ArgumentException($"Expected {parameterName} to not be equal to {expected}", parameterName);
-            }
-        }
-
         internal static void IsTrue(bool condition, string parameterName, string message)
         {
             Debug.Assert(!string.IsNullOrEmpty(parameterName), $"{nameof(parameterName)} cannot be null");
@@ -64,12 +54,7 @@ namespace Gu.Units
 
         private static string ToStringOrNull<T>(this T value)
         {
-            if (value == null)
-            {
-                return "null";
-            }
-
-            return value.ToString();
+            return value?.ToString() ?? "null";
         }
     }
 }

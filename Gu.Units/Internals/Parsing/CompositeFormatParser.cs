@@ -44,15 +44,18 @@
                 valueFormat = valueFormat.WithPostPadding(string.Empty);
             }
 
+            if (valueFormat.IsUnknown &&
+                symbolFormat.IsUnknown)
+            {
+                result = QuantityFormat<TUnit>.CreateUnknown(format, Unit<TUnit>.Default);
+                return false;
+            }
+
             if (valueFormat.IsUnknown)
             {
-                if (symbolFormat.IsUnknown)
-                {
-                    result = QuantityFormat<TUnit>.CreateUnknown(format, Unit<TUnit>.Default);
-                    return false;
-                }
-
-                if (valueFormat.Format.StartsWith(symbolFormat.Format, StringComparison.Ordinal) == true)
+                if (valueFormat.Format is { } &&
+                    symbolFormat.Format is { } &&
+                    valueFormat.Format.StartsWith(symbolFormat.Format, StringComparison.Ordinal))
                 {
                     valueFormat = valueFormat.WithFormat(null);
                 }
