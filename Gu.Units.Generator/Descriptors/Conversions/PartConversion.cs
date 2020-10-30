@@ -78,7 +78,7 @@
             }
             else
             {
-                throw new ArgumentOutOfRangeException();
+                throw new InvalidOperationException("Not handling this case.");
             }
 
             var symbolAndPowers = c1.AsSymbolAndPowers().Concat(c2.AsSymbolAndPowers());
@@ -215,8 +215,6 @@
             public Unit Unit { get; }
 
             public string SymbolConversion => this.GetSymbolConversionAsync().Result;
-
-            public bool CanRoundtrip => true;
 
             public Task<bool> CanRoundtripAsync() => Task.FromResult(true);
         }

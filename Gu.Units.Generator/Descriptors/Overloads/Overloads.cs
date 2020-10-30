@@ -76,7 +76,7 @@
             foreach (var quantity in quantities)
             {
                 var match = quantities.FirstOrDefault(x => InverseOverload.IsInverse(quantity, x));
-                quantity.Inverse = match == null
+                quantity.Inverse = match is null
                     ? null
                     : new InverseOverload(quantity, match);
             }

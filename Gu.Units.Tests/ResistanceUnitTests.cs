@@ -2,45 +2,27 @@
 {
     using NUnit.Framework;
 
-    public class ResistanceUnitTests
+    public static class ResistanceUnitTests
     {
-        private static readonly TestCase[] HappyPathSource =
+        private static readonly TestCaseData[] HappyPathSource =
         {
-            new TestCase("Ω", "\u03A9"),
-            new TestCase("\u2126", "\u03A9"),
-            new TestCase("\u03A9", "\u03A9"),
+            new TestCaseData("Ω", "\u03A9"),
+            new TestCaseData("\u2126", "\u03A9"),
+            new TestCaseData("\u03A9", "\u03A9"),
         };
 
         [TestCaseSource(nameof(HappyPathSource))]
-        public void ParseSuccess(TestCase testCase)
+        public static void ParseSuccess(string text, string expected)
         {
-            var unit = ResistanceUnit.Parse(testCase.Text);
-            Assert.AreEqual(testCase.Expected, unit.ToString());
+            var unit = ResistanceUnit.Parse(text);
+            Assert.AreEqual(expected, unit.ToString());
         }
 
         [TestCaseSource(nameof(HappyPathSource))]
-        public void TryParseSuccess(TestCase testCase)
+        public static void TryParseSuccess(string text, string expected)
         {
-            Assert.AreEqual(true, ResistanceUnit.TryParse(testCase.Text, out var result));
-            Assert.AreEqual(testCase.Expected, result.ToString());
-        }
-
-        public class TestCase
-        {
-            public TestCase(string text, string expected)
-            {
-                this.Text = text;
-                this.Expected = expected;
-            }
-
-            public string Text { get; }
-
-            public string Expected { get; }
-
-            public override string ToString()
-            {
-                return $"{nameof(this.Text)}: {this.Text}, {nameof(this.Expected)}: {this.Expected}";
-            }
+            Assert.AreEqual(true, ResistanceUnit.TryParse(text, out var result));
+            Assert.AreEqual(expected, result.ToString());
         }
     }
 }

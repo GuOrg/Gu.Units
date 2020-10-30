@@ -31,31 +31,29 @@
         [Test]
         public void Parallel()
         {
-            using (var builder1 = StringBuilderPool.Borrow())
-            using (var builder2 = StringBuilderPool.Borrow())
-            {
-                builder1.Append("a");
-                builder2.Append("b");
-                Assert.AreNotSame(GetInner(builder1), GetInner(builder2));
-                Assert.AreEqual("a", builder1.ToString());
-                Assert.AreEqual("b", builder2.ToString());
-            }
+            using var builder1 = StringBuilderPool.Borrow();
+            using var builder2 = StringBuilderPool.Borrow();
+            builder1.Append("a");
+            builder2.Append("b");
+            Assert.AreNotSame(GetInner(builder1), GetInner(builder2));
+            Assert.AreEqual("a", builder1.ToString());
+            Assert.AreEqual("b", builder2.ToString());
         }
 
         private static StringBuilder GetInner(StringBuilderPool.Builder outer)
         {
-            var field = typeof(StringBuilderPool.Builder).GetField("builder", BindingFlags.Instance | BindingFlags.NonPublic);
+            var field = typeof(StringBuilderPool.Builder).GetField("builder", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.DeclaredOnly);
             Assert.NotNull(field);
             return (StringBuilder)field.GetValue(outer);
         }
 
         private static void Clear()
         {
-            var field = typeof(StringBuilderPool).GetField("Builders", BindingFlags.Static | BindingFlags.NonPublic);
+            var field = typeof(StringBuilderPool).GetField("Builders", BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.DeclaredOnly);
             Assert.NotNull(field);
             var builders = (ConcurrentQueue<StringBuilder>)field.GetValue(null);
             //// ReSharper disable once UnusedVariable
-            while (builders.TryDequeue(out var temp))
+            while (builders.TryDequeue(out _))
             {
             }
         }

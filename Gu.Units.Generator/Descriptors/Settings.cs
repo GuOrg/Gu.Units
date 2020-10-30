@@ -58,9 +58,9 @@
         {
             get
             {
-#pragma warning disable WPF1012 // Notify when property changes.
+#pragma warning disable INPC003 // Notify when property changes.
                 InnerInstance = JsonConvert.DeserializeObject<Settings>(Properties.Resources.Units, Persister.SerializerSettings);
-#pragma warning restore WPF1012 // Notify when property changes.
+#pragma warning restore INPC003 // Notify when property changes.
                 return InnerInstance;
             }
         }

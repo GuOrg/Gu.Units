@@ -40,11 +40,11 @@
                 Assert.AreEqual(expected, xml);
             }
 
-            using (var reader = new StringReader(xml))
-            {
-                var deserialized = serializer.Deserialize(reader);
-                Assert.AreEqual(deserialized, quantity);
-            }
+            using var reader = new StringReader(xml);
+#pragma warning disable CA3075 // Insecure DTD processing in XML
+            var deserialized = serializer.Deserialize(reader);
+#pragma warning restore CA3075 // Insecure DTD processing in XML
+            Assert.AreEqual(deserialized, quantity);
         }
 
         [TestCaseSource(nameof(QuantityTypes))]
@@ -70,11 +70,10 @@
                 Assert.AreEqual(expected, xml);
             }
 
-            using (var reader = XmlReader.Create(new StringReader(xml)))
-            {
-                var deserialized = serializer.ReadObject(reader);
-                Assert.AreEqual(deserialized, quantity);
-            }
+            using var stringReader = new StringReader(xml);
+            using var reader = XmlReader.Create(stringReader);
+            var deserialized = serializer.ReadObject(reader);
+            Assert.AreEqual(deserialized, quantity);
         }
 
         [TestCaseSource(nameof(QuantityTypes))]
@@ -87,15 +86,13 @@
                         null);
             var quantity = ctor.Invoke(new object[] { 1.2 });
             var binaryFormatter = new BinaryFormatter();
-            using (var stream = new MemoryStream())
-            {
-                binaryFormatter.Serialize(stream, quantity);
-                stream.Position = 0;
+            using var stream = new MemoryStream();
+            binaryFormatter.Serialize(stream, quantity);
+            stream.Position = 0;
 #pragma warning disable CA2300 // Do not use insecure deserializer BinaryFormatter
-                var deserialized = binaryFormatter.Deserialize(stream);
+            var deserialized = binaryFormatter.Deserialize(stream);
 #pragma warning restore CA2300 // Do not use insecure deserializer BinaryFormatter
-                Assert.AreEqual(deserialized, quantity);
-            }
+            Assert.AreEqual(deserialized, quantity);
         }
     }
 }

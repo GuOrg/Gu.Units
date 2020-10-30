@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net472</TargetFrameworks>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>

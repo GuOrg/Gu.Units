@@ -1,8 +1,11 @@
 namespace Gu.Units.Tests.Internals.Parsing
 {
+    using System;
+    using System.Globalization;
+
     using NUnit.Framework;
 
-    public class DoubleFormatReaderTests
+    public static class DoubleFormatReaderTests
     {
         [TestCase(null, 0, null, 0)]
         [TestCase("", 0, null, 0)]
@@ -31,7 +34,7 @@ namespace Gu.Units.Tests.Internals.Parsing
         [TestCase("#.#", 0, "#.#", 3)]
         [TestCase("#.0#", 0, "#.0#", 4)]
         [TestCase("#0.00#", 0, "#0.00#", 6)]
-        public void TryRead(string text, int pos, string expected, int expectedPos)
+        public static void TryRead(string text, int pos, string expected, int expectedPos)
         {
             var actual = DoubleFormatCache.GetOrCreate(text, ref pos);
             Assert.AreEqual(expected, actual.Format);
@@ -40,28 +43,21 @@ namespace Gu.Units.Tests.Internals.Parsing
 
         [TestCase("J", 0, null)]
         [TestCase("J5", 0, null)]
-        ////[TestCase("E100", 0, "E101")]
-        ////[TestCase("E101", 0, "E111")]
-        ////[TestCase("E102", 0, "E112")]
-        ////[TestCase("E-1", 0, "E-1")]
         [TestCase("abc", 0, "abc")]
-        public void TryReadError(string text, int pos, string expectedFormatted)
+        public static void TryReadError(string text, int pos, string expectedFormatted)
         {
             var actual = DoubleFormatCache.GetOrCreate(text, ref pos);
             Assert.AreEqual(text, actual.Format);
             Assert.AreEqual(0, pos);
-            string formatted = null;
-            try
+            if (expectedFormatted is null)
             {
-                formatted = 1.2.ToString(text);
+                // ReSharper disable once ReturnValueOfPureMethodIsNotUsed
+                Assert.Throws<FormatException>(() => 1.2.ToString(text, CultureInfo.InvariantCulture));
             }
-
-            //// ReSharper disable once EmptyGeneralCatchClause dunno what this does.
-            catch
+            else
             {
+                Assert.AreEqual(expectedFormatted, 1.2.ToString(text, CultureInfo.InvariantCulture));
             }
-
-            Assert.AreEqual(expectedFormatted, formatted);
         }
     }
 }

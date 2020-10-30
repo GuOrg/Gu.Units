@@ -1,6 +1,7 @@
 ﻿namespace Gu.Units.Generator
 {
     using System.CodeDom.Compiler;
+    using System.Globalization;
 
     public static class StringExt
     {
@@ -8,7 +9,7 @@
 
         public static string FirstCharLower(this string text)
         {
-            return char.ToLower(text[0]) + text.Substring(1);
+            return char.ToLower(text[0], CultureInfo.InvariantCulture) + text.Substring(1);
         }
 
         public static string ToParameterName(this string text)

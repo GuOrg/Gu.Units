@@ -1,6 +1,7 @@
 namespace Gu.Units.Analyzers
 {
     using System.Collections.Immutable;
+    using System.Globalization;
     using System.Text.RegularExpressions;
     using System.Threading.Tasks;
     using Microsoft.CodeAnalysis;
@@ -53,7 +54,7 @@ namespace Gu.Units.Analyzers
                     return;
                 }
 
-                var sourceText = await diagnostic.Location.SourceTree.GetTextAsync(context.CancellationToken);
+                var sourceText = await diagnostic.Location.SourceTree.GetTextAsync(context.CancellationToken).ConfigureAwait(false);
                 var text = sourceText.GetSubText(context.Span);
                 var expression = syntaxRoot.FindNode(diagnostic.Location.SourceSpan)
                                            .FirstAncestorOrSelf<ExpressionSyntax>();
@@ -61,7 +62,7 @@ namespace Gu.Units.Analyzers
                 {
                     context.RegisterCodeFix(
                         CodeAction.Create(
-                            string.Format(this.titleFormat, text),
+                            string.Format(CultureInfo.InvariantCulture, this.titleFormat, text),
                             _ => ApplyFix(context.Document, expression, this.wrapSyntax),
                             this.key),
                         diagnostic);

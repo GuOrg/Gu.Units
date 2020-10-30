@@ -20,19 +20,18 @@ namespace Gu.Units.Generator.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is bool isTrue)
+            return value switch
             {
-                return isTrue
-                           ? this.WhenTrue
-                           : this.WhenFalse;
-            }
-
-            return this.WhenNull;
+                true => this.WhenTrue,
+                false => this.WhenFalse,
+                null => this.WhenNull,
+                _ => throw new ArgumentException("Not a bool.", nameof(value)),
+            };
         }
 
         object IValueConverter.ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException($"{nameof(BooleanToVisibilityConverterExtension)} can only be used in OneWay bindings");
         }
     }
 }

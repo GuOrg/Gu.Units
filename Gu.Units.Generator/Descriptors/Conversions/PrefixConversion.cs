@@ -82,7 +82,7 @@
                     return factorConversion.Factor * Math.Pow(10, this.Prefix.Power);
                 }
 
-                throw new ArgumentOutOfRangeException($"Could not calculate factor for {this.Name}");
+                throw new InvalidOperationException($"Could not calculate factor for {this.Name}");
             }
         }
 
@@ -90,7 +90,7 @@
 
         public string FromSi => this.GetFromSi();
 
-        public Unit Unit => this.unit ?? (this.unit = this.GetUnit());
+        public Unit Unit => this.unit ??= this.GetUnit();
 
         public static PrefixConversion Create(Unit unit, Prefix prefix)
         {

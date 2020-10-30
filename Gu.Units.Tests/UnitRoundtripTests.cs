@@ -1,21 +1,20 @@
 namespace Gu.Units.Tests
 {
-    using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
     using NUnit.Framework;
 
-    public class UnitRoundtripTests
+    public static class UnitRoundtripTests
     {
-        public static readonly List<IUnit> Units = typeof(Length).Assembly.GetTypes()
+        public static readonly IUnit[] Units = typeof(Length).Assembly.GetTypes()
             .Where(x => x.IsValueType && typeof(IUnit).IsAssignableFrom(x))
             .SelectMany(t => t.GetFields(BindingFlags.GetField | BindingFlags.Public | BindingFlags.Static)
                 .Where(f => typeof(IUnit).IsAssignableFrom(f.FieldType))
                 .Select(f => (IUnit)f.GetValue(null)))
-            .ToList();
+            .ToArray();
 
         [TestCaseSource(nameof(Units))]
-        public void SiUnit(IUnit unit)
+        public static void SiUnit(IUnit unit)
         {
             double[] values = { 0, 100 };
             foreach (var value in values)
@@ -27,16 +26,18 @@ namespace Gu.Units.Tests
         }
 
         [TestCaseSource(nameof(Units))]
-        public void Parse(IUnit unit)
+        public static void Parse(IUnit unit)
         {
             var s = unit.ToString();
+#pragma warning disable REFL003 // The member does not exist.
             var parseMethod = unit.GetType().GetMethod("Parse", BindingFlags.Static | BindingFlags.Public);
+#pragma warning restore REFL003 // The member does not exist.
             var roundtripped = (IUnit)parseMethod.Invoke(null, new object[] { s });
             Assert.AreEqual(unit, roundtripped);
         }
 
         [TestCaseSource(nameof(Units))]
-        public void CreateQuantity(IUnit unit)
+        public static void CreateQuantity(IUnit unit)
         {
             double[] values = { 0, 1.2 };
             foreach (var value in values)
