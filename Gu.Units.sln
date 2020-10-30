@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".sln", ".sln", "{4596217D-657C-443F-83BD-4D850760E094}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
+		azure-pipelines.yml = azure-pipelines.yml
+		Settings.XamlStyler = Settings.XamlStyler
+		stylecop.json = stylecop.json
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Units", "Gu.Units\Gu.Units.csproj", "{F1F8B138-BECC-4475-A7AB-B3019338BC7B}"
@@ -16,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Units.Wpf", "Gu.Units.Wp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Units.Wpf.Tests", "Gu.Units.Wpf.Tests\Gu.Units.Wpf.Tests.csproj", "{EE6BCD5F-AEF0-4929-95F6-3613E76E13CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gu.Units.Wpf.Demo", "Gu.Units.Wpf.Demo\Gu.Units.Wpf.Demo.csproj", "{8CB38BA2-254B-4B0F-9C9F-57D17DE5D8B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Units.Wpf.Demo", "Gu.Units.Wpf.Demo\Gu.Units.Wpf.Demo.csproj", "{8CB38BA2-254B-4B0F-9C9F-57D17DE5D8B5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gu.Units.Json", "Gu.Units.Json\Gu.Units.Json.csproj", "{C794758C-AFE9-489E-9525-81DF7AC98193}"
 EndProject
