@@ -20,13 +20,12 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>1.8.1</Version>
+    <Version>0.10.6.1</Version>
     <Authors>Johan Larsson</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>Roslyn analyzers and fixes for Gu.Units.</Description>
     <PackageTags>Roslyn Diagnostic Analyzer</PackageTags>
     <PackageReleaseNotes>
-      FEATURE: Name mocks
     </PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/GuOrg/Gu.Units</PackageProjectUrl>
     <RepositoryUrl>https://github.com/GuOrg/Gu.Units</RepositoryUrl>
