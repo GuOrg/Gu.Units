@@ -2,6 +2,7 @@
 {
     using System;
     using System.Globalization;
+
     using NUnit.Framework;
 
     public static class DoubleReaderTests
@@ -75,14 +76,13 @@
             new TestCaseData(Sv.NumberFormat.NegativeInfinitySymbol, NumberStyles.Float, Sv),
         };
 
-        private static readonly TestCaseData[] Errors =
+        private static readonly TestCaseData[] FormatExceptionSource =
         {
             new TestCaseData("e1", NumberStyles.Float, En),
             new TestCaseData(" 1", NumberStyles.None, En),
             new TestCaseData("-1", NumberStyles.None, En),
             new TestCaseData(".1", NumberStyles.None, En),
             new TestCaseData(",.1", NumberStyles.Float, En),
-            new TestCaseData(new string('1', 311), NumberStyles.Float, En),
             ////Add("1.", NumberStyles.Float | NumberStyles.AllowHexSpecifier, en),
             new TestCaseData(".", NumberStyles.Float, En),
             ////Add("+1,2", NumberStyles.Float, en),
@@ -90,15 +90,21 @@
             new TestCaseData("+1.2e3", NumberStyles.None | NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign, En),
         };
 
+        private static readonly TestCaseData[] OverflowExceptionSource =
+        {
+            new TestCaseData(new string('1', 311), NumberStyles.Float, En),
+            new TestCaseData(new string('1', 311), NumberStyles.Float, Sv),
+        };
+
         [TestCaseSource(nameof(HappyPaths))]
         public static void ReadSuccess(string text, NumberStyles styles, IFormatProvider culture)
         {
             foreach (var format in PadFormats)
             {
-                var formatted = string.Format(format, text);
+                var formatted = string.Format(CultureInfo.InvariantCulture, format, text);
                 var pos = format.IndexOf('{');
                 var start = pos;
-                double expected = double.Parse(text, styles, culture);
+                var expected = double.Parse(text, styles, culture);
                 var actual = DoubleReader.Read(formatted, ref pos, styles, culture);
                 Assert.AreEqual(expected, actual);
                 var expectedEnd = start + text.Length;
@@ -106,38 +112,35 @@
             }
         }
 
-        [TestCaseSource(nameof(Errors))]
-        public static void ReadError(string text, NumberStyles styles, IFormatProvider culture)
+        [TestCaseSource(nameof(FormatExceptionSource))]
+        public static void ThrowsFormatException(string text, NumberStyles styles, IFormatProvider culture)
         {
             foreach (var format in PadFormats)
             {
-                var ns = string.Format(format, text);
+                var ns = string.Format(CultureInfo.InvariantCulture, format, text);
                 var pos = format.IndexOf('{');
                 var start = pos;
-                Exception parseException = null;
-                try
-                {
-                    // ReSharper disable once ReturnValueOfPureMethodIsNotUsed
-                    double.Parse(text, styles, culture);
-                }
-                catch (Exception e)
-                {
-                    parseException = e;
-                }
 
-                Exception readException = null;
-                try
-                {
-                    DoubleReader.Read(ns, ref pos, styles, culture);
-                }
-                catch (Exception e)
-                {
-                    readException = e;
-                }
+                Assert.Throws<FormatException>(() => double.Parse(text, styles, culture));
+                Assert.Throws<FormatException>(() => DoubleReader.Read(ns, ref pos, styles, culture));
 
                 Assert.AreEqual(start, pos);
-                Assert.NotNull(parseException);
-                Assert.NotNull(readException);
+            }
+        }
+
+        [TestCaseSource(nameof(OverflowExceptionSource))]
+        public static void ThrowsOverflowException(string text, NumberStyles styles, IFormatProvider culture)
+        {
+            foreach (var format in PadFormats)
+            {
+                var ns = string.Format(CultureInfo.InvariantCulture, format, text);
+                var pos = format.IndexOf('{');
+                var start = pos;
+
+                Assert.Throws<OverflowException>(() => double.Parse(text, styles, culture));
+                Assert.Throws<FormatException>(() => DoubleReader.Read(ns, ref pos, styles, culture));
+
+                Assert.AreEqual(start, pos);
             }
         }
 
@@ -170,7 +173,7 @@
         {
             foreach (var format in PadFormats)
             {
-                var formatted = string.Format(format, text);
+                var formatted = string.Format(CultureInfo.InvariantCulture, format, text);
                 var pos = format.IndexOf('{');
                 var start = pos;
                 Assert.IsTrue(double.TryParse(text, styles, culture, out double expected));
@@ -181,12 +184,12 @@
             }
         }
 
-        [TestCaseSource(nameof(Errors))]
+        [TestCaseSource(nameof(FormatExceptionSource))]
         public static void TryReadErrorPadded(string text, NumberStyles styles, IFormatProvider culture)
         {
             foreach (var format in PadFormats)
             {
-                var ns = string.Format(format, text);
+                var ns = string.Format(CultureInfo.InvariantCulture, format, text);
                 var pos = format.IndexOf('{');
                 var start = pos;
                 Assert.IsFalse(double.TryParse(text, styles, culture, out double expected));
@@ -196,7 +199,7 @@
             }
         }
 
-        [TestCaseSource(nameof(Errors))]
+        [TestCaseSource(nameof(FormatExceptionSource))]
         public static void TryReadError(string text, NumberStyles styles, IFormatProvider culture)
         {
             var pos = 0;
