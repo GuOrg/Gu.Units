@@ -97,7 +97,7 @@
 
         private sealed class BaseUnitOrderComparer : IComparer<SymbolAndPower>
         {
-            public static readonly BaseUnitOrderComparer Default = new BaseUnitOrderComparer();
+            internal static readonly BaseUnitOrderComparer Default = new BaseUnitOrderComparer();
             private static readonly string[] Order = { "kg", "m", "s", "A", "cd", "mol" };
 
             private BaseUnitOrderComparer()

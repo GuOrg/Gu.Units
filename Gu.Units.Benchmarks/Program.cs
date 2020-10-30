@@ -9,7 +9,7 @@ namespace Gu.Units.Benchmarks
     using BenchmarkDotNet.Reports;
     using BenchmarkDotNet.Running;
 
-    public class Program
+    public static class Program
     {
         private static readonly string ProjectDirectory = Directory.GetCurrentDirectory();
 

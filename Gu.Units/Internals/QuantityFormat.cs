@@ -4,7 +4,7 @@
     using System.Diagnostics;
 
     [DebuggerDisplay("CompositeFormat: {CompositeFormat}")]
-    internal class QuantityFormat<TUnit> : IEquatable<QuantityFormat<TUnit>>
+    internal sealed class QuantityFormat<TUnit> : IEquatable<QuantityFormat<TUnit>>
         where TUnit : struct, IUnit, IEquatable<TUnit>
     {
         internal const char NoBreakingSpace = '\u00A0';
@@ -97,7 +97,7 @@
                 return true;
             }
 
-            if (obj.GetType() != this.GetType())
+            if (obj.GetType() != typeof(QuantityFormat<TUnit>))
             {
                 return false;
             }

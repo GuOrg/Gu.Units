@@ -76,7 +76,7 @@
             }
 
             var pos = 0;
-            WhiteSpaceReader.TryRead(format, ref pos);
+            _ = WhiteSpaceReader.TryRead(format, ref pos);
             var end = format.Length;
             if (TryReadPrefix(format, ref pos))
             {

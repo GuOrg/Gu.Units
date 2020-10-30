@@ -17,13 +17,10 @@
         /// </summary>
         public static readonly char Minus = '⁻';
 
-        //// ReSharper disable UnusedMember.Local
         internal const string SuperscriptDigits = "⁰¹²³⁴⁵⁶⁷⁸⁹";
-        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
-        //// ReSharper restore UnusedMember.Local
 
         /// <summary>
-        /// Gest the superscript for a number.
+        /// Gets the superscript for a number.
         /// </summary>
         /// <param name="i">A value between -9 and +9.</param>
         /// <returns>The superscript char for <paramref name="i"/>.</returns>

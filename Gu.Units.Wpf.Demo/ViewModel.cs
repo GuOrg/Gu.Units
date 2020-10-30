@@ -3,7 +3,7 @@ namespace Gu.Units.Wpf.Demo
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
 
-    public class ViewModel : INotifyPropertyChanged
+    public sealed class ViewModel : INotifyPropertyChanged
     {
         public static readonly ViewModel Instance = new ViewModel();
 
@@ -94,7 +94,7 @@ namespace Gu.Units.Wpf.Demo
             }
         }
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

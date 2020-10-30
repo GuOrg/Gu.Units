@@ -5,14 +5,10 @@
     using Gu.Units.Tests.Internals.Parsing;
     using NUnit.Framework;
 
+    // ⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹
     public class FormatTests
     {
         private const string UnknownFormat = "unknown format";
-
-        //// ReSharper disable UnusedMember.Local
-        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
-        private const char MultiplyDot = '⋅';
-        //// ReSharper restore UnusedMember.Local
 
         [Test]
         public void FormatAngle()
@@ -20,6 +16,7 @@
             var angle = Angle.FromDegrees(1.2);
             using (Thread.CurrentThread.UsingTempCulture(CultureInfo.InvariantCulture))
             {
+#pragma warning disable CA1305 // Specify IFormatProvider
                 Assert.AreEqual("0.020943951023932\u00A0rad", angle.ToString());
                 Assert.AreEqual("1.200°", angle.ToString("F3°"));
                 Assert.AreEqual("1.2°", angle.ToString(AngleUnit.Degrees));
@@ -27,6 +24,7 @@
                 Assert.AreEqual(" 0.02 rad ", angle.ToString(" F2 rad "));
                 Assert.AreEqual("1.200°", angle.ToString("F3", AngleUnit.Degrees));
                 Assert.AreEqual("0.02\u00A0rad", angle.ToString("F2", AngleUnit.Radians));
+#pragma warning restore CA1305 // Specify IFormatProvider
             }
 
             var sv = CultureInfo.GetCultureInfo("sv-SE");
@@ -45,6 +43,7 @@
             var speed = Speed.FromMetresPerSecond(1.2);
             using (Thread.CurrentThread.UsingTempCulture(CultureInfo.InvariantCulture))
             {
+#pragma warning disable CA1305 // Specify IFormatProvider
                 Assert.AreEqual("1.2\u00A0m/s", speed.ToString());
                 Assert.AreEqual("1.20 m/s", speed.ToString("F2 m/s"));
                 Assert.AreEqual(UnknownFormat, 1.2.ToString(UnknownFormat)); // for comparison
@@ -74,6 +73,7 @@
                 Assert.AreEqual("1.2\u00A0m/s", speed.ToString("F1", SpeedUnit.MetresPerSecond, SymbolFormat.FractionSuperScript));
                 Assert.AreEqual("1.2\u00A0m⋅s⁻¹", speed.ToString("F1", SpeedUnit.MetresPerSecond, SymbolFormat.SignedSuperScript));
                 Assert.AreEqual("1,200.00 mm⋅s⁻¹", speed.ToString("N mm⋅s⁻¹"));
+#pragma warning restore CA1305 // Specify IFormatProvider
             }
 
             var sv = CultureInfo.GetCultureInfo("sv-SE");
@@ -115,6 +115,7 @@
             var pressure = Pressure.FromMegapascals(1.2);
             using (Thread.CurrentThread.UsingTempCulture(CultureInfo.InvariantCulture))
             {
+#pragma warning disable CA1305 // Specify IFormatProvider
                 Assert.AreEqual("1200000\u00A0Pa", pressure.ToString());
                 Assert.AreEqual("12\u00A0bar", pressure.ToString(PressureUnit.Bars));
                 Assert.AreEqual("1.2\u00A0N/mm²", pressure.ToString(PressureUnit.NewtonsPerSquareMillimetre, SymbolFormat.Default));
@@ -132,6 +133,7 @@
                 Assert.AreEqual("1.20 N⋅mm⁻²", pressure.ToString("F2 N⋅mm⁻²"));
                 Assert.AreEqual("1.20 MPa", pressure.ToString("F2 MPa"));
                 Assert.AreEqual("1.20E+006 Pa", pressure.ToString("E2 Pa"));
+#pragma warning restore CA1305 // Specify IFormatProvider
             }
         }
 
@@ -141,7 +143,9 @@
             var value = AngularAcceleration.FromDegreesPerSecondSquared(1.2);
             using (Thread.CurrentThread.UsingTempCulture(CultureInfo.InvariantCulture))
             {
+#pragma warning disable CA1305 // Specify IFormatProvider
                 Assert.AreEqual("1.2°/s²", value.ToString(AngularAccelerationUnit.DegreesPerSecondSquared));
+#pragma warning restore CA1305 // Specify IFormatProvider
             }
         }
     }

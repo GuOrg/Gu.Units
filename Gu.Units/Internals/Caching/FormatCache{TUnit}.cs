@@ -147,7 +147,7 @@
                     return false;
                 }
 
-                return other is ValueAndUnitFormatKey && this.Equals((ValueAndUnitFormatKey)other);
+                return other is ValueAndUnitFormatKey key && this.Equals(key);
             }
 
             public override bool Equals(object obj)

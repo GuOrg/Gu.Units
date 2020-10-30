@@ -5,8 +5,10 @@
 
     public class Samples
     {
+#pragma warning disable SA1311 // Static readonly fields should begin with upper-case letter
         private static readonly LengthUnit m = LengthUnit.Metres;
         private static readonly TimeUnit s = TimeUnit.Seconds;
+#pragma warning restore SA1311 // Static readonly fields should begin with upper-case letter
 
         [Test]
         public void ArithmeticSample()

@@ -1,11 +1,12 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.Globalization;
     using System.Runtime.CompilerServices;
 
     internal static class IntReader
     {
-        private static readonly int MaxDigits = int.MaxValue.ToString().Length;
+        private static readonly int MaxDigits = int.MaxValue.ToString(CultureInfo.InvariantCulture).Length;
 
         internal static int ReadInt32(string text, ref int pos)
         {
@@ -159,31 +160,20 @@
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static int GetDigit(char c)
         {
-            switch (c)
+            return c switch
             {
-                case '0':
-                    return 0;
-                case '1':
-                    return 1;
-                case '2':
-                    return 2;
-                case '3':
-                    return 3;
-                case '4':
-                    return 4;
-                case '5':
-                    return 5;
-                case '6':
-                    return 6;
-                case '7':
-                    return 7;
-                case '8':
-                    return 8;
-                case '9':
-                    return 9;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(c), $"{c} is not a digit, check before calling");
-            }
+                '0' => 0,
+                '1' => 1,
+                '2' => 2,
+                '3' => 3,
+                '4' => 4,
+                '5' => 5,
+                '6' => 6,
+                '7' => 7,
+                '8' => 8,
+                '9' => 9,
+                _ => throw new ArgumentOutOfRangeException(nameof(c), $"{c} is not a digit, check before calling"),
+            };
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

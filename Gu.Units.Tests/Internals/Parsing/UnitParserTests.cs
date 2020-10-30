@@ -2,13 +2,11 @@
 {
     using NUnit.Framework;
 
-    public class UnitParserTests
+    // ⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹
+    public static class UnitParserTests
     {
-        // ReSharper disable once UnusedMember.Local
-        private const string Superscripts = "⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹"; // keeping this here for copy pasting
-
         [TestCase("m")]
-        public void ParseMetres(string s)
+        public static void ParseMetres(string s)
         {
             var actual = LengthUnit.Parse(s);
             var expected = LengthUnit.Metres;
@@ -29,7 +27,7 @@
         [TestCase("m^2")]
         [TestCase("m²")]
         [TestCase("m⁺²")]
-        public void ParseSquareMetres(string s)
+        public static void ParseSquareMetres(string s)
         {
             var actual = AreaUnit.Parse(s);
             var expected = AreaUnit.SquareMetres;
@@ -50,7 +48,7 @@
         [TestCase("mm^2")]
         [TestCase("mm²")]
         [TestCase("mm⁺²")]
-        public void ParseSquareMillimetres(string s)
+        public static void ParseSquareMillimetres(string s)
         {
             var actual = AreaUnit.Parse(s);
             var squareMillimetres = AreaUnit.SquareMillimetres;

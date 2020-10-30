@@ -3,13 +3,9 @@
     using System.Globalization;
     using NUnit.Framework;
 
-    public class CompositeFormatParserTests
+    // ⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹
+    public static class CompositeFormatParserTests
     {
-        //// ReSharper disable UnusedMember.Local
-        private const string Superscripts = "⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
-        private const char MultiplyDot = '⋅';
-        //// ReSharper restore UnusedMember.Local
-
         [TestCase("", "{0}\u00A0m", "1.2\u00A0m")]
         [TestCase(null, "{0}\u00A0m", "1.2\u00A0m")]
         [TestCase("E mm", "{0:E} mm", "1.200000E+003 mm")]
@@ -36,7 +32,7 @@
         [TestCase("#.# m", "{0:#.#} m", "1.2 m")]
         [TestCase("#.0#m", "{0:#.0#}m", "1.2m")]
         [TestCase("#0.00# m", "{0:#0.00#} m", "1.20 m")]
-        public void TryParseSuccess(string format, string expectedFormat, string expectedFormatted)
+        public static void TryParseSuccess(string format, string expectedFormat, string expectedFormatted)
         {
             var success = CompositeFormatParser.TryParse(format, out QuantityFormat<LengthUnit> actual);
             Assert.AreEqual(true, success);
@@ -52,7 +48,7 @@
         [TestCase("F3 N/mm^2", "{0:F3} N/m^2", "MPa")]
         [TestCase("F3 N⋅mm⁻²", "{0:F3} N⋅m⁻²", "MPa")]
         [TestCase("E Pa", "{0:E} Pa", "Pa")]
-        public void TryParsePressure(string format, string expectedFormat, string expectedSymbol)
+        public static void TryParsePressure(string format, string expectedFormat, string expectedSymbol)
         {
             var success = CompositeFormatParser.TryParse(format, out QuantityFormat<PressureUnit> actual);
             Assert.AreEqual(true, success);
@@ -62,7 +58,7 @@
 
         [TestCase("E", "E\u00A0{unit: null}")]
         [TestCase("mm", "{value: null}\u00A0mm")]
-        public void TryParseError(string text, string expectedError)
+        public static void TryParseError(string text, string expectedError)
         {
             var success = CompositeFormatParser.TryParse(text, out QuantityFormat<LengthUnit> actual);
             Assert.AreEqual(false, success);
