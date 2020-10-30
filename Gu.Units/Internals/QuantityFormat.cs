@@ -66,7 +66,7 @@
 
         public bool Equals(QuantityFormat<TUnit> other)
         {
-            if (ReferenceEquals(null, other))
+            if (other is null)
             {
                 return false;
             }
@@ -87,7 +87,7 @@
 
         public override bool Equals(object obj)
         {
-            if (ReferenceEquals(null, obj))
+            if (obj is null)
             {
                 return false;
             }
@@ -124,8 +124,8 @@
         {
             var errorFormat = CreateErrorFormat(valueFormat, symbolFormat);
             string padding = null;
-            if (valueFormat.PostPadding == null &&
-                symbolFormat.PrePadding == null)
+            if (valueFormat.PostPadding is null &&
+                symbolFormat.PrePadding is null)
             {
                 if (ShouldSpace(symbolFormat.Format))
                 {

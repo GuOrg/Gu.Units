@@ -54,7 +54,7 @@
 
         internal static bool CanParseQuantityFormat(string format)
         {
-            return TryParse(format, out QuantityFormat<TUnit> _);
+            return TryParse(format, out var _);
         }
 
         internal static string CreateFormatErrorString(string format, Type type)
@@ -66,7 +66,7 @@
         {
             if (string.IsNullOrWhiteSpace(format))
             {
-                result = QuantityFormat<TUnit>.CreateUnknown($"{nameof(format) == null}", Unit<TUnit>.Default);
+                result = QuantityFormat<TUnit>.CreateUnknown("{nameof(format) == null}", Unit<TUnit>.Default);
                 return false;
             }
 
@@ -75,9 +75,9 @@
                 return true;
             }
 
-            int pos = 0;
+            var pos = 0;
             WhiteSpaceReader.TryRead(format, ref pos);
-            int end = format.Length;
+            var end = format.Length;
             if (TryReadPrefix(format, ref pos))
             {
                 end = format.LastIndexOf('}');

@@ -11,9 +11,9 @@
         [Test]
         public void ArithmeticSample()
         {
-            Length length = 1 * m;
-            Time time = 2 * s;
-            Speed speed = length / time;
+            var length = 1 * m;
+            var time = 2 * s;
+            var speed = length / time;
             Assert.AreEqual(0.5, speed.MetresPerSecond);
         }
 

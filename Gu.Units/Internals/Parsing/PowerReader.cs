@@ -6,7 +6,7 @@
     {
         internal static int Read(string text, ref int pos)
         {
-            if (TryRead(text, ref pos, out int result))
+            if (TryRead(text, ref pos, out var result))
             {
                 return result;
             }
@@ -23,7 +23,7 @@
                 return true;
             }
 
-            int start = pos;
+            var start = pos;
             if (text[pos] == '^')
             {
                 var success = TryReadHatPower(text, ref pos, out result);

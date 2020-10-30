@@ -67,7 +67,7 @@
         {
             using (Thread.CurrentThread.UsingTempCulture(data.CultureInfo))
             {
-                var success = data.TryParse(data.Text, out object actual);
+                var success = data.TryParse(data.Text, out var actual);
                 Assert.AreEqual(true, success);
                 Assert.AreEqual(data.Expected, actual);
                 var toString = actual.ToString();
@@ -80,7 +80,7 @@
         [TestCaseSource(nameof(HappyPaths))]
         public void TryParseRoundtripWithCulture(ISuccessData data)
         {
-            var success = data.TryParse(data.Text, data.CultureInfo, out object actual);
+            var success = data.TryParse(data.Text, data.CultureInfo, out var actual);
             Assert.AreEqual(true, success);
             Assert.AreEqual(data.Expected, actual);
             success = data.TryParse(data.Text, data.CultureInfo, out actual);

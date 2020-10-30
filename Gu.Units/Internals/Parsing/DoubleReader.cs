@@ -32,7 +32,7 @@
                 throw new ArgumentException("Hex not supported", nameof(style));
             }
 
-            if (TryRead(text, ref pos, style, provider, out double result))
+            if (TryRead(text, ref pos, style, provider, out var result))
             {
                 return result;
             }
@@ -153,7 +153,7 @@
                     return false;
                 }
 
-                _ = TryReadSign(text, ref pos, format, out Sign exponentSign);
+                _ = TryReadSign(text, ref pos, format, out var exponentSign);
                 if (TrySkipExponentDigits(text, ref pos))
                 {
                     return true;

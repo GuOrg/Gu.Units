@@ -12,7 +12,7 @@
             Debug.Assert(!string.IsNullOrEmpty(parameterName), $"{nameof(parameterName)} cannot be null");
             if (Comparer<T>.Default.Compare(value, max) >= 0)
             {
-                string message = $"Expected {parameterName} to be less than {max}, {parameterName} was {value}";
+                var message = $"Expected {parameterName} to be less than {max}, {parameterName} was {value}";
                 throw new ArgumentException(message, parameterName);
             }
         }
@@ -23,7 +23,7 @@
             Debug.Assert(!string.IsNullOrEmpty(parameterName), $"{nameof(parameterName)} cannot be null");
             if (Comparer<T>.Default.Compare(value, max) > 0)
             {
-                string message = $"Expected {parameterName} to be less than or equal to {max}, {parameterName} was {value}";
+                var message = $"Expected {parameterName} to be less than or equal to {max}, {parameterName} was {value}";
                 throw new ArgumentException(message, parameterName);
             }
         }
@@ -34,7 +34,7 @@
             Debug.Assert(!string.IsNullOrEmpty(parameterName), $"{nameof(parameterName)} cannot be null");
             if (Comparer<T>.Default.Compare(value, min) <= 0)
             {
-                string message = $"Expected {parameterName} to be greater than {min}, {parameterName} was {value}";
+                var message = $"Expected {parameterName} to be greater than {min}, {parameterName} was {value}";
                 throw new ArgumentException(message, parameterName);
             }
         }
@@ -45,7 +45,7 @@
             Debug.Assert(!string.IsNullOrEmpty(parameterName), $"{nameof(parameterName)} cannot be null");
             if (Comparer<T>.Default.Compare(value, min) < 0)
             {
-                string message = $"Expected {parameterName} to be greater than or equal to {min}, {parameterName} was {value}";
+                var message = $"Expected {parameterName} to be greater than or equal to {min}, {parameterName} was {value}";
                 throw new ArgumentException(message, parameterName);
             }
         }

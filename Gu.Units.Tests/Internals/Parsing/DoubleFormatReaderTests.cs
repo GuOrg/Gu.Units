@@ -33,7 +33,7 @@ namespace Gu.Units.Tests.Internals.Parsing
         [TestCase("#0.00#", 0, "#0.00#", 6)]
         public void TryRead(string text, int pos, string expected, int expectedPos)
         {
-            PaddedFormat actual = DoubleFormatCache.GetOrCreate(text, ref pos);
+            var actual = DoubleFormatCache.GetOrCreate(text, ref pos);
             Assert.AreEqual(expected, actual.Format);
             Assert.AreEqual(expectedPos, pos);
         }
@@ -47,7 +47,7 @@ namespace Gu.Units.Tests.Internals.Parsing
         [TestCase("abc", 0, "abc")]
         public void TryReadError(string text, int pos, string expectedFormatted)
         {
-            PaddedFormat actual = DoubleFormatCache.GetOrCreate(text, ref pos);
+            var actual = DoubleFormatCache.GetOrCreate(text, ref pos);
             Assert.AreEqual(text, actual.Format);
             Assert.AreEqual(0, pos);
             string formatted = null;

@@ -55,7 +55,7 @@
             Assert.NotNull(field);
             var builders = (ConcurrentQueue<StringBuilder>)field.GetValue(null);
             //// ReSharper disable once UnusedVariable
-            while (builders.TryDequeue(out StringBuilder temp))
+            while (builders.TryDequeue(out var temp))
             {
             }
         }

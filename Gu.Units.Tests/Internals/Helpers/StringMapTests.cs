@@ -52,7 +52,7 @@
             cache.Add("bar", "4");
             cache.Add("mi", "5");
             cache.Add("mm", "6");
-            var success = cache.TryGetBySubString(key, pos, out string actualKey, out string actual);
+            var success = cache.TryGetBySubString(key, pos, out var actualKey, out var actual);
             Assert.AreEqual(true, success);
             Assert.AreEqual(expectedKey, actualKey);
             Assert.AreEqual(expectedValue, actual);
@@ -72,7 +72,7 @@
             cache.Add("abc", "2");
             cache.Add("abcd", "3");
             cache.Add("bar", "4");
-            var success = cache.TryGet(key, out string actual);
+            var success = cache.TryGet(key, out var actual);
             Assert.AreEqual(true, success);
             Assert.AreEqual(expected, actual);
         }
@@ -88,7 +88,7 @@
             cache.Add("abc", "d");
             cache.Add("foo", "e");
             cache.Add("bar", "f");
-            var success = cache.TryGetBySubString(key, pos, out string actual);
+            var success = cache.TryGetBySubString(key, pos, out var actual);
             Assert.AreEqual(false, success);
             Assert.AreEqual(null, actual);
             Assert.AreEqual(null, actual);

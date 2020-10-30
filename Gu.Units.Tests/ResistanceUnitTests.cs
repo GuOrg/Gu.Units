@@ -21,7 +21,7 @@
         [TestCaseSource(nameof(HappyPathSource))]
         public void TryParseSuccess(TestCase testCase)
         {
-            Assert.AreEqual(true, ResistanceUnit.TryParse(testCase.Text, out ResistanceUnit result));
+            Assert.AreEqual(true, ResistanceUnit.TryParse(testCase.Text, out var result));
             Assert.AreEqual(testCase.Expected, result.ToString());
         }
 

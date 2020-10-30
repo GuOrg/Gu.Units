@@ -10,7 +10,7 @@ namespace Gu.Units
 
         internal bool TryGetBySubString(string text, int pos, out TItem result)
         {
-            return this.TryGetBySubString(text, pos, out string _, out result);
+            return this.TryGetBySubString(text, pos, out var _, out result);
         }
 
         internal bool TryGetBySubString(string text, int pos, out string key, out TItem result)

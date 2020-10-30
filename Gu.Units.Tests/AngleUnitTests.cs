@@ -20,7 +20,7 @@ namespace Gu.Units.Tests
         [TestCaseSource(nameof(HappyPathSource))]
         public void TryParseSuccess(string text, string expected)
         {
-            Assert.AreEqual(true, AngleUnit.TryParse(text, out AngleUnit result));
+            Assert.AreEqual(true, AngleUnit.TryParse(text, out var result));
             Assert.AreEqual(expected, result.ToString());
         }
     }

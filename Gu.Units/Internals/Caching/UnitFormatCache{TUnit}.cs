@@ -26,7 +26,7 @@ namespace Gu.Units
 
         internal static PaddedFormat GetOrCreate(TUnit unit, SymbolFormat symbolFormat)
         {
-            if (!Cache.TryGetParts(unit, out IReadOnlyList<SymbolAndPower> symbolAndPowers))
+            if (!Cache.TryGetParts(unit, out var symbolAndPowers))
             {
                 throw new ArgumentOutOfRangeException($"Did not find parts for {unit.Symbol}");
             }
@@ -42,7 +42,7 @@ namespace Gu.Units
         internal static PaddedFormat GetOrCreate(string format, ref int pos, out TUnit unit)
         {
             var start = pos;
-            _ = WhiteSpaceReader.TryRead(format, ref pos, out string prePadding);
+            _ = WhiteSpaceReader.TryRead(format, ref pos, out var prePadding);
             if (format == null ||
                 pos == format.Length)
             {
@@ -51,11 +51,11 @@ namespace Gu.Units
                 return PaddedFormat.CreateUnknown(prePadding, null);
             }
 
-            if (Cache.TryGetUnitForSymbol(format, ref pos, out string symbol, out unit))
+            if (Cache.TryGetUnitForSymbol(format, ref pos, out var symbol, out unit))
             {
                 if (WhiteSpaceReader.IsRestWhiteSpace(format, pos))
                 {
-                    _ = WhiteSpaceReader.TryRead(format, ref pos, out string postPadding);
+                    _ = WhiteSpaceReader.TryRead(format, ref pos, out var postPadding);
                     return new PaddedFormat(prePadding, symbol, postPadding);
                 }
 
@@ -66,7 +66,7 @@ namespace Gu.Units
             {
                 symbol = format.Substring(start, pos - start);
 
-                _ = WhiteSpaceReader.TryRead(format, ref pos, out string postPadding);
+                _ = WhiteSpaceReader.TryRead(format, ref pos, out var postPadding);
                 if (!WhiteSpaceReader.IsRestWhiteSpace(format, pos))
                 {
                     pos = start;
@@ -143,7 +143,7 @@ namespace Gu.Units
 
             internal bool TryGetUnitForSymbol(string text, ref int pos, out string symbol, out TUnit result)
             {
-                var success = this.symbolUnitMap.TryGetBySubString(text, pos, out symbol, out TUnit temp);
+                var success = this.symbolUnitMap.TryGetBySubString(text, pos, out symbol, out var temp);
                 if (success)
                 {
                     pos += symbol.Length;
@@ -157,7 +157,7 @@ namespace Gu.Units
 
             internal bool TryGetUnitForSymbol(string text, ref int pos, out TUnit result)
             {
-                var success = this.symbolUnitMap.TryGetBySubString(text, pos, out string key, out TUnit temp);
+                var success = this.symbolUnitMap.TryGetBySubString(text, pos, out var key, out var temp);
                 if (success)
                 {
                     pos += key.Length;

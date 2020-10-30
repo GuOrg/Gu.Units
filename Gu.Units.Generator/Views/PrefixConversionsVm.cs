@@ -127,7 +127,7 @@
 
             if (item is DerivedUnit derivedUnit)
             {
-                if (SymbolAndPowerReader.TryRead(derivedUnit.Symbol, out IReadOnlyList<SymbolAndPower> symbolAndPowers))
+                if (SymbolAndPowerReader.TryRead(derivedUnit.Symbol, out var symbolAndPowers))
                 {
                     return symbolAndPowers.Count == 1 && symbolAndPowers[0].Power == 1;
                 }

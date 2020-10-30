@@ -33,20 +33,20 @@
         public static void ParseError(string text)
         {
             Assert.Throws<FormatException>(() => LengthUnit.Parse(text));
-            Assert.AreEqual(false, LengthUnit.TryParse(text, out LengthUnit _));
+            Assert.AreEqual(false, LengthUnit.TryParse(text, out var _));
         }
 
         [TestCaseSource(nameof(HappyPathSource))]
         public static void TryParseSuccess(string text, string expected)
         {
-            Assert.AreEqual(true, LengthUnit.TryParse(text, out LengthUnit result));
+            Assert.AreEqual(true, LengthUnit.TryParse(text, out var result));
             Assert.AreEqual(expected, result.ToString());
         }
 
         [TestCaseSource(nameof(ErrorSource))]
         public static void TryParseError(string text)
         {
-            Assert.AreEqual(false, LengthUnit.TryParse(text, out LengthUnit _));
+            Assert.AreEqual(false, LengthUnit.TryParse(text, out var _));
         }
 
         private static TestCaseData Create(string text) => new TestCaseData(text, text.Trim());

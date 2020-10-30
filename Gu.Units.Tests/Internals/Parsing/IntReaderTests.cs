@@ -39,7 +39,7 @@
         [TestCaseSource(nameof(HappyPaths))]
         public void ParseSuccess(SuccessCase<int> data)
         {
-            int pos = data.Start;
+            var pos = data.Start;
             var actual = IntReader.ReadInt32(data.Text, ref pos);
             Assert.AreEqual(actual, data.Expected);
             Assert.AreEqual(pos, data.ExpectedEnd);
@@ -48,7 +48,7 @@
         [TestCaseSource(nameof(Errors))]
         public void ParseError(ErrorCase<int> @case)
         {
-            int pos = @case.Start;
+            var pos = @case.Start;
             Assert.Throws<FormatException>(() => IntReader.ReadInt32(@case.Text, ref pos));
             Assert.AreEqual(pos, @case.ExpectedEnd);
         }
@@ -56,7 +56,7 @@
         [TestCaseSource(nameof(HappyPaths))]
         public void TryParseSuccess(SuccessCase<int> data)
         {
-            int pos = data.Start;
+            var pos = data.Start;
             int actual;
             var success = IntReader.TryReadInt32(data.Text, ref pos, out actual);
             Assert.AreEqual(true, success);
@@ -67,7 +67,7 @@
         [TestCaseSource(nameof(Errors))]
         public void TryParseError(ErrorCase<int> @case)
         {
-            int pos = @case.Start;
+            var pos = @case.Start;
             int actual;
             var success = IntReader.TryReadInt32(@case.Text, ref pos, out actual);
             Assert.AreEqual(false, success);

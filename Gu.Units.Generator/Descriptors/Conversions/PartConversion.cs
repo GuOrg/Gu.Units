@@ -140,7 +140,7 @@
             {
                 get
                 {
-                    if (SymbolAndPowerReader.TryRead(this.Conversion.Symbol, out IReadOnlyList<SymbolAndPower> symbolAndPowers))
+                    if (SymbolAndPowerReader.TryRead(this.Conversion.Symbol, out var symbolAndPowers))
                     {
                         return symbolAndPowers.Select(x => new SymbolAndPower(x.Symbol, x.Power * this.Power)).AsSymbol();
                     }
@@ -153,7 +153,7 @@
 
             internal IReadOnlyList<SymbolAndPower> AsSymbolAndPowers()
             {
-                if (SymbolAndPowerReader.TryRead(this.Conversion.Symbol, out IReadOnlyList<SymbolAndPower> symbolAndPowers))
+                if (SymbolAndPowerReader.TryRead(this.Conversion.Symbol, out var symbolAndPowers))
                 {
                     return symbolAndPowers.Select(x => new SymbolAndPower(x.Symbol, x.Power * this.Power)).ToList();
                 }

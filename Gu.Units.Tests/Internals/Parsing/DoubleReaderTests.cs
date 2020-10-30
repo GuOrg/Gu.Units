@@ -161,8 +161,8 @@
         public static void TryReadSuccess(string text, NumberStyles styles, IFormatProvider culture)
         {
             var pos = 0;
-            Assert.IsTrue(double.TryParse(text, styles, culture, out double expected));
-            Assert.IsTrue(DoubleReader.TryRead(text, ref pos, styles, culture, out double actual));
+            Assert.IsTrue(double.TryParse(text, styles, culture, out var expected));
+            Assert.IsTrue(DoubleReader.TryRead(text, ref pos, styles, culture, out var actual));
             Assert.AreEqual(expected, actual);
             var expectedEnd = text.Length;
             Assert.AreEqual(expectedEnd, pos);
@@ -176,8 +176,8 @@
                 var formatted = string.Format(CultureInfo.InvariantCulture, format, text);
                 var pos = format.IndexOf('{');
                 var start = pos;
-                Assert.IsTrue(double.TryParse(text, styles, culture, out double expected));
-                Assert.IsTrue(DoubleReader.TryRead(formatted, ref pos, styles, culture, out double actual));
+                Assert.IsTrue(double.TryParse(text, styles, culture, out var expected));
+                Assert.IsTrue(DoubleReader.TryRead(formatted, ref pos, styles, culture, out var actual));
                 Assert.AreEqual(expected, actual);
                 var expectedEnd = start + text.Length;
                 Assert.AreEqual(expectedEnd, pos);
@@ -192,8 +192,8 @@
                 var ns = string.Format(CultureInfo.InvariantCulture, format, text);
                 var pos = format.IndexOf('{');
                 var start = pos;
-                Assert.IsFalse(double.TryParse(text, styles, culture, out double expected));
-                Assert.IsFalse(DoubleReader.TryRead(ns, ref pos, styles, culture, out double actual));
+                Assert.IsFalse(double.TryParse(text, styles, culture, out var expected));
+                Assert.IsFalse(DoubleReader.TryRead(ns, ref pos, styles, culture, out var actual));
                 Assert.AreEqual(expected, actual);
                 Assert.AreEqual(start, pos);
             }
@@ -203,8 +203,8 @@
         public static void TryReadError(string text, NumberStyles styles, IFormatProvider culture)
         {
             var pos = 0;
-            Assert.IsFalse(double.TryParse(text, styles, culture, out double expected));
-            Assert.IsFalse(DoubleReader.TryRead(text, ref pos, styles, culture, out double actual));
+            Assert.IsFalse(double.TryParse(text, styles, culture, out var expected));
+            Assert.IsFalse(DoubleReader.TryRead(text, ref pos, styles, culture, out var actual));
             Assert.AreEqual(expected, actual);
             Assert.AreEqual(0, pos);
         }

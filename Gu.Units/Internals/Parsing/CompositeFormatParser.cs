@@ -20,7 +20,7 @@
                 return true;
             }
 
-            int pos = 0;
+            var pos = 0;
             return TryParse(format, ref pos, out result);
         }
 
@@ -35,7 +35,7 @@
 
             var valueFormat = DoubleFormatCache.GetOrCreate(format, ref pos);
 
-            var symbolFormat = UnitFormatCache<TUnit>.GetOrCreate(format, ref pos, out TUnit unit);
+            var symbolFormat = UnitFormatCache<TUnit>.GetOrCreate(format, ref pos, out var unit);
             if (valueFormat.PostPadding == null &&
                 symbolFormat.PrePadding == null)
             {

@@ -12,13 +12,13 @@
             var pos = 0;
             _ = WhiteSpaceReader.TryRead(text, ref pos);
 
-            if (!DoubleReader.TryRead(text, ref pos, style, provider, out double d))
+            if (!DoubleReader.TryRead(text, ref pos, style, provider, out var d))
             {
                 throw new FormatException("Could not parse the scalar value from: " + text);
             }
 
             _ = WhiteSpaceReader.TryRead(text, ref pos);
-            if (!UnitParser<TUnit>.TryParse(text, ref pos, out TUnit unit))
+            if (!UnitParser<TUnit>.TryParse(text, ref pos, out var unit))
             {
                 throw new FormatException("Could not parse the unit value from: " + text);
             }
@@ -38,7 +38,7 @@
         {
             var pos = 0;
             _ = WhiteSpaceReader.TryRead(text, ref pos);
-            if (!DoubleReader.TryRead(text, ref pos, style, provider, out double d))
+            if (!DoubleReader.TryRead(text, ref pos, style, provider, out var d))
             {
                 value = default(TQuantity);
                 return false;
@@ -46,7 +46,7 @@
 
             _ = WhiteSpaceReader.TryRead(text, ref pos);
 
-            if (!UnitParser<TUnit>.TryParse(text, ref pos, out TUnit unit))
+            if (!UnitParser<TUnit>.TryParse(text, ref pos, out var unit))
             {
                 value = default(TQuantity);
                 return false;

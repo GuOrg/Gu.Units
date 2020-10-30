@@ -53,7 +53,7 @@
         {
             var valueFormat = DoubleFormatCache.GetOrCreate(key.ValueFormat);
 
-            var symbolFormat = UnitFormatCache<TUnit>.GetOrCreate(key.SymbolFormat, out TUnit unit);
+            var symbolFormat = UnitFormatCache<TUnit>.GetOrCreate(key.SymbolFormat, out var unit);
 
             return QuantityFormat<TUnit>.Create(valueFormat, symbolFormat, unit);
         }
@@ -85,7 +85,7 @@
 
             public bool Equals(IFormatKey other)
             {
-                if (ReferenceEquals(null, other))
+                if (other is null)
                 {
                     return false;
                 }
@@ -95,7 +95,7 @@
 
             public override bool Equals(object obj)
             {
-                if (ReferenceEquals(null, obj))
+                if (obj is null)
                 {
                     return false;
                 }
@@ -142,7 +142,7 @@
 
             public bool Equals(IFormatKey other)
             {
-                if (ReferenceEquals(null, other))
+                if (other is null)
                 {
                     return false;
                 }
@@ -152,7 +152,7 @@
 
             public override bool Equals(object obj)
             {
-                if (ReferenceEquals(null, obj))
+                if (obj is null)
                 {
                     return false;
                 }
@@ -202,7 +202,7 @@
 
             public bool Equals(IFormatKey other)
             {
-                if (ReferenceEquals(null, other))
+                if (other is null)
                 {
                     return false;
                 }
@@ -212,7 +212,7 @@
 
             public override bool Equals(object obj)
             {
-                if (ReferenceEquals(null, obj))
+                if (obj is null)
                 {
                     return false;
                 }

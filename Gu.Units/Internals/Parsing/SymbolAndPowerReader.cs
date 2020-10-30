@@ -120,7 +120,7 @@
 
             var symbol = text.Substring(start, pos - start);
             _ = WhiteSpaceReader.TryRead(text, ref pos);
-            if (!PowerReader.TryRead(text, ref pos, out int power))
+            if (!PowerReader.TryRead(text, ref pos, out var power))
             {
                 pos = start;
                 result = default(SymbolAndPower);
