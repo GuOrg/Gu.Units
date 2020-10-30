@@ -20,7 +20,7 @@
         {
             this.disposable = conversion.ObservePropertyChanged(x => x.Factor)
                 .SubscribeOn(TaskPoolScheduler.Default)
-                .Subscribe(_ => this.UpdateAsync());
+                .SubscribeAsync(() => this.UpdateAsync());
         }
 
         public void Dispose()

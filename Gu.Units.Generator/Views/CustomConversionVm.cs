@@ -26,7 +26,7 @@
                     conversion.ObservePropertyChangedSlim(x => x.FromSi, signalInitial: false))
                 .StartWith(new PropertyChangedEventArgs(null))
                 .SubscribeOn(TaskPoolScheduler.Default)
-                .Subscribe(_ => this.UpdateAsync());
+                .SubscribeAsync(() => this.UpdateAsync());
         }
 
         public void Dispose()

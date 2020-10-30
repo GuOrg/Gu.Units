@@ -7,6 +7,7 @@
     using System.Reactive.Disposables;
     using System.Reactive.Linq;
     using System.Threading.Tasks;
+
     using Gu.Reactive;
     using Gu.State;
 
@@ -124,7 +125,7 @@
                 .ObservePropertyChangedSlim(x => x.Changes)
                 .Throttle(TimeSpan.FromMilliseconds(10))
                 .ObserveOn(TaskPoolScheduler.Default)
-                .Subscribe(async _ =>
+                .SubscribeAsync(async () =>
                 {
                     this.OnPropertyChanged(nameof(this.IsUnknown));
                     this.IsOk = await this.IsEverythingOkAsync().ConfigureAwait(false);
