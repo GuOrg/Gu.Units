@@ -23,7 +23,7 @@
     <PackageReleaseNotes>
       FEATURE: More conductivity units.
     </PackageReleaseNotes>
-    <PackageTags>xaml wpf flipview</PackageTags>
+    <PackageTags>unit units quantity quantities unitsofmeasure</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
