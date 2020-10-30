@@ -3,10 +3,11 @@
     using System;
     using System.Reflection;
     using System.Runtime.CompilerServices;
+
     using Newtonsoft.Json;
     using Newtonsoft.Json.Serialization;
 
-    public class ExcludeCalculatedResolver : DefaultContractResolver
+    public sealed class ExcludeCalculatedResolver : DefaultContractResolver
     {
         public static readonly ExcludeCalculatedResolver Default = new ExcludeCalculatedResolver();
 
@@ -23,19 +24,12 @@
 
         private static bool ShouldSerialize(MemberInfo memberInfo)
         {
-            var propertyInfo = memberInfo as PropertyInfo;
-            if (propertyInfo == null)
+            return memberInfo switch
             {
-                return false;
-            }
-
-            if (propertyInfo.SetMethod != null)
-            {
-                return true;
-            }
-
-            var getMethod = propertyInfo.GetMethod;
-            return Attribute.GetCustomAttribute(getMethod, typeof(CompilerGeneratedAttribute)) != null;
+                PropertyInfo { SetMethod: { } } => true,
+                PropertyInfo { GetMethod: { } getMethod } => Attribute.IsDefined(getMethod, typeof(CompilerGeneratedAttribute)),
+                _ => false,
+            };
         }
     }
 }

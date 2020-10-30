@@ -15,7 +15,7 @@
 
         public PartConversion(string name, string symbol, double factor)
         {
-            this.Name = name;
+            this.name = name;
             this.Symbol = symbol;
             this.Factor = factor;
         }

@@ -33,7 +33,7 @@
             }
 
             this.Conversions.Clear();
-            if (newUnit == null)
+            if (newUnit is null)
             {
                 return;
             }
@@ -65,7 +65,7 @@
 
         private void Synchronize(NotifyCollectionChangedEventArgs e)
         {
-            if (this.isUpdating || this.unit == null)
+            if (this.isUpdating || this.unit is null)
             {
                 return;
             }
@@ -94,7 +94,7 @@
         {
             if (this.disposed)
             {
-                throw new ObjectDisposedException(this.GetType().FullName);
+                throw new ObjectDisposedException(nameof(FactorConversionsVm));
             }
         }
     }

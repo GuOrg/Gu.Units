@@ -10,7 +10,7 @@
 
     [TypeConverter(typeof(UnitPartsConverter))]
     [Serializable]
-    public class UnitParts : IReadOnlyList<UnitAndPower>
+    public sealed class UnitParts : IReadOnlyList<UnitAndPower>
     {
         [EditorBrowsable(EditorBrowsableState.Never)]
         private ReadonlySet<UnitAndPower> baseParts;
@@ -123,7 +123,7 @@
             return this.Symbol;
         }
 
-        protected bool Equals(UnitParts other)
+        private bool Equals(UnitParts other)
         {
             return this.BaseParts.Equals(other.BaseParts);
         }

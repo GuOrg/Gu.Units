@@ -74,7 +74,7 @@
 
         public static async Task<string> GetSymbolConversionAsync(this IConversion conversion)
         {
-            if (conversion.ToSi == null || conversion.Symbol == null)
+            if (conversion.ToSi is null || conversion.Symbol is null)
             {
                 return "Invalid";
             }

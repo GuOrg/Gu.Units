@@ -42,7 +42,7 @@
 
             this.conversions.Clear();
 
-            if (this.unit == null)
+            if (this.unit is null)
             {
                 this.OnPropertyChanged(nameof(this.HasItems));
                 return;
@@ -133,7 +133,7 @@
         {
             if (this.disposed)
             {
-                throw new ObjectDisposedException(this.GetType().FullName);
+                throw new ObjectDisposedException(nameof(PartConversionsVm));
             }
         }
     }

@@ -19,7 +19,7 @@
         private MainVm()
         {
             this.settings = Settings.FromResource;
-            this.NameSpace = Settings.ProjectName;
+            this.nameSpace = Settings.ProjectName;
             this.BaseUnits = new ObservableCollection<BaseUnitViewModel>(this.settings.BaseUnits.Select(x => new BaseUnitViewModel(x)));
             this.BaseUnits.ObserveCollectionChangedSlim(signalInitial: false)
                 .Subscribe(this.OnBaseUnitsChanged);
@@ -125,7 +125,7 @@
         {
             if (this.disposed)
             {
-                throw new ObjectDisposedException(this.GetType().FullName);
+                throw new ObjectDisposedException(nameof(MainVm));
             }
         }
     }

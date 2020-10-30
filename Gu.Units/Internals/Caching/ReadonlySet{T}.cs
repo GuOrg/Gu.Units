@@ -8,23 +8,23 @@
 
     [DebuggerTypeProxy(typeof(CollectionDebugView<>))]
     [Serializable]
-    internal class ReadonlySet<T> : IReadOnlyCollection<T>
+    internal sealed class ReadonlySet<T> : IReadOnlyCollection<T>
     {
-        public static readonly ReadonlySet<T> Empty = new ReadonlySet<T>(Enumerable.Empty<T>());
+        internal static readonly ReadonlySet<T> Empty = new ReadonlySet<T>(Enumerable.Empty<T>());
 
         private readonly ISet<T> source;
 
-        public ReadonlySet(ISet<T> source)
+        internal ReadonlySet(ISet<T> source)
         {
             this.source = source;
         }
 
-        public ReadonlySet(IEnumerable<T> source)
+        internal ReadonlySet(IEnumerable<T> source)
         {
             this.source = new HashSet<T>(source);
         }
 
-        public ReadonlySet(IEnumerable<T> source, IEqualityComparer<T> comparer)
+        internal ReadonlySet(IEnumerable<T> source, IEqualityComparer<T> comparer)
         {
             this.source = new HashSet<T>(source, comparer);
         }
@@ -51,31 +51,6 @@
 
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
-        public bool Contains(T item)
-        {
-            return this.source?.Contains(item) == true;
-        }
-
-        public bool SetEquals(IEnumerable<T> other)
-        {
-            return this.source?.SetEquals(other) == true;
-        }
-
-        public bool Equals(ReadonlySet<T> other)
-        {
-            if (other is null)
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-
-            return this.source.SetEquals(other.source);
-        }
-
         public override bool Equals(object obj)
         {
             if (obj is null)
@@ -98,7 +73,7 @@
 
         public override int GetHashCode()
         {
-            if (this.source == null)
+            if (this.source is null)
             {
                 return 0;
             }
@@ -113,6 +88,31 @@
 
                 return hash;
             }
+        }
+
+        internal bool Contains(T item)
+        {
+            return this.source?.Contains(item) == true;
+        }
+
+        internal bool SetEquals(IEnumerable<T> other)
+        {
+            return this.source?.SetEquals(other) == true;
+        }
+
+        internal bool Equals(ReadonlySet<T> other)
+        {
+            if (other is null)
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            return this.source.SetEquals(other.source);
         }
     }
 }

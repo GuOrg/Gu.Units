@@ -99,7 +99,7 @@
         {
             if (this.disposed)
             {
-                throw new ObjectDisposedException(this.GetType().FullName);
+                throw new ObjectDisposedException(nameof(PrefixConversionVm));
             }
         }
     }

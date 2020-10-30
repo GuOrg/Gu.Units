@@ -153,7 +153,7 @@
         private void DeleteSelected()
         {
             this.ThrowIfDisposed();
-            if (this.selectedConversion == null || this.unit == null)
+            if (this.selectedConversion is null || this.unit is null)
             {
                 return;
             }
@@ -173,7 +173,7 @@
         {
             if (this.disposed)
             {
-                throw new ObjectDisposedException(this.GetType().FullName);
+                throw new ObjectDisposedException(nameof(ConversionsVm));
             }
         }
     }
