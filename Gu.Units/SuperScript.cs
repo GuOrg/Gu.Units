@@ -26,20 +26,28 @@
         /// <returns>The superscript char for <paramref name="i"/>.</returns>
         public static char GetChar(int i)
         {
-            Ensure.GreaterThanOrEqual(i, 0, nameof(i));
-            Ensure.LessThanOrEqual(i, 9, nameof(i));
+            if (i < 0 ||
+                i > 9)
+            {
+                throw new ArgumentOutOfRangeException(nameof(i), i, "No superscript.");
+            }
+
             return GetCharUnchecked(i);
         }
 
         /// <summary>
-        /// Gest the superscript for a number.
+        /// Gets the superscript for a number.
         /// </summary>
         /// <param name="i">A value between -9 and +9.</param>
         /// <returns>The superscript for <paramref name="i"/>.</returns>
         public static string GetString(int i)
         {
-            Ensure.GreaterThanOrEqual(i, -9, nameof(i));
-            Ensure.LessThanOrEqual(i, 9, nameof(i));
+            if (i < -9 ||
+                i > 9)
+            {
+                throw new ArgumentOutOfRangeException(nameof(i), i, "No superscript.");
+            }
+
             if (i < 0)
             {
                 return $"{Minus}{GetCharUnchecked(i)}";
