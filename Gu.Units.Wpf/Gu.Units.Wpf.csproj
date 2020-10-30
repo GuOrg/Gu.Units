@@ -28,6 +28,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="stylecop.json" />
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Gu.Units\Gu.Units.csproj" />
   </ItemGroup>
 
