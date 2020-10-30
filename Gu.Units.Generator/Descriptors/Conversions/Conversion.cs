@@ -9,7 +9,7 @@
     {
         public static Unit GetUnit(this IConversion conversion)
         {
-            if (conversion is PartConversion.IdentityConversion identityConversion)
+            if (conversion is IdentityConversion identityConversion)
             {
                 var unit = Settings.Instance.AllUnits.Single(x => x.Symbol == identityConversion.Symbol);
                 return unit;
@@ -87,7 +87,9 @@
 
                 return $"1 {conversion.Symbol.NormalizeSymbol()} = {convert.ToString(CultureInfo.InvariantCulture)} {unit.Symbol.NormalizeSymbol()}";
             }
-            catch (Exception)
+#pragma warning disable CA1031 // Do not catch general exception types
+            catch
+#pragma warning restore CA1031 // Do not catch general exception types
             {
                 return "Invalid";
             }
@@ -116,7 +118,9 @@
                     }
                 }
             }
-            catch (Exception)
+#pragma warning disable CA1031 // Do not catch general exception types
+            catch
+#pragma warning restore CA1031 // Do not catch general exception types
             {
                 return false; // lazy here only used in the code gen ui.
             }

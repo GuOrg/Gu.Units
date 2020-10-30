@@ -242,7 +242,7 @@
         {
             var scriptOptions = ScriptOptions.Default.WithReferences(typeof(Length).Assembly)
                 .WithImports("Gu.Units");
-            var result = await CSharpScript.EvaluateAsync<bool>(expression, scriptOptions);
+            var result = await CSharpScript.EvaluateAsync<bool>(expression, scriptOptions).ConfigureAwait(false);
             Assert.AreEqual(true, result);
         }
 

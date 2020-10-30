@@ -115,12 +115,12 @@
             this.Conversions.Clear();
         }
 
-        private static IReadOnlyList<PartConversion.PowerPart> CreatePowerParts(IReadOnlyList<UnitAndPower> parts, int index)
+        private static IReadOnlyList<PowerPart> CreatePowerParts(IReadOnlyList<UnitAndPower> parts, int index)
         {
-            var powerParts = new List<PartConversion.PowerPart>();
+            var powerParts = new List<PowerPart>();
             var unitAndPower = parts[index];
-            powerParts.Add(new PartConversion.PowerPart(unitAndPower.Power, new PartConversion.IdentityConversion(unitAndPower.Unit)));
-            powerParts.AddRange(unitAndPower.Unit.AllConversions.OfType<IFactorConversion>().Select(x => new PartConversion.PowerPart(unitAndPower.Power, x)));
+            powerParts.Add(new PowerPart(unitAndPower.Power, new IdentityConversion(unitAndPower.Unit)));
+            powerParts.AddRange(unitAndPower.Unit.AllConversions.OfType<IFactorConversion>().Select(x => new PowerPart(unitAndPower.Power, x)));
             return powerParts;
         }
 

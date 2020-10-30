@@ -3,7 +3,9 @@
     using System.Collections.Generic;
     using System.Linq;
 
+#pragma warning disable CA1716 // Identifiers should not match keywords
     public static class Overloads
+#pragma warning restore CA1716 // Identifiers should not match keywords
     {
         public static IReadOnlyList<MissingOverloads> Find(IReadOnlyList<Unit> units)
         {

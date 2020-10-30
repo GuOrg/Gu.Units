@@ -9,10 +9,10 @@
         public async Task IdentityConversion()
         {
             var settings = MockSettings.Create();
-            var conversion = new PartConversion.IdentityConversion(settings.Metres);
+            var conversion = new IdentityConversion(settings.Metres);
             Assert.AreEqual("metres", conversion.ToSi);
             Assert.AreEqual("metres", conversion.FromSi);
-            Assert.AreEqual("1 m = 1 m", conversion.SymbolConversion);
+            Assert.AreEqual("1 m = 1 m", await conversion.GetSymbolConversionAsync().ConfigureAwait(false));
             Assert.AreEqual(true, await conversion.CanRoundtripAsync().ConfigureAwait(false));
         }
 

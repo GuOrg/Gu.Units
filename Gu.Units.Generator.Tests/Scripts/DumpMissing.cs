@@ -27,33 +27,31 @@
         [Test]
         public static async Task SiDerivedUnitsFromWikipedia()
         {
-            using (var client = new WebClient())
+            using var client = new WebClient();
+            var text = await client
+                             .DownloadStringTaskAsync(
+                                 @"https://en.wikipedia.org/w/api.php?action=parse&page=SI_derived_unit&section=1&prop=wikitext&format=json&contentmodel=json")
+                             .ConfigureAwait(continueOnCapturedContext: false);
+            var lines = text
+                        .Replace("\\n| align = \\\"center\\\"", string.Empty)
+                        .Replace("| align=\\\"center\\\" | ", "| |")
+                        .Replace("\\u22c5", "⋅")
+                        .Replace("<sup>2</sup>", "²")
+                        .Replace("<sup>3</sup>", "³")
+                        .Replace("<sup>&minus;1</sup>", "⁻¹")
+                        .Replace("<sup>&minus;2</sup>", "⁻²")
+                        .Replace("<sup>&minus;3</sup>", "⁻³")
+                        .Split(new[] { "-\\n" }, StringSplitOptions.None);
+            foreach (var line in lines.Where(l => l.StartsWith("| '''", StringComparison.Ordinal)))
             {
-                var text = await client
-                    .DownloadStringTaskAsync(
-                        @"https://en.wikipedia.org/w/api.php?action=parse&page=SI_derived_unit&section=1&prop=wikitext&format=json&contentmodel=json")
-                    .ConfigureAwait(continueOnCapturedContext: false);
-                var lines = text
-                    .Replace("\\n| align = \\\"center\\\"", string.Empty)
-                    .Replace("| align=\\\"center\\\" | ", "| |")
-                    .Replace("\\u22c5", "⋅")
-                    .Replace("<sup>2</sup>", "²")
-                    .Replace("<sup>3</sup>", "³")
-                    .Replace("<sup>&minus;1</sup>", "⁻¹")
-                    .Replace("<sup>&minus;2</sup>", "⁻²")
-                    .Replace("<sup>&minus;3</sup>", "⁻³")
-                    .Split(new[] { "-\\n" }, StringSplitOptions.None);
-                foreach (var line in lines.Where(l => l.StartsWith("| '''", StringComparison.Ordinal)))
-                {
-                    var clean = line.Replace("| '''[[", "| ")
-                        .Replace("]]'''|", " |")
-                        .Replace("| '''", "| ")
-                        .Replace("\'\'\'\\n|", " |")
-                        .Replace("| [[", "| ")
-                        .Replace("]]|", " |")
-                        .Replace("\\n|", " |");
-                    Console.WriteLine(clean);
-                }
+                var clean = line.Replace("| '''[[", "| ")
+                                .Replace("]]'''|", " |")
+                                .Replace("| '''", "| ")
+                                .Replace("\'\'\'\\n|", " |")
+                                .Replace("| [[", "| ")
+                                .Replace("]]|", " |")
+                                .Replace("\\n|", " |");
+                Console.WriteLine(clean);
             }
         }
     }

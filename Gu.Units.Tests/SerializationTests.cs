@@ -41,9 +41,9 @@
             }
 
             using var reader = new StringReader(xml);
-#pragma warning disable CA3075 // Insecure DTD processing in XML
+#pragma warning disable CA3075, CA5369 // Insecure DTD processing in XML
             var deserialized = serializer.Deserialize(reader);
-#pragma warning restore CA3075 // Insecure DTD processing in XML
+#pragma warning restore CA3075, CA5369 // Insecure DTD processing in XML
             Assert.AreEqual(deserialized, quantity);
         }
 
