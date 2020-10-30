@@ -34,3 +34,4 @@ Generator/*
 Gu.Units.Benchmarks/_TraceEventProgrammersGuide.docx
 /paket-files/*
 /msbuild.binlog
+/msbuild.ProjectImports.zip
