@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFrameworks>net48</TargetFrameworks>
     <OutputType>Exe</OutputType>
-    <CodeAnalysisRuleSet>Gu.Units.Benchmarks.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>

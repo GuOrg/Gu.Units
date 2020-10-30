@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFrameworks>net472</TargetFrameworks>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <CodeAnalysisRuleSet>Gu.Units.Json.Tests.ruleset</CodeAnalysisRuleSet>    
   </PropertyGroup>
 
   <ItemGroup>

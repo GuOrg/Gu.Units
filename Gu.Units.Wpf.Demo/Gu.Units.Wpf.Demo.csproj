@@ -3,7 +3,6 @@
     <OutputType>WinExe</OutputType>
     <UseWpf>true</UseWpf>
     <TargetFramework>net48</TargetFramework>
-    <CodeAnalysisRuleSet>Gu.Units.Wpf.Demo.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>
