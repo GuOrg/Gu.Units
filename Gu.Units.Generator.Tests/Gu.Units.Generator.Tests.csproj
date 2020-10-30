@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="..\packages\test\NUnit\build\NUnit.props" Condition="Exists('..\packages\test\NUnit\build\NUnit.props')" Label="Paket" />
-  <Import Project="..\packages\scripting\Microsoft.CodeAnalysis.Analyzers\build\Microsoft.CodeAnalysis.Analyzers.props" Condition="Exists('..\packages\scripting\Microsoft.CodeAnalysis.Analyzers\build\Microsoft.CodeAnalysis.Analyzers.props')" Label="Paket" />
- 
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFramework>net48</TargetFramework>
     <CodeAnalysisRuleSet>Gu.Units.Generator.Tests.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Imports\**" />
-    <EmbeddedResource Remove="Imports\**" />
-    <None Remove="Imports\**" />
-  </ItemGroup>
-  
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\Gu.Units.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Reference Include="System.XML" />
   </ItemGroup>
@@ -28,6 +21,20 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  
-  <Import Project="..\.paket\Paket.Restore.targets" />
+
+  <ItemGroup>
+    <PackageReference Include="Gu.Analyzers" Version="1.8.1" PrivateAssets="all" />
+    <PackageReference Include="IDisposableAnalyzers" Version="3.4.3" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="3.7.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.1" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="16.8.51" PrivateAssets="all" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="PropertyChangedAnalyzers" Version="3.2.1" PrivateAssets="all" />
+    <PackageReference Include="ReflectionAnalyzers" Version="0.1.22-dev" PrivateAssets="all" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.205" PrivateAssets="all" />
+    <PackageReference Include="WpfAnalyzers" Version="3.2.0" PrivateAssets="all" />
+  </ItemGroup>
 </Project>
