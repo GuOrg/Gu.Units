@@ -71,7 +71,7 @@
 
         /// <summary>
         /// The extension for the generated files, set to txt if it does not build so you can´inspect the result
-        /// cs when everything works
+        /// cs when everything works.
         /// </summary>
         public static string Extension => "cs";
 

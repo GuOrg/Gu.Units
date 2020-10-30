@@ -3,7 +3,7 @@
     using System.Windows.Controls;
 
     /// <summary>
-    /// Interaction logic for PrefixConversionsView.xaml
+    /// Interaction logic for PrefixConversionsView.xaml.
     /// </summary>
     public partial class PrefixConversionsView : UserControl
     {

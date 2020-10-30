@@ -3,7 +3,7 @@
     using System.Windows.Controls;
 
     /// <summary>
-    /// Interaction logic for PartConversionsView.xaml
+    /// Interaction logic for PartConversionsView.xaml.
     /// </summary>
     public partial class PartConversionsView : UserControl
     {

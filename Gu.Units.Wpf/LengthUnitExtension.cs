@@ -5,13 +5,13 @@ namespace Gu.Units.Wpf
     using System.Windows.Markup;
 
     /// <summary>
-    /// <see cref="MarkupExtension"/> for creating <see cref="LengthUnit"/> in XAML
+    /// <see cref="MarkupExtension"/> for creating <see cref="LengthUnit"/> in XAML.
     /// </summary>
     [MarkupExtensionReturnType(typeof(LengthUnit))]
     public class LengthUnitExtension : MarkupExtension
     {
         /// <summary>
-        /// An instance of <see cref="LengthUnit.Millimetres"/>
+        /// An instance of <see cref="LengthUnit.Millimetres"/>.
         /// </summary>
         public static readonly LengthUnit Millimetres = LengthUnit.Millimetres;
 
@@ -25,7 +25,7 @@ namespace Gu.Units.Wpf
         }
 
         /// <summary>
-        /// Gets or sets the value
+        /// Gets or sets the value.
         /// </summary>
         [ConstructorArgument("value")]
         public LengthUnit Value { get; set; }

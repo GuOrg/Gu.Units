@@ -4,7 +4,7 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// http://www.periodni.com/international_system_of_units.html
+    /// http://www.periodni.com/international_system_of_units.html.
     /// </summary>
     [DebuggerDisplay("{Name} {Symbol} {QuantityName}")]
     [Serializable]

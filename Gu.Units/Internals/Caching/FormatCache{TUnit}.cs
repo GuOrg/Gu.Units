@@ -11,7 +11,7 @@
 
         private static readonly ConcurrentDictionary<IFormatKey, QuantityFormat<TUnit>> Cache = new ConcurrentDictionary<IFormatKey, QuantityFormat<TUnit>>();
 
-        /// <summary> For use as key in the cache </summary>
+        /// <summary> For use as key in the cache. </summary>
         internal interface IFormatKey : IEquatable<IFormatKey>
         {
         }

@@ -3,7 +3,7 @@
     using System.Windows.Controls;
 
     /// <summary>
-    /// Interaction logic for UnitsOnlyView.xaml
+    /// Interaction logic for UnitsOnlyView.xaml.
     /// </summary>
     public partial class UnitsOnlyView : UserControl
     {

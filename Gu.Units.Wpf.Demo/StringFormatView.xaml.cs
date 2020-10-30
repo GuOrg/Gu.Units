@@ -3,7 +3,7 @@
     using System.Windows.Controls;
 
     /// <summary>
-    /// Interaction logic for StringFormatView.xaml
+    /// Interaction logic for StringFormatView.xaml.
     /// </summary>
     public partial class StringFormatView : UserControl
     {

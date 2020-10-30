@@ -12,7 +12,7 @@
 
         /// <summary>
         /// To check if type implements IEquatable{string}
-        /// Call like this type.Implements(typeof(IEquatable{}, typeof(string))
+        /// Call like this type.Implements(typeof(IEquatable{}, typeof(string)).
         /// </summary>
         /// <param name="type"></param>
         /// <param name="genericInterface"></param>

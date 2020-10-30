@@ -5,7 +5,7 @@
     using System.Diagnostics;
 
     /// <summary>
-    /// http://en.wikipedia.org/wiki/SI_derived_unit
+    /// http://en.wikipedia.org/wiki/SI_derived_unit.
     /// </summary>
     [DebuggerDisplay("{Name} {Symbol} {QuantityName}")]
     [Serializable]

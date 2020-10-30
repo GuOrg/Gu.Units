@@ -6,7 +6,7 @@
     using System.Runtime.CompilerServices;
 
     /// <summary>
-    /// http://physics.nist.gov/cuu/Units/prefixes.html
+    /// http://physics.nist.gov/cuu/Units/prefixes.html.
     /// </summary>
     [DebuggerDisplay("Prefix{Name} ({Symbol}) 1E{Power}")]
     [Serializable]

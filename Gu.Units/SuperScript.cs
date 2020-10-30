@@ -8,12 +8,12 @@
     public static class SuperScript
     {
         /// <summary>
-        /// The superscript plus
+        /// The superscript plus.
         /// </summary>
         public static readonly char Plus = '⁺';
 
         /// <summary>
-        /// The superscript minus
+        /// The superscript minus.
         /// </summary>
         public static readonly char Minus = '⁻';
 
@@ -23,10 +23,10 @@
         //// ReSharper restore UnusedMember.Local
 
         /// <summary>
-        /// Gest the superscript for a number
+        /// Gest the superscript for a number.
         /// </summary>
-        /// <param name="i">A value between -9 and +9</param>
-        /// <returns>The superscript char for <paramref name="i"/></returns>
+        /// <param name="i">A value between -9 and +9.</param>
+        /// <returns>The superscript char for <paramref name="i"/>.</returns>
         public static char GetChar(int i)
         {
             Ensure.GreaterThanOrEqual(i, 0, nameof(i));
@@ -35,10 +35,10 @@
         }
 
         /// <summary>
-        /// Gest the superscript for a number
+        /// Gest the superscript for a number.
         /// </summary>
-        /// <param name="i">A value between -9 and +9</param>
-        /// <returns>The superscript for <paramref name="i"/></returns>
+        /// <param name="i">A value between -9 and +9.</param>
+        /// <returns>The superscript for <paramref name="i"/>.</returns>
         public static string GetString(int i)
         {
             Ensure.GreaterThanOrEqual(i, -9, nameof(i));
@@ -52,10 +52,10 @@
         }
 
         /// <summary>
-        /// Gets the integer value for a superscript char
+        /// Gets the integer value for a superscript char.
         /// </summary>
-        /// <param name="c">A value in the range {⁰¹²³⁴⁵⁶⁷⁸⁹}</param>
-        /// <returns>The integer value for <paramref name="c"/></returns>
+        /// <param name="c">A value in the range {⁰¹²³⁴⁵⁶⁷⁸⁹}.</param>
+        /// <returns>The integer value for <paramref name="c"/>.</returns>
         public static int GetDigit(char c)
         {
             try

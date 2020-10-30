@@ -6,7 +6,7 @@
     using System.Windows.Markup;
 
     /// <summary>
-    /// Use this to format unit values in XAML
+    /// Use this to format unit values in XAML.
     /// </summary>
     [MarkupExtensionReturnType(typeof(IValueConverter))]
     public class UnitFormatConverterExtension : MarkupExtension, IValueConverter
@@ -21,7 +21,7 @@
         }
 
         /// <summary>
-        /// Gets or sets the format
+        /// Gets or sets the format.
         /// </summary>
         [ConstructorArgument("format")]
         public SymbolFormat Format { get; set; }

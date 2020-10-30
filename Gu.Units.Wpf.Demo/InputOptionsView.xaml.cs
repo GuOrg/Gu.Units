@@ -3,7 +3,7 @@
     using System.Windows.Controls;
 
     /// <summary>
-    /// Interaction logic for InputOptionsView.xaml
+    /// Interaction logic for InputOptionsView.xaml.
     /// </summary>
     public partial class InputOptionsView : UserControl
     {
