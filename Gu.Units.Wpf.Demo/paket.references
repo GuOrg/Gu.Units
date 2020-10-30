@@ -1,7 +1,0 @@
-Gu.Wpf.NumericInput
-
-group Analyzers
-  StyleCop.Analyzers
-  Gu.Analyzers
-  WpfAnalyzers
-  JetBrains.Annotations
