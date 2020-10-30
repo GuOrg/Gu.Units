@@ -1,7 +1,6 @@
 ﻿namespace Gu.Units.Tests.Internals.Parsing
 {
     using System;
-    using System.Collections.Generic;
     using System.Globalization;
     using NUnit.Framework;
 
@@ -11,44 +10,44 @@
         private static readonly CultureInfo En = CultureInfo.GetCultureInfo("en-US");
         private static readonly CultureInfo Sv = CultureInfo.GetCultureInfo("sv-SE");
 
-        private static readonly IReadOnlyList<TestCase> HappyPaths = new[]
+        private static readonly TestCaseData[] HappyPaths =
         {
-            CreateTestCase("0", NumberStyles.Float, En),
-            CreateTestCase("0.", NumberStyles.Float, En),
-            CreateTestCase(".0", NumberStyles.Float, En),
-            CreateTestCase("0.0", NumberStyles.Float, En),
-            CreateTestCase("1.2", NumberStyles.Float, En),
-            CreateTestCase("0.012", NumberStyles.Float, En),
-            CreateTestCase("0.0012", NumberStyles.Float, En),
-            CreateTestCase("0.001", NumberStyles.Float, En),
-            CreateTestCase("1", NumberStyles.Float, En),
-            CreateTestCase(" 1", NumberStyles.Float, En),
-            CreateTestCase("-1", NumberStyles.Float, En),
-            CreateTestCase("+1", NumberStyles.Float, En),
-            CreateTestCase(".1", NumberStyles.Float, En),
-            CreateTestCase("-.1", NumberStyles.Float, En),
-            CreateTestCase("1.", NumberStyles.Float, En),
-            CreateTestCase("-1.", NumberStyles.Float, En),
-            CreateTestCase("12,345.67", NumberStyles.Float | NumberStyles.AllowThousands, En),
-            CreateTestCase("-12,345.67", NumberStyles.Float | NumberStyles.AllowThousands, En),
-            CreateTestCase("+1.2", NumberStyles.Float, En),
-            CreateTestCase("+1,2", NumberStyles.Float, Sv),
-            CreateTestCase("+1.2e3", NumberStyles.Float, En),
-            CreateTestCase("-1.2E3", NumberStyles.Float, En),
-            CreateTestCase("+1.2e-3", NumberStyles.Float, En),
-            CreateTestCase("+1.2E-3", NumberStyles.Float, En),
-            CreateTestCase("-1.2e+3", NumberStyles.Float, En), //// 1,,2,3,4,5,,,.00
-            CreateTestCase("1,,2,3,4,5,,,.00", NumberStyles.Float | NumberStyles.AllowThousands, En),
-            CreateTestCase("12345678910123456789", NumberStyles.Float | NumberStyles.AllowThousands, En),
-            CreateTestCase("1.2345678910123456789", NumberStyles.Float | NumberStyles.AllowThousands, En),
-            CreateTestCase("1234567891012345678.9", NumberStyles.Float | NumberStyles.AllowThousands, En),
-            CreateTestCase(new string('1', 307), NumberStyles.Float | NumberStyles.AllowThousands, En),
-            CreateTestCase(new string('1', 308), NumberStyles.Float | NumberStyles.AllowThousands, En),
-            CreateTestCase(new string('1', 309), NumberStyles.Float | NumberStyles.AllowThousands, En),
-            CreateTestCase("0." + new string('0', 15) + "1", NumberStyles.Float | NumberStyles.AllowThousands, En),
-            CreateTestCase("0." + new string('0', 16) + "1", NumberStyles.Float | NumberStyles.AllowThousands, En),
-            CreateTestCase("0." + new string('0', 299) + "1", NumberStyles.Float | NumberStyles.AllowThousands, En),
-            CreateTestCase("0." + new string('0', 300) + "1", NumberStyles.Float | NumberStyles.AllowThousands, En),
+            new TestCaseData("0", NumberStyles.Float, En),
+            new TestCaseData("0.", NumberStyles.Float, En),
+            new TestCaseData(".0", NumberStyles.Float, En),
+            new TestCaseData("0.0", NumberStyles.Float, En),
+            new TestCaseData("1.2", NumberStyles.Float, En),
+            new TestCaseData("0.012", NumberStyles.Float, En),
+            new TestCaseData("0.0012", NumberStyles.Float, En),
+            new TestCaseData("0.001", NumberStyles.Float, En),
+            new TestCaseData("1", NumberStyles.Float, En),
+            new TestCaseData(" 1", NumberStyles.Float, En),
+            new TestCaseData("-1", NumberStyles.Float, En),
+            new TestCaseData("+1", NumberStyles.Float, En),
+            new TestCaseData(".1", NumberStyles.Float, En),
+            new TestCaseData("-.1", NumberStyles.Float, En),
+            new TestCaseData("1.", NumberStyles.Float, En),
+            new TestCaseData("-1.", NumberStyles.Float, En),
+            new TestCaseData("12,345.67", NumberStyles.Float | NumberStyles.AllowThousands, En),
+            new TestCaseData("-12,345.67", NumberStyles.Float | NumberStyles.AllowThousands, En),
+            new TestCaseData("+1.2", NumberStyles.Float, En),
+            new TestCaseData("+1,2", NumberStyles.Float, Sv),
+            new TestCaseData("+1.2e3", NumberStyles.Float, En),
+            new TestCaseData("-1.2E3", NumberStyles.Float, En),
+            new TestCaseData("+1.2e-3", NumberStyles.Float, En),
+            new TestCaseData("+1.2E-3", NumberStyles.Float, En),
+            new TestCaseData("-1.2e+3", NumberStyles.Float, En), //// 1,,2,3,4,5,,,.00
+            new TestCaseData("1,,2,3,4,5,,,.00", NumberStyles.Float | NumberStyles.AllowThousands, En),
+            new TestCaseData("12345678910123456789", NumberStyles.Float | NumberStyles.AllowThousands, En),
+            new TestCaseData("1.2345678910123456789", NumberStyles.Float | NumberStyles.AllowThousands, En),
+            new TestCaseData("1234567891012345678.9", NumberStyles.Float | NumberStyles.AllowThousands, En),
+            new TestCaseData(new string('1', 307), NumberStyles.Float | NumberStyles.AllowThousands, En),
+            new TestCaseData(new string('1', 308), NumberStyles.Float | NumberStyles.AllowThousands, En),
+            new TestCaseData(new string('1', 309), NumberStyles.Float | NumberStyles.AllowThousands, En),
+            new TestCaseData("0." + new string('0', 15) + "1", NumberStyles.Float | NumberStyles.AllowThousands, En),
+            new TestCaseData("0." + new string('0', 16) + "1", NumberStyles.Float | NumberStyles.AllowThousands, En),
+            new TestCaseData("0." + new string('0', 299) + "1", NumberStyles.Float | NumberStyles.AllowThousands, En),
+            new TestCaseData("0." + new string('0', 300) + "1", NumberStyles.Float | NumberStyles.AllowThousands, En),
             CreateTestCase(-12345.678910, NumberStyles.Float, En, "e"),
             CreateTestCase(12345.678910, NumberStyles.Float, En, "E"),
             CreateTestCase(12345.678910, NumberStyles.Float, En, "E5"),
@@ -67,54 +66,49 @@
             CreateTestCase(-Math.PI, NumberStyles.Float, En, "f16"),
             CreateTestCase(-Math.PI, NumberStyles.Float, En, "f17"),
             CreateTestCase(Math.PI, NumberStyles.Float, En, "f25"),
-            CreateTestCase("3.141592653589793238", NumberStyles.Float, En),
-            CreateTestCase("-3.141592653589793238", NumberStyles.Float, En),
-            CreateTestCase("0.017453292519943295", NumberStyles.Float, En),
+            new TestCaseData("3.141592653589793238", NumberStyles.Float, En),
+            new TestCaseData("-3.141592653589793238", NumberStyles.Float, En),
+            new TestCaseData("0.017453292519943295", NumberStyles.Float, En),
             CreateTestCase(-Math.PI, NumberStyles.Float, En, "r"),
-            CreateTestCase(Sv.NumberFormat.NaNSymbol, NumberStyles.Float, Sv),
-            CreateTestCase(Sv.NumberFormat.PositiveInfinitySymbol, NumberStyles.Float, Sv),
-            CreateTestCase(Sv.NumberFormat.NegativeInfinitySymbol, NumberStyles.Float, Sv),
+            new TestCaseData(Sv.NumberFormat.NaNSymbol, NumberStyles.Float, Sv),
+            new TestCaseData(Sv.NumberFormat.PositiveInfinitySymbol, NumberStyles.Float, Sv),
+            new TestCaseData(Sv.NumberFormat.NegativeInfinitySymbol, NumberStyles.Float, Sv),
         };
 
-        private static readonly IReadOnlyList<TestCase> Errors = new[]
+        private static readonly TestCaseData[] Errors =
         {
-            CreateTestCase("e1", NumberStyles.Float, En),
-            CreateTestCase(" 1", NumberStyles.None, En),
-            CreateTestCase("-1", NumberStyles.None, En),
-            CreateTestCase(".1", NumberStyles.None, En),
-            CreateTestCase(",.1", NumberStyles.Float, En),
-            CreateTestCase(new string('1', 311), NumberStyles.Float, En),
+            new TestCaseData("e1", NumberStyles.Float, En),
+            new TestCaseData(" 1", NumberStyles.None, En),
+            new TestCaseData("-1", NumberStyles.None, En),
+            new TestCaseData(".1", NumberStyles.None, En),
+            new TestCaseData(",.1", NumberStyles.Float, En),
+            new TestCaseData(new string('1', 311), NumberStyles.Float, En),
             ////Add("1.", NumberStyles.Float | NumberStyles.AllowHexSpecifier, en),
-            CreateTestCase(".", NumberStyles.Float, En),
+            new TestCaseData(".", NumberStyles.Float, En),
             ////Add("+1,2", NumberStyles.Float, en),
             ////Add("+1.2", NumberStyles.Float, sv),
-            CreateTestCase("+1.2e3", NumberStyles.None | NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign, En),
+            new TestCaseData("+1.2e3", NumberStyles.None | NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign, En),
         };
 
         [TestCaseSource(nameof(HappyPaths))]
-        public static void ReadSuccess(TestCase data)
+        public static void ReadSuccess(string text, NumberStyles styles, IFormatProvider culture)
         {
-            var culture = data.Culture;
-            var style = data.Styles;
             foreach (var format in PadFormats)
             {
-                var text = string.Format(format, data.Text);
+                var formatted = string.Format(format, text);
                 var pos = format.IndexOf('{');
                 var start = pos;
-                double expected = double.Parse(data.Text, style, culture);
-                var actual = DoubleReader.Read(text, ref pos, style, culture);
+                double expected = double.Parse(text, styles, culture);
+                var actual = DoubleReader.Read(formatted, ref pos, styles, culture);
                 Assert.AreEqual(expected, actual);
-                var expectedEnd = start + data.Text.Length;
+                var expectedEnd = start + text.Length;
                 Assert.AreEqual(expectedEnd, pos);
             }
         }
 
         [TestCaseSource(nameof(Errors))]
-        public static void ReadError(TestCase data)
+        public static void ReadError(string text, NumberStyles styles, IFormatProvider culture)
         {
-            var culture = data.Culture;
-            var style = data.Styles;
-            var text = data.Text;
             foreach (var format in PadFormats)
             {
                 var ns = string.Format(format, text);
@@ -124,7 +118,7 @@
                 try
                 {
                     // ReSharper disable once ReturnValueOfPureMethodIsNotUsed
-                    double.Parse(text, style, culture);
+                    double.Parse(text, styles, culture);
                 }
                 catch (Exception e)
                 {
@@ -134,7 +128,7 @@
                 Exception readException = null;
                 try
                 {
-                    DoubleReader.Read(ns, ref pos, style, culture);
+                    DoubleReader.Read(ns, ref pos, styles, culture);
                 }
                 catch (Exception e)
                 {
@@ -161,95 +155,60 @@
         }
 
         [TestCaseSource(nameof(HappyPaths))]
-        public static void TryReadSuccess(TestCase data)
+        public static void TryReadSuccess(string text, NumberStyles styles, IFormatProvider culture)
         {
-            var culture = data.Culture;
-            var style = data.Styles;
             var pos = 0;
-            Assert.IsTrue(double.TryParse(data.Text, style, culture, out double expected));
-            Assert.IsTrue(DoubleReader.TryRead(data.Text, ref pos, style, culture, out double actual));
+            Assert.IsTrue(double.TryParse(text, styles, culture, out double expected));
+            Assert.IsTrue(DoubleReader.TryRead(text, ref pos, styles, culture, out double actual));
             Assert.AreEqual(expected, actual);
-            var expectedEnd = data.Text.Length;
+            var expectedEnd = text.Length;
             Assert.AreEqual(expectedEnd, pos);
         }
 
         [TestCaseSource(nameof(HappyPaths))]
-        public static void TryReadPaddedSuccess(TestCase data)
+        public static void TryReadPaddedSuccess(string text, NumberStyles styles, IFormatProvider culture)
         {
-            var culture = data.Culture;
-            var style = data.Styles;
             foreach (var format in PadFormats)
             {
-                var text = string.Format(format, data.Text);
+                var formatted = string.Format(format, text);
                 var pos = format.IndexOf('{');
                 var start = pos;
-                Assert.IsTrue(double.TryParse(data.Text, style, culture, out double expected));
-                Assert.IsTrue(DoubleReader.TryRead(text, ref pos, style, culture, out double actual));
+                Assert.IsTrue(double.TryParse(text, styles, culture, out double expected));
+                Assert.IsTrue(DoubleReader.TryRead(formatted, ref pos, styles, culture, out double actual));
                 Assert.AreEqual(expected, actual);
-                var expectedEnd = start + data.Text.Length;
+                var expectedEnd = start + text.Length;
                 Assert.AreEqual(expectedEnd, pos);
             }
         }
 
         [TestCaseSource(nameof(Errors))]
-        public static void TryReadErrorPadded(TestCase data)
+        public static void TryReadErrorPadded(string text, NumberStyles styles, IFormatProvider culture)
         {
-            var culture = data.Culture;
-            var style = data.Styles;
-            var s = data.Text;
             foreach (var format in PadFormats)
             {
-                var ns = string.Format(format, s);
+                var ns = string.Format(format, text);
                 var pos = format.IndexOf('{');
                 var start = pos;
-                Assert.IsFalse(double.TryParse(s, style, culture, out double expected));
-                Assert.IsFalse(DoubleReader.TryRead(ns, ref pos, style, culture, out double actual));
+                Assert.IsFalse(double.TryParse(text, styles, culture, out double expected));
+                Assert.IsFalse(DoubleReader.TryRead(ns, ref pos, styles, culture, out double actual));
                 Assert.AreEqual(expected, actual);
                 Assert.AreEqual(start, pos);
             }
         }
 
         [TestCaseSource(nameof(Errors))]
-        public static void TryReadError(TestCase data)
+        public static void TryReadError(string text, NumberStyles styles, IFormatProvider culture)
         {
-            var culture = data.Culture;
-            var style = data.Styles;
             var pos = 0;
-            Assert.IsFalse(double.TryParse(data.Text, style, culture, out double expected));
-            Assert.IsFalse(DoubleReader.TryRead(data.Text, ref pos, style, culture, out double actual));
+            Assert.IsFalse(double.TryParse(text, styles, culture, out double expected));
+            Assert.IsFalse(DoubleReader.TryRead(text, ref pos, styles, culture, out double actual));
             Assert.AreEqual(expected, actual);
             Assert.AreEqual(0, pos);
         }
 
-        private static TestCase CreateTestCase(double value, NumberStyles styles, IFormatProvider culture, string format)
+        private static TestCaseData CreateTestCase(double value, NumberStyles styles, IFormatProvider culture, string format)
         {
-            return new TestCase(value.ToString(format, culture), styles, culture);
-        }
-
-        private static TestCase CreateTestCase(string text, NumberStyles styles, CultureInfo culture)
-        {
-            return new TestCase(text, styles, culture);
-        }
-
-        public class TestCase
-        {
-            public TestCase(string text, NumberStyles styles, IFormatProvider culture)
-            {
-                this.Text = text;
-                this.Styles = styles;
-                this.Culture = culture;
-            }
-
-            public string Text { get; }
-
-            public NumberStyles Styles { get; }
-
-            public IFormatProvider Culture { get; }
-
-            public override string ToString()
-            {
-                return $"Text: {this.Text}, Styles: {this.Styles}, Culture: {this.Culture}";
-            }
+            return new TestCaseData(value.ToString(format, culture), styles, culture);
         }
     }
 }
