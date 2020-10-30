@@ -5,10 +5,10 @@
     [Serializable]
     internal struct SymbolAndPower : IEquatable<SymbolAndPower>
     {
-        public readonly string Symbol;
-        public readonly int Power;
+        internal readonly string Symbol;
+        internal readonly int Power;
 
-        public SymbolAndPower(string symbol, int power)
+        internal SymbolAndPower(string symbol, int power)
         {
             Ensure.NotNullOrEmpty(symbol, nameof(symbol));
             Ensure.LessThan(power, 5, nameof(power));
@@ -49,7 +49,7 @@
 
         public bool Equals(SymbolAndPower other)
         {
-            return string.Equals(this.Symbol, other.Symbol) && this.Power == other.Power;
+            return string.Equals(this.Symbol, other.Symbol, StringComparison.Ordinal) && this.Power == other.Power;
         }
 
         public override bool Equals(object obj)
@@ -59,7 +59,7 @@
                 return false;
             }
 
-            return obj is SymbolAndPower && this.Equals((SymbolAndPower)obj);
+            return obj is SymbolAndPower symbolAndPower && this.Equals(symbolAndPower);
         }
 
         public override int GetHashCode()

@@ -14,9 +14,11 @@
             try
             {
                 var text = 1.2.ToString(format, CultureInfo.InvariantCulture);
-                return double.TryParse(text, NumberStyles.Float, CultureInfo.InvariantCulture, out double _);
+                return double.TryParse(text, NumberStyles.Float, CultureInfo.InvariantCulture, out var _);
             }
-            catch (Exception)
+#pragma warning disable CA1031 // Do not catch general exception types
+            catch
+#pragma warning restore CA1031 // Do not catch general exception types
             {
                 return false;
             }

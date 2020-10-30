@@ -5,8 +5,8 @@
 
     public class Samples
     {
-        private static LengthUnit m = LengthUnit.Metres;
-        private static TimeUnit s = TimeUnit.Seconds;
+        private static readonly LengthUnit m = LengthUnit.Metres;
+        private static readonly TimeUnit s = TimeUnit.Seconds;
 
         [Test]
         public void ArithmeticSample()

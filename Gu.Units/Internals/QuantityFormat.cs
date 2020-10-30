@@ -36,7 +36,7 @@
             this.Unit = unit;
         }
 
-        public static QuantityFormat<TUnit> Default => FormatCache<TUnit>.DefaultQuantityFormat;
+        internal static QuantityFormat<TUnit> Default => FormatCache<TUnit>.DefaultQuantityFormat;
 
         internal string PrePadding { get; }
 
@@ -50,7 +50,7 @@
 
         internal string ErrorText { get; }
 
-        internal string CompositeFormat => this.compositeFormat ?? (this.compositeFormat = this.CreateCompositeFormat());
+        internal string CompositeFormat => this.compositeFormat ??= this.CreateCompositeFormat();
 
         internal TUnit Unit { get; }
 
@@ -76,12 +76,12 @@
                 return true;
             }
 
-            return string.Equals(this.PrePadding, other.PrePadding) &&
-                   string.Equals(this.ValueFormat, other.ValueFormat) &&
-                   string.Equals(this.Padding, other.Padding) &&
-                   string.Equals(this.SymbolFormat, other.SymbolFormat) &&
-                   string.Equals(this.PostPadding, other.PostPadding) &&
-                   string.Equals(this.ErrorText, other.ErrorText) &&
+            return string.Equals(this.PrePadding, other.PrePadding, StringComparison.Ordinal) &&
+                   string.Equals(this.ValueFormat, other.ValueFormat, StringComparison.Ordinal) &&
+                   string.Equals(this.Padding, other.Padding, StringComparison.Ordinal) &&
+                   string.Equals(this.SymbolFormat, other.SymbolFormat, StringComparison.Ordinal) &&
+                   string.Equals(this.PostPadding, other.PostPadding, StringComparison.Ordinal) &&
+                   string.Equals(this.ErrorText, other.ErrorText, StringComparison.Ordinal) &&
                    this.Unit.Equals(other.Unit);
         }
 
@@ -162,31 +162,29 @@
             if (valueFormat.IsUnknown ||
                 symbolFormat.IsUnknown)
             {
-                using (var writer = StringBuilderPool.Borrow())
+                using var writer = StringBuilderPool.Borrow();
+                if (valueFormat.IsUnknown)
                 {
-                    if (valueFormat.IsUnknown)
-                    {
-                        writer.Append($"{{value: {valueFormat.Format ?? "null"}}}");
-                    }
-                    else
-                    {
-                        writer.Append(valueFormat.PrePadding);
-                        writer.Append(valueFormat.Format);
-                    }
-
-                    writer.Append(NoBreakingSpace);
-                    if (symbolFormat.IsUnknown)
-                    {
-                        writer.Append($"{{unit: {symbolFormat.Format ?? "null"}}}");
-                    }
-                    else
-                    {
-                        writer.Append(symbolFormat.Format);
-                        writer.Append(symbolFormat.PostPadding);
-                    }
-
-                    return writer.ToString();
+                    writer.Append($"{{value: {valueFormat.Format ?? "null"}}}");
                 }
+                else
+                {
+                    writer.Append(valueFormat.PrePadding);
+                    writer.Append(valueFormat.Format);
+                }
+
+                writer.Append(NoBreakingSpace);
+                if (symbolFormat.IsUnknown)
+                {
+                    writer.Append($"{{unit: {symbolFormat.Format ?? "null"}}}");
+                }
+                else
+                {
+                    writer.Append(symbolFormat.Format);
+                    writer.Append(symbolFormat.PostPadding);
+                }
+
+                return writer.ToString();
             }
 
             return null;
@@ -194,33 +192,31 @@
 
         private string CreateCompositeFormat()
         {
-            using (var builder = StringBuilderPool.Borrow())
+            using var builder = StringBuilderPool.Borrow();
+            if (this.ErrorText != null)
             {
-                if (this.ErrorText != null)
-                {
-                    builder.Append(this.ErrorText);
-                    return builder.ToString();
-                }
-
-                builder.Append(this.PrePadding);
-
-                if (string.IsNullOrEmpty(this.ValueFormat))
-                {
-                    builder.Append("{0}");
-                }
-                else
-                {
-                    builder.Append("{0:");
-                    builder.Append(this.ValueFormat);
-                    builder.Append("}");
-                }
-
-                builder.Append(this.Padding);
-                builder.Append(this.SymbolFormat ?? this.Unit.Symbol);
-                builder.Append(this.PostPadding);
-                var format = builder.ToString();
-                return format;
+                builder.Append(this.ErrorText);
+                return builder.ToString();
             }
+
+            builder.Append(this.PrePadding);
+
+            if (string.IsNullOrEmpty(this.ValueFormat))
+            {
+                builder.Append("{0}");
+            }
+            else
+            {
+                builder.Append("{0:");
+                builder.Append(this.ValueFormat);
+                builder.Append("}");
+            }
+
+            builder.Append(this.Padding);
+            builder.Append(this.SymbolFormat ?? this.Unit.Symbol);
+            builder.Append(this.PostPadding);
+            var format = builder.ToString();
+            return format;
         }
     }
 }

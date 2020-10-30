@@ -80,7 +80,7 @@
 
             public bool Equals(CompositeFormatKey other)
             {
-                return string.Equals(this.CompositeFormat, other.CompositeFormat, StringComparison.InvariantCulture);
+                return string.Equals(this.CompositeFormat, other.CompositeFormat, StringComparison.Ordinal);
             }
 
             public bool Equals(IFormatKey other)
@@ -135,7 +135,7 @@
 
             public bool Equals(ValueAndUnitFormatKey other)
             {
-                return string.Equals(this.ValueFormat, other.ValueFormat, StringComparison.InvariantCulture) &&
+                return string.Equals(this.ValueFormat, other.ValueFormat, StringComparison.Ordinal) &&
                        this.Unit.Equals(other.Unit) &&
                        Equals(this.SymbolFormat, other.SymbolFormat);
             }
@@ -196,8 +196,8 @@
 
             public bool Equals(ValueAndSymbolFormatKey other)
             {
-                return string.Equals(this.ValueFormat, other.ValueFormat, StringComparison.InvariantCulture) &&
-                       string.Equals(this.SymbolFormat, other.SymbolFormat, StringComparison.InvariantCulture);
+                return string.Equals(this.ValueFormat, other.ValueFormat, StringComparison.Ordinal) &&
+                       string.Equals(this.SymbolFormat, other.SymbolFormat, StringComparison.Ordinal);
             }
 
             public bool Equals(IFormatKey other)

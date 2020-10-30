@@ -43,7 +43,7 @@
                     .Replace("<sup>&minus;2</sup>", "⁻²")
                     .Replace("<sup>&minus;3</sup>", "⁻³")
                     .Split(new[] { "-\\n" }, StringSplitOptions.None);
-                foreach (var line in lines.Where(l => l.StartsWith("| '''", StringComparison.InvariantCulture)))
+                foreach (var line in lines.Where(l => l.StartsWith("| '''", StringComparison.Ordinal)))
                 {
                     var clean = line.Replace("| '''[[", "| ")
                         .Replace("]]'''|", " |")

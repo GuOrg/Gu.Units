@@ -1,6 +1,6 @@
 ﻿namespace Gu.Units
 {
-    internal struct PaddedFormat
+    internal readonly struct PaddedFormat
     {
         internal static readonly PaddedFormat NullFormat = new PaddedFormat(null, null, null);
 
@@ -9,7 +9,7 @@
         internal readonly bool IsUnknown;
         internal readonly string PostPadding;
 
-        public PaddedFormat(string prePadding, string format, string postPadding)
+        internal PaddedFormat(string prePadding, string format, string postPadding)
         {
             this.PrePadding = prePadding;
             this.Format = format;

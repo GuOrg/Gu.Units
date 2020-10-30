@@ -1,6 +1,5 @@
 ﻿namespace Gu.Units.Generator
 {
-    using System.Diagnostics.CodeAnalysis;
     using System.IO;
     using System.Reflection;
     using Newtonsoft.Json;
@@ -9,8 +8,6 @@
     {
         public static readonly JsonSerializerSettings SerializerSettings = CreateSettings();
 
-        [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]
-        [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
         public static string SettingsFileName
         {
             get
