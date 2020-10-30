@@ -52,7 +52,7 @@
                     return false;
                 }
 
-                if (valueFormat.Format.StartsWith(symbolFormat.Format, StringComparison.Ordinal))
+                if (valueFormat.Format.StartsWith(symbolFormat.Format, StringComparison.Ordinal) == true)
                 {
                     valueFormat = valueFormat.WithFormat(null);
                 }

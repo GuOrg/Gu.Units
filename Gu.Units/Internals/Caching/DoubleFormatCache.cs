@@ -4,7 +4,7 @@ namespace Gu.Units
     {
         private static readonly StringMap<PaddedFormat> Cache = new StringMap<PaddedFormat>();
 
-        internal static PaddedFormat GetOrCreate(string format)
+        internal static PaddedFormat GetOrCreate(string? format)
         {
             if (string.IsNullOrEmpty(format))
             {

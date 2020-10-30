@@ -1,6 +1,7 @@
 namespace Gu.Units
 {
     using System;
+    using System.Diagnostics.CodeAnalysis;
 
     internal class StringMap<TItem>
     {
@@ -10,17 +11,17 @@ namespace Gu.Units
         private readonly object gate = new object();
         private CachedItem[] cache = Empty;
 
-        internal bool TryGetBySubString(string text, int pos, out TItem result)
+        internal bool TryGetBySubString(string text, int pos, [MaybeNullWhen(false)] out TItem result)
         {
             return this.TryGetBySubString(text, pos, out var _, out result);
         }
 
-        internal bool TryGetBySubString(string text, int pos, out string key, out TItem result)
+        internal bool TryGetBySubString(string text, int pos, [NotNullWhen(true)] out string? key, [MaybeNullWhen(false)] out TItem result)
         {
             if (text is null)
             {
                 key = null;
-                result = default;
+                result = default!;
                 return false;
             }
 
@@ -55,11 +56,11 @@ namespace Gu.Units
             return true;
         }
 
-        internal bool TryGet(string key, out TItem match)
+        internal bool TryGet(string key, [MaybeNullWhen(false)] out TItem match)
         {
             if (key is null)
             {
-                match = default;
+                match = default!;
                 return false;
             }
 

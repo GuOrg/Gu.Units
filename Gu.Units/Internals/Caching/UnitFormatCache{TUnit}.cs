@@ -2,6 +2,7 @@ namespace Gu.Units
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
     using System.Reflection;
 
@@ -31,19 +32,17 @@ namespace Gu.Units
                 throw new ArgumentOutOfRangeException($"Did not find parts for {unit.Symbol}");
             }
 
-            using (var builder = StringBuilderPool.Borrow())
-            {
-                builder.Append(symbolAndPowers, symbolFormat);
-                var format = builder.ToString();
-                return new PaddedFormat(null, format, null);
-            }
+            using var builder = StringBuilderPool.Borrow();
+            builder.Append(symbolAndPowers, symbolFormat);
+            var format = builder.ToString();
+            return new PaddedFormat(null, format, null);
         }
 
         internal static PaddedFormat GetOrCreate(string format, ref int pos, out TUnit unit)
         {
             var start = pos;
             _ = WhiteSpaceReader.TryRead(format, ref pos, out var prePadding);
-            if (format == null ||
+            if (format is null ||
                 pos == format.Length)
             {
                 pos = start;
@@ -62,7 +61,7 @@ namespace Gu.Units
                 pos -= symbol.Length;
             }
 
-            if (SymbolAndPowerReader.TryRead(format, ref pos, out IReadOnlyList<SymbolAndPower> symbolsAndPowers))
+            if (SymbolAndPowerReader.TryRead(format, ref pos, out IReadOnlyList<SymbolAndPower>? symbolsAndPowers))
             {
                 symbol = format.Substring(start, pos - start);
 
@@ -107,7 +106,7 @@ namespace Gu.Units
                     _ = this.symbolUnitMap.Add(unit.Symbol, unit);
 
                     var pos = 0;
-                    if (SymbolAndPowerReader.TryRead(unit.Symbol, ref pos, out IReadOnlyList<SymbolAndPower> result))
+                    if (SymbolAndPowerReader.TryRead(unit.Symbol, ref pos, out IReadOnlyList<SymbolAndPower>? result))
                     {
                         if (!WhiteSpaceReader.IsRestWhiteSpace(unit.Symbol, pos))
                         {
@@ -136,15 +135,14 @@ namespace Gu.Units
                 _ = this.symbolUnitMap.Add(symbol, unit);
             }
 
-            internal bool TryGetParts(TUnit unit, out IReadOnlyList<SymbolAndPower> result)
+            internal bool TryGetParts(TUnit unit, [NotNullWhen(true)] out IReadOnlyList<SymbolAndPower>? result)
             {
                 return this.symbolPartsMap.TryGet(unit.Symbol, out result);
             }
 
-            internal bool TryGetUnitForSymbol(string text, ref int pos, out string symbol, out TUnit result)
+            internal bool TryGetUnitForSymbol(string text, ref int pos, [NotNullWhen(true)] out string? symbol, out TUnit result)
             {
-                var success = this.symbolUnitMap.TryGetBySubString(text, pos, out symbol, out var temp);
-                if (success)
+                if (this.symbolUnitMap.TryGetBySubString(text, pos, out symbol, out var temp))
                 {
                     pos += symbol.Length;
                     result = temp;
@@ -157,8 +155,7 @@ namespace Gu.Units
 
             internal bool TryGetUnitForSymbol(string text, ref int pos, out TUnit result)
             {
-                var success = this.symbolUnitMap.TryGetBySubString(text, pos, out var key, out var temp);
-                if (success)
+                if (this.symbolUnitMap.TryGetBySubString(text, pos, out var key, out var temp))
                 {
                     pos += key.Length;
                     result = temp;
@@ -179,7 +176,7 @@ namespace Gu.Units
             {
                 var units = typeof(TUnit).GetFields(BindingFlags.GetField | BindingFlags.Public | BindingFlags.Static)
                     .Where(f => f.FieldType == typeof(TUnit))
-                    .Select(f => (TUnit)f.GetValue(null))
+                    .Select(f => (TUnit)f.GetValue(null)!)
                     .Distinct()
                     .ToList();
                 return units;

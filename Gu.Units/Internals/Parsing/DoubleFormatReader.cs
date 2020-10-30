@@ -2,7 +2,7 @@
 {
     internal static class DoubleFormatReader
     {
-        internal static bool TryRead(string format, ref int pos, out string result)
+        internal static bool TryRead(string format, ref int pos, out string? result)
         {
             if (string.IsNullOrEmpty(format) || pos == format.Length)
             {

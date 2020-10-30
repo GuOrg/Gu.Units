@@ -23,7 +23,7 @@
 
             internal Builder()
             {
-                if (!Builders.TryDequeue(out this.builder))
+                if (!Builders.TryDequeue(out this.builder!))
                 {
                     this.builder = new StringBuilder(12);
                 }
@@ -53,7 +53,7 @@
                 this.builder.Append(c);
             }
 
-            internal void Append(string s)
+            internal void Append(string? s)
             {
                 this.builder.Append(s);
             }

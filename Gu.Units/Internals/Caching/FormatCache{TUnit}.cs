@@ -83,7 +83,7 @@
                 return string.Equals(this.CompositeFormat, other.CompositeFormat, StringComparison.Ordinal);
             }
 
-            public bool Equals(IFormatKey other)
+            public bool Equals(IFormatKey? other)
             {
                 if (other is null)
                 {
@@ -93,7 +93,7 @@
                 return other is CompositeFormatKey key && this.Equals(key);
             }
 
-            public override bool Equals(object obj)
+            public override bool Equals(object? obj)
             {
                 if (obj is null)
                 {
@@ -112,11 +112,11 @@
         [DebuggerDisplay("ValueAndUnitFormatKey ValueFormat: {ValueFormat}, SymbolFormat: {SymbolFormat}, Unit: {Unit}")]
         internal readonly struct ValueAndUnitFormatKey : IFormatKey, IEquatable<ValueAndUnitFormatKey>
         {
-            internal readonly string ValueFormat;
+            internal readonly string? ValueFormat;
             internal readonly TUnit Unit;
             internal readonly SymbolFormat SymbolFormat;
 
-            internal ValueAndUnitFormatKey(string valueFormat, TUnit unit, SymbolFormat symbolFormat)
+            internal ValueAndUnitFormatKey(string? valueFormat, TUnit unit, SymbolFormat symbolFormat)
             {
                 this.ValueFormat = valueFormat;
                 this.Unit = unit;
@@ -140,7 +140,7 @@
                        Equals(this.SymbolFormat, other.SymbolFormat);
             }
 
-            public bool Equals(IFormatKey other)
+            public bool Equals(IFormatKey? other)
             {
                 if (other is null)
                 {
@@ -150,7 +150,7 @@
                 return other is ValueAndUnitFormatKey key && this.Equals(key);
             }
 
-            public override bool Equals(object obj)
+            public override bool Equals(object? obj)
             {
                 if (obj is null)
                 {
@@ -200,7 +200,7 @@
                        string.Equals(this.SymbolFormat, other.SymbolFormat, StringComparison.Ordinal);
             }
 
-            public bool Equals(IFormatKey other)
+            public bool Equals(IFormatKey? other)
             {
                 if (other is null)
                 {
@@ -210,7 +210,7 @@
                 return other is ValueAndSymbolFormatKey key && this.Equals(key);
             }
 
-            public override bool Equals(object obj)
+            public override bool Equals(object? obj)
             {
                 if (obj is null)
                 {

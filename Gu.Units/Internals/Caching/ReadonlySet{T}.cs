@@ -9,6 +9,7 @@
     [DebuggerTypeProxy(typeof(CollectionDebugView<>))]
     [Serializable]
     internal sealed class ReadonlySet<T> : IReadOnlyCollection<T>
+         where T : notnull
     {
         internal static readonly ReadonlySet<T> Empty = new ReadonlySet<T>(Enumerable.Empty<T>());
 
@@ -51,7 +52,7 @@
 
         IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is null)
             {

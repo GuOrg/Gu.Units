@@ -52,7 +52,7 @@
             return string.Equals(this.Symbol, other.Symbol, StringComparison.Ordinal) && this.Power == other.Power;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is null)
             {

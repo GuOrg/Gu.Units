@@ -4,12 +4,12 @@
     {
         internal static readonly PaddedFormat NullFormat = new PaddedFormat(null, null, null);
 
-        internal readonly string PrePadding;
-        internal readonly string Format;
+        internal readonly string? PrePadding;
+        internal readonly string? Format;
         internal readonly bool IsUnknown;
-        internal readonly string PostPadding;
+        internal readonly string? PostPadding;
 
-        internal PaddedFormat(string prePadding, string format, string postPadding)
+        internal PaddedFormat(string? prePadding, string? format, string? postPadding)
         {
             this.PrePadding = prePadding;
             this.Format = format;
@@ -17,7 +17,7 @@
             this.IsUnknown = false;
         }
 
-        private PaddedFormat(string prePadding, string format, string postPadding, bool isUnknown)
+        private PaddedFormat(string? prePadding, string? format, string? postPadding, bool isUnknown)
         {
             this.PrePadding = prePadding;
             this.Format = format;
@@ -25,7 +25,7 @@
             this.PostPadding = postPadding;
         }
 
-        private PaddedFormat(string prePadding, string format)
+        private PaddedFormat(string? prePadding, string? format)
         {
             this.PrePadding = prePadding;
             this.Format = format;
@@ -38,7 +38,7 @@
             return $"PrePadding: {this.PrePadding ?? "null"}, Format: {this.Format ?? "null"}, PostPadding: {this.PostPadding ?? "null"}, IsUnknown: {this.IsUnknown}";
         }
 
-        internal static PaddedFormat CreateUnknown(string prePadding, string format)
+        internal static PaddedFormat CreateUnknown(string? prePadding, string? format)
         {
             return new PaddedFormat(prePadding, format);
         }
@@ -53,7 +53,7 @@
             return new PaddedFormat(this.PrePadding, this.Format, padding, this.IsUnknown);
         }
 
-        internal PaddedFormat WithFormat(string format)
+        internal PaddedFormat WithFormat(string? format)
         {
             return new PaddedFormat(this.PrePadding, format, this.PostPadding, this.IsUnknown);
         }

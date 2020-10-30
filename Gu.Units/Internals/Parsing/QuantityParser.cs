@@ -33,14 +33,14 @@
         }
 
         internal static bool TryParse<TUnit, TQuantity>(string text, Func<double, TUnit, TQuantity> creator, NumberStyles style, IFormatProvider provider, out TQuantity value)
-            where TQuantity : IQuantity<TUnit>
+            where TQuantity : struct, IQuantity<TUnit>
             where TUnit : struct, IUnit, IEquatable<TUnit>
         {
             var pos = 0;
             _ = WhiteSpaceReader.TryRead(text, ref pos);
             if (!DoubleReader.TryRead(text, ref pos, style, provider, out var d))
             {
-                value = default(TQuantity);
+                value = default;
                 return false;
             }
 
@@ -48,14 +48,14 @@
 
             if (!UnitParser<TUnit>.TryParse(text, ref pos, out var unit))
             {
-                value = default(TQuantity);
+                value = default;
                 return false;
             }
 
             _ = WhiteSpaceReader.TryRead(text, ref pos);
             if (pos != text.Length)
             {
-                value = default(TQuantity);
+                value = default;
                 return false;
             }
 

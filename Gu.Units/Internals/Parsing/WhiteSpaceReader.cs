@@ -1,10 +1,12 @@
 namespace Gu.Units
 {
+    using System.Diagnostics.CodeAnalysis;
+
     internal static class WhiteSpaceReader
     {
         internal static bool TryRead(string text, ref int pos)
         {
-            if (text == null)
+            if (text is null)
             {
                 return false;
             }
@@ -18,9 +20,9 @@ namespace Gu.Units
             return pos != start;
         }
 
-        internal static bool TryRead(string text, ref int pos, out string padding)
+        internal static bool TryRead(string text, ref int pos, [NotNullWhen(true)] out string? padding)
         {
-            if (text == null)
+            if (text is null)
             {
                 padding = null;
                 return false;
@@ -57,7 +59,7 @@ namespace Gu.Units
 
         internal static bool IsRestWhiteSpace(string text, int position)
         {
-            if (text == null)
+            if (text is null)
             {
                 return true;
             }

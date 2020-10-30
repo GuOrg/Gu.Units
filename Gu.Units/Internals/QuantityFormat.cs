@@ -10,15 +10,15 @@
         internal const char NoBreakingSpace = '\u00A0';
         internal const string NoBreakingSpaceString = "\u00A0";
 
-        private string compositeFormat;
+        private string? compositeFormat;
 
         private QuantityFormat(
-            string prePadding,
-            string valueFormat,
-            string padding,
-            string symbolFormat,
-            string postPadding,
-            string errorText,
+            string? prePadding,
+            string? valueFormat,
+            string? padding,
+            string? symbolFormat,
+            string? postPadding,
+            string? errorText,
             TUnit unit)
         {
             this.PrePadding = prePadding;
@@ -38,17 +38,17 @@
 
         internal static QuantityFormat<TUnit> Default => FormatCache<TUnit>.DefaultQuantityFormat;
 
-        internal string PrePadding { get; }
+        internal string? PrePadding { get; }
 
-        internal string ValueFormat { get; }
+        internal string? ValueFormat { get; }
 
-        internal string Padding { get; }
+        internal string? Padding { get; }
 
-        internal string SymbolFormat { get; }
+        internal string? SymbolFormat { get; }
 
-        internal string PostPadding { get; }
+        internal string? PostPadding { get; }
 
-        internal string ErrorText { get; }
+        internal string? ErrorText { get; }
 
         internal string CompositeFormat => this.compositeFormat ??= this.CreateCompositeFormat();
 
@@ -64,7 +64,7 @@
             return !Equals(left, right);
         }
 
-        public bool Equals(QuantityFormat<TUnit> other)
+        public bool Equals(QuantityFormat<TUnit>? other)
         {
             if (other is null)
             {
@@ -85,7 +85,7 @@
                    this.Unit.Equals(other.Unit);
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj is null)
             {
@@ -123,7 +123,7 @@
         internal static QuantityFormat<TUnit> Create(PaddedFormat valueFormat, PaddedFormat symbolFormat, TUnit unit)
         {
             var errorFormat = CreateErrorFormat(valueFormat, symbolFormat);
-            string padding = null;
+            string? padding = null;
             if (valueFormat.PostPadding is null &&
                 symbolFormat.PrePadding is null)
             {
@@ -152,12 +152,12 @@
             return new QuantityFormat<TUnit>(errorFormat, unit);
         }
 
-        private static bool ShouldSpace(string symbol)
+        private static bool ShouldSpace(string? symbol)
         {
-            return char.IsLetter(symbol[0]);
+            return symbol is { } && char.IsLetter(symbol[0]);
         }
 
-        private static string CreateErrorFormat(PaddedFormat valueFormat, PaddedFormat symbolFormat)
+        private static string? CreateErrorFormat(PaddedFormat valueFormat, PaddedFormat symbolFormat)
         {
             if (valueFormat.IsUnknown ||
                 symbolFormat.IsUnknown)

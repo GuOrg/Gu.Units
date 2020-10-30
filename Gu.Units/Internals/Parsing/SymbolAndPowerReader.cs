@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
 
     internal static class SymbolAndPowerReader
@@ -21,18 +22,20 @@
             throw new FormatException($"No symbol found at {pos} in {text}");
         }
 
-        internal static bool TryRead(string text, out IReadOnlyList<SymbolAndPower> result)
+        internal static bool TryRead(string text, [NotNullWhen(true)] out IReadOnlyList<SymbolAndPower>? result)
         {
             var pos = 0;
             var success = TryRead(text, ref pos, out result);
+#pragma warning disable CS8762 // Parameter must have a non-null value when exiting in some condition.
             return success && WhiteSpaceReader.IsRestWhiteSpace(text, pos);
+#pragma warning restore CS8762 // Parameter must have a non-null value when exiting in some condition.
         }
 
-        internal static bool TryRead(string text, ref int pos, out IReadOnlyList<SymbolAndPower> result)
+        internal static bool TryRead(string text, ref int pos, [NotNullWhen(true)] out IReadOnlyList<SymbolAndPower>? result)
         {
             var start = pos;
             var sign = Sign.Positive;
-            List<SymbolAndPower> saps = null;
+            List<SymbolAndPower>? saps = null;
             while (pos < text.Length)
             {
                 _ = WhiteSpaceReader.TryRead(text, ref pos);
@@ -56,7 +59,7 @@
                     sap = new SymbolAndPower(sap.Symbol, -1 * sap.Power);
                 }
 
-                if (saps == null)
+                if (saps is null)
                 {
                     saps = new List<SymbolAndPower>();
                 }
@@ -88,7 +91,7 @@
                 }
             }
 
-            if (saps == null || !IsUnique(saps))
+            if (saps is null || !IsUnique(saps))
             {
                 result = null;
                 return false;
@@ -102,7 +105,7 @@
         {
             if (pos == text.Length)
             {
-                result = default(SymbolAndPower);
+                result = default;
                 return false;
             }
 
@@ -114,7 +117,7 @@
 
             if (pos == start)
             {
-                result = default(SymbolAndPower);
+                result = default;
                 return false;
             }
 
@@ -123,7 +126,7 @@
             if (!PowerReader.TryRead(text, ref pos, out var power))
             {
                 pos = start;
-                result = default(SymbolAndPower);
+                result = default;
                 return false;
             }
 
@@ -131,7 +134,7 @@
             if (power == 0 || Math.Abs(power) > 5)
             {
                 pos = start;
-                result = default(SymbolAndPower);
+                result = default;
                 return false;
             }
 

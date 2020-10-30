@@ -44,7 +44,7 @@ namespace Gu.Units
                 return true;
             }
 
-            if (SymbolAndPowerReader.TryRead(text, ref pos, out IReadOnlyList<SymbolAndPower> symbolsAndPowers))
+            if (SymbolAndPowerReader.TryRead(text, ref pos, out IReadOnlyList<SymbolAndPower>? symbolsAndPowers))
             {
                 var symbol = text.Substring(start, pos - start);
                 _ = WhiteSpaceReader.TryRead(text, ref pos, out var _);
