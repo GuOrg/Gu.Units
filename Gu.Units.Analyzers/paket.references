@@ -1,6 +1,0 @@
-group Roslyn
-  Microsoft.CodeAnalysis.CSharp.Workspaces
-
-group Analyzers
-  StyleCop.Analyzers
-  Gu.Analyzers
