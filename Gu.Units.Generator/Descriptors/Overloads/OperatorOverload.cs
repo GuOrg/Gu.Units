@@ -2,12 +2,13 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Diagnostics;
     using System.Linq;
 
     [Serializable]
     [DebuggerDisplay("{Left.Name}{Operator}{Right.Name} = {Result.Name}")]
-    public class OperatorOverload
+    public sealed class OperatorOverload
     {
         public static readonly string Divide = "/";
         public static readonly string Multiply = "*";
@@ -18,19 +19,13 @@
             this.Right = right;
             this.Result = result;
 
-            switch (@operator)
+            this.Operator = @operator switch
             {
-                case Generator.Operator.None:
-                    throw new InvalidOperationException($"Could not create overload for {left} * x^y = {result}");
-                case Generator.Operator.Multiply:
-                    this.Operator = Multiply;
-                    break;
-                case Generator.Operator.Divide:
-                    this.Operator = Divide;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+                Generator.Operator.None => throw new InvalidOperationException($"Could not create overload for {left} * x^y = {result}"),
+                Generator.Operator.Multiply => Multiply,
+                Generator.Operator.Divide => Divide,
+                _ => throw new InvalidEnumArgumentException(nameof(@operator), (int)@operator, typeof(Operator)),
+            };
         }
 
         public Quantity Left { get; }
@@ -97,7 +92,7 @@
                 return true;
             }
 
-            if (obj.GetType() != this.GetType())
+            if (obj.GetType() != typeof(OperatorOverload))
             {
                 return false;
             }
@@ -122,10 +117,12 @@
             return $"{this.Left.Name} {this.Operator} {this.Right.Name} = {this.Result.Name}";
         }
 
-        protected bool Equals(OperatorOverload other)
+        private bool Equals(OperatorOverload other)
         {
-            return this.Left.Name.Equals(other.Left.Name) && this.Right.Name.Equals(other.Right.Name) && this.Result.Name.Equals(other.Result.Name) &&
-                   string.Equals(this.Operator, other.Operator);
+            return string.Equals(this.Left.Name, other.Left.Name, StringComparison.Ordinal) &&
+                   string.Equals(this.Right.Name, other.Right.Name, StringComparison.Ordinal) &&
+                   string.Equals(this.Result.Name, other.Result.Name, StringComparison.Ordinal) &&
+                   string.Equals(this.Operator, other.Operator, StringComparison.Ordinal);
         }
     }
 }

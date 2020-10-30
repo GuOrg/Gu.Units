@@ -1,7 +1,6 @@
 ﻿namespace Gu.Units.Tests
 {
     using System;
-    using System.Collections.Generic;
     using System.IO;
     using System.Linq;
     using System.Reflection;
@@ -15,9 +14,9 @@
 
     public class SerializationTests
     {
-        public static readonly List<Type> QuantityTypes = typeof(Length).Assembly.GetTypes()
+        public static readonly Type[] QuantityTypes = typeof(Length).Assembly.GetTypes()
             .Where(x => x.IsValueType && typeof(IQuantity).IsAssignableFrom(x))
-            .ToList();
+            .ToArray();
 
         [TestCaseSource(nameof(QuantityTypes))]
         public void XmlSerializer(Type quantityType)

@@ -21,8 +21,8 @@
             }
             else
             {
-                Assert.AreEqual(m1.ToString(), m2.ToString());
-                Assert.AreEqual(m2.ToString(), m1.ToString());
+                Assert.AreEqual(m1.ToString(CultureInfo.InvariantCulture), m2.ToString(CultureInfo.InvariantCulture));
+                Assert.AreEqual(m2.ToString(CultureInfo.InvariantCulture), m1.ToString(CultureInfo.InvariantCulture));
             }
         }
     }

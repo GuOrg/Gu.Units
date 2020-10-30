@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Concurrent;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using System.Text;
 
@@ -42,19 +43,19 @@
                 Builders.Enqueue(this.builder);
             }
 
-            public void Append(char c)
+            public override string ToString()
+            {
+                return this.builder.ToString();
+            }
+
+            internal void Append(char c)
             {
                 this.builder.Append(c);
             }
 
-            public void Append(string s)
+            internal void Append(string s)
             {
                 this.builder.Append(s);
-            }
-
-            public override string ToString()
-            {
-                return this.builder.ToString();
             }
 
             // not the nicest to have this here perhaps but internal
@@ -130,7 +131,7 @@
                 {
                     case SymbolFormat.SignedHatPowers:
                         this.Append('^');
-                        this.Append(symbolAndPower.Power.ToString());
+                        this.Append(symbolAndPower.Power.ToString(CultureInfo.InvariantCulture));
                         break;
                     case SymbolFormat.FractionHatPowers:
                         {
@@ -141,7 +142,7 @@
                             }
 
                             this.Append('^');
-                            this.Append(power.ToString());
+                            this.Append(power.ToString(CultureInfo.InvariantCulture));
                             break;
                         }
 

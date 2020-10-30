@@ -98,7 +98,7 @@
             try
             {
                 var match = this.AllUnits.SingleOrDefault(x => x.Name == name);
-                if (match == null)
+                if (match is null)
                 {
                     throw new ArgumentOutOfRangeException($"Did not find a unit with name {name}");
                 }
@@ -117,7 +117,7 @@
             try
             {
                 var match = this.Quantities.SingleOrDefault(x => x.Name == name);
-                if (match == null)
+                if (match is null)
                 {
                     throw new ArgumentOutOfRangeException($"Did not find a unit with name {name}");
                 }

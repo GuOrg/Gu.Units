@@ -96,6 +96,7 @@
             var length = Length.FromMetres(1.2);
             using (Thread.CurrentThread.UsingTempCulture(CultureInfo.InvariantCulture))
             {
+#pragma warning disable CA1305 // Specify IFormatProvider
                 Assert.AreEqual("1.2\u00A0m", length.ToString());
                 Assert.AreEqual("120\u00A0cm", length.ToString(LengthUnit.Centimetres));
                 Assert.AreEqual("1200000\u00A0\u03BCm", length.ToString(LengthUnit.Micrometres));
@@ -103,6 +104,7 @@
                 Assert.AreEqual(" 1200000.0 \u03BCm ", length.ToString(" F1 \u03BCm "));
                 Assert.AreEqual(" F1 {unit: null}", length.ToString(" F1 "));
                 Assert.AreEqual("12.0\u00A0dm", length.ToString("F1", LengthUnit.Decimetres));
+#pragma warning restore CA1305 // Specify IFormatProvider
             }
 
             var sv = CultureInfo.GetCultureInfo("sv-SE");

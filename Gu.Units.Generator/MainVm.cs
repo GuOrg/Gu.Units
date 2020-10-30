@@ -92,10 +92,8 @@
                     break;
                 case NotifyCollectionChangedAction.Move:
                     break;
-                case NotifyCollectionChangedAction.Reset:
-                    throw new NotImplementedException();
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new InvalidEnumArgumentException(nameof(args.Action), (int)args.Action, typeof(NotifyCollectionChangedAction));
             }
         }
 
@@ -114,10 +112,8 @@
                     break;
                 case NotifyCollectionChangedAction.Move:
                     break;
-                case NotifyCollectionChangedAction.Reset:
-                    throw new NotImplementedException();
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new InvalidEnumArgumentException(nameof(args.Action), (int)args.Action, typeof(NotifyCollectionChangedAction));
             }
         }
 

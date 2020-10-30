@@ -28,7 +28,7 @@
 
         public string BaseUnitSymbol => this.BaseParts.AsSymbol();
 
-        internal ReadonlySet<UnitAndPower> BaseParts => this.baseParts ?? (this.baseParts = this.CreateBaseParts());
+        internal ReadonlySet<UnitAndPower> BaseParts => this.baseParts ??= this.CreateBaseParts();
 
         public UnitAndPower this[int index] => this.Parts[index];
 
@@ -105,7 +105,7 @@
                 return true;
             }
 
-            if (obj.GetType() != this.GetType())
+            if (obj.GetType() != typeof(UnitParts))
             {
                 return false;
             }

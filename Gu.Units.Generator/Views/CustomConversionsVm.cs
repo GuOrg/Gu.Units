@@ -3,6 +3,7 @@
     using System;
     using System.Collections.ObjectModel;
     using System.Collections.Specialized;
+    using System.ComponentModel;
     using System.Linq;
     using Gu.Reactive;
 
@@ -81,14 +82,11 @@
                 case NotifyCollectionChangedAction.Remove:
                     this.unit.CustomConversions.Remove((CustomConversion)args.OldItems.Single().Conversion);
                     break;
-                case NotifyCollectionChangedAction.Replace:
-                case NotifyCollectionChangedAction.Move:
-                    throw new NotImplementedException();
                 case NotifyCollectionChangedAction.Reset:
                     // NOP
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new InvalidEnumArgumentException(nameof(args.Action), (int)args.Action, typeof(NotifyCollectionChangedAction));
             }
         }
 

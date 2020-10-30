@@ -31,10 +31,7 @@
 
         public bool? IsOk
         {
-            get
-            {
-                return this.isOk;
-            }
+            get => this.isOk;
 
             private set
             {
@@ -73,6 +70,7 @@
         public void Dispose()
         {
             this.Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)

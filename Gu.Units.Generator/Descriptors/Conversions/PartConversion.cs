@@ -54,7 +54,7 @@
 
         public string FromSi => this.GetFromSi();
 
-        public Unit Unit => this.unit ?? (this.unit = this.GetUnit());
+        public Unit Unit => this.unit ??= this.GetUnit();
 
         public static PartConversion Create(Unit unit, PowerPart c1)
         {
@@ -167,30 +167,22 @@
                 power = Math.Abs(power);
                 if (isLength)
                 {
-                    switch (power)
+                    return power switch
                     {
-                        case 1:
-                            return name;
-                        case 2:
-                            return $"Square{name}";
-                        case 3:
-                            return $"Cubic{name}";
-                        default:
-                            throw new ArgumentOutOfRangeException(nameof(power));
-                    }
+                        1 => name,
+                        2 => $"Square{name}",
+                        3 => $"Cubic{name}",
+                        _ => throw new ArgumentOutOfRangeException(nameof(power), power, "Not handling this kind of power!"),
+                    };
                 }
 
-                switch (power)
+                return power switch
                 {
-                    case 1:
-                        return name;
-                    case 2:
-                        return $"{name}Squared";
-                    case 3:
-                        return $"{name}Cubed";
-                    default:
-                        throw new ArgumentOutOfRangeException(nameof(power));
-                }
+                    1 => name,
+                    2 => $"{name}Squared",
+                    3 => $"{name}Cubed",
+                    _ => throw new ArgumentOutOfRangeException(nameof(power), power, "Not handling this kind of power!"),
+                };
             }
 
             private static bool IsLength(IConversion conversion)

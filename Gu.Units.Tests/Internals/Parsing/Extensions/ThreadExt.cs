@@ -11,21 +11,21 @@
             return new TempCulture(thread, culture);
         }
 
-        private class TempCulture : IDisposable
+        private sealed class TempCulture : IDisposable
         {
             private readonly Thread thread;
-            private readonly CultureInfo current;
+            private readonly CultureInfo original;
 
-            public TempCulture(Thread thread, CultureInfo culture)
+            internal TempCulture(Thread thread, CultureInfo culture)
             {
                 this.thread = thread;
-                this.current = thread.CurrentCulture;
-                this.thread.CurrentCulture = culture;
+                this.original = thread.CurrentCulture;
+                thread.CurrentCulture = culture;
             }
 
             public void Dispose()
             {
-                this.thread.CurrentCulture = this.current;
+                this.thread.CurrentCulture = this.original;
             }
         }
     }

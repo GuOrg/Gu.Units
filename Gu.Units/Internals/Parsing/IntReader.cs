@@ -1,6 +1,7 @@
 ﻿namespace Gu.Units
 {
     using System;
+    using System.ComponentModel;
     using System.Globalization;
     using System.Runtime.CompilerServices;
 
@@ -67,7 +68,7 @@
                     case Sign.Positive:
                         return true;
                     default:
-                        throw new ArgumentOutOfRangeException();
+                        throw new InvalidEnumArgumentException(nameof(sign), (int)sign, typeof(Sign));
                 }
             }
 
@@ -111,7 +112,7 @@
                     }
 
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new InvalidEnumArgumentException(nameof(sign), (int)sign, typeof(Sign));
             }
         }
 
