@@ -23,7 +23,7 @@
 
         private static TestCase[] CreateTestCases()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var metres = settings.Metres;
             var kilograms = settings.Kilograms;
             var seconds = settings.Seconds;

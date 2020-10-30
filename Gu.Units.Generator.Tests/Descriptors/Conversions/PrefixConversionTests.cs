@@ -2,12 +2,12 @@
 {
     using NUnit.Framework;
 
-    public class PrefixConversionTests
+    public static class PrefixConversionTests
     {
         [Test]
-        public void CreateMilliAmperes()
+        public static void CreateMilliAmperes()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var conversion = PrefixConversion.Create(settings.Amperes, settings.Milli);
             settings.Amperes.PrefixConversions.Add(conversion);
             Assert.AreEqual("Milliamperes", conversion.Name);
@@ -16,9 +16,9 @@
         }
 
         [Test]
-        public void CreateMilligrams()
+        public static void CreateMilligrams()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var conversion = PrefixConversion.Create(settings.Grams, settings.Milli);
             settings.Grams.PrefixConversions.Add(conversion);
             Assert.AreEqual("Milligrams", conversion.Name);

@@ -8,7 +8,7 @@
         [Test]
         public async Task IdentityConversion()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var conversion = new IdentityConversion(settings.Metres);
             Assert.AreEqual("metres", conversion.ToSi);
             Assert.AreEqual("metres", conversion.FromSi);
@@ -19,7 +19,7 @@
         [Test]
         public async Task PrefixMilliConversion()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var conversion = PrefixConversion.Create(settings.Metres, settings.Milli);
             settings.Metres.PrefixConversions.Add(conversion);
             Assert.AreEqual("millimetres / 1000", conversion.ToSi);
@@ -31,7 +31,7 @@
         [Test]
         public async Task PrefixMicroConversion()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var conversion = PrefixConversion.Create(settings.Metres, settings.Micro);
             settings.Metres.PrefixConversions.Add(conversion);
             Assert.AreEqual("micrometres / 1000000", conversion.ToSi);
@@ -43,7 +43,7 @@
         [Test]
         public async Task FactorConversion()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var conversion = new FactorConversion("Inches", "in", 0.0254);
             settings.Metres.FactorConversions.Add(conversion);
             Assert.AreEqual("0.0254 * inches", conversion.ToSi);
@@ -55,7 +55,7 @@
         [Test]
         public async Task CustomConversion()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var conversion = new CustomConversion("Fahrenheit", "°F", "(fahrenheit + 459.67)/1.8", "1.8*kelvin - 459.67");
             settings.Kelvins.CustomConversions.Add(conversion);
             Assert.AreEqual("(fahrenheit + 459.67)/1.8", conversion.ToSi);
@@ -68,7 +68,7 @@
         [Test]
         public async Task CustomConversionWithIllegal()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var conversion = new CustomConversion("Fahrenheit", "°F", "??", null);
             settings.Kelvins.CustomConversions.Add(conversion);
             Assert.AreEqual("??", conversion.ToSi);
@@ -80,7 +80,7 @@
         [Test]
         public async Task NestedFactorConversion()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var conversion = PrefixConversion.Create(settings.Grams, settings.Milli);
             settings.Grams.PrefixConversions.Add(conversion);
             Assert.AreEqual("milligrams / 1000000", conversion.ToSi);
@@ -92,7 +92,7 @@
         [Test]
         public async Task PartConversionIdentity()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var metresPart = PartConversion.CreatePart(1, settings.Metres);
             var secondsPart = PartConversion.CreatePart(-1, settings.Seconds);
             var conversion = PartConversion.Create(settings.MetresPerSecond, metresPart, secondsPart);
@@ -106,7 +106,7 @@
         [Test]
         public async Task PartConversionPrefix()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var millimetreConversion = PrefixConversion.Create(settings.Metres, settings.Milli);
             settings.Metres.PrefixConversions.Add(millimetreConversion);
             var milliMetresPart = PartConversion.CreatePart(1, millimetreConversion);
@@ -122,7 +122,7 @@
         [Test]
         public async Task CentimetresPerMinute()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var centi = new Prefix("Centi", "c", -2);
             settings.Prefixes.Add(centi);
             var centimetresConversion = PrefixConversion.Create(settings.Metres, centi);

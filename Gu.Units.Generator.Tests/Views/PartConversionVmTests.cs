@@ -3,12 +3,12 @@
     using System.Threading.Tasks;
     using NUnit.Framework;
 
-    public class PartConversionVmTests
+    public static class PartConversionVmTests
     {
         [Test]
-        public async Task CubicMillimetresAsync()
+        public static async Task CubicMillimetresAsync()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var millimetres = PrefixConversion.Create(settings.Metres, settings.Milli);
             settings.Metres.PrefixConversions.Add(millimetres);
             var conversion = PartConversion.Create(settings.CubicMetres, new PowerPart(3, millimetres));
@@ -21,9 +21,9 @@
         }
 
         [Test]
-        public void IsUsed()
+        public static void IsUsed()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var millimetres = PrefixConversion.Create(settings.Metres, settings.Milli);
             settings.Metres.PrefixConversions.Add(millimetres);
             var conversion = PartConversion.Create(settings.CubicMetres, new PowerPart(3, millimetres));

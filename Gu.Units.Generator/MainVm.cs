@@ -12,7 +12,7 @@
     {
         public static readonly MainVm Instance = new MainVm();
         private readonly Settings settings;
-
+        private readonly System.Reactive.Disposables.CompositeDisposable disposable;
         private string nameSpace;
         private bool disposed;
 
@@ -21,13 +21,16 @@
             this.settings = Settings.FromResource;
             this.nameSpace = Settings.ProjectName;
             this.BaseUnits = new ObservableCollection<BaseUnitViewModel>(this.settings.BaseUnits.Select(x => new BaseUnitViewModel(x)));
-            this.BaseUnits.ObserveCollectionChangedSlim(signalInitial: false)
-                .Subscribe(this.OnBaseUnitsChanged);
             this.DerivedUnits = new ObservableCollection<DerivedUnitViewModel>(this.settings.DerivedUnits.Select(x => new DerivedUnitViewModel(x)));
-
-            this.DerivedUnits.ObserveCollectionChangedSlim(signalInitial: false)
-                .Subscribe(this.OnDerivedUnitsChanged);
             this.Conversions = new ConversionsVm(this.settings);
+
+            this.disposable = new System.Reactive.Disposables.CompositeDisposable
+            {
+                this.BaseUnits.ObserveCollectionChangedSlim(signalInitial: false)
+                    .Subscribe(this.OnBaseUnitsChanged),
+                this.DerivedUnits.ObserveCollectionChangedSlim(signalInitial: false)
+                    .Subscribe(this.OnDerivedUnitsChanged),
+            };
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -70,6 +73,7 @@
 
             this.disposed = true;
             this.Conversions.Dispose();
+            this.disposable?.Dispose();
         }
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)

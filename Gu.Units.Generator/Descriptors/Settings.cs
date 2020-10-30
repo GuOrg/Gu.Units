@@ -11,12 +11,15 @@
     using Newtonsoft.Json;
 
     [Serializable]
-    public class Settings : INotifyPropertyChanged
+    public class Settings : INotifyPropertyChanged, IDisposable
     {
 #pragma warning disable SA1401 // Fields must be private
         internal static Settings InnerInstance; // huge hairy hack here for T4
 #pragma warning restore SA1401 // Fields must be private
+
+        private readonly IDisposable disposable;
         private IReadOnlyList<MissingOverloads> missing;
+        private bool disposed;
 
         public Settings(ObservableCollection<Prefix> prefixes, ObservableCollection<BaseUnit> baseUnits, ObservableCollection<DerivedUnit> derivedUnits)
         {
@@ -32,7 +35,7 @@
 
             // redundant call here. T4 has trouble finding rx
             this.missing = Overloads.Find(this.AllUnits);
-            Observable.Merge(
+            this.disposable = Observable.Merge(
                           this.BaseUnits.ObserveCollectionChangedSlim(signalInitial: false),
                           this.DerivedUnits.ObserveCollectionChangedSlim(signalInitial: false))
                       .Subscribe(
@@ -130,7 +133,19 @@
             }
         }
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public virtual void Dispose()
+        {
+            if (this.disposed)
+            {
+                return;
+            }
+
+            this.disposed = true;
+            this.disposable?.Dispose();
+            GC.SuppressFinalize(this);
+        }
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

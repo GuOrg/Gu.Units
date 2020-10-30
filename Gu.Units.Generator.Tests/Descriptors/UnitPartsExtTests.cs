@@ -10,7 +10,7 @@
         [TestCase(-1, "m⁻¹")]
         public static void MetresToUnitString(int power, string expected)
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var parts = new[] { UnitAndPower.Create(settings.Metres, power) };
 
             var actual = parts.AsSymbol();
@@ -23,7 +23,7 @@
         [TestCase(-1, -1, "m⁻¹⋅s⁻¹")]
         public static void MetresSecondsToUnitString(int metresPower, int secondsPower, string expected)
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var parts = new[]
             {
                 UnitAndPower.Create(settings.Metres, metresPower),
@@ -37,7 +37,7 @@
         [Test]
         public static void SecondsMetresToUnitString()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var parts = new[]
             {
                 UnitAndPower.Create(settings.Seconds, -1),

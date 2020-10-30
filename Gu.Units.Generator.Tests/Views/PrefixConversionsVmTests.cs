@@ -3,12 +3,12 @@
     using System.Linq;
     using NUnit.Framework;
 
-    public class PrefixConversionsVmTests
+    public static class PrefixConversionsVmTests
     {
         [Test]
-        public void SetBaseUnitToMetres()
+        public static void SetBaseUnitToMetres()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             using var vm = new PrefixConversionsVm(settings);
             CollectionAssert.IsEmpty(vm.Prefixes);
 
@@ -27,9 +27,9 @@
         }
 
         [Test]
-        public void SetBaseUnitToKilograms()
+        public static void SetBaseUnitToKilograms()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             using var vm = new PrefixConversionsVm(settings);
             CollectionAssert.IsEmpty(vm.Prefixes);
 

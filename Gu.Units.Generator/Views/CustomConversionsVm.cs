@@ -9,13 +9,14 @@
 
     public sealed class CustomConversionsVm : IDisposable
     {
+        private readonly IDisposable disposable;
         private Unit unit;
         private bool isUpdating;
         private bool disposed;
 
         public CustomConversionsVm()
         {
-            this.Conversions.ObserveCollectionChangedSlim(signalInitial: false)
+            this.disposable = this.Conversions.ObserveCollectionChangedSlim(signalInitial: false)
                             .Subscribe(this.Synchronize);
         }
 
@@ -64,6 +65,7 @@
             }
 
             this.Conversions.Clear();
+            this.disposable?.Dispose();
         }
 
         private void Synchronize(NotifyCollectionChangedEventArgs e)

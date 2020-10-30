@@ -4,12 +4,12 @@
     using System.Threading.Tasks;
     using NUnit.Framework;
 
-    public class CustomConversionTests
+    public static class CustomConversionTests
     {
         [Test]
-        public async Task CustomConversion()
+        public static async Task CustomConversion()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var conversion = new CustomConversion("Fahrenheit", "°F", "(fahrenheit + 459.67)/1.8", "1.8*kelvin - 459.67");
             settings.Kelvins.CustomConversions.Add(conversion);
             Assert.AreEqual("(fahrenheit + 459.67)/1.8", conversion.ToSi);
@@ -21,9 +21,9 @@
 
         [Explicit]
         [Test]
-        public void ThrowsIfWrongParameter()
+        public static void ThrowsIfWrongParameter()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var conversion = new CustomConversion("Fahrenheit", "°F", "(fahrenheit + 459.67)/1.8", "1.8*kelvin - 459.67");
             settings.Kelvins.CustomConversions.Add(conversion);
             var exception = Assert.Throws<ArgumentException>(() => conversion.FromSi = "metres + 45");

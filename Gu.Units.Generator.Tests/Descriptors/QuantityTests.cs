@@ -13,6 +13,12 @@
             this.settings = MockSettings.Create();
         }
 
+        [TearDown]
+        public void TearDown()
+        {
+            this.settings?.Dispose();
+        }
+
         [Test]
         public void LengthOverloads()
         {

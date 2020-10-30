@@ -9,7 +9,7 @@
         [Test]
         public static void SquareMillimetres()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var millimetres = PrefixConversion.Create(settings.Metres, settings.Milli);
             settings.Metres.PrefixConversions.Add(millimetres);
             var millimetrePart = PartConversion.CreatePart(2, millimetres);
@@ -22,7 +22,7 @@
         [Test]
         public static void GramsPerCubicMetre()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var gramPart = PartConversion.CreatePart(1, settings.Grams);
             var volumePart = PartConversion.CreatePart(-1, settings.CubicMetres);
             var conversion = PartConversion.Create(settings.KilogramsPerCubicMetre, gramPart, volumePart);
@@ -34,7 +34,7 @@
         [Test]
         public static void MilliGramsPerCubicMetre()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var milligram = PrefixConversion.Create(settings.Grams, settings.Milli);
             settings.Grams.PrefixConversions.Add(milligram);
             var milliGramPart = PartConversion.CreatePart(1, milligram);
@@ -48,7 +48,7 @@
         [Test]
         public static async Task MetresPerSecondCubed()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var metrePart = PartConversion.CreatePart(1, settings.Metres);
             var secondPart = PartConversion.CreatePart(-2, settings.Seconds);
             var conversion = PartConversion.Create(settings.MetresPerSecondSquared, metrePart, secondPart);
@@ -61,7 +61,7 @@
         [Test]
         public static async Task MilliMetresPerSecondCubed()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var millimetres = PrefixConversion.Create(settings.Metres, settings.Milli);
             settings.Metres.PrefixConversions.Add(millimetres);
             var metrePart = PartConversion.CreatePart(1, millimetres);

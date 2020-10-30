@@ -3,21 +3,21 @@
     using System.Linq;
     using NUnit.Framework;
 
-    public class PartConversionsVmTests
+    public static class PartConversionsVmTests
     {
         [Test]
-        public void SetUnitToKilograms()
+        public static void SetUnitToKilograms()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             using var vm = new PartConversionsVm();
             vm.SetUnit(settings.Kilograms);
             CollectionAssert.IsEmpty(vm.Conversions);
         }
 
         [Test]
-        public void SetUnitToCubicMetres()
+        public static void SetUnitToCubicMetres()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             using var vm = new PartConversionsVm();
             vm.SetUnit(settings.CubicMetres);
             var metresPart = new PowerPart(3, new IdentityConversion(settings.Metres));
@@ -31,11 +31,11 @@
         }
 
         [Test]
-        public void SetUnitToMetresPerSecond()
+        public static void SetUnitToMetresPerSecond()
         {
             Assert.Inconclusive();
             //// ReSharper disable once HeuristicUnreachableCode
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             using var vm = new PartConversionsVm();
             vm.SetUnit(settings.MetresPerSecond);
             CollectionAssert.IsEmpty(vm.Conversions);

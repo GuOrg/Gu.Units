@@ -3,12 +3,12 @@
     using System.Threading.Tasks;
     using NUnit.Framework;
 
-    public class PrefixConversionVmTests
+    public static class PrefixConversionVmTests
     {
         [Test]
-        public void SetIsUsedToTrueAddsConversion()
+        public static void SetIsUsedToTrueAddsConversion()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             var prefixConversion = PrefixConversion.Create(settings.Amperes, settings.Milli);
             using var conversionVm = PrefixConversionVm.Create(settings.Amperes, settings.Milli);
             Assert.IsFalse(conversionVm.IsUsed);
@@ -20,9 +20,9 @@
         }
 
         [Test]
-        public async Task MilliAmperesAsync()
+        public static async Task MilliAmperesAsync()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             using var conversionVm = PrefixConversionVm.Create(settings.Amperes, settings.Milli);
             Assert.AreEqual("milliamperes / 1000", conversionVm.Conversion.ToSi);
             Assert.AreEqual("1000 * amperes", conversionVm.Conversion.FromSi);
@@ -39,9 +39,9 @@
         }
 
         [Test]
-        public async Task MilliGramsAsync()
+        public static async Task MilliGramsAsync()
         {
-            var settings = MockSettings.Create();
+            using var settings = MockSettings.Create();
             using var conversionVm = PrefixConversionVm.Create(settings.Grams, settings.Milli);
             Assert.AreEqual(1E-6, ((PrefixConversion)conversionVm.Conversion).Factor);
             Assert.AreEqual("milligrams / 1000000", conversionVm.Conversion.ToSi);
