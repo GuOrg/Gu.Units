@@ -91,7 +91,9 @@
             {
                 binaryFormatter.Serialize(stream, quantity);
                 stream.Position = 0;
+#pragma warning disable CA2300 // Do not use insecure deserializer BinaryFormatter
                 var deserialized = binaryFormatter.Deserialize(stream);
+#pragma warning restore CA2300 // Do not use insecure deserializer BinaryFormatter
                 Assert.AreEqual(deserialized, quantity);
             }
         }

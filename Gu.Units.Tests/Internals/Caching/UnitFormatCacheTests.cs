@@ -1,20 +1,17 @@
 ﻿namespace Gu.Units.Tests.Internals.Caching
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
 
     using NUnit.Framework;
 
-    public class UnitFormatCacheTests
+    // ⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹
+    public static class UnitFormatCacheTests
     {
-        // ReSharper disable once UnusedMember.Local
-        private const string Unicodes = "⋅⁺⁻⁰¹²³⁴⁵⁶⁷⁸⁹";
-
-        private static readonly IReadOnlyList<SymbolFormat> TestCases = Enum.GetValues(typeof(SymbolFormat)).Cast<SymbolFormat>().ToList();
+        private static readonly SymbolFormat[] TestCases = Enum.GetValues(typeof(SymbolFormat)).Cast<SymbolFormat>().ToArray();
 
         [TestCaseSource(nameof(TestCases))]
-        public void GetOrCreateSymbolFormatLength(SymbolFormat symbolFormat)
+        public static void GetOrCreateSymbolFormatLength(SymbolFormat symbolFormat)
         {
             var format = UnitFormatCache<LengthUnit>.GetOrCreate(LengthUnit.Millimetres, symbolFormat);
             Assert.AreEqual(null, format.PrePadding);
@@ -27,7 +24,7 @@
         [TestCase(SymbolFormat.FractionHatPowers, "mm/s")]
         [TestCase(SymbolFormat.SignedSuperScript, "mm⋅s⁻¹")]
         [TestCase(SymbolFormat.FractionSuperScript, "mm/s")]
-        public void GetOrCreateSymbolFormatSpeed(SymbolFormat symbolFormat, string expected)
+        public static void GetOrCreateSymbolFormatSpeed(SymbolFormat symbolFormat, string expected)
         {
             var format = UnitFormatCache<SpeedUnit>.GetOrCreate(SpeedUnit.MillimetresPerSecond, symbolFormat);
             Assert.AreEqual(null, format.PrePadding);
@@ -40,7 +37,7 @@
         [TestCase(SymbolFormat.FractionHatPowers, "Hz")]
         [TestCase(SymbolFormat.SignedSuperScript, "Hz")]
         [TestCase(SymbolFormat.FractionSuperScript, "Hz")]
-        public void GetOrCreateSymbolFormatFrequency(SymbolFormat symbolFormat, string expected)
+        public static void GetOrCreateSymbolFormatFrequency(SymbolFormat symbolFormat, string expected)
         {
             var format = UnitFormatCache<FrequencyUnit>.GetOrCreate(FrequencyUnit.Hertz, symbolFormat);
             Assert.AreEqual(null, format.PrePadding);

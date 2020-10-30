@@ -36,8 +36,8 @@
             var valueFormat = DoubleFormatCache.GetOrCreate(format, ref pos);
 
             var symbolFormat = UnitFormatCache<TUnit>.GetOrCreate(format, ref pos, out var unit);
-            if (valueFormat.PostPadding == null &&
-                symbolFormat.PrePadding == null)
+            if (valueFormat.PostPadding is null &&
+                symbolFormat.PrePadding is null)
             {
                 // we want to keep the padding specified in the format
                 // if both are null QuantityFormat infers padding.
@@ -52,7 +52,7 @@
                     return false;
                 }
 
-                if (valueFormat.Format.StartsWith(symbolFormat.Format))
+                if (valueFormat.Format.StartsWith(symbolFormat.Format, StringComparison.Ordinal))
                 {
                     valueFormat = valueFormat.WithFormat(null);
                 }
