@@ -30,7 +30,6 @@
                 throw new ArgumentException($"Expected parts to be have only distinct entries", nameof(parts));
             }
 
-            Ensure.Distinct(parts, x => x.UnitName, nameof(parts));
             this.Parts = new UnitParts(parts);
         }
 
