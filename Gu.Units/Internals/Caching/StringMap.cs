@@ -217,12 +217,12 @@ namespace Gu.Units
             return cached.Length - key.Length;
         }
 
-        internal struct CachedItem : IComparable<CachedItem>
+        internal readonly struct CachedItem : IComparable<CachedItem>
         {
             internal readonly string Key;
             internal readonly TItem Value;
 
-            public CachedItem(string key, TItem value)
+            internal CachedItem(string key, TItem value)
             {
                 this.Key = key;
                 this.Value = value;

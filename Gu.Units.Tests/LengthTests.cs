@@ -42,7 +42,7 @@
             var sums = new[]
                            {
                                l1 + l2,
-                               l2 + l1
+                               l2 + l1,
                            };
             var expected = Length.FromCentimetres(101);
             foreach (var sum in sums)
@@ -70,7 +70,7 @@
             var prods = new[]
                            {
                                l * 2,
-                               2 * l
+                               2 * l,
                            };
             var expected = Length.FromMetres(2);
             foreach (var prod in prods)

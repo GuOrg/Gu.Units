@@ -24,7 +24,7 @@
                                                                                                 SuccessCase.Create("m⁻²", 0, new SymbolAndPower("m", -2), 3),
                                                                                                 SuccessCase.Create("m¹", 0, new SymbolAndPower("m", 1), 2),
                                                                                                 SuccessCase.Create("m³", 0, new SymbolAndPower("m", 3), 2),
-                                                                                                SuccessCase.Create("°", 0, new SymbolAndPower("°", 1), 1)
+                                                                                                SuccessCase.Create("°", 0, new SymbolAndPower("°", 1), 1),
                                                                                             };
 
         private static readonly IReadOnlyList<SuccessCase<SymbolAndPower>> Errors = new[]

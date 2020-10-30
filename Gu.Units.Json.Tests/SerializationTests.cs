@@ -57,7 +57,7 @@ namespace Gu.Units.Json.Tests
             return new JsonSerializerSettings
             {
                 Converters = new JsonConverter[] { converter },
-                Culture = CultureInfo.GetCultureInfo(culture)
+                Culture = CultureInfo.GetCultureInfo(culture),
             };
         }
     }

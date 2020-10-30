@@ -19,6 +19,6 @@
         /// <summary>
         /// Valid input must contain a unit symbol.
         /// </summary>
-        SymbolRequired
+        SymbolRequired,
     }
 }

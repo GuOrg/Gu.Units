@@ -5,7 +5,7 @@
 
     internal static class TypeExt
     {
-        public static bool IsEquatable(this Type type)
+        internal static bool IsEquatable(this Type type)
         {
             return type.Implements(typeof(IEquatable<>), type);
         }
@@ -18,7 +18,7 @@
         /// <param name="genericInterface"></param>
         /// <param name="genericArgument"></param>
         /// <returns></returns>
-        public static bool Implements(this Type type, Type genericInterface, Type genericArgument)
+        internal static bool Implements(this Type type, Type genericInterface, Type genericArgument)
         {
             if (type.IsInterface &&
                 type.IsGenericType(genericInterface, genericArgument))
@@ -37,7 +37,7 @@
         /// <param name="genericTypeDefinition"></param>
         /// <param name="genericArgument"></param>
         /// <returns></returns>
-        public static bool IsGenericType(this Type type, Type genericTypeDefinition, Type genericArgument)
+        internal static bool IsGenericType(this Type type, Type genericTypeDefinition, Type genericArgument)
         {
             ////Ensure.IsTrue(genericTypeDefinition.IsGenericType, nameof(genericTypeDefinition), $"{nameof(genericTypeDefinition)}.{nameof(genericTypeDefinition.IsGenericType)} must be true");
             if (!type.IsGenericType)

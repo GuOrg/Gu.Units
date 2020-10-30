@@ -2,14 +2,13 @@
 {
     using NUnit.Framework;
 
-    public class StringFormatParserTests
+    public static class StringFormatParserTests
     {
         [TestCase("{0:F1 mm}")]
         [TestCase("F1 mm")]
-        public void TryParse(string format)
+        public static void TryParse(string format)
         {
-            QuantityFormat<LengthUnit> actual;
-            var success = StringFormatParser<LengthUnit>.TryParse(format, out actual);
+            var success = StringFormatParser<LengthUnit>.TryParse(format, out var actual);
             Assert.AreEqual(true, success);
             Assert.AreEqual(null, actual.PrePadding);
             Assert.AreEqual("F1", actual.ValueFormat);
