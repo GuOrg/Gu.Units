@@ -10,7 +10,7 @@
     {
         private static readonly Dictionary<string, QuantityFormat<TUnit>> Cache = new Dictionary<string, QuantityFormat<TUnit>>();
 
-        internal static bool CanParseValueFormat(string format)
+        internal static bool CanParseValueFormat(string? format)
         {
             try
             {
@@ -25,7 +25,7 @@
             }
         }
 
-        internal static void VerifyValueFormat(string format)
+        internal static void VerifyValueFormat(string? format)
         {
             if (CanParseValueFormat(format))
             {
@@ -34,12 +34,12 @@
 
             if (Is.DesignMode)
             {
-                var message = CreateFormatErrorString(format, typeof(double));
+                var message = CreateFormatErrorString(format ?? "null", typeof(double));
                 throw new FormatException(message);
             }
         }
 
-        internal static void VerifyQuantityFormat(string format)
+        internal static void VerifyQuantityFormat(string? format)
         {
             if (CanParseQuantityFormat(format))
             {
@@ -48,22 +48,22 @@
 
             if (Is.DesignMode)
             {
-                var message = CreateFormatErrorString(format, typeof(TUnit));
+                var message = CreateFormatErrorString(format ?? "null", typeof(TUnit));
                 throw new FormatException(message);
             }
         }
 
-        internal static bool CanParseQuantityFormat(string format)
+        internal static bool CanParseQuantityFormat(string? format)
         {
             return TryParse(format, out var _);
         }
 
-        internal static string CreateFormatErrorString(string format, Type type)
+        internal static string CreateFormatErrorString(string? format, Type type)
         {
-            return $"Error parsing: '{format}' for {type}";
+            return $"Error parsing: '{format ?? "null"}' for {type}";
         }
 
-        internal static bool TryParse(string format, [MaybeNullWhen(false)] out QuantityFormat<TUnit> result)
+        internal static bool TryParse(string? format, [MaybeNullWhen(false)] out QuantityFormat<TUnit> result)
         {
             if (string.IsNullOrWhiteSpace(format))
             {
