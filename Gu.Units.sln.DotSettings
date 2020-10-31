@@ -139,5 +139,6 @@ public void $TestName$()&#xD;
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=millimetres/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=paramref/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Roundtrip/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=seealso/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Templating/@EntryIndexedValue">True</s:Boolean>
 </wpf:ResourceDictionary>

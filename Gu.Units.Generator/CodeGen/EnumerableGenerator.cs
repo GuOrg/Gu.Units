@@ -5,7 +5,7 @@ namespace Gu.Units.Generator.CodeGen
     using System.Linq;
     using System.Text;
 
-    public static class Enumerable
+    public static class EnumerableGenerator
     {
         public static string Code(Settings settings)
         {
