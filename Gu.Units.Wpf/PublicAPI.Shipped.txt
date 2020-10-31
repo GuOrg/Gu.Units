@@ -1,9 +1,10 @@
-﻿Gu.Units.Wpf.AccelerationConverter
+﻿#nullable enable
+Gu.Units.Wpf.AccelerationConverter
 Gu.Units.Wpf.AccelerationConverter.AccelerationConverter() -> void
 Gu.Units.Wpf.AccelerationConverter.AccelerationConverter(Gu.Units.AccelerationUnit unit) -> void
-Gu.Units.Wpf.AccelerationConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AccelerationConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AccelerationConverter.StringFormat.get -> string
+Gu.Units.Wpf.AccelerationConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AccelerationConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AccelerationConverter.StringFormat.get -> string?
 Gu.Units.Wpf.AccelerationConverter.StringFormat.set -> void
 Gu.Units.Wpf.AccelerationConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.AccelerationConverter.SymbolFormat.set -> void
@@ -11,7 +12,7 @@ Gu.Units.Wpf.AccelerationConverter.Unit.get -> Gu.Units.AccelerationUnit?
 Gu.Units.Wpf.AccelerationConverter.Unit.set -> void
 Gu.Units.Wpf.AccelerationConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.AccelerationConverter.UnitInput.set -> void
-Gu.Units.Wpf.AccelerationConverter.ValueFormat.get -> string
+Gu.Units.Wpf.AccelerationConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.AccelerationConverter.ValueFormat.set -> void
 Gu.Units.Wpf.AccelerationExtension
 Gu.Units.Wpf.AccelerationExtension.AccelerationExtension(Gu.Units.Acceleration value) -> void
@@ -19,9 +20,9 @@ Gu.Units.Wpf.AccelerationExtension.Value.get -> Gu.Units.Acceleration
 Gu.Units.Wpf.AmountOfSubstanceConverter
 Gu.Units.Wpf.AmountOfSubstanceConverter.AmountOfSubstanceConverter() -> void
 Gu.Units.Wpf.AmountOfSubstanceConverter.AmountOfSubstanceConverter(Gu.Units.AmountOfSubstanceUnit unit) -> void
-Gu.Units.Wpf.AmountOfSubstanceConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AmountOfSubstanceConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AmountOfSubstanceConverter.StringFormat.get -> string
+Gu.Units.Wpf.AmountOfSubstanceConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AmountOfSubstanceConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AmountOfSubstanceConverter.StringFormat.get -> string?
 Gu.Units.Wpf.AmountOfSubstanceConverter.StringFormat.set -> void
 Gu.Units.Wpf.AmountOfSubstanceConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.AmountOfSubstanceConverter.SymbolFormat.set -> void
@@ -29,7 +30,7 @@ Gu.Units.Wpf.AmountOfSubstanceConverter.Unit.get -> Gu.Units.AmountOfSubstanceUn
 Gu.Units.Wpf.AmountOfSubstanceConverter.Unit.set -> void
 Gu.Units.Wpf.AmountOfSubstanceConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.AmountOfSubstanceConverter.UnitInput.set -> void
-Gu.Units.Wpf.AmountOfSubstanceConverter.ValueFormat.get -> string
+Gu.Units.Wpf.AmountOfSubstanceConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.AmountOfSubstanceConverter.ValueFormat.set -> void
 Gu.Units.Wpf.AmountOfSubstanceExtension
 Gu.Units.Wpf.AmountOfSubstanceExtension.AmountOfSubstanceExtension(Gu.Units.AmountOfSubstance value) -> void
@@ -37,9 +38,9 @@ Gu.Units.Wpf.AmountOfSubstanceExtension.Value.get -> Gu.Units.AmountOfSubstance
 Gu.Units.Wpf.AngleConverter
 Gu.Units.Wpf.AngleConverter.AngleConverter() -> void
 Gu.Units.Wpf.AngleConverter.AngleConverter(Gu.Units.AngleUnit unit) -> void
-Gu.Units.Wpf.AngleConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AngleConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AngleConverter.StringFormat.get -> string
+Gu.Units.Wpf.AngleConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AngleConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AngleConverter.StringFormat.get -> string?
 Gu.Units.Wpf.AngleConverter.StringFormat.set -> void
 Gu.Units.Wpf.AngleConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.AngleConverter.SymbolFormat.set -> void
@@ -47,7 +48,7 @@ Gu.Units.Wpf.AngleConverter.Unit.get -> Gu.Units.AngleUnit?
 Gu.Units.Wpf.AngleConverter.Unit.set -> void
 Gu.Units.Wpf.AngleConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.AngleConverter.UnitInput.set -> void
-Gu.Units.Wpf.AngleConverter.ValueFormat.get -> string
+Gu.Units.Wpf.AngleConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.AngleConverter.ValueFormat.set -> void
 Gu.Units.Wpf.AngleExtension
 Gu.Units.Wpf.AngleExtension.AngleExtension(Gu.Units.Angle value) -> void
@@ -55,9 +56,9 @@ Gu.Units.Wpf.AngleExtension.Value.get -> Gu.Units.Angle
 Gu.Units.Wpf.AnglePerUnitlessConverter
 Gu.Units.Wpf.AnglePerUnitlessConverter.AnglePerUnitlessConverter() -> void
 Gu.Units.Wpf.AnglePerUnitlessConverter.AnglePerUnitlessConverter(Gu.Units.AnglePerUnitlessUnit unit) -> void
-Gu.Units.Wpf.AnglePerUnitlessConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AnglePerUnitlessConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AnglePerUnitlessConverter.StringFormat.get -> string
+Gu.Units.Wpf.AnglePerUnitlessConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AnglePerUnitlessConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AnglePerUnitlessConverter.StringFormat.get -> string?
 Gu.Units.Wpf.AnglePerUnitlessConverter.StringFormat.set -> void
 Gu.Units.Wpf.AnglePerUnitlessConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.AnglePerUnitlessConverter.SymbolFormat.set -> void
@@ -65,7 +66,7 @@ Gu.Units.Wpf.AnglePerUnitlessConverter.Unit.get -> Gu.Units.AnglePerUnitlessUnit
 Gu.Units.Wpf.AnglePerUnitlessConverter.Unit.set -> void
 Gu.Units.Wpf.AnglePerUnitlessConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.AnglePerUnitlessConverter.UnitInput.set -> void
-Gu.Units.Wpf.AnglePerUnitlessConverter.ValueFormat.get -> string
+Gu.Units.Wpf.AnglePerUnitlessConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.AnglePerUnitlessConverter.ValueFormat.set -> void
 Gu.Units.Wpf.AnglePerUnitlessExtension
 Gu.Units.Wpf.AnglePerUnitlessExtension.AnglePerUnitlessExtension(Gu.Units.AnglePerUnitless value) -> void
@@ -73,9 +74,9 @@ Gu.Units.Wpf.AnglePerUnitlessExtension.Value.get -> Gu.Units.AnglePerUnitless
 Gu.Units.Wpf.AngularAccelerationConverter
 Gu.Units.Wpf.AngularAccelerationConverter.AngularAccelerationConverter() -> void
 Gu.Units.Wpf.AngularAccelerationConverter.AngularAccelerationConverter(Gu.Units.AngularAccelerationUnit unit) -> void
-Gu.Units.Wpf.AngularAccelerationConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AngularAccelerationConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AngularAccelerationConverter.StringFormat.get -> string
+Gu.Units.Wpf.AngularAccelerationConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AngularAccelerationConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AngularAccelerationConverter.StringFormat.get -> string?
 Gu.Units.Wpf.AngularAccelerationConverter.StringFormat.set -> void
 Gu.Units.Wpf.AngularAccelerationConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.AngularAccelerationConverter.SymbolFormat.set -> void
@@ -83,7 +84,7 @@ Gu.Units.Wpf.AngularAccelerationConverter.Unit.get -> Gu.Units.AngularAccelerati
 Gu.Units.Wpf.AngularAccelerationConverter.Unit.set -> void
 Gu.Units.Wpf.AngularAccelerationConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.AngularAccelerationConverter.UnitInput.set -> void
-Gu.Units.Wpf.AngularAccelerationConverter.ValueFormat.get -> string
+Gu.Units.Wpf.AngularAccelerationConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.AngularAccelerationConverter.ValueFormat.set -> void
 Gu.Units.Wpf.AngularAccelerationExtension
 Gu.Units.Wpf.AngularAccelerationExtension.AngularAccelerationExtension(Gu.Units.AngularAcceleration value) -> void
@@ -91,9 +92,9 @@ Gu.Units.Wpf.AngularAccelerationExtension.Value.get -> Gu.Units.AngularAccelerat
 Gu.Units.Wpf.AngularJerkConverter
 Gu.Units.Wpf.AngularJerkConverter.AngularJerkConverter() -> void
 Gu.Units.Wpf.AngularJerkConverter.AngularJerkConverter(Gu.Units.AngularJerkUnit unit) -> void
-Gu.Units.Wpf.AngularJerkConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AngularJerkConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AngularJerkConverter.StringFormat.get -> string
+Gu.Units.Wpf.AngularJerkConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AngularJerkConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AngularJerkConverter.StringFormat.get -> string?
 Gu.Units.Wpf.AngularJerkConverter.StringFormat.set -> void
 Gu.Units.Wpf.AngularJerkConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.AngularJerkConverter.SymbolFormat.set -> void
@@ -101,7 +102,7 @@ Gu.Units.Wpf.AngularJerkConverter.Unit.get -> Gu.Units.AngularJerkUnit?
 Gu.Units.Wpf.AngularJerkConverter.Unit.set -> void
 Gu.Units.Wpf.AngularJerkConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.AngularJerkConverter.UnitInput.set -> void
-Gu.Units.Wpf.AngularJerkConverter.ValueFormat.get -> string
+Gu.Units.Wpf.AngularJerkConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.AngularJerkConverter.ValueFormat.set -> void
 Gu.Units.Wpf.AngularJerkExtension
 Gu.Units.Wpf.AngularJerkExtension.AngularJerkExtension(Gu.Units.AngularJerk value) -> void
@@ -109,9 +110,9 @@ Gu.Units.Wpf.AngularJerkExtension.Value.get -> Gu.Units.AngularJerk
 Gu.Units.Wpf.AngularSpeedConverter
 Gu.Units.Wpf.AngularSpeedConverter.AngularSpeedConverter() -> void
 Gu.Units.Wpf.AngularSpeedConverter.AngularSpeedConverter(Gu.Units.AngularSpeedUnit unit) -> void
-Gu.Units.Wpf.AngularSpeedConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AngularSpeedConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AngularSpeedConverter.StringFormat.get -> string
+Gu.Units.Wpf.AngularSpeedConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AngularSpeedConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AngularSpeedConverter.StringFormat.get -> string?
 Gu.Units.Wpf.AngularSpeedConverter.StringFormat.set -> void
 Gu.Units.Wpf.AngularSpeedConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.AngularSpeedConverter.SymbolFormat.set -> void
@@ -119,7 +120,7 @@ Gu.Units.Wpf.AngularSpeedConverter.Unit.get -> Gu.Units.AngularSpeedUnit?
 Gu.Units.Wpf.AngularSpeedConverter.Unit.set -> void
 Gu.Units.Wpf.AngularSpeedConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.AngularSpeedConverter.UnitInput.set -> void
-Gu.Units.Wpf.AngularSpeedConverter.ValueFormat.get -> string
+Gu.Units.Wpf.AngularSpeedConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.AngularSpeedConverter.ValueFormat.set -> void
 Gu.Units.Wpf.AngularSpeedExtension
 Gu.Units.Wpf.AngularSpeedExtension.AngularSpeedExtension(Gu.Units.AngularSpeed value) -> void
@@ -127,9 +128,9 @@ Gu.Units.Wpf.AngularSpeedExtension.Value.get -> Gu.Units.AngularSpeed
 Gu.Units.Wpf.AreaConverter
 Gu.Units.Wpf.AreaConverter.AreaConverter() -> void
 Gu.Units.Wpf.AreaConverter.AreaConverter(Gu.Units.AreaUnit unit) -> void
-Gu.Units.Wpf.AreaConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AreaConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AreaConverter.StringFormat.get -> string
+Gu.Units.Wpf.AreaConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AreaConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AreaConverter.StringFormat.get -> string?
 Gu.Units.Wpf.AreaConverter.StringFormat.set -> void
 Gu.Units.Wpf.AreaConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.AreaConverter.SymbolFormat.set -> void
@@ -137,14 +138,14 @@ Gu.Units.Wpf.AreaConverter.Unit.get -> Gu.Units.AreaUnit?
 Gu.Units.Wpf.AreaConverter.Unit.set -> void
 Gu.Units.Wpf.AreaConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.AreaConverter.UnitInput.set -> void
-Gu.Units.Wpf.AreaConverter.ValueFormat.get -> string
+Gu.Units.Wpf.AreaConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.AreaConverter.ValueFormat.set -> void
 Gu.Units.Wpf.AreaDensityConverter
 Gu.Units.Wpf.AreaDensityConverter.AreaDensityConverter() -> void
 Gu.Units.Wpf.AreaDensityConverter.AreaDensityConverter(Gu.Units.AreaDensityUnit unit) -> void
-Gu.Units.Wpf.AreaDensityConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AreaDensityConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.AreaDensityConverter.StringFormat.get -> string
+Gu.Units.Wpf.AreaDensityConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AreaDensityConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.AreaDensityConverter.StringFormat.get -> string?
 Gu.Units.Wpf.AreaDensityConverter.StringFormat.set -> void
 Gu.Units.Wpf.AreaDensityConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.AreaDensityConverter.SymbolFormat.set -> void
@@ -152,7 +153,7 @@ Gu.Units.Wpf.AreaDensityConverter.Unit.get -> Gu.Units.AreaDensityUnit?
 Gu.Units.Wpf.AreaDensityConverter.Unit.set -> void
 Gu.Units.Wpf.AreaDensityConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.AreaDensityConverter.UnitInput.set -> void
-Gu.Units.Wpf.AreaDensityConverter.ValueFormat.get -> string
+Gu.Units.Wpf.AreaDensityConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.AreaDensityConverter.ValueFormat.set -> void
 Gu.Units.Wpf.AreaDensityExtension
 Gu.Units.Wpf.AreaDensityExtension.AreaDensityExtension(Gu.Units.AreaDensity value) -> void
@@ -163,9 +164,9 @@ Gu.Units.Wpf.AreaExtension.Value.get -> Gu.Units.Area
 Gu.Units.Wpf.CapacitanceConverter
 Gu.Units.Wpf.CapacitanceConverter.CapacitanceConverter() -> void
 Gu.Units.Wpf.CapacitanceConverter.CapacitanceConverter(Gu.Units.CapacitanceUnit unit) -> void
-Gu.Units.Wpf.CapacitanceConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.CapacitanceConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.CapacitanceConverter.StringFormat.get -> string
+Gu.Units.Wpf.CapacitanceConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.CapacitanceConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.CapacitanceConverter.StringFormat.get -> string?
 Gu.Units.Wpf.CapacitanceConverter.StringFormat.set -> void
 Gu.Units.Wpf.CapacitanceConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.CapacitanceConverter.SymbolFormat.set -> void
@@ -173,7 +174,7 @@ Gu.Units.Wpf.CapacitanceConverter.Unit.get -> Gu.Units.CapacitanceUnit?
 Gu.Units.Wpf.CapacitanceConverter.Unit.set -> void
 Gu.Units.Wpf.CapacitanceConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.CapacitanceConverter.UnitInput.set -> void
-Gu.Units.Wpf.CapacitanceConverter.ValueFormat.get -> string
+Gu.Units.Wpf.CapacitanceConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.CapacitanceConverter.ValueFormat.set -> void
 Gu.Units.Wpf.CapacitanceExtension
 Gu.Units.Wpf.CapacitanceExtension.CapacitanceExtension(Gu.Units.Capacitance value) -> void
@@ -181,9 +182,9 @@ Gu.Units.Wpf.CapacitanceExtension.Value.get -> Gu.Units.Capacitance
 Gu.Units.Wpf.CatalyticActivityConverter
 Gu.Units.Wpf.CatalyticActivityConverter.CatalyticActivityConverter() -> void
 Gu.Units.Wpf.CatalyticActivityConverter.CatalyticActivityConverter(Gu.Units.CatalyticActivityUnit unit) -> void
-Gu.Units.Wpf.CatalyticActivityConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.CatalyticActivityConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.CatalyticActivityConverter.StringFormat.get -> string
+Gu.Units.Wpf.CatalyticActivityConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.CatalyticActivityConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.CatalyticActivityConverter.StringFormat.get -> string?
 Gu.Units.Wpf.CatalyticActivityConverter.StringFormat.set -> void
 Gu.Units.Wpf.CatalyticActivityConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.CatalyticActivityConverter.SymbolFormat.set -> void
@@ -191,7 +192,7 @@ Gu.Units.Wpf.CatalyticActivityConverter.Unit.get -> Gu.Units.CatalyticActivityUn
 Gu.Units.Wpf.CatalyticActivityConverter.Unit.set -> void
 Gu.Units.Wpf.CatalyticActivityConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.CatalyticActivityConverter.UnitInput.set -> void
-Gu.Units.Wpf.CatalyticActivityConverter.ValueFormat.get -> string
+Gu.Units.Wpf.CatalyticActivityConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.CatalyticActivityConverter.ValueFormat.set -> void
 Gu.Units.Wpf.CatalyticActivityExtension
 Gu.Units.Wpf.CatalyticActivityExtension.CatalyticActivityExtension(Gu.Units.CatalyticActivity value) -> void
@@ -199,9 +200,9 @@ Gu.Units.Wpf.CatalyticActivityExtension.Value.get -> Gu.Units.CatalyticActivity
 Gu.Units.Wpf.ConductivityConverter
 Gu.Units.Wpf.ConductivityConverter.ConductivityConverter() -> void
 Gu.Units.Wpf.ConductivityConverter.ConductivityConverter(Gu.Units.ConductivityUnit unit) -> void
-Gu.Units.Wpf.ConductivityConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.ConductivityConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.ConductivityConverter.StringFormat.get -> string
+Gu.Units.Wpf.ConductivityConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.ConductivityConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.ConductivityConverter.StringFormat.get -> string?
 Gu.Units.Wpf.ConductivityConverter.StringFormat.set -> void
 Gu.Units.Wpf.ConductivityConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.ConductivityConverter.SymbolFormat.set -> void
@@ -209,17 +210,17 @@ Gu.Units.Wpf.ConductivityConverter.Unit.get -> Gu.Units.ConductivityUnit?
 Gu.Units.Wpf.ConductivityConverter.Unit.set -> void
 Gu.Units.Wpf.ConductivityConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.ConductivityConverter.UnitInput.set -> void
-Gu.Units.Wpf.ConductivityConverter.ValueFormat.get -> string
+Gu.Units.Wpf.ConductivityConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.ConductivityConverter.ValueFormat.set -> void
 Gu.Units.Wpf.ConductivityExtension
 Gu.Units.Wpf.ConductivityExtension.ConductivityExtension(Gu.Units.Conductivity value) -> void
 Gu.Units.Wpf.ConductivityExtension.Value.get -> Gu.Units.Conductivity
 Gu.Units.Wpf.CurrentConverter
-Gu.Units.Wpf.CurrentConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.CurrentConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.CurrentConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.CurrentConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.CurrentConverter.CurrentConverter() -> void
 Gu.Units.Wpf.CurrentConverter.CurrentConverter(Gu.Units.CurrentUnit unit) -> void
-Gu.Units.Wpf.CurrentConverter.StringFormat.get -> string
+Gu.Units.Wpf.CurrentConverter.StringFormat.get -> string?
 Gu.Units.Wpf.CurrentConverter.StringFormat.set -> void
 Gu.Units.Wpf.CurrentConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.CurrentConverter.SymbolFormat.set -> void
@@ -227,17 +228,17 @@ Gu.Units.Wpf.CurrentConverter.Unit.get -> Gu.Units.CurrentUnit?
 Gu.Units.Wpf.CurrentConverter.Unit.set -> void
 Gu.Units.Wpf.CurrentConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.CurrentConverter.UnitInput.set -> void
-Gu.Units.Wpf.CurrentConverter.ValueFormat.get -> string
+Gu.Units.Wpf.CurrentConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.CurrentConverter.ValueFormat.set -> void
 Gu.Units.Wpf.CurrentExtension
 Gu.Units.Wpf.CurrentExtension.CurrentExtension(Gu.Units.Current value) -> void
 Gu.Units.Wpf.CurrentExtension.Value.get -> Gu.Units.Current
 Gu.Units.Wpf.DataConverter
-Gu.Units.Wpf.DataConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.DataConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.DataConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.DataConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.DataConverter.DataConverter() -> void
 Gu.Units.Wpf.DataConverter.DataConverter(Gu.Units.DataUnit unit) -> void
-Gu.Units.Wpf.DataConverter.StringFormat.get -> string
+Gu.Units.Wpf.DataConverter.StringFormat.get -> string?
 Gu.Units.Wpf.DataConverter.StringFormat.set -> void
 Gu.Units.Wpf.DataConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.DataConverter.SymbolFormat.set -> void
@@ -245,17 +246,17 @@ Gu.Units.Wpf.DataConverter.Unit.get -> Gu.Units.DataUnit?
 Gu.Units.Wpf.DataConverter.Unit.set -> void
 Gu.Units.Wpf.DataConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.DataConverter.UnitInput.set -> void
-Gu.Units.Wpf.DataConverter.ValueFormat.get -> string
+Gu.Units.Wpf.DataConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.DataConverter.ValueFormat.set -> void
 Gu.Units.Wpf.DataExtension
 Gu.Units.Wpf.DataExtension.DataExtension(Gu.Units.Data value) -> void
 Gu.Units.Wpf.DataExtension.Value.get -> Gu.Units.Data
 Gu.Units.Wpf.DensityConverter
-Gu.Units.Wpf.DensityConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.DensityConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.DensityConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.DensityConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.DensityConverter.DensityConverter() -> void
 Gu.Units.Wpf.DensityConverter.DensityConverter(Gu.Units.DensityUnit unit) -> void
-Gu.Units.Wpf.DensityConverter.StringFormat.get -> string
+Gu.Units.Wpf.DensityConverter.StringFormat.get -> string?
 Gu.Units.Wpf.DensityConverter.StringFormat.set -> void
 Gu.Units.Wpf.DensityConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.DensityConverter.SymbolFormat.set -> void
@@ -263,17 +264,17 @@ Gu.Units.Wpf.DensityConverter.Unit.get -> Gu.Units.DensityUnit?
 Gu.Units.Wpf.DensityConverter.Unit.set -> void
 Gu.Units.Wpf.DensityConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.DensityConverter.UnitInput.set -> void
-Gu.Units.Wpf.DensityConverter.ValueFormat.get -> string
+Gu.Units.Wpf.DensityConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.DensityConverter.ValueFormat.set -> void
 Gu.Units.Wpf.DensityExtension
 Gu.Units.Wpf.DensityExtension.DensityExtension(Gu.Units.Density value) -> void
 Gu.Units.Wpf.DensityExtension.Value.get -> Gu.Units.Density
 Gu.Units.Wpf.ElectricalConductanceConverter
-Gu.Units.Wpf.ElectricalConductanceConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.ElectricalConductanceConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.ElectricalConductanceConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.ElectricalConductanceConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.ElectricalConductanceConverter.ElectricalConductanceConverter() -> void
 Gu.Units.Wpf.ElectricalConductanceConverter.ElectricalConductanceConverter(Gu.Units.ElectricalConductanceUnit unit) -> void
-Gu.Units.Wpf.ElectricalConductanceConverter.StringFormat.get -> string
+Gu.Units.Wpf.ElectricalConductanceConverter.StringFormat.get -> string?
 Gu.Units.Wpf.ElectricalConductanceConverter.StringFormat.set -> void
 Gu.Units.Wpf.ElectricalConductanceConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.ElectricalConductanceConverter.SymbolFormat.set -> void
@@ -281,17 +282,17 @@ Gu.Units.Wpf.ElectricalConductanceConverter.Unit.get -> Gu.Units.ElectricalCondu
 Gu.Units.Wpf.ElectricalConductanceConverter.Unit.set -> void
 Gu.Units.Wpf.ElectricalConductanceConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.ElectricalConductanceConverter.UnitInput.set -> void
-Gu.Units.Wpf.ElectricalConductanceConverter.ValueFormat.get -> string
+Gu.Units.Wpf.ElectricalConductanceConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.ElectricalConductanceConverter.ValueFormat.set -> void
 Gu.Units.Wpf.ElectricalConductanceExtension
 Gu.Units.Wpf.ElectricalConductanceExtension.ElectricalConductanceExtension(Gu.Units.ElectricalConductance value) -> void
 Gu.Units.Wpf.ElectricalConductanceExtension.Value.get -> Gu.Units.ElectricalConductance
 Gu.Units.Wpf.ElectricChargeConverter
-Gu.Units.Wpf.ElectricChargeConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.ElectricChargeConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.ElectricChargeConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.ElectricChargeConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.ElectricChargeConverter.ElectricChargeConverter() -> void
 Gu.Units.Wpf.ElectricChargeConverter.ElectricChargeConverter(Gu.Units.ElectricChargeUnit unit) -> void
-Gu.Units.Wpf.ElectricChargeConverter.StringFormat.get -> string
+Gu.Units.Wpf.ElectricChargeConverter.StringFormat.get -> string?
 Gu.Units.Wpf.ElectricChargeConverter.StringFormat.set -> void
 Gu.Units.Wpf.ElectricChargeConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.ElectricChargeConverter.SymbolFormat.set -> void
@@ -299,17 +300,17 @@ Gu.Units.Wpf.ElectricChargeConverter.Unit.get -> Gu.Units.ElectricChargeUnit?
 Gu.Units.Wpf.ElectricChargeConverter.Unit.set -> void
 Gu.Units.Wpf.ElectricChargeConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.ElectricChargeConverter.UnitInput.set -> void
-Gu.Units.Wpf.ElectricChargeConverter.ValueFormat.get -> string
+Gu.Units.Wpf.ElectricChargeConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.ElectricChargeConverter.ValueFormat.set -> void
 Gu.Units.Wpf.ElectricChargeExtension
 Gu.Units.Wpf.ElectricChargeExtension.ElectricChargeExtension(Gu.Units.ElectricCharge value) -> void
 Gu.Units.Wpf.ElectricChargeExtension.Value.get -> Gu.Units.ElectricCharge
 Gu.Units.Wpf.EnergyConverter
-Gu.Units.Wpf.EnergyConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.EnergyConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.EnergyConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.EnergyConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.EnergyConverter.EnergyConverter() -> void
 Gu.Units.Wpf.EnergyConverter.EnergyConverter(Gu.Units.EnergyUnit unit) -> void
-Gu.Units.Wpf.EnergyConverter.StringFormat.get -> string
+Gu.Units.Wpf.EnergyConverter.StringFormat.get -> string?
 Gu.Units.Wpf.EnergyConverter.StringFormat.set -> void
 Gu.Units.Wpf.EnergyConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.EnergyConverter.SymbolFormat.set -> void
@@ -317,17 +318,17 @@ Gu.Units.Wpf.EnergyConverter.Unit.get -> Gu.Units.EnergyUnit?
 Gu.Units.Wpf.EnergyConverter.Unit.set -> void
 Gu.Units.Wpf.EnergyConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.EnergyConverter.UnitInput.set -> void
-Gu.Units.Wpf.EnergyConverter.ValueFormat.get -> string
+Gu.Units.Wpf.EnergyConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.EnergyConverter.ValueFormat.set -> void
 Gu.Units.Wpf.EnergyExtension
 Gu.Units.Wpf.EnergyExtension.EnergyExtension(Gu.Units.Energy value) -> void
 Gu.Units.Wpf.EnergyExtension.Value.get -> Gu.Units.Energy
 Gu.Units.Wpf.FlexibilityConverter
-Gu.Units.Wpf.FlexibilityConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.FlexibilityConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.FlexibilityConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.FlexibilityConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.FlexibilityConverter.FlexibilityConverter() -> void
 Gu.Units.Wpf.FlexibilityConverter.FlexibilityConverter(Gu.Units.FlexibilityUnit unit) -> void
-Gu.Units.Wpf.FlexibilityConverter.StringFormat.get -> string
+Gu.Units.Wpf.FlexibilityConverter.StringFormat.get -> string?
 Gu.Units.Wpf.FlexibilityConverter.StringFormat.set -> void
 Gu.Units.Wpf.FlexibilityConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.FlexibilityConverter.SymbolFormat.set -> void
@@ -335,17 +336,17 @@ Gu.Units.Wpf.FlexibilityConverter.Unit.get -> Gu.Units.FlexibilityUnit?
 Gu.Units.Wpf.FlexibilityConverter.Unit.set -> void
 Gu.Units.Wpf.FlexibilityConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.FlexibilityConverter.UnitInput.set -> void
-Gu.Units.Wpf.FlexibilityConverter.ValueFormat.get -> string
+Gu.Units.Wpf.FlexibilityConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.FlexibilityConverter.ValueFormat.set -> void
 Gu.Units.Wpf.FlexibilityExtension
 Gu.Units.Wpf.FlexibilityExtension.FlexibilityExtension(Gu.Units.Flexibility value) -> void
 Gu.Units.Wpf.FlexibilityExtension.Value.get -> Gu.Units.Flexibility
 Gu.Units.Wpf.ForceConverter
-Gu.Units.Wpf.ForceConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.ForceConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.ForceConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.ForceConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.ForceConverter.ForceConverter() -> void
 Gu.Units.Wpf.ForceConverter.ForceConverter(Gu.Units.ForceUnit unit) -> void
-Gu.Units.Wpf.ForceConverter.StringFormat.get -> string
+Gu.Units.Wpf.ForceConverter.StringFormat.get -> string?
 Gu.Units.Wpf.ForceConverter.StringFormat.set -> void
 Gu.Units.Wpf.ForceConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.ForceConverter.SymbolFormat.set -> void
@@ -353,17 +354,17 @@ Gu.Units.Wpf.ForceConverter.Unit.get -> Gu.Units.ForceUnit?
 Gu.Units.Wpf.ForceConverter.Unit.set -> void
 Gu.Units.Wpf.ForceConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.ForceConverter.UnitInput.set -> void
-Gu.Units.Wpf.ForceConverter.ValueFormat.get -> string
+Gu.Units.Wpf.ForceConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.ForceConverter.ValueFormat.set -> void
 Gu.Units.Wpf.ForceExtension
 Gu.Units.Wpf.ForceExtension.ForceExtension(Gu.Units.Force value) -> void
 Gu.Units.Wpf.ForceExtension.Value.get -> Gu.Units.Force
 Gu.Units.Wpf.ForcePerUnitlessConverter
-Gu.Units.Wpf.ForcePerUnitlessConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.ForcePerUnitlessConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.ForcePerUnitlessConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.ForcePerUnitlessConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.ForcePerUnitlessConverter.ForcePerUnitlessConverter() -> void
 Gu.Units.Wpf.ForcePerUnitlessConverter.ForcePerUnitlessConverter(Gu.Units.ForcePerUnitlessUnit unit) -> void
-Gu.Units.Wpf.ForcePerUnitlessConverter.StringFormat.get -> string
+Gu.Units.Wpf.ForcePerUnitlessConverter.StringFormat.get -> string?
 Gu.Units.Wpf.ForcePerUnitlessConverter.StringFormat.set -> void
 Gu.Units.Wpf.ForcePerUnitlessConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.ForcePerUnitlessConverter.SymbolFormat.set -> void
@@ -371,17 +372,17 @@ Gu.Units.Wpf.ForcePerUnitlessConverter.Unit.get -> Gu.Units.ForcePerUnitlessUnit
 Gu.Units.Wpf.ForcePerUnitlessConverter.Unit.set -> void
 Gu.Units.Wpf.ForcePerUnitlessConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.ForcePerUnitlessConverter.UnitInput.set -> void
-Gu.Units.Wpf.ForcePerUnitlessConverter.ValueFormat.get -> string
+Gu.Units.Wpf.ForcePerUnitlessConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.ForcePerUnitlessConverter.ValueFormat.set -> void
 Gu.Units.Wpf.ForcePerUnitlessExtension
 Gu.Units.Wpf.ForcePerUnitlessExtension.ForcePerUnitlessExtension(Gu.Units.ForcePerUnitless value) -> void
 Gu.Units.Wpf.ForcePerUnitlessExtension.Value.get -> Gu.Units.ForcePerUnitless
 Gu.Units.Wpf.FrequencyConverter
-Gu.Units.Wpf.FrequencyConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.FrequencyConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.FrequencyConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.FrequencyConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.FrequencyConverter.FrequencyConverter() -> void
 Gu.Units.Wpf.FrequencyConverter.FrequencyConverter(Gu.Units.FrequencyUnit unit) -> void
-Gu.Units.Wpf.FrequencyConverter.StringFormat.get -> string
+Gu.Units.Wpf.FrequencyConverter.StringFormat.get -> string?
 Gu.Units.Wpf.FrequencyConverter.StringFormat.set -> void
 Gu.Units.Wpf.FrequencyConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.FrequencyConverter.SymbolFormat.set -> void
@@ -389,17 +390,17 @@ Gu.Units.Wpf.FrequencyConverter.Unit.get -> Gu.Units.FrequencyUnit?
 Gu.Units.Wpf.FrequencyConverter.Unit.set -> void
 Gu.Units.Wpf.FrequencyConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.FrequencyConverter.UnitInput.set -> void
-Gu.Units.Wpf.FrequencyConverter.ValueFormat.get -> string
+Gu.Units.Wpf.FrequencyConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.FrequencyConverter.ValueFormat.set -> void
 Gu.Units.Wpf.FrequencyExtension
 Gu.Units.Wpf.FrequencyExtension.FrequencyExtension(Gu.Units.Frequency value) -> void
 Gu.Units.Wpf.FrequencyExtension.Value.get -> Gu.Units.Frequency
 Gu.Units.Wpf.IlluminanceConverter
-Gu.Units.Wpf.IlluminanceConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.IlluminanceConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.IlluminanceConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.IlluminanceConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.IlluminanceConverter.IlluminanceConverter() -> void
 Gu.Units.Wpf.IlluminanceConverter.IlluminanceConverter(Gu.Units.IlluminanceUnit unit) -> void
-Gu.Units.Wpf.IlluminanceConverter.StringFormat.get -> string
+Gu.Units.Wpf.IlluminanceConverter.StringFormat.get -> string?
 Gu.Units.Wpf.IlluminanceConverter.StringFormat.set -> void
 Gu.Units.Wpf.IlluminanceConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.IlluminanceConverter.SymbolFormat.set -> void
@@ -407,17 +408,17 @@ Gu.Units.Wpf.IlluminanceConverter.Unit.get -> Gu.Units.IlluminanceUnit?
 Gu.Units.Wpf.IlluminanceConverter.Unit.set -> void
 Gu.Units.Wpf.IlluminanceConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.IlluminanceConverter.UnitInput.set -> void
-Gu.Units.Wpf.IlluminanceConverter.ValueFormat.get -> string
+Gu.Units.Wpf.IlluminanceConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.IlluminanceConverter.ValueFormat.set -> void
 Gu.Units.Wpf.IlluminanceExtension
 Gu.Units.Wpf.IlluminanceExtension.IlluminanceExtension(Gu.Units.Illuminance value) -> void
 Gu.Units.Wpf.IlluminanceExtension.Value.get -> Gu.Units.Illuminance
 Gu.Units.Wpf.InductanceConverter
-Gu.Units.Wpf.InductanceConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.InductanceConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.InductanceConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.InductanceConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.InductanceConverter.InductanceConverter() -> void
 Gu.Units.Wpf.InductanceConverter.InductanceConverter(Gu.Units.InductanceUnit unit) -> void
-Gu.Units.Wpf.InductanceConverter.StringFormat.get -> string
+Gu.Units.Wpf.InductanceConverter.StringFormat.get -> string?
 Gu.Units.Wpf.InductanceConverter.StringFormat.set -> void
 Gu.Units.Wpf.InductanceConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.InductanceConverter.SymbolFormat.set -> void
@@ -425,17 +426,17 @@ Gu.Units.Wpf.InductanceConverter.Unit.get -> Gu.Units.InductanceUnit?
 Gu.Units.Wpf.InductanceConverter.Unit.set -> void
 Gu.Units.Wpf.InductanceConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.InductanceConverter.UnitInput.set -> void
-Gu.Units.Wpf.InductanceConverter.ValueFormat.get -> string
+Gu.Units.Wpf.InductanceConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.InductanceConverter.ValueFormat.set -> void
 Gu.Units.Wpf.InductanceExtension
 Gu.Units.Wpf.InductanceExtension.InductanceExtension(Gu.Units.Inductance value) -> void
 Gu.Units.Wpf.InductanceExtension.Value.get -> Gu.Units.Inductance
 Gu.Units.Wpf.JerkConverter
-Gu.Units.Wpf.JerkConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.JerkConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.JerkConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.JerkConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.JerkConverter.JerkConverter() -> void
 Gu.Units.Wpf.JerkConverter.JerkConverter(Gu.Units.JerkUnit unit) -> void
-Gu.Units.Wpf.JerkConverter.StringFormat.get -> string
+Gu.Units.Wpf.JerkConverter.StringFormat.get -> string?
 Gu.Units.Wpf.JerkConverter.StringFormat.set -> void
 Gu.Units.Wpf.JerkConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.JerkConverter.SymbolFormat.set -> void
@@ -443,17 +444,17 @@ Gu.Units.Wpf.JerkConverter.Unit.get -> Gu.Units.JerkUnit?
 Gu.Units.Wpf.JerkConverter.Unit.set -> void
 Gu.Units.Wpf.JerkConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.JerkConverter.UnitInput.set -> void
-Gu.Units.Wpf.JerkConverter.ValueFormat.get -> string
+Gu.Units.Wpf.JerkConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.JerkConverter.ValueFormat.set -> void
 Gu.Units.Wpf.JerkExtension
 Gu.Units.Wpf.JerkExtension.JerkExtension(Gu.Units.Jerk value) -> void
 Gu.Units.Wpf.JerkExtension.Value.get -> Gu.Units.Jerk
 Gu.Units.Wpf.KinematicViscosityConverter
-Gu.Units.Wpf.KinematicViscosityConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.KinematicViscosityConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.KinematicViscosityConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.KinematicViscosityConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.KinematicViscosityConverter.KinematicViscosityConverter() -> void
 Gu.Units.Wpf.KinematicViscosityConverter.KinematicViscosityConverter(Gu.Units.KinematicViscosityUnit unit) -> void
-Gu.Units.Wpf.KinematicViscosityConverter.StringFormat.get -> string
+Gu.Units.Wpf.KinematicViscosityConverter.StringFormat.get -> string?
 Gu.Units.Wpf.KinematicViscosityConverter.StringFormat.set -> void
 Gu.Units.Wpf.KinematicViscosityConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.KinematicViscosityConverter.SymbolFormat.set -> void
@@ -461,17 +462,17 @@ Gu.Units.Wpf.KinematicViscosityConverter.Unit.get -> Gu.Units.KinematicViscosity
 Gu.Units.Wpf.KinematicViscosityConverter.Unit.set -> void
 Gu.Units.Wpf.KinematicViscosityConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.KinematicViscosityConverter.UnitInput.set -> void
-Gu.Units.Wpf.KinematicViscosityConverter.ValueFormat.get -> string
+Gu.Units.Wpf.KinematicViscosityConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.KinematicViscosityConverter.ValueFormat.set -> void
 Gu.Units.Wpf.KinematicViscosityExtension
 Gu.Units.Wpf.KinematicViscosityExtension.KinematicViscosityExtension(Gu.Units.KinematicViscosity value) -> void
 Gu.Units.Wpf.KinematicViscosityExtension.Value.get -> Gu.Units.KinematicViscosity
 Gu.Units.Wpf.LengthConverter
-Gu.Units.Wpf.LengthConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.LengthConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.LengthConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.LengthConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.LengthConverter.LengthConverter() -> void
 Gu.Units.Wpf.LengthConverter.LengthConverter(Gu.Units.LengthUnit unit) -> void
-Gu.Units.Wpf.LengthConverter.StringFormat.get -> string
+Gu.Units.Wpf.LengthConverter.StringFormat.get -> string?
 Gu.Units.Wpf.LengthConverter.StringFormat.set -> void
 Gu.Units.Wpf.LengthConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.LengthConverter.SymbolFormat.set -> void
@@ -479,17 +480,17 @@ Gu.Units.Wpf.LengthConverter.Unit.get -> Gu.Units.LengthUnit?
 Gu.Units.Wpf.LengthConverter.Unit.set -> void
 Gu.Units.Wpf.LengthConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.LengthConverter.UnitInput.set -> void
-Gu.Units.Wpf.LengthConverter.ValueFormat.get -> string
+Gu.Units.Wpf.LengthConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.LengthConverter.ValueFormat.set -> void
 Gu.Units.Wpf.LengthExtension
 Gu.Units.Wpf.LengthExtension.LengthExtension(Gu.Units.Length value) -> void
 Gu.Units.Wpf.LengthExtension.Value.get -> Gu.Units.Length
 Gu.Units.Wpf.LengthPerUnitlessConverter
-Gu.Units.Wpf.LengthPerUnitlessConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.LengthPerUnitlessConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.LengthPerUnitlessConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.LengthPerUnitlessConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.LengthPerUnitlessConverter.LengthPerUnitlessConverter() -> void
 Gu.Units.Wpf.LengthPerUnitlessConverter.LengthPerUnitlessConverter(Gu.Units.LengthPerUnitlessUnit unit) -> void
-Gu.Units.Wpf.LengthPerUnitlessConverter.StringFormat.get -> string
+Gu.Units.Wpf.LengthPerUnitlessConverter.StringFormat.get -> string?
 Gu.Units.Wpf.LengthPerUnitlessConverter.StringFormat.set -> void
 Gu.Units.Wpf.LengthPerUnitlessConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.LengthPerUnitlessConverter.SymbolFormat.set -> void
@@ -497,7 +498,7 @@ Gu.Units.Wpf.LengthPerUnitlessConverter.Unit.get -> Gu.Units.LengthPerUnitlessUn
 Gu.Units.Wpf.LengthPerUnitlessConverter.Unit.set -> void
 Gu.Units.Wpf.LengthPerUnitlessConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.LengthPerUnitlessConverter.UnitInput.set -> void
-Gu.Units.Wpf.LengthPerUnitlessConverter.ValueFormat.get -> string
+Gu.Units.Wpf.LengthPerUnitlessConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.LengthPerUnitlessConverter.ValueFormat.set -> void
 Gu.Units.Wpf.LengthPerUnitlessExtension
 Gu.Units.Wpf.LengthPerUnitlessExtension.LengthPerUnitlessExtension(Gu.Units.LengthPerUnitless value) -> void
@@ -507,11 +508,11 @@ Gu.Units.Wpf.LengthUnitExtension.LengthUnitExtension(Gu.Units.LengthUnit value) 
 Gu.Units.Wpf.LengthUnitExtension.Value.get -> Gu.Units.LengthUnit
 Gu.Units.Wpf.LengthUnitExtension.Value.set -> void
 Gu.Units.Wpf.LuminousFluxConverter
-Gu.Units.Wpf.LuminousFluxConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.LuminousFluxConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.LuminousFluxConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.LuminousFluxConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.LuminousFluxConverter.LuminousFluxConverter() -> void
 Gu.Units.Wpf.LuminousFluxConverter.LuminousFluxConverter(Gu.Units.LuminousFluxUnit unit) -> void
-Gu.Units.Wpf.LuminousFluxConverter.StringFormat.get -> string
+Gu.Units.Wpf.LuminousFluxConverter.StringFormat.get -> string?
 Gu.Units.Wpf.LuminousFluxConverter.StringFormat.set -> void
 Gu.Units.Wpf.LuminousFluxConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.LuminousFluxConverter.SymbolFormat.set -> void
@@ -519,17 +520,17 @@ Gu.Units.Wpf.LuminousFluxConverter.Unit.get -> Gu.Units.LuminousFluxUnit?
 Gu.Units.Wpf.LuminousFluxConverter.Unit.set -> void
 Gu.Units.Wpf.LuminousFluxConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.LuminousFluxConverter.UnitInput.set -> void
-Gu.Units.Wpf.LuminousFluxConverter.ValueFormat.get -> string
+Gu.Units.Wpf.LuminousFluxConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.LuminousFluxConverter.ValueFormat.set -> void
 Gu.Units.Wpf.LuminousFluxExtension
 Gu.Units.Wpf.LuminousFluxExtension.LuminousFluxExtension(Gu.Units.LuminousFlux value) -> void
 Gu.Units.Wpf.LuminousFluxExtension.Value.get -> Gu.Units.LuminousFlux
 Gu.Units.Wpf.LuminousIntensityConverter
-Gu.Units.Wpf.LuminousIntensityConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.LuminousIntensityConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.LuminousIntensityConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.LuminousIntensityConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.LuminousIntensityConverter.LuminousIntensityConverter() -> void
 Gu.Units.Wpf.LuminousIntensityConverter.LuminousIntensityConverter(Gu.Units.LuminousIntensityUnit unit) -> void
-Gu.Units.Wpf.LuminousIntensityConverter.StringFormat.get -> string
+Gu.Units.Wpf.LuminousIntensityConverter.StringFormat.get -> string?
 Gu.Units.Wpf.LuminousIntensityConverter.StringFormat.set -> void
 Gu.Units.Wpf.LuminousIntensityConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.LuminousIntensityConverter.SymbolFormat.set -> void
@@ -537,17 +538,17 @@ Gu.Units.Wpf.LuminousIntensityConverter.Unit.get -> Gu.Units.LuminousIntensityUn
 Gu.Units.Wpf.LuminousIntensityConverter.Unit.set -> void
 Gu.Units.Wpf.LuminousIntensityConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.LuminousIntensityConverter.UnitInput.set -> void
-Gu.Units.Wpf.LuminousIntensityConverter.ValueFormat.get -> string
+Gu.Units.Wpf.LuminousIntensityConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.LuminousIntensityConverter.ValueFormat.set -> void
 Gu.Units.Wpf.LuminousIntensityExtension
 Gu.Units.Wpf.LuminousIntensityExtension.LuminousIntensityExtension(Gu.Units.LuminousIntensity value) -> void
 Gu.Units.Wpf.LuminousIntensityExtension.Value.get -> Gu.Units.LuminousIntensity
 Gu.Units.Wpf.MagneticFieldStrengthConverter
-Gu.Units.Wpf.MagneticFieldStrengthConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.MagneticFieldStrengthConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.MagneticFieldStrengthConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.MagneticFieldStrengthConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.MagneticFieldStrengthConverter.MagneticFieldStrengthConverter() -> void
 Gu.Units.Wpf.MagneticFieldStrengthConverter.MagneticFieldStrengthConverter(Gu.Units.MagneticFieldStrengthUnit unit) -> void
-Gu.Units.Wpf.MagneticFieldStrengthConverter.StringFormat.get -> string
+Gu.Units.Wpf.MagneticFieldStrengthConverter.StringFormat.get -> string?
 Gu.Units.Wpf.MagneticFieldStrengthConverter.StringFormat.set -> void
 Gu.Units.Wpf.MagneticFieldStrengthConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.MagneticFieldStrengthConverter.SymbolFormat.set -> void
@@ -555,17 +556,17 @@ Gu.Units.Wpf.MagneticFieldStrengthConverter.Unit.get -> Gu.Units.MagneticFieldSt
 Gu.Units.Wpf.MagneticFieldStrengthConverter.Unit.set -> void
 Gu.Units.Wpf.MagneticFieldStrengthConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.MagneticFieldStrengthConverter.UnitInput.set -> void
-Gu.Units.Wpf.MagneticFieldStrengthConverter.ValueFormat.get -> string
+Gu.Units.Wpf.MagneticFieldStrengthConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.MagneticFieldStrengthConverter.ValueFormat.set -> void
 Gu.Units.Wpf.MagneticFieldStrengthExtension
 Gu.Units.Wpf.MagneticFieldStrengthExtension.MagneticFieldStrengthExtension(Gu.Units.MagneticFieldStrength value) -> void
 Gu.Units.Wpf.MagneticFieldStrengthExtension.Value.get -> Gu.Units.MagneticFieldStrength
 Gu.Units.Wpf.MagneticFluxConverter
-Gu.Units.Wpf.MagneticFluxConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.MagneticFluxConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.MagneticFluxConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.MagneticFluxConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.MagneticFluxConverter.MagneticFluxConverter() -> void
 Gu.Units.Wpf.MagneticFluxConverter.MagneticFluxConverter(Gu.Units.MagneticFluxUnit unit) -> void
-Gu.Units.Wpf.MagneticFluxConverter.StringFormat.get -> string
+Gu.Units.Wpf.MagneticFluxConverter.StringFormat.get -> string?
 Gu.Units.Wpf.MagneticFluxConverter.StringFormat.set -> void
 Gu.Units.Wpf.MagneticFluxConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.MagneticFluxConverter.SymbolFormat.set -> void
@@ -573,17 +574,17 @@ Gu.Units.Wpf.MagneticFluxConverter.Unit.get -> Gu.Units.MagneticFluxUnit?
 Gu.Units.Wpf.MagneticFluxConverter.Unit.set -> void
 Gu.Units.Wpf.MagneticFluxConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.MagneticFluxConverter.UnitInput.set -> void
-Gu.Units.Wpf.MagneticFluxConverter.ValueFormat.get -> string
+Gu.Units.Wpf.MagneticFluxConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.MagneticFluxConverter.ValueFormat.set -> void
 Gu.Units.Wpf.MagneticFluxExtension
 Gu.Units.Wpf.MagneticFluxExtension.MagneticFluxExtension(Gu.Units.MagneticFlux value) -> void
 Gu.Units.Wpf.MagneticFluxExtension.Value.get -> Gu.Units.MagneticFlux
 Gu.Units.Wpf.MassConverter
-Gu.Units.Wpf.MassConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.MassConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.MassConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.MassConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.MassConverter.MassConverter() -> void
 Gu.Units.Wpf.MassConverter.MassConverter(Gu.Units.MassUnit unit) -> void
-Gu.Units.Wpf.MassConverter.StringFormat.get -> string
+Gu.Units.Wpf.MassConverter.StringFormat.get -> string?
 Gu.Units.Wpf.MassConverter.StringFormat.set -> void
 Gu.Units.Wpf.MassConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.MassConverter.SymbolFormat.set -> void
@@ -591,17 +592,17 @@ Gu.Units.Wpf.MassConverter.Unit.get -> Gu.Units.MassUnit?
 Gu.Units.Wpf.MassConverter.Unit.set -> void
 Gu.Units.Wpf.MassConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.MassConverter.UnitInput.set -> void
-Gu.Units.Wpf.MassConverter.ValueFormat.get -> string
+Gu.Units.Wpf.MassConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.MassConverter.ValueFormat.set -> void
 Gu.Units.Wpf.MassExtension
 Gu.Units.Wpf.MassExtension.MassExtension(Gu.Units.Mass value) -> void
 Gu.Units.Wpf.MassExtension.Value.get -> Gu.Units.Mass
 Gu.Units.Wpf.MassFlowConverter
-Gu.Units.Wpf.MassFlowConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.MassFlowConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.MassFlowConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.MassFlowConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.MassFlowConverter.MassFlowConverter() -> void
 Gu.Units.Wpf.MassFlowConverter.MassFlowConverter(Gu.Units.MassFlowUnit unit) -> void
-Gu.Units.Wpf.MassFlowConverter.StringFormat.get -> string
+Gu.Units.Wpf.MassFlowConverter.StringFormat.get -> string?
 Gu.Units.Wpf.MassFlowConverter.StringFormat.set -> void
 Gu.Units.Wpf.MassFlowConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.MassFlowConverter.SymbolFormat.set -> void
@@ -609,17 +610,17 @@ Gu.Units.Wpf.MassFlowConverter.Unit.get -> Gu.Units.MassFlowUnit?
 Gu.Units.Wpf.MassFlowConverter.Unit.set -> void
 Gu.Units.Wpf.MassFlowConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.MassFlowConverter.UnitInput.set -> void
-Gu.Units.Wpf.MassFlowConverter.ValueFormat.get -> string
+Gu.Units.Wpf.MassFlowConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.MassFlowConverter.ValueFormat.set -> void
 Gu.Units.Wpf.MassFlowExtension
 Gu.Units.Wpf.MassFlowExtension.MassFlowExtension(Gu.Units.MassFlow value) -> void
 Gu.Units.Wpf.MassFlowExtension.Value.get -> Gu.Units.MassFlow
 Gu.Units.Wpf.MolarHeatCapacityConverter
-Gu.Units.Wpf.MolarHeatCapacityConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.MolarHeatCapacityConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.MolarHeatCapacityConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.MolarHeatCapacityConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.MolarHeatCapacityConverter.MolarHeatCapacityConverter() -> void
 Gu.Units.Wpf.MolarHeatCapacityConverter.MolarHeatCapacityConverter(Gu.Units.MolarHeatCapacityUnit unit) -> void
-Gu.Units.Wpf.MolarHeatCapacityConverter.StringFormat.get -> string
+Gu.Units.Wpf.MolarHeatCapacityConverter.StringFormat.get -> string?
 Gu.Units.Wpf.MolarHeatCapacityConverter.StringFormat.set -> void
 Gu.Units.Wpf.MolarHeatCapacityConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.MolarHeatCapacityConverter.SymbolFormat.set -> void
@@ -627,17 +628,17 @@ Gu.Units.Wpf.MolarHeatCapacityConverter.Unit.get -> Gu.Units.MolarHeatCapacityUn
 Gu.Units.Wpf.MolarHeatCapacityConverter.Unit.set -> void
 Gu.Units.Wpf.MolarHeatCapacityConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.MolarHeatCapacityConverter.UnitInput.set -> void
-Gu.Units.Wpf.MolarHeatCapacityConverter.ValueFormat.get -> string
+Gu.Units.Wpf.MolarHeatCapacityConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.MolarHeatCapacityConverter.ValueFormat.set -> void
 Gu.Units.Wpf.MolarHeatCapacityExtension
 Gu.Units.Wpf.MolarHeatCapacityExtension.MolarHeatCapacityExtension(Gu.Units.MolarHeatCapacity value) -> void
 Gu.Units.Wpf.MolarHeatCapacityExtension.Value.get -> Gu.Units.MolarHeatCapacity
 Gu.Units.Wpf.MolarMassConverter
-Gu.Units.Wpf.MolarMassConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.MolarMassConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.MolarMassConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.MolarMassConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.MolarMassConverter.MolarMassConverter() -> void
 Gu.Units.Wpf.MolarMassConverter.MolarMassConverter(Gu.Units.MolarMassUnit unit) -> void
-Gu.Units.Wpf.MolarMassConverter.StringFormat.get -> string
+Gu.Units.Wpf.MolarMassConverter.StringFormat.get -> string?
 Gu.Units.Wpf.MolarMassConverter.StringFormat.set -> void
 Gu.Units.Wpf.MolarMassConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.MolarMassConverter.SymbolFormat.set -> void
@@ -645,17 +646,17 @@ Gu.Units.Wpf.MolarMassConverter.Unit.get -> Gu.Units.MolarMassUnit?
 Gu.Units.Wpf.MolarMassConverter.Unit.set -> void
 Gu.Units.Wpf.MolarMassConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.MolarMassConverter.UnitInput.set -> void
-Gu.Units.Wpf.MolarMassConverter.ValueFormat.get -> string
+Gu.Units.Wpf.MolarMassConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.MolarMassConverter.ValueFormat.set -> void
 Gu.Units.Wpf.MolarMassExtension
 Gu.Units.Wpf.MolarMassExtension.MolarMassExtension(Gu.Units.MolarMass value) -> void
 Gu.Units.Wpf.MolarMassExtension.Value.get -> Gu.Units.MolarMass
 Gu.Units.Wpf.MomentumConverter
-Gu.Units.Wpf.MomentumConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.MomentumConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.MomentumConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.MomentumConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.MomentumConverter.MomentumConverter() -> void
 Gu.Units.Wpf.MomentumConverter.MomentumConverter(Gu.Units.MomentumUnit unit) -> void
-Gu.Units.Wpf.MomentumConverter.StringFormat.get -> string
+Gu.Units.Wpf.MomentumConverter.StringFormat.get -> string?
 Gu.Units.Wpf.MomentumConverter.StringFormat.set -> void
 Gu.Units.Wpf.MomentumConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.MomentumConverter.SymbolFormat.set -> void
@@ -663,17 +664,17 @@ Gu.Units.Wpf.MomentumConverter.Unit.get -> Gu.Units.MomentumUnit?
 Gu.Units.Wpf.MomentumConverter.Unit.set -> void
 Gu.Units.Wpf.MomentumConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.MomentumConverter.UnitInput.set -> void
-Gu.Units.Wpf.MomentumConverter.ValueFormat.get -> string
+Gu.Units.Wpf.MomentumConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.MomentumConverter.ValueFormat.set -> void
 Gu.Units.Wpf.MomentumExtension
 Gu.Units.Wpf.MomentumExtension.MomentumExtension(Gu.Units.Momentum value) -> void
 Gu.Units.Wpf.MomentumExtension.Value.get -> Gu.Units.Momentum
 Gu.Units.Wpf.PowerConverter
-Gu.Units.Wpf.PowerConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.PowerConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.PowerConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.PowerConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.PowerConverter.PowerConverter() -> void
 Gu.Units.Wpf.PowerConverter.PowerConverter(Gu.Units.PowerUnit unit) -> void
-Gu.Units.Wpf.PowerConverter.StringFormat.get -> string
+Gu.Units.Wpf.PowerConverter.StringFormat.get -> string?
 Gu.Units.Wpf.PowerConverter.StringFormat.set -> void
 Gu.Units.Wpf.PowerConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.PowerConverter.SymbolFormat.set -> void
@@ -681,17 +682,17 @@ Gu.Units.Wpf.PowerConverter.Unit.get -> Gu.Units.PowerUnit?
 Gu.Units.Wpf.PowerConverter.Unit.set -> void
 Gu.Units.Wpf.PowerConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.PowerConverter.UnitInput.set -> void
-Gu.Units.Wpf.PowerConverter.ValueFormat.get -> string
+Gu.Units.Wpf.PowerConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.PowerConverter.ValueFormat.set -> void
 Gu.Units.Wpf.PowerExtension
 Gu.Units.Wpf.PowerExtension.PowerExtension(Gu.Units.Power value) -> void
 Gu.Units.Wpf.PowerExtension.Value.get -> Gu.Units.Power
 Gu.Units.Wpf.PressureConverter
-Gu.Units.Wpf.PressureConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.PressureConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.PressureConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.PressureConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.PressureConverter.PressureConverter() -> void
 Gu.Units.Wpf.PressureConverter.PressureConverter(Gu.Units.PressureUnit unit) -> void
-Gu.Units.Wpf.PressureConverter.StringFormat.get -> string
+Gu.Units.Wpf.PressureConverter.StringFormat.get -> string?
 Gu.Units.Wpf.PressureConverter.StringFormat.set -> void
 Gu.Units.Wpf.PressureConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.PressureConverter.SymbolFormat.set -> void
@@ -699,7 +700,7 @@ Gu.Units.Wpf.PressureConverter.Unit.get -> Gu.Units.PressureUnit?
 Gu.Units.Wpf.PressureConverter.Unit.set -> void
 Gu.Units.Wpf.PressureConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.PressureConverter.UnitInput.set -> void
-Gu.Units.Wpf.PressureConverter.ValueFormat.get -> string
+Gu.Units.Wpf.PressureConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.PressureConverter.ValueFormat.set -> void
 Gu.Units.Wpf.PressureExtension
 Gu.Units.Wpf.PressureExtension.PressureExtension(Gu.Units.Pressure value) -> void
@@ -758,11 +759,11 @@ Gu.Units.Wpf.Proxies.VolumetricFlowUnit
 Gu.Units.Wpf.Proxies.VolumeUnit
 Gu.Units.Wpf.Proxies.WavenumberUnit
 Gu.Units.Wpf.ResistanceConverter
-Gu.Units.Wpf.ResistanceConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.ResistanceConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.ResistanceConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.ResistanceConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.ResistanceConverter.ResistanceConverter() -> void
 Gu.Units.Wpf.ResistanceConverter.ResistanceConverter(Gu.Units.ResistanceUnit unit) -> void
-Gu.Units.Wpf.ResistanceConverter.StringFormat.get -> string
+Gu.Units.Wpf.ResistanceConverter.StringFormat.get -> string?
 Gu.Units.Wpf.ResistanceConverter.StringFormat.set -> void
 Gu.Units.Wpf.ResistanceConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.ResistanceConverter.SymbolFormat.set -> void
@@ -770,17 +771,17 @@ Gu.Units.Wpf.ResistanceConverter.Unit.get -> Gu.Units.ResistanceUnit?
 Gu.Units.Wpf.ResistanceConverter.Unit.set -> void
 Gu.Units.Wpf.ResistanceConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.ResistanceConverter.UnitInput.set -> void
-Gu.Units.Wpf.ResistanceConverter.ValueFormat.get -> string
+Gu.Units.Wpf.ResistanceConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.ResistanceConverter.ValueFormat.set -> void
 Gu.Units.Wpf.ResistanceExtension
 Gu.Units.Wpf.ResistanceExtension.ResistanceExtension(Gu.Units.Resistance value) -> void
 Gu.Units.Wpf.ResistanceExtension.Value.get -> Gu.Units.Resistance
 Gu.Units.Wpf.SolidAngleConverter
-Gu.Units.Wpf.SolidAngleConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.SolidAngleConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.SolidAngleConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.SolidAngleConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.SolidAngleConverter.SolidAngleConverter() -> void
 Gu.Units.Wpf.SolidAngleConverter.SolidAngleConverter(Gu.Units.SolidAngleUnit unit) -> void
-Gu.Units.Wpf.SolidAngleConverter.StringFormat.get -> string
+Gu.Units.Wpf.SolidAngleConverter.StringFormat.get -> string?
 Gu.Units.Wpf.SolidAngleConverter.StringFormat.set -> void
 Gu.Units.Wpf.SolidAngleConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.SolidAngleConverter.SymbolFormat.set -> void
@@ -788,17 +789,17 @@ Gu.Units.Wpf.SolidAngleConverter.Unit.get -> Gu.Units.SolidAngleUnit?
 Gu.Units.Wpf.SolidAngleConverter.Unit.set -> void
 Gu.Units.Wpf.SolidAngleConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.SolidAngleConverter.UnitInput.set -> void
-Gu.Units.Wpf.SolidAngleConverter.ValueFormat.get -> string
+Gu.Units.Wpf.SolidAngleConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.SolidAngleConverter.ValueFormat.set -> void
 Gu.Units.Wpf.SolidAngleExtension
 Gu.Units.Wpf.SolidAngleExtension.SolidAngleExtension(Gu.Units.SolidAngle value) -> void
 Gu.Units.Wpf.SolidAngleExtension.Value.get -> Gu.Units.SolidAngle
 Gu.Units.Wpf.SpecificEnergyConverter
-Gu.Units.Wpf.SpecificEnergyConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.SpecificEnergyConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.SpecificEnergyConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.SpecificEnergyConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.SpecificEnergyConverter.SpecificEnergyConverter() -> void
 Gu.Units.Wpf.SpecificEnergyConverter.SpecificEnergyConverter(Gu.Units.SpecificEnergyUnit unit) -> void
-Gu.Units.Wpf.SpecificEnergyConverter.StringFormat.get -> string
+Gu.Units.Wpf.SpecificEnergyConverter.StringFormat.get -> string?
 Gu.Units.Wpf.SpecificEnergyConverter.StringFormat.set -> void
 Gu.Units.Wpf.SpecificEnergyConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.SpecificEnergyConverter.SymbolFormat.set -> void
@@ -806,17 +807,17 @@ Gu.Units.Wpf.SpecificEnergyConverter.Unit.get -> Gu.Units.SpecificEnergyUnit?
 Gu.Units.Wpf.SpecificEnergyConverter.Unit.set -> void
 Gu.Units.Wpf.SpecificEnergyConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.SpecificEnergyConverter.UnitInput.set -> void
-Gu.Units.Wpf.SpecificEnergyConverter.ValueFormat.get -> string
+Gu.Units.Wpf.SpecificEnergyConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.SpecificEnergyConverter.ValueFormat.set -> void
 Gu.Units.Wpf.SpecificEnergyExtension
 Gu.Units.Wpf.SpecificEnergyExtension.SpecificEnergyExtension(Gu.Units.SpecificEnergy value) -> void
 Gu.Units.Wpf.SpecificEnergyExtension.Value.get -> Gu.Units.SpecificEnergy
 Gu.Units.Wpf.SpecificVolumeConverter
-Gu.Units.Wpf.SpecificVolumeConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.SpecificVolumeConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.SpecificVolumeConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.SpecificVolumeConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.SpecificVolumeConverter.SpecificVolumeConverter() -> void
 Gu.Units.Wpf.SpecificVolumeConverter.SpecificVolumeConverter(Gu.Units.SpecificVolumeUnit unit) -> void
-Gu.Units.Wpf.SpecificVolumeConverter.StringFormat.get -> string
+Gu.Units.Wpf.SpecificVolumeConverter.StringFormat.get -> string?
 Gu.Units.Wpf.SpecificVolumeConverter.StringFormat.set -> void
 Gu.Units.Wpf.SpecificVolumeConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.SpecificVolumeConverter.SymbolFormat.set -> void
@@ -824,17 +825,17 @@ Gu.Units.Wpf.SpecificVolumeConverter.Unit.get -> Gu.Units.SpecificVolumeUnit?
 Gu.Units.Wpf.SpecificVolumeConverter.Unit.set -> void
 Gu.Units.Wpf.SpecificVolumeConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.SpecificVolumeConverter.UnitInput.set -> void
-Gu.Units.Wpf.SpecificVolumeConverter.ValueFormat.get -> string
+Gu.Units.Wpf.SpecificVolumeConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.SpecificVolumeConverter.ValueFormat.set -> void
 Gu.Units.Wpf.SpecificVolumeExtension
 Gu.Units.Wpf.SpecificVolumeExtension.SpecificVolumeExtension(Gu.Units.SpecificVolume value) -> void
 Gu.Units.Wpf.SpecificVolumeExtension.Value.get -> Gu.Units.SpecificVolume
 Gu.Units.Wpf.SpeedConverter
-Gu.Units.Wpf.SpeedConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.SpeedConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.SpeedConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.SpeedConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.SpeedConverter.SpeedConverter() -> void
 Gu.Units.Wpf.SpeedConverter.SpeedConverter(Gu.Units.SpeedUnit unit) -> void
-Gu.Units.Wpf.SpeedConverter.StringFormat.get -> string
+Gu.Units.Wpf.SpeedConverter.StringFormat.get -> string?
 Gu.Units.Wpf.SpeedConverter.StringFormat.set -> void
 Gu.Units.Wpf.SpeedConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.SpeedConverter.SymbolFormat.set -> void
@@ -842,17 +843,17 @@ Gu.Units.Wpf.SpeedConverter.Unit.get -> Gu.Units.SpeedUnit?
 Gu.Units.Wpf.SpeedConverter.Unit.set -> void
 Gu.Units.Wpf.SpeedConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.SpeedConverter.UnitInput.set -> void
-Gu.Units.Wpf.SpeedConverter.ValueFormat.get -> string
+Gu.Units.Wpf.SpeedConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.SpeedConverter.ValueFormat.set -> void
 Gu.Units.Wpf.SpeedExtension
 Gu.Units.Wpf.SpeedExtension.SpeedExtension(Gu.Units.Speed value) -> void
 Gu.Units.Wpf.SpeedExtension.Value.get -> Gu.Units.Speed
 Gu.Units.Wpf.StiffnessConverter
-Gu.Units.Wpf.StiffnessConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.StiffnessConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.StiffnessConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.StiffnessConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
 Gu.Units.Wpf.StiffnessConverter.StiffnessConverter() -> void
 Gu.Units.Wpf.StiffnessConverter.StiffnessConverter(Gu.Units.StiffnessUnit unit) -> void
-Gu.Units.Wpf.StiffnessConverter.StringFormat.get -> string
+Gu.Units.Wpf.StiffnessConverter.StringFormat.get -> string?
 Gu.Units.Wpf.StiffnessConverter.StringFormat.set -> void
 Gu.Units.Wpf.StiffnessConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.StiffnessConverter.SymbolFormat.set -> void
@@ -860,15 +861,15 @@ Gu.Units.Wpf.StiffnessConverter.Unit.get -> Gu.Units.StiffnessUnit?
 Gu.Units.Wpf.StiffnessConverter.Unit.set -> void
 Gu.Units.Wpf.StiffnessConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.StiffnessConverter.UnitInput.set -> void
-Gu.Units.Wpf.StiffnessConverter.ValueFormat.get -> string
+Gu.Units.Wpf.StiffnessConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.StiffnessConverter.ValueFormat.set -> void
 Gu.Units.Wpf.StiffnessExtension
 Gu.Units.Wpf.StiffnessExtension.StiffnessExtension(Gu.Units.Stiffness value) -> void
 Gu.Units.Wpf.StiffnessExtension.Value.get -> Gu.Units.Stiffness
 Gu.Units.Wpf.TemperatureConverter
-Gu.Units.Wpf.TemperatureConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.TemperatureConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.TemperatureConverter.StringFormat.get -> string
+Gu.Units.Wpf.TemperatureConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.TemperatureConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.TemperatureConverter.StringFormat.get -> string?
 Gu.Units.Wpf.TemperatureConverter.StringFormat.set -> void
 Gu.Units.Wpf.TemperatureConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.TemperatureConverter.SymbolFormat.set -> void
@@ -878,15 +879,15 @@ Gu.Units.Wpf.TemperatureConverter.Unit.get -> Gu.Units.TemperatureUnit?
 Gu.Units.Wpf.TemperatureConverter.Unit.set -> void
 Gu.Units.Wpf.TemperatureConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.TemperatureConverter.UnitInput.set -> void
-Gu.Units.Wpf.TemperatureConverter.ValueFormat.get -> string
+Gu.Units.Wpf.TemperatureConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.TemperatureConverter.ValueFormat.set -> void
 Gu.Units.Wpf.TemperatureExtension
 Gu.Units.Wpf.TemperatureExtension.TemperatureExtension(Gu.Units.Temperature value) -> void
 Gu.Units.Wpf.TemperatureExtension.Value.get -> Gu.Units.Temperature
 Gu.Units.Wpf.TimeConverter
-Gu.Units.Wpf.TimeConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.TimeConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.TimeConverter.StringFormat.get -> string
+Gu.Units.Wpf.TimeConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.TimeConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.TimeConverter.StringFormat.get -> string?
 Gu.Units.Wpf.TimeConverter.StringFormat.set -> void
 Gu.Units.Wpf.TimeConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.TimeConverter.SymbolFormat.set -> void
@@ -896,15 +897,15 @@ Gu.Units.Wpf.TimeConverter.Unit.get -> Gu.Units.TimeUnit?
 Gu.Units.Wpf.TimeConverter.Unit.set -> void
 Gu.Units.Wpf.TimeConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.TimeConverter.UnitInput.set -> void
-Gu.Units.Wpf.TimeConverter.ValueFormat.get -> string
+Gu.Units.Wpf.TimeConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.TimeConverter.ValueFormat.set -> void
 Gu.Units.Wpf.TimeExtension
 Gu.Units.Wpf.TimeExtension.TimeExtension(Gu.Units.Time value) -> void
 Gu.Units.Wpf.TimeExtension.Value.get -> Gu.Units.Time
 Gu.Units.Wpf.TorqueConverter
-Gu.Units.Wpf.TorqueConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.TorqueConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.TorqueConverter.StringFormat.get -> string
+Gu.Units.Wpf.TorqueConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.TorqueConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.TorqueConverter.StringFormat.get -> string?
 Gu.Units.Wpf.TorqueConverter.StringFormat.set -> void
 Gu.Units.Wpf.TorqueConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.TorqueConverter.SymbolFormat.set -> void
@@ -914,13 +915,13 @@ Gu.Units.Wpf.TorqueConverter.Unit.get -> Gu.Units.TorqueUnit?
 Gu.Units.Wpf.TorqueConverter.Unit.set -> void
 Gu.Units.Wpf.TorqueConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.TorqueConverter.UnitInput.set -> void
-Gu.Units.Wpf.TorqueConverter.ValueFormat.get -> string
+Gu.Units.Wpf.TorqueConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.TorqueConverter.ValueFormat.set -> void
 Gu.Units.Wpf.TorqueExtension
 Gu.Units.Wpf.TorqueExtension.TorqueExtension(Gu.Units.Torque value) -> void
 Gu.Units.Wpf.TorqueExtension.Value.get -> Gu.Units.Torque
 Gu.Units.Wpf.UnitFormatConverterExtension
-Gu.Units.Wpf.UnitFormatConverterExtension.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
+Gu.Units.Wpf.UnitFormatConverterExtension.Convert(object! value, System.Type! targetType, object! parameter, System.Globalization.CultureInfo! culture) -> object!
 Gu.Units.Wpf.UnitFormatConverterExtension.Format.get -> Gu.Units.SymbolFormat
 Gu.Units.Wpf.UnitFormatConverterExtension.Format.set -> void
 Gu.Units.Wpf.UnitFormatConverterExtension.UnitFormatConverterExtension(Gu.Units.SymbolFormat format) -> void
@@ -929,9 +930,9 @@ Gu.Units.Wpf.UnitInput.ScalarOnly = 0 -> Gu.Units.Wpf.UnitInput
 Gu.Units.Wpf.UnitInput.SymbolAllowed = 1 -> Gu.Units.Wpf.UnitInput
 Gu.Units.Wpf.UnitInput.SymbolRequired = 2 -> Gu.Units.Wpf.UnitInput
 Gu.Units.Wpf.UnitlessConverter
-Gu.Units.Wpf.UnitlessConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.UnitlessConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.UnitlessConverter.StringFormat.get -> string
+Gu.Units.Wpf.UnitlessConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.UnitlessConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.UnitlessConverter.StringFormat.get -> string?
 Gu.Units.Wpf.UnitlessConverter.StringFormat.set -> void
 Gu.Units.Wpf.UnitlessConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.UnitlessConverter.SymbolFormat.set -> void
@@ -941,15 +942,15 @@ Gu.Units.Wpf.UnitlessConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.UnitlessConverter.UnitInput.set -> void
 Gu.Units.Wpf.UnitlessConverter.UnitlessConverter() -> void
 Gu.Units.Wpf.UnitlessConverter.UnitlessConverter(Gu.Units.UnitlessUnit unit) -> void
-Gu.Units.Wpf.UnitlessConverter.ValueFormat.get -> string
+Gu.Units.Wpf.UnitlessConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.UnitlessConverter.ValueFormat.set -> void
 Gu.Units.Wpf.UnitlessExtension
 Gu.Units.Wpf.UnitlessExtension.UnitlessExtension(Gu.Units.Unitless value) -> void
 Gu.Units.Wpf.UnitlessExtension.Value.get -> Gu.Units.Unitless
 Gu.Units.Wpf.VoltageConverter
-Gu.Units.Wpf.VoltageConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.VoltageConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.VoltageConverter.StringFormat.get -> string
+Gu.Units.Wpf.VoltageConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.VoltageConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.VoltageConverter.StringFormat.get -> string?
 Gu.Units.Wpf.VoltageConverter.StringFormat.set -> void
 Gu.Units.Wpf.VoltageConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.VoltageConverter.SymbolFormat.set -> void
@@ -957,7 +958,7 @@ Gu.Units.Wpf.VoltageConverter.Unit.get -> Gu.Units.VoltageUnit?
 Gu.Units.Wpf.VoltageConverter.Unit.set -> void
 Gu.Units.Wpf.VoltageConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.VoltageConverter.UnitInput.set -> void
-Gu.Units.Wpf.VoltageConverter.ValueFormat.get -> string
+Gu.Units.Wpf.VoltageConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.VoltageConverter.ValueFormat.set -> void
 Gu.Units.Wpf.VoltageConverter.VoltageConverter() -> void
 Gu.Units.Wpf.VoltageConverter.VoltageConverter(Gu.Units.VoltageUnit unit) -> void
@@ -965,9 +966,9 @@ Gu.Units.Wpf.VoltageExtension
 Gu.Units.Wpf.VoltageExtension.Value.get -> Gu.Units.Voltage
 Gu.Units.Wpf.VoltageExtension.VoltageExtension(Gu.Units.Voltage value) -> void
 Gu.Units.Wpf.VolumeConverter
-Gu.Units.Wpf.VolumeConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.VolumeConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.VolumeConverter.StringFormat.get -> string
+Gu.Units.Wpf.VolumeConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.VolumeConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.VolumeConverter.StringFormat.get -> string?
 Gu.Units.Wpf.VolumeConverter.StringFormat.set -> void
 Gu.Units.Wpf.VolumeConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.VolumeConverter.SymbolFormat.set -> void
@@ -975,7 +976,7 @@ Gu.Units.Wpf.VolumeConverter.Unit.get -> Gu.Units.VolumeUnit?
 Gu.Units.Wpf.VolumeConverter.Unit.set -> void
 Gu.Units.Wpf.VolumeConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.VolumeConverter.UnitInput.set -> void
-Gu.Units.Wpf.VolumeConverter.ValueFormat.get -> string
+Gu.Units.Wpf.VolumeConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.VolumeConverter.ValueFormat.set -> void
 Gu.Units.Wpf.VolumeConverter.VolumeConverter() -> void
 Gu.Units.Wpf.VolumeConverter.VolumeConverter(Gu.Units.VolumeUnit unit) -> void
@@ -983,9 +984,9 @@ Gu.Units.Wpf.VolumeExtension
 Gu.Units.Wpf.VolumeExtension.Value.get -> Gu.Units.Volume
 Gu.Units.Wpf.VolumeExtension.VolumeExtension(Gu.Units.Volume value) -> void
 Gu.Units.Wpf.VolumetricFlowConverter
-Gu.Units.Wpf.VolumetricFlowConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.VolumetricFlowConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.VolumetricFlowConverter.StringFormat.get -> string
+Gu.Units.Wpf.VolumetricFlowConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.VolumetricFlowConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.VolumetricFlowConverter.StringFormat.get -> string?
 Gu.Units.Wpf.VolumetricFlowConverter.StringFormat.set -> void
 Gu.Units.Wpf.VolumetricFlowConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.VolumetricFlowConverter.SymbolFormat.set -> void
@@ -993,7 +994,7 @@ Gu.Units.Wpf.VolumetricFlowConverter.Unit.get -> Gu.Units.VolumetricFlowUnit?
 Gu.Units.Wpf.VolumetricFlowConverter.Unit.set -> void
 Gu.Units.Wpf.VolumetricFlowConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.VolumetricFlowConverter.UnitInput.set -> void
-Gu.Units.Wpf.VolumetricFlowConverter.ValueFormat.get -> string
+Gu.Units.Wpf.VolumetricFlowConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.VolumetricFlowConverter.ValueFormat.set -> void
 Gu.Units.Wpf.VolumetricFlowConverter.VolumetricFlowConverter() -> void
 Gu.Units.Wpf.VolumetricFlowConverter.VolumetricFlowConverter(Gu.Units.VolumetricFlowUnit unit) -> void
@@ -1001,9 +1002,9 @@ Gu.Units.Wpf.VolumetricFlowExtension
 Gu.Units.Wpf.VolumetricFlowExtension.Value.get -> Gu.Units.VolumetricFlow
 Gu.Units.Wpf.VolumetricFlowExtension.VolumetricFlowExtension(Gu.Units.VolumetricFlow value) -> void
 Gu.Units.Wpf.WavenumberConverter
-Gu.Units.Wpf.WavenumberConverter.Convert(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.WavenumberConverter.ConvertBack(object value, System.Type targetType, object parameter, System.Globalization.CultureInfo culture) -> object
-Gu.Units.Wpf.WavenumberConverter.StringFormat.get -> string
+Gu.Units.Wpf.WavenumberConverter.Convert(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.WavenumberConverter.ConvertBack(object! value, System.Type! targetType, object? parameter, System.Globalization.CultureInfo! culture) -> object?
+Gu.Units.Wpf.WavenumberConverter.StringFormat.get -> string?
 Gu.Units.Wpf.WavenumberConverter.StringFormat.set -> void
 Gu.Units.Wpf.WavenumberConverter.SymbolFormat.get -> Gu.Units.SymbolFormat?
 Gu.Units.Wpf.WavenumberConverter.SymbolFormat.set -> void
@@ -1011,121 +1012,121 @@ Gu.Units.Wpf.WavenumberConverter.Unit.get -> Gu.Units.WavenumberUnit?
 Gu.Units.Wpf.WavenumberConverter.Unit.set -> void
 Gu.Units.Wpf.WavenumberConverter.UnitInput.get -> Gu.Units.Wpf.UnitInput?
 Gu.Units.Wpf.WavenumberConverter.UnitInput.set -> void
-Gu.Units.Wpf.WavenumberConverter.ValueFormat.get -> string
+Gu.Units.Wpf.WavenumberConverter.ValueFormat.get -> string?
 Gu.Units.Wpf.WavenumberConverter.ValueFormat.set -> void
 Gu.Units.Wpf.WavenumberConverter.WavenumberConverter() -> void
 Gu.Units.Wpf.WavenumberConverter.WavenumberConverter(Gu.Units.WavenumberUnit unit) -> void
 Gu.Units.Wpf.WavenumberExtension
 Gu.Units.Wpf.WavenumberExtension.Value.get -> Gu.Units.Wavenumber
 Gu.Units.Wpf.WavenumberExtension.WavenumberExtension(Gu.Units.Wavenumber value) -> void
-override Gu.Units.Wpf.AccelerationConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AccelerationExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AmountOfSubstanceConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AmountOfSubstanceExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AngleConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AngleExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AnglePerUnitlessConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AnglePerUnitlessExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AngularAccelerationConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AngularAccelerationExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AngularJerkConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AngularJerkExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AngularSpeedConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AngularSpeedExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AreaConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AreaDensityConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AreaDensityExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.AreaExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.CapacitanceConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.CapacitanceExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.CatalyticActivityConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.CatalyticActivityExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.ConductivityConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.ConductivityExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.CurrentConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.CurrentExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.DataConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.DataExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.DensityConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.DensityExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.ElectricalConductanceConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.ElectricalConductanceExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.ElectricChargeConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.ElectricChargeExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.EnergyConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.EnergyExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.FlexibilityConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.FlexibilityExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.ForceConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.ForceExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.ForcePerUnitlessConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.ForcePerUnitlessExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.FrequencyConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.FrequencyExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.IlluminanceConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.IlluminanceExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.InductanceConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.InductanceExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.JerkConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.JerkExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.KinematicViscosityConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.KinematicViscosityExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.LengthConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.LengthExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.LengthPerUnitlessConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.LengthPerUnitlessExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.LengthUnitExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.LuminousFluxConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.LuminousFluxExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.LuminousIntensityConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.LuminousIntensityExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.MagneticFieldStrengthConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.MagneticFieldStrengthExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.MagneticFluxConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.MagneticFluxExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.MassConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.MassExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.MassFlowConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.MassFlowExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.MolarHeatCapacityConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.MolarHeatCapacityExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.MolarMassConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.MolarMassExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.MomentumConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.MomentumExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.PowerConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.PowerExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.PressureConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.PressureExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.ResistanceConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.ResistanceExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.SolidAngleConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.SolidAngleExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.SpecificEnergyConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.SpecificEnergyExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.SpecificVolumeConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.SpecificVolumeExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.SpeedConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.SpeedExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.StiffnessConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.StiffnessExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.TemperatureConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.TemperatureExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.TimeConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.TimeExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.TorqueConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.TorqueExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.UnitFormatConverterExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.UnitlessConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.UnitlessExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.VoltageConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.VoltageExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.VolumeConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.VolumeExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.VolumetricFlowConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.VolumetricFlowExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.WavenumberConverter.ProvideValue(System.IServiceProvider serviceProvider) -> object
-override Gu.Units.Wpf.WavenumberExtension.ProvideValue(System.IServiceProvider serviceProvider) -> object
+override Gu.Units.Wpf.AccelerationConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AccelerationExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AmountOfSubstanceConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AmountOfSubstanceExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AngleConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AngleExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AnglePerUnitlessConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AnglePerUnitlessExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AngularAccelerationConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AngularAccelerationExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AngularJerkConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AngularJerkExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AngularSpeedConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AngularSpeedExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AreaConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AreaDensityConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AreaDensityExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.AreaExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.CapacitanceConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.CapacitanceExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.CatalyticActivityConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.CatalyticActivityExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.ConductivityConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.ConductivityExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.CurrentConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.CurrentExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.DataConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.DataExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.DensityConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.DensityExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.ElectricalConductanceConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.ElectricalConductanceExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.ElectricChargeConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.ElectricChargeExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.EnergyConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.EnergyExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.FlexibilityConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.FlexibilityExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.ForceConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.ForceExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.ForcePerUnitlessConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.ForcePerUnitlessExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.FrequencyConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.FrequencyExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.IlluminanceConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.IlluminanceExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.InductanceConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.InductanceExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.JerkConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.JerkExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.KinematicViscosityConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.KinematicViscosityExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.LengthConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.LengthExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.LengthPerUnitlessConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.LengthPerUnitlessExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.LengthUnitExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.LuminousFluxConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.LuminousFluxExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.LuminousIntensityConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.LuminousIntensityExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.MagneticFieldStrengthConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.MagneticFieldStrengthExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.MagneticFluxConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.MagneticFluxExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.MassConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.MassExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.MassFlowConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.MassFlowExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.MolarHeatCapacityConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.MolarHeatCapacityExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.MolarMassConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.MolarMassExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.MomentumConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.MomentumExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.PowerConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.PowerExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.PressureConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.PressureExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.ResistanceConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.ResistanceExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.SolidAngleConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.SolidAngleExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.SpecificEnergyConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.SpecificEnergyExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.SpecificVolumeConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.SpecificVolumeExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.SpeedConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.SpeedExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.StiffnessConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.StiffnessExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.TemperatureConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.TemperatureExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.TimeConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.TimeExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.TorqueConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.TorqueExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.UnitFormatConverterExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.UnitlessConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.UnitlessExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.VoltageConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.VoltageExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.VolumeConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.VolumeExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.VolumetricFlowConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.VolumetricFlowExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.WavenumberConverter.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
+override Gu.Units.Wpf.WavenumberExtension.ProvideValue(System.IServiceProvider! serviceProvider) -> object!
 static Gu.Units.Wpf.Proxies.AccelerationUnit.CentimetresPerHourSquared.get -> Gu.Units.AccelerationUnit
 static Gu.Units.Wpf.Proxies.AccelerationUnit.CentimetresPerSecondSquared.get -> Gu.Units.AccelerationUnit
 static Gu.Units.Wpf.Proxies.AccelerationUnit.MetresPerHourSquared.get -> Gu.Units.AccelerationUnit

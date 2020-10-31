@@ -16,9 +16,9 @@ namespace Gu.Units.Wpf
     {
         private FrequencyUnit? unit;
         private Binding binding;
-        private QuantityFormat<FrequencyUnit> quantityFormat;
-        private QuantityFormat<FrequencyUnit> bindingQuantityFormat;
-        private string valueFormat;
+        private QuantityFormat<FrequencyUnit>? quantityFormat;
+        private QuantityFormat<FrequencyUnit>? bindingQuantityFormat;
+        private string? valueFormat;
         private bool initialized;
         private StringBuilder errorText = new StringBuilder();
 
@@ -45,11 +45,7 @@ namespace Gu.Units.Wpf
         [TypeConverter(typeof(FrequencyUnitTypeConverter))]
         public FrequencyUnit? Unit
         {
-            get
-            {
-                return this.unit;
-            }
-
+            get => this.unit;
             set
             {
                 if (value == null)
@@ -69,13 +65,9 @@ namespace Gu.Units.Wpf
         /// Gets or sets the format to use when formatting the scalar part.
         /// Formats valid for formatting <see cref="double"/> are valid
         /// </summary>
-        public string ValueFormat
+        public string? ValueFormat
         {
-            get
-            {
-                return this.valueFormat;
-            }
-
+            get => this.valueFormat;
             set
             {
                 if (!StringFormatParser<FrequencyUnit>.CanParseValueFormat(value))
@@ -105,13 +97,9 @@ namespace Gu.Units.Wpf
         /// <summary>
         /// Gets or sets the composite string format to use when formatting the quantity value.
         /// </summary>
-        public string StringFormat
+        public string? StringFormat
         {
-            get
-            {
-                return this.quantityFormat?.CompositeFormat;
-            }
-
+            get => this.quantityFormat?.CompositeFormat;
             set
             {
                 if (StringFormatParser<FrequencyUnit>.TryParse(value, out this.quantityFormat))
@@ -169,7 +157,7 @@ namespace Gu.Units.Wpf
         }
 
         /// <inheritdoc />
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object? Convert(object value, Type targetType, object? parameter, CultureInfo culture)
         {
             if (!this.initialized)
             {
@@ -235,7 +223,7 @@ namespace Gu.Units.Wpf
         }
 
         /// <inheritdoc />
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object? ConvertBack(object value, Type targetType, object? parameter, CultureInfo culture)
         {
             if (!this.initialized)
             {
