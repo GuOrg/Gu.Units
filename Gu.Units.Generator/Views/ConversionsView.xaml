@@ -10,52 +10,43 @@
              mc:Ignorable="d">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition />
         </Grid.RowDefinitions>
 
         <GroupBox Grid.Row="0" Header="Fractions">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0"
-                               Grid.Column="0"
-                               Text="{Binding Unit.Name, StringFormat='BaseUnit: {0}'}" />
-                    <GroupBox Grid.Row="1"
-                              MinHeight="100"
-                              Header="Prefixes"
-                              Visibility="{Binding PrefixConversions.HasItems, Converter={converters:BooleanToVisibilityConverter WhenFalse=Collapsed, WhenTrue=Visible}}">
+                <TextBlock Grid.Row="0"
+                           Grid.Column="0"
+                           Text="{Binding Unit.Name, StringFormat='BaseUnit: {0}'}" />
+                <UniformGrid Grid.Row="1"
+                             MinHeight="100"
+                             Rows="1">
+                    <GroupBox Header="Prefixes" Visibility="{Binding PrefixConversions.HasItems, Converter={converters:BooleanToVisibilityConverter WhenFalse=Collapsed, WhenTrue=Visible}}">
                         <local:PrefixConversionsView />
                     </GroupBox>
 
-                    <GroupBox Grid.Row="2"
-                              MinHeight="100"
-                              Header="Subparts"
-                              Visibility="{Binding PartConversions.HasItems, Converter={converters:BooleanToVisibilityConverter WhenFalse=Collapsed, WhenTrue=Visible}}">
+                    <GroupBox Header="Subparts" Visibility="{Binding PartConversions.HasItems, Converter={converters:BooleanToVisibilityConverter WhenFalse=Collapsed, WhenTrue=Visible}}">
                         <local:PartConversionsView />
                     </GroupBox>
+                </UniformGrid>
 
-                    <GroupBox Grid.Row="3" Header="FactorConversions">
-                        <local:FactorConversionsView />
-                    </GroupBox>
+                <GroupBox Grid.Row="2" Header="FactorConversions">
+                    <local:FactorConversionsView />
+                </GroupBox>
 
-                    <GroupBox Grid.Row="4" Header="CustomConversions">
-                        <local:CustomConversionsView />
-                    </GroupBox>
-                </Grid>
-                <GroupBox Grid.Row="1" Header="All">
+                <GroupBox Grid.Row="3" Header="CustomConversions">
+                    <local:CustomConversionsView />
+                </GroupBox>
+
+                <GroupBox Grid.Row="4" Header="All">
                     <DataGrid AutoGenerateColumns="False"
                               CanUserDeleteRows="False"
                               ItemsSource="{Binding AllConversions}"
