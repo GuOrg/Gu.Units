@@ -20,12 +20,13 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <Version>0.10.6.1</Version>
+    <Version>0.10.7</Version>
     <Authors>Johan Larsson</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>Roslyn analyzers and fixes for Gu.Units.</Description>
     <PackageTags>Roslyn Diagnostic Analyzer</PackageTags>
     <PackageReleaseNotes>
+      FEATURE: nullable enable.
     </PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/GuOrg/Gu.Units</PackageProjectUrl>
     <RepositoryUrl>https://github.com/GuOrg/Gu.Units</RepositoryUrl>

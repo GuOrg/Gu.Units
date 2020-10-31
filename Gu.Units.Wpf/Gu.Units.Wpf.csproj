@@ -14,14 +14,14 @@
 
   <PropertyGroup>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>0.10.6.1</Version>
+    <Version>0.10.7</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Authors>Johan Larsson</Authors>
     <Description>IValueConverters for Gu.Units as MarkupExtensions</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
     <RepositoryUrl>https://github.com/GuOrg/Gu.Units</RepositoryUrl>
     <PackageReleaseNotes>
-      FEATURE: More conductivity units.
+      FEATURE: nullable enable.
     </PackageReleaseNotes>
     <PackageTags>unit units quantity quantities unitsofmeasure</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

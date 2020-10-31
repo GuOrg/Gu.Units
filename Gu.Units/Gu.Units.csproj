@@ -13,14 +13,14 @@
 
   <PropertyGroup>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>0.10.6.1</Version>
+    <Version>0.10.7</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Authors>Johan Larsson</Authors>
     <Description>Units of measure for C#</Description>
     <NeutralLanguage>en-US</NeutralLanguage>
     <RepositoryUrl>https://github.com/GuOrg/Gu.Units</RepositoryUrl>
     <PackageReleaseNotes>
-      FEATURE: More conductivity units.
+      FEATURE: nullable enable.
     </PackageReleaseNotes>
     <PackageTags>unit units quantity quantities unitsofmeasure</PackageTags>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
