@@ -1,3 +1,4 @@
+#nullable enable
 namespace Gu.Units
 {
     using System;
@@ -100,7 +101,7 @@ namespace Gu.Units
         /// Indicates whether two <see cref="Gu.Units.AngularAccelerationUnit"/> instances are equal.
         /// </summary>
         /// <returns>
-        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// true if the quantities of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
         /// <param name="left">The left instance of <see cref="Gu.Units.AngularAccelerationUnit"/>.</param>
         /// <param name="right">The right instance of <see cref="Gu.Units.AngularAccelerationUnit"/>.</param>
@@ -113,7 +114,7 @@ namespace Gu.Units
         /// Indicates whether two <see cref="Gu.Units.AngularAccelerationUnit"/> instances are not equal.
         /// </summary>
         /// <returns>
-        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// true if the quantities of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
         /// <param name="left">The left instance of <see cref="Gu.Units.AngularAccelerationUnit"/>.</param>
         /// <param name="right">The right instance of <see cref="Gu.Units.AngularAccelerationUnit"/>.</param>
@@ -177,7 +178,7 @@ namespace Gu.Units
         /// <summary>
         /// Gets the scalar value of <paramref name="quantity"/> in RadiansPerSecondSquared
         /// </summary>
-        /// <param name="quantity">The quanity.</param>
+        /// <param name="quantity">The quantity.</param>
         /// <returns>The SI-unit value.</returns>
         public double GetScalarValue(AngularAcceleration quantity)
         {
@@ -193,7 +194,7 @@ namespace Gu.Units
         /// <summary>
         /// Converts the unit value of this instance to its equivalent string representation.
         /// </summary>
-        /// <param name="format">The format to use when convereting</param>
+        /// <param name="format">The format to use when converting</param>
         /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string format)
         {
@@ -243,22 +244,17 @@ namespace Gu.Units
         }
 
         /// <inheritdoc />
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
-            if (ReferenceEquals(null, obj))
-            {
-                return false;
-            }
-
-            return obj is AngularAccelerationUnit && this.Equals((AngularAccelerationUnit)obj);
+            return obj is AngularAccelerationUnit other && this.Equals(other);
         }
 
         /// <inheritdoc />
         public override int GetHashCode()
         {
-            if (this.symbol == null)
+            if (this.symbol is null)
             {
-                return 0; // Needed due to default ctor
+                return 0; // Needed due to default constructor
             }
 
             return this.symbol.GetHashCode();

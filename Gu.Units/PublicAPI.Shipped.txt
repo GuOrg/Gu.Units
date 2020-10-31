@@ -36,16 +36,16 @@ Gu.Units.AccelerationTypeConverter
 Gu.Units.AccelerationTypeConverter.AccelerationTypeConverter() -> void
 Gu.Units.AccelerationUnit
 Gu.Units.AccelerationUnit.AccelerationUnit() -> void
-~Gu.Units.AccelerationUnit.AccelerationUnit(System.Func<double, double> toMetresPerSecondSquared, System.Func<double, double> fromMetresPerSecondSquared, string symbol) -> void
+Gu.Units.AccelerationUnit.AccelerationUnit(System.Func<double, double>! toMetresPerSecondSquared, System.Func<double, double>! fromMetresPerSecondSquared, string! symbol) -> void
 Gu.Units.AccelerationUnit.CreateQuantity(double value) -> Gu.Units.Acceleration
 Gu.Units.AccelerationUnit.Equals(Gu.Units.AccelerationUnit other) -> bool
 Gu.Units.AccelerationUnit.FromSiUnit(double metresPerSecondSquared) -> double
 Gu.Units.AccelerationUnit.GetScalarValue(Gu.Units.Acceleration quantity) -> double
 Gu.Units.AccelerationUnit.SiUnit.get -> Gu.Units.AccelerationUnit
-~Gu.Units.AccelerationUnit.Symbol.get -> string
+Gu.Units.AccelerationUnit.Symbol.get -> string!
 Gu.Units.AccelerationUnit.ToSiUnit(double value) -> double
-~Gu.Units.AccelerationUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.AccelerationUnit.ToString(string format) -> string
+Gu.Units.AccelerationUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.AccelerationUnit.ToString(string! format) -> string!
 Gu.Units.AccelerationUnitTypeConverter
 Gu.Units.AccelerationUnitTypeConverter.AccelerationUnitTypeConverter() -> void
 Gu.Units.AmountOfSubstance
@@ -78,16 +78,16 @@ Gu.Units.AmountOfSubstanceTypeConverter
 Gu.Units.AmountOfSubstanceTypeConverter.AmountOfSubstanceTypeConverter() -> void
 Gu.Units.AmountOfSubstanceUnit
 Gu.Units.AmountOfSubstanceUnit.AmountOfSubstanceUnit() -> void
-~Gu.Units.AmountOfSubstanceUnit.AmountOfSubstanceUnit(System.Func<double, double> toMoles, System.Func<double, double> fromMoles, string symbol) -> void
+Gu.Units.AmountOfSubstanceUnit.AmountOfSubstanceUnit(System.Func<double, double>! toMoles, System.Func<double, double>! fromMoles, string! symbol) -> void
 Gu.Units.AmountOfSubstanceUnit.CreateQuantity(double value) -> Gu.Units.AmountOfSubstance
 Gu.Units.AmountOfSubstanceUnit.Equals(Gu.Units.AmountOfSubstanceUnit other) -> bool
 Gu.Units.AmountOfSubstanceUnit.FromSiUnit(double moles) -> double
 Gu.Units.AmountOfSubstanceUnit.GetScalarValue(Gu.Units.AmountOfSubstance quantity) -> double
 Gu.Units.AmountOfSubstanceUnit.SiUnit.get -> Gu.Units.AmountOfSubstanceUnit
-~Gu.Units.AmountOfSubstanceUnit.Symbol.get -> string
+Gu.Units.AmountOfSubstanceUnit.Symbol.get -> string!
 Gu.Units.AmountOfSubstanceUnit.ToSiUnit(double value) -> double
-~Gu.Units.AmountOfSubstanceUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.AmountOfSubstanceUnit.ToString(string format) -> string
+Gu.Units.AmountOfSubstanceUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.AmountOfSubstanceUnit.ToString(string! format) -> string!
 Gu.Units.AmountOfSubstanceUnitTypeConverter
 Gu.Units.AmountOfSubstanceUnitTypeConverter.AmountOfSubstanceUnitTypeConverter() -> void
 Gu.Units.Angle
@@ -149,32 +149,32 @@ Gu.Units.AnglePerUnitlessTypeConverter
 Gu.Units.AnglePerUnitlessTypeConverter.AnglePerUnitlessTypeConverter() -> void
 Gu.Units.AnglePerUnitlessUnit
 Gu.Units.AnglePerUnitlessUnit.AnglePerUnitlessUnit() -> void
-~Gu.Units.AnglePerUnitlessUnit.AnglePerUnitlessUnit(System.Func<double, double> toRadiansPerUnitless, System.Func<double, double> fromRadiansPerUnitless, string symbol) -> void
+Gu.Units.AnglePerUnitlessUnit.AnglePerUnitlessUnit(System.Func<double, double>! toRadiansPerUnitless, System.Func<double, double>! fromRadiansPerUnitless, string! symbol) -> void
 Gu.Units.AnglePerUnitlessUnit.CreateQuantity(double value) -> Gu.Units.AnglePerUnitless
 Gu.Units.AnglePerUnitlessUnit.Equals(Gu.Units.AnglePerUnitlessUnit other) -> bool
 Gu.Units.AnglePerUnitlessUnit.FromSiUnit(double radiansPerUnitless) -> double
 Gu.Units.AnglePerUnitlessUnit.GetScalarValue(Gu.Units.AnglePerUnitless quantity) -> double
 Gu.Units.AnglePerUnitlessUnit.SiUnit.get -> Gu.Units.AnglePerUnitlessUnit
-~Gu.Units.AnglePerUnitlessUnit.Symbol.get -> string
+Gu.Units.AnglePerUnitlessUnit.Symbol.get -> string!
 Gu.Units.AnglePerUnitlessUnit.ToSiUnit(double value) -> double
-~Gu.Units.AnglePerUnitlessUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.AnglePerUnitlessUnit.ToString(string format) -> string
+Gu.Units.AnglePerUnitlessUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.AnglePerUnitlessUnit.ToString(string! format) -> string!
 Gu.Units.AnglePerUnitlessUnitTypeConverter
 Gu.Units.AnglePerUnitlessUnitTypeConverter.AnglePerUnitlessUnitTypeConverter() -> void
 Gu.Units.AngleTypeConverter
 Gu.Units.AngleTypeConverter.AngleTypeConverter() -> void
 Gu.Units.AngleUnit
 Gu.Units.AngleUnit.AngleUnit() -> void
-~Gu.Units.AngleUnit.AngleUnit(System.Func<double, double> toRadians, System.Func<double, double> fromRadians, string symbol) -> void
+Gu.Units.AngleUnit.AngleUnit(System.Func<double, double>! toRadians, System.Func<double, double>! fromRadians, string! symbol) -> void
 Gu.Units.AngleUnit.CreateQuantity(double value) -> Gu.Units.Angle
 Gu.Units.AngleUnit.Equals(Gu.Units.AngleUnit other) -> bool
 Gu.Units.AngleUnit.FromSiUnit(double radians) -> double
 Gu.Units.AngleUnit.GetScalarValue(Gu.Units.Angle quantity) -> double
 Gu.Units.AngleUnit.SiUnit.get -> Gu.Units.AngleUnit
-~Gu.Units.AngleUnit.Symbol.get -> string
+Gu.Units.AngleUnit.Symbol.get -> string!
 Gu.Units.AngleUnit.ToSiUnit(double value) -> double
-~Gu.Units.AngleUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.AngleUnit.ToString(string format) -> string
+Gu.Units.AngleUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.AngleUnit.ToString(string! format) -> string!
 Gu.Units.AngleUnitTypeConverter
 Gu.Units.AngleUnitTypeConverter.AngleUnitTypeConverter() -> void
 Gu.Units.AngularAcceleration
@@ -212,16 +212,16 @@ Gu.Units.AngularAccelerationTypeConverter
 Gu.Units.AngularAccelerationTypeConverter.AngularAccelerationTypeConverter() -> void
 Gu.Units.AngularAccelerationUnit
 Gu.Units.AngularAccelerationUnit.AngularAccelerationUnit() -> void
-~Gu.Units.AngularAccelerationUnit.AngularAccelerationUnit(System.Func<double, double> toRadiansPerSecondSquared, System.Func<double, double> fromRadiansPerSecondSquared, string symbol) -> void
+Gu.Units.AngularAccelerationUnit.AngularAccelerationUnit(System.Func<double, double>! toRadiansPerSecondSquared, System.Func<double, double>! fromRadiansPerSecondSquared, string! symbol) -> void
 Gu.Units.AngularAccelerationUnit.CreateQuantity(double value) -> Gu.Units.AngularAcceleration
 Gu.Units.AngularAccelerationUnit.Equals(Gu.Units.AngularAccelerationUnit other) -> bool
 Gu.Units.AngularAccelerationUnit.FromSiUnit(double radiansPerSecondSquared) -> double
 Gu.Units.AngularAccelerationUnit.GetScalarValue(Gu.Units.AngularAcceleration quantity) -> double
 Gu.Units.AngularAccelerationUnit.SiUnit.get -> Gu.Units.AngularAccelerationUnit
-~Gu.Units.AngularAccelerationUnit.Symbol.get -> string
+Gu.Units.AngularAccelerationUnit.Symbol.get -> string!
 Gu.Units.AngularAccelerationUnit.ToSiUnit(double value) -> double
-~Gu.Units.AngularAccelerationUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.AngularAccelerationUnit.ToString(string format) -> string
+Gu.Units.AngularAccelerationUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.AngularAccelerationUnit.ToString(string! format) -> string!
 Gu.Units.AngularAccelerationUnitTypeConverter
 Gu.Units.AngularAccelerationUnitTypeConverter.AngularAccelerationUnitTypeConverter() -> void
 Gu.Units.AngularJerk
@@ -259,16 +259,16 @@ Gu.Units.AngularJerkTypeConverter
 Gu.Units.AngularJerkTypeConverter.AngularJerkTypeConverter() -> void
 Gu.Units.AngularJerkUnit
 Gu.Units.AngularJerkUnit.AngularJerkUnit() -> void
-~Gu.Units.AngularJerkUnit.AngularJerkUnit(System.Func<double, double> toRadiansPerSecondCubed, System.Func<double, double> fromRadiansPerSecondCubed, string symbol) -> void
+Gu.Units.AngularJerkUnit.AngularJerkUnit(System.Func<double, double>! toRadiansPerSecondCubed, System.Func<double, double>! fromRadiansPerSecondCubed, string! symbol) -> void
 Gu.Units.AngularJerkUnit.CreateQuantity(double value) -> Gu.Units.AngularJerk
 Gu.Units.AngularJerkUnit.Equals(Gu.Units.AngularJerkUnit other) -> bool
 Gu.Units.AngularJerkUnit.FromSiUnit(double radiansPerSecondCubed) -> double
 Gu.Units.AngularJerkUnit.GetScalarValue(Gu.Units.AngularJerk quantity) -> double
 Gu.Units.AngularJerkUnit.SiUnit.get -> Gu.Units.AngularJerkUnit
-~Gu.Units.AngularJerkUnit.Symbol.get -> string
+Gu.Units.AngularJerkUnit.Symbol.get -> string!
 Gu.Units.AngularJerkUnit.ToSiUnit(double value) -> double
-~Gu.Units.AngularJerkUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.AngularJerkUnit.ToString(string format) -> string
+Gu.Units.AngularJerkUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.AngularJerkUnit.ToString(string! format) -> string!
 Gu.Units.AngularJerkUnitTypeConverter
 Gu.Units.AngularJerkUnitTypeConverter.AngularJerkUnitTypeConverter() -> void
 Gu.Units.AngularSpeed
@@ -307,16 +307,16 @@ Gu.Units.AngularSpeedTypeConverter
 Gu.Units.AngularSpeedTypeConverter.AngularSpeedTypeConverter() -> void
 Gu.Units.AngularSpeedUnit
 Gu.Units.AngularSpeedUnit.AngularSpeedUnit() -> void
-~Gu.Units.AngularSpeedUnit.AngularSpeedUnit(System.Func<double, double> toRadiansPerSecond, System.Func<double, double> fromRadiansPerSecond, string symbol) -> void
+Gu.Units.AngularSpeedUnit.AngularSpeedUnit(System.Func<double, double>! toRadiansPerSecond, System.Func<double, double>! fromRadiansPerSecond, string! symbol) -> void
 Gu.Units.AngularSpeedUnit.CreateQuantity(double value) -> Gu.Units.AngularSpeed
 Gu.Units.AngularSpeedUnit.Equals(Gu.Units.AngularSpeedUnit other) -> bool
 Gu.Units.AngularSpeedUnit.FromSiUnit(double radiansPerSecond) -> double
 Gu.Units.AngularSpeedUnit.GetScalarValue(Gu.Units.AngularSpeed quantity) -> double
 Gu.Units.AngularSpeedUnit.SiUnit.get -> Gu.Units.AngularSpeedUnit
-~Gu.Units.AngularSpeedUnit.Symbol.get -> string
+Gu.Units.AngularSpeedUnit.Symbol.get -> string!
 Gu.Units.AngularSpeedUnit.ToSiUnit(double value) -> double
-~Gu.Units.AngularSpeedUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.AngularSpeedUnit.ToString(string format) -> string
+Gu.Units.AngularSpeedUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.AngularSpeedUnit.ToString(string! format) -> string!
 Gu.Units.AngularSpeedUnitTypeConverter
 Gu.Units.AngularSpeedUnitTypeConverter.AngularSpeedUnitTypeConverter() -> void
 Gu.Units.Area
@@ -384,32 +384,32 @@ Gu.Units.AreaDensityTypeConverter
 Gu.Units.AreaDensityTypeConverter.AreaDensityTypeConverter() -> void
 Gu.Units.AreaDensityUnit
 Gu.Units.AreaDensityUnit.AreaDensityUnit() -> void
-~Gu.Units.AreaDensityUnit.AreaDensityUnit(System.Func<double, double> toKilogramsPerSquareMetre, System.Func<double, double> fromKilogramsPerSquareMetre, string symbol) -> void
+Gu.Units.AreaDensityUnit.AreaDensityUnit(System.Func<double, double>! toKilogramsPerSquareMetre, System.Func<double, double>! fromKilogramsPerSquareMetre, string! symbol) -> void
 Gu.Units.AreaDensityUnit.CreateQuantity(double value) -> Gu.Units.AreaDensity
 Gu.Units.AreaDensityUnit.Equals(Gu.Units.AreaDensityUnit other) -> bool
 Gu.Units.AreaDensityUnit.FromSiUnit(double kilogramsPerSquareMetre) -> double
 Gu.Units.AreaDensityUnit.GetScalarValue(Gu.Units.AreaDensity quantity) -> double
 Gu.Units.AreaDensityUnit.SiUnit.get -> Gu.Units.AreaDensityUnit
-~Gu.Units.AreaDensityUnit.Symbol.get -> string
+Gu.Units.AreaDensityUnit.Symbol.get -> string!
 Gu.Units.AreaDensityUnit.ToSiUnit(double value) -> double
-~Gu.Units.AreaDensityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.AreaDensityUnit.ToString(string format) -> string
+Gu.Units.AreaDensityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.AreaDensityUnit.ToString(string! format) -> string!
 Gu.Units.AreaDensityUnitTypeConverter
 Gu.Units.AreaDensityUnitTypeConverter.AreaDensityUnitTypeConverter() -> void
 Gu.Units.AreaTypeConverter
 Gu.Units.AreaTypeConverter.AreaTypeConverter() -> void
 Gu.Units.AreaUnit
 Gu.Units.AreaUnit.AreaUnit() -> void
-~Gu.Units.AreaUnit.AreaUnit(System.Func<double, double> toSquareMetres, System.Func<double, double> fromSquareMetres, string symbol) -> void
+Gu.Units.AreaUnit.AreaUnit(System.Func<double, double>! toSquareMetres, System.Func<double, double>! fromSquareMetres, string! symbol) -> void
 Gu.Units.AreaUnit.CreateQuantity(double value) -> Gu.Units.Area
 Gu.Units.AreaUnit.Equals(Gu.Units.AreaUnit other) -> bool
 Gu.Units.AreaUnit.FromSiUnit(double squareMetres) -> double
 Gu.Units.AreaUnit.GetScalarValue(Gu.Units.Area quantity) -> double
 Gu.Units.AreaUnit.SiUnit.get -> Gu.Units.AreaUnit
-~Gu.Units.AreaUnit.Symbol.get -> string
+Gu.Units.AreaUnit.Symbol.get -> string!
 Gu.Units.AreaUnit.ToSiUnit(double value) -> double
-~Gu.Units.AreaUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.AreaUnit.ToString(string format) -> string
+Gu.Units.AreaUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.AreaUnit.ToString(string! format) -> string!
 Gu.Units.AreaUnitTypeConverter
 Gu.Units.AreaUnitTypeConverter.AreaUnitTypeConverter() -> void
 Gu.Units.Capacitance
@@ -448,16 +448,16 @@ Gu.Units.CapacitanceTypeConverter
 Gu.Units.CapacitanceTypeConverter.CapacitanceTypeConverter() -> void
 Gu.Units.CapacitanceUnit
 Gu.Units.CapacitanceUnit.CapacitanceUnit() -> void
-~Gu.Units.CapacitanceUnit.CapacitanceUnit(System.Func<double, double> toFarads, System.Func<double, double> fromFarads, string symbol) -> void
+Gu.Units.CapacitanceUnit.CapacitanceUnit(System.Func<double, double>! toFarads, System.Func<double, double>! fromFarads, string! symbol) -> void
 Gu.Units.CapacitanceUnit.CreateQuantity(double value) -> Gu.Units.Capacitance
 Gu.Units.CapacitanceUnit.Equals(Gu.Units.CapacitanceUnit other) -> bool
 Gu.Units.CapacitanceUnit.FromSiUnit(double farads) -> double
 Gu.Units.CapacitanceUnit.GetScalarValue(Gu.Units.Capacitance quantity) -> double
 Gu.Units.CapacitanceUnit.SiUnit.get -> Gu.Units.CapacitanceUnit
-~Gu.Units.CapacitanceUnit.Symbol.get -> string
+Gu.Units.CapacitanceUnit.Symbol.get -> string!
 Gu.Units.CapacitanceUnit.ToSiUnit(double value) -> double
-~Gu.Units.CapacitanceUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.CapacitanceUnit.ToString(string format) -> string
+Gu.Units.CapacitanceUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.CapacitanceUnit.ToString(string! format) -> string!
 Gu.Units.CapacitanceUnitTypeConverter
 Gu.Units.CapacitanceUnitTypeConverter.CapacitanceUnitTypeConverter() -> void
 Gu.Units.CatalyticActivity
@@ -490,16 +490,16 @@ Gu.Units.CatalyticActivityTypeConverter
 Gu.Units.CatalyticActivityTypeConverter.CatalyticActivityTypeConverter() -> void
 Gu.Units.CatalyticActivityUnit
 Gu.Units.CatalyticActivityUnit.CatalyticActivityUnit() -> void
-~Gu.Units.CatalyticActivityUnit.CatalyticActivityUnit(System.Func<double, double> toKatals, System.Func<double, double> fromKatals, string symbol) -> void
+Gu.Units.CatalyticActivityUnit.CatalyticActivityUnit(System.Func<double, double>! toKatals, System.Func<double, double>! fromKatals, string! symbol) -> void
 Gu.Units.CatalyticActivityUnit.CreateQuantity(double value) -> Gu.Units.CatalyticActivity
 Gu.Units.CatalyticActivityUnit.Equals(Gu.Units.CatalyticActivityUnit other) -> bool
 Gu.Units.CatalyticActivityUnit.FromSiUnit(double katals) -> double
 Gu.Units.CatalyticActivityUnit.GetScalarValue(Gu.Units.CatalyticActivity quantity) -> double
 Gu.Units.CatalyticActivityUnit.SiUnit.get -> Gu.Units.CatalyticActivityUnit
-~Gu.Units.CatalyticActivityUnit.Symbol.get -> string
+Gu.Units.CatalyticActivityUnit.Symbol.get -> string!
 Gu.Units.CatalyticActivityUnit.ToSiUnit(double value) -> double
-~Gu.Units.CatalyticActivityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.CatalyticActivityUnit.ToString(string format) -> string
+Gu.Units.CatalyticActivityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.CatalyticActivityUnit.ToString(string! format) -> string!
 Gu.Units.CatalyticActivityUnitTypeConverter
 Gu.Units.CatalyticActivityUnitTypeConverter.CatalyticActivityUnitTypeConverter() -> void
 Gu.Units.Conductivity
@@ -544,16 +544,16 @@ Gu.Units.ConductivityTypeConverter
 Gu.Units.ConductivityTypeConverter.ConductivityTypeConverter() -> void
 Gu.Units.ConductivityUnit
 Gu.Units.ConductivityUnit.ConductivityUnit() -> void
-~Gu.Units.ConductivityUnit.ConductivityUnit(System.Func<double, double> toSiemensPerMetre, System.Func<double, double> fromSiemensPerMetre, string symbol) -> void
+Gu.Units.ConductivityUnit.ConductivityUnit(System.Func<double, double>! toSiemensPerMetre, System.Func<double, double>! fromSiemensPerMetre, string! symbol) -> void
 Gu.Units.ConductivityUnit.CreateQuantity(double value) -> Gu.Units.Conductivity
 Gu.Units.ConductivityUnit.Equals(Gu.Units.ConductivityUnit other) -> bool
 Gu.Units.ConductivityUnit.FromSiUnit(double siemensPerMetre) -> double
 Gu.Units.ConductivityUnit.GetScalarValue(Gu.Units.Conductivity quantity) -> double
 Gu.Units.ConductivityUnit.SiUnit.get -> Gu.Units.ConductivityUnit
-~Gu.Units.ConductivityUnit.Symbol.get -> string
+Gu.Units.ConductivityUnit.Symbol.get -> string!
 Gu.Units.ConductivityUnit.ToSiUnit(double value) -> double
-~Gu.Units.ConductivityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.ConductivityUnit.ToString(string format) -> string
+Gu.Units.ConductivityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.ConductivityUnit.ToString(string! format) -> string!
 Gu.Units.ConductivityUnitTypeConverter
 Gu.Units.ConductivityUnitTypeConverter.ConductivityUnitTypeConverter() -> void
 Gu.Units.Current
@@ -593,15 +593,15 @@ Gu.Units.CurrentTypeConverter.CurrentTypeConverter() -> void
 Gu.Units.CurrentUnit
 Gu.Units.CurrentUnit.CreateQuantity(double value) -> Gu.Units.Current
 Gu.Units.CurrentUnit.CurrentUnit() -> void
-~Gu.Units.CurrentUnit.CurrentUnit(System.Func<double, double> toAmperes, System.Func<double, double> fromAmperes, string symbol) -> void
+Gu.Units.CurrentUnit.CurrentUnit(System.Func<double, double>! toAmperes, System.Func<double, double>! fromAmperes, string! symbol) -> void
 Gu.Units.CurrentUnit.Equals(Gu.Units.CurrentUnit other) -> bool
 Gu.Units.CurrentUnit.FromSiUnit(double amperes) -> double
 Gu.Units.CurrentUnit.GetScalarValue(Gu.Units.Current quantity) -> double
 Gu.Units.CurrentUnit.SiUnit.get -> Gu.Units.CurrentUnit
-~Gu.Units.CurrentUnit.Symbol.get -> string
+Gu.Units.CurrentUnit.Symbol.get -> string!
 Gu.Units.CurrentUnit.ToSiUnit(double value) -> double
-~Gu.Units.CurrentUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.CurrentUnit.ToString(string format) -> string
+Gu.Units.CurrentUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.CurrentUnit.ToString(string! format) -> string!
 Gu.Units.CurrentUnitTypeConverter
 Gu.Units.CurrentUnitTypeConverter.CurrentUnitTypeConverter() -> void
 Gu.Units.Data
@@ -643,15 +643,15 @@ Gu.Units.DataTypeConverter.DataTypeConverter() -> void
 Gu.Units.DataUnit
 Gu.Units.DataUnit.CreateQuantity(double value) -> Gu.Units.Data
 Gu.Units.DataUnit.DataUnit() -> void
-~Gu.Units.DataUnit.DataUnit(System.Func<double, double> toBits, System.Func<double, double> fromBits, string symbol) -> void
+Gu.Units.DataUnit.DataUnit(System.Func<double, double>! toBits, System.Func<double, double>! fromBits, string! symbol) -> void
 Gu.Units.DataUnit.Equals(Gu.Units.DataUnit other) -> bool
 Gu.Units.DataUnit.FromSiUnit(double bits) -> double
 Gu.Units.DataUnit.GetScalarValue(Gu.Units.Data quantity) -> double
 Gu.Units.DataUnit.SiUnit.get -> Gu.Units.DataUnit
-~Gu.Units.DataUnit.Symbol.get -> string
+Gu.Units.DataUnit.Symbol.get -> string!
 Gu.Units.DataUnit.ToSiUnit(double value) -> double
-~Gu.Units.DataUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.DataUnit.ToString(string format) -> string
+Gu.Units.DataUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.DataUnit.ToString(string! format) -> string!
 Gu.Units.DataUnitTypeConverter
 Gu.Units.DataUnitTypeConverter.DataUnitTypeConverter() -> void
 Gu.Units.Density
@@ -690,15 +690,15 @@ Gu.Units.DensityTypeConverter.DensityTypeConverter() -> void
 Gu.Units.DensityUnit
 Gu.Units.DensityUnit.CreateQuantity(double value) -> Gu.Units.Density
 Gu.Units.DensityUnit.DensityUnit() -> void
-~Gu.Units.DensityUnit.DensityUnit(System.Func<double, double> toKilogramsPerCubicMetre, System.Func<double, double> fromKilogramsPerCubicMetre, string symbol) -> void
+Gu.Units.DensityUnit.DensityUnit(System.Func<double, double>! toKilogramsPerCubicMetre, System.Func<double, double>! fromKilogramsPerCubicMetre, string! symbol) -> void
 Gu.Units.DensityUnit.Equals(Gu.Units.DensityUnit other) -> bool
 Gu.Units.DensityUnit.FromSiUnit(double kilogramsPerCubicMetre) -> double
 Gu.Units.DensityUnit.GetScalarValue(Gu.Units.Density quantity) -> double
 Gu.Units.DensityUnit.SiUnit.get -> Gu.Units.DensityUnit
-~Gu.Units.DensityUnit.Symbol.get -> string
+Gu.Units.DensityUnit.Symbol.get -> string!
 Gu.Units.DensityUnit.ToSiUnit(double value) -> double
-~Gu.Units.DensityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.DensityUnit.ToString(string format) -> string
+Gu.Units.DensityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.DensityUnit.ToString(string! format) -> string!
 Gu.Units.DensityUnitTypeConverter
 Gu.Units.DensityUnitTypeConverter.DensityUnitTypeConverter() -> void
 Gu.Units.ElectricalConductance
@@ -735,15 +735,15 @@ Gu.Units.ElectricalConductanceTypeConverter.ElectricalConductanceTypeConverter()
 Gu.Units.ElectricalConductanceUnit
 Gu.Units.ElectricalConductanceUnit.CreateQuantity(double value) -> Gu.Units.ElectricalConductance
 Gu.Units.ElectricalConductanceUnit.ElectricalConductanceUnit() -> void
-~Gu.Units.ElectricalConductanceUnit.ElectricalConductanceUnit(System.Func<double, double> toSiemens, System.Func<double, double> fromSiemens, string symbol) -> void
+Gu.Units.ElectricalConductanceUnit.ElectricalConductanceUnit(System.Func<double, double>! toSiemens, System.Func<double, double>! fromSiemens, string! symbol) -> void
 Gu.Units.ElectricalConductanceUnit.Equals(Gu.Units.ElectricalConductanceUnit other) -> bool
 Gu.Units.ElectricalConductanceUnit.FromSiUnit(double siemens) -> double
 Gu.Units.ElectricalConductanceUnit.GetScalarValue(Gu.Units.ElectricalConductance quantity) -> double
 Gu.Units.ElectricalConductanceUnit.SiUnit.get -> Gu.Units.ElectricalConductanceUnit
-~Gu.Units.ElectricalConductanceUnit.Symbol.get -> string
+Gu.Units.ElectricalConductanceUnit.Symbol.get -> string!
 Gu.Units.ElectricalConductanceUnit.ToSiUnit(double value) -> double
-~Gu.Units.ElectricalConductanceUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.ElectricalConductanceUnit.ToString(string format) -> string
+Gu.Units.ElectricalConductanceUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.ElectricalConductanceUnit.ToString(string! format) -> string!
 Gu.Units.ElectricalConductanceUnitTypeConverter
 Gu.Units.ElectricalConductanceUnitTypeConverter.ElectricalConductanceUnitTypeConverter() -> void
 Gu.Units.ElectricCharge
@@ -783,15 +783,15 @@ Gu.Units.ElectricChargeTypeConverter.ElectricChargeTypeConverter() -> void
 Gu.Units.ElectricChargeUnit
 Gu.Units.ElectricChargeUnit.CreateQuantity(double value) -> Gu.Units.ElectricCharge
 Gu.Units.ElectricChargeUnit.ElectricChargeUnit() -> void
-~Gu.Units.ElectricChargeUnit.ElectricChargeUnit(System.Func<double, double> toCoulombs, System.Func<double, double> fromCoulombs, string symbol) -> void
+Gu.Units.ElectricChargeUnit.ElectricChargeUnit(System.Func<double, double>! toCoulombs, System.Func<double, double>! fromCoulombs, string! symbol) -> void
 Gu.Units.ElectricChargeUnit.Equals(Gu.Units.ElectricChargeUnit other) -> bool
 Gu.Units.ElectricChargeUnit.FromSiUnit(double coulombs) -> double
 Gu.Units.ElectricChargeUnit.GetScalarValue(Gu.Units.ElectricCharge quantity) -> double
 Gu.Units.ElectricChargeUnit.SiUnit.get -> Gu.Units.ElectricChargeUnit
-~Gu.Units.ElectricChargeUnit.Symbol.get -> string
+Gu.Units.ElectricChargeUnit.Symbol.get -> string!
 Gu.Units.ElectricChargeUnit.ToSiUnit(double value) -> double
-~Gu.Units.ElectricChargeUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.ElectricChargeUnit.ToString(string format) -> string
+Gu.Units.ElectricChargeUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.ElectricChargeUnit.ToString(string! format) -> string!
 Gu.Units.ElectricChargeUnitTypeConverter
 Gu.Units.ElectricChargeUnitTypeConverter.ElectricChargeUnitTypeConverter() -> void
 Gu.Units.Energy
@@ -832,15 +832,15 @@ Gu.Units.EnergyTypeConverter.EnergyTypeConverter() -> void
 Gu.Units.EnergyUnit
 Gu.Units.EnergyUnit.CreateQuantity(double value) -> Gu.Units.Energy
 Gu.Units.EnergyUnit.EnergyUnit() -> void
-~Gu.Units.EnergyUnit.EnergyUnit(System.Func<double, double> toJoules, System.Func<double, double> fromJoules, string symbol) -> void
+Gu.Units.EnergyUnit.EnergyUnit(System.Func<double, double>! toJoules, System.Func<double, double>! fromJoules, string! symbol) -> void
 Gu.Units.EnergyUnit.Equals(Gu.Units.EnergyUnit other) -> bool
 Gu.Units.EnergyUnit.FromSiUnit(double joules) -> double
 Gu.Units.EnergyUnit.GetScalarValue(Gu.Units.Energy quantity) -> double
 Gu.Units.EnergyUnit.SiUnit.get -> Gu.Units.EnergyUnit
-~Gu.Units.EnergyUnit.Symbol.get -> string
+Gu.Units.EnergyUnit.Symbol.get -> string!
 Gu.Units.EnergyUnit.ToSiUnit(double value) -> double
-~Gu.Units.EnergyUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.EnergyUnit.ToString(string format) -> string
+Gu.Units.EnergyUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.EnergyUnit.ToString(string! format) -> string!
 Gu.Units.EnergyUnitTypeConverter
 Gu.Units.EnergyUnitTypeConverter.EnergyUnitTypeConverter() -> void
 Gu.Units.EnumerableUnits
@@ -879,14 +879,14 @@ Gu.Units.FlexibilityUnit
 Gu.Units.FlexibilityUnit.CreateQuantity(double value) -> Gu.Units.Flexibility
 Gu.Units.FlexibilityUnit.Equals(Gu.Units.FlexibilityUnit other) -> bool
 Gu.Units.FlexibilityUnit.FlexibilityUnit() -> void
-~Gu.Units.FlexibilityUnit.FlexibilityUnit(System.Func<double, double> toMetresPerNewton, System.Func<double, double> fromMetresPerNewton, string symbol) -> void
+Gu.Units.FlexibilityUnit.FlexibilityUnit(System.Func<double, double>! toMetresPerNewton, System.Func<double, double>! fromMetresPerNewton, string! symbol) -> void
 Gu.Units.FlexibilityUnit.FromSiUnit(double metresPerNewton) -> double
 Gu.Units.FlexibilityUnit.GetScalarValue(Gu.Units.Flexibility quantity) -> double
 Gu.Units.FlexibilityUnit.SiUnit.get -> Gu.Units.FlexibilityUnit
-~Gu.Units.FlexibilityUnit.Symbol.get -> string
+Gu.Units.FlexibilityUnit.Symbol.get -> string!
 Gu.Units.FlexibilityUnit.ToSiUnit(double value) -> double
-~Gu.Units.FlexibilityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.FlexibilityUnit.ToString(string format) -> string
+Gu.Units.FlexibilityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.FlexibilityUnit.ToString(string! format) -> string!
 Gu.Units.FlexibilityUnitTypeConverter
 Gu.Units.FlexibilityUnitTypeConverter.FlexibilityUnitTypeConverter() -> void
 Gu.Units.Force
@@ -957,14 +957,14 @@ Gu.Units.ForcePerUnitlessUnit
 Gu.Units.ForcePerUnitlessUnit.CreateQuantity(double value) -> Gu.Units.ForcePerUnitless
 Gu.Units.ForcePerUnitlessUnit.Equals(Gu.Units.ForcePerUnitlessUnit other) -> bool
 Gu.Units.ForcePerUnitlessUnit.ForcePerUnitlessUnit() -> void
-~Gu.Units.ForcePerUnitlessUnit.ForcePerUnitlessUnit(System.Func<double, double> toNewtonsPerUnitless, System.Func<double, double> fromNewtonsPerUnitless, string symbol) -> void
+Gu.Units.ForcePerUnitlessUnit.ForcePerUnitlessUnit(System.Func<double, double>! toNewtonsPerUnitless, System.Func<double, double>! fromNewtonsPerUnitless, string! symbol) -> void
 Gu.Units.ForcePerUnitlessUnit.FromSiUnit(double newtonsPerUnitless) -> double
 Gu.Units.ForcePerUnitlessUnit.GetScalarValue(Gu.Units.ForcePerUnitless quantity) -> double
 Gu.Units.ForcePerUnitlessUnit.SiUnit.get -> Gu.Units.ForcePerUnitlessUnit
-~Gu.Units.ForcePerUnitlessUnit.Symbol.get -> string
+Gu.Units.ForcePerUnitlessUnit.Symbol.get -> string!
 Gu.Units.ForcePerUnitlessUnit.ToSiUnit(double value) -> double
-~Gu.Units.ForcePerUnitlessUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.ForcePerUnitlessUnit.ToString(string format) -> string
+Gu.Units.ForcePerUnitlessUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.ForcePerUnitlessUnit.ToString(string! format) -> string!
 Gu.Units.ForcePerUnitlessUnitTypeConverter
 Gu.Units.ForcePerUnitlessUnitTypeConverter.ForcePerUnitlessUnitTypeConverter() -> void
 Gu.Units.ForceTypeConverter
@@ -973,14 +973,14 @@ Gu.Units.ForceUnit
 Gu.Units.ForceUnit.CreateQuantity(double value) -> Gu.Units.Force
 Gu.Units.ForceUnit.Equals(Gu.Units.ForceUnit other) -> bool
 Gu.Units.ForceUnit.ForceUnit() -> void
-~Gu.Units.ForceUnit.ForceUnit(System.Func<double, double> toNewtons, System.Func<double, double> fromNewtons, string symbol) -> void
+Gu.Units.ForceUnit.ForceUnit(System.Func<double, double>! toNewtons, System.Func<double, double>! fromNewtons, string! symbol) -> void
 Gu.Units.ForceUnit.FromSiUnit(double newtons) -> double
 Gu.Units.ForceUnit.GetScalarValue(Gu.Units.Force quantity) -> double
 Gu.Units.ForceUnit.SiUnit.get -> Gu.Units.ForceUnit
-~Gu.Units.ForceUnit.Symbol.get -> string
+Gu.Units.ForceUnit.Symbol.get -> string!
 Gu.Units.ForceUnit.ToSiUnit(double value) -> double
-~Gu.Units.ForceUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.ForceUnit.ToString(string format) -> string
+Gu.Units.ForceUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.ForceUnit.ToString(string! format) -> string!
 Gu.Units.ForceUnitTypeConverter
 Gu.Units.ForceUnitTypeConverter.ForceUnitTypeConverter() -> void
 Gu.Units.Frequency
@@ -1019,14 +1019,14 @@ Gu.Units.FrequencyUnit
 Gu.Units.FrequencyUnit.CreateQuantity(double value) -> Gu.Units.Frequency
 Gu.Units.FrequencyUnit.Equals(Gu.Units.FrequencyUnit other) -> bool
 Gu.Units.FrequencyUnit.FrequencyUnit() -> void
-~Gu.Units.FrequencyUnit.FrequencyUnit(System.Func<double, double> toHertz, System.Func<double, double> fromHertz, string symbol) -> void
+Gu.Units.FrequencyUnit.FrequencyUnit(System.Func<double, double>! toHertz, System.Func<double, double>! fromHertz, string! symbol) -> void
 Gu.Units.FrequencyUnit.FromSiUnit(double hertz) -> double
 Gu.Units.FrequencyUnit.GetScalarValue(Gu.Units.Frequency quantity) -> double
 Gu.Units.FrequencyUnit.SiUnit.get -> Gu.Units.FrequencyUnit
-~Gu.Units.FrequencyUnit.Symbol.get -> string
+Gu.Units.FrequencyUnit.Symbol.get -> string!
 Gu.Units.FrequencyUnit.ToSiUnit(double value) -> double
-~Gu.Units.FrequencyUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.FrequencyUnit.ToString(string format) -> string
+Gu.Units.FrequencyUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.FrequencyUnit.ToString(string! format) -> string!
 Gu.Units.FrequencyUnitTypeConverter
 Gu.Units.FrequencyUnitTypeConverter.FrequencyUnitTypeConverter() -> void
 Gu.Units.Illuminance
@@ -1063,12 +1063,12 @@ Gu.Units.IlluminanceUnit.Equals(Gu.Units.IlluminanceUnit other) -> bool
 Gu.Units.IlluminanceUnit.FromSiUnit(double lux) -> double
 Gu.Units.IlluminanceUnit.GetScalarValue(Gu.Units.Illuminance quantity) -> double
 Gu.Units.IlluminanceUnit.IlluminanceUnit() -> void
-~Gu.Units.IlluminanceUnit.IlluminanceUnit(System.Func<double, double> toLux, System.Func<double, double> fromLux, string symbol) -> void
+Gu.Units.IlluminanceUnit.IlluminanceUnit(System.Func<double, double>! toLux, System.Func<double, double>! fromLux, string! symbol) -> void
 Gu.Units.IlluminanceUnit.SiUnit.get -> Gu.Units.IlluminanceUnit
-~Gu.Units.IlluminanceUnit.Symbol.get -> string
+Gu.Units.IlluminanceUnit.Symbol.get -> string!
 Gu.Units.IlluminanceUnit.ToSiUnit(double value) -> double
-~Gu.Units.IlluminanceUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.IlluminanceUnit.ToString(string format) -> string
+Gu.Units.IlluminanceUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.IlluminanceUnit.ToString(string! format) -> string!
 Gu.Units.IlluminanceUnitTypeConverter
 Gu.Units.IlluminanceUnitTypeConverter.IlluminanceUnitTypeConverter() -> void
 Gu.Units.Inductance
@@ -1111,12 +1111,12 @@ Gu.Units.InductanceUnit.Equals(Gu.Units.InductanceUnit other) -> bool
 Gu.Units.InductanceUnit.FromSiUnit(double henrys) -> double
 Gu.Units.InductanceUnit.GetScalarValue(Gu.Units.Inductance quantity) -> double
 Gu.Units.InductanceUnit.InductanceUnit() -> void
-~Gu.Units.InductanceUnit.InductanceUnit(System.Func<double, double> toHenrys, System.Func<double, double> fromHenrys, string symbol) -> void
+Gu.Units.InductanceUnit.InductanceUnit(System.Func<double, double>! toHenrys, System.Func<double, double>! fromHenrys, string! symbol) -> void
 Gu.Units.InductanceUnit.SiUnit.get -> Gu.Units.InductanceUnit
-~Gu.Units.InductanceUnit.Symbol.get -> string
+Gu.Units.InductanceUnit.Symbol.get -> string!
 Gu.Units.InductanceUnit.ToSiUnit(double value) -> double
-~Gu.Units.InductanceUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.InductanceUnit.ToString(string format) -> string
+Gu.Units.InductanceUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.InductanceUnit.ToString(string! format) -> string!
 Gu.Units.InductanceUnitTypeConverter
 Gu.Units.InductanceUnitTypeConverter.InductanceUnitTypeConverter() -> void
 Gu.Units.IQuantity
@@ -1187,12 +1187,12 @@ Gu.Units.JerkUnit.Equals(Gu.Units.JerkUnit other) -> bool
 Gu.Units.JerkUnit.FromSiUnit(double metresPerSecondCubed) -> double
 Gu.Units.JerkUnit.GetScalarValue(Gu.Units.Jerk quantity) -> double
 Gu.Units.JerkUnit.JerkUnit() -> void
-~Gu.Units.JerkUnit.JerkUnit(System.Func<double, double> toMetresPerSecondCubed, System.Func<double, double> fromMetresPerSecondCubed, string symbol) -> void
+Gu.Units.JerkUnit.JerkUnit(System.Func<double, double>! toMetresPerSecondCubed, System.Func<double, double>! fromMetresPerSecondCubed, string! symbol) -> void
 Gu.Units.JerkUnit.SiUnit.get -> Gu.Units.JerkUnit
-~Gu.Units.JerkUnit.Symbol.get -> string
+Gu.Units.JerkUnit.Symbol.get -> string!
 Gu.Units.JerkUnit.ToSiUnit(double value) -> double
-~Gu.Units.JerkUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.JerkUnit.ToString(string format) -> string
+Gu.Units.JerkUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.JerkUnit.ToString(string! format) -> string!
 Gu.Units.JerkUnitTypeConverter
 Gu.Units.JerkUnitTypeConverter.JerkUnitTypeConverter() -> void
 Gu.Units.KinematicViscosity
@@ -1229,12 +1229,12 @@ Gu.Units.KinematicViscosityUnit.Equals(Gu.Units.KinematicViscosityUnit other) ->
 Gu.Units.KinematicViscosityUnit.FromSiUnit(double squareMetresPerSecond) -> double
 Gu.Units.KinematicViscosityUnit.GetScalarValue(Gu.Units.KinematicViscosity quantity) -> double
 Gu.Units.KinematicViscosityUnit.KinematicViscosityUnit() -> void
-~Gu.Units.KinematicViscosityUnit.KinematicViscosityUnit(System.Func<double, double> toSquareMetresPerSecond, System.Func<double, double> fromSquareMetresPerSecond, string symbol) -> void
+Gu.Units.KinematicViscosityUnit.KinematicViscosityUnit(System.Func<double, double>! toSquareMetresPerSecond, System.Func<double, double>! fromSquareMetresPerSecond, string! symbol) -> void
 Gu.Units.KinematicViscosityUnit.SiUnit.get -> Gu.Units.KinematicViscosityUnit
-~Gu.Units.KinematicViscosityUnit.Symbol.get -> string
+Gu.Units.KinematicViscosityUnit.Symbol.get -> string!
 Gu.Units.KinematicViscosityUnit.ToSiUnit(double value) -> double
-~Gu.Units.KinematicViscosityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.KinematicViscosityUnit.ToString(string format) -> string
+Gu.Units.KinematicViscosityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.KinematicViscosityUnit.ToString(string! format) -> string!
 Gu.Units.KinematicViscosityUnitTypeConverter
 Gu.Units.KinematicViscosityUnitTypeConverter.KinematicViscosityUnitTypeConverter() -> void
 Gu.Units.Length
@@ -1311,12 +1311,12 @@ Gu.Units.LengthPerUnitlessUnit.Equals(Gu.Units.LengthPerUnitlessUnit other) -> b
 Gu.Units.LengthPerUnitlessUnit.FromSiUnit(double metresPerUnitless) -> double
 Gu.Units.LengthPerUnitlessUnit.GetScalarValue(Gu.Units.LengthPerUnitless quantity) -> double
 Gu.Units.LengthPerUnitlessUnit.LengthPerUnitlessUnit() -> void
-~Gu.Units.LengthPerUnitlessUnit.LengthPerUnitlessUnit(System.Func<double, double> toMetresPerUnitless, System.Func<double, double> fromMetresPerUnitless, string symbol) -> void
+Gu.Units.LengthPerUnitlessUnit.LengthPerUnitlessUnit(System.Func<double, double>! toMetresPerUnitless, System.Func<double, double>! fromMetresPerUnitless, string! symbol) -> void
 Gu.Units.LengthPerUnitlessUnit.SiUnit.get -> Gu.Units.LengthPerUnitlessUnit
-~Gu.Units.LengthPerUnitlessUnit.Symbol.get -> string
+Gu.Units.LengthPerUnitlessUnit.Symbol.get -> string!
 Gu.Units.LengthPerUnitlessUnit.ToSiUnit(double value) -> double
-~Gu.Units.LengthPerUnitlessUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.LengthPerUnitlessUnit.ToString(string format) -> string
+Gu.Units.LengthPerUnitlessUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.LengthPerUnitlessUnit.ToString(string! format) -> string!
 Gu.Units.LengthPerUnitlessUnitTypeConverter
 Gu.Units.LengthPerUnitlessUnitTypeConverter.LengthPerUnitlessUnitTypeConverter() -> void
 Gu.Units.LengthTypeConverter
@@ -1327,12 +1327,12 @@ Gu.Units.LengthUnit.Equals(Gu.Units.LengthUnit other) -> bool
 Gu.Units.LengthUnit.FromSiUnit(double metres) -> double
 Gu.Units.LengthUnit.GetScalarValue(Gu.Units.Length quantity) -> double
 Gu.Units.LengthUnit.LengthUnit() -> void
-~Gu.Units.LengthUnit.LengthUnit(System.Func<double, double> toMetres, System.Func<double, double> fromMetres, string symbol) -> void
+Gu.Units.LengthUnit.LengthUnit(System.Func<double, double>! toMetres, System.Func<double, double>! fromMetres, string! symbol) -> void
 Gu.Units.LengthUnit.SiUnit.get -> Gu.Units.LengthUnit
-~Gu.Units.LengthUnit.Symbol.get -> string
+Gu.Units.LengthUnit.Symbol.get -> string!
 Gu.Units.LengthUnit.ToSiUnit(double value) -> double
-~Gu.Units.LengthUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.LengthUnit.ToString(string format) -> string
+Gu.Units.LengthUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.LengthUnit.ToString(string! format) -> string!
 Gu.Units.LengthUnitTypeConverter
 Gu.Units.LengthUnitTypeConverter.LengthUnitTypeConverter() -> void
 Gu.Units.LuminousFlux
@@ -1369,12 +1369,12 @@ Gu.Units.LuminousFluxUnit.Equals(Gu.Units.LuminousFluxUnit other) -> bool
 Gu.Units.LuminousFluxUnit.FromSiUnit(double lumens) -> double
 Gu.Units.LuminousFluxUnit.GetScalarValue(Gu.Units.LuminousFlux quantity) -> double
 Gu.Units.LuminousFluxUnit.LuminousFluxUnit() -> void
-~Gu.Units.LuminousFluxUnit.LuminousFluxUnit(System.Func<double, double> toLumens, System.Func<double, double> fromLumens, string symbol) -> void
+Gu.Units.LuminousFluxUnit.LuminousFluxUnit(System.Func<double, double>! toLumens, System.Func<double, double>! fromLumens, string! symbol) -> void
 Gu.Units.LuminousFluxUnit.SiUnit.get -> Gu.Units.LuminousFluxUnit
-~Gu.Units.LuminousFluxUnit.Symbol.get -> string
+Gu.Units.LuminousFluxUnit.Symbol.get -> string!
 Gu.Units.LuminousFluxUnit.ToSiUnit(double value) -> double
-~Gu.Units.LuminousFluxUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.LuminousFluxUnit.ToString(string format) -> string
+Gu.Units.LuminousFluxUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.LuminousFluxUnit.ToString(string! format) -> string!
 Gu.Units.LuminousFluxUnitTypeConverter
 Gu.Units.LuminousFluxUnitTypeConverter.LuminousFluxUnitTypeConverter() -> void
 Gu.Units.LuminousIntensity
@@ -1411,12 +1411,12 @@ Gu.Units.LuminousIntensityUnit.Equals(Gu.Units.LuminousIntensityUnit other) -> b
 Gu.Units.LuminousIntensityUnit.FromSiUnit(double candelas) -> double
 Gu.Units.LuminousIntensityUnit.GetScalarValue(Gu.Units.LuminousIntensity quantity) -> double
 Gu.Units.LuminousIntensityUnit.LuminousIntensityUnit() -> void
-~Gu.Units.LuminousIntensityUnit.LuminousIntensityUnit(System.Func<double, double> toCandelas, System.Func<double, double> fromCandelas, string symbol) -> void
+Gu.Units.LuminousIntensityUnit.LuminousIntensityUnit(System.Func<double, double>! toCandelas, System.Func<double, double>! fromCandelas, string! symbol) -> void
 Gu.Units.LuminousIntensityUnit.SiUnit.get -> Gu.Units.LuminousIntensityUnit
-~Gu.Units.LuminousIntensityUnit.Symbol.get -> string
+Gu.Units.LuminousIntensityUnit.Symbol.get -> string!
 Gu.Units.LuminousIntensityUnit.ToSiUnit(double value) -> double
-~Gu.Units.LuminousIntensityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.LuminousIntensityUnit.ToString(string format) -> string
+Gu.Units.LuminousIntensityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.LuminousIntensityUnit.ToString(string! format) -> string!
 Gu.Units.LuminousIntensityUnitTypeConverter
 Gu.Units.LuminousIntensityUnitTypeConverter.LuminousIntensityUnitTypeConverter() -> void
 Gu.Units.MagneticFieldStrength
@@ -1453,12 +1453,12 @@ Gu.Units.MagneticFieldStrengthUnit.Equals(Gu.Units.MagneticFieldStrengthUnit oth
 Gu.Units.MagneticFieldStrengthUnit.FromSiUnit(double teslas) -> double
 Gu.Units.MagneticFieldStrengthUnit.GetScalarValue(Gu.Units.MagneticFieldStrength quantity) -> double
 Gu.Units.MagneticFieldStrengthUnit.MagneticFieldStrengthUnit() -> void
-~Gu.Units.MagneticFieldStrengthUnit.MagneticFieldStrengthUnit(System.Func<double, double> toTeslas, System.Func<double, double> fromTeslas, string symbol) -> void
+Gu.Units.MagneticFieldStrengthUnit.MagneticFieldStrengthUnit(System.Func<double, double>! toTeslas, System.Func<double, double>! fromTeslas, string! symbol) -> void
 Gu.Units.MagneticFieldStrengthUnit.SiUnit.get -> Gu.Units.MagneticFieldStrengthUnit
-~Gu.Units.MagneticFieldStrengthUnit.Symbol.get -> string
+Gu.Units.MagneticFieldStrengthUnit.Symbol.get -> string!
 Gu.Units.MagneticFieldStrengthUnit.ToSiUnit(double value) -> double
-~Gu.Units.MagneticFieldStrengthUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.MagneticFieldStrengthUnit.ToString(string format) -> string
+Gu.Units.MagneticFieldStrengthUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.MagneticFieldStrengthUnit.ToString(string! format) -> string!
 Gu.Units.MagneticFieldStrengthUnitTypeConverter
 Gu.Units.MagneticFieldStrengthUnitTypeConverter.MagneticFieldStrengthUnitTypeConverter() -> void
 Gu.Units.MagneticFlux
@@ -1495,12 +1495,12 @@ Gu.Units.MagneticFluxUnit.Equals(Gu.Units.MagneticFluxUnit other) -> bool
 Gu.Units.MagneticFluxUnit.FromSiUnit(double webers) -> double
 Gu.Units.MagneticFluxUnit.GetScalarValue(Gu.Units.MagneticFlux quantity) -> double
 Gu.Units.MagneticFluxUnit.MagneticFluxUnit() -> void
-~Gu.Units.MagneticFluxUnit.MagneticFluxUnit(System.Func<double, double> toWebers, System.Func<double, double> fromWebers, string symbol) -> void
+Gu.Units.MagneticFluxUnit.MagneticFluxUnit(System.Func<double, double>! toWebers, System.Func<double, double>! fromWebers, string! symbol) -> void
 Gu.Units.MagneticFluxUnit.SiUnit.get -> Gu.Units.MagneticFluxUnit
-~Gu.Units.MagneticFluxUnit.Symbol.get -> string
+Gu.Units.MagneticFluxUnit.Symbol.get -> string!
 Gu.Units.MagneticFluxUnit.ToSiUnit(double value) -> double
-~Gu.Units.MagneticFluxUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.MagneticFluxUnit.ToString(string format) -> string
+Gu.Units.MagneticFluxUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.MagneticFluxUnit.ToString(string! format) -> string!
 Gu.Units.MagneticFluxUnitTypeConverter
 Gu.Units.MagneticFluxUnitTypeConverter.MagneticFluxUnitTypeConverter() -> void
 Gu.Units.Mass
@@ -1570,12 +1570,12 @@ Gu.Units.MassFlowUnit.Equals(Gu.Units.MassFlowUnit other) -> bool
 Gu.Units.MassFlowUnit.FromSiUnit(double kilogramsPerSecond) -> double
 Gu.Units.MassFlowUnit.GetScalarValue(Gu.Units.MassFlow quantity) -> double
 Gu.Units.MassFlowUnit.MassFlowUnit() -> void
-~Gu.Units.MassFlowUnit.MassFlowUnit(System.Func<double, double> toKilogramsPerSecond, System.Func<double, double> fromKilogramsPerSecond, string symbol) -> void
+Gu.Units.MassFlowUnit.MassFlowUnit(System.Func<double, double>! toKilogramsPerSecond, System.Func<double, double>! fromKilogramsPerSecond, string! symbol) -> void
 Gu.Units.MassFlowUnit.SiUnit.get -> Gu.Units.MassFlowUnit
-~Gu.Units.MassFlowUnit.Symbol.get -> string
+Gu.Units.MassFlowUnit.Symbol.get -> string!
 Gu.Units.MassFlowUnit.ToSiUnit(double value) -> double
-~Gu.Units.MassFlowUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.MassFlowUnit.ToString(string format) -> string
+Gu.Units.MassFlowUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.MassFlowUnit.ToString(string! format) -> string!
 Gu.Units.MassFlowUnitTypeConverter
 Gu.Units.MassFlowUnitTypeConverter.MassFlowUnitTypeConverter() -> void
 Gu.Units.MassTypeConverter
@@ -1586,12 +1586,12 @@ Gu.Units.MassUnit.Equals(Gu.Units.MassUnit other) -> bool
 Gu.Units.MassUnit.FromSiUnit(double kilograms) -> double
 Gu.Units.MassUnit.GetScalarValue(Gu.Units.Mass quantity) -> double
 Gu.Units.MassUnit.MassUnit() -> void
-~Gu.Units.MassUnit.MassUnit(System.Func<double, double> toKilograms, System.Func<double, double> fromKilograms, string symbol) -> void
+Gu.Units.MassUnit.MassUnit(System.Func<double, double>! toKilograms, System.Func<double, double>! fromKilograms, string! symbol) -> void
 Gu.Units.MassUnit.SiUnit.get -> Gu.Units.MassUnit
-~Gu.Units.MassUnit.Symbol.get -> string
+Gu.Units.MassUnit.Symbol.get -> string!
 Gu.Units.MassUnit.ToSiUnit(double value) -> double
-~Gu.Units.MassUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.MassUnit.ToString(string format) -> string
+Gu.Units.MassUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.MassUnit.ToString(string! format) -> string!
 Gu.Units.MassUnitTypeConverter
 Gu.Units.MassUnitTypeConverter.MassUnitTypeConverter() -> void
 Gu.Units.MolarHeatCapacity
@@ -1628,12 +1628,12 @@ Gu.Units.MolarHeatCapacityUnit.Equals(Gu.Units.MolarHeatCapacityUnit other) -> b
 Gu.Units.MolarHeatCapacityUnit.FromSiUnit(double joulesPerKelvinMole) -> double
 Gu.Units.MolarHeatCapacityUnit.GetScalarValue(Gu.Units.MolarHeatCapacity quantity) -> double
 Gu.Units.MolarHeatCapacityUnit.MolarHeatCapacityUnit() -> void
-~Gu.Units.MolarHeatCapacityUnit.MolarHeatCapacityUnit(System.Func<double, double> toJoulesPerKelvinMole, System.Func<double, double> fromJoulesPerKelvinMole, string symbol) -> void
+Gu.Units.MolarHeatCapacityUnit.MolarHeatCapacityUnit(System.Func<double, double>! toJoulesPerKelvinMole, System.Func<double, double>! fromJoulesPerKelvinMole, string! symbol) -> void
 Gu.Units.MolarHeatCapacityUnit.SiUnit.get -> Gu.Units.MolarHeatCapacityUnit
-~Gu.Units.MolarHeatCapacityUnit.Symbol.get -> string
+Gu.Units.MolarHeatCapacityUnit.Symbol.get -> string!
 Gu.Units.MolarHeatCapacityUnit.ToSiUnit(double value) -> double
-~Gu.Units.MolarHeatCapacityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.MolarHeatCapacityUnit.ToString(string format) -> string
+Gu.Units.MolarHeatCapacityUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.MolarHeatCapacityUnit.ToString(string! format) -> string!
 Gu.Units.MolarHeatCapacityUnitTypeConverter
 Gu.Units.MolarHeatCapacityUnitTypeConverter.MolarHeatCapacityUnitTypeConverter() -> void
 Gu.Units.MolarMass
@@ -1671,12 +1671,12 @@ Gu.Units.MolarMassUnit.Equals(Gu.Units.MolarMassUnit other) -> bool
 Gu.Units.MolarMassUnit.FromSiUnit(double kilogramsPerMole) -> double
 Gu.Units.MolarMassUnit.GetScalarValue(Gu.Units.MolarMass quantity) -> double
 Gu.Units.MolarMassUnit.MolarMassUnit() -> void
-~Gu.Units.MolarMassUnit.MolarMassUnit(System.Func<double, double> toKilogramsPerMole, System.Func<double, double> fromKilogramsPerMole, string symbol) -> void
+Gu.Units.MolarMassUnit.MolarMassUnit(System.Func<double, double>! toKilogramsPerMole, System.Func<double, double>! fromKilogramsPerMole, string! symbol) -> void
 Gu.Units.MolarMassUnit.SiUnit.get -> Gu.Units.MolarMassUnit
-~Gu.Units.MolarMassUnit.Symbol.get -> string
+Gu.Units.MolarMassUnit.Symbol.get -> string!
 Gu.Units.MolarMassUnit.ToSiUnit(double value) -> double
-~Gu.Units.MolarMassUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.MolarMassUnit.ToString(string format) -> string
+Gu.Units.MolarMassUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.MolarMassUnit.ToString(string! format) -> string!
 Gu.Units.MolarMassUnitTypeConverter
 Gu.Units.MolarMassUnitTypeConverter.MolarMassUnitTypeConverter() -> void
 Gu.Units.Momentum
@@ -1713,12 +1713,12 @@ Gu.Units.MomentumUnit.Equals(Gu.Units.MomentumUnit other) -> bool
 Gu.Units.MomentumUnit.FromSiUnit(double newtonSecond) -> double
 Gu.Units.MomentumUnit.GetScalarValue(Gu.Units.Momentum quantity) -> double
 Gu.Units.MomentumUnit.MomentumUnit() -> void
-~Gu.Units.MomentumUnit.MomentumUnit(System.Func<double, double> toNewtonSecond, System.Func<double, double> fromNewtonSecond, string symbol) -> void
+Gu.Units.MomentumUnit.MomentumUnit(System.Func<double, double>! toNewtonSecond, System.Func<double, double>! fromNewtonSecond, string! symbol) -> void
 Gu.Units.MomentumUnit.SiUnit.get -> Gu.Units.MomentumUnit
-~Gu.Units.MomentumUnit.Symbol.get -> string
+Gu.Units.MomentumUnit.Symbol.get -> string!
 Gu.Units.MomentumUnit.ToSiUnit(double value) -> double
-~Gu.Units.MomentumUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.MomentumUnit.ToString(string format) -> string
+Gu.Units.MomentumUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.MomentumUnit.ToString(string! format) -> string!
 Gu.Units.MomentumUnitTypeConverter
 Gu.Units.MomentumUnitTypeConverter.MomentumUnitTypeConverter() -> void
 Gu.Units.Power
@@ -1761,12 +1761,12 @@ Gu.Units.PowerUnit.Equals(Gu.Units.PowerUnit other) -> bool
 Gu.Units.PowerUnit.FromSiUnit(double watts) -> double
 Gu.Units.PowerUnit.GetScalarValue(Gu.Units.Power quantity) -> double
 Gu.Units.PowerUnit.PowerUnit() -> void
-~Gu.Units.PowerUnit.PowerUnit(System.Func<double, double> toWatts, System.Func<double, double> fromWatts, string symbol) -> void
+Gu.Units.PowerUnit.PowerUnit(System.Func<double, double>! toWatts, System.Func<double, double>! fromWatts, string! symbol) -> void
 Gu.Units.PowerUnit.SiUnit.get -> Gu.Units.PowerUnit
-~Gu.Units.PowerUnit.Symbol.get -> string
+Gu.Units.PowerUnit.Symbol.get -> string!
 Gu.Units.PowerUnit.ToSiUnit(double value) -> double
-~Gu.Units.PowerUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.PowerUnit.ToString(string format) -> string
+Gu.Units.PowerUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.PowerUnit.ToString(string! format) -> string!
 Gu.Units.PowerUnitTypeConverter
 Gu.Units.PowerUnitTypeConverter.PowerUnitTypeConverter() -> void
 Gu.Units.Pressure
@@ -1814,12 +1814,12 @@ Gu.Units.PressureUnit.Equals(Gu.Units.PressureUnit other) -> bool
 Gu.Units.PressureUnit.FromSiUnit(double pascals) -> double
 Gu.Units.PressureUnit.GetScalarValue(Gu.Units.Pressure quantity) -> double
 Gu.Units.PressureUnit.PressureUnit() -> void
-~Gu.Units.PressureUnit.PressureUnit(System.Func<double, double> toPascals, System.Func<double, double> fromPascals, string symbol) -> void
+Gu.Units.PressureUnit.PressureUnit(System.Func<double, double>! toPascals, System.Func<double, double>! fromPascals, string! symbol) -> void
 Gu.Units.PressureUnit.SiUnit.get -> Gu.Units.PressureUnit
-~Gu.Units.PressureUnit.Symbol.get -> string
+Gu.Units.PressureUnit.Symbol.get -> string!
 Gu.Units.PressureUnit.ToSiUnit(double value) -> double
-~Gu.Units.PressureUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.PressureUnit.ToString(string format) -> string
+Gu.Units.PressureUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.PressureUnit.ToString(string! format) -> string!
 Gu.Units.PressureUnitTypeConverter
 Gu.Units.PressureUnitTypeConverter.PressureUnitTypeConverter() -> void
 Gu.Units.Resistance
@@ -1860,12 +1860,12 @@ Gu.Units.ResistanceUnit.Equals(Gu.Units.ResistanceUnit other) -> bool
 Gu.Units.ResistanceUnit.FromSiUnit(double ohms) -> double
 Gu.Units.ResistanceUnit.GetScalarValue(Gu.Units.Resistance quantity) -> double
 Gu.Units.ResistanceUnit.ResistanceUnit() -> void
-~Gu.Units.ResistanceUnit.ResistanceUnit(System.Func<double, double> toOhms, System.Func<double, double> fromOhms, string symbol) -> void
+Gu.Units.ResistanceUnit.ResistanceUnit(System.Func<double, double>! toOhms, System.Func<double, double>! fromOhms, string! symbol) -> void
 Gu.Units.ResistanceUnit.SiUnit.get -> Gu.Units.ResistanceUnit
-~Gu.Units.ResistanceUnit.Symbol.get -> string
+Gu.Units.ResistanceUnit.Symbol.get -> string!
 Gu.Units.ResistanceUnit.ToSiUnit(double value) -> double
-~Gu.Units.ResistanceUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.ResistanceUnit.ToString(string format) -> string
+Gu.Units.ResistanceUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.ResistanceUnit.ToString(string! format) -> string!
 Gu.Units.ResistanceUnitTypeConverter
 Gu.Units.ResistanceUnitTypeConverter.ResistanceUnitTypeConverter() -> void
 Gu.Units.SolidAngle
@@ -1903,11 +1903,11 @@ Gu.Units.SolidAngleUnit.FromSiUnit(double steradians) -> double
 Gu.Units.SolidAngleUnit.GetScalarValue(Gu.Units.SolidAngle quantity) -> double
 Gu.Units.SolidAngleUnit.SiUnit.get -> Gu.Units.SolidAngleUnit
 Gu.Units.SolidAngleUnit.SolidAngleUnit() -> void
-~Gu.Units.SolidAngleUnit.SolidAngleUnit(System.Func<double, double> toSteradians, System.Func<double, double> fromSteradians, string symbol) -> void
-~Gu.Units.SolidAngleUnit.Symbol.get -> string
+Gu.Units.SolidAngleUnit.SolidAngleUnit(System.Func<double, double>! toSteradians, System.Func<double, double>! fromSteradians, string! symbol) -> void
+Gu.Units.SolidAngleUnit.Symbol.get -> string!
 Gu.Units.SolidAngleUnit.ToSiUnit(double value) -> double
-~Gu.Units.SolidAngleUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.SolidAngleUnit.ToString(string format) -> string
+Gu.Units.SolidAngleUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.SolidAngleUnit.ToString(string! format) -> string!
 Gu.Units.SolidAngleUnitTypeConverter
 Gu.Units.SolidAngleUnitTypeConverter.SolidAngleUnitTypeConverter() -> void
 Gu.Units.SpecificEnergy
@@ -1946,11 +1946,11 @@ Gu.Units.SpecificEnergyUnit.FromSiUnit(double joulesPerKilogram) -> double
 Gu.Units.SpecificEnergyUnit.GetScalarValue(Gu.Units.SpecificEnergy quantity) -> double
 Gu.Units.SpecificEnergyUnit.SiUnit.get -> Gu.Units.SpecificEnergyUnit
 Gu.Units.SpecificEnergyUnit.SpecificEnergyUnit() -> void
-~Gu.Units.SpecificEnergyUnit.SpecificEnergyUnit(System.Func<double, double> toJoulesPerKilogram, System.Func<double, double> fromJoulesPerKilogram, string symbol) -> void
-~Gu.Units.SpecificEnergyUnit.Symbol.get -> string
+Gu.Units.SpecificEnergyUnit.SpecificEnergyUnit(System.Func<double, double>! toJoulesPerKilogram, System.Func<double, double>! fromJoulesPerKilogram, string! symbol) -> void
+Gu.Units.SpecificEnergyUnit.Symbol.get -> string!
 Gu.Units.SpecificEnergyUnit.ToSiUnit(double value) -> double
-~Gu.Units.SpecificEnergyUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.SpecificEnergyUnit.ToString(string format) -> string
+Gu.Units.SpecificEnergyUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.SpecificEnergyUnit.ToString(string! format) -> string!
 Gu.Units.SpecificEnergyUnitTypeConverter
 Gu.Units.SpecificEnergyUnitTypeConverter.SpecificEnergyUnitTypeConverter() -> void
 Gu.Units.SpecificVolume
@@ -1990,11 +1990,11 @@ Gu.Units.SpecificVolumeUnit.FromSiUnit(double cubicMetresPerKilogram) -> double
 Gu.Units.SpecificVolumeUnit.GetScalarValue(Gu.Units.SpecificVolume quantity) -> double
 Gu.Units.SpecificVolumeUnit.SiUnit.get -> Gu.Units.SpecificVolumeUnit
 Gu.Units.SpecificVolumeUnit.SpecificVolumeUnit() -> void
-~Gu.Units.SpecificVolumeUnit.SpecificVolumeUnit(System.Func<double, double> toCubicMetresPerKilogram, System.Func<double, double> fromCubicMetresPerKilogram, string symbol) -> void
-~Gu.Units.SpecificVolumeUnit.Symbol.get -> string
+Gu.Units.SpecificVolumeUnit.SpecificVolumeUnit(System.Func<double, double>! toCubicMetresPerKilogram, System.Func<double, double>! fromCubicMetresPerKilogram, string! symbol) -> void
+Gu.Units.SpecificVolumeUnit.Symbol.get -> string!
 Gu.Units.SpecificVolumeUnit.ToSiUnit(double value) -> double
-~Gu.Units.SpecificVolumeUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.SpecificVolumeUnit.ToString(string format) -> string
+Gu.Units.SpecificVolumeUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.SpecificVolumeUnit.ToString(string! format) -> string!
 Gu.Units.SpecificVolumeUnitTypeConverter
 Gu.Units.SpecificVolumeUnitTypeConverter.SpecificVolumeUnitTypeConverter() -> void
 Gu.Units.Speed
@@ -2041,11 +2041,11 @@ Gu.Units.SpeedUnit.FromSiUnit(double metresPerSecond) -> double
 Gu.Units.SpeedUnit.GetScalarValue(Gu.Units.Speed quantity) -> double
 Gu.Units.SpeedUnit.SiUnit.get -> Gu.Units.SpeedUnit
 Gu.Units.SpeedUnit.SpeedUnit() -> void
-~Gu.Units.SpeedUnit.SpeedUnit(System.Func<double, double> toMetresPerSecond, System.Func<double, double> fromMetresPerSecond, string symbol) -> void
-~Gu.Units.SpeedUnit.Symbol.get -> string
+Gu.Units.SpeedUnit.SpeedUnit(System.Func<double, double>! toMetresPerSecond, System.Func<double, double>! fromMetresPerSecond, string! symbol) -> void
+Gu.Units.SpeedUnit.Symbol.get -> string!
 Gu.Units.SpeedUnit.ToSiUnit(double value) -> double
-~Gu.Units.SpeedUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.SpeedUnit.ToString(string format) -> string
+Gu.Units.SpeedUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.SpeedUnit.ToString(string! format) -> string!
 Gu.Units.SpeedUnitTypeConverter
 Gu.Units.SpeedUnitTypeConverter.SpeedUnitTypeConverter() -> void
 Gu.Units.Stiffness
@@ -2094,11 +2094,11 @@ Gu.Units.StiffnessUnit.FromSiUnit(double newtonsPerMetre) -> double
 Gu.Units.StiffnessUnit.GetScalarValue(Gu.Units.Stiffness quantity) -> double
 Gu.Units.StiffnessUnit.SiUnit.get -> Gu.Units.StiffnessUnit
 Gu.Units.StiffnessUnit.StiffnessUnit() -> void
-~Gu.Units.StiffnessUnit.StiffnessUnit(System.Func<double, double> toNewtonsPerMetre, System.Func<double, double> fromNewtonsPerMetre, string symbol) -> void
-~Gu.Units.StiffnessUnit.Symbol.get -> string
+Gu.Units.StiffnessUnit.StiffnessUnit(System.Func<double, double>! toNewtonsPerMetre, System.Func<double, double>! fromNewtonsPerMetre, string! symbol) -> void
+Gu.Units.StiffnessUnit.Symbol.get -> string!
 Gu.Units.StiffnessUnit.ToSiUnit(double value) -> double
-~Gu.Units.StiffnessUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.StiffnessUnit.ToString(string format) -> string
+Gu.Units.StiffnessUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.StiffnessUnit.ToString(string! format) -> string!
 Gu.Units.StiffnessUnitTypeConverter
 Gu.Units.StiffnessUnitTypeConverter.StiffnessUnitTypeConverter() -> void
 Gu.Units.SuperScript
@@ -2144,12 +2144,12 @@ Gu.Units.TemperatureUnit.Equals(Gu.Units.TemperatureUnit other) -> bool
 Gu.Units.TemperatureUnit.FromSiUnit(double kelvin) -> double
 Gu.Units.TemperatureUnit.GetScalarValue(Gu.Units.Temperature quantity) -> double
 Gu.Units.TemperatureUnit.SiUnit.get -> Gu.Units.TemperatureUnit
-~Gu.Units.TemperatureUnit.Symbol.get -> string
+Gu.Units.TemperatureUnit.Symbol.get -> string!
 Gu.Units.TemperatureUnit.TemperatureUnit() -> void
-~Gu.Units.TemperatureUnit.TemperatureUnit(System.Func<double, double> toKelvin, System.Func<double, double> fromKelvin, string symbol) -> void
+Gu.Units.TemperatureUnit.TemperatureUnit(System.Func<double, double>! toKelvin, System.Func<double, double>! fromKelvin, string! symbol) -> void
 Gu.Units.TemperatureUnit.ToSiUnit(double value) -> double
-~Gu.Units.TemperatureUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.TemperatureUnit.ToString(string format) -> string
+Gu.Units.TemperatureUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.TemperatureUnit.ToString(string! format) -> string!
 Gu.Units.TemperatureUnitTypeConverter
 Gu.Units.TemperatureUnitTypeConverter.TemperatureUnitTypeConverter() -> void
 Gu.Units.Time
@@ -2193,12 +2193,12 @@ Gu.Units.TimeUnit.Equals(Gu.Units.TimeUnit other) -> bool
 Gu.Units.TimeUnit.FromSiUnit(double seconds) -> double
 Gu.Units.TimeUnit.GetScalarValue(Gu.Units.Time quantity) -> double
 Gu.Units.TimeUnit.SiUnit.get -> Gu.Units.TimeUnit
-~Gu.Units.TimeUnit.Symbol.get -> string
+Gu.Units.TimeUnit.Symbol.get -> string!
 Gu.Units.TimeUnit.TimeUnit() -> void
-~Gu.Units.TimeUnit.TimeUnit(System.Func<double, double> toSeconds, System.Func<double, double> fromSeconds, string symbol) -> void
+Gu.Units.TimeUnit.TimeUnit(System.Func<double, double>! toSeconds, System.Func<double, double>! fromSeconds, string! symbol) -> void
 Gu.Units.TimeUnit.ToSiUnit(double value) -> double
-~Gu.Units.TimeUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.TimeUnit.ToString(string format) -> string
+Gu.Units.TimeUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.TimeUnit.ToString(string! format) -> string!
 Gu.Units.TimeUnitTypeConverter
 Gu.Units.TimeUnitTypeConverter.TimeUnitTypeConverter() -> void
 Gu.Units.Torque
@@ -2235,12 +2235,12 @@ Gu.Units.TorqueUnit.Equals(Gu.Units.TorqueUnit other) -> bool
 Gu.Units.TorqueUnit.FromSiUnit(double newtonMetres) -> double
 Gu.Units.TorqueUnit.GetScalarValue(Gu.Units.Torque quantity) -> double
 Gu.Units.TorqueUnit.SiUnit.get -> Gu.Units.TorqueUnit
-~Gu.Units.TorqueUnit.Symbol.get -> string
+Gu.Units.TorqueUnit.Symbol.get -> string!
 Gu.Units.TorqueUnit.TorqueUnit() -> void
-~Gu.Units.TorqueUnit.TorqueUnit(System.Func<double, double> toNewtonMetres, System.Func<double, double> fromNewtonMetres, string symbol) -> void
+Gu.Units.TorqueUnit.TorqueUnit(System.Func<double, double>! toNewtonMetres, System.Func<double, double>! fromNewtonMetres, string! symbol) -> void
 Gu.Units.TorqueUnit.ToSiUnit(double value) -> double
-~Gu.Units.TorqueUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.TorqueUnit.ToString(string format) -> string
+Gu.Units.TorqueUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.TorqueUnit.ToString(string! format) -> string!
 Gu.Units.TorqueUnitTypeConverter
 Gu.Units.TorqueUnitTypeConverter.TorqueUnitTypeConverter() -> void
 Gu.Units.Unitless
@@ -2280,12 +2280,12 @@ Gu.Units.UnitlessUnit.Equals(Gu.Units.UnitlessUnit other) -> bool
 Gu.Units.UnitlessUnit.FromSiUnit(double scalar) -> double
 Gu.Units.UnitlessUnit.GetScalarValue(Gu.Units.Unitless quantity) -> double
 Gu.Units.UnitlessUnit.SiUnit.get -> Gu.Units.UnitlessUnit
-~Gu.Units.UnitlessUnit.Symbol.get -> string
+Gu.Units.UnitlessUnit.Symbol.get -> string!
 Gu.Units.UnitlessUnit.ToSiUnit(double value) -> double
-~Gu.Units.UnitlessUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.UnitlessUnit.ToString(string format) -> string
+Gu.Units.UnitlessUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.UnitlessUnit.ToString(string! format) -> string!
 Gu.Units.UnitlessUnit.UnitlessUnit() -> void
-~Gu.Units.UnitlessUnit.UnitlessUnit(System.Func<double, double> toScalar, System.Func<double, double> fromScalar, string symbol) -> void
+Gu.Units.UnitlessUnit.UnitlessUnit(System.Func<double, double>! toScalar, System.Func<double, double>! fromScalar, string! symbol) -> void
 Gu.Units.UnitlessUnitTypeConverter
 Gu.Units.UnitlessUnitTypeConverter.UnitlessUnitTypeConverter() -> void
 Gu.Units.Voltage
@@ -2328,12 +2328,12 @@ Gu.Units.VoltageUnit.Equals(Gu.Units.VoltageUnit other) -> bool
 Gu.Units.VoltageUnit.FromSiUnit(double volts) -> double
 Gu.Units.VoltageUnit.GetScalarValue(Gu.Units.Voltage quantity) -> double
 Gu.Units.VoltageUnit.SiUnit.get -> Gu.Units.VoltageUnit
-~Gu.Units.VoltageUnit.Symbol.get -> string
+Gu.Units.VoltageUnit.Symbol.get -> string!
 Gu.Units.VoltageUnit.ToSiUnit(double value) -> double
-~Gu.Units.VoltageUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.VoltageUnit.ToString(string format) -> string
+Gu.Units.VoltageUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.VoltageUnit.ToString(string! format) -> string!
 Gu.Units.VoltageUnit.VoltageUnit() -> void
-~Gu.Units.VoltageUnit.VoltageUnit(System.Func<double, double> toVolts, System.Func<double, double> fromVolts, string symbol) -> void
+Gu.Units.VoltageUnit.VoltageUnit(System.Func<double, double>! toVolts, System.Func<double, double>! fromVolts, string! symbol) -> void
 Gu.Units.VoltageUnitTypeConverter
 Gu.Units.VoltageUnitTypeConverter.VoltageUnitTypeConverter() -> void
 Gu.Units.Volume
@@ -2420,12 +2420,12 @@ Gu.Units.VolumetricFlowUnit.Equals(Gu.Units.VolumetricFlowUnit other) -> bool
 Gu.Units.VolumetricFlowUnit.FromSiUnit(double cubicMetresPerSecond) -> double
 Gu.Units.VolumetricFlowUnit.GetScalarValue(Gu.Units.VolumetricFlow quantity) -> double
 Gu.Units.VolumetricFlowUnit.SiUnit.get -> Gu.Units.VolumetricFlowUnit
-~Gu.Units.VolumetricFlowUnit.Symbol.get -> string
+Gu.Units.VolumetricFlowUnit.Symbol.get -> string!
 Gu.Units.VolumetricFlowUnit.ToSiUnit(double value) -> double
-~Gu.Units.VolumetricFlowUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.VolumetricFlowUnit.ToString(string format) -> string
+Gu.Units.VolumetricFlowUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.VolumetricFlowUnit.ToString(string! format) -> string!
 Gu.Units.VolumetricFlowUnit.VolumetricFlowUnit() -> void
-~Gu.Units.VolumetricFlowUnit.VolumetricFlowUnit(System.Func<double, double> toCubicMetresPerSecond, System.Func<double, double> fromCubicMetresPerSecond, string symbol) -> void
+Gu.Units.VolumetricFlowUnit.VolumetricFlowUnit(System.Func<double, double>! toCubicMetresPerSecond, System.Func<double, double>! fromCubicMetresPerSecond, string! symbol) -> void
 Gu.Units.VolumetricFlowUnitTypeConverter
 Gu.Units.VolumetricFlowUnitTypeConverter.VolumetricFlowUnitTypeConverter() -> void
 Gu.Units.VolumeTypeConverter
@@ -2436,12 +2436,12 @@ Gu.Units.VolumeUnit.Equals(Gu.Units.VolumeUnit other) -> bool
 Gu.Units.VolumeUnit.FromSiUnit(double cubicMetres) -> double
 Gu.Units.VolumeUnit.GetScalarValue(Gu.Units.Volume quantity) -> double
 Gu.Units.VolumeUnit.SiUnit.get -> Gu.Units.VolumeUnit
-~Gu.Units.VolumeUnit.Symbol.get -> string
+Gu.Units.VolumeUnit.Symbol.get -> string!
 Gu.Units.VolumeUnit.ToSiUnit(double value) -> double
-~Gu.Units.VolumeUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.VolumeUnit.ToString(string format) -> string
+Gu.Units.VolumeUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.VolumeUnit.ToString(string! format) -> string!
 Gu.Units.VolumeUnit.VolumeUnit() -> void
-~Gu.Units.VolumeUnit.VolumeUnit(System.Func<double, double> toCubicMetres, System.Func<double, double> fromCubicMetres, string symbol) -> void
+Gu.Units.VolumeUnit.VolumeUnit(System.Func<double, double>! toCubicMetres, System.Func<double, double>! fromCubicMetres, string! symbol) -> void
 Gu.Units.VolumeUnitTypeConverter
 Gu.Units.VolumeUnitTypeConverter.VolumeUnitTypeConverter() -> void
 Gu.Units.Wavenumber
@@ -2478,12 +2478,12 @@ Gu.Units.WavenumberUnit.Equals(Gu.Units.WavenumberUnit other) -> bool
 Gu.Units.WavenumberUnit.FromSiUnit(double reciprocalMetres) -> double
 Gu.Units.WavenumberUnit.GetScalarValue(Gu.Units.Wavenumber quantity) -> double
 Gu.Units.WavenumberUnit.SiUnit.get -> Gu.Units.WavenumberUnit
-~Gu.Units.WavenumberUnit.Symbol.get -> string
+Gu.Units.WavenumberUnit.Symbol.get -> string!
 Gu.Units.WavenumberUnit.ToSiUnit(double value) -> double
-~Gu.Units.WavenumberUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string
-~Gu.Units.WavenumberUnit.ToString(string format) -> string
+Gu.Units.WavenumberUnit.ToString(Gu.Units.SymbolFormat symbolFormat) -> string!
+Gu.Units.WavenumberUnit.ToString(string! format) -> string!
 Gu.Units.WavenumberUnit.WavenumberUnit() -> void
-~Gu.Units.WavenumberUnit.WavenumberUnit(System.Func<double, double> toReciprocalMetres, System.Func<double, double> fromReciprocalMetres, string symbol) -> void
+Gu.Units.WavenumberUnit.WavenumberUnit(System.Func<double, double>! toReciprocalMetres, System.Func<double, double>! fromReciprocalMetres, string! symbol) -> void
 Gu.Units.WavenumberUnitTypeConverter
 Gu.Units.WavenumberUnitTypeConverter.WavenumberUnitTypeConverter() -> void
 override Gu.Units.Acceleration.Equals(object? obj) -> bool
@@ -2493,9 +2493,9 @@ override Gu.Units.Acceleration.ToString() -> string!
 ~override Gu.Units.AccelerationTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AccelerationTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.AccelerationTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.AccelerationUnit.Equals(object obj) -> bool
+override Gu.Units.AccelerationUnit.Equals(object? obj) -> bool
 override Gu.Units.AccelerationUnit.GetHashCode() -> int
-~override Gu.Units.AccelerationUnit.ToString() -> string
+override Gu.Units.AccelerationUnit.ToString() -> string!
 ~override Gu.Units.AccelerationUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.AccelerationUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AccelerationUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2507,9 +2507,9 @@ override Gu.Units.AmountOfSubstance.ToString() -> string!
 ~override Gu.Units.AmountOfSubstanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AmountOfSubstanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.AmountOfSubstanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.AmountOfSubstanceUnit.Equals(object obj) -> bool
+override Gu.Units.AmountOfSubstanceUnit.Equals(object? obj) -> bool
 override Gu.Units.AmountOfSubstanceUnit.GetHashCode() -> int
-~override Gu.Units.AmountOfSubstanceUnit.ToString() -> string
+override Gu.Units.AmountOfSubstanceUnit.ToString() -> string!
 ~override Gu.Units.AmountOfSubstanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.AmountOfSubstanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AmountOfSubstanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2524,9 +2524,9 @@ override Gu.Units.AnglePerUnitless.ToString() -> string!
 ~override Gu.Units.AnglePerUnitlessTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AnglePerUnitlessTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.AnglePerUnitlessTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.AnglePerUnitlessUnit.Equals(object obj) -> bool
+override Gu.Units.AnglePerUnitlessUnit.Equals(object? obj) -> bool
 override Gu.Units.AnglePerUnitlessUnit.GetHashCode() -> int
-~override Gu.Units.AnglePerUnitlessUnit.ToString() -> string
+override Gu.Units.AnglePerUnitlessUnit.ToString() -> string!
 ~override Gu.Units.AnglePerUnitlessUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.AnglePerUnitlessUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AnglePerUnitlessUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2535,9 +2535,9 @@ override Gu.Units.AnglePerUnitlessUnit.GetHashCode() -> int
 ~override Gu.Units.AngleTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AngleTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.AngleTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.AngleUnit.Equals(object obj) -> bool
+override Gu.Units.AngleUnit.Equals(object? obj) -> bool
 override Gu.Units.AngleUnit.GetHashCode() -> int
-~override Gu.Units.AngleUnit.ToString() -> string
+override Gu.Units.AngleUnit.ToString() -> string!
 ~override Gu.Units.AngleUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.AngleUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AngleUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2549,9 +2549,9 @@ override Gu.Units.AngularAcceleration.ToString() -> string!
 ~override Gu.Units.AngularAccelerationTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AngularAccelerationTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.AngularAccelerationTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.AngularAccelerationUnit.Equals(object obj) -> bool
+override Gu.Units.AngularAccelerationUnit.Equals(object? obj) -> bool
 override Gu.Units.AngularAccelerationUnit.GetHashCode() -> int
-~override Gu.Units.AngularAccelerationUnit.ToString() -> string
+override Gu.Units.AngularAccelerationUnit.ToString() -> string!
 ~override Gu.Units.AngularAccelerationUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.AngularAccelerationUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AngularAccelerationUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2563,9 +2563,9 @@ override Gu.Units.AngularJerk.ToString() -> string!
 ~override Gu.Units.AngularJerkTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AngularJerkTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.AngularJerkTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.AngularJerkUnit.Equals(object obj) -> bool
+override Gu.Units.AngularJerkUnit.Equals(object? obj) -> bool
 override Gu.Units.AngularJerkUnit.GetHashCode() -> int
-~override Gu.Units.AngularJerkUnit.ToString() -> string
+override Gu.Units.AngularJerkUnit.ToString() -> string!
 ~override Gu.Units.AngularJerkUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.AngularJerkUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AngularJerkUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2577,9 +2577,9 @@ override Gu.Units.AngularSpeed.ToString() -> string!
 ~override Gu.Units.AngularSpeedTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AngularSpeedTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.AngularSpeedTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.AngularSpeedUnit.Equals(object obj) -> bool
+override Gu.Units.AngularSpeedUnit.Equals(object? obj) -> bool
 override Gu.Units.AngularSpeedUnit.GetHashCode() -> int
-~override Gu.Units.AngularSpeedUnit.ToString() -> string
+override Gu.Units.AngularSpeedUnit.ToString() -> string!
 ~override Gu.Units.AngularSpeedUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.AngularSpeedUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AngularSpeedUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2594,9 +2594,9 @@ override Gu.Units.AreaDensity.ToString() -> string!
 ~override Gu.Units.AreaDensityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AreaDensityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.AreaDensityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.AreaDensityUnit.Equals(object obj) -> bool
+override Gu.Units.AreaDensityUnit.Equals(object? obj) -> bool
 override Gu.Units.AreaDensityUnit.GetHashCode() -> int
-~override Gu.Units.AreaDensityUnit.ToString() -> string
+override Gu.Units.AreaDensityUnit.ToString() -> string!
 ~override Gu.Units.AreaDensityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.AreaDensityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AreaDensityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2605,9 +2605,9 @@ override Gu.Units.AreaDensityUnit.GetHashCode() -> int
 ~override Gu.Units.AreaTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AreaTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.AreaTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.AreaUnit.Equals(object obj) -> bool
+override Gu.Units.AreaUnit.Equals(object? obj) -> bool
 override Gu.Units.AreaUnit.GetHashCode() -> int
-~override Gu.Units.AreaUnit.ToString() -> string
+override Gu.Units.AreaUnit.ToString() -> string!
 ~override Gu.Units.AreaUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.AreaUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.AreaUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2619,9 +2619,9 @@ override Gu.Units.Capacitance.ToString() -> string!
 ~override Gu.Units.CapacitanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.CapacitanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.CapacitanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.CapacitanceUnit.Equals(object obj) -> bool
+override Gu.Units.CapacitanceUnit.Equals(object? obj) -> bool
 override Gu.Units.CapacitanceUnit.GetHashCode() -> int
-~override Gu.Units.CapacitanceUnit.ToString() -> string
+override Gu.Units.CapacitanceUnit.ToString() -> string!
 ~override Gu.Units.CapacitanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.CapacitanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.CapacitanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2633,9 +2633,9 @@ override Gu.Units.CatalyticActivity.ToString() -> string!
 ~override Gu.Units.CatalyticActivityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.CatalyticActivityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.CatalyticActivityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.CatalyticActivityUnit.Equals(object obj) -> bool
+override Gu.Units.CatalyticActivityUnit.Equals(object? obj) -> bool
 override Gu.Units.CatalyticActivityUnit.GetHashCode() -> int
-~override Gu.Units.CatalyticActivityUnit.ToString() -> string
+override Gu.Units.CatalyticActivityUnit.ToString() -> string!
 ~override Gu.Units.CatalyticActivityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.CatalyticActivityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.CatalyticActivityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2647,9 +2647,9 @@ override Gu.Units.Conductivity.ToString() -> string!
 ~override Gu.Units.ConductivityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.ConductivityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.ConductivityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.ConductivityUnit.Equals(object obj) -> bool
+override Gu.Units.ConductivityUnit.Equals(object? obj) -> bool
 override Gu.Units.ConductivityUnit.GetHashCode() -> int
-~override Gu.Units.ConductivityUnit.ToString() -> string
+override Gu.Units.ConductivityUnit.ToString() -> string!
 ~override Gu.Units.ConductivityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.ConductivityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.ConductivityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2661,9 +2661,9 @@ override Gu.Units.Current.ToString() -> string!
 ~override Gu.Units.CurrentTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.CurrentTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.CurrentTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.CurrentUnit.Equals(object obj) -> bool
+override Gu.Units.CurrentUnit.Equals(object? obj) -> bool
 override Gu.Units.CurrentUnit.GetHashCode() -> int
-~override Gu.Units.CurrentUnit.ToString() -> string
+override Gu.Units.CurrentUnit.ToString() -> string!
 ~override Gu.Units.CurrentUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.CurrentUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.CurrentUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2675,9 +2675,9 @@ override Gu.Units.Data.ToString() -> string!
 ~override Gu.Units.DataTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.DataTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.DataTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.DataUnit.Equals(object obj) -> bool
+override Gu.Units.DataUnit.Equals(object? obj) -> bool
 override Gu.Units.DataUnit.GetHashCode() -> int
-~override Gu.Units.DataUnit.ToString() -> string
+override Gu.Units.DataUnit.ToString() -> string!
 ~override Gu.Units.DataUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.DataUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.DataUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2689,9 +2689,9 @@ override Gu.Units.Density.ToString() -> string!
 ~override Gu.Units.DensityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.DensityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.DensityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.DensityUnit.Equals(object obj) -> bool
+override Gu.Units.DensityUnit.Equals(object? obj) -> bool
 override Gu.Units.DensityUnit.GetHashCode() -> int
-~override Gu.Units.DensityUnit.ToString() -> string
+override Gu.Units.DensityUnit.ToString() -> string!
 ~override Gu.Units.DensityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.DensityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.DensityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2703,9 +2703,9 @@ override Gu.Units.ElectricalConductance.ToString() -> string!
 ~override Gu.Units.ElectricalConductanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.ElectricalConductanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.ElectricalConductanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.ElectricalConductanceUnit.Equals(object obj) -> bool
+override Gu.Units.ElectricalConductanceUnit.Equals(object? obj) -> bool
 override Gu.Units.ElectricalConductanceUnit.GetHashCode() -> int
-~override Gu.Units.ElectricalConductanceUnit.ToString() -> string
+override Gu.Units.ElectricalConductanceUnit.ToString() -> string!
 ~override Gu.Units.ElectricalConductanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.ElectricalConductanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.ElectricalConductanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2717,9 +2717,9 @@ override Gu.Units.ElectricCharge.ToString() -> string!
 ~override Gu.Units.ElectricChargeTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.ElectricChargeTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.ElectricChargeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.ElectricChargeUnit.Equals(object obj) -> bool
+override Gu.Units.ElectricChargeUnit.Equals(object? obj) -> bool
 override Gu.Units.ElectricChargeUnit.GetHashCode() -> int
-~override Gu.Units.ElectricChargeUnit.ToString() -> string
+override Gu.Units.ElectricChargeUnit.ToString() -> string!
 ~override Gu.Units.ElectricChargeUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.ElectricChargeUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.ElectricChargeUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2731,9 +2731,9 @@ override Gu.Units.Energy.ToString() -> string!
 ~override Gu.Units.EnergyTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.EnergyTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.EnergyTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.EnergyUnit.Equals(object obj) -> bool
+override Gu.Units.EnergyUnit.Equals(object? obj) -> bool
 override Gu.Units.EnergyUnit.GetHashCode() -> int
-~override Gu.Units.EnergyUnit.ToString() -> string
+override Gu.Units.EnergyUnit.ToString() -> string!
 ~override Gu.Units.EnergyUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.EnergyUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.EnergyUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2745,9 +2745,9 @@ override Gu.Units.Flexibility.ToString() -> string!
 ~override Gu.Units.FlexibilityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.FlexibilityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.FlexibilityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.FlexibilityUnit.Equals(object obj) -> bool
+override Gu.Units.FlexibilityUnit.Equals(object? obj) -> bool
 override Gu.Units.FlexibilityUnit.GetHashCode() -> int
-~override Gu.Units.FlexibilityUnit.ToString() -> string
+override Gu.Units.FlexibilityUnit.ToString() -> string!
 ~override Gu.Units.FlexibilityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.FlexibilityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.FlexibilityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2762,9 +2762,9 @@ override Gu.Units.ForcePerUnitless.ToString() -> string!
 ~override Gu.Units.ForcePerUnitlessTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.ForcePerUnitlessTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.ForcePerUnitlessTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.ForcePerUnitlessUnit.Equals(object obj) -> bool
+override Gu.Units.ForcePerUnitlessUnit.Equals(object? obj) -> bool
 override Gu.Units.ForcePerUnitlessUnit.GetHashCode() -> int
-~override Gu.Units.ForcePerUnitlessUnit.ToString() -> string
+override Gu.Units.ForcePerUnitlessUnit.ToString() -> string!
 ~override Gu.Units.ForcePerUnitlessUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.ForcePerUnitlessUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.ForcePerUnitlessUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2773,9 +2773,9 @@ override Gu.Units.ForcePerUnitlessUnit.GetHashCode() -> int
 ~override Gu.Units.ForceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.ForceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.ForceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.ForceUnit.Equals(object obj) -> bool
+override Gu.Units.ForceUnit.Equals(object? obj) -> bool
 override Gu.Units.ForceUnit.GetHashCode() -> int
-~override Gu.Units.ForceUnit.ToString() -> string
+override Gu.Units.ForceUnit.ToString() -> string!
 ~override Gu.Units.ForceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.ForceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.ForceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2787,9 +2787,9 @@ override Gu.Units.Frequency.ToString() -> string!
 ~override Gu.Units.FrequencyTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.FrequencyTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.FrequencyTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.FrequencyUnit.Equals(object obj) -> bool
+override Gu.Units.FrequencyUnit.Equals(object? obj) -> bool
 override Gu.Units.FrequencyUnit.GetHashCode() -> int
-~override Gu.Units.FrequencyUnit.ToString() -> string
+override Gu.Units.FrequencyUnit.ToString() -> string!
 ~override Gu.Units.FrequencyUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.FrequencyUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.FrequencyUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2801,9 +2801,9 @@ override Gu.Units.Illuminance.ToString() -> string!
 ~override Gu.Units.IlluminanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.IlluminanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.IlluminanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.IlluminanceUnit.Equals(object obj) -> bool
+override Gu.Units.IlluminanceUnit.Equals(object? obj) -> bool
 override Gu.Units.IlluminanceUnit.GetHashCode() -> int
-~override Gu.Units.IlluminanceUnit.ToString() -> string
+override Gu.Units.IlluminanceUnit.ToString() -> string!
 ~override Gu.Units.IlluminanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.IlluminanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.IlluminanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2815,9 +2815,9 @@ override Gu.Units.Inductance.ToString() -> string!
 ~override Gu.Units.InductanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.InductanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.InductanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.InductanceUnit.Equals(object obj) -> bool
+override Gu.Units.InductanceUnit.Equals(object? obj) -> bool
 override Gu.Units.InductanceUnit.GetHashCode() -> int
-~override Gu.Units.InductanceUnit.ToString() -> string
+override Gu.Units.InductanceUnit.ToString() -> string!
 ~override Gu.Units.InductanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.InductanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.InductanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2829,9 +2829,9 @@ override Gu.Units.Jerk.ToString() -> string!
 ~override Gu.Units.JerkTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.JerkTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.JerkTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.JerkUnit.Equals(object obj) -> bool
+override Gu.Units.JerkUnit.Equals(object? obj) -> bool
 override Gu.Units.JerkUnit.GetHashCode() -> int
-~override Gu.Units.JerkUnit.ToString() -> string
+override Gu.Units.JerkUnit.ToString() -> string!
 ~override Gu.Units.JerkUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.JerkUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.JerkUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2843,9 +2843,9 @@ override Gu.Units.KinematicViscosity.ToString() -> string!
 ~override Gu.Units.KinematicViscosityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.KinematicViscosityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.KinematicViscosityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.KinematicViscosityUnit.Equals(object obj) -> bool
+override Gu.Units.KinematicViscosityUnit.Equals(object? obj) -> bool
 override Gu.Units.KinematicViscosityUnit.GetHashCode() -> int
-~override Gu.Units.KinematicViscosityUnit.ToString() -> string
+override Gu.Units.KinematicViscosityUnit.ToString() -> string!
 ~override Gu.Units.KinematicViscosityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.KinematicViscosityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.KinematicViscosityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2860,9 +2860,9 @@ override Gu.Units.LengthPerUnitless.ToString() -> string!
 ~override Gu.Units.LengthPerUnitlessTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.LengthPerUnitlessTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.LengthPerUnitlessTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.LengthPerUnitlessUnit.Equals(object obj) -> bool
+override Gu.Units.LengthPerUnitlessUnit.Equals(object? obj) -> bool
 override Gu.Units.LengthPerUnitlessUnit.GetHashCode() -> int
-~override Gu.Units.LengthPerUnitlessUnit.ToString() -> string
+override Gu.Units.LengthPerUnitlessUnit.ToString() -> string!
 ~override Gu.Units.LengthPerUnitlessUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.LengthPerUnitlessUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.LengthPerUnitlessUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2871,9 +2871,9 @@ override Gu.Units.LengthPerUnitlessUnit.GetHashCode() -> int
 ~override Gu.Units.LengthTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.LengthTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.LengthTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.LengthUnit.Equals(object obj) -> bool
+override Gu.Units.LengthUnit.Equals(object? obj) -> bool
 override Gu.Units.LengthUnit.GetHashCode() -> int
-~override Gu.Units.LengthUnit.ToString() -> string
+override Gu.Units.LengthUnit.ToString() -> string!
 ~override Gu.Units.LengthUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.LengthUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.LengthUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2885,9 +2885,9 @@ override Gu.Units.LuminousFlux.ToString() -> string!
 ~override Gu.Units.LuminousFluxTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.LuminousFluxTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.LuminousFluxTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.LuminousFluxUnit.Equals(object obj) -> bool
+override Gu.Units.LuminousFluxUnit.Equals(object? obj) -> bool
 override Gu.Units.LuminousFluxUnit.GetHashCode() -> int
-~override Gu.Units.LuminousFluxUnit.ToString() -> string
+override Gu.Units.LuminousFluxUnit.ToString() -> string!
 ~override Gu.Units.LuminousFluxUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.LuminousFluxUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.LuminousFluxUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2899,9 +2899,9 @@ override Gu.Units.LuminousIntensity.ToString() -> string!
 ~override Gu.Units.LuminousIntensityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.LuminousIntensityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.LuminousIntensityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.LuminousIntensityUnit.Equals(object obj) -> bool
+override Gu.Units.LuminousIntensityUnit.Equals(object? obj) -> bool
 override Gu.Units.LuminousIntensityUnit.GetHashCode() -> int
-~override Gu.Units.LuminousIntensityUnit.ToString() -> string
+override Gu.Units.LuminousIntensityUnit.ToString() -> string!
 ~override Gu.Units.LuminousIntensityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.LuminousIntensityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.LuminousIntensityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2913,9 +2913,9 @@ override Gu.Units.MagneticFieldStrength.ToString() -> string!
 ~override Gu.Units.MagneticFieldStrengthTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.MagneticFieldStrengthTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.MagneticFieldStrengthTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.MagneticFieldStrengthUnit.Equals(object obj) -> bool
+override Gu.Units.MagneticFieldStrengthUnit.Equals(object? obj) -> bool
 override Gu.Units.MagneticFieldStrengthUnit.GetHashCode() -> int
-~override Gu.Units.MagneticFieldStrengthUnit.ToString() -> string
+override Gu.Units.MagneticFieldStrengthUnit.ToString() -> string!
 ~override Gu.Units.MagneticFieldStrengthUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.MagneticFieldStrengthUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.MagneticFieldStrengthUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2927,9 +2927,9 @@ override Gu.Units.MagneticFlux.ToString() -> string!
 ~override Gu.Units.MagneticFluxTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.MagneticFluxTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.MagneticFluxTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.MagneticFluxUnit.Equals(object obj) -> bool
+override Gu.Units.MagneticFluxUnit.Equals(object? obj) -> bool
 override Gu.Units.MagneticFluxUnit.GetHashCode() -> int
-~override Gu.Units.MagneticFluxUnit.ToString() -> string
+override Gu.Units.MagneticFluxUnit.ToString() -> string!
 ~override Gu.Units.MagneticFluxUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.MagneticFluxUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.MagneticFluxUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2944,9 +2944,9 @@ override Gu.Units.MassFlow.ToString() -> string!
 ~override Gu.Units.MassFlowTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.MassFlowTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.MassFlowTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.MassFlowUnit.Equals(object obj) -> bool
+override Gu.Units.MassFlowUnit.Equals(object? obj) -> bool
 override Gu.Units.MassFlowUnit.GetHashCode() -> int
-~override Gu.Units.MassFlowUnit.ToString() -> string
+override Gu.Units.MassFlowUnit.ToString() -> string!
 ~override Gu.Units.MassFlowUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.MassFlowUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.MassFlowUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2955,9 +2955,9 @@ override Gu.Units.MassFlowUnit.GetHashCode() -> int
 ~override Gu.Units.MassTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.MassTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.MassTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.MassUnit.Equals(object obj) -> bool
+override Gu.Units.MassUnit.Equals(object? obj) -> bool
 override Gu.Units.MassUnit.GetHashCode() -> int
-~override Gu.Units.MassUnit.ToString() -> string
+override Gu.Units.MassUnit.ToString() -> string!
 ~override Gu.Units.MassUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.MassUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.MassUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2969,9 +2969,9 @@ override Gu.Units.MolarHeatCapacity.ToString() -> string!
 ~override Gu.Units.MolarHeatCapacityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.MolarHeatCapacityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.MolarHeatCapacityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.MolarHeatCapacityUnit.Equals(object obj) -> bool
+override Gu.Units.MolarHeatCapacityUnit.Equals(object? obj) -> bool
 override Gu.Units.MolarHeatCapacityUnit.GetHashCode() -> int
-~override Gu.Units.MolarHeatCapacityUnit.ToString() -> string
+override Gu.Units.MolarHeatCapacityUnit.ToString() -> string!
 ~override Gu.Units.MolarHeatCapacityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.MolarHeatCapacityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.MolarHeatCapacityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2983,9 +2983,9 @@ override Gu.Units.MolarMass.ToString() -> string!
 ~override Gu.Units.MolarMassTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.MolarMassTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.MolarMassTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.MolarMassUnit.Equals(object obj) -> bool
+override Gu.Units.MolarMassUnit.Equals(object? obj) -> bool
 override Gu.Units.MolarMassUnit.GetHashCode() -> int
-~override Gu.Units.MolarMassUnit.ToString() -> string
+override Gu.Units.MolarMassUnit.ToString() -> string!
 ~override Gu.Units.MolarMassUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.MolarMassUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.MolarMassUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -2997,9 +2997,9 @@ override Gu.Units.Momentum.ToString() -> string!
 ~override Gu.Units.MomentumTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.MomentumTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.MomentumTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.MomentumUnit.Equals(object obj) -> bool
+override Gu.Units.MomentumUnit.Equals(object? obj) -> bool
 override Gu.Units.MomentumUnit.GetHashCode() -> int
-~override Gu.Units.MomentumUnit.ToString() -> string
+override Gu.Units.MomentumUnit.ToString() -> string!
 ~override Gu.Units.MomentumUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.MomentumUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.MomentumUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3011,9 +3011,9 @@ override Gu.Units.Power.ToString() -> string!
 ~override Gu.Units.PowerTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.PowerTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.PowerTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.PowerUnit.Equals(object obj) -> bool
+override Gu.Units.PowerUnit.Equals(object? obj) -> bool
 override Gu.Units.PowerUnit.GetHashCode() -> int
-~override Gu.Units.PowerUnit.ToString() -> string
+override Gu.Units.PowerUnit.ToString() -> string!
 ~override Gu.Units.PowerUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.PowerUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.PowerUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3025,9 +3025,9 @@ override Gu.Units.Pressure.ToString() -> string!
 ~override Gu.Units.PressureTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.PressureTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.PressureTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.PressureUnit.Equals(object obj) -> bool
+override Gu.Units.PressureUnit.Equals(object? obj) -> bool
 override Gu.Units.PressureUnit.GetHashCode() -> int
-~override Gu.Units.PressureUnit.ToString() -> string
+override Gu.Units.PressureUnit.ToString() -> string!
 ~override Gu.Units.PressureUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.PressureUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.PressureUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3039,9 +3039,9 @@ override Gu.Units.Resistance.ToString() -> string!
 ~override Gu.Units.ResistanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.ResistanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.ResistanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.ResistanceUnit.Equals(object obj) -> bool
+override Gu.Units.ResistanceUnit.Equals(object? obj) -> bool
 override Gu.Units.ResistanceUnit.GetHashCode() -> int
-~override Gu.Units.ResistanceUnit.ToString() -> string
+override Gu.Units.ResistanceUnit.ToString() -> string!
 ~override Gu.Units.ResistanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.ResistanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.ResistanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3053,9 +3053,9 @@ override Gu.Units.SolidAngle.ToString() -> string!
 ~override Gu.Units.SolidAngleTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.SolidAngleTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.SolidAngleTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.SolidAngleUnit.Equals(object obj) -> bool
+override Gu.Units.SolidAngleUnit.Equals(object? obj) -> bool
 override Gu.Units.SolidAngleUnit.GetHashCode() -> int
-~override Gu.Units.SolidAngleUnit.ToString() -> string
+override Gu.Units.SolidAngleUnit.ToString() -> string!
 ~override Gu.Units.SolidAngleUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.SolidAngleUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.SolidAngleUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3067,9 +3067,9 @@ override Gu.Units.SpecificEnergy.ToString() -> string!
 ~override Gu.Units.SpecificEnergyTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.SpecificEnergyTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.SpecificEnergyTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.SpecificEnergyUnit.Equals(object obj) -> bool
+override Gu.Units.SpecificEnergyUnit.Equals(object? obj) -> bool
 override Gu.Units.SpecificEnergyUnit.GetHashCode() -> int
-~override Gu.Units.SpecificEnergyUnit.ToString() -> string
+override Gu.Units.SpecificEnergyUnit.ToString() -> string!
 ~override Gu.Units.SpecificEnergyUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.SpecificEnergyUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.SpecificEnergyUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3081,9 +3081,9 @@ override Gu.Units.SpecificVolume.ToString() -> string!
 ~override Gu.Units.SpecificVolumeTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.SpecificVolumeTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.SpecificVolumeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.SpecificVolumeUnit.Equals(object obj) -> bool
+override Gu.Units.SpecificVolumeUnit.Equals(object? obj) -> bool
 override Gu.Units.SpecificVolumeUnit.GetHashCode() -> int
-~override Gu.Units.SpecificVolumeUnit.ToString() -> string
+override Gu.Units.SpecificVolumeUnit.ToString() -> string!
 ~override Gu.Units.SpecificVolumeUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.SpecificVolumeUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.SpecificVolumeUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3095,9 +3095,9 @@ override Gu.Units.Speed.ToString() -> string!
 ~override Gu.Units.SpeedTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.SpeedTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.SpeedTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.SpeedUnit.Equals(object obj) -> bool
+override Gu.Units.SpeedUnit.Equals(object? obj) -> bool
 override Gu.Units.SpeedUnit.GetHashCode() -> int
-~override Gu.Units.SpeedUnit.ToString() -> string
+override Gu.Units.SpeedUnit.ToString() -> string!
 ~override Gu.Units.SpeedUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.SpeedUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.SpeedUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3109,9 +3109,9 @@ override Gu.Units.Stiffness.ToString() -> string!
 ~override Gu.Units.StiffnessTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.StiffnessTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.StiffnessTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.StiffnessUnit.Equals(object obj) -> bool
+override Gu.Units.StiffnessUnit.Equals(object? obj) -> bool
 override Gu.Units.StiffnessUnit.GetHashCode() -> int
-~override Gu.Units.StiffnessUnit.ToString() -> string
+override Gu.Units.StiffnessUnit.ToString() -> string!
 ~override Gu.Units.StiffnessUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.StiffnessUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.StiffnessUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3123,9 +3123,9 @@ override Gu.Units.Temperature.ToString() -> string!
 ~override Gu.Units.TemperatureTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.TemperatureTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.TemperatureTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.TemperatureUnit.Equals(object obj) -> bool
+override Gu.Units.TemperatureUnit.Equals(object? obj) -> bool
 override Gu.Units.TemperatureUnit.GetHashCode() -> int
-~override Gu.Units.TemperatureUnit.ToString() -> string
+override Gu.Units.TemperatureUnit.ToString() -> string!
 ~override Gu.Units.TemperatureUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.TemperatureUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.TemperatureUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3137,9 +3137,9 @@ override Gu.Units.Time.ToString() -> string!
 ~override Gu.Units.TimeTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.TimeTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.TimeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.TimeUnit.Equals(object obj) -> bool
+override Gu.Units.TimeUnit.Equals(object? obj) -> bool
 override Gu.Units.TimeUnit.GetHashCode() -> int
-~override Gu.Units.TimeUnit.ToString() -> string
+override Gu.Units.TimeUnit.ToString() -> string!
 ~override Gu.Units.TimeUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.TimeUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.TimeUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3151,9 +3151,9 @@ override Gu.Units.Torque.ToString() -> string!
 ~override Gu.Units.TorqueTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.TorqueTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.TorqueTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.TorqueUnit.Equals(object obj) -> bool
+override Gu.Units.TorqueUnit.Equals(object? obj) -> bool
 override Gu.Units.TorqueUnit.GetHashCode() -> int
-~override Gu.Units.TorqueUnit.ToString() -> string
+override Gu.Units.TorqueUnit.ToString() -> string!
 ~override Gu.Units.TorqueUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.TorqueUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.TorqueUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3165,9 +3165,9 @@ override Gu.Units.Unitless.ToString() -> string!
 ~override Gu.Units.UnitlessTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.UnitlessTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.UnitlessTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.UnitlessUnit.Equals(object obj) -> bool
+override Gu.Units.UnitlessUnit.Equals(object? obj) -> bool
 override Gu.Units.UnitlessUnit.GetHashCode() -> int
-~override Gu.Units.UnitlessUnit.ToString() -> string
+override Gu.Units.UnitlessUnit.ToString() -> string!
 ~override Gu.Units.UnitlessUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.UnitlessUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.UnitlessUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3179,9 +3179,9 @@ override Gu.Units.Voltage.ToString() -> string!
 ~override Gu.Units.VoltageTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.VoltageTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.VoltageTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.VoltageUnit.Equals(object obj) -> bool
+override Gu.Units.VoltageUnit.Equals(object? obj) -> bool
 override Gu.Units.VoltageUnit.GetHashCode() -> int
-~override Gu.Units.VoltageUnit.ToString() -> string
+override Gu.Units.VoltageUnit.ToString() -> string!
 ~override Gu.Units.VoltageUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.VoltageUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.VoltageUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3196,9 +3196,9 @@ override Gu.Units.VolumetricFlow.ToString() -> string!
 ~override Gu.Units.VolumetricFlowTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.VolumetricFlowTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.VolumetricFlowTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.VolumetricFlowUnit.Equals(object obj) -> bool
+override Gu.Units.VolumetricFlowUnit.Equals(object? obj) -> bool
 override Gu.Units.VolumetricFlowUnit.GetHashCode() -> int
-~override Gu.Units.VolumetricFlowUnit.ToString() -> string
+override Gu.Units.VolumetricFlowUnit.ToString() -> string!
 ~override Gu.Units.VolumetricFlowUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.VolumetricFlowUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.VolumetricFlowUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3207,9 +3207,9 @@ override Gu.Units.VolumetricFlowUnit.GetHashCode() -> int
 ~override Gu.Units.VolumeTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.VolumeTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.VolumeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.VolumeUnit.Equals(object obj) -> bool
+override Gu.Units.VolumeUnit.Equals(object? obj) -> bool
 override Gu.Units.VolumeUnit.GetHashCode() -> int
-~override Gu.Units.VolumeUnit.ToString() -> string
+override Gu.Units.VolumeUnit.ToString() -> string!
 ~override Gu.Units.VolumeUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.VolumeUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.VolumeUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3221,9 +3221,9 @@ override Gu.Units.Wavenumber.ToString() -> string!
 ~override Gu.Units.WavenumberTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.WavenumberTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
 ~override Gu.Units.WavenumberTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.WavenumberUnit.Equals(object obj) -> bool
+override Gu.Units.WavenumberUnit.Equals(object? obj) -> bool
 override Gu.Units.WavenumberUnit.GetHashCode() -> int
-~override Gu.Units.WavenumberUnit.ToString() -> string
+override Gu.Units.WavenumberUnit.ToString() -> string!
 ~override Gu.Units.WavenumberUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
 ~override Gu.Units.WavenumberUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
 ~override Gu.Units.WavenumberUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
@@ -3275,8 +3275,8 @@ static Gu.Units.Acceleration.TryParse(string! text, System.IFormatProvider! prov
 static Gu.Units.AccelerationUnit.operator !=(Gu.Units.AccelerationUnit left, Gu.Units.AccelerationUnit right) -> bool
 static Gu.Units.AccelerationUnit.operator *(double left, Gu.Units.AccelerationUnit right) -> Gu.Units.Acceleration
 static Gu.Units.AccelerationUnit.operator ==(Gu.Units.AccelerationUnit left, Gu.Units.AccelerationUnit right) -> bool
-~static Gu.Units.AccelerationUnit.Parse(string text) -> Gu.Units.AccelerationUnit
-~static Gu.Units.AccelerationUnit.TryParse(string text, out Gu.Units.AccelerationUnit result) -> bool
+static Gu.Units.AccelerationUnit.Parse(string! text) -> Gu.Units.AccelerationUnit
+static Gu.Units.AccelerationUnit.TryParse(string! text, out Gu.Units.AccelerationUnit result) -> bool
 static Gu.Units.AmountOfSubstance.From(double value, Gu.Units.AmountOfSubstanceUnit unit) -> Gu.Units.AmountOfSubstance
 static Gu.Units.AmountOfSubstance.FromMoles(double moles) -> Gu.Units.AmountOfSubstance
 static Gu.Units.AmountOfSubstance.operator !=(Gu.Units.AmountOfSubstance left, Gu.Units.AmountOfSubstance right) -> bool
@@ -3309,8 +3309,8 @@ static Gu.Units.AmountOfSubstance.TryParse(string! text, System.IFormatProvider!
 static Gu.Units.AmountOfSubstanceUnit.operator !=(Gu.Units.AmountOfSubstanceUnit left, Gu.Units.AmountOfSubstanceUnit right) -> bool
 static Gu.Units.AmountOfSubstanceUnit.operator *(double left, Gu.Units.AmountOfSubstanceUnit right) -> Gu.Units.AmountOfSubstance
 static Gu.Units.AmountOfSubstanceUnit.operator ==(Gu.Units.AmountOfSubstanceUnit left, Gu.Units.AmountOfSubstanceUnit right) -> bool
-~static Gu.Units.AmountOfSubstanceUnit.Parse(string text) -> Gu.Units.AmountOfSubstanceUnit
-~static Gu.Units.AmountOfSubstanceUnit.TryParse(string text, out Gu.Units.AmountOfSubstanceUnit result) -> bool
+static Gu.Units.AmountOfSubstanceUnit.Parse(string! text) -> Gu.Units.AmountOfSubstanceUnit
+static Gu.Units.AmountOfSubstanceUnit.TryParse(string! text, out Gu.Units.AmountOfSubstanceUnit result) -> bool
 static Gu.Units.Angle.From(double value, Gu.Units.AngleUnit unit) -> Gu.Units.Angle
 static Gu.Units.Angle.FromDegrees(double degrees) -> Gu.Units.Angle
 static Gu.Units.Angle.FromRadians(double radians) -> Gu.Units.Angle
@@ -3374,13 +3374,13 @@ static Gu.Units.AnglePerUnitless.TryParse(string! text, System.IFormatProvider! 
 static Gu.Units.AnglePerUnitlessUnit.operator !=(Gu.Units.AnglePerUnitlessUnit left, Gu.Units.AnglePerUnitlessUnit right) -> bool
 static Gu.Units.AnglePerUnitlessUnit.operator *(double left, Gu.Units.AnglePerUnitlessUnit right) -> Gu.Units.AnglePerUnitless
 static Gu.Units.AnglePerUnitlessUnit.operator ==(Gu.Units.AnglePerUnitlessUnit left, Gu.Units.AnglePerUnitlessUnit right) -> bool
-~static Gu.Units.AnglePerUnitlessUnit.Parse(string text) -> Gu.Units.AnglePerUnitlessUnit
-~static Gu.Units.AnglePerUnitlessUnit.TryParse(string text, out Gu.Units.AnglePerUnitlessUnit result) -> bool
+static Gu.Units.AnglePerUnitlessUnit.Parse(string! text) -> Gu.Units.AnglePerUnitlessUnit
+static Gu.Units.AnglePerUnitlessUnit.TryParse(string! text, out Gu.Units.AnglePerUnitlessUnit result) -> bool
 static Gu.Units.AngleUnit.operator !=(Gu.Units.AngleUnit left, Gu.Units.AngleUnit right) -> bool
 static Gu.Units.AngleUnit.operator *(double left, Gu.Units.AngleUnit right) -> Gu.Units.Angle
 static Gu.Units.AngleUnit.operator ==(Gu.Units.AngleUnit left, Gu.Units.AngleUnit right) -> bool
-~static Gu.Units.AngleUnit.Parse(string text) -> Gu.Units.AngleUnit
-~static Gu.Units.AngleUnit.TryParse(string text, out Gu.Units.AngleUnit result) -> bool
+static Gu.Units.AngleUnit.Parse(string! text) -> Gu.Units.AngleUnit
+static Gu.Units.AngleUnit.TryParse(string! text, out Gu.Units.AngleUnit result) -> bool
 static Gu.Units.AngularAcceleration.From(double value, Gu.Units.AngularAccelerationUnit unit) -> Gu.Units.AngularAcceleration
 static Gu.Units.AngularAcceleration.FromDegreesPerHourSquared(double degreesPerHourSquared) -> Gu.Units.AngularAcceleration
 static Gu.Units.AngularAcceleration.FromDegreesPerMinuteSquared(double degreesPerMinuteSquared) -> Gu.Units.AngularAcceleration
@@ -3420,8 +3420,8 @@ static Gu.Units.AngularAcceleration.TryParse(string! text, System.IFormatProvide
 static Gu.Units.AngularAccelerationUnit.operator !=(Gu.Units.AngularAccelerationUnit left, Gu.Units.AngularAccelerationUnit right) -> bool
 static Gu.Units.AngularAccelerationUnit.operator *(double left, Gu.Units.AngularAccelerationUnit right) -> Gu.Units.AngularAcceleration
 static Gu.Units.AngularAccelerationUnit.operator ==(Gu.Units.AngularAccelerationUnit left, Gu.Units.AngularAccelerationUnit right) -> bool
-~static Gu.Units.AngularAccelerationUnit.Parse(string text) -> Gu.Units.AngularAccelerationUnit
-~static Gu.Units.AngularAccelerationUnit.TryParse(string text, out Gu.Units.AngularAccelerationUnit result) -> bool
+static Gu.Units.AngularAccelerationUnit.Parse(string! text) -> Gu.Units.AngularAccelerationUnit
+static Gu.Units.AngularAccelerationUnit.TryParse(string! text, out Gu.Units.AngularAccelerationUnit result) -> bool
 static Gu.Units.AngularJerk.From(double value, Gu.Units.AngularJerkUnit unit) -> Gu.Units.AngularJerk
 static Gu.Units.AngularJerk.FromDegreesPerHourCubed(double degreesPerHourCubed) -> Gu.Units.AngularJerk
 static Gu.Units.AngularJerk.FromDegreesPerMinuteCubed(double degreesPerMinuteCubed) -> Gu.Units.AngularJerk
@@ -3458,8 +3458,8 @@ static Gu.Units.AngularJerk.TryParse(string! text, System.IFormatProvider! provi
 static Gu.Units.AngularJerkUnit.operator !=(Gu.Units.AngularJerkUnit left, Gu.Units.AngularJerkUnit right) -> bool
 static Gu.Units.AngularJerkUnit.operator *(double left, Gu.Units.AngularJerkUnit right) -> Gu.Units.AngularJerk
 static Gu.Units.AngularJerkUnit.operator ==(Gu.Units.AngularJerkUnit left, Gu.Units.AngularJerkUnit right) -> bool
-~static Gu.Units.AngularJerkUnit.Parse(string text) -> Gu.Units.AngularJerkUnit
-~static Gu.Units.AngularJerkUnit.TryParse(string text, out Gu.Units.AngularJerkUnit result) -> bool
+static Gu.Units.AngularJerkUnit.Parse(string! text) -> Gu.Units.AngularJerkUnit
+static Gu.Units.AngularJerkUnit.TryParse(string! text, out Gu.Units.AngularJerkUnit result) -> bool
 static Gu.Units.AngularSpeed.From(double value, Gu.Units.AngularSpeedUnit unit) -> Gu.Units.AngularSpeed
 static Gu.Units.AngularSpeed.FromDegreesPerHour(double degreesPerHour) -> Gu.Units.AngularSpeed
 static Gu.Units.AngularSpeed.FromDegreesPerMinute(double degreesPerMinute) -> Gu.Units.AngularSpeed
@@ -3501,8 +3501,8 @@ static Gu.Units.AngularSpeed.TryParse(string! text, System.IFormatProvider! prov
 static Gu.Units.AngularSpeedUnit.operator !=(Gu.Units.AngularSpeedUnit left, Gu.Units.AngularSpeedUnit right) -> bool
 static Gu.Units.AngularSpeedUnit.operator *(double left, Gu.Units.AngularSpeedUnit right) -> Gu.Units.AngularSpeed
 static Gu.Units.AngularSpeedUnit.operator ==(Gu.Units.AngularSpeedUnit left, Gu.Units.AngularSpeedUnit right) -> bool
-~static Gu.Units.AngularSpeedUnit.Parse(string text) -> Gu.Units.AngularSpeedUnit
-~static Gu.Units.AngularSpeedUnit.TryParse(string text, out Gu.Units.AngularSpeedUnit result) -> bool
+static Gu.Units.AngularSpeedUnit.Parse(string! text) -> Gu.Units.AngularSpeedUnit
+static Gu.Units.AngularSpeedUnit.TryParse(string! text, out Gu.Units.AngularSpeedUnit result) -> bool
 static Gu.Units.Area.From(double value, Gu.Units.AreaUnit unit) -> Gu.Units.Area
 static Gu.Units.Area.FromHectares(double hectares) -> Gu.Units.Area
 static Gu.Units.Area.FromSquareCentimetres(double squareCentimetres) -> Gu.Units.Area
@@ -3590,13 +3590,13 @@ static Gu.Units.AreaDensity.TryParse(string! text, System.IFormatProvider! provi
 static Gu.Units.AreaDensityUnit.operator !=(Gu.Units.AreaDensityUnit left, Gu.Units.AreaDensityUnit right) -> bool
 static Gu.Units.AreaDensityUnit.operator *(double left, Gu.Units.AreaDensityUnit right) -> Gu.Units.AreaDensity
 static Gu.Units.AreaDensityUnit.operator ==(Gu.Units.AreaDensityUnit left, Gu.Units.AreaDensityUnit right) -> bool
-~static Gu.Units.AreaDensityUnit.Parse(string text) -> Gu.Units.AreaDensityUnit
-~static Gu.Units.AreaDensityUnit.TryParse(string text, out Gu.Units.AreaDensityUnit result) -> bool
+static Gu.Units.AreaDensityUnit.Parse(string! text) -> Gu.Units.AreaDensityUnit
+static Gu.Units.AreaDensityUnit.TryParse(string! text, out Gu.Units.AreaDensityUnit result) -> bool
 static Gu.Units.AreaUnit.operator !=(Gu.Units.AreaUnit left, Gu.Units.AreaUnit right) -> bool
 static Gu.Units.AreaUnit.operator *(double left, Gu.Units.AreaUnit right) -> Gu.Units.Area
 static Gu.Units.AreaUnit.operator ==(Gu.Units.AreaUnit left, Gu.Units.AreaUnit right) -> bool
-~static Gu.Units.AreaUnit.Parse(string text) -> Gu.Units.AreaUnit
-~static Gu.Units.AreaUnit.TryParse(string text, out Gu.Units.AreaUnit result) -> bool
+static Gu.Units.AreaUnit.Parse(string! text) -> Gu.Units.AreaUnit
+static Gu.Units.AreaUnit.TryParse(string! text, out Gu.Units.AreaUnit result) -> bool
 static Gu.Units.Capacitance.From(double value, Gu.Units.CapacitanceUnit unit) -> Gu.Units.Capacitance
 static Gu.Units.Capacitance.FromFarads(double farads) -> Gu.Units.Capacitance
 static Gu.Units.Capacitance.FromGigafarads(double gigafarads) -> Gu.Units.Capacitance
@@ -3636,8 +3636,8 @@ static Gu.Units.Capacitance.TryParse(string! text, System.IFormatProvider! provi
 static Gu.Units.CapacitanceUnit.operator !=(Gu.Units.CapacitanceUnit left, Gu.Units.CapacitanceUnit right) -> bool
 static Gu.Units.CapacitanceUnit.operator *(double left, Gu.Units.CapacitanceUnit right) -> Gu.Units.Capacitance
 static Gu.Units.CapacitanceUnit.operator ==(Gu.Units.CapacitanceUnit left, Gu.Units.CapacitanceUnit right) -> bool
-~static Gu.Units.CapacitanceUnit.Parse(string text) -> Gu.Units.CapacitanceUnit
-~static Gu.Units.CapacitanceUnit.TryParse(string text, out Gu.Units.CapacitanceUnit result) -> bool
+static Gu.Units.CapacitanceUnit.Parse(string! text) -> Gu.Units.CapacitanceUnit
+static Gu.Units.CapacitanceUnit.TryParse(string! text, out Gu.Units.CapacitanceUnit result) -> bool
 static Gu.Units.CatalyticActivity.From(double value, Gu.Units.CatalyticActivityUnit unit) -> Gu.Units.CatalyticActivity
 static Gu.Units.CatalyticActivity.FromKatals(double katals) -> Gu.Units.CatalyticActivity
 static Gu.Units.CatalyticActivity.operator !=(Gu.Units.CatalyticActivity left, Gu.Units.CatalyticActivity right) -> bool
@@ -3670,8 +3670,8 @@ static Gu.Units.CatalyticActivity.TryParse(string! text, System.IFormatProvider!
 static Gu.Units.CatalyticActivityUnit.operator !=(Gu.Units.CatalyticActivityUnit left, Gu.Units.CatalyticActivityUnit right) -> bool
 static Gu.Units.CatalyticActivityUnit.operator *(double left, Gu.Units.CatalyticActivityUnit right) -> Gu.Units.CatalyticActivity
 static Gu.Units.CatalyticActivityUnit.operator ==(Gu.Units.CatalyticActivityUnit left, Gu.Units.CatalyticActivityUnit right) -> bool
-~static Gu.Units.CatalyticActivityUnit.Parse(string text) -> Gu.Units.CatalyticActivityUnit
-~static Gu.Units.CatalyticActivityUnit.TryParse(string text, out Gu.Units.CatalyticActivityUnit result) -> bool
+static Gu.Units.CatalyticActivityUnit.Parse(string! text) -> Gu.Units.CatalyticActivityUnit
+static Gu.Units.CatalyticActivityUnit.TryParse(string! text, out Gu.Units.CatalyticActivityUnit result) -> bool
 static Gu.Units.Conductivity.From(double value, Gu.Units.ConductivityUnit unit) -> Gu.Units.Conductivity
 static Gu.Units.Conductivity.FromMicrosiemensPerCentimetre(double microsiemensPerCentimetre) -> Gu.Units.Conductivity
 static Gu.Units.Conductivity.FromMicrosiemensPerMetre(double microsiemensPerMetre) -> Gu.Units.Conductivity
@@ -3716,8 +3716,8 @@ static Gu.Units.Conductivity.TryParse(string! text, System.IFormatProvider! prov
 static Gu.Units.ConductivityUnit.operator !=(Gu.Units.ConductivityUnit left, Gu.Units.ConductivityUnit right) -> bool
 static Gu.Units.ConductivityUnit.operator *(double left, Gu.Units.ConductivityUnit right) -> Gu.Units.Conductivity
 static Gu.Units.ConductivityUnit.operator ==(Gu.Units.ConductivityUnit left, Gu.Units.ConductivityUnit right) -> bool
-~static Gu.Units.ConductivityUnit.Parse(string text) -> Gu.Units.ConductivityUnit
-~static Gu.Units.ConductivityUnit.TryParse(string text, out Gu.Units.ConductivityUnit result) -> bool
+static Gu.Units.ConductivityUnit.Parse(string! text) -> Gu.Units.ConductivityUnit
+static Gu.Units.ConductivityUnit.TryParse(string! text, out Gu.Units.ConductivityUnit result) -> bool
 static Gu.Units.Current.From(double value, Gu.Units.CurrentUnit unit) -> Gu.Units.Current
 static Gu.Units.Current.FromAmperes(double amperes) -> Gu.Units.Current
 static Gu.Units.Current.FromGigaamperes(double gigaamperes) -> Gu.Units.Current
@@ -3762,8 +3762,8 @@ static Gu.Units.Current.TryParse(string! text, System.IFormatProvider! provider,
 static Gu.Units.CurrentUnit.operator !=(Gu.Units.CurrentUnit left, Gu.Units.CurrentUnit right) -> bool
 static Gu.Units.CurrentUnit.operator *(double left, Gu.Units.CurrentUnit right) -> Gu.Units.Current
 static Gu.Units.CurrentUnit.operator ==(Gu.Units.CurrentUnit left, Gu.Units.CurrentUnit right) -> bool
-~static Gu.Units.CurrentUnit.Parse(string text) -> Gu.Units.CurrentUnit
-~static Gu.Units.CurrentUnit.TryParse(string text, out Gu.Units.CurrentUnit result) -> bool
+static Gu.Units.CurrentUnit.Parse(string! text) -> Gu.Units.CurrentUnit
+static Gu.Units.CurrentUnit.TryParse(string! text, out Gu.Units.CurrentUnit result) -> bool
 static Gu.Units.Data.From(double value, Gu.Units.DataUnit unit) -> Gu.Units.Data
 static Gu.Units.Data.FromBits(double bits) -> Gu.Units.Data
 static Gu.Units.Data.FromByte(double byte) -> Gu.Units.Data
@@ -3800,8 +3800,8 @@ static Gu.Units.Data.TryParse(string! text, System.IFormatProvider! provider, ou
 static Gu.Units.DataUnit.operator !=(Gu.Units.DataUnit left, Gu.Units.DataUnit right) -> bool
 static Gu.Units.DataUnit.operator *(double left, Gu.Units.DataUnit right) -> Gu.Units.Data
 static Gu.Units.DataUnit.operator ==(Gu.Units.DataUnit left, Gu.Units.DataUnit right) -> bool
-~static Gu.Units.DataUnit.Parse(string text) -> Gu.Units.DataUnit
-~static Gu.Units.DataUnit.TryParse(string text, out Gu.Units.DataUnit result) -> bool
+static Gu.Units.DataUnit.Parse(string! text) -> Gu.Units.DataUnit
+static Gu.Units.DataUnit.TryParse(string! text, out Gu.Units.DataUnit result) -> bool
 static Gu.Units.Density.From(double value, Gu.Units.DensityUnit unit) -> Gu.Units.Density
 static Gu.Units.Density.FromGramsPerCubicCentimetre(double gramsPerCubicCentimetre) -> Gu.Units.Density
 static Gu.Units.Density.FromGramsPerCubicMetre(double gramsPerCubicMetre) -> Gu.Units.Density
@@ -3842,8 +3842,8 @@ static Gu.Units.Density.TryParse(string! text, System.IFormatProvider! provider,
 static Gu.Units.DensityUnit.operator !=(Gu.Units.DensityUnit left, Gu.Units.DensityUnit right) -> bool
 static Gu.Units.DensityUnit.operator *(double left, Gu.Units.DensityUnit right) -> Gu.Units.Density
 static Gu.Units.DensityUnit.operator ==(Gu.Units.DensityUnit left, Gu.Units.DensityUnit right) -> bool
-~static Gu.Units.DensityUnit.Parse(string text) -> Gu.Units.DensityUnit
-~static Gu.Units.DensityUnit.TryParse(string text, out Gu.Units.DensityUnit result) -> bool
+static Gu.Units.DensityUnit.Parse(string! text) -> Gu.Units.DensityUnit
+static Gu.Units.DensityUnit.TryParse(string! text, out Gu.Units.DensityUnit result) -> bool
 static Gu.Units.ElectricalConductance.From(double value, Gu.Units.ElectricalConductanceUnit unit) -> Gu.Units.ElectricalConductance
 static Gu.Units.ElectricalConductance.FromMicrosiemens(double microsiemens) -> Gu.Units.ElectricalConductance
 static Gu.Units.ElectricalConductance.FromMillisiemens(double millisiemens) -> Gu.Units.ElectricalConductance
@@ -3885,8 +3885,8 @@ static Gu.Units.ElectricalConductance.TryParse(string! text, System.IFormatProvi
 static Gu.Units.ElectricalConductanceUnit.operator !=(Gu.Units.ElectricalConductanceUnit left, Gu.Units.ElectricalConductanceUnit right) -> bool
 static Gu.Units.ElectricalConductanceUnit.operator *(double left, Gu.Units.ElectricalConductanceUnit right) -> Gu.Units.ElectricalConductance
 static Gu.Units.ElectricalConductanceUnit.operator ==(Gu.Units.ElectricalConductanceUnit left, Gu.Units.ElectricalConductanceUnit right) -> bool
-~static Gu.Units.ElectricalConductanceUnit.Parse(string text) -> Gu.Units.ElectricalConductanceUnit
-~static Gu.Units.ElectricalConductanceUnit.TryParse(string text, out Gu.Units.ElectricalConductanceUnit result) -> bool
+static Gu.Units.ElectricalConductanceUnit.Parse(string! text) -> Gu.Units.ElectricalConductanceUnit
+static Gu.Units.ElectricalConductanceUnit.TryParse(string! text, out Gu.Units.ElectricalConductanceUnit result) -> bool
 static Gu.Units.ElectricCharge.From(double value, Gu.Units.ElectricChargeUnit unit) -> Gu.Units.ElectricCharge
 static Gu.Units.ElectricCharge.FromCoulombs(double coulombs) -> Gu.Units.ElectricCharge
 static Gu.Units.ElectricCharge.FromGigacoulombs(double gigacoulombs) -> Gu.Units.ElectricCharge
@@ -3931,8 +3931,8 @@ static Gu.Units.ElectricCharge.TryParse(string! text, System.IFormatProvider! pr
 static Gu.Units.ElectricChargeUnit.operator !=(Gu.Units.ElectricChargeUnit left, Gu.Units.ElectricChargeUnit right) -> bool
 static Gu.Units.ElectricChargeUnit.operator *(double left, Gu.Units.ElectricChargeUnit right) -> Gu.Units.ElectricCharge
 static Gu.Units.ElectricChargeUnit.operator ==(Gu.Units.ElectricChargeUnit left, Gu.Units.ElectricChargeUnit right) -> bool
-~static Gu.Units.ElectricChargeUnit.Parse(string text) -> Gu.Units.ElectricChargeUnit
-~static Gu.Units.ElectricChargeUnit.TryParse(string text, out Gu.Units.ElectricChargeUnit result) -> bool
+static Gu.Units.ElectricChargeUnit.Parse(string! text) -> Gu.Units.ElectricChargeUnit
+static Gu.Units.ElectricChargeUnit.TryParse(string! text, out Gu.Units.ElectricChargeUnit result) -> bool
 static Gu.Units.Energy.From(double value, Gu.Units.EnergyUnit unit) -> Gu.Units.Energy
 static Gu.Units.Energy.FromGigajoules(double gigajoules) -> Gu.Units.Energy
 static Gu.Units.Energy.FromJoules(double joules) -> Gu.Units.Energy
@@ -3991,8 +3991,8 @@ static Gu.Units.Energy.TryParse(string! text, System.IFormatProvider! provider, 
 static Gu.Units.EnergyUnit.operator !=(Gu.Units.EnergyUnit left, Gu.Units.EnergyUnit right) -> bool
 static Gu.Units.EnergyUnit.operator *(double left, Gu.Units.EnergyUnit right) -> Gu.Units.Energy
 static Gu.Units.EnergyUnit.operator ==(Gu.Units.EnergyUnit left, Gu.Units.EnergyUnit right) -> bool
-~static Gu.Units.EnergyUnit.Parse(string text) -> Gu.Units.EnergyUnit
-~static Gu.Units.EnergyUnit.TryParse(string text, out Gu.Units.EnergyUnit result) -> bool
+static Gu.Units.EnergyUnit.Parse(string! text) -> Gu.Units.EnergyUnit
+static Gu.Units.EnergyUnit.TryParse(string! text, out Gu.Units.EnergyUnit result) -> bool
 static Gu.Units.EnumerableUnits.Average(this System.Collections.Generic.IEnumerable<Gu.Units.Acceleration>! source) -> Gu.Units.Acceleration
 static Gu.Units.EnumerableUnits.Average(this System.Collections.Generic.IEnumerable<Gu.Units.Acceleration?>! source) -> Gu.Units.Acceleration?
 static Gu.Units.EnumerableUnits.Average(this System.Collections.Generic.IEnumerable<Gu.Units.AmountOfSubstance>! source) -> Gu.Units.AmountOfSubstance
@@ -4455,8 +4455,8 @@ static Gu.Units.Flexibility.TryParse(string! text, System.IFormatProvider! provi
 static Gu.Units.FlexibilityUnit.operator !=(Gu.Units.FlexibilityUnit left, Gu.Units.FlexibilityUnit right) -> bool
 static Gu.Units.FlexibilityUnit.operator *(double left, Gu.Units.FlexibilityUnit right) -> Gu.Units.Flexibility
 static Gu.Units.FlexibilityUnit.operator ==(Gu.Units.FlexibilityUnit left, Gu.Units.FlexibilityUnit right) -> bool
-~static Gu.Units.FlexibilityUnit.Parse(string text) -> Gu.Units.FlexibilityUnit
-~static Gu.Units.FlexibilityUnit.TryParse(string text, out Gu.Units.FlexibilityUnit result) -> bool
+static Gu.Units.FlexibilityUnit.Parse(string! text) -> Gu.Units.FlexibilityUnit
+static Gu.Units.FlexibilityUnit.TryParse(string! text, out Gu.Units.FlexibilityUnit result) -> bool
 static Gu.Units.Force.From(double value, Gu.Units.ForceUnit unit) -> Gu.Units.Force
 static Gu.Units.Force.FromGiganewtons(double giganewtons) -> Gu.Units.Force
 static Gu.Units.Force.FromKilonewtons(double kilonewtons) -> Gu.Units.Force
@@ -4543,13 +4543,13 @@ static Gu.Units.ForcePerUnitless.TryParse(string! text, System.IFormatProvider! 
 static Gu.Units.ForcePerUnitlessUnit.operator !=(Gu.Units.ForcePerUnitlessUnit left, Gu.Units.ForcePerUnitlessUnit right) -> bool
 static Gu.Units.ForcePerUnitlessUnit.operator *(double left, Gu.Units.ForcePerUnitlessUnit right) -> Gu.Units.ForcePerUnitless
 static Gu.Units.ForcePerUnitlessUnit.operator ==(Gu.Units.ForcePerUnitlessUnit left, Gu.Units.ForcePerUnitlessUnit right) -> bool
-~static Gu.Units.ForcePerUnitlessUnit.Parse(string text) -> Gu.Units.ForcePerUnitlessUnit
-~static Gu.Units.ForcePerUnitlessUnit.TryParse(string text, out Gu.Units.ForcePerUnitlessUnit result) -> bool
+static Gu.Units.ForcePerUnitlessUnit.Parse(string! text) -> Gu.Units.ForcePerUnitlessUnit
+static Gu.Units.ForcePerUnitlessUnit.TryParse(string! text, out Gu.Units.ForcePerUnitlessUnit result) -> bool
 static Gu.Units.ForceUnit.operator !=(Gu.Units.ForceUnit left, Gu.Units.ForceUnit right) -> bool
 static Gu.Units.ForceUnit.operator *(double left, Gu.Units.ForceUnit right) -> Gu.Units.Force
 static Gu.Units.ForceUnit.operator ==(Gu.Units.ForceUnit left, Gu.Units.ForceUnit right) -> bool
-~static Gu.Units.ForceUnit.Parse(string text) -> Gu.Units.ForceUnit
-~static Gu.Units.ForceUnit.TryParse(string text, out Gu.Units.ForceUnit result) -> bool
+static Gu.Units.ForceUnit.Parse(string! text) -> Gu.Units.ForceUnit
+static Gu.Units.ForceUnit.TryParse(string! text, out Gu.Units.ForceUnit result) -> bool
 static Gu.Units.Frequency.From(double value, Gu.Units.FrequencyUnit unit) -> Gu.Units.Frequency
 static Gu.Units.Frequency.FromGigahertz(double gigahertz) -> Gu.Units.Frequency
 static Gu.Units.Frequency.FromHertz(double hertz) -> Gu.Units.Frequency
@@ -4603,8 +4603,8 @@ static Gu.Units.Frequency.TryParse(string! text, System.IFormatProvider! provide
 static Gu.Units.FrequencyUnit.operator !=(Gu.Units.FrequencyUnit left, Gu.Units.FrequencyUnit right) -> bool
 static Gu.Units.FrequencyUnit.operator *(double left, Gu.Units.FrequencyUnit right) -> Gu.Units.Frequency
 static Gu.Units.FrequencyUnit.operator ==(Gu.Units.FrequencyUnit left, Gu.Units.FrequencyUnit right) -> bool
-~static Gu.Units.FrequencyUnit.Parse(string text) -> Gu.Units.FrequencyUnit
-~static Gu.Units.FrequencyUnit.TryParse(string text, out Gu.Units.FrequencyUnit result) -> bool
+static Gu.Units.FrequencyUnit.Parse(string! text) -> Gu.Units.FrequencyUnit
+static Gu.Units.FrequencyUnit.TryParse(string! text, out Gu.Units.FrequencyUnit result) -> bool
 static Gu.Units.Illuminance.From(double value, Gu.Units.IlluminanceUnit unit) -> Gu.Units.Illuminance
 static Gu.Units.Illuminance.FromLux(double lux) -> Gu.Units.Illuminance
 static Gu.Units.Illuminance.operator !=(Gu.Units.Illuminance left, Gu.Units.Illuminance right) -> bool
@@ -4634,8 +4634,8 @@ static Gu.Units.Illuminance.TryParse(string! text, System.IFormatProvider! provi
 static Gu.Units.IlluminanceUnit.operator !=(Gu.Units.IlluminanceUnit left, Gu.Units.IlluminanceUnit right) -> bool
 static Gu.Units.IlluminanceUnit.operator *(double left, Gu.Units.IlluminanceUnit right) -> Gu.Units.Illuminance
 static Gu.Units.IlluminanceUnit.operator ==(Gu.Units.IlluminanceUnit left, Gu.Units.IlluminanceUnit right) -> bool
-~static Gu.Units.IlluminanceUnit.Parse(string text) -> Gu.Units.IlluminanceUnit
-~static Gu.Units.IlluminanceUnit.TryParse(string text, out Gu.Units.IlluminanceUnit result) -> bool
+static Gu.Units.IlluminanceUnit.Parse(string! text) -> Gu.Units.IlluminanceUnit
+static Gu.Units.IlluminanceUnit.TryParse(string! text, out Gu.Units.IlluminanceUnit result) -> bool
 static Gu.Units.Inductance.From(double value, Gu.Units.InductanceUnit unit) -> Gu.Units.Inductance
 static Gu.Units.Inductance.FromGigahenrys(double gigahenrys) -> Gu.Units.Inductance
 static Gu.Units.Inductance.FromHenrys(double henrys) -> Gu.Units.Inductance
@@ -4675,8 +4675,8 @@ static Gu.Units.Inductance.TryParse(string! text, System.IFormatProvider! provid
 static Gu.Units.InductanceUnit.operator !=(Gu.Units.InductanceUnit left, Gu.Units.InductanceUnit right) -> bool
 static Gu.Units.InductanceUnit.operator *(double left, Gu.Units.InductanceUnit right) -> Gu.Units.Inductance
 static Gu.Units.InductanceUnit.operator ==(Gu.Units.InductanceUnit left, Gu.Units.InductanceUnit right) -> bool
-~static Gu.Units.InductanceUnit.Parse(string text) -> Gu.Units.InductanceUnit
-~static Gu.Units.InductanceUnit.TryParse(string text, out Gu.Units.InductanceUnit result) -> bool
+static Gu.Units.InductanceUnit.Parse(string! text) -> Gu.Units.InductanceUnit
+static Gu.Units.InductanceUnit.TryParse(string! text, out Gu.Units.InductanceUnit result) -> bool
 static Gu.Units.Jerk.From(double value, Gu.Units.JerkUnit unit) -> Gu.Units.Jerk
 static Gu.Units.Jerk.FromCentimetresPerHourCubed(double centimetresPerHourCubed) -> Gu.Units.Jerk
 static Gu.Units.Jerk.FromCentimetresPerMinuteCubed(double centimetresPerMinuteCubed) -> Gu.Units.Jerk
@@ -4716,8 +4716,8 @@ static Gu.Units.Jerk.TryParse(string! text, System.IFormatProvider! provider, ou
 static Gu.Units.JerkUnit.operator !=(Gu.Units.JerkUnit left, Gu.Units.JerkUnit right) -> bool
 static Gu.Units.JerkUnit.operator *(double left, Gu.Units.JerkUnit right) -> Gu.Units.Jerk
 static Gu.Units.JerkUnit.operator ==(Gu.Units.JerkUnit left, Gu.Units.JerkUnit right) -> bool
-~static Gu.Units.JerkUnit.Parse(string text) -> Gu.Units.JerkUnit
-~static Gu.Units.JerkUnit.TryParse(string text, out Gu.Units.JerkUnit result) -> bool
+static Gu.Units.JerkUnit.Parse(string! text) -> Gu.Units.JerkUnit
+static Gu.Units.JerkUnit.TryParse(string! text, out Gu.Units.JerkUnit result) -> bool
 static Gu.Units.KinematicViscosity.From(double value, Gu.Units.KinematicViscosityUnit unit) -> Gu.Units.KinematicViscosity
 static Gu.Units.KinematicViscosity.FromSquareMetresPerSecond(double squareMetresPerSecond) -> Gu.Units.KinematicViscosity
 static Gu.Units.KinematicViscosity.operator !=(Gu.Units.KinematicViscosity left, Gu.Units.KinematicViscosity right) -> bool
@@ -4764,8 +4764,8 @@ static Gu.Units.KinematicViscosity.TryParse(string! text, System.IFormatProvider
 static Gu.Units.KinematicViscosityUnit.operator !=(Gu.Units.KinematicViscosityUnit left, Gu.Units.KinematicViscosityUnit right) -> bool
 static Gu.Units.KinematicViscosityUnit.operator *(double left, Gu.Units.KinematicViscosityUnit right) -> Gu.Units.KinematicViscosity
 static Gu.Units.KinematicViscosityUnit.operator ==(Gu.Units.KinematicViscosityUnit left, Gu.Units.KinematicViscosityUnit right) -> bool
-~static Gu.Units.KinematicViscosityUnit.Parse(string text) -> Gu.Units.KinematicViscosityUnit
-~static Gu.Units.KinematicViscosityUnit.TryParse(string text, out Gu.Units.KinematicViscosityUnit result) -> bool
+static Gu.Units.KinematicViscosityUnit.Parse(string! text) -> Gu.Units.KinematicViscosityUnit
+static Gu.Units.KinematicViscosityUnit.TryParse(string! text, out Gu.Units.KinematicViscosityUnit result) -> bool
 static Gu.Units.Length.From(double value, Gu.Units.LengthUnit unit) -> Gu.Units.Length
 static Gu.Units.Length.FromCentimetres(double centimetres) -> Gu.Units.Length
 static Gu.Units.Length.FromDecimetres(double decimetres) -> Gu.Units.Length
@@ -4859,13 +4859,13 @@ static Gu.Units.LengthPerUnitless.TryParse(string! text, System.IFormatProvider!
 static Gu.Units.LengthPerUnitlessUnit.operator !=(Gu.Units.LengthPerUnitlessUnit left, Gu.Units.LengthPerUnitlessUnit right) -> bool
 static Gu.Units.LengthPerUnitlessUnit.operator *(double left, Gu.Units.LengthPerUnitlessUnit right) -> Gu.Units.LengthPerUnitless
 static Gu.Units.LengthPerUnitlessUnit.operator ==(Gu.Units.LengthPerUnitlessUnit left, Gu.Units.LengthPerUnitlessUnit right) -> bool
-~static Gu.Units.LengthPerUnitlessUnit.Parse(string text) -> Gu.Units.LengthPerUnitlessUnit
-~static Gu.Units.LengthPerUnitlessUnit.TryParse(string text, out Gu.Units.LengthPerUnitlessUnit result) -> bool
+static Gu.Units.LengthPerUnitlessUnit.Parse(string! text) -> Gu.Units.LengthPerUnitlessUnit
+static Gu.Units.LengthPerUnitlessUnit.TryParse(string! text, out Gu.Units.LengthPerUnitlessUnit result) -> bool
 static Gu.Units.LengthUnit.operator !=(Gu.Units.LengthUnit left, Gu.Units.LengthUnit right) -> bool
 static Gu.Units.LengthUnit.operator *(double left, Gu.Units.LengthUnit right) -> Gu.Units.Length
 static Gu.Units.LengthUnit.operator ==(Gu.Units.LengthUnit left, Gu.Units.LengthUnit right) -> bool
-~static Gu.Units.LengthUnit.Parse(string text) -> Gu.Units.LengthUnit
-~static Gu.Units.LengthUnit.TryParse(string text, out Gu.Units.LengthUnit result) -> bool
+static Gu.Units.LengthUnit.Parse(string! text) -> Gu.Units.LengthUnit
+static Gu.Units.LengthUnit.TryParse(string! text, out Gu.Units.LengthUnit result) -> bool
 static Gu.Units.LuminousFlux.From(double value, Gu.Units.LuminousFluxUnit unit) -> Gu.Units.LuminousFlux
 static Gu.Units.LuminousFlux.FromLumens(double lumens) -> Gu.Units.LuminousFlux
 static Gu.Units.LuminousFlux.operator !=(Gu.Units.LuminousFlux left, Gu.Units.LuminousFlux right) -> bool
@@ -4898,8 +4898,8 @@ static Gu.Units.LuminousFlux.TryParse(string! text, System.IFormatProvider! prov
 static Gu.Units.LuminousFluxUnit.operator !=(Gu.Units.LuminousFluxUnit left, Gu.Units.LuminousFluxUnit right) -> bool
 static Gu.Units.LuminousFluxUnit.operator *(double left, Gu.Units.LuminousFluxUnit right) -> Gu.Units.LuminousFlux
 static Gu.Units.LuminousFluxUnit.operator ==(Gu.Units.LuminousFluxUnit left, Gu.Units.LuminousFluxUnit right) -> bool
-~static Gu.Units.LuminousFluxUnit.Parse(string text) -> Gu.Units.LuminousFluxUnit
-~static Gu.Units.LuminousFluxUnit.TryParse(string text, out Gu.Units.LuminousFluxUnit result) -> bool
+static Gu.Units.LuminousFluxUnit.Parse(string! text) -> Gu.Units.LuminousFluxUnit
+static Gu.Units.LuminousFluxUnit.TryParse(string! text, out Gu.Units.LuminousFluxUnit result) -> bool
 static Gu.Units.LuminousIntensity.From(double value, Gu.Units.LuminousIntensityUnit unit) -> Gu.Units.LuminousIntensity
 static Gu.Units.LuminousIntensity.FromCandelas(double candelas) -> Gu.Units.LuminousIntensity
 static Gu.Units.LuminousIntensity.operator !=(Gu.Units.LuminousIntensity left, Gu.Units.LuminousIntensity right) -> bool
@@ -4929,8 +4929,8 @@ static Gu.Units.LuminousIntensity.TryParse(string! text, System.IFormatProvider!
 static Gu.Units.LuminousIntensityUnit.operator !=(Gu.Units.LuminousIntensityUnit left, Gu.Units.LuminousIntensityUnit right) -> bool
 static Gu.Units.LuminousIntensityUnit.operator *(double left, Gu.Units.LuminousIntensityUnit right) -> Gu.Units.LuminousIntensity
 static Gu.Units.LuminousIntensityUnit.operator ==(Gu.Units.LuminousIntensityUnit left, Gu.Units.LuminousIntensityUnit right) -> bool
-~static Gu.Units.LuminousIntensityUnit.Parse(string text) -> Gu.Units.LuminousIntensityUnit
-~static Gu.Units.LuminousIntensityUnit.TryParse(string text, out Gu.Units.LuminousIntensityUnit result) -> bool
+static Gu.Units.LuminousIntensityUnit.Parse(string! text) -> Gu.Units.LuminousIntensityUnit
+static Gu.Units.LuminousIntensityUnit.TryParse(string! text, out Gu.Units.LuminousIntensityUnit result) -> bool
 static Gu.Units.MagneticFieldStrength.From(double value, Gu.Units.MagneticFieldStrengthUnit unit) -> Gu.Units.MagneticFieldStrength
 static Gu.Units.MagneticFieldStrength.FromTeslas(double teslas) -> Gu.Units.MagneticFieldStrength
 static Gu.Units.MagneticFieldStrength.operator !=(Gu.Units.MagneticFieldStrength left, Gu.Units.MagneticFieldStrength right) -> bool
@@ -4963,8 +4963,8 @@ static Gu.Units.MagneticFieldStrength.TryParse(string! text, System.IFormatProvi
 static Gu.Units.MagneticFieldStrengthUnit.operator !=(Gu.Units.MagneticFieldStrengthUnit left, Gu.Units.MagneticFieldStrengthUnit right) -> bool
 static Gu.Units.MagneticFieldStrengthUnit.operator *(double left, Gu.Units.MagneticFieldStrengthUnit right) -> Gu.Units.MagneticFieldStrength
 static Gu.Units.MagneticFieldStrengthUnit.operator ==(Gu.Units.MagneticFieldStrengthUnit left, Gu.Units.MagneticFieldStrengthUnit right) -> bool
-~static Gu.Units.MagneticFieldStrengthUnit.Parse(string text) -> Gu.Units.MagneticFieldStrengthUnit
-~static Gu.Units.MagneticFieldStrengthUnit.TryParse(string text, out Gu.Units.MagneticFieldStrengthUnit result) -> bool
+static Gu.Units.MagneticFieldStrengthUnit.Parse(string! text) -> Gu.Units.MagneticFieldStrengthUnit
+static Gu.Units.MagneticFieldStrengthUnit.TryParse(string! text, out Gu.Units.MagneticFieldStrengthUnit result) -> bool
 static Gu.Units.MagneticFlux.From(double value, Gu.Units.MagneticFluxUnit unit) -> Gu.Units.MagneticFlux
 static Gu.Units.MagneticFlux.FromWebers(double webers) -> Gu.Units.MagneticFlux
 static Gu.Units.MagneticFlux.operator !=(Gu.Units.MagneticFlux left, Gu.Units.MagneticFlux right) -> bool
@@ -5004,8 +5004,8 @@ static Gu.Units.MagneticFlux.TryParse(string! text, System.IFormatProvider! prov
 static Gu.Units.MagneticFluxUnit.operator !=(Gu.Units.MagneticFluxUnit left, Gu.Units.MagneticFluxUnit right) -> bool
 static Gu.Units.MagneticFluxUnit.operator *(double left, Gu.Units.MagneticFluxUnit right) -> Gu.Units.MagneticFlux
 static Gu.Units.MagneticFluxUnit.operator ==(Gu.Units.MagneticFluxUnit left, Gu.Units.MagneticFluxUnit right) -> bool
-~static Gu.Units.MagneticFluxUnit.Parse(string text) -> Gu.Units.MagneticFluxUnit
-~static Gu.Units.MagneticFluxUnit.TryParse(string text, out Gu.Units.MagneticFluxUnit result) -> bool
+static Gu.Units.MagneticFluxUnit.Parse(string! text) -> Gu.Units.MagneticFluxUnit
+static Gu.Units.MagneticFluxUnit.TryParse(string! text, out Gu.Units.MagneticFluxUnit result) -> bool
 static Gu.Units.Mass.From(double value, Gu.Units.MassUnit unit) -> Gu.Units.Mass
 static Gu.Units.Mass.FromAvoirdupoisOunces(double avoirdupoisOunces) -> Gu.Units.Mass
 static Gu.Units.Mass.FromAvoirdupoisPounds(double avoirdupoisPounds) -> Gu.Units.Mass
@@ -5101,13 +5101,13 @@ static Gu.Units.MassFlow.TryParse(string! text, System.IFormatProvider! provider
 static Gu.Units.MassFlowUnit.operator !=(Gu.Units.MassFlowUnit left, Gu.Units.MassFlowUnit right) -> bool
 static Gu.Units.MassFlowUnit.operator *(double left, Gu.Units.MassFlowUnit right) -> Gu.Units.MassFlow
 static Gu.Units.MassFlowUnit.operator ==(Gu.Units.MassFlowUnit left, Gu.Units.MassFlowUnit right) -> bool
-~static Gu.Units.MassFlowUnit.Parse(string text) -> Gu.Units.MassFlowUnit
-~static Gu.Units.MassFlowUnit.TryParse(string text, out Gu.Units.MassFlowUnit result) -> bool
+static Gu.Units.MassFlowUnit.Parse(string! text) -> Gu.Units.MassFlowUnit
+static Gu.Units.MassFlowUnit.TryParse(string! text, out Gu.Units.MassFlowUnit result) -> bool
 static Gu.Units.MassUnit.operator !=(Gu.Units.MassUnit left, Gu.Units.MassUnit right) -> bool
 static Gu.Units.MassUnit.operator *(double left, Gu.Units.MassUnit right) -> Gu.Units.Mass
 static Gu.Units.MassUnit.operator ==(Gu.Units.MassUnit left, Gu.Units.MassUnit right) -> bool
-~static Gu.Units.MassUnit.Parse(string text) -> Gu.Units.MassUnit
-~static Gu.Units.MassUnit.TryParse(string text, out Gu.Units.MassUnit result) -> bool
+static Gu.Units.MassUnit.Parse(string! text) -> Gu.Units.MassUnit
+static Gu.Units.MassUnit.TryParse(string! text, out Gu.Units.MassUnit result) -> bool
 static Gu.Units.MolarHeatCapacity.From(double value, Gu.Units.MolarHeatCapacityUnit unit) -> Gu.Units.MolarHeatCapacity
 static Gu.Units.MolarHeatCapacity.FromJoulesPerKelvinMole(double joulesPerKelvinMole) -> Gu.Units.MolarHeatCapacity
 static Gu.Units.MolarHeatCapacity.operator !=(Gu.Units.MolarHeatCapacity left, Gu.Units.MolarHeatCapacity right) -> bool
@@ -5136,8 +5136,8 @@ static Gu.Units.MolarHeatCapacity.TryParse(string! text, System.IFormatProvider!
 static Gu.Units.MolarHeatCapacityUnit.operator !=(Gu.Units.MolarHeatCapacityUnit left, Gu.Units.MolarHeatCapacityUnit right) -> bool
 static Gu.Units.MolarHeatCapacityUnit.operator *(double left, Gu.Units.MolarHeatCapacityUnit right) -> Gu.Units.MolarHeatCapacity
 static Gu.Units.MolarHeatCapacityUnit.operator ==(Gu.Units.MolarHeatCapacityUnit left, Gu.Units.MolarHeatCapacityUnit right) -> bool
-~static Gu.Units.MolarHeatCapacityUnit.Parse(string text) -> Gu.Units.MolarHeatCapacityUnit
-~static Gu.Units.MolarHeatCapacityUnit.TryParse(string text, out Gu.Units.MolarHeatCapacityUnit result) -> bool
+static Gu.Units.MolarHeatCapacityUnit.Parse(string! text) -> Gu.Units.MolarHeatCapacityUnit
+static Gu.Units.MolarHeatCapacityUnit.TryParse(string! text, out Gu.Units.MolarHeatCapacityUnit result) -> bool
 static Gu.Units.MolarMass.From(double value, Gu.Units.MolarMassUnit unit) -> Gu.Units.MolarMass
 static Gu.Units.MolarMass.FromGramsPerMole(double gramsPerMole) -> Gu.Units.MolarMass
 static Gu.Units.MolarMass.FromKilogramsPerMole(double kilogramsPerMole) -> Gu.Units.MolarMass
@@ -5169,8 +5169,8 @@ static Gu.Units.MolarMass.TryParse(string! text, System.IFormatProvider! provide
 static Gu.Units.MolarMassUnit.operator !=(Gu.Units.MolarMassUnit left, Gu.Units.MolarMassUnit right) -> bool
 static Gu.Units.MolarMassUnit.operator *(double left, Gu.Units.MolarMassUnit right) -> Gu.Units.MolarMass
 static Gu.Units.MolarMassUnit.operator ==(Gu.Units.MolarMassUnit left, Gu.Units.MolarMassUnit right) -> bool
-~static Gu.Units.MolarMassUnit.Parse(string text) -> Gu.Units.MolarMassUnit
-~static Gu.Units.MolarMassUnit.TryParse(string text, out Gu.Units.MolarMassUnit result) -> bool
+static Gu.Units.MolarMassUnit.Parse(string! text) -> Gu.Units.MolarMassUnit
+static Gu.Units.MolarMassUnit.TryParse(string! text, out Gu.Units.MolarMassUnit result) -> bool
 static Gu.Units.Momentum.From(double value, Gu.Units.MomentumUnit unit) -> Gu.Units.Momentum
 static Gu.Units.Momentum.FromNewtonSecond(double newtonSecond) -> Gu.Units.Momentum
 static Gu.Units.Momentum.operator !=(Gu.Units.Momentum left, Gu.Units.Momentum right) -> bool
@@ -5211,8 +5211,8 @@ static Gu.Units.Momentum.TryParse(string! text, System.IFormatProvider! provider
 static Gu.Units.MomentumUnit.operator !=(Gu.Units.MomentumUnit left, Gu.Units.MomentumUnit right) -> bool
 static Gu.Units.MomentumUnit.operator *(double left, Gu.Units.MomentumUnit right) -> Gu.Units.Momentum
 static Gu.Units.MomentumUnit.operator ==(Gu.Units.MomentumUnit left, Gu.Units.MomentumUnit right) -> bool
-~static Gu.Units.MomentumUnit.Parse(string text) -> Gu.Units.MomentumUnit
-~static Gu.Units.MomentumUnit.TryParse(string text, out Gu.Units.MomentumUnit result) -> bool
+static Gu.Units.MomentumUnit.Parse(string! text) -> Gu.Units.MomentumUnit
+static Gu.Units.MomentumUnit.TryParse(string! text, out Gu.Units.MomentumUnit result) -> bool
 static Gu.Units.Power.From(double value, Gu.Units.PowerUnit unit) -> Gu.Units.Power
 static Gu.Units.Power.FromGigawatts(double gigawatts) -> Gu.Units.Power
 static Gu.Units.Power.FromKilowatts(double kilowatts) -> Gu.Units.Power
@@ -5265,8 +5265,8 @@ static Gu.Units.Power.TryParse(string! text, System.IFormatProvider! provider, o
 static Gu.Units.PowerUnit.operator !=(Gu.Units.PowerUnit left, Gu.Units.PowerUnit right) -> bool
 static Gu.Units.PowerUnit.operator *(double left, Gu.Units.PowerUnit right) -> Gu.Units.Power
 static Gu.Units.PowerUnit.operator ==(Gu.Units.PowerUnit left, Gu.Units.PowerUnit right) -> bool
-~static Gu.Units.PowerUnit.Parse(string text) -> Gu.Units.PowerUnit
-~static Gu.Units.PowerUnit.TryParse(string text, out Gu.Units.PowerUnit result) -> bool
+static Gu.Units.PowerUnit.Parse(string! text) -> Gu.Units.PowerUnit
+static Gu.Units.PowerUnit.TryParse(string! text, out Gu.Units.PowerUnit result) -> bool
 static Gu.Units.Pressure.From(double value, Gu.Units.PressureUnit unit) -> Gu.Units.Pressure
 static Gu.Units.Pressure.FromBars(double bars) -> Gu.Units.Pressure
 static Gu.Units.Pressure.FromGigapascals(double gigapascals) -> Gu.Units.Pressure
@@ -5318,8 +5318,8 @@ static Gu.Units.Pressure.TryParse(string! text, System.IFormatProvider! provider
 static Gu.Units.PressureUnit.operator !=(Gu.Units.PressureUnit left, Gu.Units.PressureUnit right) -> bool
 static Gu.Units.PressureUnit.operator *(double left, Gu.Units.PressureUnit right) -> Gu.Units.Pressure
 static Gu.Units.PressureUnit.operator ==(Gu.Units.PressureUnit left, Gu.Units.PressureUnit right) -> bool
-~static Gu.Units.PressureUnit.Parse(string text) -> Gu.Units.PressureUnit
-~static Gu.Units.PressureUnit.TryParse(string text, out Gu.Units.PressureUnit result) -> bool
+static Gu.Units.PressureUnit.Parse(string! text) -> Gu.Units.PressureUnit
+static Gu.Units.PressureUnit.TryParse(string! text, out Gu.Units.PressureUnit result) -> bool
 static Gu.Units.Resistance.From(double value, Gu.Units.ResistanceUnit unit) -> Gu.Units.Resistance
 static Gu.Units.Resistance.FromKiloohms(double kiloohms) -> Gu.Units.Resistance
 static Gu.Units.Resistance.FromMegaohms(double megaohms) -> Gu.Units.Resistance
@@ -5360,8 +5360,8 @@ static Gu.Units.Resistance.TryParse(string! text, System.IFormatProvider! provid
 static Gu.Units.ResistanceUnit.operator !=(Gu.Units.ResistanceUnit left, Gu.Units.ResistanceUnit right) -> bool
 static Gu.Units.ResistanceUnit.operator *(double left, Gu.Units.ResistanceUnit right) -> Gu.Units.Resistance
 static Gu.Units.ResistanceUnit.operator ==(Gu.Units.ResistanceUnit left, Gu.Units.ResistanceUnit right) -> bool
-~static Gu.Units.ResistanceUnit.Parse(string text) -> Gu.Units.ResistanceUnit
-~static Gu.Units.ResistanceUnit.TryParse(string text, out Gu.Units.ResistanceUnit result) -> bool
+static Gu.Units.ResistanceUnit.Parse(string! text) -> Gu.Units.ResistanceUnit
+static Gu.Units.ResistanceUnit.TryParse(string! text, out Gu.Units.ResistanceUnit result) -> bool
 static Gu.Units.SolidAngle.From(double value, Gu.Units.SolidAngleUnit unit) -> Gu.Units.SolidAngle
 static Gu.Units.SolidAngle.FromSteradians(double steradians) -> Gu.Units.SolidAngle
 static Gu.Units.SolidAngle.operator !=(Gu.Units.SolidAngle left, Gu.Units.SolidAngle right) -> bool
@@ -5391,8 +5391,8 @@ static Gu.Units.SolidAngle.TryParse(string! text, System.IFormatProvider! provid
 static Gu.Units.SolidAngleUnit.operator !=(Gu.Units.SolidAngleUnit left, Gu.Units.SolidAngleUnit right) -> bool
 static Gu.Units.SolidAngleUnit.operator *(double left, Gu.Units.SolidAngleUnit right) -> Gu.Units.SolidAngle
 static Gu.Units.SolidAngleUnit.operator ==(Gu.Units.SolidAngleUnit left, Gu.Units.SolidAngleUnit right) -> bool
-~static Gu.Units.SolidAngleUnit.Parse(string text) -> Gu.Units.SolidAngleUnit
-~static Gu.Units.SolidAngleUnit.TryParse(string text, out Gu.Units.SolidAngleUnit result) -> bool
+static Gu.Units.SolidAngleUnit.Parse(string! text) -> Gu.Units.SolidAngleUnit
+static Gu.Units.SolidAngleUnit.TryParse(string! text, out Gu.Units.SolidAngleUnit result) -> bool
 static Gu.Units.SpecificEnergy.From(double value, Gu.Units.SpecificEnergyUnit unit) -> Gu.Units.SpecificEnergy
 static Gu.Units.SpecificEnergy.FromJoulesPerKilogram(double joulesPerKilogram) -> Gu.Units.SpecificEnergy
 static Gu.Units.SpecificEnergy.FromKilojoulesPerKilogram(double kilojoulesPerKilogram) -> Gu.Units.SpecificEnergy
@@ -5435,8 +5435,8 @@ static Gu.Units.SpecificEnergy.TryParse(string! text, System.IFormatProvider! pr
 static Gu.Units.SpecificEnergyUnit.operator !=(Gu.Units.SpecificEnergyUnit left, Gu.Units.SpecificEnergyUnit right) -> bool
 static Gu.Units.SpecificEnergyUnit.operator *(double left, Gu.Units.SpecificEnergyUnit right) -> Gu.Units.SpecificEnergy
 static Gu.Units.SpecificEnergyUnit.operator ==(Gu.Units.SpecificEnergyUnit left, Gu.Units.SpecificEnergyUnit right) -> bool
-~static Gu.Units.SpecificEnergyUnit.Parse(string text) -> Gu.Units.SpecificEnergyUnit
-~static Gu.Units.SpecificEnergyUnit.TryParse(string text, out Gu.Units.SpecificEnergyUnit result) -> bool
+static Gu.Units.SpecificEnergyUnit.Parse(string! text) -> Gu.Units.SpecificEnergyUnit
+static Gu.Units.SpecificEnergyUnit.TryParse(string! text, out Gu.Units.SpecificEnergyUnit result) -> bool
 static Gu.Units.SpecificVolume.From(double value, Gu.Units.SpecificVolumeUnit unit) -> Gu.Units.SpecificVolume
 static Gu.Units.SpecificVolume.FromCubicCentimetresPerGram(double cubicCentimetresPerGram) -> Gu.Units.SpecificVolume
 static Gu.Units.SpecificVolume.FromCubicMetresPerGram(double cubicMetresPerGram) -> Gu.Units.SpecificVolume
@@ -5472,8 +5472,8 @@ static Gu.Units.SpecificVolume.TryParse(string! text, System.IFormatProvider! pr
 static Gu.Units.SpecificVolumeUnit.operator !=(Gu.Units.SpecificVolumeUnit left, Gu.Units.SpecificVolumeUnit right) -> bool
 static Gu.Units.SpecificVolumeUnit.operator *(double left, Gu.Units.SpecificVolumeUnit right) -> Gu.Units.SpecificVolume
 static Gu.Units.SpecificVolumeUnit.operator ==(Gu.Units.SpecificVolumeUnit left, Gu.Units.SpecificVolumeUnit right) -> bool
-~static Gu.Units.SpecificVolumeUnit.Parse(string text) -> Gu.Units.SpecificVolumeUnit
-~static Gu.Units.SpecificVolumeUnit.TryParse(string text, out Gu.Units.SpecificVolumeUnit result) -> bool
+static Gu.Units.SpecificVolumeUnit.Parse(string! text) -> Gu.Units.SpecificVolumeUnit
+static Gu.Units.SpecificVolumeUnit.TryParse(string! text, out Gu.Units.SpecificVolumeUnit result) -> bool
 static Gu.Units.Speed.From(double value, Gu.Units.SpeedUnit unit) -> Gu.Units.Speed
 static Gu.Units.Speed.FromCentimetresPerHour(double centimetresPerHour) -> Gu.Units.Speed
 static Gu.Units.Speed.FromCentimetresPerMinute(double centimetresPerMinute) -> Gu.Units.Speed
@@ -5527,8 +5527,8 @@ static Gu.Units.Speed.TryParse(string! text, System.IFormatProvider! provider, o
 static Gu.Units.SpeedUnit.operator !=(Gu.Units.SpeedUnit left, Gu.Units.SpeedUnit right) -> bool
 static Gu.Units.SpeedUnit.operator *(double left, Gu.Units.SpeedUnit right) -> Gu.Units.Speed
 static Gu.Units.SpeedUnit.operator ==(Gu.Units.SpeedUnit left, Gu.Units.SpeedUnit right) -> bool
-~static Gu.Units.SpeedUnit.Parse(string text) -> Gu.Units.SpeedUnit
-~static Gu.Units.SpeedUnit.TryParse(string text, out Gu.Units.SpeedUnit result) -> bool
+static Gu.Units.SpeedUnit.Parse(string! text) -> Gu.Units.SpeedUnit
+static Gu.Units.SpeedUnit.TryParse(string! text, out Gu.Units.SpeedUnit result) -> bool
 static Gu.Units.Stiffness.From(double value, Gu.Units.StiffnessUnit unit) -> Gu.Units.Stiffness
 static Gu.Units.Stiffness.FromGiganewtonsPerMicrometre(double giganewtonsPerMicrometre) -> Gu.Units.Stiffness
 static Gu.Units.Stiffness.FromGiganewtonsPerMillimetre(double giganewtonsPerMillimetre) -> Gu.Units.Stiffness
@@ -5585,8 +5585,8 @@ static Gu.Units.Stiffness.TryParse(string! text, System.IFormatProvider! provide
 static Gu.Units.StiffnessUnit.operator !=(Gu.Units.StiffnessUnit left, Gu.Units.StiffnessUnit right) -> bool
 static Gu.Units.StiffnessUnit.operator *(double left, Gu.Units.StiffnessUnit right) -> Gu.Units.Stiffness
 static Gu.Units.StiffnessUnit.operator ==(Gu.Units.StiffnessUnit left, Gu.Units.StiffnessUnit right) -> bool
-~static Gu.Units.StiffnessUnit.Parse(string text) -> Gu.Units.StiffnessUnit
-~static Gu.Units.StiffnessUnit.TryParse(string text, out Gu.Units.StiffnessUnit result) -> bool
+static Gu.Units.StiffnessUnit.Parse(string! text) -> Gu.Units.StiffnessUnit
+static Gu.Units.StiffnessUnit.TryParse(string! text, out Gu.Units.StiffnessUnit result) -> bool
 static Gu.Units.SuperScript.GetChar(int i) -> char
 static Gu.Units.SuperScript.GetDigit(char c) -> int
 static Gu.Units.SuperScript.GetString(int i) -> string!
@@ -5620,8 +5620,8 @@ static Gu.Units.Temperature.TryParse(string! text, System.IFormatProvider! provi
 static Gu.Units.TemperatureUnit.operator !=(Gu.Units.TemperatureUnit left, Gu.Units.TemperatureUnit right) -> bool
 static Gu.Units.TemperatureUnit.operator *(double left, Gu.Units.TemperatureUnit right) -> Gu.Units.Temperature
 static Gu.Units.TemperatureUnit.operator ==(Gu.Units.TemperatureUnit left, Gu.Units.TemperatureUnit right) -> bool
-~static Gu.Units.TemperatureUnit.Parse(string text) -> Gu.Units.TemperatureUnit
-~static Gu.Units.TemperatureUnit.TryParse(string text, out Gu.Units.TemperatureUnit result) -> bool
+static Gu.Units.TemperatureUnit.Parse(string! text) -> Gu.Units.TemperatureUnit
+static Gu.Units.TemperatureUnit.TryParse(string! text, out Gu.Units.TemperatureUnit result) -> bool
 static Gu.Units.Time.explicit operator Gu.Units.Time(System.TimeSpan timeSpan) -> Gu.Units.Time
 static Gu.Units.Time.explicit operator System.TimeSpan(Gu.Units.Time time) -> System.TimeSpan
 static Gu.Units.Time.From(double value, Gu.Units.TimeUnit unit) -> Gu.Units.Time
@@ -5684,8 +5684,8 @@ static Gu.Units.Time.TryParse(string! text, System.IFormatProvider! provider, ou
 static Gu.Units.TimeUnit.operator !=(Gu.Units.TimeUnit left, Gu.Units.TimeUnit right) -> bool
 static Gu.Units.TimeUnit.operator *(double left, Gu.Units.TimeUnit right) -> Gu.Units.Time
 static Gu.Units.TimeUnit.operator ==(Gu.Units.TimeUnit left, Gu.Units.TimeUnit right) -> bool
-~static Gu.Units.TimeUnit.Parse(string text) -> Gu.Units.TimeUnit
-~static Gu.Units.TimeUnit.TryParse(string text, out Gu.Units.TimeUnit result) -> bool
+static Gu.Units.TimeUnit.Parse(string! text) -> Gu.Units.TimeUnit
+static Gu.Units.TimeUnit.TryParse(string! text, out Gu.Units.TimeUnit result) -> bool
 static Gu.Units.Torque.From(double value, Gu.Units.TorqueUnit unit) -> Gu.Units.Torque
 static Gu.Units.Torque.FromNewtonMetres(double newtonMetres) -> Gu.Units.Torque
 static Gu.Units.Torque.operator !=(Gu.Units.Torque left, Gu.Units.Torque right) -> bool
@@ -5716,8 +5716,8 @@ static Gu.Units.Torque.TryParse(string! text, System.IFormatProvider! provider, 
 static Gu.Units.TorqueUnit.operator !=(Gu.Units.TorqueUnit left, Gu.Units.TorqueUnit right) -> bool
 static Gu.Units.TorqueUnit.operator *(double left, Gu.Units.TorqueUnit right) -> Gu.Units.Torque
 static Gu.Units.TorqueUnit.operator ==(Gu.Units.TorqueUnit left, Gu.Units.TorqueUnit right) -> bool
-~static Gu.Units.TorqueUnit.Parse(string text) -> Gu.Units.TorqueUnit
-~static Gu.Units.TorqueUnit.TryParse(string text, out Gu.Units.TorqueUnit result) -> bool
+static Gu.Units.TorqueUnit.Parse(string! text) -> Gu.Units.TorqueUnit
+static Gu.Units.TorqueUnit.TryParse(string! text, out Gu.Units.TorqueUnit result) -> bool
 static Gu.Units.Unitless.explicit operator Gu.Units.Unitless(double d) -> Gu.Units.Unitless
 static Gu.Units.Unitless.From(double value, Gu.Units.UnitlessUnit unit) -> Gu.Units.Unitless
 static Gu.Units.Unitless.FromPartsPerMillion(double partsPerMillion) -> Gu.Units.Unitless
@@ -5754,8 +5754,8 @@ static Gu.Units.Unitless.TryParse(string! text, System.IFormatProvider! provider
 static Gu.Units.UnitlessUnit.operator !=(Gu.Units.UnitlessUnit left, Gu.Units.UnitlessUnit right) -> bool
 static Gu.Units.UnitlessUnit.operator *(double left, Gu.Units.UnitlessUnit right) -> Gu.Units.Unitless
 static Gu.Units.UnitlessUnit.operator ==(Gu.Units.UnitlessUnit left, Gu.Units.UnitlessUnit right) -> bool
-~static Gu.Units.UnitlessUnit.Parse(string text) -> Gu.Units.UnitlessUnit
-~static Gu.Units.UnitlessUnit.TryParse(string text, out Gu.Units.UnitlessUnit result) -> bool
+static Gu.Units.UnitlessUnit.Parse(string! text) -> Gu.Units.UnitlessUnit
+static Gu.Units.UnitlessUnit.TryParse(string! text, out Gu.Units.UnitlessUnit result) -> bool
 static Gu.Units.Voltage.From(double value, Gu.Units.VoltageUnit unit) -> Gu.Units.Voltage
 static Gu.Units.Voltage.FromGigavolts(double gigavolts) -> Gu.Units.Voltage
 static Gu.Units.Voltage.FromKilovolts(double kilovolts) -> Gu.Units.Voltage
@@ -5801,8 +5801,8 @@ static Gu.Units.Voltage.TryParse(string! text, System.IFormatProvider! provider,
 static Gu.Units.VoltageUnit.operator !=(Gu.Units.VoltageUnit left, Gu.Units.VoltageUnit right) -> bool
 static Gu.Units.VoltageUnit.operator *(double left, Gu.Units.VoltageUnit right) -> Gu.Units.Voltage
 static Gu.Units.VoltageUnit.operator ==(Gu.Units.VoltageUnit left, Gu.Units.VoltageUnit right) -> bool
-~static Gu.Units.VoltageUnit.Parse(string text) -> Gu.Units.VoltageUnit
-~static Gu.Units.VoltageUnit.TryParse(string text, out Gu.Units.VoltageUnit result) -> bool
+static Gu.Units.VoltageUnit.Parse(string! text) -> Gu.Units.VoltageUnit
+static Gu.Units.VoltageUnit.TryParse(string! text, out Gu.Units.VoltageUnit result) -> bool
 static Gu.Units.Volume.From(double value, Gu.Units.VolumeUnit unit) -> Gu.Units.Volume
 static Gu.Units.Volume.FromCentilitres(double centilitres) -> Gu.Units.Volume
 static Gu.Units.Volume.FromCubicCentimetres(double cubicCentimetres) -> Gu.Units.Volume
@@ -5903,13 +5903,13 @@ static Gu.Units.VolumetricFlow.TryParse(string! text, System.IFormatProvider! pr
 static Gu.Units.VolumetricFlowUnit.operator !=(Gu.Units.VolumetricFlowUnit left, Gu.Units.VolumetricFlowUnit right) -> bool
 static Gu.Units.VolumetricFlowUnit.operator *(double left, Gu.Units.VolumetricFlowUnit right) -> Gu.Units.VolumetricFlow
 static Gu.Units.VolumetricFlowUnit.operator ==(Gu.Units.VolumetricFlowUnit left, Gu.Units.VolumetricFlowUnit right) -> bool
-~static Gu.Units.VolumetricFlowUnit.Parse(string text) -> Gu.Units.VolumetricFlowUnit
-~static Gu.Units.VolumetricFlowUnit.TryParse(string text, out Gu.Units.VolumetricFlowUnit result) -> bool
+static Gu.Units.VolumetricFlowUnit.Parse(string! text) -> Gu.Units.VolumetricFlowUnit
+static Gu.Units.VolumetricFlowUnit.TryParse(string! text, out Gu.Units.VolumetricFlowUnit result) -> bool
 static Gu.Units.VolumeUnit.operator !=(Gu.Units.VolumeUnit left, Gu.Units.VolumeUnit right) -> bool
 static Gu.Units.VolumeUnit.operator *(double left, Gu.Units.VolumeUnit right) -> Gu.Units.Volume
 static Gu.Units.VolumeUnit.operator ==(Gu.Units.VolumeUnit left, Gu.Units.VolumeUnit right) -> bool
-~static Gu.Units.VolumeUnit.Parse(string text) -> Gu.Units.VolumeUnit
-~static Gu.Units.VolumeUnit.TryParse(string text, out Gu.Units.VolumeUnit result) -> bool
+static Gu.Units.VolumeUnit.Parse(string! text) -> Gu.Units.VolumeUnit
+static Gu.Units.VolumeUnit.TryParse(string! text, out Gu.Units.VolumeUnit result) -> bool
 static Gu.Units.Wavenumber.From(double value, Gu.Units.WavenumberUnit unit) -> Gu.Units.Wavenumber
 static Gu.Units.Wavenumber.FromReciprocalMetres(double reciprocalMetres) -> Gu.Units.Wavenumber
 static Gu.Units.Wavenumber.operator !=(Gu.Units.Wavenumber left, Gu.Units.Wavenumber right) -> bool
@@ -5955,8 +5955,8 @@ static Gu.Units.Wavenumber.TryParse(string! text, System.IFormatProvider! provid
 static Gu.Units.WavenumberUnit.operator !=(Gu.Units.WavenumberUnit left, Gu.Units.WavenumberUnit right) -> bool
 static Gu.Units.WavenumberUnit.operator *(double left, Gu.Units.WavenumberUnit right) -> Gu.Units.Wavenumber
 static Gu.Units.WavenumberUnit.operator ==(Gu.Units.WavenumberUnit left, Gu.Units.WavenumberUnit right) -> bool
-~static Gu.Units.WavenumberUnit.Parse(string text) -> Gu.Units.WavenumberUnit
-~static Gu.Units.WavenumberUnit.TryParse(string text, out Gu.Units.WavenumberUnit result) -> bool
+static Gu.Units.WavenumberUnit.Parse(string! text) -> Gu.Units.WavenumberUnit
+static Gu.Units.WavenumberUnit.TryParse(string! text, out Gu.Units.WavenumberUnit result) -> bool
 static readonly Gu.Units.Acceleration.Zero -> Gu.Units.Acceleration
 static readonly Gu.Units.AccelerationUnit.CentimetresPerHourSquared -> Gu.Units.AccelerationUnit
 static readonly Gu.Units.AccelerationUnit.CentimetresPerSecondSquared -> Gu.Units.AccelerationUnit
