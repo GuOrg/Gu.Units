@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.Jerk"/>.
     /// </summary>
     [TypeConverter(typeof(JerkTypeConverter))]
     [Serializable]
-    public partial struct Jerk : IQuantity<JerkUnit>, IComparable<Jerk>, IEquatable<Jerk>
+    public partial struct Jerk : IQuantity<JerkUnit>, IComparable<Jerk>, IEquatable<Jerk>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.JerkUnit.MetresPerSecondCubed"/>

@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.Unitless"/>.
     /// </summary>
     [TypeConverter(typeof(UnitlessTypeConverter))]
     [Serializable]
-    public partial struct Unitless : IQuantity<UnitlessUnit>, IComparable<Unitless>, IEquatable<Unitless>
+    public partial struct Unitless : IQuantity<UnitlessUnit>, IComparable<Unitless>, IEquatable<Unitless>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.UnitlessUnit.Scalar"/>

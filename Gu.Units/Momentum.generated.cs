@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.Momentum"/>.
     /// </summary>
     [TypeConverter(typeof(MomentumTypeConverter))]
     [Serializable]
-    public partial struct Momentum : IQuantity<MomentumUnit>, IComparable<Momentum>, IEquatable<Momentum>
+    public partial struct Momentum : IQuantity<MomentumUnit>, IComparable<Momentum>, IEquatable<Momentum>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.MomentumUnit.NewtonSecond"/>

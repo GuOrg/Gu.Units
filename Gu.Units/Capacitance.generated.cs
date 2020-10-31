@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.Capacitance"/>.
     /// </summary>
     [TypeConverter(typeof(CapacitanceTypeConverter))]
     [Serializable]
-    public partial struct Capacitance : IQuantity<CapacitanceUnit>, IComparable<Capacitance>, IEquatable<Capacitance>
+    public partial struct Capacitance : IQuantity<CapacitanceUnit>, IComparable<Capacitance>, IEquatable<Capacitance>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.CapacitanceUnit.Farads"/>

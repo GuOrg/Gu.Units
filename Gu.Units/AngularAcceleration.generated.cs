@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.AngularAcceleration"/>.
     /// </summary>
     [TypeConverter(typeof(AngularAccelerationTypeConverter))]
     [Serializable]
-    public partial struct AngularAcceleration : IQuantity<AngularAccelerationUnit>, IComparable<AngularAcceleration>, IEquatable<AngularAcceleration>
+    public partial struct AngularAcceleration : IQuantity<AngularAccelerationUnit>, IComparable<AngularAcceleration>, IEquatable<AngularAcceleration>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.AngularAccelerationUnit.RadiansPerSecondSquared"/>

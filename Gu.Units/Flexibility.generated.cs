@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.Flexibility"/>.
     /// </summary>
     [TypeConverter(typeof(FlexibilityTypeConverter))]
     [Serializable]
-    public partial struct Flexibility : IQuantity<FlexibilityUnit>, IComparable<Flexibility>, IEquatable<Flexibility>
+    public partial struct Flexibility : IQuantity<FlexibilityUnit>, IComparable<Flexibility>, IEquatable<Flexibility>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.FlexibilityUnit.MetresPerNewton"/>

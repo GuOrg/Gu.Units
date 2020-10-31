@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.MagneticFlux"/>.
     /// </summary>
     [TypeConverter(typeof(MagneticFluxTypeConverter))]
     [Serializable]
-    public partial struct MagneticFlux : IQuantity<MagneticFluxUnit>, IComparable<MagneticFlux>, IEquatable<MagneticFlux>
+    public partial struct MagneticFlux : IQuantity<MagneticFluxUnit>, IComparable<MagneticFlux>, IEquatable<MagneticFlux>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.MagneticFluxUnit.Webers"/>

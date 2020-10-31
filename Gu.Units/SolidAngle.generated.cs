@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.SolidAngle"/>.
     /// </summary>
     [TypeConverter(typeof(SolidAngleTypeConverter))]
     [Serializable]
-    public partial struct SolidAngle : IQuantity<SolidAngleUnit>, IComparable<SolidAngle>, IEquatable<SolidAngle>
+    public partial struct SolidAngle : IQuantity<SolidAngleUnit>, IComparable<SolidAngle>, IEquatable<SolidAngle>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.SolidAngleUnit.Steradians"/>

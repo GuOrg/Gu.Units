@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.Energy"/>.
     /// </summary>
     [TypeConverter(typeof(EnergyTypeConverter))]
     [Serializable]
-    public partial struct Energy : IQuantity<EnergyUnit>, IComparable<Energy>, IEquatable<Energy>
+    public partial struct Energy : IQuantity<EnergyUnit>, IComparable<Energy>, IEquatable<Energy>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.EnergyUnit.Joules"/>

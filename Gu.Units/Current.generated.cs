@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.Current"/>.
     /// </summary>
     [TypeConverter(typeof(CurrentTypeConverter))]
     [Serializable]
-    public partial struct Current : IQuantity<CurrentUnit>, IComparable<Current>, IEquatable<Current>
+    public partial struct Current : IQuantity<CurrentUnit>, IComparable<Current>, IEquatable<Current>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.CurrentUnit.Amperes"/>

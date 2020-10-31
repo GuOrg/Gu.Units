@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.LuminousIntensity"/>.
     /// </summary>
     [TypeConverter(typeof(LuminousIntensityTypeConverter))]
     [Serializable]
-    public partial struct LuminousIntensity : IQuantity<LuminousIntensityUnit>, IComparable<LuminousIntensity>, IEquatable<LuminousIntensity>
+    public partial struct LuminousIntensity : IQuantity<LuminousIntensityUnit>, IComparable<LuminousIntensity>, IEquatable<LuminousIntensity>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.LuminousIntensityUnit.Candelas"/>

@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.MolarMass"/>.
     /// </summary>
     [TypeConverter(typeof(MolarMassTypeConverter))]
     [Serializable]
-    public partial struct MolarMass : IQuantity<MolarMassUnit>, IComparable<MolarMass>, IEquatable<MolarMass>
+    public partial struct MolarMass : IQuantity<MolarMassUnit>, IComparable<MolarMass>, IEquatable<MolarMass>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.MolarMassUnit.KilogramsPerMole"/>

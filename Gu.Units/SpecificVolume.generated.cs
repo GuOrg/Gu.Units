@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.SpecificVolume"/>.
     /// </summary>
     [TypeConverter(typeof(SpecificVolumeTypeConverter))]
     [Serializable]
-    public partial struct SpecificVolume : IQuantity<SpecificVolumeUnit>, IComparable<SpecificVolume>, IEquatable<SpecificVolume>
+    public partial struct SpecificVolume : IQuantity<SpecificVolumeUnit>, IComparable<SpecificVolume>, IEquatable<SpecificVolume>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.SpecificVolumeUnit.CubicMetresPerKilogram"/>

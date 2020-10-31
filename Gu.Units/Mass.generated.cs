@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.Mass"/>.
     /// </summary>
     [TypeConverter(typeof(MassTypeConverter))]
     [Serializable]
-    public partial struct Mass : IQuantity<MassUnit>, IComparable<Mass>, IEquatable<Mass>
+    public partial struct Mass : IQuantity<MassUnit>, IComparable<Mass>, IEquatable<Mass>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.MassUnit.Kilograms"/>

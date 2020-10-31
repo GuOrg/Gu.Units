@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.Data"/>.
     /// </summary>
     [TypeConverter(typeof(DataTypeConverter))]
     [Serializable]
-    public partial struct Data : IQuantity<DataUnit>, IComparable<Data>, IEquatable<Data>
+    public partial struct Data : IQuantity<DataUnit>, IComparable<Data>, IEquatable<Data>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.DataUnit.Bits"/>

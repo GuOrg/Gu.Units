@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.ElectricalConductance"/>.
     /// </summary>
     [TypeConverter(typeof(ElectricalConductanceTypeConverter))]
     [Serializable]
-    public partial struct ElectricalConductance : IQuantity<ElectricalConductanceUnit>, IComparable<ElectricalConductance>, IEquatable<ElectricalConductance>
+    public partial struct ElectricalConductance : IQuantity<ElectricalConductanceUnit>, IComparable<ElectricalConductance>, IEquatable<ElectricalConductance>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.ElectricalConductanceUnit.Siemens"/>

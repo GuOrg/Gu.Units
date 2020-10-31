@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.Temperature"/>.
     /// </summary>
     [TypeConverter(typeof(TemperatureTypeConverter))]
     [Serializable]
-    public partial struct Temperature : IQuantity<TemperatureUnit>, IComparable<Temperature>, IEquatable<Temperature>
+    public partial struct Temperature : IQuantity<TemperatureUnit>, IComparable<Temperature>, IEquatable<Temperature>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.TemperatureUnit.Kelvin"/>

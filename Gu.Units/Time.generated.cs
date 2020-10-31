@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.Time"/>.
     /// </summary>
     [TypeConverter(typeof(TimeTypeConverter))]
     [Serializable]
-    public partial struct Time : IQuantity<TimeUnit>, IComparable<Time>, IEquatable<Time>
+    public partial struct Time : IQuantity<TimeUnit>, IComparable<Time>, IEquatable<Time>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.TimeUnit.Seconds"/>

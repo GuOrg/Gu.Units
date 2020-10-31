@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.Wavenumber"/>.
     /// </summary>
     [TypeConverter(typeof(WavenumberTypeConverter))]
     [Serializable]
-    public partial struct Wavenumber : IQuantity<WavenumberUnit>, IComparable<Wavenumber>, IEquatable<Wavenumber>
+    public partial struct Wavenumber : IQuantity<WavenumberUnit>, IComparable<Wavenumber>, IEquatable<Wavenumber>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.WavenumberUnit.ReciprocalMetres"/>

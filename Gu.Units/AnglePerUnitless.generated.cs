@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.AnglePerUnitless"/>.
     /// </summary>
     [TypeConverter(typeof(AnglePerUnitlessTypeConverter))]
     [Serializable]
-    public partial struct AnglePerUnitless : IQuantity<AnglePerUnitlessUnit>, IComparable<AnglePerUnitless>, IEquatable<AnglePerUnitless>
+    public partial struct AnglePerUnitless : IQuantity<AnglePerUnitlessUnit>, IComparable<AnglePerUnitless>, IEquatable<AnglePerUnitless>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.AnglePerUnitlessUnit.RadiansPerUnitless"/>

@@ -6,13 +6,14 @@ namespace Gu.Units
     using System.Globalization;
     using System.Xml;
     using System.Xml.Schema;
+    using System.Xml.Serialization;
 
     /// <summary>
     /// A type for the quantity <see cref="Gu.Units.CatalyticActivity"/>.
     /// </summary>
     [TypeConverter(typeof(CatalyticActivityTypeConverter))]
     [Serializable]
-    public partial struct CatalyticActivity : IQuantity<CatalyticActivityUnit>, IComparable<CatalyticActivity>, IEquatable<CatalyticActivity>
+    public partial struct CatalyticActivity : IQuantity<CatalyticActivityUnit>, IComparable<CatalyticActivity>, IEquatable<CatalyticActivity>, IXmlSerializable
     {
         /// <summary>
         /// Gets a value that is zero <see cref="Gu.Units.CatalyticActivityUnit.Katals"/>
