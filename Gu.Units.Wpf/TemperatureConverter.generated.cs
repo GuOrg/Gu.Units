@@ -208,18 +208,18 @@ namespace Gu.Units.Wpf
             {
                 if (this.UnitInput == Wpf.UnitInput.SymbolRequired)
                 {
-                    return temperature.ToString(this.quantityFormat, culture);
+                    return temperature.ToString(this.quantityFormat!, culture);
                 }
 
                 if (this.ValueFormat is { })
                 {
-                    return temperature.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                    return temperature.GetValue(this.unit!.Value).ToString(this.valueFormat, culture);
                 }
 
-                return temperature.GetValue(this.unit.Value);
+                return temperature.GetValue(this.unit!.Value);
             }
 
-            return temperature.GetValue(this.unit.Value);
+            return temperature.GetValue(this.unit!.Value);
         }
 
         /// <inheritdoc />
@@ -254,7 +254,7 @@ namespace Gu.Units.Wpf
 
             if (value is double)
             {
-                return new Temperature((double)value, this.unit.Value);
+                return new Temperature((double)value, this.unit!.Value);
             }
 
             var text = value as string;
@@ -271,7 +271,7 @@ namespace Gu.Units.Wpf
                         double d;
                         if (double.TryParse(text, NumberStyles.Float, culture, out d))
                         {
-                            return new Temperature(d, this.unit.Value);
+                            return new Temperature(d, this.unit!.Value);
                         }
 
                         Temperature result;
@@ -293,7 +293,7 @@ namespace Gu.Units.Wpf
                             WhiteSpaceReader.TryRead(text, ref pos);
                             if (pos == text.Length)
                             {
-                                return new Temperature(d, this.unit.Value);
+                                return new Temperature(d, this.unit!.Value);
                             }
                         }
 

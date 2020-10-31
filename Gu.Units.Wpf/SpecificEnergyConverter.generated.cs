@@ -208,18 +208,18 @@ namespace Gu.Units.Wpf
             {
                 if (this.UnitInput == Wpf.UnitInput.SymbolRequired)
                 {
-                    return specificEnergy.ToString(this.quantityFormat, culture);
+                    return specificEnergy.ToString(this.quantityFormat!, culture);
                 }
 
                 if (this.ValueFormat is { })
                 {
-                    return specificEnergy.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                    return specificEnergy.GetValue(this.unit!.Value).ToString(this.valueFormat, culture);
                 }
 
-                return specificEnergy.GetValue(this.unit.Value);
+                return specificEnergy.GetValue(this.unit!.Value);
             }
 
-            return specificEnergy.GetValue(this.unit.Value);
+            return specificEnergy.GetValue(this.unit!.Value);
         }
 
         /// <inheritdoc />
@@ -254,7 +254,7 @@ namespace Gu.Units.Wpf
 
             if (value is double)
             {
-                return new SpecificEnergy((double)value, this.unit.Value);
+                return new SpecificEnergy((double)value, this.unit!.Value);
             }
 
             var text = value as string;
@@ -271,7 +271,7 @@ namespace Gu.Units.Wpf
                         double d;
                         if (double.TryParse(text, NumberStyles.Float, culture, out d))
                         {
-                            return new SpecificEnergy(d, this.unit.Value);
+                            return new SpecificEnergy(d, this.unit!.Value);
                         }
 
                         SpecificEnergy result;
@@ -293,7 +293,7 @@ namespace Gu.Units.Wpf
                             WhiteSpaceReader.TryRead(text, ref pos);
                             if (pos == text.Length)
                             {
-                                return new SpecificEnergy(d, this.unit.Value);
+                                return new SpecificEnergy(d, this.unit!.Value);
                             }
                         }
 

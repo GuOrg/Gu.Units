@@ -208,18 +208,18 @@ namespace Gu.Units.Wpf
             {
                 if (this.UnitInput == Wpf.UnitInput.SymbolRequired)
                 {
-                    return angularAcceleration.ToString(this.quantityFormat, culture);
+                    return angularAcceleration.ToString(this.quantityFormat!, culture);
                 }
 
                 if (this.ValueFormat is { })
                 {
-                    return angularAcceleration.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                    return angularAcceleration.GetValue(this.unit!.Value).ToString(this.valueFormat, culture);
                 }
 
-                return angularAcceleration.GetValue(this.unit.Value);
+                return angularAcceleration.GetValue(this.unit!.Value);
             }
 
-            return angularAcceleration.GetValue(this.unit.Value);
+            return angularAcceleration.GetValue(this.unit!.Value);
         }
 
         /// <inheritdoc />
@@ -254,7 +254,7 @@ namespace Gu.Units.Wpf
 
             if (value is double)
             {
-                return new AngularAcceleration((double)value, this.unit.Value);
+                return new AngularAcceleration((double)value, this.unit!.Value);
             }
 
             var text = value as string;
@@ -271,7 +271,7 @@ namespace Gu.Units.Wpf
                         double d;
                         if (double.TryParse(text, NumberStyles.Float, culture, out d))
                         {
-                            return new AngularAcceleration(d, this.unit.Value);
+                            return new AngularAcceleration(d, this.unit!.Value);
                         }
 
                         AngularAcceleration result;
@@ -293,7 +293,7 @@ namespace Gu.Units.Wpf
                             WhiteSpaceReader.TryRead(text, ref pos);
                             if (pos == text.Length)
                             {
-                                return new AngularAcceleration(d, this.unit.Value);
+                                return new AngularAcceleration(d, this.unit!.Value);
                             }
                         }
 

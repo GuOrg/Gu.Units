@@ -208,18 +208,18 @@ namespace Gu.Units.Wpf
             {
                 if (this.UnitInput == Wpf.UnitInput.SymbolRequired)
                 {
-                    return force.ToString(this.quantityFormat, culture);
+                    return force.ToString(this.quantityFormat!, culture);
                 }
 
                 if (this.ValueFormat is { })
                 {
-                    return force.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                    return force.GetValue(this.unit!.Value).ToString(this.valueFormat, culture);
                 }
 
-                return force.GetValue(this.unit.Value);
+                return force.GetValue(this.unit!.Value);
             }
 
-            return force.GetValue(this.unit.Value);
+            return force.GetValue(this.unit!.Value);
         }
 
         /// <inheritdoc />
@@ -254,7 +254,7 @@ namespace Gu.Units.Wpf
 
             if (value is double)
             {
-                return new Force((double)value, this.unit.Value);
+                return new Force((double)value, this.unit!.Value);
             }
 
             var text = value as string;
@@ -271,7 +271,7 @@ namespace Gu.Units.Wpf
                         double d;
                         if (double.TryParse(text, NumberStyles.Float, culture, out d))
                         {
-                            return new Force(d, this.unit.Value);
+                            return new Force(d, this.unit!.Value);
                         }
 
                         Force result;
@@ -293,7 +293,7 @@ namespace Gu.Units.Wpf
                             WhiteSpaceReader.TryRead(text, ref pos);
                             if (pos == text.Length)
                             {
-                                return new Force(d, this.unit.Value);
+                                return new Force(d, this.unit!.Value);
                             }
                         }
 

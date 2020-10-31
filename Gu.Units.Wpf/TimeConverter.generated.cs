@@ -208,18 +208,18 @@ namespace Gu.Units.Wpf
             {
                 if (this.UnitInput == Wpf.UnitInput.SymbolRequired)
                 {
-                    return time.ToString(this.quantityFormat, culture);
+                    return time.ToString(this.quantityFormat!, culture);
                 }
 
                 if (this.ValueFormat is { })
                 {
-                    return time.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                    return time.GetValue(this.unit!.Value).ToString(this.valueFormat, culture);
                 }
 
-                return time.GetValue(this.unit.Value);
+                return time.GetValue(this.unit!.Value);
             }
 
-            return time.GetValue(this.unit.Value);
+            return time.GetValue(this.unit!.Value);
         }
 
         /// <inheritdoc />
@@ -254,7 +254,7 @@ namespace Gu.Units.Wpf
 
             if (value is double)
             {
-                return new Time((double)value, this.unit.Value);
+                return new Time((double)value, this.unit!.Value);
             }
 
             var text = value as string;
@@ -271,7 +271,7 @@ namespace Gu.Units.Wpf
                         double d;
                         if (double.TryParse(text, NumberStyles.Float, culture, out d))
                         {
-                            return new Time(d, this.unit.Value);
+                            return new Time(d, this.unit!.Value);
                         }
 
                         Time result;
@@ -293,7 +293,7 @@ namespace Gu.Units.Wpf
                             WhiteSpaceReader.TryRead(text, ref pos);
                             if (pos == text.Length)
                             {
-                                return new Time(d, this.unit.Value);
+                                return new Time(d, this.unit!.Value);
                             }
                         }
 

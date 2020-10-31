@@ -208,18 +208,18 @@ namespace Gu.Units.Wpf
             {
                 if (this.UnitInput == Wpf.UnitInput.SymbolRequired)
                 {
-                    return conductivity.ToString(this.quantityFormat, culture);
+                    return conductivity.ToString(this.quantityFormat!, culture);
                 }
 
                 if (this.ValueFormat is { })
                 {
-                    return conductivity.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                    return conductivity.GetValue(this.unit!.Value).ToString(this.valueFormat, culture);
                 }
 
-                return conductivity.GetValue(this.unit.Value);
+                return conductivity.GetValue(this.unit!.Value);
             }
 
-            return conductivity.GetValue(this.unit.Value);
+            return conductivity.GetValue(this.unit!.Value);
         }
 
         /// <inheritdoc />
@@ -254,7 +254,7 @@ namespace Gu.Units.Wpf
 
             if (value is double)
             {
-                return new Conductivity((double)value, this.unit.Value);
+                return new Conductivity((double)value, this.unit!.Value);
             }
 
             var text = value as string;
@@ -271,7 +271,7 @@ namespace Gu.Units.Wpf
                         double d;
                         if (double.TryParse(text, NumberStyles.Float, culture, out d))
                         {
-                            return new Conductivity(d, this.unit.Value);
+                            return new Conductivity(d, this.unit!.Value);
                         }
 
                         Conductivity result;
@@ -293,7 +293,7 @@ namespace Gu.Units.Wpf
                             WhiteSpaceReader.TryRead(text, ref pos);
                             if (pos == text.Length)
                             {
-                                return new Conductivity(d, this.unit.Value);
+                                return new Conductivity(d, this.unit!.Value);
                             }
                         }
 

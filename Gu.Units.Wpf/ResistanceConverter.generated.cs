@@ -208,18 +208,18 @@ namespace Gu.Units.Wpf
             {
                 if (this.UnitInput == Wpf.UnitInput.SymbolRequired)
                 {
-                    return resistance.ToString(this.quantityFormat, culture);
+                    return resistance.ToString(this.quantityFormat!, culture);
                 }
 
                 if (this.ValueFormat is { })
                 {
-                    return resistance.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                    return resistance.GetValue(this.unit!.Value).ToString(this.valueFormat, culture);
                 }
 
-                return resistance.GetValue(this.unit.Value);
+                return resistance.GetValue(this.unit!.Value);
             }
 
-            return resistance.GetValue(this.unit.Value);
+            return resistance.GetValue(this.unit!.Value);
         }
 
         /// <inheritdoc />
@@ -254,7 +254,7 @@ namespace Gu.Units.Wpf
 
             if (value is double)
             {
-                return new Resistance((double)value, this.unit.Value);
+                return new Resistance((double)value, this.unit!.Value);
             }
 
             var text = value as string;
@@ -271,7 +271,7 @@ namespace Gu.Units.Wpf
                         double d;
                         if (double.TryParse(text, NumberStyles.Float, culture, out d))
                         {
-                            return new Resistance(d, this.unit.Value);
+                            return new Resistance(d, this.unit!.Value);
                         }
 
                         Resistance result;
@@ -293,7 +293,7 @@ namespace Gu.Units.Wpf
                             WhiteSpaceReader.TryRead(text, ref pos);
                             if (pos == text.Length)
                             {
-                                return new Resistance(d, this.unit.Value);
+                                return new Resistance(d, this.unit!.Value);
                             }
                         }
 

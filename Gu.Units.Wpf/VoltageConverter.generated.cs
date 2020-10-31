@@ -208,18 +208,18 @@ namespace Gu.Units.Wpf
             {
                 if (this.UnitInput == Wpf.UnitInput.SymbolRequired)
                 {
-                    return voltage.ToString(this.quantityFormat, culture);
+                    return voltage.ToString(this.quantityFormat!, culture);
                 }
 
                 if (this.ValueFormat is { })
                 {
-                    return voltage.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                    return voltage.GetValue(this.unit!.Value).ToString(this.valueFormat, culture);
                 }
 
-                return voltage.GetValue(this.unit.Value);
+                return voltage.GetValue(this.unit!.Value);
             }
 
-            return voltage.GetValue(this.unit.Value);
+            return voltage.GetValue(this.unit!.Value);
         }
 
         /// <inheritdoc />
@@ -254,7 +254,7 @@ namespace Gu.Units.Wpf
 
             if (value is double)
             {
-                return new Voltage((double)value, this.unit.Value);
+                return new Voltage((double)value, this.unit!.Value);
             }
 
             var text = value as string;
@@ -271,7 +271,7 @@ namespace Gu.Units.Wpf
                         double d;
                         if (double.TryParse(text, NumberStyles.Float, culture, out d))
                         {
-                            return new Voltage(d, this.unit.Value);
+                            return new Voltage(d, this.unit!.Value);
                         }
 
                         Voltage result;
@@ -293,7 +293,7 @@ namespace Gu.Units.Wpf
                             WhiteSpaceReader.TryRead(text, ref pos);
                             if (pos == text.Length)
                             {
-                                return new Voltage(d, this.unit.Value);
+                                return new Voltage(d, this.unit!.Value);
                             }
                         }
 

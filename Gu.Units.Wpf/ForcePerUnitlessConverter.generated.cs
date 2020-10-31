@@ -208,18 +208,18 @@ namespace Gu.Units.Wpf
             {
                 if (this.UnitInput == Wpf.UnitInput.SymbolRequired)
                 {
-                    return forcePerUnitless.ToString(this.quantityFormat, culture);
+                    return forcePerUnitless.ToString(this.quantityFormat!, culture);
                 }
 
                 if (this.ValueFormat is { })
                 {
-                    return forcePerUnitless.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
+                    return forcePerUnitless.GetValue(this.unit!.Value).ToString(this.valueFormat, culture);
                 }
 
-                return forcePerUnitless.GetValue(this.unit.Value);
+                return forcePerUnitless.GetValue(this.unit!.Value);
             }
 
-            return forcePerUnitless.GetValue(this.unit.Value);
+            return forcePerUnitless.GetValue(this.unit!.Value);
         }
 
         /// <inheritdoc />
@@ -254,7 +254,7 @@ namespace Gu.Units.Wpf
 
             if (value is double)
             {
-                return new ForcePerUnitless((double)value, this.unit.Value);
+                return new ForcePerUnitless((double)value, this.unit!.Value);
             }
 
             var text = value as string;
@@ -271,7 +271,7 @@ namespace Gu.Units.Wpf
                         double d;
                         if (double.TryParse(text, NumberStyles.Float, culture, out d))
                         {
-                            return new ForcePerUnitless(d, this.unit.Value);
+                            return new ForcePerUnitless(d, this.unit!.Value);
                         }
 
                         ForcePerUnitless result;
@@ -293,7 +293,7 @@ namespace Gu.Units.Wpf
                             WhiteSpaceReader.TryRead(text, ref pos);
                             if (pos == text.Length)
                             {
-                                return new ForcePerUnitless(d, this.unit.Value);
+                                return new ForcePerUnitless(d, this.unit!.Value);
                             }
                         }
 
