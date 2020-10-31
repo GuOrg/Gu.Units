@@ -747,8 +747,15 @@ namespace Gu.Units
         /// <param name="reader">The <see cref="System.Xml.XmlReader"/> stream from which the object is deserialized. </param>
         public void ReadXml(XmlReader reader)
         {
-            // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "bits", reader, "Value");
+            reader.MoveToContent();
+            var attribute = reader.GetAttribute("Value");
+            if (attribute is null)
+            {
+                throw new XmlException($"Could not find attribute named: Value");
+            }
+
+            this  = new Data(XmlConvert.ToDouble(attribute), DataUnit.Bits);
+            reader.ReadStartElement();
         }
 
         /// <summary>
@@ -757,7 +764,9 @@ namespace Gu.Units
         /// <param name="writer">The <see cref="System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.bits);
+            writer.WriteStartAttribute("Value");
+            writer.WriteValue(this.bits);
+            writer.WriteEndAttribute();
         }
 
         internal string ToString(QuantityFormat<DataUnit> format, IFormatProvider? formatProvider)

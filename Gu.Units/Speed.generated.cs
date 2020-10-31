@@ -938,8 +938,15 @@ namespace Gu.Units
         /// <param name="reader">The <see cref="System.Xml.XmlReader"/> stream from which the object is deserialized. </param>
         public void ReadXml(XmlReader reader)
         {
-            // Hacking set readonly fields here, can't think of a cleaner workaround
-            XmlExt.SetReadonlyField(ref this, "metresPerSecond", reader, "Value");
+            reader.MoveToContent();
+            var attribute = reader.GetAttribute("Value");
+            if (attribute is null)
+            {
+                throw new XmlException($"Could not find attribute named: Value");
+            }
+
+            this  = new Speed(XmlConvert.ToDouble(attribute), SpeedUnit.MetresPerSecond);
+            reader.ReadStartElement();
         }
 
         /// <summary>
@@ -948,7 +955,9 @@ namespace Gu.Units
         /// <param name="writer">The <see cref="System.Xml.XmlWriter"/> stream to which the object is serialized. </param>
         public void WriteXml(XmlWriter writer)
         {
-            XmlExt.WriteAttribute(writer, "Value", this.metresPerSecond);
+            writer.WriteStartAttribute("Value");
+            writer.WriteValue(this.metresPerSecond);
+            writer.WriteEndAttribute();
         }
 
         internal string ToString(QuantityFormat<SpeedUnit> format, IFormatProvider? formatProvider)
