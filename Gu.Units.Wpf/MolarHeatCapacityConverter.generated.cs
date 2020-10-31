@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return molarHeatCapacity.GetValue(this.unit.Value);
+                    return molarHeatCapacity.GetValue(this.unit!.Value);
                 }
 
                 return molarHeatCapacity;

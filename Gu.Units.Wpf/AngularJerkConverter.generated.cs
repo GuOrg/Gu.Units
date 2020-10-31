@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return angularJerk.GetValue(this.unit.Value);
+                    return angularJerk.GetValue(this.unit!.Value);
                 }
 
                 return angularJerk;

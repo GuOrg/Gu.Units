@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return lengthPerUnitless.GetValue(this.unit.Value);
+                    return lengthPerUnitless.GetValue(this.unit!.Value);
                 }
 
                 return lengthPerUnitless;

@@ -45,7 +45,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            var lengthPerUnitless = (LengthPerUnitless)value;
+            var lengthPerUnitless = (LengthPerUnitless)value!;
             serializer.Serialize(writer, lengthPerUnitless.ToString(this.unit, serializer.Culture));
         }
 
@@ -58,7 +58,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            var stringValue = (string)reader.Value;
+            var stringValue = (string)reader.Value!;
             return LengthPerUnitless.Parse(stringValue, serializer.Culture);
         }
     }

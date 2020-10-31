@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return inductance.GetValue(this.unit.Value);
+                    return inductance.GetValue(this.unit!.Value);
                 }
 
                 return inductance;

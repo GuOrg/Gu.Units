@@ -85,7 +85,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            var pressure = (Pressure)value;
+            var pressure = (Pressure)value!;
             serializer.Serialize(writer, pressure.ToString(this.unit, serializer.Culture));
         }
 
@@ -98,7 +98,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            var stringValue = (string)reader.Value;
+            var stringValue = (string)reader.Value!;
             return Pressure.Parse(stringValue, serializer.Culture);
         }
     }

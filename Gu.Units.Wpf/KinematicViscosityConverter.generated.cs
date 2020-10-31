@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return kinematicViscosity.GetValue(this.unit.Value);
+                    return kinematicViscosity.GetValue(this.unit!.Value);
                 }
 
                 return kinematicViscosity;

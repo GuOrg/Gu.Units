@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return pressure.GetValue(this.unit.Value);
+                    return pressure.GetValue(this.unit!.Value);
                 }
 
                 return pressure;

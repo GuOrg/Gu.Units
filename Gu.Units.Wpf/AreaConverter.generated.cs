@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return area.GetValue(this.unit.Value);
+                    return area.GetValue(this.unit!.Value);
                 }
 
                 return area;

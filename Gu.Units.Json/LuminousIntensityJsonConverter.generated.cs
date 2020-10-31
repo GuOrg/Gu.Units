@@ -30,7 +30,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            var luminousIntensity = (LuminousIntensity)value;
+            var luminousIntensity = (LuminousIntensity)value!;
             serializer.Serialize(writer, luminousIntensity.ToString(this.unit, serializer.Culture));
         }
 
@@ -43,7 +43,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            var stringValue = (string)reader.Value;
+            var stringValue = (string)reader.Value!;
             return LuminousIntensity.Parse(stringValue, serializer.Culture);
         }
     }

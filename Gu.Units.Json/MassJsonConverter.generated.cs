@@ -65,7 +65,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            var mass = (Mass)value;
+            var mass = (Mass)value!;
             serializer.Serialize(writer, mass.ToString(this.unit, serializer.Culture));
         }
 
@@ -78,7 +78,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            var stringValue = (string)reader.Value;
+            var stringValue = (string)reader.Value!;
             return Mass.Parse(stringValue, serializer.Culture);
         }
     }

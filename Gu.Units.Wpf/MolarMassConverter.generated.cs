@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return molarMass.GetValue(this.unit.Value);
+                    return molarMass.GetValue(this.unit!.Value);
                 }
 
                 return molarMass;

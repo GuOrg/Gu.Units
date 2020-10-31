@@ -60,7 +60,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            var voltage = (Voltage)value;
+            var voltage = (Voltage)value!;
             serializer.Serialize(writer, voltage.ToString(this.unit, serializer.Culture));
         }
 
@@ -73,7 +73,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            var stringValue = (string)reader.Value;
+            var stringValue = (string)reader.Value!;
             return Voltage.Parse(stringValue, serializer.Culture);
         }
     }

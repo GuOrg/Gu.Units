@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return torque.GetValue(this.unit.Value);
+                    return torque.GetValue(this.unit!.Value);
                 }
 
                 return torque;

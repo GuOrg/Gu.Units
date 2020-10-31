@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return luminousFlux.GetValue(this.unit.Value);
+                    return luminousFlux.GetValue(this.unit!.Value);
                 }
 
                 return luminousFlux;

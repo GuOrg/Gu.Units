@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return magneticFieldStrength.GetValue(this.unit.Value);
+                    return magneticFieldStrength.GetValue(this.unit!.Value);
                 }
 
                 return magneticFieldStrength;

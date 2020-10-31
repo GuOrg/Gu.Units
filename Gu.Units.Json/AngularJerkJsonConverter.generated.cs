@@ -55,7 +55,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            var angularJerk = (AngularJerk)value;
+            var angularJerk = (AngularJerk)value!;
             serializer.Serialize(writer, angularJerk.ToString(this.unit, serializer.Culture));
         }
 
@@ -68,7 +68,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            var stringValue = (string)reader.Value;
+            var stringValue = (string)reader.Value!;
             return AngularJerk.Parse(stringValue, serializer.Culture);
         }
     }

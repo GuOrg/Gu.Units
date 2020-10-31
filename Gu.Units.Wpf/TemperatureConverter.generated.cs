@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return temperature.GetValue(this.unit.Value);
+                    return temperature.GetValue(this.unit!.Value);
                 }
 
                 return temperature;

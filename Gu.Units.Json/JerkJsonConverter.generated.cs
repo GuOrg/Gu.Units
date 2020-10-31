@@ -70,7 +70,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            var jerk = (Jerk)value;
+            var jerk = (Jerk)value!;
             serializer.Serialize(writer, jerk.ToString(this.unit, serializer.Culture));
         }
 
@@ -83,7 +83,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            var stringValue = (string)reader.Value;
+            var stringValue = (string)reader.Value!;
             return Jerk.Parse(stringValue, serializer.Culture);
         }
     }

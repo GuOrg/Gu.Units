@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return frequency.GetValue(this.unit.Value);
+                    return frequency.GetValue(this.unit!.Value);
                 }
 
                 return frequency;

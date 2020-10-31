@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return volumetricFlow.GetValue(this.unit.Value);
+                    return volumetricFlow.GetValue(this.unit!.Value);
                 }
 
                 return volumetricFlow;

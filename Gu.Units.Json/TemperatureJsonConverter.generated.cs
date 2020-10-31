@@ -40,7 +40,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            var temperature = (Temperature)value;
+            var temperature = (Temperature)value!;
             serializer.Serialize(writer, temperature.ToString(this.unit, serializer.Culture));
         }
 
@@ -53,7 +53,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            var stringValue = (string)reader.Value;
+            var stringValue = (string)reader.Value!;
             return Temperature.Parse(stringValue, serializer.Culture);
         }
     }

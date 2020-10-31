@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return magneticFlux.GetValue(this.unit.Value);
+                    return magneticFlux.GetValue(this.unit!.Value);
                 }
 
                 return magneticFlux;

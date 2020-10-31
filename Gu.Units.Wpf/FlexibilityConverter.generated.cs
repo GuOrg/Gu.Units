@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return flexibility.GetValue(this.unit.Value);
+                    return flexibility.GetValue(this.unit!.Value);
                 }
 
                 return flexibility;

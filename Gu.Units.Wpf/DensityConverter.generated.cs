@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return density.GetValue(this.unit.Value);
+                    return density.GetValue(this.unit!.Value);
                 }
 
                 return density;

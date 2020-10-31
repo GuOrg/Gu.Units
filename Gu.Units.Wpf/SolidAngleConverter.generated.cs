@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return solidAngle.GetValue(this.unit.Value);
+                    return solidAngle.GetValue(this.unit!.Value);
                 }
 
                 return solidAngle;

@@ -45,7 +45,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            var flexibility = (Flexibility)value;
+            var flexibility = (Flexibility)value!;
             serializer.Serialize(writer, flexibility.ToString(this.unit, serializer.Culture));
         }
 
@@ -58,7 +58,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            var stringValue = (string)reader.Value;
+            var stringValue = (string)reader.Value!;
             return Flexibility.Parse(stringValue, serializer.Culture);
         }
     }

@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return wavenumber.GetValue(this.unit.Value);
+                    return wavenumber.GetValue(this.unit!.Value);
                 }
 
                 return wavenumber;

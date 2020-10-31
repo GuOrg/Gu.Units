@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return jerk.GetValue(this.unit.Value);
+                    return jerk.GetValue(this.unit!.Value);
                 }
 
                 return jerk;

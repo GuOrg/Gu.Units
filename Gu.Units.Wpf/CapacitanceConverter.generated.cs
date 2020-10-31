@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return capacitance.GetValue(this.unit.Value);
+                    return capacitance.GetValue(this.unit!.Value);
                 }
 
                 return capacitance;

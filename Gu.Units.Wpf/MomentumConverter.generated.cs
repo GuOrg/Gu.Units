@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return momentum.GetValue(this.unit.Value);
+                    return momentum.GetValue(this.unit!.Value);
                 }
 
                 return momentum;

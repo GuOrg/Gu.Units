@@ -198,7 +198,7 @@ namespace Gu.Units.Wpf
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
-                    return conductivity.GetValue(this.unit.Value);
+                    return conductivity.GetValue(this.unit!.Value);
                 }
 
                 return conductivity;

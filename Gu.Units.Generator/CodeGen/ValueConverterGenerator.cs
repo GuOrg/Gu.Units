@@ -208,7 +208,7 @@ namespace Gu.Units.Generator.CodeGen
                 .AppendLine($"            {{")
                 .AppendLine($"                if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))")
                 .AppendLine($"                {{")
-                .AppendLine($"                    return {quantity.ParameterName}.GetValue(this.unit.Value);")
+                .AppendLine($"                    return {quantity.ParameterName}.GetValue(this.unit!.Value);")
                 .AppendLine($"                }}")
                 .AppendLine()
                 .AppendLine($"                return {quantity.ParameterName};")

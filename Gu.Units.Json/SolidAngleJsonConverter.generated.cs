@@ -30,7 +30,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            var solidAngle = (SolidAngle)value;
+            var solidAngle = (SolidAngle)value!;
             serializer.Serialize(writer, solidAngle.ToString(this.unit, serializer.Culture));
         }
 
@@ -43,7 +43,7 @@ namespace Gu.Units.Json
         /// <inheritdoc />
         public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            var stringValue = (string)reader.Value;
+            var stringValue = (string)reader.Value!;
             return SolidAngle.Parse(stringValue, serializer.Culture);
         }
     }
