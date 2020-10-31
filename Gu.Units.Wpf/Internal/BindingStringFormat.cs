@@ -6,7 +6,7 @@
 
     internal static class BindingStringFormat
     {
-        internal static bool TryGet<TUnit>(this Binding binding, [MaybeNullWhen(false)] out QuantityFormat<TUnit> format)
+        internal static bool TryGet<TUnit>(this Binding? binding, [MaybeNullWhen(false)] out QuantityFormat<TUnit> format)
             where TUnit : struct, IUnit, IEquatable<TUnit>
         {
             if (binding is { StringFormat: { } stringFormat })
