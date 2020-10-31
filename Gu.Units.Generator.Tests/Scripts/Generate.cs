@@ -13,7 +13,7 @@
         [Test]
         public static void Dump()
         {
-            foreach (var line in File.ReadAllLines("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Generator\\Templates\\QuantityValueConverter.tt"))
+            foreach (var line in File.ReadAllLines("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Generator\\Templates\\Unit.tt"))
             {
                 if (line.Length == 0)
                 {
@@ -45,12 +45,22 @@
         }
 
         [Test]
-        public static void WriteQuantityStructs()
+        public static void WriteQuantitys()
         {
             var settings = Settings();
             foreach (var quantity in settings.Quantities)
             {
                 File.WriteAllText($"C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\{quantity.Name}.generated.cs", QuantityGenerator.Code(quantity));
+            }
+        }
+
+        [Test]
+        public static void WriteUnits()
+        {
+            var settings = Settings();
+            foreach (var unit in settings.AllUnits)
+            {
+                File.WriteAllText($"C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\{unit.ClassName}.generated.cs", UnitGenerator.Code(unit));
             }
         }
 
