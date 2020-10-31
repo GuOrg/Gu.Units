@@ -367,15 +367,15 @@ namespace Gu.Units.Wpf
                 }
                 else if (hasFmtUnit && !hasBindingUnit)
                 {
-                    this.unit = this.quantityFormat.Unit;
+                    this.unit = this.quantityFormat!.Unit;
                 }
                 else if (!hasFmtUnit && hasBindingUnit)
                 {
-                    this.unit = this.bindingQuantityFormat.Unit;
+                    this.unit = this.bindingQuantityFormat!.Unit;
                 }
                 else
                 {
-                    if (this.quantityFormat.Unit != this.bindingQuantityFormat.Unit)
+                    if (this.quantityFormat!.Unit != this.bindingQuantityFormat!.Unit)
                     {
                         this.errorText.AppendLine($"Ambiguous units StringFormat: {this.quantityFormat.CompositeFormat} Binding.StringFormat: {this.bindingQuantityFormat.CompositeFormat}");
                     }
@@ -388,7 +388,7 @@ namespace Gu.Units.Wpf
                 if (!string.IsNullOrEmpty(this.quantityFormat?.SymbolFormat) &&
                     this.unit != this.quantityFormat.Unit)
                 {
-                    this.errorText.AppendLine($"Unit is set to '{this.unit}' but StringFormat is '{this.StringFormat.Replace("{0:", string.Empty).Replace("}", string.Empty)}'");
+                    this.errorText.AppendLine($"Unit is set to '{this.unit}' but StringFormat is '{this.quantityFormat!.CompositeFormat.Replace("{0:", string.Empty).Replace("}", string.Empty)}'");
                 }
 
                 var hasBindingUnit = !string.IsNullOrEmpty(this.bindingQuantityFormat?.SymbolFormat);
