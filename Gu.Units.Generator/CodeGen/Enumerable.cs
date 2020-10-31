@@ -377,10 +377,7 @@ namespace Gu.Units.Generator.CodeGen
                     .AppendLine($"            }}")
                     .AppendLine()
                     .AppendLine($"            return null;")
-                    .AppendLine($"        }}")
-                    .AppendLine($"<#      if (quantity != quantities[quantities.Count -1])")
-                    .AppendLine($"        {{#>")
-                    .AppendLine();
+                    .AppendLine($"        }}");
 
                 if (quantity != quantities.Last())
                 {

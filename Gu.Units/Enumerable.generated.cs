@@ -12549,9 +12549,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{AmountOfSubstance}"/> for the values in <paramref name="source"/>
@@ -12586,9 +12583,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Angle}"/> for the values in <paramref name="source"/>
@@ -12623,9 +12617,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{AnglePerUnitless}"/> for the values in <paramref name="source"/>
@@ -12660,9 +12651,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{AngularAcceleration}"/> for the values in <paramref name="source"/>
@@ -12697,9 +12685,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{AngularJerk}"/> for the values in <paramref name="source"/>
@@ -12734,9 +12719,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{AngularSpeed}"/> for the values in <paramref name="source"/>
@@ -12771,9 +12753,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Area}"/> for the values in <paramref name="source"/>
@@ -12808,9 +12787,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{AreaDensity}"/> for the values in <paramref name="source"/>
@@ -12845,9 +12821,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Capacitance}"/> for the values in <paramref name="source"/>
@@ -12882,9 +12855,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{CatalyticActivity}"/> for the values in <paramref name="source"/>
@@ -12919,9 +12889,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Conductivity}"/> for the values in <paramref name="source"/>
@@ -12956,9 +12923,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Current}"/> for the values in <paramref name="source"/>
@@ -12993,9 +12957,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Data}"/> for the values in <paramref name="source"/>
@@ -13030,9 +12991,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Density}"/> for the values in <paramref name="source"/>
@@ -13067,9 +13025,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{ElectricalConductance}"/> for the values in <paramref name="source"/>
@@ -13104,9 +13059,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{ElectricCharge}"/> for the values in <paramref name="source"/>
@@ -13141,9 +13093,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Energy}"/> for the values in <paramref name="source"/>
@@ -13178,9 +13127,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Flexibility}"/> for the values in <paramref name="source"/>
@@ -13215,9 +13161,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Force}"/> for the values in <paramref name="source"/>
@@ -13252,9 +13195,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{ForcePerUnitless}"/> for the values in <paramref name="source"/>
@@ -13289,9 +13229,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Frequency}"/> for the values in <paramref name="source"/>
@@ -13326,9 +13263,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Illuminance}"/> for the values in <paramref name="source"/>
@@ -13363,9 +13297,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Inductance}"/> for the values in <paramref name="source"/>
@@ -13400,9 +13331,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Jerk}"/> for the values in <paramref name="source"/>
@@ -13437,9 +13365,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{KinematicViscosity}"/> for the values in <paramref name="source"/>
@@ -13474,9 +13399,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Length}"/> for the values in <paramref name="source"/>
@@ -13511,9 +13433,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{LengthPerUnitless}"/> for the values in <paramref name="source"/>
@@ -13548,9 +13467,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{LuminousFlux}"/> for the values in <paramref name="source"/>
@@ -13585,9 +13501,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{LuminousIntensity}"/> for the values in <paramref name="source"/>
@@ -13622,9 +13535,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{MagneticFieldStrength}"/> for the values in <paramref name="source"/>
@@ -13659,9 +13569,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{MagneticFlux}"/> for the values in <paramref name="source"/>
@@ -13696,9 +13603,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Mass}"/> for the values in <paramref name="source"/>
@@ -13733,9 +13637,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{MassFlow}"/> for the values in <paramref name="source"/>
@@ -13770,9 +13671,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{MolarHeatCapacity}"/> for the values in <paramref name="source"/>
@@ -13807,9 +13705,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{MolarMass}"/> for the values in <paramref name="source"/>
@@ -13844,9 +13739,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Momentum}"/> for the values in <paramref name="source"/>
@@ -13881,9 +13773,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Power}"/> for the values in <paramref name="source"/>
@@ -13918,9 +13807,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Pressure}"/> for the values in <paramref name="source"/>
@@ -13955,9 +13841,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Resistance}"/> for the values in <paramref name="source"/>
@@ -13992,9 +13875,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{SolidAngle}"/> for the values in <paramref name="source"/>
@@ -14029,9 +13909,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{SpecificEnergy}"/> for the values in <paramref name="source"/>
@@ -14066,9 +13943,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{SpecificVolume}"/> for the values in <paramref name="source"/>
@@ -14103,9 +13977,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Speed}"/> for the values in <paramref name="source"/>
@@ -14140,9 +14011,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Stiffness}"/> for the values in <paramref name="source"/>
@@ -14177,9 +14045,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Temperature}"/> for the values in <paramref name="source"/>
@@ -14214,9 +14079,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Time}"/> for the values in <paramref name="source"/>
@@ -14251,9 +14113,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Torque}"/> for the values in <paramref name="source"/>
@@ -14288,9 +14147,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Unitless}"/> for the values in <paramref name="source"/>
@@ -14325,9 +14181,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Voltage}"/> for the values in <paramref name="source"/>
@@ -14362,9 +14215,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Volume}"/> for the values in <paramref name="source"/>
@@ -14399,9 +14249,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{VolumetricFlow}"/> for the values in <paramref name="source"/>
@@ -14436,9 +14283,6 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
 
         /// <summary>
         /// Calculates the average <see cref="Nullable{Wavenumber}"/> for the values in <paramref name="source"/>
@@ -14473,8 +14317,5 @@ namespace Gu.Units
 
             return null;
         }
-<#      if (quantity != quantities[quantities.Count -1])
-        {#>
-
     }
 }
