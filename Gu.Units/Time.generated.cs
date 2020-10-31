@@ -1,3 +1,4 @@
+#nullable enable
 namespace Gu.Units
 {
     using System;
@@ -382,7 +383,7 @@ namespace Gu.Units
         /// Indicates whether two <see cref="Gu.Units.Time"/> instances are equal.
         /// </summary>
         /// <returns>
-        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
+        /// true if the quantities of <paramref name="left"/> and <paramref name="right"/> are equal; otherwise, false.
         /// </returns>
         /// <param name="left">The left instance of <see cref="Gu.Units.Time"/>.</param>
         /// <param name="right">The right instance of <see cref="Gu.Units.Time"/>.</param>
@@ -395,7 +396,7 @@ namespace Gu.Units
         /// Indicates whether two <see cref="Gu.Units.Time"/> instances are not equal.
         /// </summary>
         /// <returns>
-        /// true if the quantitys of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
+        /// true if the quantities of <paramref name="left"/> and <paramref name="right"/> are not equal; otherwise, false.
         /// </returns>
         /// <param name="left">The left instance of <see cref="Gu.Units.Time"/>.</param>
         /// <param name="right">The right instance of <see cref="Gu.Units.Time"/>.</param>
@@ -493,7 +494,7 @@ namespace Gu.Units
         /// Adds two specified <see cref="Gu.Units.Time"/> instances.
         /// </summary>
         /// <returns>
-        /// An <see cref="Gu.Units.Time"/> whose quantity is the sum of the quantitys of <paramref name="left"/> and <paramref name="right"/>.
+        /// An <see cref="Gu.Units.Time"/> whose quantity is the sum of the quantities of <paramref name="left"/> and <paramref name="right"/>.
         /// </returns>
         /// <param name="left">The left instance of <see cref="Gu.Units.Time"/>.</param>
         /// <param name="right">The right instance of <see cref="Gu.Units.Time"/>.</param>
@@ -797,7 +798,7 @@ namespace Gu.Units
         /// <param name="valueFormat">For formatting the scalar, format stings valid for <see cref="double"/> are valid
         ///  ex: F2</param>
         /// <param name="symbolFormat">For formatting the unit ex s</param>
-        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
         /// <returns>The string representation of the <see cref="Time"/></returns>
         public string ToString(string valueFormat, string symbolFormat, IFormatProvider formatProvider)
         {
@@ -820,7 +821,7 @@ namespace Gu.Units
         /// Converts the quantity value of this instance to its equivalent string representation.
         /// </summary>
         /// <param name="unit">The unit to use in the conversion</param>
-        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(TimeUnit unit, SymbolFormat symbolFormat)
         {
@@ -832,7 +833,7 @@ namespace Gu.Units
         /// Converts the quantity value of this instance to its equivalent string representation.
         /// </summary>
         /// <param name="unit">The unit to use in the conversion</param>
-        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(TimeUnit unit, IFormatProvider formatProvider)
         {
@@ -844,8 +845,8 @@ namespace Gu.Units
         /// Converts the quantity value of this instance to its equivalent string representation.
         /// </summary>
         /// <param name="unit">The unit to use in the conversion</param>
-        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
-        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creting the string representation.</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
+        /// <param name="formatProvider">Specifies the <see cref="IFormatProvider"/> to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(TimeUnit unit, SymbolFormat symbolFormat, IFormatProvider formatProvider)
         {
@@ -870,7 +871,7 @@ namespace Gu.Units
         /// </summary>
         /// <param name="valueFormat">The format to use for the scalar value. Valid formats are formats valid for formatting <see cref="double"/></param>
         /// <param name="unit">The unit to use in the conversion</param>
-        /// <param name="symbolFormat">Specifies the symbol format to use when creting the string representation.</param>
+        /// <param name="symbolFormat">Specifies the symbol format to use when creating the string representation.</param>
         /// <returns>The string representation of the value of this instance.</returns>
         public string ToString(string valueFormat, TimeUnit unit, SymbolFormat symbolFormat)
         {
@@ -909,7 +910,7 @@ namespace Gu.Units
         /// Compares this instance to a specified <see cref="Gu.Units.Time"/> object and returns an integer that indicates whether this <paramref name="quantity"/> is smaller than, equal to, or greater than the <see cref="Gu.Units.Time"/> object.
         /// </summary>
         /// <returns>
-        /// A signed number indicating the relative quantitys of this instance and <paramref name="quantity"/>.
+        /// A signed number indicating the relative quantities of this instance and <paramref name="quantity"/>.
         /// Value
         /// Description
         /// A negative integer
@@ -1011,7 +1012,7 @@ namespace Gu.Units
             XmlExt.WriteAttribute(writer, "Value", this.seconds);
         }
 
-        internal string ToString(QuantityFormat<TimeUnit> format, IFormatProvider formatProvider)
+        internal string ToString(QuantityFormat<TimeUnit> format, IFormatProvider? formatProvider)
         {
             using (var builder = StringBuilderPool.Borrow())
             {

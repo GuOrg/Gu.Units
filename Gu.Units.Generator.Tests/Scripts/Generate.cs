@@ -45,7 +45,7 @@
         }
 
         [Test]
-        public static void WriteQuantitys()
+        public static void WriteQuantities()
         {
             var settings = Settings();
             foreach (var quantity in settings.Quantities)

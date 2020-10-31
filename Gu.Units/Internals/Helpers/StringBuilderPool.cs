@@ -62,7 +62,7 @@
             internal void Append<TQuantity, TUnit>(
                 TQuantity quantity,
                 QuantityFormat<TUnit> format,
-                IFormatProvider formatProvider)
+                IFormatProvider? formatProvider)
                 where TQuantity : IQuantity<TUnit>
                 where TUnit : struct, IUnit, IEquatable<TUnit>
             {

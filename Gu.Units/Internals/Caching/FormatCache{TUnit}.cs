@@ -23,7 +23,7 @@
             return Cache.GetOrAdd(new CompositeFormatKey(compositeFormat), _ => CompositeFormatParser.Create<TUnit>(compositeFormat));
         }
 
-        internal static QuantityFormat<TUnit> GetOrCreate(string valueFormat, TUnit unit)
+        internal static QuantityFormat<TUnit> GetOrCreate(string? valueFormat, TUnit unit)
         {
             var key = new ValueAndUnitFormatKey(valueFormat, unit, DefaultSymbolFormat);
             return Cache.GetOrAdd(key, _ => CreateFromValueFormatAndUnit(key));
