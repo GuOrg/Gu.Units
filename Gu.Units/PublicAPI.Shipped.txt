@@ -2489,745 +2489,745 @@ Gu.Units.WavenumberUnitTypeConverter.WavenumberUnitTypeConverter() -> void
 override Gu.Units.Acceleration.Equals(object? obj) -> bool
 override Gu.Units.Acceleration.GetHashCode() -> int
 override Gu.Units.Acceleration.ToString() -> string!
-~override Gu.Units.AccelerationTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AccelerationTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AccelerationTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AccelerationTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AccelerationTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AccelerationTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AccelerationTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AccelerationTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.AccelerationUnit.Equals(object? obj) -> bool
 override Gu.Units.AccelerationUnit.GetHashCode() -> int
 override Gu.Units.AccelerationUnit.ToString() -> string!
-~override Gu.Units.AccelerationUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AccelerationUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AccelerationUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AccelerationUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AccelerationUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AccelerationUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AccelerationUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AccelerationUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.AmountOfSubstance.Equals(object? obj) -> bool
 override Gu.Units.AmountOfSubstance.GetHashCode() -> int
 override Gu.Units.AmountOfSubstance.ToString() -> string!
-~override Gu.Units.AmountOfSubstanceTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AmountOfSubstanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AmountOfSubstanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AmountOfSubstanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AmountOfSubstanceTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AmountOfSubstanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AmountOfSubstanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AmountOfSubstanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.AmountOfSubstanceUnit.Equals(object? obj) -> bool
 override Gu.Units.AmountOfSubstanceUnit.GetHashCode() -> int
 override Gu.Units.AmountOfSubstanceUnit.ToString() -> string!
-~override Gu.Units.AmountOfSubstanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AmountOfSubstanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AmountOfSubstanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AmountOfSubstanceUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AmountOfSubstanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AmountOfSubstanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AmountOfSubstanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AmountOfSubstanceUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Angle.Equals(object? obj) -> bool
 override Gu.Units.Angle.GetHashCode() -> int
 override Gu.Units.Angle.ToString() -> string!
 override Gu.Units.AnglePerUnitless.Equals(object? obj) -> bool
 override Gu.Units.AnglePerUnitless.GetHashCode() -> int
 override Gu.Units.AnglePerUnitless.ToString() -> string!
-~override Gu.Units.AnglePerUnitlessTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AnglePerUnitlessTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AnglePerUnitlessTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AnglePerUnitlessTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AnglePerUnitlessTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AnglePerUnitlessTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AnglePerUnitlessTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AnglePerUnitlessTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.AnglePerUnitlessUnit.Equals(object? obj) -> bool
 override Gu.Units.AnglePerUnitlessUnit.GetHashCode() -> int
 override Gu.Units.AnglePerUnitlessUnit.ToString() -> string!
-~override Gu.Units.AnglePerUnitlessUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AnglePerUnitlessUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AnglePerUnitlessUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AnglePerUnitlessUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.AngleTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AngleTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AngleTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AngleTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AnglePerUnitlessUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AnglePerUnitlessUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AnglePerUnitlessUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AnglePerUnitlessUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
+override Gu.Units.AngleTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AngleTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AngleTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AngleTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.AngleUnit.Equals(object? obj) -> bool
 override Gu.Units.AngleUnit.GetHashCode() -> int
 override Gu.Units.AngleUnit.ToString() -> string!
-~override Gu.Units.AngleUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AngleUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AngleUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AngleUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AngleUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AngleUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AngleUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AngleUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.AngularAcceleration.Equals(object? obj) -> bool
 override Gu.Units.AngularAcceleration.GetHashCode() -> int
 override Gu.Units.AngularAcceleration.ToString() -> string!
-~override Gu.Units.AngularAccelerationTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AngularAccelerationTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AngularAccelerationTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AngularAccelerationTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AngularAccelerationTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AngularAccelerationTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AngularAccelerationTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AngularAccelerationTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.AngularAccelerationUnit.Equals(object? obj) -> bool
 override Gu.Units.AngularAccelerationUnit.GetHashCode() -> int
 override Gu.Units.AngularAccelerationUnit.ToString() -> string!
-~override Gu.Units.AngularAccelerationUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AngularAccelerationUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AngularAccelerationUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AngularAccelerationUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AngularAccelerationUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AngularAccelerationUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AngularAccelerationUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AngularAccelerationUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.AngularJerk.Equals(object? obj) -> bool
 override Gu.Units.AngularJerk.GetHashCode() -> int
 override Gu.Units.AngularJerk.ToString() -> string!
-~override Gu.Units.AngularJerkTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AngularJerkTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AngularJerkTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AngularJerkTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AngularJerkTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AngularJerkTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AngularJerkTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AngularJerkTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.AngularJerkUnit.Equals(object? obj) -> bool
 override Gu.Units.AngularJerkUnit.GetHashCode() -> int
 override Gu.Units.AngularJerkUnit.ToString() -> string!
-~override Gu.Units.AngularJerkUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AngularJerkUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AngularJerkUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AngularJerkUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AngularJerkUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AngularJerkUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AngularJerkUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AngularJerkUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.AngularSpeed.Equals(object? obj) -> bool
 override Gu.Units.AngularSpeed.GetHashCode() -> int
 override Gu.Units.AngularSpeed.ToString() -> string!
-~override Gu.Units.AngularSpeedTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AngularSpeedTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AngularSpeedTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AngularSpeedTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AngularSpeedTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AngularSpeedTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AngularSpeedTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AngularSpeedTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.AngularSpeedUnit.Equals(object? obj) -> bool
 override Gu.Units.AngularSpeedUnit.GetHashCode() -> int
 override Gu.Units.AngularSpeedUnit.ToString() -> string!
-~override Gu.Units.AngularSpeedUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AngularSpeedUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AngularSpeedUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AngularSpeedUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AngularSpeedUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AngularSpeedUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AngularSpeedUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AngularSpeedUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Area.Equals(object? obj) -> bool
 override Gu.Units.Area.GetHashCode() -> int
 override Gu.Units.Area.ToString() -> string!
 override Gu.Units.AreaDensity.Equals(object? obj) -> bool
 override Gu.Units.AreaDensity.GetHashCode() -> int
 override Gu.Units.AreaDensity.ToString() -> string!
-~override Gu.Units.AreaDensityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AreaDensityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AreaDensityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AreaDensityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AreaDensityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AreaDensityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AreaDensityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AreaDensityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.AreaDensityUnit.Equals(object? obj) -> bool
 override Gu.Units.AreaDensityUnit.GetHashCode() -> int
 override Gu.Units.AreaDensityUnit.ToString() -> string!
-~override Gu.Units.AreaDensityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AreaDensityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AreaDensityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AreaDensityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.AreaTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AreaTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AreaTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AreaTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AreaDensityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AreaDensityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AreaDensityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AreaDensityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
+override Gu.Units.AreaTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AreaTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AreaTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AreaTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.AreaUnit.Equals(object? obj) -> bool
 override Gu.Units.AreaUnit.GetHashCode() -> int
 override Gu.Units.AreaUnit.ToString() -> string!
-~override Gu.Units.AreaUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.AreaUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.AreaUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.AreaUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.AreaUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.AreaUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.AreaUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.AreaUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Capacitance.Equals(object? obj) -> bool
 override Gu.Units.Capacitance.GetHashCode() -> int
 override Gu.Units.Capacitance.ToString() -> string!
-~override Gu.Units.CapacitanceTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.CapacitanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.CapacitanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.CapacitanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.CapacitanceTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.CapacitanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.CapacitanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.CapacitanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.CapacitanceUnit.Equals(object? obj) -> bool
 override Gu.Units.CapacitanceUnit.GetHashCode() -> int
 override Gu.Units.CapacitanceUnit.ToString() -> string!
-~override Gu.Units.CapacitanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.CapacitanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.CapacitanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.CapacitanceUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.CapacitanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.CapacitanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.CapacitanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.CapacitanceUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.CatalyticActivity.Equals(object? obj) -> bool
 override Gu.Units.CatalyticActivity.GetHashCode() -> int
 override Gu.Units.CatalyticActivity.ToString() -> string!
-~override Gu.Units.CatalyticActivityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.CatalyticActivityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.CatalyticActivityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.CatalyticActivityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.CatalyticActivityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.CatalyticActivityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.CatalyticActivityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.CatalyticActivityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.CatalyticActivityUnit.Equals(object? obj) -> bool
 override Gu.Units.CatalyticActivityUnit.GetHashCode() -> int
 override Gu.Units.CatalyticActivityUnit.ToString() -> string!
-~override Gu.Units.CatalyticActivityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.CatalyticActivityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.CatalyticActivityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.CatalyticActivityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.CatalyticActivityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.CatalyticActivityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.CatalyticActivityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.CatalyticActivityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Conductivity.Equals(object? obj) -> bool
 override Gu.Units.Conductivity.GetHashCode() -> int
 override Gu.Units.Conductivity.ToString() -> string!
-~override Gu.Units.ConductivityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.ConductivityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.ConductivityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.ConductivityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.ConductivityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.ConductivityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.ConductivityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.ConductivityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.ConductivityUnit.Equals(object? obj) -> bool
 override Gu.Units.ConductivityUnit.GetHashCode() -> int
 override Gu.Units.ConductivityUnit.ToString() -> string!
-~override Gu.Units.ConductivityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.ConductivityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.ConductivityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.ConductivityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.ConductivityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.ConductivityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.ConductivityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.ConductivityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Current.Equals(object? obj) -> bool
 override Gu.Units.Current.GetHashCode() -> int
 override Gu.Units.Current.ToString() -> string!
-~override Gu.Units.CurrentTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.CurrentTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.CurrentTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.CurrentTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.CurrentTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.CurrentTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.CurrentTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.CurrentTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.CurrentUnit.Equals(object? obj) -> bool
 override Gu.Units.CurrentUnit.GetHashCode() -> int
 override Gu.Units.CurrentUnit.ToString() -> string!
-~override Gu.Units.CurrentUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.CurrentUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.CurrentUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.CurrentUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.CurrentUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.CurrentUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.CurrentUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.CurrentUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Data.Equals(object? obj) -> bool
 override Gu.Units.Data.GetHashCode() -> int
 override Gu.Units.Data.ToString() -> string!
-~override Gu.Units.DataTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.DataTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.DataTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.DataTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.DataTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.DataTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.DataTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.DataTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.DataUnit.Equals(object? obj) -> bool
 override Gu.Units.DataUnit.GetHashCode() -> int
 override Gu.Units.DataUnit.ToString() -> string!
-~override Gu.Units.DataUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.DataUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.DataUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.DataUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.DataUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.DataUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.DataUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.DataUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Density.Equals(object? obj) -> bool
 override Gu.Units.Density.GetHashCode() -> int
 override Gu.Units.Density.ToString() -> string!
-~override Gu.Units.DensityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.DensityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.DensityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.DensityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.DensityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.DensityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.DensityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.DensityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.DensityUnit.Equals(object? obj) -> bool
 override Gu.Units.DensityUnit.GetHashCode() -> int
 override Gu.Units.DensityUnit.ToString() -> string!
-~override Gu.Units.DensityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.DensityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.DensityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.DensityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.DensityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.DensityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.DensityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.DensityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.ElectricalConductance.Equals(object? obj) -> bool
 override Gu.Units.ElectricalConductance.GetHashCode() -> int
 override Gu.Units.ElectricalConductance.ToString() -> string!
-~override Gu.Units.ElectricalConductanceTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.ElectricalConductanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.ElectricalConductanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.ElectricalConductanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.ElectricalConductanceTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.ElectricalConductanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.ElectricalConductanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.ElectricalConductanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.ElectricalConductanceUnit.Equals(object? obj) -> bool
 override Gu.Units.ElectricalConductanceUnit.GetHashCode() -> int
 override Gu.Units.ElectricalConductanceUnit.ToString() -> string!
-~override Gu.Units.ElectricalConductanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.ElectricalConductanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.ElectricalConductanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.ElectricalConductanceUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.ElectricalConductanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.ElectricalConductanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.ElectricalConductanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.ElectricalConductanceUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.ElectricCharge.Equals(object? obj) -> bool
 override Gu.Units.ElectricCharge.GetHashCode() -> int
 override Gu.Units.ElectricCharge.ToString() -> string!
-~override Gu.Units.ElectricChargeTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.ElectricChargeTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.ElectricChargeTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.ElectricChargeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.ElectricChargeTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.ElectricChargeTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.ElectricChargeTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.ElectricChargeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.ElectricChargeUnit.Equals(object? obj) -> bool
 override Gu.Units.ElectricChargeUnit.GetHashCode() -> int
 override Gu.Units.ElectricChargeUnit.ToString() -> string!
-~override Gu.Units.ElectricChargeUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.ElectricChargeUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.ElectricChargeUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.ElectricChargeUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.ElectricChargeUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.ElectricChargeUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.ElectricChargeUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.ElectricChargeUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Energy.Equals(object? obj) -> bool
 override Gu.Units.Energy.GetHashCode() -> int
 override Gu.Units.Energy.ToString() -> string!
-~override Gu.Units.EnergyTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.EnergyTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.EnergyTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.EnergyTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.EnergyTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.EnergyTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.EnergyTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.EnergyTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.EnergyUnit.Equals(object? obj) -> bool
 override Gu.Units.EnergyUnit.GetHashCode() -> int
 override Gu.Units.EnergyUnit.ToString() -> string!
-~override Gu.Units.EnergyUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.EnergyUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.EnergyUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.EnergyUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.EnergyUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.EnergyUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.EnergyUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.EnergyUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Flexibility.Equals(object? obj) -> bool
 override Gu.Units.Flexibility.GetHashCode() -> int
 override Gu.Units.Flexibility.ToString() -> string!
-~override Gu.Units.FlexibilityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.FlexibilityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.FlexibilityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.FlexibilityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.FlexibilityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.FlexibilityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.FlexibilityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.FlexibilityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.FlexibilityUnit.Equals(object? obj) -> bool
 override Gu.Units.FlexibilityUnit.GetHashCode() -> int
 override Gu.Units.FlexibilityUnit.ToString() -> string!
-~override Gu.Units.FlexibilityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.FlexibilityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.FlexibilityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.FlexibilityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.FlexibilityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.FlexibilityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.FlexibilityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.FlexibilityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Force.Equals(object? obj) -> bool
 override Gu.Units.Force.GetHashCode() -> int
 override Gu.Units.Force.ToString() -> string!
 override Gu.Units.ForcePerUnitless.Equals(object? obj) -> bool
 override Gu.Units.ForcePerUnitless.GetHashCode() -> int
 override Gu.Units.ForcePerUnitless.ToString() -> string!
-~override Gu.Units.ForcePerUnitlessTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.ForcePerUnitlessTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.ForcePerUnitlessTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.ForcePerUnitlessTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.ForcePerUnitlessTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.ForcePerUnitlessTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.ForcePerUnitlessTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.ForcePerUnitlessTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.ForcePerUnitlessUnit.Equals(object? obj) -> bool
 override Gu.Units.ForcePerUnitlessUnit.GetHashCode() -> int
 override Gu.Units.ForcePerUnitlessUnit.ToString() -> string!
-~override Gu.Units.ForcePerUnitlessUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.ForcePerUnitlessUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.ForcePerUnitlessUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.ForcePerUnitlessUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.ForceTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.ForceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.ForceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.ForceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.ForcePerUnitlessUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.ForcePerUnitlessUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.ForcePerUnitlessUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.ForcePerUnitlessUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
+override Gu.Units.ForceTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.ForceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.ForceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.ForceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.ForceUnit.Equals(object? obj) -> bool
 override Gu.Units.ForceUnit.GetHashCode() -> int
 override Gu.Units.ForceUnit.ToString() -> string!
-~override Gu.Units.ForceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.ForceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.ForceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.ForceUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.ForceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.ForceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.ForceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.ForceUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Frequency.Equals(object? obj) -> bool
 override Gu.Units.Frequency.GetHashCode() -> int
 override Gu.Units.Frequency.ToString() -> string!
-~override Gu.Units.FrequencyTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.FrequencyTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.FrequencyTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.FrequencyTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.FrequencyTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.FrequencyTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.FrequencyTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.FrequencyTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.FrequencyUnit.Equals(object? obj) -> bool
 override Gu.Units.FrequencyUnit.GetHashCode() -> int
 override Gu.Units.FrequencyUnit.ToString() -> string!
-~override Gu.Units.FrequencyUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.FrequencyUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.FrequencyUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.FrequencyUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.FrequencyUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.FrequencyUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.FrequencyUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.FrequencyUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Illuminance.Equals(object? obj) -> bool
 override Gu.Units.Illuminance.GetHashCode() -> int
 override Gu.Units.Illuminance.ToString() -> string!
-~override Gu.Units.IlluminanceTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.IlluminanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.IlluminanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.IlluminanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.IlluminanceTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.IlluminanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.IlluminanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.IlluminanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.IlluminanceUnit.Equals(object? obj) -> bool
 override Gu.Units.IlluminanceUnit.GetHashCode() -> int
 override Gu.Units.IlluminanceUnit.ToString() -> string!
-~override Gu.Units.IlluminanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.IlluminanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.IlluminanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.IlluminanceUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.IlluminanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.IlluminanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.IlluminanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.IlluminanceUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Inductance.Equals(object? obj) -> bool
 override Gu.Units.Inductance.GetHashCode() -> int
 override Gu.Units.Inductance.ToString() -> string!
-~override Gu.Units.InductanceTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.InductanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.InductanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.InductanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.InductanceTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.InductanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.InductanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.InductanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.InductanceUnit.Equals(object? obj) -> bool
 override Gu.Units.InductanceUnit.GetHashCode() -> int
 override Gu.Units.InductanceUnit.ToString() -> string!
-~override Gu.Units.InductanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.InductanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.InductanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.InductanceUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.InductanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.InductanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.InductanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.InductanceUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Jerk.Equals(object? obj) -> bool
 override Gu.Units.Jerk.GetHashCode() -> int
 override Gu.Units.Jerk.ToString() -> string!
-~override Gu.Units.JerkTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.JerkTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.JerkTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.JerkTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.JerkTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.JerkTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.JerkTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.JerkTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.JerkUnit.Equals(object? obj) -> bool
 override Gu.Units.JerkUnit.GetHashCode() -> int
 override Gu.Units.JerkUnit.ToString() -> string!
-~override Gu.Units.JerkUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.JerkUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.JerkUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.JerkUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.JerkUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.JerkUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.JerkUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.JerkUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.KinematicViscosity.Equals(object? obj) -> bool
 override Gu.Units.KinematicViscosity.GetHashCode() -> int
 override Gu.Units.KinematicViscosity.ToString() -> string!
-~override Gu.Units.KinematicViscosityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.KinematicViscosityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.KinematicViscosityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.KinematicViscosityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.KinematicViscosityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.KinematicViscosityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.KinematicViscosityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.KinematicViscosityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.KinematicViscosityUnit.Equals(object? obj) -> bool
 override Gu.Units.KinematicViscosityUnit.GetHashCode() -> int
 override Gu.Units.KinematicViscosityUnit.ToString() -> string!
-~override Gu.Units.KinematicViscosityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.KinematicViscosityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.KinematicViscosityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.KinematicViscosityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.KinematicViscosityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.KinematicViscosityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.KinematicViscosityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.KinematicViscosityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Length.Equals(object? obj) -> bool
 override Gu.Units.Length.GetHashCode() -> int
 override Gu.Units.Length.ToString() -> string!
 override Gu.Units.LengthPerUnitless.Equals(object? obj) -> bool
 override Gu.Units.LengthPerUnitless.GetHashCode() -> int
 override Gu.Units.LengthPerUnitless.ToString() -> string!
-~override Gu.Units.LengthPerUnitlessTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.LengthPerUnitlessTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.LengthPerUnitlessTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.LengthPerUnitlessTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.LengthPerUnitlessTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.LengthPerUnitlessTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.LengthPerUnitlessTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.LengthPerUnitlessTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.LengthPerUnitlessUnit.Equals(object? obj) -> bool
 override Gu.Units.LengthPerUnitlessUnit.GetHashCode() -> int
 override Gu.Units.LengthPerUnitlessUnit.ToString() -> string!
-~override Gu.Units.LengthPerUnitlessUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.LengthPerUnitlessUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.LengthPerUnitlessUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.LengthPerUnitlessUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.LengthTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.LengthTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.LengthTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.LengthTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.LengthPerUnitlessUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.LengthPerUnitlessUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.LengthPerUnitlessUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.LengthPerUnitlessUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
+override Gu.Units.LengthTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.LengthTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.LengthTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.LengthTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.LengthUnit.Equals(object? obj) -> bool
 override Gu.Units.LengthUnit.GetHashCode() -> int
 override Gu.Units.LengthUnit.ToString() -> string!
-~override Gu.Units.LengthUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.LengthUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.LengthUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.LengthUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.LengthUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.LengthUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.LengthUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.LengthUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.LuminousFlux.Equals(object? obj) -> bool
 override Gu.Units.LuminousFlux.GetHashCode() -> int
 override Gu.Units.LuminousFlux.ToString() -> string!
-~override Gu.Units.LuminousFluxTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.LuminousFluxTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.LuminousFluxTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.LuminousFluxTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.LuminousFluxTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.LuminousFluxTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.LuminousFluxTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.LuminousFluxTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.LuminousFluxUnit.Equals(object? obj) -> bool
 override Gu.Units.LuminousFluxUnit.GetHashCode() -> int
 override Gu.Units.LuminousFluxUnit.ToString() -> string!
-~override Gu.Units.LuminousFluxUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.LuminousFluxUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.LuminousFluxUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.LuminousFluxUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.LuminousFluxUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.LuminousFluxUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.LuminousFluxUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.LuminousFluxUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.LuminousIntensity.Equals(object? obj) -> bool
 override Gu.Units.LuminousIntensity.GetHashCode() -> int
 override Gu.Units.LuminousIntensity.ToString() -> string!
-~override Gu.Units.LuminousIntensityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.LuminousIntensityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.LuminousIntensityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.LuminousIntensityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.LuminousIntensityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.LuminousIntensityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.LuminousIntensityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.LuminousIntensityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.LuminousIntensityUnit.Equals(object? obj) -> bool
 override Gu.Units.LuminousIntensityUnit.GetHashCode() -> int
 override Gu.Units.LuminousIntensityUnit.ToString() -> string!
-~override Gu.Units.LuminousIntensityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.LuminousIntensityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.LuminousIntensityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.LuminousIntensityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.LuminousIntensityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.LuminousIntensityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.LuminousIntensityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.LuminousIntensityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.MagneticFieldStrength.Equals(object? obj) -> bool
 override Gu.Units.MagneticFieldStrength.GetHashCode() -> int
 override Gu.Units.MagneticFieldStrength.ToString() -> string!
-~override Gu.Units.MagneticFieldStrengthTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.MagneticFieldStrengthTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.MagneticFieldStrengthTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.MagneticFieldStrengthTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.MagneticFieldStrengthTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.MagneticFieldStrengthTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.MagneticFieldStrengthTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.MagneticFieldStrengthTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.MagneticFieldStrengthUnit.Equals(object? obj) -> bool
 override Gu.Units.MagneticFieldStrengthUnit.GetHashCode() -> int
 override Gu.Units.MagneticFieldStrengthUnit.ToString() -> string!
-~override Gu.Units.MagneticFieldStrengthUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.MagneticFieldStrengthUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.MagneticFieldStrengthUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.MagneticFieldStrengthUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.MagneticFieldStrengthUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.MagneticFieldStrengthUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.MagneticFieldStrengthUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.MagneticFieldStrengthUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.MagneticFlux.Equals(object? obj) -> bool
 override Gu.Units.MagneticFlux.GetHashCode() -> int
 override Gu.Units.MagneticFlux.ToString() -> string!
-~override Gu.Units.MagneticFluxTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.MagneticFluxTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.MagneticFluxTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.MagneticFluxTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.MagneticFluxTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.MagneticFluxTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.MagneticFluxTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.MagneticFluxTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.MagneticFluxUnit.Equals(object? obj) -> bool
 override Gu.Units.MagneticFluxUnit.GetHashCode() -> int
 override Gu.Units.MagneticFluxUnit.ToString() -> string!
-~override Gu.Units.MagneticFluxUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.MagneticFluxUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.MagneticFluxUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.MagneticFluxUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.MagneticFluxUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.MagneticFluxUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.MagneticFluxUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.MagneticFluxUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Mass.Equals(object? obj) -> bool
 override Gu.Units.Mass.GetHashCode() -> int
 override Gu.Units.Mass.ToString() -> string!
 override Gu.Units.MassFlow.Equals(object? obj) -> bool
 override Gu.Units.MassFlow.GetHashCode() -> int
 override Gu.Units.MassFlow.ToString() -> string!
-~override Gu.Units.MassFlowTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.MassFlowTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.MassFlowTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.MassFlowTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.MassFlowTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.MassFlowTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.MassFlowTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.MassFlowTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.MassFlowUnit.Equals(object? obj) -> bool
 override Gu.Units.MassFlowUnit.GetHashCode() -> int
 override Gu.Units.MassFlowUnit.ToString() -> string!
-~override Gu.Units.MassFlowUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.MassFlowUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.MassFlowUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.MassFlowUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.MassTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.MassTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.MassTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.MassTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.MassFlowUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.MassFlowUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.MassFlowUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.MassFlowUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
+override Gu.Units.MassTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.MassTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.MassTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.MassTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.MassUnit.Equals(object? obj) -> bool
 override Gu.Units.MassUnit.GetHashCode() -> int
 override Gu.Units.MassUnit.ToString() -> string!
-~override Gu.Units.MassUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.MassUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.MassUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.MassUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.MassUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.MassUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.MassUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.MassUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.MolarHeatCapacity.Equals(object? obj) -> bool
 override Gu.Units.MolarHeatCapacity.GetHashCode() -> int
 override Gu.Units.MolarHeatCapacity.ToString() -> string!
-~override Gu.Units.MolarHeatCapacityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.MolarHeatCapacityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.MolarHeatCapacityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.MolarHeatCapacityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.MolarHeatCapacityTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.MolarHeatCapacityTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.MolarHeatCapacityTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.MolarHeatCapacityTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.MolarHeatCapacityUnit.Equals(object? obj) -> bool
 override Gu.Units.MolarHeatCapacityUnit.GetHashCode() -> int
 override Gu.Units.MolarHeatCapacityUnit.ToString() -> string!
-~override Gu.Units.MolarHeatCapacityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.MolarHeatCapacityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.MolarHeatCapacityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.MolarHeatCapacityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.MolarHeatCapacityUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.MolarHeatCapacityUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.MolarHeatCapacityUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.MolarHeatCapacityUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.MolarMass.Equals(object? obj) -> bool
 override Gu.Units.MolarMass.GetHashCode() -> int
 override Gu.Units.MolarMass.ToString() -> string!
-~override Gu.Units.MolarMassTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.MolarMassTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.MolarMassTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.MolarMassTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.MolarMassTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.MolarMassTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.MolarMassTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.MolarMassTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.MolarMassUnit.Equals(object? obj) -> bool
 override Gu.Units.MolarMassUnit.GetHashCode() -> int
 override Gu.Units.MolarMassUnit.ToString() -> string!
-~override Gu.Units.MolarMassUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.MolarMassUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.MolarMassUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.MolarMassUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.MolarMassUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.MolarMassUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.MolarMassUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.MolarMassUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Momentum.Equals(object? obj) -> bool
 override Gu.Units.Momentum.GetHashCode() -> int
 override Gu.Units.Momentum.ToString() -> string!
-~override Gu.Units.MomentumTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.MomentumTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.MomentumTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.MomentumTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.MomentumTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.MomentumTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.MomentumTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.MomentumTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.MomentumUnit.Equals(object? obj) -> bool
 override Gu.Units.MomentumUnit.GetHashCode() -> int
 override Gu.Units.MomentumUnit.ToString() -> string!
-~override Gu.Units.MomentumUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.MomentumUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.MomentumUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.MomentumUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.MomentumUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.MomentumUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.MomentumUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.MomentumUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Power.Equals(object? obj) -> bool
 override Gu.Units.Power.GetHashCode() -> int
 override Gu.Units.Power.ToString() -> string!
-~override Gu.Units.PowerTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.PowerTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.PowerTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.PowerTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.PowerTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.PowerTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.PowerTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.PowerTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.PowerUnit.Equals(object? obj) -> bool
 override Gu.Units.PowerUnit.GetHashCode() -> int
 override Gu.Units.PowerUnit.ToString() -> string!
-~override Gu.Units.PowerUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.PowerUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.PowerUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.PowerUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.PowerUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.PowerUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.PowerUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.PowerUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Pressure.Equals(object? obj) -> bool
 override Gu.Units.Pressure.GetHashCode() -> int
 override Gu.Units.Pressure.ToString() -> string!
-~override Gu.Units.PressureTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.PressureTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.PressureTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.PressureTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.PressureTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.PressureTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.PressureTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.PressureTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.PressureUnit.Equals(object? obj) -> bool
 override Gu.Units.PressureUnit.GetHashCode() -> int
 override Gu.Units.PressureUnit.ToString() -> string!
-~override Gu.Units.PressureUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.PressureUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.PressureUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.PressureUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.PressureUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.PressureUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.PressureUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.PressureUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Resistance.Equals(object? obj) -> bool
 override Gu.Units.Resistance.GetHashCode() -> int
 override Gu.Units.Resistance.ToString() -> string!
-~override Gu.Units.ResistanceTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.ResistanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.ResistanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.ResistanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.ResistanceTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.ResistanceTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.ResistanceTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.ResistanceTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.ResistanceUnit.Equals(object? obj) -> bool
 override Gu.Units.ResistanceUnit.GetHashCode() -> int
 override Gu.Units.ResistanceUnit.ToString() -> string!
-~override Gu.Units.ResistanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.ResistanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.ResistanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.ResistanceUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.ResistanceUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.ResistanceUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.ResistanceUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.ResistanceUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.SolidAngle.Equals(object? obj) -> bool
 override Gu.Units.SolidAngle.GetHashCode() -> int
 override Gu.Units.SolidAngle.ToString() -> string!
-~override Gu.Units.SolidAngleTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.SolidAngleTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.SolidAngleTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.SolidAngleTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.SolidAngleTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.SolidAngleTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.SolidAngleTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.SolidAngleTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.SolidAngleUnit.Equals(object? obj) -> bool
 override Gu.Units.SolidAngleUnit.GetHashCode() -> int
 override Gu.Units.SolidAngleUnit.ToString() -> string!
-~override Gu.Units.SolidAngleUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.SolidAngleUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.SolidAngleUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.SolidAngleUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.SolidAngleUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.SolidAngleUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.SolidAngleUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.SolidAngleUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.SpecificEnergy.Equals(object? obj) -> bool
 override Gu.Units.SpecificEnergy.GetHashCode() -> int
 override Gu.Units.SpecificEnergy.ToString() -> string!
-~override Gu.Units.SpecificEnergyTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.SpecificEnergyTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.SpecificEnergyTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.SpecificEnergyTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.SpecificEnergyTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.SpecificEnergyTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.SpecificEnergyTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.SpecificEnergyTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.SpecificEnergyUnit.Equals(object? obj) -> bool
 override Gu.Units.SpecificEnergyUnit.GetHashCode() -> int
 override Gu.Units.SpecificEnergyUnit.ToString() -> string!
-~override Gu.Units.SpecificEnergyUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.SpecificEnergyUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.SpecificEnergyUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.SpecificEnergyUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.SpecificEnergyUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.SpecificEnergyUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.SpecificEnergyUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.SpecificEnergyUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.SpecificVolume.Equals(object? obj) -> bool
 override Gu.Units.SpecificVolume.GetHashCode() -> int
 override Gu.Units.SpecificVolume.ToString() -> string!
-~override Gu.Units.SpecificVolumeTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.SpecificVolumeTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.SpecificVolumeTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.SpecificVolumeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.SpecificVolumeTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.SpecificVolumeTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.SpecificVolumeTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.SpecificVolumeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.SpecificVolumeUnit.Equals(object? obj) -> bool
 override Gu.Units.SpecificVolumeUnit.GetHashCode() -> int
 override Gu.Units.SpecificVolumeUnit.ToString() -> string!
-~override Gu.Units.SpecificVolumeUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.SpecificVolumeUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.SpecificVolumeUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.SpecificVolumeUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.SpecificVolumeUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.SpecificVolumeUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.SpecificVolumeUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.SpecificVolumeUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Speed.Equals(object? obj) -> bool
 override Gu.Units.Speed.GetHashCode() -> int
 override Gu.Units.Speed.ToString() -> string!
-~override Gu.Units.SpeedTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.SpeedTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.SpeedTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.SpeedTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.SpeedTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.SpeedTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.SpeedTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.SpeedTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.SpeedUnit.Equals(object? obj) -> bool
 override Gu.Units.SpeedUnit.GetHashCode() -> int
 override Gu.Units.SpeedUnit.ToString() -> string!
-~override Gu.Units.SpeedUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.SpeedUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.SpeedUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.SpeedUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.SpeedUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.SpeedUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.SpeedUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.SpeedUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Stiffness.Equals(object? obj) -> bool
 override Gu.Units.Stiffness.GetHashCode() -> int
 override Gu.Units.Stiffness.ToString() -> string!
-~override Gu.Units.StiffnessTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.StiffnessTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.StiffnessTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.StiffnessTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.StiffnessTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.StiffnessTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.StiffnessTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.StiffnessTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.StiffnessUnit.Equals(object? obj) -> bool
 override Gu.Units.StiffnessUnit.GetHashCode() -> int
 override Gu.Units.StiffnessUnit.ToString() -> string!
-~override Gu.Units.StiffnessUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.StiffnessUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.StiffnessUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.StiffnessUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.StiffnessUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.StiffnessUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.StiffnessUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.StiffnessUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Temperature.Equals(object? obj) -> bool
 override Gu.Units.Temperature.GetHashCode() -> int
 override Gu.Units.Temperature.ToString() -> string!
-~override Gu.Units.TemperatureTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.TemperatureTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.TemperatureTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.TemperatureTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.TemperatureTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.TemperatureTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.TemperatureTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.TemperatureTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.TemperatureUnit.Equals(object? obj) -> bool
 override Gu.Units.TemperatureUnit.GetHashCode() -> int
 override Gu.Units.TemperatureUnit.ToString() -> string!
-~override Gu.Units.TemperatureUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.TemperatureUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.TemperatureUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.TemperatureUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.TemperatureUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.TemperatureUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.TemperatureUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.TemperatureUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Time.Equals(object? obj) -> bool
 override Gu.Units.Time.GetHashCode() -> int
 override Gu.Units.Time.ToString() -> string!
-~override Gu.Units.TimeTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.TimeTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.TimeTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.TimeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.TimeTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.TimeTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.TimeTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.TimeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.TimeUnit.Equals(object? obj) -> bool
 override Gu.Units.TimeUnit.GetHashCode() -> int
 override Gu.Units.TimeUnit.ToString() -> string!
-~override Gu.Units.TimeUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.TimeUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.TimeUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.TimeUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.TimeUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.TimeUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.TimeUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.TimeUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Torque.Equals(object? obj) -> bool
 override Gu.Units.Torque.GetHashCode() -> int
 override Gu.Units.Torque.ToString() -> string!
-~override Gu.Units.TorqueTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.TorqueTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.TorqueTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.TorqueTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.TorqueTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.TorqueTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.TorqueTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.TorqueTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.TorqueUnit.Equals(object? obj) -> bool
 override Gu.Units.TorqueUnit.GetHashCode() -> int
 override Gu.Units.TorqueUnit.ToString() -> string!
-~override Gu.Units.TorqueUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.TorqueUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.TorqueUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.TorqueUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.TorqueUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.TorqueUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.TorqueUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.TorqueUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Unitless.Equals(object? obj) -> bool
 override Gu.Units.Unitless.GetHashCode() -> int
 override Gu.Units.Unitless.ToString() -> string!
-~override Gu.Units.UnitlessTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.UnitlessTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.UnitlessTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.UnitlessTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.UnitlessTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.UnitlessTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.UnitlessTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.UnitlessTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.UnitlessUnit.Equals(object? obj) -> bool
 override Gu.Units.UnitlessUnit.GetHashCode() -> int
 override Gu.Units.UnitlessUnit.ToString() -> string!
-~override Gu.Units.UnitlessUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.UnitlessUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.UnitlessUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.UnitlessUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.UnitlessUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.UnitlessUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.UnitlessUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.UnitlessUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Voltage.Equals(object? obj) -> bool
 override Gu.Units.Voltage.GetHashCode() -> int
 override Gu.Units.Voltage.ToString() -> string!
-~override Gu.Units.VoltageTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.VoltageTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.VoltageTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.VoltageTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.VoltageTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.VoltageTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.VoltageTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.VoltageTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.VoltageUnit.Equals(object? obj) -> bool
 override Gu.Units.VoltageUnit.GetHashCode() -> int
 override Gu.Units.VoltageUnit.ToString() -> string!
-~override Gu.Units.VoltageUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.VoltageUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.VoltageUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.VoltageUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.VoltageUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.VoltageUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.VoltageUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.VoltageUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Volume.Equals(object? obj) -> bool
 override Gu.Units.Volume.GetHashCode() -> int
 override Gu.Units.Volume.ToString() -> string!
 override Gu.Units.VolumetricFlow.Equals(object? obj) -> bool
 override Gu.Units.VolumetricFlow.GetHashCode() -> int
 override Gu.Units.VolumetricFlow.ToString() -> string!
-~override Gu.Units.VolumetricFlowTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.VolumetricFlowTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.VolumetricFlowTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.VolumetricFlowTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.VolumetricFlowTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.VolumetricFlowTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.VolumetricFlowTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.VolumetricFlowTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.VolumetricFlowUnit.Equals(object? obj) -> bool
 override Gu.Units.VolumetricFlowUnit.GetHashCode() -> int
 override Gu.Units.VolumetricFlowUnit.ToString() -> string!
-~override Gu.Units.VolumetricFlowUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.VolumetricFlowUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.VolumetricFlowUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.VolumetricFlowUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
-~override Gu.Units.VolumeTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.VolumeTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.VolumeTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.VolumeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.VolumetricFlowUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.VolumetricFlowUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.VolumetricFlowUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.VolumetricFlowUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
+override Gu.Units.VolumeTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.VolumeTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.VolumeTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.VolumeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.VolumeUnit.Equals(object? obj) -> bool
 override Gu.Units.VolumeUnit.GetHashCode() -> int
 override Gu.Units.VolumeUnit.ToString() -> string!
-~override Gu.Units.VolumeUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.VolumeUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.VolumeUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.VolumeUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.VolumeUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.VolumeUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.VolumeUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.VolumeUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.Wavenumber.Equals(object? obj) -> bool
 override Gu.Units.Wavenumber.GetHashCode() -> int
 override Gu.Units.Wavenumber.ToString() -> string!
-~override Gu.Units.WavenumberTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.WavenumberTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.WavenumberTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.WavenumberTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.WavenumberTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.WavenumberTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.WavenumberTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.WavenumberTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 override Gu.Units.WavenumberUnit.Equals(object? obj) -> bool
 override Gu.Units.WavenumberUnit.GetHashCode() -> int
 override Gu.Units.WavenumberUnit.ToString() -> string!
-~override Gu.Units.WavenumberUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Type sourceType) -> bool
-~override Gu.Units.WavenumberUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Type destinationType) -> bool
-~override Gu.Units.WavenumberUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value) -> object
-~override Gu.Units.WavenumberUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext context, System.Globalization.CultureInfo culture, object value, System.Type destinationType) -> object
+override Gu.Units.WavenumberUnitTypeConverter.CanConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Type! sourceType) -> bool
+override Gu.Units.WavenumberUnitTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Type! destinationType) -> bool
+override Gu.Units.WavenumberUnitTypeConverter.ConvertFrom(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value) -> object!
+override Gu.Units.WavenumberUnitTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext! context, System.Globalization.CultureInfo! culture, object! value, System.Type! destinationType) -> object!
 static Gu.Units.Acceleration.From(double value, Gu.Units.AccelerationUnit unit) -> Gu.Units.Acceleration
 static Gu.Units.Acceleration.FromCentimetresPerHourSquared(double centimetresPerHourSquared) -> Gu.Units.Acceleration
 static Gu.Units.Acceleration.FromCentimetresPerSecondSquared(double centimetresPerSecondSquared) -> Gu.Units.Acceleration
