@@ -18,7 +18,7 @@
 
         private static SymbolFormat DefaultSymbolFormat => SymbolFormat.FractionSuperScript;
 
-        internal static QuantityFormat<TUnit> GetOrCreate(string compositeFormat)
+        internal static QuantityFormat<TUnit> GetOrCreate(string? compositeFormat)
         {
             return Cache.GetOrAdd(new CompositeFormatKey(compositeFormat), _ => CompositeFormatParser.Create<TUnit>(compositeFormat));
         }
@@ -29,7 +29,7 @@
             return Cache.GetOrAdd(key, _ => CreateFromValueFormatAndUnit(key));
         }
 
-        internal static QuantityFormat<TUnit> GetOrCreate(string valueFormat, TUnit unit, SymbolFormat symbolFormat)
+        internal static QuantityFormat<TUnit> GetOrCreate(string? valueFormat, TUnit unit, SymbolFormat symbolFormat)
         {
             var key = new ValueAndUnitFormatKey(valueFormat, unit, symbolFormat);
             return Cache.GetOrAdd(key, _ => CreateFromValueFormatAndUnit(key));
@@ -61,9 +61,9 @@
         [DebuggerDisplay("CompositeFormat: {CompositeFormat}")]
         internal readonly struct CompositeFormatKey : IFormatKey, IEquatable<CompositeFormatKey>
         {
-            internal readonly string CompositeFormat;
+            internal readonly string? CompositeFormat;
 
-            internal CompositeFormatKey(string compositeFormat)
+            internal CompositeFormatKey(string? compositeFormat)
             {
                 this.CompositeFormat = compositeFormat;
             }
@@ -85,21 +85,11 @@
 
             public bool Equals(IFormatKey? other)
             {
-                if (other is null)
-                {
-                    return false;
-                }
-
                 return other is CompositeFormatKey key && this.Equals(key);
             }
 
             public override bool Equals(object? obj)
             {
-                if (obj is null)
-                {
-                    return false;
-                }
-
                 return obj is CompositeFormatKey key && this.Equals(key);
             }
 

@@ -421,7 +421,7 @@ namespace Gu.Units
         public override string ToString()
         {
             var quantityFormat = FormatCache<CatalyticActivityUnit>.GetOrCreate(null, this.SiUnit);
-            return this.ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider?)null);
         }
 
         /// <summary>
@@ -443,7 +443,7 @@ namespace Gu.Units
         public string ToString(string format)
         {
             var quantityFormat = FormatCache<CatalyticActivityUnit>.GetOrCreate(format);
-            return this.ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider?)null);
         }
 
         /// <summary>
@@ -452,7 +452,7 @@ namespace Gu.Units
         /// <param name="format">Must be a composite format ex: \"F2 kat\"</param>
         /// <param name="formatProvider">Specifies the formatProvider to be used.</param>
         /// <returns>The string representation of the <see cref="CatalyticActivity"/></returns>
-        public string ToString(string format, IFormatProvider formatProvider)
+        public string ToString(string? format, IFormatProvider? formatProvider)
         {
             var quantityFormat = FormatCache<CatalyticActivityUnit>.GetOrCreate(format);
             return this.ToString(quantityFormat, formatProvider);
@@ -468,7 +468,7 @@ namespace Gu.Units
         public string ToString(string valueFormat, string symbolFormat)
         {
             var quantityFormat = FormatCache<CatalyticActivityUnit>.GetOrCreate(valueFormat, symbolFormat);
-            return this.ToString(quantityFormat, (IFormatProvider)null);
+            return this.ToString(quantityFormat, (IFormatProvider?)null);
         }
 
         /// <summary>
@@ -638,14 +638,9 @@ namespace Gu.Units
         /// <returns>
         /// true if <paramref name="obj"/> represents the same <see cref="Gu.Units.CatalyticActivity"/> as this instance; otherwise, false.
         /// </returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
-            if (ReferenceEquals(null, obj))
-            {
-                return false;
-            }
-
-            return obj is CatalyticActivity && this.Equals((CatalyticActivity)obj);
+            return obj is CatalyticActivity other && this.Equals(other);
         }
 
         /// <summary>
@@ -667,10 +662,7 @@ namespace Gu.Units
         ///  <see cref="M:System.Xml.Serialization.IXmlSerializable.WriteXml(System.Xml.XmlWriter)"/>
         /// method and consumed by the <see cref="M:System.Xml.Serialization.IXmlSerializable.ReadXml(System.Xml.XmlReader)"/> method.
         /// </returns>
-        public XmlSchema GetSchema()
-        {
-            return null;
-        }
+        public XmlSchema? GetSchema() => null;
 
         /// <summary>
         /// Generates an object from its XML representation.
