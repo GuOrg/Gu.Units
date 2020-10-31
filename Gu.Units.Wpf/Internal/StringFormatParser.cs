@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Globalization;
 
     internal static class StringFormatParser<TUnit>
@@ -62,7 +63,7 @@
             return $"Error parsing: '{format}' for {type}";
         }
 
-        internal static bool TryParse(string format, out QuantityFormat<TUnit> result)
+        internal static bool TryParse(string format, [MaybeNullWhen(false)] out QuantityFormat<TUnit> result)
         {
             if (string.IsNullOrWhiteSpace(format))
             {
