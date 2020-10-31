@@ -4,7 +4,7 @@ namespace Gu.Units.Generator.CodeGen
     using System.Collections.Generic;
     using System.Text;
 
-    public static class QuantityMarkupExtensionGenerator
+    public static class MarkupExtensionGenerator
     {
         public static string Code(Quantity quantity)
         {

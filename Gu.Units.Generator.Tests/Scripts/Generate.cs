@@ -7,13 +7,13 @@
 
     using NUnit.Framework;
 
+    [Ignore("Script")]
     public static class Generate
     {
-        [Ignore("Script")]
         [Test]
         public static void Dump()
         {
-            foreach (var line in File.ReadAllLines("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Generator\\Templates\\QuantityExtension.tt"))
+            foreach (var line in File.ReadAllLines("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Generator\\Templates\\QuantityJsonConverter.tt"))
             {
                 if (line.Length == 0)
                 {
@@ -37,7 +37,6 @@
             }
         }
 
-        [Ignore("Script")]
         [Test]
         public static void WriteEnumerable()
         {
@@ -45,7 +44,6 @@
             File.WriteAllText("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\Enumerable.generated.cs", EnumerableGenerator.Code(settings));
         }
 
-        [Ignore("Script")]
         [Test]
         public static void WriteQuantityStructs()
         {
@@ -56,14 +54,23 @@
             }
         }
 
-        [Ignore("Script")]
         [Test]
-        public static void WriteQuantityMarkupExtensions()
+        public static void WriteMarkupExtensions()
         {
             var settings = Settings();
             foreach (var quantity in settings.Quantities)
             {
-                File.WriteAllText("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Wpf\\" + quantity.Name + "Extension.generated.cs", QuantityMarkupExtensionGenerator.Code(quantity));
+                File.WriteAllText("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Wpf\\" + quantity.Name + "Extension.generated.cs", MarkupExtensionGenerator.Code(quantity));
+            }
+        }
+
+        [Test]
+        public static void WriteJsonConverters()
+        {
+            var settings = Settings();
+            foreach (var quantity in settings.Quantities)
+            {
+                File.WriteAllText("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Json\\" + quantity.Name + "JsonConverter.generated.cs", JsonConverterGenerator.Code(quantity));
             }
         }
 

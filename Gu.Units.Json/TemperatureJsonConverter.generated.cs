@@ -1,4 +1,4 @@
-﻿namespace Gu.Units.Json
+namespace Gu.Units.Json
 {
     using System;
     using Newtonsoft.Json;
