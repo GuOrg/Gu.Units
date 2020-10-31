@@ -67,7 +67,7 @@
         {
             if (string.IsNullOrWhiteSpace(format))
             {
-                result = QuantityFormat<TUnit>.CreateUnknown("{nameof(format) == null}", Unit<TUnit>.Default);
+                result = QuantityFormat<TUnit>.CreateUnknown("{nameof(format) is null}", Unit<TUnit>.Default);
                 return false;
             }
 

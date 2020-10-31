@@ -24,7 +24,7 @@
         /// <param name="canExecute">The execution status logic.</param>
         public RelayCommand(Action<T> execute, Predicate<T> canExecute)
         {
-            if (execute == null)
+            if (execute is null)
             {
                 throw new ArgumentNullException(nameof(execute));
             }

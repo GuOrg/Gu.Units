@@ -15,7 +15,7 @@ namespace Gu.Units.Wpf
     public class TemperatureConverter : MarkupExtension, IValueConverter
     {
         private TemperatureUnit? unit;
-        private Binding binding;
+        private Binding? binding;
         private QuantityFormat<TemperatureUnit>? quantityFormat;
         private QuantityFormat<TemperatureUnit>? bindingQuantityFormat;
         private string? valueFormat;
@@ -48,7 +48,7 @@ namespace Gu.Units.Wpf
             get => this.unit;
             set
             {
-                if (value == null)
+                if (value is null)
                 {
                     this.errorText.AppendLine($"{nameof(this.Unit)} cannot be null");
                     if (Is.DesignMode)
@@ -57,7 +57,7 @@ namespace Gu.Units.Wpf
                     }
                 }
 
-                this.unit = value.Value;
+                this.unit = value;
             }
         }
 
@@ -135,7 +135,7 @@ namespace Gu.Units.Wpf
                 var provideValueTarget = (IProvideValueTarget)serviceProvider.GetService(typeof(IProvideValueTarget));
                 var targetObject = provideValueTarget?.TargetObject;
                 this.binding = targetObject as Binding;
-                if (this.binding == null && targetObject != null)
+                if (this.binding is null && targetObject != null)
                 {
                     this.errorText.AppendLine("TargetObject is not a binding");
                     if (Is.DesignMode)
@@ -186,7 +186,7 @@ namespace Gu.Units.Wpf
                 return message;
             }
 
-            if (value == null)
+            if (value is null)
             {
                 return targetType == typeof(string)
                     ? string.Empty
@@ -247,7 +247,7 @@ namespace Gu.Units.Wpf
                 return message;
             }
 
-            if (value == null)
+            if (value is null)
             {
                 return null;
             }
@@ -356,7 +356,7 @@ namespace Gu.Units.Wpf
                 }
             }
 
-            if (this.unit == null)
+            if (this.unit is null)
             {
                 var hasFmtUnit = !string.IsNullOrEmpty(this.quantityFormat?.SymbolFormat);
                 var hasBindingUnit = !string.IsNullOrEmpty(this.bindingQuantityFormat?.SymbolFormat);
@@ -400,14 +400,14 @@ namespace Gu.Units.Wpf
                 {
                     if (string.IsNullOrEmpty(this.bindingQuantityFormat?.SymbolFormat))
                     {
-                        if (this.unit == null)
+                        if (this.unit is null)
                         {
                             this.errorText.AppendLine("UnitInput == SymbolRequired but no unit format is specified");
                         }
                         else if (this.SymbolFormat != null)
                         {
                             this.quantityFormat = FormatCache<TemperatureUnit>.GetOrCreate(this.ValueFormat, this.unit.Value, this.SymbolFormat.Value);
-                            if (this.UnitInput == null)
+                            if (this.UnitInput is null)
                             {
                                 this.UnitInput = Wpf.UnitInput.SymbolRequired;
                             }
@@ -419,7 +419,7 @@ namespace Gu.Units.Wpf
                         else
                         {
                             this.quantityFormat = FormatCache<TemperatureUnit>.GetOrCreate(this.ValueFormat, this.unit.Value);
-                            if (this.UnitInput == null)
+                            if (this.UnitInput is null)
                             {
                                 this.UnitInput = Wpf.UnitInput.ScalarOnly;
                             }
@@ -436,7 +436,7 @@ namespace Gu.Units.Wpf
                 }
             }
 
-            if (this.UnitInput == null)
+            if (this.UnitInput is null)
             {
                 if (!string.IsNullOrEmpty(this.quantityFormat?.SymbolFormat) ||
                     !string.IsNullOrEmpty(this.bindingQuantityFormat?.SymbolFormat))

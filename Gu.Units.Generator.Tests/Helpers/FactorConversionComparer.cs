@@ -13,8 +13,8 @@ namespace Gu.Units.Generator.Tests
 
         public int Compare(FactorConversion x, FactorConversion y)
         {
-            if (x == null ||
-                y == null)
+            if (x is null ||
+                y is null)
             {
                 return -1;
             }

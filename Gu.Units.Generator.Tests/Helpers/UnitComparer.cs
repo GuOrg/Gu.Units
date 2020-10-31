@@ -14,7 +14,7 @@ namespace Gu.Units.Generator.Tests
 
         public int Compare(BaseUnit x, BaseUnit y)
         {
-            if (x == null || y == null)
+            if (x is null || y is null)
             {
                 return -1;
             }

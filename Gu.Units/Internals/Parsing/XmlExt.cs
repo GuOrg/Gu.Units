@@ -17,7 +17,7 @@ namespace Gu.Units
         {
             reader.MoveToContent();
             var attribute = reader.GetAttribute(attributeName);
-            if (attribute == null)
+            if (attribute is null)
             {
                 throw new XmlException($"Could not find attribute named: {attributeName}");
             }
@@ -32,7 +32,7 @@ namespace Gu.Units
         {
             var fieldInfo = self.GetType()
                                 .GetField(fieldName, BindingFlags.NonPublic | BindingFlags.Instance);
-            if (fieldInfo == null)
+            if (fieldInfo is null)
             {
                 throw new XmlException($"Could not find field named: {fieldName}");
             }

@@ -22,7 +22,7 @@
         {
             get
             {
-                if (Settings.Instance == null)
+                if (Settings.Instance is null)
                 {
                     return true;
                 }
@@ -35,7 +35,7 @@
 
         public static Settings GetSettingsFromFile()
         {
-            if (Settings.Instance == null)
+            if (Settings.Instance is null)
             {
                 var json = File.ReadAllText(SettingsFileName);
                 Settings.InnerInstance = JsonConvert.DeserializeObject<Settings>(json, SerializerSettings);

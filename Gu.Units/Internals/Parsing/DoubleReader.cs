@@ -82,7 +82,7 @@
                 return TryParseSubString(text, start, ref pos, style, provider, out result);
             }
 
-            if (provider == null)
+            if (provider is null)
             {
                 provider = CultureInfo.CurrentCulture;
             }

@@ -34,7 +34,7 @@
 
         public override string ToString()
         {
-            if (this.CultureInfo == null)
+            if (this.CultureInfo is null)
             {
                 return $"Text: {this.Text}, Start: {this.Start}, Expected {ToString(typeof(T))}: {ToString(this.Expected)}, ExpectedEnd: {this.ExpectedEnd}";
             }
@@ -54,7 +54,7 @@
 
         private static string ToString(T expected)
         {
-            if (expected == null)
+            if (expected is null)
             {
                 return "null";
             }

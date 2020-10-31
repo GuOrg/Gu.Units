@@ -20,12 +20,12 @@ namespace Gu.Units.Generator.Tests
 
         private int Compare(object x, object y, ICollection<ComparedPair> compared)
         {
-            if (x == null && y == null)
+            if (x is null && y is null)
             {
                 return 0;
             }
 
-            if (x == null || y == null)
+            if (x is null || y is null)
             {
                 return -1;
             }

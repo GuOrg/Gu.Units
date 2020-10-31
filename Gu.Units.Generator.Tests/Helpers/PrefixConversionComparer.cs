@@ -13,7 +13,7 @@
 
         public int Compare(PrefixConversion x, PrefixConversion y)
         {
-            if (x == null || y == null)
+            if (x is null || y is null)
             {
                 return -1;
             }
