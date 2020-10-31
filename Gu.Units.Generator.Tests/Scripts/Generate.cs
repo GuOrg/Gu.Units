@@ -7,13 +7,13 @@
 
     using NUnit.Framework;
 
-    [Ignore("Script")]
+    //[Ignore("Script")]
     public static class Generate
     {
         [Test]
         public static void Dump()
         {
-            foreach (var line in File.ReadAllLines("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Generator\\Templates\\QuantityJsonConverter.tt"))
+            foreach (var line in File.ReadAllLines("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Generator\\Templates\\QuantityTypeConverter.tt"))
             {
                 if (line.Length == 0)
                 {
@@ -51,6 +51,16 @@
             foreach (var quantity in settings.Quantities)
             {
                 File.WriteAllText("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\" + quantity.Name + ".generated.cs", QuantityGenerator.Code(quantity));
+            }
+        }
+
+        [Test]
+        public static void WriteTypeConverters()
+        {
+            var settings = Settings();
+            foreach (var quantity in settings.Quantities)
+            {
+                File.WriteAllText("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\" + quantity.Name + "TypeConverter.generated.cs", TypeConverterGenerator.Code(quantity));
             }
         }
 

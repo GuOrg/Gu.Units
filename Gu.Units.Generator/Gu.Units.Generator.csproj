@@ -20,26 +20,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <EmbeddedResource Include="Templates\TemplateFilemanager.CS.ttinclude" />
 
-    <None Update="Templates\QuantityTypeConverter.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>QuantityTypeConverter.txt</LastGenOutput>
-    </None>
-    <None Update="Templates\QuantityTypeConverter.txt">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>QuantityTypeConverter.tt</DependentUpon>
-    </None>
-
-    <None Update="Templates\QuantityTypeConverters.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>QuantityTypeConverters.txt</LastGenOutput>
-    </None>
-    <None Update="Templates\QuantityTypeConverters.txt">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>QuantityTypeConverters.tt</DependentUpon>
-    </None>
-
     <None Include="Templates\QuantityValueConverter.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>QuantityValueConverter.txt</LastGenOutput>

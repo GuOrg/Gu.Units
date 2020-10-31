@@ -1,4 +1,4 @@
-﻿namespace Gu.Units
+namespace Gu.Units
 {
     using System;
     using System.ComponentModel;
