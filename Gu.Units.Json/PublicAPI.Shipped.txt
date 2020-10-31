@@ -1,0 +1,544 @@
+﻿Gu.Units.Json.AccelerationJsonConverter
+Gu.Units.Json.AmountOfSubstanceJsonConverter
+Gu.Units.Json.AngleJsonConverter
+Gu.Units.Json.AnglePerUnitlessJsonConverter
+Gu.Units.Json.AngularAccelerationJsonConverter
+Gu.Units.Json.AngularJerkJsonConverter
+Gu.Units.Json.AngularSpeedJsonConverter
+Gu.Units.Json.AreaDensityJsonConverter
+Gu.Units.Json.AreaJsonConverter
+Gu.Units.Json.CapacitanceJsonConverter
+Gu.Units.Json.CatalyticActivityJsonConverter
+Gu.Units.Json.ConductivityJsonConverter
+Gu.Units.Json.CurrentJsonConverter
+Gu.Units.Json.DataJsonConverter
+Gu.Units.Json.DensityJsonConverter
+Gu.Units.Json.ElectricalConductanceJsonConverter
+Gu.Units.Json.ElectricChargeJsonConverter
+Gu.Units.Json.EnergyJsonConverter
+Gu.Units.Json.FlexibilityJsonConverter
+Gu.Units.Json.ForceJsonConverter
+Gu.Units.Json.ForcePerUnitlessJsonConverter
+Gu.Units.Json.FrequencyJsonConverter
+Gu.Units.Json.IlluminanceJsonConverter
+Gu.Units.Json.InductanceJsonConverter
+Gu.Units.Json.JerkJsonConverter
+Gu.Units.Json.KinematicViscosityJsonConverter
+Gu.Units.Json.LengthJsonConverter
+Gu.Units.Json.LengthPerUnitlessJsonConverter
+Gu.Units.Json.LuminousFluxJsonConverter
+Gu.Units.Json.LuminousIntensityJsonConverter
+Gu.Units.Json.MagneticFieldStrengthJsonConverter
+Gu.Units.Json.MagneticFluxJsonConverter
+Gu.Units.Json.MassFlowJsonConverter
+Gu.Units.Json.MassJsonConverter
+Gu.Units.Json.MolarHeatCapacityJsonConverter
+Gu.Units.Json.MolarMassJsonConverter
+Gu.Units.Json.MomentumJsonConverter
+Gu.Units.Json.PowerJsonConverter
+Gu.Units.Json.PressureJsonConverter
+Gu.Units.Json.ResistanceJsonConverter
+Gu.Units.Json.SolidAngleJsonConverter
+Gu.Units.Json.SpecificEnergyJsonConverter
+Gu.Units.Json.SpecificVolumeJsonConverter
+Gu.Units.Json.SpeedJsonConverter
+Gu.Units.Json.StiffnessJsonConverter
+Gu.Units.Json.TemperatureJsonConverter
+Gu.Units.Json.TimeJsonConverter
+Gu.Units.Json.TorqueJsonConverter
+Gu.Units.Json.UnitlessJsonConverter
+Gu.Units.Json.VoltageJsonConverter
+Gu.Units.Json.VolumeJsonConverter
+Gu.Units.Json.VolumetricFlowJsonConverter
+Gu.Units.Json.WavenumberJsonConverter
+override Gu.Units.Json.AccelerationJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.AccelerationJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.AccelerationJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.AmountOfSubstanceJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.AmountOfSubstanceJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.AmountOfSubstanceJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.AngleJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.AngleJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.AngleJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.AnglePerUnitlessJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.AnglePerUnitlessJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.AnglePerUnitlessJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.AngularAccelerationJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.AngularAccelerationJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.AngularAccelerationJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.AngularJerkJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.AngularJerkJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.AngularJerkJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.AngularSpeedJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.AngularSpeedJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.AngularSpeedJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.AreaDensityJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.AreaDensityJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.AreaDensityJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.AreaJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.AreaJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.AreaJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.CapacitanceJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.CapacitanceJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.CapacitanceJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.CatalyticActivityJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.CatalyticActivityJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.CatalyticActivityJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.ConductivityJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.ConductivityJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.ConductivityJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.CurrentJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.CurrentJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.CurrentJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.DataJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.DataJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.DataJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.DensityJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.DensityJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.DensityJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.ElectricalConductanceJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.ElectricalConductanceJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.ElectricalConductanceJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.ElectricChargeJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.ElectricChargeJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.ElectricChargeJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.EnergyJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.EnergyJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.EnergyJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.FlexibilityJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.FlexibilityJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.FlexibilityJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.ForceJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.ForceJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.ForceJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.ForcePerUnitlessJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.ForcePerUnitlessJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.ForcePerUnitlessJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.FrequencyJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.FrequencyJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.FrequencyJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.IlluminanceJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.IlluminanceJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.IlluminanceJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.InductanceJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.InductanceJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.InductanceJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.JerkJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.JerkJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.JerkJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.KinematicViscosityJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.KinematicViscosityJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.KinematicViscosityJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.LengthJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.LengthJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.LengthJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.LengthPerUnitlessJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.LengthPerUnitlessJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.LengthPerUnitlessJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.LuminousFluxJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.LuminousFluxJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.LuminousFluxJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.LuminousIntensityJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.LuminousIntensityJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.LuminousIntensityJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.MagneticFieldStrengthJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.MagneticFieldStrengthJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.MagneticFieldStrengthJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.MagneticFluxJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.MagneticFluxJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.MagneticFluxJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.MassFlowJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.MassFlowJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.MassFlowJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.MassJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.MassJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.MassJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.MolarHeatCapacityJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.MolarHeatCapacityJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.MolarHeatCapacityJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.MolarMassJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.MolarMassJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.MolarMassJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.MomentumJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.MomentumJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.MomentumJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.PowerJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.PowerJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.PowerJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.PressureJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.PressureJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.PressureJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.ResistanceJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.ResistanceJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.ResistanceJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.SolidAngleJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.SolidAngleJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.SolidAngleJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.SpecificEnergyJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.SpecificEnergyJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.SpecificEnergyJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.SpecificVolumeJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.SpecificVolumeJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.SpecificVolumeJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.SpeedJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.SpeedJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.SpeedJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.StiffnessJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.StiffnessJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.StiffnessJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.TemperatureJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.TemperatureJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.TemperatureJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.TimeJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.TimeJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.TimeJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.TorqueJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.TorqueJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.TorqueJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.UnitlessJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.UnitlessJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.UnitlessJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.VoltageJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.VoltageJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.VoltageJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.VolumeJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.VolumeJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.VolumeJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.VolumetricFlowJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.VolumetricFlowJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.VolumetricFlowJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+override Gu.Units.Json.WavenumberJsonConverter.CanConvert(System.Type objectType) -> bool
+override Gu.Units.Json.WavenumberJsonConverter.ReadJson(Newtonsoft.Json.JsonReader reader, System.Type objectType, object existingValue, Newtonsoft.Json.JsonSerializer serializer) -> object
+override Gu.Units.Json.WavenumberJsonConverter.WriteJson(Newtonsoft.Json.JsonWriter writer, object value, Newtonsoft.Json.JsonSerializer serializer) -> void
+static readonly Gu.Units.Json.AccelerationJsonConverter.CentimetresPerHourSquared -> Gu.Units.Json.AccelerationJsonConverter
+static readonly Gu.Units.Json.AccelerationJsonConverter.CentimetresPerSecondSquared -> Gu.Units.Json.AccelerationJsonConverter
+static readonly Gu.Units.Json.AccelerationJsonConverter.Default -> Gu.Units.Json.AccelerationJsonConverter
+static readonly Gu.Units.Json.AccelerationJsonConverter.MetresPerHourSquared -> Gu.Units.Json.AccelerationJsonConverter
+static readonly Gu.Units.Json.AccelerationJsonConverter.MetresPerMinuteSquared -> Gu.Units.Json.AccelerationJsonConverter
+static readonly Gu.Units.Json.AccelerationJsonConverter.MetresPerSecondSquared -> Gu.Units.Json.AccelerationJsonConverter
+static readonly Gu.Units.Json.AccelerationJsonConverter.MillimetresPerHourSquared -> Gu.Units.Json.AccelerationJsonConverter
+static readonly Gu.Units.Json.AccelerationJsonConverter.MillimetresPerMinuteSquared -> Gu.Units.Json.AccelerationJsonConverter
+static readonly Gu.Units.Json.AccelerationJsonConverter.MillimetresPerSecondSquared -> Gu.Units.Json.AccelerationJsonConverter
+static readonly Gu.Units.Json.AmountOfSubstanceJsonConverter.Default -> Gu.Units.Json.AmountOfSubstanceJsonConverter
+static readonly Gu.Units.Json.AmountOfSubstanceJsonConverter.Moles -> Gu.Units.Json.AmountOfSubstanceJsonConverter
+static readonly Gu.Units.Json.AngleJsonConverter.Default -> Gu.Units.Json.AngleJsonConverter
+static readonly Gu.Units.Json.AngleJsonConverter.Degrees -> Gu.Units.Json.AngleJsonConverter
+static readonly Gu.Units.Json.AngleJsonConverter.Radians -> Gu.Units.Json.AngleJsonConverter
+static readonly Gu.Units.Json.AnglePerUnitlessJsonConverter.Default -> Gu.Units.Json.AnglePerUnitlessJsonConverter
+static readonly Gu.Units.Json.AnglePerUnitlessJsonConverter.DegreesPerPercent -> Gu.Units.Json.AnglePerUnitlessJsonConverter
+static readonly Gu.Units.Json.AnglePerUnitlessJsonConverter.RadiansPerPercent -> Gu.Units.Json.AnglePerUnitlessJsonConverter
+static readonly Gu.Units.Json.AnglePerUnitlessJsonConverter.RadiansPerUnitless -> Gu.Units.Json.AnglePerUnitlessJsonConverter
+static readonly Gu.Units.Json.AngularAccelerationJsonConverter.Default -> Gu.Units.Json.AngularAccelerationJsonConverter
+static readonly Gu.Units.Json.AngularAccelerationJsonConverter.DegreesPerHourSquared -> Gu.Units.Json.AngularAccelerationJsonConverter
+static readonly Gu.Units.Json.AngularAccelerationJsonConverter.DegreesPerMinuteSquared -> Gu.Units.Json.AngularAccelerationJsonConverter
+static readonly Gu.Units.Json.AngularAccelerationJsonConverter.DegreesPerSecondSquared -> Gu.Units.Json.AngularAccelerationJsonConverter
+static readonly Gu.Units.Json.AngularAccelerationJsonConverter.RadiansPerHourSquared -> Gu.Units.Json.AngularAccelerationJsonConverter
+static readonly Gu.Units.Json.AngularAccelerationJsonConverter.RadiansPerMinuteSquared -> Gu.Units.Json.AngularAccelerationJsonConverter
+static readonly Gu.Units.Json.AngularAccelerationJsonConverter.RadiansPerSecondSquared -> Gu.Units.Json.AngularAccelerationJsonConverter
+static readonly Gu.Units.Json.AngularJerkJsonConverter.Default -> Gu.Units.Json.AngularJerkJsonConverter
+static readonly Gu.Units.Json.AngularJerkJsonConverter.DegreesPerHourCubed -> Gu.Units.Json.AngularJerkJsonConverter
+static readonly Gu.Units.Json.AngularJerkJsonConverter.DegreesPerMinuteCubed -> Gu.Units.Json.AngularJerkJsonConverter
+static readonly Gu.Units.Json.AngularJerkJsonConverter.DegreesPerSecondCubed -> Gu.Units.Json.AngularJerkJsonConverter
+static readonly Gu.Units.Json.AngularJerkJsonConverter.RadiansPerHourCubed -> Gu.Units.Json.AngularJerkJsonConverter
+static readonly Gu.Units.Json.AngularJerkJsonConverter.RadiansPerMinuteCubed -> Gu.Units.Json.AngularJerkJsonConverter
+static readonly Gu.Units.Json.AngularJerkJsonConverter.RadiansPerSecondCubed -> Gu.Units.Json.AngularJerkJsonConverter
+static readonly Gu.Units.Json.AngularSpeedJsonConverter.Default -> Gu.Units.Json.AngularSpeedJsonConverter
+static readonly Gu.Units.Json.AngularSpeedJsonConverter.DegreesPerHour -> Gu.Units.Json.AngularSpeedJsonConverter
+static readonly Gu.Units.Json.AngularSpeedJsonConverter.DegreesPerMinute -> Gu.Units.Json.AngularSpeedJsonConverter
+static readonly Gu.Units.Json.AngularSpeedJsonConverter.DegreesPerSecond -> Gu.Units.Json.AngularSpeedJsonConverter
+static readonly Gu.Units.Json.AngularSpeedJsonConverter.RadiansPerHour -> Gu.Units.Json.AngularSpeedJsonConverter
+static readonly Gu.Units.Json.AngularSpeedJsonConverter.RadiansPerMinute -> Gu.Units.Json.AngularSpeedJsonConverter
+static readonly Gu.Units.Json.AngularSpeedJsonConverter.RadiansPerSecond -> Gu.Units.Json.AngularSpeedJsonConverter
+static readonly Gu.Units.Json.AngularSpeedJsonConverter.RevolutionsPerMinute -> Gu.Units.Json.AngularSpeedJsonConverter
+static readonly Gu.Units.Json.AreaDensityJsonConverter.Default -> Gu.Units.Json.AreaDensityJsonConverter
+static readonly Gu.Units.Json.AreaDensityJsonConverter.KilogramsPerSquareMetre -> Gu.Units.Json.AreaDensityJsonConverter
+static readonly Gu.Units.Json.AreaJsonConverter.Default -> Gu.Units.Json.AreaJsonConverter
+static readonly Gu.Units.Json.AreaJsonConverter.Hectares -> Gu.Units.Json.AreaJsonConverter
+static readonly Gu.Units.Json.AreaJsonConverter.SquareCentimetres -> Gu.Units.Json.AreaJsonConverter
+static readonly Gu.Units.Json.AreaJsonConverter.SquareDecimetres -> Gu.Units.Json.AreaJsonConverter
+static readonly Gu.Units.Json.AreaJsonConverter.SquareFeet -> Gu.Units.Json.AreaJsonConverter
+static readonly Gu.Units.Json.AreaJsonConverter.SquareInches -> Gu.Units.Json.AreaJsonConverter
+static readonly Gu.Units.Json.AreaJsonConverter.SquareKilometres -> Gu.Units.Json.AreaJsonConverter
+static readonly Gu.Units.Json.AreaJsonConverter.SquareMetres -> Gu.Units.Json.AreaJsonConverter
+static readonly Gu.Units.Json.AreaJsonConverter.SquareMile -> Gu.Units.Json.AreaJsonConverter
+static readonly Gu.Units.Json.AreaJsonConverter.SquareMillimetres -> Gu.Units.Json.AreaJsonConverter
+static readonly Gu.Units.Json.AreaJsonConverter.SquareYards -> Gu.Units.Json.AreaJsonConverter
+static readonly Gu.Units.Json.CapacitanceJsonConverter.Default -> Gu.Units.Json.CapacitanceJsonConverter
+static readonly Gu.Units.Json.CapacitanceJsonConverter.Farads -> Gu.Units.Json.CapacitanceJsonConverter
+static readonly Gu.Units.Json.CapacitanceJsonConverter.Gigafarads -> Gu.Units.Json.CapacitanceJsonConverter
+static readonly Gu.Units.Json.CapacitanceJsonConverter.Kilofarads -> Gu.Units.Json.CapacitanceJsonConverter
+static readonly Gu.Units.Json.CapacitanceJsonConverter.Megafarads -> Gu.Units.Json.CapacitanceJsonConverter
+static readonly Gu.Units.Json.CapacitanceJsonConverter.Microfarads -> Gu.Units.Json.CapacitanceJsonConverter
+static readonly Gu.Units.Json.CapacitanceJsonConverter.Millifarads -> Gu.Units.Json.CapacitanceJsonConverter
+static readonly Gu.Units.Json.CapacitanceJsonConverter.Nanofarads -> Gu.Units.Json.CapacitanceJsonConverter
+static readonly Gu.Units.Json.CatalyticActivityJsonConverter.Default -> Gu.Units.Json.CatalyticActivityJsonConverter
+static readonly Gu.Units.Json.CatalyticActivityJsonConverter.Katals -> Gu.Units.Json.CatalyticActivityJsonConverter
+static readonly Gu.Units.Json.ConductivityJsonConverter.Default -> Gu.Units.Json.ConductivityJsonConverter
+static readonly Gu.Units.Json.ConductivityJsonConverter.MicrosiemensPerCentimetre -> Gu.Units.Json.ConductivityJsonConverter
+static readonly Gu.Units.Json.ConductivityJsonConverter.MicrosiemensPerMetre -> Gu.Units.Json.ConductivityJsonConverter
+static readonly Gu.Units.Json.ConductivityJsonConverter.MicrosiemensPerMillimetre -> Gu.Units.Json.ConductivityJsonConverter
+static readonly Gu.Units.Json.ConductivityJsonConverter.MillisiemensPerCentimetre -> Gu.Units.Json.ConductivityJsonConverter
+static readonly Gu.Units.Json.ConductivityJsonConverter.MillisiemensPerMetre -> Gu.Units.Json.ConductivityJsonConverter
+static readonly Gu.Units.Json.ConductivityJsonConverter.MillisiemensPerMillimetre -> Gu.Units.Json.ConductivityJsonConverter
+static readonly Gu.Units.Json.ConductivityJsonConverter.NanosiemensPerCentimetre -> Gu.Units.Json.ConductivityJsonConverter
+static readonly Gu.Units.Json.ConductivityJsonConverter.NanosiemensPerMetre -> Gu.Units.Json.ConductivityJsonConverter
+static readonly Gu.Units.Json.ConductivityJsonConverter.NanosiemensPerMicrometre -> Gu.Units.Json.ConductivityJsonConverter
+static readonly Gu.Units.Json.ConductivityJsonConverter.NanosiemensPerMillimetre -> Gu.Units.Json.ConductivityJsonConverter
+static readonly Gu.Units.Json.ConductivityJsonConverter.SiemensPerCentimetre -> Gu.Units.Json.ConductivityJsonConverter
+static readonly Gu.Units.Json.ConductivityJsonConverter.SiemensPerMetre -> Gu.Units.Json.ConductivityJsonConverter
+static readonly Gu.Units.Json.ConductivityJsonConverter.SiemensPerMillimetre -> Gu.Units.Json.ConductivityJsonConverter
+static readonly Gu.Units.Json.CurrentJsonConverter.Amperes -> Gu.Units.Json.CurrentJsonConverter
+static readonly Gu.Units.Json.CurrentJsonConverter.Default -> Gu.Units.Json.CurrentJsonConverter
+static readonly Gu.Units.Json.CurrentJsonConverter.Gigaamperes -> Gu.Units.Json.CurrentJsonConverter
+static readonly Gu.Units.Json.CurrentJsonConverter.Kiloamperes -> Gu.Units.Json.CurrentJsonConverter
+static readonly Gu.Units.Json.CurrentJsonConverter.Megaamperes -> Gu.Units.Json.CurrentJsonConverter
+static readonly Gu.Units.Json.CurrentJsonConverter.Microamperes -> Gu.Units.Json.CurrentJsonConverter
+static readonly Gu.Units.Json.CurrentJsonConverter.Milliamperes -> Gu.Units.Json.CurrentJsonConverter
+static readonly Gu.Units.Json.CurrentJsonConverter.Nanoamperes -> Gu.Units.Json.CurrentJsonConverter
+static readonly Gu.Units.Json.DataJsonConverter.Bits -> Gu.Units.Json.DataJsonConverter
+static readonly Gu.Units.Json.DataJsonConverter.Byte -> Gu.Units.Json.DataJsonConverter
+static readonly Gu.Units.Json.DataJsonConverter.Default -> Gu.Units.Json.DataJsonConverter
+static readonly Gu.Units.Json.DataJsonConverter.Gigabits -> Gu.Units.Json.DataJsonConverter
+static readonly Gu.Units.Json.DataJsonConverter.Gigabyte -> Gu.Units.Json.DataJsonConverter
+static readonly Gu.Units.Json.DataJsonConverter.Kilobits -> Gu.Units.Json.DataJsonConverter
+static readonly Gu.Units.Json.DataJsonConverter.Kilobyte -> Gu.Units.Json.DataJsonConverter
+static readonly Gu.Units.Json.DataJsonConverter.Megabits -> Gu.Units.Json.DataJsonConverter
+static readonly Gu.Units.Json.DataJsonConverter.Megabyte -> Gu.Units.Json.DataJsonConverter
+static readonly Gu.Units.Json.DataJsonConverter.Terabyte -> Gu.Units.Json.DataJsonConverter
+static readonly Gu.Units.Json.DensityJsonConverter.Default -> Gu.Units.Json.DensityJsonConverter
+static readonly Gu.Units.Json.DensityJsonConverter.GramsPerCubicCentimetre -> Gu.Units.Json.DensityJsonConverter
+static readonly Gu.Units.Json.DensityJsonConverter.GramsPerCubicMetre -> Gu.Units.Json.DensityJsonConverter
+static readonly Gu.Units.Json.DensityJsonConverter.GramsPerCubicMillimetre -> Gu.Units.Json.DensityJsonConverter
+static readonly Gu.Units.Json.DensityJsonConverter.KilogramsPerCubicMetre -> Gu.Units.Json.DensityJsonConverter
+static readonly Gu.Units.Json.DensityJsonConverter.MilligramsPerCubicMetre -> Gu.Units.Json.DensityJsonConverter
+static readonly Gu.Units.Json.DensityJsonConverter.MilligramsPerCubicMillimetre -> Gu.Units.Json.DensityJsonConverter
+static readonly Gu.Units.Json.ElectricalConductanceJsonConverter.Default -> Gu.Units.Json.ElectricalConductanceJsonConverter
+static readonly Gu.Units.Json.ElectricalConductanceJsonConverter.Microsiemens -> Gu.Units.Json.ElectricalConductanceJsonConverter
+static readonly Gu.Units.Json.ElectricalConductanceJsonConverter.Millisiemens -> Gu.Units.Json.ElectricalConductanceJsonConverter
+static readonly Gu.Units.Json.ElectricalConductanceJsonConverter.Nanosiemens -> Gu.Units.Json.ElectricalConductanceJsonConverter
+static readonly Gu.Units.Json.ElectricalConductanceJsonConverter.Siemens -> Gu.Units.Json.ElectricalConductanceJsonConverter
+static readonly Gu.Units.Json.ElectricChargeJsonConverter.Coulombs -> Gu.Units.Json.ElectricChargeJsonConverter
+static readonly Gu.Units.Json.ElectricChargeJsonConverter.Default -> Gu.Units.Json.ElectricChargeJsonConverter
+static readonly Gu.Units.Json.ElectricChargeJsonConverter.Gigacoulombs -> Gu.Units.Json.ElectricChargeJsonConverter
+static readonly Gu.Units.Json.ElectricChargeJsonConverter.Kilocoulombs -> Gu.Units.Json.ElectricChargeJsonConverter
+static readonly Gu.Units.Json.ElectricChargeJsonConverter.Megacoulombs -> Gu.Units.Json.ElectricChargeJsonConverter
+static readonly Gu.Units.Json.ElectricChargeJsonConverter.Microcoulombs -> Gu.Units.Json.ElectricChargeJsonConverter
+static readonly Gu.Units.Json.ElectricChargeJsonConverter.Millicoulombs -> Gu.Units.Json.ElectricChargeJsonConverter
+static readonly Gu.Units.Json.ElectricChargeJsonConverter.Nanocoulombs -> Gu.Units.Json.ElectricChargeJsonConverter
+static readonly Gu.Units.Json.EnergyJsonConverter.Default -> Gu.Units.Json.EnergyJsonConverter
+static readonly Gu.Units.Json.EnergyJsonConverter.Gigajoules -> Gu.Units.Json.EnergyJsonConverter
+static readonly Gu.Units.Json.EnergyJsonConverter.Joules -> Gu.Units.Json.EnergyJsonConverter
+static readonly Gu.Units.Json.EnergyJsonConverter.Kilojoules -> Gu.Units.Json.EnergyJsonConverter
+static readonly Gu.Units.Json.EnergyJsonConverter.KilowattHours -> Gu.Units.Json.EnergyJsonConverter
+static readonly Gu.Units.Json.EnergyJsonConverter.Megajoules -> Gu.Units.Json.EnergyJsonConverter
+static readonly Gu.Units.Json.EnergyJsonConverter.Microjoules -> Gu.Units.Json.EnergyJsonConverter
+static readonly Gu.Units.Json.EnergyJsonConverter.Millijoules -> Gu.Units.Json.EnergyJsonConverter
+static readonly Gu.Units.Json.EnergyJsonConverter.Nanojoules -> Gu.Units.Json.EnergyJsonConverter
+static readonly Gu.Units.Json.FlexibilityJsonConverter.Default -> Gu.Units.Json.FlexibilityJsonConverter
+static readonly Gu.Units.Json.FlexibilityJsonConverter.MetresPerNewton -> Gu.Units.Json.FlexibilityJsonConverter
+static readonly Gu.Units.Json.FlexibilityJsonConverter.MicrometresPerKilonewton -> Gu.Units.Json.FlexibilityJsonConverter
+static readonly Gu.Units.Json.FlexibilityJsonConverter.MillimetresPerKilonewton -> Gu.Units.Json.FlexibilityJsonConverter
+static readonly Gu.Units.Json.FlexibilityJsonConverter.MillimetresPerNewton -> Gu.Units.Json.FlexibilityJsonConverter
+static readonly Gu.Units.Json.ForceJsonConverter.Default -> Gu.Units.Json.ForceJsonConverter
+static readonly Gu.Units.Json.ForceJsonConverter.Giganewtons -> Gu.Units.Json.ForceJsonConverter
+static readonly Gu.Units.Json.ForceJsonConverter.Kilonewtons -> Gu.Units.Json.ForceJsonConverter
+static readonly Gu.Units.Json.ForceJsonConverter.Meganewtons -> Gu.Units.Json.ForceJsonConverter
+static readonly Gu.Units.Json.ForceJsonConverter.Micronewtons -> Gu.Units.Json.ForceJsonConverter
+static readonly Gu.Units.Json.ForceJsonConverter.Millinewtons -> Gu.Units.Json.ForceJsonConverter
+static readonly Gu.Units.Json.ForceJsonConverter.Nanonewtons -> Gu.Units.Json.ForceJsonConverter
+static readonly Gu.Units.Json.ForceJsonConverter.Newtons -> Gu.Units.Json.ForceJsonConverter
+static readonly Gu.Units.Json.ForcePerUnitlessJsonConverter.Default -> Gu.Units.Json.ForcePerUnitlessJsonConverter
+static readonly Gu.Units.Json.ForcePerUnitlessJsonConverter.GiganewtonsPerPercent -> Gu.Units.Json.ForcePerUnitlessJsonConverter
+static readonly Gu.Units.Json.ForcePerUnitlessJsonConverter.KilonewtonsPerPercent -> Gu.Units.Json.ForcePerUnitlessJsonConverter
+static readonly Gu.Units.Json.ForcePerUnitlessJsonConverter.MeganewtonsPerPercent -> Gu.Units.Json.ForcePerUnitlessJsonConverter
+static readonly Gu.Units.Json.ForcePerUnitlessJsonConverter.NewtonsPerPercent -> Gu.Units.Json.ForcePerUnitlessJsonConverter
+static readonly Gu.Units.Json.ForcePerUnitlessJsonConverter.NewtonsPerUnitless -> Gu.Units.Json.ForcePerUnitlessJsonConverter
+static readonly Gu.Units.Json.FrequencyJsonConverter.Default -> Gu.Units.Json.FrequencyJsonConverter
+static readonly Gu.Units.Json.FrequencyJsonConverter.Gigahertz -> Gu.Units.Json.FrequencyJsonConverter
+static readonly Gu.Units.Json.FrequencyJsonConverter.Hertz -> Gu.Units.Json.FrequencyJsonConverter
+static readonly Gu.Units.Json.FrequencyJsonConverter.Kilohertz -> Gu.Units.Json.FrequencyJsonConverter
+static readonly Gu.Units.Json.FrequencyJsonConverter.Megahertz -> Gu.Units.Json.FrequencyJsonConverter
+static readonly Gu.Units.Json.FrequencyJsonConverter.Millihertz -> Gu.Units.Json.FrequencyJsonConverter
+static readonly Gu.Units.Json.IlluminanceJsonConverter.Default -> Gu.Units.Json.IlluminanceJsonConverter
+static readonly Gu.Units.Json.IlluminanceJsonConverter.Lux -> Gu.Units.Json.IlluminanceJsonConverter
+static readonly Gu.Units.Json.InductanceJsonConverter.Default -> Gu.Units.Json.InductanceJsonConverter
+static readonly Gu.Units.Json.InductanceJsonConverter.Gigahenrys -> Gu.Units.Json.InductanceJsonConverter
+static readonly Gu.Units.Json.InductanceJsonConverter.Henrys -> Gu.Units.Json.InductanceJsonConverter
+static readonly Gu.Units.Json.InductanceJsonConverter.Kilohenrys -> Gu.Units.Json.InductanceJsonConverter
+static readonly Gu.Units.Json.InductanceJsonConverter.Megahenrys -> Gu.Units.Json.InductanceJsonConverter
+static readonly Gu.Units.Json.InductanceJsonConverter.Microhenrys -> Gu.Units.Json.InductanceJsonConverter
+static readonly Gu.Units.Json.InductanceJsonConverter.Millihenrys -> Gu.Units.Json.InductanceJsonConverter
+static readonly Gu.Units.Json.InductanceJsonConverter.Nanohenrys -> Gu.Units.Json.InductanceJsonConverter
+static readonly Gu.Units.Json.JerkJsonConverter.CentimetresPerHourCubed -> Gu.Units.Json.JerkJsonConverter
+static readonly Gu.Units.Json.JerkJsonConverter.CentimetresPerMinuteCubed -> Gu.Units.Json.JerkJsonConverter
+static readonly Gu.Units.Json.JerkJsonConverter.CentimetresPerSecondCubed -> Gu.Units.Json.JerkJsonConverter
+static readonly Gu.Units.Json.JerkJsonConverter.Default -> Gu.Units.Json.JerkJsonConverter
+static readonly Gu.Units.Json.JerkJsonConverter.MetresPerHourCubed -> Gu.Units.Json.JerkJsonConverter
+static readonly Gu.Units.Json.JerkJsonConverter.MetresPerMinuteCubed -> Gu.Units.Json.JerkJsonConverter
+static readonly Gu.Units.Json.JerkJsonConverter.MetresPerSecondCubed -> Gu.Units.Json.JerkJsonConverter
+static readonly Gu.Units.Json.JerkJsonConverter.MillimetresPerHourCubed -> Gu.Units.Json.JerkJsonConverter
+static readonly Gu.Units.Json.JerkJsonConverter.MillimetresPerMinuteCubed -> Gu.Units.Json.JerkJsonConverter
+static readonly Gu.Units.Json.JerkJsonConverter.MillimetresPerSecondCubed -> Gu.Units.Json.JerkJsonConverter
+static readonly Gu.Units.Json.KinematicViscosityJsonConverter.Default -> Gu.Units.Json.KinematicViscosityJsonConverter
+static readonly Gu.Units.Json.KinematicViscosityJsonConverter.SquareMetresPerSecond -> Gu.Units.Json.KinematicViscosityJsonConverter
+static readonly Gu.Units.Json.LengthJsonConverter.Centimetres -> Gu.Units.Json.LengthJsonConverter
+static readonly Gu.Units.Json.LengthJsonConverter.Decimetres -> Gu.Units.Json.LengthJsonConverter
+static readonly Gu.Units.Json.LengthJsonConverter.Default -> Gu.Units.Json.LengthJsonConverter
+static readonly Gu.Units.Json.LengthJsonConverter.Feet -> Gu.Units.Json.LengthJsonConverter
+static readonly Gu.Units.Json.LengthJsonConverter.Inches -> Gu.Units.Json.LengthJsonConverter
+static readonly Gu.Units.Json.LengthJsonConverter.Kilometres -> Gu.Units.Json.LengthJsonConverter
+static readonly Gu.Units.Json.LengthJsonConverter.Metres -> Gu.Units.Json.LengthJsonConverter
+static readonly Gu.Units.Json.LengthJsonConverter.Micrometres -> Gu.Units.Json.LengthJsonConverter
+static readonly Gu.Units.Json.LengthJsonConverter.Miles -> Gu.Units.Json.LengthJsonConverter
+static readonly Gu.Units.Json.LengthJsonConverter.Millimetres -> Gu.Units.Json.LengthJsonConverter
+static readonly Gu.Units.Json.LengthJsonConverter.Nanometres -> Gu.Units.Json.LengthJsonConverter
+static readonly Gu.Units.Json.LengthJsonConverter.NauticalMiles -> Gu.Units.Json.LengthJsonConverter
+static readonly Gu.Units.Json.LengthJsonConverter.Yards -> Gu.Units.Json.LengthJsonConverter
+static readonly Gu.Units.Json.LengthPerUnitlessJsonConverter.Default -> Gu.Units.Json.LengthPerUnitlessJsonConverter
+static readonly Gu.Units.Json.LengthPerUnitlessJsonConverter.MetresPerPercent -> Gu.Units.Json.LengthPerUnitlessJsonConverter
+static readonly Gu.Units.Json.LengthPerUnitlessJsonConverter.MetresPerUnitless -> Gu.Units.Json.LengthPerUnitlessJsonConverter
+static readonly Gu.Units.Json.LengthPerUnitlessJsonConverter.MicrometresPerPercent -> Gu.Units.Json.LengthPerUnitlessJsonConverter
+static readonly Gu.Units.Json.LengthPerUnitlessJsonConverter.MillimetresPerPercent -> Gu.Units.Json.LengthPerUnitlessJsonConverter
+static readonly Gu.Units.Json.LuminousFluxJsonConverter.Default -> Gu.Units.Json.LuminousFluxJsonConverter
+static readonly Gu.Units.Json.LuminousFluxJsonConverter.Lumens -> Gu.Units.Json.LuminousFluxJsonConverter
+static readonly Gu.Units.Json.LuminousIntensityJsonConverter.Candelas -> Gu.Units.Json.LuminousIntensityJsonConverter
+static readonly Gu.Units.Json.LuminousIntensityJsonConverter.Default -> Gu.Units.Json.LuminousIntensityJsonConverter
+static readonly Gu.Units.Json.MagneticFieldStrengthJsonConverter.Default -> Gu.Units.Json.MagneticFieldStrengthJsonConverter
+static readonly Gu.Units.Json.MagneticFieldStrengthJsonConverter.Teslas -> Gu.Units.Json.MagneticFieldStrengthJsonConverter
+static readonly Gu.Units.Json.MagneticFluxJsonConverter.Default -> Gu.Units.Json.MagneticFluxJsonConverter
+static readonly Gu.Units.Json.MagneticFluxJsonConverter.Webers -> Gu.Units.Json.MagneticFluxJsonConverter
+static readonly Gu.Units.Json.MassFlowJsonConverter.Default -> Gu.Units.Json.MassFlowJsonConverter
+static readonly Gu.Units.Json.MassFlowJsonConverter.KilogramsPerSecond -> Gu.Units.Json.MassFlowJsonConverter
+static readonly Gu.Units.Json.MassJsonConverter.AvoirdupoisOunces -> Gu.Units.Json.MassJsonConverter
+static readonly Gu.Units.Json.MassJsonConverter.AvoirdupoisPounds -> Gu.Units.Json.MassJsonConverter
+static readonly Gu.Units.Json.MassJsonConverter.Default -> Gu.Units.Json.MassJsonConverter
+static readonly Gu.Units.Json.MassJsonConverter.Grams -> Gu.Units.Json.MassJsonConverter
+static readonly Gu.Units.Json.MassJsonConverter.Kilograms -> Gu.Units.Json.MassJsonConverter
+static readonly Gu.Units.Json.MassJsonConverter.Micrograms -> Gu.Units.Json.MassJsonConverter
+static readonly Gu.Units.Json.MassJsonConverter.Milligrams -> Gu.Units.Json.MassJsonConverter
+static readonly Gu.Units.Json.MassJsonConverter.TroyGrains -> Gu.Units.Json.MassJsonConverter
+static readonly Gu.Units.Json.MassJsonConverter.TroyOunces -> Gu.Units.Json.MassJsonConverter
+static readonly Gu.Units.Json.MolarHeatCapacityJsonConverter.Default -> Gu.Units.Json.MolarHeatCapacityJsonConverter
+static readonly Gu.Units.Json.MolarHeatCapacityJsonConverter.JoulesPerKelvinMole -> Gu.Units.Json.MolarHeatCapacityJsonConverter
+static readonly Gu.Units.Json.MolarMassJsonConverter.Default -> Gu.Units.Json.MolarMassJsonConverter
+static readonly Gu.Units.Json.MolarMassJsonConverter.GramsPerMole -> Gu.Units.Json.MolarMassJsonConverter
+static readonly Gu.Units.Json.MolarMassJsonConverter.KilogramsPerMole -> Gu.Units.Json.MolarMassJsonConverter
+static readonly Gu.Units.Json.MomentumJsonConverter.Default -> Gu.Units.Json.MomentumJsonConverter
+static readonly Gu.Units.Json.MomentumJsonConverter.NewtonSecond -> Gu.Units.Json.MomentumJsonConverter
+static readonly Gu.Units.Json.PowerJsonConverter.Default -> Gu.Units.Json.PowerJsonConverter
+static readonly Gu.Units.Json.PowerJsonConverter.Gigawatts -> Gu.Units.Json.PowerJsonConverter
+static readonly Gu.Units.Json.PowerJsonConverter.Kilowatts -> Gu.Units.Json.PowerJsonConverter
+static readonly Gu.Units.Json.PowerJsonConverter.Megawatts -> Gu.Units.Json.PowerJsonConverter
+static readonly Gu.Units.Json.PowerJsonConverter.Microwatts -> Gu.Units.Json.PowerJsonConverter
+static readonly Gu.Units.Json.PowerJsonConverter.Milliwatts -> Gu.Units.Json.PowerJsonConverter
+static readonly Gu.Units.Json.PowerJsonConverter.Nanowatts -> Gu.Units.Json.PowerJsonConverter
+static readonly Gu.Units.Json.PowerJsonConverter.Watts -> Gu.Units.Json.PowerJsonConverter
+static readonly Gu.Units.Json.PressureJsonConverter.Bars -> Gu.Units.Json.PressureJsonConverter
+static readonly Gu.Units.Json.PressureJsonConverter.Default -> Gu.Units.Json.PressureJsonConverter
+static readonly Gu.Units.Json.PressureJsonConverter.Gigapascals -> Gu.Units.Json.PressureJsonConverter
+static readonly Gu.Units.Json.PressureJsonConverter.KilonewtonsPerSquareMillimetre -> Gu.Units.Json.PressureJsonConverter
+static readonly Gu.Units.Json.PressureJsonConverter.Kilopascals -> Gu.Units.Json.PressureJsonConverter
+static readonly Gu.Units.Json.PressureJsonConverter.Megapascals -> Gu.Units.Json.PressureJsonConverter
+static readonly Gu.Units.Json.PressureJsonConverter.Micropascals -> Gu.Units.Json.PressureJsonConverter
+static readonly Gu.Units.Json.PressureJsonConverter.Millibars -> Gu.Units.Json.PressureJsonConverter
+static readonly Gu.Units.Json.PressureJsonConverter.Millipascals -> Gu.Units.Json.PressureJsonConverter
+static readonly Gu.Units.Json.PressureJsonConverter.Nanopascals -> Gu.Units.Json.PressureJsonConverter
+static readonly Gu.Units.Json.PressureJsonConverter.NewtonsPerSquareMetre -> Gu.Units.Json.PressureJsonConverter
+static readonly Gu.Units.Json.PressureJsonConverter.NewtonsPerSquareMillimetre -> Gu.Units.Json.PressureJsonConverter
+static readonly Gu.Units.Json.PressureJsonConverter.Pascals -> Gu.Units.Json.PressureJsonConverter
+static readonly Gu.Units.Json.ResistanceJsonConverter.Default -> Gu.Units.Json.ResistanceJsonConverter
+static readonly Gu.Units.Json.ResistanceJsonConverter.Kiloohms -> Gu.Units.Json.ResistanceJsonConverter
+static readonly Gu.Units.Json.ResistanceJsonConverter.Megaohms -> Gu.Units.Json.ResistanceJsonConverter
+static readonly Gu.Units.Json.ResistanceJsonConverter.Microohms -> Gu.Units.Json.ResistanceJsonConverter
+static readonly Gu.Units.Json.ResistanceJsonConverter.Milliohms -> Gu.Units.Json.ResistanceJsonConverter
+static readonly Gu.Units.Json.ResistanceJsonConverter.Ohms -> Gu.Units.Json.ResistanceJsonConverter
+static readonly Gu.Units.Json.SolidAngleJsonConverter.Default -> Gu.Units.Json.SolidAngleJsonConverter
+static readonly Gu.Units.Json.SolidAngleJsonConverter.Steradians -> Gu.Units.Json.SolidAngleJsonConverter
+static readonly Gu.Units.Json.SpecificEnergyJsonConverter.Default -> Gu.Units.Json.SpecificEnergyJsonConverter
+static readonly Gu.Units.Json.SpecificEnergyJsonConverter.JoulesPerKilogram -> Gu.Units.Json.SpecificEnergyJsonConverter
+static readonly Gu.Units.Json.SpecificEnergyJsonConverter.KilojoulesPerKilogram -> Gu.Units.Json.SpecificEnergyJsonConverter
+static readonly Gu.Units.Json.SpecificVolumeJsonConverter.CubicCentimetresPerGram -> Gu.Units.Json.SpecificVolumeJsonConverter
+static readonly Gu.Units.Json.SpecificVolumeJsonConverter.CubicMetresPerGram -> Gu.Units.Json.SpecificVolumeJsonConverter
+static readonly Gu.Units.Json.SpecificVolumeJsonConverter.CubicMetresPerKilogram -> Gu.Units.Json.SpecificVolumeJsonConverter
+static readonly Gu.Units.Json.SpecificVolumeJsonConverter.Default -> Gu.Units.Json.SpecificVolumeJsonConverter
+static readonly Gu.Units.Json.SpeedJsonConverter.CentimetresPerHour -> Gu.Units.Json.SpeedJsonConverter
+static readonly Gu.Units.Json.SpeedJsonConverter.CentimetresPerMinute -> Gu.Units.Json.SpeedJsonConverter
+static readonly Gu.Units.Json.SpeedJsonConverter.CentimetresPerSecond -> Gu.Units.Json.SpeedJsonConverter
+static readonly Gu.Units.Json.SpeedJsonConverter.Default -> Gu.Units.Json.SpeedJsonConverter
+static readonly Gu.Units.Json.SpeedJsonConverter.KilometresPerHour -> Gu.Units.Json.SpeedJsonConverter
+static readonly Gu.Units.Json.SpeedJsonConverter.MetresPerHour -> Gu.Units.Json.SpeedJsonConverter
+static readonly Gu.Units.Json.SpeedJsonConverter.MetresPerMinute -> Gu.Units.Json.SpeedJsonConverter
+static readonly Gu.Units.Json.SpeedJsonConverter.MetresPerSecond -> Gu.Units.Json.SpeedJsonConverter
+static readonly Gu.Units.Json.SpeedJsonConverter.MillimetresPerHour -> Gu.Units.Json.SpeedJsonConverter
+static readonly Gu.Units.Json.SpeedJsonConverter.MillimetresPerMinute -> Gu.Units.Json.SpeedJsonConverter
+static readonly Gu.Units.Json.SpeedJsonConverter.MillimetresPerSecond -> Gu.Units.Json.SpeedJsonConverter
+static readonly Gu.Units.Json.StiffnessJsonConverter.Default -> Gu.Units.Json.StiffnessJsonConverter
+static readonly Gu.Units.Json.StiffnessJsonConverter.GiganewtonsPerMicrometre -> Gu.Units.Json.StiffnessJsonConverter
+static readonly Gu.Units.Json.StiffnessJsonConverter.GiganewtonsPerMillimetre -> Gu.Units.Json.StiffnessJsonConverter
+static readonly Gu.Units.Json.StiffnessJsonConverter.KilonewtonsPerMicrometre -> Gu.Units.Json.StiffnessJsonConverter
+static readonly Gu.Units.Json.StiffnessJsonConverter.KilonewtonsPerMillimetre -> Gu.Units.Json.StiffnessJsonConverter
+static readonly Gu.Units.Json.StiffnessJsonConverter.KilonewtonsPerNanometre -> Gu.Units.Json.StiffnessJsonConverter
+static readonly Gu.Units.Json.StiffnessJsonConverter.MeganewtonsPerMicrometre -> Gu.Units.Json.StiffnessJsonConverter
+static readonly Gu.Units.Json.StiffnessJsonConverter.MeganewtonsPerMillimetre -> Gu.Units.Json.StiffnessJsonConverter
+static readonly Gu.Units.Json.StiffnessJsonConverter.MeganewtonsPerNanometre -> Gu.Units.Json.StiffnessJsonConverter
+static readonly Gu.Units.Json.StiffnessJsonConverter.NewtonsPerMetre -> Gu.Units.Json.StiffnessJsonConverter
+static readonly Gu.Units.Json.StiffnessJsonConverter.NewtonsPerMicrometre -> Gu.Units.Json.StiffnessJsonConverter
+static readonly Gu.Units.Json.StiffnessJsonConverter.NewtonsPerMillimetre -> Gu.Units.Json.StiffnessJsonConverter
+static readonly Gu.Units.Json.StiffnessJsonConverter.NewtonsPerNanometre -> Gu.Units.Json.StiffnessJsonConverter
+static readonly Gu.Units.Json.TemperatureJsonConverter.Celsius -> Gu.Units.Json.TemperatureJsonConverter
+static readonly Gu.Units.Json.TemperatureJsonConverter.Default -> Gu.Units.Json.TemperatureJsonConverter
+static readonly Gu.Units.Json.TemperatureJsonConverter.Fahrenheit -> Gu.Units.Json.TemperatureJsonConverter
+static readonly Gu.Units.Json.TemperatureJsonConverter.Kelvin -> Gu.Units.Json.TemperatureJsonConverter
+static readonly Gu.Units.Json.TimeJsonConverter.Days -> Gu.Units.Json.TimeJsonConverter
+static readonly Gu.Units.Json.TimeJsonConverter.Default -> Gu.Units.Json.TimeJsonConverter
+static readonly Gu.Units.Json.TimeJsonConverter.Hours -> Gu.Units.Json.TimeJsonConverter
+static readonly Gu.Units.Json.TimeJsonConverter.Microseconds -> Gu.Units.Json.TimeJsonConverter
+static readonly Gu.Units.Json.TimeJsonConverter.Milliseconds -> Gu.Units.Json.TimeJsonConverter
+static readonly Gu.Units.Json.TimeJsonConverter.Minutes -> Gu.Units.Json.TimeJsonConverter
+static readonly Gu.Units.Json.TimeJsonConverter.Nanoseconds -> Gu.Units.Json.TimeJsonConverter
+static readonly Gu.Units.Json.TimeJsonConverter.Seconds -> Gu.Units.Json.TimeJsonConverter
+static readonly Gu.Units.Json.TorqueJsonConverter.Default -> Gu.Units.Json.TorqueJsonConverter
+static readonly Gu.Units.Json.TorqueJsonConverter.NewtonMetres -> Gu.Units.Json.TorqueJsonConverter
+static readonly Gu.Units.Json.UnitlessJsonConverter.Default -> Gu.Units.Json.UnitlessJsonConverter
+static readonly Gu.Units.Json.UnitlessJsonConverter.PartsPerMillion -> Gu.Units.Json.UnitlessJsonConverter
+static readonly Gu.Units.Json.UnitlessJsonConverter.Percents -> Gu.Units.Json.UnitlessJsonConverter
+static readonly Gu.Units.Json.UnitlessJsonConverter.Promilles -> Gu.Units.Json.UnitlessJsonConverter
+static readonly Gu.Units.Json.UnitlessJsonConverter.Scalar -> Gu.Units.Json.UnitlessJsonConverter
+static readonly Gu.Units.Json.VoltageJsonConverter.Default -> Gu.Units.Json.VoltageJsonConverter
+static readonly Gu.Units.Json.VoltageJsonConverter.Gigavolts -> Gu.Units.Json.VoltageJsonConverter
+static readonly Gu.Units.Json.VoltageJsonConverter.Kilovolts -> Gu.Units.Json.VoltageJsonConverter
+static readonly Gu.Units.Json.VoltageJsonConverter.Megavolts -> Gu.Units.Json.VoltageJsonConverter
+static readonly Gu.Units.Json.VoltageJsonConverter.Microvolts -> Gu.Units.Json.VoltageJsonConverter
+static readonly Gu.Units.Json.VoltageJsonConverter.Millivolts -> Gu.Units.Json.VoltageJsonConverter
+static readonly Gu.Units.Json.VoltageJsonConverter.Nanovolts -> Gu.Units.Json.VoltageJsonConverter
+static readonly Gu.Units.Json.VoltageJsonConverter.Volts -> Gu.Units.Json.VoltageJsonConverter
+static readonly Gu.Units.Json.VolumeJsonConverter.Centilitres -> Gu.Units.Json.VolumeJsonConverter
+static readonly Gu.Units.Json.VolumeJsonConverter.CubicCentimetres -> Gu.Units.Json.VolumeJsonConverter
+static readonly Gu.Units.Json.VolumeJsonConverter.CubicDecimetres -> Gu.Units.Json.VolumeJsonConverter
+static readonly Gu.Units.Json.VolumeJsonConverter.CubicFeet -> Gu.Units.Json.VolumeJsonConverter
+static readonly Gu.Units.Json.VolumeJsonConverter.CubicInches -> Gu.Units.Json.VolumeJsonConverter
+static readonly Gu.Units.Json.VolumeJsonConverter.CubicMetres -> Gu.Units.Json.VolumeJsonConverter
+static readonly Gu.Units.Json.VolumeJsonConverter.CubicMillimetres -> Gu.Units.Json.VolumeJsonConverter
+static readonly Gu.Units.Json.VolumeJsonConverter.Decilitres -> Gu.Units.Json.VolumeJsonConverter
+static readonly Gu.Units.Json.VolumeJsonConverter.Default -> Gu.Units.Json.VolumeJsonConverter
+static readonly Gu.Units.Json.VolumeJsonConverter.Litres -> Gu.Units.Json.VolumeJsonConverter
+static readonly Gu.Units.Json.VolumeJsonConverter.Millilitres -> Gu.Units.Json.VolumeJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.CentilitresPerHour -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.CentilitresPerMinute -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.CentilitresPerSecond -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.CubicFeetPerDay -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.CubicFeetPerHour -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.CubicFeetPerMinute -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.CubicFeetPerSecond -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.CubicMetresPerHour -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.CubicMetresPerMinute -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.CubicMetresPerSecond -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.Default -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.LitresPerHour -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.LitresPerMinute -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.LitresPerSecond -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.MillilitresPerHour -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.MillilitresPerMinute -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.VolumetricFlowJsonConverter.MillilitresPerSecond -> Gu.Units.Json.VolumetricFlowJsonConverter
+static readonly Gu.Units.Json.WavenumberJsonConverter.Default -> Gu.Units.Json.WavenumberJsonConverter
+static readonly Gu.Units.Json.WavenumberJsonConverter.ReciprocalMetres -> Gu.Units.Json.WavenumberJsonConverter
