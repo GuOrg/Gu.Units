@@ -3,7 +3,7 @@ namespace Gu.Units.Generator.CodeGen
 {
     using System.Text;
 
-    public static class TypeConverterGenerator
+    public static class QuantityTypeConverterGenerator
     {
         public static string Code(Quantity quantity)
         {

@@ -1,4 +1,4 @@
-﻿namespace Gu.Units.Wpf.Proxies
+namespace Gu.Units.Wpf.Proxies
 {
     /// <summary>
     /// Proxy class for accessing units from xaml.

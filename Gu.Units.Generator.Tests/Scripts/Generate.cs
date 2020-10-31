@@ -13,7 +13,7 @@
         [Test]
         public static void Dump()
         {
-            foreach (var line in File.ReadAllLines("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Generator\\Templates\\UnitTypeConverter.tt"))
+            foreach (var line in File.ReadAllLines("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Generator\\Templates\\UnitWpf.tt"))
             {
                 if (line.Length == 0)
                 {
@@ -55,12 +55,12 @@
         }
 
         [Test]
-        public static void WriteTypeConverters()
+        public static void WriteQuantityTypeConverters()
         {
             var settings = Settings();
             foreach (var quantity in settings.Quantities)
             {
-                File.WriteAllText($"C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\{quantity.Name}TypeConverter.generated.cs", TypeConverterGenerator.Code(quantity));
+                File.WriteAllText($"C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\{quantity.Name}TypeConverter.generated.cs", QuantityTypeConverterGenerator.Code(quantity));
             }
         }
 
@@ -81,6 +81,16 @@
             foreach (var unit in settings.AllUnits)
             {
                 File.WriteAllText($"C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\{unit.ClassName}TypeConverter.generated.cs", UnitTypeConverterGenerator.Code(unit));
+            }
+        }
+
+        [Test]
+        public static void WriteUnitWpfProxys()
+        {
+            var settings = Settings();
+            foreach (var unit in settings.AllUnits)
+            {
+                File.WriteAllText($"C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Wpf\\{unit.ClassName}.generated.cs", UnitWpfProxyGenerator.Code(unit));
             }
         }
 

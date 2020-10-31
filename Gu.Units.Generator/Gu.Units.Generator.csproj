@@ -18,27 +18,6 @@
 
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-    <EmbeddedResource Include="Templates\TemplateFilemanager.CS.ttinclude" />
-
-    <None Update="Templates\UnitWpf.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UnitWpf.txt</LastGenOutput>
-    </None>
-    <None Update="Templates\UnitWpf.txt">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>UnitWpf.tt</DependentUpon>
-    </None>
-
-    <None Update="Templates\UnitsWpf.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UnitsWpf.txt</LastGenOutput>
-    </None>
-    <None Update="Templates\UnitsWpf.txt">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>UnitsWpf.tt</DependentUpon>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
