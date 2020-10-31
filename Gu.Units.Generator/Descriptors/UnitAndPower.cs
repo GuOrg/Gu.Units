@@ -67,22 +67,7 @@
 
         public override bool Equals(object obj)
         {
-            if (obj is null)
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, obj))
-            {
-                return true;
-            }
-
-            if (obj.GetType() != typeof(UnitAndPower))
-            {
-                return false;
-            }
-
-            return this.Equals((UnitAndPower)obj);
+            return obj is UnitAndPower uap && this.Equals(uap);
         }
 
         public override int GetHashCode()

@@ -87,22 +87,7 @@
 
         public override bool Equals(object? obj)
         {
-            if (obj is null)
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, obj))
-            {
-                return true;
-            }
-
-            if (obj.GetType() != typeof(QuantityFormat<TUnit>))
-            {
-                return false;
-            }
-
-            return this.Equals((QuantityFormat<TUnit>)obj);
+            return obj is QuantityFormat<TUnit> format && this.Equals(format);
         }
 
         public override int GetHashCode()

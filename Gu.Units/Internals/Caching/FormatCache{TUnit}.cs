@@ -95,7 +95,9 @@
 
             public override int GetHashCode()
             {
+#pragma warning disable CA1307 // Specify StringComparison for clarity
                 return this.CompositeFormat?.GetHashCode() ?? 0;
+#pragma warning restore CA1307 // Specify StringComparison for clarity
             }
         }
 
@@ -132,21 +134,11 @@
 
             public bool Equals(IFormatKey? other)
             {
-                if (other is null)
-                {
-                    return false;
-                }
-
                 return other is ValueAndUnitFormatKey key && this.Equals(key);
             }
 
             public override bool Equals(object? obj)
             {
-                if (obj is null)
-                {
-                    return false;
-                }
-
                 return obj is ValueAndUnitFormatKey key && this.Equals(key);
             }
 
@@ -192,21 +184,11 @@
 
             public bool Equals(IFormatKey? other)
             {
-                if (other is null)
-                {
-                    return false;
-                }
-
                 return other is ValueAndSymbolFormatKey key && this.Equals(key);
             }
 
             public override bool Equals(object? obj)
             {
-                if (obj is null)
-                {
-                    return false;
-                }
-
                 return obj is ValueAndSymbolFormatKey key && this.Equals(key);
             }
 
@@ -215,7 +197,9 @@
                 unchecked
                 {
                     var hashCode = this.ValueFormat?.GetHashCode() ?? 0;
+#pragma warning disable CA1307 // Specify StringComparison for clarity
                     hashCode = (hashCode * 397) ^ (this.SymbolFormat?.GetHashCode() ?? 0);
+#pragma warning restore CA1307 // Specify StringComparison for clarity
                     return hashCode;
                 }
             }

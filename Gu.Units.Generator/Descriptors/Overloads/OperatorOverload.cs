@@ -82,22 +82,7 @@
 
         public override bool Equals(object obj)
         {
-            if (obj is null)
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, obj))
-            {
-                return true;
-            }
-
-            if (obj.GetType() != typeof(OperatorOverload))
-            {
-                return false;
-            }
-
-            return this.Equals((OperatorOverload)obj);
+            return obj is OperatorOverload oo && this.Equals(oo);
         }
 
         public override int GetHashCode()
