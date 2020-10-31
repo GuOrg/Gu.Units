@@ -50,9 +50,10 @@
 
         [Ignore("Script")]
         [Test]
-        public static void DumpEnumerable()
+        public static void WriteEnumerable()
         {
-            File.WriteAllText("C:\\Git\\_GuOrg\\Gu.Units\\Enumerable.generated.cs", Gu.Units.Generator.CodeGen.Enumerable.Code(Settings.Instance));
+            Settings.InnerInstance = null;
+            File.WriteAllText("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\Enumerable.generated.cs", Gu.Units.Generator.CodeGen.Enumerable.Code(Settings.FromResource));
         }
     }
 }

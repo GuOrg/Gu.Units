@@ -20,26 +20,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <EmbeddedResource Include="Templates\TemplateFilemanager.CS.ttinclude" />
 
-    <None Include="Templates\Enumerable.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Enumerable.txt</LastGenOutput>
-    </None>
-    <None Update="Templates\Enumerable.txt">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Enumerable.tt</DependentUpon>
-    </None>
-
-    <None Include="Templates\EnumerableGenerator.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>EnumerableGenerator.txt</LastGenOutput>
-    </None>
-    <None Update="Templates\EnumerableGenerator.txt">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>EnumerableGenerator.tt</DependentUpon>
-    </None>
-
     <None Update="Templates\Quantity.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Quantity.txt</LastGenOutput>
