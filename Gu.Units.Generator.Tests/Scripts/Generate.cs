@@ -9,7 +9,7 @@
 
     public static class Generate
     {
-        // [Ignore("Script")]
+        [Ignore("Script")]
         [Test]
         public static void Dump()
         {
