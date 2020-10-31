@@ -1,10 +1,11 @@
+#nullable enable
 namespace Gu.Units
 {
     using System;
     using System.Collections.Generic;
 
     /// <summary>
-    /// Provides common linq operations for quantity types
+    /// Provides common LINQ operations for quantity types
     /// </summary>
     public static partial class EnumerableUnits
     {
@@ -15,7 +16,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Acceleration Sum(this IEnumerable<Acceleration> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -39,7 +40,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static AmountOfSubstance Sum(this IEnumerable<AmountOfSubstance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -63,7 +64,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Angle Sum(this IEnumerable<Angle> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -87,7 +88,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static AnglePerUnitless Sum(this IEnumerable<AnglePerUnitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -111,7 +112,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static AngularAcceleration Sum(this IEnumerable<AngularAcceleration> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -135,7 +136,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static AngularJerk Sum(this IEnumerable<AngularJerk> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -159,7 +160,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static AngularSpeed Sum(this IEnumerable<AngularSpeed> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -183,7 +184,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Area Sum(this IEnumerable<Area> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -207,7 +208,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static AreaDensity Sum(this IEnumerable<AreaDensity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -231,7 +232,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Capacitance Sum(this IEnumerable<Capacitance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -255,7 +256,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static CatalyticActivity Sum(this IEnumerable<CatalyticActivity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -279,7 +280,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Conductivity Sum(this IEnumerable<Conductivity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -303,7 +304,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Current Sum(this IEnumerable<Current> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -327,7 +328,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Data Sum(this IEnumerable<Data> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -351,7 +352,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Density Sum(this IEnumerable<Density> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -375,7 +376,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static ElectricalConductance Sum(this IEnumerable<ElectricalConductance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -399,7 +400,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static ElectricCharge Sum(this IEnumerable<ElectricCharge> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -423,7 +424,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Energy Sum(this IEnumerable<Energy> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -447,7 +448,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Flexibility Sum(this IEnumerable<Flexibility> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -471,7 +472,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Force Sum(this IEnumerable<Force> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -495,7 +496,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static ForcePerUnitless Sum(this IEnumerable<ForcePerUnitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -519,7 +520,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Frequency Sum(this IEnumerable<Frequency> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -543,7 +544,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Illuminance Sum(this IEnumerable<Illuminance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -567,7 +568,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Inductance Sum(this IEnumerable<Inductance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -591,7 +592,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Jerk Sum(this IEnumerable<Jerk> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -615,7 +616,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static KinematicViscosity Sum(this IEnumerable<KinematicViscosity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -639,7 +640,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Length Sum(this IEnumerable<Length> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -663,7 +664,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static LengthPerUnitless Sum(this IEnumerable<LengthPerUnitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -687,7 +688,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static LuminousFlux Sum(this IEnumerable<LuminousFlux> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -711,7 +712,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static LuminousIntensity Sum(this IEnumerable<LuminousIntensity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -735,7 +736,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static MagneticFieldStrength Sum(this IEnumerable<MagneticFieldStrength> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -759,7 +760,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static MagneticFlux Sum(this IEnumerable<MagneticFlux> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -783,7 +784,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Mass Sum(this IEnumerable<Mass> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -807,7 +808,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static MassFlow Sum(this IEnumerable<MassFlow> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -831,7 +832,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static MolarHeatCapacity Sum(this IEnumerable<MolarHeatCapacity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -855,7 +856,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static MolarMass Sum(this IEnumerable<MolarMass> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -879,7 +880,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Momentum Sum(this IEnumerable<Momentum> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -903,7 +904,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Power Sum(this IEnumerable<Power> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -927,7 +928,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Pressure Sum(this IEnumerable<Pressure> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -951,7 +952,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Resistance Sum(this IEnumerable<Resistance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -975,7 +976,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static SolidAngle Sum(this IEnumerable<SolidAngle> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -999,7 +1000,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static SpecificEnergy Sum(this IEnumerable<SpecificEnergy> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1023,7 +1024,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static SpecificVolume Sum(this IEnumerable<SpecificVolume> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1047,7 +1048,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Speed Sum(this IEnumerable<Speed> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1071,7 +1072,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Stiffness Sum(this IEnumerable<Stiffness> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1095,7 +1096,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Temperature Sum(this IEnumerable<Temperature> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1119,7 +1120,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Time Sum(this IEnumerable<Time> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1143,7 +1144,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Torque Sum(this IEnumerable<Torque> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1167,7 +1168,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Unitless Sum(this IEnumerable<Unitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1191,7 +1192,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Voltage Sum(this IEnumerable<Voltage> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1215,7 +1216,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Volume Sum(this IEnumerable<Volume> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1239,7 +1240,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static VolumetricFlow Sum(this IEnumerable<VolumetricFlow> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1263,7 +1264,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Wavenumber Sum(this IEnumerable<Wavenumber> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1287,7 +1288,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Acceleration? Sum(this IEnumerable<Acceleration?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1314,7 +1315,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static AmountOfSubstance? Sum(this IEnumerable<AmountOfSubstance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1341,7 +1342,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Angle? Sum(this IEnumerable<Angle?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1368,7 +1369,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static AnglePerUnitless? Sum(this IEnumerable<AnglePerUnitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1395,7 +1396,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static AngularAcceleration? Sum(this IEnumerable<AngularAcceleration?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1422,7 +1423,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static AngularJerk? Sum(this IEnumerable<AngularJerk?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1449,7 +1450,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static AngularSpeed? Sum(this IEnumerable<AngularSpeed?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1476,7 +1477,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Area? Sum(this IEnumerable<Area?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1503,7 +1504,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static AreaDensity? Sum(this IEnumerable<AreaDensity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1530,7 +1531,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Capacitance? Sum(this IEnumerable<Capacitance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1557,7 +1558,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static CatalyticActivity? Sum(this IEnumerable<CatalyticActivity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1584,7 +1585,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Conductivity? Sum(this IEnumerable<Conductivity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1611,7 +1612,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Current? Sum(this IEnumerable<Current?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1638,7 +1639,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Data? Sum(this IEnumerable<Data?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1665,7 +1666,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Density? Sum(this IEnumerable<Density?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1692,7 +1693,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static ElectricalConductance? Sum(this IEnumerable<ElectricalConductance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1719,7 +1720,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static ElectricCharge? Sum(this IEnumerable<ElectricCharge?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1746,7 +1747,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Energy? Sum(this IEnumerable<Energy?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1773,7 +1774,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Flexibility? Sum(this IEnumerable<Flexibility?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1800,7 +1801,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Force? Sum(this IEnumerable<Force?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1827,7 +1828,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static ForcePerUnitless? Sum(this IEnumerable<ForcePerUnitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1854,7 +1855,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Frequency? Sum(this IEnumerable<Frequency?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1881,7 +1882,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Illuminance? Sum(this IEnumerable<Illuminance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1908,7 +1909,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Inductance? Sum(this IEnumerable<Inductance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1935,7 +1936,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Jerk? Sum(this IEnumerable<Jerk?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1962,7 +1963,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static KinematicViscosity? Sum(this IEnumerable<KinematicViscosity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -1989,7 +1990,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Length? Sum(this IEnumerable<Length?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2016,7 +2017,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static LengthPerUnitless? Sum(this IEnumerable<LengthPerUnitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2043,7 +2044,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static LuminousFlux? Sum(this IEnumerable<LuminousFlux?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2070,7 +2071,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static LuminousIntensity? Sum(this IEnumerable<LuminousIntensity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2097,7 +2098,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static MagneticFieldStrength? Sum(this IEnumerable<MagneticFieldStrength?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2124,7 +2125,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static MagneticFlux? Sum(this IEnumerable<MagneticFlux?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2151,7 +2152,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Mass? Sum(this IEnumerable<Mass?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2178,7 +2179,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static MassFlow? Sum(this IEnumerable<MassFlow?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2205,7 +2206,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static MolarHeatCapacity? Sum(this IEnumerable<MolarHeatCapacity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2232,7 +2233,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static MolarMass? Sum(this IEnumerable<MolarMass?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2259,7 +2260,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Momentum? Sum(this IEnumerable<Momentum?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2286,7 +2287,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Power? Sum(this IEnumerable<Power?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2313,7 +2314,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Pressure? Sum(this IEnumerable<Pressure?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2340,7 +2341,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Resistance? Sum(this IEnumerable<Resistance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2367,7 +2368,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static SolidAngle? Sum(this IEnumerable<SolidAngle?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2394,7 +2395,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static SpecificEnergy? Sum(this IEnumerable<SpecificEnergy?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2421,7 +2422,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static SpecificVolume? Sum(this IEnumerable<SpecificVolume?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2448,7 +2449,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Speed? Sum(this IEnumerable<Speed?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2475,7 +2476,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Stiffness? Sum(this IEnumerable<Stiffness?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2502,7 +2503,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Temperature? Sum(this IEnumerable<Temperature?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2529,7 +2530,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Time? Sum(this IEnumerable<Time?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2556,7 +2557,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Torque? Sum(this IEnumerable<Torque?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2583,7 +2584,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Unitless? Sum(this IEnumerable<Unitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2610,7 +2611,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Voltage? Sum(this IEnumerable<Voltage?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2637,7 +2638,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Volume? Sum(this IEnumerable<Volume?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2664,7 +2665,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static VolumetricFlow? Sum(this IEnumerable<VolumetricFlow?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2691,7 +2692,7 @@ namespace Gu.Units
         /// <returns>The sum</returns>
         public static Wavenumber? Sum(this IEnumerable<Wavenumber?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2718,7 +2719,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Acceleration Min(this IEnumerable<Acceleration> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2761,7 +2762,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static AmountOfSubstance Min(this IEnumerable<AmountOfSubstance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2804,7 +2805,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Angle Min(this IEnumerable<Angle> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2847,7 +2848,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static AnglePerUnitless Min(this IEnumerable<AnglePerUnitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2890,7 +2891,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static AngularAcceleration Min(this IEnumerable<AngularAcceleration> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2933,7 +2934,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static AngularJerk Min(this IEnumerable<AngularJerk> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -2976,7 +2977,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static AngularSpeed Min(this IEnumerable<AngularSpeed> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3019,7 +3020,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Area Min(this IEnumerable<Area> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3062,7 +3063,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static AreaDensity Min(this IEnumerable<AreaDensity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3105,7 +3106,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Capacitance Min(this IEnumerable<Capacitance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3148,7 +3149,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static CatalyticActivity Min(this IEnumerable<CatalyticActivity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3191,7 +3192,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Conductivity Min(this IEnumerable<Conductivity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3234,7 +3235,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Current Min(this IEnumerable<Current> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3277,7 +3278,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Data Min(this IEnumerable<Data> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3320,7 +3321,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Density Min(this IEnumerable<Density> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3363,7 +3364,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static ElectricalConductance Min(this IEnumerable<ElectricalConductance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3406,7 +3407,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static ElectricCharge Min(this IEnumerable<ElectricCharge> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3449,7 +3450,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Energy Min(this IEnumerable<Energy> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3492,7 +3493,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Flexibility Min(this IEnumerable<Flexibility> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3535,7 +3536,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Force Min(this IEnumerable<Force> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3578,7 +3579,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static ForcePerUnitless Min(this IEnumerable<ForcePerUnitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3621,7 +3622,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Frequency Min(this IEnumerable<Frequency> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3664,7 +3665,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Illuminance Min(this IEnumerable<Illuminance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3707,7 +3708,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Inductance Min(this IEnumerable<Inductance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3750,7 +3751,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Jerk Min(this IEnumerable<Jerk> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3793,7 +3794,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static KinematicViscosity Min(this IEnumerable<KinematicViscosity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3836,7 +3837,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Length Min(this IEnumerable<Length> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3879,7 +3880,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static LengthPerUnitless Min(this IEnumerable<LengthPerUnitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3922,7 +3923,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static LuminousFlux Min(this IEnumerable<LuminousFlux> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -3965,7 +3966,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static LuminousIntensity Min(this IEnumerable<LuminousIntensity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4008,7 +4009,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static MagneticFieldStrength Min(this IEnumerable<MagneticFieldStrength> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4051,7 +4052,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static MagneticFlux Min(this IEnumerable<MagneticFlux> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4094,7 +4095,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Mass Min(this IEnumerable<Mass> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4137,7 +4138,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static MassFlow Min(this IEnumerable<MassFlow> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4180,7 +4181,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static MolarHeatCapacity Min(this IEnumerable<MolarHeatCapacity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4223,7 +4224,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static MolarMass Min(this IEnumerable<MolarMass> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4266,7 +4267,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Momentum Min(this IEnumerable<Momentum> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4309,7 +4310,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Power Min(this IEnumerable<Power> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4352,7 +4353,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Pressure Min(this IEnumerable<Pressure> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4395,7 +4396,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Resistance Min(this IEnumerable<Resistance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4438,7 +4439,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static SolidAngle Min(this IEnumerable<SolidAngle> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4481,7 +4482,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static SpecificEnergy Min(this IEnumerable<SpecificEnergy> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4524,7 +4525,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static SpecificVolume Min(this IEnumerable<SpecificVolume> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4567,7 +4568,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Speed Min(this IEnumerable<Speed> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4610,7 +4611,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Stiffness Min(this IEnumerable<Stiffness> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4653,7 +4654,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Temperature Min(this IEnumerable<Temperature> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4696,7 +4697,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Time Min(this IEnumerable<Time> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4739,7 +4740,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Torque Min(this IEnumerable<Torque> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4782,7 +4783,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Unitless Min(this IEnumerable<Unitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4825,7 +4826,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Voltage Min(this IEnumerable<Voltage> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4868,7 +4869,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Volume Min(this IEnumerable<Volume> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4911,7 +4912,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static VolumetricFlow Min(this IEnumerable<VolumetricFlow> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4954,7 +4955,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Wavenumber Min(this IEnumerable<Wavenumber> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -4997,7 +4998,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Acceleration? Min(this IEnumerable<Acceleration?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5005,7 +5006,7 @@ namespace Gu.Units
             Acceleration? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5015,7 +5016,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.metresPerSecondSquared < value.Value.metresPerSecondSquared)
+                if (value is null || x.Value.metresPerSecondSquared < value.Value.metresPerSecondSquared)
                 {
                     value = x;
                 }
@@ -5031,7 +5032,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static AmountOfSubstance? Min(this IEnumerable<AmountOfSubstance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5039,7 +5040,7 @@ namespace Gu.Units
             AmountOfSubstance? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5049,7 +5050,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.moles < value.Value.moles)
+                if (value is null || x.Value.moles < value.Value.moles)
                 {
                     value = x;
                 }
@@ -5065,7 +5066,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Angle? Min(this IEnumerable<Angle?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5073,7 +5074,7 @@ namespace Gu.Units
             Angle? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5083,7 +5084,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.radians < value.Value.radians)
+                if (value is null || x.Value.radians < value.Value.radians)
                 {
                     value = x;
                 }
@@ -5099,7 +5100,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static AnglePerUnitless? Min(this IEnumerable<AnglePerUnitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5107,7 +5108,7 @@ namespace Gu.Units
             AnglePerUnitless? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5117,7 +5118,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.radiansPerUnitless < value.Value.radiansPerUnitless)
+                if (value is null || x.Value.radiansPerUnitless < value.Value.radiansPerUnitless)
                 {
                     value = x;
                 }
@@ -5133,7 +5134,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static AngularAcceleration? Min(this IEnumerable<AngularAcceleration?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5141,7 +5142,7 @@ namespace Gu.Units
             AngularAcceleration? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5151,7 +5152,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.radiansPerSecondSquared < value.Value.radiansPerSecondSquared)
+                if (value is null || x.Value.radiansPerSecondSquared < value.Value.radiansPerSecondSquared)
                 {
                     value = x;
                 }
@@ -5167,7 +5168,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static AngularJerk? Min(this IEnumerable<AngularJerk?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5175,7 +5176,7 @@ namespace Gu.Units
             AngularJerk? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5185,7 +5186,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.radiansPerSecondCubed < value.Value.radiansPerSecondCubed)
+                if (value is null || x.Value.radiansPerSecondCubed < value.Value.radiansPerSecondCubed)
                 {
                     value = x;
                 }
@@ -5201,7 +5202,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static AngularSpeed? Min(this IEnumerable<AngularSpeed?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5209,7 +5210,7 @@ namespace Gu.Units
             AngularSpeed? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5219,7 +5220,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.radiansPerSecond < value.Value.radiansPerSecond)
+                if (value is null || x.Value.radiansPerSecond < value.Value.radiansPerSecond)
                 {
                     value = x;
                 }
@@ -5235,7 +5236,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Area? Min(this IEnumerable<Area?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5243,7 +5244,7 @@ namespace Gu.Units
             Area? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5253,7 +5254,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.squareMetres < value.Value.squareMetres)
+                if (value is null || x.Value.squareMetres < value.Value.squareMetres)
                 {
                     value = x;
                 }
@@ -5269,7 +5270,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static AreaDensity? Min(this IEnumerable<AreaDensity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5277,7 +5278,7 @@ namespace Gu.Units
             AreaDensity? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5287,7 +5288,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.kilogramsPerSquareMetre < value.Value.kilogramsPerSquareMetre)
+                if (value is null || x.Value.kilogramsPerSquareMetre < value.Value.kilogramsPerSquareMetre)
                 {
                     value = x;
                 }
@@ -5303,7 +5304,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Capacitance? Min(this IEnumerable<Capacitance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5311,7 +5312,7 @@ namespace Gu.Units
             Capacitance? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5321,7 +5322,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.farads < value.Value.farads)
+                if (value is null || x.Value.farads < value.Value.farads)
                 {
                     value = x;
                 }
@@ -5337,7 +5338,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static CatalyticActivity? Min(this IEnumerable<CatalyticActivity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5345,7 +5346,7 @@ namespace Gu.Units
             CatalyticActivity? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5355,7 +5356,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.katals < value.Value.katals)
+                if (value is null || x.Value.katals < value.Value.katals)
                 {
                     value = x;
                 }
@@ -5371,7 +5372,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Conductivity? Min(this IEnumerable<Conductivity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5379,7 +5380,7 @@ namespace Gu.Units
             Conductivity? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5389,7 +5390,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.siemensPerMetre < value.Value.siemensPerMetre)
+                if (value is null || x.Value.siemensPerMetre < value.Value.siemensPerMetre)
                 {
                     value = x;
                 }
@@ -5405,7 +5406,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Current? Min(this IEnumerable<Current?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5413,7 +5414,7 @@ namespace Gu.Units
             Current? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5423,7 +5424,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.amperes < value.Value.amperes)
+                if (value is null || x.Value.amperes < value.Value.amperes)
                 {
                     value = x;
                 }
@@ -5439,7 +5440,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Data? Min(this IEnumerable<Data?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5447,7 +5448,7 @@ namespace Gu.Units
             Data? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5457,7 +5458,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.bits < value.Value.bits)
+                if (value is null || x.Value.bits < value.Value.bits)
                 {
                     value = x;
                 }
@@ -5473,7 +5474,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Density? Min(this IEnumerable<Density?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5481,7 +5482,7 @@ namespace Gu.Units
             Density? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5491,7 +5492,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.kilogramsPerCubicMetre < value.Value.kilogramsPerCubicMetre)
+                if (value is null || x.Value.kilogramsPerCubicMetre < value.Value.kilogramsPerCubicMetre)
                 {
                     value = x;
                 }
@@ -5507,7 +5508,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static ElectricalConductance? Min(this IEnumerable<ElectricalConductance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5515,7 +5516,7 @@ namespace Gu.Units
             ElectricalConductance? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5525,7 +5526,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.siemens < value.Value.siemens)
+                if (value is null || x.Value.siemens < value.Value.siemens)
                 {
                     value = x;
                 }
@@ -5541,7 +5542,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static ElectricCharge? Min(this IEnumerable<ElectricCharge?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5549,7 +5550,7 @@ namespace Gu.Units
             ElectricCharge? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5559,7 +5560,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.coulombs < value.Value.coulombs)
+                if (value is null || x.Value.coulombs < value.Value.coulombs)
                 {
                     value = x;
                 }
@@ -5575,7 +5576,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Energy? Min(this IEnumerable<Energy?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5583,7 +5584,7 @@ namespace Gu.Units
             Energy? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5593,7 +5594,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.joules < value.Value.joules)
+                if (value is null || x.Value.joules < value.Value.joules)
                 {
                     value = x;
                 }
@@ -5609,7 +5610,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Flexibility? Min(this IEnumerable<Flexibility?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5617,7 +5618,7 @@ namespace Gu.Units
             Flexibility? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5627,7 +5628,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.metresPerNewton < value.Value.metresPerNewton)
+                if (value is null || x.Value.metresPerNewton < value.Value.metresPerNewton)
                 {
                     value = x;
                 }
@@ -5643,7 +5644,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Force? Min(this IEnumerable<Force?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5651,7 +5652,7 @@ namespace Gu.Units
             Force? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5661,7 +5662,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.newtons < value.Value.newtons)
+                if (value is null || x.Value.newtons < value.Value.newtons)
                 {
                     value = x;
                 }
@@ -5677,7 +5678,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static ForcePerUnitless? Min(this IEnumerable<ForcePerUnitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5685,7 +5686,7 @@ namespace Gu.Units
             ForcePerUnitless? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5695,7 +5696,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.newtonsPerUnitless < value.Value.newtonsPerUnitless)
+                if (value is null || x.Value.newtonsPerUnitless < value.Value.newtonsPerUnitless)
                 {
                     value = x;
                 }
@@ -5711,7 +5712,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Frequency? Min(this IEnumerable<Frequency?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5719,7 +5720,7 @@ namespace Gu.Units
             Frequency? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5729,7 +5730,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.hertz < value.Value.hertz)
+                if (value is null || x.Value.hertz < value.Value.hertz)
                 {
                     value = x;
                 }
@@ -5745,7 +5746,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Illuminance? Min(this IEnumerable<Illuminance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5753,7 +5754,7 @@ namespace Gu.Units
             Illuminance? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5763,7 +5764,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.lux < value.Value.lux)
+                if (value is null || x.Value.lux < value.Value.lux)
                 {
                     value = x;
                 }
@@ -5779,7 +5780,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Inductance? Min(this IEnumerable<Inductance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5787,7 +5788,7 @@ namespace Gu.Units
             Inductance? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5797,7 +5798,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.henrys < value.Value.henrys)
+                if (value is null || x.Value.henrys < value.Value.henrys)
                 {
                     value = x;
                 }
@@ -5813,7 +5814,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Jerk? Min(this IEnumerable<Jerk?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5821,7 +5822,7 @@ namespace Gu.Units
             Jerk? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5831,7 +5832,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.metresPerSecondCubed < value.Value.metresPerSecondCubed)
+                if (value is null || x.Value.metresPerSecondCubed < value.Value.metresPerSecondCubed)
                 {
                     value = x;
                 }
@@ -5847,7 +5848,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static KinematicViscosity? Min(this IEnumerable<KinematicViscosity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5855,7 +5856,7 @@ namespace Gu.Units
             KinematicViscosity? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5865,7 +5866,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.squareMetresPerSecond < value.Value.squareMetresPerSecond)
+                if (value is null || x.Value.squareMetresPerSecond < value.Value.squareMetresPerSecond)
                 {
                     value = x;
                 }
@@ -5881,7 +5882,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Length? Min(this IEnumerable<Length?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5889,7 +5890,7 @@ namespace Gu.Units
             Length? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5899,7 +5900,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.metres < value.Value.metres)
+                if (value is null || x.Value.metres < value.Value.metres)
                 {
                     value = x;
                 }
@@ -5915,7 +5916,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static LengthPerUnitless? Min(this IEnumerable<LengthPerUnitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5923,7 +5924,7 @@ namespace Gu.Units
             LengthPerUnitless? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5933,7 +5934,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.metresPerUnitless < value.Value.metresPerUnitless)
+                if (value is null || x.Value.metresPerUnitless < value.Value.metresPerUnitless)
                 {
                     value = x;
                 }
@@ -5949,7 +5950,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static LuminousFlux? Min(this IEnumerable<LuminousFlux?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5957,7 +5958,7 @@ namespace Gu.Units
             LuminousFlux? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -5967,7 +5968,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.lumens < value.Value.lumens)
+                if (value is null || x.Value.lumens < value.Value.lumens)
                 {
                     value = x;
                 }
@@ -5983,7 +5984,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static LuminousIntensity? Min(this IEnumerable<LuminousIntensity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -5991,7 +5992,7 @@ namespace Gu.Units
             LuminousIntensity? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6001,7 +6002,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.candelas < value.Value.candelas)
+                if (value is null || x.Value.candelas < value.Value.candelas)
                 {
                     value = x;
                 }
@@ -6017,7 +6018,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static MagneticFieldStrength? Min(this IEnumerable<MagneticFieldStrength?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6025,7 +6026,7 @@ namespace Gu.Units
             MagneticFieldStrength? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6035,7 +6036,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.teslas < value.Value.teslas)
+                if (value is null || x.Value.teslas < value.Value.teslas)
                 {
                     value = x;
                 }
@@ -6051,7 +6052,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static MagneticFlux? Min(this IEnumerable<MagneticFlux?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6059,7 +6060,7 @@ namespace Gu.Units
             MagneticFlux? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6069,7 +6070,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.webers < value.Value.webers)
+                if (value is null || x.Value.webers < value.Value.webers)
                 {
                     value = x;
                 }
@@ -6085,7 +6086,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Mass? Min(this IEnumerable<Mass?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6093,7 +6094,7 @@ namespace Gu.Units
             Mass? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6103,7 +6104,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.kilograms < value.Value.kilograms)
+                if (value is null || x.Value.kilograms < value.Value.kilograms)
                 {
                     value = x;
                 }
@@ -6119,7 +6120,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static MassFlow? Min(this IEnumerable<MassFlow?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6127,7 +6128,7 @@ namespace Gu.Units
             MassFlow? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6137,7 +6138,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.kilogramsPerSecond < value.Value.kilogramsPerSecond)
+                if (value is null || x.Value.kilogramsPerSecond < value.Value.kilogramsPerSecond)
                 {
                     value = x;
                 }
@@ -6153,7 +6154,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static MolarHeatCapacity? Min(this IEnumerable<MolarHeatCapacity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6161,7 +6162,7 @@ namespace Gu.Units
             MolarHeatCapacity? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6171,7 +6172,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.joulesPerKelvinMole < value.Value.joulesPerKelvinMole)
+                if (value is null || x.Value.joulesPerKelvinMole < value.Value.joulesPerKelvinMole)
                 {
                     value = x;
                 }
@@ -6187,7 +6188,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static MolarMass? Min(this IEnumerable<MolarMass?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6195,7 +6196,7 @@ namespace Gu.Units
             MolarMass? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6205,7 +6206,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.kilogramsPerMole < value.Value.kilogramsPerMole)
+                if (value is null || x.Value.kilogramsPerMole < value.Value.kilogramsPerMole)
                 {
                     value = x;
                 }
@@ -6221,7 +6222,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Momentum? Min(this IEnumerable<Momentum?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6229,7 +6230,7 @@ namespace Gu.Units
             Momentum? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6239,7 +6240,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.newtonSecond < value.Value.newtonSecond)
+                if (value is null || x.Value.newtonSecond < value.Value.newtonSecond)
                 {
                     value = x;
                 }
@@ -6255,7 +6256,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Power? Min(this IEnumerable<Power?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6263,7 +6264,7 @@ namespace Gu.Units
             Power? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6273,7 +6274,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.watts < value.Value.watts)
+                if (value is null || x.Value.watts < value.Value.watts)
                 {
                     value = x;
                 }
@@ -6289,7 +6290,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Pressure? Min(this IEnumerable<Pressure?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6297,7 +6298,7 @@ namespace Gu.Units
             Pressure? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6307,7 +6308,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.pascals < value.Value.pascals)
+                if (value is null || x.Value.pascals < value.Value.pascals)
                 {
                     value = x;
                 }
@@ -6323,7 +6324,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Resistance? Min(this IEnumerable<Resistance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6331,7 +6332,7 @@ namespace Gu.Units
             Resistance? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6341,7 +6342,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.ohms < value.Value.ohms)
+                if (value is null || x.Value.ohms < value.Value.ohms)
                 {
                     value = x;
                 }
@@ -6357,7 +6358,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static SolidAngle? Min(this IEnumerable<SolidAngle?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6365,7 +6366,7 @@ namespace Gu.Units
             SolidAngle? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6375,7 +6376,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.steradians < value.Value.steradians)
+                if (value is null || x.Value.steradians < value.Value.steradians)
                 {
                     value = x;
                 }
@@ -6391,7 +6392,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static SpecificEnergy? Min(this IEnumerable<SpecificEnergy?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6399,7 +6400,7 @@ namespace Gu.Units
             SpecificEnergy? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6409,7 +6410,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.joulesPerKilogram < value.Value.joulesPerKilogram)
+                if (value is null || x.Value.joulesPerKilogram < value.Value.joulesPerKilogram)
                 {
                     value = x;
                 }
@@ -6425,7 +6426,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static SpecificVolume? Min(this IEnumerable<SpecificVolume?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6433,7 +6434,7 @@ namespace Gu.Units
             SpecificVolume? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6443,7 +6444,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.cubicMetresPerKilogram < value.Value.cubicMetresPerKilogram)
+                if (value is null || x.Value.cubicMetresPerKilogram < value.Value.cubicMetresPerKilogram)
                 {
                     value = x;
                 }
@@ -6459,7 +6460,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Speed? Min(this IEnumerable<Speed?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6467,7 +6468,7 @@ namespace Gu.Units
             Speed? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6477,7 +6478,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.metresPerSecond < value.Value.metresPerSecond)
+                if (value is null || x.Value.metresPerSecond < value.Value.metresPerSecond)
                 {
                     value = x;
                 }
@@ -6493,7 +6494,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Stiffness? Min(this IEnumerable<Stiffness?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6501,7 +6502,7 @@ namespace Gu.Units
             Stiffness? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6511,7 +6512,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.newtonsPerMetre < value.Value.newtonsPerMetre)
+                if (value is null || x.Value.newtonsPerMetre < value.Value.newtonsPerMetre)
                 {
                     value = x;
                 }
@@ -6527,7 +6528,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Temperature? Min(this IEnumerable<Temperature?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6535,7 +6536,7 @@ namespace Gu.Units
             Temperature? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6545,7 +6546,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.kelvin < value.Value.kelvin)
+                if (value is null || x.Value.kelvin < value.Value.kelvin)
                 {
                     value = x;
                 }
@@ -6561,7 +6562,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Time? Min(this IEnumerable<Time?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6569,7 +6570,7 @@ namespace Gu.Units
             Time? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6579,7 +6580,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.seconds < value.Value.seconds)
+                if (value is null || x.Value.seconds < value.Value.seconds)
                 {
                     value = x;
                 }
@@ -6595,7 +6596,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Torque? Min(this IEnumerable<Torque?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6603,7 +6604,7 @@ namespace Gu.Units
             Torque? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6613,7 +6614,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.newtonMetres < value.Value.newtonMetres)
+                if (value is null || x.Value.newtonMetres < value.Value.newtonMetres)
                 {
                     value = x;
                 }
@@ -6629,7 +6630,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Unitless? Min(this IEnumerable<Unitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6637,7 +6638,7 @@ namespace Gu.Units
             Unitless? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6647,7 +6648,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.scalar < value.Value.scalar)
+                if (value is null || x.Value.scalar < value.Value.scalar)
                 {
                     value = x;
                 }
@@ -6663,7 +6664,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Voltage? Min(this IEnumerable<Voltage?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6671,7 +6672,7 @@ namespace Gu.Units
             Voltage? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6681,7 +6682,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.volts < value.Value.volts)
+                if (value is null || x.Value.volts < value.Value.volts)
                 {
                     value = x;
                 }
@@ -6697,7 +6698,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Volume? Min(this IEnumerable<Volume?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6705,7 +6706,7 @@ namespace Gu.Units
             Volume? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6715,7 +6716,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.cubicMetres < value.Value.cubicMetres)
+                if (value is null || x.Value.cubicMetres < value.Value.cubicMetres)
                 {
                     value = x;
                 }
@@ -6731,7 +6732,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static VolumetricFlow? Min(this IEnumerable<VolumetricFlow?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6739,7 +6740,7 @@ namespace Gu.Units
             VolumetricFlow? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6749,7 +6750,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.cubicMetresPerSecond < value.Value.cubicMetresPerSecond)
+                if (value is null || x.Value.cubicMetresPerSecond < value.Value.cubicMetresPerSecond)
                 {
                     value = x;
                 }
@@ -6765,7 +6766,7 @@ namespace Gu.Units
         /// <returns>The min</returns>
         public static Wavenumber? Min(this IEnumerable<Wavenumber?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6773,7 +6774,7 @@ namespace Gu.Units
             Wavenumber? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -6783,7 +6784,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.reciprocalMetres < value.Value.reciprocalMetres)
+                if (value is null || x.Value.reciprocalMetres < value.Value.reciprocalMetres)
                 {
                     value = x;
                 }
@@ -6799,7 +6800,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Acceleration Max(this IEnumerable<Acceleration> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6842,7 +6843,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static AmountOfSubstance Max(this IEnumerable<AmountOfSubstance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6885,7 +6886,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Angle Max(this IEnumerable<Angle> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6928,7 +6929,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static AnglePerUnitless Max(this IEnumerable<AnglePerUnitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -6971,7 +6972,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static AngularAcceleration Max(this IEnumerable<AngularAcceleration> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7014,7 +7015,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static AngularJerk Max(this IEnumerable<AngularJerk> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7057,7 +7058,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static AngularSpeed Max(this IEnumerable<AngularSpeed> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7100,7 +7101,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Area Max(this IEnumerable<Area> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7143,7 +7144,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static AreaDensity Max(this IEnumerable<AreaDensity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7186,7 +7187,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Capacitance Max(this IEnumerable<Capacitance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7229,7 +7230,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static CatalyticActivity Max(this IEnumerable<CatalyticActivity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7272,7 +7273,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Conductivity Max(this IEnumerable<Conductivity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7315,7 +7316,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Current Max(this IEnumerable<Current> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7358,7 +7359,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Data Max(this IEnumerable<Data> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7401,7 +7402,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Density Max(this IEnumerable<Density> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7444,7 +7445,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static ElectricalConductance Max(this IEnumerable<ElectricalConductance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7487,7 +7488,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static ElectricCharge Max(this IEnumerable<ElectricCharge> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7530,7 +7531,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Energy Max(this IEnumerable<Energy> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7573,7 +7574,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Flexibility Max(this IEnumerable<Flexibility> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7616,7 +7617,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Force Max(this IEnumerable<Force> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7659,7 +7660,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static ForcePerUnitless Max(this IEnumerable<ForcePerUnitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7702,7 +7703,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Frequency Max(this IEnumerable<Frequency> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7745,7 +7746,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Illuminance Max(this IEnumerable<Illuminance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7788,7 +7789,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Inductance Max(this IEnumerable<Inductance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7831,7 +7832,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Jerk Max(this IEnumerable<Jerk> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7874,7 +7875,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static KinematicViscosity Max(this IEnumerable<KinematicViscosity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7917,7 +7918,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Length Max(this IEnumerable<Length> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -7960,7 +7961,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static LengthPerUnitless Max(this IEnumerable<LengthPerUnitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8003,7 +8004,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static LuminousFlux Max(this IEnumerable<LuminousFlux> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8046,7 +8047,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static LuminousIntensity Max(this IEnumerable<LuminousIntensity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8089,7 +8090,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static MagneticFieldStrength Max(this IEnumerable<MagneticFieldStrength> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8132,7 +8133,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static MagneticFlux Max(this IEnumerable<MagneticFlux> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8175,7 +8176,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Mass Max(this IEnumerable<Mass> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8218,7 +8219,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static MassFlow Max(this IEnumerable<MassFlow> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8261,7 +8262,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static MolarHeatCapacity Max(this IEnumerable<MolarHeatCapacity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8304,7 +8305,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static MolarMass Max(this IEnumerable<MolarMass> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8347,7 +8348,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Momentum Max(this IEnumerable<Momentum> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8390,7 +8391,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Power Max(this IEnumerable<Power> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8433,7 +8434,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Pressure Max(this IEnumerable<Pressure> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8476,7 +8477,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Resistance Max(this IEnumerable<Resistance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8519,7 +8520,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static SolidAngle Max(this IEnumerable<SolidAngle> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8562,7 +8563,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static SpecificEnergy Max(this IEnumerable<SpecificEnergy> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8605,7 +8606,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static SpecificVolume Max(this IEnumerable<SpecificVolume> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8648,7 +8649,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Speed Max(this IEnumerable<Speed> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8691,7 +8692,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Stiffness Max(this IEnumerable<Stiffness> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8734,7 +8735,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Temperature Max(this IEnumerable<Temperature> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8777,7 +8778,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Time Max(this IEnumerable<Time> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8820,7 +8821,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Torque Max(this IEnumerable<Torque> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8863,7 +8864,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Unitless Max(this IEnumerable<Unitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8906,7 +8907,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Voltage Max(this IEnumerable<Voltage> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8949,7 +8950,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Volume Max(this IEnumerable<Volume> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -8992,7 +8993,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static VolumetricFlow Max(this IEnumerable<VolumetricFlow> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9035,7 +9036,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Wavenumber Max(this IEnumerable<Wavenumber> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9078,7 +9079,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Acceleration? Max(this IEnumerable<Acceleration?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9086,7 +9087,7 @@ namespace Gu.Units
             Acceleration? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9096,7 +9097,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.metresPerSecondSquared > value.Value.metresPerSecondSquared)
+                if (value is null || x.Value.metresPerSecondSquared > value.Value.metresPerSecondSquared)
                 {
                     value = x;
                 }
@@ -9112,7 +9113,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static AmountOfSubstance? Max(this IEnumerable<AmountOfSubstance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9120,7 +9121,7 @@ namespace Gu.Units
             AmountOfSubstance? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9130,7 +9131,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.moles > value.Value.moles)
+                if (value is null || x.Value.moles > value.Value.moles)
                 {
                     value = x;
                 }
@@ -9146,7 +9147,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Angle? Max(this IEnumerable<Angle?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9154,7 +9155,7 @@ namespace Gu.Units
             Angle? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9164,7 +9165,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.radians > value.Value.radians)
+                if (value is null || x.Value.radians > value.Value.radians)
                 {
                     value = x;
                 }
@@ -9180,7 +9181,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static AnglePerUnitless? Max(this IEnumerable<AnglePerUnitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9188,7 +9189,7 @@ namespace Gu.Units
             AnglePerUnitless? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9198,7 +9199,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.radiansPerUnitless > value.Value.radiansPerUnitless)
+                if (value is null || x.Value.radiansPerUnitless > value.Value.radiansPerUnitless)
                 {
                     value = x;
                 }
@@ -9214,7 +9215,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static AngularAcceleration? Max(this IEnumerable<AngularAcceleration?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9222,7 +9223,7 @@ namespace Gu.Units
             AngularAcceleration? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9232,7 +9233,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.radiansPerSecondSquared > value.Value.radiansPerSecondSquared)
+                if (value is null || x.Value.radiansPerSecondSquared > value.Value.radiansPerSecondSquared)
                 {
                     value = x;
                 }
@@ -9248,7 +9249,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static AngularJerk? Max(this IEnumerable<AngularJerk?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9256,7 +9257,7 @@ namespace Gu.Units
             AngularJerk? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9266,7 +9267,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.radiansPerSecondCubed > value.Value.radiansPerSecondCubed)
+                if (value is null || x.Value.radiansPerSecondCubed > value.Value.radiansPerSecondCubed)
                 {
                     value = x;
                 }
@@ -9282,7 +9283,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static AngularSpeed? Max(this IEnumerable<AngularSpeed?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9290,7 +9291,7 @@ namespace Gu.Units
             AngularSpeed? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9300,7 +9301,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.radiansPerSecond > value.Value.radiansPerSecond)
+                if (value is null || x.Value.radiansPerSecond > value.Value.radiansPerSecond)
                 {
                     value = x;
                 }
@@ -9316,7 +9317,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Area? Max(this IEnumerable<Area?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9324,7 +9325,7 @@ namespace Gu.Units
             Area? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9334,7 +9335,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.squareMetres > value.Value.squareMetres)
+                if (value is null || x.Value.squareMetres > value.Value.squareMetres)
                 {
                     value = x;
                 }
@@ -9350,7 +9351,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static AreaDensity? Max(this IEnumerable<AreaDensity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9358,7 +9359,7 @@ namespace Gu.Units
             AreaDensity? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9368,7 +9369,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.kilogramsPerSquareMetre > value.Value.kilogramsPerSquareMetre)
+                if (value is null || x.Value.kilogramsPerSquareMetre > value.Value.kilogramsPerSquareMetre)
                 {
                     value = x;
                 }
@@ -9384,7 +9385,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Capacitance? Max(this IEnumerable<Capacitance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9392,7 +9393,7 @@ namespace Gu.Units
             Capacitance? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9402,7 +9403,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.farads > value.Value.farads)
+                if (value is null || x.Value.farads > value.Value.farads)
                 {
                     value = x;
                 }
@@ -9418,7 +9419,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static CatalyticActivity? Max(this IEnumerable<CatalyticActivity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9426,7 +9427,7 @@ namespace Gu.Units
             CatalyticActivity? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9436,7 +9437,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.katals > value.Value.katals)
+                if (value is null || x.Value.katals > value.Value.katals)
                 {
                     value = x;
                 }
@@ -9452,7 +9453,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Conductivity? Max(this IEnumerable<Conductivity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9460,7 +9461,7 @@ namespace Gu.Units
             Conductivity? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9470,7 +9471,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.siemensPerMetre > value.Value.siemensPerMetre)
+                if (value is null || x.Value.siemensPerMetre > value.Value.siemensPerMetre)
                 {
                     value = x;
                 }
@@ -9486,7 +9487,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Current? Max(this IEnumerable<Current?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9494,7 +9495,7 @@ namespace Gu.Units
             Current? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9504,7 +9505,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.amperes > value.Value.amperes)
+                if (value is null || x.Value.amperes > value.Value.amperes)
                 {
                     value = x;
                 }
@@ -9520,7 +9521,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Data? Max(this IEnumerable<Data?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9528,7 +9529,7 @@ namespace Gu.Units
             Data? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9538,7 +9539,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.bits > value.Value.bits)
+                if (value is null || x.Value.bits > value.Value.bits)
                 {
                     value = x;
                 }
@@ -9554,7 +9555,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Density? Max(this IEnumerable<Density?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9562,7 +9563,7 @@ namespace Gu.Units
             Density? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9572,7 +9573,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.kilogramsPerCubicMetre > value.Value.kilogramsPerCubicMetre)
+                if (value is null || x.Value.kilogramsPerCubicMetre > value.Value.kilogramsPerCubicMetre)
                 {
                     value = x;
                 }
@@ -9588,7 +9589,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static ElectricalConductance? Max(this IEnumerable<ElectricalConductance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9596,7 +9597,7 @@ namespace Gu.Units
             ElectricalConductance? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9606,7 +9607,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.siemens > value.Value.siemens)
+                if (value is null || x.Value.siemens > value.Value.siemens)
                 {
                     value = x;
                 }
@@ -9622,7 +9623,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static ElectricCharge? Max(this IEnumerable<ElectricCharge?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9630,7 +9631,7 @@ namespace Gu.Units
             ElectricCharge? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9640,7 +9641,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.coulombs > value.Value.coulombs)
+                if (value is null || x.Value.coulombs > value.Value.coulombs)
                 {
                     value = x;
                 }
@@ -9656,7 +9657,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Energy? Max(this IEnumerable<Energy?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9664,7 +9665,7 @@ namespace Gu.Units
             Energy? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9674,7 +9675,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.joules > value.Value.joules)
+                if (value is null || x.Value.joules > value.Value.joules)
                 {
                     value = x;
                 }
@@ -9690,7 +9691,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Flexibility? Max(this IEnumerable<Flexibility?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9698,7 +9699,7 @@ namespace Gu.Units
             Flexibility? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9708,7 +9709,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.metresPerNewton > value.Value.metresPerNewton)
+                if (value is null || x.Value.metresPerNewton > value.Value.metresPerNewton)
                 {
                     value = x;
                 }
@@ -9724,7 +9725,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Force? Max(this IEnumerable<Force?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9732,7 +9733,7 @@ namespace Gu.Units
             Force? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9742,7 +9743,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.newtons > value.Value.newtons)
+                if (value is null || x.Value.newtons > value.Value.newtons)
                 {
                     value = x;
                 }
@@ -9758,7 +9759,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static ForcePerUnitless? Max(this IEnumerable<ForcePerUnitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9766,7 +9767,7 @@ namespace Gu.Units
             ForcePerUnitless? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9776,7 +9777,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.newtonsPerUnitless > value.Value.newtonsPerUnitless)
+                if (value is null || x.Value.newtonsPerUnitless > value.Value.newtonsPerUnitless)
                 {
                     value = x;
                 }
@@ -9792,7 +9793,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Frequency? Max(this IEnumerable<Frequency?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9800,7 +9801,7 @@ namespace Gu.Units
             Frequency? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9810,7 +9811,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.hertz > value.Value.hertz)
+                if (value is null || x.Value.hertz > value.Value.hertz)
                 {
                     value = x;
                 }
@@ -9826,7 +9827,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Illuminance? Max(this IEnumerable<Illuminance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9834,7 +9835,7 @@ namespace Gu.Units
             Illuminance? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9844,7 +9845,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.lux > value.Value.lux)
+                if (value is null || x.Value.lux > value.Value.lux)
                 {
                     value = x;
                 }
@@ -9860,7 +9861,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Inductance? Max(this IEnumerable<Inductance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9868,7 +9869,7 @@ namespace Gu.Units
             Inductance? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9878,7 +9879,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.henrys > value.Value.henrys)
+                if (value is null || x.Value.henrys > value.Value.henrys)
                 {
                     value = x;
                 }
@@ -9894,7 +9895,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Jerk? Max(this IEnumerable<Jerk?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9902,7 +9903,7 @@ namespace Gu.Units
             Jerk? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9912,7 +9913,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.metresPerSecondCubed > value.Value.metresPerSecondCubed)
+                if (value is null || x.Value.metresPerSecondCubed > value.Value.metresPerSecondCubed)
                 {
                     value = x;
                 }
@@ -9928,7 +9929,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static KinematicViscosity? Max(this IEnumerable<KinematicViscosity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9936,7 +9937,7 @@ namespace Gu.Units
             KinematicViscosity? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9946,7 +9947,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.squareMetresPerSecond > value.Value.squareMetresPerSecond)
+                if (value is null || x.Value.squareMetresPerSecond > value.Value.squareMetresPerSecond)
                 {
                     value = x;
                 }
@@ -9962,7 +9963,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Length? Max(this IEnumerable<Length?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -9970,7 +9971,7 @@ namespace Gu.Units
             Length? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -9980,7 +9981,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.metres > value.Value.metres)
+                if (value is null || x.Value.metres > value.Value.metres)
                 {
                     value = x;
                 }
@@ -9996,7 +9997,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static LengthPerUnitless? Max(this IEnumerable<LengthPerUnitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10004,7 +10005,7 @@ namespace Gu.Units
             LengthPerUnitless? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10014,7 +10015,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.metresPerUnitless > value.Value.metresPerUnitless)
+                if (value is null || x.Value.metresPerUnitless > value.Value.metresPerUnitless)
                 {
                     value = x;
                 }
@@ -10030,7 +10031,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static LuminousFlux? Max(this IEnumerable<LuminousFlux?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10038,7 +10039,7 @@ namespace Gu.Units
             LuminousFlux? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10048,7 +10049,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.lumens > value.Value.lumens)
+                if (value is null || x.Value.lumens > value.Value.lumens)
                 {
                     value = x;
                 }
@@ -10064,7 +10065,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static LuminousIntensity? Max(this IEnumerable<LuminousIntensity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10072,7 +10073,7 @@ namespace Gu.Units
             LuminousIntensity? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10082,7 +10083,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.candelas > value.Value.candelas)
+                if (value is null || x.Value.candelas > value.Value.candelas)
                 {
                     value = x;
                 }
@@ -10098,7 +10099,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static MagneticFieldStrength? Max(this IEnumerable<MagneticFieldStrength?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10106,7 +10107,7 @@ namespace Gu.Units
             MagneticFieldStrength? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10116,7 +10117,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.teslas > value.Value.teslas)
+                if (value is null || x.Value.teslas > value.Value.teslas)
                 {
                     value = x;
                 }
@@ -10132,7 +10133,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static MagneticFlux? Max(this IEnumerable<MagneticFlux?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10140,7 +10141,7 @@ namespace Gu.Units
             MagneticFlux? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10150,7 +10151,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.webers > value.Value.webers)
+                if (value is null || x.Value.webers > value.Value.webers)
                 {
                     value = x;
                 }
@@ -10166,7 +10167,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Mass? Max(this IEnumerable<Mass?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10174,7 +10175,7 @@ namespace Gu.Units
             Mass? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10184,7 +10185,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.kilograms > value.Value.kilograms)
+                if (value is null || x.Value.kilograms > value.Value.kilograms)
                 {
                     value = x;
                 }
@@ -10200,7 +10201,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static MassFlow? Max(this IEnumerable<MassFlow?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10208,7 +10209,7 @@ namespace Gu.Units
             MassFlow? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10218,7 +10219,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.kilogramsPerSecond > value.Value.kilogramsPerSecond)
+                if (value is null || x.Value.kilogramsPerSecond > value.Value.kilogramsPerSecond)
                 {
                     value = x;
                 }
@@ -10234,7 +10235,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static MolarHeatCapacity? Max(this IEnumerable<MolarHeatCapacity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10242,7 +10243,7 @@ namespace Gu.Units
             MolarHeatCapacity? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10252,7 +10253,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.joulesPerKelvinMole > value.Value.joulesPerKelvinMole)
+                if (value is null || x.Value.joulesPerKelvinMole > value.Value.joulesPerKelvinMole)
                 {
                     value = x;
                 }
@@ -10268,7 +10269,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static MolarMass? Max(this IEnumerable<MolarMass?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10276,7 +10277,7 @@ namespace Gu.Units
             MolarMass? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10286,7 +10287,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.kilogramsPerMole > value.Value.kilogramsPerMole)
+                if (value is null || x.Value.kilogramsPerMole > value.Value.kilogramsPerMole)
                 {
                     value = x;
                 }
@@ -10302,7 +10303,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Momentum? Max(this IEnumerable<Momentum?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10310,7 +10311,7 @@ namespace Gu.Units
             Momentum? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10320,7 +10321,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.newtonSecond > value.Value.newtonSecond)
+                if (value is null || x.Value.newtonSecond > value.Value.newtonSecond)
                 {
                     value = x;
                 }
@@ -10336,7 +10337,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Power? Max(this IEnumerable<Power?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10344,7 +10345,7 @@ namespace Gu.Units
             Power? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10354,7 +10355,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.watts > value.Value.watts)
+                if (value is null || x.Value.watts > value.Value.watts)
                 {
                     value = x;
                 }
@@ -10370,7 +10371,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Pressure? Max(this IEnumerable<Pressure?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10378,7 +10379,7 @@ namespace Gu.Units
             Pressure? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10388,7 +10389,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.pascals > value.Value.pascals)
+                if (value is null || x.Value.pascals > value.Value.pascals)
                 {
                     value = x;
                 }
@@ -10404,7 +10405,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Resistance? Max(this IEnumerable<Resistance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10412,7 +10413,7 @@ namespace Gu.Units
             Resistance? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10422,7 +10423,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.ohms > value.Value.ohms)
+                if (value is null || x.Value.ohms > value.Value.ohms)
                 {
                     value = x;
                 }
@@ -10438,7 +10439,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static SolidAngle? Max(this IEnumerable<SolidAngle?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10446,7 +10447,7 @@ namespace Gu.Units
             SolidAngle? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10456,7 +10457,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.steradians > value.Value.steradians)
+                if (value is null || x.Value.steradians > value.Value.steradians)
                 {
                     value = x;
                 }
@@ -10472,7 +10473,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static SpecificEnergy? Max(this IEnumerable<SpecificEnergy?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10480,7 +10481,7 @@ namespace Gu.Units
             SpecificEnergy? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10490,7 +10491,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.joulesPerKilogram > value.Value.joulesPerKilogram)
+                if (value is null || x.Value.joulesPerKilogram > value.Value.joulesPerKilogram)
                 {
                     value = x;
                 }
@@ -10506,7 +10507,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static SpecificVolume? Max(this IEnumerable<SpecificVolume?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10514,7 +10515,7 @@ namespace Gu.Units
             SpecificVolume? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10524,7 +10525,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.cubicMetresPerKilogram > value.Value.cubicMetresPerKilogram)
+                if (value is null || x.Value.cubicMetresPerKilogram > value.Value.cubicMetresPerKilogram)
                 {
                     value = x;
                 }
@@ -10540,7 +10541,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Speed? Max(this IEnumerable<Speed?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10548,7 +10549,7 @@ namespace Gu.Units
             Speed? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10558,7 +10559,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.metresPerSecond > value.Value.metresPerSecond)
+                if (value is null || x.Value.metresPerSecond > value.Value.metresPerSecond)
                 {
                     value = x;
                 }
@@ -10574,7 +10575,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Stiffness? Max(this IEnumerable<Stiffness?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10582,7 +10583,7 @@ namespace Gu.Units
             Stiffness? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10592,7 +10593,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.newtonsPerMetre > value.Value.newtonsPerMetre)
+                if (value is null || x.Value.newtonsPerMetre > value.Value.newtonsPerMetre)
                 {
                     value = x;
                 }
@@ -10608,7 +10609,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Temperature? Max(this IEnumerable<Temperature?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10616,7 +10617,7 @@ namespace Gu.Units
             Temperature? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10626,7 +10627,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.kelvin > value.Value.kelvin)
+                if (value is null || x.Value.kelvin > value.Value.kelvin)
                 {
                     value = x;
                 }
@@ -10642,7 +10643,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Time? Max(this IEnumerable<Time?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10650,7 +10651,7 @@ namespace Gu.Units
             Time? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10660,7 +10661,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.seconds > value.Value.seconds)
+                if (value is null || x.Value.seconds > value.Value.seconds)
                 {
                     value = x;
                 }
@@ -10676,7 +10677,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Torque? Max(this IEnumerable<Torque?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10684,7 +10685,7 @@ namespace Gu.Units
             Torque? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10694,7 +10695,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.newtonMetres > value.Value.newtonMetres)
+                if (value is null || x.Value.newtonMetres > value.Value.newtonMetres)
                 {
                     value = x;
                 }
@@ -10710,7 +10711,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Unitless? Max(this IEnumerable<Unitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10718,7 +10719,7 @@ namespace Gu.Units
             Unitless? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10728,7 +10729,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.scalar > value.Value.scalar)
+                if (value is null || x.Value.scalar > value.Value.scalar)
                 {
                     value = x;
                 }
@@ -10744,7 +10745,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Voltage? Max(this IEnumerable<Voltage?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10752,7 +10753,7 @@ namespace Gu.Units
             Voltage? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10762,7 +10763,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.volts > value.Value.volts)
+                if (value is null || x.Value.volts > value.Value.volts)
                 {
                     value = x;
                 }
@@ -10778,7 +10779,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Volume? Max(this IEnumerable<Volume?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10786,7 +10787,7 @@ namespace Gu.Units
             Volume? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10796,7 +10797,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.cubicMetres > value.Value.cubicMetres)
+                if (value is null || x.Value.cubicMetres > value.Value.cubicMetres)
                 {
                     value = x;
                 }
@@ -10812,7 +10813,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static VolumetricFlow? Max(this IEnumerable<VolumetricFlow?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10820,7 +10821,7 @@ namespace Gu.Units
             VolumetricFlow? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10830,7 +10831,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.cubicMetresPerSecond > value.Value.cubicMetresPerSecond)
+                if (value is null || x.Value.cubicMetresPerSecond > value.Value.cubicMetresPerSecond)
                 {
                     value = x;
                 }
@@ -10846,7 +10847,7 @@ namespace Gu.Units
         /// <returns>The max</returns>
         public static Wavenumber? Max(this IEnumerable<Wavenumber?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10854,7 +10855,7 @@ namespace Gu.Units
             Wavenumber? value = null;
             foreach (var x in source)
             {
-                if (x == null)
+                if (x is null)
                 {
                     continue;
                 }
@@ -10864,7 +10865,7 @@ namespace Gu.Units
                     return x;
                 }
 
-                if (value == null || x.Value.reciprocalMetres > value.Value.reciprocalMetres)
+                if (value is null || x.Value.reciprocalMetres > value.Value.reciprocalMetres)
                 {
                     value = x;
                 }
@@ -10880,7 +10881,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Acceleration Average(this IEnumerable<Acceleration> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10911,7 +10912,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static AmountOfSubstance Average(this IEnumerable<AmountOfSubstance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10942,7 +10943,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Angle Average(this IEnumerable<Angle> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -10973,7 +10974,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static AnglePerUnitless Average(this IEnumerable<AnglePerUnitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11004,7 +11005,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static AngularAcceleration Average(this IEnumerable<AngularAcceleration> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11035,7 +11036,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static AngularJerk Average(this IEnumerable<AngularJerk> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11066,7 +11067,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static AngularSpeed Average(this IEnumerable<AngularSpeed> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11097,7 +11098,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Area Average(this IEnumerable<Area> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11128,7 +11129,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static AreaDensity Average(this IEnumerable<AreaDensity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11159,7 +11160,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Capacitance Average(this IEnumerable<Capacitance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11190,7 +11191,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static CatalyticActivity Average(this IEnumerable<CatalyticActivity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11221,7 +11222,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Conductivity Average(this IEnumerable<Conductivity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11252,7 +11253,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Current Average(this IEnumerable<Current> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11283,7 +11284,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Data Average(this IEnumerable<Data> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11314,7 +11315,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Density Average(this IEnumerable<Density> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11345,7 +11346,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static ElectricalConductance Average(this IEnumerable<ElectricalConductance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11376,7 +11377,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static ElectricCharge Average(this IEnumerable<ElectricCharge> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11407,7 +11408,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Energy Average(this IEnumerable<Energy> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11438,7 +11439,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Flexibility Average(this IEnumerable<Flexibility> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11469,7 +11470,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Force Average(this IEnumerable<Force> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11500,7 +11501,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static ForcePerUnitless Average(this IEnumerable<ForcePerUnitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11531,7 +11532,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Frequency Average(this IEnumerable<Frequency> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11562,7 +11563,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Illuminance Average(this IEnumerable<Illuminance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11593,7 +11594,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Inductance Average(this IEnumerable<Inductance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11624,7 +11625,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Jerk Average(this IEnumerable<Jerk> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11655,7 +11656,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static KinematicViscosity Average(this IEnumerable<KinematicViscosity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11686,7 +11687,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Length Average(this IEnumerable<Length> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11717,7 +11718,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static LengthPerUnitless Average(this IEnumerable<LengthPerUnitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11748,7 +11749,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static LuminousFlux Average(this IEnumerable<LuminousFlux> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11779,7 +11780,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static LuminousIntensity Average(this IEnumerable<LuminousIntensity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11810,7 +11811,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static MagneticFieldStrength Average(this IEnumerable<MagneticFieldStrength> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11841,7 +11842,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static MagneticFlux Average(this IEnumerable<MagneticFlux> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11872,7 +11873,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Mass Average(this IEnumerable<Mass> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11903,7 +11904,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static MassFlow Average(this IEnumerable<MassFlow> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11934,7 +11935,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static MolarHeatCapacity Average(this IEnumerable<MolarHeatCapacity> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11965,7 +11966,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static MolarMass Average(this IEnumerable<MolarMass> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -11996,7 +11997,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Momentum Average(this IEnumerable<Momentum> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12027,7 +12028,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Power Average(this IEnumerable<Power> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12058,7 +12059,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Pressure Average(this IEnumerable<Pressure> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12089,7 +12090,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Resistance Average(this IEnumerable<Resistance> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12120,7 +12121,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static SolidAngle Average(this IEnumerable<SolidAngle> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12151,7 +12152,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static SpecificEnergy Average(this IEnumerable<SpecificEnergy> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12182,7 +12183,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static SpecificVolume Average(this IEnumerable<SpecificVolume> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12213,7 +12214,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Speed Average(this IEnumerable<Speed> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12244,7 +12245,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Stiffness Average(this IEnumerable<Stiffness> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12275,7 +12276,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Temperature Average(this IEnumerable<Temperature> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12306,7 +12307,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Time Average(this IEnumerable<Time> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12337,7 +12338,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Torque Average(this IEnumerable<Torque> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12368,7 +12369,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Unitless Average(this IEnumerable<Unitless> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12399,7 +12400,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Voltage Average(this IEnumerable<Voltage> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12430,7 +12431,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Volume Average(this IEnumerable<Volume> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12461,7 +12462,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static VolumetricFlow Average(this IEnumerable<VolumetricFlow> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12492,7 +12493,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Wavenumber Average(this IEnumerable<Wavenumber> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12523,7 +12524,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Acceleration? Average(this IEnumerable<Acceleration?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12557,7 +12558,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static AmountOfSubstance? Average(this IEnumerable<AmountOfSubstance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12591,7 +12592,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Angle? Average(this IEnumerable<Angle?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12625,7 +12626,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static AnglePerUnitless? Average(this IEnumerable<AnglePerUnitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12659,7 +12660,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static AngularAcceleration? Average(this IEnumerable<AngularAcceleration?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12693,7 +12694,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static AngularJerk? Average(this IEnumerable<AngularJerk?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12727,7 +12728,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static AngularSpeed? Average(this IEnumerable<AngularSpeed?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12761,7 +12762,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Area? Average(this IEnumerable<Area?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12795,7 +12796,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static AreaDensity? Average(this IEnumerable<AreaDensity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12829,7 +12830,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Capacitance? Average(this IEnumerable<Capacitance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12863,7 +12864,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static CatalyticActivity? Average(this IEnumerable<CatalyticActivity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12897,7 +12898,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Conductivity? Average(this IEnumerable<Conductivity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12931,7 +12932,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Current? Average(this IEnumerable<Current?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12965,7 +12966,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Data? Average(this IEnumerable<Data?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -12999,7 +13000,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Density? Average(this IEnumerable<Density?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13033,7 +13034,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static ElectricalConductance? Average(this IEnumerable<ElectricalConductance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13067,7 +13068,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static ElectricCharge? Average(this IEnumerable<ElectricCharge?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13101,7 +13102,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Energy? Average(this IEnumerable<Energy?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13135,7 +13136,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Flexibility? Average(this IEnumerable<Flexibility?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13169,7 +13170,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Force? Average(this IEnumerable<Force?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13203,7 +13204,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static ForcePerUnitless? Average(this IEnumerable<ForcePerUnitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13237,7 +13238,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Frequency? Average(this IEnumerable<Frequency?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13271,7 +13272,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Illuminance? Average(this IEnumerable<Illuminance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13305,7 +13306,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Inductance? Average(this IEnumerable<Inductance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13339,7 +13340,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Jerk? Average(this IEnumerable<Jerk?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13373,7 +13374,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static KinematicViscosity? Average(this IEnumerable<KinematicViscosity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13407,7 +13408,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Length? Average(this IEnumerable<Length?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13441,7 +13442,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static LengthPerUnitless? Average(this IEnumerable<LengthPerUnitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13475,7 +13476,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static LuminousFlux? Average(this IEnumerable<LuminousFlux?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13509,7 +13510,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static LuminousIntensity? Average(this IEnumerable<LuminousIntensity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13543,7 +13544,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static MagneticFieldStrength? Average(this IEnumerable<MagneticFieldStrength?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13577,7 +13578,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static MagneticFlux? Average(this IEnumerable<MagneticFlux?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13611,7 +13612,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Mass? Average(this IEnumerable<Mass?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13645,7 +13646,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static MassFlow? Average(this IEnumerable<MassFlow?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13679,7 +13680,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static MolarHeatCapacity? Average(this IEnumerable<MolarHeatCapacity?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13713,7 +13714,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static MolarMass? Average(this IEnumerable<MolarMass?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13747,7 +13748,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Momentum? Average(this IEnumerable<Momentum?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13781,7 +13782,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Power? Average(this IEnumerable<Power?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13815,7 +13816,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Pressure? Average(this IEnumerable<Pressure?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13849,7 +13850,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Resistance? Average(this IEnumerable<Resistance?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13883,7 +13884,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static SolidAngle? Average(this IEnumerable<SolidAngle?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13917,7 +13918,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static SpecificEnergy? Average(this IEnumerable<SpecificEnergy?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13951,7 +13952,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static SpecificVolume? Average(this IEnumerable<SpecificVolume?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -13985,7 +13986,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Speed? Average(this IEnumerable<Speed?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -14019,7 +14020,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Stiffness? Average(this IEnumerable<Stiffness?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -14053,7 +14054,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Temperature? Average(this IEnumerable<Temperature?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -14087,7 +14088,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Time? Average(this IEnumerable<Time?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -14121,7 +14122,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Torque? Average(this IEnumerable<Torque?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -14155,7 +14156,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Unitless? Average(this IEnumerable<Unitless?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -14189,7 +14190,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Voltage? Average(this IEnumerable<Voltage?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -14223,7 +14224,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Volume? Average(this IEnumerable<Volume?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -14257,7 +14258,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static VolumetricFlow? Average(this IEnumerable<VolumetricFlow?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
@@ -14291,7 +14292,7 @@ namespace Gu.Units
         /// <returns>The average</returns>
         public static Wavenumber? Average(this IEnumerable<Wavenumber?> source)
         {
-            if (source == null)
+            if (source is null)
             {
                 throw new ArgumentNullException("source");
             }
