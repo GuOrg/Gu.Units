@@ -13,7 +13,7 @@
         [Test]
         public static void Dump()
         {
-            foreach (var line in File.ReadAllLines("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Generator\\Templates\\Unit.tt"))
+            foreach (var line in File.ReadAllLines("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Generator\\Templates\\UnitTypeConverter.tt"))
             {
                 if (line.Length == 0)
                 {
@@ -55,6 +55,16 @@
         }
 
         [Test]
+        public static void WriteTypeConverters()
+        {
+            var settings = Settings();
+            foreach (var quantity in settings.Quantities)
+            {
+                File.WriteAllText($"C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\{quantity.Name}TypeConverter.generated.cs", TypeConverterGenerator.Code(quantity));
+            }
+        }
+
+        [Test]
         public static void WriteUnits()
         {
             var settings = Settings();
@@ -65,12 +75,12 @@
         }
 
         [Test]
-        public static void WriteTypeConverters()
+        public static void WriteUnitTypeConverters()
         {
             var settings = Settings();
-            foreach (var quantity in settings.Quantities)
+            foreach (var unit in settings.AllUnits)
             {
-                File.WriteAllText($"C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\{quantity.Name}TypeConverter.generated.cs", TypeConverterGenerator.Code(quantity));
+                File.WriteAllText($"C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\{unit.ClassName}TypeConverter.generated.cs", UnitTypeConverterGenerator.Code(unit));
             }
         }
 

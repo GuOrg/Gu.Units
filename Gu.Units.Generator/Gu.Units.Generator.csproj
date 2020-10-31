@@ -39,26 +39,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>UnitsWpf.tt</DependentUpon>
     </None>
-
-    <None Include="Templates\UnitTypeConverter.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UnitTypeConverter.txt</LastGenOutput>
-    </None>
-    <None Update="Templates\UnitTypeConverter.txt">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>UnitTypeConverter.tt</DependentUpon>
-    </None>
-
-    <None Include="Templates\UnitTypeConverters.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UnitTypeConverters.txt</LastGenOutput>
-    </None>
-    <None Update="Templates\UnitTypeConverters.txt">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>UnitTypeConverters.tt</DependentUpon>
-    </None>
   </ItemGroup>
 
   <ItemGroup>
