@@ -104,7 +104,7 @@ namespace Gu.Units.Wpf
             {
                 if (StringFormatParser<LengthPerUnitlessUnit>.TryParse(value, out this.quantityFormat))
                 {
-                    if (this.unit != null && this.unit != this.quantityFormat.Unit)
+                    if (this.unit is { } && this.unit != this.quantityFormat.Unit)
                     {
                         var message = $"Unit is set to '{this.unit.Value.symbol}' but StringFormat is '{value}'";
                         if (Is.DesignMode)
@@ -135,7 +135,7 @@ namespace Gu.Units.Wpf
                 var provideValueTarget = (IProvideValueTarget)serviceProvider.GetService(typeof(IProvideValueTarget));
                 var targetObject = provideValueTarget?.TargetObject;
                 this.binding = targetObject as Binding;
-                if (this.binding is null && targetObject != null)
+                if (this.binding is null && targetObject is { })
                 {
                     this.errorText.AppendLine("TargetObject is not a binding");
                     if (Is.DesignMode)
@@ -170,7 +170,7 @@ namespace Gu.Units.Wpf
                 message += $"{this.GetType().Name} does not support converting to {targetType.Name}";
             }
 
-            if (value != null && !(value is LengthPerUnitless))
+            if (value is { } && !(value is LengthPerUnitless))
             {
                 message += $"{this.GetType().Name} only supports converting from {typeof(LengthPerUnitless)}";
             }
@@ -194,7 +194,7 @@ namespace Gu.Units.Wpf
             }
 
             var lengthPerUnitless = (LengthPerUnitless)value;
-            if (this.bindingQuantityFormat != null)
+            if (this.bindingQuantityFormat is { })
             {
                 if (string.IsNullOrEmpty(this.bindingQuantityFormat.SymbolFormat))
                 {
@@ -211,7 +211,7 @@ namespace Gu.Units.Wpf
                     return lengthPerUnitless.ToString(this.quantityFormat, culture);
                 }
 
-                if (this.ValueFormat != null)
+                if (this.ValueFormat is { })
                 {
                     return lengthPerUnitless.GetValue(this.unit.Value).ToString(this.valueFormat, culture);
                 }
@@ -330,27 +330,27 @@ namespace Gu.Units.Wpf
             BindingStringFormat.TryGet(this.binding, out this.bindingQuantityFormat);
             if (!string.IsNullOrEmpty(this.bindingQuantityFormat?.SymbolFormat))
             {
-                if (this.ValueFormat != null)
+                if (this.ValueFormat is { })
                 {
                     this.errorText.AppendLine($"ValueFormat cannot be set when Binding.StringFormat is a unit format.");
                 }
 
-                if (this.StringFormat != null)
+                if (this.StringFormat is { })
                 {
                     this.errorText.AppendLine($"ValueFormat cannot be set when Binding.StringFormat is a unit format.");
                 }
             }
 
-            if (this.quantityFormat != null)
+            if (this.quantityFormat is { })
             {
-                if (this.ValueFormat != null)
+                if (this.ValueFormat is { })
                 {
                     this.errorText.AppendLine($"Both ValueFormat and StringFormat cannot be set.");
                 }
             }
             else
             {
-                if (this.unit != null && this.SymbolFormat != null)
+                if (this.unit is { } && this.SymbolFormat is { })
                 {
                     this.quantityFormat = FormatCache<LengthPerUnitlessUnit>.GetOrCreate(this.ValueFormat, this.unit.Value, this.SymbolFormat.Value);
                 }
@@ -404,7 +404,7 @@ namespace Gu.Units.Wpf
                         {
                             this.errorText.AppendLine("UnitInput == SymbolRequired but no unit format is specified");
                         }
-                        else if (this.SymbolFormat != null)
+                        else if (this.SymbolFormat is { })
                         {
                             this.quantityFormat = FormatCache<LengthPerUnitlessUnit>.GetOrCreate(this.ValueFormat, this.unit.Value, this.SymbolFormat.Value);
                             if (this.UnitInput is null)

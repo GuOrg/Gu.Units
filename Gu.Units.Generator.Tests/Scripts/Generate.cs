@@ -7,7 +7,7 @@
 
     using NUnit.Framework;
 
-    [Ignore("Script")]
+    //[Ignore("Script")]
     public static class Generate
     {
         [Test]
