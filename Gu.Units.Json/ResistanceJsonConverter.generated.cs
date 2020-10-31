@@ -48,7 +48,7 @@ namespace Gu.Units.Json
         }
 
         /// <inheritdoc />
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
             var resistance = (Resistance)value;
             serializer.Serialize(writer, resistance.ToString(this.unit, serializer.Culture));
@@ -61,9 +61,9 @@ namespace Gu.Units.Json
         }
 
         /// <inheritdoc />
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            var stringValue = reader.Value as string;
+            var stringValue = (string)reader.Value;
             return Resistance.Parse(stringValue, serializer.Culture);
         }
     }

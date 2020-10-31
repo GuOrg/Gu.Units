@@ -33,7 +33,7 @@ namespace Gu.Units.Json
         }
 
         /// <inheritdoc />
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
             var angle = (Angle)value;
             serializer.Serialize(writer, angle.ToString(this.unit, serializer.Culture));
@@ -46,9 +46,9 @@ namespace Gu.Units.Json
         }
 
         /// <inheritdoc />
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            var stringValue = reader.Value as string;
+            var stringValue = (string)reader.Value;
             return Angle.Parse(stringValue, serializer.Culture);
         }
     }
