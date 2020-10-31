@@ -1,3 +1,4 @@
+#nullable enable
 namespace Gu.Units.Wpf.Proxies
 {
     /// <summary>

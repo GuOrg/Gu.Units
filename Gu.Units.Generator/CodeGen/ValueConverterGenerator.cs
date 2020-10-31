@@ -8,6 +8,7 @@ namespace Gu.Units.Generator.CodeGen
         public static string Code(Quantity quantity)
         {
             return new StringBuilder()
+                .AppendLine("#nullable enable")
                 .AppendLine($"namespace Gu.Units.Wpf")
                 .AppendLine($"{{")
                 .AppendLine($"    using System;")
@@ -149,7 +150,7 @@ namespace Gu.Units.Generator.CodeGen
                 .AppendLine($"        /// <inheritdoc />")
                 .AppendLine($"        public override object ProvideValue(IServiceProvider serviceProvider)")
                 .AppendLine($"        {{")
-                .AppendLine($"            // the binding does not have stringformat set at this point")
+                .AppendLine($"            // the binding does not have string format set at this point")
                 .AppendLine($"            // caching the binding to resolve later.")
                 .AppendLine($"            try")
                 .AppendLine($"            {{")

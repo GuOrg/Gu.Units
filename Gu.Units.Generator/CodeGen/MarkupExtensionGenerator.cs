@@ -9,6 +9,7 @@ namespace Gu.Units.Generator.CodeGen
         public static string Code(Quantity quantity)
         {
             return new StringBuilder()
+                .AppendLine("#nullable enable")
                 .AppendLine($"namespace Gu.Units.Wpf")
                 .AppendLine($"{{")
                 .AppendLine($"    using System;")

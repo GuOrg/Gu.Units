@@ -1,3 +1,4 @@
+#nullable enable
 namespace Gu.Units.Wpf
 {
     using System;
@@ -139,7 +140,7 @@ namespace Gu.Units.Wpf
         /// <inheritdoc />
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            // the binding does not have stringformat set at this point
+            // the binding does not have string format set at this point
             // caching the binding to resolve later.
             try
             {

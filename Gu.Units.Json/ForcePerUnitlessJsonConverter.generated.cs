@@ -1,3 +1,4 @@
+#nullable enable
 namespace Gu.Units.Json
 {
     using System;

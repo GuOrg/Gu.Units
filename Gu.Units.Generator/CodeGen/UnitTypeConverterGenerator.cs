@@ -8,6 +8,7 @@ namespace Gu.Units.Generator.CodeGen
         public static string Code(Unit unit)
         {
             return new StringBuilder()
+                .AppendLine("#nullable enable")
                 .AppendLine($"namespace Gu.Units")
                 .AppendLine($"{{")
                 .AppendLine($"    using System;")
@@ -16,7 +17,7 @@ namespace Gu.Units.Generator.CodeGen
                 .AppendLine($"    using System.Globalization;")
                 .AppendLine()
                 .AppendLine($"    /// <summary>")
-                .AppendLine($"    /// Provides a unified way of converting types of values to other types, as well as for accessing standard values and subproperties.")
+                .AppendLine($"    /// Provides a unified way of converting types of values to other types, as well as for accessing standard values and sub properties.")
                 .AppendLine($"    /// </summary>")
                 .AppendLine($"    /// <devdoc>")
                 .AppendLine($"    /// <para>Provides a type converter to convert <see cref='Gu.Units.{unit.ClassName}'/>")

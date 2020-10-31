@@ -10,6 +10,7 @@ namespace Gu.Units.Generator.CodeGen
         public static string Code(Unit unit)
         {
             return new StringBuilder()
+                .AppendLine("#nullable enable")
                 .AppendLine($"namespace Gu.Units.Wpf.Proxies")
                 .AppendLine($"{{")
                 .AppendLine($"    /// <summary>")

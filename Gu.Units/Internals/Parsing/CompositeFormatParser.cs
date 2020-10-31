@@ -4,14 +4,14 @@
 
     internal static class CompositeFormatParser
     {
-        internal static QuantityFormat<TUnit> Create<TUnit>(string format)
+        internal static QuantityFormat<TUnit> Create<TUnit>(string? format)
             where TUnit : struct, IUnit, IEquatable<TUnit>
         {
             _ = TryParse(format, out QuantityFormat<TUnit> result);
             return result;
         }
 
-        internal static bool TryParse<TUnit>(string format, out QuantityFormat<TUnit> result)
+        internal static bool TryParse<TUnit>(string? format, out QuantityFormat<TUnit> result)
             where TUnit : struct, IUnit, IEquatable<TUnit>
         {
             if (string.IsNullOrWhiteSpace(format))
@@ -24,7 +24,7 @@
             return TryParse(format, ref pos, out result);
         }
 
-        internal static bool TryParse<TUnit>(string format, ref int pos, out QuantityFormat<TUnit> result)
+        internal static bool TryParse<TUnit>(string? format, ref int pos, out QuantityFormat<TUnit> result)
                 where TUnit : struct, IUnit, IEquatable<TUnit>
         {
             if (string.IsNullOrWhiteSpace(format))

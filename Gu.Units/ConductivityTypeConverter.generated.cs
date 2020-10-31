@@ -1,3 +1,4 @@
+#nullable enable
 namespace Gu.Units
 {
     using System;
@@ -7,7 +8,7 @@ namespace Gu.Units
     using System.Reflection;
 
     /// <summary>
-    /// Provides a unified way of converting types of values to other types, as well as for accessing standard values and subproperties.
+    /// Provides a unified way of converting types of values to other types, as well as for accessing standard values and sub properties.
     /// </summary>
     /// <devdoc>
     /// <para>Provides a type converter to convert <see cref='Gu.Units.Conductivity'/>

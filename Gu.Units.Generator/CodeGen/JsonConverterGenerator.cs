@@ -8,6 +8,7 @@ namespace Gu.Units.Generator.CodeGen
         public static string Code(Quantity quantity)
         {
             return new StringBuilder()
+                .AppendLine("#nullable enable")
                 .AppendLine($"namespace Gu.Units.Json")
                 .AppendLine($"{{")
                 .AppendLine($"    using System;")
