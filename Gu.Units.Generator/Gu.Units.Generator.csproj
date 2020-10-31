@@ -20,16 +20,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <EmbeddedResource Include="Templates\TemplateFilemanager.CS.ttinclude" />
 
-    <None Update="Templates\Quantity.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Quantity.txt</LastGenOutput>
-    </None>
-    <None Update="Templates\Quantity.txt">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Quantity.tt</DependentUpon>
-    </None>
-
     <None Update="Templates\QuantityExtension.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>QuantityExtension.txt</LastGenOutput>
@@ -108,16 +98,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>QuantityValueConverters.tt</DependentUpon>
-    </None>
-
-    <None Update="Templates\Quantties.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Quantties.txt</LastGenOutput>
-    </None>
-    <None Update="Templates\Quantties.txt">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Quantties.tt</DependentUpon>
     </None>
 
     <None Include="Templates\Unit.tt">

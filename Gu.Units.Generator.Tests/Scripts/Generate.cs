@@ -27,10 +27,11 @@
                     {
                         return line.Replace("{", "{{")
                                    .Replace("}", "}}")
+                                   .Replace("\\", "\\\\")
                                    .Replace("\"", "\\\"")
+                                   .Replace("<#= Settings.Namespace #>", "Gu.Units")
                                    .Replace("<#= ", "{")
-                                   .Replace(" #>", "}")
-                                   .Replace("<#= Settings.Namespace #>", "Gu.Units");
+                                   .Replace(" #>", "}");
                     }
                 }
             }
@@ -40,8 +41,25 @@
         [Test]
         public static void WriteEnumerable()
         {
-            Settings.InnerInstance = null;
-            File.WriteAllText("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\Enumerable.generated.cs", EnumerableGenerator.Code(Settings.FromResource));
+            var settings = Settings();
+            File.WriteAllText("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\Enumerable.generated.cs", EnumerableGenerator.Code(settings));
+        }
+
+        [Ignore("Script")]
+        [Test]
+        public static void WriteQuantities()
+        {
+            var settings = Settings();
+            foreach (var quantity in settings.Quantities)
+            {
+                File.WriteAllText("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\" + quantity.Name + ".generated.cs", QuantityGenerator.Code(quantity));
+            }
+        }
+
+        private static Settings Settings()
+        {
+            Gu.Units.Generator.Settings.InnerInstance = null;
+            return Gu.Units.Generator.Settings.FromResource;
         }
     }
 }
