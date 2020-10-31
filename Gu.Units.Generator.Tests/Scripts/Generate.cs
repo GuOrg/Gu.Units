@@ -13,7 +13,7 @@
         [Test]
         public static void Dump()
         {
-            foreach (var line in File.ReadAllLines("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Generator\\Templates\\QuantityTypeConverter.tt"))
+            foreach (var line in File.ReadAllLines("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Generator\\Templates\\QuantityValueConverter.tt"))
             {
                 if (line.Length == 0)
                 {
@@ -50,7 +50,7 @@
             var settings = Settings();
             foreach (var quantity in settings.Quantities)
             {
-                File.WriteAllText("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\" + quantity.Name + ".generated.cs", QuantityGenerator.Code(quantity));
+                File.WriteAllText($"C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\{quantity.Name}.generated.cs", QuantityGenerator.Code(quantity));
             }
         }
 
@@ -60,17 +60,7 @@
             var settings = Settings();
             foreach (var quantity in settings.Quantities)
             {
-                File.WriteAllText("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\" + quantity.Name + "TypeConverter.generated.cs", TypeConverterGenerator.Code(quantity));
-            }
-        }
-
-        [Test]
-        public static void WriteMarkupExtensions()
-        {
-            var settings = Settings();
-            foreach (var quantity in settings.Quantities)
-            {
-                File.WriteAllText("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Wpf\\" + quantity.Name + "Extension.generated.cs", MarkupExtensionGenerator.Code(quantity));
+                File.WriteAllText($"C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units\\{quantity.Name}TypeConverter.generated.cs", TypeConverterGenerator.Code(quantity));
             }
         }
 
@@ -80,7 +70,27 @@
             var settings = Settings();
             foreach (var quantity in settings.Quantities)
             {
-                File.WriteAllText("C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Json\\" + quantity.Name + "JsonConverter.generated.cs", JsonConverterGenerator.Code(quantity));
+                File.WriteAllText($"C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Json\\{quantity.Name}JsonConverter.generated.cs", JsonConverterGenerator.Code(quantity));
+            }
+        }
+
+        [Test]
+        public static void WriteMarkupExtensions()
+        {
+            var settings = Settings();
+            foreach (var quantity in settings.Quantities)
+            {
+                File.WriteAllText($"C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Wpf\\{quantity.Name}Extension.generated.cs", MarkupExtensionGenerator.Code(quantity));
+            }
+        }
+
+        [Test]
+        public static void WriteValueConverters()
+        {
+            var settings = Settings();
+            foreach (var quantity in settings.Quantities)
+            {
+                File.WriteAllText($"C:\\Git\\_GuOrg\\Gu.Units\\Gu.Units.Wpf\\{quantity.Name}Converter.generated.cs", ValueConverterGenerator.Code(quantity));
             }
         }
 
