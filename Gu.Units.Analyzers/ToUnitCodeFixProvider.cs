@@ -4,6 +4,7 @@ namespace Gu.Units.Analyzers
     using System.Globalization;
     using System.Text.RegularExpressions;
     using System.Threading.Tasks;
+
     using Microsoft.CodeAnalysis;
     using Microsoft.CodeAnalysis.CodeActions;
     using Microsoft.CodeAnalysis.CodeFixes;
@@ -49,23 +50,22 @@ namespace Gu.Units.Analyzers
             foreach (var diagnostic in context.Diagnostics)
             {
                 var message = diagnostic.GetMessage();
-                if (!Regex.IsMatch(message, this.pattern))
+                if (Regex.IsMatch(message, this.pattern) &&
+                    syntaxRoot is { })
                 {
-                    return;
-                }
-
-                var sourceText = await diagnostic.Location.SourceTree.GetTextAsync(context.CancellationToken).ConfigureAwait(false);
-                var text = sourceText.GetSubText(context.Span);
-                var expression = syntaxRoot.FindNode(diagnostic.Location.SourceSpan)
-                                           .FirstAncestorOrSelf<ExpressionSyntax>();
-                if (expression != null)
-                {
-                    context.RegisterCodeFix(
-                        CodeAction.Create(
-                            string.Format(CultureInfo.InvariantCulture, this.titleFormat, text),
-                            _ => ApplyFix(context.Document, expression, this.wrapSyntax),
-                            this.key),
-                        diagnostic);
+                    var sourceText = await syntaxRoot.SyntaxTree.GetTextAsync(context.CancellationToken).ConfigureAwait(false);
+                    var text = sourceText.GetSubText(context.Span);
+                    var expression = syntaxRoot.FindNode(diagnostic.Location.SourceSpan)
+                        .FirstAncestorOrSelf<ExpressionSyntax>();
+                    if (expression != null)
+                    {
+                        context.RegisterCodeFix(
+                            CodeAction.Create(
+                                string.Format(CultureInfo.InvariantCulture, this.titleFormat, text),
+                                _ => ApplyFix(context.Document, expression, this.wrapSyntax),
+                                this.key),
+                            diagnostic);
+                    }
                 }
             }
         }
