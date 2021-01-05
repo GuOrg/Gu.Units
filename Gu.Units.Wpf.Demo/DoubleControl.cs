@@ -7,6 +7,7 @@
     // Dummy control for testing binding of doubles.
     public class DoubleControl : TextBox
     {
+        /// <summary>Identifies the <see cref="Number"/> dependency property.</summary>
         public static readonly DependencyProperty NumberProperty = DependencyProperty.Register(
             nameof(Number),
             typeof(double),

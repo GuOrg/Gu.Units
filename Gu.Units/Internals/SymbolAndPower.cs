@@ -8,6 +8,8 @@
         internal readonly string Symbol;
         internal readonly int Power;
 
+        private static readonly StringComparer OrdinalComparer = StringComparer.Ordinal;
+
         internal SymbolAndPower(string symbol, int power)
         {
             if (string.IsNullOrEmpty(symbol))
@@ -55,7 +57,7 @@
 
         public bool Equals(SymbolAndPower other)
         {
-            return string.Equals(this.Symbol, other.Symbol, StringComparison.Ordinal) && this.Power == other.Power;
+            return OrdinalComparer.Equals(this.Symbol, other.Symbol) && this.Power == other.Power;
         }
 
         public override bool Equals(object? obj)
@@ -67,7 +69,7 @@
         {
             unchecked
             {
-                return (this.Symbol.GetHashCode() * 397) ^ this.Power;
+                return (OrdinalComparer.GetHashCode(this.Symbol) * 397) ^ this.Power;
             }
         }
     }

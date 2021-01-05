@@ -11,6 +11,8 @@
 
         private static readonly ConcurrentDictionary<IFormatKey, QuantityFormat<TUnit>> Cache = new ConcurrentDictionary<IFormatKey, QuantityFormat<TUnit>>();
 
+        private static readonly StringComparer OrdinalComparer = StringComparer.Ordinal;
+
         /// <summary> For use as key in the cache. </summary>
         internal interface IFormatKey : IEquatable<IFormatKey>
         {
@@ -80,7 +82,7 @@
 
             public bool Equals(CompositeFormatKey other)
             {
-                return string.Equals(this.CompositeFormat, other.CompositeFormat, StringComparison.Ordinal);
+                return OrdinalComparer.Equals(this.CompositeFormat, other.CompositeFormat);
             }
 
             public bool Equals(IFormatKey? other)
@@ -95,9 +97,7 @@
 
             public override int GetHashCode()
             {
-#pragma warning disable CA1307 // Specify StringComparison for clarity
-                return this.CompositeFormat?.GetHashCode() ?? 0;
-#pragma warning restore CA1307 // Specify StringComparison for clarity
+                return OrdinalComparer.GetHashCode(this.CompositeFormat ?? string.Empty);
             }
         }
 
@@ -127,7 +127,7 @@
 
             public bool Equals(ValueAndUnitFormatKey other)
             {
-                return string.Equals(this.ValueFormat, other.ValueFormat, StringComparison.Ordinal) &&
+                return OrdinalComparer.Equals(this.ValueFormat, other.ValueFormat) &&
                        this.Unit.Equals(other.Unit) &&
                        Equals(this.SymbolFormat, other.SymbolFormat);
             }
@@ -146,7 +146,7 @@
             {
                 unchecked
                 {
-                    var hashCode = this.ValueFormat?.GetHashCode() ?? 0;
+                    var hashCode = OrdinalComparer.GetHashCode(this.ValueFormat ?? string.Empty);
                     hashCode = (hashCode * 397) ^ this.SymbolFormat.GetHashCode();
                     hashCode = (hashCode * 397) ^ this.Unit.GetHashCode();
                     return hashCode;
@@ -178,8 +178,8 @@
 
             public bool Equals(ValueAndSymbolFormatKey other)
             {
-                return string.Equals(this.ValueFormat, other.ValueFormat, StringComparison.Ordinal) &&
-                       string.Equals(this.SymbolFormat, other.SymbolFormat, StringComparison.Ordinal);
+                return OrdinalComparer.Equals(this.ValueFormat, other.ValueFormat) &&
+                       OrdinalComparer.Equals(this.SymbolFormat, other.SymbolFormat);
             }
 
             public bool Equals(IFormatKey? other)
@@ -196,10 +196,8 @@
             {
                 unchecked
                 {
-                    var hashCode = this.ValueFormat?.GetHashCode() ?? 0;
-#pragma warning disable CA1307 // Specify StringComparison for clarity
-                    hashCode = (hashCode * 397) ^ (this.SymbolFormat?.GetHashCode() ?? 0);
-#pragma warning restore CA1307 // Specify StringComparison for clarity
+                    var hashCode = OrdinalComparer.GetHashCode(this.ValueFormat);
+                    hashCode = (hashCode * 397) ^ OrdinalComparer.GetHashCode(this.SymbolFormat);
                     return hashCode;
                 }
             }
