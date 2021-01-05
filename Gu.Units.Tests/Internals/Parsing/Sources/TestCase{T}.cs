@@ -54,18 +54,12 @@
 
         private static string ToString(T expected)
         {
-            if (expected is null)
+            return expected switch
             {
-                return "null";
-            }
-
-            var saps = expected as IEnumerable<SymbolAndPower>;
-            if (saps != null)
-            {
-                return $"{{{string.Join(", ", saps)}}}";
-            }
-
-            return expected.ToString();
+                null => null,
+                IEnumerable<SymbolAndPower> saps => $"{{{string.Join(", ", saps)}}}",
+                _ => expected.ToString(),
+            };
         }
     }
 }

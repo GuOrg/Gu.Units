@@ -3,7 +3,7 @@ namespace Gu.Units.Generator.Tests
     using System.Collections;
     using System.Collections.Generic;
 
-    public class FactorConversionComparer : IComparer<FactorConversion>, IComparer
+    public sealed class FactorConversionComparer : IComparer<FactorConversion>, IComparer
     {
         public static readonly FactorConversionComparer Default = new FactorConversionComparer();
 

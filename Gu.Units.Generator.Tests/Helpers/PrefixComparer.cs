@@ -3,7 +3,7 @@
     using System.Collections;
     using System.Collections.Generic;
 
-    public class PrefixComparer : IComparer<Prefix>, IComparer
+    public sealed class PrefixComparer : IComparer<Prefix>, IComparer
     {
         public static readonly PrefixComparer Default = new PrefixComparer();
 

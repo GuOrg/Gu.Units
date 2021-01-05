@@ -4,7 +4,7 @@ namespace Gu.Units.Generator.Tests
     using System.Collections.Generic;
     using System.Linq;
 
-    public class UnitComparer : IComparer<BaseUnit>, IComparer
+    public sealed class UnitComparer : IComparer<BaseUnit>, IComparer
     {
         public static readonly UnitComparer Default = new UnitComparer();
 

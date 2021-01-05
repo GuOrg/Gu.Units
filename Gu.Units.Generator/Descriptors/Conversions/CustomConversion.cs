@@ -93,7 +93,7 @@
             }
         }
 
-        public Unit Unit => this.unit ?? (this.unit = this.GetUnit());
+        public Unit Unit => this.unit ??= this.GetUnit();
 
         public Task<bool> CanRoundtripAsync() => this.CanRoundtripCoreAsync();
 

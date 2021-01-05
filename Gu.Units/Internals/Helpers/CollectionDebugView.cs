@@ -12,10 +12,7 @@
     [Serializable]
     internal class CollectionDebugView<T>
     {
-#pragma warning disable CA1825 // Avoid zero-length array allocations
         private static readonly T[] Empty = new T[0];
-#pragma warning restore CA1825 // Avoid zero-length array allocations
-
         private readonly IEnumerable<T> collection;
 
         internal CollectionDebugView(IEnumerable<T> collection)

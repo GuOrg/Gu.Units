@@ -9,6 +9,7 @@
     /// Use this to format unit values in XAML.
     /// </summary>
     [MarkupExtensionReturnType(typeof(IValueConverter))]
+    [ValueConversion(typeof(IUnit), typeof(string))]
     public class UnitFormatConverterExtension : MarkupExtension, IValueConverter
     {
         /// <summary>
@@ -35,13 +36,11 @@
         /// <inheritdoc />
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var lengthUnit = value as IUnit;
-            if (lengthUnit is null)
+            return value switch
             {
-                return value;
-            }
-
-            return lengthUnit.ToString(this.Format);
+                IUnit unit => unit.ToString(this.Format),
+                _ => value,
+            };
         }
 
         /// <inheritdoc />

@@ -83,7 +83,7 @@
 
         public string FromSi => this.GetFromSi();
 
-        public Unit Unit => this.unit ?? (this.unit = this.GetUnit());
+        public Unit Unit => this.unit ??= this.GetUnit();
 
         public ObservableCollection<PrefixConversion> PrefixConversions { get; } = new ObservableCollection<PrefixConversion>();
 

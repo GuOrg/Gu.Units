@@ -3,7 +3,7 @@
     using System.Collections;
     using System.Collections.Generic;
 
-    public class PrefixConversionVmComparer : IComparer<PrefixConversionVm>, IComparer
+    public sealed class PrefixConversionVmComparer : IComparer<PrefixConversionVm>, IComparer
     {
         public static readonly PrefixConversionVmComparer Default = new PrefixConversionVmComparer();
 

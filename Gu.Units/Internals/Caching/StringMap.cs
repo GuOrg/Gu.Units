@@ -5,9 +5,7 @@ namespace Gu.Units
 
     internal class StringMap<TItem>
     {
-#pragma warning disable CA1825 // Avoid zero-length array allocations
         private static readonly CachedItem[] Empty = new CachedItem[0];
-#pragma warning restore CA1825 // Avoid zero-length array allocations
         private readonly object gate = new object();
         private CachedItem[] cache = Empty;
 

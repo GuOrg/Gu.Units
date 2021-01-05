@@ -18,9 +18,9 @@
 
         public Prefix(string name, string symbol, int power)
         {
-            this.Name = name;
-            this.Symbol = symbol;
-            this.Power = power;
+            this.name = name;
+            this.symbol = symbol;
+            this.power = power;
         }
 
         private Prefix()
