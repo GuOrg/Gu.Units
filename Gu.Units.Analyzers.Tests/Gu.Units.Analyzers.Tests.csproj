@@ -4,6 +4,12 @@
     <TargetFramework>net48</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <EnableNETAnalyzers>True</EnableNETAnalyzers>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+    <AnalysisLevel>latest</AnalysisLevel>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Gu.Units.Analyzers\Gu.Units.Analyzers.csproj" />
     <ProjectReference Include="..\Gu.Units\Gu.Units.csproj" />
@@ -16,7 +22,6 @@
     <PackageReference Include="IDisposableAnalyzers" Version="3.4.8" PrivateAssets="all" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" PrivateAssets="all" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.8.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.3.2" PrivateAssets="all" />
     <PackageReference Include="NUnit" Version="3.12.0" PrivateAssets="all" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" PrivateAssets="all" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.321" PrivateAssets="all" />
