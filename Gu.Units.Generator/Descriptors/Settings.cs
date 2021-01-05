@@ -10,7 +10,6 @@
     using Gu.Reactive;
     using Newtonsoft.Json;
 
-    [Serializable]
     public class Settings : INotifyPropertyChanged, IDisposable
     {
 #pragma warning disable SA1401 // Fields must be private
@@ -48,11 +47,6 @@
                               });
         }
 
-        private Settings()
-        {
-        }
-
-        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public static Settings Instance => InnerInstance ?? FromResource;

@@ -104,14 +104,12 @@
                 "Newtons",
                 "N",
                 "Force",
-#pragma warning disable SA1118 // Parameter should not span multiple lines
                 new[]
                     {
                         UnitAndPower.Create(this.Kilograms, 1),
                         UnitAndPower.Create(this.Metres, 1),
                         UnitAndPower.Create(this.Seconds, -2),
                     });
-#pragma warning restore SA1118 // Parameter should not span multiple lines
             this.DerivedUnits.Add(this.Newtons);
             this.Force = this.Newtons.Quantity;
 

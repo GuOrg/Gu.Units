@@ -6,7 +6,6 @@
     using System.Diagnostics;
     using System.Linq;
 
-    [Serializable]
     [DebuggerDisplay("{Left.Name}{Operator}{Right.Name} = {Result.Name}")]
     public sealed class OperatorOverload
     {

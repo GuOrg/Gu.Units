@@ -6,7 +6,6 @@
     using System.Runtime.CompilerServices;
     using System.Threading.Tasks;
 
-    [Serializable]
     public class PartConversion : IFactorConversion, INotifyPropertyChanged
     {
         private Unit unit;
@@ -19,7 +18,6 @@
             this.Factor = factor;
         }
 
-        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Name

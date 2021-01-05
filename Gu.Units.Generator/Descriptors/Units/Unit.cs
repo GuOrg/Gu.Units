@@ -1,13 +1,11 @@
 namespace Gu.Units.Generator
 {
-    using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
     using Newtonsoft.Json;
 
-    [Serializable]
     public abstract class Unit : INameAndSymbol, INotifyPropertyChanged
     {
         private readonly Quantity quantity;
@@ -23,7 +21,6 @@ namespace Gu.Units.Generator
             this.quantity = new Quantity(this);
         }
 
-        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public abstract UnitParts Parts { get; }

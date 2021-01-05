@@ -7,7 +7,6 @@
     using System.Runtime.CompilerServices;
 
     [DebuggerDisplay("{Name}")]
-    [Serializable]
     public class Quantity : MarshalByRefObject, INotifyPropertyChanged
     {
         private InverseOverload inverse;
@@ -17,7 +16,6 @@
             this.Unit = unit;
         }
 
-        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public Unit Unit { get; }

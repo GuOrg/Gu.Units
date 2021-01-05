@@ -9,7 +9,6 @@
     /// http://physics.nist.gov/cuu/Units/prefixes.html.
     /// </summary>
     [DebuggerDisplay("Prefix{Name} ({Symbol}) 1E{Power}")]
-    [Serializable]
     public class Prefix : INotifyPropertyChanged
     {
         private string name;
@@ -23,11 +22,6 @@
             this.power = power;
         }
 
-        private Prefix()
-        {
-        }
-
-        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Name

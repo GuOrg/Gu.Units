@@ -1,11 +1,9 @@
 ﻿namespace Gu.Units.Generator
 {
-    using System;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
     using System.Threading.Tasks;
 
-    [Serializable]
     public class CustomConversion : IConversion, INotifyPropertyChanged
     {
         private string name;
@@ -22,7 +20,6 @@
             this.fromSi = fromSi;
         }
 
-        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Name

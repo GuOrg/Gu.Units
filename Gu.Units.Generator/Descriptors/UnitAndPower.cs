@@ -3,7 +3,6 @@
     using System;
     using System.Linq;
 
-    [Serializable]
     public sealed class UnitAndPower
     {
         private Unit unit;

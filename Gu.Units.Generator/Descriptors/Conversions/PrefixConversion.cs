@@ -6,7 +6,6 @@
     using System.Runtime.CompilerServices;
     using System.Threading.Tasks;
 
-    [Serializable]
     public class PrefixConversion : IFactorConversion, INotifyPropertyChanged
     {
         private string name;
@@ -21,7 +20,6 @@
             this.PrefixName = prefixName;
         }
 
-        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Name

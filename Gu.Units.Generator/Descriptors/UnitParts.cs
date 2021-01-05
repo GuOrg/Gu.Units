@@ -1,6 +1,5 @@
 ﻿namespace Gu.Units.Generator
 {
-    using System;
     using System.Collections;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -9,7 +8,6 @@
     using Gu.Units.Generator.WpfStuff;
 
     [TypeConverter(typeof(UnitPartsConverter))]
-    [Serializable]
     public sealed class UnitParts : IReadOnlyList<UnitAndPower>
     {
         [EditorBrowsable(EditorBrowsableState.Never)]

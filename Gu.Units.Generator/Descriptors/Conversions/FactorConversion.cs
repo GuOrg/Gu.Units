@@ -1,12 +1,10 @@
 ﻿namespace Gu.Units.Generator
 {
-    using System;
     using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Runtime.CompilerServices;
     using System.Threading.Tasks;
 
-    [Serializable]
     public class FactorConversion : IFactorConversion, INotifyPropertyChanged
     {
         private string name;
@@ -21,7 +19,6 @@
             this.factor = factor;
         }
 
-        [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Name
