@@ -10,6 +10,8 @@
         internal const char NoBreakingSpace = '\u00A0';
         internal const string NoBreakingSpaceString = "\u00A0";
 
+        private static readonly StringComparer OrdinalComparer = StringComparer.Ordinal;
+
         private string? compositeFormat;
 
         private QuantityFormat(
@@ -76,12 +78,12 @@
                 return true;
             }
 
-            return string.Equals(this.PrePadding, other.PrePadding, StringComparison.Ordinal) &&
-                   string.Equals(this.ValueFormat, other.ValueFormat, StringComparison.Ordinal) &&
-                   string.Equals(this.Padding, other.Padding, StringComparison.Ordinal) &&
-                   string.Equals(this.SymbolFormat, other.SymbolFormat, StringComparison.Ordinal) &&
-                   string.Equals(this.PostPadding, other.PostPadding, StringComparison.Ordinal) &&
-                   string.Equals(this.ErrorText, other.ErrorText, StringComparison.Ordinal) &&
+            return OrdinalComparer.Equals(this.PrePadding, other.PrePadding) &&
+                   OrdinalComparer.Equals(this.ValueFormat, other.ValueFormat) &&
+                   OrdinalComparer.Equals(this.Padding, other.Padding) &&
+                   OrdinalComparer.Equals(this.SymbolFormat, other.SymbolFormat) &&
+                   OrdinalComparer.Equals(this.PostPadding, other.PostPadding) &&
+                   OrdinalComparer.Equals(this.ErrorText, other.ErrorText) &&
                    this.Unit.Equals(other.Unit);
         }
 
@@ -96,14 +98,21 @@
             {
 #pragma warning disable CA1307 // Specify StringComparison for clarity
                 var hashCode = this.PrePadding?.GetHashCode() ?? 0;
-                hashCode = (hashCode * 397) ^ (this.ValueFormat?.GetHashCode() ?? 0);
-                hashCode = (hashCode * 397) ^ (this.Padding?.GetHashCode() ?? 0);
-                hashCode = (hashCode * 397) ^ (this.SymbolFormat?.GetHashCode() ?? 0);
-                hashCode = (hashCode * 397) ^ (this.PostPadding?.GetHashCode() ?? 0);
-                hashCode = (hashCode * 397) ^ (this.ErrorText?.GetHashCode() ?? 0);
+                hashCode = (hashCode * 397) ^ GetHashCode(this.ValueFormat);
+                hashCode = (hashCode * 397) ^ GetHashCode(this.Padding);
+                hashCode = (hashCode * 397) ^ GetHashCode(this.SymbolFormat);
+                hashCode = (hashCode * 397) ^ GetHashCode(this.PostPadding);
+                hashCode = (hashCode * 397) ^ GetHashCode(this.ErrorText);
 #pragma warning restore CA1307 // Specify StringComparison for clarity
                 hashCode = (hashCode * 397) ^ this.Unit.GetHashCode();
                 return hashCode;
+
+                static int GetHashCode(string? s)
+                {
+                    return s is null
+                        ? 0
+                        : OrdinalComparer.GetHashCode(s);
+                }
             }
         }
 
