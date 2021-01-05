@@ -96,14 +96,12 @@
         {
             unchecked
             {
-#pragma warning disable CA1307 // Specify StringComparison for clarity
                 var hashCode = this.PrePadding?.GetHashCode() ?? 0;
                 hashCode = (hashCode * 397) ^ GetHashCode(this.ValueFormat);
                 hashCode = (hashCode * 397) ^ GetHashCode(this.Padding);
                 hashCode = (hashCode * 397) ^ GetHashCode(this.SymbolFormat);
                 hashCode = (hashCode * 397) ^ GetHashCode(this.PostPadding);
                 hashCode = (hashCode * 397) ^ GetHashCode(this.ErrorText);
-#pragma warning restore CA1307 // Specify StringComparison for clarity
                 hashCode = (hashCode * 397) ^ this.Unit.GetHashCode();
                 return hashCode;
 
