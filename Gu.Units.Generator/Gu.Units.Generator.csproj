@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Gu.Analyzers" Version="1.8.4" PrivateAssets="all" />
+    <PackageReference Include="Gu.Analyzers" Version="1.8.5" PrivateAssets="all" />
     <PackageReference Include="Gu.State" Version="0.3.1" />
     <PackageReference Include="Gu.Wpf.Reactive" Version="4.3.0" />
     <PackageReference Include="IDisposableAnalyzers" Version="3.4.13" PrivateAssets="all" />
