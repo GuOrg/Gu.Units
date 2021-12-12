@@ -11,7 +11,7 @@
         {
             Settings.Default = Settings.Default.WithMetadataReferences(
                 MetadataReferences.Transitive(
-                    typeof(ModuleInitializer)));
+                    typeof(Gu.Units.Angle)));
         }
     }
 }
