@@ -5,7 +5,7 @@
 
     public class ToAngleCodeFixProviderTests
     {
-        private static readonly ToAngleCodeFixProvider Fix = new ToAngleCodeFixProvider();
+        private static readonly ToAngleCodeFixProvider Fix = new();
 
         [Test]
         public void IntToDegrees()

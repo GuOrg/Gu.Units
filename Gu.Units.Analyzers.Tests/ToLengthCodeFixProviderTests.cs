@@ -5,7 +5,7 @@
 
     public class ToLengthCodeFixProviderTests
     {
-        private static readonly ToLengthCodeFixProvider Fix = new ToLengthCodeFixProvider();
+        private static readonly ToLengthCodeFixProvider Fix = new();
 
         [Test]
         public void IntToMillimetres()
