@@ -5,7 +5,7 @@ namespace Gu.Units
 
     internal sealed class SymbolComparer : IComparer<SymbolAndPower>
     {
-        internal static readonly SymbolComparer Default = new SymbolComparer();
+        internal static readonly SymbolComparer Default = new();
 
         private SymbolComparer()
         {

@@ -11,7 +11,7 @@
     internal sealed class ReadonlySet<T> : IReadOnlyCollection<T>
          where T : notnull
     {
-        internal static readonly ReadonlySet<T> Empty = new ReadonlySet<T>(Enumerable.Empty<T>());
+        internal static readonly ReadonlySet<T> Empty = new(Enumerable.Empty<T>());
 
         private readonly ISet<T> source;
 

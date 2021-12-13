@@ -2,7 +2,7 @@
 {
     internal readonly struct PaddedFormat
     {
-        internal static readonly PaddedFormat NullFormat = new PaddedFormat(null, null, null);
+        internal static readonly PaddedFormat NullFormat = new(null, null, null);
 
         internal readonly string? PrePadding;
         internal readonly string? Format;

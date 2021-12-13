@@ -10,7 +10,7 @@
 
     public sealed class MainVm : INotifyPropertyChanged, IDisposable
     {
-        public static readonly MainVm Instance = new MainVm();
+        public static readonly MainVm Instance = new();
         private readonly Settings settings;
         private readonly System.Reactive.Disposables.CompositeDisposable disposable;
         private string nameSpace;

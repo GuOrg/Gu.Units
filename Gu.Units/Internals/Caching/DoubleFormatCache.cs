@@ -2,7 +2,7 @@ namespace Gu.Units
 {
     internal static class DoubleFormatCache
     {
-        private static readonly StringMap<PaddedFormat> Cache = new StringMap<PaddedFormat>();
+        private static readonly StringMap<PaddedFormat> Cache = new();
 
         internal static PaddedFormat GetOrCreate(string? format)
         {

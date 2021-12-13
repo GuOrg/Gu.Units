@@ -20,7 +20,7 @@
                             .Subscribe(this.Synchronize);
         }
 
-        public ObservableCollection<CustomConversionVm> Conversions { get; } = new ObservableCollection<CustomConversionVm>();
+        public ObservableCollection<CustomConversionVm> Conversions { get; } = new();
 
         public void SetUnit(Unit newUnit)
         {

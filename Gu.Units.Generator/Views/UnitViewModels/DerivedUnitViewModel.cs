@@ -6,9 +6,9 @@
 
     public class DerivedUnitViewModel : UnitViewModel<DerivedUnit>
     {
-        private static readonly BaseUnit UnknownUnit = new BaseUnit("???", "??", "????");
+        private static readonly BaseUnit UnknownUnit = new("???", "??", "????");
         private static readonly UnitAndPower[] UnknownUnitAndPowers = { UnitAndPower.Create(UnknownUnit, 1) };
-        private readonly SerialDisposable subscription = new SerialDisposable();
+        private readonly SerialDisposable subscription = new();
 
         public DerivedUnitViewModel()
             : this(new DerivedUnit(UnknownName, UnknownSymbol, UnknownName, UnknownUnitAndPowers))

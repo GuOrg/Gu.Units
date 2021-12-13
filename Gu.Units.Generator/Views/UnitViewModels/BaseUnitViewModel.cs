@@ -6,7 +6,7 @@
 
     public class BaseUnitViewModel : UnitViewModel<BaseUnit>
     {
-        private readonly SerialDisposable subscription = new SerialDisposable();
+        private readonly SerialDisposable subscription = new();
 
         public BaseUnitViewModel()
             : this(new BaseUnit(UnknownName, UnknownSymbol, UnknownName))

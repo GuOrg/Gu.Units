@@ -82,7 +82,7 @@
 
         public Unit Unit => this.unit ??= this.GetUnit();
 
-        public ObservableCollection<PrefixConversion> PrefixConversions { get; } = new ObservableCollection<PrefixConversion>();
+        public ObservableCollection<PrefixConversion> PrefixConversions { get; } = new();
 
         public Task<bool> CanRoundtripAsync() => this.CanRoundtripCoreAsync();
 

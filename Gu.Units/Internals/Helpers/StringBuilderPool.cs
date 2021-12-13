@@ -9,7 +9,7 @@
 
     internal static class StringBuilderPool
     {
-        private static readonly ConcurrentQueue<StringBuilder> Builders = new ConcurrentQueue<StringBuilder>();
+        private static readonly ConcurrentQueue<StringBuilder> Builders = new();
 
         internal static Builder Borrow()
         {

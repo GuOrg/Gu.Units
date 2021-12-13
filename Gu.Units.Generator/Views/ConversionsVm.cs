@@ -59,9 +59,9 @@
 
         public PartConversionsVm PartConversions { get; }
 
-        public FactorConversionsVm FactorConversions { get; } = new FactorConversionsVm();
+        public FactorConversionsVm FactorConversions { get; } = new();
 
-        public CustomConversionsVm CustomConversions { get; } = new CustomConversionsVm();
+        public CustomConversionsVm CustomConversions { get; } = new();
 
         public IConversion SelectedConversion
         {

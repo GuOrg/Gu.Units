@@ -9,7 +9,7 @@ namespace Gu.Units
     internal static class UnitFormatCache<TUnit>
         where TUnit : struct, IUnit, IEquatable<TUnit>
     {
-        private static readonly Lazy<Caches> LazyCache = new Lazy<Caches>(() => new Caches());
+        private static readonly Lazy<Caches> LazyCache = new(() => new Caches());
 
         internal static Caches Cache => LazyCache.Value;
 
@@ -94,9 +94,9 @@ namespace Gu.Units
 
         internal class Caches
         {
-            private readonly Map<ReadonlySet<SymbolAndPower>, TUnit> unitPartsMap = new Map<ReadonlySet<SymbolAndPower>, TUnit>();
-            private readonly StringMap<TUnit> symbolUnitMap = new StringMap<TUnit>();
-            private readonly StringMap<IReadOnlyList<SymbolAndPower>> symbolPartsMap = new StringMap<IReadOnlyList<SymbolAndPower>>();
+            private readonly Map<ReadonlySet<SymbolAndPower>, TUnit> unitPartsMap = new();
+            private readonly StringMap<TUnit> symbolUnitMap = new();
+            private readonly StringMap<IReadOnlyList<SymbolAndPower>> symbolPartsMap = new();
 
             internal Caches()
             {

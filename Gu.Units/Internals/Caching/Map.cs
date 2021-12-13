@@ -7,7 +7,7 @@
         where T1 : notnull
         where T2 : notnull
     {
-        private readonly object gate = new object();
+        private readonly object gate = new();
         private readonly Dictionary<T1, T2> dictT1T2;
         private readonly Dictionary<T2, T1> dictT2T1;
 

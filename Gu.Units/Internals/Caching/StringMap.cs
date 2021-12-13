@@ -6,7 +6,7 @@ namespace Gu.Units
     internal class StringMap<TItem>
     {
         private static readonly CachedItem[] Empty = new CachedItem[0];
-        private readonly object gate = new object();
+        private readonly object gate = new();
         private CachedItem[] cache = Empty;
 
         internal bool TryGetBySubString(string text, int pos, [MaybeNullWhen(false)] out TItem result)

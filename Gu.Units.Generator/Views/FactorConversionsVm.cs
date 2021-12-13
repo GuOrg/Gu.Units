@@ -21,7 +21,7 @@
                 .Subscribe(this.Synchronize);
         }
 
-        public ObservableCollection<FactorConversionVm> Conversions { get; } = new ObservableCollection<FactorConversionVm>();
+        public ObservableCollection<FactorConversionVm> Conversions { get; } = new();
 
         public void SetUnit(Unit newUnit)
         {

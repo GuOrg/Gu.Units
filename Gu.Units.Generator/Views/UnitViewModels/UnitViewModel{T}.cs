@@ -17,7 +17,7 @@
         protected const string UnknownName = "Unknown";
         protected const string UnknownSymbol = "??";
 
-        private readonly SerialDisposable subscription = new SerialDisposable();
+        private readonly SerialDisposable subscription = new();
 
         private IChangeTracker tracker;
         private TUnit unit;
@@ -66,7 +66,7 @@
 
         public bool IsUnknown => this.Unit.Name == UnknownName || this.Unit.QuantityName == UnknownName || this.Unit.Symbol == UnknownSymbol || this.Unit.Parts.Any(p => p.UnitName.Contains("?"));
 
-        public ObservableCollection<string> Errors { get; } = new ObservableCollection<string>();
+        public ObservableCollection<string> Errors { get; } = new();
 
         public void Dispose()
         {

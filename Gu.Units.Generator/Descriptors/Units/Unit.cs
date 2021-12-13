@@ -26,16 +26,16 @@ namespace Gu.Units.Generator
         public abstract UnitParts Parts { get; }
 
         [JsonProperty(Order = 3)]
-        public ObservableCollection<FactorConversion> FactorConversions { get; } = new ObservableCollection<FactorConversion>();
+        public ObservableCollection<FactorConversion> FactorConversions { get; } = new();
 
         [JsonProperty(Order = 4)]
-        public ObservableCollection<CustomConversion> CustomConversions { get; } = new ObservableCollection<CustomConversion>();
+        public ObservableCollection<CustomConversion> CustomConversions { get; } = new();
 
         [JsonProperty(Order = 5)]
-        public ObservableCollection<PrefixConversion> PrefixConversions { get; } = new ObservableCollection<PrefixConversion>();
+        public ObservableCollection<PrefixConversion> PrefixConversions { get; } = new();
 
         [JsonProperty(Order = 6)]
-        public ObservableCollection<PartConversion> PartConversions { get; } = new ObservableCollection<PartConversion>();
+        public ObservableCollection<PartConversion> PartConversions { get; } = new();
 
         public string ClassName => this.QuantityName + "Unit";
 

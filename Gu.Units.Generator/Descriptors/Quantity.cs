@@ -26,7 +26,7 @@
 
         public string ParameterName => this.Name.ToParameterName();
 
-        public ObservableCollection<OperatorOverload> OperatorOverloads { get; } = new ObservableCollection<OperatorOverload>();
+        public ObservableCollection<OperatorOverload> OperatorOverloads { get; } = new();
 
         public InverseOverload Inverse
         {

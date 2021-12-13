@@ -10,7 +10,7 @@
 
     public sealed class PartConversionsVm : INotifyPropertyChanged, IDisposable
     {
-        private readonly ObservableCollection<PartConversionVm[]> conversions = new ObservableCollection<PartConversionVm[]>();
+        private readonly ObservableCollection<PartConversionVm[]> conversions = new();
         private Unit unit;
         private bool disposed;
 
@@ -25,7 +25,7 @@
 
         public IReadOnlyObservableCollection<PartConversionVm> UsedConversions { get; }
 
-        public ObservableBatchCollection<PartConversionVm> AllConversions { get; } = new ObservableBatchCollection<PartConversionVm>();
+        public ObservableBatchCollection<PartConversionVm> AllConversions { get; } = new();
 
         public ObservableCollection<PartConversionVm[]> Conversions => this.conversions;
 

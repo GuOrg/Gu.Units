@@ -26,9 +26,9 @@
 
         public IReadOnlyObservableCollection<ConversionVm> UsedConversions { get; }
 
-        public ObservableBatchCollection<PrefixConversionVm> AllConversions { get; } = new ObservableBatchCollection<PrefixConversionVm>();
+        public ObservableBatchCollection<PrefixConversionVm> AllConversions { get; } = new();
 
-        public ObservableCollection<IReadOnlyList<PrefixConversionVm>> Prefixes { get; } = new ObservableCollection<IReadOnlyList<PrefixConversionVm>>();
+        public ObservableCollection<IReadOnlyList<PrefixConversionVm>> Prefixes { get; } = new();
 
         public Unit Unit
         {

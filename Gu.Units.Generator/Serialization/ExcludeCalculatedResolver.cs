@@ -9,7 +9,7 @@
 
     public sealed class ExcludeCalculatedResolver : DefaultContractResolver
     {
-        public static readonly ExcludeCalculatedResolver Default = new ExcludeCalculatedResolver();
+        public static readonly ExcludeCalculatedResolver Default = new();
 
         private ExcludeCalculatedResolver()
         {

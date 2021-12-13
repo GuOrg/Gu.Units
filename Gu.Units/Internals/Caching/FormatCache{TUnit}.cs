@@ -9,7 +9,7 @@
     {
         internal static readonly QuantityFormat<TUnit> DefaultQuantityFormat = CreateFromValueFormatAndUnit(new ValueAndUnitFormatKey(null, Unit<TUnit>.Default, DefaultSymbolFormat));
 
-        private static readonly ConcurrentDictionary<IFormatKey, QuantityFormat<TUnit>> Cache = new ConcurrentDictionary<IFormatKey, QuantityFormat<TUnit>>();
+        private static readonly ConcurrentDictionary<IFormatKey, QuantityFormat<TUnit>> Cache = new();
 
         private static readonly StringComparer OrdinalComparer = StringComparer.Ordinal;
 
