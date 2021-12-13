@@ -7,7 +7,7 @@ namespace Gu.Units.Generator.Tests
 
     public sealed class FieldComparer : IComparer
     {
-        public static readonly FieldComparer Default = new FieldComparer();
+        public static readonly FieldComparer Default = new();
 
         private FieldComparer()
         {

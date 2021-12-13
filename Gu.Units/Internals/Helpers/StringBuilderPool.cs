@@ -93,9 +93,7 @@
                     this.Append(symbolAndPower, symbolFormat);
                 }
 
-                if ((symbolFormat == SymbolFormat.Default ||
-                     symbolFormat == SymbolFormat.FractionHatPowers ||
-                     symbolFormat == SymbolFormat.FractionSuperScript) &&
+                if (symbolFormat is SymbolFormat.Default or SymbolFormat.FractionHatPowers or SymbolFormat.FractionSuperScript &&
                     symbolAndPowers.Any(x => x.Power < 0))
                 {
                     if (this.builder.Length == 0)

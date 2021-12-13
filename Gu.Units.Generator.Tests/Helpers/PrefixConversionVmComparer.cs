@@ -5,7 +5,7 @@
 
     public sealed class PrefixConversionVmComparer : IComparer<PrefixConversionVm>, IComparer
     {
-        public static readonly PrefixConversionVmComparer Default = new PrefixConversionVmComparer();
+        public static readonly PrefixConversionVmComparer Default = new();
 
         private PrefixConversionVmComparer()
         {

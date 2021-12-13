@@ -13,9 +13,9 @@
             Create(" m "),
             Create(" cm"),
             Create("mm"),
-            new TestCaseData("μm", "\u03BCm"),
-            new TestCaseData("\u00B5m", "\u03BCm"),
-            new TestCaseData("\u03BCm", "\u03BCm"),
+            new("μm", "\u03BCm"),
+            new("\u00B5m", "\u03BCm"),
+            new("\u03BCm", "\u03BCm"),
             Create("ft"),
             Create("yd"),
         };
@@ -49,6 +49,6 @@
             Assert.AreEqual(false, LengthUnit.TryParse(text, out var _));
         }
 
-        private static TestCaseData Create(string text) => new TestCaseData(text, text.Trim());
+        private static TestCaseData Create(string text) => new(text, text.Trim());
     }
 }

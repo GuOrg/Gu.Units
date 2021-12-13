@@ -5,7 +5,7 @@
 
     public sealed class PrefixConversionComparer : IComparer<PrefixConversion>, IComparer
     {
-        public static readonly PrefixConversionComparer Default = new PrefixConversionComparer();
+        public static readonly PrefixConversionComparer Default = new();
 
         private PrefixConversionComparer()
         {

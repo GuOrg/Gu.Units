@@ -5,7 +5,7 @@
 
     public sealed class PrefixComparer : IComparer<Prefix>, IComparer
     {
-        public static readonly PrefixComparer Default = new PrefixComparer();
+        public static readonly PrefixComparer Default = new();
 
         private PrefixComparer()
         {

@@ -5,7 +5,7 @@ namespace Gu.Units.Generator.Tests
 
     public sealed class FactorConversionComparer : IComparer<FactorConversion>, IComparer
     {
-        public static readonly FactorConversionComparer Default = new FactorConversionComparer();
+        public static readonly FactorConversionComparer Default = new();
 
         private FactorConversionComparer()
         {

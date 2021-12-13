@@ -52,9 +52,9 @@
 
         public readonly DerivedUnit Hertz;
         public readonly Quantity Frequency;
-        public readonly Prefix Micro = new Prefix("Micro", "µ", -6);
-        public readonly Prefix Milli = new Prefix("Milli", "m", -3);
-        public readonly Prefix Kilo = new Prefix("Kilo", "k", 3);
+        public readonly Prefix Micro = new("Micro", "µ", -6);
+        public readonly Prefix Milli = new("Milli", "m", -3);
+        public readonly Prefix Kilo = new("Kilo", "k", 3);
 
         private MockSettings()
             : base(new ObservableCollection<Prefix>(), new ObservableCollection<BaseUnit>(), new ObservableCollection<DerivedUnit>())

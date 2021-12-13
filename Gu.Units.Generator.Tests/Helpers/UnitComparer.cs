@@ -6,7 +6,7 @@ namespace Gu.Units.Generator.Tests
 
     public sealed class UnitComparer : IComparer<BaseUnit>, IComparer
     {
-        public static readonly UnitComparer Default = new UnitComparer();
+        public static readonly UnitComparer Default = new();
 
         private UnitComparer()
         {

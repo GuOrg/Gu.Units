@@ -8,7 +8,7 @@
     internal static class StringFormatParser<TUnit>
         where TUnit : struct, IUnit, IEquatable<TUnit>
     {
-        private static readonly Dictionary<string, QuantityFormat<TUnit>> Cache = new Dictionary<string, QuantityFormat<TUnit>>();
+        private static readonly Dictionary<string, QuantityFormat<TUnit>> Cache = new();
 
         internal static bool CanParseValueFormat(string? format)
         {
