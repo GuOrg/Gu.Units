@@ -71,12 +71,8 @@
                                                                     .Where(x => !string.Equals(x.Conversion.Name, this.unit.Name, StringComparison.OrdinalIgnoreCase)) // filter out kilograms
                                                                     .ToArray();
                     this.Prefixes.Add(prefixConversionVms);
+                    this.AllConversions.AddRange(prefixConversionVms);
                 }
-            }
-
-            foreach (var prefix in this.Prefixes)
-            {
-                this.AllConversions.AddRange(prefix);
             }
 
             this.OnPropertyChanged(nameof(this.HasItems));
