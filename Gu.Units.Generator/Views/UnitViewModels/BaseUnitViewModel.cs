@@ -11,17 +11,17 @@
         public BaseUnitViewModel()
             : this(new BaseUnit(UnknownName, UnknownSymbol, UnknownName))
         {
-            this.subscription.Disposable = this.Unit.ObservePropertyChangedSlim()
-                .Subscribe(_ =>
+            this.subscription.Disposable = this.ObserveValue(x => x.Unit)
+                .Subscribe(x =>
                 {
-                    if (Settings.Instance.BaseUnits.Contains(this.Unit))
+                    if (Settings.Instance.BaseUnits.Contains(x.Value))
                     {
                         return;
                     }
 
                     if (!this.IsUnknown)
                     {
-                        Settings.Instance.BaseUnits.Add(this.Unit);
+                        Settings.Instance.BaseUnits.Add(x.Value);
                     }
                 });
         }

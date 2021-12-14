@@ -52,18 +52,18 @@
 
         private void Subscribe()
         {
-            this.subscription.Disposable = this.Unit.ObservePropertyChangedSlim()
-                .Subscribe(_ =>
+            this.subscription.Disposable = this.ObserveValue(x => x.Unit)
+                .Subscribe(x =>
                 {
-                    if (Settings.Instance.DerivedUnits.Contains(this.Unit))
+                    if (Settings.Instance.DerivedUnits.Contains(x.Value))
                     {
-                        this.subscription.Disposable.Dispose();
+                        this.subscription.Disposable = null;
                         return;
                     }
 
                     if (!this.IsUnknown)
                     {
-                        Settings.Instance.DerivedUnits.Add(this.Unit);
+                        Settings.Instance.DerivedUnits.Add(x.Value);
                     }
                 });
         }

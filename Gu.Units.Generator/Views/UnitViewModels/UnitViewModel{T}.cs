@@ -122,7 +122,9 @@
             this.tracker?.Dispose();
             this.tracker = Track.Changes(this.unit, ChangeTrackerSettings);
             this.subscription.Disposable = this.tracker
+#pragma warning disable GUREA01 // Don't observe mutable property.
                 .ObservePropertyChangedSlim(x => x.Changes)
+#pragma warning restore GUREA01 // Don't observe mutable property.
                 .Throttle(TimeSpan.FromMilliseconds(10))
                 .ObserveOn(TaskPoolScheduler.Default)
                 .SubscribeAsync(async () =>
