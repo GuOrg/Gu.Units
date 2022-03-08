@@ -11,6 +11,7 @@
     <EnableNETAnalyzers>True</EnableNETAnalyzers>
     <AnalysisMode>AllEnabledByDefault</AnalysisMode>
     <AnalysisLevel>latest</AnalysisLevel>
+    <StartupObject>Gu.Units.Benchmarks.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
